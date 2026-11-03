@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Line origination | OWN7 Analysis</title>
+<meta name="description" content="Model-originated NBA spreads, totals and win probabilities with explicit assumptions and no invented market prices.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <a class="brand" href="index.html">
+    <span class="brand-icon">O<span>7</span></span>
+    <span><b>OWN7</b><small>ANALYSIS ENGINE</small></span>
+  </a>
+  <div class="side-label">DASHBOARD</div>
+  <nav aria-label="Section navigation">
+<a class="" href="index.html"><span class="num">00</span>Overview</a>
+<a class="" href="executive-summary.html"><span class="num">01</span>Executive summary</a>
+<a class="" href="data.html"><span class="num">02</span>Official data</a>
+<a class="active" href="lines.html"><span class="num">03</span>Line origination</a>
+<a class="" href="correlation.html"><span class="num">04</span>Correlation</a>
+<a class="" href="validation.html"><span class="num">05</span>Validation gates</a>
+<a class="" href="leaderboard.html"><span class="num">06</span>Leaderboard</a>
+<a class="" href="methods.html"><span class="num">07</span>Methods &amp; tests</a>
+<a class="" href="flagged.html"><span class="num">08</span>Flagged for review</a>
+<a class="" href="sources.html"><span class="num">09</span>Sources</a>
+  </nav>
+  <div class="side-note">
+    <b>Evidence before action</b>
+    Every number is traced to an NBA.com URL or shown blank.
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span>NBA &nbsp;/&nbsp; <b>Line origination</b></span>
+    <span class="pill">BUILD 2026-11-03T23:55Z</span>
+  </header>
+  <div class="content">
+
+<div class="eyebrow">03 / LINE ORIGINATION</div>
+<h1>From a rating to a line, with every assumption in the open.</h1>
+<p class="intro">A spread, a total and a win probability for all 14 games on the 2026-11-04 slate, computed from official team ratings that were shrunk for small-sample noise.</p>
+
+<div class="notice">
+  <span class="ico">!</span>
+  <div>
+    <b>These are not market prices.</b>
+    The <em>fair odds</em> columns are the mathematical inverse of a model probability — the break-even price the model implies. They contain no vig and have not been compared with any book. The market columns are blank because no official NBA source publishes sportsbook prices. A row with a blank market column cannot have an edge, and no edge is claimed.
+  </div>
+</div>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">SLATE</div><h2>2026-11-04 originated lines</h2></div>
+    <span class="tag">14 GAMES</span>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr>
+      <th>Matchup</th><th class="num">Model spread (home)</th><th class="num">Model total</th>
+      <th class="num">Home win %</th><th class="num">Home fair odds</th><th class="num">Away fair odds</th>
+      <th class="num">Pace</th><th>Confidence</th><th class="num">Market price</th><th>Source</th>
+    </tr></thead>
+    <tbody>
+<tr>
+          <td class="tight"><b>PHI</b> @ <b>DET</b></td>
+          <td class="num">-3.9</td>
+          <td class="num">214.1</td>
+          <td class="num">62.2%</td>
+          <td class="num">1.61</td>
+          <td class="num">2.64</td>
+          <td class="num">99.28</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>ATL</b> @ <b>WAS</b></td>
+          <td class="num">-2.7</td>
+          <td class="num">223.0</td>
+          <td class="num">58.6%</td>
+          <td class="num">1.71</td>
+          <td class="num">2.42</td>
+          <td class="num">101.03</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>MIL</b> @ <b>BOS</b></td>
+          <td class="num">-7.6</td>
+          <td class="num">228.1</td>
+          <td class="num">72.8%</td>
+          <td class="num">1.37</td>
+          <td class="num">3.67</td>
+          <td class="num">101.42</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>CHA</b> @ <b>BKN</b></td>
+          <td class="num">-3.5</td>
+          <td class="num">211.2</td>
+          <td class="num">61.0%</td>
+          <td class="num">1.64</td>
+          <td class="num">2.56</td>
+          <td class="num">98.43</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>CHI</b> @ <b>NYK</b></td>
+          <td class="num">-7.0</td>
+          <td class="num">226.3</td>
+          <td class="num">71.3%</td>
+          <td class="num">1.40</td>
+          <td class="num">3.48</td>
+          <td class="num">101.18</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>IND</b> @ <b>MEM</b></td>
+          <td class="num">-6.8</td>
+          <td class="num">228.6</td>
+          <td class="num">70.6%</td>
+          <td class="num">1.42</td>
+          <td class="num">3.40</td>
+          <td class="num">101.52</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>UTA</b> @ <b>NOP</b></td>
+          <td class="num">-6.0</td>
+          <td class="num">228.7</td>
+          <td class="num">68.5%</td>
+          <td class="num">1.46</td>
+          <td class="num">3.17</td>
+          <td class="num">102.63</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>CLE</b> @ <b>OKC</b></td>
+          <td class="num">-1.7</td>
+          <td class="num">224.0</td>
+          <td class="num">55.4%</td>
+          <td class="num">1.80</td>
+          <td class="num">2.24</td>
+          <td class="num">99.67</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>MIN</b> @ <b>HOU</b></td>
+          <td class="num">-3.0</td>
+          <td class="num">224.7</td>
+          <td class="num">59.4%</td>
+          <td class="num">1.68</td>
+          <td class="num">2.46</td>
+          <td class="num">99.90</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>TOR</b> @ <b>DEN</b></td>
+          <td class="num">+0.2</td>
+          <td class="num">227.9</td>
+          <td class="num">49.3%</td>
+          <td class="num">2.03</td>
+          <td class="num">1.97</td>
+          <td class="num">100.64</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>POR</b> @ <b>PHX</b></td>
+          <td class="num">+1.8</td>
+          <td class="num">232.3</td>
+          <td class="num">44.4%</td>
+          <td class="num">2.25</td>
+          <td class="num">1.80</td>
+          <td class="num">99.72</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>DAL</b> @ <b>SAS</b></td>
+          <td class="num">-4.7</td>
+          <td class="num">223.6</td>
+          <td class="num">64.7%</td>
+          <td class="num">1.54</td>
+          <td class="num">2.84</td>
+          <td class="num">99.94</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>LAL</b> @ <b>SAC</b></td>
+          <td class="num">+3.3</td>
+          <td class="num">236.2</td>
+          <td class="num">39.6%</td>
+          <td class="num">2.52</td>
+          <td class="num">1.66</td>
+          <td class="num">102.08</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>MIA</b> @ <b>LAC</b></td>
+          <td class="num">-2.3</td>
+          <td class="num">232.8</td>
+          <td class="num">57.2%</td>
+          <td class="num">1.75</td>
+          <td class="num">2.33</td>
+          <td class="num">102.39</td>
+          <td><span class="chip muted">very low</span></td>
+          <td class="num blank">not available</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">Source for the underlying ratings: <a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">NBA.com team advanced stats ↗</a>. Slate taken from <a href="https://www.nba.com/schedule?date=11/03/2026" target="_blank" rel="noopener noreferrer">the NBA.com schedule page ↗</a>. Every row is labelled <span class="chip warn">very low</span> confidence because at least one team has fewer than 10 games of data.</p>
+</section>
+
+<section>
+  <div class="eyebrow">THE MATHS</div>
+  <h2>How each number is produced</h2>
+  <div class="prose">
+    <h3>1. Shrink the rating</h3>
+    <div class="formula">net_shrunk = μ + (gp / (gp + k)) × (net_raw − μ)
+μ = possession-weighted league mean NetRtg, k = 20 games</div>
+    <p>A team that is +12.8 after 8 games keeps 8/28 = 28.6% of that edge, because most of an 8-game rating is noise. This is the single most important defence against pricing a hot start as if it were a true rating.</p>
+
+    <h3>2. Convert rating to points</h3>
+    <div class="formula">gap_points = (net_shrunk_home − net_shrunk_away) × matchup_pace / 100
+model_margin = gap_points + home_court_points   (home_court = 2.5)</div>
+
+    <h3>3. Turn the margin into a probability</h3>
+    <div class="formula">model_margin ~ Normal(model_margin, 12.5)
+P(home wins) = Φ(model_margin / σ)</div>
+
+    <h3>4. Turn the probability into a price</h3>
+    <div class="formula">fair_decimal_odds = 1 / p</div>
+    <p>At <em>p</em> = 0.50 the fair price is 2.00. A book offering 1.91 is holding about 4.7% — which is why a 52.4% win rate, not 50%, is the real break-even at standard two-way prices.</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">PARLAY ARITHMETIC</div><h2>What a two-leg parlay really costs</h2></div>
+  </div>
+  <div class="prose">
+    <p>Two legs priced as independent multiply. If the legs are correlated, that multiplication is wrong, and the size of the error is computable:</p>
+    <div class="formula">P(A ∩ B) = Φ₂(z_A, z_B; φ)      — bivariate normal CDF
+independence_gap = P(A ∩ B) − P(A)·P(B)</div>
+    <p>The engine implements Φ₂ directly and the self-tests pin it against the exact closed form <code>P(X&lt;0, Y&lt;0) = 1/4 + arcsin(ρ)/2π</code>. What the engine will <strong>not</strong> do is invent φ: it has to come from measured paired outcomes, and that measurement is on the <a href="correlation.html">correlation page</a>.</p>
+  </div>
+</section>
+
+    <footer>
+      <span>OWN7 / analysis engine · research only · no wagering recommendations</span>
+      <span>Data snapshot 2026-11-03T23:55Z · <a href="../index.html">main site ↗</a></span>
+    </footer>
+  </div>
+</main>
+</div>
+</body>
+</html>

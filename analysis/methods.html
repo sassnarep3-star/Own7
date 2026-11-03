@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methods &amp; tests | OWN7 Analysis</title>
+<meta name="description" content="Engine architecture and the closed-form self-tests that let a reader verify the maths.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <a class="brand" href="index.html">
+    <span class="brand-icon">O<span>7</span></span>
+    <span><b>OWN7</b><small>ANALYSIS ENGINE</small></span>
+  </a>
+  <div class="side-label">DASHBOARD</div>
+  <nav aria-label="Section navigation">
+<a class="" href="index.html"><span class="num">00</span>Overview</a>
+<a class="" href="executive-summary.html"><span class="num">01</span>Executive summary</a>
+<a class="" href="data.html"><span class="num">02</span>Official data</a>
+<a class="" href="lines.html"><span class="num">03</span>Line origination</a>
+<a class="" href="correlation.html"><span class="num">04</span>Correlation</a>
+<a class="" href="validation.html"><span class="num">05</span>Validation gates</a>
+<a class="" href="leaderboard.html"><span class="num">06</span>Leaderboard</a>
+<a class="active" href="methods.html"><span class="num">07</span>Methods &amp; tests</a>
+<a class="" href="flagged.html"><span class="num">08</span>Flagged for review</a>
+<a class="" href="sources.html"><span class="num">09</span>Sources</a>
+  </nav>
+  <div class="side-note">
+    <b>Evidence before action</b>
+    Every number is traced to an NBA.com URL or shown blank.
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span>NBA &nbsp;/&nbsp; <b>Methods &amp; tests</b></span>
+    <span class="pill">BUILD 2026-11-03T23:55Z</span>
+  </header>
+  <div class="content">
+
+<div class="eyebrow">07 / METHODS</div>
+<h1>Check the maths instead of trusting it.</h1>
+<p class="intro">The engine ships with 51 self-tests. Where a closed form exists, the test asserts the closed form — so a bug in the implementation cannot pass silently.</p>
+
+<div class="notice good">
+  <span class="ico">✓</span>
+  <div>
+    <b>51 tests, all passing, fully offline.</b>
+    Run <code>python3 -m unittest discover -s analysis/tests -t analysis</code>. No network access, no third-party packages, no randomness without a seed.
+  </div>
+</div>
+
+<section>
+  <div class="eyebrow">ARCHITECTURE</div>
+  <h2>Six modules, each with one job</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Module</th><th>Responsibility</th><th>Key honesty guarantee</th><th>Code</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">ratings.py</td><td>Shrink small-sample team ratings</td><td>Prior strength is declared, never fitted and hidden</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/ratings.py" target="_blank" rel="noopener noreferrer">source ↗</a></td></tr>
+      <tr><td class="mono">markets.py</td><td>Spread, total, win prob, fair odds, parlay joints</td><td><code>is_market_price: false</code> on every output; EV needs a real price passed in</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/markets.py" target="_blank" rel="noopener noreferrer">source ↗</a></td></tr>
+      <tr><td class="mono">correlation.py</td><td>Pearson/phi with Fisher intervals</td><td>Refuses player-prop correlation rather than guessing</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/correlation.py" target="_blank" rel="noopener noreferrer">source ↗</a></td></tr>
+      <tr><td class="mono">skill.py</td><td>Binominal, PSR, deflated Sharpe, bootstrap</td><td>Cannot certify skill; can only fail to reject chance</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">source ↗</a></td></tr>
+      <tr><td class="mono">gates.py</td><td>Eight gates, three-state results</td><td><code>not_evaluable</code> can never be rolled up to <code>passed</code></td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">source ↗</a></td></tr>
+      <tr><td class="mono">leaderboard.py</td><td>ROI lower bounds and ranking</td><td>Unproven strategies get <code>rank: null</code>, not a low rank</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/leaderboard.py" target="_blank" rel="noopener noreferrer">source ↗</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">THE TESTS THAT MATTER MOST</div>
+  <h2>Closed-form anchors</h2>
+  <div class="prose">
+    <h3>Bivariate normal CDF</h3>
+    <p>The parlay joint probability depends entirely on Φ₂. If that is wrong, every parlay number is wrong. The test pins it against the exact identity:</p>
+    <div class="formula">P(X &lt; 0, Y &lt; 0) = 1/4 + arcsin(ρ) / (2π)   for standard bivariate normal
+checked at ρ ∈ {−0.9, −0.5, −0.2, 0, 0.2, 0.5, 0.9}, tolerance 1e-6</div>
+    <p>It also asserts Φ₂ reduces exactly to Φ(h)·Φ(k) at ρ = 0, and that the joint upper-tail probability is monotone in ρ.</p>
+
+    <h3>Shrinkage limits</h3>
+    <p>Zero games must return the league mean exactly; a large number of games must return the observed rating. Both are asserted, so an inverted weight formula cannot survive.</p>
+
+    <h3>Vig arithmetic</h3>
+    <p>De-vigging two −110 prices must yield a 4.77% hold and fair probabilities of exactly 0.5 each. The test asserts this rather than eyeballing it.</p>
+
+    <h3>Determinism</h3>
+    <p>One test re-runs the entire analysis as a subprocess and fails if any output byte changed. A result that moves between runs is not evidence.</p>
+
+    <h3>Honest anchors that constrain the claims</h3>
+    <ul>
+      <li>52.38% is break-even at −110, so a 55% record over 1,000 bets lands at p ≈ 0.052 — barely at the line. The test asserts this band rather than pretending such a record is decisive.</li>
+      <li>A zero-mean return series must <em>not</em> look significant in the block bootstrap.</li>
+      <li>"No bets" must produce the verdict <code>unproven</code>, never <code>passed</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">REPRODUCE</div>
+  <h2>Three commands, no network</h2>
+  <pre>python3 analysis/run.py                                        # rebuild results/*.json
+python3 analysis/build_site.py                                 # rebuild this dashboard
+python3 -m unittest discover -s analysis/tests -t analysis      # 51 tests</pre>
+  <p class="small muted">Inputs live in <code>analysis/data/*.json</code>, each recording the NBA.com URL it was transcribed from and the timestamp of the read.</p>
+</section>
+
+    <footer>
+      <span>OWN7 / analysis engine · research only · no wagering recommendations</span>
+      <span>Data snapshot 2026-11-03T23:55Z · <a href="../index.html">main site ↗</a></span>
+    </footer>
+  </div>
+</main>
+</div>
+</body>
+</html>

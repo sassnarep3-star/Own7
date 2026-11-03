@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review | OWN7 Analysis</title>
+<meta name="description" content="Every unverified item, blank cell and documented assumption in the NBA analysis, with sources.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <a class="brand" href="index.html">
+    <span class="brand-icon">O<span>7</span></span>
+    <span><b>OWN7</b><small>ANALYSIS ENGINE</small></span>
+  </a>
+  <div class="side-label">DASHBOARD</div>
+  <nav aria-label="Section navigation">
+<a class="" href="index.html"><span class="num">00</span>Overview</a>
+<a class="" href="executive-summary.html"><span class="num">01</span>Executive summary</a>
+<a class="" href="data.html"><span class="num">02</span>Official data</a>
+<a class="" href="lines.html"><span class="num">03</span>Line origination</a>
+<a class="" href="correlation.html"><span class="num">04</span>Correlation</a>
+<a class="" href="validation.html"><span class="num">05</span>Validation gates</a>
+<a class="" href="leaderboard.html"><span class="num">06</span>Leaderboard</a>
+<a class="" href="methods.html"><span class="num">07</span>Methods &amp; tests</a>
+<a class="active" href="flagged.html"><span class="num">08</span>Flagged for review</a>
+<a class="" href="sources.html"><span class="num">09</span>Sources</a>
+  </nav>
+  <div class="side-note">
+    <b>Evidence before action</b>
+    Every number is traced to an NBA.com URL or shown blank.
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span>NBA &nbsp;/&nbsp; <b>Flagged for review</b></span>
+    <span class="pill">BUILD 2026-11-03T23:55Z</span>
+  </header>
+  <div class="content">
+
+<div class="eyebrow">08 / FLAGGED FOR REVIEW</div>
+<h1>Everything that could not be verified, stated plainly.</h1>
+<p class="intro">These items do not block publication — they block <em>claims</em>. Each one is listed with the official source that constrains it, so it can be checked and challenged.</p>
+
+<div class="notice">
+  <span class="ico">!</span>
+  <div>
+    <b>Read this before citing anything from this site.</b>
+    The originated lines are model outputs, the correlation intervals include zero, no market price exists, and no strategy is ranked. Every limitation below is a deliberate blank rather than a filled-in guess.
+  </div>
+</div>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">REGISTER</div><h2>Open items</h2></div>
+    <span class="tag">10 ITEMS</span>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>ID</th><th>Item</th><th>Why it is flagged</th><th>Status</th><th>Source</th></tr></thead>
+    <tbody>
+<tr>
+          <td class="tight mono">F1</td>
+          <td>No sportsbook prices anywhere in this repository</td>
+          <td>No official NBA source publishes sportsbook prices. NBA.com renders no odds on its standings, stats, schedule or game-summary pages (the games list has a &#x27;HIDE ODDS&#x27; toggle but no prices reach the rendered text). Without a licensed feed there is nothing to compare a model against.</td>
+          <td><span class="chip warn">unverified</span></td>
+          <td class="src"><a href="https://www.nba.com/schedule?date=11/03/2026" target="_blank" rel="noopener noreferrer">source ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">F2</td>
+          <td>Player prop correlation is not computable</td>
+          <td>NBA.com player box-score pages are rendered client-side and returned no table when fetched, so no paired player stat lines exist here. The correlation cell is blank rather than estimated.</td>
+          <td><span class="chip warn">unverified</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/players/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">source ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">F3</td>
+          <td>Game sample is 18 games, not a season</td>
+          <td>Only 11/01 and 11/02 games were transcribed. Earlier dates are published by NBA.com but sit behind a paginated table that was not fully readable. Correlations from 18 games have intervals that include zero.</td>
+          <td><span class="chip warn">unverified</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">source ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">F4</td>
+          <td>Prior strength k = 20 games is an assumption</td>
+          <td>The shrinkage constant used to deflate small-sample ratings was chosen as a deliberately weak prior, not estimated from this data. A different k moves every originated line.</td>
+          <td><span class="chip warn">unverified</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">source ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">F5</td>
+          <td>Home-court advantage 2.5 points and margin SD 12.5 are constants</td>
+          <td>Both are documented assumptions in engine/markets.py. NBA.com publishes home/road splits but no official single home-court number or margin distribution; neither was fitted to the 18-game sample because that would be overfitting.</td>
+          <td><span class="chip warn">unverified</span></td>
+          <td class="src"><a href="https://www.nba.com/standings?GroupBy=conf&amp;Season=2025-26&amp;Section=overall" target="_blank" rel="noopener noreferrer">source ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">F6</td>
+          <td>Competition rewards are undefined</td>
+          <td>The brief asks for rewards for top-performing strategies. No reward, prize, points scheme or funding is defined anywhere and none is invented here. The owner must set this before a competition is real.</td>
+          <td><span class="chip warn">unverified</span></td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7" target="_blank" rel="noopener noreferrer">source ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">F7</td>
+          <td>2025-26 ratings snapshot is partial (14 of 30 teams)</td>
+          <td>Only 14 completed-season rows could be read without ambiguity. The remainder are omitted rather than filled in.</td>
+          <td><span class="chip warn">unverified</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">source ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">F8</td>
+          <td>&#x27;Remove luck from the equation&#x27; is not achievable as stated</td>
+          <td>Luck cannot be eliminated from a finite bet record. What this engine does instead: shrink small samples, test against no-skill nulls, deflate for multiple testing, and rank on a lower confidence bound. The claim is deliberately weakened to what is mathematically defensible.</td>
+          <td><span class="chip muted">noted</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/help/glossary" target="_blank" rel="noopener noreferrer">source ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">F9</td>
+          <td>Totals model uses a blended offense/defence assumption</td>
+          <td>Expected points per 100 for each side is the mean of that side&#x27;s offense and the opponent&#x27;s defence. This is a documented simplification; a properly fitted model would separate pace and efficiency interactions.</td>
+          <td><span class="chip warn">unverified</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/help/glossary" target="_blank" rel="noopener noreferrer">source ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">F10</td>
+          <td>No license file in the repository</td>
+          <td>Reuse terms for this analysis are undefined.</td>
+          <td><span class="chip warn">unverified</span></td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7" target="_blank" rel="noopener noreferrer">source ↗</a></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">WHAT WOULD CLOSE THESE</div>
+  <h2>The shortest honest path to a real edge</h2>
+  <div class="prose">
+    <ol>
+      <li><strong>Get a licensed, timestamped odds feed.</strong> Nothing on this site can become a bet evaluation until real prices with a capture time exist. This is the single blocking dependency.</li>
+      <li><strong>Get paired player game logs.</strong> Player-prop combos need per-player, per-game stat lines plus the exact prop lines and settlement rules for pushes and voids.</li>
+      <li><strong>Build a full-season game sample.</strong> A correlation needs roughly 174 paired games to reach ±0.15, and preferably two seasons to check stability.</li>
+      <li><strong>Pre-register the strategy, then leave it alone.</strong> Hash the thresholds before the first bet. The moment a threshold moves after results are seen, gate G1 fails.</li>
+      <li><strong>Define the reward and the evaluation window.</strong> Owner decision, not a modelling decision.</li>
+    </ol>
+  </div>
+</section>
+
+    <footer>
+      <span>OWN7 / analysis engine · research only · no wagering recommendations</span>
+      <span>Data snapshot 2026-11-03T23:55Z · <a href="../index.html">main site ↗</a></span>
+    </footer>
+  </div>
+</main>
+</div>
+</body>
+</html>

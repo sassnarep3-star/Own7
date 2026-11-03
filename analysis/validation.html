@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Validation gates | OWN7 Analysis</title>
+<meta name="description" content="Eight validation gates with three-state outcomes, run against the actual strategies.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <a class="brand" href="index.html">
+    <span class="brand-icon">O<span>7</span></span>
+    <span><b>OWN7</b><small>ANALYSIS ENGINE</small></span>
+  </a>
+  <div class="side-label">DASHBOARD</div>
+  <nav aria-label="Section navigation">
+<a class="" href="index.html"><span class="num">00</span>Overview</a>
+<a class="" href="executive-summary.html"><span class="num">01</span>Executive summary</a>
+<a class="" href="data.html"><span class="num">02</span>Official data</a>
+<a class="" href="lines.html"><span class="num">03</span>Line origination</a>
+<a class="" href="correlation.html"><span class="num">04</span>Correlation</a>
+<a class="active" href="validation.html"><span class="num">05</span>Validation gates</a>
+<a class="" href="leaderboard.html"><span class="num">06</span>Leaderboard</a>
+<a class="" href="methods.html"><span class="num">07</span>Methods &amp; tests</a>
+<a class="" href="flagged.html"><span class="num">08</span>Flagged for review</a>
+<a class="" href="sources.html"><span class="num">09</span>Sources</a>
+  </nav>
+  <div class="side-note">
+    <b>Evidence before action</b>
+    Every number is traced to an NBA.com URL or shown blank.
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span>NBA &nbsp;/&nbsp; <b>Validation gates</b></span>
+    <span class="pill">BUILD 2026-11-03T23:55Z</span>
+  </header>
+  <div class="content">
+
+<div class="eyebrow">05 / VALIDATION GATES</div>
+<h1>Eight gates. Three outcomes. "Unknown" is never "pass".</h1>
+<p class="intro">A strategy reaches the leaderboard only if every gate passes. Gates that cannot be evaluated return <em>not evaluable</em>, which makes the strategy <em>unproven</em> — not approved, and not rejected either.</p>
+
+<div class="metrics">
+  <div class="metric bad"><span>OVERALL</span><b style="font-size:19px">REJECTED</b><small>for the lead strategy</small></div>
+  <div class="metric good"><span>PASSED</span><b>2</b><small>gates cleared</small></div>
+  <div class="metric warn"><span>NOT EVALUABLE</span><b>5</b><small>blocked by missing data</small></div>
+  <div class="metric bad"><span>FAILED</span><b>1</b><small>gate actively failed</small></div>
+</div>
+
+<div class="notice info">
+  <span class="ico">i</span>
+  <div>
+    <b>A strategy is ranked only if overall == &#x27;passed&#x27;. &#x27;unproven&#x27; is not a soft pass.</b>
+    The gate engine is real code, not a description. It runs on every build and its output for the lead strategy is shown below exactly as computed.
+  </div>
+</div>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">LIVE RUN</div><h2>Gate result: "Pace-and-efficiency spread model"</h2></div>
+    <span class="tag">COMPUTED, NOT ASSERTED</span>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>ID</th><th>Gate</th><th>Status</th><th>Reason</th><th>Basis</th></tr></thead>
+    <tbody>
+<tr>
+          <td class="tight mono">G0</td>
+          <td>Provenance</td>
+          <td><span class="chip ok">pass</span></td>
+          <td>all 1 inputs carry a source URL</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">G1</td>
+          <td>Pre-registration</td>
+          <td><span class="chip ok">pass</span></td>
+          <td>all declarations present</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">G2</td>
+          <td>Sample size</td>
+          <td><span class="chip warn">not_evaluable</span></td>
+          <td>no settled bets</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">G3</td>
+          <td>Out-of-sample</td>
+          <td><span class="chip warn">not_evaluable</span></td>
+          <td>in-sample or out-of-sample metric missing</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">G4</td>
+          <td>Luck test</td>
+          <td><span class="chip warn">not_evaluable</span></td>
+          <td>no settled bets</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">G5</td>
+          <td>Price realism</td>
+          <td><span class="chip warn">not_evaluable</span></td>
+          <td>no recorded prices</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">G6</td>
+          <td>Correlation</td>
+          <td><span class="chip bad">fail</span></td>
+          <td>legs treated as independent and no dependence was measured</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight mono">G7</td>
+          <td>Robustness</td>
+          <td><span class="chip warn">not_evaluable</span></td>
+          <td>only 0 results; robustness needs at least 20</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted" style="margin-top:12px">G0 and G1 pass. G2, G3, G4, G5, G7 cannot be evaluated without a bet record; G6 fails while legs are assumed independent. Overall: unproven, so no rank.</p>
+</section>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">DEFINITIONS</div><h2>What each gate requires</h2></div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>ID</th><th>Gate</th><th>Requirement</th><th>Basis</th></tr></thead>
+    <tbody>
+<tr><td class="tight mono">G0</td><td class="tight">Provenance</td><td>every input has an official source URL</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td></tr>
+<tr><td class="tight mono">G1</td><td class="tight">Pre-registration</td><td>thresholds, universe, stopping rule and window declared and hashed before results</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td></tr>
+<tr><td class="tight mono">G2</td><td class="tight">Sample size</td><td>settled bets &gt;= declared minimum</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td></tr>
+<tr><td class="tight mono">G3</td><td class="tight">Out-of-sample</td><td>OOS edge retains at least 50% of in-sample edge</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td></tr>
+<tr><td class="tight mono">G4</td><td class="tight">Luck test</td><td>binomial p &lt; 0.05, PSR &gt; 0.95, deflated Sharpe &gt; 0.95</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td></tr>
+<tr><td class="tight mono">G5</td><td class="tight">Price realism</td><td>every bet priced from a timestamped, attributed, sourced executable price</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td></tr>
+<tr><td class="tight mono">G6</td><td class="tight">Correlation</td><td>parlay dependence measured, interval excluding zero</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td></tr>
+<tr><td class="tight mono">G7</td><td class="tight">Robustness</td><td>mean return stays positive after dropping the best 5% of results</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/gates.py" target="_blank" rel="noopener noreferrer">gate rule ↗</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">WHY THIS ORDER</div>
+  <h2>The gates run cheapest-first, and the cheap ones catch the most</h2>
+  <div class="prose">
+    <p><strong>G0 provenance</strong> catches the most common failure in this whole field: a number with no source, or a number that quietly changed definition between the input and the claim. One missing URL fails the gate.</p>
+    <p><strong>G1 pre-registration</strong> is hashed, so a later edit to the thresholds changes the hash and invalidates the run. Without it, "we would have bet that anyway" is unfalsifiable.</p>
+    <p><strong>G4 luck</strong> requires three separate tests to agree — an exact binomial test, the probabilistic Sharpe ratio, and the deflated Sharpe ratio. They fail in different ways, which is the point: a fat-tailed streak can pass one and fail another.</p>
+    <p><strong>G6 correlation</strong> fails a parlay outright if its legs were assumed independent without a measurement. That single rule kills most plausible-looking parlay "systems".</p>
+    <p><strong>G7 robustness</strong> deletes the best 5% of results and re-checks. A strategy whose entire edge comes from three lucky weeks fails here, which is the arithmetic version of "that was one good month".</p>
+  </div>
+</section>
+
+    <footer>
+      <span>OWN7 / analysis engine · research only · no wagering recommendations</span>
+      <span>Data snapshot 2026-11-03T23:55Z · <a href="../index.html">main site ↗</a></span>
+    </footer>
+  </div>
+</main>
+</div>
+</body>
+</html>

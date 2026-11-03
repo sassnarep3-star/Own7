@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Correlation | OWN7 Analysis</title>
+<meta name="description" content="Measured same-game correlation between NBA parlay legs, with confidence intervals and explicit blanks.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <a class="brand" href="index.html">
+    <span class="brand-icon">O<span>7</span></span>
+    <span><b>OWN7</b><small>ANALYSIS ENGINE</small></span>
+  </a>
+  <div class="side-label">DASHBOARD</div>
+  <nav aria-label="Section navigation">
+<a class="" href="index.html"><span class="num">00</span>Overview</a>
+<a class="" href="executive-summary.html"><span class="num">01</span>Executive summary</a>
+<a class="" href="data.html"><span class="num">02</span>Official data</a>
+<a class="" href="lines.html"><span class="num">03</span>Line origination</a>
+<a class="active" href="correlation.html"><span class="num">04</span>Correlation</a>
+<a class="" href="validation.html"><span class="num">05</span>Validation gates</a>
+<a class="" href="leaderboard.html"><span class="num">06</span>Leaderboard</a>
+<a class="" href="methods.html"><span class="num">07</span>Methods &amp; tests</a>
+<a class="" href="flagged.html"><span class="num">08</span>Flagged for review</a>
+<a class="" href="sources.html"><span class="num">09</span>Sources</a>
+  </nav>
+  <div class="side-note">
+    <b>Evidence before action</b>
+    Every number is traced to an NBA.com URL or shown blank.
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span>NBA &nbsp;/&nbsp; <b>Correlation</b></span>
+    <span class="pill">BUILD 2026-11-03T23:55Z</span>
+  </header>
+  <div class="content">
+
+<div class="eyebrow">04 / CORRELATION</div>
+<h1>Parlay legs are not independent. Here is how much, and how sure we are.</h1>
+<p class="intro">Measured on 18 real games from NBA.com. The result is a genuine measurement — and its confidence interval is the reason it is not yet priced into a bet.</p>
+
+<div class="notice">
+  <span class="ico">!</span>
+  <div>
+    <b>The honest headline is the interval, not the point estimate.</b>
+    Home and away scoring correlate at r = 0.42, but the 95% interval runs -0.06 to 0.74 — it includes zero. At 18 games, "these legs are dependent" and "these legs are independent" cannot be told apart. Pinning a correlation to ±0.15 needs roughly 174 paired games: a full season.
+  </div>
+</div>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">TABLE</div><h2>Measured dependence</h2></div>
+    <span class="tag">n = 18 GAMES</span>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Pair</th><th class="num">n</th><th class="num">Estimate</th><th class="num">95% low</th><th class="num">95% high</th><th>Status</th><th>Source</th></tr></thead>
+    <tbody>
+<tr>
+          <td>home_points vs away_points (same game)</td>
+          <td class="num">18</td>
+          <td class="num">0.420</td>
+          <td class="num">-0.058</td>
+          <td class="num">0.742</td>
+          <td><span class="chip ok">measured</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td>home_points vs game_total (same game)</td>
+          <td class="num">18</td>
+          <td class="num">0.873</td>
+          <td class="num">0.685</td>
+          <td class="num">0.952</td>
+          <td><span class="chip muted">mechanically inflated - not tradable evidence</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td>pregame projected matchup pace vs realised game total</td>
+          <td class="num">18</td>
+          <td class="num">0.558</td>
+          <td class="num">0.123</td>
+          <td class="num">0.813</td>
+          <td><span class="chip ok">measured</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td>home scores 110+ vs home wins (phi)</td>
+          <td class="num">18</td>
+          <td class="num">0.447</td>
+          <td class="num">-0.025</td>
+          <td class="num">0.756</td>
+          <td><span class="chip ok">measured</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td>player stat vs player stat (props)</td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num"><span class="muted">—</span></td>
+          <td><span class="chip warn">BLANK - not computable</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">WHAT EACH ROW MEANS</div>
+  <h2>Reading the table properly</h2>
+  <div class="prose">
+    <h3>Home points vs away points — a real measurement</h3>
+    <p>r = 0.420, 95% CI [-0.06, 0.74]. Both teams' scores rise together because they share a game environment: possessions, pace, officiating, and overtime. A same-game parlay on two overs is therefore <em>not</em> independent, and multiplying the two prices would overstate the fair parlay price.</p>
+
+    <h3>Team points vs game total — deliberately flagged as inflated</h3>
+    <p>r = 0.873 looks spectacular and means nothing: the total is partly made of the team's own points. This row is included precisely to show the difference between a real relationship and a tautology.</p>
+
+    <h3>Pre-game pace vs realised total — a legitimate forecast check</h3>
+    <p>r = 0.558, 95% CI [0.12, 0.81]. This uses only team PACE as published before the games, so it is an out-of-sample-ish signal rather than a same-game identity. It is the most encouraging number on this page, and it is still far too wide to trade.</p>
+
+    <h3>Binary-to-binary dependence (prop-combo form)</h3>
+    <p>φ = 0.447 between "home team scores 110+" and "home team wins", 95% CI [-0.02, 0.76]. This is the shape of a player-prop combo problem — two yes/no legs that share a game — and it too cannot be separated from independence yet.</p>
+
+    <h3>Player vs player prop correlation — blank, on purpose</h3>
+    <p>NBA.com player box-score pages are rendered client-side and returned no table when fetched, so there are no paired player stat lines to correlate. Rather than estimate a coefficient from nothing, the cell is blank and the blocker is documented. See <a href="flagged.html">Flagged for review</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">SAMPLE SIZE</div><h2>Why one month of data cannot price a parlay</h2></div>
+  </div>
+  <div class="prose">
+    <div class="formula">95% half-width on r ≈ 1.96 / (√(n − 3) × (1 + r²/2))  →  n ≈ 3 + (1.96 / half-width)²</div>
+    <p>To get a correlation interval of ±0.15 around r = 0.3, you need about <strong>174</strong> independent paired games. To get ±0.10, about 390. And games are not fully independent draws, so the true requirement is worse than that. This is the quantitative reason a correlation estimate is not an edge.</p>
+  </div>
+</section>
+
+    <footer>
+      <span>OWN7 / analysis engine · research only · no wagering recommendations</span>
+      <span>Data snapshot 2026-11-03T23:55Z · <a href="../index.html">main site ↗</a></span>
+    </footer>
+  </div>
+</main>
+</div>
+</body>
+</html>

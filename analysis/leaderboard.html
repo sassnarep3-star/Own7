@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leaderboard | OWN7 Analysis</title>
+<meta name="description" content="Luck-adjusted strategy leaderboard: lower confidence bounds, deflated Sharpe, and the arithmetic of no-skill records.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <a class="brand" href="index.html">
+    <span class="brand-icon">O<span>7</span></span>
+    <span><b>OWN7</b><small>ANALYSIS ENGINE</small></span>
+  </a>
+  <div class="side-label">DASHBOARD</div>
+  <nav aria-label="Section navigation">
+<a class="" href="index.html"><span class="num">00</span>Overview</a>
+<a class="" href="executive-summary.html"><span class="num">01</span>Executive summary</a>
+<a class="" href="data.html"><span class="num">02</span>Official data</a>
+<a class="" href="lines.html"><span class="num">03</span>Line origination</a>
+<a class="" href="correlation.html"><span class="num">04</span>Correlation</a>
+<a class="" href="validation.html"><span class="num">05</span>Validation gates</a>
+<a class="active" href="leaderboard.html"><span class="num">06</span>Leaderboard</a>
+<a class="" href="methods.html"><span class="num">07</span>Methods &amp; tests</a>
+<a class="" href="flagged.html"><span class="num">08</span>Flagged for review</a>
+<a class="" href="sources.html"><span class="num">09</span>Sources</a>
+  </nav>
+  <div class="side-note">
+    <b>Evidence before action</b>
+    Every number is traced to an NBA.com URL or shown blank.
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span>NBA &nbsp;/&nbsp; <b>Leaderboard</b></span>
+    <span class="pill">BUILD 2026-11-03T23:55Z</span>
+  </header>
+  <div class="content">
+
+<div class="eyebrow">06 / LEADERBOARD</div>
+<h1>A leaderboard that will not rank a hot streak.</h1>
+<p class="intro">Five candidate strategies across singles, parlays and prop combos. None has a settled, priced bet record, so none is ranked. That is the correct output, not a missing one.</p>
+
+<div class="notice">
+  <span class="ico">!</span>
+  <div>
+    <b>Zero strategies are ranked, and that is the finding.</b>
+    A rank is withheld unless every gate passes. There are no settled bets and no market prices, so the honest state is <em>unproven</em> for all five strategies. The reward column is undefined by design: the competition owner sets rewards, and none are invented here.
+    <a href="validation.html">See the gates →</a>
+  </div>
+</div>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">BOARD</div><h2>Strategy standings</h2></div>
+    <span class="tag">5 CANDIDATES / 0 RANKED</span>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr>
+      <th class="num">Rank</th><th>ID</th><th>Strategy</th><th>Category</th>
+      <th>Gate status</th><th class="num">Bets</th><th class="num">ROI</th>
+      <th class="num">ROI lower bound</th><th class="num">Reward</th>
+    </tr></thead>
+    <tbody>
+<tr>
+          <td class="num">—</td>
+          <td class="tight mono">S5</td>
+          <td>Cross-game independent-leg parlay</td>
+          <td>Parlay</td>
+          <td><span class="chip warn">unproven</span></td>
+          <td class="num">0</td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num blank">undefined</td>
+        </tr>
+<tr>
+          <td class="num">—</td>
+          <td class="tight mono">S1</td>
+          <td>Pace-and-efficiency spread model</td>
+          <td>Single bet</td>
+          <td><span class="chip warn">unproven</span></td>
+          <td class="num">0</td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num blank">undefined</td>
+        </tr>
+<tr>
+          <td class="num">—</td>
+          <td class="tight mono">S4</td>
+          <td>Same-game player prop combo (points + assists)</td>
+          <td>Prop combo</td>
+          <td><span class="chip warn">unproven</span></td>
+          <td class="num">0</td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num blank">undefined</td>
+        </tr>
+<tr>
+          <td class="num">—</td>
+          <td class="tight mono">S2</td>
+          <td>Shrunk-net-rating total model</td>
+          <td>Single bet</td>
+          <td><span class="chip warn">unproven</span></td>
+          <td class="num">0</td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num blank">undefined</td>
+        </tr>
+<tr>
+          <td class="num">—</td>
+          <td class="tight mono">S3</td>
+          <td>Two-leg same-game total parlay with measured dependence</td>
+          <td>Parlay</td>
+          <td><span class="chip warn">unproven</span></td>
+          <td class="num">0</td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num"><span class="muted">—</span></td>
+          <td class="num blank">undefined</td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">rank = order of one-sided 95% lower bound on per-bet ROI; only strategies with overall_gate_status == &#x27;passed&#x27; are ranked</p>
+</section>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">THE ARITHMETIC OF LUCK</div><h2>How many no-skill entries look good at each sample size</h2></div>
+    <span class="tag">AT -110 / 52.38% BREAK-EVEN</span>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr>
+      <th class="num">Bets</th><th class="num">No-skill SD of win rate</th>
+      <th class="num">95% win-rate band if no skill</th><th class="num">No-skill SD of ROI</th><th>Basis</th>
+    </tr></thead>
+    <tbody>
+<tr>
+          <td class="num">50</td>
+          <td class="num">7.06%</td>
+          <td class="num">38.5% – 66.2%</td>
+          <td class="num">13.48%</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">formula ↗</a></td>
+        </tr>
+<tr>
+          <td class="num">200</td>
+          <td class="num">3.53%</td>
+          <td class="num">45.5% – 59.3%</td>
+          <td class="num">6.74%</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">formula ↗</a></td>
+        </tr>
+<tr>
+          <td class="num">1000</td>
+          <td class="num">1.58%</td>
+          <td class="num">49.3% – 55.5%</td>
+          <td class="num">3.01%</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">formula ↗</a></td>
+        </tr>
+<tr>
+          <td class="num">5000</td>
+          <td class="num">0.71%</td>
+          <td class="num">51.0% – 53.8%</td>
+          <td class="num">1.35%</td>
+          <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">formula ↗</a></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">Derived from the binomial model in <code>engine/skill.py</code>; no data needed, and none invented.</p>
+</section>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">THE KILLER NUMBER</div><h2>100 identical no-skill entries, 200 bets each</h2></div>
+  </div>
+  <div class="metrics">
+    <div class="metric bad"><span>EXPECTED IN PROFIT</span><b>50</b><small>of 100 with no skill at all</small></div>
+    <div class="metric bad"><span>SHARE IN PROFIT</span><b>50%</b><small>purely by chance</small></div>
+    <div class="metric"><span>SD OF WIN RATE</span><b>3.53%</b><small>at 200 bets</small></div>
+  </div>
+  <div class="prose" style="margin-top:18px">
+    <p>With 200 bets at -110, a no-skill bettor&#x27;s win rate still has a standard deviation of about 0.035. Among 100 identical no-skill entries, about 50 will show a profit. A leaderboard at 200 bets ranks noise.</p>
+    <p>This is why the ranking uses a <strong>lower confidence bound</strong> rather than ROI. Two strategies with the same ROI but different sample sizes are not equally good, and a bound makes the shorter record rank below the longer one automatically. The reward for a top-performing strategy therefore requires defining the evaluation window first — see <a href="flagged.html">the open owner decisions</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">MULTIPLE TESTING</div>
+  <h2>The bar rises with every idea you try</h2>
+  <div class="prose">
+    <div class="formula">E[max Sharpe of N zero-skill strategies] ≈ (1−γ)·Φ⁻¹(1 − 1/N) + γ·Φ⁻¹(1 − 1/(N·e)),  γ = 0.5772</div>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th class="num">Strategies tried</th><th class="num">Sharpe a zero-skill best-of-N is expected to reach</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="num">0.00</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">formula ↗</a></td></tr><tr><td class="num">10</td><td class="num">1.57</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">formula ↗</a></td></tr><tr><td class="num">100</td><td class="num">2.53</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">formula ↗</a></td></tr><tr><td class="num">1000</td><td class="num">3.26</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">formula ↗</a></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Try 100 ideas and the best one will typically show a Sharpe near 2.53 with no skill whatsoever. The deflated Sharpe ratio in gate G4 subtracts exactly this threshold, so a strategy cannot win the board by being the luckiest of a hundred attempts.</p>
+  </div>
+</section>
+
+    <footer>
+      <span>OWN7 / analysis engine · research only · no wagering recommendations</span>
+      <span>Data snapshot 2026-11-03T23:55Z · <a href="../index.html">main site ↗</a></span>
+    </footer>
+  </div>
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Executive summary | OWN7 Analysis</title>
+<meta name="description" content="Executive summary of the NBA line-origination engine: findings, deliverables, blockers and what to trust.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <a class="brand" href="index.html">
+    <span class="brand-icon">O<span>7</span></span>
+    <span><b>OWN7</b><small>ANALYSIS ENGINE</small></span>
+  </a>
+  <div class="side-label">DASHBOARD</div>
+  <nav aria-label="Section navigation">
+<a class="" href="index.html"><span class="num">00</span>Overview</a>
+<a class="active" href="executive-summary.html"><span class="num">01</span>Executive summary</a>
+<a class="" href="data.html"><span class="num">02</span>Official data</a>
+<a class="" href="lines.html"><span class="num">03</span>Line origination</a>
+<a class="" href="correlation.html"><span class="num">04</span>Correlation</a>
+<a class="" href="validation.html"><span class="num">05</span>Validation gates</a>
+<a class="" href="leaderboard.html"><span class="num">06</span>Leaderboard</a>
+<a class="" href="methods.html"><span class="num">07</span>Methods &amp; tests</a>
+<a class="" href="flagged.html"><span class="num">08</span>Flagged for review</a>
+<a class="" href="sources.html"><span class="num">09</span>Sources</a>
+  </nav>
+  <div class="side-note">
+    <b>Evidence before action</b>
+    Every number is traced to an NBA.com URL or shown blank.
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span>NBA &nbsp;/&nbsp; <b>Executive summary</b></span>
+    <span class="pill">BUILD 2026-11-03T23:55Z</span>
+  </header>
+  <div class="content">
+
+<div class="eyebrow">01 / EXECUTIVE SUMMARY</div>
+<h1>An honest line-origination engine, and the reasons its best ideas are not yet tradable.</h1>
+<p class="intro">What was built, what the numbers say, what is missing, and what would have to be true before any of it deserves a bet.</p>
+
+<section style="margin-top:26px">
+  <div class="section-head"><div><div class="eyebrow">THE ONE-PARAGRAPH VERSION</div><h2>Summary</h2></div><span class="tag">READ THIS FIRST</span></div>
+  <div class="prose">
+    <p>A reproducible engine now originates NBA spread, total and win-probability lines from official NBA.com team ratings, with small-sample shrinkage so a hot start is not mistaken for a true rating. It measures real same-game dependence instead of assuming legs are independent, and it runs eight validation gates with three-state outcomes before anything reaches a leaderboard. On the current data the honest reading is this: the machinery is sound and independently testable, but the evidence base is too thin to rank any strategy. Eighteen games are not enough to pin a correlation, no official source publishes sportsbook prices, and player-level prop data could not be collected at all. The leaderboard therefore ranks nothing — deliberately.</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">FINDINGS</div>
+  <h2>Six findings worth acting on</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>#</th><th>Finding</th><th>Evidence</th><th>Status</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">1</td>
+        <td>Small-sample NBA ratings are wildly overstated if used raw. Houston is +12.8 after 8 games; shrinkage keeps 28.6% of that.</td>
+        <td class="num">12.8 → 3.66</td>
+        <td><span class="chip muted">computed</span></td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr>
+      <tr><td class="mono">2</td>
+        <td>Same-game parlay legs are positively dependent, but 18 games cannot distinguish that from independence.</td>
+        <td class="num">r = 0.42 (CI -0.06…0.74)</td>
+        <td><span class="chip ok">measured</span></td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr>
+      <tr><td class="mono">3</td>
+        <td>Pre-game pace is positively related to the realised total — the most promising signal found, and still far too wide to trade.</td>
+        <td class="num">r = 0.56 (CI 0.12…0.81)</td>
+        <td><span class="chip ok">measured</span></td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr>
+      <tr><td class="mono">4</td>
+        <td>There is no market to beat. No official NBA source publishes prices, so no edge can be computed at all.</td>
+        <td>0 prices available</td>
+        <td><span class="chip warn">unverified</span></td>
+        <td class="src"><a href="https://www.nba.com/schedule?date=11/03/2026" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr>
+      <tr><td class="mono">5</td>
+        <td>Leaderboards at short horizons rank luck. Among 100 identical no-skill entries at 200 bets, roughly 44 show a profit.</td>
+        <td class="num">44 / 100</td>
+        <td><span class="chip muted">computed</span></td>
+        <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">derivation ↗</a></td></tr>
+      <tr><td class="mono">6</td>
+        <td>Multiplicity is the dominant hidden risk. Trying 100 ideas yields a best Sharpe near 2.5 with zero skill.</td>
+        <td class="num">E[max SR] ≈ 2.53</td>
+        <td><span class="chip muted">computed</span></td>
+        <td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/engine/skill.py" target="_blank" rel="noopener noreferrer">derivation ↗</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">DELIVERED</div>
+  <h2>What exists now</h2>
+  <div class="prose">
+    <ul>
+      <li><strong>Verified data layer</strong> — 30 teams and 18 games, every value traced to an NBA.com URL with a read timestamp.</li>
+      <li><strong>Line origination</strong> — 14 model spread/total/win-probability lines for the 2026-11-04 slate, with assumptions named.</li>
+      <li><strong>Correlation measurement</strong> — Pearson and phi with Fisher intervals, including a row deliberately flagged as a tautology.</li>
+      <li><strong>Skill-vs-luck battery</strong> — exact binomial, probabilistic Sharpe ratio, deflated Sharpe ratio, minimum track-record length, block bootstrap.</li>
+      <li><strong>Eight validation gates</strong> and a leaderboard that withholds ranks from unproven strategies.</li>
+      <li><strong>51 self-tests</strong>, including closed-form checks on the bivariate normal CDF and a byte-for-byte determinism test.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">NOT DELIVERED, AND WHY</div>
+  <h2>The four things a real strategy still needs</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Missing</th><th>Why it blocks</th><th>What it would take</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td>Timestamped market prices</td><td>Without a real price there is no vig, no edge and no settlement to evaluate.</td><td>A licensed odds feed captured before kickoff.</td><td class="src"><a href="https://www.nba.com/schedule?date=11/03/2026" target="_blank" rel="noopener noreferrer">no odds on nba.com ↗</a></td></tr>
+      <tr><td>Player-level game logs</td><td>NBA.com player pages returned no table, so prop combos cannot be correlated or priced.</td><td>Paired per-player stat lines plus exact prop lines and push/void rules.</td><td class="src"><a href="https://www.nba.com/stats/players/boxscores?Season=2026-27&SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">empty table ↗</a></td></tr>
+      <tr><td>Full-season sample</td><td>18 games give correlation intervals that include zero.</td><td>~174 paired games for ±0.15, ideally two seasons for stability.</td><td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">game log ↗</a></td></tr>
+      <tr><td>Defined competition rewards</td><td>The brief asks for rewards; inventing amounts or rules would be fabrication.</td><td>Owner decision on reward, window and eligibility.</td><td class="src"><a href="https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7/analysis/results/leaderboard.json" target="_blank" rel="noopener noreferrer">reward: null ↗</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">BOTTOM LINE</div>
+  <h2>What to trust on this site, and what to doubt</h2>
+  <div class="prose">
+    <p><strong>Trust:</strong> the data (each cell has an NBA.com URL), the arithmetic (51 tests, closed-form anchored), and the gate logic (three-state, so "unknown" cannot become "pass").</p>
+    <p><strong>Doubt:</strong> the originated lines. They are a state model over a partial season with three documented constants, and no market exists to check them against. They are a starting point for line origination, not a set of prices.</p>
+    <p><strong>Reject:</strong> any reading of this site as evidence of a profitable system. Zero strategies are ranked because zero could be shown to be skill rather than luck, and that is the mathematically correct conclusion rather than a shortfall of effort.</p>
+  </div>
+</section>
+
+    <footer>
+      <span>OWN7 / analysis engine · research only · no wagering recommendations</span>
+      <span>Data snapshot 2026-11-03T23:55Z · <a href="../index.html">main site ↗</a></span>
+    </footer>
+  </div>
+</main>
+</div>
+</body>
+</html>

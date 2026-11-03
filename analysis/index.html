@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview | OWN7 Analysis</title>
+<meta name="description" content="NBA line origination analysis engine: verified NBA.com data, model-implied lines, measured correlation, validation gates.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <a class="brand" href="index.html">
+    <span class="brand-icon">O<span>7</span></span>
+    <span><b>OWN7</b><small>ANALYSIS ENGINE</small></span>
+  </a>
+  <div class="side-label">DASHBOARD</div>
+  <nav aria-label="Section navigation">
+<a class="active" href="index.html"><span class="num">00</span>Overview</a>
+<a class="" href="executive-summary.html"><span class="num">01</span>Executive summary</a>
+<a class="" href="data.html"><span class="num">02</span>Official data</a>
+<a class="" href="lines.html"><span class="num">03</span>Line origination</a>
+<a class="" href="correlation.html"><span class="num">04</span>Correlation</a>
+<a class="" href="validation.html"><span class="num">05</span>Validation gates</a>
+<a class="" href="leaderboard.html"><span class="num">06</span>Leaderboard</a>
+<a class="" href="methods.html"><span class="num">07</span>Methods &amp; tests</a>
+<a class="" href="flagged.html"><span class="num">08</span>Flagged for review</a>
+<a class="" href="sources.html"><span class="num">09</span>Sources</a>
+  </nav>
+  <div class="side-note">
+    <b>Evidence before action</b>
+    Every number is traced to an NBA.com URL or shown blank.
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span>NBA &nbsp;/&nbsp; <b>Overview</b></span>
+    <span class="pill">BUILD 2026-11-03T23:55Z</span>
+  </header>
+  <div class="content">
+
+<div class="eyebrow">NBA / ANALYSIS ENGINE</div>
+<h1>Originated lines, measured dependence, and a leaderboard that refuses to rank luck.</h1>
+<p class="intro">A reproducible engine that reads official NBA.com team data, originates spread / total / win-probability lines, measures real same-game dependence, and runs statistical gates before anything is allowed onto a leaderboard.</p>
+
+<div class="notice">
+  <span class="ico">!</span>
+  <div>
+    <b>What this is not.</b>
+    There are no sportsbook prices here, because no official NBA source publishes them. Every line on this site is a
+    <em>model output</em> computed from NBA.com ratings — not a market price, not a pick, not a result.
+    No strategy has a settled, priced bet record, so no strategy is ranked. Blanks are deliberate.
+    <a href="flagged.html">See what is flagged →</a>
+  </div>
+</div>
+
+<div class="metrics">
+  <div class="metric good"><span>TEAMS VERIFIED</span><b>30</b><small>All 30, NBA.com advanced</small></div>
+  <div class="metric"><span>GAMES IN SAMPLE</span><b>18</b><small>Two most recent dates</small></div>
+  <div class="metric"><span>LINES ORIGINATED</span><b>14</b><small>2026-11-04 slate</small></div>
+  <div class="metric bad"><span>STRATEGIES RANKED</span><b>0</b><small>None passed every gate</small></div>
+</div>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">THE HEADLINE</div><h2>What the numbers actually say</h2></div>
+    <span class="tag">VERIFIED VS MODELLED</span>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Finding</th><th>Value</th><th>Status</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>League-relative team ratings for all 30 teams, 2026-27 to date</td>
+        <td class="num">30 teams</td>
+        <td><span class="chip ok">verified</span></td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">NBA teams advanced ↗</a></td>
+      </tr>
+      <tr>
+        <td>Home and away scoring are positively related in the same game (n=18)</td>
+        <td class="num">r = 0.420</td>
+        <td><span class="chip ok">measured</span> <span class="muted small">95% CI -0.06 … 0.74</span></td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">NBA team box scores ↗</a></td>
+      </tr>
+      <tr>
+        <td>Player-vs-player prop correlation</td>
+        <td class="num"><span class="muted">—</span></td>
+        <td><span class="chip warn">blank - not computable</span></td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">NBA stats ↗</a></td>
+      </tr>
+      <tr>
+        <td>Sportsbook prices for any game</td>
+        <td class="num"><span class="muted">—</span></td>
+        <td><span class="chip warn">unverified</span></td>
+        <td class="src"><a href="https://www.nba.com/schedule?date=11/03/2026" target="_blank" rel="noopener noreferrer">NBA schedule (no odds rendered) ↗</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">A correlation is a measurement, not an edge. The 95% interval above includes zero, so even this one cannot be distinguished from independence at n=18 — which is exactly why it is not priced into a parlay.</p>
+</section>
+
+<section>
+  <div class="eyebrow">NAVIGATE</div>
+  <h2>The seven questions this engine answers</h2>
+  <div class="cards">
+    <a class="card" href="data.html"><span class="card-num">02 / DATA</span><h3>What is actually verified? <span>↗</span></h3><p>Every team rating, every game score, with the NBA.com URL it was read from.</p></a>
+    <a class="card" href="lines.html"><span class="card-num">03 / ORIGINATION</span><h3>How is a line made? <span>↗</span></h3><p>Spread, total and win probability from shrunk ratings — with the assumptions named.</p></a>
+    <a class="card" href="correlation.html"><span class="card-num">04 / DEPENDENCE</span><h3>Are parlay legs independent? <span>↗</span></h3><p>No. Here is the measured dependence and the honest interval around it.</p></a>
+  </div>
+  <div class="cards">
+    <a class="card" href="validation.html"><span class="card-num">05 / GATES</span><h3>What must a strategy pass? <span>↗</span></h3><p>Eight gates from provenance to robustness. Three-state outcomes, so "unknown" can never read as "pass".</p></a>
+    <a class="card" href="leaderboard.html"><span class="card-num">06 / COMPETITION</span><h3>How is luck removed? <span>↗</span></h3><p>Lower confidence bounds, deflated Sharpe, and the arithmetic of how many no-skill entries look good.</p></a>
+    <a class="card" href="methods.html"><span class="card-num">07 / METHODS</span><h3>Can I check the maths? <span>↗</span></h3><p>51 self-tests, including closed-form checks on the bivariate normal CDF.</p></a>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">SAMPLE</div><h2>Originated lines, 2026-11-04</h2></div>
+    <a class="tag" href="lines.html">FULL SLATE →</a>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Matchup</th><th class="num">Model spread (home)</th><th class="num">Model total</th><th class="num">Home win %</th><th class="num">Market spread</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="tight">PHI @ DET</td>
+        <td class="num">-3.88</td>
+        <td class="num">214.1</td>
+        <td class="num">62.2%</td>
+        <td class="num blank">not available</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">NBA ratings ↗</a></td>
+      </tr><tr>
+        <td class="tight">ATL @ WAS</td>
+        <td class="num">-2.73</td>
+        <td class="num">223.0</td>
+        <td class="num">58.6%</td>
+        <td class="num blank">not available</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">NBA ratings ↗</a></td>
+      </tr><tr>
+        <td class="tight">MIL @ BOS</td>
+        <td class="num">-7.57</td>
+        <td class="num">228.1</td>
+        <td class="num">72.8%</td>
+        <td class="num blank">not available</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">NBA ratings ↗</a></td>
+      </tr><tr>
+        <td class="tight">CHA @ BKN</td>
+        <td class="num">-3.48</td>
+        <td class="num">211.2</td>
+        <td class="num">61.0%</td>
+        <td class="num blank">not available</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">NBA ratings ↗</a></td>
+      </tr><tr>
+        <td class="tight">CHI @ NYK</td>
+        <td class="num">-7.01</td>
+        <td class="num">226.3</td>
+        <td class="num">71.3%</td>
+        <td class="num blank">not available</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">NBA ratings ↗</a></td>
+      </tr><tr>
+        <td class="tight">IND @ MEM</td>
+        <td class="num">-6.78</td>
+        <td class="num">228.6</td>
+        <td class="num">70.6%</td>
+        <td class="num blank">not available</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">NBA ratings ↗</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">Model spread, total and win probability are computed from NBA.com team ratings. The market column is blank because no official NBA source publishes prices. Showing six of 14.</p>
+</section>
+
+    <footer>
+      <span>OWN7 / analysis engine · research only · no wagering recommendations</span>
+      <span>Data snapshot 2026-11-03T23:55Z · <a href="../index.html">main site ↗</a></span>
+    </footer>
+  </div>
+</main>
+</div>
+</body>
+</html>

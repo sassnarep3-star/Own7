@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources | OWN7 Analysis</title>
+<meta name="description" content="Official NBA.com sources used, what was taken from each, and what failed.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <a class="brand" href="index.html">
+    <span class="brand-icon">O<span>7</span></span>
+    <span><b>OWN7</b><small>ANALYSIS ENGINE</small></span>
+  </a>
+  <div class="side-label">DASHBOARD</div>
+  <nav aria-label="Section navigation">
+<a class="" href="index.html"><span class="num">00</span>Overview</a>
+<a class="" href="executive-summary.html"><span class="num">01</span>Executive summary</a>
+<a class="" href="data.html"><span class="num">02</span>Official data</a>
+<a class="" href="lines.html"><span class="num">03</span>Line origination</a>
+<a class="" href="correlation.html"><span class="num">04</span>Correlation</a>
+<a class="" href="validation.html"><span class="num">05</span>Validation gates</a>
+<a class="" href="leaderboard.html"><span class="num">06</span>Leaderboard</a>
+<a class="" href="methods.html"><span class="num">07</span>Methods &amp; tests</a>
+<a class="" href="flagged.html"><span class="num">08</span>Flagged for review</a>
+<a class="active" href="sources.html"><span class="num">09</span>Sources</a>
+  </nav>
+  <div class="side-note">
+    <b>Evidence before action</b>
+    Every number is traced to an NBA.com URL or shown blank.
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span>NBA &nbsp;/&nbsp; <b>Sources</b></span>
+    <span class="pill">BUILD 2026-11-03T23:55Z</span>
+  </header>
+  <div class="content">
+
+<div class="eyebrow">09 / SOURCES</div>
+<h1>Every source used, and the one that failed.</h1>
+<p class="intro">Ten NBA.com pages were read on 2026-11-03 (UTC). Each table on this site prints the URL for the row's source, and this register records what was taken from each page and what was verified.</p>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">REGISTER</div><h2>Official sources</h2></div>
+    <span class="tag">ALL NBA.COM</span>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Source</th><th>What was taken</th><th>Verification</th><th>Link</th></tr></thead>
+    <tbody>
+<tr>
+          <td>NBA.com — Team advanced stats, 2026-27</td>
+          <td>OffRtg, DefRtg, NetRtg, PACE, eFG%, TS%, PIE, possessions for all 30 teams</td>
+          <td><span class="chip ok">verified</span> <span class="small muted">30/30 rows transcribed</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">open ↗</a></td>
+        </tr>
+<tr>
+          <td>NBA.com — Team advanced stats, 2025-26</td>
+          <td>Completed-season ratings used as prior context</td>
+          <td><span class="chip ok">verified</span> <span class="small muted">14 rows transcribed; remainder omitted</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">open ↗</a></td>
+        </tr>
+<tr>
+          <td>NBA.com — Team box scores</td>
+          <td>Final scores, minutes and OT flag for 18 games (11/01, 11/02)</td>
+          <td><span class="chip ok">verified</span> <span class="small muted">18 games transcribed</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">open ↗</a></td>
+        </tr>
+<tr>
+          <td>NBA.com — Standings, 2026-27</td>
+          <td>Win-loss records used to cross-check ratings rows</td>
+          <td><span class="chip ok">verified</span> <span class="small muted">30 rows matched</span></td>
+          <td class="src"><a href="https://www.nba.com/standings" target="_blank" rel="noopener noreferrer">open ↗</a></td>
+        </tr>
+<tr>
+          <td>NBA.com — Standings, 2025-26</td>
+          <td>Cross-check of completed-season records</td>
+          <td><span class="chip ok">verified</span> <span class="small muted">OKC 64-18 and DET 60-22 matched</span></td>
+          <td class="src"><a href="https://www.nba.com/standings?GroupBy=conf&amp;Season=2025-26&amp;Section=overall" target="_blank" rel="noopener noreferrer">open ↗</a></td>
+        </tr>
+<tr>
+          <td>NBA.com — Schedule</td>
+          <td>Slate and home/away order for 2026-11-04</td>
+          <td><span class="chip ok">verified</span> <span class="small muted">14 games transcribed</span></td>
+          <td class="src"><a href="https://www.nba.com/schedule?date=11/03/2026" target="_blank" rel="noopener noreferrer">open ↗</a></td>
+        </tr>
+<tr>
+          <td>NBA.com — Game summary (BOS @ HOU)</td>
+          <td>Independent cross-check of a game row and the quarter line score</td>
+          <td><span class="chip ok">verified</span> <span class="small muted">Scores matched exactly</span></td>
+          <td class="src"><a href="https://www.nba.com/game/0022600167" target="_blank" rel="noopener noreferrer">open ↗</a></td>
+        </tr>
+<tr>
+          <td>NBA.com — Stat glossary</td>
+          <td>Official definitions of PACE, OffRtg, DefRtg, NetRtg, TS%, USG%, PIE, Poss</td>
+          <td><span class="chip ok">verified</span> <span class="small muted">Definitions quoted verbatim in methods</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/help/glossary" target="_blank" rel="noopener noreferrer">open ↗</a></td>
+        </tr>
+<tr>
+          <td>NBA.com — Stats landing page</td>
+          <td>Season selector confirms 2026-27 is current</td>
+          <td><span class="chip ok">verified</span> <span class="small muted">confirmed</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/" target="_blank" rel="noopener noreferrer">open ↗</a></td>
+        </tr>
+<tr>
+          <td>NBA.com — Player box scores (attempted)</td>
+          <td>Attempted player-level game logs for prop correlation</td>
+          <td><span class="chip warn">unverified</span> <span class="small muted">NO TABLE RETURNED — flagged F2</span></td>
+          <td class="src"><a href="https://www.nba.com/stats/players/boxscores?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">open ↗</a></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">OFFICIAL DEFINITIONS QUOTED</div>
+  <h2>NBA.com glossary, verbatim</h2>
+  <div class="prose">
+    <ul>
+      <li><strong>OffRtg</strong> — "Measures a team's points scored per 100 possessions."</li>
+      <li><strong>DEFRTG</strong> — "The number of points allowed per 100 possessions by a team."</li>
+      <li><strong>NetRtg</strong> — "Measures a team's point differential per 100 possessions… Formula OFFRTG - DEFRTG."</li>
+      <li><strong>PACE</strong> — "The number of possessions per 48 minutes for a team or player."</li>
+      <li><strong>TS%</strong> — "A shooting percentage that factors in the value of three-point field goals and free throws… Formula Points / [2*(Field Goals Attempted+0.44*Free Throws Attempted)]."</li>
+      <li><strong>Poss</strong> — "The number of possessions played by a player or team. Please note: an Offensive Rebound does not create another possession, it simply makes the existing possession longer."</li>
+      <li><strong>PIE</strong> — "Player Impact Estimate… measures a player's overall statistical contribution against the total statistics in games they play in."</li>
+    </ul>
+    <p class="small muted">All definitions from <a href="https://www.nba.com/stats/help/glossary" target="_blank" rel="noopener noreferrer">NBA.com stat glossary ↗</a>, read 2026-11-03.</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">NOT USED, AND WHY</div>
+  <h2>Third-party odds and data were deliberately excluded</h2>
+  <div class="prose">
+    <p>Sportsbook aggregators and odds APIs were not used, because the project rule is official sources only and no official NBA source publishes prices. Secondary stat sites were also excluded so every value traces to the league itself. The cost of that discipline is visible on this site: no market comparison, no player-prop modelling, and a correlation sample of 18 games.</p>
+  </div>
+</section>
+
+    <footer>
+      <span>OWN7 / analysis engine · research only · no wagering recommendations</span>
+      <span>Data snapshot 2026-11-03T23:55Z · <a href="../index.html">main site ↗</a></span>
+    </footer>
+  </div>
+</main>
+</div>
+</body>
+</html>

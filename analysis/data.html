@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Official data | OWN7 Analysis</title>
+<meta name="description" content="Verified NBA.com team ratings and game scores with per-row source links.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<aside>
+  <a class="brand" href="index.html">
+    <span class="brand-icon">O<span>7</span></span>
+    <span><b>OWN7</b><small>ANALYSIS ENGINE</small></span>
+  </a>
+  <div class="side-label">DASHBOARD</div>
+  <nav aria-label="Section navigation">
+<a class="" href="index.html"><span class="num">00</span>Overview</a>
+<a class="" href="executive-summary.html"><span class="num">01</span>Executive summary</a>
+<a class="active" href="data.html"><span class="num">02</span>Official data</a>
+<a class="" href="lines.html"><span class="num">03</span>Line origination</a>
+<a class="" href="correlation.html"><span class="num">04</span>Correlation</a>
+<a class="" href="validation.html"><span class="num">05</span>Validation gates</a>
+<a class="" href="leaderboard.html"><span class="num">06</span>Leaderboard</a>
+<a class="" href="methods.html"><span class="num">07</span>Methods &amp; tests</a>
+<a class="" href="flagged.html"><span class="num">08</span>Flagged for review</a>
+<a class="" href="sources.html"><span class="num">09</span>Sources</a>
+  </nav>
+  <div class="side-note">
+    <b>Evidence before action</b>
+    Every number is traced to an NBA.com URL or shown blank.
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span>NBA &nbsp;/&nbsp; <b>Official data</b></span>
+    <span class="pill">BUILD 2026-11-03T23:55Z</span>
+  </header>
+  <div class="content">
+
+<div class="eyebrow">02 / OFFICIAL DATA</div>
+<h1>Everything here was read off an NBA.com page today.</h1>
+<p class="intro">Two snapshots: team advanced ratings for all 30 teams, and eighteen finished games with final scores. No value was inferred, interpolated or scraped from a third party.</p>
+
+<div class="notice info">
+  <span class="ico">i</span>
+  <div>
+    <b>How collection works, including its limits.</b>
+    This environment has no general HTTPS egress from the shell, so nothing is scraped automatically. Each value was read from the rendered NBA.com table and transcribed; ambiguous or truncated cells were left out rather than guessed. That is why the game sample is 18 games and not the full season.
+    <a href="flagged.html">Collection limits →</a>
+  </div>
+</div>
+
+<div class="metrics">
+  <div class="metric good"><span>TEAM ROWS</span><b>30</b><small>of 30 NBA teams</small></div>
+  <div class="metric good"><span>GAME ROWS</span><b>18</b><small>11/01 and 11/02</small></div>
+  <div class="metric"><span>SNAPSHOT</span><b>23:45Z</b><small>2026-11-03</small></div>
+  <div class="metric warn"><span>ODDS ROWS</span><b>0</b><small>No official odds source</small></div>
+</div>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">TABLE 1</div><h2>Team advanced ratings, 2026-27</h2></div>
+    <span class="tag">NBA.COM VERIFIED</span>
+  </div>
+  <p class="small muted" style="margin-top:0">Raw NetRtg is NBA.com's published figure. Shrunk NetRtg pulls it toward the league mean (0.001) with weight <code>gp / (gp + 20)</code>. A 7-game team keeps about a quarter of its observed edge.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr>
+      <th>Team</th><th class="num">GP</th><th class="num">W–L</th>
+      <th class="num">NetRtg raw</th><th class="num">NetRtg shrunk</th>
+      <th class="num">Weight</th><th class="num">Pace</th><th>Source</th>
+    </tr></thead>
+    <tbody>
+<tr>
+          <td class="tight"><b>HOU</b> <span class="muted">Houston Rockets</span></td>
+          <td class="num">8</td>
+          <td class="num">7–1</td>
+          <td class="num">+12.8</td>
+          <td class="num">+3.66</td>
+          <td class="num">29%</td>
+          <td class="num">98.25</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>MEM</b> <span class="muted">Memphis Grizzlies</span></td>
+          <td class="num">7</td>
+          <td class="num">6–1</td>
+          <td class="num">+12.5</td>
+          <td class="num">+3.24</td>
+          <td class="num">26%</td>
+          <td class="num">101.35</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>MIN</b> <span class="muted">Minnesota Timberwolves</span></td>
+          <td class="num">8</td>
+          <td class="num">5–3</td>
+          <td class="num">+11.1</td>
+          <td class="num">+3.17</td>
+          <td class="num">29%</td>
+          <td class="num">101.55</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>DET</b> <span class="muted">Detroit Pistons</span></td>
+          <td class="num">7</td>
+          <td class="num">6–1</td>
+          <td class="num">+11.4</td>
+          <td class="num">+2.96</td>
+          <td class="num">26%</td>
+          <td class="num">98.43</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>POR</b> <span class="muted">Portland Trail Blazers</span></td>
+          <td class="num">6</td>
+          <td class="num">5–1</td>
+          <td class="num">+10.0</td>
+          <td class="num">+2.31</td>
+          <td class="num">23%</td>
+          <td class="num">100.83</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>SAS</b> <span class="muted">San Antonio Spurs</span></td>
+          <td class="num">7</td>
+          <td class="num">5–2</td>
+          <td class="num">+8.8</td>
+          <td class="num">+2.28</td>
+          <td class="num">26%</td>
+          <td class="num">100.08</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>LAL</b> <span class="muted">Los Angeles Lakers</span></td>
+          <td class="num">8</td>
+          <td class="num">6–2</td>
+          <td class="num">+7.9</td>
+          <td class="num">+2.26</td>
+          <td class="num">29%</td>
+          <td class="num">100.81</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>TOR</b> <span class="muted">Toronto Raptors</span></td>
+          <td class="num">7</td>
+          <td class="num">4–3</td>
+          <td class="num">+7.8</td>
+          <td class="num">+2.02</td>
+          <td class="num">26%</td>
+          <td class="num">102.57</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>BOS</b> <span class="muted">Boston Celtics</span></td>
+          <td class="num">7</td>
+          <td class="num">5–2</td>
+          <td class="num">+6.7</td>
+          <td class="num">+1.74</td>
+          <td class="num">26%</td>
+          <td class="num">98.04</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>PHI</b> <span class="muted">Philadelphia 76ers</span></td>
+          <td class="num">8</td>
+          <td class="num">7–1</td>
+          <td class="num">+5.5</td>
+          <td class="num">+1.57</td>
+          <td class="num">29%</td>
+          <td class="num">100.13</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>CLE</b> <span class="muted">Cleveland Cavaliers</span></td>
+          <td class="num">7</td>
+          <td class="num">4–3</td>
+          <td class="num">+3.1</td>
+          <td class="num">+0.81</td>
+          <td class="num">26%</td>
+          <td class="num">101.63</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>GSW</b> <span class="muted">Golden State Warriors</span></td>
+          <td class="num">8</td>
+          <td class="num">5–3</td>
+          <td class="num">+2.4</td>
+          <td class="num">+0.69</td>
+          <td class="num">29%</td>
+          <td class="num">100.06</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>WAS</b> <span class="muted">Washington Wizards</span></td>
+          <td class="num">7</td>
+          <td class="num">4–3</td>
+          <td class="num">+2.2</td>
+          <td class="num">+0.57</td>
+          <td class="num">26%</td>
+          <td class="num">98.93</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>NOP</b> <span class="muted">New Orleans Pelicans</span></td>
+          <td class="num">7</td>
+          <td class="num">3–4</td>
+          <td class="num">+1.5</td>
+          <td class="num">+0.39</td>
+          <td class="num">26%</td>
+          <td class="num">103.98</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>ATL</b> <span class="muted">Atlanta Hawks</span></td>
+          <td class="num">8</td>
+          <td class="num">4–4</td>
+          <td class="num">+1.2</td>
+          <td class="num">+0.34</td>
+          <td class="num">29%</td>
+          <td class="num">103.13</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>NYK</b> <span class="muted">New York Knicks</span></td>
+          <td class="num">7</td>
+          <td class="num">3–4</td>
+          <td class="num">+1.2</td>
+          <td class="num">+0.31</td>
+          <td class="num">26%</td>
+          <td class="num">96.50</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>DAL</b> <span class="muted">Dallas Mavericks</span></td>
+          <td class="num">7</td>
+          <td class="num">4–3</td>
+          <td class="num">+0.2</td>
+          <td class="num">+0.05</td>
+          <td class="num">26%</td>
+          <td class="num">99.79</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>OKC</b> <span class="muted">Oklahoma City Thunder</span></td>
+          <td class="num">7</td>
+          <td class="num">5–2</td>
+          <td class="num">+0.0</td>
+          <td class="num">+0.00</td>
+          <td class="num">26%</td>
+          <td class="num">97.71</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>DEN</b> <span class="muted">Denver Nuggets</span></td>
+          <td class="num">6</td>
+          <td class="num">3–3</td>
+          <td class="num">-2.9</td>
+          <td class="num">-0.67</td>
+          <td class="num">23%</td>
+          <td class="num">98.70</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>IND</b> <span class="muted">Indiana Pacers</span></td>
+          <td class="num">8</td>
+          <td class="num">2–6</td>
+          <td class="num">-3.4</td>
+          <td class="num">-0.97</td>
+          <td class="num">29%</td>
+          <td class="num">101.69</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>MIA</b> <span class="muted">Miami Heat</span></td>
+          <td class="num">7</td>
+          <td class="num">2–5</td>
+          <td class="num">-6.0</td>
+          <td class="num">-1.55</td>
+          <td class="num">26%</td>
+          <td class="num">103.64</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>LAC</b> <span class="muted">LA Clippers</span></td>
+          <td class="num">7</td>
+          <td class="num">1–6</td>
+          <td class="num">-6.9</td>
+          <td class="num">-1.79</td>
+          <td class="num">26%</td>
+          <td class="num">101.14</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>PHX</b> <span class="muted">Phoenix Suns</span></td>
+          <td class="num">5</td>
+          <td class="num">1–4</td>
+          <td class="num">-9.8</td>
+          <td class="num">-1.96</td>
+          <td class="num">20%</td>
+          <td class="num">98.60</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>ORL</b> <span class="muted">Orlando Magic</span></td>
+          <td class="num">7</td>
+          <td class="num">2–5</td>
+          <td class="num">-8.2</td>
+          <td class="num">-2.12</td>
+          <td class="num">26%</td>
+          <td class="num">98.29</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>BKN</b> <span class="muted">Brooklyn Nets</span></td>
+          <td class="num">7</td>
+          <td class="num">1–6</td>
+          <td class="num">-8.6</td>
+          <td class="num">-2.23</td>
+          <td class="num">26%</td>
+          <td class="num">99.73</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>UTA</b> <span class="muted">Utah Jazz</span></td>
+          <td class="num">7</td>
+          <td class="num">1–6</td>
+          <td class="num">-11.7</td>
+          <td class="num">-3.03</td>
+          <td class="num">26%</td>
+          <td class="num">101.28</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>CHA</b> <span class="muted">Charlotte Hornets</span></td>
+          <td class="num">8</td>
+          <td class="num">3–5</td>
+          <td class="num">-11.3</td>
+          <td class="num">-3.23</td>
+          <td class="num">29%</td>
+          <td class="num">97.13</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>MIL</b> <span class="muted">Milwaukee Bucks</span></td>
+          <td class="num">7</td>
+          <td class="num">1–6</td>
+          <td class="num">-12.6</td>
+          <td class="num">-3.27</td>
+          <td class="num">26%</td>
+          <td class="num">104.79</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>SAC</b> <span class="muted">Sacramento Kings</span></td>
+          <td class="num">7</td>
+          <td class="num">1–6</td>
+          <td class="num">-13.2</td>
+          <td class="num">-3.42</td>
+          <td class="num">26%</td>
+          <td class="num">103.36</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight"><b>CHI</b> <span class="muted">Chicago Bulls</span></td>
+          <td class="num">7</td>
+          <td class="num">1–6</td>
+          <td class="num">-16.0</td>
+          <td class="num">-4.15</td>
+          <td class="num">26%</td>
+          <td class="num">105.86</td>
+          <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">Source for every row in this table: <a href="https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">https://www.nba.com/stats/teams/advanced?Season=2026-27&amp;SeasonType=Regular%20Season</a> — fetched 2026-11-03T23:45Z.</p>
+</section>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">TABLE 2</div><h2>Finished games used for the correlation study</h2></div>
+    <span class="tag">18 GAMES</span>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Date</th><th>Matchup</th><th class="num">Score (away–home)</th><th class="num">Total</th><th class="num">OT</th><th>Game page</th></tr></thead>
+    <tbody>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">DET @ CHA</td>
+          <td class="num">124 – 91</td>
+          <td class="num">215</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600159" target="_blank" rel="noopener noreferrer">0022600159 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">ATL @ IND</td>
+          <td class="num">108 – 104</td>
+          <td class="num">212</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600160" target="_blank" rel="noopener noreferrer">0022600160 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">BKN @ NYK</td>
+          <td class="num">90 – 103</td>
+          <td class="num">193</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600161" target="_blank" rel="noopener noreferrer">0022600161 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">WAS @ ORL</td>
+          <td class="num">103 – 94</td>
+          <td class="num">197</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600162" target="_blank" rel="noopener noreferrer">0022600162 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">CHI @ PHI</td>
+          <td class="num">107 – 126</td>
+          <td class="num">233</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600163" target="_blank" rel="noopener noreferrer">0022600163 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">SAC @ DAL</td>
+          <td class="num">115 – 100</td>
+          <td class="num">215</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600164" target="_blank" rel="noopener noreferrer">0022600164 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">NOP @ MEM</td>
+          <td class="num">135 – 134</td>
+          <td class="num">269</td>
+          <td class="num">1</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600165" target="_blank" rel="noopener noreferrer">0022600165 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">MIL @ MIN</td>
+          <td class="num">100 – 112</td>
+          <td class="num">212</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600166" target="_blank" rel="noopener noreferrer">0022600166 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">BOS @ HOU</td>
+          <td class="num">93 – 109</td>
+          <td class="num">202</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600167" target="_blank" rel="noopener noreferrer">0022600167 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">UTA @ SAS</td>
+          <td class="num">97 – 119</td>
+          <td class="num">216</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600168" target="_blank" rel="noopener noreferrer">0022600168 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">POR @ DEN</td>
+          <td class="num">118 – 110</td>
+          <td class="num">228</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600169" target="_blank" rel="noopener noreferrer">0022600169 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">PHX @ GSW</td>
+          <td class="num">113 – 116</td>
+          <td class="num">229</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600170" target="_blank" rel="noopener noreferrer">0022600170 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">TOR @ LAC</td>
+          <td class="num">125 – 118</td>
+          <td class="num">243</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600171" target="_blank" rel="noopener noreferrer">0022600171 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-02</td>
+          <td class="tight">MIA @ LAL</td>
+          <td class="num">117 – 138</td>
+          <td class="num">255</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600172" target="_blank" rel="noopener noreferrer">0022600172 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-01</td>
+          <td class="tight">BOS @ ORL</td>
+          <td class="num">108 – 97</td>
+          <td class="num">205</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600154" target="_blank" rel="noopener noreferrer">0022600154 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-01</td>
+          <td class="tight">BKN @ IND</td>
+          <td class="num">98 – 90</td>
+          <td class="num">188</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600155" target="_blank" rel="noopener noreferrer">0022600155 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-01</td>
+          <td class="tight">LAC @ GSW</td>
+          <td class="num">112 – 124</td>
+          <td class="num">236</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600156" target="_blank" rel="noopener noreferrer">0022600156 ↗</a></td>
+        </tr>
+<tr>
+          <td class="tight">2026-11-01</td>
+          <td class="tight">TOR @ LAL</td>
+          <td class="num">125 – 131</td>
+          <td class="num">256</td>
+          <td class="num">0</td>
+          <td class="src"><a href="https://www.nba.com/game/0022600157" target="_blank" rel="noopener noreferrer">0022600157 ↗</a></td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">Each row links to its official NBA.com game summary. One row was additionally cross-checked end to end: BOS 93 @ HOU 109 on 11/02, matching the per-quarter line score on <a href="https://www.nba.com/game/0022600167" target="_blank" rel="noopener noreferrer">the game page ↗</a>.</p>
+</section>
+
+<section>
+  <div class="section-head">
+    <div><div class="eyebrow">TABLE 3</div><h2>2025-26 completed-season ratings (context only)</h2></div>
+    <span class="tag">PARTIAL — 14 OF 30</span>
+  </div>
+  <p class="small muted" style="margin-top:0">These are last season's full-season ratings, useful as a prior. Only 14 rows could be read unambiguously, so the set is published as partial rather than filled in.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Team</th><th class="num">GP</th><th class="num">W–L</th><th class="num">OffRtg</th><th class="num">DefRtg</th><th class="num">NetRtg</th><th class="num">Pace</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td class="tight"><b>OKC</b> <span class="muted">Oklahoma City Thunder</span></td>
+        <td class="num">82</td><td class="num">64–18</td>
+        <td class="num">117.6</td><td class="num">106.5</td>
+        <td class="num">+11.1</td><td class="num">100.37</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>SAS</b> <span class="muted">San Antonio Spurs</span></td>
+        <td class="num">82</td><td class="num">62–20</td>
+        <td class="num">118.7</td><td class="num">110.4</td>
+        <td class="num">+8.4</td><td class="num">100.72</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>DET</b> <span class="muted">Detroit Pistons</span></td>
+        <td class="num">82</td><td class="num">60–22</td>
+        <td class="num">117.3</td><td class="num">108.9</td>
+        <td class="num">+8.4</td><td class="num">99.88</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>BOS</b> <span class="muted">Boston Celtics</span></td>
+        <td class="num">82</td><td class="num">56–26</td>
+        <td class="num">120.0</td><td class="num">111.7</td>
+        <td class="num">+8.3</td><td class="num">95.58</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>DEN</b> <span class="muted">Denver Nuggets</span></td>
+        <td class="num">82</td><td class="num">54–28</td>
+        <td class="num">121.2</td><td class="num">116.0</td>
+        <td class="num">+5.2</td><td class="num">99.49</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>LAL</b> <span class="muted">Los Angeles Lakers</span></td>
+        <td class="num">82</td><td class="num">53–29</td>
+        <td class="num">117.0</td><td class="num">115.5</td>
+        <td class="num">+1.5</td><td class="num">99.22</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>NYK</b> <span class="muted">New York Knicks</span></td>
+        <td class="num">82</td><td class="num">53–29</td>
+        <td class="num">118.7</td><td class="num">112.3</td>
+        <td class="num">+6.4</td><td class="num">97.71</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>CLE</b> <span class="muted">Cleveland Cavaliers</span></td>
+        <td class="num">82</td><td class="num">52–30</td>
+        <td class="num">118.3</td><td class="num">114.1</td>
+        <td class="num">+4.1</td><td class="num">100.70</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>HOU</b> <span class="muted">Houston Rockets</span></td>
+        <td class="num">82</td><td class="num">52–30</td>
+        <td class="num">117.5</td><td class="num">112.1</td>
+        <td class="num">+5.4</td><td class="num">96.98</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>MIN</b> <span class="muted">Minnesota Timberwolves</span></td>
+        <td class="num">82</td><td class="num">49–33</td>
+        <td class="num">115.6</td><td class="num">112.5</td>
+        <td class="num">+3.1</td><td class="num">101.50</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>ATL</b> <span class="muted">Atlanta Hawks</span></td>
+        <td class="num">82</td><td class="num">46–36</td>
+        <td class="num">115.0</td><td class="num">112.9</td>
+        <td class="num">+2.2</td><td class="num">102.50</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>TOR</b> <span class="muted">Toronto Raptors</span></td>
+        <td class="num">82</td><td class="num">46–36</td>
+        <td class="num">115.0</td><td class="num">112.1</td>
+        <td class="num">+2.9</td><td class="num">99.22</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>ORL</b> <span class="muted">Orlando Magic</span></td>
+        <td class="num">82</td><td class="num">45–37</td>
+        <td class="num">114.2</td><td class="num">113.6</td>
+        <td class="num">+0.6</td><td class="num">100.56</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr><tr><td class="tight"><b>PHI</b> <span class="muted">Philadelphia 76ers</span></td>
+        <td class="num">82</td><td class="num">45–37</td>
+        <td class="num">114.3</td><td class="num">114.4</td>
+        <td class="num">-0.1</td><td class="num">100.39</td>
+        <td class="src"><a href="https://www.nba.com/stats/teams/advanced?Season=2025-26&amp;SeasonType=Regular%20Season" target="_blank" rel="noopener noreferrer">nba.com ↗</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+    <footer>
+      <span>OWN7 / analysis engine · research only · no wagering recommendations</span>
+      <span>Data snapshot 2026-11-03T23:55Z · <a href="../index.html">main site ↗</a></span>
+    </footer>
+  </div>
+</main>
+</div>
+</body>
+</html>
