@@ -12,6 +12,8 @@ An audited static research workspace for NBA line origination: eight candidate s
 python3 scripts/build_dashboard.py
 python3 scripts/check_site.py
 python3 scripts/test_research.py
+python3 scripts/verify_official_snapshots.py
+python3 scripts/compute_team_correlations.py
 python3 -m http.server 8000 --bind 0.0.0.0
 ```
 

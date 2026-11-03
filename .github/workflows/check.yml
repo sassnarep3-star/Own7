@@ -11,3 +11,5 @@ jobs:
       - run: git diff --exit-code -- '*.html'
       - run: python3 scripts/check_site.py
       - run: python3 scripts/test_research.py
+      - run: python3 scripts/verify_official_snapshots.py
+      - run: python3 scripts/compute_team_correlations.py && git diff --exit-code -- data/team-correlations-2025-26.csv

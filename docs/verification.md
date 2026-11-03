@@ -2,7 +2,7 @@
 
 # Verification Log
 
-Method: every table row was checked against the linked official NBA.com page. Values are recorded exactly as displayed. No value was inferred, estimated, or filled in. Where no official source confirms a value, the cell is left blank and the row is flagged on site/pages/flagged.html.
+Method: every table row was checked against the linked official NBA.com page. Values are recorded exactly as displayed. No value was inferred, estimated, or filled in. Where no official source confirms a value, the cell is left blank and the row is flagged on review.html (Flagged for Review).
 
 ## Verified data (source: nba.com)
 

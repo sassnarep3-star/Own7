@@ -17,4 +17,4 @@ Verified reachable from this sandbox via the Arena fetch proxy (direct `curl` to
 ## Irregularities flagged
 - Direct `curl` to `stats.nba.com` and `www.nba.com` returns connection failure (exit 35) from this sandbox; `fetch_page` proxy works. No data was obtained from any non-proxied path.
 - One display column between `BLK` and `PF` in the NBA.com teams table rendering could not be unambiguously mapped; it is excluded from all tables (flagged, see docs/verification.md).
-- Betting lines / odds are NOT published by NBA.com. All market-line cells are left blank and flagged unverified (see docs/strategies.md and site/pages/flagged.html).
+- Betting lines / odds are NOT published by NBA.com. All market-line cells are left blank and flagged unverified (see docs/strategies.md and review.html (Flagged for Review)).
