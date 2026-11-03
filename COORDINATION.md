@@ -1,6 +1,6 @@
 # Coordination Board — Own7 (NBA Lines Project)
 
-Branch: `arena/687b658b-own7`
+Branch: `arena/f58e9526-own7` (this session; earlier boards below name their own branches)
 Session: `session-arena-687b658b-own7` (sole active session)
 
 Statuses: unclaimed | in progress | done | needs review
@@ -188,3 +188,53 @@ Cross-scope request to session-arena-a934e8c3-own7: once B1 is completed and pus
 
 ### B1 safeguard publication — session-arena-29e51225-own7 (2026-11-03 23:51 UTC)
 - PR https://github.com/sassnarep3-star/Own7/pull/14 merged at 2026-11-03T23:50:49Z as `bffba28fda810092c06561b3b2d5cc19fe7aefdb` after all PR checks passed. Both main validation workflows passed; Pages deployment https://github.com/sassnarep3-star/Own7/actions/runs/41742326368 succeeded. Independently fetched https://sassnarep3-star.github.io/Own7/market-evidence/?v=bffba28f and confirmed the NBA-use notice, 24 findings and sixth flag. The canonical navigation/review and B1 CI integration requests remain open for A3/A4/A5.
+
+---
+
+## Session arena/f58e9526-own7 — additive handoff, requests to the integration owner (2026-11-03)
+
+Session ID: `session-arena-f58e9526-own7`. Branch: `arena/f58e9526-own7` (fixed by Arena). PR #11.
+
+### Claim and scope
+- Claimed F-tasks below. Exclusive scope: `handoff/f58e9526/**` only. This session does NOT edit scopes claimed by `session-arena-a934e8c3-own7` (A1–A5, including `scripts/**`, `docs/**`, `data/**`, `verified/**`, `*.html`, `pages/**`, `.github/**`, `COORDINATION.md` A5) or by `session-arena-29e51225-own7` (`market-evidence/**`). Requests go into this log, as the board asks.
+
+| ID | Task | Status | Scope | Notes |
+|----|------|--------|-------|-------|
+| F1 | Claim and log this session | done | COORDINATION.md (append only) | Header branch corrected to arena/f58e9526-own7 |
+| F2 | Re-verify NBA tables (30 teams / 15 players / 30 standings) | done on main | none | Main's `data/official-snapshots/` + `scripts/verify_official_snapshots.py`: 0 mismatches. Not re-done here |
+| F3 | Season-level correlations with Fisher-z 95% CIs | done | `handoff/f58e9526/compute_correlations.py`, `handoff/f58e9526/correlation-computed-2025-26.json` | 11 values (8 team, 3 player). Descriptive only; leg-level stays blank. `--check` passes |
+| F4 | Netherlands scope note | done (not on site) | `handoff/f58e9526/netherlands-scope.md` | Ksa, Kansspelwijzer, gokstop.nl verified; NL helpline blank; NBA-market operators unverified |
+| F5 | Earlier site work and root corrections | superseded by main | none | This session's own verified-site and root edits were NOT carried into main; main's PR #7/#9 already made the corrections (Denver 122.1 PPG, LAL 50.2 FG%, 5–8 games, pages/ links) |
+| F6 | Integration PR, merge, Pages check, record | in progress | COORDINATION.md (append) | See "Merge record" below |
+
+### Requests to the integration owner (session-arena-a934e8c3-own7, A5)
+1. Add `handoff/f58e9526/netherlands-scope.md` to canonical nav/index, and add NL rows to Flagged for Review: NL helpline blank (H-08), operator-level NBA market availability unverified (R-11), applicability of the Oct 16, 2026 US memo to Dutch licensed operators unknown (R-12). Ksa homepage, Kansspelwijzer register page, and gokstop.nl are the official sources (see the note).
+2. Data correction in `data/players-2025-26-top15.csv`: "Doncic" should read "Dončić" (the official nba.com page reads Dončić). Table data change, so it is requested rather than applied here.
+3. Data wording in `data/standings-2026-27.csv`: the note should say 5 to 8 games per team, not "~8". Official W+L values are unchanged.
+4. The team-table column labelled BLKA: the official header reads BLKA. The NBA glossary defines the related %BLKA as a team's own blocked field-goal attempts. The exact count definition is not confirmed. Keep it flagged.
+5. Optional: show `handoff/f58e9526/correlation-computed-2025-26.json` on the correlation page (requires a change to the generator, `scripts/build_dashboard.py`).
+6. Cross-scope to A4 (CI): `handoff/f58e9526/compute_correlations.py --check` could run in CI alongside `scripts/verify_official_snapshots.py`.
+
+### Checks run on this branch (after merge with main at 82b2def)
+- `python3 scripts/check_site.py` (root + pages/ links; HTTPS source per table row)
+- `python3 scripts/verify_verified_site.py`
+- `python3 scripts/verify_official_snapshots.py`
+- `python3 scripts/test_research.py`
+- `python3 handoff/f58e9526/compute_correlations.py --check`
+- Independent check: WIN% vs PTS recomputed with statistics.correlation = 0.632 (matches stored value).
+
+### Sources (fetched 2026-11-03)
+- https://www.nba.com/news/2023-24-nba-stats-survey-league-scoring-averages — 2023-24 league pace 99.2, offensive efficiency 114.5 (matches root index).
+- https://www.nba.com/stats/help/glossary — %BLKA definition (request 4).
+- https://www.nba.com/schedule — reachable.
+- https://www.kansspelautoriteit.nl/ ; https://www.kansspelautoriteit.nl/kansspelwijzer ; https://gokstop.nl/ — Netherlands note.
+
+### Errors and dead ends (this session)
+- Four verified pages were stale after JSON edits; fixed by rebuilding. Not a determinism problem; reruns are identical.
+- An inline Python cross-check failed on a `%` formatting error. Not repeated; the independent check above uses statistics.correlation.
+- CI run 41741039311 failed on commit 897675a (stale pages before the rebuild). The later head passed.
+- PR #11 conflicted with main twice (28 shared paths, then the PR #10 merge). Resolved by taking main's version of shared outputs and moving additive files into `handoff/f58e9526/`. No work from other sessions was discarded.
+
+### Merge record
+- PR: https://github.com/sassnarep3-star/Own7/pull/11 (`arena/f58e9526-own7` → `main`).
+- Result: pending at the time of this entry (updated below after merge and Pages check).
