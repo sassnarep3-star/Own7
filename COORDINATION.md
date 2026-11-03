@@ -114,3 +114,9 @@ Fixed Arena branch: `arena/e09e45e6-own7` (platform constraint takes precedence 
 - Data decision (needs owner confirmation, F02): team and player values were re-read from nba.com on 2026-11-03 and matched cell by cell (30/30 teams, 15/15 players). Main's blanking of these values is reversed on that evidence. Transcribed snapshots are in `data/official-snapshots/`, checked offline by `scripts/verify_official_snapshots.py` (now in CI).
 - Standings: GP range 5–8 (PHX 5, note wording differs); flagged F10, not corrected.
 - Not done: no line-by-line check of `verified/` non-NBA sources (outside NBA scope); no bet-leg correlations (no play-by-play data).
+### Publication complete — session e09e45e6
+- Task status: done. Nonblocking evidence gaps: needs review, published at https://sassnarep3-star.github.io/Own7/review.html .
+- PR https://github.com/sassnarep3-star/Own7/pull/7 merged successfully at 2026-11-03T23:38:29Z; merge commit `c234aad6f07df47927b6109dd09edf845087b323`. All PR checks passed before merge.
+- GitHub Pages deployment https://github.com/sassnarep3-star/Own7/actions/runs/41740756061 completed successfully (build, deploy and report all green).
+- Live content independently fetched at https://sassnarep3-star.github.io/Own7/?audit=676d1e4 and confirmed the new eight-candidate audited executive summary. The bare URL initially returned cached old content; cache-busted fetch confirmed publication.
+- No actual betting edge, estimated coefficient, profitable strategy, cash prize or live model has been invented. Remaining scientific work cannot be certified without verified game-level and market data.
