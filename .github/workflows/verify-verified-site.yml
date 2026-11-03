@@ -1,0 +1,13 @@
+name: Verify verified-data site
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild and verify verified/ site (official sources, blank rules, links)
+        run: python3 scripts/verify_verified_site.py

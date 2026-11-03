@@ -1,29 +1,18 @@
-# Own7 – NBA Lines Research
+# Own7 NBA Research Lab
 
-A verification-first research site for NBA betting strategies. Live site (GitHub Pages, from `/docs` on `main`):
-https://sassnarep3-star.github.io/Own7/
+A static research dashboard for NBA line origination, candidate signals, validation gates, a proposed leaderboard, and unresolved items. The project does **not** contain collected odds, fitted models, performance results, correlation estimates, or betting recommendations.
 
-**Principle:** every value shown is either confirmed from a linked official source, or left blank and flagged.
-No strategy is shown as profitable unless it passes all validation gates.
+## Run and verify
 
-## Layout
+Run `python3 scripts/check_site.py` to check local HTML links and the presence of an HTTPS source in each table body row. This check does not validate external links, page claims, or source authority. Run `python3 -m http.server 8000` from the repository root to serve the site locally. GitHub Pages is configured to publish the root of `main`.
 
-- `docs/` – the published site (generated HTML + `docs/data/*.json`, the single source of truth)
-- `docs/data/` – source registry, rules, helplines, strategies, gates, correlation, leaderboard, repo review, flagged items
-- `scripts/build_site.py` – regenerates the HTML pages from the JSON
-- `scripts/check_site.py` – verification gate: official-source check, blank-value check, link check, rebuild-diff check
-- `COORDINATION.md` – shared task board for parallel sessions
+See the [source register](sources.html) and [Flagged for Review](review.html). The validation thresholds and competition rules are proposals, not empirically established results. Gambling entails risk; luck cannot be eliminated.
 
-## Rebuild and check
+## Verified-data site (`verified/`)
 
-```bash
-python3 scripts/build_site.py
-python3 scripts/check_site.py   # must print OK before merge
-```
+A second, data-first site lives in `verified/` (published with the root of `main` at `/verified/`). Every row has an official `source_url` or is blank and flagged. Its data is `verified/data/*.json`.
 
-No dependencies beyond Python 3.
+- Rebuild: `python3 scripts/build_verified_site.py`
+- Verify: `python3 scripts/verify_verified_site.py` (must print `OK`)
 
-## Not financial or betting advice
-
-Responsible gambling: Alberta helplines and self-exclusion are on the
-[Responsible Gambling page](https://sassnarep3-star.github.io/Own7/responsible-gambling.html).
+Pages: Executive Summary, Sources, Betting Rules, Strategies, Validation Gates, Correlation, Leaderboard, Responsible Gambling, Repo Review, Flagged for Review. Current results: 0 strategies tested, 0 passing gates; no NBA numeric data verified (the NBA stats endpoints were not reachable from the build environment).
