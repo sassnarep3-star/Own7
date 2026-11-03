@@ -1,3 +1,5 @@
+> SUPERSEDED HISTORICAL DOCUMENT: Earlier claims have not been endorsed by the 2026-11-03 independent audit. Current summary: ../index.html ; findings: ../review.html . Numeric values must not be used as verified data.
+
 # Validation Gates
 
 Every strategy must pass ALL gates before it is considered for the leaderboard. Gates are applied in order; a strategy that fails any gate is rejected or flagged, not traded.
@@ -12,7 +14,7 @@ Note: NBA.com does not publish betting lines/odds. Market-line cells are intenti
 Rule: A signal requires a minimum observed sample before it can be considered skill-based.
 - Team-level signal (spread/total): >= 25 games (full-season equivalent basis from 2025-26: 82 games).
 - Player prop signal: >= 25 games AND >= 25 minutes per game average.
-- 2026-27 in-season standings: only 5 to 8 games per team as of 2026-11-03 → FAILS sample-size gate. Used for context only, never as a standalone signal.
+- 2026-27 in-season standings: only ~8 games played as of 2026-11-03 → FAILS sample-size gate. Used for context only, never as a standalone signal.
 Fail action: Signal marked "small sample — excluded from leaderboard".
 
 ## Gate 3 — Correlation gate

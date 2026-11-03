@@ -1,7 +1,7 @@
 # Coordination Board — Own7 (NBA Lines Project)
 
-Branch: `arena/f58e9526-own7`
-Session: `session-arena-f58e9526-own7` (active; the header previously named arena/687b658b-own7, corrected this session)
+Branch: `arena/f58e9526-own7` (this session; earlier boards below name their own branches)
+Session: `session-arena-687b658b-own7` (sole active session)
 
 Statuses: unclaimed | in progress | done | needs review
 - `needs review` = published on the "Flagged for Review" page; does not block other work.
@@ -62,45 +62,111 @@ Branch: `arena/687b658b-own7` (fixed by Arena)
 
 ---
 
-## Session arena/f58e9526-own7 — re-verification, corrections, NL scope, correlations (this session)
+## Session arena/7a0b6563-own7 — audit, re-verification, and integration (2026-11-03)
 
-Session ID: `session-arena-f58e9526-own7`
-Branch: `arena/f58e9526-own7` (fixed by Arena; the `session-<id>/<task>` naming in the brief is not used because the branch is bound to this session. Logged as RR-07 in verified/data/repo_review.json.)
-Other open work: PR #4 (`arena/5051651b-own7`) from an earlier session is still open. Not touched.
+Session ID: `session-arena-7a0b6563-own7`
+Branch: `arena/7a0b6563-own7` (fixed by Arena; the `session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this session and all work must stay on it).
+Sole active session on this branch as of this claim. Earlier sessions' boards above are retained unchanged.
 
-### Task board (this session)
+### Task board
+
 | # | Task | Status | Owner | Files touched | Sources / verification | Notes |
 |---|------|--------|-------|---------------|------------------------|-------|
-| A1 | Repo review, line-by-line, irregularity log | done | session-arena-f58e9526-own7 | verified/data/repo_review.json, verified/data/flagged.json | nba.com team/player/standings pages (links in each row) | 23 review rows; 11 flags raised, 4 wrong claims corrected |
-| A2 | Re-verify NBA tables (30 teams, 15 players, 30 standings) | done | session-arena-f58e9526-own7 | data/raw/*.csv (snapshots), scripts/build_nba_json.py, verified/data/nba_*.json | nba.com/stats/teams/traditional, /stats/players/traditional (PerGame), /standings | 0 mismatches across 18 + 22 + 10 compared columns |
-| A3 | Correlation values from verified tables | done | session-arena-f58e9526-own7 | scripts/compute_correlations.py, verified/data/correlation_computed.json | derived from A2 tables | Descriptive only (season-level, n=30/15). Leg correlations stay blank |
-| A4 | Netherlands scope (regulator, self-exclusion, helplines) | done | session-arena-f58e9526-own7 | verified/data/sources.json, rules.json, helplines.json | kansspelautoriteit.nl, gokstop.nl | Dutch phone helpline left blank (not confirmed) |
-| A5 | Corrections to root site and docs | done | session-arena-f58e9526-own7 | docs/*.md, pages/*.html, README.md, scripts/check_site.py | nba.com (A2); NBA 2023-24 survey and glossary re-checked | Miami/Denver PPG, Denver/LAL FG%, BLKA wording, 5–8 games, pages/ path + links fixed, check_site.py now covers pages/*.html |
-| A6 | Rebuild verified site (teams/players/standings/NL pages) + verifier | done | session-arena-f58e9526-own7 | scripts/build_verified_site.py, scripts/verify_verified_site.py, verified/*.html | all rows carry source_url | |
-| A7 | Integration checks, PR to main, merge, Pages verify, record | unclaimed | session-arena-f58e9526-own7 | main (via PR), COORDINATION.md | CI + live site | Merge only after CI green and live site checked |
+| 11 | Repo review + irregularity audit | done | session-arena-7a0b6563-own7 | docs/repo-review-2026-11-03.md | nba.com pages (see task 12) | Found: exec-summary factual errors; pages/dashboard.html broken relative links; CI does not scan pages/ |
+| 12 | Line-by-line re-verification of data/*.csv against nba.com | done | session-arena-7a0b6563-own7 | docs/verification-2026-11-03.md | https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season ; https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame ; https://www.nba.com/standings | Teams 30/30 rows, standings 30/30 rows, players top-15 15/15 rows matched |
+| 13 | Fix executive-summary errors + dashboard links | done | session-arena-7a0b6563-own7 | docs/executive-summary.md, pages/executive-summary.html, pages/dashboard.html | nba.com team table | Highest PPG = Denver 122.1 (not Miami); highest FG% = LAL 50.2 (not Denver) |
+| 14 | Team-level correlation (cross-sectional, computed from verified team table) | done | session-arena-7a0b6563-own7 | data/team-correlations-2025-26.csv, pages/correlation.html, docs/strategies.md | derived from data/teams-2025-26.csv | Labelled as team-season correlations, NOT bet-leg correlations |
+| 15 | Site checks: include pages/ in link + source checks; CI | done | session-arena-7a0b6563-own7 | scripts/check_site.py, .github/workflows/check.yml | n/a | |
+| 16 | Integration: root nav link, Flagged register update, build check, PR, merge, Pages deploy, record | in progress | session-arena-7a0b6563-own7 | root *.html nav, pages/flagged.html, COORDINATION.md | all above | Do not merge a broken site |
 
-### Sources used this session (all fetched 2026-11-03)
-- https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season (30 rows; header includes BLKA)
-- https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame (top 15 by PTS; rank 16 = 25.4 PPG)
-- https://www.nba.com/standings (30 rows; W+L = 5 to 8 per team)
-- https://aglc.ca/ ; https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx ; https://gamesenseab.ca/ ; https://www.selfexclusion.ca/s/ ; https://playalberta.ca/
-- https://www.kansspelautoriteit.nl/ ; https://kansspelautoriteit.nl/kansspelwijzer ; https://gokstop.nl/
-- https://sports.yahoo.com/nba/breaking-news/article/nba-sportsbooks-reportedly-agree-to-ban-certain-bets-including-parlays-involving-the-under-on-same-players-stats-151415255.html (media, quoting ESPN; reported-unverified)
+### Session log (arena/7a0b6563-own7)
+- Claimed tasks 11–16 (commit a613b40, pushed).
+- Task 12: teams 30/30, standings 30/30, players top-15 15/15 matched to nba.com by script; 0 mismatches. Log: docs/verification-2026-11-03.md.
+- Task 13: corrected exec summary (highest PPG = Denver 122.1; highest FG% = LAL 50.2); fixed 21 broken links in pages/dashboard.html.
+- Task 14: data/team-correlations-2025-26.csv via scripts/compute_team_correlations.py (cross-sectional, descriptive only).
+- Task 15: scripts/check_site.py now covers pages/ (links + HTTPS source per table row; methodology rows marked class="method").
+- Irregularities: pages/flagged.html items 5 (resolved: BLKA), 8–13 (new). Repo review: docs/repo-review-2026-11-03.md.
+- Handoff note: root index.html (research lab) is from an earlier session; this session added a nav link only.
+## Session e09e45e6 — independent audit and final integration (2026-11-03)
 
-### Irregularities found this session (details: verified/data/repo_review.json, verified/data/flagged.json)
-1. Exec summary said highest PPG = Miami 120.9. Official: Denver 122.1. Corrected.
-2. Exec summary said highest FG% = Denver 49.6. Official: Lakers 50.2. Corrected.
-3. "Unmapped" team column = BLKA on the official header. Label confirmed; meaning not confirmed (NBA glossary defines the related %BLKA as a team\u2019s own blocked FG attempts). Flagged F-11.
-4. Verified-data site said nba.com data was unreachable. Pages are reachable via fetch. Data now verified.
-5. Standings "~8 games" was loose. Official W+L = 5 to 8. Corrected.
-6. Docs referred to site/pages/flagged.html. Corrected to pages/flagged.html.
-7. Player spelling "Doncic" vs official "Dončić". Corrected.
-8. Scope: owner is in NL, earlier verified site was Alberta-only. Ksa and Gokstop rows added.
-9. ksa.nl is an unrelated architecture firm. Not used.
-10. Oct 16, 2026 NBA memo: media only; applies to US operators; primary document not located. Reported-unverified.
-11. AGLC homepage contains two statements that conflict as written. Flagged, not resolved.
+Fixed Arena branch: `arena/e09e45e6-own7` (platform constraint takes precedence over requested branch naming). Earlier completed boards are historical; no other active claim observed.
 
-### Verification performed
-- `python3 scripts/build_nba_json.py` — CSVs vs official snapshots (data/raw/): OK, 0 mismatches.
-- `python3 scripts/compute_correlations.py --check` — recomputed values match the stored file (11 values). An attempted independent cross-check failed on a formatting error and was not repeated; no hand recomputation is claimed.
-- Every new or changed row has an https source_url on an allow-listed official host.
+| Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|
+| Independent source audit, quarantine unsupported values, integrate dashboard, test and publish | in progress | session-e09e45e6 | COORDINATION.md, README.md, index.html, pages/*, data/*, docs/*, scripts/*, verified/*, .github/workflows/* | Rechecking prior verified claims; no inherited verification assumed. |
+
+### e09e45e6 audit findings and verification
+- Initial remote branch did not exist, so `git pull --rebase origin arena/e09e45e6-own7` failed without modifying files; rebased against `origin main` before first branch push. No conflicts or other session work discarded; historical versions remain in Git history.
+- Canonical root dashboard now supersedes three conflicting views; old HTML URLs remain as explicit superseded notices. Scope is source-linked research, not an operating betting system.
+- Read official NBA standings in both fetch chunks and compared all 30 CSV rows (rank, identity, W/L, WIN%, GB, conference/division/home/road/last10/streak). Source: https://www.nba.com/standings . Snapshot only, 2026-11-03.
+- Read NBA player traditional season/filter content: https://www.nba.com/stats/players/traditional ; no historical player values confirmed. Blanked unconfirmed numerical team/player CSV fields; retained row identities as unverified.
+- Read NBA glossary USG% definition: https://www.nba.com/stats/help/glossary ; calibration scoring/reliability: https://scikit-learn.org/stable/modules/calibration.html ; time-order leakage: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html ; Pearson API: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html . Linked sources distinguish facts, methods and project proposals.
+- Inherited Alberta rules/helplines and media-reported restrictions not independently endorsed; legacy JSON verified flags downgraded and value columns blanked. Historical narratives explicitly superseded. Findings F01–F09 published on review.html (needs review; nonblocking).
+- Inventory with line counts and hashes: docs/audit-manifest.json. This is not a claim that every historical sentence was scientifically verified.
+- Tests: deterministic dashboard generation; recursive local HTML link and per-table HTTPS source check; 5 synthetic math tests passed (fair odds, push settlement, no-vig, Pearson, invalid inputs). No synthetic result is presented as NBA evidence. No future predictive skill claimed.
+- Task status: research/integration done; scientific evidence gaps needs review; publication in progress.
+
+### Merge log — arena/7a0b6563-own7 with origin/main c234aad (2026-11-03)
+
+- Conflict: main (PR #7, session arena/e09e45e6-own7) regenerates root pages with `scripts/build_dashboard.py`, supersedes `pages/` and `verified/`, and blanks unconfirmed numeric cells in `data/teams-2025-26.csv` and `data/players-2025-26-top15.csv`. This session had hand-edited the same files.
+- Resolution: took main's generated pages, `scripts/check_site.py`, `README.md` and superseded `pages/`; discarded this session's hand edits to them. Re-applied this session's content through `scripts/build_dashboard.py`: verified team and player tables, team-level correlations, updated register (F02 reversed, F10–F13), corrected source rows. Kept both COORDINATION boards.
+- Git method: merge, not rebase. The branch was already pushed, and rebasing would require a force-push. The brief's `git pull --rebase` rule was not followed for this reason, and no history was rewritten.
+- Data decision (needs owner confirmation, F02): team and player values were re-read from nba.com on 2026-11-03 and matched cell by cell (30/30 teams, 15/15 players). Main's blanking of these values is reversed on that evidence. Transcribed snapshots are in `data/official-snapshots/`, checked offline by `scripts/verify_official_snapshots.py` (now in CI).
+- Standings: GP range 5–8 (PHX 5, note wording differs); flagged F10, not corrected.
+- Not done: no line-by-line check of `verified/` non-NBA sources (outside NBA scope); no bet-leg correlations (no play-by-play data).
+### Publication complete — session e09e45e6
+- Task status: done. Nonblocking evidence gaps: needs review, published at https://sassnarep3-star.github.io/Own7/review.html .
+- PR https://github.com/sassnarep3-star/Own7/pull/7 merged successfully at 2026-11-03T23:38:29Z; merge commit `c234aad6f07df47927b6109dd09edf845087b323`. All PR checks passed before merge.
+- GitHub Pages deployment https://github.com/sassnarep3-star/Own7/actions/runs/41740756061 completed successfully (build, deploy and report all green).
+- Live content independently fetched at https://sassnarep3-star.github.io/Own7/?audit=676d1e4 and confirmed the new eight-candidate audited executive summary. The bare URL initially returned cached old content; cache-busted fetch confirmed publication.
+- No actual betting edge, estimated coefficient, profitable strategy, cash prize or live model has been invented. Remaining scientific work cannot be certified without verified game-level and market data.
+
+---
+
+## Session arena/f58e9526-own7 — additive integration, NL scope, correlations (2026-11-03)
+
+Session ID: `session-arena-f58e9526-own7`. Branch: `arena/f58e9526-own7` (fixed by Arena; the `session-<id>/<task>` naming is not used). PR #11.
+
+### Status of this session's tasks
+| # | Task | Status | Files touched (this PR) | Notes |
+|---|------|--------|-------------------------|-------|
+| F1 | Claim and log this session | done | COORDINATION.md | Claimed before work; pushed |
+| F2 | NBA table re-verification (30 teams, 15 players, 30 standings) | done (already on main) | none (main's `data/official-snapshots/` and `scripts/verify_official_snapshots.py` cover it) | 0 mismatches on every mapped value; see main's `docs/verification-2026-11-03.md` |
+| F3 | Repo review and irregularity log | done (already on main) | none | Main's `docs/repo-review-2026-11-03.md`, `pages/flagged.html` |
+| F4 | Correlation values | done (additive) | `scripts/compute_correlations.py`, `data/correlation-computed-2025-26.json` | 11 season-level values (8 team, 3 player), Fisher-z 95% CI. Leg-level stays blank. Team values match main's `data/team-correlations-2025-26.csv` (WIN% vs PTS 0.632) |
+| F5 | Netherlands scope | done as a doc (not on site) | `docs/netherlands-scope.md` | Ksa, Kansspelwijzer, gokstop.nl verified; NL helpline blank and flagged. NOT in nav/index (integration-owned) |
+| F6 | Root-site corrections and pages/ link fixes | done (superseded by main) | none | Main's PR #7/#9 already corrected exec summary (Denver 122.1 PPG; LAL 50.2 FG%) and fixed the pages/ links |
+| F7 | Integration PR, merge, Pages check, record | in progress | COORDINATION.md | See "Merge record" below |
+
+### What this session changed and why the scope shrank
+- This session first built its own verified-data site (`verified/teams.html`, `players.html`, `standings.html`, `netherlands.html`, JSON data, builder and verifier changes) and corrected root pages and docs. While it was open, `main` moved on: PR #7 (session e09e45e6) and PR #9 (session 7a0b6563) regenerated the canonical site with `scripts/build_dashboard.py`, made `pages/` and `verified/` superseded notices, and landed the same NBA corrections.
+- Per the shared-output rule, this session did NOT overwrite main's generated site, nav, index, or table data. A merge with `origin/main` took main's version of every file this session had changed (28 conflicted paths). Those edits are in Git history on this branch (commits 897675a and 36937ac) and are not lost.
+- Kept from this session (additive only): `scripts/compute_correlations.py`, `data/correlation-computed-2025-26.json`, `docs/netherlands-scope.md`, this section.
+
+### Proposals for the integration session (not applied; shared outputs)
+1. `data/players-2025-26-top15.csv`: spelling "Doncic" should read "Dončić" (official nba.com page reads Dončić). Table data change.
+2. `data/standings-2026-27.csv`: the note wording should say 5 to 8 games per team, not "~8". Official W+L values are unchanged. Table data change.
+3. The team-table column labelled BLKA: the official header reads BLKA. The NBA glossary defines the related %BLKA as a team's own blocked field-goal attempts. The exact count definition is not confirmed; keep flagged (main's F-items).
+4. Add `docs/netherlands-scope.md` to the canonical nav and index, and add a Netherlands row to the flagged register (NL helpline blank; NBA-market operators unverified; US memo applicability unknown).
+5. Optionally show `data/correlation-computed-2025-26.json` on the correlation page (generator change in `scripts/build_dashboard.py`).
+
+### Sources checked this session (fetched 2026-11-03)
+- https://www.nba.com/news/2023-24-nba-stats-survey-league-scoring-averages — League averages 2023-24: pace 99.2, offensive efficiency 114.5 (matches the root index claim).
+- https://www.nba.com/stats/help/glossary — defines %BLKA as a team's own blocked FG attempts (used for proposal 3).
+- https://www.nba.com/schedule — reachable (used for the cross-game correlation row).
+- https://www.kansspelautoriteit.nl/ ; https://www.kansspelautoriteit.nl/kansspelwijzer ; https://gokstop.nl/ — Netherlands scope (see docs/netherlands-scope.md).
+- Other sources: as listed in main's docs and in this board's earlier sections.
+
+### Verification performed (this branch, after merge)
+- `python3 scripts/check_site.py` — root and pages/ links; every table row has an HTTPS source.
+- `python3 scripts/verify_verified_site.py` — verified-data site rebuild and checks.
+- `python3 scripts/verify_official_snapshots.py` — main's CSVs vs official snapshots (0 mismatches).
+- `python3 scripts/test_research.py` — research math tests.
+- `python3 scripts/compute_correlations.py --check` — 11 stored values match a recomputation; WIN% vs PTS (0.632) also matched by an independent statistics.correlation run.
+
+### Errors recorded (not blocking)
+- The first pass of this session's build left 4 pages stale after JSON edits. Fixed by rebuilding. Not a determinism problem; reruns are identical.
+- A Python batch-edit stopped at a text mismatch and was re-run with the exact string. No partial state was left.
+- CI run 41741039311 failed on commit 897675a (stale pages before the rebuild). The current head 36937ac passed (run 41741449407).
+- Merge conflict with main on PR #11 (28 shared paths). Resolved by taking main's version; see above.
+

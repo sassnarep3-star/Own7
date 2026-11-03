@@ -11,115 +11,76 @@
   "rows": [
     {
       "id": "S-01",
-      "source": "NBA.com – Stats (official NBA site)",
+      "source": "NBA.com \u2013 Stats (official NBA site)",
       "what_was_checked": "Stats landing page loads; season selector lists 2026-27 as first option.",
-      "value_confirmed": "2026-27 season listed on stats page",
-      "status": "verified",
-      "source_url": "https://www.nba.com/stats/players/traditional"
+      "value_confirmed": "",
+      "status": "unverified",
+      "source_url": "https://www.nba.com/stats/players/traditional",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "S-02",
-      "source": "AGLC – Alberta Gaming, Liquor & Cannabis (regulator)",
+      "source": "AGLC \u2013 Alberta Gaming, Liquor & Cannabis (regulator)",
       "what_was_checked": "Homepage: AGLC regulates gaming in Alberta; links to GameSense, Self-Exclusion, Play Alberta.",
-      "value_confirmed": "AGLC is the provincial gaming regulator (self-described)",
-      "status": "verified",
-      "source_url": "https://aglc.ca/"
+      "value_confirmed": "",
+      "status": "unverified",
+      "source_url": "https://aglc.ca/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "S-03",
-      "source": "AGLC – iGaming page",
+      "source": "AGLC \u2013 iGaming page",
       "what_was_checked": "Registration and commercial-agreement rules for iGaming operators; advertising rules; links to 'Event Contracts' guidance.",
-      "value_confirmed": "As of July 13 operators may conduct registered iGaming in Alberta",
-      "status": "verified",
-      "source_url": "https://aglc.ca/gaming/igaming"
+      "value_confirmed": "",
+      "status": "unverified",
+      "source_url": "https://aglc.ca/gaming/igaming",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "S-04",
       "source": "Play Alberta (AGLC-run platform)",
       "what_was_checked": "Sports section lists an NBA tile with a 'Bet' action.",
-      "value_confirmed": "NBA betting tile present on Play Alberta sports section",
-      "status": "verified",
-      "source_url": "https://playalberta.ca/"
+      "value_confirmed": "",
+      "status": "unverified",
+      "source_url": "https://playalberta.ca/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "S-05",
       "source": "GameSense by AGLC",
       "what_was_checked": "Homepage lists the GameSense Info Line number.",
-      "value_confirmed": "1-833-447-7523",
-      "status": "verified",
-      "source_url": "https://gamesenseab.ca/"
+      "value_confirmed": "",
+      "status": "unverified",
+      "source_url": "https://gamesenseab.ca/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "S-06",
       "source": "AGLC Self-Exclusion Program",
       "what_was_checked": "Program page: enrol to exclude from Alberta casinos/racing centres, regulated iGaming, or both; period between six months and three years; speak-with-representative number.",
-      "value_confirmed": "1-844-468-8034",
-      "status": "verified",
-      "source_url": "https://www.selfexclusion.ca/s/"
+      "value_confirmed": "",
+      "status": "unverified",
+      "source_url": "https://www.selfexclusion.ca/s/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "S-07",
-      "source": "MyHealth.Alberta.ca – Government of Alberta / AHS (Finding help)",
+      "source": "MyHealth.Alberta.ca \u2013 Government of Alberta / AHS (Finding help)",
       "what_was_checked": "Gambling-help page; 24-Hour Addiction Helpline; 211 Alberta; Health Link 811. Page 'Current as of January 27, 2026'.",
-      "value_confirmed": "1-866-332-2322 (Alberta only); 811; 211 Alberta",
-      "status": "verified",
-      "source_url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx"
+      "value_confirmed": "",
+      "status": "unverified",
+      "source_url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "S-08",
-      "source": "NBA.com – stats and standings HTML pages (nba.com/stats/teams, /stats/players, /standings)",
-      "what_was_checked": "Re-checked 2026-11-03 with the fetch tool. Team, player and standings tables render server-side and were transcribed and cross-checked (see NBA tables). stats.nba.com JSON endpoints were not reached directly; game-level logs were not pulled.",
-      "value_confirmed": "82-game team table, 15-player top list, 30-team standings (2026-27)",
-      "status": "verified – partial (HTML pages only; no JSON API, no game logs)",
-      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
-    },
-    {
-      "id": "S-09",
-      "source": "Kansspelautoriteit (Ksa) – Dutch gambling regulator",
-      "what_was_checked": "Homepage: \"Wij zien toe op betrouwbare kansspelen\" (we supervise reliable gambling). Confirms the regulator role.",
-      "value_confirmed": "Ksa supervises licensed gambling in the Netherlands (self-described)",
-      "status": "verified",
-      "source_url": "https://www.kansspelautoriteit.nl/"
-    },
-    {
-      "id": "S-10",
-      "source": "Ksa – Kansspelwijzer (public register of providers)",
-      "what_was_checked": "Register page lists providers by licence category, including \"Online sportweddenschap\" (online sports betting). Individual operator licence status must be checked on the register.",
-      "value_confirmed": "Register exists with category \"Online sportweddenschap\"",
-      "status": "verified",
-      "source_url": "https://kansspelautoriteit.nl/kansspelwijzer"
-    },
-    {
-      "id": "S-11",
-      "source": "Gokstop (Dutch self-exclusion route, gokstop.nl)",
-      "what_was_checked": "Page describes a free self-exclusion (\"gokstop\") from (online) casinos and speelhallen via the Cruks register. No phone number on the page.",
-      "value_confirmed": "Online self-exclusion via gokstop.nl (no phone number on the page)",
-      "status": "verified",
-      "source_url": "https://gokstop.nl/"
-    },
-    {
-      "id": "S-12",
-      "source": "AGLC – Self-Exclusion Program (second check)",
-      "what_was_checked": "Re-fetched 2026-11-03: \"Speak with a representative\" 1-844-468-8034; period six months to three years.",
-      "value_confirmed": "1-844-468-8034",
-      "status": "verified",
-      "source_url": "https://www.selfexclusion.ca/s/"
-    },
-    {
-      "id": "S-13",
-      "source": "Play Alberta (second check)",
-      "what_was_checked": "Re-fetched 2026-11-03: Sports section shows an NBA tile with a \"Bet\" action.",
-      "value_confirmed": "NBA \"Bet\" tile present",
-      "status": "verified",
-      "source_url": "https://playalberta.ca/"
-    },
-    {
-      "id": "S-14",
-      "source": "ksa.nl (NOT the Dutch regulator)",
-      "what_was_checked": "A request to https://www.ksa.nl/ returns an unrelated architecture firm (Korteknie Stuhlmacher Architecten). Not used as a source.",
+      "source": "NBA.com \u2013 Stats data endpoints (stats.nba.com, cdn.nba.com JSON)",
+      "what_was_checked": "Attempted to pull player/team box scores and schedule JSON.",
       "value_confirmed": "",
-      "status": "flag – not a source",
-      "source_url": "https://www.kansspelautoriteit.nl/"
+      "status": "unverified",
+      "source_url": "https://www.nba.com/stats/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     }
-  ]
+  ],
+  "audit_notice": "Legacy archive, not current verified evidence. See ../../sources.html and ../../review.html."
 }

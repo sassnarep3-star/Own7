@@ -1,0 +1,366 @@
+{
+  "audit_date": "2026-11-03",
+  "warning": "File hashes and line counts are an inventory, not a claim that every line was externally fact-checked.",
+  "files": [
+    {
+      "file": ".github/workflows/check.yml",
+      "lines": 13,
+      "sha256": "b3d7678adf946c181e327da8e65235ec1de6bf1fc6422c5b01d4dd5314e7e8c2",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": ".github/workflows/verify-verified-site.yml",
+      "lines": 13,
+      "sha256": "4685c115d4f3701f1aaf9d93b23791cb2ab4a95f933c1a652c296a81d2464dab",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": ".gitignore",
+      "lines": 2,
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "COORDINATION.md",
+      "lines": 69,
+      "sha256": "cc943aee1cc32e165e457fad148d3316b1f41ed8fe9ced4c570cd242c6d71e15",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "README.md",
+      "lines": 30,
+      "sha256": "0da6a30d0092f5241856526bad428af239ac17520061cae88478a97308675bfc",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "assets/style.css",
+      "lines": 2,
+      "sha256": "8e1fc6f455f417872a0005a79e295b3b5e390ef554a66589075751fca15da1f5",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "correlation.html",
+      "lines": 1,
+      "sha256": "b9fdee4d5f33f40df8fb884cb2c59b45b9ab9bb9521ed1ad3df4de7833ae5e07",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "css/style.css",
+      "lines": 99,
+      "sha256": "90b21d88ff21c95d7a0e93a6b8295edd69a8a394c562a5fd0e8b002a52d68774",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "data/players-2025-26-top15.csv",
+      "lines": 16,
+      "sha256": "eee487bfa5a66529b4525bc4fc92e98b8ce50c56a634f261c36565429b7c1063",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "data/standings-2026-27.csv",
+      "lines": 31,
+      "sha256": "aeeef5029d3d266acb84a5162429c33be6da1d954b15d3f8e23418cb8e28cf66",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "data/teams-2025-26.csv",
+      "lines": 31,
+      "sha256": "c637358833119f382ffc9de9e29cfe3d6a4cf1edf7df96a166c6dce2ed19a720",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "docs/executive-summary.md",
+      "lines": 32,
+      "sha256": "8f57f304762383feb4ba6d6ccedeef4672d4ff8c1b7389e7915b516eb54461aa",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "docs/sources.md",
+      "lines": 20,
+      "sha256": "cf4cd67325068128029462c5831779d065d877e3383afbcb166f42025ddfde7f",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "docs/strategies.md",
+      "lines": 49,
+      "sha256": "42253653383ddae2816ddbd72cc4c264e07543e9f7fb0e42e94747ffb4c24e43",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "docs/validation-gates.md",
+      "lines": 41,
+      "sha256": "e4d56e994c7c60550c660c276acba518f7a59ff39bdb97214aea5ee16fd2c1f0",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "docs/verification.md",
+      "lines": 26,
+      "sha256": "0c85b825fa2aa778146e73dcf34a33064725d5e73ffd384fb49676173317ead0",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "findings.html",
+      "lines": 1,
+      "sha256": "65d5fa1d887ba70b18eb7cbc489ace345e96ecb673874162e932a0846af58d5e",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "index.html",
+      "lines": 1,
+      "sha256": "b0ce9a24a3042b3ef062ac257fc6dca52211e8c4944e181eddd3bc5b9aa1537d",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "js/app.js",
+      "lines": 34,
+      "sha256": "6b1cacff5cc4b4a569f9c1147961236e91c2263cda05d105938aa90af1f222e0",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "leaderboard.html",
+      "lines": 1,
+      "sha256": "306603c5758c2c29da30113808f9ac089722a5ea13a04a0bd28fecd7dde854b0",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "pages/correlation.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "pages/dashboard.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "pages/executive-summary.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "pages/flagged.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "pages/parlays.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "pages/player-props.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "pages/single-bets.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "pages/validation-gates.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "review.html",
+      "lines": 1,
+      "sha256": "34c7ddfa3766de6cc69206ab754204c993758fbd4692bf08e39d02539850107f",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "scripts/build_dashboard.py",
+      "lines": 43,
+      "sha256": "fe55f6300fe5cd86e1fa3776a3704cfe3a7de3a0d34376df5eef8fb12918f850",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "scripts/build_verified_site.py",
+      "lines": 2,
+      "sha256": "628f2c701ee93232b970b70810b1100c780f84f726da229bf591477b08133a3b",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "scripts/check_site.py",
+      "lines": 27,
+      "sha256": "73a7950701db4bf502d8ad8bf3ea55ae27bad97818e27d95841608016a27aea1",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "scripts/research_math.py",
+      "lines": 32,
+      "sha256": "5e21ec112afe4cb01ed921ee4eb2abc6f1142bc55daeb4dbf64ebb6cbdf17e53",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "scripts/test_research.py",
+      "lines": 11,
+      "sha256": "878d4407c5f07aa9f0eb9eece0ba18648c63f6ab2f8ccac7e1bae0d925b769d3",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "scripts/verify_verified_site.py",
+      "lines": 4,
+      "sha256": "29d634312f9a0e539227711c1bf4bbabe4b143873f35c78ade3aa3c265d5dedb",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "signals.html",
+      "lines": 1,
+      "sha256": "fae370c459e3901f120b63725edf69586c010acb6461486f3bd91c220b24430d",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "sources.html",
+      "lines": 1,
+      "sha256": "9b7ffde4d89d7b8150db872ea8990cce7ac6b33de0e7bd4705ca31aa2b2efc3c",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "validation.html",
+      "lines": 1,
+      "sha256": "2ebe246765d9887d2e4bc7ee04e2eee786b4d90b7d57add24b67b25fb2bb2747",
+      "scope": "Current artifact; see sources.html for claim-level evidence"
+    },
+    {
+      "file": "verified/.nojekyll",
+      "lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/assets/style.css",
+      "lines": 31,
+      "sha256": "f3f99d387bdfaccfca897cce11c43eac06d2edc06ee9f35837f913836d5eda63",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/betting-rules.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/correlation.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/data/correlation.json",
+      "lines": 56,
+      "sha256": "057ea74063d7be76700b15712ca270730212321fa961911437dd3189c69ffa15",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/data/flagged.json",
+      "lines": 71,
+      "sha256": "8463a42b71551432795267bcccd9a809cf489394acee9af4530ccb4df91702d0",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/data/gates.json",
+      "lines": 95,
+      "sha256": "f3977406816a8551c57bc839ef5f4d22028223ecfbd0d36a86a913c2bd8369f9",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/data/helplines.json",
+      "lines": 69,
+      "sha256": "588225bba6659b844c291a8f717d6cb9607eced24b376699de42cf149885e71f",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/data/leaderboard.json",
+      "lines": 24,
+      "sha256": "de0df3f35ffb49ef4112777859ca73c860c5fda57b3dd7dc6956f0eb0de5a1d5",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/data/repo_review.json",
+      "lines": 124,
+      "sha256": "b89c4e46d6dde6fef137e8110df99debbdf85077aa499c476524849d5afa6406",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/data/rules.json",
+      "lines": 89,
+      "sha256": "424c387a52884b2859c90a936e5b31b088785f1195f63ad4977ebf6517b40351",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/data/sources.json",
+      "lines": 86,
+      "sha256": "3f7b9c5a03dde24d33e87523b19bf7fd047b2c7f046e6e469f846bfba22e6eab",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/data/strategies.json",
+      "lines": 124,
+      "sha256": "dc8ef1052cd32c4297b208f2f959ec0c37eaf3937e3440696d7f32634e24c30b",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/executive-summary.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/flagged.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/index.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/leaderboard.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/repo-review.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/responsible-gambling.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/sources.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/strategies.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    },
+    {
+      "file": "verified/validation-gates.html",
+      "lines": 1,
+      "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+      "scope": "Structural inspection only; historical content superseded"
+    }
+  ]
+}

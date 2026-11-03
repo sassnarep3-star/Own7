@@ -12,42 +12,47 @@
     {
       "id": "H-01",
       "contact": "GameSense Info Line (AGLC)",
-      "number_or_detail": "1-833-447-7523",
-      "status": "verified",
+      "number_or_detail": "",
+      "status": "unverified",
       "source_url": "https://gamesenseab.ca/",
-      "note": "Official AGLC/GameSense site."
+      "note": "Official AGLC/GameSense site.",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "H-02",
-      "contact": "AGLC Self-Exclusion Program – speak with a representative",
-      "number_or_detail": "1-844-468-8034",
-      "status": "verified",
+      "contact": "AGLC Self-Exclusion Program \u2013 speak with a representative",
+      "number_or_detail": "",
+      "status": "unverified",
       "source_url": "https://www.selfexclusion.ca/s/",
-      "note": "Enrolment period six months to three years per official page."
+      "note": "Enrolment period six months to three years per official page.",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "H-03",
       "contact": "24-Hour Addiction Helpline (Alberta Health Services)",
-      "number_or_detail": "1-866-332-2322 (Alberta only)",
-      "status": "verified",
+      "number_or_detail": "",
+      "status": "unverified",
       "source_url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx",
-      "note": "Listed on Government of Alberta MyHealth page (current as of Jan 27, 2026). Re-checked 2026-11-03."
+      "note": "Listed on Government of Alberta MyHealth page (current as of Jan 27, 2026).",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "H-04",
       "contact": "Health Link",
-      "number_or_detail": "811",
-      "status": "verified",
+      "number_or_detail": "",
+      "status": "unverified",
       "source_url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx",
-      "note": "Listed on the same official page. Re-checked 2026-11-03."
+      "note": "Listed on the same official page.",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "H-05",
       "contact": "211 Alberta",
-      "number_or_detail": "211",
-      "status": "verified",
+      "number_or_detail": "",
+      "status": "unverified",
       "source_url": "https://aglc.ca/gaming/igaming",
-      "note": "AGLC requires registered iGaming advertising to reference 211 Alberta; 211 also listed on MyHealth page. Re-checked 2026-11-03."
+      "note": "AGLC requires registered iGaming advertising to reference 211 Alberta; 211 also listed on MyHealth page.",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "H-06",
@@ -56,23 +61,9 @@
       "status": "unverified",
       "source_url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx",
       "note": "Number 1-866-461-1259 appears on non-official sites only; not found on any official Alberta/AGLC source. Left blank. Flagged.",
-      "reference_url": "https://www.playcanada.com/news/gambling-addiction-hotlines-canada/"
-    },
-    {
-      "id": "H-07",
-      "contact": "Gokstop (Netherlands) – free self-exclusion",
-      "number_or_detail": "Online at gokstop.nl (no phone number on the page)",
-      "status": "verified",
-      "source_url": "https://gokstop.nl/",
-      "note": "Official Dutch self-exclusion page; links to the Cruks register."
-    },
-    {
-      "id": "H-08",
-      "contact": "Dutch problem-gambling telephone helpline",
-      "number_or_detail": "",
-      "status": "unverified",
-      "source_url": "https://www.kansspelautoriteit.nl/",
-      "note": "No number confirmed from an official Ksa or Gokstop page in this session. Left blank. Flagged."
+      "reference_url": "https://www.playcanada.com/news/gambling-addiction-hotlines-canada/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     }
-  ]
+  ],
+  "audit_notice": "Legacy archive, not current verified evidence. See ../../sources.html and ../../review.html."
 }

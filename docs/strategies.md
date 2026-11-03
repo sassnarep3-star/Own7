@@ -1,3 +1,5 @@
+> SUPERSEDED HISTORICAL DOCUMENT: Earlier claims have not been endorsed by the 2026-11-03 independent audit. Current summary: ../index.html ; findings: ../review.html . Numeric values must not be used as verified data.
+
 # NBA Signal Strategies
 
 Framework: originate lines from official NBA statistics only. Three bet classes: single bets, parlays, player-prop combos. Every strategy passes the validation gates (docs/validation-gates.md). No manual input — all values computed from linked official sources.
@@ -40,7 +42,9 @@ All player values from data/players-2025-26-top15.csv (official NBA.com source).
 
 ## Correlation values
 
-Correlation matrix cells are intentionally blank in this release. Season-level correlations between team (n=30) and player (n=15) averages are computed from the verified tables (verified/data/correlation_computed.json, scripts/compute_correlations.py). Leg-level correlations need official game-level logs, which were not pulled, so those cells stay blank and flagged unverified. Never inferred.
+Team-season correlations (cross-sectional, n = 30 teams, computed from the verified NBA.com team table) are in `data/team-correlations-2025-26.csv` (script: `scripts/compute_team_correlations.py`). They are descriptive context, not bet-leg correlations.
+
+Bet-leg correlation matrix cells remain intentionally blank in this release. Numeric correlation values require official play-by-play game logs (stats.nba.com API endpoint), which is not reachable from this sandbox; nba.com HTML pages do not expose play-by-play correlation data. Cells are flagged unverified, never inferred.
 
 ## Leaderboard eligibility
 

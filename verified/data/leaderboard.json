@@ -1,8 +1,24 @@
 {
   "title": "Strategy Leaderboard",
-  "columns": ["rank", "strategy_id", "score", "gates_passed", "status", "source_url"],
-  "rows": [
-    {"rank":"—","strategy_id":"(none)","score":"","gates_passed":"0 of 9","status":"No strategy has passed the validation gates. No rewards are awarded.","source_url":"https://www.nba.com/stats/"}
+  "columns": [
+    "rank",
+    "strategy_id",
+    "score",
+    "gates_passed",
+    "status",
+    "source_url"
   ],
-  "ranking_rule": "Ranked only after all gates pass. Score = out-of-sample CLV-adjusted ROI with lower 95% bound above zero. Leaderboard has no monetary value."
+  "rows": [
+    {
+      "rank": "\u2014",
+      "strategy_id": "(none)",
+      "score": "",
+      "gates_passed": "0 of 9",
+      "status": "No strategy has passed the validation gates. No rewards are awarded.",
+      "source_url": "https://www.nba.com/stats/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
+    }
+  ],
+  "ranking_rule": "Ranked only after all gates pass. Score = out-of-sample CLV-adjusted ROI with lower 95% bound above zero. Leaderboard has no monetary value.",
+  "audit_notice": "Legacy archive, not current verified evidence. See ../../sources.html and ../../review.html."
 }

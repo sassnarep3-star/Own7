@@ -1,6 +1,8 @@
+> SUPERSEDED HISTORICAL DOCUMENT: Earlier claims have not been endorsed by the 2026-11-03 independent audit. Current summary: ../index.html ; findings: ../review.html . Numeric values must not be used as verified data.
+
 # Verification Log
 
-Method: every table row was checked against the linked official NBA.com page. Values are recorded exactly as displayed. No value was inferred, estimated, or filled in. Where no official source confirms a value, the cell is left blank and the row is flagged on site/pages/flagged.html.
+Method: every table row was checked against the linked official NBA.com page. Values are recorded exactly as displayed. No value was inferred, estimated, or filled in. Where no official source confirms a value, the cell is left blank and the row is flagged on review.html (Flagged for Review).
 
 ## Verified data (source: nba.com)
 
@@ -15,10 +17,10 @@ Method: every table row was checked against the linked official NBA.com page. Va
 | # | Item | Location | Disposition |
 |---|------|----------|-------------|
 | 1 | Direct `curl` to nba.com/stats.nba.com blocked from sandbox (exit 35); `fetch_page` proxy used | docs/sources.md | Noted; all data still from official nba.com pages |
-| 2 | Column labelled BLKA (between BLK and PF) was not in the CSV. Added to verified/data/nba_teams.json; meaning to be confirmed | data/teams-2025-26.csv | Resolved in part; flagged F-11 |
+| 2 | One display column between BLK and PF in NBA.com teams table could not be unambiguously mapped; excluded from all tables | data/teams-2025-26.csv | Excluded, flagged |
 | 3 | Betting lines/odds not published by NBA.com | All strategy tables | Cells blank + unverified; sportsbook line capture required at bet time |
-| 4 | 2026-27 standings: 5 to 8 games per team | data/standings-2026-27.csv | Small-sample flag; context only, not a signal |
-| 5 | stats.nba.com JSON API not reached; game-level logs not pulled. Season-level correlations are computed (verified/data/correlation_computed.json); leg correlations stay blank | docs/strategies.md | Partly resolved |
+| 4 | 2026-27 standings are ~8 games into the season | data/standings-2026-27.csv | Small-sample flag; context only, not a signal |
+| 5 | stats.nba.com JSON API unreachable; correlation values cannot be computed from play-by-play | docs/strategies.md | Correlation cells blank + unverified |
 
 ## Verification statement
 All numeric values in data/ tables match the official NBA.com pages listed above as fetched on 2026-11-03. Nothing was inferred.
