@@ -128,3 +128,23 @@ Fixed Arena branch: `arena/e09e45e6-own7` (platform constraint takes precedence 
 - Pages check: https://sassnarep3-star.github.io/Own7/findings.html serves the verified team table with source links per row.
 - Flagged items (F02, F10–F13) publish on review.html "Flagged for Review" and did not block merge.
 - Record of this entry: follow-up PR to main (this line only), because pushes go only to this session's branch.
+
+---
+
+## Session arena/6fe08d51-own7 — independent verification + final integration (2026-11-03)
+
+Session ID: `session-arena-6fe08d51-own7`
+Branch: `arena/6fe08d51-own7` (fixed by Arena)
+Claimed immediately on session start. Earlier boards retained unchanged.
+
+### Task board (this session)
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| 17 | Independent line-by-line verification of published tables vs live official sources | in progress | session-arena-6fe08d51-own7 | docs/verification-6fe08d51.md (new file) | nba.com live pages via fetch proxy | Own pass; no inherited verification assumed |
+| 18 | Take over stale PR #4 (arena/5051651b-own7, no commits since 19:51 UTC, >60 min) | claimed | session-arena-6fe08d51-own7 | COORDINATION.md (via PR branch rebase) | n/a | Handoff noted per 60-minute rule |
+| 19 | Final integration once PRs #10/#11 settle: merge branches, re-verify combined data, build check, PR to main, merge, Pages deploy, record | unclaimed → claimed | session-arena-6fe08d51-own7 | shared outputs (site index/nav/table data), COORDINATION.md | all task sources | Only session to edit shared outputs; do not merge a broken site |
+
+### Notes
+- Active parallel sessions observed at claim time: `arena/f58e9526-own7` (PR #11) and `arena/29e51225-own7` (PR #10), both committing within the last 10 minutes. Their PRs are not touched until they settle or pass the 60-minute staleness rule.
+- Rules: never infer or fill values; blank + flag when no official source confirms; link every source; small frequent commits; resolve conflicts without discarding others' work.
