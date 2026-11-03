@@ -1,3 +1,5 @@
+> SUPERSEDED HISTORICAL DOCUMENT: Earlier claims have not been endorsed by the 2026-11-03 independent audit. Current summary: ../index.html ; findings: ../review.html . Numeric values must not be used as verified data.
+
 # Official NBA Data Sources
 
 Verified reachable from this sandbox via the Arena fetch proxy (direct `curl` to NBA hosts fails; `fetch_page` succeeds). All data in `data/` was transcribed from these live pages.

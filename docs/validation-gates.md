@@ -1,3 +1,5 @@
+> SUPERSEDED HISTORICAL DOCUMENT: Earlier claims have not been endorsed by the 2026-11-03 independent audit. Current summary: ../index.html ; findings: ../review.html . Numeric values must not be used as verified data.
+
 # Validation Gates
 
 Every strategy must pass ALL gates before it is considered for the leaderboard. Gates are applied in order; a strategy that fails any gate is rejected or flagged, not traded.

@@ -14,8 +14,9 @@
       "gate": "Data provenance",
       "pass_rule": "Every input series traces to an official source row in the Source Registry",
       "type": "Design choice",
-      "status": "Not yet passable – no official stats pulled",
-      "source_url": "https://www.nba.com/stats/"
+      "status": "Not yet passable \u2013 no official stats pulled",
+      "source_url": "https://www.nba.com/stats/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "G-02",
@@ -23,7 +24,8 @@
       "pass_rule": "Features use only information available before tip-off (timestamped)",
       "type": "Design choice",
       "status": "Not yet passable",
-      "source_url": "https://www.nba.com/stats/"
+      "source_url": "https://www.nba.com/stats/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "G-03",
@@ -31,15 +33,17 @@
       "pass_rule": "Walk-forward test on seasons not used to fit; minimum sample set before the test is read",
       "type": "Design choice (sample size is a project parameter, not an external fact)",
       "status": "Not yet passable",
-      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/verified/data/gates.json"
+      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/verified/data/gates.json",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "G-04",
       "gate": "Closing-line value (CLV)",
       "pass_rule": "Average CLV vs. closing price is positive out-of-sample",
       "type": "Design choice",
-      "status": "Blocked – closing-price data source not verified",
-      "source_url": "https://aglc.ca/gaming/igaming"
+      "status": "Blocked \u2013 closing-price data source not verified",
+      "source_url": "https://aglc.ca/gaming/igaming",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "G-05",
@@ -47,23 +51,26 @@
       "pass_rule": "Surviving signals still significant after false-discovery-rate correction across all tested strategies",
       "type": "Design choice",
       "status": "Not yet passable",
-      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/verified/data/gates.json"
+      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/verified/data/gates.json",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "G-06",
       "gate": "Calibration vs. market",
       "pass_rule": "Model probabilities beat the de-vigged market probabilities on log-loss out-of-sample",
       "type": "Design choice",
-      "status": "Blocked – market price data not verified",
-      "source_url": "https://aglc.ca/gaming/igaming"
+      "status": "Blocked \u2013 market price data not verified",
+      "source_url": "https://aglc.ca/gaming/igaming",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "G-07",
       "gate": "Market is offered and unrestricted",
       "pass_rule": "Bet type is offered by a registered Alberta operator and is not restricted by the league",
       "type": "External rule",
-      "status": "Partly verified – NBA betting exists on Play Alberta; restriction list unverified (R-05 to R-07)",
-      "source_url": "https://playalberta.ca/"
+      "status": "Partly verified \u2013 NBA betting exists on Play Alberta; restriction list unverified (R-05 to R-07)",
+      "source_url": "https://playalberta.ca/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "G-08",
@@ -71,15 +78,18 @@
       "pass_rule": "Joint-outcome correlation estimated from enough joint observations; independence assumption tested",
       "type": "Design choice",
       "status": "Not yet passable",
-      "source_url": "https://www.nba.com/stats/"
+      "source_url": "https://www.nba.com/stats/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "G-09",
       "gate": "Responsible-gambling limits",
       "pass_rule": "Stake caps and loss limits set before any strategy is read; self-exclusion respected",
       "type": "External rule",
-      "status": "Not yet passable – applies to any use; helplines verified (see Responsible Gambling)",
-      "source_url": "https://gamesenseab.ca/"
+      "status": "Not yet passable \u2013 applies to any use; helplines verified (see Responsible Gambling)",
+      "source_url": "https://gamesenseab.ca/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     }
-  ]
+  ],
+  "audit_notice": "Legacy archive, not current verified evidence. See ../../sources.html and ../../review.html."
 }

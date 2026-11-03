@@ -1,7 +1,5 @@
 name: Validate site
-on:
-  push:
-  pull_request:
+on: [push, pull_request]
 permissions:
   contents: read
 jobs:
@@ -9,5 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check local links and table sources
-        run: python3 scripts/check_site.py
+      - run: python3 scripts/build_dashboard.py
+      - run: git diff --exit-code -- '*.html'
+      - run: python3 scripts/check_site.py
+      - run: python3 scripts/test_research.py
