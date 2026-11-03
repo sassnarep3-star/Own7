@@ -1,3 +1,5 @@
+> SUPERSEDED HISTORICAL DOCUMENT: Earlier claims have not been endorsed by the 2026-11-03 independent audit. Current summary: ../index.html ; findings: ../review.html . Numeric values must not be used as verified data.
+
 # NBA Signal Strategies
 
 Framework: originate lines from official NBA statistics only. Three bet classes: single bets, parlays, player-prop combos. Every strategy passes the validation gates (docs/validation-gates.md). No manual input — all values computed from linked official sources.

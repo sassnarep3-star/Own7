@@ -1,3 +1,5 @@
+> SUPERSEDED HISTORICAL DOCUMENT: Earlier claims have not been endorsed by the 2026-11-03 independent audit. Current summary: ../index.html ; findings: ../review.html . Numeric values must not be used as verified data.
+
 # Executive Summary — Own7 NBA Lines Project
 
 ## Purpose

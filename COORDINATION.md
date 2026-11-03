@@ -59,3 +59,22 @@ Branch: `arena/687b658b-own7` (fixed by Arena)
 - Small, frequent commits; `git pull --rebase` before every push.
 - On conflict: stop, resolve without discarding the other session's work, log what happened.
 - Never infer or fill in values; leave blank + flag as unverified if no official source confirms. Link the source.
+
+## Session e09e45e6 — independent audit and final integration (2026-11-03)
+
+Fixed Arena branch: `arena/e09e45e6-own7` (platform constraint takes precedence over requested branch naming). Earlier completed boards are historical; no other active claim observed.
+
+| Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|
+| Independent source audit, quarantine unsupported values, integrate dashboard, test and publish | in progress | session-e09e45e6 | COORDINATION.md, README.md, index.html, pages/*, data/*, docs/*, scripts/*, verified/*, .github/workflows/* | Rechecking prior verified claims; no inherited verification assumed. |
+
+### e09e45e6 audit findings and verification
+- Initial remote branch did not exist, so `git pull --rebase origin arena/e09e45e6-own7` failed without modifying files; rebased against `origin main` before first branch push. No conflicts or other session work discarded; historical versions remain in Git history.
+- Canonical root dashboard now supersedes three conflicting views; old HTML URLs remain as explicit superseded notices. Scope is source-linked research, not an operating betting system.
+- Read official NBA standings in both fetch chunks and compared all 30 CSV rows (rank, identity, W/L, WIN%, GB, conference/division/home/road/last10/streak). Source: https://www.nba.com/standings . Snapshot only, 2026-11-03.
+- Read NBA player traditional season/filter content: https://www.nba.com/stats/players/traditional ; no historical player values confirmed. Blanked unconfirmed numerical team/player CSV fields; retained row identities as unverified.
+- Read NBA glossary USG% definition: https://www.nba.com/stats/help/glossary ; calibration scoring/reliability: https://scikit-learn.org/stable/modules/calibration.html ; time-order leakage: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html ; Pearson API: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html . Linked sources distinguish facts, methods and project proposals.
+- Inherited Alberta rules/helplines and media-reported restrictions not independently endorsed; legacy JSON verified flags downgraded and value columns blanked. Historical narratives explicitly superseded. Findings F01–F09 published on review.html (needs review; nonblocking).
+- Inventory with line counts and hashes: docs/audit-manifest.json. This is not a claim that every historical sentence was scientifically verified.
+- Tests: deterministic dashboard generation; recursive local HTML link and per-table HTTPS source check; 5 synthetic math tests passed (fair odds, push settlement, no-vig, Pearson, invalid inputs). No synthetic result is presented as NBA evidence. No future predictive skill claimed.
+- Task status: research/integration done; scientific evidence gaps needs review; publication in progress.
