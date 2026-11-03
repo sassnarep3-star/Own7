@@ -120,3 +120,11 @@ Fixed Arena branch: `arena/e09e45e6-own7` (platform constraint takes precedence 
 - GitHub Pages deployment https://github.com/sassnarep3-star/Own7/actions/runs/41740756061 completed successfully (build, deploy and report all green).
 - Live content independently fetched at https://sassnarep3-star.github.io/Own7/?audit=676d1e4 and confirmed the new eight-candidate audited executive summary. The bare URL initially returned cached old content; cache-busted fetch confirmed publication.
 - No actual betting edge, estimated coefficient, profitable strategy, cash prize or live model has been invented. Remaining scientific work cannot be certified without verified game-level and market data.
+
+### Integration record — arena/7a0b6563-own7 (2026-11-03)
+
+- Integration PR: https://github.com/sassnarep3-star/Own7/pull/9 (arena/7a0b6563-own7 → main). Merged with a merge commit at 2026-11-03T23:43:21Z (merge commit df03ebe01bf90828e3e4493ebf54255534ab5790). Not waited for approval; merged after CI passed on the PR head (both "verify" checks pass).
+- Post-merge CI on df03ebe: "Validate site" success; "Verify verified-data site" success; "pages build and deployment" success.
+- Pages check: https://sassnarep3-star.github.io/Own7/findings.html serves the verified team table with source links per row.
+- Flagged items (F02, F10–F13) publish on review.html "Flagged for Review" and did not block merge.
+- Record of this entry: follow-up PR to main (this line only), because pushes go only to this session's branch.
