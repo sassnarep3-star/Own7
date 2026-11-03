@@ -31,7 +31,7 @@
       "pass_rule": "Walk-forward test on seasons not used to fit; minimum sample set before the test is read",
       "type": "Design choice (sample size is a project parameter, not an external fact)",
       "status": "Not yet passable",
-      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/docs/data/gates.json"
+      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/verified/data/gates.json"
     },
     {
       "id": "G-04",
@@ -47,7 +47,7 @@
       "pass_rule": "Surviving signals still significant after false-discovery-rate correction across all tested strategies",
       "type": "Design choice",
       "status": "Not yet passable",
-      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/docs/data/gates.json"
+      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/verified/data/gates.json"
     },
     {
       "id": "G-06",

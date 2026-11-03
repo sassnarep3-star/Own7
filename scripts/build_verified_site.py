@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the static GitHub Pages site in docs/ from docs/data/*.json.
+"""Generate the verified-data site in verified/ from verified/data/*.json.
 
 Pages are plain HTML (no build dependencies). Every table row is rendered from
 a JSON row, so the data file is the single source of truth.
@@ -9,7 +9,7 @@ import json
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DOCS = ROOT / "docs"
+DOCS = ROOT / "verified"
 DATA = DOCS / "data"
 DATE = "2026-11-03"
 

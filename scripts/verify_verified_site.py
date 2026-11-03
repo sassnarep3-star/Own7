@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Verification gate for the site. Exit code 1 on any failure.
+"""Verification gate for the verified-data site (verified/). Exit code 1 on any failure.
 
 Checks:
   1. Every data row has an official source_url (allow-listed host).
   2. Rows with status 'verified' have non-empty values and an official source.
   3. Rows with status 'unverified' / 'reported-unverified' have blank value columns.
-  4. Every internal link/asset in docs/*.html resolves to a file.
+  4. Every internal link/asset in verified/*.html resolves to a file.
   5. Generated pages are up to date with data (rebuild and diff).
 """
 import html.parser
@@ -17,7 +17,7 @@ import sys
 from urllib.parse import urlparse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DOCS = ROOT / "docs"
+DOCS = ROOT / "verified"
 DATA = DOCS / "data"
 
 OFFICIAL_HOSTS = {
@@ -112,7 +112,7 @@ def check_links():
 
 def check_rebuild_matches():
     before = {p: p.read_bytes() for p in DOCS.glob("*.html")}
-    subprocess.run([sys.executable, str(ROOT / "scripts" / "build_site.py")], check=True, capture_output=True)
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "build_verified_site.py")], check=True, capture_output=True)
     for p, b in before.items():
         if p.read_bytes() != b:
             err(f"{p.name} was stale; rebuild changed it")

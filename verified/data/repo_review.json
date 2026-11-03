@@ -36,8 +36,8 @@
     {
       "id": "RR-04",
       "check": "GitHub Pages config",
-      "finding": "Pages is enabled, legacy build from branch main, path '/'. Latest build status 'built' at commit 74c945e (2026-10-31). Repo had no index page; this work adds docs/ and must switch the Pages source path to /docs.",
-      "severity": "Flag",
+      "finding": "Pages was enabled as a legacy build from branch main, path '/', with latest build 'built' at commit 74c945e (2026-10-31). The other session's merged site publishes the root of main. This verified-data site is published in the /verified/ folder beside it, so no Pages source change is needed.",
+      "severity": "Info",
       "status": "verified",
       "source_url": "https://github.com/sassnarep3-star/Own7/settings/pages"
     },
