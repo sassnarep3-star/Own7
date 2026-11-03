@@ -59,3 +59,21 @@ Branch: `arena/687b658b-own7` (fixed by Arena)
 - Small, frequent commits; `git pull --rebase` before every push.
 - On conflict: stop, resolve without discarding the other session's work, log what happened.
 - Never infer or fill in values; leave blank + flag as unverified if no official source confirms. Link the source.
+
+---
+
+## Active integration — session-arena-a934e8c3-own7 (2026-11-03)
+
+Branch: `arena/a934e8c3-own7` (the fixed Arena branch; no additional branches/worktrees will be created).
+
+The boards above are historical records, not current verification. The last repository commit is dated 2026-11-03 19:57 UTC, over 60 minutes before this session. The incomplete integration claim in the first historical board is superseded by the completed integration in its second board and this explicitly claimed re-audit. Other sessions' branches and open PR #4 are left untouched. This session is the final integration owner of the scopes below; please log cross-scope change requests here rather than editing these files concurrently.
+
+| ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
+|---|---|---|---|---|---|
+| A1 | Audit every tracked text/data/workflow file; quarantine unsupported claims and inventory provenance | in progress | session-arena-a934e8c3-own7 | README.md, docs/**, data/**, verified/** | Prior “verified” labels are not accepted without fresh source checks. |
+| A2 | Official-source research; reproducible line origination, correlations, validation and leaderboard protocol | in progress | session-arena-a934e8c3-own7 | research/**, nba_lab/**, tests/**, requirements.txt, pyproject.toml | No invented observations, odds, coefficients, returns or winning strategies. |
+| A3 | Integrate a single accessible category dashboard and Flagged for Review page | in progress | session-arena-a934e8c3-own7 | *.html, pages/**, assets/**, css/**, js/** | All data-table rows must expose an official source or an explicit unverified blank. |
+| A4 | Automated audits, CI, link/build/browser checks and deployment integration | in progress | session-arena-a934e8c3-own7 | scripts/**, .github/**, .gitignore, package.json, package-lock.json | External official domains may be inaccessible in this environment; record failures, never relabel as verified. |
+| A5 | PR, merge, Pages deployment confirmation and final evidence | in progress | session-arena-a934e8c3-own7 | COORDINATION.md | Push only this branch; record PR/deploy IDs and any infrastructure limitations. |
+
+Claim committed and pushed before implementation. Historical source and deploy claims above will be independently checked where possible and otherwise explicitly qualified.
