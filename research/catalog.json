@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-11-03",
+  "strategies": [
+    {
+      "id": "S01",
+      "category": "Single bets",
+      "name": "Opponent-adjusted margin",
+      "hypothesis": "Shrink team strength toward league mean; fit score margin using lagged offense/defense, home court and opponent strength.",
+      "output": "Distribution of home margin; derive spread cover and moneyline from the same coherent score distribution.",
+      "risk": "Raw win percentage is NOT a matchup win probability. Full-season aggregates may seed a later season only, never earlier games.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NBA-TEAMS",
+        "NBA-GLOSSARY",
+        "SK-TIME"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "S02",
+      "category": "Single bets",
+      "name": "Pace × efficiency total",
+      "hypothesis": "Forecast possessions and both teams’ points per possession using prior-game data; allow their residuals to co-move.",
+      "output": "μ_total = E[possessions × (PPP_home + PPP_away)]; integrate a calibrated distribution at the offered total.",
+      "risk": "PTS_home average + PTS_away average is not an opponent-adjusted total model. Overtime and pushes must match operator rules.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NBA-GLOSSARY",
+        "NBA-TEAMS",
+        "SK-CAL"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "S03",
+      "category": "Single bets",
+      "name": "Schedule & availability update",
+      "hypothesis": "Fit rest and back-to-back effects as covariates; timestamp official injury reports and roster changes.",
+      "output": "Update score/participation distributions at a fixed pregame cutoff; abstain when material availability is unknown.",
+      "risk": "A shared schedule factor does not prove independence or a profitable rest effect; do not use final minutes as a pregame feature.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NBA-INJURY",
+        "SK-TIME",
+        "NBA-TEAMS"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "S04",
+      "category": "Player props / combos",
+      "name": "Minutes × role · points",
+      "hypothesis": "Model participation, minutes and points per minute separately; shrink player rates and include opponent/role context.",
+      "output": "P(points > offered line), P(push), and fair decimal price under the documented participation/void contract.",
+      "risk": "Season PPG is not a prop distribution; do not train only on the 15 highest scorers. Injury probabilities remain blank without data.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NBA-PLAYERS",
+        "NBA-INJURY",
+        "SK-CAL"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "S05",
+      "category": "Player props / combos",
+      "name": "Rebounds / assists distribution",
+      "hypothesis": "Model minutes, opportunities and conversion with overdispersion; check calibration separately for each market.",
+      "output": "Full predictive count distribution; component totals (PRA) need the joint distribution, not summed independent variances.",
+      "risk": "Points/rebounds/assists correlations can change with role and threshold. No sign is assumed.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NBA-GAMES",
+        "NBA-GLOSSARY",
+        "SCIPY-CORR"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "S06",
+      "category": "Parlays",
+      "name": "Cross-game joint-value filter",
+      "hypothesis": "Start from independently validated single-game probabilities; estimate shared-day/team uncertainty and test dependence.",
+      "output": "Joint win probability vs the actual operator’s combined executable quote; disclose every leg and exposure cluster.",
+      "risk": "Different games do NOT automatically mean independence. Product of individual odds is not a verified combined payout.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "SCIPY-CORR",
+        "SK-CAL",
+        "REPO"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "S07",
+      "category": "Player props / combos",
+      "name": "Same-player points + assists",
+      "hypothesis": "Use aligned game-level outcomes and frozen thresholds; validate joint hit probabilities on later games.",
+      "output": "Estimate joint hits directly or use a calibrated joint simulation; compare with a same-contract combo quote.",
+      "risk": "The retrospective 32-game demo is not gate evidence. Positive raw-stat correlation does not guarantee positive threshold-event correlation.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR",
+        "SK-TIME"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "S08",
+      "category": "Player props / combos",
+      "name": "Teammate / team-total combination",
+      "hypothesis": "Simulate shared possessions, minutes, usage and game script; fit conditional residual dependence.",
+      "output": "Joint probability of all requested legs; use the operator’s offered settlement and void matrix.",
+      "risk": "No presumption that teammates are positively or negatively correlated. Pairwise correlations cannot identify a 3+ leg distribution.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NBA-GLOSSARY",
+        "NBA-INJURY",
+        "SCIPY-CORR"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "Provenance & contract",
+      "pass_rule": "Official-source receipts for every datum, original publication/capture time, dataset hashes, exact market/line/operator and settlement rules. URL presence is insufficient.",
+      "current": "Stats snapshots checked; pregame quotes and contracts missing.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NBA-GAMES",
+        "REPO"
+      ]
+    },
+    {
+      "id": "G02",
+      "name": "Temporal integrity",
+      "pass_rule": "Freeze features, model, selection and calibration before tipoff; join using available_at ≤ cutoff; purged calendar walk-forward folds group every game’s legs.",
+      "current": "Demo recomputes prior-game history, but no actual pregame record or sealed test exists.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "SK-TIME",
+        "NBA-INJURY"
+      ]
+    },
+    {
+      "id": "G03",
+      "name": "Coverage & power",
+      "pass_rule": "Screen at 500 settled selections, 200 distinct games, 60 dates, plus a predeclared power calculation and missingness/selection-bias audit. Numbers are project policy, not proof of skill.",
+      "current": "Only one player / 32 games; no market selections or power study.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "REPO",
+        "NBA-GAMES"
+      ]
+    },
+    {
+      "id": "G04",
+      "name": "Forecast quality",
+      "pass_rule": "On a common untouched window, beat both the frozen simple baseline and same-contract de-vigged market in log loss/Brier; inspect reliability bins and intervals. Fit calibrators on earlier data only.",
+      "current": "Only exploratory scores against neutral p=0.5; no market baseline or reliable calibration sample.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "SK-CAL"
+      ]
+    },
+    {
+      "id": "G05",
+      "name": "Joint dependence",
+      "pass_rule": "For combos: aligned threshold-hit observations, conditional residual analysis, pair definition/n/date range/CI, Fréchet feasibility and held-out joint calibration; 3+ legs require full joint model. Explicitly N/A for singles only.",
+      "current": "Descriptive correlations computed; no confirmatory joint validation or executable combo quotes.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "SCIPY-CORR",
+        "NBA-GAMES"
+      ]
+    },
+    {
+      "id": "G06",
+      "name": "Executable economics",
+      "pass_rule": "Price against a captured, actually available operator quote. Include margin, fees, taxes where applicable, limits, partial voids/pushes; do not infer quotes or multiply SGP payouts.",
+      "current": "No operator snapshots, closing prices or offer/void rules captured.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "REPO",
+        "KSA-PLAYERS"
+      ]
+    },
+    {
+      "id": "G07",
+      "name": "Uncertainty & robustness",
+      "pass_rule": "Net-return lower 95% date-block-bootstrap bound > 0 after costs on the untouched set; report drawdown, coverage, CLV at identical contracts, and block/season sensitivity. CLV alone is not proof.",
+      "current": "ROI, CLV and confidence bounds on return remain blank.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "REPO",
+        "SCIPY-CORR"
+      ]
+    },
+    {
+      "id": "G08",
+      "name": "Selection / multiple testing",
+      "pass_rule": "Log every trial and variant, including rejected attempts. Apply Holm at familywise α=0.05 to valid predeclared tests; do not recycle the holdout after failures.",
+      "current": "No confirmatory tests or p-values; all present analyses are exploratory.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "SM-HOLM",
+        "REPO"
+      ]
+    },
+    {
+      "id": "G09",
+      "name": "Forward shadow & risk",
+      "pass_rule": "Freeze submission before a common future window, collect at least 60 calendar days / 200 distinct games on paper, obey 1 unit/game and 5/day caps and 10-unit drawdown stop; log abstentions.",
+      "current": "No prospective shadow record. Cash execution disabled.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "REPO",
+        "KSA-PLAYERS"
+      ]
+    },
+    {
+      "id": "G10",
+      "name": "Reproducibility & rights",
+      "pass_rule": "Reproduce data hashes, forecasts, settlement and score from the frozen run; check source rights, operator/jurisdiction restrictions, reward terms and audit artifacts.",
+      "current": "Offline reproduction supported. NBA §9(iv) gambling-use restriction confirmed; separate permission and operator authorization absent. Pricing release blocked.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NBA-TERMS",
+        "REPO"
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "id": "F01",
+      "status": "Corrected",
+      "item": "Conflicting executive-summary maxima",
+      "finding": "Earlier pages named Miami as highest-scoring team and Denver as best FG%. The checked table instead shows Denver 122.1 PTS and Lakers 50.2 FG%. Old summaries replaced.",
+      "unverified_value": null,
+      "source_ids": [
+        "NBA-TEAMS"
+      ]
+    },
+    {
+      "id": "F02",
+      "status": "Corrected",
+      "item": "Utah rank and ambiguous column",
+      "finding": "Utah’s tied displayed rank corrected from 27 to 26. Column between BLK and PF is explicitly BLKA; earlier “unmappable column” assertion withdrawn.",
+      "unverified_value": null,
+      "source_ids": [
+        "NBA-TEAMS"
+      ]
+    },
+    {
+      "id": "F03",
+      "status": "Corrected",
+      "item": "Three incompatible public sites",
+      "finding": "Root, pages/ and verified/ carried contradictory claims and separate menus. All old HTML addresses now route to one generated dashboard. Baseline preserved in git and hashed audit inventory.",
+      "unverified_value": null,
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "F04",
+      "status": "Corrected",
+      "item": "Zero correlation / unsupported sign / payout claims",
+      "finding": "Removed zero-correlation ⇒ independence, presumed teammate correlation signs, play-by-play-only requirement and guaranteed product-of-leg payouts. Box scores suffice for paired game-level statistics; combo quotes/rules still required.",
+      "unverified_value": null,
+      "source_ids": [
+        "SCIPY-CORR"
+      ]
+    },
+    {
+      "id": "F05",
+      "status": "Needs review",
+      "item": "Market data and executable lines absent",
+      "finding": "Current spreads, odds, prop lines, combined payouts, closing prices, edge, ROI and CLV are unverified and blank. No feed authorization, paid subscription or credentials were invented.",
+      "unverified_value": null,
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "F06",
+      "status": "Needs review",
+      "item": "Retrospective sample is not skill evidence",
+      "finding": "32 games / one player; window and hypothetical thresholds chosen retrospectively. Intervals are exploratory, not selection-adjusted. Demo probabilities are calculated model outputs, not verified forecasts or recommendations.",
+      "unverified_value": null,
+      "source_ids": [
+        "NBA-GAMES"
+      ]
+    },
+    {
+      "id": "F07",
+      "status": "Needs review",
+      "item": "No pregame timestamp archive or untouched test",
+      "finding": "Snapshots retrieved now cannot prove historical pregame availability. Using full-season averages to predict games within that season would leak future data.",
+      "unverified_value": null,
+      "source_ids": [
+        "SK-TIME"
+      ]
+    },
+    {
+      "id": "F08",
+      "status": "Needs review",
+      "item": "Legacy Alberta and media-policy material retired",
+      "finding": "Unrequested Alberta regulatory/helpline claims and media-only league restriction claims had stale verification labels. They are not independently confirmed in this re-audit and are withdrawn from active tables; historical wording remains in git. No restriction value or phone number is republished.",
+      "unverified_value": null,
+      "source_ids": [
+        "KSA-PLAYERS"
+      ]
+    },
+    {
+      "id": "F09",
+      "status": "Needs review",
+      "item": "Rights, licensing and automated collection",
+      "finding": "Confirmed: NBA terms §9(iv) prohibits use of NBA Statistics in connection with any gambling activity, including legal gambling. Separate permission is unverified. NBA-derived betting prices, bulk collection and cash use are disabled; do not confuse public access with a betting-data license. Publication/use restrictions also require review. This is not legal advice.",
+      "unverified_value": null,
+      "source_ids": [
+        "NBA-TERMS"
+      ]
+    },
+    {
+      "id": "F10",
+      "status": "Needs review",
+      "item": "Cash prizes not funded or authorized",
+      "finding": "Competition uses explicit non-monetary merit points only. Cash pool and payment amounts are blank; no eligible winner exists. No reward promise or financial transaction is made.",
+      "unverified_value": null,
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "F11",
+      "status": "Needs review",
+      "item": "Repository has no LICENSE",
+      "finding": "No LICENSE file exists at the audited baseline. No permission, ownership or license was inferred for code or third-party data.",
+      "unverified_value": null,
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "F12",
+      "status": "Needs review",
+      "item": "Frozen snapshots and source-check limits",
+      "finding": "Snapshots were checked through fetch_page, not a raw HTTP archive. Direct sandbox access is allowlisted. Automated link health is not factual verification; sources may change or reject bots.",
+      "unverified_value": null,
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "F13",
+      "status": "Corrected",
+      "item": "Ignored filter / pagination risk",
+      "finding": "A LastNGames=30 URL returned 65 reported rows with pagination. Rejected that scope; an explicit date filter returned all 32 intended rows on one page. No missing games were filled in.",
+      "unverified_value": null,
+      "source_ids": [
+        "NBA-GAMES"
+      ]
+    },
+    {
+      "id": "F14",
+      "status": "Corrected",
+      "item": "Player selection and current-vs-season metadata",
+      "finding": "The 15-player table is scoring-selected. It cannot represent the whole player universe. Profile headline current-season averages were excluded from the historical game-log cohort.",
+      "unverified_value": null,
+      "source_ids": [
+        "NBA-PLAYERS"
+      ]
+    },
+    {
+      "id": "F15",
+      "status": "Needs review",
+      "item": "Other session’s documentation PR remains open",
+      "finding": "PR #4 from the earlier session changes its historical coordination record only. It is left untouched, not merged into this integration; its records already coexist in COORDINATION.md. Fixed Arena branch replaces the requested session/<task> branch naming.",
+      "unverified_value": null,
+      "source_ids": [
+        "REPO"
+      ]
+    }
+  ]
+}
