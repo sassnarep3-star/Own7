@@ -35,6 +35,7 @@ NAV = [
 ]
 
 REPO_BLOB = "https://github.com/sassnarep3-star/Own7/blob/arena/1050ddb0-own7"
+REPO_TREE = "https://github.com/sassnarep3-star/Own7/tree/arena/1050ddb0-own7/analysis"
 
 
 def esc(x) -> str:
@@ -623,6 +624,19 @@ def build_validation() -> None:
          "Eight validation gates with three-state outcomes, run against the actual strategies.")
 
 
+def row_source(strategy_id: str) -> str:
+    """Per-strategy evidence link. Points at the page holding that strategy's basis."""
+    mapping = {
+        "S1": ("line origination", f"{REPO_TREE}/lines.html"),
+        "S2": ("line origination", f"{REPO_TREE}/lines.html"),
+        "S3": ("correlation", f"{REPO_TREE}/correlation.html"),
+        "S4": ("no player data", f"{REPO_TREE}/flagged.html"),
+        "S5": ("gates", f"{REPO_TREE}/validation.html"),
+    }
+    label, url = mapping.get(strategy_id, ("repo", REPO_TREE))
+    return f'<a href="{url}" target="_blank" rel="noopener noreferrer">{label} ↗</a>'
+
+
 def build_leaderboard() -> None:
     lb = load_results("leaderboard.json")
     luck = lb["luck_arithmetic"]
@@ -639,6 +653,7 @@ def build_leaderboard() -> None:
           <td class="num">{fmt(r['roi'], 4)}</td>
           <td class="num">{fmt(r['roi_lower_bound'], 4)}</td>
           <td class="num blank">undefined</td>
+          <td class="src">{row_source(r['id'])}</td>
         </tr>"""
         for r in lb["rows"]
     )
@@ -678,7 +693,7 @@ def build_leaderboard() -> None:
     <thead><tr>
       <th class="num">Rank</th><th>ID</th><th>Strategy</th><th>Category</th>
       <th>Gate status</th><th class="num">Bets</th><th class="num">ROI</th>
-      <th class="num">ROI lower bound</th><th class="num">Reward</th>
+      <th class="num">ROI lower bound</th><th class="num">Reward</th><th>Evidence / basis</th>
     </tr></thead>
     <tbody>
 {rows}
