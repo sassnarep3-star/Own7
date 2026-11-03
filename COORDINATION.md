@@ -59,3 +59,22 @@ Branch: `arena/687b658b-own7` (fixed by Arena)
 - Small, frequent commits; `git pull --rebase` before every push.
 - On conflict: stop, resolve without discarding the other session's work, log what happened.
 - Never infer or fill in values; leave blank + flag as unverified if no official source confirms. Link the source.
+
+---
+
+## Session arena/7a0b6563-own7 — audit, re-verification, and integration (2026-11-03)
+
+Session ID: `session-arena-7a0b6563-own7`
+Branch: `arena/7a0b6563-own7` (fixed by Arena; the `session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this session and all work must stay on it).
+Sole active session on this branch as of this claim. Earlier sessions' boards above are retained unchanged.
+
+### Task board
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| 11 | Repo review + irregularity audit | in progress | session-arena-7a0b6563-own7 | docs/repo-review-2026-11-03.md | nba.com pages (see task 12) | Found: exec-summary factual errors; pages/dashboard.html broken relative links; CI does not scan pages/ |
+| 12 | Line-by-line re-verification of data/*.csv against nba.com | in progress | session-arena-7a0b6563-own7 | docs/verification-2026-11-03.md | https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season ; https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame ; https://www.nba.com/standings | Teams 30/30 rows, standings 30/30 rows, players top-15 15/15 rows matched |
+| 13 | Fix executive-summary errors + dashboard links | in progress | session-arena-7a0b6563-own7 | docs/executive-summary.md, pages/executive-summary.html, pages/dashboard.html | nba.com team table | Highest PPG = Denver 122.1 (not Miami); highest FG% = LAL 50.2 (not Denver) |
+| 14 | Team-level correlation (cross-sectional, computed from verified team table) | in progress | session-arena-7a0b6563-own7 | data/team-correlations-2025-26.csv, pages/correlation.html, docs/strategies.md | derived from data/teams-2025-26.csv | Labelled as team-season correlations, NOT bet-leg correlations |
+| 15 | Site checks: include pages/ in link + source checks; CI | in progress | session-arena-7a0b6563-own7 | scripts/check_site.py, .github/workflows/check.yml | n/a | |
+| 16 | Integration: root nav link, Flagged register update, build check, PR, merge, Pages deploy, record | unclaimed | session-arena-7a0b6563-own7 | root *.html nav, pages/flagged.html, COORDINATION.md | all above | Do not merge a broken site |
