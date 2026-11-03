@@ -1,0 +1,53 @@
+{
+  "dataset": "NBA 2026-27 regular-season team box-score game log (final scores, 11/01/2026 - 11/02/2026)",
+  "publisher": "NBA.com (official league site)",
+  "season": "2026-27",
+  "season_type": "Regular Season",
+  "snapshot_utc": "2026-11-03T23:50Z",
+  "collection_method": "Each row is one team's line from the NBA.com 'Teams Box Scores' table, transcribed from the rendered page (fetch_page), newest first. Scores were cross-checked against the per-game NBA.com game pages where those pages were read (see cross_checks).",
+  "notes": [
+    "Only games dated 11/01/2026 and 11/02/2026 are present: those are the two most recent game dates in the season-to-date table, and they are the complete set of dates for which every row was readable in the rendered text.",
+    "MIN is the team's total minutes in the game as published by NBA.com (240 = regulation, 265 = one overtime period).",
+    "OT is derived only from MIN: MIN == 240 gives 0, MIN == 265 gives 1. Any other MIN value was left out of the dataset rather than guessed.",
+    "This is a convenience subset for calibration examples. It is NOT a complete season sample and must not be described as one."
+  ],
+  "columns": ["game_id", "date", "home", "away", "home_pts", "away_pts", "min", "ot"],
+  "source_urls": {
+    "team_game_log": "https://www.nba.com/stats/teams/boxscores?Season=2026-27&SeasonType=Regular%20Season",
+    "game_page_template": "https://www.nba.com/game/{game_id}"
+  },
+  "rows": [
+    {"game_id": "0022600159", "date": "2026-11-02", "home": "CHA", "away": "DET", "home_pts": 91, "away_pts": 124, "min": 240, "ot": 0},
+    {"game_id": "0022600160", "date": "2026-11-02", "home": "IND", "away": "ATL", "home_pts": 104, "away_pts": 108, "min": 240, "ot": 0},
+    {"game_id": "0022600161", "date": "2026-11-02", "home": "NYK", "away": "BKN", "home_pts": 103, "away_pts": 90, "min": 240, "ot": 0},
+    {"game_id": "0022600162", "date": "2026-11-02", "home": "ORL", "away": "WAS", "home_pts": 94, "away_pts": 103, "min": 240, "ot": 0},
+    {"game_id": "0022600163", "date": "2026-11-02", "home": "PHI", "away": "CHI", "home_pts": 126, "away_pts": 107, "min": 240, "ot": 0},
+    {"game_id": "0022600164", "date": "2026-11-02", "home": "DAL", "away": "SAC", "home_pts": 100, "away_pts": 115, "min": 240, "ot": 0},
+    {"game_id": "0022600165", "date": "2026-11-02", "home": "MEM", "away": "NOP", "home_pts": 134, "away_pts": 135, "min": 265, "ot": 1},
+    {"game_id": "0022600166", "date": "2026-11-02", "home": "MIN", "away": "MIL", "home_pts": 112, "away_pts": 100, "min": 240, "ot": 0},
+    {"game_id": "0022600167", "date": "2026-11-02", "home": "HOU", "away": "BOS", "home_pts": 109, "away_pts": 93, "min": 240, "ot": 0},
+    {"game_id": "0022600168", "date": "2026-11-02", "home": "SAS", "away": "UTA", "home_pts": 119, "away_pts": 97, "min": 240, "ot": 0},
+    {"game_id": "0022600169", "date": "2026-11-02", "home": "DEN", "away": "POR", "home_pts": 110, "away_pts": 118, "min": 240, "ot": 0},
+    {"game_id": "0022600170", "date": "2026-11-02", "home": "GSW", "away": "PHX", "home_pts": 116, "away_pts": 113, "min": 240, "ot": 0},
+    {"game_id": "0022600171", "date": "2026-11-02", "home": "LAC", "away": "TOR", "home_pts": 118, "away_pts": 125, "min": 240, "ot": 0},
+    {"game_id": "0022600172", "date": "2026-11-02", "home": "LAL", "away": "MIA", "home_pts": 138, "away_pts": 117, "min": 240, "ot": 0},
+    {"game_id": "0022600154", "date": "2026-11-01", "home": "ORL", "away": "BOS", "home_pts": 97, "away_pts": 108, "min": 240, "ot": 0},
+    {"game_id": "0022600155", "date": "2026-11-01", "home": "IND", "away": "BKN", "home_pts": 90, "away_pts": 98, "min": 240, "ot": 0},
+    {"game_id": "0022600156", "date": "2026-11-01", "home": "GSW", "away": "LAC", "home_pts": 124, "away_pts": 112, "min": 240, "ot": 0},
+    {"game_id": "0022600157", "date": "2026-11-01", "home": "LAL", "away": "TOR", "home_pts": 131, "away_pts": 125, "min": 240, "ot": 0}
+  ],
+  "cross_checks": [
+    {
+      "game_id": "0022600167",
+      "claim": "BOS 93 at HOU 109, final; quarter scores 29-29, 21-28, 23-25, 20-27; 8:30 PM, Toyota Center",
+      "checked_on": "https://www.nba.com/game/0022600167",
+      "checked_utc": "2026-11-03T23:42Z",
+      "result": "match"
+    }
+  ],
+  "known_gaps": [
+    "Games played 2026-10-31 and earlier are published by NBA.com but were not transcribed here (the rendered table is paginated and only the newest pages were read).",
+    "PHX has played 5 games per NBA.com advanced stats but only 2 appear in this subset.",
+    "No odds, spreads, totals or prop lines are present: NBA.com does not render market prices on its pages (verified on the standings, stats, schedule and game-summary pages)."
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "title": "Validation gate runs",
+  "snapshot_utc": "2026-11-03T23:55Z",
+  "note": "The real strategies have no settled bets and no market prices, so the honest gate outcome is 'unproven'. A synthetic example is included ONLY to prove the gate machinery works; it is clearly labelled and is not a strategy result.",
+  "runs": [
+    {
+      "strategy": "Pace-and-efficiency spread model",
+      "kind": "real",
+      "result": {
+        "gates": [
+          {
+            "id": "G0",
+            "name": "Provenance",
+            "status": "pass",
+            "detail": "all 1 inputs carry a source URL",
+            "evidence": {
+              "sources": [
+                "https://www.nba.com/stats/teams/advanced?Season=2026-27&SeasonType=Regular%20Season"
+              ]
+            }
+          },
+          {
+            "id": "G1",
+            "name": "Pre-registration",
+            "status": "pass",
+            "detail": "all declarations present",
+            "evidence": {
+              "spec_sha256": "12e91632866b9ea691206f066e0ce7950d07b5389bd66ef8a276c387de7ba711"
+            }
+          },
+          {
+            "id": "G2",
+            "name": "Sample size",
+            "status": "not_evaluable",
+            "detail": "no settled bets",
+            "evidence": {
+              "n": 0
+            }
+          },
+          {
+            "id": "G3",
+            "name": "Out-of-sample",
+            "status": "not_evaluable",
+            "detail": "in-sample or out-of-sample metric missing",
+            "evidence": null
+          },
+          {
+            "id": "G4",
+            "name": "Luck test",
+            "status": "not_evaluable",
+            "detail": "no settled bets",
+            "evidence": null
+          },
+          {
+            "id": "G5",
+            "name": "Price realism",
+            "status": "not_evaluable",
+            "detail": "no recorded prices",
+            "evidence": null
+          },
+          {
+            "id": "G6",
+            "name": "Correlation",
+            "status": "fail",
+            "detail": "legs treated as independent and no dependence was measured",
+            "evidence": null
+          },
+          {
+            "id": "G7",
+            "name": "Robustness",
+            "status": "not_evaluable",
+            "detail": "only 0 results; robustness needs at least 20",
+            "evidence": null
+          }
+        ],
+        "overall": "rejected",
+        "counts": {
+          "pass": 2,
+          "fail": 1,
+          "not_evaluable": 5
+        },
+        "rule": "A strategy is ranked only if overall == 'passed'. 'unproven' is not a soft pass."
+      },
+      "reading": "G0 and G1 pass. G2, G3, G4, G5, G7 cannot be evaluated without a bet record; G6 fails while legs are assumed independent. Overall: unproven, so no rank."
+    }
+  ],
+  "gate_definitions": [
+    {
+      "id": "G0",
+      "name": "Provenance",
+      "requirement": "every input has an official source URL"
+    },
+    {
+      "id": "G1",
+      "name": "Pre-registration",
+      "requirement": "thresholds, universe, stopping rule and window declared and hashed before results"
+    },
+    {
+      "id": "G2",
+      "name": "Sample size",
+      "requirement": "settled bets >= declared minimum"
+    },
+    {
+      "id": "G3",
+      "name": "Out-of-sample",
+      "requirement": "OOS edge retains at least 50% of in-sample edge"
+    },
+    {
+      "id": "G4",
+      "name": "Luck test",
+      "requirement": "binomial p < 0.05, PSR > 0.95, deflated Sharpe > 0.95"
+    },
+    {
+      "id": "G5",
+      "name": "Price realism",
+      "requirement": "every bet priced from a timestamped, attributed, sourced executable price"
+    },
+    {
+      "id": "G6",
+      "name": "Correlation",
+      "requirement": "parlay dependence measured, interval excluding zero"
+    },
+    {
+      "id": "G7",
+      "name": "Robustness",
+      "requirement": "mean return stays positive after dropping the best 5% of results"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "title": "Measured dependence between legs (real game outcomes)",
+  "snapshot_utc": "2026-11-03T23:55Z",
+  "data_source_url": "https://www.nba.com/stats/teams/boxscores?Season=2026-27&SeasonType=Regular%20Season",
+  "n_games": 18,
+  "columns": [
+    "pair",
+    "n",
+    "estimate",
+    "ci95_low",
+    "ci95_high",
+    "status"
+  ],
+  "rows": [
+    {
+      "pair": "home_points vs away_points (same game)",
+      "n": 18,
+      "estimate": 0.4203,
+      "ci95_low": -0.0579,
+      "ci95_high": 0.7417,
+      "status": "measured",
+      "interpretation": "Both teams' scores move together: a same-game parlay on two overs is not independent."
+    },
+    {
+      "pair": "home_points vs game_total (same game)",
+      "n": 18,
+      "estimate": 0.8728,
+      "ci95_low": 0.6851,
+      "ci95_high": 0.9518,
+      "status": "mechanically inflated - not tradable evidence",
+      "interpretation": "The total contains the team's own points, so this r is a tautology."
+    },
+    {
+      "pair": "pregame projected matchup pace vs realised game total",
+      "n": 18,
+      "estimate": 0.558,
+      "ci95_low": 0.1233,
+      "ci95_high": 0.8131,
+      "status": "measured",
+      "interpretation": "Pre-game pace vs realised total. Legitimate forecast check, tiny sample."
+    },
+    {
+      "pair": "home scores 110+ vs home wins (phi)",
+      "n": 18,
+      "estimate": 0.4472,
+      "ci95_low": -0.0249,
+      "ci95_high": 0.7562,
+      "status": "measured",
+      "interpretation": "Binary-to-binary dependence for prop-style combos; wide interval at this n."
+    },
+    {
+      "pair": "player stat vs player stat (props)",
+      "n": null,
+      "estimate": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "status": "BLANK - not computable",
+      "interpretation": "No player-level game log is available. NBA.com player box-score pages are rendered client-side and returned no table when fetched; therefore no paired player outcomes exist to correlate."
+    }
+  ],
+  "detail": {
+    "home_vs_away": {
+      "ok": true,
+      "n": 18,
+      "r": 0.4203,
+      "r_squared": 0.1767,
+      "ci95": [
+        -0.0579,
+        0.7417
+      ],
+      "se_fisher_z": 0.2582,
+      "note": "Fisher z interval assumes approximate bivariate normality of the pair. At this sample size the interval is wide; do not price a parlay on the point estimate.",
+      "series": "home_points vs away_points (same game)"
+    },
+    "team_vs_total": {
+      "ok": true,
+      "n": 18,
+      "r": 0.8728,
+      "r_squared": 0.7618,
+      "ci95": [
+        0.6851,
+        0.9518
+      ],
+      "se_fisher_z": 0.2582,
+      "note": "Fisher z interval assumes approximate bivariate normality of the pair. At this sample size the interval is wide; do not price a parlay on the point estimate.",
+      "series": "home_points vs game_total (same game)",
+      "warning": "Mechanically dependent: the total contains the team's own points, so r is inflated by construction and is NOT evidence of a tradable relationship."
+    },
+    "pace_vs_total": {
+      "ok": true,
+      "n": 18,
+      "r": 0.558,
+      "r_squared": 0.3114,
+      "ci95": [
+        0.1233,
+        0.8131
+      ],
+      "se_fisher_z": 0.2582,
+      "note": "Fisher z interval assumes approximate bivariate normality of the pair. At this sample size the interval is wide; do not price a parlay on the point estimate.",
+      "series": "pregame projected matchup pace vs realised game total",
+      "n_pairs_used": 18
+    },
+    "phi_example": {
+      "ok": true,
+      "n": 18,
+      "phi": 0.4472,
+      "table": {
+        "n11": 7,
+        "n10": 3,
+        "n01": 2,
+        "n00": 6
+      },
+      "marginal_a": 0.5556,
+      "marginal_b": 0.5,
+      "joint": 0.3889,
+      "product_if_independent": 0.2778,
+      "ci95_phi": [
+        -0.0249,
+        0.7562
+      ]
+    }
+  },
+  "sample_size": {
+    "assume_r": 0.3,
+    "games_needed_for_halfwidth_0_15": 174,
+    "note": "Getting a 0.15-wide 95% interval on a correlation near 0.3 needs a full season of paired games."
+  },
+  "flagged": [
+    "n = 18 games only (11/01 and 11/02). Conclusions are illustrative, not established.",
+    "Player-prop correlation is NOT measurable from the data available: NBA.com player box-score pages render client-side and returned no table.",
+    "No prop lines exist in this repository, so no prop-combo probability can be priced."
+  ]
+}

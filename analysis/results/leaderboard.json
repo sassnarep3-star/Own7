@@ -1,0 +1,166 @@
+{
+  "title": "Strategy leaderboard",
+  "snapshot_utc": "2026-11-03T23:55Z",
+  "n_eligible": 0,
+  "n_total": 5,
+  "ranking_rule": "rank = order of one-sided 95% lower bound on per-bet ROI; only strategies with overall_gate_status == 'passed' are ranked",
+  "reward_status": "undefined by design; the owner sets rewards, and none are inferred here",
+  "columns": [
+    "rank",
+    "id",
+    "name",
+    "category",
+    "overall_gate_status",
+    "n_bets",
+    "roi",
+    "roi_lower_bound",
+    "reward"
+  ],
+  "rows": [
+    {
+      "id": "S5",
+      "name": "Cross-game independent-leg parlay",
+      "category": "Parlay",
+      "overall_gate_status": "unproven",
+      "n_bets": 0,
+      "roi": null,
+      "roi_lower_bound": null,
+      "eligible": false,
+      "reward": null,
+      "rank": null
+    },
+    {
+      "id": "S1",
+      "name": "Pace-and-efficiency spread model",
+      "category": "Single bet",
+      "overall_gate_status": "unproven",
+      "n_bets": 0,
+      "roi": null,
+      "roi_lower_bound": null,
+      "eligible": false,
+      "reward": null,
+      "rank": null
+    },
+    {
+      "id": "S4",
+      "name": "Same-game player prop combo (points + assists)",
+      "category": "Prop combo",
+      "overall_gate_status": "unproven",
+      "n_bets": 0,
+      "roi": null,
+      "roi_lower_bound": null,
+      "eligible": false,
+      "reward": null,
+      "rank": null
+    },
+    {
+      "id": "S2",
+      "name": "Shrunk-net-rating total model",
+      "category": "Single bet",
+      "overall_gate_status": "unproven",
+      "n_bets": 0,
+      "roi": null,
+      "roi_lower_bound": null,
+      "eligible": false,
+      "reward": null,
+      "rank": null
+    },
+    {
+      "id": "S3",
+      "name": "Two-leg same-game total parlay with measured dependence",
+      "category": "Parlay",
+      "overall_gate_status": "unproven",
+      "n_bets": 0,
+      "roi": null,
+      "roi_lower_bound": null,
+      "eligible": false,
+      "reward": null,
+      "rank": null
+    }
+  ],
+  "luck_arithmetic": {
+    "scenarios": [
+      {
+        "ok": true,
+        "n_bets": 50,
+        "win_prob": 0.5238,
+        "decimal_odds": 1.909,
+        "ev_per_bet": -0.0001,
+        "no_skill_sd_of_win_rate": 0.0706,
+        "no_skill_sd_of_roi": 0.1348,
+        "win_rate_95pct_band_if_no_skill": [
+          0.3854,
+          0.6622
+        ],
+        "bets_to_halve_noise": 200,
+        "note": "Noise falls as 1/sqrt(n): quadrupling the sample halves the luck band."
+      },
+      {
+        "ok": true,
+        "n_bets": 200,
+        "win_prob": 0.5238,
+        "decimal_odds": 1.909,
+        "ev_per_bet": -0.0001,
+        "no_skill_sd_of_win_rate": 0.0353,
+        "no_skill_sd_of_roi": 0.0674,
+        "win_rate_95pct_band_if_no_skill": [
+          0.4546,
+          0.593
+        ],
+        "bets_to_halve_noise": 800,
+        "note": "Noise falls as 1/sqrt(n): quadrupling the sample halves the luck band."
+      },
+      {
+        "ok": true,
+        "n_bets": 1000,
+        "win_prob": 0.5238,
+        "decimal_odds": 1.909,
+        "ev_per_bet": -0.0001,
+        "no_skill_sd_of_win_rate": 0.0158,
+        "no_skill_sd_of_roi": 0.0301,
+        "win_rate_95pct_band_if_no_skill": [
+          0.4928,
+          0.5548
+        ],
+        "bets_to_halve_noise": 4000,
+        "note": "Noise falls as 1/sqrt(n): quadrupling the sample halves the luck band."
+      },
+      {
+        "ok": true,
+        "n_bets": 5000,
+        "win_prob": 0.5238,
+        "decimal_odds": 1.909,
+        "ev_per_bet": -0.0001,
+        "no_skill_sd_of_win_rate": 0.0071,
+        "no_skill_sd_of_roi": 0.0135,
+        "win_rate_95pct_band_if_no_skill": [
+          0.51,
+          0.5376
+        ],
+        "bets_to_halve_noise": 20000,
+        "note": "Noise falls as 1/sqrt(n): quadrupling the sample halves the luck band."
+      }
+    ],
+    "thresholds_for_best_of_n": {
+      "1": 0.0,
+      "10": 1.5746,
+      "100": 2.5306,
+      "1000": 3.2551
+    },
+    "identical_no_skill_bettors": {
+      "ok": true,
+      "n_bettors": 100,
+      "n_bets_each": 200,
+      "win_prob": 0.5238,
+      "expected_profitable_no_skill": 49.96,
+      "expected_profitable_no_skill_pct": 49.96,
+      "sd_of_win_rate": 0.0353,
+      "note": "If the leaderboard threshold is 'positive ROI', roughly this share of pure-chance entries clears it."
+    },
+    "reading": "With 200 bets at -110, a no-skill bettor's win rate still has a standard deviation of about 0.035. Among 100 identical no-skill entries, about 50 will show a profit. A leaderboard at 200 bets ranks noise."
+  },
+  "flagged": [
+    "No strategy has any settled, priced bet record, so no rank exists. Ranks are blank by design, not by error.",
+    "Rewards are undefined. The owner of the competition must set them; none are invented here."
+  ]
+}
