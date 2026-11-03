@@ -11,10 +11,11 @@ The `finding` fields describe the source; `research_implication` fields are our 
 ```sh
 python3 market-evidence/build.py
 python3 market-evidence/build.py --check
+python3 market-evidence/test_build.py -v
 ```
 
-The offline check validates source-domain allowlisting, unique row IDs, source references, blank unverified values and deterministic HTML output. It does **not** check whether external websites remain reachable, whether source text has changed, or whether terms apply to any individual; those require current primary-source verification.
+The offline checks validate source-domain allowlisting, unique IDs, exact source links on every rendered evidence card, blank unverified values, HTML escaping and deterministic output. Metadata includes source jurisdiction, document version, effective date and update date when known; unknown fields are empty. The main site checker validates table rows but does not inspect these cards; run the dedicated card tests as well. It does **not** check whether external websites remain reachable, whether source text has changed, or whether terms apply to any individual; those require current primary-source verification.
 
 ## Integration handoff
 
-The independent page is `market-evidence/index.html`. Please link it from the canonical site navigation and publish its five `MF` items on the main Flagged for Review page. The main site's HTML row-source checker must recognize the cited official operator and regulator domains; accepting arbitrary HTTPS hosts would be unsafe. Do not merge the page while the combined site's tests fail. No source or policy here should be generalized between operators, jurisdictions, market types or rule versions.
+The independent page is `market-evidence/index.html`. Please link it from the canonical site navigation and publish its five `MF` items on the main Flagged for Review page. If the main Flagged for Review page adds these findings as table rows, its row-source checker must recognize the cited official operator and regulator domains; accepting arbitrary HTTPS hosts would be unsafe. A source-linked list is another valid presentation. Please run the dedicated B1 checks in CI. Do not merge the page while the combined site's tests fail. No source or policy here should be generalized between operators, jurisdictions, market types or rule versions.
