@@ -121,6 +121,16 @@
       "effective_from": "",
       "version": "",
       "published_or_updated": ""
+    },
+    "nba_terms": {
+      "publisher": "NBA.com",
+      "title": "Terms of Use",
+      "locator": "Section 9, NBA Statistics",
+      "url": "https://www.nba.com/termsofuse#nba-statistics",
+      "jurisdiction": "",
+      "effective_from": "",
+      "version": "",
+      "published_or_updated": ""
     }
   },
   "findings": [
@@ -195,7 +205,7 @@
       "category": "Same-game pricing",
       "operator_scope": "TOTO help · NL",
       "finding": "TOTO says Betbuilder pricing considers how selections affect one another rather than simply multiplying the individual quotes.",
-      "research_implication": "Capture the actual combined quote and compare it with a joint probability; do not assert a particular correlation sign or value without data.",
+      "research_implication": "A hypothetical pricing study requires an accepted combined quote and a joint probability, using appropriately authorized data; do not assume a particular correlation value or use NBA Statistics for gambling.",
       "sources": [
         "toto_builder"
       ],
@@ -228,7 +238,7 @@
       "category": "Quote capture",
       "operator_scope": "BetMGM help · NL",
       "finding": "The help page says odds changing before confirmation require a new confirmation; after placement, the odds on the slip at confirmation apply.",
-      "research_implication": "For a reproducible backtest, distinguish an observed quote from an accepted price and preserve timestamps and later settlement adjustments.",
+      "research_implication": "For a hypothetical backtest using appropriately authorized data, distinguish observed quotes from accepted prices and preserve timestamps and settlement adjustments.",
       "sources": [
         "betmgm_quotes"
       ],
@@ -376,6 +386,17 @@
         "cruks_contact"
       ],
       "source_location": "Advice and help; telephone"
+    },
+    {
+      "id": "M24",
+      "category": "Data-use restriction",
+      "operator_scope": "NBA.com · Terms of Use §9",
+      "finding": "The NBA.com Terms of Use say that NBA Statistics may not be used in connection with any gambling activity, including legal gambling activity.",
+      "research_implication": "This supplement does not use NBA Statistics, calculate a line or place bets. Do not treat any separate permission or license as established.",
+      "sources": [
+        "nba_terms"
+      ],
+      "source_location": "Section 9, NBA Statistics, clause (iv)"
     }
   ],
   "flags": [
@@ -436,6 +457,17 @@
         "betmgm_builder"
       ],
       "source_location": "How are Bet Builder odds calculated?; invalid and incorrect selection bullets"
+    },
+    {
+      "id": "MF06",
+      "issue": "Permission for gambling-related use of NBA Statistics",
+      "evidence": "NBA.com Terms of Use §9 say NBA Statistics may not be used in connection with gambling activity, including legal gambling.",
+      "unverified_value": "",
+      "resolution": "No separate license or permission has been established here. Do not use NBA Statistics for gambling on the basis of this research; review the applicable terms independently.",
+      "sources": [
+        "nba_terms"
+      ],
+      "source_location": "Section 9, NBA Statistics, clause (iv)"
     }
   ]
 }
