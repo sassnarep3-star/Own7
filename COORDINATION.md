@@ -46,7 +46,7 @@ Branch: `arena/687b658b-own7` (fixed by Arena)
 | 7 | GitHub Pages site | done | session-arena-687b658b-own7 | pages/dashboard.html, pages/*.html, css/, js/ | Linked per row | Landing at root index.html (session 5051651b kept); category pages under pages/ |
 | 8 | Verification pass + Flagged for Review page | done | session-arena-687b658b-own7 | docs/verification.md, pages/flagged.html | Official sources per row | 7 flagged items registered |
 | 9 | Integration, build check, no broken links | done | session-arena-687b658b-own7 | All | All task sources | Internal link check clean; external links nba.com only, all reachable |
-| 10 | PR + merge + GitHub Pages deploy + record result | done | session-arena-687b658b-own7 | main branch, GitHub Pages | COORDINATION.md | PR https://github.com/sassnarep3-star/Own7/pull/5 ; merged into main; GitHub Pages status: built (https://sassnarep3-star.github.io/Own7/) |
+| 10 | PR + merge + GitHub Pages deploy + record result | done | session-arena-687b658b-own7 | main branch, GitHub Pages | COORDINATION.md | PR https://github.com/sassnarep3-star/Own7/pull/5 ; merged commit 6823f29 into main; GitHub Pages deploy confirmed live at https://sassnarep3-star.github.io/Own7/ |
 
 ### Integration conflict resolution (this merge)
 - `index.html` add/add conflict: root `index.html` from main (session 5051651b research lab) kept in full; this session's landing moved to `pages/dashboard.html`; all my pages' Dashboard nav links point to `pages/dashboard.html`. No other session's work discarded.
