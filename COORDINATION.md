@@ -237,4 +237,8 @@ Session ID: `session-arena-f58e9526-own7`. Branch: `arena/f58e9526-own7` (fixed 
 
 ### Merge record
 - PR: https://github.com/sassnarep3-star/Own7/pull/11 (`arena/f58e9526-own7` → `main`).
-- Result: pending at the time of this entry (updated below after merge and Pages check).
+- Result: MERGED with a merge commit, 2026-11-03T23:54:10Z, merge commit `37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11` on main. Approval was not sought; the PR merged after CI passed on head `8a4b1ef` (both "verify" jobs pass) and main was confirmed to be an ancestor of that head.
+- Post-merge workflows on 37e1bbd: "Validate site" success; "Verify verified-data site" success; "pages build and deployment" success.
+- Live Pages check: https://sassnarep3-star.github.io/Own7/findings.html?v=37e1bbd serves the canonical NBA data page with per-row source links.
+- Open after merge (not blocking, requests to the integration owner above): Doncic spelling on the live data page; standings note wording; BLKA definition; Netherlands note not yet in nav.
+- This record is committed on arena/f58e9526-own7 (the only branch this session may push). It reaches main with the next PR.
