@@ -72,9 +72,18 @@ Sole active session on this branch as of this claim. Earlier sessions' boards ab
 
 | # | Task | Status | Owner | Files touched | Sources / verification | Notes |
 |---|------|--------|-------|---------------|------------------------|-------|
-| 11 | Repo review + irregularity audit | in progress | session-arena-7a0b6563-own7 | docs/repo-review-2026-11-03.md | nba.com pages (see task 12) | Found: exec-summary factual errors; pages/dashboard.html broken relative links; CI does not scan pages/ |
-| 12 | Line-by-line re-verification of data/*.csv against nba.com | in progress | session-arena-7a0b6563-own7 | docs/verification-2026-11-03.md | https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season ; https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame ; https://www.nba.com/standings | Teams 30/30 rows, standings 30/30 rows, players top-15 15/15 rows matched |
-| 13 | Fix executive-summary errors + dashboard links | in progress | session-arena-7a0b6563-own7 | docs/executive-summary.md, pages/executive-summary.html, pages/dashboard.html | nba.com team table | Highest PPG = Denver 122.1 (not Miami); highest FG% = LAL 50.2 (not Denver) |
-| 14 | Team-level correlation (cross-sectional, computed from verified team table) | in progress | session-arena-7a0b6563-own7 | data/team-correlations-2025-26.csv, pages/correlation.html, docs/strategies.md | derived from data/teams-2025-26.csv | Labelled as team-season correlations, NOT bet-leg correlations |
-| 15 | Site checks: include pages/ in link + source checks; CI | in progress | session-arena-7a0b6563-own7 | scripts/check_site.py, .github/workflows/check.yml | n/a | |
-| 16 | Integration: root nav link, Flagged register update, build check, PR, merge, Pages deploy, record | unclaimed | session-arena-7a0b6563-own7 | root *.html nav, pages/flagged.html, COORDINATION.md | all above | Do not merge a broken site |
+| 11 | Repo review + irregularity audit | done | session-arena-7a0b6563-own7 | docs/repo-review-2026-11-03.md | nba.com pages (see task 12) | Found: exec-summary factual errors; pages/dashboard.html broken relative links; CI does not scan pages/ |
+| 12 | Line-by-line re-verification of data/*.csv against nba.com | done | session-arena-7a0b6563-own7 | docs/verification-2026-11-03.md | https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season ; https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame ; https://www.nba.com/standings | Teams 30/30 rows, standings 30/30 rows, players top-15 15/15 rows matched |
+| 13 | Fix executive-summary errors + dashboard links | done | session-arena-7a0b6563-own7 | docs/executive-summary.md, pages/executive-summary.html, pages/dashboard.html | nba.com team table | Highest PPG = Denver 122.1 (not Miami); highest FG% = LAL 50.2 (not Denver) |
+| 14 | Team-level correlation (cross-sectional, computed from verified team table) | done | session-arena-7a0b6563-own7 | data/team-correlations-2025-26.csv, pages/correlation.html, docs/strategies.md | derived from data/teams-2025-26.csv | Labelled as team-season correlations, NOT bet-leg correlations |
+| 15 | Site checks: include pages/ in link + source checks; CI | done | session-arena-7a0b6563-own7 | scripts/check_site.py, .github/workflows/check.yml | n/a | |
+| 16 | Integration: root nav link, Flagged register update, build check, PR, merge, Pages deploy, record | in progress | session-arena-7a0b6563-own7 | root *.html nav, pages/flagged.html, COORDINATION.md | all above | Do not merge a broken site |
+
+### Session log (arena/7a0b6563-own7)
+- Claimed tasks 11–16 (commit a613b40, pushed).
+- Task 12: teams 30/30, standings 30/30, players top-15 15/15 matched to nba.com by script; 0 mismatches. Log: docs/verification-2026-11-03.md.
+- Task 13: corrected exec summary (highest PPG = Denver 122.1; highest FG% = LAL 50.2); fixed 21 broken links in pages/dashboard.html.
+- Task 14: data/team-correlations-2025-26.csv via scripts/compute_team_correlations.py (cross-sectional, descriptive only).
+- Task 15: scripts/check_site.py now covers pages/ (links + HTTPS source per table row; methodology rows marked class="method").
+- Irregularities: pages/flagged.html items 5 (resolved: BLKA), 8–13 (new). Repo review: docs/repo-review-2026-11-03.md.
+- Handoff note: root index.html (research lab) is from an earlier session; this session added a nav link only.

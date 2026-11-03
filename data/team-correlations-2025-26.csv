@@ -1,0 +1,7 @@
+Pair,n_teams,r,r_squared,Method,Input_file,Source,Verified
+WIN% vs +/-,30,0.973,0.947,"Pearson, cross-sectional across 30 team-season rows (not bet-leg correlation)",data/teams-2025-26.csv,https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season,computed from verified inputs
+WIN% vs TOV,30,-0.502,0.252,"Pearson, cross-sectional across 30 team-season rows (not bet-leg correlation)",data/teams-2025-26.csv,https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season,computed from verified inputs
+PTS vs FG%,30,0.577,0.333,"Pearson, cross-sectional across 30 team-season rows (not bet-leg correlation)",data/teams-2025-26.csv,https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season,computed from verified inputs
+PTS vs 3P%,30,0.364,0.133,"Pearson, cross-sectional across 30 team-season rows (not bet-leg correlation)",data/teams-2025-26.csv,https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season,computed from verified inputs
+PTS vs AST,30,0.525,0.276,"Pearson, cross-sectional across 30 team-season rows (not bet-leg correlation)",data/teams-2025-26.csv,https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season,computed from verified inputs
+REB vs OREB,30,0.690,0.476,"Pearson, cross-sectional across 30 team-season rows (not bet-leg correlation)",data/teams-2025-26.csv,https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season,computed from verified inputs

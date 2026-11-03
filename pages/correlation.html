@@ -49,11 +49,30 @@
         <tr><td>Same player, PTS vs REB</td><td>Luka Dončić PTS &times; REB (LAL)</td><td>Positive</td><td>Minutes and paint usage drive both</td><td class="blank">— blank</td><td><span class="badge badge-unverified">unverified</span></td><td class="source"><a href="https://www.nba.com/stats/player/1629029/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com player page</a> (marginals only)</td></tr>
         <tr><td>Same player, PTS vs AST</td><td>Shai Gilgeous-Alexander PTS &times; AST (OKC)</td><td>Positive</td><td>Usage drives scoring and creation</td><td class="blank">— blank</td><td><span class="badge badge-unverified">unverified</span></td><td class="source"><a href="https://www.nba.com/stats/player/1628983/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com player page</a> (marginals only)</td></tr>
         <tr><td>Teammates, playmaker AST vs finisher PTS</td><td>Dončić AST vs teammate PTS (LAL)</td><td>Positive</td><td>Assists create teammate scoring chances</td><td class="blank">— blank</td><td><span class="badge badge-unverified">unverified</span></td><td class="source"><a href="https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame">NBA.com player stats</a> (marginals only)</td></tr>
-        <tr><td>Same team, two high-usage scorers</td><td>Two teammates' PTS props (same game)</td><td>Negative</td><td>Possession competition</td><td class="blank">— blank</td><td><span class="badge badge-unverified">unverified</span></td><td class="source">nba.com player stats (marginals only)</td></tr>
-        <tr><td>Cross-game, different teams</td><td>LAL Moneyline &times; OKC Moneyline</td><td>None (independent)</td><td>Different games, no shared players</td><td class="blank">— blank (assumed 0)</td><td><span class="badge badge-unverified">unverified</span></td><td class="source"><a href="https://www.nba.com/schedule">NBA.com schedule</a> (game list only)</td></tr>
+        <tr><td>Same team, two high-usage scorers</td><td>Two teammates' PTS props (same game)</td><td>Negative</td><td>Possession competition</td><td class="blank">— blank</td><td><span class="badge badge-unverified">unverified</span></td><td class="source"><a href="https://www.nba.com/stats/players/traditional?Season=2025-26&amp;SeasonType=Regular%20Season&amp;PerMode=PerGame" target="_blank" rel="noopener">nba.com player stats (marginals only)</a></td></tr>
+        <tr><td>Cross-game, different teams</td><td>LAL Moneyline &times; OKC Moneyline</td><td>None (independent)</td><td>Different games, no shared players</td><td class="blank">— blank</td><td><span class="badge badge-unverified">unverified</span></td><td class="source"><a href="https://www.nba.com/schedule">NBA.com schedule</a> (game list only)</td></tr>
       </tbody>
     </table>
     <p class="source-note">Marginal statistics (PPG, RPG, APG) are verified from NBA.com and linked per row. Joint distributions and numeric &rho; values require official play-by-play game logs (stats.nba.com API), which is unreachable from this environment; nba.com HTML pages do not expose play-by-play data. Every &rho; cell is intentionally blank &mdash; never inferred.</p>
+  </section>
+
+  <section>
+    <h2>Team-level correlations (2025-26, computed)</h2>
+    <p><strong>What this is:</strong> Pearson correlations across the 30 team-season rows of the verified NBA.com team table (<a href="../data/teams-2025-26.csv">data/teams-2025-26.csv</a>). Script: <a href="../scripts/compute_team_correlations.py">scripts/compute_team_correlations.py</a>; output: <a href="../data/team-correlations-2025-26.csv">data/team-correlations-2025-26.csv</a>.</p>
+    <p><strong>What this is not:</strong> These are not bet-leg correlations. A leg correlation needs paired per-game outcomes and sportsbook prices, neither of which is available from the verified sources. Use these only as descriptive context.</p>
+    <table>
+      <thead>
+        <tr><th>Pair (team-season)</th><th>n (teams)</th><th>r</th><th>r&sup2;</th><th>Source</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>WIN% vs +/-</td><td>30</td><td>0.973</td><td>0.947</td><td class="source"><a href="https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com team stats</a></td><td><span class="badge badge-verified">computed</span></td></tr>
+        <tr><td>WIN% vs TOV</td><td>30</td><td>-0.502</td><td>0.252</td><td class="source"><a href="https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com team stats</a></td><td><span class="badge badge-verified">computed</span></td></tr>
+        <tr><td>PTS vs FG%</td><td>30</td><td>0.577</td><td>0.333</td><td class="source"><a href="https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com team stats</a></td><td><span class="badge badge-verified">computed</span></td></tr>
+        <tr><td>PTS vs 3P%</td><td>30</td><td>0.364</td><td>0.133</td><td class="source"><a href="https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com team stats</a></td><td><span class="badge badge-verified">computed</span></td></tr>
+        <tr><td>PTS vs AST</td><td>30</td><td>0.525</td><td>0.276</td><td class="source"><a href="https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com team stats</a></td><td><span class="badge badge-verified">computed</span></td></tr>
+        <tr><td>REB vs OREB</td><td>30</td><td>0.690</td><td>0.476</td><td class="source"><a href="https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com team stats</a></td><td><span class="badge badge-verified">computed</span></td></tr>
+      </tbody>
+    </table>
   </section>
 
   <section>

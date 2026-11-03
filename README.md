@@ -13,6 +13,8 @@ See the [source register](sources.html) and [Flagged for Review](review.html). T
 A second, data-first site lives in `verified/` (published with the root of `main` at `/verified/`). Every row has an official `source_url` or is blank and flagged. Its data is `verified/data/*.json`.
 
 - Rebuild: `python3 scripts/build_verified_site.py`
+
+Session 2026-11-03 additions: `python3 scripts/compute_team_correlations.py` recomputes the team-level correlations (cross-sectional; not bet-leg correlations). Line-by-line verification and the repo review are in `docs/verification-2026-11-03.md` and `docs/repo-review-2026-11-03.md`.
 - Verify: `python3 scripts/verify_verified_site.py` (must print `OK`)
 
 Pages: Executive Summary, Sources, Betting Rules, Strategies, Validation Gates, Correlation, Leaderboard, Responsible Gambling, Repo Review, Flagged for Review. Current results: 0 strategies tested, 0 passing gates; no NBA numeric data verified (the NBA stats endpoints were not reachable from the build environment).
