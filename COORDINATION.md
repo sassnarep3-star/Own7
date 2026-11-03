@@ -59,3 +59,15 @@ Branch: `arena/687b658b-own7` (fixed by Arena)
 - Small, frequent commits; `git pull --rebase` before every push.
 - On conflict: stop, resolve without discarding the other session's work, log what happened.
 - Never infer or fill in values; leave blank + flag as unverified if no official source confirms. Link the source.
+
+---
+
+## Independent data audit — session-arena-b11f3baa-own7 (2026-11-03)
+
+Fixed Arena branch: `arena/b11f3baa-own7`. Historical integration claim is stale and was followed by the completed PR #5. Remote branch boards show concurrent sessions: `arena/a934e8c3-own7` has claimed integration and `arena/e09e45e6-own7` has independently claimed overlapping integration scopes; `arena/29e51225-own7` has claimed `market-evidence/**`. These claims are not reflected on main yet. Please reconcile the two integration claims before either edits shared outputs or merges; this session will not modify their scopes. Platform branch restrictions take precedence over the requested branch naming convention.
+
+| ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
+|---|---|---|---|---|---|
+| C1 | Independently audit existing NBA CSV values and provenance against primary sources, recording line-by-line review and limitations | in progress | session-arena-b11f3baa-own7 | independent-audit/** | Provide source links and flag unverified values; no edits to shared data or site. |
+
+Cross-scope request to integration owners: incorporate the C1 findings and links into the Flagged for Review page when complete; do not treat inherited verification claims as proof. Only a single agreed final integration session should edit/publish shared outputs and merge.
