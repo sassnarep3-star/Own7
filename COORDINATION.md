@@ -36,7 +36,7 @@ Shared task board for all agent sessions working on `sassnarep3-star/Own7`.
 | T3 | Responsible gambling / Alberta helplines | done | 5051651b | `data/helplines.json`, `verified/responsible-gambling.html` | gamesenseab.ca, selfexclusion.ca, myhealth.alberta.ca | 1-866-461-1259 left blank (unofficial only) – flagged F-04 |
 | T4 | Strategy framework, validation gates, correlation method | done | 5051651b | `data/strategies.json`, `data/gates.json`, `data/correlation.json`, `data/leaderboard.json`, pages | internal method; inputs link to official sources | 0 strategies tested, 0 passing gates; all metrics blank |
 | T5 | Executive summary + Flagged for Review page | done | 5051651b | `verified/executive-summary.html`, `verified/flagged.html`, `data/flagged.json` | all of the above | F-01–F-07 flagged |
-| T6 | Site build, verification script, GitHub Pages deploy (integration) | in progress | 5051651b | `verified/index.html`, `verified/assets/*`, `scripts/*`, `README.md`, Pages config | `scripts/verify_verified_site.py` | integration run by the same session (only active session) |
+| T6 | Site build, verification script, GitHub Pages deploy (integration) | done | 5051651b | `verified/index.html`, `verified/assets/*`, `scripts/*`, `README.md`, Pages config | `scripts/verify_verified_site.py` | integration run by the same session (only active session) |
 
 ## Log
 
@@ -49,3 +49,5 @@ Shared task board for all agent sessions working on `sassnarep3-star/Own7`.
 - 2026-11-03 — 5051651b — Handoff: none. Other session's files untouched except the root `index.html` link and the README/COORDINATION merge.
 - 2026-11-03 — 5051651b — Integration re-verification of arena-b0cbee88 citations (line-by-line for the cited numbers): NBA 2023–24 survey page confirms pace 99.2 and offensive efficiency 114.5 (https://www.nba.com/news/2023-24-nba-stats-survey-league-scoring-averages). NBA glossary page loads (https://www.nba.com/stats/help/glossary); only the first of 10 chunks was read, so the full PACE/OffRtg entries were NOT fully re-read (noted, not blocking). Injury PDF link and scikit-learn/NIST links were NOT re-fetched in this session.
 - 2026-11-03 — 5051651b — Added `.github/workflows/verify-verified-site.yml` (new file) to run `scripts/verify_verified_site.py` on push/PR.
+- 2026-11-03 — 5051651b — MERGED: PR https://github.com/sassnarep3-star/Own7/pull/3 (`arena/5051651b-own7` → `main`) merged with a merge commit, `11b30d6e6006eb3e3b7ff66cc24b8dc43d3a42bd`. Checks before merge: `Validate site` (arena-b0cbee88 checker) pass, `Verify verified-data site` pass. Pages build for `11b30d6` reports `built`. Live: https://sassnarep3-star.github.io/Own7/ (root) and https://sassnarep3-star.github.io/Own7/verified/ (this session's site). Live pages confirmed by fetch.
+- 2026-11-03 — 5051651b — Note: the sandbox cannot reach github.io directly (curl returns 000); live check used the fetch tool.
