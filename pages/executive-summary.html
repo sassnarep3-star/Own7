@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Summary — Own7 NBA Lines</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Own7 &rsaquo; Executive Summary</h1>
+    <div class="tagline">NBA line origination, signal strategies, and validation gates</div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a class="active" href="executive-summary.html">Executive Summary</a></li>
+    <li><a href="single-bets.html">Single Bets</a></li>
+    <li><a href="parlays.html">Parlays</a></li>
+    <li><a href="player-props.html">Player Props</a></li>
+    <li><a href="correlation.html">Correlation</a></li>
+    <li><a href="validation-gates.html">Validation Gates</a></li>
+    <li><a href="flagged.html">Flagged for Review</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+  <section>
+    <h2>Purpose</h2>
+    <p>Own7 originates NBA betting lines from official statistics, runs signal strategies as a selectively skill-based leaderboard, and removes luck by requiring reproducible, source-verified inputs with validation gates. Bet classes: single bets (spread/total/moneyline), parlays, and player-prop combinations.</p>
+  </section>
+
+  <section>
+    <h2>Data basis (official, NBA.com)</h2>
+    <ul>
+      <li>2025-26 regular season team stats — all 30 teams, complete 82-game season (<a href="../data/teams-2025-26.csv">source CSV</a>)</li>
+      <li>2025-26 regular season player stats — top 15 scorers, per game (<a href="../data/players-2025-26-top15.csv">source CSV</a>)</li>
+      <li>2026-27 standings — in progress as of 2026-11-03 (~8 games; small sample, context only) (<a href="../data/standings-2026-27.csv">source CSV</a>)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Key observations from verified 2025-26 data</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Best record</h4>
+        <p>Oklahoma City Thunder 64–18 (.780)</p>
+      </div>
+      <div class="card">
+        <h4>Worst record</h4>
+        <p>Washington Wizards 17–65 (.207)</p>
+      </div>
+      <div class="card">
+        <h4>Highest team PPG</h4>
+        <p>Miami Heat 120.9</p>
+      </div>
+      <div class="card">
+        <h4>Lowest team PPG</h4>
+        <p>Brooklyn Nets 105.9</p>
+      </div>
+      <div class="card">
+        <h4>Best team FG%</h4>
+        <p>Denver Nuggets 49.6%</p>
+      </div>
+      <div class="card">
+        <h4>Top scorer (PPG)</h4>
+        <p>Luka Dončić (LAL) 33.5 over 64 GP</p>
+      </div>
+      <div class="card">
+        <h4>2026-27 leaders (in progress)</h4>
+        <p>East: Philadelphia 76ers 7–1 &bull; West: Houston Rockets 7–1</p>
+      </div>
+    </div>
+    <p class="source-note">All observations transcribed from official NBA.com pages; every value carries a source link on the category pages.</p>
+  </section>
+
+  <section>
+    <h2>Strategy status</h2>
+    <ul>
+      <li>Framework defined: single bets, parlays, player-prop combos (pages/, docs/strategies.md)</li>
+      <li>Five validation gates defined and applied (pages/validation-gates.html, docs/validation-gates.md)</li>
+      <li>Correlation formulas documented; numeric values blank pending official play-by-play (pages/correlation.html)</li>
+      <li><strong>No strategy is leaderboard-eligible yet:</strong> betting lines are not published by NBA.com, so all market-line cells are blank and flagged unverified (<a href="flagged.html">Flagged for Review</a>)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Verification</h2>
+    <ul>
+      <li>Every table row carries a source link to NBA.com and a verified/unverified flag.</li>
+      <li>No value was inferred or filled in; blanks remain where no official source confirms the value.</li>
+      <li>Verification log: <a href="../docs/verification.md">docs/verification.md</a> &bull; Flagged items: <a href="flagged.html">pages/flagged.html</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Site</h2>
+    <ul>
+      <li>Landing page: index.html</li>
+      <li>Category pages: single-bets, parlays, player-props, correlation, validation-gates, executive-summary, flagged</li>
+      <li>All tables source-linked, sortable, and filterable client-side</li>
+    </ul>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p><strong>Own7</strong> — executive summary. Data sourced from official NBA.com pages. See <a href="flagged.html">Flagged for Review</a> for unverified items and irregularities.</p>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

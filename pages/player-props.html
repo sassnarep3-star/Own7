@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Player Prop Combos — Own7 NBA Lines</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Own7 &rsaquo; Player Prop Combos</h1>
+    <div class="tagline">Same-game player props from official NBA player statistics</div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="executive-summary.html">Executive Summary</a></li>
+    <li><a href="single-bets.html">Single Bets</a></li>
+    <li><a href="parlays.html">Parlays</a></li>
+    <li><a class="active" href="player-props.html">Player Props</a></li>
+    <li><a href="correlation.html">Correlation</a></li>
+    <li><a href="validation-gates.html">Validation Gates</a></li>
+    <li><a href="flagged.html">Flagged for Review</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+  <section>
+    <h2>Player prop signal framework</h2>
+    <p>Player inputs come from the verified top-15 scorers table (2025-26 regular season, per game) sourced from NBA.com. Prop lines (points/rebounds/assists over-under) are <strong>not published by NBA.com</strong> and are blank + flagged unverified on every row &mdash; capture from a sportsbook at bet time.</p>
+    <ul>
+      <li><strong>Points prop:</strong> player PPG vs sportsbook points line.</li>
+      <li><strong>Rebounds prop:</strong> player RPG vs sportsbook rebounds line.</li>
+      <li><strong>Assists prop:</strong> player APG vs sportsbook assists line.</li>
+    </ul>
+    <div class="flag">
+      <h3>Flagged — prop lines</h3>
+      <p>Player prop market lines are blank. No inferred values are used; a prop combo strategy cannot pass Gate 1 until line inputs are captured from an operator and verified against that operator's published line.</p>
+    </div>
+  </section>
+
+  <section id="players">
+    <h2>Verified player statistics — 2025-26 regular season, top 15 by PPG (per game)</h2>
+    <p>Source: <a href="https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame">NBA.com — Player Traditional Stats, 2025-26 Regular Season, Per Game</a>. Every row verified; source link per player. Giannis Antetokounmpo (36 GP), Joel Embiid (38 GP), Lauri Markkanen (42 GP), and Stephen Curry (43 GP) fall below the 25-game... actually they exceed 25 games but are well short of 82; minutes/games are displayed so the sample-size gate can be applied per strategy.</p>
+    <div class="table-wrap">
+      <table id="players-table">
+        <thead>
+          <tr>
+            <th>Rank</th><th>Player</th><th>Team</th><th>Age</th><th>GP</th><th>W</th><th>L</th><th>MIN</th><th>PTS</th><th>FG%</th><th>3P%</th><th>FT%</th><th>REB</th><th>AST</th><th>TOV</th><th>Source (official)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><a class="player-link" href="https://www.nba.com/stats/player/1629029/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Luka Dončić</a></td><td>Los Angeles Lakers</td><td>27</td><td>64</td><td>43</td><td>21</td><td>35.8</td><td>33.5</td><td>47.6</td><td>36.6</td><td>78.0</td><td>7.7</td><td>8.3</td><td>4.0</td><td class="source"><a href="https://www.nba.com/stats/player/1629029/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>2</td><td><a class="player-link" href="https://www.nba.com/stats/player/1628983/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Shai Gilgeous-Alexander</a></td><td>Oklahoma City Thunder</td><td>27</td><td>68</td><td>56</td><td>12</td><td>33.2</td><td>31.1</td><td>55.3</td><td>38.6</td><td>87.9</td><td>4.3</td><td>6.6</td><td>2.2</td><td class="source"><a href="https://www.nba.com/stats/player/1628983/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>3</td><td><a class="player-link" href="https://www.nba.com/stats/player/1630162/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Anthony Edwards</a></td><td>Minnesota Timberwolves</td><td>24</td><td>61</td><td>37</td><td>24</td><td>35.0</td><td>28.8</td><td>48.9</td><td>39.9</td><td>79.6</td><td>5.0</td><td>3.7</td><td>2.9</td><td class="source"><a href="https://www.nba.com/stats/player/1630162/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>4</td><td><a class="player-link" href="https://www.nba.com/stats/player/1627759/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Jaylen Brown</a></td><td>Boston Celtics</td><td>29</td><td>71</td><td>47</td><td>24</td><td>34.4</td><td>28.7</td><td>47.7</td><td>34.7</td><td>79.5</td><td>6.9</td><td>5.1</td><td>3.6</td><td class="source"><a href="https://www.nba.com/stats/player/1627759/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>5</td><td><a class="player-link" href="https://www.nba.com/stats/player/1630178/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Tyrese Maxey</a></td><td>Philadelphia 76ers</td><td>25</td><td>70</td><td>38</td><td>32</td><td>38.0</td><td>28.3</td><td>46.2</td><td>36.7</td><td>89.2</td><td>4.1</td><td>6.6</td><td>2.4</td><td class="source"><a href="https://www.nba.com/stats/player/1630178/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>6</td><td><a class="player-link" href="https://www.nba.com/stats/player/202695/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Kawhi Leonard</a></td><td>LA Clippers</td><td>35</td><td>65</td><td>37</td><td>28</td><td>32.1</td><td>27.9</td><td>50.5</td><td>38.7</td><td>89.2</td><td>6.4</td><td>3.6</td><td>2.0</td><td class="source"><a href="https://www.nba.com/stats/player/202695/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>7</td><td><a class="player-link" href="https://www.nba.com/stats/player/1628378/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Donovan Mitchell</a></td><td>Cleveland Cavaliers</td><td>29</td><td>70</td><td>45</td><td>25</td><td>33.5</td><td>27.9</td><td>48.3</td><td>36.4</td><td>86.5</td><td>4.5</td><td>5.7</td><td>2.8</td><td class="source"><a href="https://www.nba.com/stats/player/1628378/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>8</td><td><a class="player-link" href="https://www.nba.com/stats/player/203999/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Nikola Jokić</a></td><td>Denver Nuggets</td><td>31</td><td>65</td><td>43</td><td>22</td><td>34.8</td><td>27.7</td><td>56.9</td><td>38.0</td><td>83.1</td><td>12.9</td><td>10.7</td><td>3.7</td><td class="source"><a href="https://www.nba.com/stats/player/203999/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>9</td><td><a class="player-link" href="https://www.nba.com/stats/player/203507/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Giannis Antetokounmpo</a></td><td>Milwaukee Bucks</td><td>31</td><td>36</td><td>17</td><td>19</td><td>28.9</td><td>27.6</td><td>62.4</td><td>33.3</td><td>65.0</td><td>9.8</td><td>5.4</td><td>3.2</td><td class="source"><a href="https://www.nba.com/stats/player/203507/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>10</td><td><a class="player-link" href="https://www.nba.com/stats/player/203954/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Joel Embiid</a></td><td>Philadelphia 76ers</td><td>32</td><td>38</td><td>24</td><td>14</td><td>31.6</td><td>26.9</td><td>48.9</td><td>33.3</td><td>85.4</td><td>7.7</td><td>3.9</td><td>2.9</td><td class="source"><a href="https://www.nba.com/stats/player/203954/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>11</td><td><a class="player-link" href="https://www.nba.com/stats/player/1628374/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Lauri Markkanen</a></td><td>Utah Jazz</td><td>29</td><td>42</td><td>17</td><td>25</td><td>34.3</td><td>26.7</td><td>47.7</td><td>35.5</td><td>89.6</td><td>6.9</td><td>2.1</td><td>1.5</td><td class="source"><a href="https://www.nba.com/stats/player/1628374/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>12</td><td><a class="player-link" href="https://www.nba.com/stats/player/201939/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Stephen Curry</a></td><td>Golden State Warriors</td><td>38</td><td>43</td><td>24</td><td>19</td><td>30.9</td><td>26.6</td><td>46.8</td><td>39.3</td><td>92.3</td><td>3.6</td><td>4.7</td><td>2.8</td><td class="source"><a href="https://www.nba.com/stats/player/201939/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>13</td><td><a class="player-link" href="https://www.nba.com/stats/player/1626164/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Devin Booker</a></td><td>Phoenix Suns</td><td>29</td><td>64</td><td>37</td><td>27</td><td>33.5</td><td>26.1</td><td>45.6</td><td>33.0</td><td>87.3</td><td>3.9</td><td>6.0</td><td>3.1</td><td class="source"><a href="https://www.nba.com/stats/player/1626164/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>14</td><td><a class="player-link" href="https://www.nba.com/stats/player/1628973/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Jalen Brunson</a></td><td>New York Knicks</td><td>29</td><td>74</td><td>50</td><td>24</td><td>35.0</td><td>26.0</td><td>46.7</td><td>36.9</td><td>84.1</td><td>3.3</td><td>6.8</td><td>2.4</td><td class="source"><a href="https://www.nba.com/stats/player/1628973/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+          <tr><td>15</td><td><a class="player-link" href="https://www.nba.com/stats/player/201142/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">Kevin Durant</a></td><td>Houston Rockets</td><td>37</td><td>78</td><td>48</td><td>30</td><td>36.4</td><td>26.0</td><td>52.0</td><td>41.3</td><td>87.4</td><td>5.5</td><td>4.8</td><td>3.2</td><td class="source"><a href="https://www.nba.com/stats/player/201142/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">All 15 rows transcribed from the official NBA.com page above on 2026-11-03. Every row has an official source link; every value verified. Full CSV: <a href="../data/players-2025-26-top15.csv">data/players-2025-26-top15.csv</a>.</p>
+  </section>
+
+  <section>
+    <h2>Player prop combo construction</h2>
+    <p>A same-game prop combo combines 2+ player props in one game. It is leaderboard-eligible only if it passes Gates 1&ndash;5, including the correlation gate (docs/correlation.html). Examples below are analytical rationale only; numeric correlation values are blank and unverified until computed from official play-by-play.</p>
+    <h3>Positively correlated combos (skill rationale)</h3>
+    <ul>
+      <li><strong>Playmaker points + teammate finisher points (same team):</strong> a high-usage creator's scoring is associated with teammates' scoring opportunities (assists &rarr; points). Rationale: shared game script and playmaking gravity.</li>
+      <li><strong>Big-man points + rebounds (same player):</strong> scoring possessions and rebounding opportunities both scale with minutes and usage in the paint.</li>
+      <li><strong>Pace-driven team total + player points (same game):</strong> higher pace raises expected possessions for both teams.</li>
+    </ul>
+    <h3>Negatively correlated combos (avoid stacking)</h3>
+    <ul>
+      <li><strong>Two high-usage players on the same team:</strong> possession competition reduces the probability that both exceed their lines simultaneously.</li>
+      <li><strong>Teammate assists vs same player's turnovers:</strong> opposing directional dependencies within one game script.</li>
+    </ul>
+    <div class="flag">
+      <h3>Flagged — correlation values</h3>
+      <p>Numeric correlation coefficients (rho) for every combo are blank. Computing them requires official play-by-play game logs (stats.nba.com API), which is unreachable from this environment; nba.com HTML pages do not expose play-by-play data. Values are never inferred.</p>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p><strong>Own7</strong> &mdash; player-prop combos from official NBA.com statistics. Prop lines blank + flagged pending sportsbook capture. <a href="flagged.html">Flagged for Review</a> &bull; <a href="../docs/verification.md">Verification log</a></p>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

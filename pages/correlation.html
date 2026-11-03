@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Correlation — Own7 NBA Lines</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Own7 &rsaquo; Correlation</h1>
+    <div class="tagline">Correlation values, formulas, and gate results</div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="executive-summary.html">Executive Summary</a></li>
+    <li><a href="single-bets.html">Single Bets</a></li>
+    <li><a href="parlays.html">Parlays</a></li>
+    <li><a href="player-props.html">Player Props</a></li>
+    <li><a class="active" href="correlation.html">Correlation</a></li>
+    <li><a href="validation-gates.html">Validation Gates</a></li>
+    <li><a href="flagged.html">Flagged for Review</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+  <section>
+    <h2>Correlation definitions</h2>
+    <ul>
+      <li><strong>Pearson correlation between legs A and B:</strong> &rho; = cov(A,B) / (sd(A) &times; sd(B)), where &rho; &in; [-1, 1].</li>
+      <li><strong>&rho; &gt; 0:</strong> legs move together (positive correlation). Joint probability under dependence exceeds P(A)&times;P(B).</li>
+      <li><strong>&rho; = 0:</strong> no linear correlation; independence approximation P(A &amp; B) = P(A)&times;P(B).</li>
+      <li><strong>&rho; &lt; 0:</strong> legs move in opposite directions (negative correlation); stacking them compounds risk.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Correlation register (official-data basis)</h2>
+    <table>
+      <thead>
+        <tr><th>Pair type</th><th>Example pair</th><th>Expected sign</th><th>Rationale</th><th>&rho; value</th><th>Status</th><th>Source note</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Same player, PTS vs REB</td><td>Luka Dončić PTS &times; REB (LAL)</td><td>Positive</td><td>Minutes and paint usage drive both</td><td class="blank">— blank</td><td><span class="badge badge-unverified">unverified</span></td><td class="source"><a href="https://www.nba.com/stats/player/1629029/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com player page</a> (marginals only)</td></tr>
+        <tr><td>Same player, PTS vs AST</td><td>Shai Gilgeous-Alexander PTS &times; AST (OKC)</td><td>Positive</td><td>Usage drives scoring and creation</td><td class="blank">— blank</td><td><span class="badge badge-unverified">unverified</span></td><td class="source"><a href="https://www.nba.com/stats/player/1628983/?Season=2025-26&SeasonType=Regular%20Season" target="_blank" rel="noopener">NBA.com player page</a> (marginals only)</td></tr>
+        <tr><td>Teammates, playmaker AST vs finisher PTS</td><td>Dončić AST vs teammate PTS (LAL)</td><td>Positive</td><td>Assists create teammate scoring chances</td><td class="blank">— blank</td><td><span class="badge badge-unverified">unverified</span></td><td class="source"><a href="https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame">NBA.com player stats</a> (marginals only)</td></tr>
+        <tr><td>Same team, two high-usage scorers</td><td>Two teammates' PTS props (same game)</td><td>Negative</td><td>Possession competition</td><td class="blank">— blank</td><td><span class="badge badge-unverified">unverified</span></td><td class="source">nba.com player stats (marginals only)</td></tr>
+        <tr><td>Cross-game, different teams</td><td>LAL Moneyline &times; OKC Moneyline</td><td>None (independent)</td><td>Different games, no shared players</td><td class="blank">— blank (assumed 0)</td><td><span class="badge badge-unverified">unverified</span></td><td class="source"><a href="https://www.nba.com/schedule">NBA.com schedule</a> (game list only)</td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Marginal statistics (PPG, RPG, APG) are verified from NBA.com and linked per row. Joint distributions and numeric &rho; values require official play-by-play game logs (stats.nba.com API), which is unreachable from this environment; nba.com HTML pages do not expose play-by-play data. Every &rho; cell is intentionally blank &mdash; never inferred.</p>
+  </section>
+
+  <section>
+    <h2>Gate outcome</h2>
+    <p>Gate 3 (correlation gate): no multi-leg strategy can pass until &rho; values are computed from official play-by-play and line inputs are captured from a sportsbook. Register remains published for review.</p>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p><strong>Own7</strong> &mdash; correlation register. Numeric values blank + unverified pending official play-by-play data. <a href="flagged.html">Flagged for Review</a></p>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
