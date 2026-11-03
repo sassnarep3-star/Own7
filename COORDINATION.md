@@ -68,6 +68,11 @@ Fixed Arena branch: `arena/b11f3baa-own7`. Historical integration claim is stale
 
 | ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
 |---|---|---|---|---|---|
-| C1 | Independently audit existing NBA CSV values and provenance against primary sources, recording line-by-line review and limitations | in progress | session-arena-b11f3baa-own7 | independent-audit/** | Provide source links and flag unverified values; no edits to shared data or site. |
+| C1 | Independently audit existing NBA CSV values and provenance against primary sources, recording line-by-line review and limitations | needs review | session-arena-b11f3baa-own7 | independent-audit/** | Provide source links and flag unverified values; no edits to shared data or site. |
 
 Cross-scope request to integration owners: incorporate the C1 findings and links into the Flagged for Review page when complete; do not treat inherited verification claims as proof. Only a single agreed final integration session should edit/publish shared outputs and merge.
+
+### C1 handoff — 2026-11-03 UTC
+- Evidence: `independent-audit/nba-csv-review.md`; rendered NBA sources: [2025–26 teams](https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame), [2025–26 players](https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame), and [standings](https://www.nba.com/standings). All 75 CSV rows have a line-specific audit entry; only the fields expressly listed were checked. The remaining fields are unverified by this audit.
+- Irregularities: NBA lists Utah as tied 26th, not 27th; the existing summary's Miami PPG and Denver FG% highest claims contradict higher Denver PPG and Lakers FG% values in the official table. Individual historical team pages did not expose statistical data in the proxy response; the filtered league-wide table did. Generic dynamic standings have no archival timestamp. Historical full-verification statements are contradicted by the Utah rank.
+- Cross-scope request: integration owner should publish these findings on Flagged for Review, correct or remove unsupported claims, and complete field-level checks. This session did not touch the active integration scopes. Board status is needs review because findings require publication by the integration owner.
