@@ -1,0 +1,250 @@
+{
+  "reviewed_utc": "2026-11-03",
+  "scope": "Documented operator-specific examples, not universal betting rules, current eligibility, legal advice, NBA quotes, or empirical performance results. Rules may have changed since the cited version.",
+  "sources": {
+    "toto_rules": {
+      "publisher": "TOTO Online B.V.",
+      "title": "Sport-specific rules, effective 28 April 2026",
+      "locator": "Section 2, item 20; section 3, item 6 (Basketball), pages 20–22",
+      "url": "https://portal-spa-api.toto.nl/assets/6e583945-ef2e-401c-b6a2-ad9f7a285519"
+    },
+    "toto_builder": {
+      "publisher": "TOTO",
+      "title": "Betbuilder help",
+      "locator": "How are odds calculated?; Can multiple Betbuilders be combined?",
+      "url": "https://www.toto.nl/klantenservice/betbuilder"
+    },
+    "toto_blog": {
+      "publisher": "TOTO",
+      "title": "Betbuilder explained, 30 June 2026",
+      "locator": "Good to know; Betbuilder pricing",
+      "url": "https://extra.toto.nl/blog/betbuilder-uitgelegd"
+    },
+    "betmgm_builder": {
+      "publisher": "BetMGM Netherlands",
+      "title": "What is a Bet Builder?",
+      "locator": "How are the odds calculated?",
+      "url": "https://help.betmgm.nl/hc/nl/articles/17499791885458-Wat-is-een-Bet-Builder"
+    },
+    "betmgm_quotes": {
+      "publisher": "BetMGM Netherlands",
+      "title": "What happens if odds change while placing a bet?",
+      "locator": "Quote changes and confirmation",
+      "url": "https://help.betmgm.nl/hc/nl/articles/17500084367250-Wat-gebeurt-er-als-de-odds-veranderen-terwijl-ik-een-weddenschap-aan-het-plaatsen-ben"
+    },
+    "fanatics_oh": {
+      "publisher": "Fanatics Sportsbook Ohio",
+      "title": "House Rules, effective 17 September 2026",
+      "locator": "Parlays; Same Game Parlay; Basketball/eBasketball; Basketball Player Market Rules",
+      "url": "https://sportsbook.fanatics.com/legal/oh/house-rules/"
+    },
+    "oneida": {
+      "publisher": "Oneida Casino Sportsbook",
+      "title": "Rules of Play",
+      "locator": "XVIII Same Game Parlay; XXI Parlays & Teasers",
+      "url": "https://oneidacasinohotel.com/sportsbook-rules-of-play/"
+    },
+    "dk_parlay": {
+      "publisher": "DraftKings",
+      "title": "What is a parlay bet? version 4.0, revised 29 June 2026",
+      "locator": "Parlay example and correlated selections",
+      "url": "https://support.draftkings.com/dk/en-us/what-is-a-parlay-bet?id=kb_article_view&sysparm_article=KB0010683"
+    },
+    "dk_odds": {
+      "publisher": "DraftKings",
+      "title": "Understanding Odds, version 4.0, revised 6 October 2026",
+      "locator": "American odds and multiplier odds",
+      "url": "https://support.draftkings.com/dk/en-us/understanding-odds?id=kb_article_view&sysparm_article=KB0010466"
+    },
+    "ukgc": {
+      "publisher": "Great Britain Gambling Commission",
+      "title": "Codes of practice: fair and open provisions",
+      "locator": "4.2.6 Display of rules – betting",
+      "url": "https://www.gamblingcommission.gov.uk/authorities/codes-of-practice/4"
+    },
+    "cruks": {
+      "publisher": "Centraal Register Uitsluiting Kansspelen (Cruks)",
+      "title": "Cruks gambling stop",
+      "locator": "How the gambling stop works",
+      "url": "https://cruksregister.nl/"
+    },
+    "cruks_contact": {
+      "publisher": "Centraal Register Uitsluiting Kansspelen (Cruks)",
+      "title": "Contact and gambling support",
+      "locator": "Advice and help",
+      "url": "https://cruksregister.nl/contact"
+    }
+  },
+  "findings": [
+    {
+      "id": "M01", "category": "Game singles", "operator_scope": "TOTO online · NL · 28 Apr 2026 rules",
+      "finding": "The basketball section says completed full-game results include overtime unless otherwise indicated.",
+      "research_implication": "Record the exact market, period and overtime treatment; do not transfer this rule to another operator.",
+      "sources": ["toto_rules"]
+    },
+    {
+      "id": "M02", "category": "Period markets", "operator_scope": "TOTO online · NL · 28 Apr 2026 rules",
+      "finding": "The basketball general rules say second-half or fourth-quarter wagers for American basketball competitions include overtime. The separate quarter section describes settlement by the completed quarter.",
+      "research_implication": "Do not assume that every book defines fourth-quarter markets the same way; the interaction with a specific market label remains flagged.",
+      "sources": ["toto_rules"]
+    },
+    {
+      "id": "M03", "category": "Player props", "operator_scope": "TOTO online · NL · 28 Apr 2026 rules",
+      "finding": "The basketball player-market section lists points, assists, rebounds, blocks, steals and combinations, including double-doubles and triple-doubles.",
+      "research_implication": "Keep a combined-stat threshold distinct from a parlay requiring multiple separate thresholds.",
+      "sources": ["toto_rules"]
+    },
+    {
+      "id": "M04", "category": "Player participation", "operator_scope": "TOTO online · NL · 28 Apr 2026 rules",
+      "finding": "The basketball player-market section says no participation makes the selection void; entering at any point makes it valid regardless of playing duration or the selected period. Its example covers a second-half player prop after first-half-only participation.",
+      "research_implication": "Use actual game participation and the applicable period rule, rather than treating every non-start or early injury as a void.",
+      "sources": ["toto_rules"]
+    },
+    {
+      "id": "M05", "category": "First scorer", "operator_scope": "TOTO online · NL · 28 Apr 2026 rules",
+      "finding": "For 'first player to score', the selected player is void if not on court when the first point is scored or if entering afterwards.",
+      "research_implication": "Do not grade this market using only a final box score or a generic participation rule.",
+      "sources": ["toto_rules"]
+    },
+    {
+      "id": "M06", "category": "Same-game combos", "operator_scope": "TOTO online · NL · 28 Apr 2026 rules",
+      "finding": "The basketball Bet Builder rule says that if one or more selections are invalid, the whole bet is invalid; an abandoned-game clause separately describes how already determined results are handled.",
+      "research_implication": "Record the reason for a void and the applicable sport and market clauses, rather than simply deleting a leg.",
+      "sources": ["toto_rules"]
+    },
+    {
+      "id": "M07", "category": "Same-game pricing", "operator_scope": "TOTO help · NL",
+      "finding": "TOTO says Betbuilder pricing considers how selections affect one another rather than simply multiplying the individual quotes.",
+      "research_implication": "Capture the actual combined quote and compare it with a joint probability; do not assert a particular correlation sign or value without data.",
+      "sources": ["toto_builder"]
+    },
+    {
+      "id": "M08", "category": "Same-game pricing", "operator_scope": "BetMGM help · NL",
+      "finding": "BetMGM describes one system-calculated price for a Bet Builder, rather than multiplying the individual odds.",
+      "research_implication": "An offered same-game price cannot be reconstructed by assuming independence from individual leg prices.",
+      "sources": ["betmgm_builder"]
+    },
+    {
+      "id": "M09", "category": "Same-game combos", "operator_scope": "BetMGM help · NL",
+      "finding": "The help page says an invalid Bet Builder selection makes the entire Bet Builder void and returns the stake; an incorrect selection makes the entire Bet Builder lose.",
+      "research_implication": "Do not infer precedence if an invalid and losing selection occur together: this help page does not resolve that case.",
+      "sources": ["betmgm_builder"]
+    },
+    {
+      "id": "M10", "category": "Quote capture", "operator_scope": "BetMGM help · NL",
+      "finding": "The help page says odds changing before confirmation require a new confirmation; after placement, the odds on the slip at confirmation apply.",
+      "research_implication": "For a reproducible backtest, distinguish an observed quote from an accepted price and preserve timestamps and later settlement adjustments.",
+      "sources": ["betmgm_quotes"]
+    },
+    {
+      "id": "M11", "category": "Game singles", "operator_scope": "Fanatics · Ohio · 17 Sep 2026 rules",
+      "finding": "The basketball section defines a two-way moneyline using the winner including required overtime, while its three-way moneyline uses the regulation result.",
+      "research_implication": "Record whether a market is two-way or three-way; their result spaces differ.",
+      "sources": ["fanatics_oh"]
+    },
+    {
+      "id": "M12", "category": "Pushes", "operator_scope": "Fanatics · Ohio · 17 Sep 2026 rules",
+      "finding": "For two-way basketball spread and total markets, the rules state that a whole-number line matched exactly is a push and the market is voided.",
+      "research_implication": "Keep push/refund outcomes separate from wins and losses, and do not apply a two-way rule to a three-way market.",
+      "sources": ["fanatics_oh"]
+    },
+    {
+      "id": "M13", "category": "Period markets", "operator_scope": "Fanatics · Ohio · 17 Sep 2026 rules",
+      "finding": "The basketball point-spread and total sections include overtime for full-game and second-half markets but exclude it for fourth-quarter markets.",
+      "research_implication": "Store the period and overtime rule per market; do not use a single generic basketball overtime setting.",
+      "sources": ["fanatics_oh"]
+    },
+    {
+      "id": "M14", "category": "Player props", "operator_scope": "Fanatics · Ohio · 17 Sep 2026 rules",
+      "finding": "The basketball player section excludes overtime from fourth-quarter and second-half specific player props; the listed points/rebounds/assists/threes/blocks/steals markets require at least one second in the stated quarter or half for period-specific action.",
+      "research_implication": "A second-half team total and a second-half player prop cannot be assumed to use identical overtime or participation rules.",
+      "sources": ["fanatics_oh"]
+    },
+    {
+      "id": "M15", "category": "Player injury", "operator_scope": "Fanatics · Ohio · 17 Sep 2026 rules",
+      "finding": "For the listed NBA/WNBA competitions, Fanatics reserves discretion to void match player-prop selections after a player leaves in the first or second quarter due to injury without returning; already unequivocally determined selections are settled as such.",
+      "research_implication": "A mid-game injury void is not automatic. Use the recorded actual settlement or flag it unresolved.",
+      "sources": ["fanatics_oh"]
+    },
+    {
+      "id": "M16", "category": "Combined player props", "operator_scope": "Fanatics · Ohio · 17 Sep 2026 rules",
+      "finding": "The basketball player market section says combinations such as player points plus rebounds are settled using the sum of listed categories.",
+      "research_implication": "A sum-threshold prop is a different event from a parlay of separate points and rebounds thresholds.",
+      "sources": ["fanatics_oh"]
+    },
+    {
+      "id": "M17", "category": "Same-game combos", "operator_scope": "Fanatics · Ohio · 17 Sep 2026 rules",
+      "finding": "The general same-game parlay rule says a void selection leaves the remaining selections to determine the result and the odds are adapted, subject to sport-specific rules.",
+      "research_implication": "Keep a versioned settlement policy and the repriced combined odds; do not copy another operator's whole-wager-void rule.",
+      "sources": ["fanatics_oh"]
+    },
+    {
+      "id": "M18", "category": "Same-game combos", "operator_scope": "Oneida Casino Sportsbook · Wisconsin",
+      "finding": "Section XVIII states that if any Same Game Parlay leg is void or pushes, the whole wager is void or a push.",
+      "research_implication": "The same label 'same-game parlay' does not imply the same void treatment across operators.",
+      "sources": ["oneida"]
+    },
+    {
+      "id": "M19", "category": "Traditional parlays", "operator_scope": "Oneida Casino Sportsbook · Wisconsin",
+      "finding": "Section XXI says a parlay is reduced when a game is a betting tie, postponed or cancelled; if a two-team parlay is reduced, the remaining game becomes a straight bet.",
+      "research_implication": "Distinguish this traditional-parlay rule from the same operator's separate same-game rule.",
+      "sources": ["oneida"]
+    },
+    {
+      "id": "M20", "category": "Related selections", "operator_scope": "DraftKings · general help",
+      "finding": "DraftKings says it may restrict parlays containing selections it regards as correlated, and directs readers to sport-specific sections for same-game settlement.",
+      "research_implication": "Store offered combinations and actual quotes; a mathematically imaginable combination is not evidence of an available market.",
+      "sources": ["dk_parlay"]
+    },
+    {
+      "id": "M21", "category": "Published terms", "operator_scope": "Great Britain Gambling Commission · specified licences",
+      "finding": "Code 4.2.6 requires the specified betting licensees to publish core acceptance and settlement rules including voids, errors, payout limits and how results are determined.",
+      "research_implication": "Use as an example of a source hierarchy, not as a statement of Dutch law or of the terms governing a particular bet.",
+      "sources": ["ukgc"]
+    },
+    {
+      "id": "M22", "category": "Risk support", "operator_scope": "Cruks · Netherlands",
+      "finding": "Cruks describes a gambling stop for Dutch-licensed gambling websites, gaming arcades and casinos lasting at least six months.",
+      "research_implication": "The project is research only; it cannot remove luck or ensure profitable betting.",
+      "sources": ["cruks"]
+    },
+    {
+      "id": "M23", "category": "Risk support", "operator_scope": "Cruks · Netherlands",
+      "finding": "The Cruks contact page lists free and anonymous Open over Gokken support and the 24/7 number 0800 24 000 22.",
+      "research_implication": "Support and self-exclusion are available if gambling becomes difficult to control.",
+      "sources": ["cruks_contact"]
+    }
+  ],
+  "flags": [
+    {
+      "id": "MF01", "issue": "TOTO Bet Builder combinations across games",
+      "evidence": "The 28 April 2026 sports-rules PDF says a Bet Builder cannot be combined with selections from other games. TOTO's help page and its 30 June 2026 article say Bet Builders can be combined with other bets.",
+      "unverified_value": "", "resolution": "Current applicable product/version and legal precedence are not established; do not model cross-game availability as confirmed.",
+      "sources": ["toto_rules", "toto_builder", "toto_blog"]
+    },
+    {
+      "id": "MF02", "issue": "Fanatics basketball Double Result overtime",
+      "evidence": "The Ohio basketball Double Result paragraph refers to the result at the end of regulation and then states that overtime counts toward settlement.",
+      "unverified_value": "", "resolution": "Do not choose an overtime treatment for this market without a clarified, applicable rule or actual settlement.",
+      "sources": ["fanatics_oh"]
+    },
+    {
+      "id": "MF03", "issue": "DraftKings parlay example profit versus return",
+      "evidence": "The help example describes a $100 stake at displayed +567 and calls $667.27 'combined profit'. Its odds explainer separately distinguishes profit from total payout including stake.",
+      "unverified_value": "", "resolution": "The example is inconsistent on its face; the precise intended profit and any underlying unrounded quote are not confirmed. Do not use it as a payout fixture.",
+      "sources": ["dk_parlay", "dk_odds"]
+    },
+    {
+      "id": "MF04", "issue": "TOTO fourth-quarter overtime application",
+      "evidence": "The basketball general rules include overtime in fourth-quarter wagers for American basketball, while a separate quarter section describes settlement based on the completed quarter without restating overtime treatment.",
+      "unverified_value": "", "resolution": "Do not infer how the clauses interact for a particular fourth-quarter or player market; obtain the rule version and market label applicable to that wager.",
+      "sources": ["toto_rules"]
+    },
+    {
+      "id": "MF05", "issue": "BetMGM invalid leg plus losing leg",
+      "evidence": "The Bet Builder help separately describes an invalid leg making the whole wager void and an incorrect leg making the wager lose, without explicitly resolving a case containing both.",
+      "unverified_value": "", "resolution": "Settlement precedence for the combined case is not confirmed; keep it ungraded until the applicable rules or official settlement are available.",
+      "sources": ["betmgm_builder"]
+    }
+  ]
+}
