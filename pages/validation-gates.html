@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validation Gates — Own7 NBA Lines</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Own7 &rsaquo; Validation Gates</h1>
+    <div class="tagline">Every strategy must pass all five gates</div>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="../index.html">Dashboard</a></li>
+    <li><a href="executive-summary.html">Executive Summary</a></li>
+    <li><a href="single-bets.html">Single Bets</a></li>
+    <li><a href="parlays.html">Parlays</a></li>
+    <li><a href="player-props.html">Player Props</a></li>
+    <li><a href="correlation.html">Correlation</a></li>
+    <li><a class="active" href="validation-gates.html">Validation Gates</a></li>
+    <li><a href="flagged.html">Flagged for Review</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+  <section>
+    <h2>The five gates (applied in order)</h2>
+    <table>
+      <thead>
+        <tr><th>Gate</th><th>Rule</th><th>Pass condition</th><th>Fail action</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1 — Official source</strong></td><td>Every input value carries a reachable official NBA.com source link.</td><td>Source link present and reachable.</td><td>Value blank; row flagged unverified.</td><td><span class="badge badge-gate-pass">defined</span></td></tr>
+        <tr><td><strong>2 — Sample size</strong></td><td>Team signal: &ge; 25 games. Player prop: &ge; 25 games and &ge; 25 MPG average.</td><td>Sample meets threshold.</td><td>Signal excluded from leaderboard ("small sample").</td><td><span class="badge badge-gate-pass">defined</span></td></tr>
+        <tr><td><strong>3 — Correlation</strong></td><td>Multi-leg bets disclose leg correlation and joint-probability method.</td><td>Method stated; independence labeled if used.</td><td>Combo excluded from parlay leaderboard.</td><td><span class="badge badge-gate-pass">defined</span></td></tr>
+        <tr><td><strong>4 — No luck / skill</strong></td><td>Signal must be statistics-driven; no "due" heuristics, media narratives, or stake progressions.</td><td>Repeatable rule from official stats.</td><td>Strategy rejected.</td><td><span class="badge badge-gate-pass">defined</span></td></tr>
+        <tr><td><strong>5 — Reproducibility</strong></td><td>Signal recomputable from linked sources + documented formula with no manual author input.</td><td>Fully reproducible.</td><td>Flagged "not reproducible".</td><td><span class="badge badge-gate-pass">defined</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Gate results applied to current data</h2>
+    <table>
+      <thead><tr><th>Dataset</th><th>Rows</th><th>Sample gate</th><th>Official-source gate</th><th>Eligible for leaderboard</th></tr></thead>
+      <tbody>
+        <tr><td>2025-26 team stats (82 games)</td><td>30</td><td><span class="badge badge-gate-pass">Pass (&ge;25 games)</span></td><td><span class="badge badge-gate-pass">Pass (NBA.com linked)</span></td><td><span class="badge badge-unverified">Blocked — market lines blank</span></td></tr>
+        <tr><td>2025-26 player stats (top 15)</td><td>15</td><td><span class="badge badge-gate-pass">Pass (&ge;25 games)</span></td><td><span class="badge badge-gate-pass">Pass (NBA.com linked)</span></td><td><span class="badge badge-unverified">Blocked — prop lines blank</span></td></tr>
+        <tr><td>2026-27 standings (~8 games)</td><td>30</td><td><span class="badge badge-gate-fail">Fail — small sample</span></td><td><span class="badge badge-gate-pass">Pass (NBA.com linked)</span></td><td><span class="badge badge-unverified">Context only — never a signal</span></td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Full detail: docs/validation-gates.md &bull; source links: docs/sources.md</p>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p><strong>Own7</strong> &mdash; validation gates. No strategy is leaderboard-eligible until all gates pass. <a href="pages/flagged.html">Flagged for Review</a></p>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
