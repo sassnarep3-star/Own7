@@ -78,3 +78,10 @@ Fixed Arena branch: `arena/e09e45e6-own7` (platform constraint takes precedence 
 - Inventory with line counts and hashes: docs/audit-manifest.json. This is not a claim that every historical sentence was scientifically verified.
 - Tests: deterministic dashboard generation; recursive local HTML link and per-table HTTPS source check; 5 synthetic math tests passed (fair odds, push settlement, no-vig, Pearson, invalid inputs). No synthetic result is presented as NBA evidence. No future predictive skill claimed.
 - Task status: research/integration done; scientific evidence gaps needs review; publication in progress.
+
+### Publication complete — session e09e45e6
+- Task status: done. Nonblocking evidence gaps: needs review, published at https://sassnarep3-star.github.io/Own7/review.html .
+- PR https://github.com/sassnarep3-star/Own7/pull/7 merged successfully at 2026-11-03T23:38:29Z; merge commit `c234aad6f07df47927b6109dd09edf845087b323`. All PR checks passed before merge.
+- GitHub Pages deployment https://github.com/sassnarep3-star/Own7/actions/runs/41740756061 completed successfully (build, deploy and report all green).
+- Live content independently fetched at https://sassnarep3-star.github.io/Own7/?audit=676d1e4 and confirmed the new eight-candidate audited executive summary. The bare URL initially returned cached old content; cache-busted fetch confirmed publication.
+- No actual betting edge, estimated coefficient, profitable strategy, cash prize or live model has been invented. Remaining scientific work cannot be certified without verified game-level and market data.
