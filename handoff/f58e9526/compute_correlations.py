@@ -3,7 +3,7 @@
 
 Input : data/teams-2025-26.csv (30 teams, 2025-26 season averages, nba.com)
         data/players-2025-26-top15.csv (15 players, 2025-26 per-game, nba.com)
-Output: data/correlation-computed-2025-26.json
+Output: handoff/f58e9526/correlation-computed-2025-26.json
 
 What these numbers are (and are not):
   * Pearson r across teams (or players) using season-level averages.
@@ -23,8 +23,8 @@ import math
 import pathlib
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
-OUT = ROOT / "data" / "correlation-computed-2025-26.json"
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+OUT = ROOT / "handoff" / "f58e9526" / "correlation-computed-2025-26.json"
 
 TEAM_SOURCE = "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
 PLAYER_SOURCE = "https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame"
