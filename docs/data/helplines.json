@@ -1,0 +1,62 @@
+{
+  "title": "Alberta Responsible Gambling Contacts",
+  "columns": [
+    "id",
+    "contact",
+    "number_or_detail",
+    "status",
+    "source_url",
+    "note"
+  ],
+  "rows": [
+    {
+      "id": "H-01",
+      "contact": "GameSense Info Line (AGLC)",
+      "number_or_detail": "1-833-447-7523",
+      "status": "verified",
+      "source_url": "https://gamesenseab.ca/",
+      "note": "Official AGLC/GameSense site."
+    },
+    {
+      "id": "H-02",
+      "contact": "AGLC Self-Exclusion Program – speak with a representative",
+      "number_or_detail": "1-844-468-8034",
+      "status": "verified",
+      "source_url": "https://www.selfexclusion.ca/s/",
+      "note": "Enrolment period six months to three years per official page."
+    },
+    {
+      "id": "H-03",
+      "contact": "24-Hour Addiction Helpline (Alberta Health Services)",
+      "number_or_detail": "1-866-332-2322 (Alberta only)",
+      "status": "verified",
+      "source_url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx",
+      "note": "Listed on Government of Alberta MyHealth page (current as of Jan 27, 2026)."
+    },
+    {
+      "id": "H-04",
+      "contact": "Health Link",
+      "number_or_detail": "811",
+      "status": "verified",
+      "source_url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx",
+      "note": "Listed on the same official page."
+    },
+    {
+      "id": "H-05",
+      "contact": "211 Alberta",
+      "number_or_detail": "211",
+      "status": "verified",
+      "source_url": "https://aglc.ca/gaming/igaming",
+      "note": "AGLC requires registered iGaming advertising to reference 211 Alberta; 211 also listed on MyHealth page."
+    },
+    {
+      "id": "H-06",
+      "contact": "'Alberta Problem Gambling Resources Network'",
+      "number_or_detail": "",
+      "status": "unverified",
+      "source_url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx",
+      "note": "Number 1-866-461-1259 appears on non-official sites only; not found on any official Alberta/AGLC source. Left blank. Flagged.",
+      "reference_url": "https://www.playcanada.com/news/gambling-addiction-hotlines-canada/"
+    }
+  ]
+}

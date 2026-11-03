@@ -1,0 +1,8 @@
+{
+  "title": "Strategy Leaderboard",
+  "columns": ["rank", "strategy_id", "score", "gates_passed", "status", "source_url"],
+  "rows": [
+    {"rank":"—","strategy_id":"(none)","score":"","gates_passed":"0 of 9","status":"No strategy has passed the validation gates. No rewards are awarded.","source_url":"https://www.nba.com/stats/"}
+  ],
+  "ranking_rule": "Ranked only after all gates pass. Score = out-of-sample CLV-adjusted ROI with lower 95% bound above zero. Leaderboard has no monetary value."
+}

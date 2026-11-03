@@ -1,0 +1,111 @@
+{
+  "title": "Repository Review (sassnarep3-star/Own7)",
+  "columns": [
+    "id",
+    "check",
+    "finding",
+    "severity",
+    "status",
+    "source_url"
+  ],
+  "rows": [
+    {
+      "id": "RR-01",
+      "check": "Repository contents",
+      "finding": "Only one tracked file: README.md (6 bytes, '# Own7'). No description, license, data, tests, or CI.",
+      "severity": "Info",
+      "status": "verified",
+      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/README.md"
+    },
+    {
+      "id": "RR-02",
+      "check": "License",
+      "finding": "No license (GitHub license API returns 404). Reuse rights are undefined – flag for owner.",
+      "severity": "Flag",
+      "status": "verified",
+      "source_url": "https://github.com/sassnarep3-star/Own7"
+    },
+    {
+      "id": "RR-03",
+      "check": "History",
+      "finding": "One commit on main: 'Initial commit' (74c945e73e79fd2cd1a330a2a7ce359e538df368).",
+      "severity": "Info",
+      "status": "verified",
+      "source_url": "https://github.com/sassnarep3-star/Own7/commit/74c945e73e79fd2cd1a330a2a7ce359e538df368"
+    },
+    {
+      "id": "RR-04",
+      "check": "GitHub Pages config",
+      "finding": "Pages is enabled, legacy build from branch main, path '/'. Latest build status 'built' at commit 74c945e (2026-10-31). Repo had no index page; this work adds docs/ and must switch the Pages source path to /docs.",
+      "severity": "Flag",
+      "status": "verified",
+      "source_url": "https://github.com/sassnarep3-star/Own7/settings/pages"
+    },
+    {
+      "id": "RR-05",
+      "check": "Live site reachability",
+      "finding": "The live Pages URL did not respond from the build sandbox (no HTTP response). Re-check after deploy.",
+      "severity": "Flag",
+      "status": "unverified",
+      "source_url": "https://sassnarep3-star.github.io/Own7/"
+    },
+    {
+      "id": "RR-06",
+      "check": "Coordination file",
+      "finding": "COORDINATION.md did not exist; created by this session.",
+      "severity": "Info",
+      "status": "verified",
+      "source_url": "https://github.com/sassnarep3-star/Own7/blob/arena/5051651b-own7/COORDINATION.md"
+    },
+    {
+      "id": "RR-07",
+      "check": "Branch naming in brief",
+      "finding": "Brief asks for 'session-<id>/<task>' branches; this session is bound to arena/5051651b-own7. Followed the bound branch and logged the deviation.",
+      "severity": "Flag",
+      "status": "verified",
+      "source_url": "https://github.com/sassnarep3-star/Own7/tree/arena/5051651b-own7"
+    },
+    {
+      "id": "RR-08",
+      "check": "Brief text encoding",
+      "finding": "Brief contains HTML-escaped fragments (e.g., '&amp;amp;lt;id&amp;amp;gt;') and a broken link label. Interpreted as the plain text 'session-<id>/<task>'.",
+      "severity": "Info",
+      "status": "verified",
+      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/README.md"
+    },
+    {
+      "id": "RR-09",
+      "check": "NBA data endpoints",
+      "finding": "stats.nba.com and cdn.nba.com JSON endpoints did not return data from this environment. No numeric NBA data was pulled, so no statistic in this site is verified.",
+      "severity": "Flag",
+      "status": "unverified",
+      "source_url": "https://www.nba.com/stats/"
+    },
+    {
+      "id": "RR-10",
+      "check": "Conflicting Alberta statements",
+      "finding": "AGLC homepage calls Play Alberta 'the only regulated online gambling site in Alberta', while the AGLC iGaming page (July 2026) describes dozens of registered iGaming operators. One statement is likely stale – flagged for review.",
+      "severity": "Flag",
+      "status": "verified",
+      "source_url": "https://aglc.ca/"
+    },
+    {
+      "id": "RR-11",
+      "check": "Conflicting helpline numbers",
+      "finding": "Non-official sites list 1-866-461-1259 as an Alberta problem-gambling line. Not found on any official source; left blank.",
+      "severity": "Flag",
+      "status": "unverified",
+      "source_url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx",
+      "reference_url": "https://www.playcanada.com/news/gambling-addiction-hotlines-canada/"
+    },
+    {
+      "id": "RR-12",
+      "check": "Reliance on secondary sources",
+      "finding": "The Oct 16, 2026 NBA memo and past investigations were found only via media. Not treated as verified.",
+      "severity": "Flag",
+      "status": "reported-unverified",
+      "source_url": "https://www.nba.com/news",
+      "reference_url": "https://www.bostonglobe.com/2026/10/16/sports/nba-gambling-limitations/"
+    }
+  ]
+}
