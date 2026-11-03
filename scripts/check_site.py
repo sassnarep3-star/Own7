@@ -21,7 +21,7 @@ class Check(HTMLParser):
             self.row = None
         if tag == 'tbody': self.tbody = False
 errors=[]
-for path in Path('.').glob('*.html'):
+for path in sorted([*Path('.').glob('*.html'), *Path('pages').glob('*.html')]):
     checker=Check(path); checker.feed(path.read_text()); errors.extend(checker.errors)
 if errors: raise SystemExit('\n'.join(errors))
 print('All local HTML links resolve and every table row has an HTTPS source.')

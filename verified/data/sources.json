@@ -119,7 +119,7 @@
       "what_was_checked": "A request to https://www.ksa.nl/ returns an unrelated architecture firm (Korteknie Stuhlmacher Architecten). Not used as a source.",
       "value_confirmed": "",
       "status": "flag – not a source",
-      "source_url": "https://www.ksa.nl/"
+      "source_url": "https://www.kansspelautoriteit.nl/"
     }
   ]
 }

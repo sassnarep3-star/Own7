@@ -40,7 +40,7 @@ All player values from data/players-2025-26-top15.csv (official NBA.com source).
 
 ## Correlation values
 
-Correlation matrix cells are intentionally blank in this release. Numeric correlation values require official play-by-play game logs (stats.nba.com API endpoint), which is not reachable from this sandbox; nba.com HTML pages do not expose play-by-play correlation data. Cells are flagged unverified, never inferred.
+Correlation matrix cells are intentionally blank in this release. Season-level correlations between team (n=30) and player (n=15) averages are computed from the verified tables (verified/data/correlation_computed.json, scripts/compute_correlations.py). Leg-level correlations need official game-level logs, which were not pulled, so those cells stay blank and flagged unverified. Never inferred.
 
 ## Leaderboard eligibility
 

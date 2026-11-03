@@ -26,9 +26,11 @@ OFFICIAL_HOSTS = {
     "playalberta.ca", "myhealth.alberta.ca", "www.albertahealthservices.ca",
     "github.com",
     "sassnarep3-star.github.io",  # this project's own Pages URL
+    "www.kansspelautoriteit.nl", "kansspelautoriteit.nl",  # Dutch gambling regulator (Ksa)
+    "gokstop.nl", "www.gokstop.nl",  # Dutch self-exclusion page
 }
 VALUE_COLS = {"value_confirmed", "official_value", "number_or_detail", "correlation_value", "score", "roi", "clv", "sample_size", "n_observations"}
-FILES = ["sources", "rules", "helplines", "strategies", "gates", "correlation", "leaderboard", "repo_review", "flagged"]
+FILES = ["sources", "rules", "helplines", "strategies", "gates", "correlation", "correlation_computed", "leaderboard", "repo_review", "flagged", "nba_teams", "nba_players", "nba_standings"]
 ALLOWED_STATUS = {"verified", "unverified", "reported-unverified", "Design choice"}
 
 errors, warnings = [], []
@@ -55,7 +57,7 @@ def check_data():
             if ref and urlparse(ref).scheme != "https":
                 err(f"{name}:{rid} reference_url not https")
             st = row.get("status", "")
-            if st and st not in ALLOWED_STATUS and not st.startswith(("verified", "unverified", "reported", "Design", "Blocked", "Partly", "Not yet", "No ", "Unverified")):
+            if st and st not in ALLOWED_STATUS and not st.startswith(("verified", "unverified", "reported", "Design", "Blocked", "Partly", "Not yet", "No ", "Unverified", "flag")):
                 err(f"{name}:{rid} unknown status '{st}'")
             status_key = st.split(" ")[0] if st else ""
             if st == "verified":
@@ -126,7 +128,20 @@ def check_external_hosts():
     print("external hosts linked from site:", ", ".join(sorted(external)))
 
 
+def check_computed():
+    """Verified tables -> snapshot match, and recomputed correlations match the stored values."""
+    for cmd in (["build_nba_json.py", "--check"], ["compute_correlations.py", "--check"]):
+        r = subprocess.run([sys.executable, str(ROOT / "scripts" / cmd[0])] + cmd[1:], capture_output=True, text=True)
+        print((r.stdout or "").strip())
+        if r.returncode != 0:
+            err(f"{cmd[0]} failed: {(r.stdout + r.stderr).strip()}")
+    for row in json.loads((DATA / "correlation_computed.json").read_text(encoding="utf-8"))["rows"]:
+        if not str(row.get("status", "")).startswith("verified"):
+            err(f"correlation_computed:{row['id']} is not marked verified")
+
+
 if __name__ == "__main__":
+    check_computed()
     check_data()
     check_links()
     check_rebuild_matches()

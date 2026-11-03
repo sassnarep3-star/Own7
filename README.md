@@ -15,4 +15,4 @@ A second, data-first site lives in `verified/` (published with the root of `main
 - Rebuild: `python3 scripts/build_verified_site.py`
 - Verify: `python3 scripts/verify_verified_site.py` (must print `OK`)
 
-Pages: Executive Summary, Sources, Betting Rules, Strategies, Validation Gates, Correlation, Leaderboard, Responsible Gambling, Repo Review, Flagged for Review. Current results: 0 strategies tested, 0 passing gates; no NBA numeric data verified (the NBA stats endpoints were not reachable from the build environment).
+Pages: Executive Summary, Teams, Players, Standings, Correlation, Strategies, Validation Gates, Leaderboard, Betting Rules, Netherlands, Responsible Gambling, Sources, Repo Review, Flagged for Review. Current results: 0 strategies tested, 0 passing gates. Team (30), player (top 15) and standings (30) tables are verified against nba.com pages (snapshots in `data/raw/`, checked by `scripts/build_nba_json.py`). Season-level correlations are computed by `scripts/compute_correlations.py`. Leg-level correlations remain blank.

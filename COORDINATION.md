@@ -1,7 +1,7 @@
 # Coordination Board — Own7 (NBA Lines Project)
 
-Branch: `arena/687b658b-own7`
-Session: `session-arena-687b658b-own7` (sole active session)
+Branch: `arena/f58e9526-own7`
+Session: `session-arena-f58e9526-own7` (active; the header previously named arena/687b658b-own7, corrected this session)
 
 Statuses: unclaimed | in progress | done | needs review
 - `needs review` = published on the "Flagged for Review" page; does not block other work.
@@ -71,12 +71,12 @@ Other open work: PR #4 (`arena/5051651b-own7`) from an earlier session is still 
 ### Task board (this session)
 | # | Task | Status | Owner | Files touched | Sources / verification | Notes |
 |---|------|--------|-------|---------------|------------------------|-------|
-| A1 | Repo review, line-by-line, irregularity log | in progress | session-arena-f58e9526-own7 | verified/data/repo_review.json, verified/data/flagged.json | nba.com team/player/standings pages (links in each row) | 23 review rows; 11 flags raised, 4 wrong claims corrected |
-| A2 | Re-verify NBA tables (30 teams, 15 players, 30 standings) | in progress | session-arena-f58e9526-own7 | data/raw/*.csv (snapshots), scripts/build_nba_json.py, verified/data/nba_*.json | nba.com/stats/teams/traditional, /stats/players/traditional (PerGame), /standings | 0 mismatches across 18 + 22 + 10 compared columns |
-| A3 | Correlation values from verified tables | in progress | session-arena-f58e9526-own7 | scripts/compute_correlations.py, verified/data/correlation_computed.json | derived from A2 tables | Descriptive only (season-level, n=30/15). Leg correlations stay blank |
-| A4 | Netherlands scope (regulator, self-exclusion, helplines) | in progress | session-arena-f58e9526-own7 | verified/data/sources.json, rules.json, helplines.json | kansspelautoriteit.nl, gokstop.nl | Dutch phone helpline left blank (not confirmed) |
-| A5 | Corrections to root site and docs | in progress | session-arena-f58e9526-own7 | docs/*.md, pages/*.html, README.md, data/standings-2026-27.csv | nba.com (A2) | Miami/Denver PPG, Denver/LAL FG%, BLKA, ~8 games, site/ path |
-| A6 | Rebuild verified site (teams/players/standings/NL pages) + verifier | in progress | session-arena-f58e9526-own7 | scripts/build_verified_site.py, scripts/verify_verified_site.py, verified/*.html | all rows carry source_url | |
+| A1 | Repo review, line-by-line, irregularity log | done | session-arena-f58e9526-own7 | verified/data/repo_review.json, verified/data/flagged.json | nba.com team/player/standings pages (links in each row) | 23 review rows; 11 flags raised, 4 wrong claims corrected |
+| A2 | Re-verify NBA tables (30 teams, 15 players, 30 standings) | done | session-arena-f58e9526-own7 | data/raw/*.csv (snapshots), scripts/build_nba_json.py, verified/data/nba_*.json | nba.com/stats/teams/traditional, /stats/players/traditional (PerGame), /standings | 0 mismatches across 18 + 22 + 10 compared columns |
+| A3 | Correlation values from verified tables | done | session-arena-f58e9526-own7 | scripts/compute_correlations.py, verified/data/correlation_computed.json | derived from A2 tables | Descriptive only (season-level, n=30/15). Leg correlations stay blank |
+| A4 | Netherlands scope (regulator, self-exclusion, helplines) | done | session-arena-f58e9526-own7 | verified/data/sources.json, rules.json, helplines.json | kansspelautoriteit.nl, gokstop.nl | Dutch phone helpline left blank (not confirmed) |
+| A5 | Corrections to root site and docs | done | session-arena-f58e9526-own7 | docs/*.md, pages/*.html, README.md, scripts/check_site.py | nba.com (A2); NBA 2023-24 survey and glossary re-checked | Miami/Denver PPG, Denver/LAL FG%, BLKA wording, 5–8 games, pages/ path + links fixed, check_site.py now covers pages/*.html |
+| A6 | Rebuild verified site (teams/players/standings/NL pages) + verifier | done | session-arena-f58e9526-own7 | scripts/build_verified_site.py, scripts/verify_verified_site.py, verified/*.html | all rows carry source_url | |
 | A7 | Integration checks, PR to main, merge, Pages verify, record | unclaimed | session-arena-f58e9526-own7 | main (via PR), COORDINATION.md | CI + live site | Merge only after CI green and live site checked |
 
 ### Sources used this session (all fetched 2026-11-03)
@@ -90,7 +90,7 @@ Other open work: PR #4 (`arena/5051651b-own7`) from an earlier session is still 
 ### Irregularities found this session (details: verified/data/repo_review.json, verified/data/flagged.json)
 1. Exec summary said highest PPG = Miami 120.9. Official: Denver 122.1. Corrected.
 2. Exec summary said highest FG% = Denver 49.6. Official: Lakers 50.2. Corrected.
-3. "Unmapped" team column = BLKA on the official header. Resolved.
+3. "Unmapped" team column = BLKA on the official header. Label confirmed; meaning not confirmed (NBA glossary defines the related %BLKA as a team\u2019s own blocked FG attempts). Flagged F-11.
 4. Verified-data site said nba.com data was unreachable. Pages are reachable via fetch. Data now verified.
 5. Standings "~8 games" was loose. Official W+L = 5 to 8. Corrected.
 6. Docs referred to site/pages/flagged.html. Corrected to pages/flagged.html.
@@ -102,5 +102,5 @@ Other open work: PR #4 (`arena/5051651b-own7`) from an earlier session is still 
 
 ### Verification performed
 - `python3 scripts/build_nba_json.py` — CSVs vs official snapshots (data/raw/): OK, 0 mismatches.
-- `python3 scripts/compute_correlations.py --check` — recomputed values match the stored file; one value independently recomputed by hand.
+- `python3 scripts/compute_correlations.py --check` — recomputed values match the stored file (11 values). An attempted independent cross-check failed on a formatting error and was not repeated; no hand recomputation is claimed.
 - Every new or changed row has an https source_url on an allow-listed official host.

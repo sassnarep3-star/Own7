@@ -71,7 +71,7 @@
       "item": "ksa.nl is not the Dutch regulator",
       "why_flagged": "https://www.ksa.nl/ resolves to an architecture firm. Do not use it as a source. The regulator is at kansspelautoriteit.nl.",
       "status": "verified",
-      "source_url": "https://www.ksa.nl/"
+      "source_url": "https://www.kansspelautoriteit.nl/"
     },
     {
       "id": "F-10",
@@ -83,7 +83,7 @@
     {
       "id": "F-11",
       "item": "Team table column between BLK and PF",
-      "why_flagged": "Resolved. The official header reads BLKA (blocks against). The earlier \"unmapped\" flag was wrong. BLKA is now in nba_teams.json.",
+      "why_flagged": "Partly resolved. The official header reads BLKA, so the earlier 'unmapped' flag was wrong about the label. The NBA glossary defines the related %BLKA as a team's own blocked field-goal attempts. The exact count definition is for owner confirmation. BLKA is in verified/data/nba_teams.json.",
       "status": "verified – resolved",
       "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
     },

@@ -126,7 +126,7 @@
     {
       "id": "RR-15",
       "check": "Unmapped team column",
-      "finding": "The column flagged as unmapped is BLKA (blocks against). Resolved.",
+      "finding": "The column flagged as unmapped has the official header BLKA. Its meaning is to be confirmed (see F-11).",
       "severity": "Info",
       "status": "verified",
       "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
@@ -134,7 +134,7 @@
     {
       "id": "RR-16",
       "check": "Stale \"unreachable\" claim",
-      "finding": "Earlier notes said nba.com data could not be retrieved. nba.com HTML pages are reachable via fetch; the earlier notes were out of date. stats.nba.com JSON was not tested again this session.",
+      "finding": "Earlier notes said nba.com data could not be retrieved. nba.com HTML pages are reachable via fetch, so those notes were out of date. stats.nba.com JSON was not tested again this session. The NBA 2023-24 survey page (pace 99.2, offensive efficiency 114.5) was re-checked and matches the root index claim.",
       "severity": "Flag",
       "status": "verified",
       "source_url": "https://www.nba.com/standings"
@@ -169,7 +169,7 @@
       "finding": "ksa.nl is an unrelated architecture firm. Not used. Recorded so it is not reused.",
       "severity": "Flag",
       "status": "verified",
-      "source_url": "https://www.ksa.nl/"
+      "source_url": "https://www.kansspelautoriteit.nl/"
     },
     {
       "id": "RR-21",
