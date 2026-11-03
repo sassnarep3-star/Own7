@@ -1,5 +1,5 @@
 {
-  "title": "Correlation Values (none computed – no verified data)",
+  "title": "Correlation Values (none computed \u2013 no verified data)",
   "columns": [
     "id",
     "pair",
@@ -16,8 +16,9 @@
       "method": "Pearson / Spearman on box-score stats",
       "correlation_value": "",
       "n_observations": "",
-      "status": "unverified – no official box-score data pulled",
-      "source_url": "https://www.nba.com/stats/players/traditional"
+      "status": "unverified \u2013 no official box-score data pulled",
+      "source_url": "https://www.nba.com/stats/players/traditional",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "C-02",
@@ -26,7 +27,8 @@
       "correlation_value": "",
       "n_observations": "",
       "status": "unverified",
-      "source_url": "https://www.nba.com/stats/"
+      "source_url": "https://www.nba.com/stats/",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "C-03",
@@ -35,7 +37,8 @@
       "correlation_value": "",
       "n_observations": "",
       "status": "unverified",
-      "source_url": "https://www.nba.com/stats/players/traditional"
+      "source_url": "https://www.nba.com/stats/players/traditional",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     },
     {
       "id": "C-04",
@@ -43,9 +46,11 @@
       "method": "Logistic on minutes bucket",
       "correlation_value": "",
       "n_observations": "",
-      "status": "unverified – relevant to the reported under-minutes restriction (R-07)",
+      "status": "unverified \u2013 relevant to the reported under-minutes restriction (R-07)",
       "source_url": "https://www.nba.com/stats/",
-      "reference_url": "https://sports.yahoo.com/nba/breaking-news/article/nba-sportsbooks-reportedly-agree-to-ban-certain-bets-including-parlays-involving-the-under-on-same-players-stats-151415255.html"
+      "reference_url": "https://sports.yahoo.com/nba/breaking-news/article/nba-sportsbooks-reportedly-agree-to-ban-certain-bets-including-parlays-involving-the-under-on-same-players-stats-151415255.html",
+      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
     }
-  ]
+  ],
+  "audit_notice": "Legacy archive, not current verified evidence. See ../../sources.html and ../../review.html."
 }

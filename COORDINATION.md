@@ -87,3 +87,30 @@ Sole active session on this branch as of this claim. Earlier sessions' boards ab
 - Task 15: scripts/check_site.py now covers pages/ (links + HTTPS source per table row; methodology rows marked class="method").
 - Irregularities: pages/flagged.html items 5 (resolved: BLKA), 8–13 (new). Repo review: docs/repo-review-2026-11-03.md.
 - Handoff note: root index.html (research lab) is from an earlier session; this session added a nav link only.
+## Session e09e45e6 — independent audit and final integration (2026-11-03)
+
+Fixed Arena branch: `arena/e09e45e6-own7` (platform constraint takes precedence over requested branch naming). Earlier completed boards are historical; no other active claim observed.
+
+| Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|
+| Independent source audit, quarantine unsupported values, integrate dashboard, test and publish | in progress | session-e09e45e6 | COORDINATION.md, README.md, index.html, pages/*, data/*, docs/*, scripts/*, verified/*, .github/workflows/* | Rechecking prior verified claims; no inherited verification assumed. |
+
+### e09e45e6 audit findings and verification
+- Initial remote branch did not exist, so `git pull --rebase origin arena/e09e45e6-own7` failed without modifying files; rebased against `origin main` before first branch push. No conflicts or other session work discarded; historical versions remain in Git history.
+- Canonical root dashboard now supersedes three conflicting views; old HTML URLs remain as explicit superseded notices. Scope is source-linked research, not an operating betting system.
+- Read official NBA standings in both fetch chunks and compared all 30 CSV rows (rank, identity, W/L, WIN%, GB, conference/division/home/road/last10/streak). Source: https://www.nba.com/standings . Snapshot only, 2026-11-03.
+- Read NBA player traditional season/filter content: https://www.nba.com/stats/players/traditional ; no historical player values confirmed. Blanked unconfirmed numerical team/player CSV fields; retained row identities as unverified.
+- Read NBA glossary USG% definition: https://www.nba.com/stats/help/glossary ; calibration scoring/reliability: https://scikit-learn.org/stable/modules/calibration.html ; time-order leakage: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html ; Pearson API: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html . Linked sources distinguish facts, methods and project proposals.
+- Inherited Alberta rules/helplines and media-reported restrictions not independently endorsed; legacy JSON verified flags downgraded and value columns blanked. Historical narratives explicitly superseded. Findings F01–F09 published on review.html (needs review; nonblocking).
+- Inventory with line counts and hashes: docs/audit-manifest.json. This is not a claim that every historical sentence was scientifically verified.
+- Tests: deterministic dashboard generation; recursive local HTML link and per-table HTTPS source check; 5 synthetic math tests passed (fair odds, push settlement, no-vig, Pearson, invalid inputs). No synthetic result is presented as NBA evidence. No future predictive skill claimed.
+- Task status: research/integration done; scientific evidence gaps needs review; publication in progress.
+
+### Merge log — arena/7a0b6563-own7 with origin/main c234aad (2026-11-03)
+
+- Conflict: main (PR #7, session arena/e09e45e6-own7) regenerates root pages with `scripts/build_dashboard.py`, supersedes `pages/` and `verified/`, and blanks unconfirmed numeric cells in `data/teams-2025-26.csv` and `data/players-2025-26-top15.csv`. This session had hand-edited the same files.
+- Resolution: took main's generated pages, `scripts/check_site.py`, `README.md` and superseded `pages/`; discarded this session's hand edits to them. Re-applied this session's content through `scripts/build_dashboard.py`: verified team and player tables, team-level correlations, updated register (F02 reversed, F10–F13), corrected source rows. Kept both COORDINATION boards.
+- Git method: merge, not rebase. The branch was already pushed, and rebasing would require a force-push. The brief's `git pull --rebase` rule was not followed for this reason, and no history was rewritten.
+- Data decision (needs owner confirmation, F02): team and player values were re-read from nba.com on 2026-11-03 and matched cell by cell (30/30 teams, 15/15 players). Main's blanking of these values is reversed on that evidence. Transcribed snapshots are in `data/official-snapshots/`, checked offline by `scripts/verify_official_snapshots.py` (now in CI).
+- Standings: GP range 5–8 (PHX 5, note wording differs); flagged F10, not corrected.
+- Not done: no line-by-line check of `verified/` non-NBA sources (outside NBA scope); no bet-leg correlations (no play-by-play data).

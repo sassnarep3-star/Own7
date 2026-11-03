@@ -10,16 +10,16 @@ Method: official NBA.com pages were fetched through the Arena fetch tool. Each p
 | `data/teams-2025-26.csv` | https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season (5 chunks, all read) | 30 of 30 | 30 of 30 | 0 | Every mapped column matched: GP, W, L, WIN%, PTS, FG%, 3P%, FT%, OREB, DREB, REB, AST, TOV, STL, BLK, PF, PFD, +/-. Not in CSV: MIN, FGM, FGA, 3PM, 3PA, FTM, FTA, BLKA. |
 | `data/standings-2026-27.csv` | https://www.nba.com/standings (2 chunks, all read) | 30 of 30 | 30 of 30 | 0 | Programmatic comparison (W, L, WIN%, GB, CONF, DIV, HOME, ROAD, LAST10, STREAK).  Notes text is flagged (see below). |
 | `data/players-2025-26-top15.csv` | https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame (chunks 2 and 3, ranks 1–15) | 15 of 15 | 15 of 15 | 0 | Programmatic comparison of 25 columns (Rank through PF). Rank, GP, W, L, MIN, PTS, FGM, FGA, FG%, 3PM, 3PA, 3P%, FTM, FTA, FT%, OREB, DREB, REB, AST, TOV, STL, BLK, PF matched. Team codes mapped to full names. |
-| `docs/executive-summary.md`, `pages/executive-summary.html` | Derived from the team table above | 2 claims | 0 of 2 correct before fix | 2 | Corrected. See below. |
+| `docs/executive-summary.md`, the superseded `pages/executive-summary.html` copy | Derived from the team table above | 2 claims | 0 of 2 correct before fix | 2 | Corrected. See below. |
 | `root index.html` (2023-24 league averages) | https://www.nba.com/news/2023-24-nba-stats-survey-league-scoring-averages | 2 values | 2 of 2 | 0 | Pace 99.2 and offensive efficiency 114.5 confirmed. |
 | `root index.html` (pace / offensive rating definitions) | Same NBA page (footnotes: "Pace = Possessions per team per 48 minutes", "OffRtg = Points scored per 100 possessions") | 2 | 2 | 0 | The NBA glossary (https://www.nba.com/stats/help/glossary) was fetched but only its first chunk was read, which does not include the PACE entry. The definition was confirmed from the survey page instead. |
 
 ## Corrections made in this session
 
-1. **Highest team PPG** was stated as Miami Heat 120.9. Official value: **Denver Nuggets 122.1**. Miami 120.9 is second. Corrected in `docs/executive-summary.md` and `pages/executive-summary.html`.
+1. **Highest team PPG** was stated as Miami Heat 120.9. Official value: **Denver Nuggets 122.1**. Miami 120.9 is second. Corrected in `docs/executive-summary.md` and the superseded `pages/executive-summary.html` copy.
 2. **Highest team FG%** was stated as Denver Nuggets 49.6%. Official value: **Los Angeles Lakers 50.2%**. Denver 49.6% is second. Corrected in both files.
 3. **Correlation register** showed an assumed value ("blank (assumed 0)") for cross-game legs. Changed to blank, per the no-inference rule.
-4. **`pages/dashboard.html`** used root-relative paths from inside `pages/`. 21 links and the stylesheet and script paths were broken. Fixed.
+4. **`pages/dashboard.html` (pre-merge)** used root-relative paths from inside `pages/`. 21 links and the stylesheet and script paths were broken. Fixed.
 
 ## Unchanged, verified in this session
 
@@ -27,7 +27,7 @@ Method: official NBA.com pages were fetched through the Arena fetch tool. Each p
 - Player top-15 values in `data/players-2025-26-top15.csv` (15 rows) — no change.
 - Standings values in `data/standings-2026-27.csv` (30 rows) — no change.
 
-## Irregularities found (also listed on pages/flagged.html)
+## Irregularities found (also listed on review.html, F02 and F10–F13)
 
 | # | Item | Official source | Disposition |
 |---|---|---|---|
