@@ -14,7 +14,7 @@
       "gate": "Data provenance",
       "pass_rule": "Every input series traces to an official source row in the Source Registry",
       "type": "Design choice",
-      "status": "Not yet passable – no official stats pulled",
+      "status": "Partly passable – team, player and standings inputs have official source rows (nba_*.json); odds inputs do not",
       "source_url": "https://www.nba.com/stats/"
     },
     {
@@ -70,7 +70,7 @@
       "gate": "Correlation check for combos",
       "pass_rule": "Joint-outcome correlation estimated from enough joint observations; independence assumption tested",
       "type": "Design choice",
-      "status": "Not yet passable",
+      "status": "Partly – descriptive team-level correlations computed from verified tables (correlation_computed.json); combo-leg correlations still need game-level data",
       "source_url": "https://www.nba.com/stats/"
     },
     {

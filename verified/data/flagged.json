@@ -10,30 +10,30 @@
   "rows": [
     {
       "id": "F-01",
-      "item": "No NBA numeric data verified",
-      "why_flagged": "stats.nba.com / cdn.nba.com not reachable; no box-score, schedule, or odds values verified. All stat/correlation cells blank.",
-      "status": "unverified",
-      "source_url": "https://www.nba.com/stats/"
+      "item": "NBA numeric data (was: \"no NBA numeric data verified\")",
+      "why_flagged": "Resolved 2026-11-03. nba.com team, player and standings pages were re-fetched and transcribed; the CSVs match the snapshots on every compared column (0 mismatches). stats.nba.com JSON and game logs were not reached.",
+      "status": "verified – resolved",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
     },
     {
       "id": "F-02",
-      "item": "Oct 16, 2026 NBA sportsbook memo",
-      "why_flagged": "Reported by media only; no official NBA primary document found. Restrictions shown as reported, not confirmed.",
+      "item": "Oct 16, 2026 NBA memo on restricted bets",
+      "why_flagged": "Known only from media (Yahoo Sports quoting ESPN). The memo itself and NBA.com primary text were not located. The restrictions are reported for US authorized operators. Applicability to Dutch operators is unknown.",
       "status": "reported-unverified",
       "source_url": "https://www.nba.com/news",
-      "reference_url": "https://www.bostonglobe.com/2026/10/16/sports/nba-gambling-limitations/"
+      "reference_url": "https://sports.yahoo.com/nba/breaking-news/article/nba-sportsbooks-reportedly-agree-to-ban-certain-bets-including-parlays-involving-the-under-on-same-players-stats-151415255.html"
     },
     {
       "id": "F-03",
-      "item": "Alberta 'only regulated online gambling site' vs. multiple registered operators",
-      "why_flagged": "Two official AGLC pages appear to conflict.",
-      "status": "verified",
+      "item": "AGLC homepage: 'only regulated online gambling site' vs. 'dozens of new iGaming operators'",
+      "why_flagged": "Both statements appear on the same AGLC homepage (checked 2026-11-03). They conflict as written. Not resolved.",
+      "status": "verified – conflict noted",
       "source_url": "https://aglc.ca/"
     },
     {
       "id": "F-04",
-      "item": "1-866-461-1259 helpline",
-      "why_flagged": "Non-official sources only. Blank in the verified helpline table.",
+      "item": "1-866-461-1259 helpline (Alberta)",
+      "why_flagged": "Found only on non-official sites. Not on the AHS MyHealth page (checked 2026-11-03). Left blank.",
       "status": "unverified",
       "source_url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx",
       "reference_url": "https://www.playcanada.com/news/gambling-addiction-hotlines-canada/"
@@ -41,23 +41,72 @@
     {
       "id": "F-05",
       "item": "Strategy leaderboard rewards",
-      "why_flagged": "The brief asks for rewards for top strategies. No reward amount, funding, or rules are defined and none are inferred here. Owner decision needed.",
+      "why_flagged": "The brief asks for rewards for top strategies. No reward amount, funding, or rules are defined, and none are inferred here. Owner decision needed.",
       "status": "unverified",
       "source_url": "https://github.com/sassnarep3-star/Own7"
     },
     {
       "id": "F-06",
       "item": "Repository license",
-      "why_flagged": "No license file. Reuse terms undefined.",
+      "why_flagged": "No license file. Reuse terms are undefined. Owner decision needed.",
       "status": "verified",
       "source_url": "https://github.com/sassnarep3-star/Own7"
     },
     {
       "id": "F-07",
       "item": "AGLC event-contracts guidance",
-      "why_flagged": "Document title confirmed on AGLC page; contents not reviewed. Relevant to prediction-market use.",
+      "why_flagged": "Document title is on the AGLC iGaming page; contents not reviewed. Relevant to prediction-market use.",
       "status": "unverified",
       "source_url": "https://aglc.ca/gaming/igaming"
+    },
+    {
+      "id": "F-08",
+      "item": "Scope: owner is in the Netherlands; most rows describe Alberta",
+      "why_flagged": "Alberta/AGLC rows describe Alberta law only. The Dutch regulator is the Kansspelautoriteit (Ksa). Netherlands rows were added (R-09 to R-12, H-07, H-08, S-09 to S-11). NL operator availability for NBA markets is not verified (R-11).",
+      "status": "verified – scope note",
+      "source_url": "https://www.kansspelautoriteit.nl/"
+    },
+    {
+      "id": "F-09",
+      "item": "ksa.nl is not the Dutch regulator",
+      "why_flagged": "https://www.ksa.nl/ resolves to an architecture firm. Do not use it as a source. The regulator is at kansspelautoriteit.nl.",
+      "status": "verified",
+      "source_url": "https://www.ksa.nl/"
+    },
+    {
+      "id": "F-10",
+      "item": "2026-27 standings: games played differ by team",
+      "why_flagged": "Official W+L shows 5 to 8 games per team, not a uniform ~8 as earlier notes said. Still fails the 25-game sample gate; context only.",
+      "status": "verified – corrected",
+      "source_url": "https://www.nba.com/standings"
+    },
+    {
+      "id": "F-11",
+      "item": "Team table column between BLK and PF",
+      "why_flagged": "Resolved. The official header reads BLKA (blocks against). The earlier \"unmapped\" flag was wrong. BLKA is now in nba_teams.json.",
+      "status": "verified – resolved",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
+    },
+    {
+      "id": "F-12",
+      "item": "Executive summary: \"highest PPG Miami 120.9\" and \"highest FG% Denver 49.6%\"",
+      "why_flagged": "Both wrong. Official team table: Denver has the highest PPG (122.1) and the Lakers the highest FG% (50.2). Corrected on both site copies.",
+      "status": "verified – corrected",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
+    },
+    {
+      "id": "F-13",
+      "item": "Player name spelling: \"Doncic\" vs. official \"Dončić\"",
+      "why_flagged": "The CSV had the ASCII form. Corrected to the official spelling. No value change.",
+      "status": "verified – corrected",
+      "source_url": "https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame"
+    },
+    {
+      "id": "F-14",
+      "item": "Live site reachability (GitHub Pages)",
+      "why_flagged": "Pages is built from main at /. The check after deploy is recorded in COORDINATION.md. Sandbox curl to the site failed (TLS); fetch was used.",
+      "status": "unverified – re-check after deploy",
+      "source_url": "https://sassnarep3-star.github.io/Own7/"
     }
   ]
 }

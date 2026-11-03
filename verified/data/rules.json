@@ -45,7 +45,7 @@
       "id": "R-05",
       "item": "NBA memo (Oct 16, 2026) restricting parlays with same-player unders",
       "official_value": "",
-      "reported_unverified": "Reported by ESPN/Yahoo Sports, Boston Globe and others: sportsbooks told not to offer parlays with the under on the same player's stats.",
+      "reported_unverified": "Media (Yahoo Sports, quoting an ESPN report of a league memo dated Oct 16, 2026): authorized US sportsbooks told not to offer parlays with the under on the same player's stats. Scope: NBA's US authorized operators.",
       "status": "reported-unverified",
       "source_url": "https://www.nba.com/news",
       "reference_url": "https://www.bostonglobe.com/2026/10/16/sports/nba-gambling-limitations/"
@@ -54,7 +54,7 @@
       "id": "R-06",
       "item": "NBA memo: opening-tip winner, 'first-of' markets, missed-shot props",
       "official_value": "",
-      "reported_unverified": "Reported as banned for sportsbooks this season (Yahoo/ESPN, Boston Globe, Ingame).",
+      "reported_unverified": "Media (Yahoo Sports, quoting ESPN): no bets on the winner of the opening tip, 'first-of' player markets, and bets on players to miss specific shots. Scope: US authorized operators.",
       "status": "reported-unverified",
       "source_url": "https://www.nba.com/news",
       "reference_url": "https://sports.yahoo.com/nba/breaking-news/article/nba-sportsbooks-reportedly-agree-to-ban-certain-bets-including-parlays-involving-the-under-on-same-players-stats-151415255.html"
@@ -63,7 +63,7 @@
       "id": "R-07",
       "item": "NBA memo: under bets on players expected to play fewer than 12 minutes",
       "official_value": "",
-      "reported_unverified": "Reported as banned (ESPN via Yahoo Sports).",
+      "reported_unverified": "Media (Yahoo Sports, quoting ESPN): no under bets on players expected to play fewer than 12 minutes in a game. Scope: US authorized operators.",
       "status": "reported-unverified",
       "source_url": "https://www.nba.com/news",
       "reference_url": "https://sports.yahoo.com/nba/breaking-news/article/nba-sportsbooks-reportedly-agree-to-ban-certain-bets-including-parlays-involving-the-under-on-same-players-stats-151415255.html"
@@ -72,7 +72,39 @@
       "id": "R-08",
       "item": "NBA official primary document for the Oct 2026 memo",
       "official_value": "",
-      "reported_unverified": "No official NBA publication of the memo was located in this session. Primary-source check NOT completed.",
+      "reported_unverified": "No official NBA primary document located. This session fetched the Yahoo Sports article (Oct 16, 2026) which cites an ESPN report and a league memo; the memo itself was not seen. Primary-source check still open.",
+      "status": "unverified",
+      "source_url": "https://www.nba.com/news"
+    },
+    {
+      "id": "R-09",
+      "item": "Netherlands: online sports betting is licensed by the Ksa",
+      "official_value": "Ksa register lists providers by category, including \"Online sportweddenschap\"; check each operator on the register before use",
+      "reported_unverified": "",
+      "status": "verified",
+      "source_url": "https://kansspelautoriteit.nl/kansspelwijzer"
+    },
+    {
+      "id": "R-10",
+      "item": "Netherlands: free self-exclusion route",
+      "official_value": "Gokstop: self-exclusion from (online) casinos and speelhallen via the Cruks register (gokstop.nl)",
+      "reported_unverified": "",
+      "status": "verified",
+      "source_url": "https://gokstop.nl/"
+    },
+    {
+      "id": "R-11",
+      "item": "Netherlands: which licensed Dutch operators offer NBA markets (spreads, totals, player props)",
+      "official_value": "",
+      "reported_unverified": "Not verified. Third-party sites name operators, but none was checked against the Ksa register in this session.",
+      "status": "unverified",
+      "source_url": "https://kansspelautoriteit.nl/kansspelwijzer"
+    },
+    {
+      "id": "R-12",
+      "item": "Whether the Oct 16, 2026 US restrictions (R-05 to R-07) apply to Dutch licensed operators",
+      "official_value": "",
+      "reported_unverified": "Unknown. The reported memo is addressed to the NBA's US authorized operators. No Dutch source was found.",
       "status": "unverified",
       "source_url": "https://www.nba.com/news"
     }

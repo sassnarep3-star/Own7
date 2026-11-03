@@ -106,6 +106,94 @@
       "status": "reported-unverified",
       "source_url": "https://www.nba.com/news",
       "reference_url": "https://www.bostonglobe.com/2026/10/16/sports/nba-gambling-limitations/"
+    },
+    {
+      "id": "RR-13",
+      "check": "Line-by-line NBA data (teams, players, standings)",
+      "finding": "Re-fetched nba.com pages 2026-11-03 and compared 30 team rows (18 columns), 15 player rows (23 columns), 30 standings rows (10 columns). 0 mismatches. Snapshots kept in data/raw/.",
+      "severity": "Info",
+      "status": "verified",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
+    },
+    {
+      "id": "RR-14",
+      "check": "Executive summary accuracy",
+      "finding": "Two claims were wrong and are corrected: highest PPG is Denver 122.1 (not Miami 120.9); highest FG% is the Lakers 50.2 (not Denver 49.6).",
+      "severity": "Flag",
+      "status": "verified",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
+    },
+    {
+      "id": "RR-15",
+      "check": "Unmapped team column",
+      "finding": "The column flagged as unmapped is BLKA (blocks against). Resolved.",
+      "severity": "Info",
+      "status": "verified",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
+    },
+    {
+      "id": "RR-16",
+      "check": "Stale \"unreachable\" claim",
+      "finding": "Earlier notes said nba.com data could not be retrieved. nba.com HTML pages are reachable via fetch; the earlier notes were out of date. stats.nba.com JSON was not tested again this session.",
+      "severity": "Flag",
+      "status": "verified",
+      "source_url": "https://www.nba.com/standings"
+    },
+    {
+      "id": "RR-17",
+      "check": "Standings sample wording",
+      "finding": "\"~8 games\" was approximate. Official W+L shows 5 to 8 games per team. Corrected in data and text.",
+      "severity": "Info",
+      "status": "verified",
+      "source_url": "https://www.nba.com/standings"
+    },
+    {
+      "id": "RR-18",
+      "check": "Broken path in docs",
+      "finding": "docs/executive-summary.md referred to site/pages/flagged.html. The file is pages/flagged.html. Corrected.",
+      "severity": "Info",
+      "status": "verified",
+      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/docs/executive-summary.md"
+    },
+    {
+      "id": "RR-19",
+      "check": "Netherlands scope",
+      "finding": "The owner is in Naaldwijk, NL. The earlier verified site described only Alberta. Netherlands regulator rows were added (Ksa, Kansspelwijzer, Gokstop). Dutch helpline number left blank (not confirmed).",
+      "severity": "Flag",
+      "status": "verified",
+      "source_url": "https://www.kansspelautoriteit.nl/kansspelwijzer"
+    },
+    {
+      "id": "RR-20",
+      "check": "Wrong domain used",
+      "finding": "ksa.nl is an unrelated architecture firm. Not used. Recorded so it is not reused.",
+      "severity": "Flag",
+      "status": "verified",
+      "source_url": "https://www.ksa.nl/"
+    },
+    {
+      "id": "RR-21",
+      "check": "CI scope",
+      "finding": "scripts/check_site.py checks local links and that table rows contain an https link. It does not check values. Values are checked by scripts/build_nba_json.py (snapshot match) and scripts/compute_correlations.py --check.",
+      "severity": "Info",
+      "status": "verified",
+      "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/scripts/check_site.py"
+    },
+    {
+      "id": "RR-22",
+      "check": "Open PR from an earlier session",
+      "finding": "PR #4 (branch arena/5051651b-own7, \"Record PR #3 merge result\") is still open. Not touched in this session.",
+      "severity": "Flag",
+      "status": "verified",
+      "source_url": "https://github.com/sassnarep3-star/Own7/pull/4"
+    },
+    {
+      "id": "RR-23",
+      "check": "Correlations",
+      "finding": "Team-level correlations (n=30) and player-level (n=15) were computed from verified tables and recomputed by a check. They are descriptive season-level values, not game-level or betting-leg correlations. Leg correlations remain blank.",
+      "severity": "Info",
+      "status": "verified",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season"
     }
   ]
 }

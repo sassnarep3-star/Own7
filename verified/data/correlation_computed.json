@@ -1,0 +1,148 @@
+{
+  "title": "Computed correlations from verified official tables (descriptive, not betting leg correlations)",
+  "columns": [
+    "id",
+    "pair",
+    "method",
+    "correlation_value",
+    "ci_95",
+    "n_observations",
+    "status",
+    "source_url",
+    "note"
+  ],
+  "rows": [
+    {
+      "id": "CC-T01",
+      "pair": "Team win % vs points per game",
+      "method": "Pearson r, 30 teams, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "+0.632",
+      "n_observations": "30",
+      "ci_95": "+0.352 to +0.808 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season",
+      "note": "Descriptive only; not a parlay or prop-combo correlation.",
+      "_r": 0.631821
+    },
+    {
+      "id": "CC-T02",
+      "pair": "Team win % vs point differential per game",
+      "method": "Pearson r, 30 teams, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "+0.973",
+      "n_observations": "30",
+      "ci_95": "+0.943 to +0.987 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season",
+      "note": "Descriptive only; not a parlay or prop-combo correlation.",
+      "_r": 0.97296
+    },
+    {
+      "id": "CC-T03",
+      "pair": "Team win % vs field-goal %",
+      "method": "Pearson r, 30 teams, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "+0.630",
+      "n_observations": "30",
+      "ci_95": "+0.349 to +0.807 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season",
+      "note": "Descriptive only; not a parlay or prop-combo correlation.",
+      "_r": 0.630078
+    },
+    {
+      "id": "CC-T04",
+      "pair": "Team win % vs three-point %",
+      "method": "Pearson r, 30 teams, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "+0.444",
+      "n_observations": "30",
+      "ci_95": "+0.099 to +0.693 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season",
+      "note": "Descriptive only; not a parlay or prop-combo correlation.",
+      "_r": 0.443679
+    },
+    {
+      "id": "CC-T05",
+      "pair": "Team win % vs turnovers per game",
+      "method": "Pearson r, 30 teams, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "-0.502",
+      "n_observations": "30",
+      "ci_95": "-0.730 to -0.173 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season",
+      "note": "Descriptive only; not a parlay or prop-combo correlation.",
+      "_r": -0.501644
+    },
+    {
+      "id": "CC-T06",
+      "pair": "Team win % vs rebounds per game",
+      "method": "Pearson r, 30 teams, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "+0.516",
+      "n_observations": "30",
+      "ci_95": "+0.192 to +0.739 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season",
+      "note": "Descriptive only; not a parlay or prop-combo correlation.",
+      "_r": 0.516298
+    },
+    {
+      "id": "CC-T07",
+      "pair": "Team points per game vs field-goal %",
+      "method": "Pearson r, 30 teams, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "+0.577",
+      "n_observations": "30",
+      "ci_95": "+0.273 to +0.776 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season",
+      "note": "Descriptive only; not a parlay or prop-combo correlation.",
+      "_r": 0.576885
+    },
+    {
+      "id": "CC-T08",
+      "pair": "Team points per game vs turnovers per game",
+      "method": "Pearson r, 30 teams, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "-0.422",
+      "n_observations": "30",
+      "ci_95": "-0.679 to -0.073 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season",
+      "note": "Descriptive only; not a parlay or prop-combo correlation.",
+      "_r": -0.421898
+    },
+    {
+      "id": "CC-P09",
+      "pair": "Player points per game vs minutes per game",
+      "method": "Pearson r, 15 players, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "+0.191",
+      "n_observations": "15",
+      "ci_95": "-0.356 to +0.640 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame",
+      "note": "Descriptive only; not a parlay or prop-combo correlation. Small sample (n=15): treat as indicative only.",
+      "_r": 0.190822
+    },
+    {
+      "id": "CC-P10",
+      "pair": "Player points per game vs field-goal attempts per game",
+      "method": "Pearson r, 15 players, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "+0.622",
+      "n_observations": "15",
+      "ci_95": "+0.161 to +0.860 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame",
+      "note": "Descriptive only; not a parlay or prop-combo correlation. Small sample (n=15): treat as indicative only.",
+      "_r": 0.621715
+    },
+    {
+      "id": "CC-P11",
+      "pair": "Player points per game vs assists per game",
+      "method": "Pearson r, 15 players, 2025-26 season averages (cross-sectional, not game-level)",
+      "correlation_value": "+0.356",
+      "n_observations": "15",
+      "ci_95": "-0.191 to +0.735 (Fisher z)",
+      "status": "verified – computed from verified official values",
+      "source_url": "https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame",
+      "note": "Descriptive only; not a parlay or prop-combo correlation. Small sample (n=15): treat as indicative only.",
+      "_r": 0.356485
+    }
+  ]
+}
