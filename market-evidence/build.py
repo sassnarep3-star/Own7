@@ -16,7 +16,7 @@ OUT = ROOT / "index.html"
 OFFICIAL_HOSTS = {
     "portal-spa-api.toto.nl", "www.toto.nl", "extra.toto.nl",
     "help.betmgm.nl", "sportsbook.fanatics.com", "oneidacasinohotel.com",
-    "support.draftkings.com", "www.gamblingcommission.gov.uk", "cruksregister.nl",
+    "support.draftkings.com", "www.gamblingcommission.gov.uk", "cruksregister.nl", "www.nba.com",
 }
 
 
@@ -113,7 +113,7 @@ main{max-width:1320px;margin:auto;padding:2.8rem 1.2rem 4rem}h1{font-size:clamp(
 <p class="eyebrow">Primary-source research · reviewed {{reviewed}} UTC</p>
 <h1>Market &amp; settlement evidence</h1>
 <p class="lead">A practical, source-linked reference for singles, player props and parlays. Contract details differ across operators, jurisdictions, market labels and rule versions.</p>
-<div class="callout"><p><strong>Research only.</strong> Findings report what the cited documents say, not what is currently offered or what applies to a particular wager. Operator examples are not recommendations or legal advice.</p><p>There are no NBA odds, measured correlations, performance results or proven profitable strategies in this register. No method removes luck.</p></div>
+<div class="callout"><p><strong>Research only.</strong> Findings report what the cited documents say, not what is currently offered or what applies to a particular wager. Operator examples are not recommendations or legal advice.</p><p>There are no NBA odds, measured correlations, performance results or proven profitable strategies in this register. No method removes luck.</p><p><strong>NBA data restriction:</strong> <a href="https://www.nba.com/termsofuse#nba-statistics">NBA.com Terms of Use §9</a> state that NBA Statistics may not be used in connection with gambling, including legal gambling. This supplement contains no NBA Statistics; no separate license or permission has been established.</p></div>
 <section id="evidence" aria-labelledby="evidence-heading"><h2 id="evidence-heading">Documented rule findings</h2>
 <p class="small">Each finding was compared with its linked operator or regulator document. The research implications are proposed safeguards, not claims of proven predictive skill. Select a source to inspect the original text and context.</p>
 <div class="toolbar"><label class="field" for="filter">Filter findings<input id="filter" type="search" placeholder="e.g. overtime, player, TOTO"></label><p class="small" id="count" role="status" aria-live="polite"></p></div>
