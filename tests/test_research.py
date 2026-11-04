@@ -250,6 +250,7 @@ class GateTests(unittest.TestCase):
         return {'strategy_id': 'synthetic-test', 'category': 'Single bets',
                 'gate_evidence': {g: {'status': 'pass', 'artifact_url': 'https://github.com/sassnarep3-star/Own7'} for g in GATE_IDS},
                 'test_window_id': 'synthetic', 'stake_policy_id': 'synthetic',
+                'offer_universe_id': 'synthetic', 'evaluation_event_set_hash': 'synthetic',
                 'roi_lcb95': 0.01, 'log_loss': 0.6, 'frozen_at': '2020-01-01T00:00:00Z'}
 
     def test_missing_gates_rejected(self):

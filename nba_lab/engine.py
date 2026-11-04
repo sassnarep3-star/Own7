@@ -52,9 +52,26 @@ def verify_receipts() -> None:
             raise ValueError(f"Unverified input in {path.name}")
 
 
+def validate_source_rights(settings: dict) -> None:
+    """Do not silently enable operations absent verified source authorization.
+
+    This frozen NBA audit has no gambling-use permission. A different mode would
+    require a separate rights-reviewed implementation, not a configuration toggle.
+    """
+    rights = settings.get("source_rights", {})
+    if not isinstance(rights, dict):
+        raise ValueError("Explicit source-rights no-go policy required")
+    for field in ("nba_gambling_use_authorized", "nba_derived_betting_prices_enabled", "bulk_collection_enabled"):
+        if rights.get(field) is not False:
+            raise ValueError(f"Source-rights no-go: {field} must remain explicitly false")
+    if settings.get("competition", {}).get("cash_payments_enabled") is not False:
+        raise ValueError("Cash operations are disabled for this frozen audit")
+
+
 def compute() -> dict:
     verify_receipts()
     settings = load_json("research/protocol.json")
+    validate_source_rights(settings)
     catalog = load_json("research/catalog.json")
     games = load_csv("data/jokic-games-2025-26.csv")
     if len(games) != 32 or games[0]["Date"] != settings["demo"]["window_start"] or games[-1]["Date"] != settings["demo"]["window_end"]:
