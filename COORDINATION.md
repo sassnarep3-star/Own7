@@ -148,3 +148,12 @@ Claimed immediately on session start. Earlier boards retained unchanged.
 ### Notes
 - Active parallel sessions observed at claim time: `arena/f58e9526-own7` (PR #11) and `arena/29e51225-own7` (PR #10), both committing within the last 10 minutes. Their PRs are not touched until they settle or pass the 60-minute staleness rule.
 - Rules: never infer or fill values; blank + flag when no official source confirms; link every source; small frequent commits; resolve conflicts without discarding others' work.
+
+### Task 18 — stale PR #4 takeover (completed 2026-11-04 00:10 UTC)
+
+- Handoff: PR #4 (`arena/5051651b-own7`, "Record PR #3 merge result in COORDINATION.md") had no commits since 19:51:04 UTC (>60 min stale) and is CONFLICTING with main because the T1–T6 board it edits no longer exists in COORDINATION.md. Taken over per the 60-minute rule; branch left untouched in history; PR closed as superseded (content preserved below).
+- Preserved content from PR #4 (no work discarded):
+  - T6 (session 5051651b site build / verification script / Pages deploy) — status: done.
+  - MERGED: PR https://github.com/sassnarep3-star/Own7/pull/3 (`arena/5051651b-own7` → `main`), merge commit `11b30d6e6006eb3e3b7ff66cc24b8dc43d3a42bd`. Checks before merge: Validate site pass, Verify verified-data site pass. Pages build reported `built`; live at https://sassnarep3-star.github.io/Own7/ and /verified/. Live pages confirmed by fetch.
+  - Note from that session: sandbox cannot reach github.io via curl; live check used the fetch tool.
+- Irregularity (logged, not blocking): `11b30d6` is not an ancestor of current `main` history (repo history contains disjoint roots from parallel session pushes); the record above is retained as documentation of the event.
