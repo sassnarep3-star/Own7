@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "canonical_pages": 15,
+  "legacy_redirects": 20,
+  "auxiliary_pages": 1,
+  "recursive_html_pages": 36,
+  "table_body_rows": 541,
+  "internal_link_references": 493,
+  "external_references": 1031,
+  "registered_sources": 28,
+  "unknown_values_blank": true,
+  "research_reproduction": "passed",
+  "errors": [],
+  "scope": "Integrity, contracts, semantics and local routing. Not external factual truth, source rights or profitability."
+}

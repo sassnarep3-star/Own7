@@ -1,0 +1,2798 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-11-03",
+  "mode": "Frozen statistical/methods audit; no betting-price release or gambling service",
+  "source_rights": {
+    "nba_gambling_use_authorized": false,
+    "nba_derived_betting_prices_enabled": false,
+    "bulk_collection_enabled": false,
+    "source_id": "NBA-TERMS",
+    "rule": "NBA terms section 9(iv) states NBA Statistics may not be used in connection with any gambling activity, including legal gambling activity. No separate permission is evidenced.",
+    "research_boundary": "Frozen, attributed statistical audit and non-commercial methods demonstration only; no executable line or wagering signal is released."
+  },
+  "verified_observation_rows": 107,
+  "source_verification": "Agent row-by-row comparison to rendered official tables; normalized evidence, not a raw archive",
+  "cohort": {
+    "player": "Nikola Jokić",
+    "player_id": "203999",
+    "games": 32,
+    "start": "2026-02-01",
+    "end": "2026-04-12",
+    "complete_for_explicit_window": true,
+    "complete_season": false,
+    "preregistered": false
+  },
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261103,
+    "block_length": 5,
+    "confidence": 0.95,
+    "method": "paired circular moving-block percentile bootstrap in chronological game order",
+    "limitations": "Exploratory intervals only; five-game dependence horizon is assumed, not established. No adjustment for selection, player/window choice or multiple comparisons; no confirmatory p-values reported."
+  },
+  "correlations": [
+    {
+      "pair": "PTS / REB",
+      "n": 32,
+      "start": "2026-02-01",
+      "end": "2026-04-12",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ],
+      "status": "Derived · exploratory",
+      "kind": "Raw statistics",
+      "pearson": 0.03453535,
+      "spearman": -9.294e-05,
+      "interval": {
+        "low": -0.4416152,
+        "high": 0.49436809,
+        "valid_resamples": 10000,
+        "draws": 10000
+      }
+    },
+    {
+      "pair": "PTS > 27.5 & REB > 12.5",
+      "n": 32,
+      "start": "2026-02-01",
+      "end": "2026-04-12",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ],
+      "status": "Derived · exploratory",
+      "kind": "Binary hit indicators",
+      "pearson": -0.07116959,
+      "spearman": null,
+      "interval": {
+        "low": -0.4040951,
+        "high": 0.28312885,
+        "valid_resamples": 10000,
+        "draws": 10000
+      }
+    },
+    {
+      "pair": "PTS / AST",
+      "n": 32,
+      "start": "2026-02-01",
+      "end": "2026-04-12",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ],
+      "status": "Derived · exploratory",
+      "kind": "Raw statistics",
+      "pearson": -0.10956406,
+      "spearman": -0.11425664,
+      "interval": {
+        "low": -0.40594741,
+        "high": 0.17707526,
+        "valid_resamples": 10000,
+        "draws": 10000
+      }
+    },
+    {
+      "pair": "PTS > 27.5 & AST > 10.5",
+      "n": 32,
+      "start": "2026-02-01",
+      "end": "2026-04-12",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ],
+      "status": "Derived · exploratory",
+      "kind": "Binary hit indicators",
+      "pearson": -0.04008217,
+      "spearman": null,
+      "interval": {
+        "low": -0.37056499,
+        "high": 0.33075319,
+        "valid_resamples": 10000,
+        "draws": 10000
+      }
+    },
+    {
+      "pair": "REB / AST",
+      "n": 32,
+      "start": "2026-02-01",
+      "end": "2026-04-12",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ],
+      "status": "Derived · exploratory",
+      "kind": "Raw statistics",
+      "pearson": 0.42960748,
+      "spearman": 0.3313237,
+      "interval": {
+        "low": 0.12706156,
+        "high": 0.65972123,
+        "valid_resamples": 10000,
+        "draws": 10000
+      }
+    },
+    {
+      "pair": "REB > 12.5 & AST > 10.5",
+      "n": 32,
+      "start": "2026-02-01",
+      "end": "2026-04-12",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ],
+      "status": "Derived · exploratory",
+      "kind": "Binary hit indicators",
+      "pearson": 0.29012943,
+      "spearman": null,
+      "interval": {
+        "low": 0.04008217,
+        "high": 0.52665972,
+        "valid_resamples": 10000,
+        "draws": 10000
+      }
+    },
+    {
+      "pair": "Player A / teammate B",
+      "kind": "Not collected",
+      "n": null,
+      "pearson": null,
+      "spearman": null,
+      "interval": {
+        "low": null,
+        "high": null,
+        "valid_resamples": null,
+        "draws": null
+      },
+      "start": null,
+      "end": null,
+      "status": "Unverified · blank",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ]
+    },
+    {
+      "pair": "Cross-game leg A / leg B",
+      "kind": "Not collected",
+      "n": null,
+      "pearson": null,
+      "spearman": null,
+      "interval": {
+        "low": null,
+        "high": null,
+        "valid_resamples": null,
+        "draws": null
+      },
+      "start": null,
+      "end": null,
+      "status": "Unverified · blank",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ]
+    },
+    {
+      "pair": "Three-or-more-leg joint distribution",
+      "kind": "Not collected",
+      "n": null,
+      "pearson": null,
+      "spearman": null,
+      "interval": {
+        "low": null,
+        "high": null,
+        "valid_resamples": null,
+        "draws": null
+      },
+      "start": null,
+      "end": null,
+      "status": "Unverified · blank",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ]
+    }
+  ],
+  "joint_events": [
+    {
+      "pair": "PTS > 27.5 & REB > 12.5",
+      "n": 32,
+      "start": "2026-02-01",
+      "end": "2026-04-12",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ],
+      "status": "Derived · exploratory",
+      "hits_a": 13,
+      "hits_b": 21,
+      "joint_hits": 8,
+      "p_a": 0.40625,
+      "p_b": 0.65625,
+      "p_independent": 0.26660156,
+      "p_joint": 0.25,
+      "difference": -0.01660156,
+      "phi": -0.07116959,
+      "joint_interval": {
+        "low": 0.1875,
+        "high": 0.34375,
+        "valid_resamples": 10000,
+        "draws": 10000
+      }
+    },
+    {
+      "pair": "PTS > 27.5 & AST > 10.5",
+      "n": 32,
+      "start": "2026-02-01",
+      "end": "2026-04-12",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ],
+      "status": "Derived · exploratory",
+      "hits_a": 13,
+      "hits_b": 18,
+      "joint_hits": 7,
+      "p_a": 0.40625,
+      "p_b": 0.5625,
+      "p_independent": 0.22851562,
+      "p_joint": 0.21875,
+      "difference": -0.00976562,
+      "phi": -0.04008217,
+      "joint_interval": {
+        "low": 0.09375,
+        "high": 0.34375,
+        "valid_resamples": 10000,
+        "draws": 10000
+      }
+    },
+    {
+      "pair": "REB > 12.5 & AST > 10.5",
+      "n": 32,
+      "start": "2026-02-01",
+      "end": "2026-04-12",
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR"
+      ],
+      "status": "Derived · exploratory",
+      "hits_a": 21,
+      "hits_b": 18,
+      "joint_hits": 14,
+      "p_a": 0.65625,
+      "p_b": 0.5625,
+      "p_independent": 0.36914062,
+      "p_joint": 0.4375,
+      "difference": 0.06835938,
+      "phi": 0.29012943,
+      "joint_interval": {
+        "low": 0.28125,
+        "high": 0.59375,
+        "valid_resamples": 10000,
+        "draws": 10000
+      }
+    }
+  ],
+  "demo": {
+    "forecasts": [
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500862",
+        "date": "2026-02-27",
+        "train_end": "2026-02-25",
+        "training_games": 10,
+        "training_hits": 4,
+        "p_model": 0.41666667,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500862/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500871",
+        "date": "2026-03-01",
+        "train_end": "2026-02-27",
+        "training_games": 11,
+        "training_hits": 4,
+        "p_model": 0.38461538,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500871/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500881",
+        "date": "2026-03-02",
+        "train_end": "2026-03-01",
+        "training_games": 12,
+        "training_hits": 5,
+        "p_model": 0.42857143,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500881/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500906",
+        "date": "2026-03-05",
+        "train_end": "2026-03-02",
+        "training_games": 13,
+        "training_hits": 5,
+        "p_model": 0.4,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500906/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500911",
+        "date": "2026-03-06",
+        "train_end": "2026-03-05",
+        "training_games": 14,
+        "training_hits": 6,
+        "p_model": 0.4375,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500911/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500933",
+        "date": "2026-03-09",
+        "train_end": "2026-03-06",
+        "training_games": 15,
+        "training_hits": 7,
+        "p_model": 0.47058824,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500933/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500950",
+        "date": "2026-03-11",
+        "train_end": "2026-03-09",
+        "training_games": 16,
+        "training_hits": 8,
+        "p_model": 0.5,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500950/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500958",
+        "date": "2026-03-12",
+        "train_end": "2026-03-11",
+        "training_games": 17,
+        "training_hits": 8,
+        "p_model": 0.47368421,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500958/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500974",
+        "date": "2026-03-14",
+        "train_end": "2026-03-12",
+        "training_games": 18,
+        "training_hits": 9,
+        "p_model": 0.5,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500974/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500997",
+        "date": "2026-03-17",
+        "train_end": "2026-03-14",
+        "training_games": 19,
+        "training_hits": 9,
+        "p_model": 0.47619048,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500997/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022500651",
+        "date": "2026-03-18",
+        "train_end": "2026-03-17",
+        "training_games": 20,
+        "training_hits": 9,
+        "p_model": 0.45454545,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500651/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501021",
+        "date": "2026-03-20",
+        "train_end": "2026-03-18",
+        "training_games": 21,
+        "training_hits": 10,
+        "p_model": 0.47826087,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501021/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501032",
+        "date": "2026-03-22",
+        "train_end": "2026-03-20",
+        "training_games": 22,
+        "training_hits": 10,
+        "p_model": 0.45833333,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501032/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501050",
+        "date": "2026-03-24",
+        "train_end": "2026-03-22",
+        "training_games": 23,
+        "training_hits": 10,
+        "p_model": 0.44,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501050/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501059",
+        "date": "2026-03-25",
+        "train_end": "2026-03-24",
+        "training_games": 24,
+        "training_hits": 10,
+        "p_model": 0.42307692,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501059/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501072",
+        "date": "2026-03-27",
+        "train_end": "2026-03-25",
+        "training_games": 25,
+        "training_hits": 10,
+        "p_model": 0.40740741,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501072/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501090",
+        "date": "2026-03-29",
+        "train_end": "2026-03-27",
+        "training_games": 26,
+        "training_hits": 11,
+        "p_model": 0.42857143,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501090/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501112",
+        "date": "2026-04-01",
+        "train_end": "2026-03-29",
+        "training_games": 27,
+        "training_hits": 11,
+        "p_model": 0.4137931,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501112/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501130",
+        "date": "2026-04-04",
+        "train_end": "2026-04-01",
+        "training_games": 28,
+        "training_hits": 11,
+        "p_model": 0.4,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501130/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501147",
+        "date": "2026-04-06",
+        "train_end": "2026-04-04",
+        "training_games": 29,
+        "training_hits": 12,
+        "p_model": 0.41935484,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501147/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501162",
+        "date": "2026-04-08",
+        "train_end": "2026-04-06",
+        "training_games": 30,
+        "training_hits": 13,
+        "p_model": 0.4375,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501162/"
+      },
+      {
+        "event": "PTS",
+        "threshold": "PTS > 27.5",
+        "game_id": "0022501197",
+        "date": "2026-04-12",
+        "train_end": "2026-04-08",
+        "training_games": 31,
+        "training_hits": 13,
+        "p_model": 0.42424242,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501197/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500862",
+        "date": "2026-02-27",
+        "train_end": "2026-02-25",
+        "training_games": 10,
+        "training_hits": 7,
+        "p_model": 0.66666667,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500862/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500871",
+        "date": "2026-03-01",
+        "train_end": "2026-02-27",
+        "training_games": 11,
+        "training_hits": 8,
+        "p_model": 0.69230769,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500871/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500881",
+        "date": "2026-03-02",
+        "train_end": "2026-03-01",
+        "training_games": 12,
+        "training_hits": 9,
+        "p_model": 0.71428571,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500881/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500906",
+        "date": "2026-03-05",
+        "train_end": "2026-03-02",
+        "training_games": 13,
+        "training_hits": 9,
+        "p_model": 0.66666667,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500906/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500911",
+        "date": "2026-03-06",
+        "train_end": "2026-03-05",
+        "training_games": 14,
+        "training_hits": 9,
+        "p_model": 0.625,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500911/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500933",
+        "date": "2026-03-09",
+        "train_end": "2026-03-06",
+        "training_games": 15,
+        "training_hits": 9,
+        "p_model": 0.58823529,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500933/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500950",
+        "date": "2026-03-11",
+        "train_end": "2026-03-09",
+        "training_games": 16,
+        "training_hits": 10,
+        "p_model": 0.61111111,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500950/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500958",
+        "date": "2026-03-12",
+        "train_end": "2026-03-11",
+        "training_games": 17,
+        "training_hits": 10,
+        "p_model": 0.57894737,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500958/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500974",
+        "date": "2026-03-14",
+        "train_end": "2026-03-12",
+        "training_games": 18,
+        "training_hits": 11,
+        "p_model": 0.6,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500974/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500997",
+        "date": "2026-03-17",
+        "train_end": "2026-03-14",
+        "training_games": 19,
+        "training_hits": 12,
+        "p_model": 0.61904762,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500997/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022500651",
+        "date": "2026-03-18",
+        "train_end": "2026-03-17",
+        "training_games": 20,
+        "training_hits": 12,
+        "p_model": 0.59090909,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500651/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501021",
+        "date": "2026-03-20",
+        "train_end": "2026-03-18",
+        "training_games": 21,
+        "training_hits": 13,
+        "p_model": 0.60869565,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501021/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501032",
+        "date": "2026-03-22",
+        "train_end": "2026-03-20",
+        "training_games": 22,
+        "training_hits": 13,
+        "p_model": 0.58333333,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501032/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501050",
+        "date": "2026-03-24",
+        "train_end": "2026-03-22",
+        "training_games": 23,
+        "training_hits": 14,
+        "p_model": 0.6,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501050/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501059",
+        "date": "2026-03-25",
+        "train_end": "2026-03-24",
+        "training_games": 24,
+        "training_hits": 15,
+        "p_model": 0.61538462,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501059/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501072",
+        "date": "2026-03-27",
+        "train_end": "2026-03-25",
+        "training_games": 25,
+        "training_hits": 16,
+        "p_model": 0.62962963,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501072/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501090",
+        "date": "2026-03-29",
+        "train_end": "2026-03-27",
+        "training_games": 26,
+        "training_hits": 17,
+        "p_model": 0.64285714,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501090/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501112",
+        "date": "2026-04-01",
+        "train_end": "2026-03-29",
+        "training_games": 27,
+        "training_hits": 18,
+        "p_model": 0.65517241,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501112/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501130",
+        "date": "2026-04-04",
+        "train_end": "2026-04-01",
+        "training_games": 28,
+        "training_hits": 19,
+        "p_model": 0.66666667,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501130/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501147",
+        "date": "2026-04-06",
+        "train_end": "2026-04-04",
+        "training_games": 29,
+        "training_hits": 19,
+        "p_model": 0.64516129,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501147/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501162",
+        "date": "2026-04-08",
+        "train_end": "2026-04-06",
+        "training_games": 30,
+        "training_hits": 20,
+        "p_model": 0.65625,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501162/"
+      },
+      {
+        "event": "REB",
+        "threshold": "REB > 12.5",
+        "game_id": "0022501197",
+        "date": "2026-04-12",
+        "train_end": "2026-04-08",
+        "training_games": 31,
+        "training_hits": 21,
+        "p_model": 0.66666667,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501197/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500862",
+        "date": "2026-02-27",
+        "train_end": "2026-02-25",
+        "training_games": 10,
+        "training_hits": 4,
+        "p_model": 0.41666667,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500862/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500871",
+        "date": "2026-03-01",
+        "train_end": "2026-02-27",
+        "training_games": 11,
+        "training_hits": 5,
+        "p_model": 0.46153846,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500871/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500881",
+        "date": "2026-03-02",
+        "train_end": "2026-03-01",
+        "training_games": 12,
+        "training_hits": 5,
+        "p_model": 0.42857143,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500881/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500906",
+        "date": "2026-03-05",
+        "train_end": "2026-03-02",
+        "training_games": 13,
+        "training_hits": 5,
+        "p_model": 0.4,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500906/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500911",
+        "date": "2026-03-06",
+        "train_end": "2026-03-05",
+        "training_games": 14,
+        "training_hits": 6,
+        "p_model": 0.4375,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500911/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500933",
+        "date": "2026-03-09",
+        "train_end": "2026-03-06",
+        "training_games": 15,
+        "training_hits": 6,
+        "p_model": 0.41176471,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500933/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500950",
+        "date": "2026-03-11",
+        "train_end": "2026-03-09",
+        "training_games": 16,
+        "training_hits": 7,
+        "p_model": 0.44444444,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500950/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500958",
+        "date": "2026-03-12",
+        "train_end": "2026-03-11",
+        "training_games": 17,
+        "training_hits": 8,
+        "p_model": 0.47368421,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500958/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500974",
+        "date": "2026-03-14",
+        "train_end": "2026-03-12",
+        "training_games": 18,
+        "training_hits": 9,
+        "p_model": 0.5,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500974/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500997",
+        "date": "2026-03-17",
+        "train_end": "2026-03-14",
+        "training_games": 19,
+        "training_hits": 10,
+        "p_model": 0.52380952,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500997/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022500651",
+        "date": "2026-03-18",
+        "train_end": "2026-03-17",
+        "training_games": 20,
+        "training_hits": 11,
+        "p_model": 0.54545455,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500651/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501021",
+        "date": "2026-03-20",
+        "train_end": "2026-03-18",
+        "training_games": 21,
+        "training_hits": 11,
+        "p_model": 0.52173913,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501021/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501032",
+        "date": "2026-03-22",
+        "train_end": "2026-03-20",
+        "training_games": 22,
+        "training_hits": 11,
+        "p_model": 0.5,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501032/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501050",
+        "date": "2026-03-24",
+        "train_end": "2026-03-22",
+        "training_games": 23,
+        "training_hits": 12,
+        "p_model": 0.52,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501050/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501059",
+        "date": "2026-03-25",
+        "train_end": "2026-03-24",
+        "training_games": 24,
+        "training_hits": 13,
+        "p_model": 0.53846154,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501059/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501072",
+        "date": "2026-03-27",
+        "train_end": "2026-03-25",
+        "training_games": 25,
+        "training_hits": 14,
+        "p_model": 0.55555556,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501072/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501090",
+        "date": "2026-03-29",
+        "train_end": "2026-03-27",
+        "training_games": 26,
+        "training_hits": 15,
+        "p_model": 0.57142857,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501090/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501112",
+        "date": "2026-04-01",
+        "train_end": "2026-03-29",
+        "training_games": 27,
+        "training_hits": 15,
+        "p_model": 0.55172414,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501112/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501130",
+        "date": "2026-04-04",
+        "train_end": "2026-04-01",
+        "training_games": 28,
+        "training_hits": 16,
+        "p_model": 0.56666667,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501130/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501147",
+        "date": "2026-04-06",
+        "train_end": "2026-04-04",
+        "training_games": 29,
+        "training_hits": 17,
+        "p_model": 0.58064516,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501147/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501162",
+        "date": "2026-04-08",
+        "train_end": "2026-04-06",
+        "training_games": 30,
+        "training_hits": 18,
+        "p_model": 0.59375,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501162/"
+      },
+      {
+        "event": "AST",
+        "threshold": "AST > 10.5",
+        "game_id": "0022501197",
+        "date": "2026-04-12",
+        "train_end": "2026-04-08",
+        "training_games": 31,
+        "training_hits": 18,
+        "p_model": 0.57575758,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501197/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500862",
+        "date": "2026-02-27",
+        "train_end": "2026-02-25",
+        "training_games": 10,
+        "training_hits": 1,
+        "p_model": 0.16666667,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500862/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500871",
+        "date": "2026-03-01",
+        "train_end": "2026-02-27",
+        "training_games": 11,
+        "training_hits": 1,
+        "p_model": 0.15384615,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500871/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500881",
+        "date": "2026-03-02",
+        "train_end": "2026-03-01",
+        "training_games": 12,
+        "training_hits": 1,
+        "p_model": 0.14285714,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500881/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500906",
+        "date": "2026-03-05",
+        "train_end": "2026-03-02",
+        "training_games": 13,
+        "training_hits": 1,
+        "p_model": 0.13333333,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500906/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500911",
+        "date": "2026-03-06",
+        "train_end": "2026-03-05",
+        "training_games": 14,
+        "training_hits": 2,
+        "p_model": 0.1875,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500911/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500933",
+        "date": "2026-03-09",
+        "train_end": "2026-03-06",
+        "training_games": 15,
+        "training_hits": 2,
+        "p_model": 0.17647059,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500933/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500950",
+        "date": "2026-03-11",
+        "train_end": "2026-03-09",
+        "training_games": 16,
+        "training_hits": 3,
+        "p_model": 0.22222222,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500950/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500958",
+        "date": "2026-03-12",
+        "train_end": "2026-03-11",
+        "training_games": 17,
+        "training_hits": 3,
+        "p_model": 0.21052632,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500958/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500974",
+        "date": "2026-03-14",
+        "train_end": "2026-03-12",
+        "training_games": 18,
+        "training_hits": 4,
+        "p_model": 0.25,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500974/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500997",
+        "date": "2026-03-17",
+        "train_end": "2026-03-14",
+        "training_games": 19,
+        "training_hits": 4,
+        "p_model": 0.23809524,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500997/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022500651",
+        "date": "2026-03-18",
+        "train_end": "2026-03-17",
+        "training_games": 20,
+        "training_hits": 4,
+        "p_model": 0.22727273,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022500651/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501021",
+        "date": "2026-03-20",
+        "train_end": "2026-03-18",
+        "training_games": 21,
+        "training_hits": 4,
+        "p_model": 0.2173913,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501021/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501032",
+        "date": "2026-03-22",
+        "train_end": "2026-03-20",
+        "training_games": 22,
+        "training_hits": 4,
+        "p_model": 0.20833333,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501032/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501050",
+        "date": "2026-03-24",
+        "train_end": "2026-03-22",
+        "training_games": 23,
+        "training_hits": 4,
+        "p_model": 0.2,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501050/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501059",
+        "date": "2026-03-25",
+        "train_end": "2026-03-24",
+        "training_games": 24,
+        "training_hits": 4,
+        "p_model": 0.19230769,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501059/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501072",
+        "date": "2026-03-27",
+        "train_end": "2026-03-25",
+        "training_games": 25,
+        "training_hits": 4,
+        "p_model": 0.18518519,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501072/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501090",
+        "date": "2026-03-29",
+        "train_end": "2026-03-27",
+        "training_games": 26,
+        "training_hits": 5,
+        "p_model": 0.21428571,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501090/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501112",
+        "date": "2026-04-01",
+        "train_end": "2026-03-29",
+        "training_games": 27,
+        "training_hits": 5,
+        "p_model": 0.20689655,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501112/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501130",
+        "date": "2026-04-04",
+        "train_end": "2026-04-01",
+        "training_games": 28,
+        "training_hits": 5,
+        "p_model": 0.2,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501130/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501147",
+        "date": "2026-04-06",
+        "train_end": "2026-04-04",
+        "training_games": 29,
+        "training_hits": 6,
+        "p_model": 0.22580645,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 1,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501147/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501162",
+        "date": "2026-04-08",
+        "train_end": "2026-04-06",
+        "training_games": 30,
+        "training_hits": 7,
+        "p_model": 0.25,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501162/"
+      },
+      {
+        "event": "PTS + AST combo",
+        "threshold": "PTS > 27.5 & AST > 10.5",
+        "game_id": "0022501197",
+        "date": "2026-04-12",
+        "train_end": "2026-04-08",
+        "training_games": 31,
+        "training_hits": 7,
+        "p_model": 0.24242424,
+        "fair_model_decimal": null,
+        "price_status": "Withheld: NBA source-rights gate not cleared",
+        "outcome": 0,
+        "market_decimal": null,
+        "edge": null,
+        "roi": null,
+        "clv": null,
+        "status": "Retrospective demonstration",
+        "source_ids": [
+          "NBA-GAMES"
+        ],
+        "source_url": "https://www.nba.com/game/0022501197/"
+      }
+    ],
+    "summaries": [
+      {
+        "event": "PTS",
+        "forecasts": 22,
+        "log_loss": 0.70079164,
+        "brier": 0.25363409,
+        "neutral_log_loss": 0.69314718,
+        "neutral_brier": 0.25,
+        "roi": null,
+        "clv": null,
+        "status": "Exploratory; not market-tested",
+        "source_ids": [
+          "NBA-GAMES",
+          "SK-CAL"
+        ]
+      },
+      {
+        "event": "REB",
+        "forecasts": 22,
+        "log_loss": 0.6812106,
+        "brier": 0.24320782,
+        "neutral_log_loss": 0.69314718,
+        "neutral_brier": 0.25,
+        "roi": null,
+        "clv": null,
+        "status": "Exploratory; not market-tested",
+        "source_ids": [
+          "NBA-GAMES",
+          "SK-CAL"
+        ]
+      },
+      {
+        "event": "AST",
+        "forecasts": 22,
+        "log_loss": 0.71467263,
+        "brier": 0.26057448,
+        "neutral_log_loss": 0.69314718,
+        "neutral_brier": 0.25,
+        "roi": null,
+        "clv": null,
+        "status": "Exploratory; not market-tested",
+        "source_ids": [
+          "NBA-GAMES",
+          "SK-CAL"
+        ]
+      },
+      {
+        "event": "PTS + AST combo",
+        "forecasts": 22,
+        "log_loss": 0.62841909,
+        "brier": 0.21185242,
+        "neutral_log_loss": 0.69314718,
+        "neutral_brier": 0.25,
+        "roi": null,
+        "clv": null,
+        "status": "Exploratory; not market-tested",
+        "source_ids": [
+          "NBA-GAMES",
+          "SK-CAL"
+        ]
+      }
+    ]
+  },
+  "evaluations": [
+    {
+      "strategy_id": "S01",
+      "name": "Opponent-adjusted margin",
+      "category": "Single bets",
+      "gate_evidence": {
+        "G01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G05": {
+          "status": "not applicable",
+          "artifact_url": "https://github.com/sassnarep3-star/Own7/blob/main/research/protocol.json"
+        },
+        "G06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NBA-TEAMS",
+        "NBA-GLOSSARY",
+        "SK-TIME"
+      ]
+    },
+    {
+      "strategy_id": "S02",
+      "name": "Pace × efficiency total",
+      "category": "Single bets",
+      "gate_evidence": {
+        "G01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G05": {
+          "status": "not applicable",
+          "artifact_url": "https://github.com/sassnarep3-star/Own7/blob/main/research/protocol.json"
+        },
+        "G06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NBA-GLOSSARY",
+        "NBA-TEAMS",
+        "SK-CAL"
+      ]
+    },
+    {
+      "strategy_id": "S03",
+      "name": "Schedule & availability update",
+      "category": "Single bets",
+      "gate_evidence": {
+        "G01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G05": {
+          "status": "not applicable",
+          "artifact_url": "https://github.com/sassnarep3-star/Own7/blob/main/research/protocol.json"
+        },
+        "G06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NBA-INJURY",
+        "SK-TIME",
+        "NBA-TEAMS"
+      ]
+    },
+    {
+      "strategy_id": "S04",
+      "name": "Minutes × role · points",
+      "category": "Player props / combos",
+      "gate_evidence": {
+        "G01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G05": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NBA-PLAYERS",
+        "NBA-INJURY",
+        "SK-CAL"
+      ]
+    },
+    {
+      "strategy_id": "S05",
+      "name": "Rebounds / assists distribution",
+      "category": "Player props / combos",
+      "gate_evidence": {
+        "G01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G05": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NBA-GAMES",
+        "NBA-GLOSSARY",
+        "SCIPY-CORR"
+      ]
+    },
+    {
+      "strategy_id": "S06",
+      "name": "Cross-game joint-value filter",
+      "category": "Parlays",
+      "gate_evidence": {
+        "G01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G05": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "SCIPY-CORR",
+        "SK-CAL",
+        "REPO"
+      ]
+    },
+    {
+      "strategy_id": "S07",
+      "name": "Same-player points + assists",
+      "category": "Player props / combos",
+      "gate_evidence": {
+        "G01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G05": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NBA-GAMES",
+        "SCIPY-CORR",
+        "SK-TIME"
+      ]
+    },
+    {
+      "strategy_id": "S08",
+      "name": "Teammate / team-total combination",
+      "category": "Player props / combos",
+      "gate_evidence": {
+        "G01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G05": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "G10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NBA-GLOSSARY",
+        "NBA-INJURY",
+        "SCIPY-CORR"
+      ]
+    }
+  ],
+  "leaderboard": [],
+  "cash_rewards": null,
+  "input_sha256": {
+    "data/jokic-games-2025-26.csv": "6aef2e09256d0423a80df850830c7daea7f18142219a07e6b37b17b2e8b6528f",
+    "data/players-2025-26-top15.csv": "418c0ff25f96990483aba7f7e1f8b2fa234344a3073b0ddb2f7cfa72da254f10",
+    "data/standings-2026-27.csv": "3bb2b710822a2e42c887f389ef03df393c11c5c94faaca6979a358e597616d20",
+    "data/team-correlations-2025-26.csv": "45190765932f4d89217b55aa32a4ca48acdfb2ab56da95cd1a97f2a8772f24ae",
+    "data/teams-2025-26.csv": "2c88848b57b87696d30eb37fa93499ecac557c7e2dd00b77ee7630ffbad11e6f",
+    "nba_lab/__init__.py": "c308344bcfcf89b5bc69fdb61c9637ad0000288c4003e774c5a63f1ab3d006b5",
+    "nba_lab/__main__.py": "5305d5d90b492216fcdf499c4e9f1a68224302b54195502ca049a3002781658b",
+    "nba_lab/engine.py": "67fcdb061e3e6b7a2ed8174f3addad3328a3208932e39cbcb9accdf8ec700366",
+    "nba_lab/math.py": "64aefb7effa86a046dca9b530ab3b07f7243b9560b263bf8925aab736d1429f4",
+    "nba_lab/models.py": "e215f35ae9005b64a7026622ecf2a4fc3c03ef8251fed1ed0972290f9ab755bc",
+    "nba_lab/validation.py": "037dff8f23e6143d133c2d116e095a8cb3c8faea544f27fd365aee8055a373eb",
+    "research/catalog.json": "cdcd932a4bb6f415f2487352df6c516c37c1b42316f4ed660a6413ee287d1097",
+    "research/evidence/receipts.json": "813665038767581ee7981d5beb051f86b2ec80ede955861533229d444f4f8d03",
+    "research/protocol.json": "4d40bed6586a473363bf2b9be035d7a30ba2ccf1b611fb152c7dcf25ff00eda8",
+    "research/sources.json": "e91a11b787763016229692604e92ed5b7a0b6b0885b20c6460c0bb29d0df7b6f"
+  },
+  "run_hash": "bf171b924c523c1edbc1561944caf28626145ccbaad81870b43e368197736f23",
+  "limitations": [
+    "No operator prices or pregame timestamp archive",
+    "No untouched confirmatory or prospective shadow evaluation",
+    "One retrospectively selected player/window",
+    "Not selection-adjusted or powered for strategy validation",
+    "No verified edge, ROI, CLV, prize payment or live recommendation"
+  ]
+}

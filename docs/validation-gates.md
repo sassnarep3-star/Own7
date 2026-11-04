@@ -1,41 +1,22 @@
-> SUPERSEDED HISTORICAL DOCUMENT: Earlier claims have not been endorsed by the 2026-11-03 independent audit. Current summary: ../index.html ; findings: ../review.html . Numeric values must not be used as verified data.
+# Ten fail-closed validation gates
 
-# Validation Gates
+Canonical pass rules and current evidence are in [`research/catalog.json`](../research/catalog.json). Numerical floors, risk limits and reward rules are **project design choices**, not official NBA standards or proof of skill. No current candidate passes all applicable gates.
 
-Every strategy must pass ALL gates before it is considered for the leaderboard. Gates are applied in order; a strategy that fails any gate is rejected or flagged, not traded.
+| Gate | Evidence required | Current no-go | Primary method / official reference |
+|---|---|---|---|
+| G01 Provenance / contract | Official row receipts, original publication and capture times, input hashes, exact operator/market/line/settlement contract. | Stats snapshots checked; quotes and original pregame timing absent. | [NBA game rows](https://www.nba.com/stats/player/203999/boxscores?Season=2025-26&SeasonType=Regular%20Season&DateFrom=02%2F01%2F2026&DateTo=04%2F12%2F2026) |
+| G02 Chronology | Freeze all features/model/selection/calibration before tipoff; available_at ≤ cutoff; group legs/game and purge calendar splits. | Earlier-game retrospective calculation is not a contemporaneous pregame record. | [TimeSeriesSplit](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html) |
+| G03 Coverage / power | Screening floor: 500 settled selections, 200 distinct games, 60 dates; predeclared power/missingness/selection-bias analysis. | One player / 32 games; no market selections or power calculation. | [Official project policy](https://github.com/sassnarep3-star/Own7/blob/main/research/protocol.json) |
+| G04 Forecast quality | Common untouched event universe; beat frozen simple and same-contract de-vigged-market baselines in proper scores; inspect reliability. | Only small exploratory baseline-vs-neutral demonstrations. | [Calibration / proper scores](https://scikit-learn.org/stable/modules/calibration.html) |
+| G05 Joint dependence | Aligned event pairs, n/date/CI, conditional residual study, feasible marginals/joint probabilities and held-out joint calibration. | Descriptive estimates only; no executable combo evidence. Explicitly N/A for singles with an artifact, not a pass. | [Pearson method/limits](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html) |
+| G06 Executable economics | Actual timely quote, offered market, costs/limits, full push/void/overtime/DNP settlement and same-contract close. | No operator prices/contracts. | [Project economics contract](https://github.com/sassnarep3-star/Own7/blob/main/research/catalog.json) |
+| G07 Uncertainty / robustness | Net return lower 95% date-block interval >0 after costs; drawdown, coverage, CLV, block/season sensitivity. | ROI, CLV and return intervals blank. CLV alone would not establish skill. | [Project uncertainty policy](https://github.com/sassnarep3-star/Own7/blob/main/research/protocol.json) |
+| G08 Multiplicity | Every attempted variant logged; valid preregistered null tests; Holm familywise α=0.05 over the full family. | No confirmatory test family or p-values. | [statsmodels Holm](https://www.statsmodels.org/stable/generated/statsmodels.stats.multitest.multipletests.html) |
+| G09 Forward shadow / risk | Freeze common future evaluation; at least 60 calendar days and 200 games; paper caps and abstention log. | No prospective record; cash execution disabled. | [Official project policy](https://github.com/sassnarep3-star/Own7/blob/main/research/protocol.json) |
+| G10 Reproduction / rights | Reproduce hashes, probabilities, settlement and scores; establish source rights/operator/contest permissions. | Reproduction works; NBA gambling-use prohibition confirmed, separate permission absent. | [NBA terms §9](https://www.nba.com/termsofuse) |
 
-## Gate 1 — Official-source gate
-Rule: Every input value in a strategy table row must come from an official NBA source (nba.com / stats.nba.com) and carry a source link.
-Pass condition: Source link present and reachable.
-Fail action: Value left blank, row flagged "unverified" on the Flagged for Review page.
-Note: NBA.com does not publish betting lines/odds. Market-line cells are intentionally blank and flagged (see Flagged for Review). Lines must be obtained from the sportsbook at bet time and are outside this repo's verification boundary.
+`nba_lab.validation.eligible` enforces complete gate identities, pass states and nonempty evidence artifact links. It is a **structural contract validator**, not an automatic scientific, legal or factual certification. Missing, failed, partial, blocked or unknown evidence cannot rank. `rank_entries` additionally rejects missing/nonfinite metrics and incomparable evaluation IDs; separate divisions and deterministic ties are explicit.
 
-## Gate 2 — Sample-size gate
-Rule: A signal requires a minimum observed sample before it can be considered skill-based.
-- Team-level signal (spread/total): >= 25 games (full-season equivalent basis from 2025-26: 82 games).
-- Player prop signal: >= 25 games AND >= 25 minutes per game average.
-- 2026-27 in-season standings: only ~8 games played as of 2026-11-03 → FAILS sample-size gate. Used for context only, never as a standalone signal.
-Fail action: Signal marked "small sample — excluded from leaderboard".
+Ranking rewards only qualified paper entries with non-monetary merit points (3/2/1); no eligible entries means no points. Cash amounts stay blank. The present data cannot prove skill or eliminate outcome luck. Minimum counts alone never establish statistical power.
 
-## Gate 3 — Correlation gate
-Rule: Multi-leg bets (parlays, player-prop combos) must disclose the correlation between legs and how the joint probability is computed.
-Pass condition: Correlation method stated; independence assumption explicitly labeled; positive-correlation edges require a skill rationale, not same-game coincidence.
-Fail action: Combo excluded from parlay leaderboard.
-
-## Gate 4 — No-luck / skill gate
-Rule: Strategies must be selectively skill-based: a repeatable, statistics-driven edge, not a random guess or a "due for a win" heuristic.
-- Allowed inputs: official NBA stats (team/player splits, home/road, pace, efficiency), correlation structure, implied probability from sportsbook lines.
-- Disallowed: "gut" picks, injury rumors, media narratives, streaks without statistical basis, martingale/stake progression.
-Fail action: Strategy rejected.
-
-## Gate 5 — Reproducibility gate
-Rule: Another person must be able to recompute the signal from the linked official sources + the documented formula, with no manual input from the strategy author.
-Fail action: Strategy flagged "not reproducible".
-
-## Verification record
-| Gate | Source checked | Result |
-|------|----------------|--------|
-| Official source | https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season | Pass — all 30 team rows transcribed, source linked |
-| Official source | https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame | Pass — top 15 player rows transcribed, source linked |
-| Official source | https://www.nba.com/standings | Pass — 2026-27 standings transcribed; small-sample caveat applied |
-| Betting lines | NBA.com | Fail by design — NBA.com publishes no betting lines; cells blank + unverified |
+The ranking contract requires the same nonempty test-window ID, stake-policy ID, eligible-offer-universe ID and scored-event-set hash within a division; mismatches are rejected, not silently ranked in separate windows. Duplicate identities, negative log loss and invalid/non-timezone-aware freeze timestamps are rejected. The current NBA audit source-rights configuration is runtime-checked; toggling a flag cannot silently enable prices, collection or cash.

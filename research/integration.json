@@ -1,0 +1,28 @@
+{
+  "incoming_main": "37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11",
+  "incoming_files": 77,
+  "incoming_lines": 3397,
+  "market_source_map": {
+    "toto_rules": "MKT-TOTO-RULES",
+    "toto_builder": "MKT-TOTO-BUILDER",
+    "toto_blog": "MKT-TOTO-BLOG",
+    "betmgm_builder": "MKT-BETMGM-BUILDER",
+    "betmgm_quotes": "MKT-BETMGM-QUOTES",
+    "fanatics_oh": "MKT-FANATICS-OH",
+    "oneida": "MKT-ONEIDA",
+    "dk_parlay": "MKT-DK-PARLAY",
+    "dk_odds": "MKT-DK-ODDS",
+    "ukgc": "MKT-UKGC",
+    "cruks": "MKT-CRUKS",
+    "cruks_contact": "MKT-CRUKS-CONTACT",
+    "nba_terms": "NBA-TERMS"
+  },
+  "preserved_card_annex": "market-evidence/index.html",
+  "contributions": [
+    "market-evidence/**",
+    "handoff/f58e9526/**",
+    "data/official-snapshots/**",
+    "data/team-correlations-2025-26.csv",
+    "docs dated audits"
+  ]
+}

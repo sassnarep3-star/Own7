@@ -167,14 +167,40 @@ The boards above are historical records, not current verification. The last repo
 
 | ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
 |---|---|---|---|---|---|
-| A1 | Audit every tracked text/data/workflow file; quarantine unsupported claims and inventory provenance | in progress | session-arena-a934e8c3-own7 | README.md, docs/**, data/**, verified/** | Prior “verified” labels are not accepted without fresh source checks. |
-| A2 | Official-source research; reproducible line origination, correlations, validation and leaderboard protocol | in progress | session-arena-a934e8c3-own7 | research/**, nba_lab/**, tests/**, requirements.txt, pyproject.toml | No invented observations, odds, coefficients, returns or winning strategies. |
-| A3 | Integrate a single accessible category dashboard and Flagged for Review page | in progress | session-arena-a934e8c3-own7 | *.html, pages/**, assets/**, css/**, js/** | All data-table rows must expose an official source or an explicit unverified blank. |
+| A1 | Audit every tracked text/data/workflow file; quarantine unsupported claims and inventory provenance | done | session-arena-a934e8c3-own7 | README.md, docs/**, data/**, verified/** | Prior “verified” labels are not accepted without fresh source checks. |
+| A2 | Official-source research; reproducible line origination, correlations, validation and leaderboard protocol | needs review | session-arena-a934e8c3-own7 | research/**, nba_lab/**, tests/**, requirements.txt, pyproject.toml | No invented observations, odds, coefficients, returns or winning strategies. |
+| A3 | Integrate a single accessible category dashboard and Flagged for Review page | done | session-arena-a934e8c3-own7 | *.html, pages/**, assets/**, css/**, js/** | All data-table rows must expose an official source or an explicit unverified blank. |
 | A4 | Automated audits, CI, link/build/browser checks and deployment integration | in progress | session-arena-a934e8c3-own7 | scripts/**, .github/**, .gitignore, package.json, package-lock.json | External official domains may be inaccessible in this environment; record failures, never relabel as verified. |
 | A5 | PR, merge, Pages deployment confirmation and final evidence | in progress | session-arena-a934e8c3-own7 | COORDINATION.md | Push only this branch; record PR/deploy IDs and any infrastructure limitations. |
 
 Claim committed and pushed before implementation. Historical source and deploy claims above will be independently checked where possible and otherwise explicitly qualified.
 
+### A1/A2 progress — independent source and calculation checks
+
+- Re-read the existing 54 tracked files (2,630 text lines); preserved baseline file paths, complete line scopes and SHA-256 hashes in `research/audit/baseline-inventory.json`. Historical claims not retained as facts unless rechecked.
+- Rechecked all 30 team rows, 15 scoring-filtered player rows and 30 standings rows via the exact NBA URLs in `research/evidence/receipts.json`. Corrected Utah’s tied rank (26) and identified incorrect executive-summary maxima (Denver PTS 122.1; Lakers FG% 50.2). Team conference/division fields not supported by that table were removed.
+- Collected every row of an explicitly date-filtered, one-page 32-game Jokić log. Rejected an ignored LastNGames filter/paginated scope. Saved normalized transcriptions, NOT claimed raw HTTP captures.
+- Implemented dependency-free correlation, paired circular-block intervals, threshold-event joint rates, chronological retrospective probability demos, proper scores, pricing primitives, Holm adjustment and fail-closed leaderboard contracts. 52 Python tests passed; results reproduce exactly. No ROI, CLV, executable prices, cash prizes or winning strategies invented.
+- Important official restriction: [NBA Terms §9](https://www.nba.com/termsofuse) expressly prohibits using NBA Statistics in connection with any gambling activity, including legal gambling. Separate permission is not established. Bulk collection, NBA-derived betting-price release, cash wagering and payments remain disabled. Statistical audit/methodology demonstration only. F09 published with the integration site.
+- Method sources freshly checked: [NBA glossary](https://www.nba.com/stats/help/glossary), [NBA injury policy](https://official.nba.com/nba-injury-report-2026-27-season/), [SciPy Pearson](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html), [scikit-learn calibration](https://scikit-learn.org/stable/modules/calibration.html), [time splits](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html), [statsmodels Holm](https://www.statsmodels.org/stable/generated/statsmodels.stats.multitest.multipletests.html), [Dutch regulator](https://kansspelautoriteit.nl/voor-spelers), [GitHub Pages docs](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
+- Next integration step: replace the conflicting public views with one generated, source-linked dashboard; publish all unresolved items, the full per-file audit and requirements traceability; run recursive/static/browser/CI checks before PR/merge.
+
+### A1/A2 completion; A3/A4 integration verification
+
+- Full baseline per-file dispositions and all 26 request-to-evidence entries are published in `research/audit/file-review.json` and `research/requirements.json`. This is review coverage, not a blanket re-verification of withdrawn historical claims.
+- Runtime source-rights no-go now rejects missing/enabled rights or cash flags. The NBA-specific demo cannot emit betting prices. Generic synthetic pricing math is separate.
+- 57 Python tests pass, including future-outcome leakage, malformed gate evidence, common offer/event-universe enforcement, duplicate identities and timestamp-aware ranking. Source/code hashes regenerated; no qualified candidate, ROI or cash amount.
+- A unified generated dashboard and 19 legacy redirects have passed initial recursive checks (33 HTML files, 391 source-linked body rows, 431 local references) and 14 desktop + 14 mobile WCAG A/AA/interaction checks. Improved contrast, touch targets, visible text links and navigation focus; test screenshots are ignored artifacts, not source data.
+- Final CI/source-health automation, final browser rerun and PR/Pages verification are still in progress; no new deployment is claimed yet. Earlier claim runs 41740265168/41740264896 and backend runs 41741617837/41741617880 completed successfully.
+
+### Final local verification before integration PR
+
+- A1 complete; A3 complete. A2 research/software complete, **needs review for actual strategy qualification and source rights**: all eight candidates blocked and all nine unresolved items publicly listed. No manual user input or approval is being requested.
+- Full final local run: 57/57 Python tests, byte-identical research/site rebuilds, 33 recursive HTML paths, 391 source-linked table body rows and 431 valid local references; zero unresolved local links/fragments. External references counted, not falsely claimed to have all received HTTP checks.
+- Chromium 153.0.8010.0: 14 desktop + 14 mobile pages; no WCAG 2.0/2.1/2.2 A/AA automated violations; no JS/network/console errors; nine interaction groups including numeric keyboard sorting, CSV with source URLs, search/reset, all 19 redirects, no-JS reading and mobile focus restoration. Automated accessibility checks do not replace every manual assistive-technology review.
+- Final local testing caught incomplete guard/fixture edits; fixed and the entire suite rerun successfully before this push. No broken revision is being merged. Source-rights flags cannot enable prices/collection/cash through config.
+- Scheduled source checks are deliberately non-mutating availability audits, not numerical scrapes or factual certification. Legacy verification script names forward to the integrated checks.
+- Test evidence: `research/audit/{check-results,static-checks,browser-checks}.json`. Screenshots/temporary CSVs/dependencies/bytecode are ignored rather than committed. Live preview binds 0.0.0.0 and serves only public files, not .git or dependencies.
 
 ---
 
@@ -268,9 +294,37 @@ Session ID: `session-arena-f58e9526-own7`. Branch: `arena/f58e9526-own7` (fixed 
 - PR: https://github.com/sassnarep3-star/Own7/pull/11 (`arena/f58e9526-own7` → `main`).
 - Result: MERGED at 2026-11-03T23:54:10Z into main (merge commit 37e1bbd). Post-merge checks and Pages deploy re-verified by session arena/6fe08d51-own7 (task 19).
 
+
+### Parallel main reconciliation — PR #16 integration (in progress)
+
+- Main advanced from original `14c5f50` to `37e1bbd` while this independent audit ran: PRs #7–#15 brought source reconciliation, aggregate correlations, settlement evidence and Netherlands context. PR #16 initially conflicts; merging is paused for explicit reconciliation.
+- Merge resolution: preserve **all** other sessions’ append-only boards, immutable baseline links, supplemental docs, official-snapshot transcriptions, six team-correlation rows, 11 handoff correlations and `market-evidence/**`. Use the tested single canonical generator for shared generated views/legacy pointers. No other session branch is modified.
+- All completed B1/F1–F5 cross-scope requests are accepted for canonical integration: operator-specific evidence and all MF flags; Dutch scope/unknown applicability; aggregate correlations kept distinct from paired game/leg correlation; helper checks added to CI. The source dossiers remain attributable to their original authors.
+- Prior open PR #4 was subsequently closed by another session; it remains untouched here. Current flag/text will be corrected rather than describing it as open.
+- Any incompatible/stale generated assertions remain inspectable at the exact main commit. New source/claim scopes will be rechecked, all unresolved values kept blank, and combined build/source/browser checks rerun before PR #16 can merge.
+
+### Combined reconciliation complete locally — PR #16
+
+- Incoming-main integration preserves all original source dossiers, handoff scripts/outputs, historical snapshots and boards. Shared generated views are rebuilt once; `findings.html` is an additional compatibility redirect. `market-evidence/index.html` remains an attributed supplementary dossier, linked from the new canonical Market evidence category.
+- Independently re-read all relevant TOTO / BetMGM / Fanatics Ohio / Oneida / DraftKings / UKGC / Cruks paragraphs. All 24 B1 findings and six MF flags are included with exact official sources; no universal or current wager contract inferred. All rule locators/chunks recorded in `research/evidence/settlement-recheck.json`.
+- All F58 requests addressed: 17 contributed aggregate rows displayed separately (including overlaps); 11 Fisher intervals nominal only, with assumptions/selection flag AGG01. Unicode names retained. Standings 5–8 scope explicit. BLKA count definition remains flagged separately from its confirmed header. Netherlands handoff linked; offer universe and US-to-NL applicability blank. Dutch support phone now independently confirmed from Cruks contact, so H-08/NL03 gap is resolved rather than left falsely unknown.
+- Combined local evidence: **75 Python tests** (62 + 8 + 5); **36 HTML paths**, **541 source-linked table rows**, **493 valid local references**, 28 curated source records; **16 desktop + 16 mobile views**, zero automated WCAG 2.0/2.1/2.2 A/AA/runtime/network/console violations; all 20 historical HTML redirects work. Source availability is not factual/rights certification.
+- The obsolete historical snapshot checker omitted PF and failed to distinguish ASCII identity aliases; both fixed without changing the original snapshot text. Numeric data independently agree with canonical verified receipts. New root-redirect preview allowlist caught/fixed by browser test; full combined suite passed after correction.
+- 18 open flags and eight corrected records are public. A2 remains needs review for qualification/rights, not an implementation pass. All eight strategy candidates remain blocked and no cash awards or executable prices exist.
+- PR #16: https://github.com/sassnarep3-star/Own7/pull/16. Initial independent-head CI 41744371326 passed both core and browser jobs; it does not replace CI on this combined head. Final merge/Pages evidence will follow only after combined CI passes.
+
+### Safe branch synchronization note
+- A default `git pull --rebase` tried to flatten/replay the newly merged parallel history and produced conflicts. Aborted it immediately; the tested integration merge `48586d9` and all other sessions’ history were restored exactly. No conflict resolution or discarded commit from that attempted replay was retained.
+- `git pull --rebase --ff-only` confirmed the remote session branch was already an ancestor and up to date. This safe no-op synchronization will be used before pushes so preserved merge topology is not flattened. Work remains exclusively on `arena/a934e8c3-own7`.
+
+### PR #16 merge record (recorded by session arena/6fe08d51-own7)
+- PR https://github.com/sassnarep3-star/Own7/pull/16 (`arena/a934e8c3-own7` → `main`) merged at 2026-11-04T00:28:27Z, merge commit `39c427913bdae0581987b9762f31ccfa98d14d0d`. CI (Research and recursive site audit + Desktop/mobile/accessibility) passed on the PR head before merge; post-merge main checks re-verified by session 6fe08d51 before its own integration PR.
+
+
 ### Task 19 progress — irregularity found and fixed (2026-11-04 00:35 UTC)
 
 - Cross-session finding adopted: session `arena/b11f3baa-own7` audit (independent-audit/nba-csv-review.md, on its branch, C1 done, no PR) reported Utah Jazz rank 27 in `data/teams-2025-26.csv` vs 26 on the official table. Confirmed live by this session (nba.com 2025-26 teams table, chunk 4: `| 26 | Utah Jazz`, tied with Sacramento; competition ranking skips 27).
 - Root cause: `data/official-snapshots/teams-2025-26.txt` and `standings-2026-27.txt` did not include the Rank column, so `scripts/verify_official_snapshots.py` could not catch it.
-- Fix (this session): CSV rank 27→26; Rank prepended to both snapshots (re-read live 2026-11-04); verifier extended to check Rank for teams and standings; `findings.html` regenerated via `scripts/build_dashboard.py`; flag F14 published on review.html; `docs/verification-6fe08d51.md` updated (V-6).
-- All local checks green after the fix: check_site, verify_verified_site, verify_official_snapshots (now rank-inclusive), test_research, market-evidence --check.
+- Initial fix attempt (this session, commit 962ee91): CSV rank 27→26; Rank prepended to snapshots; verifier extended; F14 flag drafted.
+- Resolution after PR #16 merged (39c4279): PR #16 had independently applied the same CSV rank fix (receipts note + catalog flag F02, status Corrected) and declared snapshots immutable historical transcripts ("fixed without changing the original snapshot text"). Per that rule this session reverted its snapshot/verifier/CSV edits to main's versions, kept main's generated pages, and recorded the live Rank re-read (60/60 match, Utah=26) in docs/verification-6fe08d51.md V-6 instead. Residual gap: offline snapshot checker does not cover Rank; documented, non-blocking.
+- All local checks green on the merged tree (full CI suite re-run; see task-19 final record below).

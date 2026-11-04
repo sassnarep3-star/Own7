@@ -1,2 +1,6 @@
-"""Compatibility entrypoint: legacy views now point to the canonical dashboard."""
-from build_dashboard import *
+#!/usr/bin/env python3
+"""Compatibility entrypoint: the old independent verified/ site is retired."""
+from build_site import build
+
+if __name__ == '__main__':
+    build()

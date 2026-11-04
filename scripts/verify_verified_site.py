@@ -1,4 +1,6 @@
-"""Compatibility entrypoint for consolidated site checks."""
-import runpy
-from pathlib import Path
-runpy.run_path(str(Path(__file__).with_name('check_site.py')),run_name='__main__')
+#!/usr/bin/env python3
+"""Compatibility entrypoint: all canonical and legacy paths use the same audit."""
+from check_site import main
+
+if __name__ == '__main__':
+    main()
