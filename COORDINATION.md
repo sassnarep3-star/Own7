@@ -282,3 +282,7 @@ Session ID: `session-arena-f58e9526-own7`. Branch: `arena/f58e9526-own7` (fixed 
 - The obsolete historical snapshot checker omitted PF and failed to distinguish ASCII identity aliases; both fixed without changing the original snapshot text. Numeric data independently agree with canonical verified receipts. New root-redirect preview allowlist caught/fixed by browser test; full combined suite passed after correction.
 - 18 open flags and eight corrected records are public. A2 remains needs review for qualification/rights, not an implementation pass. All eight strategy candidates remain blocked and no cash awards or executable prices exist.
 - PR #16: https://github.com/sassnarep3-star/Own7/pull/16. Initial independent-head CI 41744371326 passed both core and browser jobs; it does not replace CI on this combined head. Final merge/Pages evidence will follow only after combined CI passes.
+
+### Safe branch synchronization note
+- A default `git pull --rebase` tried to flatten/replay the newly merged parallel history and produced conflicts. Aborted it immediately; the tested integration merge `48586d9` and all other sessions’ history were restored exactly. No conflict resolution or discarded commit from that attempted replay was retained.
+- `git pull --rebase --ff-only` confirmed the remote session branch was already an ancestor and up to date. This safe no-op synchronization will be used before pushes so preserved merge topology is not flattened. Work remains exclusively on `arena/a934e8c3-own7`.
