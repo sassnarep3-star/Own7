@@ -1,56 +1,6 @@
 {
-  "title": "Correlation Values (none computed \u2013 no verified data)",
-  "columns": [
-    "id",
-    "pair",
-    "method",
-    "correlation_value",
-    "n_observations",
-    "status",
-    "source_url"
-  ],
-  "rows": [
-    {
-      "id": "C-01",
-      "pair": "Player points vs. player assists (same player, same game)",
-      "method": "Pearson / Spearman on box-score stats",
-      "correlation_value": "",
-      "n_observations": "",
-      "status": "unverified \u2013 no official box-score data pulled",
-      "source_url": "https://www.nba.com/stats/players/traditional",
-      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
-    },
-    {
-      "id": "C-02",
-      "pair": "Team total points vs. team win (same game)",
-      "method": "Point-biserial on box-score totals",
-      "correlation_value": "",
-      "n_observations": "",
-      "status": "unverified",
-      "source_url": "https://www.nba.com/stats/",
-      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
-    },
-    {
-      "id": "C-03",
-      "pair": "Player A points vs. teammate B points (same game)",
-      "method": "Pearson on box-score stats, conditioned on minutes",
-      "correlation_value": "",
-      "n_observations": "",
-      "status": "unverified",
-      "source_url": "https://www.nba.com/stats/players/traditional",
-      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
-    },
-    {
-      "id": "C-04",
-      "pair": "Player minutes vs. player unders outcome",
-      "method": "Logistic on minutes bucket",
-      "correlation_value": "",
-      "n_observations": "",
-      "status": "unverified \u2013 relevant to the reported under-minutes restriction (R-07)",
-      "source_url": "https://www.nba.com/stats/",
-      "reference_url": "https://sports.yahoo.com/nba/breaking-news/article/nba-sportsbooks-reportedly-agree-to-ban-certain-bets-including-parlays-involving-the-under-on-same-players-stats-151415255.html",
-      "audit_notice": "Superseded legacy record; use canonical dashboard. Earlier verification is not endorsed by current audit."
-    }
-  ],
-  "audit_notice": "Legacy archive, not current verified evidence. See ../../sources.html and ../../review.html."
+  "deprecated": true,
+  "canonical": "../../research/results.json",
+  "rows": [],
+  "note": "Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts."
 }

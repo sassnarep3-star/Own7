@@ -1,0 +1,945 @@
+[
+  {
+    "path": ".github/workflows/check.yml",
+    "lines": 15,
+    "review_scope": "1-15",
+    "sha256": "27f5d84024b9ac7cdd0b0c1cdd132caa68c5fca0001e2f726c511576ab3befd8",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/.github/workflows/check.yml"
+  },
+  {
+    "path": ".github/workflows/verify-verified-site.yml",
+    "lines": 13,
+    "review_scope": "1-13",
+    "sha256": "4685c115d4f3701f1aaf9d93b23791cb2ab4a95f933c1a652c296a81d2464dab",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/.github/workflows/verify-verified-site.yml"
+  },
+  {
+    "path": ".gitignore",
+    "lines": 2,
+    "review_scope": "1-2",
+    "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/.gitignore"
+  },
+  {
+    "path": "COORDINATION.md",
+    "lines": 240,
+    "review_scope": "1-240",
+    "sha256": "32da7c3f6d30019b01f08011a71ded910d0f3aab66d3c1bea3b88c8e162936e3",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/COORDINATION.md"
+  },
+  {
+    "path": "README.md",
+    "lines": 32,
+    "review_scope": "1-32",
+    "sha256": "b546c9a9f0b1d29f548346e67f61d48a2847e9549ae0b16d9f10407282584ebd",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/README.md"
+  },
+  {
+    "path": "assets/style.css",
+    "lines": 2,
+    "review_scope": "1-2",
+    "sha256": "8e1fc6f455f417872a0005a79e295b3b5e390ef554a66589075751fca15da1f5",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/assets/style.css"
+  },
+  {
+    "path": "correlation.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0023b568240c5b4511cbadbef079214cde2fdcb992c1e7055a90e39be4e2e205",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/correlation.html"
+  },
+  {
+    "path": "css/style.css",
+    "lines": 99,
+    "review_scope": "1-99",
+    "sha256": "90b21d88ff21c95d7a0e93a6b8295edd69a8a394c562a5fd0e8b002a52d68774",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/css/style.css"
+  },
+  {
+    "path": "data/official-snapshots/players-2025-26-top15.txt",
+    "lines": 16,
+    "review_scope": "1-16",
+    "sha256": "e48cecaba6183f50a5717a2bd293ad328196ce49a9fa19dd47e4e52cce660cbe",
+    "disposition": "Retained historical transcription",
+    "finding": "Numeric cells compared to current checked CSVs. Historical ASCII player spellings are explicit identity aliases, not current official spelling. Not a raw HTTP archive.",
+    "source_ids": [
+      "REPO",
+      "NBA-TEAMS",
+      "NBA-PLAYERS"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/data/official-snapshots/players-2025-26-top15.txt"
+  },
+  {
+    "path": "data/official-snapshots/standings-2026-27.txt",
+    "lines": 31,
+    "review_scope": "1-31",
+    "sha256": "f6fc8fa825052a63eaa9808b3a70042082aebac20e18fa478c0c90a390fecd64",
+    "disposition": "Retained historical transcription",
+    "finding": "Numeric cells compared to current checked CSVs. Historical ASCII player spellings are explicit identity aliases, not current official spelling. Not a raw HTTP archive.",
+    "source_ids": [
+      "REPO",
+      "NBA-TEAMS",
+      "NBA-PLAYERS"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/data/official-snapshots/standings-2026-27.txt"
+  },
+  {
+    "path": "data/official-snapshots/teams-2025-26.txt",
+    "lines": 31,
+    "review_scope": "1-31",
+    "sha256": "98a5e91935d89e2faef5ea6c61f014fe93bf483f67c48ad20e415bf65a4f7145",
+    "disposition": "Retained historical transcription",
+    "finding": "Numeric cells compared to current checked CSVs. Historical ASCII player spellings are explicit identity aliases, not current official spelling. Not a raw HTTP archive.",
+    "source_ids": [
+      "REPO",
+      "NBA-TEAMS",
+      "NBA-PLAYERS"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/data/official-snapshots/teams-2025-26.txt"
+  },
+  {
+    "path": "data/players-2025-26-top15.csv",
+    "lines": 16,
+    "review_scope": "1-16",
+    "sha256": "23577c5b81f3be6ea3796d5aa0d913f36ea8328512050f95ba7d2ec7db563e0d",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/data/players-2025-26-top15.csv"
+  },
+  {
+    "path": "data/standings-2026-27.csv",
+    "lines": 31,
+    "review_scope": "1-31",
+    "sha256": "aeeef5029d3d266acb84a5162429c33be6da1d954b15d3f8e23418cb8e28cf66",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/data/standings-2026-27.csv"
+  },
+  {
+    "path": "data/team-correlations-2025-26.csv",
+    "lines": 7,
+    "review_scope": "1-7",
+    "sha256": "45190765932f4d89217b55aa32a4ca48acdfb2ab56da95cd1a97f2a8772f24ae",
+    "disposition": "Retained derived result",
+    "finding": "Six cross-sectional coefficients independently recomputed from the checked team table. Distinct from game/leg dependence; no price or predictive-edge inference.",
+    "source_ids": [
+      "REPO",
+      "NBA-TEAMS",
+      "SCIPY-CORR"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/data/team-correlations-2025-26.csv"
+  },
+  {
+    "path": "data/teams-2025-26.csv",
+    "lines": 31,
+    "review_scope": "1-31",
+    "sha256": "b4cacbf56d5af6cc02e75d6a4ec62c92c3ecc95ea5c9aaba58c27311369ac7d2",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/data/teams-2025-26.csv"
+  },
+  {
+    "path": "docs/audit-manifest.json",
+    "lines": 366,
+    "review_scope": "1-366",
+    "sha256": "5fe6987eb0836124c14cb769eeefb2f8aeb10574289f699d0c28a66c14d727a0",
+    "disposition": "Retained dated audit",
+    "finding": "Historical review preserved with chronology and immutable-source context. It predates this final combined release and is not blanket current verification.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/docs/audit-manifest.json"
+  },
+  {
+    "path": "docs/executive-summary.md",
+    "lines": 33,
+    "review_scope": "1-33",
+    "sha256": "58839bd9ef2c57fe85cf167bb92ff56fb3952a466886bdf4e0005d63e427ee73",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/docs/executive-summary.md"
+  },
+  {
+    "path": "docs/repo-review-2026-11-03.md",
+    "lines": 30,
+    "review_scope": "1-30",
+    "sha256": "f72c3f601ddeb0939c8bcdb6b3f88ac9eb12f2de30343616415df840324d70ac",
+    "disposition": "Retained dated audit",
+    "finding": "Historical review preserved with chronology and immutable-source context. It predates this final combined release and is not blanket current verification.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/docs/repo-review-2026-11-03.md"
+  },
+  {
+    "path": "docs/sources.md",
+    "lines": 20,
+    "review_scope": "1-20",
+    "sha256": "24aa243b6233c56de5017a908efe14804785b78c780920421fc6d5d49af02244",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/docs/sources.md"
+  },
+  {
+    "path": "docs/strategies.md",
+    "lines": 51,
+    "review_scope": "1-51",
+    "sha256": "3d56989d19af18ce1c7769e49e29cf21b52d802a82b236be23058161d9f5e439",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/docs/strategies.md"
+  },
+  {
+    "path": "docs/validation-gates.md",
+    "lines": 41,
+    "review_scope": "1-41",
+    "sha256": "e4d56e994c7c60550c660c276acba518f7a59ff39bdb97214aea5ee16fd2c1f0",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/docs/validation-gates.md"
+  },
+  {
+    "path": "docs/verification-2026-11-03.md",
+    "lines": 44,
+    "review_scope": "1-44",
+    "sha256": "3d1b395a57a8fdb774846efb1723ced983c514a1036d607d28b4f24cf18e3165",
+    "disposition": "Retained dated audit",
+    "finding": "Historical review preserved with chronology and immutable-source context. It predates this final combined release and is not blanket current verification.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/docs/verification-2026-11-03.md"
+  },
+  {
+    "path": "docs/verification.md",
+    "lines": 26,
+    "review_scope": "1-26",
+    "sha256": "c6628232000f9a33402596d368a33940096d78c9a20c778c17eee32df233b7e9",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/docs/verification.md"
+  },
+  {
+    "path": "findings.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "06f79e24d2dbc4e1865773321abecfaea2e79bf19060ce7ac363fdc144e04bbd",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/findings.html"
+  },
+  {
+    "path": "handoff/f58e9526/compute_correlations.py",
+    "lines": 126,
+    "review_scope": "1-126",
+    "sha256": "65aadecd07d3b49d311468938b3a4fb2a660531b9c0973fc181f927010757161",
+    "disposition": "Retained attributed handoff",
+    "finding": "11 season-level coefficients independently recomputed. Fisher intervals are nominal assumption-dependent, not calibrated betting uncertainty. NL requests integrated; H-08 is superseded by the checked Cruks contact. Historical no-game-log comment is not current.",
+    "source_ids": [
+      "REPO",
+      "NBA-GAMES",
+      "MKT-CRUKS-CONTACT"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/handoff/f58e9526/compute_correlations.py"
+  },
+  {
+    "path": "handoff/f58e9526/correlation-computed-2025-26.json",
+    "lines": 148,
+    "review_scope": "1-148",
+    "sha256": "b829d23271ff6e7750033cafc229af5ef3e66b27eb70809d573c870d32e18ac5",
+    "disposition": "Retained attributed handoff",
+    "finding": "11 season-level coefficients independently recomputed. Fisher intervals are nominal assumption-dependent, not calibrated betting uncertainty. NL requests integrated; H-08 is superseded by the checked Cruks contact. Historical no-game-log comment is not current.",
+    "source_ids": [
+      "REPO",
+      "NBA-GAMES",
+      "MKT-CRUKS-CONTACT"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/handoff/f58e9526/correlation-computed-2025-26.json"
+  },
+  {
+    "path": "handoff/f58e9526/netherlands-scope.md",
+    "lines": 38,
+    "review_scope": "1-38",
+    "sha256": "381cb3c43324f6c3437c8f63c09a8b4122251eaa29823b5cbdc54b0432794cb3",
+    "disposition": "Retained attributed handoff",
+    "finding": "11 season-level coefficients independently recomputed. Fisher intervals are nominal assumption-dependent, not calibrated betting uncertainty. NL requests integrated; H-08 is superseded by the checked Cruks contact. Historical no-game-log comment is not current.",
+    "source_ids": [
+      "REPO",
+      "NBA-GAMES",
+      "MKT-CRUKS-CONTACT"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/handoff/f58e9526/netherlands-scope.md"
+  },
+  {
+    "path": "index.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "b0ce9a24a3042b3ef062ac257fc6dca52211e8c4944e181eddd3bc5b9aa1537d",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/index.html"
+  },
+  {
+    "path": "js/app.js",
+    "lines": 34,
+    "review_scope": "1-34",
+    "sha256": "6b1cacff5cc4b4a569f9c1147961236e91c2263cda05d105938aa90af1f222e0",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/js/app.js"
+  },
+  {
+    "path": "leaderboard.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "306603c5758c2c29da30113808f9ac089722a5ea13a04a0bd28fecd7dde854b0",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/leaderboard.html"
+  },
+  {
+    "path": "market-evidence/README.md",
+    "lines": 21,
+    "review_scope": "1-21",
+    "sha256": "ca0d9da89d3620de698f30dc98f4bc8d5cd61f0567b8af89cf1540d4c92d864d",
+    "disposition": "Retained independent source dossier",
+    "finding": "All 24 findings and six MF flags retained; relevant official sections independently re-read; canonical settlement/review integration added. Original card builder and eight structural tests retained.",
+    "source_ids": [
+      "REPO",
+      "NBA-TERMS"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/market-evidence/README.md"
+  },
+  {
+    "path": "market-evidence/build.py",
+    "lines": 157,
+    "review_scope": "1-157",
+    "sha256": "79f77a005c73002db996740a4fb202d04b986c03f0eedd51aadce705be521bca",
+    "disposition": "Retained independent source dossier",
+    "finding": "All 24 findings and six MF flags retained; relevant official sections independently re-read; canonical settlement/review integration added. Original card builder and eight structural tests retained.",
+    "source_ids": [
+      "REPO",
+      "NBA-TERMS"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/market-evidence/build.py"
+  },
+  {
+    "path": "market-evidence/evidence.json",
+    "lines": 473,
+    "review_scope": "1-473",
+    "sha256": "d2ee070c071228d60f616f746972011ce1b37db9532181992aa6f5c5d3bbc0a1",
+    "disposition": "Retained independent source dossier",
+    "finding": "All 24 findings and six MF flags retained; relevant official sections independently re-read; canonical settlement/review integration added. Original card builder and eight structural tests retained.",
+    "source_ids": [
+      "REPO",
+      "NBA-TERMS"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/market-evidence/evidence.json"
+  },
+  {
+    "path": "market-evidence/index.html",
+    "lines": 69,
+    "review_scope": "1-69",
+    "sha256": "bea4d3ef0f645de158c8522909611fc8964b83386d40de601b3664d9d9b10466",
+    "disposition": "Retained independent source dossier",
+    "finding": "All 24 findings and six MF flags retained; relevant official sections independently re-read; canonical settlement/review integration added. Original card builder and eight structural tests retained.",
+    "source_ids": [
+      "REPO",
+      "NBA-TERMS"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/market-evidence/index.html"
+  },
+  {
+    "path": "market-evidence/test_build.py",
+    "lines": 89,
+    "review_scope": "1-89",
+    "sha256": "1f8c25b59ef2d2578f6e4363a64b7de8cce86399e8a8540c886b99b82070ef35",
+    "disposition": "Retained independent source dossier",
+    "finding": "All 24 findings and six MF flags retained; relevant official sections independently re-read; canonical settlement/review integration added. Original card builder and eight structural tests retained.",
+    "source_ids": [
+      "REPO",
+      "NBA-TERMS"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/market-evidence/test_build.py"
+  },
+  {
+    "path": "pages/correlation.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/pages/correlation.html"
+  },
+  {
+    "path": "pages/dashboard.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/pages/dashboard.html"
+  },
+  {
+    "path": "pages/executive-summary.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/pages/executive-summary.html"
+  },
+  {
+    "path": "pages/flagged.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/pages/flagged.html"
+  },
+  {
+    "path": "pages/parlays.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/pages/parlays.html"
+  },
+  {
+    "path": "pages/player-props.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/pages/player-props.html"
+  },
+  {
+    "path": "pages/single-bets.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/pages/single-bets.html"
+  },
+  {
+    "path": "pages/validation-gates.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/pages/validation-gates.html"
+  },
+  {
+    "path": "review.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "970515c894ddff3bc8decd2c63976064d6362709bb06a58e77bc6751dc890329",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/review.html"
+  },
+  {
+    "path": "scripts/build_dashboard.py",
+    "lines": 50,
+    "review_scope": "1-50",
+    "sha256": "05173c6a8ef257f103595d6171b71203e6e3dc112a1051243db4c605b6aa3c71",
+    "disposition": "Integrated / retained compatible tooling",
+    "finding": "New canonical generator owns public views; prior dashboard name becomes a wrapper. Numeric snapshot and contributed calculations receive additional integrity/semantic checks in CI.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/scripts/build_dashboard.py"
+  },
+  {
+    "path": "scripts/build_verified_site.py",
+    "lines": 2,
+    "review_scope": "1-2",
+    "sha256": "628f2c701ee93232b970b70810b1100c780f84f726da229bf591477b08133a3b",
+    "disposition": "Integrated / retained compatible tooling",
+    "finding": "New canonical generator owns public views; prior dashboard name becomes a wrapper. Numeric snapshot and contributed calculations receive additional integrity/semantic checks in CI.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/scripts/build_verified_site.py"
+  },
+  {
+    "path": "scripts/check_site.py",
+    "lines": 31,
+    "review_scope": "1-31",
+    "sha256": "361cd1020df937ecb8f51b40871dbbe9bd804985ba67aafd0c1b43b929e6bccd",
+    "disposition": "Integrated / retained compatible tooling",
+    "finding": "New canonical generator owns public views; prior dashboard name becomes a wrapper. Numeric snapshot and contributed calculations receive additional integrity/semantic checks in CI.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/scripts/check_site.py"
+  },
+  {
+    "path": "scripts/compute_team_correlations.py",
+    "lines": 65,
+    "review_scope": "1-65",
+    "sha256": "1bcecb4261ee634d70008c2262701a461b011d6d744567b5624e597278be30e2",
+    "disposition": "Integrated / retained compatible tooling",
+    "finding": "New canonical generator owns public views; prior dashboard name becomes a wrapper. Numeric snapshot and contributed calculations receive additional integrity/semantic checks in CI.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/scripts/compute_team_correlations.py"
+  },
+  {
+    "path": "scripts/research_math.py",
+    "lines": 32,
+    "review_scope": "1-32",
+    "sha256": "5e21ec112afe4cb01ed921ee4eb2abc6f1142bc55daeb4dbf64ebb6cbdf17e53",
+    "disposition": "Integrated / retained compatible tooling",
+    "finding": "New canonical generator owns public views; prior dashboard name becomes a wrapper. Numeric snapshot and contributed calculations receive additional integrity/semantic checks in CI.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/scripts/research_math.py"
+  },
+  {
+    "path": "scripts/test_research.py",
+    "lines": 11,
+    "review_scope": "1-11",
+    "sha256": "878d4407c5f07aa9f0eb9eece0ba18648c63f6ab2f8ccac7e1bae0d925b769d3",
+    "disposition": "Integrated / retained compatible tooling",
+    "finding": "New canonical generator owns public views; prior dashboard name becomes a wrapper. Numeric snapshot and contributed calculations receive additional integrity/semantic checks in CI.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/scripts/test_research.py"
+  },
+  {
+    "path": "scripts/verify_official_snapshots.py",
+    "lines": 74,
+    "review_scope": "1-74",
+    "sha256": "87fad3b272c31c947ccc4047c52f6c8ab185d9e4608a5e811d1be7c4cdf89e91",
+    "disposition": "Integrated / retained compatible tooling",
+    "finding": "New canonical generator owns public views; prior dashboard name becomes a wrapper. Numeric snapshot and contributed calculations receive additional integrity/semantic checks in CI.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/scripts/verify_official_snapshots.py"
+  },
+  {
+    "path": "scripts/verify_verified_site.py",
+    "lines": 4,
+    "review_scope": "1-4",
+    "sha256": "29d634312f9a0e539227711c1bf4bbabe4b143873f35c78ade3aa3c265d5dedb",
+    "disposition": "Integrated / retained compatible tooling",
+    "finding": "New canonical generator owns public views; prior dashboard name becomes a wrapper. Numeric snapshot and contributed calculations receive additional integrity/semantic checks in CI.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/scripts/verify_verified_site.py"
+  },
+  {
+    "path": "signals.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "fae370c459e3901f120b63725edf69586c010acb6461486f3bd91c220b24430d",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/signals.html"
+  },
+  {
+    "path": "sources.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "957402db9b9b8441a9e205b79a48e4cd6b85cf941e5fe0e54c78a2d11dc95aa4",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/sources.html"
+  },
+  {
+    "path": "validation.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "2ebe246765d9887d2e4bc7ee04e2eee786b4d90b7d57add24b67b25fb2bb2747",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/validation.html"
+  },
+  {
+    "path": "verified/.nojekyll",
+    "lines": 0,
+    "review_scope": "empty file",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/.nojekyll"
+  },
+  {
+    "path": "verified/assets/style.css",
+    "lines": 31,
+    "review_scope": "1-31",
+    "sha256": "f3f99d387bdfaccfca897cce11c43eac06d2edc06ee9f35837f913836d5eda63",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/assets/style.css"
+  },
+  {
+    "path": "verified/betting-rules.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/betting-rules.html"
+  },
+  {
+    "path": "verified/correlation.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/correlation.html"
+  },
+  {
+    "path": "verified/data/correlation.json",
+    "lines": 56,
+    "review_scope": "1-56",
+    "sha256": "057ea74063d7be76700b15712ca270730212321fa961911437dd3189c69ffa15",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/data/correlation.json"
+  },
+  {
+    "path": "verified/data/flagged.json",
+    "lines": 71,
+    "review_scope": "1-71",
+    "sha256": "8463a42b71551432795267bcccd9a809cf489394acee9af4530ccb4df91702d0",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/data/flagged.json"
+  },
+  {
+    "path": "verified/data/gates.json",
+    "lines": 95,
+    "review_scope": "1-95",
+    "sha256": "f3977406816a8551c57bc839ef5f4d22028223ecfbd0d36a86a913c2bd8369f9",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/data/gates.json"
+  },
+  {
+    "path": "verified/data/helplines.json",
+    "lines": 69,
+    "review_scope": "1-69",
+    "sha256": "588225bba6659b844c291a8f717d6cb9607eced24b376699de42cf149885e71f",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/data/helplines.json"
+  },
+  {
+    "path": "verified/data/leaderboard.json",
+    "lines": 24,
+    "review_scope": "1-24",
+    "sha256": "de0df3f35ffb49ef4112777859ca73c860c5fda57b3dd7dc6956f0eb0de5a1d5",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/data/leaderboard.json"
+  },
+  {
+    "path": "verified/data/repo_review.json",
+    "lines": 124,
+    "review_scope": "1-124",
+    "sha256": "b89c4e46d6dde6fef137e8110df99debbdf85077aa499c476524849d5afa6406",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/data/repo_review.json"
+  },
+  {
+    "path": "verified/data/rules.json",
+    "lines": 89,
+    "review_scope": "1-89",
+    "sha256": "424c387a52884b2859c90a936e5b31b088785f1195f63ad4977ebf6517b40351",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/data/rules.json"
+  },
+  {
+    "path": "verified/data/sources.json",
+    "lines": 86,
+    "review_scope": "1-86",
+    "sha256": "3f7b9c5a03dde24d33e87523b19bf7fd047b2c7f046e6e469f846bfba22e6eab",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/data/sources.json"
+  },
+  {
+    "path": "verified/data/strategies.json",
+    "lines": 124,
+    "review_scope": "1-124",
+    "sha256": "dc8ef1052cd32c4297b208f2f959ec0c37eaf3937e3440696d7f32634e24c30b",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/data/strategies.json"
+  },
+  {
+    "path": "verified/executive-summary.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/executive-summary.html"
+  },
+  {
+    "path": "verified/flagged.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/flagged.html"
+  },
+  {
+    "path": "verified/index.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/index.html"
+  },
+  {
+    "path": "verified/leaderboard.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/leaderboard.html"
+  },
+  {
+    "path": "verified/repo-review.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/repo-review.html"
+  },
+  {
+    "path": "verified/responsible-gambling.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/responsible-gambling.html"
+  },
+  {
+    "path": "verified/sources.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/sources.html"
+  },
+  {
+    "path": "verified/strategies.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/strategies.html"
+  },
+  {
+    "path": "verified/validation-gates.html",
+    "lines": 1,
+    "review_scope": "1-1",
+    "sha256": "0212b3584fd358d57d86f91d88d768b43b396615721e5d5a87906ef66de3e957",
+    "disposition": "Reconciled canonical / historical content",
+    "finding": "Shared canonical view/doc reconciled into the single audited build; original incoming version remains at the immutable main commit.",
+    "source_ids": [
+      "REPO"
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/blob/37e1bbde64cd2dedcc1fffb2ba35a0ed2cdb4f11/verified/validation-gates.html"
+  }
+]

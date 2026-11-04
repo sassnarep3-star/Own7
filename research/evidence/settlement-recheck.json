@@ -1,0 +1,131 @@
+{
+  "scope": "Relevant rule paragraphs, not complete documents or current wager applicability; fetched during final integration. No raw page archive.",
+  "contributed_findings": 24,
+  "contributed_flags": 6,
+  "sources": [
+    {
+      "source_id": "MKT-TOTO-RULES",
+      "url": "https://portal-spa-api.toto.nl/assets/6e583945-ef2e-401c-b6a2-ad9f7a285519",
+      "checked_chunks": [
+        0,
+        2,
+        3,
+        5,
+        6
+      ],
+      "locator": "Section 2, item 20 (Bet Builder); section 3, item 6 (Basketball)"
+    },
+    {
+      "source_id": "MKT-TOTO-BUILDER",
+      "url": "https://www.toto.nl/klantenservice/betbuilder",
+      "checked_chunks": [
+        0
+      ],
+      "locator": "How are odds calculated?; Can multiple Betbuilders be combined?"
+    },
+    {
+      "source_id": "MKT-TOTO-BLOG",
+      "url": "https://extra.toto.nl/blog/betbuilder-uitgelegd",
+      "checked_chunks": [
+        0
+      ],
+      "locator": "Good to know; Betbuilder pricing"
+    },
+    {
+      "source_id": "MKT-BETMGM-BUILDER",
+      "url": "https://help.betmgm.nl/hc/nl/articles/17499791885458-Wat-is-een-Bet-Builder",
+      "checked_chunks": [
+        0
+      ],
+      "locator": "How are the odds calculated?"
+    },
+    {
+      "source_id": "MKT-BETMGM-QUOTES",
+      "url": "https://help.betmgm.nl/hc/nl/articles/17500084367250-Wat-gebeurt-er-als-de-odds-veranderen-terwijl-ik-een-weddenschap-aan-het-plaatsen-ben",
+      "checked_chunks": [
+        0
+      ],
+      "locator": "Quote changes and confirmation"
+    },
+    {
+      "source_id": "MKT-FANATICS-OH",
+      "url": "https://sportsbook.fanatics.com/legal/oh/house-rules/",
+      "checked_chunks": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        8,
+        13,
+        14,
+        15
+      ],
+      "locator": "Parlays; Same Game Parlay; Basketball/eBasketball; Basketball Player Market Rules"
+    },
+    {
+      "source_id": "MKT-ONEIDA",
+      "url": "https://oneidacasinohotel.com/sportsbook-rules-of-play/",
+      "checked_chunks": [
+        0,
+        10,
+        15,
+        16,
+        17
+      ],
+      "locator": "XVIII Same Game Parlay; XXI Parlays & Teasers"
+    },
+    {
+      "source_id": "MKT-DK-PARLAY",
+      "url": "https://support.draftkings.com/dk/en-us/what-is-a-parlay-bet?id=kb_article_view&sysparm_article=KB0010683",
+      "checked_chunks": [
+        0
+      ],
+      "locator": "Parlay example and correlated selections"
+    },
+    {
+      "source_id": "MKT-DK-ODDS",
+      "url": "https://support.draftkings.com/dk/en-us/understanding-odds?id=kb_article_view&sysparm_article=KB0010466",
+      "checked_chunks": [
+        0
+      ],
+      "locator": "American odds and multiplier odds"
+    },
+    {
+      "source_id": "MKT-UKGC",
+      "url": "https://www.gamblingcommission.gov.uk/authorities/codes-of-practice/4",
+      "checked_chunks": [
+        0,
+        1
+      ],
+      "locator": "4.2.6 Display of rules – betting"
+    },
+    {
+      "source_id": "MKT-CRUKS",
+      "url": "https://cruksregister.nl/",
+      "checked_chunks": [
+        0
+      ],
+      "locator": "How the gambling stop works"
+    },
+    {
+      "source_id": "MKT-CRUKS-CONTACT",
+      "url": "https://cruksregister.nl/contact",
+      "checked_chunks": [
+        0
+      ],
+      "locator": "Advice and help"
+    },
+    {
+      "source_id": "NBA-TERMS",
+      "url": "https://www.nba.com/termsofuse#nba-statistics",
+      "checked_chunks": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "locator": "Section 9, NBA Statistics"
+    }
+  ]
+}

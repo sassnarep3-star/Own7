@@ -1,0 +1,73 @@
+[
+  {
+    "id": "teams-2025-26",
+    "source_url": "https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season",
+    "checked_on": "2026-11-03",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "chunks_read": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "official_displayed_rows": 30,
+    "retained_rows": 30,
+    "data_file": "data/teams-2025-26.csv",
+    "sha256": "2c88848b57b87696d30eb37fa93499ecac557c7e2dd00b77ee7630ffbad11e6f",
+    "note": "All 30 table rows checked. Retained traditional fields matched; Utah rank corrected 27 → 26. Conference/division fields dropped because this source does not display them.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  },
+  {
+    "id": "players-2025-26-top15",
+    "source_url": "https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame&CF=PTS*GE*26",
+    "checked_on": "2026-11-03",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "chunks_read": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "official_displayed_rows": 15,
+    "retained_rows": 15,
+    "data_file": "data/players-2025-26-top15.csv",
+    "sha256": "418c0ff25f96990483aba7f7e1f8b2fa234344a3073b0ddb2f7cfa72da254f10",
+    "note": "Filter PTS >= 26; official page reports 15 rows, +567 filtered. Snapshot is a scoring-selected subset, NOT an unbiased prop-model training universe. Names use official spelling; expanded team names cross-checked via linked NBA team IDs.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  },
+  {
+    "id": "standings-2026-27",
+    "source_url": "https://www.nba.com/standings",
+    "checked_on": "2026-11-03",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "chunks_read": [
+      0,
+      1
+    ],
+    "official_displayed_rows": 30,
+    "retained_rows": 30,
+    "data_file": "data/standings-2026-27.csv",
+    "sha256": "3bb2b710822a2e42c887f389ef03df393c11c5c94faaca6979a358e597616d20",
+    "note": "All 30 displayed rows checked; snapshots can become stale immediately. 5–8 games played, computed from W+L, not a uniform 8-game sample.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  },
+  {
+    "id": "jokic-games-2025-26",
+    "source_url": "https://www.nba.com/stats/player/203999/boxscores?Season=2025-26&SeasonType=Regular%20Season&DateFrom=02%2F01%2F2026&DateTo=04%2F12%2F2026",
+    "checked_on": "2026-11-03",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "chunks_read": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "official_displayed_rows": 32,
+    "retained_rows": 32,
+    "data_file": "data/jokic-games-2025-26.csv",
+    "sha256": "6aef2e09256d0423a80df850830c7daea7f18142219a07e6b37b17b2e8b6528f",
+    "note": "Explicit date filter displayed 32 rows, one page. MIN, PTS, REB, AST, W/L, date, matchup and game ID checked for all 32. Profile headline averages belong to another scope and are NOT used. LastNGames=30 was ignored on an earlier URL and is not used.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  }
+]

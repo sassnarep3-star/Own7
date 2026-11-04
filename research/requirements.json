@@ -1,0 +1,310 @@
+[
+  {
+    "id": "R01",
+    "requirement": "Review repository line by line",
+    "status": "Complete",
+    "evidence": "54 baseline files / 2,630 text lines inventoried, scoped and hashed; per-file dispositions published.",
+    "artifact": "research/audit/file-review.json",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R02",
+    "requirement": "Coordinate before implementation",
+    "status": "Complete",
+    "evidence": "Historical board read; A1–A5 claimed, committed and pushed before work.",
+    "artifact": "COORDINATION.md",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R03",
+    "requirement": "Avoid parallel-session conflicts",
+    "status": "Complete",
+    "evidence": "Fixed Arena branch only; all incoming parallel histories, boards and source contributions retained. Historical PR #4 left untouched (now closed).",
+    "artifact": "COORDINATION.md",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R04",
+    "requirement": "Verify official NBA statistics",
+    "status": "Complete",
+    "evidence": "All retained fields in 75 inherited rows rechecked; 32 complete date-window rows added.",
+    "artifact": "research/evidence/receipts.json",
+    "source_ids": [
+      "NBA-TEAMS",
+      "NBA-PLAYERS",
+      "NBA-STANDINGS",
+      "NBA-GAMES"
+    ]
+  },
+  {
+    "id": "R05",
+    "requirement": "Every data table row has an official source",
+    "status": "Complete",
+    "evidence": "Generated rows include registered primary/input/method links or the official project artifact for local facts. Sources do not endorse hypotheses.",
+    "artifact": "sources.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R06",
+    "requirement": "Leave unconfirmed values blank and flag them",
+    "status": "Complete",
+    "evidence": "Nulls render as genuinely empty cells with accessible unverified labels; no guessed market data.",
+    "artifact": "review.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R07",
+    "requirement": "Research useful signals",
+    "status": "Complete",
+    "evidence": "Eight explicit hypotheses with input needs, outputs, risks and official references. None promoted to a proven edge.",
+    "artifact": "signals.html",
+    "source_ids": [
+      "NBA-GLOSSARY",
+      "SK-CAL"
+    ]
+  },
+  {
+    "id": "R08",
+    "requirement": "Originate executable own NBA lines",
+    "status": "Needs review",
+    "evidence": "Pricing math implemented/tested; NBA-derived price release disabled by source-rights gate and missing licensed quotes. No actual line issued.",
+    "artifact": "methodology.html",
+    "source_ids": [
+      "NBA-TERMS"
+    ]
+  },
+  {
+    "id": "R09",
+    "requirement": "Single bets",
+    "status": "Complete",
+    "evidence": "Margin/moneyline, pace–efficiency total and rest/availability hypothesis contracts documented.",
+    "artifact": "signals.html#single-bets",
+    "source_ids": [
+      "NBA-TEAMS",
+      "NBA-GLOSSARY"
+    ]
+  },
+  {
+    "id": "R10",
+    "requirement": "Parlays",
+    "status": "Complete",
+    "evidence": "Joint pricing/exposure protocol; no cross-game independence assumption and no invented combined payout.",
+    "artifact": "signals.html#parlays",
+    "source_ids": [
+      "SCIPY-CORR"
+    ]
+  },
+  {
+    "id": "R11",
+    "requirement": "Player props and combinations",
+    "status": "Complete",
+    "evidence": "Minutes/role, count distributions, same-player and teammate models documented; four exploratory probability demos computed.",
+    "artifact": "signals.html#player-props",
+    "source_ids": [
+      "NBA-GAMES",
+      "NBA-INJURY"
+    ]
+  },
+  {
+    "id": "R12",
+    "requirement": "Determine correlation values",
+    "status": "Complete",
+    "evidence": "Six descriptive estimates on paired official game rows, uncertainty, n/date scope and limitations; unavailable structures blank.",
+    "artifact": "correlation.html",
+    "source_ids": [
+      "NBA-GAMES",
+      "SCIPY-CORR"
+    ]
+  },
+  {
+    "id": "R13",
+    "requirement": "Every strategy passes validation gates",
+    "status": "Enforced / blocked",
+    "evidence": "Ten gates enforced fail-closed; zero strategies approved. A request for all to pass cannot manufacture evidence.",
+    "artifact": "validation.html",
+    "source_ids": [
+      "REPO",
+      "SM-HOLM"
+    ]
+  },
+  {
+    "id": "R14",
+    "requirement": "Remove luck from the equation",
+    "status": "Not possible",
+    "evidence": "Luck cannot be eliminated. Time separation, proper scores, uncertainty, multiplicity control and shadow tests reduce false skill claims; no guarantee.",
+    "artifact": "methodology.html",
+    "source_ids": [
+      "SK-CAL",
+      "SM-HOLM"
+    ]
+  },
+  {
+    "id": "R15",
+    "requirement": "Leaderboard competition",
+    "status": "Complete",
+    "evidence": "Separate classes, identical frozen offer/window/exposure policies, lower-bound ranking and deterministic ties; empty until qualified.",
+    "artifact": "leaderboard.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R16",
+    "requirement": "Rewards for top strategies",
+    "status": "Implemented / limited",
+    "evidence": "Non-monetary merit points 3/2/1 for eligible top ranks; zero winners now. Cash pool/amounts unverified and blank.",
+    "artifact": "leaderboard.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R17",
+    "requirement": "Executive summary",
+    "status": "Complete",
+    "evidence": "Source-linked brief covers verified observations, derived results, restrictions, omissions and go/no-go status.",
+    "artifact": "executive-summary.html",
+    "source_ids": [
+      "NBA-TEAMS",
+      "NBA-GAMES",
+      "NBA-TERMS"
+    ]
+  },
+  {
+    "id": "R18",
+    "requirement": "Clean landing dashboard and category subpages",
+    "status": "Complete",
+    "evidence": "One responsive generated site with a shared sidebar, tables, search, filters, keyboard sorting and downloads.",
+    "artifact": "index.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R19",
+    "requirement": "All findings and original URLs retained accessibly",
+    "status": "Complete",
+    "evidence": "Full data/review/audit catalogs published; old HTML URLs redirect to current categories. Superseded assertions preserved in baseline git history, not as current facts.",
+    "artifact": "audit.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R20",
+    "requirement": "Reproducible analysis without manual entry",
+    "status": "Complete",
+    "evidence": "python -m nba_lab run; scripts/build_site.py; deterministic CI uses checked snapshots without credentials or user entry.",
+    "artifact": "README.md",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R21",
+    "requirement": "Automated source-health follow-up",
+    "status": "Complete",
+    "evidence": "Scheduled non-mutating primary-source/link checks save artifacts. No automated NBA data harvest or betting execution.",
+    "artifact": "methodology.html#automation",
+    "source_ids": [
+      "NBA-TERMS",
+      "REPO"
+    ]
+  },
+  {
+    "id": "R22",
+    "requirement": "Verify site builds and has no broken local links",
+    "status": "Complete",
+    "evidence": "Combined run: 62 core/integration + 8 B1 + 5 retained math tests; 36 HTML paths, 541 source-linked table rows, 493 local references; 16 desktop and 16 mobile views, zero automated WCAG A/AA/runtime violations. CI repeats before merge.",
+    "artifact": "research/audit/check-results.json",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R23",
+    "requirement": "Create and merge pull request autonomously",
+    "status": "In progress",
+    "evidence": "Final integration PR will include sources, evidence and all non-blocking flags; required checks must pass first.",
+    "artifact": "COORDINATION.md",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R24",
+    "requirement": "Confirm live GitHub Pages deployment",
+    "status": "In progress",
+    "evidence": "Repository Pages is already configured for root of main; confirm new deployment run and public content after merge.",
+    "artifact": "COORDINATION.md",
+    "source_ids": [
+      "GH-PAGES",
+      "REPO"
+    ]
+  },
+  {
+    "id": "R25",
+    "requirement": "No invented legal/operator/league restrictions",
+    "status": "Complete",
+    "evidence": "Only verified NBA terms published as a confirmed restriction; earlier media/Alberta material withdrawn from active facts.",
+    "artifact": "review.html",
+    "source_ids": [
+      "NBA-TERMS",
+      "KSA-PLAYERS"
+    ]
+  },
+  {
+    "id": "R26",
+    "requirement": "No cash wagering or account actions",
+    "status": "Complete",
+    "evidence": "No bets, money transfers, funded contests, paid feeds or credential requests made. Research-only system.",
+    "artifact": "research/protocol.json",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R27",
+    "requirement": "Integrate all parallel-session contributions",
+    "status": "Complete",
+    "evidence": "Incoming 77 files inventoried; B1 rule evidence/MF flags and F58 correlations/NL requests integrated without changing their session branches.",
+    "artifact": "research/audit/parallel-review.json",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R28",
+    "requirement": "Operator-specific settlement and review evidence",
+    "status": "Complete",
+    "evidence": "24 source-specific findings, all six MF discrepancies; independently re-read relevant official sections; no governing actual wager terms inferred.",
+    "artifact": "settlement.html",
+    "source_ids": [
+      "MKT-TOTO-RULES",
+      "MKT-FANATICS-OH",
+      "MKT-ONEIDA"
+    ]
+  },
+  {
+    "id": "R29",
+    "requirement": "Netherlands scope and safeguards",
+    "status": "Complete",
+    "evidence": "Kansspelwijzer/Gokstop integrated; current NBA offer universe and US-to-NL applicability blank. Cruks contact independently resolves the previous Dutch phone gap.",
+    "artifact": "responsible-gambling.html#netherlands",
+    "source_ids": [
+      "KSA-REGISTER",
+      "NL-GOKSTOP",
+      "MKT-CRUKS-CONTACT"
+    ]
+  }
+]

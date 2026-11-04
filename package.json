@@ -1,0 +1,16 @@
+{
+  "name": "own7-research-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static, source-backed NBA research dashboard; no wagering execution",
+  "scripts": {
+    "build": "python -m nba_lab run && python scripts/build_site.py",
+    "check": "python -m unittest discover -s tests && python scripts/check_site.py",
+    "test:browser": "node scripts/browser_test.mjs"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "153.0.0",
+    "axe-core": "4.14.0",
+    "playwright-core": "1.64.1"
+  }
+}

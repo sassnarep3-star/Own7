@@ -1,0 +1,50 @@
+{
+  "status": "passed locally after parallel integration",
+  "snapshot_checked_on": "2026-11-03",
+  "python_unit_tests": 75,
+  "test_suites": {
+    "core_and_integration": 62,
+    "independent_settlement": 8,
+    "retained_research_math": 5
+  },
+  "python_result": "passed",
+  "static_checks": {
+    "status": "passed",
+    "canonical_pages": 15,
+    "legacy_redirects": 20,
+    "auxiliary_pages": 1,
+    "recursive_html_pages": 36,
+    "table_body_rows": 541,
+    "internal_link_references": 493,
+    "external_references": 1031,
+    "registered_sources": 28,
+    "unknown_values_blank": true,
+    "research_reproduction": "passed",
+    "errors": [],
+    "scope": "Integrity, contracts, semantics and local routing. Not external factual truth, source rights or profitability."
+  },
+  "browser": {
+    "engine": "153.0.8010.0",
+    "desktop_views": 16,
+    "mobile_views": 16,
+    "canonical_pages": 15,
+    "supplementary_dossiers": 1,
+    "wcag_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa",
+      "wcag22aa"
+    ],
+    "violations": 0,
+    "runtime_errors": 0,
+    "interaction_groups": 9,
+    "report": "browser-checks.json"
+  },
+  "ci_status": "waiting for PR #16 at combined merge head",
+  "notes": [
+    "Original 54-file audit plus 77 incoming-main files reviewed.",
+    "28 registered primary/project sources; normalized evidence is not raw archives.",
+    "No rights, skill or economic certification implied by software checks.",
+    "Source prices, ROI, CLV, cash funding, operator applicability remain unverified/blank."
+  ]
+}

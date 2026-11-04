@@ -1,4 +1,7 @@
-"""Offline line-by-line check: data/*.csv versus the transcribed official snapshots.
+"""Offline mapped-cell comparison against preserved historical transcriptions.
+
+Player identity aliases are explicitly accent-normalized; exact current official
+spellings are preserved by the newer canonical receipts. These are not raw archives.
 
 Each snapshot in data/official-snapshots/ records values read from an nba.com page
 (URL in its header comment). This script compares every mapped CSV cell with the
@@ -8,10 +11,15 @@ Run: python3 scripts/verify_official_snapshots.py
 """
 import csv
 import sys
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SNAP = ROOT / "data" / "official-snapshots"
+
+
+def identity(text):
+    return "".join(c for c in unicodedata.normalize("NFKD",text) if not unicodedata.combining(c)).casefold()
 
 
 def read_snapshot(name):
@@ -31,17 +39,22 @@ def check(label, csv_path, snap_name, key_col, snap_cols, csv_cols, snap_key_ind
         if not line.strip() or line.startswith("#"):
             continue
         parts = line.strip().split("|")
-        snap[parts[snap_key_index]] = parts
+        key=identity(parts[snap_key_index])
+        if key in snap:raise ValueError("Duplicate historical identity alias")
+        snap[key] = parts
     mismatches = []
     matched = 0
     for r in rows:
-        key = r[key_col]
+        key = identity(r[key_col])
         if key not in snap:
             mismatches.append(f"{label}: {key} not in official snapshot")
             continue
         s = snap[key]
         ok = True
         for sc, cc in zip(snap_cols, csv_cols):
+            if cc == "Player" and identity(r[cc]) == identity(s[sc]):
+                if r[cc] != s[sc]:print(f"Identity alias (not verbatim spelling): {s[sc]} -> {r[cc]}; canonical receipt preserves official spelling")
+                continue
             if r[cc] != s[sc]:
                 mismatches.append(f"{label}: {key} {cc}: csv={r[cc]!r} official={s[sc]!r}")
                 ok = False
@@ -59,7 +72,7 @@ def main():
     # players: snapshot Rank|Player|Team|Age|... (25 fields) -> CSV columns by name; match by Player
     player_cols = ["Rank", "Player", "Team", "Age", "GP", "W", "L", "MIN", "PTS", "FGM", "FGA", "FG%", "3PM", "3PA", "3P%", "FTM", "FTA", "FT%", "OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"]
     problems += check("players-2025-26-top15", ROOT / "data/players-2025-26-top15.csv", "players-2025-26-top15.txt",
-                      "Player", list(range(0, 25)), player_cols, snap_key_index=1)
+                      "Player", list(range(0, len(player_cols))), player_cols, snap_key_index=1)
     # standings: snapshot Team|W|L|WIN%|GB|CONF|DIV|HOME|ROAD|LAST10|STREAK
     standings_cols = ["W", "L", "WIN%", "GB", "CONF", "DIV", "HOME", "ROAD", "LAST10", "STREAK"]
     problems += check("standings-2026-27", ROOT / "data/standings-2026-27.csv", "standings-2026-27.txt", "Team",
@@ -67,7 +80,7 @@ def main():
     if problems:
         print("\n".join(problems))
         sys.exit(1)
-    print("OK: all mapped CSV cells match the official snapshots (0 mismatches).")
+    print("OK: all mapped numeric cells and explicit normalized identities match historical transcriptions; not a renewed external fact check.")
 
 
 if __name__ == "__main__":
