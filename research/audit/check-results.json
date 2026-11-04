@@ -1,5 +1,5 @@
 {
-  "status": "passed locally after parallel integration",
+  "status": "passed locally and in exact-head GitHub CI",
   "snapshot_checked_on": "2026-11-03",
   "python_unit_tests": 75,
   "test_suites": {
@@ -16,7 +16,7 @@
     "recursive_html_pages": 36,
     "table_body_rows": 541,
     "internal_link_references": 493,
-    "external_references": 1031,
+    "external_references": 1033,
     "registered_sources": 28,
     "unknown_values_blank": true,
     "research_reproduction": "passed",
@@ -40,11 +40,12 @@
     "interaction_groups": 9,
     "report": "browser-checks.json"
   },
-  "ci_status": "waiting for PR #16 at combined merge head",
+  "ci_status": "success: 41746838632, 41746843969 and postmerge 41747077356",
   "notes": [
     "Original 54-file audit plus 77 incoming-main files reviewed.",
     "28 registered primary/project sources; normalized evidence is not raw archives.",
     "No rights, skill or economic certification implied by software checks.",
     "Source prices, ROI, CLV, cash funding, operator applicability remain unverified/blank."
-  ]
+  ],
+  "release_evidence": "../release.json"
 }
