@@ -19,7 +19,9 @@ Method: every row of every published data table was re-read from the live offici
 | data/standings-2026-27.csv | 30/30 | W, L, WIN%, GB, CONF, DIV, HOME, ROAD, LAST10, STREAK (10 per row) | 30 | 0 | 0 |
 | data/team-correlations-2025-26.csv | 6/6 pairs | r, r_squared recomputed from data/teams-2025-26.csv by scripts/compute_team_correlations.py | 6 | 0 | 0 |
 
-Total cells compared: 30×18 + 15×23 + 30×10 + 6×2 = **1,086**. Mismatches: **0**.
+Total cells compared: 30×18 + 15×23 + 30×10 + 6×2 = **1,086**. Mismatches: **0** (statistical columns).
+
+Rank-column follow-up (2026-11-04): after the b11f3baa audit surfaced the Utah rank discrepancy, Rank was added to the comparison scope - 30 team ranks + 30 standings ranks re-read live. One mismatch found and fixed (Utah 27 to 26, V-6). With the fix, Rank now matches 60/60.
 
 ## Derived-claim checks (docs/executive-summary.md and index.html)
 
@@ -45,6 +47,7 @@ Total cells compared: 30×18 + 15×23 + 30×10 + 6×2 = **1,086**. Mismatches: *
 | V-3 | Live teams table includes a BLKA (blocks against) column between BLK and PF; it is intentionally excluded from the CSV. | Correct exclusion; earlier flag resolved (BLKA identified). |
 | V-4 | docs/executive-summary.md carries a "SUPERSEDED HISTORICAL DOCUMENT" banner while its numeric content was corrected and matches live data. The canonical summary is index.html. | Banner retained (docs file, not a data table); canonical page unaffected. Noted for review. |
 | V-5 | NBA.com publishes no betting lines/odds; market-line cells remain blank and flagged across all strategy pages. | By design; flagged on Flagged for Review pages. |
+| V-6 | Rank-column gap: the offline teams/standings snapshots omitted Rank, masking that Utah Jazz was published at rank 27 while the official table shows 26 (tied with Sacramento; competition ranking skips 27). First flagged by session b11f3baa (independent-audit/nba-csv-review.md); confirmed live by this session on 2026-11-04. | Fixed: data/teams-2025-26.csv rank 27 to 26; Rank prepended to both snapshots; verifier now checks Rank for teams and standings; findings.html regenerated; flag F14 published. |
 
 ## Statement
 

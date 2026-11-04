@@ -267,3 +267,10 @@ Session ID: `session-arena-f58e9526-own7`. Branch: `arena/f58e9526-own7` (fixed 
 ### Merge record
 - PR: https://github.com/sassnarep3-star/Own7/pull/11 (`arena/f58e9526-own7` → `main`).
 - Result: MERGED at 2026-11-03T23:54:10Z into main (merge commit 37e1bbd). Post-merge checks and Pages deploy re-verified by session arena/6fe08d51-own7 (task 19).
+
+### Task 19 progress — irregularity found and fixed (2026-11-04 00:35 UTC)
+
+- Cross-session finding adopted: session `arena/b11f3baa-own7` audit (independent-audit/nba-csv-review.md, on its branch, C1 done, no PR) reported Utah Jazz rank 27 in `data/teams-2025-26.csv` vs 26 on the official table. Confirmed live by this session (nba.com 2025-26 teams table, chunk 4: `| 26 | Utah Jazz`, tied with Sacramento; competition ranking skips 27).
+- Root cause: `data/official-snapshots/teams-2025-26.txt` and `standings-2026-27.txt` did not include the Rank column, so `scripts/verify_official_snapshots.py` could not catch it.
+- Fix (this session): CSV rank 27→26; Rank prepended to both snapshots (re-read live 2026-11-04); verifier extended to check Rank for teams and standings; `findings.html` regenerated via `scripts/build_dashboard.py`; flag F14 published on review.html; `docs/verification-6fe08d51.md` updated (V-6).
+- All local checks green after the fix: check_site, verify_verified_site, verify_official_snapshots (now rank-inclusive), test_research, market-evidence --check.

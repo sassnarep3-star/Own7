@@ -52,18 +52,18 @@ def check(label, csv_path, snap_name, key_col, snap_cols, csv_cols, snap_key_ind
 
 def main():
     problems = []
-    # teams: snapshot Team|GP|W|L|WIN%|PTS|FG%|3P%|FT%|OREB|DREB|REB|AST|TOV|STL|BLK|PF|PFD|+/-
-    team_cols = ["GP", "W", "L", "WIN%", "PTS", "FG%", "3P%", "FT%", "OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF", "PFD", "+/-"]
+    # teams: snapshot Rank|Team|GP|W|L|WIN%|PTS|FG%|3P%|FT%|OREB|DREB|REB|AST|TOV|STL|BLK|PF|PFD|+/-
+    team_cols = ["Rank", "GP", "W", "L", "WIN%", "PTS", "FG%", "3P%", "FT%", "OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF", "PFD", "+/-"]
     problems += check("teams-2025-26", ROOT / "data/teams-2025-26.csv", "teams-2025-26.txt", "Team",
-                      list(range(1, 19)), team_cols)
+                      [0] + list(range(2, 20)), team_cols, snap_key_index=1)
     # players: snapshot Rank|Player|Team|Age|... (25 fields) -> CSV columns by name; match by Player
     player_cols = ["Rank", "Player", "Team", "Age", "GP", "W", "L", "MIN", "PTS", "FGM", "FGA", "FG%", "3PM", "3PA", "3P%", "FTM", "FTA", "FT%", "OREB", "DREB", "REB", "AST", "TOV", "STL", "BLK", "PF"]
     problems += check("players-2025-26-top15", ROOT / "data/players-2025-26-top15.csv", "players-2025-26-top15.txt",
                       "Player", list(range(0, 25)), player_cols, snap_key_index=1)
-    # standings: snapshot Team|W|L|WIN%|GB|CONF|DIV|HOME|ROAD|LAST10|STREAK
-    standings_cols = ["W", "L", "WIN%", "GB", "CONF", "DIV", "HOME", "ROAD", "LAST10", "STREAK"]
+    # standings: snapshot Rank|Team|W|L|WIN%|GB|CONF|DIV|HOME|ROAD|LAST10|STREAK
+    standings_cols = ["Rank", "W", "L", "WIN%", "GB", "CONF", "DIV", "HOME", "ROAD", "LAST10", "STREAK"]
     problems += check("standings-2026-27", ROOT / "data/standings-2026-27.csv", "standings-2026-27.txt", "Team",
-                      list(range(1, 11)), standings_cols)
+                      [0] + list(range(2, 12)), standings_cols, snap_key_index=1)
     if problems:
         print("\n".join(problems))
         sys.exit(1)
