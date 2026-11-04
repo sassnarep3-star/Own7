@@ -11,11 +11,13 @@
     "methodology.html",
     "validation.html",
     "leaderboard.html",
+    "settlement.html",
     "sources.html",
     "review.html",
     "audit.html",
     "requirements.html",
-    "responsible-gambling.html"
+    "responsible-gambling.html",
+    "market-evidence/index.html"
   ],
   "mobile_pages": [
     "index.html",
@@ -27,11 +29,13 @@
     "methodology.html",
     "validation.html",
     "leaderboard.html",
+    "settlement.html",
     "sources.html",
     "review.html",
     "audit.html",
     "requirements.html",
-    "responsible-gambling.html"
+    "responsible-gambling.html",
+    "market-evidence/index.html"
   ],
   "accessibility_violations": [],
   "runtime_errors": [],
@@ -40,9 +44,9 @@
     "CSV export downloads filtered values with actual official URLs",
     "Keyboard table sort is numeric and reports aria-sort",
     "Global search shortcut, empty state and Escape reset work",
-    "Review filters distinguish 9 open and 6 corrected items",
+    "Review filters match all current open/corrected catalog entries",
     "No fictional ranks, ROI, CLV or rewards; all 40 missing cells stay blank",
-    "All 19 historical HTML URLs redirect to the right category/fragment",
+    "All 20 historical HTML URLs redirect to the right category/fragment",
     "Data and official links remain readable without JavaScript",
     "Mobile navigation opens accessibly, closes with Escape and restores focus"
   ]

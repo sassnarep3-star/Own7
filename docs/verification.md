@@ -33,3 +33,11 @@ Exact URLs, check method, chunk scopes, official displayed row counts, retained 
 - Browser checks for desktop/mobile rendering, keyboard navigation/sorting/search, filters, blank preservation, CSV download, legacy redirects, console/network errors, responsive overflow and automated accessibility checks.
 
 The tools do **not** certify future source accuracy, independent data rights, real operator availability, skill, profit or legality. Scheduled source-health requests check availability only, save non-mutating artifacts and never promote a URL into a factual verification. Current check/deploy evidence is recorded in [`COORDINATION.md`](../COORDINATION.md) and [`research/audit/check-results.json`](../research/audit/check-results.json).
+
+## Incoming-main re-verification
+
+Incoming main `37e1bbd` added parallel source and calculation work after the original baseline. All 77 files have scoped dispositions in `research/audit/parallel-review.json`. All append-only boards and independently authored dossiers were preserved. B1 has 24 findings and six flags; the exact checked operator/regulator sections are in `research/evidence/settlement-recheck.json`. Current wager terms are still unverified.
+
+Historical NBA transcription files remain unaltered. Their numeric fields match the current checked CSVs; historical ASCII names are explicitly matched as identity aliases, not silently called verbatim official spelling. The newer receipts preserve Dončić/Jokić. The contributed snapshot checker now includes the formerly omitted PF field. Six team coefficients and all 11 handoff coefficients/intervals are independently checked; the canonical UI labels them derived and flags nominal Fisher-interval assumptions. Original historical no-game-log statements predate the new 32-row cohort and are not current claims.
+
+PR #4 was open at initial claim but later closed by another session. F15 is corrected based on the official GitHub record; this session did not modify that PR. Canonical review also includes all MF/NL/BLKA/aggregate-coverage flags. Automated checks are repeated on the combined integration, not assumed from an earlier independent branch.

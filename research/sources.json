@@ -166,5 +166,159 @@
     "scope": "Repository contents, coordination, tests and generated artifacts are locally auditable. A GitHub link alone never verifies an external NBA claim.",
     "access": "Local git and authenticated GitHub API",
     "chunks_read": "local git + gh"
+  },
+  {
+    "id": "MKT-TOTO-RULES",
+    "publisher": "TOTO Online B.V.",
+    "title": "Sport-specific rules, effective 28 April 2026",
+    "url": "https://portal-spa-api.toto.nl/assets/6e583945-ef2e-401c-b6a2-ad9f7a285519",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "Section 2, item 20 (Bet Builder); section 3, item 6 (Basketball); original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-TOTO-BUILDER",
+    "publisher": "TOTO",
+    "title": "Betbuilder help",
+    "url": "https://www.toto.nl/klantenservice/betbuilder",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "How are odds calculated?; Can multiple Betbuilders be combined?; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-TOTO-BLOG",
+    "publisher": "TOTO",
+    "title": "Betbuilder explained, 30 June 2026",
+    "url": "https://extra.toto.nl/blog/betbuilder-uitgelegd",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "Good to know; Betbuilder pricing; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-BETMGM-BUILDER",
+    "publisher": "BetMGM Netherlands",
+    "title": "What is a Bet Builder?",
+    "url": "https://help.betmgm.nl/hc/nl/articles/17499791885458-Wat-is-een-Bet-Builder",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "How are the odds calculated?; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-BETMGM-QUOTES",
+    "publisher": "BetMGM Netherlands",
+    "title": "What happens if odds change while placing a bet?",
+    "url": "https://help.betmgm.nl/hc/nl/articles/17500084367250-Wat-gebeurt-er-als-de-odds-veranderen-terwijl-ik-een-weddenschap-aan-het-plaatsen-ben",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "Quote changes and confirmation; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-FANATICS-OH",
+    "publisher": "Fanatics Sportsbook Ohio",
+    "title": "House Rules, effective 17 September 2026",
+    "url": "https://sportsbook.fanatics.com/legal/oh/house-rules/",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "Parlays; Same Game Parlay; Basketball/eBasketball; Basketball Player Market Rules; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-ONEIDA",
+    "publisher": "Oneida Casino Sportsbook",
+    "title": "Rules of Play",
+    "url": "https://oneidacasinohotel.com/sportsbook-rules-of-play/",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "XVIII Same Game Parlay; XXI Parlays & Teasers; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-DK-PARLAY",
+    "publisher": "DraftKings",
+    "title": "What is a parlay bet? version 4.0, revised 29 June 2026",
+    "url": "https://support.draftkings.com/dk/en-us/what-is-a-parlay-bet?id=kb_article_view&sysparm_article=KB0010683",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "Parlay example and correlated selections; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-DK-ODDS",
+    "publisher": "DraftKings",
+    "title": "Understanding Odds, version 4.0, revised 6 October 2026",
+    "url": "https://support.draftkings.com/dk/en-us/understanding-odds?id=kb_article_view&sysparm_article=KB0010466",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "American odds and multiplier odds; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-UKGC",
+    "publisher": "Great Britain Gambling Commission",
+    "title": "Codes of practice: fair and open provisions",
+    "url": "https://www.gamblingcommission.gov.uk/authorities/codes-of-practice/4",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "4.2.6 Display of rules – betting; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-CRUKS",
+    "publisher": "Centraal Register Uitsluiting Kansspelen (Cruks)",
+    "title": "Cruks gambling stop",
+    "url": "https://cruksregister.nl/",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "How the gambling stop works; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "MKT-CRUKS-CONTACT",
+    "publisher": "Centraal Register Uitsluiting Kansspelen (Cruks)",
+    "title": "Contact and gambling support",
+    "url": "https://cruksregister.nl/contact",
+    "authority": "Official operator or regulator; jurisdiction-specific, not universal",
+    "scope": "Advice and help; original B1 review and independent integration re-read of the relevant sections. Current contract applicability not established.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant rendered sections read with fetch_page; dated document examples, not live odds, operator eligibility or legal advice."
+  },
+  {
+    "id": "KSA-REGISTER",
+    "publisher": "Kansspelautoriteit / official Dutch player-protection service",
+    "title": "Kansspelwijzer register",
+    "url": "https://kansspelautoriteit.nl/kansspelwijzer",
+    "authority": "Dutch regulator / official player-protection service",
+    "scope": "Register exists and lists Online sportweddenschap category; no complete operator-by-operator NBA-market audit.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant page independently fetched during integration; source publishes no verified complete NBA offer universe."
+  },
+  {
+    "id": "NL-GOKSTOP",
+    "publisher": "Kansspelautoriteit / official Dutch player-protection service",
+    "title": "Gokstop self-exclusion route",
+    "url": "https://gokstop.nl/",
+    "authority": "Dutch regulator / official player-protection service",
+    "scope": "Describes safe, easy, free self-exclusion via Cruks; no phone number inferred from this page.",
+    "status": "Content checked",
+    "checked_on": "2026-11-03",
+    "access": "Relevant page independently fetched during integration; source publishes no verified complete NBA offer universe."
   }
 ]

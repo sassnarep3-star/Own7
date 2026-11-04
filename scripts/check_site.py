@@ -25,6 +25,8 @@ SOURCE_HOSTS = {
     'KSA-PLAYERS': 'kansspelautoriteit.nl', 'GH-PAGES': 'docs.github.com', 'REPO': 'github.com',
 }
 
+SOURCE_HOSTS.update({'MKT-TOTO-RULES': 'portal-spa-api.toto.nl', 'MKT-TOTO-BUILDER': 'www.toto.nl', 'MKT-TOTO-BLOG': 'extra.toto.nl', 'MKT-BETMGM-BUILDER': 'help.betmgm.nl', 'MKT-BETMGM-QUOTES': 'help.betmgm.nl', 'MKT-FANATICS-OH': 'sportsbook.fanatics.com', 'MKT-ONEIDA': 'oneidacasinohotel.com', 'MKT-DK-PARLAY': 'support.draftkings.com', 'MKT-DK-ODDS': 'support.draftkings.com', 'MKT-UKGC': 'www.gamblingcommission.gov.uk', 'MKT-CRUKS': 'cruksregister.nl', 'MKT-CRUKS-CONTACT': 'cruksregister.nl', 'KSA-REGISTER': 'kansspelautoriteit.nl', 'NL-GOKSTOP': 'gokstop.nl'})
+
 
 class Page(HTMLParser):
     def __init__(self, path):
@@ -193,7 +195,7 @@ def main():
         for p,content in before.items():
             if p.read_bytes()!=content:errors.append(f'{p.relative_to(ROOT)}: stale; deterministic rebuild changed file')
     report={'status':'passed' if not errors else 'failed','canonical_pages':len(manifest['canonical_pages']),
-            'legacy_redirects':len(manifest['legacy_redirects']),'recursive_html_pages':len(pages),
+            'legacy_redirects':len(manifest['legacy_redirects']),'auxiliary_pages':len(manifest.get('auxiliary_pages',[])),'recursive_html_pages':len(pages),
             'table_body_rows':row_count,'internal_link_references':internal,'external_references':external,
             'registered_sources':len(registry),'unknown_values_blank':True if not errors else None,
             'research_reproduction':'passed' if research_ok else 'failed','errors':errors,

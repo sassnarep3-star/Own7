@@ -12,12 +12,14 @@ import {chromium as playwright} from 'playwright-core';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const manifest=JSON.parse(readFileSync(join(root,'research/site-manifest.json'),'utf8'));
+const catalog=JSON.parse(readFileSync(join(root,'research/catalog.json'),'utf8'));
+const visitPages=[...manifest.canonical_pages,...(manifest.auxiliary_pages||[])];
 const out=join(root,'.artifacts');
 mkdirSync(out,{recursive:true});
 const report={status:'running',browser:null,desktop_pages:[],mobile_pages:[],accessibility_violations:[],runtime_errors:[],assertions:[]};
 const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript','.svg':'image/svg+xml','.json':'application/json','.csv':'text/csv','.md':'text/plain'};
-const allowedFolders=new Set(['assets','css','js','data','research','docs','pages','verified']);
-const publicRootFiles=new Set([...manifest.canonical_pages,'README.md','COORDINATION.md']);
+const allowedFolders=new Set(['assets','css','js','data','research','docs','pages','verified','handoff','market-evidence']);
+const publicRootFiles=new Set([...manifest.canonical_pages,...Object.keys(manifest.legacy_redirects),'README.md','COORDINATION.md']);
 const server=createServer((req,res)=>{
   try{
     const url=new URL(req.url,'http://localhost');
@@ -58,7 +60,7 @@ try{
     const response=await page.goto(base+slug,{waitUntil:'networkidle'});
     assert.equal(response.status(),200,slug+' status');
     assert.equal(await page.locator('main h1').count(),1,slug+' single main heading');
-    assert.equal(await page.locator('nav a[aria-current="page"]').count(),1,slug+' active navigation');
+    if(manifest.canonical_pages.includes(slug))assert.equal(await page.locator('nav a[aria-current="page"]').count(),1,slug+' active navigation');
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),slug+' outer horizontal overflow');
     assert(await page.locator('td[data-empty]').evaluateAll(cells=>cells.every(c=>!c.textContent.trim())),slug+' unknown fields blank');
     await page.addScriptTag({path:axePath});
@@ -66,7 +68,7 @@ try{
     for(const violation of result.violations)report.accessibility_violations.push({page:slug,mode,id:violation.id,impact:violation.impact,nodes:violation.nodes.map(n=>({target:n.target,summary:n.failureSummary}))});
     report[mode+'_pages'].push(slug);
   }
-  for(const slug of manifest.canonical_pages)await visit(slug,'desktop');
+  for(const slug of visitPages)await visit(slug,'desktop');
   await page.goto(base+'index.html',{waitUntil:'networkidle'});
   await page.screenshot({path:join(out,'dashboard-desktop.png'),fullPage:true});
 
@@ -103,10 +105,10 @@ try{
 
   await page.goto(base+'review.html',{waitUntil:'networkidle'});
   await page.locator('[data-status-filter="review-register"]').selectOption('Needs review');
-  assert.equal(await page.locator('#review-register tbody tr:visible').count(),9);
+  assert.equal(await page.locator('#review-register tbody tr:visible').count(),catalog.flags.filter(f=>f.status==='Needs review').length);
   await page.locator('[data-status-filter="review-register"]').selectOption('Corrected');
-  assert.equal(await page.locator('#review-register tbody tr:visible').count(),6);
-  report.assertions.push('Review filters distinguish 9 open and 6 corrected items');
+  assert.equal(await page.locator('#review-register tbody tr:visible').count(),catalog.flags.filter(f=>f.status==='Corrected').length);
+  report.assertions.push('Review filters match all current open/corrected catalog entries');
   await page.goto(base+'leaderboard.html',{waitUntil:'networkidle'});
   assert.equal(await page.locator('#candidate-status td[data-empty]').count(),40);
   assert((await page.locator('main').innerText()).includes('No eligible strategies'));
@@ -116,7 +118,7 @@ try{
     await page.goto(base+old,{waitUntil:'networkidle'});
     await page.waitForURL(base+target);
   }
-  report.assertions.push('All 19 historical HTML URLs redirect to the right category/fragment');
+  report.assertions.push(`All ${Object.keys(manifest.legacy_redirects).length} historical HTML URLs redirect to the right category/fragment`);
   const noJS=await browser.newContext({javaScriptEnabled:false,viewport:{width:1280,height:900}});
   const plain=await noJS.newPage();await plain.goto(base+'data.html');
   assert.equal(await plain.locator('#team-data-table tbody tr').count(),30);
@@ -126,7 +128,7 @@ try{
   // Keep the extra context alive until browser.close (serverless single-process build).
 
   await page.setViewportSize({width:390,height:844});
-  for(const slug of manifest.canonical_pages)await visit(slug,'mobile');
+  for(const slug of visitPages)await visit(slug,'mobile');
   await page.goto(base+'index.html',{waitUntil:'networkidle'});
   await page.screenshot({path:join(out,'dashboard-mobile.png'),fullPage:true});
   assert.equal(await page.locator('#sidebar').getAttribute('aria-hidden'),'true');

@@ -47,3 +47,13 @@ The leaderboard has separate market classes, common frozen windows/offer/exposur
 The baseline contains 54 tracked files / 2,630 text lines, not the one-file repository described by a stale audit. Every file has a full line scope, hash and disposition. Three overlapping sites are reconciled into one generated dashboard; historical URLs redirect to corresponding categories, and original contents remain in git.
 
 The full requirement ledger, official data tables, source receipts, methods, gate matrix, correlations, results, repository audit and **Flagged for Review** are public site categories. Review flags do not block publishing an honest site, but do block unsupported strategy/price/cash release. Build, PR, merge and Pages evidence are recorded in [`COORDINATION.md`](../COORDINATION.md).
+
+## Parallel-session contributions reconciled
+
+All 77 files at incoming main `37e1bbd` were inventoried and reconciled without modifying other session branches. In addition to the original 54-file audit, the release preserves the other sessions’ dated source transcriptions, audit notes, mathematical helpers, 17 aggregate-correlation rows (overlapping pairs), and the complete B1 source dossier.
+
+The new Market evidence category has 24 operator-specific rule findings and all six MF discrepancies appear on central review. Relevant original source paragraphs were independently read: TOTO’s April PDF versus current FAQ/June article; BetMGM NL; Fanatics Ohio; Oneida Wisconsin; DraftKings; UKGC §4.2.6; Cruks. These are examples of document content, **not universally applicable contracts or current offered NBA bets**. See the [attributed dossier](../market-evidence/README.md) and [recheck scopes](../research/evidence/settlement-recheck.json).
+
+The 17 contributed aggregate rows are distinct from paired-game estimates and not 17 unique discoveries. Their nominal Fisher intervals assume independent approximately bivariate-normal sampling; shared team games and scoring selection defeat any automatic generalizable-coverage interpretation. No skill or betting-leg conclusion follows.
+
+Dutch context now includes the official [Kansspelwijzer](https://kansspelautoriteit.nl/kansspelwijzer), [Gokstop](https://gokstop.nl/) and [Cruks contact](https://cruksregister.nl/contact). The contact page independently confirms free, anonymous Open over Gokken support at **0800 24 000 22, 24/7**; previous H-08 is resolved. Current NBA operator availability and applicability of reported US rules in the Netherlands remain unverified and blank.

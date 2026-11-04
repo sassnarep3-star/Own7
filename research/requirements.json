@@ -23,7 +23,7 @@
     "id": "R03",
     "requirement": "Avoid parallel-session conflicts",
     "status": "Complete",
-    "evidence": "Fixed Arena branch only; historical work preserved; PR #4 left untouched; changes limited to claimed integration scopes.",
+    "evidence": "Fixed Arena branch only; all incoming parallel histories, boards and source contributions retained. Historical PR #4 left untouched (now closed).",
     "artifact": "COORDINATION.md",
     "source_ids": [
       "REPO"
@@ -225,7 +225,7 @@
     "id": "R22",
     "requirement": "Verify site builds and has no broken local links",
     "status": "Complete",
-    "evidence": "57 Python tests pass; recursive HTML/asset/fragment/source audit and deterministic rebuild pass. Desktop/mobile Chromium, WCAG A/AA and interaction checks pass on all 14 pages. Final CI repeats before merge.",
+    "evidence": "Combined run: 62 core/integration + 8 B1 + 5 retained math tests; 36 HTML paths, 541 source-linked table rows, 493 local references; 16 desktop and 16 mobile views, zero automated WCAG A/AA/runtime violations. CI repeats before merge.",
     "artifact": "research/audit/check-results.json",
     "source_ids": [
       "REPO"
@@ -271,6 +271,40 @@
     "artifact": "research/protocol.json",
     "source_ids": [
       "REPO"
+    ]
+  },
+  {
+    "id": "R27",
+    "requirement": "Integrate all parallel-session contributions",
+    "status": "Complete",
+    "evidence": "Incoming 77 files inventoried; B1 rule evidence/MF flags and F58 correlations/NL requests integrated without changing their session branches.",
+    "artifact": "research/audit/parallel-review.json",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R28",
+    "requirement": "Operator-specific settlement and review evidence",
+    "status": "Complete",
+    "evidence": "24 source-specific findings, all six MF discrepancies; independently re-read relevant official sections; no governing actual wager terms inferred.",
+    "artifact": "settlement.html",
+    "source_ids": [
+      "MKT-TOTO-RULES",
+      "MKT-FANATICS-OH",
+      "MKT-ONEIDA"
+    ]
+  },
+  {
+    "id": "R29",
+    "requirement": "Netherlands scope and safeguards",
+    "status": "Complete",
+    "evidence": "Kansspelwijzer/Gokstop integrated; current NBA offer universe and US-to-NL applicability blank. Cruks contact independently resolves the previous Dutch phone gap.",
+    "artifact": "responsible-gambling.html#netherlands",
+    "source_ids": [
+      "KSA-REGISTER",
+      "NL-GOKSTOP",
+      "MKT-CRUKS-CONTACT"
     ]
   }
 ]

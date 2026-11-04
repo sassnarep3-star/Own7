@@ -23,6 +23,14 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Reproduce research, sources, blanks, all links and generated pages
         run: python scripts/check_site.py
+      - name: Verify retained snapshots and parallel source contributions
+        run: |
+          python scripts/verify_official_snapshots.py
+          python scripts/compute_team_correlations.py
+          python scripts/test_research.py
+          python handoff/f58e9526/compute_correlations.py --check
+          python market-evidence/build.py --check
+          python market-evidence/test_build.py -v
       - name: Committed artifacts must already be current
         run: git diff --exit-code
   browser:

@@ -2774,6 +2774,7 @@
     "data/jokic-games-2025-26.csv": "6aef2e09256d0423a80df850830c7daea7f18142219a07e6b37b17b2e8b6528f",
     "data/players-2025-26-top15.csv": "418c0ff25f96990483aba7f7e1f8b2fa234344a3073b0ddb2f7cfa72da254f10",
     "data/standings-2026-27.csv": "3bb2b710822a2e42c887f389ef03df393c11c5c94faaca6979a358e597616d20",
+    "data/team-correlations-2025-26.csv": "45190765932f4d89217b55aa32a4ca48acdfb2ab56da95cd1a97f2a8772f24ae",
     "data/teams-2025-26.csv": "2c88848b57b87696d30eb37fa93499ecac557c7e2dd00b77ee7630ffbad11e6f",
     "nba_lab/__init__.py": "c308344bcfcf89b5bc69fdb61c9637ad0000288c4003e774c5a63f1ab3d006b5",
     "nba_lab/__main__.py": "5305d5d90b492216fcdf499c4e9f1a68224302b54195502ca049a3002781658b",
@@ -2781,12 +2782,12 @@
     "nba_lab/math.py": "64aefb7effa86a046dca9b530ab3b07f7243b9560b263bf8925aab736d1429f4",
     "nba_lab/models.py": "e215f35ae9005b64a7026622ecf2a4fc3c03ef8251fed1ed0972290f9ab755bc",
     "nba_lab/validation.py": "037dff8f23e6143d133c2d116e095a8cb3c8faea544f27fd365aee8055a373eb",
-    "research/catalog.json": "ea7df475bf4847b4b2ece546955a370420679987cb01d9b1b7fff693851ef022",
+    "research/catalog.json": "cdcd932a4bb6f415f2487352df6c516c37c1b42316f4ed660a6413ee287d1097",
     "research/evidence/receipts.json": "813665038767581ee7981d5beb051f86b2ec80ede955861533229d444f4f8d03",
     "research/protocol.json": "4d40bed6586a473363bf2b9be035d7a30ba2ccf1b611fb152c7dcf25ff00eda8",
-    "research/sources.json": "0211e75893c1798b5503813c445d370d910987505baccdba59e2b5feb2e24ff0"
+    "research/sources.json": "e91a11b787763016229692604e92ed5b7a0b6b0885b20c6460c0bb29d0df7b6f"
   },
-  "run_hash": "2bf091b647957c45cfe12b2740c07932d291cef2e018389d869d2ff2219879f0",
+  "run_hash": "bf171b924c523c1edbc1561944caf28626145ccbaad81870b43e368197736f23",
   "limitations": [
     "No operator prices or pregame timestamp archive",
     "No untouched confirmatory or prospective shadow evaluation",

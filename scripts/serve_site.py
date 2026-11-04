@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 ROOT=Path(__file__).resolve().parent.parent
-FOLDERS={'assets','css','js','data','research','docs','pages','verified'}
+FOLDERS={'assets','css','js','data','research','docs','pages','verified','handoff','market-evidence'}
 EXTENSIONS={'.html','.css','.js','.svg','.json','.csv','.md'}
 ROOT_FILES={'README.md','COORDINATION.md'}
 
@@ -21,7 +21,8 @@ class Handler(SimpleHTTPRequestHandler):
         else:local=local.lstrip('/')
         if not local:local='index.html'
         target=(ROOT/local).resolve()
-        known=set(json.loads((ROOT/'research/site-manifest.json').read_text())['canonical_pages'])|ROOT_FILES
+        manifest=json.loads((ROOT/'research/site-manifest.json').read_text())
+        known=set(manifest['canonical_pages'])|set(manifest['legacy_redirects'])|ROOT_FILES
         if not target.is_relative_to(ROOT) or not target.is_file() or target.suffix not in EXTENSIONS:return None
         if local.split('/')[0] not in FOLDERS and local not in known:return None
         return target
