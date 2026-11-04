@@ -6,7 +6,7 @@ import math
 import unittest
 from pathlib import Path
 
-from nba_lab.engine import ROOT, load_csv, load_json, verify_receipts
+from nba_lab.engine import ROOT, load_csv, load_json, verify_receipts, validate_source_rights
 from nba_lab.math import (bernoulli_joint, brier_score, circular_block_interval,
                           decimal_from_american, expected_net, fair_decimal,
                           holm_adjust, implied_probability, joint_hit_rate,
@@ -282,6 +282,49 @@ class GateTests(unittest.TestCase):
         result = rank_entries([self.fixture()])
         self.assertEqual(result[0]['merit_points'], 3)
         self.assertIsNone(result[0]['cash_reward'])
+
+    def test_malformed_evidence_denied(self):
+        for bad in (None, [], 'pass'):
+            item = self.fixture(); item['gate_evidence']['G01'] = bad
+            self.assertFalse(eligible(item))
+        item = self.fixture(); item['gate_evidence']['G01']['artifact_url'] = None
+        self.assertFalse(eligible(item))
+
+    def test_common_universe_required(self):
+        for field in ('offer_universe_id', 'evaluation_event_set_hash'):
+            a, b = self.fixture(), self.fixture(); b['strategy_id'] = 'second'; b[field] = 'different'
+            with self.assertRaises(ValueError):
+                rank_entries([a, b])
+
+    def test_duplicate_entry_and_invalid_timestamp_rejected(self):
+        with self.assertRaises(ValueError):
+            rank_entries([self.fixture(), self.fixture()])
+        for stamp in ('', 'not a date', '2020-01-01T00:00:00'):
+            item = self.fixture(); item['frozen_at'] = stamp
+            with self.assertRaises(ValueError):
+                rank_entries([item])
+
+    def test_ranking_and_separate_categories(self):
+        a, b, c = self.fixture(), self.fixture(), self.fixture()
+        a['strategy_id'] = 'A'; b['strategy_id'] = 'B'; b['roi_lcb95'] = 0.02
+        c['strategy_id'] = 'C'; c['category'] = 'Parlays'
+        result = rank_entries([a, b, c])
+        singles = [r for r in result if r['category'] == 'Single bets']
+        self.assertEqual([r['strategy_id'] for r in singles], ['B', 'A'])
+        self.assertEqual([r['merit_points'] for r in singles], [3, 2])
+        self.assertEqual(next(r for r in result if r['strategy_id'] == 'C')['rank'], 1)
+
+    def test_rights_config_cannot_silently_enable_operations(self):
+        settings = load_json('research/protocol.json')
+        validate_source_rights(settings)
+        for key in ('nba_gambling_use_authorized', 'nba_derived_betting_prices_enabled', 'bulk_collection_enabled'):
+            for value in (None, True):
+                changed = copy.deepcopy(settings); changed['source_rights'][key] = value
+                with self.assertRaises(ValueError):
+                    validate_source_rights(changed)
+        changed = copy.deepcopy(settings); changed['competition']['cash_payments_enabled'] = True
+        with self.assertRaises(ValueError):
+            validate_source_rights(changed)
 
     def test_actual_leaderboard_empty(self):
         results = load_json('research/results.json')

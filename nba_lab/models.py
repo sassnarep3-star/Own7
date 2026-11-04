@@ -1,7 +1,7 @@
 """Retrospective demonstration: earlier-game inputs only, no market assertions."""
 from __future__ import annotations
 
-from .math import brier_score, fair_decimal, log_loss, probability
+from .math import brier_score, log_loss, probability
 
 
 def beta_probability(hits: int, n: int, alpha: float = 1, beta: float = 1) -> float:
@@ -14,7 +14,7 @@ def beta_probability(hits: int, n: int, alpha: float = 1, beta: float = 1) -> fl
     return probability((hits + alpha) / (n + alpha + beta))
 
 
-def walk_forward_demo(games: list[dict], settings: dict, *, pricing_authorized: bool = False) -> dict:
+def walk_forward_demo(games: list[dict], settings: dict) -> dict:
     """Fixed hypothetical thresholds, not archived sportsbook lines.
 
     This is a counterfactual walk-forward run, NOT genuinely pre-registered or
@@ -48,8 +48,8 @@ def walk_forward_demo(games: list[dict], settings: dict, *, pricing_authorized: 
                 "game_id": target["GameID"], "date": target["Date"],
                 "train_end": train[-1]["Date"], "training_games": len(train),
                 "training_hits": train_hits, "p_model": p,
-                "fair_model_decimal": fair_decimal(p) if pricing_authorized else None,
-                "price_status": "Source-rights gate not cleared" if not pricing_authorized else "Model calculation, not a quote",
+                "fair_model_decimal": None,
+                "price_status": "Withheld: NBA source-rights gate not cleared",
                 "outcome": realized,
                 "market_decimal": None, "edge": None, "roi": None, "clv": None,
                 "status": "Retrospective demonstration", "source_ids": ["NBA-GAMES"],

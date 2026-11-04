@@ -108,7 +108,8 @@ def compute() -> dict:
     run_hash = hashlib.sha256(json.dumps(manifest, sort_keys=True).encode()).hexdigest()
     return rounded({
         "schema_version": 1, "snapshot_date": settings["snapshot_date"],
-        "mode": "Frozen exploratory paper research; not betting advice",
+        "mode": "Frozen statistical/methods audit; no betting-price release or gambling service",
+        "source_rights": settings["source_rights"],
         "verified_observation_rows": sum(r["retained_rows"] for r in load_json("research/evidence/receipts.json")),
         "source_verification": "Agent row-by-row comparison to rendered official tables; normalized evidence, not a raw archive",
         "cohort": {"player": "Nikola Jokić", "player_id": "203999", "games": len(games),
