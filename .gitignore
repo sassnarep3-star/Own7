@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+node_modules/
+.venv/
+.artifacts/
+.cache/
+coverage/
+playwright-report/
+test-results/
+.DS_Store

@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "browser": "153.0.8010.0",
+  "desktop_pages": [
+    "index.html",
+    "executive-summary.html",
+    "data.html",
+    "signals.html",
+    "lines.html",
+    "correlation.html",
+    "methodology.html",
+    "validation.html",
+    "leaderboard.html",
+    "sources.html",
+    "review.html",
+    "audit.html",
+    "requirements.html",
+    "responsible-gambling.html"
+  ],
+  "mobile_pages": [
+    "index.html",
+    "executive-summary.html",
+    "data.html",
+    "signals.html",
+    "lines.html",
+    "correlation.html",
+    "methodology.html",
+    "validation.html",
+    "leaderboard.html",
+    "sources.html",
+    "review.html",
+    "audit.html",
+    "requirements.html",
+    "responsible-gambling.html"
+  ],
+  "accessibility_violations": [],
+  "runtime_errors": [],
+  "assertions": [
+    "Local search filters official rows without changing values",
+    "CSV export downloads filtered values with actual official URLs",
+    "Keyboard table sort is numeric and reports aria-sort",
+    "Global search shortcut, empty state and Escape reset work",
+    "Review filters distinguish 9 open and 6 corrected items",
+    "No fictional ranks, ROI, CLV or rewards; all 40 missing cells stay blank",
+    "All 19 historical HTML URLs redirect to the right category/fragment",
+    "Data and official links remain readable without JavaScript",
+    "Mobile navigation opens accessibly, closes with Escape and restores focus"
+  ]
+}

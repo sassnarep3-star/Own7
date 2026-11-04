@@ -1,13 +1,50 @@
-name: Validate site
+name: Research and dashboard checks
 on:
   push:
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: own7-checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  verify:
+  research-static:
+    name: Research and recursive site audit
+    runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test statistical math, chronology, rights and eligibility
+        run: python -m unittest discover -s tests -v
+      - name: Reproduce research, sources, blanks, all links and generated pages
+        run: python scripts/check_site.py
+      - name: Committed artifacts must already be current
+        run: git diff --exit-code
+  browser:
+    name: Desktop, mobile and accessibility
+    needs: research-static
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check local links and table sources
-        run: python3 scripts/check_site.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install pinned browser test dependencies (no postinstall scripts)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Check client JavaScript syntax
+        run: node --check js/app.js
+      - name: Test every page at the GitHub project path
+        run: npm run test:browser
+      - name: Save browser evidence and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dashboard-browser-evidence
+          path: .artifacts/
+          retention-days: 7

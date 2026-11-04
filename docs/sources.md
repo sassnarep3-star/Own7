@@ -1,18 +1,26 @@
-# Official NBA Data Sources
+# Official and primary source register
 
-Verified reachable from this sandbox via the Arena fetch proxy (direct `curl` to NBA hosts fails; `fetch_page` succeeds). All data in `data/` was transcribed from these live pages.
+Checked 2026-11-03. A source link confirms only the stated scope. NBA observations, derived calculations, project designs and unverified values are distinct. Thirteen external primary references plus the official project repository.
 
-| # | Source | URL | What it provides | Status |
-|---|--------|-----|------------------|--------|
-| 1 | NBA.com — Team Traditional Stats (2025-26 Regular Season) | https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season | Full 30-team table: GP, W, L, WIN%, Min, PTS, FGM, FGA, FG%, 3PM, 3PA, 3P%, FTM, FTA, FT%, OREB, DREB, REB, AST, TOV, STL, BLK, PF, PFD, +/- | Reachable; data rendered server-side |
-| 2 | NBA.com — Player Traditional Stats (2025-26 Regular Season, Per Game) | https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame | 582-player table; top 15 by PPG transcribed for `data/players-2025-26-top15.csv` | Reachable; data rendered server-side |
-| 3 | NBA.com — Standings (2026-27 Regular Season) | https://www.nba.com/standings | Conference standings, W/L, WIN%, GB, streaks | Reachable; reflects ~8 games played as of 2026-11-03 (small sample) |
-| 4 | NBA.com — Schedule | https://www.nba.com/schedule | Game dates, times, arenas, official Game IDs (e.g. 0022600173) | Reachable |
-| 5 | NBA.com — Stats home | https://www.nba.com/stats | Navigation to traditional/advanced/misc/usage/scoring/opponent stats | Reachable |
-| 6 | NBA.com — Teams | https://www.nba.com/teams | Team directory with official team IDs used in stats URLs | Reachable |
-| 7 | NBA.com (stats API host) | https://stats.nba.com | Official stats API host (`/stats/...` endpoints) | NOT reachable from sandbox (connection fails); pages on nba.com used instead |
+| ID | Publisher / source | Checked scope | Access boundary | Official / primary URL |
+|---|---|---|---|---|
+| NBA-TEAMS | NBA — Team traditional · 2025–26 | 30 rows; all retained traditional columns compared. Denver PTS 122.1; Lakers FG% 50.2; Utah displayed rank 26. | Arena fetch_page; not a direct HTTP-status attestation | [NBA-TEAMS](https://www.nba.com/stats/teams/traditional?Season=2025-26&SeasonType=Regular%20Season) |
+| NBA-PLAYERS | NBA — Player traditional · scoring-selected 15 | 15 rows (+567 filtered), PTS ≥ 26. Luka Dončić 33.5 PTS; Nikola Jokić 65 GP / 27.7 PTS / 12.9 REB / 10.7 AST. | Arena fetch_page; not a direct HTTP-status attestation | [NBA-PLAYERS](https://www.nba.com/stats/players/traditional?Season=2025-26&SeasonType=Regular%20Season&PerMode=PerGame&CF=PTS*GE*26) |
+| NBA-STANDINGS | NBA — Standings · 2026–27 snapshot | 30 rows checked. Philadelphia 7–1 and Houston 7–1; Phoenix 1–4. Not a uniform eight-game sample. | Arena fetch_page; not a direct HTTP-status attestation | [NBA-STANDINGS](https://www.nba.com/standings) |
+| NBA-GAMES | NBA — Jokić game log · explicit 32-game window | Page says Date From 02/01/2026, Date To 04/12/2026, 32 Rows, one page. All retained fields compared for all 32 rows. | Arena fetch_page; not a direct HTTP-status attestation | [NBA-GAMES](https://www.nba.com/stats/player/203999/boxscores?Season=2025-26&SeasonType=Regular%20Season&DateFrom=02%2F01%2F2026&DateTo=04%2F12%2F2026) |
+| NBA-GLOSSARY | NBA — NBA Stats glossary | PACE: number of possessions per 48 minutes. OffRtg: team points scored per 100 possessions. NetRtg: OFFRTG − DEFRTG. | Arena fetch_page; not a direct HTTP-status attestation | [NBA-GLOSSARY](https://www.nba.com/stats/help/glossary) |
+| NBA-INJURY | NBA Official — Injury reporting · 2026–27 | Participation status reporting is required. Reports are updated on a continual basis throughout the day. No player status from a PDF was transcribed. | Arena fetch_page; not a direct HTTP-status attestation | [NBA-INJURY](https://official.nba.com/nba-injury-report-2026-27-season/) |
+| SCIPY-CORR | SciPy maintainers — Pearson correlation | Constant input has undefined correlation; formula and confidence-interval methods documented. Zero correlation does not imply independence in general. | Arena fetch_page; not a direct HTTP-status attestation | [SCIPY-CORR](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html) |
+| SK-CAL | scikit-learn maintainers — Probability calibration | Brier/log loss combine calibration, resolution and uncertainty. Reliability diagrams are separate checks; calibrator must use independent data. | Arena fetch_page; not a direct HTTP-status attestation | [SK-CAL](https://scikit-learn.org/stable/modules/calibration.html) |
+| SK-TIME | scikit-learn maintainers — TimeSeriesSplit | Time-ordered splits avoid training on the future. gap excludes observations. NBA games are irregularly spaced: use calendar/game grouping, not blind equal-row folds. | Arena fetch_page; not a direct HTTP-status attestation | [SK-TIME](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html) |
+| SM-HOLM | statsmodels maintainers — Multiple-testing corrections | holm is the step-down Bonferroni adjustment; corrected p-values and rejection indicators are distinct outputs. | Arena fetch_page; not a direct HTTP-status attestation | [SM-HOLM](https://www.statsmodels.org/stable/generated/statsmodels.stats.multitest.multipletests.html) |
+| KSA-PLAYERS | Kansspelautoriteit — Dutch player protection | Links to the Kansspelwijzer, OpenOverGokken and Cruks. Cruks registration is for at least six months. No telephone number inferred. | Arena fetch_page; not a direct HTTP-status attestation | [KSA-PLAYERS](https://kansspelautoriteit.nl/voor-spelers) |
+| GH-PAGES | GitHub — What is GitHub Pages? | Static hosting takes HTML, CSS and JavaScript files from a repository; project-site URL uses /repositoryname. | Arena fetch_page; not a direct HTTP-status attestation | [GH-PAGES](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages) |
+| NBA-TERMS | NBA — NBA terms of use | Section 9(iv) expressly prohibits use of NBA Statistics in connection with gambling activity, including legal gambling activity. Sections 1 and 9 also contain publication/commercial-use restrictions. No separate data-use permission established. | Arena fetch_page; not a direct HTTP-status attestation | [NBA-TERMS](https://www.nba.com/termsofuse) |
+| REPO | OWN7 maintainers — Project policy and reproducible code | Repository contents, coordination, tests and generated artifacts are locally auditable. A GitHub link alone never verifies an external NBA claim. | Local git and authenticated GitHub API | [REPO](https://github.com/sassnarep3-star/Own7) |
 
-## Irregularities flagged
-- Direct `curl` to `stats.nba.com` and `www.nba.com` returns connection failure (exit 35) from this sandbox; `fetch_page` proxy works. No data was obtained from any non-proxied path.
-- One display column between `BLK` and `PF` in the NBA.com teams table rendering could not be unambiguously mapped; it is excluded from all tables (flagged, see docs/verification.md).
-- Betting lines / odds are NOT published by NBA.com. All market-line cells are left blank and flagged unverified (see docs/strategies.md and site/pages/flagged.html).
+Exact source scopes, checked chunks and records: [`research/sources.json`](../research/sources.json). Row verification receipts and normalized-transcription limits: [`research/evidence/`](../research/evidence/README.md).
+
+NBA terms §9(iv) is a **confirmed no-go restriction for gambling use**; separate permission is not established. The incorrect `/terms-of-use` route returned “Content Unavailable”; the checked correct URL is `/termsofuse`. Current Dutch regulator URL is `/voor-spelers` (redirected from the requested legacy path). GitHub Pages documentation resolves to `/what-is-github-pages`. Only checked canonical URLs are used in active source rows.
+
+The old unrelated Alberta and media-only restriction claims are not reconfirmed or republished as official facts. The absence of current operator prices does not imply the NBA never publishes odds anywhere; this release makes no such blanket claim.

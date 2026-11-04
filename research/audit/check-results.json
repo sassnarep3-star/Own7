@@ -1,0 +1,41 @@
+{
+  "status": "passed locally",
+  "snapshot_checked_on": "2026-11-03",
+  "python_unit_tests": 57,
+  "python_result": "passed",
+  "static_checks": {
+    "status": "passed",
+    "canonical_pages": 14,
+    "legacy_redirects": 19,
+    "recursive_html_pages": 33,
+    "table_body_rows": 391,
+    "internal_link_references": 431,
+    "external_references": 716,
+    "registered_sources": 14,
+    "unknown_values_blank": true,
+    "research_reproduction": "passed",
+    "errors": [],
+    "scope": "Integrity, contracts, semantics and local routing. Not external factual truth, source rights or profitability."
+  },
+  "browser": {
+    "engine": "153.0.8010.0",
+    "desktop_pages": 14,
+    "mobile_pages": 14,
+    "wcag_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa",
+      "wcag22aa"
+    ],
+    "violations": 0,
+    "runtime_errors": 0,
+    "interaction_groups": 9,
+    "report": "browser-checks.json"
+  },
+  "ci_status": "pending final integration push; not a deployment claim",
+  "notes": [
+    "Normalized evidence integrity is not a renewed source fact check.",
+    "No performance/rights/skill certification is implied by passing software checks.",
+    "No source prices, ROI, CLV or cash funds were filled in."
+  ]
+}

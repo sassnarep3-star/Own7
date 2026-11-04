@@ -1,0 +1,24 @@
+name: Primary source availability
+on:
+  schedule:
+    - cron: '19 6 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-health:
+    name: Non-mutating source availability (not factual verification)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check primary links without harvesting feeds or changing facts
+        run: python scripts/source_health.py
+      - name: Save explicit reachable, restricted and unverified outcomes
+        uses: actions/upload-artifact@v4
+        with:
+          name: primary-source-availability
+          path: .artifacts/source-health.json
+          retention-days: 30
