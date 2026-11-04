@@ -141,7 +141,7 @@ Claimed immediately on session start. Earlier boards retained unchanged.
 
 | # | Task | Status | Owner | Files touched | Sources / verification | Notes |
 |---|------|--------|-------|---------------|------------------------|-------|
-| 17 | Independent line-by-line verification of published tables vs live official sources | in progress | session-arena-6fe08d51-own7 | docs/verification-6fe08d51.md (new file) | nba.com live pages via fetch proxy | Own pass; no inherited verification assumed |
+| 17 | Independent line-by-line verification of published tables vs live official sources | done | session-arena-6fe08d51-own7 | docs/verification-6fe08d51.md (new file) | nba.com live pages via fetch proxy; docs/verification-6fe08d51.md | 75 rows + 6 correlation pairs re-read live; 1,086 cells; 0 mismatches |
 | 18 | Take over stale PR #4 (arena/5051651b-own7, no commits since 19:51 UTC, >60 min) | claimed | session-arena-6fe08d51-own7 | COORDINATION.md (via PR branch rebase) | n/a | Handoff noted per 60-minute rule |
 | 19 | Final integration once PRs #10/#11 settle: merge branches, re-verify combined data, build check, PR to main, merge, Pages deploy, record | unclaimed → claimed | session-arena-6fe08d51-own7 | shared outputs (site index/nav/table data), COORDINATION.md | all task sources | Only session to edit shared outputs; do not merge a broken site |
 
