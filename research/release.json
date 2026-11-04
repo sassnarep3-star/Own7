@@ -1,0 +1,27 @@
+{
+  "status": "published; public content verified",
+  "integration_pr": "https://github.com/sassnarep3-star/Own7/pull/16",
+  "merged_at_utc": "2026-11-04T00:28:27Z",
+  "merge_commit": "39c427913bdae0581987b9762f31ccfa98d14d0d",
+  "premerge_checks": [
+    "https://github.com/sassnarep3-star/Own7/actions/runs/41746838632",
+    "https://github.com/sassnarep3-star/Own7/actions/runs/41746843969"
+  ],
+  "postmerge_checks": "https://github.com/sassnarep3-star/Own7/actions/runs/41747077356",
+  "pages_deployment": "https://github.com/sassnarep3-star/Own7/actions/runs/41747075905",
+  "pages_build_status": "built",
+  "public_url": "https://sassnarep3-star.github.io/Own7/",
+  "public_content_verified": [
+    "https://sassnarep3-star.github.io/Own7/?release=39c427913bdae0581987b9762f31ccfa98d14d0d",
+    "https://sassnarep3-star.github.io/Own7/settlement.html?release=39c4279",
+    "https://sassnarep3-star.github.io/Own7/research/site-manifest.json?release=39c4279"
+  ],
+  "verification_method": "fetch_page independently returned new dashboard/24-finding category and matching live research run hash; deployment commit checked through GitHub Pages API. Not an assertion of byte-fetching every external link.",
+  "live_research_run_hash": "bf171b924c523c1edbc1561944caf28626145ccbaad81870b43e368197736f23",
+  "open_review_items": 18,
+  "corrected_items": 8,
+  "eligible_strategies": 0,
+  "cash_rewards": null,
+  "betting_prices_enabled": false,
+  "source_availability_automation": "Weekly and registry/workflow-change-triggered, non-mutating. Optional manual workflow dispatch denied by current integration permission (403); no credentials requested. Availability is not factual verification."
+}

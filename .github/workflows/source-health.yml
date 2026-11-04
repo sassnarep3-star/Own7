@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '19 6 * * 1'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - research/sources.json
+      - .github/workflows/source-health.yml
 permissions:
   contents: read
 jobs:

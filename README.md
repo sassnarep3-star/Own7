@@ -63,3 +63,5 @@ The canonical **Market evidence** category exposes all 24 B1 operator-specific f
 Six team coefficients and 11 F58 season-level rows are independently recomputed and displayed separately from paired-game dependence. Their Fisher intervals are nominal assumption-based calculations; team dependence, scoring selection and lack of generalizable coverage are flagged. The original scripts/outputs remain attributed under `handoff/f58e9526/`.
 
 Netherlands context, Kansspelwijzer and Gokstop are linked. Current NBA operator/market applicability and US-to-NL memo applicability remain blank. The earlier Dutch support gap was resolved by the official Cruks contact page (Open over Gokken, 0800 24 000 22, 24/7). This does not validate legacy Alberta or media-policy claims.
+
+Primary-source availability audits run weekly and on main-branch registry/workflow changes; manual dispatch is optional and may be restricted by the connected integration’s permissions. All outcomes, including restricted/unverified URLs, are saved as artifacts without changing source facts. Published PR/Pages/public-content evidence: [`research/release.json`](research/release.json).

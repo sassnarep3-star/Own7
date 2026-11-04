@@ -17,8 +17,9 @@ def inspect(source):
     try:
         req=urllib.request.Request(source['url'],headers={'User-Agent':'Own7-Source-Health/1.0 (+https://github.com/sassnarep3-star/Own7)','Accept':'text/html'})
         with urllib.request.urlopen(req,timeout=25) as response:
-            body=response.read(LIMIT).decode('utf-8',errors='replace')
-            result.update(http_status=response.status,final_url=response.url,inspected_bytes=min(LIMIT,len(body.encode())),body_limit_bytes=LIMIT)
+            raw=response.read(LIMIT)
+            body=raw.decode('utf-8',errors='replace')
+            result.update(http_status=response.status,final_url=response.url,inspected_bytes=len(raw),body_limit_bytes=LIMIT)
             if 'Content Unavailable' in body or '<title>404' in body:
                 result.update(availability='needs review',note='Possible soft 404 in limited response; manual official-source review needed.')
             else:

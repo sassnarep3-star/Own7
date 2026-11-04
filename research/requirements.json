@@ -234,23 +234,25 @@
   {
     "id": "R23",
     "requirement": "Create and merge pull request autonomously",
-    "status": "In progress",
-    "evidence": "Final integration PR will include sources, evidence and all non-blocking flags; required checks must pass first.",
+    "status": "Complete",
+    "evidence": "PR #16 merged autonomously after four successful exact-head checks; merge commit 39c427913bdae0581987b9762f31ccfa98d14d0d. Other session histories retained.",
     "artifact": "COORDINATION.md",
     "source_ids": [
       "REPO"
-    ]
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/pull/16"
   },
   {
     "id": "R24",
     "requirement": "Confirm live GitHub Pages deployment",
-    "status": "In progress",
-    "evidence": "Repository Pages is already configured for root of main; confirm new deployment run and public content after merge.",
+    "status": "Complete",
+    "evidence": "Pages run 41747075905 succeeded for merge 39c4279; public dashboard, Market evidence and research manifest independently fetched. Live research hash matches the committed manifest.",
     "artifact": "COORDINATION.md",
     "source_ids": [
       "GH-PAGES",
       "REPO"
-    ]
+    ],
+    "source_url": "https://github.com/sassnarep3-star/Own7/actions/runs/41747075905"
   },
   {
     "id": "R25",
