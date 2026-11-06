@@ -27,6 +27,8 @@ SOURCE_HOSTS = {
 
 SOURCE_HOSTS.update({'MKT-TOTO-RULES': 'portal-spa-api.toto.nl', 'MKT-TOTO-BUILDER': 'www.toto.nl', 'MKT-TOTO-BLOG': 'extra.toto.nl', 'MKT-BETMGM-BUILDER': 'help.betmgm.nl', 'MKT-BETMGM-QUOTES': 'help.betmgm.nl', 'MKT-FANATICS-OH': 'sportsbook.fanatics.com', 'MKT-ONEIDA': 'oneidacasinohotel.com', 'MKT-DK-PARLAY': 'support.draftkings.com', 'MKT-DK-ODDS': 'support.draftkings.com', 'MKT-UKGC': 'www.gamblingcommission.gov.uk', 'MKT-CRUKS': 'cruksregister.nl', 'MKT-CRUKS-CONTACT': 'cruksregister.nl', 'KSA-REGISTER': 'kansspelautoriteit.nl', 'NL-GOKSTOP': 'gokstop.nl'})
 
+SOURCE_HOSTS.update({'SF-RATES': 'www.sf.gov', 'SF-RENT-INCREASES': 'www.sf.gov', 'SF-AB1482': 'www.sf.gov', 'SF-TENANT-RESOURCES': 'www.sf.gov', 'SF-DISCRIMINATION': 'www.sf.gov', 'CA-CIVIL-1947': 'leginfo.legislature.ca.gov', 'CA-CIVIL-827': 'leginfo.legislature.ca.gov', 'CA-COSTA-HAWKINS': 'leginfo.legislature.ca.gov', 'HUD-FHEO': 'www.hud.gov'})
+
 
 class Page(HTMLParser):
     def __init__(self, path):

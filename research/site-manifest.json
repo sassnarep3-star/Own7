@@ -14,7 +14,10 @@
     "review.html",
     "audit.html",
     "requirements.html",
-    "responsible-gambling.html"
+    "responsible-gambling.html",
+    "rent-overview.html",
+    "rent-units.html",
+    "rent-qa.html"
   ],
   "auxiliary_pages": [
     "market-evidence/index.html"
@@ -42,16 +45,16 @@
     "verified/responsible-gambling.html": "responsible-gambling.html"
   },
   "generated_html": {
-    "audit.html": "036618eaee2619c8313b49f1b5a62be9f31abf8aa7a5133c1fc271e3a58154b3",
-    "correlation.html": "539a8611e5c6f8859873c9812d73fa89c4b66cf508e15835a71a4e8bf6e5d149",
-    "data.html": "323096bd8d11dfc20324dbeed0493ec4bfd72810dc4a560c76a0199b3ff1aecd",
-    "executive-summary.html": "4708f940cbf4254550067df3a50d8dd4a39f040f3f9e3f1b71c315041ef68f00",
+    "audit.html": "53aa54cc6d2494298de19577d06a14aa22065dc185960a25a7d89d20147fb855",
+    "correlation.html": "cf25aedb68836f6c833f69aa5aac6da632e212454bfad3a5f817d15867065837",
+    "data.html": "b7b6c0dae70a8d69ec46d359797d4ad340f468a17b9d20c429ca5b99746c0195",
+    "executive-summary.html": "79e1a531981cd170b12aa158a826077f8843dbb0fa462a8f4454469bf11ab5f3",
     "findings.html": "e41d604e97741d5fe9beb5fdf59d984aad4551937cef32f8cebc6442ddbf3c7e",
-    "index.html": "f7d04d3429da6c0e45eaa6d4991436275fb3fa0c43ebd37af2345efd79521fe0",
-    "leaderboard.html": "87a73b05003d17ecb770470ea500a6e8c77d96dac3c3296add17ead348b7390d",
-    "lines.html": "99118000dfbac123554aad0857cc2c58e3e75274a6c3692a9dd6324a95a83f09",
+    "index.html": "5c108fc5616592a91207acadf90a05e3f8d5f43d71b76233036b86d1962fea26",
+    "leaderboard.html": "6375eb0d23a718c19b1cd58ebfbfaab8555c650760c732605304a696cb7fa88f",
+    "lines.html": "43bb1cc78c3b7902f179b321ac255109956d325781a820cde83f16861c5f1531",
     "market-evidence/index.html": "bea4d3ef0f645de158c8522909611fc8964b83386d40de601b3664d9d9b10466",
-    "methodology.html": "6f27caf6fdb89a8ee9ea1ee8f714ad998fc496f3bb032837420ed14052cb2ffc",
+    "methodology.html": "e6abd9901e19019e05e3890fb0473da6408c77e2b94fa5ab458ae035951ed77c",
     "pages/correlation.html": "0bece3d46a2088faebf0b35f3869dc7d1509bbc33cf1e0847fd0926ddaecb1ae",
     "pages/dashboard.html": "f874fbfeb5776d995e16c2f4d3c20dd8f751ce1a0b931f526f2e76a564426e9b",
     "pages/executive-summary.html": "e090d64cea8f5bc1f5abdac6a5e737795fb084852368205723c168aaec107beb",
@@ -60,13 +63,16 @@
     "pages/player-props.html": "c95f90f8f6bdab2fcb78dc17124e4cac86018db8d636780bc282c6b21bd87d81",
     "pages/single-bets.html": "33564ce89523b38c39d5c2e0c79709c24797c29ade79859d797beea2639b158e",
     "pages/validation-gates.html": "1e1584f1ff9e10a208e60ee45ecb2d113c9a98eda06db944ec01bdbd8f4702cd",
-    "requirements.html": "ac0c30a97328bf021084f8d7a6e31ff356744907921e6f9296a8e65b09d11fcc",
-    "responsible-gambling.html": "f9f5a7f3be9287f5d61836bffb60d0ee2313db21aef0bd66d79252f20736bb82",
-    "review.html": "91be6006c423706a24202d35c6c1649d54514eff3e29a6e5cf3196b5cc644c53",
-    "settlement.html": "f455db5c1df55aee7544cc7a93ec42343d7d75d8a6909ad48a0247126b380bf8",
-    "signals.html": "b6176aab54bbd021254be8d07f0051f8ced49df1f8e8a4579383beb6c44dd276",
-    "sources.html": "b2b2089152868f569f49791908951b8c88d8ea3ec7f63f4c7ca4c8fe204e9baa",
-    "validation.html": "94a538c4078db007547fd56a3ceed40b395a3b389a6e6dba60e4067796fea41f",
+    "rent-overview.html": "27dcf570bf1aaf34fdbcfebb4b4bcd0077c9c96de3862c6b8d078bdea02ebc2b",
+    "rent-qa.html": "a22c59ca574b936761d1a7ba2cc16b48c1a961850330fc2259da1147d5656593",
+    "rent-units.html": "c767a37ffbe6dff20848c4ce6985cde80394eedb1a21b01afde4ae7ac7302106",
+    "requirements.html": "023979dbc5bd12b133164ec6a09fd4d4a6f6a2f7657a50228877f750e538f4da",
+    "responsible-gambling.html": "7b7ede7477905afa98ff81ee0713e424aecc643f6292bbc73309f8024d924f20",
+    "review.html": "6104f9a29f7dc5081bd7e4d8664b4246d52552680eaec903b43697bbf3d9504c",
+    "settlement.html": "dc4fe05c65d961fa082e19a2026abf4f242e8764f6a5ff5bdec53d841737bcb3",
+    "signals.html": "07efe9287c1f6018335eba8634e9e17a7e74a9e91d26f2ba73f9985f6774c1d5",
+    "sources.html": "a8313e2639aba3a041a1b7b75b5413ade1dccc4666169b2aac5dfa8d84e83ce0",
+    "validation.html": "830d1e10cfdf49b0dd49e2ea059b2b336f0177b5f88639491767c487e789daa3",
     "verified/betting-rules.html": "fd70be817c7da2ef8dd56eeb65f15372dd214882bdf9a07fc06e90b0918ce897",
     "verified/correlation.html": "0bece3d46a2088faebf0b35f3869dc7d1509bbc33cf1e0847fd0926ddaecb1ae",
     "verified/executive-summary.html": "e090d64cea8f5bc1f5abdac6a5e737795fb084852368205723c168aaec107beb",
@@ -79,5 +85,5 @@
     "verified/strategies.html": "a7b30d435deb49af1a5bb41ee34ddde08ba7e3315cc1cbb1d0e4a6fc7efd125b",
     "verified/validation-gates.html": "1e1584f1ff9e10a208e60ee45ecb2d113c9a98eda06db944ec01bdbd8f4702cd"
   },
-  "research_run_hash": "bf171b924c523c1edbc1561944caf28626145ccbaad81870b43e368197736f23"
+  "research_run_hash": "f02e07470bfe80b6a78ff30c9d8e8733dfa3974f3f1cf95fdd64b053a9345bda"
 }
