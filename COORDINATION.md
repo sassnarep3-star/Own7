@@ -286,3 +286,32 @@ Session ID: `session-arena-f58e9526-own7`. Branch: `arena/f58e9526-own7` (fixed 
 ### Safe branch synchronization note
 - A default `git pull --rebase` tried to flatten/replay the newly merged parallel history and produced conflicts. Aborted it immediately; the tested integration merge `48586d9` and all other sessions’ history were restored exactly. No conflict resolution or discarded commit from that attempted replay was retained.
 - `git pull --rebase --ff-only` confirmed the remote session branch was already an ancestor and up to date. This safe no-op synchronization will be used before pushes so preserved merge topology is not flattened. Work remains exclusively on `arena/a934e8c3-own7`.
+
+---
+
+## Session arena/88f27bdc-own7 — Rental increase SF project (2026-11-06)
+
+Session ID: `session-arena-88f27bdc-own7`. Branch: `arena/88f27bdc-own7` (fixed by Arena; the `session-<id>/<task>` convention is not usable because the branch is fixed for this session). Sole active session as of claim.
+
+Request: analyze reasonable/normal rent increases for two rent-controlled units (1940 building, outer Sunset 94122), San Francisco. Deliverables: anonymized executive summary; GitHub Pages site with tables + analysis; every table row sourced to an official site; unverified values blank + flagged; repo review with irregularities flagged; PR merged, Pages live. Personal info (tenant identities) anonymized; dates and amounts unchanged. Not legal advice; no values inferred or filled in.
+
+### Task board
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| R1 | Claim this board; commit + push claim | in progress | session-arena-88f27bdc-own7 | COORDINATION.md | n/a | Clean baseline: `check_site.py` passes on branch before changes |
+| R2 | Research official SF/CA/federal sources | in progress | session-arena-88f27bdc-own7 | (fetch log) | sf.gov Rent Board pages; SF Form 571 PDF; sf.gov AB 1482 report; leginfo CIV 827, CIV 1947.12, CIV 1942.5, CIV 1954.52; govinfo 42 USC 3604; calcivilrights.ca.gov; huduser.gov FY2026 FMR; justice.gov RealPage releases | All fetched 2026-11-06 |
+| R3 | Anonymized executive summary | unclaimed | session-arena-88f27bdc-own7 | docs/rental-executive-summary.md, rental/executive-summary.html | R2 sources | Names → Tenant A..F; dates/amounts unchanged |
+| R4 | Unit 1 / Unit 2 analysis + scenarios | unclaimed | session-arena-88f27bdc-own7 | rental/units.html | SF-571 PDF (official rates), R2 | Derived calculations labelled; not legal advice |
+| R5 | Law tables (local/state/federal) | unclaimed | session-arena-88f27bdc-own7 | rental/law.html | R2 | AB 1482 8.8% SF max (8/1/26–7/31/27); local ordinance stricter and controls |
+| R6 | Practice: corporations vs individuals; notice process; reasons; tenant-lawyer review checklist | unclaimed | session-arena-88f27bdc-own7 | rental/practice.html | DOJ justice.gov (Aug 23 2024; Jan 7 2025; Nov 24 2025), SF Rent Ordinance §37.10C (sf.gov), SF referral listing (sf.gov) | Individual-owner practice not quantified by official sources → flag as unverified |
+| R7 | Fair housing / discrimination analysis (one vs both units) | unclaimed | session-arena-88f27bdc-own7 | rental/fair-housing.html | govinfo 42 USC 3604; calcivilrights.ca.gov FEHA; CIV 1942.5; sf.gov referral listing | Not legal advice |
+| R8 | Repo review (line-by-line approach, irregularities flagged) | unclaimed | session-arena-88f27bdc-own7 | rental/repo-review.html, docs/rental-repo-review.md | Local checks (check_site.py pass; tests; git log/status) | Line-by-line automated pass + manual review; limits stated |
+| R9 | Site: rental section + generator/manifest/registry integration | unclaimed | session-arena-88f27bdc-own7 | scripts/build_site.py, scripts/check_site.py (SOURCE_HOSTS only), research/sources.json, rental/*.html, README.md | Build + CI contracts | 9 new canonical pages under rental/; NAV additive; no content removed |
+| R10 | Verification: rows sourced or flagged; docs/rental-verification.md | unclaimed | session-arena-88f27bdc-own7 | docs/rental-verification.md, rental/flagged.html | R2 sources | Blanks stay blank |
+| R11 | Integration: build, run checks, PR to main, merge, Pages deploy, record | unclaimed | session-arena-88f27bdc-own7 | main, COORDINATION.md | All | Flagged items do not block merge |
+
+### Rules honored
+- Scope limited to files listed; append-only to this board; small frequent commits; pull before push.
+- No personal data on the site or in committed files: tenant identities replaced by Tenant A–F placeholders; dates and amounts unchanged.
+- Blank + flag whenever no official source confirms a value. Analysis is labelled as derived/opinion, not law.
