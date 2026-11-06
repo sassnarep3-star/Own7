@@ -363,7 +363,7 @@ def rent_overview():
         {'id': 'P3', 'field': 'Coverage', 'value': p['coverage'], 'source_ids': p['coverage_source_ids']},
         {'id': 'P4', 'field': 'Privacy', 'value': RENT['privacy'], 'source_ids': ['REPO']},
     ], note='Coverage rule: most multi-unit residential buildings first occupied on or before June 13, 1979 are covered by the SF Rent Ordinance.'), eyebrow='PROPERTY', sid='property')
-    body += section('Published allowable increases', table('rent-rates', 'SF Rent Board allowable annual increases', [('Period', 'period'), ('Allowable', lambda r: f"{r['allowable_pct']}%" if r['allowable_pct'] is not None else None), ('Basis / state', lambda r: r.get('basis', '') + (f" · {r['status']}" if r.get('status') else '')), ('', lambda r: badge(r['status']) if r.get('status') else badge('Verified snapshot'))], RENT['rates'], note='Blank cells are intentional: the 2027-28 rate is not yet published and is left unverified.'), eyebrow='OFFICIAL RATES', sid='rates')
+    body += section('Published allowable increases', table('rent-rates', 'SF Rent Board allowable annual increases', [('Period', 'period'), ('Allowable', lambda r: f"{r['allowable_pct']}%" if r['allowable_pct'] is not None else None), ('Basis / state', lambda r: r.get('basis', '') + (f" · {r['status']}" if r.get('status') else '')), ('State', lambda r: badge(r['status']) if r.get('status') else badge('Verified snapshot'))], RENT['rates'], note='Blank cells are intentional: the 2027-28 rate is not yet published and is left unverified.'), eyebrow='OFFICIAL RATES', sid='rates')
     body += section('Answers at a glance', table('rent-qa-overview', 'Question index', [('Question', lambda r: rich(r['question'], r['id'])), ('Short answer', 'answer'), ('Detail', lambda r: link('rent-qa.html#' + r['id'].lower(), 'Full answer →'))], RENT['qa'], note='Every answer is linked to official sf.gov, leginfo.legislature.ca.gov or hud.gov sources on the Q&A page.'), eyebrow='FIVE QUESTIONS', sid='questions')
     return body
 
@@ -545,13 +545,13 @@ def build():
         'rent-overview.html':('SF rent overview','Outer Sunset 94122 two-unit rent-controlled property: verified allowable increases, anonymized unit ledger and flagged items.',rent_overview(),'SF / RENTAL ANALYSIS'),
         'rent-units.html':('Units & caps','Anonymized unit details, maximum lawful 2026-27 increases, timing, notice and license rules.',rent_units(),'SF / RENTAL ANALYSIS'),
         'rent-qa.html':('Q&A and compliance','The five rent-increase questions answered from official SF, California and federal sources.',rent_qa(),'SF / RENTAL ANALYSIS'),
-        'rental.html':('Rental overview · SF 94122','Rent-increase analysis for a rent-controlled 1940 building in Outer Sunset, San Francisco 94122: anonymized units, official rules, scenarios and flags.',rental_landing(),'SF / RENTAL ANALYSIS'),
-        'rental-summary.html':('Rental executive summary','The important details of the SF 94122 rent-increase analysis in one place.',rental_summary(),'SF / RENTAL ANALYSIS'),
+        'rental.html':('Rental overview','Rent-increase analysis for a rent-controlled 1940 building in Outer Sunset, San Francisco 94122: anonymized units, official rules, scenarios and flags.',rental_landing(),'SF / RENTAL ANALYSIS'),
+        'rental-summary.html':('Rental summary','The important details of the SF 94122 rent-increase analysis in one place.',rental_summary(),'SF / RENTAL ANALYSIS'),
         'rental-units.html':('Units & scenarios','Anonymized unit records with exact dates and amounts, plus allowable-increase calculations. Blanks are unverified.',rental_units(),'SF / RENTAL ANALYSIS'),
         'rental-law.html':('Law by jurisdiction','Local SF Rent Ordinance, state AB 1482 / Civil Code, and federal Fair Housing Act — every row source-linked.',rental_law(),'SF / RENTAL ANALYSIS'),
         'rental-notice.html':('Notice procedure','The compliant path: license, rate, 12-month rule, written notice contents and service timing.',rental_notice(),'SF / RENTAL ANALYSIS'),
         'rental-answers.html':('Questions answered','The specific rental-increase inquiries, answered with official source links.',rental_answers(),'SF / RENTAL ANALYSIS'),
-        'rental-flagged.html':('Flagged for review · rental','Unverified rental values (2027-28 rate, banked history) published blank for manual review.',rental_flagged(),'SF / RENTAL ANALYSIS'),
+        'rental-flagged.html':('Rental flagged','Unverified rental values (2027-28 rate, banked history) published blank for manual review.',rental_flagged(),'SF / RENTAL ANALYSIS'),
     }
     generated=['market-evidence/index.html']
     for slug,entry in pages.items():
