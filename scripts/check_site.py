@@ -29,6 +29,18 @@ SOURCE_HOSTS.update({'MKT-TOTO-RULES': 'portal-spa-api.toto.nl', 'MKT-TOTO-BUILD
 
 SOURCE_HOSTS.update({'SF-RATES': 'www.sf.gov', 'SF-RENT-INCREASES': 'www.sf.gov', 'SF-AB1482': 'www.sf.gov', 'SF-TENANT-RESOURCES': 'www.sf.gov', 'SF-DISCRIMINATION': 'www.sf.gov', 'CA-CIVIL-1947': 'leginfo.legislature.ca.gov', 'CA-CIVIL-827': 'leginfo.legislature.ca.gov', 'CA-COSTA-HAWKINS': 'leginfo.legislature.ca.gov', 'HUD-FHEO': 'www.hud.gov'})
 
+# Rental sub-site (session arena/cab077aa-own7) — official government/legal hosts only.
+SOURCE_HOSTS.update({
+    'SFGOV-ANNUAL-26': 'www.sf.gov', 'SFGOV-RATES': 'www.sf.gov', 'SFGOV-RENT-INC': 'www.sf.gov',
+    'SFGOV-RENTAL-LAWS': 'www.sf.gov', 'SFGOV-BANKED': 'www.sf.gov', 'SFGOV-PETITIONS': 'www.sf.gov',
+    'SFGOV-RENTBOARD': 'www.sf.gov', 'SFGOV-RB-ABOUT': 'www.sf.gov', 'SFGOV-COUNSEL': 'www.sf.gov',
+    'SFGOV-EVICTIONS': 'www.sf.gov',
+    'CA-CC827': 'leginfo.legislature.ca.gov', 'CA-CC1947-12': 'leginfo.legislature.ca.gov',
+    'CA-CC1954-52': 'leginfo.legislature.ca.gov', 'CA-CC1954-53': 'leginfo.legislature.ca.gov',
+    'FHA-3604': 'uscode.house.gov',
+})
+
+# Rental pages from session arena/692da006-own7 (PR #19) — official government/legal hosts only.
 SOURCE_HOSTS.update({'SF-RENTAL-LAWS': 'www.sf.gov', 'SF-RENT-INC': 'www.sf.gov', 'SF-NEWS-AGA': 'www.sf.gov', 'SF-BANKED': 'www.sf.gov', 'SF-HI-LICENSE': 'www.sf.gov', 'CA-AG-RENTCAPS': 'oag.ca.gov', 'CA-AG-TENANTS': 'oag.ca.gov', 'LEGINFO-CIV827': 'leginfo.legislature.ca.gov', 'LEGINFO-CIV1947-12': 'leginfo.legislature.ca.gov', 'LEGINFO-AB1482': 'leginfo.legislature.ca.gov', 'BLS-SF-CPI': 'blsmon1.bls.gov', 'GOVINFO-FHA': 'www.govinfo.gov', 'SF-RTC-EDC': 'evictiondefense.org'})
 
 

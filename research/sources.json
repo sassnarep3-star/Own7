@@ -575,5 +575,170 @@
     "scope": "Proposition F (approved June 2018, services from July 11, 2019): tenants served with an eviction notice or unlawful detainer lawsuit who do not live with their landlord have a right to a free attorney with full-scope representation.",
     "access": "Arena fetch_page; not a direct HTTP-status attestation",
     "chunks_read": "1-2 of 2"
+  },
+  {
+    "id": "SFGOV-ANNUAL-26",
+    "publisher": "City and County of San Francisco (SF.gov, Rent Board)",
+    "title": "Annual Rent Increase for 3/1/26 - 2/28/27 Announced (Jan 14, 2026)",
+    "url": "https://www.sf.gov/news--annual-rent-increase-3126-22827-announced",
+    "authority": "Official SF Rent Board announcement",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Annual allowable increase for rent-controlled units is 1.6% effective March 1, 2026 through February 28, 2027; base rent x .016; prior period (3/1/2025-2/28/2026) was 1.4%.",
+    "access": "Arena fetch_page 2026-11-06; content read; not a direct HTTP-status attestation"
+  },
+  {
+    "id": "SFGOV-RATES",
+    "publisher": "City and County of San Francisco (SF.gov, Rent Board)",
+    "title": "Current Rates, including Rent Increase, Relocation, Sec. Deposit",
+    "url": "https://www.sf.gov/reports--current-rates-including-rent-increase-relocation-sec-deposit",
+    "authority": "Official SF Rent Board rates report",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Allowable rent increase table: 1.6% (3/1/2026-2/28/2027), 1.4% (3/1/2025-2/28/2026), 1.7% (3/1/2024-2/28/2025); links official form 571 with all past annual allowable increases.",
+    "access": "Arena fetch_page 2026-11-06; content read"
+  },
+  {
+    "id": "SFGOV-RENT-INC",
+    "publisher": "City and County of San Francisco (SF.gov, Rent Board)",
+    "title": "Learn about rent increases in San Francisco",
+    "url": "https://www.sf.gov/learn-about-rent-increases-san-francisco",
+    "authority": "Official SF Rent Board guidance",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Rent can be increased only once every 12 months; calculated on base rent only (incl. parking/storage, excl. temporary passthroughs); no rounding up; 30-day written notice (90-day if the increase, alone or combined in the same year, exceeds 10%); +5 days if mailed; notice should state dollar amount, percentage, effective date; rent increase license required (Housing Inventory); banking allowed; no extra rent charge merely for an additional occupant/roommate.",
+    "access": "Arena search + page read 2026-11-06"
+  },
+  {
+    "id": "SFGOV-RENTAL-LAWS",
+    "publisher": "City and County of San Francisco (SF.gov, Rent Board)",
+    "title": "Learn about San Francisco rental laws",
+    "url": "https://www.sf.gov/learn-about-san-francisco-rental-laws",
+    "authority": "Official SF Rent Board guidance",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Many residential units built on or before June 13, 1979 (not single-family dwellings) have both rent control and eviction protection; check year built on the SF Property Information Map; lists partial/total exemptions; free Rent Board counseling 415-252-4600.",
+    "access": "Arena fetch_page 2026-11-06; content read"
+  },
+  {
+    "id": "SFGOV-BANKED",
+    "publisher": "City and County of San Francisco (SF.gov, Rent Board)",
+    "title": "Banked rent increases",
+    "url": "https://www.sf.gov/information--banked-rent-increases",
+    "authority": "Official SF Rent Board guidance",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "A landlord may bank (save) an unused allowable increase and impose it later (banking allowed since April 1, 1982); no limit on amount banked; banked increases do not expire during a tenancy; new owners may use prior owners' bank; banked increases do not carry to a new tenant; not compounded or prorated - add the percentages, then multiply by current base rent; notice must state which part is banked; 30-day notice, 90-day if >10%.",
+    "access": "Arena search + page read 2026-11-06"
+  },
+  {
+    "id": "SFGOV-PETITIONS",
+    "publisher": "City and County of San Francisco (SF.gov, Rent Board)",
+    "title": "Landlord Petitions and Passthroughs",
+    "url": "https://www.sf.gov/landlord-petitions-and-passthroughs",
+    "authority": "Official SF Rent Board guidance",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Six rent-increase types require a landlord petition before notice: capital improvement passthrough; operating and maintenance expense increase; special circumstances/comparable rents; Proposition I past rent history; utility passthrough (petition or worksheet); Rules & Regs 1.21 increase with no tenant in occupancy. Bond-measure and certain utility passthroughs use Rent Board worksheets.",
+    "access": "Arena search + page read 2026-11-06"
+  },
+  {
+    "id": "SFGOV-RENTBOARD",
+    "publisher": "City and County of San Francisco (SF.gov)",
+    "title": "Rent Board (department page)",
+    "url": "https://www.sf.gov/departments--rent-board",
+    "authority": "Official SF Rent Board",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Current allowed increase 1.6% for covered units (3/1/2026-2/28/2027); owners must report into the Rent Board Housing Inventory; reporting generates the rent increase license required before annual/banked increases; landlord petitions (capital improvements) and tenant petitions (incl. unlawful rent increase) listed.",
+    "access": "Arena search + page read 2026-11-06"
+  },
+  {
+    "id": "SFGOV-RB-ABOUT",
+    "publisher": "City and County of San Francisco (SF.gov)",
+    "title": "About Rent Board",
+    "url": "https://www.sf.gov/departments--rent-board--about",
+    "authority": "Official SF Rent Board",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Free phone counseling 415-252-4600 (Mon-Fri 9-12, 1-4); Rent Board cannot give legal advice and refers discrimination/retaliation cases to the San Francisco Human Rights Commission.",
+    "access": "Arena search + page read 2026-11-06"
+  },
+  {
+    "id": "SFGOV-COUNSEL",
+    "publisher": "City and County of San Francisco (SF.gov)",
+    "title": "Speak with a Rent Board counselor",
+    "url": "https://www.sf.gov/speak-rent-board-counselor",
+    "authority": "Official SF Rent Board",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Counseling is free, multilingual (Spanish, Cantonese, Mandarin + interpretation), 415-252-4600; counselors cannot give legal advice and will say when a lawyer is needed.",
+    "access": "Arena search + page read 2026-11-06"
+  },
+  {
+    "id": "SFGOV-EVICTIONS",
+    "publisher": "City and County of San Francisco (SF.gov)",
+    "title": "Evictions in San Francisco",
+    "url": "https://www.sf.gov/evictions-san-francisco",
+    "authority": "Official City and County of San Francisco",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Recommends seeking legal help; Rent Board 415-252-4600; tenants receiving an Unlawful Detainer should contact the Eviction Defense Collaborative at 415-659-9184 for free legal help; 10 business days to respond to an Unlawful Detainer.",
+    "access": "Arena search + page read 2026-11-06"
+  },
+  {
+    "id": "CA-CC827",
+    "publisher": "California Legislative Information (leginfo.legislature.ca.gov)",
+    "title": "Civil Code section 827 - notice to change lease terms / rent",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827.",
+    "authority": "Official California statute text",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "827(b)(2): if the proposed increase is 10% or less of the rent charged at any time in the prior 12 months (alone or combined with other increases), notice at least 30 days before effective date; 827(b)(3)(A): if greater than 10%, at least 90 days; service by mail per Code of Civil Procedure 1013 (adds time).",
+    "access": "Arena fetch_page 2026-11-06; statute text read"
+  },
+  {
+    "id": "CA-CC1947-12",
+    "publisher": "California Legislative Information (leginfo.legislature.ca.gov)",
+    "title": "Civil Code section 1947.12 - Tenant Protection Act (AB 1482) rent cap",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12.",
+    "authority": "Official California statute text",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "(a)(1): over any 12-month period rent may not increase more than 5% plus the percentage change in cost of living, or 10%, whichever is lower, measured from the lowest gross rental rate in the prior 12 months; (a)(2): no more than two increments in 12 months; (b): initial rent for a new tenancy is not capped (vacancy decontrol); (d)(3): section does not apply to housing subject to rent control through a public entity's valid police power that restricts annual increases below the state cap (i.e., stricter local rent control governs); (d)(5): single-family/condo exemption only if owner is not a REIT, corporation, or LLC with a corporate member.",
+    "access": "Arena fetch_page 2026-11-06; statute text read"
+  },
+  {
+    "id": "CA-CC1954-52",
+    "publisher": "California Legislative Information (leginfo.legislature.ca.gov)",
+    "title": "Civil Code section 1954.52 - Costa-Hawkins limits on local rent control",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.52.",
+    "authority": "Official California statute text",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Costa-Hawkins Rental Housing Act (Ch. 2.7, secs. 1954.50-1954.535): local rent control may not apply to single-family homes or condominiums (separately alienable); a two-unit building (duplex) is not a single-family home for this purpose.",
+    "access": "Arena fetch_page 2026-11-06 (chapter 2.7 verified via 1954.53 page); standard leginfo section URL"
+  },
+  {
+    "id": "CA-CC1954-53",
+    "publisher": "California Legislative Information (leginfo.legislature.ca.gov)",
+    "title": "Civil Code section 1954.53 - vacancy decontrol",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.53.",
+    "authority": "Official California statute text",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "1954.53(a): an owner of residential real property may establish the initial rental rate for a dwelling or unit (with listed exceptions), i.e., no cap on the rent charged to a brand-new tenant; subsequent increases are limited.",
+    "access": "Arena fetch_page 2026-11-06; statute text read"
+  },
+  {
+    "id": "FHA-3604",
+    "publisher": "Office of the Law Revision Counsel, U.S. House of Representatives (uscode.house.gov)",
+    "title": "42 U.S.C. 3604 - Fair Housing Act: discrimination in sale or rental of housing",
+    "url": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title42-section3604&num=0&edition=prelim",
+    "authority": "Official U.S. Code text",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "3604(a): unlawful to refuse to rent or make unavailable a dwelling because of race, color, religion, sex, familial status, or national origin; 3604(b): unlawful to discriminate against any person in the terms, conditions, or privileges of rental, or in services/facilities, because of race, color, religion, sex, familial status, national origin (and 3604(f) adds handicap/disability).",
+    "access": "Arena fetch_page 2026-11-06; statute text read"
   }
 ]

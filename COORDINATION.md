@@ -330,3 +330,42 @@ Session ID: `session-arena-692da006-own7`. Branch: `arena/692da006-own7` (fixed 
 
 ### Merge record
 - PR #19: https://github.com/sassnarep3-star/Own7/pull/19 (result recorded after merge below)
+
+## Session arena/cab077aa-own7 — SF Outer Sunset rent-increase research + site section (2026-11-06)
+
+Session ID: `session-arena-cab077aa-own7`. Branch: `arena/cab077aa-own7` (fixed by Arena; sole active session on this branch as of this claim). Earlier boards above are historical and unchanged.
+
+Scope: new self-contained sub-site under `rental/**` (data.json, build.py, test_build.py, README.md, generated *.html, style.css), plus integration touchpoints owned by the integration role: `research/sources.json` (append-only new source IDs), `scripts/check_site.py` (SOURCE_HOSTS append), `scripts/build_site.py` (nav link + rental build hook + manifest auxiliary pages), `scripts/browser_test.mjs` (allowedFolders += rental), `.github/workflows/check.yml` (rental checks). No existing NBA content values are modified.
+
+Privacy: all personal information (tenant initials) is anonymized everywhere in the repo/website with placeholder labels (Tenant U1-A … U2-B). Dates and dollar amounts are retained unchanged. No names/initials are written into any repo file.
+
+### Task board
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| R1 | Claim session + log board | done | session-arena-cab077aa-own7 | COORDINATION.md | n/a | Committed + pushed immediately (5a33394) |
+| R2 | Official-source research (SF Rent Board/sf.gov, leginfo CIV 827/1947.12/1954.52/1954.53, uscode.house.gov 42 USC 3604, hud.gov) | done | session-arena-cab077aa-own7 | rental/data.json sources | 16 sources fetched/read 2026-11-06 via Arena fetch_page + web_search | 1.6% allowable increase 3/1/26–2/28/27 confirmed on sf.gov news + current-rates report |
+| R3 | Source registry + checker registration | done | session-arena-cab077aa-own7 | research/sources.json (+16 IDs, 44 total), scripts/check_site.py SOURCE_HOSTS | hosts: www.sf.gov, leginfo.legislature.ca.gov, uscode.house.gov, www.hud.gov | ID sets match exactly; check_site validate_data passes |
+| R4 | Rental sub-site builder + pages (landing, exec summary, units, law, process, practice, sources, flagged) | done | session-arena-cab077aa-own7 | rental/** (data.json, build.py, test_build.py, style.css, README.md, manifest.json, 8 generated html) | per-row source links enforced by check_site.py | Anonymized placeholders only; unverified values blank |
+| R5 | Integration: build_site.py hook + nav, browser_test allowedFolders, CI steps | done | session-arena-cab077aa-own7 | scripts/build_site.py, scripts/browser_test.mjs, .github/workflows/check.yml | n/a | Nav group "Housing research" → rental/index.html; manifest auxiliary_pages includes 8 rental pages |
+| R6 | Local verification: unittest, check_site.py, rental tests, browser test | done | session-arena-cab077aa-own7 | all | check_site.py passed (44 html pages, 628 rows, blanks blank, deterministic rebuild); 62+6+8+5+6 unit tests OK; browser: 24 desktop + 24 mobile pages, WCAG A/AA zero violations, no runtime errors | No broken links; no hallucinated values |
+| R7 | PR to main + merge + GitHub Pages deploy verification + record | in progress | session-arena-cab077aa-own7 | main, COORDINATION.md | Pages: main branch, path / | Do not merge a broken site |
+
+### Session log (arena/cab077aa-own7)
+- 2026-11-06: claimed R1–R2. Research verified: sf.gov news (1.6% for 3/1/2026–2/28/2027), sf.gov current-rates report (1.6%/1.4%/1.7%), sf.gov rent-increase page (once/12 months, base rent, no rounding, 30/90-day notice +5 mail, license via Housing Inventory, banking, no extra charge for roommates), sf.gov rental-laws page (pre-6/13/1979 coverage), sf.gov banked-increases page, sf.gov landlord petitions page, sf.gov Rent Board dept + counselor pages, sf.gov evictions page (EDC free legal help), leginfo CIV 827, CIV 1947.12 (cap + (d)(3) local-control exemption), CIV 1954.53 (vacancy decontrol), uscode.house.gov 42 USC 3604, hud.gov reporthousingdiscrimination (7 protected classes).
+
+### Session log update (arena/cab077aa-own7, 2026-11-06)
+- R2–R6 completed. Key verified facts: SF allowable increase 1.6% for 3/1/2026–2/28/2027 (sf.gov news + current rates; prior 1.4%, 1.7%); once per 12 months on base rent, no rounding up; 30/90-day written notice (+5 mail) per sf.gov and Civ. Code 827; rent increase license via Housing Inventory; banking rules (no limit, no compounding, since 4/1/1982); petitions/passthroughs list; AB 1482 cap 5%+CPI/10% with (d)(3) exemption for stricter local control; Costa-Hawkins 1954.52/.53; FHA 42 USC 3604(a),(b) protected classes; free SF tenant help (Rent Board 415-252-4600; EDC 415-659-9184).
+- Calculations published as arithmetic on user-supplied rents: Unit 1 $3,995 x 1.6% = $63.92 → $4,058.92; Unit 2 $3,150 x 1.6% = $50.40 → $3,200.40. Unit 2 banked total left BLANK (FLG-02) pending year-by-year official 571 rates.
+- Flags FLG-01..FLG-09 published on rental/flagged.html (market rents, banked total, exemption status, license status, Unit 1 anniversary date, corp-vs-individual practice, federal cap not found, AB 1482 regional %, privacy note).
+- Privacy: tenant initials never appear in any repo file (test-enforced); placeholders Tenant U1-A…U2-B used; dates/amounts unchanged.
+- Integration notes: two same-file parallel edits to scripts/build_site.py were clobbered once and re-applied; final state verified by grep + passing check_site.py. WCAG 2.2 target-size violations on small source links fixed via CSS padding (24px min targets); browser suite then passed 24+24 pages.
+
+### Merge note (arena/cab077aa-own7, 2026-11-06)
+- Merged origin/main (PR #18, session arena/e3f8f4fd-own7: rent-overview/rent-units/rent-qa canonical pages + research/rent.json + its source IDs) into this branch for PR #20. No other session's work discarded: their build_site.py rent pages, rent.json, sources.json IDs and COORDINATION board are all retained.
+- Conflict resolution: generated artifacts (root *.html, research/site-manifest.json, research/results.json) were regenerated deterministically (nba_lab run + scripts/build_site.py) after unioning research/sources.json (52 IDs; HUD-FHEO kept from main, my 15 non-colliding IDs added) and unioning SOURCE_HOSTS in scripts/check_site.py. My rental/** sub-site is additive and kept in full; main nav now links both their "Rental analysis" pages and my "SF rent research (deep dive)" → rental/index.html.
+- Both rent sections coexist intentionally: theirs = concise canonical pages; mine = deeper law/process/practice/flagged sub-site with per-row source links. Flagged items from both are published for review.
+
+### Merge note (arena/cab077aa-own7, 2026-11-06, second merge)
+- Merged origin/main again (PR #19, session arena/692da006-own7: root-level rental*.html pages + research/rental.json). No other session's work discarded; their nav group and pages retained, mine added as "Deep-dive sub-site" → rental/index.html.
+- research/sources.json unioned by ID across both sides; SOURCE_HOSTS in scripts/check_site.py unioned; generated artifacts regenerated deterministically.
