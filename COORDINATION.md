@@ -286,3 +286,28 @@ Session ID: `session-arena-f58e9526-own7`. Branch: `arena/f58e9526-own7` (fixed 
 ### Safe branch synchronization note
 - A default `git pull --rebase` tried to flatten/replay the newly merged parallel history and produced conflicts. Aborted it immediately; the tested integration merge `48586d9` and all other sessions’ history were restored exactly. No conflict resolution or discarded commit from that attempted replay was retained.
 - `git pull --rebase --ff-only` confirmed the remote session branch was already an ancestor and up to date. This safe no-op synchronization will be used before pushes so preserved merge topology is not flattened. Work remains exclusively on `arena/a934e8c3-own7`.
+
+---
+
+## Session arena/cab077aa-own7 — SF Outer Sunset rent-increase research + site section (2026-11-06)
+
+Session ID: `session-arena-cab077aa-own7`. Branch: `arena/cab077aa-own7` (fixed by Arena; sole active session on this branch as of this claim). Earlier boards above are historical and unchanged.
+
+Scope: new self-contained sub-site under `rental/**` (data.json, build.py, test_build.py, README.md, generated *.html, style.css), plus integration touchpoints owned by the integration role: `research/sources.json` (append-only new source IDs), `scripts/check_site.py` (SOURCE_HOSTS append), `scripts/build_site.py` (nav link + rental build hook + manifest auxiliary pages), `scripts/browser_test.mjs` (allowedFolders += rental), `.github/workflows/check.yml` (rental checks). No existing NBA content values are modified.
+
+Privacy: all personal information (tenant initials) is anonymized everywhere in the repo/website with placeholder labels (Tenant U1-A … U2-B). Dates and dollar amounts are retained unchanged. No names/initials are written into any repo file.
+
+### Task board
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| R1 | Claim session + log board | in progress | session-arena-cab077aa-own7 | COORDINATION.md | n/a | Committed + pushed immediately |
+| R2 | Official-source research (SF Rent Board/sf.gov, leginfo CIV 827/1947.12/1954.52/1954.53, uscode.house.gov 42 USC 3604, hud.gov) | in progress | session-arena-cab077aa-own7 | rental/data.json sources | URLs fetched 2026-11-06 via Arena fetch_page; content read | 1.6% allowable increase 3/1/26–2/28/27 confirmed on sf.gov |
+| R3 | Source registry + checker registration | unclaimed | session-arena-cab077aa-own7 | research/sources.json, scripts/check_site.py | hosts: www.sf.gov, leginfo.legislature.ca.gov, uscode.house.gov, www.hud.gov | IDs must match SOURCE_HOSTS exactly |
+| R4 | Rental sub-site builder + pages (landing, exec summary, units, law, process, practice, sources, flagged) | unclaimed | session-arena-cab077aa-own7 | rental/** | per-row source links required by check_site.py | Anonymized; blanks stay blank |
+| R5 | Integration: build_site.py hook + nav, browser_test allowedFolders, CI steps | unclaimed | session-arena-cab077aa-own7 | scripts/build_site.py, scripts/browser_test.mjs, .github/workflows/check.yml | n/a | Rebuild + hash manifest |
+| R6 | Local verification: unittest, check_site.py, rental tests, link check | unclaimed | session-arena-cab077aa-own7 | all | scripts/check_site.py | No broken links; blanks blank |
+| R7 | PR to main + merge + GitHub Pages deploy verification + record | unclaimed | session-arena-cab077aa-own7 | main, COORDINATION.md | Pages: main branch, path / | Do not merge a broken site |
+
+### Session log (arena/cab077aa-own7)
+- 2026-11-06: claimed R1–R2. Research verified: sf.gov news (1.6% for 3/1/2026–2/28/2027), sf.gov current-rates report (1.6%/1.4%/1.7%), sf.gov rent-increase page (once/12 months, base rent, no rounding, 30/90-day notice +5 mail, license via Housing Inventory, banking, no extra charge for roommates), sf.gov rental-laws page (pre-6/13/1979 coverage), sf.gov banked-increases page, sf.gov landlord petitions page, sf.gov Rent Board dept + counselor pages, sf.gov evictions page (EDC free legal help), leginfo CIV 827, CIV 1947.12 (cap + (d)(3) local-control exemption), CIV 1954.53 (vacancy decontrol), uscode.house.gov 42 USC 3604, hud.gov reporthousingdiscrimination (7 protected classes).
