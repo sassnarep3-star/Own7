@@ -17,7 +17,15 @@
     "responsible-gambling.html"
   ],
   "auxiliary_pages": [
-    "market-evidence/index.html"
+    "market-evidence/index.html",
+    "rental/index.html",
+    "rental/executive-summary.html",
+    "rental/units.html",
+    "rental/law.html",
+    "rental/process.html",
+    "rental/practice.html",
+    "rental/sources.html",
+    "rental/flagged.html"
   ],
   "legacy_redirects": {
     "findings.html": "data.html",
@@ -42,16 +50,16 @@
     "verified/responsible-gambling.html": "responsible-gambling.html"
   },
   "generated_html": {
-    "audit.html": "036618eaee2619c8313b49f1b5a62be9f31abf8aa7a5133c1fc271e3a58154b3",
-    "correlation.html": "539a8611e5c6f8859873c9812d73fa89c4b66cf508e15835a71a4e8bf6e5d149",
-    "data.html": "323096bd8d11dfc20324dbeed0493ec4bfd72810dc4a560c76a0199b3ff1aecd",
-    "executive-summary.html": "4708f940cbf4254550067df3a50d8dd4a39f040f3f9e3f1b71c315041ef68f00",
+    "audit.html": "85abf6f12f42aa77f141751ad88c4e456a46ecb4ab2d81e0d209b803854020b3",
+    "correlation.html": "5121bacb45d38b3df1ddd0bc18507f5245147c8337f04ef9769823906a16a4c0",
+    "data.html": "265a222207efbaa7c8ea14e0d9904bc07a081156e3f823c59ebb3dac2566d460",
+    "executive-summary.html": "e6dc23d4407d277f755a04a4a9a44820e0ba298b7ee121b54a82f22a5893143c",
     "findings.html": "e41d604e97741d5fe9beb5fdf59d984aad4551937cef32f8cebc6442ddbf3c7e",
-    "index.html": "f7d04d3429da6c0e45eaa6d4991436275fb3fa0c43ebd37af2345efd79521fe0",
-    "leaderboard.html": "87a73b05003d17ecb770470ea500a6e8c77d96dac3c3296add17ead348b7390d",
-    "lines.html": "99118000dfbac123554aad0857cc2c58e3e75274a6c3692a9dd6324a95a83f09",
+    "index.html": "0cff0123dfb6255895a785b98d97f8c0896412e5017abdcd4521d6e4eebdea44",
+    "leaderboard.html": "1efd810c0d9b8966e5267d9b9124beb70656f5b9f9b232d96d79eec02a46a6b7",
+    "lines.html": "252a166f08f1bf95e22d6ec802e57f3ae17321d1a42a0f790fbca346af8baaca",
     "market-evidence/index.html": "bea4d3ef0f645de158c8522909611fc8964b83386d40de601b3664d9d9b10466",
-    "methodology.html": "6f27caf6fdb89a8ee9ea1ee8f714ad998fc496f3bb032837420ed14052cb2ffc",
+    "methodology.html": "0297d3a4f560c3db2bf89aa78c7ae4e2858e430dc33550ec6bc26ca59a5ec037",
     "pages/correlation.html": "0bece3d46a2088faebf0b35f3869dc7d1509bbc33cf1e0847fd0926ddaecb1ae",
     "pages/dashboard.html": "f874fbfeb5776d995e16c2f4d3c20dd8f751ce1a0b931f526f2e76a564426e9b",
     "pages/executive-summary.html": "e090d64cea8f5bc1f5abdac6a5e737795fb084852368205723c168aaec107beb",
@@ -60,13 +68,21 @@
     "pages/player-props.html": "c95f90f8f6bdab2fcb78dc17124e4cac86018db8d636780bc282c6b21bd87d81",
     "pages/single-bets.html": "33564ce89523b38c39d5c2e0c79709c24797c29ade79859d797beea2639b158e",
     "pages/validation-gates.html": "1e1584f1ff9e10a208e60ee45ecb2d113c9a98eda06db944ec01bdbd8f4702cd",
-    "requirements.html": "ac0c30a97328bf021084f8d7a6e31ff356744907921e6f9296a8e65b09d11fcc",
-    "responsible-gambling.html": "f9f5a7f3be9287f5d61836bffb60d0ee2313db21aef0bd66d79252f20736bb82",
-    "review.html": "91be6006c423706a24202d35c6c1649d54514eff3e29a6e5cf3196b5cc644c53",
-    "settlement.html": "f455db5c1df55aee7544cc7a93ec42343d7d75d8a6909ad48a0247126b380bf8",
-    "signals.html": "b6176aab54bbd021254be8d07f0051f8ced49df1f8e8a4579383beb6c44dd276",
-    "sources.html": "b2b2089152868f569f49791908951b8c88d8ea3ec7f63f4c7ca4c8fe204e9baa",
-    "validation.html": "94a538c4078db007547fd56a3ceed40b395a3b389a6e6dba60e4067796fea41f",
+    "rental/executive-summary.html": "0485a08107863044b32bf7e087a66003ab5cab7b16282c1924dcfaf1312d9a87",
+    "rental/flagged.html": "4d110540e629f251feba00b1710e81c52b3799827852001d2adb311d827821ae",
+    "rental/index.html": "a98a1d8e9410ef73dcf1228afb529540056dc6f4abd7383f7831ef5973c8b0d1",
+    "rental/law.html": "369b24637c02abd2b15407ceae74c0ecdf9e98eab90f95118383abea79790681",
+    "rental/practice.html": "d8696466d3ec6c100f736fe83b48adfe6a49d8114552eddc6cd44c053d7daf78",
+    "rental/process.html": "12b49fdc3fcddd0b9ec79346ee6dd8ce5b3859d1d241172315dd3a7e7f7bd94c",
+    "rental/sources.html": "9d0552ba33155f671ef7de17482b5132209b54d3c2524e3cdab5fe8c3457acfa",
+    "rental/units.html": "d5f00c19ba39423a50d18edecfa25945652ba6270a3f5d540cdce8c55de4d756",
+    "requirements.html": "20b93b04fa74b1f5cada5d68c8b8325f75fb2515d1dabff8de9c21ab04da83c8",
+    "responsible-gambling.html": "f983186039d940d5e03ba7ba5206bd5028c02d348b36ba91e6b8041a255b17fb",
+    "review.html": "621286518da947765f13abef03b2918e4aa5d78b22e7ff7da1d43c3b68eb8cd7",
+    "settlement.html": "85fda3758c54976b0ac134960e60d98be09f91d3731e460338dd801363b7b984",
+    "signals.html": "fbe6842378ab7d7f78c46974bedc95c910cbb857bfe072411e0ecd1559aaf92d",
+    "sources.html": "cdd30491eae5c61a3ad6346501e6b9ca7aeef85d62648cd2bbe9d9b286121e03",
+    "validation.html": "fa1b874d1e873eb1431fc188011ba3911badaf31d6db8a422ce4a1e70e607469",
     "verified/betting-rules.html": "fd70be817c7da2ef8dd56eeb65f15372dd214882bdf9a07fc06e90b0918ce897",
     "verified/correlation.html": "0bece3d46a2088faebf0b35f3869dc7d1509bbc33cf1e0847fd0926ddaecb1ae",
     "verified/executive-summary.html": "e090d64cea8f5bc1f5abdac6a5e737795fb084852368205723c168aaec107beb",
@@ -79,5 +95,5 @@
     "verified/strategies.html": "a7b30d435deb49af1a5bb41ee34ddde08ba7e3315cc1cbb1d0e4a6fc7efd125b",
     "verified/validation-gates.html": "1e1584f1ff9e10a208e60ee45ecb2d113c9a98eda06db944ec01bdbd8f4702cd"
   },
-  "research_run_hash": "bf171b924c523c1edbc1561944caf28626145ccbaad81870b43e368197736f23"
+  "research_run_hash": "6b5810124a18a48fd17952e94a3ffba8a62ee40b5fad23657affa7ffd506e019"
 }

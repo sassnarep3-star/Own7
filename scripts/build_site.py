@@ -6,6 +6,7 @@ import hashlib
 import html
 import json
 from pathlib import Path
+import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -147,6 +148,7 @@ NAV = [
     ("Workspace", [("index.html", "Overview", "overview"), ("executive-summary.html", "Executive brief", "brief"), ("data.html", "Data library", "data")]),
     ("Research", [("signals.html", "Signal library", "signals"), ("lines.html", "Probability lab", "lab"), ("correlation.html", "Correlation", "correlation"), ("methodology.html", "Methodology", "method"), ("settlement.html", "Market evidence", "sources"), ("validation.html", "Validation gates", "validation"), ("leaderboard.html", "Leaderboard", "leaderboard")]),
     ("Transparency", [("sources.html", "Source register", "sources"), ("review.html", "Flagged for Review", "review"), ("audit.html", "Repository audit", "audit"), ("requirements.html", "Requirements", "requirements"), ("responsible-gambling.html", "Responsible use", "care")]),
+    ("Housing research", [("rental/index.html", "SF rent research", "info")]),
 ]
 
 
@@ -375,6 +377,12 @@ def build():
         'responsible-gambling.html':('Responsible use','Research boundaries, source rights and official player-protection information. No wagering service is operated here.',responsible_use()),
     }
     generated=['market-evidence/index.html']
+    # Auxiliary sub-site (session arena/cab077aa-own7): anonymized SF rent-increase research.
+    rental_result=subprocess.run([sys.executable,str(ROOT/'rental'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if rental_result.returncode: raise SystemExit(rental_result.stdout+rental_result.stderr)
+    rental_pages=load_json('rental/manifest.json')['pages']
+    for name in rental_pages:
+        generated.append(f'rental/{name}')
     for slug,(title,subtitle,body) in pages.items():
         (ROOT/slug).write_text(page(slug,title,subtitle,body),encoding='utf-8');generated.append(slug)
     for old,target in ALIASES.items():
@@ -387,7 +395,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html'],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 

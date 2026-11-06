@@ -27,6 +27,17 @@ SOURCE_HOSTS = {
 
 SOURCE_HOSTS.update({'MKT-TOTO-RULES': 'portal-spa-api.toto.nl', 'MKT-TOTO-BUILDER': 'www.toto.nl', 'MKT-TOTO-BLOG': 'extra.toto.nl', 'MKT-BETMGM-BUILDER': 'help.betmgm.nl', 'MKT-BETMGM-QUOTES': 'help.betmgm.nl', 'MKT-FANATICS-OH': 'sportsbook.fanatics.com', 'MKT-ONEIDA': 'oneidacasinohotel.com', 'MKT-DK-PARLAY': 'support.draftkings.com', 'MKT-DK-ODDS': 'support.draftkings.com', 'MKT-UKGC': 'www.gamblingcommission.gov.uk', 'MKT-CRUKS': 'cruksregister.nl', 'MKT-CRUKS-CONTACT': 'cruksregister.nl', 'KSA-REGISTER': 'kansspelautoriteit.nl', 'NL-GOKSTOP': 'gokstop.nl'})
 
+# SF rent-increase research (session arena/cab077aa-own7) — official government/legal hosts only.
+SOURCE_HOSTS.update({
+    'SFGOV-ANNUAL-26': 'www.sf.gov', 'SFGOV-RATES': 'www.sf.gov', 'SFGOV-RENT-INC': 'www.sf.gov',
+    'SFGOV-RENTAL-LAWS': 'www.sf.gov', 'SFGOV-BANKED': 'www.sf.gov', 'SFGOV-PETITIONS': 'www.sf.gov',
+    'SFGOV-RENTBOARD': 'www.sf.gov', 'SFGOV-RB-ABOUT': 'www.sf.gov', 'SFGOV-COUNSEL': 'www.sf.gov',
+    'SFGOV-EVICTIONS': 'www.sf.gov',
+    'CA-CC827': 'leginfo.legislature.ca.gov', 'CA-CC1947-12': 'leginfo.legislature.ca.gov',
+    'CA-CC1954-52': 'leginfo.legislature.ca.gov', 'CA-CC1954-53': 'leginfo.legislature.ca.gov',
+    'FHA-3604': 'uscode.house.gov', 'HUD-FHEO': 'www.hud.gov',
+})
+
 
 class Page(HTMLParser):
     def __init__(self, path):

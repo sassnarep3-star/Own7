@@ -31,6 +31,8 @@ jobs:
           python handoff/f58e9526/compute_correlations.py --check
           python market-evidence/build.py --check
           python market-evidence/test_build.py -v
+          python rental/build.py --check
+          python rental/test_build.py -v
       - name: Committed artifacts must already be current
         run: git diff --exit-code
   browser:
