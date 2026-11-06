@@ -305,6 +305,32 @@ Session ID: `session-arena-e3f8f4fd-own7`. Branch: `arena/e3f8f4fd-own7` (fixed 
 | R8 | PR + merge + Pages deploy + record | done | same | main, GitHub Pages | this board | PR link and merge result recorded below |
 
 ### Merge record (to be completed after merge)
+
+---
+
+## Session arena/692da006-own7 — SF Outer Sunset (94122) rent-increase analysis (2026-11-06)
+
+Session ID: `session-arena-692da006-own7`. Branch: `arena/692da006-own7` (fixed by Arena). Rebased onto main after parallel session `arena/e3f8f4fd-own7` (PR #18) added its own rent pages; both sessions' work retained — see merge note below.
+
+### Task board
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| R1 | Claim and log this session | done | session-arena-692da006-own7 | COORDINATION.md (append only) | n/a | |
+| R2 | Verify official sources line by line | done | session-arena-692da006-own7 | research/sources.json (+13 new IDs beyond PR #18's set; SF-RATES/HUD-FHEO shared IDs kept from main) | sf.gov, oag.ca.gov, leginfo.legislature.ca.gov, blsmon1.bls.gov, govinfo.gov, hud.gov, evictiondefense.org — fetched and content-checked 2026-11-06 | AGA 1.6% (3/1/26–2/28/27), 1.4% (2025–26), 1.7% (2024–25); AB 1482 SF-Area cap 8.8% (starts 8/1/26–7/31/27); notice 30/90/+5 days; license, banking, coverage rules |
+| R3 | Canonical rental dataset (anonymized) | done | session-arena-692da006-own7 | research/rental.json | Official sources per row | Tenant A–F placeholders; dates/amounts unchanged; unverified values null |
+| R4 | Site: landing + 6 subpages | done | session-arena-692da006-own7 | scripts/build_site.py, rental*.html (generated) | Row-level source contract enforced by check_site.py | Coexists with PR #18's rent-overview/rent-units/rent-qa pages |
+| R5 | Executive summary (markdown) | done | session-arena-692da006-own7 | docs/rental-executive-summary.md | All R2 sources | |
+| R6 | Verification: unit tests + recursive site audit + determinism | done | session-arena-692da006-own7 | scripts/check_site.py run | Re-run after merge below | |
+| R7 | PR + merge + Pages deploy + record | in progress | session-arena-692da006-own7 | main branch | COORDINATION.md | PR #19 |
+
+### Merge note (rebase onto main @ 1976f1c)
+- Parallel session PR #18 (rent-overview.html, rent-units.html, rent-qa.html, research/rent.json, 9 sources) merged first; this branch was rebased on top. No work discarded: sources.json and check_site.py now carry the union of both sessions' registered IDs; build_site.py carries both nav groups and both page sets; generated HTML/manifest/results regenerated deterministically.
+- Flagged rental items published blank on rental-flagged.html: R-F1 2027–28 rate not announced; R-F2 Unit 2 banked history (owner records); R-F3 Unit 1 skipped 1.4% disposition; R-F4 corporate practice claims unverifiable; R-F5 no federal cap located; R-F6 anonymization applied; R-F7 not legal advice.
+
+### Merge record
+- PR #19: https://github.com/sassnarep3-star/Own7/pull/19 (result recorded after merge below)
+
 ## Session arena/cab077aa-own7 — SF Outer Sunset rent-increase research + site section (2026-11-06)
 
 Session ID: `session-arena-cab077aa-own7`. Branch: `arena/cab077aa-own7` (fixed by Arena; sole active session on this branch as of this claim). Earlier boards above are historical and unchanged.
@@ -339,3 +365,7 @@ Privacy: all personal information (tenant initials) is anonymized everywhere in 
 - Merged origin/main (PR #18, session arena/e3f8f4fd-own7: rent-overview/rent-units/rent-qa canonical pages + research/rent.json + its source IDs) into this branch for PR #20. No other session's work discarded: their build_site.py rent pages, rent.json, sources.json IDs and COORDINATION board are all retained.
 - Conflict resolution: generated artifacts (root *.html, research/site-manifest.json, research/results.json) were regenerated deterministically (nba_lab run + scripts/build_site.py) after unioning research/sources.json (52 IDs; HUD-FHEO kept from main, my 15 non-colliding IDs added) and unioning SOURCE_HOSTS in scripts/check_site.py. My rental/** sub-site is additive and kept in full; main nav now links both their "Rental analysis" pages and my "SF rent research (deep dive)" → rental/index.html.
 - Both rent sections coexist intentionally: theirs = concise canonical pages; mine = deeper law/process/practice/flagged sub-site with per-row source links. Flagged items from both are published for review.
+
+### Merge note (arena/cab077aa-own7, 2026-11-06, second merge)
+- Merged origin/main again (PR #19, session arena/692da006-own7: root-level rental*.html pages + research/rental.json). No other session's work discarded; their nav group and pages retained, mine added as "Deep-dive sub-site" → rental/index.html.
+- research/sources.json unioned by ID across both sides; SOURCE_HOSTS in scripts/check_site.py unioned; generated artifacts regenerated deterministically.
