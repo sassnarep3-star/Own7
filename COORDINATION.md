@@ -329,4 +329,7 @@ Session ID: `session-arena-692da006-own7`. Branch: `arena/692da006-own7` (fixed 
 - Flagged rental items published blank on rental-flagged.html: R-F1 2027–28 rate not announced; R-F2 Unit 2 banked history (owner records); R-F3 Unit 1 skipped 1.4% disposition; R-F4 corporate practice claims unverifiable; R-F5 no federal cap located; R-F6 anonymization applied; R-F7 not legal advice.
 
 ### Merge record
-- PR #19: https://github.com/sassnarep3-star/Own7/pull/19 (result recorded after merge below)
+- PR #19: https://github.com/sassnarep3-star/Own7/pull/19 — MERGED into main as `08bef1dd2c6412ec6854440ef262ec27c6a75691` on 2026-11-06 after both CI jobs (recursive site audit + desktop/mobile/WCAG browser test) passed.
+- GitHub Pages: legacy root deploy on main; latest pages build for commit 08bef1d reports status `built` (API: /repos/sassnarep3-star/Own7/pages/builds). Live site: https://sassnarep3-star.github.io/Own7/ (rental.html, rental-summary.html, rental-units.html, rental-law.html, rental-notice.html, rental-answers.html, rental-flagged.html).
+- Fixes applied during PR review: shortened rental page titles (mobile topbar overflow) and gave the rent-rates table's empty column a "State" header (axe button-name violations from PR #18's page).
+- Post-merge local verification: 62 unit tests OK; check_site.py passed (25 canonical pages, 46 HTML files, 652 source-linked rows, 50 registered sources, blanks preserved, deterministic rebuild); browser test OK (26 desktop + 26 mobile pages, WCAG A/AA, no runtime errors).
