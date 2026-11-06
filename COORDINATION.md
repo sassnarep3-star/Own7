@@ -304,4 +304,7 @@ Session ID: `session-arena-e3f8f4fd-own7`. Branch: `arena/e3f8f4fd-own7` (fixed 
 | R7 | Tests + integration checks | done | same | scripts/check_site.py (SOURCE_HOSTS) | unittest 62 OK; check_site OK; snapshots OK | deterministic rebuild clean |
 | R8 | PR + merge + Pages deploy + record | done | same | main, GitHub Pages | this board | PR link and merge result recorded below |
 
-### Merge record (to be completed after merge)
+### Merge record
+- PR: https://github.com/sassnarep3-star/Own7/pull/18 (arena/e3f8f4fd-own7 -> main), merged as 1976f1c32966c215c87e30ac51fc0c098183de9a.
+- CI on main: "Research and dashboard checks" and "pages build and deployment" both completed successfully (run 42228046113 / 42228044564).
+- GitHub Pages verified live: https://sassnarep3-star.github.io/Own7/rent-overview.html (plus rent-units.html, rent-qa.html) render with source-linked tables and anonymized tenants.
