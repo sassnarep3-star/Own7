@@ -19,6 +19,7 @@ RESULTS = load_json("research/results.json")
 PROTOCOL = load_json("research/protocol.json")
 INTEGRATION = load_json("research/integration.json")
 MARKET = load_json("market-evidence/evidence.json")
+RENT = load_json("research/rent.json")
 OPEN_FLAGS = sum(x["status"] == "Needs review" for x in CATALOG["flags"])
 
 
@@ -148,7 +149,7 @@ NAV = [
     ("Workspace", [("index.html", "Overview", "overview"), ("executive-summary.html", "Executive brief", "brief"), ("data.html", "Data library", "data")]),
     ("Research", [("signals.html", "Signal library", "signals"), ("lines.html", "Probability lab", "lab"), ("correlation.html", "Correlation", "correlation"), ("methodology.html", "Methodology", "method"), ("settlement.html", "Market evidence", "sources"), ("validation.html", "Validation gates", "validation"), ("leaderboard.html", "Leaderboard", "leaderboard")]),
     ("Transparency", [("sources.html", "Source register", "sources"), ("review.html", "Flagged for Review", "review"), ("audit.html", "Repository audit", "audit"), ("requirements.html", "Requirements", "requirements"), ("responsible-gambling.html", "Responsible use", "care")]),
-    ("Housing research", [("rental/index.html", "SF rent research", "info")]),
+    ("Rental analysis", [("rent-overview.html", "SF rent overview", "data"), ("rent-units.html", "Units & caps", "brief"), ("rent-qa.html", "Q&A and compliance", "validation")]),
 ]
 
 
@@ -351,6 +352,71 @@ def responsible_use():
     return body
 
 
+def rent_overview():
+    p = RENT["property"]
+    body = notice('Rent-controlled units, verified rules only.', 'Both units sit in a 1940 multi-unit building, so the SF Rent Ordinance caps annual increases. Personal information is anonymized; dates and amounts are unchanged. This is general information, not legal advice.', info=True, action=False)
+    body += metrics([('Allowable increase 2026-27', '1.6%', 'Mar 1, 2026 - Feb 28, 2027 · once per 12 months', 'data'), ('Unit 1 max new rent', '$4,058.92', '$3,995 + $63.92 (1.6%)', 'brief'), ('Unit 2 max new rent', '$3,200.40', '$3,150 + $50.40 (1.6%)', 'brief'), ('Federal rent cap', 'None', 'Fair Housing Act covers discrimination only', 'validation')])
+    body += section('Property and coverage', table('rent-property', 'Property and rent-control coverage', [('Field', 'field'), ('Value', 'value')], [
+        {'id': 'P1', 'field': 'Location', 'value': f"{p['city']} · {p['neighborhood']} · ZIP {p['zip']}", 'source_ids': ['SF-RENT-INCREASES']},
+        {'id': 'P2', 'field': 'Built', 'value': str(p['built']), 'source_ids': ['SF-RENT-INCREASES']},
+        {'id': 'P3', 'field': 'Coverage', 'value': p['coverage'], 'source_ids': p['coverage_source_ids']},
+        {'id': 'P4', 'field': 'Privacy', 'value': RENT['privacy'], 'source_ids': ['REPO']},
+    ], note='Coverage rule: most multi-unit residential buildings first occupied on or before June 13, 1979 are covered by the SF Rent Ordinance.'), eyebrow='PROPERTY', sid='property')
+    body += section('Published allowable increases', table('rent-rates', 'SF Rent Board allowable annual increases', [('Period', 'period'), ('Allowable', lambda r: f"{r['allowable_pct']}%" if r['allowable_pct'] is not None else None), ('Basis / state', lambda r: r.get('basis', '') + (f" · {r['status']}" if r.get('status') else '')), ('State', lambda r: badge(r['status']) if r.get('status') else badge('Verified snapshot'))], RENT['rates'], note='Blank cells are intentional: the 2027-28 rate is not yet published and is left unverified.'), eyebrow='OFFICIAL RATES', sid='rates')
+    body += section('Answers at a glance', table('rent-qa-overview', 'Question index', [('Question', lambda r: rich(r['question'], r['id'])), ('Short answer', 'answer'), ('Detail', lambda r: link('rent-qa.html#' + r['id'].lower(), 'Full answer →'))], RENT['qa'], note='Every answer is linked to official sf.gov, leginfo.legislature.ca.gov or hud.gov sources on the Q&A page.'), eyebrow='FIVE QUESTIONS', sid='questions')
+    return body
+
+
+def rent_units():
+    body = notice('Maximum lawful annual increase for 2026-27: 1.6% per unit.', 'Calculated as current base rent x 1.6%. One increase per 12 months, written notice (30 days at this size), and a rent increase license must be in place first. Market-rent benchmarks are blank because no official source publishes them.', info=True, action=False)
+    rows = []
+    for u in RENT['units']:
+        row = dict(u)
+        row['max_increase_display'] = f"${u['max_increase_amount']:.2f}"
+        row['max_new_rent_display'] = f"${u['max_new_rent']:.2f}"
+        rows.append(row)
+    body += section('Unit ledger (anonymized)', table('rent-units', 'Unit ledger with maximum allowable increase', [
+        ('Unit', lambda r: rich(r['label'], r['id'])),
+        ('Last lease start', 'last_lease_start'),
+        ('Current rent', lambda r: f"${r['current_rent']:,}"),
+        ('Initial tenants (anonymized)', 'initial_tenants_anonymized'),
+        ('Current tenants (anonymized)', 'current_tenants_anonymized'),
+        ('Max increase (1.6%)', 'max_increase_display'),
+        ('Max new rent', 'max_new_rent_display'),
+        ('94122 market rent', 'market_rent_94122'),
+    ], rows, note='Dates and amounts are unchanged from the internal record; only personal names are replaced with placeholders. Market-rent cells are intentionally blank (unverified).'), eyebrow='TWO UNITS', sid='units')
+    body += section('Timing rules', table('rent-timing', 'Timing, notice and license rules', [
+        ('Rule', 'rule'), ('Requirement', 'requirement'), ('State', lambda r: badge(r.get('status', 'Verified rule')))
+    ], [
+        {'id': 'T1', 'rule': 'Frequency', 'requirement': 'Only one rent increase per 12 months; the first increase may come 12 months after the lease began; the increase date becomes the new anniversary date.', 'source_ids': ['SF-RENT-INCREASES']},
+        {'id': 'T2', 'rule': 'Notice', 'requirement': '30-day written notice for increases of 10% or less; 90-day if more than 10% (alone or combined in the same year); add 5 days if mailed. Use the percentage in effect on the effective date.', 'source_ids': ['SF-RENT-INCREASES', 'CA-CIVIL-827']},
+        {'id': 'T3', 'rule': 'License', 'requirement': 'A rent increase license (via Rent Board Housing Inventory reporting) must be in effect before an annual or banked increase is imposed.', 'source_ids': ['SF-RENT-INCREASES']},
+        {'id': 'T4', 'rule': 'Banking', 'requirement': 'Unused allowable increases may be banked and applied later; amounts are not verifiable from public sources and are left blank for Unit 2.', 'status': 'Partially unverified', 'source_ids': ['SF-RENT-INCREASES']},
+        {'id': 'T5', 'rule': 'Vacancy decontrol', 'requirement': 'No limit on the initial rent for a vacant unit / new tenancy (Costa-Hawkins). Not usable while an original occupant remains in Unit 1.', 'source_ids': ['CA-COSTA-HAWKINS', 'SF-AB1482']},
+    ], note='An increase that does not conform to the ordinance is null and void; willful violations can be misdemeanors with a mandatory $1,000 fine.'), eyebrow='COMPLIANCE', sid='timing')
+    return body
+
+
+def rent_qa():
+    body = notice('General information, not legal advice.', 'Tenants can obtain free help: SF Rent Board counseling (415) 252-4600, Eviction Defense Collaborative / Right to Counsel (415) 659-9184. Figures below were checked against official sources on 2026-11-06.', info=True, action=False)
+    rows = []
+    for q in RENT['qa']:
+        row = dict(q)
+        row['answer_html'] = Markup(esc(q['answer']))
+        rows.append(row)
+    body += section('Questions and verified answers', table('rent-qa', 'Rent-increase Q&A with official sources', [
+        ('Question', lambda r: rich(r['question'], r['id'])),
+        ('Answer', 'answer_html'),
+    ], rows, note='Local cap controls for these units: 1.6% (2026-27). The state AB 1482 figure (8.8% for the SF region, Aug 2026 - Jul 2027) does not apply to units already under the lower SF Rent Ordinance cap. There is no federal rent cap.'), eyebrow='FIVE QUESTIONS', sid='questions')
+    body += section('Flagged for review', table('rent-flags', 'Unverified and caution items', [
+        ('Item', lambda r: rich(r['item'], r['id'])),
+        ('Finding / disposition', 'finding'),
+        ('Unverified value', 'unverified_value'),
+        ('State', lambda r: badge('Needs review')),
+    ], RENT['flags'], note='Blank unverified-value cells are intentional; nothing is inferred.'), eyebrow='TRANSPARENCY', sid='flags')
+    return body
+
+
 ALIASES = {
     'findings.html':'data.html','pages/dashboard.html':'index.html','pages/executive-summary.html':'executive-summary.html','pages/single-bets.html':'signals.html#single-bets','pages/parlays.html':'signals.html#parlays','pages/player-props.html':'signals.html#player-props','pages/correlation.html':'correlation.html','pages/validation-gates.html':'validation.html','pages/flagged.html':'review.html',
     'verified/index.html':'index.html','verified/executive-summary.html':'executive-summary.html','verified/sources.html':'sources.html','verified/betting-rules.html':'methodology.html#settlement','verified/strategies.html':'signals.html','verified/validation-gates.html':'validation.html','verified/correlation.html':'correlation.html','verified/leaderboard.html':'leaderboard.html','verified/repo-review.html':'audit.html','verified/flagged.html':'review.html','verified/responsible-gambling.html':'responsible-gambling.html',
@@ -375,6 +441,9 @@ def build():
         'audit.html':('Repository audit','A scoped, line-by-line review of the inherited repository, with original hashes, source links and dispositions.',audit_page()),
         'requirements.html':('Requirements','A traceable ledger from the full request to the evidence, deliverables and honest remaining constraints.',requirements_page()),
         'responsible-gambling.html':('Responsible use','Research boundaries, source rights and official player-protection information. No wagering service is operated here.',responsible_use()),
+        'rent-overview.html':('SF rent overview','Outer Sunset 94122 two-unit rent-controlled property: verified allowable increases, anonymized unit ledger and flagged items.',rent_overview(),'SF / RENTAL ANALYSIS'),
+        'rent-units.html':('Units & caps','Anonymized unit details, maximum lawful 2026-27 increases, timing, notice and license rules.',rent_units(),'SF / RENTAL ANALYSIS'),
+        'rent-qa.html':('Q&A and compliance','The five rent-increase questions answered from official SF, California and federal sources.',rent_qa(),'SF / RENTAL ANALYSIS'),
     }
     generated=['market-evidence/index.html']
     # Auxiliary sub-site (session arena/cab077aa-own7): anonymized SF rent-increase research.
@@ -383,8 +452,10 @@ def build():
     rental_pages=load_json('rental/manifest.json')['pages']
     for name in rental_pages:
         generated.append(f'rental/{name}')
-    for slug,(title,subtitle,body) in pages.items():
-        (ROOT/slug).write_text(page(slug,title,subtitle,body),encoding='utf-8');generated.append(slug)
+    for slug,entry in pages.items():
+        title,subtitle,body = entry[0],entry[1],entry[2]
+        eyebrow = entry[3] if len(entry) > 3 else "NBA / RESEARCH WORKSPACE"
+        (ROOT/slug).write_text(page(slug,title,subtitle,body,eyebrow),encoding='utf-8');generated.append(slug)
     for old,target in ALIASES.items():
         href=('../' if '/' in old else '')+target
         text=f'<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url={esc(href)}"><title>Page moved · OWN7</title></head><body><main><h1>This research page has moved.</h1><p>The parallel legacy sites have been reconciled. <a href="{esc(href)}">Continue to the current source-linked dashboard</a>.</p><p>Old claims are not republished as verified. See the current audit and review register.</p></main></body></html>\n'

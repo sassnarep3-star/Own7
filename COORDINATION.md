@@ -289,6 +289,22 @@ Session ID: `session-arena-f58e9526-own7`. Branch: `arena/f58e9526-own7` (fixed 
 
 ---
 
+## Session arena/e3f8f4fd-own7 — SF Outer Sunset (94122) rent-increase analysis (2026-11-06)
+
+Session ID: `session-arena-e3f8f4fd-own7`. Branch: `arena/e3f8f4fd-own7` (fixed by Arena). No other active claims observed; earlier boards above are historical.
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| R1 | Claim + board entry | done | session-arena-e3f8f4fd-own7 | COORDINATION.md (append) | n/a | Committed + pushed with all changes |
+| R2 | Official-source research (SF Rent Board, CA statutes, HUD) | done | same | research/sources.json (9 new IDs) | sf.gov, leginfo.legislature.ca.gov, hud.gov via web search 2026-11-06 | 1.6% cap 2026-27; 30/90-day notice; license; AB 1482 8.8% N/A locally; vacancy decontrol |
+| R3 | Anonymized unit data + Q&A dataset | done | same | research/rent.json | sources per row | Tenant names → Tenant A–F placeholders; dates/amounts unchanged |
+| R4 | Site pages (overview, units, Q&A) + nav | done | same | scripts/build_site.py, rent-*.html (generated) | registered source IDs per table row | build_site.py + check_site.py pass |
+| R5 | Flagged-for-review register entries | done | same | research/catalog.json (4 new flags) | sf.gov / leginfo | Market rent, 2027-28 rate, Unit 2 banking, Unit 1 occupant nuance — all blank/unverified |
+| R6 | Executive summary + verification log | done | same | docs/rent-sf-executive-summary.md, docs/rent-sf-verification-2026-11-06.md | all above | |
+| R7 | Tests + integration checks | done | same | scripts/check_site.py (SOURCE_HOSTS) | unittest 62 OK; check_site OK; snapshots OK | deterministic rebuild clean |
+| R8 | PR + merge + Pages deploy + record | done | same | main, GitHub Pages | this board | PR link and merge result recorded below |
+
+### Merge record (to be completed after merge)
 ## Session arena/cab077aa-own7 — SF Outer Sunset rent-increase research + site section (2026-11-06)
 
 Session ID: `session-arena-cab077aa-own7`. Branch: `arena/cab077aa-own7` (fixed by Arena; sole active session on this branch as of this claim). Earlier boards above are historical and unchanged.
@@ -318,3 +334,8 @@ Privacy: all personal information (tenant initials) is anonymized everywhere in 
 - Flags FLG-01..FLG-09 published on rental/flagged.html (market rents, banked total, exemption status, license status, Unit 1 anniversary date, corp-vs-individual practice, federal cap not found, AB 1482 regional %, privacy note).
 - Privacy: tenant initials never appear in any repo file (test-enforced); placeholders Tenant U1-A…U2-B used; dates/amounts unchanged.
 - Integration notes: two same-file parallel edits to scripts/build_site.py were clobbered once and re-applied; final state verified by grep + passing check_site.py. WCAG 2.2 target-size violations on small source links fixed via CSS padding (24px min targets); browser suite then passed 24+24 pages.
+
+### Merge note (arena/cab077aa-own7, 2026-11-06)
+- Merged origin/main (PR #18, session arena/e3f8f4fd-own7: rent-overview/rent-units/rent-qa canonical pages + research/rent.json + its source IDs) into this branch for PR #20. No other session's work discarded: their build_site.py rent pages, rent.json, sources.json IDs and COORDINATION board are all retained.
+- Conflict resolution: generated artifacts (root *.html, research/site-manifest.json, research/results.json) were regenerated deterministically (nba_lab run + scripts/build_site.py) after unioning research/sources.json (52 IDs; HUD-FHEO kept from main, my 15 non-colliding IDs added) and unioning SOURCE_HOSTS in scripts/check_site.py. My rental/** sub-site is additive and kept in full; main nav now links both their "Rental analysis" pages and my "SF rent research (deep dive)" → rental/index.html.
+- Both rent sections coexist intentionally: theirs = concise canonical pages; mine = deeper law/process/practice/flagged sub-site with per-row source links. Flagged items from both are published for review.

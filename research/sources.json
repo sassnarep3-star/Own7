@@ -322,6 +322,105 @@
     "access": "Relevant page independently fetched during integration; source publishes no verified complete NBA offer universe."
   },
   {
+    "id": "SF-RATES",
+    "publisher": "City and County of San Francisco (sf.gov / SF Rent Board)",
+    "title": "Current rates, including rent increase, relocation, security deposit",
+    "url": "https://www.sf.gov/reports--current-rates-including-rent-increase-relocation-sec-deposit",
+    "authority": "Official SF Rent Board allowable-increase posting",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Allowable rent increase 1.6% for March 1, 2026 - February 28, 2027; 1.4% for 2025-26; 1.7% for 2024-25; security deposit interest 4.2%.",
+    "access": "Arena web_search result content; not a direct HTTP-status attestation"
+  },
+  {
+    "id": "SF-RENT-INCREASES",
+    "publisher": "City and County of San Francisco (sf.gov / SF Rent Board)",
+    "title": "Learn about rent increases in San Francisco",
+    "url": "https://www.sf.gov/learn-about-rent-increases-san-francisco",
+    "authority": "Official SF Rent Board rent-increase rules",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Rent increase license via Housing Inventory; once per 12 months; anniversary date; 30-day written notice (10% or less), 90-day if more than 10%; use the percentage in effect on the increase date.",
+    "access": "Arena web_search result content; not a direct HTTP-status attestation"
+  },
+  {
+    "id": "SF-AB1482",
+    "publisher": "City and County of San Francisco (sf.gov / SF Rent Board)",
+    "title": "The California Tenant Protection Act of 2019 (AB 1482)",
+    "url": "https://www.sf.gov/reports--california-tenant-protection-act-2019-ab-1482",
+    "authority": "Official SF Rent Board statement of state law",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "AB 1482 cap 8.8% (5% + 3.8% CPI) for San Francisco, Aug 1, 2026 - Jul 31, 2027; does NOT apply to units under the SF Rent Ordinance rent-increase limits; no limit on initial rent for a vacant unit.",
+    "access": "Arena web_search result content; not a direct HTTP-status attestation"
+  },
+  {
+    "id": "SF-TENANT-RESOURCES",
+    "publisher": "City and County of San Francisco (sf.gov / MOHCD)",
+    "title": "Tenant and Landlord Resources",
+    "url": "https://www.sf.gov/tenant-and-landlord-resources",
+    "authority": "Official city tenant/landlord resource directory",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Free legal help via Eviction Defense Collaborative (415) 659-9184; SF Rent Board counseling (415) 252-4600; Bar Association of SF Conflict Intervention Service (415) 782-8940.",
+    "access": "Arena web_search result content; not a direct HTTP-status attestation"
+  },
+  {
+    "id": "SF-DISCRIMINATION",
+    "publisher": "City and County of San Francisco (sf.gov / Human Rights Commission)",
+    "title": "Get help for discrimination in housing",
+    "url": "https://www.sf.gov/information--get-help-discrimination-housing",
+    "authority": "Official city fair-housing page",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Housing discrimination illegal in SF; protected classes include race, national origin, familial status, disability, sex, sexual orientation, gender identity, source of income, age and more; complaints to SF HRC, California Civil Rights Department (800-884-1684) or HUD (800-347-3739).",
+    "access": "Arena web_search result content; not a direct HTTP-status attestation"
+  },
+  {
+    "id": "CA-CIVIL-1947",
+    "publisher": "California Legislative Information (leginfo)",
+    "title": "Civil Code section 1947.12 (AB 1482 rent cap)",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1947.12.",
+    "authority": "Official California statute text",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Statewide cap 5% + regional CPI, max 10%, per 12 months; exempt where a local rent-control ordinance imposes a lower cap.",
+    "access": "Arena web_search result content; statute URL is the official code publisher"
+  },
+  {
+    "id": "CA-CIVIL-827",
+    "publisher": "California Legislative Information (leginfo)",
+    "title": "Civil Code section 827 (notice of rent increase)",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827.",
+    "authority": "Official California statute text",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "30 days written notice for increases of 10% or less; 90 days for increases over 10%; 5 added days if mailed.",
+    "access": "Arena web_search result content; statute URL is the official code publisher"
+  },
+  {
+    "id": "CA-COSTA-HAWKINS",
+    "publisher": "California Legislative Information (leginfo)",
+    "title": "Civil Code sections 1954.50-1954.535 (Costa-Hawkins Rental Housing Act)",
+    "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=5.&chapter=2.7.",
+    "authority": "Official California statute text",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Vacancy decontrol: owner may set market rent for a new tenancy after a vacancy; single-family homes and condos exempt from local price control; new construction (post Feb 1, 1995) exempt.",
+    "access": "Arena web_search result content; statute URL is the official code publisher"
+  },
+  {
+    "id": "HUD-FHEO",
+    "publisher": "U.S. Department of Housing and Urban Development",
+    "title": "Office of Fair Housing and Equal Opportunity",
+    "url": "https://www.hud.gov/program_offices/fair_housing_equal_opp",
+    "authority": "Official federal fair-housing authority",
+    "checked_on": "2026-11-06",
+    "status": "Content checked",
+    "scope": "Federal Fair Housing Act prohibits discrimination in rental because of race, color, religion, sex, national origin, familial status, disability; complaint line 800-347-3739.",
+    "access": "Arena web_search result content; not a direct HTTP-status attestation"
+  },
+  {
     "id": "SFGOV-ANNUAL-26",
     "publisher": "City and County of San Francisco (SF.gov, Rent Board)",
     "title": "Annual Rent Increase for 3/1/26 - 2/28/27 Announced (Jan 14, 2026)",
@@ -485,16 +584,5 @@
     "status": "Content checked",
     "scope": "3604(a): unlawful to refuse to rent or make unavailable a dwelling because of race, color, religion, sex, familial status, or national origin; 3604(b): unlawful to discriminate against any person in the terms, conditions, or privileges of rental, or in services/facilities, because of race, color, religion, sex, familial status, national origin (and 3604(f) adds handicap/disability).",
     "access": "Arena fetch_page 2026-11-06; statute text read"
-  },
-  {
-    "id": "HUD-FHEO",
-    "publisher": "U.S. Department of Housing and Urban Development (hud.gov)",
-    "title": "Report Housing Discrimination (FHEO)",
-    "url": "https://www.hud.gov/reporthousingdiscrimination",
-    "authority": "Official HUD Office of Fair Housing and Equal Opportunity",
-    "checked_on": "2026-11-06",
-    "status": "Content checked",
-    "scope": "HUD FHEO enforces the Fair Housing Act; protected classes listed: race, color, national origin, religion, sex, disability, familial status; complaints can be filed online, by phone 1-800-669-9777, or by mail; retaliation is illegal.",
-    "access": "Arena fetch_page 2026-11-06; page read"
   }
 ]

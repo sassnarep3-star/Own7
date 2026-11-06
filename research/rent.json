@@ -1,0 +1,36 @@
+{
+ "scope": "San Francisco Outer Sunset (94122) two-unit residential building, built 1940, rent controlled. Tenant names anonymized to placeholders; dates and dollar amounts unchanged. Analysis date 2026-11-06.",
+ "privacy": "All personal information is anonymized on the public site. Initial Unit 1 occupants are shown only as Tenant A / Tenant B / Tenant C; current Unit 1 occupants as Tenant A / Tenant D; Unit 2 occupants as Tenant E / Tenant F.",
+ "checked_on": "2026-11-06",
+ "property": {
+  "city": "San Francisco, CA",
+  "neighborhood": "Outer Sunset",
+  "zip": "94122",
+  "built": 1940,
+  "coverage": "Building is a multi-unit residential building with a certificate of occupancy on or before June 13, 1979, so both units are covered by the SF Rent Ordinance rent-increase limits.",
+  "coverage_source_ids": ["SF-RENT-INCREASES", "CA-COSTA-HAWKINS"]
+ },
+ "rates": [
+  {"id": "RATE-2026-27", "period": "March 1, 2026 - February 28, 2027", "allowable_pct": 1.6, "basis": "60% of Bay Area CPI change, set annually by the SF Rent Board", "source_ids": ["SF-RATES", "SF-RENT-INCREASES"]},
+  {"id": "RATE-2025-26", "period": "March 1, 2025 - February 28, 2026", "allowable_pct": 1.4, "basis": "Prior-year published allowable increase", "source_ids": ["SF-RATES"]},
+  {"id": "RATE-2024-25", "period": "March 1, 2024 - February 28, 2025", "allowable_pct": 1.7, "basis": "Prior-year published allowable increase", "source_ids": ["SF-RATES"]},
+  {"id": "RATE-2027-28", "period": "March 1, 2027 - February 28, 2028", "allowable_pct": null, "basis": "Not yet announced by the Rent Board as of 2026-11-06; left blank, unverified", "status": "Unverified - not yet published", "source_ids": ["SF-RATES"]}
+ ],
+ "units": [
+  {"id": "UNIT-1", "label": "Unit 1", "last_lease_start": "February 1, 2025", "current_rent": 3995, "initial_tenants_anonymized": "Tenant A, Tenant B, Tenant C", "current_tenants_anonymized": "Tenant A, Tenant D", "continuing_tenancy_date": "April 1, 2026", "anniversary_note": "Rent may be increased only once every 12 months; the increase date becomes the new anniversary date.", "max_increase_pct": 1.6, "max_increase_amount": 63.92, "max_new_rent": 4058.92, "market_rent_94122": null, "source_ids": ["SF-RATES", "SF-RENT-INCREASES"]},
+  {"id": "UNIT-2", "label": "Unit 2", "last_lease_start": "June 1, 2019", "current_rent": 3150, "initial_tenants_anonymized": "Tenant E, Tenant F", "current_tenants_anonymized": "Tenant E, Tenant F", "last_increase_date": null, "anniversary_note": "Last rent-increase date is not verifiable from an official public source; confirm with Rent Board records before setting an anniversary date.", "max_increase_pct": 1.6, "max_increase_amount": 50.40, "max_new_rent": 3200.40, "market_rent_94122": null, "source_ids": ["SF-RATES", "SF-RENT-INCREASES"]}
+ ],
+ "qa": [
+  {"id": "Q1", "question": "What is a reasonable and normal rent increase in SF 94122 under local, state and federal law?", "answer": "Local (controls here): the SF Rent Board allowable increase is 1.6% for increases effective March 1, 2026 - February 28, 2027, once per 12 months, on base rent. State: AB 1482's cap (8.8% for the SF region, Aug 1, 2026 - Jul 31, 2027) does NOT apply because these units are already under the lower local cap. Federal: there is no federal rent cap; federal law (Fair Housing Act) governs discrimination only. So a normal, defensible increase is up to 1.6% per year.", "source_ids": ["SF-RATES", "SF-RENT-INCREASES", "SF-AB1482", "CA-CIVIL-1947", "HUD-FHEO"]},
+  {"id": "Q2", "question": "How do big real estate corporations handle increases vs individual owners in SF?", "answer": "The same SF Rent Ordinance (Admin Code Ch. 37) applies to both: same annual allowable percentage, same 12-month rule, same notice and license requirements. Corporate ownership changes nothing for these pre-1979 units; it only matters for AB 1482 exemptions on single-family homes/condos, which do not apply here.", "source_ids": ["SF-RENT-INCREASES", "CA-CIVIL-1947", "CA-COSTA-HAWKINS"]},
+  {"id": "Q3", "question": "What is the correct way to inform tenants, and what are reasonable reasons?", "answer": "Obtain the rent increase license (report units to the Rent Board Housing Inventory) BEFORE imposing an increase. Give written notice: 30 days for increases of 10% or less, 90 days if more than 10% (alone or combined in the same year); add 5 days if mailed. Use the percentage in effect on the effective date. The lawful reason is the annual allowable increase (and any properly banked amounts); anything above the cap requires a Rent Board petition (e.g., approved capital improvements).", "source_ids": ["SF-RENT-INCREASES", "CA-CIVIL-827"]},
+  {"id": "Q4", "question": "Can the increase pass review by SF tenant advocates and free tenant lawyers?", "answer": "Yes if it complies with Ch. 37: within the published allowable percentage, once per 12 months, proper written notice, and a valid rent increase license. An increase that does not conform to the ordinance is null and void; violations can be misdemeanors with a mandatory $1,000 fine. Tenants can get free help: SF Rent Board counseling (415) 252-4600 and the Eviction Defense Collaborative / Right to Counsel (415) 659-9184.", "source_ids": ["SF-RENT-INCREASES", "SF-TENANT-RESOURCES"]},
+  {"id": "Q5", "question": "Raise one unit's rent or both, to avoid discrimination claims?", "answer": "No law requires raising both units. But applying the SAME lawful percentage and procedure to all tenants in the building is the defensible, non-discriminatory practice. SF, state (FEHA) and federal (FHA) fair-housing laws prohibit treating tenants differently based on protected classes (race, national origin, familial status, disability, sex, source of income, etc.). Uniform treatment avoids disparate-treatment exposure.", "source_ids": ["SF-DISCRIMINATION", "HUD-FHEO", "SF-RENT-INCREASES"]}
+ ],
+ "flags": [
+  {"id": "R-FLAG-1", "item": "Market rent benchmark for 94122 Outer Sunset", "finding": "No official government source publishes neighborhood market rents. Any 94122 market-rent figure is left blank rather than inferred from commercial listings.", "unverified_value": null, "source_ids": ["SF-RATES"]},
+  {"id": "R-FLAG-2", "item": "Allowable increase for March 1, 2027 - February 28, 2028", "finding": "Not yet announced by the Rent Board as of 2026-11-06; left blank.", "unverified_value": null, "source_ids": ["SF-RATES"]},
+  {"id": "R-FLAG-3", "item": "Unit 2 last rent-increase date and any banked increases", "finding": "Not verifiable from an official public source; banked amounts (Rent Board Rule 4.12) require the owner's Rent Board records. Left blank; confirm before setting an anniversary date or applying banked amounts.", "unverified_value": null, "source_ids": ["SF-RENT-INCREASES"]},
+  {"id": "R-FLAG-4", "item": "Unit 1 occupant-status nuance", "finding": "An original occupant (Tenant A) remains in Unit 1, so the annual cap continues to apply. Vacancy decontrol under Costa-Hawkins applies only when the tenancy ends and a new tenancy begins; it cannot be used while an original occupant remains.", "unverified_value": null, "source_ids": ["CA-COSTA-HAWKINS", "SF-AB1482", "SF-RENT-INCREASES"]}
+ ]
+}
