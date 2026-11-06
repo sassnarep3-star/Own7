@@ -29,6 +29,8 @@ SOURCE_HOSTS.update({'MKT-TOTO-RULES': 'portal-spa-api.toto.nl', 'MKT-TOTO-BUILD
 
 SOURCE_HOSTS.update({'SF-RATES': 'www.sf.gov', 'SF-RENT-INCREASES': 'www.sf.gov', 'SF-AB1482': 'www.sf.gov', 'SF-TENANT-RESOURCES': 'www.sf.gov', 'SF-DISCRIMINATION': 'www.sf.gov', 'CA-CIVIL-1947': 'leginfo.legislature.ca.gov', 'CA-CIVIL-827': 'leginfo.legislature.ca.gov', 'CA-COSTA-HAWKINS': 'leginfo.legislature.ca.gov', 'HUD-FHEO': 'www.hud.gov'})
 
+SOURCE_HOSTS.update({'SF-RENTAL-LAWS': 'www.sf.gov', 'SF-RENT-INC': 'www.sf.gov', 'SF-NEWS-AGA': 'www.sf.gov', 'SF-BANKED': 'www.sf.gov', 'SF-HI-LICENSE': 'www.sf.gov', 'CA-AG-RENTCAPS': 'oag.ca.gov', 'CA-AG-TENANTS': 'oag.ca.gov', 'LEGINFO-CIV827': 'leginfo.legislature.ca.gov', 'LEGINFO-CIV1947-12': 'leginfo.legislature.ca.gov', 'LEGINFO-AB1482': 'leginfo.legislature.ca.gov', 'BLS-SF-CPI': 'blsmon1.bls.gov', 'GOVINFO-FHA': 'www.govinfo.gov', 'SF-RTC-EDC': 'evictiondefense.org'})
+
 
 class Page(HTMLParser):
     def __init__(self, path):

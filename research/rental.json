@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "project": "SF Outer Sunset (94122) rent-increase analysis",
+    "prepared_on": "2026-11-06",
+    "privacy": "All tenant personal information is anonymized with placeholder names (Tenant A-F). Dates and dollar amounts are unchanged. Real names/initials are kept only in the owner's internal records, never on this public site.",
+    "disclaimer": "Informational research compiled from official sources. Not legal advice. Any rent increase should be reviewed by a qualified SF tenant-rights attorney before service.",
+    "property": {
+      "location": "Outer Sunset, San Francisco, CA 94122",
+      "built": 1940,
+      "units": 2,
+      "rent_control": "Covered — certificate of occupancy before June 13, 1979 (1940 building)",
+      "source_ids": [
+        "SF-RENTAL-LAWS",
+        "REPO"
+      ]
+    }
+  },
+  "units": [
+    {
+      "id": "U1",
+      "unit": "Unit 1",
+      "last_lease_start": "2025-02-01",
+      "rent": "$3,995 / month",
+      "initial_tenants": "Tenant A, Tenant B, Tenant C (anonymized)",
+      "continuing_tenancy": "Current tenants: Tenant A and Tenant D (anonymized)",
+      "continuing_since": "2026-04-01",
+      "continuing_rent": "$3,995 / month",
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "U2",
+      "unit": "Unit 2",
+      "last_lease_start": "2019-06-01",
+      "rent": "$3,150 / month",
+      "initial_tenants": "Tenant E and Tenant F (anonymized)",
+      "continuing_tenancy": "",
+      "continuing_since": "",
+      "continuing_rent": "",
+      "source_ids": [
+        "REPO"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S1",
+      "unit": "Unit 1",
+      "period": "3/1/2026 - 2/28/2027",
+      "rate": "1.6%",
+      "base_rent": 3995.0,
+      "increase": "$63.92",
+      "new_base_rent": "$4,058.92",
+      "note": "$3,995.00 x .016 = $63.92; no rounding up permitted. Applies to an increase with an effective date in this window (e.g., on/after the anniversary date).",
+      "source_ids": [
+        "SF-NEWS-AGA",
+        "SF-RENT-INC",
+        "SF-RATES"
+      ]
+    },
+    {
+      "id": "S2",
+      "unit": "Unit 2",
+      "period": "3/1/2026 - 2/28/2027",
+      "rate": "1.6%",
+      "base_rent": 3150.0,
+      "increase": "$50.40",
+      "new_base_rent": "$3,200.40",
+      "note": "$3,150.00 x .016 = $50.40; no rounding up permitted.",
+      "source_ids": [
+        "SF-NEWS-AGA",
+        "SF-RENT-INC",
+        "SF-RATES"
+      ]
+    },
+    {
+      "id": "S3",
+      "unit": "Unit 1",
+      "period": "3/1/2025 - 2/28/2026",
+      "rate": "1.4%",
+      "base_rent": 3995.0,
+      "increase": "$55.93",
+      "new_base_rent": "$4,050.93",
+      "note": "Prior-period rate; relevant only to an increase effective on/before 2/28/2026 (none was imposed at $3,995).",
+      "source_ids": [
+        "SF-RATES",
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "S4",
+      "unit": "Unit 2",
+      "period": "3/1/2025 - 2/28/2026",
+      "rate": "1.4%",
+      "base_rent": 3150.0,
+      "increase": "$44.10",
+      "new_base_rent": "$3,194.10",
+      "note": "Prior-period rate; relevant only to an increase effective on/before 2/28/2026.",
+      "source_ids": [
+        "SF-RATES",
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "S5",
+      "unit": "Unit 1",
+      "period": "3/1/2027 - 2/28/2028",
+      "rate": null,
+      "base_rent": 3995.0,
+      "increase": null,
+      "new_base_rent": null,
+      "note": "The 2027-2028 annual allowable increase has not been announced yet; value left blank as unverified. Check the Rent Board when announced.",
+      "source_ids": [
+        "SF-RATES",
+        "SF-NEWS-AGA"
+      ]
+    },
+    {
+      "id": "S6",
+      "unit": "Unit 2",
+      "period": "3/1/2027 - 2/28/2028",
+      "rate": null,
+      "base_rent": 3150.0,
+      "increase": null,
+      "new_base_rent": null,
+      "note": "Blank — 2027-2028 rate not yet announced; also see banked-increase flag R-F2.",
+      "source_ids": [
+        "SF-RATES",
+        "SF-NEWS-AGA"
+      ]
+    }
+  ],
+  "law": [
+    {
+      "id": "L1",
+      "jurisdiction": "Local — SF Rent Ordinance (Admin. Code ch. 37)",
+      "topic": "Rent-control coverage",
+      "rule": "Most residential units built on or before June 13, 1979 are rent controlled. The 1940 building qualifies (not a single-family dwelling).",
+      "value": "Covered",
+      "effective": "Current",
+      "source_ids": [
+        "SF-RENTAL-LAWS"
+      ]
+    },
+    {
+      "id": "L2",
+      "jurisdiction": "Local — SF Rent Ordinance",
+      "topic": "Annual allowable increase (AGA)",
+      "rule": "Landlord may raise rent only by the Rent Board's annual percentage, once every 12 months. 60% of the Bay Area CPI-U change.",
+      "value": "1.6%",
+      "effective": "3/1/2026 - 2/28/2027",
+      "source_ids": [
+        "SF-RENT-INC",
+        "SF-NEWS-AGA",
+        "SF-RATES",
+        "BLS-SF-CPI"
+      ]
+    },
+    {
+      "id": "L3",
+      "jurisdiction": "Local — SF Rent Ordinance",
+      "topic": "Prior AGA periods",
+      "rule": "Published allowable increases for recent periods.",
+      "value": "1.4% (3/1/2025-2/28/2026); 1.7% (3/1/2024-2/28/2025)",
+      "effective": "Past periods",
+      "source_ids": [
+        "SF-RATES"
+      ]
+    },
+    {
+      "id": "L4",
+      "jurisdiction": "Local — SF Rent Ordinance",
+      "topic": "Calculation base",
+      "rule": "Increase is calculated on base rent only (incl. housing services such as parking/storage; excl. temporary passthroughs). Rent increases cannot be rounded up to the nearest dollar.",
+      "value": "base rent x published rate",
+      "effective": "Current",
+      "source_ids": [
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "L5",
+      "jurisdiction": "Local — SF Rent Ordinance",
+      "topic": "Frequency / anniversary date",
+      "rule": "First increase 12 months after lease began; each increase sets a new anniversary date; no second increase within 12 months.",
+      "value": "1 increase / 12 months",
+      "effective": "Current",
+      "source_ids": [
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "L6",
+      "jurisdiction": "Local — SF Rent Ordinance",
+      "topic": "Notice of increase",
+      "rule": "30-day written notice; 90-day written notice if the increase alone or combined with another increase in the same year exceeds 10%; +5 days if mailed. Notice should state dollar amount, percentage, and effective date; use the rate in effect on the effective date.",
+      "value": "30 days (90 if >10%; +5 mailed)",
+      "effective": "Current",
+      "source_ids": [
+        "SF-RENT-INC",
+        "SF-BANKED",
+        "LEGINFO-CIV827"
+      ]
+    },
+    {
+      "id": "L7",
+      "jurisdiction": "Local — SF Rent Ordinance §37.15",
+      "topic": "Rent increase license",
+      "rule": "Landlord must report into the Rent Board Housing Inventory (annual deadline March 1) and hold a current rent increase license before any annual or banked increase goes into effect; a notice is not enforceable without a license on the effective date.",
+      "value": "License required",
+      "effective": "Since 7/1/2022 (3/1/2023 for condos / 1-9 unit buildings)",
+      "source_ids": [
+        "SF-HI-LICENSE",
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "L8",
+      "jurisdiction": "Local — SF Rent Ordinance",
+      "topic": "Banked increases",
+      "rule": "A skipped increase is banked only if at least 24 full months pass without any rent increase; no limit on the banked amount; cannot be compounded or prorated; does not expire during the tenancy; does not carry to a new tenant; notice must state the banked portion.",
+      "value": "Banking allowed (since 4/1/1982)",
+      "effective": "Current",
+      "source_ids": [
+        "SF-BANKED"
+      ]
+    },
+    {
+      "id": "L9",
+      "jurisdiction": "Local — SF Rent Ordinance",
+      "topic": "Vacancy decontrol",
+      "rule": "No limit on the rent first charged when renting an empty rent-controlled unit to a new tenant.",
+      "value": "No cap on initial rent",
+      "effective": "Current",
+      "source_ids": [
+        "SF-RENT-INC",
+        "CA-AG-TENANTS",
+        "LEGINFO-CIV1947-12"
+      ]
+    },
+    {
+      "id": "L10",
+      "jurisdiction": "Local — SF Rent Ordinance",
+      "topic": "Additional occupants",
+      "rule": "Landlord cannot charge additional rent simply because a new/additional roommate moved in; such a charge is an unlawful rent increase.",
+      "value": "Prohibited",
+      "effective": "Current",
+      "source_ids": [
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "L11",
+      "jurisdiction": "Local — SF Rent Ordinance",
+      "topic": "Above-annual increases",
+      "rule": "Increases beyond the annual allowable amount are possible only through landlord petitions and passthroughs (e.g., capital improvements, operating costs) under Rent Board rules.",
+      "value": "Petition required",
+      "effective": "Current",
+      "source_ids": [
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "L12",
+      "jurisdiction": "State — CA Tenant Protection Act (AB 1482), Civ. Code §1947.12",
+      "topic": "Statewide rent cap",
+      "rule": "Over any 12-month period, gross rental rate may not increase more than 5% plus the regional CPI change, or 10%, whichever is lower, measured against the lowest rent charged in the prior 12 months; max two increments per 12 months. Units under a stricter local ordinance are exempt from the state cap (local cap controls).",
+      "value": "min(5% + CPI, 10%)",
+      "effective": "Current (through 1/1/2030)",
+      "source_ids": [
+        "LEGINFO-CIV1947-12",
+        "LEGINFO-AB1482",
+        "CA-AG-TENANTS"
+      ]
+    },
+    {
+      "id": "L13",
+      "jurisdiction": "State — CA (SF Bay Area counties)",
+      "topic": "Statewide cap, San Francisco Area",
+      "rule": "CA AG chart: San Francisco Area (Alameda, Contra Costa, Marin, San Francisco, San Mateo) maximum under AB 1482. Not the operative cap for these units — the lower local 1.6% AGA controls.",
+      "value": "8.8% (increases starting 8/1/2026-7/31/2027); 6.3% (8/1/2025-7/31/2026)",
+      "effective": "8/1/2026 - 7/31/2027",
+      "source_ids": [
+        "CA-AG-RENTCAPS"
+      ]
+    },
+    {
+      "id": "L14",
+      "jurisdiction": "State — Civ. Code §827",
+      "topic": "State notice periods",
+      "rule": "Written notice at least 30 days before effective date for increases of 10% or less (alone or combined with increases in the prior 12 months); at least 90 days if more than 10%; personal delivery or mail under CCP §1013 (+5 days when mailed within California).",
+      "value": "30 / 90 days (+5 mailed)",
+      "effective": "Current",
+      "source_ids": [
+        "LEGINFO-CIV827"
+      ]
+    },
+    {
+      "id": "L15",
+      "jurisdiction": "Federal — Fair Housing Act, 42 U.S.C. §§3601-3619",
+      "topic": "Discrimination in rental terms",
+      "rule": "§3604(b): unlawful to discriminate in the terms, conditions, or privileges of rental of a dwelling because of race, color, religion, sex, handicap, familial status, or national origin. Uniform, consistently applied rent-increase practices are the defensible standard.",
+      "value": "No discriminatory terms",
+      "effective": "Current",
+      "source_ids": [
+        "GOVINFO-FHA",
+        "HUD-FHEO"
+      ]
+    },
+    {
+      "id": "L16",
+      "jurisdiction": "Federal",
+      "topic": "Federal rent-increase cap",
+      "rule": "No federal statute capping residential rent increases was located in the official sources checked; federal law relevant to increases is the anti-discrimination Fair Housing Act. See flag R-F5.",
+      "value": null,
+      "effective": "—",
+      "source_ids": [
+        "GOVINFO-FHA",
+        "HUD-FHEO"
+      ]
+    }
+  ],
+  "notice": [
+    {
+      "id": "N1",
+      "step": "Confirm coverage",
+      "detail": "1940 building = rent controlled (pre-6/13/1979). Check the address on the SF Property Information Map if ever unsure.",
+      "source_ids": [
+        "SF-RENTAL-LAWS"
+      ]
+    },
+    {
+      "id": "N2",
+      "step": "Hold a rent increase license",
+      "detail": "Report the property in the Rent Board Housing Inventory (deadline March 1 each year); license must be current on the effective date of the increase, or the notice is not enforceable.",
+      "source_ids": [
+        "SF-HI-LICENSE",
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "N3",
+      "step": "Pick the correct rate",
+      "detail": "Use the annual allowable percentage in effect on the effective date of the increase (1.6% for effective dates 3/1/2026-2/28/2027), not the rate on the day the notice is served.",
+      "source_ids": [
+        "SF-RENT-INC",
+        "SF-NEWS-AGA"
+      ]
+    },
+    {
+      "id": "N4",
+      "step": "Respect the 12-month / anniversary rule",
+      "detail": "No more than one increase per 12 months; the effective date becomes the new anniversary date.",
+      "source_ids": [
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "N5",
+      "step": "Calculate on base rent, no rounding up",
+      "detail": "base rent x rate; do not round up to the nearest dollar; exclude temporary passthroughs.",
+      "source_ids": [
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "N6",
+      "step": "Serve written notice with required content",
+      "detail": "30 days' written notice (90 days if the increase alone or combined in the same year exceeds 10%; +5 days if mailed). Include dollar amount, percentage, effective date, and any banked portion.",
+      "source_ids": [
+        "SF-RENT-INC",
+        "SF-BANKED",
+        "LEGINFO-CIV827"
+      ]
+    },
+    {
+      "id": "N7",
+      "step": "Apply uniformly to both units",
+      "detail": "Use the same lawful percentage and procedure for Unit 1 and Unit 2 to avoid any appearance of discriminatory treatment under the Fair Housing Act.",
+      "source_ids": [
+        "GOVINFO-FHA",
+        "HUD-FHEO",
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "N8",
+      "step": "Do not charge for added roommates",
+      "detail": "No additional rent solely because a new roommate joined (relevant to Unit 1's change in occupants).",
+      "source_ids": [
+        "SF-RENT-INC"
+      ]
+    },
+    {
+      "id": "N9",
+      "step": "Keep records for review",
+      "detail": "Keep the license, notice, and calculation; tenants can get free Rent Board counseling (415-252-4600) and free Right to Counsel attorneys if ever facing eviction (Prop F).",
+      "source_ids": [
+        "SF-RENTAL-LAWS",
+        "SF-RTC-EDC"
+      ]
+    }
+  ],
+  "answers": [
+    {
+      "id": "Q1",
+      "question": "What is a reasonable and normal rental increase for these units (94122) under local, state, and federal law?",
+      "answer": "Local (controls): the SF Rent Board annual allowable increase — 1.6% for effective dates 3/1/2026-2/28/2027 (60% of Bay Area CPI-U) — once per 12 months. Unit 1: +$63.92 to $4,058.92; Unit 2: +$50.40 to $3,200.40. State: AB 1482 caps at 8.8% for the SF Area for increases starting 8/1/2026-7/31/2027, but the lower local cap governs these rent-controlled units. Federal: no rent cap; only anti-discrimination rules. Anything above the local AGA needs a Rent Board petition.",
+      "source_ids": [
+        "SF-NEWS-AGA",
+        "SF-RATES",
+        "CA-AG-RENTCAPS",
+        "LEGINFO-CIV1947-12",
+        "GOVINFO-FHA"
+      ]
+    },
+    {
+      "id": "Q2",
+      "question": "How do big real estate corporations handle increases vs. individual owners in SF?",
+      "answer": "The same ordinances apply to every owner regardless of size — the SF Rent Ordinance and AB 1482 do not distinguish corporate from individual landlords (AB 1482's only ownership-based exemption is for non-corporate single-family homes). Both must hold a rent increase license, follow the AGA, and give proper notice. Claims about differing internal market practices of large firms are not verifiable from official sources — see flag R-F4.",
+      "source_ids": [
+        "CA-AG-TENANTS",
+        "SF-RENTAL-LAWS",
+        "SF-HI-LICENSE"
+      ]
+    },
+    {
+      "id": "Q3",
+      "question": "What is the correct way to inform tenants of an increase, and what are reasonable reasons?",
+      "answer": "Written notice at least 30 days before the effective date (90 days if >10% combined in the year; +5 days if mailed), stating the dollar amount, percentage, effective date and any banked portion, using the rate in effect on the effective date, with a current rent increase license on file. The standard, reasonable reason is the annual CPI-based allowable increase; above-cap amounts require a Rent Board petition (capital improvements / operating-cost passthroughs).",
+      "source_ids": [
+        "SF-RENT-INC",
+        "SF-BANKED",
+        "LEGINFO-CIV827",
+        "SF-HI-LICENSE"
+      ]
+    },
+    {
+      "id": "Q4",
+      "question": "Will the increase survive scrutiny by SF tenant advocates / free tenant lawyers?",
+      "answer": "It is designed to: 1.6% is the published allowable increase, notice and licensing rules are followed, and both units are treated identically. Tenants have free resources — Rent Board counseling (415-252-4600) and Prop F Right to Counsel via the Eviction Defense Collaborative. Have a SF tenant-rights attorney review the actual notice before serving; this site is not legal advice.",
+      "source_ids": [
+        "SF-NEWS-AGA",
+        "SF-RENT-INC",
+        "SF-HI-LICENSE",
+        "SF-RENTAL-LAWS",
+        "SF-RTC-EDC"
+      ]
+    },
+    {
+      "id": "Q5",
+      "question": "Raise one unit or both — discrimination risk?",
+      "answer": "Raise both units with the same lawful percentage and identical procedure. The federal Fair Housing Act (§3604(b)) prohibits discrimination in the terms and conditions of rental; singling out one unit without a documented, lawful, uniformly applied reason creates disparate-treatment risk. Uniform application is the defensible normal business practice.",
+      "source_ids": [
+        "GOVINFO-FHA",
+        "HUD-FHEO",
+        "SF-RENT-INC"
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "id": "R-F1",
+      "item": "2027-2028 annual allowable increase not yet announced",
+      "detail": "The Rent Board has published rates only through 2/28/2027. Any increase with an effective date on/after 3/1/2027 (e.g., Unit 1's next anniversary on/after April 2027) must use the not-yet-published rate.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "source_ids": [
+        "SF-RATES",
+        "SF-NEWS-AGA"
+      ]
+    },
+    {
+      "id": "R-F2",
+      "item": "Unit 2 banked-increase history unverified",
+      "detail": "Unit 2's last lease start is 6/1/2019 at $3,150. Any skipped annual increases could be banked (only after 24+ months without an increase; license required), but the actual increase history is an owner record not confirmable from official sources. No banked total is computed here.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "source_ids": [
+        "SF-BANKED",
+        "SF-HI-LICENSE",
+        "REPO"
+      ]
+    },
+    {
+      "id": "R-F3",
+      "item": "Unit 1 skipped 1.4% (available 2/1/2026) — disposition depends on timing",
+      "detail": "No increase was imposed at $3,995. Under the 24-month banking rule, the 1.4% is banked only if no increase occurs for 24 full months after it first became available; an increase before that (e.g., April 2027) loses it. Confirm against the actual increase history.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "source_ids": [
+        "SF-BANKED",
+        "SF-RENT-INC",
+        "REPO"
+      ]
+    },
+    {
+      "id": "R-F4",
+      "item": "Market-practice claims about large corporations vs. small owners",
+      "detail": "No official source verifies how specific corporations administer increases internally; only the legal parity (same rules for all owners) is officially confirmed. Left blank rather than inferred.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "source_ids": [
+        "CA-AG-TENANTS",
+        "SF-RENTAL-LAWS"
+      ]
+    },
+    {
+      "id": "R-F5",
+      "item": "No federal rent-cap statute located",
+      "detail": "Official sources checked (U.S. Code ch. 45, HUD) confirm the Fair Housing Act's anti-discrimination rules but no federal rent-increase cap. Stated as an absence finding, not independently adjudicated.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "source_ids": [
+        "GOVINFO-FHA",
+        "HUD-FHEO"
+      ]
+    },
+    {
+      "id": "R-F6",
+      "item": "Personal information anonymized",
+      "detail": "Tenant names/initials are replaced with placeholders (Tenant A-F) on all public pages; dates and amounts unchanged. Internal records remain private to the owner.",
+      "unverified_value": null,
+      "status": "Corrected",
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "R-F7",
+      "item": "Not legal advice",
+      "detail": "This analysis is informational. SF tenants can obtain free counsel (Prop F / Eviction Defense Collaborative) and Rent Board counseling; have a tenant-rights attorney review any actual notice.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "source_ids": [
+        "SF-RTC-EDC",
+        "SF-RENTAL-LAWS"
+      ]
+    }
+  ]
+}

@@ -19,6 +19,7 @@ PROTOCOL = load_json("research/protocol.json")
 INTEGRATION = load_json("research/integration.json")
 MARKET = load_json("market-evidence/evidence.json")
 RENT = load_json("research/rent.json")
+RENTAL = load_json("research/rental.json")
 OPEN_FLAGS = sum(x["status"] == "Needs review" for x in CATALOG["flags"])
 
 
@@ -149,6 +150,7 @@ NAV = [
     ("Research", [("signals.html", "Signal library", "signals"), ("lines.html", "Probability lab", "lab"), ("correlation.html", "Correlation", "correlation"), ("methodology.html", "Methodology", "method"), ("settlement.html", "Market evidence", "sources"), ("validation.html", "Validation gates", "validation"), ("leaderboard.html", "Leaderboard", "leaderboard")]),
     ("Transparency", [("sources.html", "Source register", "sources"), ("review.html", "Flagged for Review", "review"), ("audit.html", "Repository audit", "audit"), ("requirements.html", "Requirements", "requirements"), ("responsible-gambling.html", "Responsible use", "care")]),
     ("Rental analysis", [("rent-overview.html", "SF rent overview", "data"), ("rent-units.html", "Units & caps", "brief"), ("rent-qa.html", "Q&A and compliance", "validation")]),
+    ("Rental · SF 94122 (full)", [("rental.html", "Rental overview", "data"), ("rental-summary.html", "Executive summary", "brief"), ("rental-units.html", "Units & scenarios", "lab"), ("rental-law.html", "Law by jurisdiction", "method"), ("rental-notice.html", "Notice procedure", "validation"), ("rental-answers.html", "Questions answered", "sources"), ("rental-flagged.html", "Flagged for review", "review")]),
 ]
 
 
@@ -361,7 +363,7 @@ def rent_overview():
         {'id': 'P3', 'field': 'Coverage', 'value': p['coverage'], 'source_ids': p['coverage_source_ids']},
         {'id': 'P4', 'field': 'Privacy', 'value': RENT['privacy'], 'source_ids': ['REPO']},
     ], note='Coverage rule: most multi-unit residential buildings first occupied on or before June 13, 1979 are covered by the SF Rent Ordinance.'), eyebrow='PROPERTY', sid='property')
-    body += section('Published allowable increases', table('rent-rates', 'SF Rent Board allowable annual increases', [('Period', 'period'), ('Allowable', lambda r: f"{r['allowable_pct']}%" if r['allowable_pct'] is not None else None), ('Basis / state', lambda r: r.get('basis', '') + (f" · {r['status']}" if r.get('status') else '')), ('', lambda r: badge(r['status']) if r.get('status') else badge('Verified snapshot'))], RENT['rates'], note='Blank cells are intentional: the 2027-28 rate is not yet published and is left unverified.'), eyebrow='OFFICIAL RATES', sid='rates')
+    body += section('Published allowable increases', table('rent-rates', 'SF Rent Board allowable annual increases', [('Period', 'period'), ('Allowable', lambda r: f"{r['allowable_pct']}%" if r['allowable_pct'] is not None else None), ('Basis / state', lambda r: r.get('basis', '') + (f" · {r['status']}" if r.get('status') else '')), ('State', lambda r: badge(r['status']) if r.get('status') else badge('Verified snapshot'))], RENT['rates'], note='Blank cells are intentional: the 2027-28 rate is not yet published and is left unverified.'), eyebrow='OFFICIAL RATES', sid='rates')
     body += section('Answers at a glance', table('rent-qa-overview', 'Question index', [('Question', lambda r: rich(r['question'], r['id'])), ('Short answer', 'answer'), ('Detail', lambda r: link('rent-qa.html#' + r['id'].lower(), 'Full answer →'))], RENT['qa'], note='Every answer is linked to official sf.gov, leginfo.legislature.ca.gov or hud.gov sources on the Q&A page.'), eyebrow='FIVE QUESTIONS', sid='questions')
     return body
 
@@ -416,6 +418,106 @@ def rent_qa():
     return body
 
 
+RENTAL_EYEBROW = "SF RENTAL ANALYSIS · OUTER SUNSET 94122"
+RENTAL_DESC = "OWN7 rental-increase analysis for a rent-controlled 1940 building in SF 94122: source-linked rules, unit scenarios, notice procedure and flagged items. Anonymized; not legal advice."
+
+
+def rental_landing():
+    meta = RENTAL["meta"]
+    flags_open = sum(f["status"] == "Needs review" for f in RENTAL["flags"])
+    body = notice("Anonymized and source-linked — not legal advice.", meta["privacy"] + " " + meta["disclaimer"], info=True, action=False)
+    body += metrics([
+        ("Units analyzed", 2, "1940 building · rent controlled", "data"),
+        ("Local allowable increase", "1.6%", "3/1/2026 - 2/28/2027 · 60% of Bay Area CPI", "brief"),
+        ("State cap (SF Area, 8/1/26-7/31/27)", "8.8%", "AB 1482 — lower local cap controls", "validation"),
+        ("Open review flags", flags_open, "Published on the flagged page", "review"),
+    ])
+    cards = [
+        ("01 / SUMMARY", "brief", "Executive summary", "The important details: coverage, caps, unit scenarios and the uniform-treatment recommendation.", "rental-summary.html", "Read the summary"),
+        ("02 / UNITS", "lab", "Units & scenarios", "Anonymized unit records with dates and amounts, plus exact 1.6% / 1.4% calculations and blank unverified 2027-28 rates.", "rental-units.html", "See the scenarios"),
+        ("03 / RULES", "method", "Law by jurisdiction", "Local SF Rent Ordinance, state AB 1482 / Civ. Code, and federal Fair Housing Act rows — each with an official source link.", "rental-law.html", "Review the rules"),
+        ("04 / PROCESS", "validation", "Notice procedure", "License, rate selection, 12-month rule, written notice content and service timing — the compliant path.", "rental-notice.html", "Follow the checklist"),
+        ("05 / ANSWERS", "sources", "Questions answered", "Your specific inquiries answered with source-linked rows.", "rental-answers.html", "Read the answers"),
+        ("06 / FLAGS", "review", "Flagged for review", "Unverified values left blank: 2027-28 rate, banked history, and other items for manual review.", "rental-flagged.html", "Review the flags"),
+    ]
+    body += '<div class="grid-3">' + ''.join(f'<a class="path-card" href="{href}"><span class="step">{step}</span><span class="card-icon">{icon(ico)}</span><h3>{t}</h3><p>{d}</p><span class="card-link">{cta} →</span></a>' for step, ico, t, d, href, cta in cards) + '</div>'
+    prop = meta["property"]
+    body += section("Property & coverage", table("rental-property", "Property and coverage", [
+        ("Location", "location"), ("Built", lambda r: str(r["built"])), ("Units", lambda r: str(r["units"])),
+        ("Rent-control status", "rent_control"),
+    ], [prop], note="Coverage rule: most units built on or before June 13, 1979 are rent controlled — a 1940 building qualifies."), eyebrow="PROPERTY", subtitle="Owner-supplied facts (dates/amounts) are project records; the coverage rule is official.")
+    rows = RENTAL["units"]
+    body += section("Units (anonymized)", table("rental-units-table", "Unit records (placeholders replace tenant names)", [
+        ("Unit", "unit"), ("Last lease start", "last_lease_start"), ("Rent", "rent"),
+        ("Initial tenants", "initial_tenants"), ("Continuing tenancy", "continuing_tenancy"), ("Continuing since", "continuing_since"), ("Continuing rent", "continuing_rent"),
+    ], rows, note="Personal information is anonymized with placeholders; dates and amounts are unchanged. Unit facts are owner-supplied records (project source), not official data."), eyebrow="2 UNITS · PRIVACY FIRST")
+    body += '<p class="source-line">' + link("docs/rental-executive-summary.md", "Markdown executive summary") + " &nbsp;·&nbsp; " + link("research/rental.json", "Rental dataset JSON") + " &nbsp;·&nbsp; " + link("rental-flagged.html", "Flagged for review →") + "</p>"
+    return body
+
+
+def rental_summary():
+    meta = RENTAL["meta"]
+    body = notice("Bottom line: the lawful, normal increase is the published annual allowable increase — 1.6% for 3/1/2026-2/28/2027 — applied uniformly to both units.", "For Unit 1 that is +$63.92 (to $4,058.92); for Unit 2 +$50.40 (to $3,200.40). Above-cap amounts require a Rent Board petition, and every increase needs a current rent increase license plus proper written notice.", action=False)
+    findings = [
+        {"finding": "Coverage", "detail": "The 1940 building (Outer Sunset, 94122) is rent controlled: most units built on or before June 13, 1979 are covered.", "status": "Verified · official", "source_ids": ["SF-RENTAL-LAWS"]},
+        {"finding": "Local cap controls", "detail": "SF allowable annual increase is 1.6% for effective dates 3/1/2026-2/28/2027 (60% of Bay Area CPI-U), once per 12 months, on base rent only, no rounding up.", "status": "Verified · official", "source_ids": ["SF-NEWS-AGA", "SF-RENT-INC", "SF-RATES"]},
+        {"finding": "State cap is higher but not operative here", "detail": "AB 1482 caps increases at 8.8% for the SF Area for starts 8/1/2026-7/31/2027 (min(5%+CPI, 10%)); units under a stricter local ordinance follow the local 1.6%.", "status": "Verified · official", "source_ids": ["CA-AG-RENTCAPS", "LEGINFO-CIV1947-12"]},
+        {"finding": "Federal law", "detail": "No federal rent cap located; the Fair Housing Act prohibits discriminatory rental terms (42 U.S.C. §3604(b)).", "status": "Verified · official", "source_ids": ["GOVINFO-FHA", "HUD-FHEO"]},
+        {"finding": "Unit 1 scenario", "detail": "$3,995.00 x .016 = $63.92 → new base rent $4,058.92 for an effective date in the 2026-27 window. Next anniversary after 4/1/2026 falls in the not-yet-announced 2027-28 window (blank, flagged).", "status": "Calculated from official rate", "source_ids": ["SF-NEWS-AGA", "SF-RENT-INC", "SF-RATES"]},
+        {"finding": "Unit 2 scenario", "detail": "$3,150.00 x .016 = $50.40 → new base rent $3,200.40. Banked-increase history since 6/1/2019 is an owner record — unverified, flagged.", "status": "Calculated from official rate", "source_ids": ["SF-NEWS-AGA", "SF-RENT-INC", "SF-BANKED"]},
+        {"finding": "Procedure", "detail": "Rent increase license on file, correct rate for the effective date, 30-day written notice (+5 if mailed; 90 days if >10% combined), contents stated, both units treated identically.", "status": "Verified · official", "source_ids": ["SF-HI-LICENSE", "SF-RENT-INC", "LEGINFO-CIV827", "GOVINFO-FHA"]},
+        {"finding": "Tenant-side review", "detail": "SF tenants can obtain free Rent Board counseling and free Right to Counsel attorneys (Prop F); have a tenant-rights attorney review any actual notice.", "status": "Verified · official", "source_ids": ["SF-RENTAL-LAWS", "SF-RTC-EDC"]},
+    ]
+    body += section("Executive summary — key findings", table("rental-summary-findings", "Key findings", [("Finding", "finding"), ("Detail", "detail"), ("Evidence class", lambda r: badge(r["status"]))], findings), eyebrow="EXECUTIVE SUMMARY")
+    body += '<div class="grid-2"><div class="panel body-text"><h3>Recommended practice</h3><p>Apply the same 1.6% annual allowable increase to both units on their respective anniversary dates, with identical written notice and a current license. Uniform treatment is the defensible, non-discriminatory normal business practice.</p>' + link("rental-notice.html", "Notice procedure checklist →") + '</div><div class="panel body-text"><h3>What stays blank</h3><p>The 2027-28 allowable rate, the banked-increase total for Unit 2, and any corporate market-practice claims are not officially verifiable today and are published as blank flagged items rather than inferred.</p>' + link("rental-flagged.html", "See flagged items →") + '</div></div>'
+    body += '<div class="download-list">' + link("docs/rental-executive-summary.md", icon("download") + " Markdown brief", css="button") + link("research/rental.json", icon("download") + " Rental dataset JSON", css="button") + '</div>'
+    return body
+
+
+def rental_units():
+    body = notice("Dates and amounts are preserved exactly; only tenant identities are placeholder-anonymized.", "Calculations follow the Rent Board method (base rent x published rate; no rounding up). Blank cells are intentional — unverified values are never filled in.", info=True, action=False)
+    body += section("Unit records", table("rental-unit-records", "Unit records (anonymized)", [
+        ("Unit", "unit"), ("Last lease start", "last_lease_start"), ("Rent", "rent"), ("Initial tenants", "initial_tenants"), ("Continuing tenancy", "continuing_tenancy"), ("Continuing since", "continuing_since"), ("Continuing rent", "continuing_rent"),
+    ], RENTAL["units"], note="Owner-supplied records attributed to the project source; coverage rule is official (pre-6/13/1979 buildings)."), eyebrow="UNITS")
+    body += section("Increase scenarios", table("rental-scenarios", "Allowable-increase scenarios by unit and period", [
+        ("Unit", "unit"), ("Rate period", "period"), ("Rate", "rate"), ("Base rent", "base_rent"), ("Increase", "increase"), ("New base rent", "new_base_rent"), ("Basis / note", "note"),
+    ], RENTAL["scenarios"], note="1.6% = allowable increase for effective dates 3/1/2026-2/28/2027; 1.4% = 3/1/2025-2/28/2026. 2027-28 rates are not yet announced and stay blank."), eyebrow="SCENARIOS")
+    return body
+
+
+def rental_law():
+    body = notice("The lower cap controls.", "Local SF rent control (1.6% AGA) governs these 1940 units; the state AB 1482 cap (8.8% for the SF Area, starts 8/1/2026-7/31/2027) applies only where no stricter local rule exists; federal law adds anti-discrimination protection, not a rent cap.", action=False)
+    body += section("Rules by jurisdiction", table("rental-law", "Law by jurisdiction (local · state · federal)", [
+        ("Jurisdiction", "jurisdiction"), ("Topic", "topic"), ("Rule", "rule"), ("Value", "value"), ("Effective", "effective"),
+    ], RENTAL["law"], note="Every row links to an official source (sf.gov, oag.ca.gov, leginfo.legislature.ca.gov, govinfo.gov, hud.gov, bls.gov). Blank value = unverified, see flagged page."), eyebrow="SOURCE-LINKED RULES")
+    return body
+
+
+def rental_notice():
+    body = notice("A compliant increase is a checklist, not a judgment call.", "License first, then correct rate, then timely written notice with the required contents — applied identically to both units.", action=False)
+    body += section("Compliance checklist", table("rental-notice", "Notice & compliance checklist", [
+        ("Step", "step"), ("Requirement", "detail"),
+    ], RENTAL["notice"], note="30-day written notice (90 if >10% combined in the year; +5 days if mailed). Contents: dollar amount, percentage, effective date, banked portion."), eyebrow="STEP BY STEP")
+    return body
+
+
+def rental_answers():
+    body = notice("Answers to the specific inquiries.", "Each answer is tied to official sources; anything not officially confirmable is routed to the flagged page instead of being inferred.", info=True, action=False)
+    body += section("Questions & answers", table("rental-answers", "Inquiries answered", [
+        ("Question", lambda r: rich(r["question"], r["id"])), ("Answer", "answer"),
+    ], RENTAL["answers"], note="Informational only — not legal advice; SF tenants have free counsel resources (Prop F) and Rent Board counseling."), eyebrow="Q&A")
+    return body
+
+
+def rental_flagged():
+    open_flags = [f for f in RENTAL["flags"] if f["status"] == "Needs review"]
+    body = notice(f"{len(open_flags)} rental items need review; unverified values are blank, never inferred.", "These do not block publishing the analysis, but they must be checked manually (Rent Board announcements, owner records, attorney review) before acting.", action=False)
+    body += section("Flagged for review — rental analysis", table("rental-flags", "Flagged items", [
+        ("Item", lambda r: rich(r["item"], r["id"])), ("Detail / disposition", "detail"), ("Unverified value", "unverified_value"), ("State", lambda r: badge(r["status"])),
+    ], RENTAL["flags"], filter_options=["Needs review", "Corrected"], note="Blank unverified-value cells are intentional. Source links identify the official reference for the surrounding rule, not verification of the missing value."), eyebrow="TRANSPARENCY")
+    return body
+
+
 ALIASES = {
     'findings.html':'data.html','pages/dashboard.html':'index.html','pages/executive-summary.html':'executive-summary.html','pages/single-bets.html':'signals.html#single-bets','pages/parlays.html':'signals.html#parlays','pages/player-props.html':'signals.html#player-props','pages/correlation.html':'correlation.html','pages/validation-gates.html':'validation.html','pages/flagged.html':'review.html',
     'verified/index.html':'index.html','verified/executive-summary.html':'executive-summary.html','verified/sources.html':'sources.html','verified/betting-rules.html':'methodology.html#settlement','verified/strategies.html':'signals.html','verified/validation-gates.html':'validation.html','verified/correlation.html':'correlation.html','verified/leaderboard.html':'leaderboard.html','verified/repo-review.html':'audit.html','verified/flagged.html':'review.html','verified/responsible-gambling.html':'responsible-gambling.html',
@@ -443,6 +545,13 @@ def build():
         'rent-overview.html':('SF rent overview','Outer Sunset 94122 two-unit rent-controlled property: verified allowable increases, anonymized unit ledger and flagged items.',rent_overview(),'SF / RENTAL ANALYSIS'),
         'rent-units.html':('Units & caps','Anonymized unit details, maximum lawful 2026-27 increases, timing, notice and license rules.',rent_units(),'SF / RENTAL ANALYSIS'),
         'rent-qa.html':('Q&A and compliance','The five rent-increase questions answered from official SF, California and federal sources.',rent_qa(),'SF / RENTAL ANALYSIS'),
+        'rental.html':('Rental overview','Rent-increase analysis for a rent-controlled 1940 building in Outer Sunset, San Francisco 94122: anonymized units, official rules, scenarios and flags.',rental_landing(),'SF / RENTAL ANALYSIS'),
+        'rental-summary.html':('Rental summary','The important details of the SF 94122 rent-increase analysis in one place.',rental_summary(),'SF / RENTAL ANALYSIS'),
+        'rental-units.html':('Units & scenarios','Anonymized unit records with exact dates and amounts, plus allowable-increase calculations. Blanks are unverified.',rental_units(),'SF / RENTAL ANALYSIS'),
+        'rental-law.html':('Law by jurisdiction','Local SF Rent Ordinance, state AB 1482 / Civil Code, and federal Fair Housing Act — every row source-linked.',rental_law(),'SF / RENTAL ANALYSIS'),
+        'rental-notice.html':('Notice procedure','The compliant path: license, rate, 12-month rule, written notice contents and service timing.',rental_notice(),'SF / RENTAL ANALYSIS'),
+        'rental-answers.html':('Questions answered','The specific rental-increase inquiries, answered with official source links.',rental_answers(),'SF / RENTAL ANALYSIS'),
+        'rental-flagged.html':('Rental flagged','Unverified rental values (2027-28 rate, banked history) published blank for manual review.',rental_flagged(),'SF / RENTAL ANALYSIS'),
     }
     generated=['market-evidence/index.html']
     for slug,entry in pages.items():

@@ -305,3 +305,28 @@ Session ID: `session-arena-e3f8f4fd-own7`. Branch: `arena/e3f8f4fd-own7` (fixed 
 | R8 | PR + merge + Pages deploy + record | done | same | main, GitHub Pages | this board | PR link and merge result recorded below |
 
 ### Merge record (to be completed after merge)
+
+---
+
+## Session arena/692da006-own7 — SF Outer Sunset (94122) rent-increase analysis (2026-11-06)
+
+Session ID: `session-arena-692da006-own7`. Branch: `arena/692da006-own7` (fixed by Arena). Rebased onto main after parallel session `arena/e3f8f4fd-own7` (PR #18) added its own rent pages; both sessions' work retained — see merge note below.
+
+### Task board
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| R1 | Claim and log this session | done | session-arena-692da006-own7 | COORDINATION.md (append only) | n/a | |
+| R2 | Verify official sources line by line | done | session-arena-692da006-own7 | research/sources.json (+13 new IDs beyond PR #18's set; SF-RATES/HUD-FHEO shared IDs kept from main) | sf.gov, oag.ca.gov, leginfo.legislature.ca.gov, blsmon1.bls.gov, govinfo.gov, hud.gov, evictiondefense.org — fetched and content-checked 2026-11-06 | AGA 1.6% (3/1/26–2/28/27), 1.4% (2025–26), 1.7% (2024–25); AB 1482 SF-Area cap 8.8% (starts 8/1/26–7/31/27); notice 30/90/+5 days; license, banking, coverage rules |
+| R3 | Canonical rental dataset (anonymized) | done | session-arena-692da006-own7 | research/rental.json | Official sources per row | Tenant A–F placeholders; dates/amounts unchanged; unverified values null |
+| R4 | Site: landing + 6 subpages | done | session-arena-692da006-own7 | scripts/build_site.py, rental*.html (generated) | Row-level source contract enforced by check_site.py | Coexists with PR #18's rent-overview/rent-units/rent-qa pages |
+| R5 | Executive summary (markdown) | done | session-arena-692da006-own7 | docs/rental-executive-summary.md | All R2 sources | |
+| R6 | Verification: unit tests + recursive site audit + determinism | done | session-arena-692da006-own7 | scripts/check_site.py run | Re-run after merge below | |
+| R7 | PR + merge + Pages deploy + record | in progress | session-arena-692da006-own7 | main branch | COORDINATION.md | PR #19 |
+
+### Merge note (rebase onto main @ 1976f1c)
+- Parallel session PR #18 (rent-overview.html, rent-units.html, rent-qa.html, research/rent.json, 9 sources) merged first; this branch was rebased on top. No work discarded: sources.json and check_site.py now carry the union of both sessions' registered IDs; build_site.py carries both nav groups and both page sets; generated HTML/manifest/results regenerated deterministically.
+- Flagged rental items published blank on rental-flagged.html: R-F1 2027–28 rate not announced; R-F2 Unit 2 banked history (owner records); R-F3 Unit 1 skipped 1.4% disposition; R-F4 corporate practice claims unverifiable; R-F5 no federal cap located; R-F6 anonymization applied; R-F7 not legal advice.
+
+### Merge record
+- PR #19: https://github.com/sassnarep3-star/Own7/pull/19 (result recorded after merge below)
