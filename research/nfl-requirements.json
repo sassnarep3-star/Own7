@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "requirements": [
+    {
+      "id": "NR01",
+      "requirement": "Coordinate work on shared task board",
+      "status": "In progress",
+      "evidence": "Claims and session history recorded; integration and deployment remain.",
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NR02",
+      "requirement": "Collect official, source-linked NFL observations",
+      "status": "Partial",
+      "evidence": "Seven bounded snapshots; not live and not full league injury coverage.",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NR03",
+      "requirement": "Verify observations line by line and flag limitations",
+      "status": "Partial",
+      "evidence": "Normalized transcriptions and hashes retained; originals are not archived and some headers need review.",
+      "source_ids": [
+        "NFL-TEAM-OFF"
+      ]
+    },
+    {
+      "id": "NR04",
+      "requirement": "Create a complete requirements ledger",
+      "status": "Implemented",
+      "evidence": "This ledger records implemented, partial and blocked scope.",
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NR05",
+      "requirement": "Publish decision-making suggestions before implementation",
+      "status": "Implemented",
+      "evidence": "Twelve proposals; static read-only ledger, no approval controls.",
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NR06",
+      "requirement": "List questions, known and missing information, and discovery routes",
+      "status": "Implemented",
+      "evidence": "Fifteen questions and discovery steps; unsupported answers blank.",
+      "source_ids": [
+        "NFL-INJURY"
+      ]
+    },
+    {
+      "id": "NR07",
+      "requirement": "Originate NFL lines",
+      "status": "Blocked",
+      "evidence": "No executable NFL line or fitted model; permission, data and validation gaps.",
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NR08",
+      "requirement": "Develop signal strategies for singles, parlays and prop combinations",
+      "status": "Partial",
+      "evidence": "Eight hypotheses documented; none fitted or proven.",
+      "source_ids": [
+        "NFL-PASSING"
+      ]
+    },
+    {
+      "id": "NR09",
+      "requirement": "Leaderboard competition with rewards",
+      "status": "Partial",
+      "evidence": "Competition rules specified and empty display; automated ranking, eligibility and rewards are not implemented.",
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NR10",
+      "requirement": "Require validation gates and distinguish skill from chance",
+      "status": "Partial",
+      "evidence": "Ten gate contracts and blocked states; no validated edge, luck cannot be removed.",
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NR11",
+      "requirement": "Determine correlations",
+      "status": "Partial",
+      "evidence": "Ten descriptive correlations computed; bet-leg and joint-event correlations blank.",
+      "source_ids": [
+        "NFL-PASSING"
+      ]
+    },
+    {
+      "id": "NR12",
+      "requirement": "Track injuries and offensive and defensive backup deficiencies",
+      "status": "Partial",
+      "evidence": "45 historical injury rows; no live tracking, verified depth mapping, or deficiency estimates.",
+      "source_ids": [
+        "NFL-INJURY"
+      ]
+    },
+    {
+      "id": "NR13",
+      "requirement": "Publish an executive summary",
+      "status": "Implemented",
+      "evidence": "Summary separates verified observations from blocked decisions.",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NR14",
+      "requirement": "Build a clean dashboard with categorized pages and official links",
+      "status": "Implemented",
+      "evidence": "Static NFL dashboard; source links on each data row, no automatic updates.",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NR15",
+      "requirement": "Publish flagged items and missing values",
+      "status": "Implemented",
+      "evidence": "Review register and blank cells; flags do not imply strategy eligibility.",
+      "source_ids": [
+        "NFL-INJURY"
+      ]
+    },
+    {
+      "id": "NR16",
+      "requirement": "Integrate, test, merge and confirm GitHub Pages",
+      "status": "In progress",
+      "evidence": "Local static and browser checks; PR and Pages deployment pending.",
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    }
+  ]
+}
