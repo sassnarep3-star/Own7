@@ -152,6 +152,8 @@ NAV = [
     ("Transparency", [("sources.html", "Source register", "sources"), ("review.html", "Flagged for Review", "review"), ("audit.html", "Repository audit", "audit"), ("requirements.html", "Requirements", "requirements"), ("responsible-gambling.html", "Responsible use", "care")]),
     ("Rental analysis", [("rent-overview.html", "SF rent overview", "data"), ("rent-units.html", "Units & caps", "brief"), ("rent-qa.html", "Q&A and compliance", "validation")]),
     ("Rental · SF 94122 (full)", [("rental.html", "Rental overview", "data"), ("rental-summary.html", "Executive summary", "brief"), ("rental-units.html", "Units & scenarios", "lab"), ("rental-law.html", "Law by jurisdiction", "method"), ("rental-notice.html", "Notice procedure", "validation"), ("rental-answers.html", "Questions answered", "sources"), ("rental-flagged.html", "Flagged for review", "review"), ("rental/index.html", "Deep-dive sub-site", "info")]),
+    ("NFL research", [("nfl/index.html", "NFL overview", "overview"), ("nfl/executive-summary.html", "NFL executive summary", "brief"), ("nfl/requirements.html", "NFL requirements", "validation"), ("nfl/data.html", "NFL data library", "data"), ("nfl/signals.html", "NFL signal library", "signals"), ("nfl/correlation.html", "NFL correlation", "correlation"), ("nfl/injuries.html", "NFL injuries & backups", "validation"), ("nfl/validation.html", "NFL validation gates", "validation"), ("nfl/leaderboard.html", "NFL leaderboard", "leaderboard"), ("nfl/suggestions.html", "NFL suggestions", "review"), ("nfl/questions.html", "NFL questions & answers", "sources"), ("nfl/review.html", "NFL flagged for review", "review")]),
+    ("NFL line origination", [("nfl/origination/index.html", "Origination dashboard", "overview"), ("nfl/origination/model.html", "Model lines & sensitivity", "lab"), ("nfl/origination/depth.html", "Depth deficiencies", "validation"), ("nfl/origination/suggestions.html", "Suggestions", "brief"), ("nfl/origination/questions.html", "Open questions", "review"), ("nfl/origination/flagged.html", "NFL origination flags", "care")]),
 ]
 
 
@@ -561,6 +563,18 @@ def build():
     rental_pages=load_json('rental/manifest.json')['pages']
     for name in rental_pages:
         generated.append(f'rental/{name}')
+    # Auxiliary sub-site (session arena/a4e560bc-own7): NFL research lab.
+    nfl_result=subprocess.run([sys.executable,str(ROOT/'nfl'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if nfl_result.returncode: raise SystemExit(nfl_result.stdout+nfl_result.stderr)
+    nfl_pages=load_json('nfl/manifest.json')['pages']
+    for name in nfl_pages:
+        generated.append(f'nfl/{name}')
+    # Nested line-origination lab (session arena/20394b77-own7), Week 10 snapshot.
+    lab_result=subprocess.run([sys.executable,str(ROOT/'nfl'/'origination'/'originate.py')],cwd=ROOT,capture_output=True,text=True)
+    if lab_result.returncode: raise SystemExit(lab_result.stdout+lab_result.stderr)
+    lab_pages=load_json('nfl/origination/manifest.json')['pages']
+    for name in lab_pages:
+        generated.append(f'nfl/origination/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else "NBA / RESEARCH WORKSPACE"
@@ -575,7 +589,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 

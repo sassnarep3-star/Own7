@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "index.html",
+    "executive-summary.html",
+    "model.html",
+    "injuries.html",
+    "depth.html",
+    "strategies.html",
+    "validation.html",
+    "correlation.html",
+    "leaderboard.html",
+    "suggestions.html",
+    "questions.html",
+    "sources.html",
+    "flagged.html",
+    "repo-review.html"
+  ],
+  "checked_on": "2026-11-12"
+}
