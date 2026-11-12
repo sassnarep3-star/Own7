@@ -22,10 +22,10 @@ jobs:
         with:
           python-version: '3.11'
       - name: Capture only allowlisted official pages (no crawling or odds)
-        run: python nfl/collect.py --output .artifacts/nfl-sources
+        run: python nfl-assurance-9580ac3f/collect.py --output .artifacts/nfl-sources
       - name: Check capture integrity
         if: always()
-        run: python nfl/collect.py --check --output .artifacts/nfl-sources
+        run: python nfl-assurance-9580ac3f/collect.py --check --output .artifacts/nfl-sources
       - name: Preserve raw response hashes and explicit errors for review
         if: always()
         uses: actions/upload-artifact@v4

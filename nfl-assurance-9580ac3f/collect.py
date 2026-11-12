@@ -20,7 +20,7 @@ import urllib.request
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
-REGISTRY = ROOT / 'nfl/sources/registry.json'
+REGISTRY = ROOT / 'nfl-assurance-9580ac3f/sources/registry.json'
 ALLOWED_HOSTS = {'www.nfl.com', 'operations.nfl.com', 'www.patriots.com', 'www.detroitlions.com',
                  'www.giants.com', 'www.seahawks.com', 'www.baltimoreravens.com',
                  'www.miamidolphins.com', 'www.clevelandbrowns.com', 'www.azcardinals.com', 'www.commanders.com'}
