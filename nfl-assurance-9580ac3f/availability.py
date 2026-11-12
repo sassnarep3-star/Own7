@@ -38,7 +38,7 @@ def parse_injuries(text):
             raise ValueError('Unknown designation: ' + line)
         rows.append({'id': f'I-{team}-{len(rows)+1:03}', 'team': team, 'player': player, 'position': pos,
                      'injury': injury or None, 'practice_status': PRACTICE[practice], 'game_status': game or None,
-                     'source_ids': ['NFL-INJURIES'], 'status': 'Verified snapshot',
+                     'source_ids': ['NFL-INJURIES'], 'status': 'Source compared',
                      'availability': 'Out' if game == 'Out' else 'Uncertain' if game else 'Not designated',
                      'note': 'Blank injury/game cells are source blanks; not a clean bill of health or final active list.'})
     if len({(r['team'], norm(r['player'])) for r in rows}) != len(rows):
@@ -64,7 +64,7 @@ def parse_depth(text):
         counters[(team, unit, position)] += 1
         rows.append({'id': f'D-{team}-{len(rows)+1:03}', 'team': team, 'unit': unit, 'position': position,
                      'slot': counters[(team, unit, position)], 'players': players,
-                     'source_ids': [team + '-DEPTH'], 'status': 'Verified snapshot',
+                     'source_ids': [team + '-DEPTH'], 'status': 'Source compared',
                      'authority_note': 'Club-published printed order; not a confirmed starter list.'})
     return rows
 
@@ -120,8 +120,9 @@ def summary(injuries, depth, unmatched):
             'special_teams_slots': sum(r['unit'] == 'Special Teams' for r in depth),
             'first_string_out_slots': sum(r['first_string_out'] for r in depth),
             'slots_with_later_out': sum(bool(r['later_listed_out']) for r in depth),
-            'unmatched_depth_names': len(unmatched),
-            'scope': 'Descriptive counts of the transcribed snapshot, not incidence, player health, team quality or betting probabilities. A player can occupy multiple slots.'}
+            'unmatched_depth_names': len({(u['team'], norm(u['player'])) for u in unmatched}),
+            'unmatched_depth_entries': len(unmatched),
+            'scope': 'Descriptive counts of the transcribed snapshot, not incidence, player health, team quality or betting probabilities. A player can occupy multiple slots; unmatched names are unique team/name pairs, entries count slot appearances.'}
 
 
 def build():

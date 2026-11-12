@@ -207,7 +207,8 @@ def joint_binary(rows):
         raise ValueError('Joint outcome contradicts legs')
     a, b, j = ([r[i] for r in rows] for i in range(3))
     pa, pb, pj = statistics.mean(a), statistics.mean(b), statistics.mean(j)
-    return {'n': len(rows), 'p_a': pa, 'p_b': pb, 'joint': pj, 'phi': event_phi(a, b),
+    phi = event_phi(a, b) if len(rows) >= 3 and len(set(a)) > 1 and len(set(b)) > 1 else None
+    return {'n': len(rows), 'p_a': pa, 'p_b': pb, 'joint': pj, 'phi': phi,
             'frechet_low': max(0, pa+pb-1), 'frechet_high': min(pa, pb),
             'independence_product': pa*pb, 'note': 'Product is a comparison, not an estimate. Pairwise values do not identify 3+ leg joints.'}
 
@@ -227,23 +228,50 @@ def parse_time(value):
 
 
 def audit_chronology(records, embargo_hours=24):
+    """Audit sealed forecasts and expanding-window label availability.
+
+    A fold is valid only when every training label has an explicit
+    ``label_available_at`` timestamp, that timestamp precedes the test forecast
+    seal, and the embargo between label availability and test kickoff is met.
+    Missing label timestamps are never inferred from kickoff.
+    """
+    if embargo_hours < 0:
+        raise ValueError('Embargo must be non-negative')
     games = {}
     for r in records:
         known, sealed, kickoff = (parse_time(r[k]) for k in ('known_at', 'sealed_at', 'event_at'))
         if not known <= sealed < kickoff:
             raise ValueError('Forecast uses future information or is not sealed before kickoff')
+        label = parse_time(r['label_available_at']) if r.get('label_available_at') else None
+        if label is not None and label < kickoff:
+            raise ValueError('Label cannot be available before the event starts')
         gid = r['game_id']
-        if gid in games and games[gid] != kickoff:
-            raise ValueError('Inconsistent kickoff for same game')
-        games[gid] = kickoff
-    ordered = sorted(games.items(), key=lambda x: (x[1], x[0]))
-    folds = []
+        if gid in games:
+            if games[gid]['kickoff'] != kickoff:
+                raise ValueError('Inconsistent kickoff for same game')
+            if label is not None:
+                prior = games[gid]['label_available_at']
+                if prior is not None and prior != label:
+                    raise ValueError('Inconsistent label availability for same game')
+                games[gid]['label_available_at'] = label
+            games[gid]['sealed_at'] = min(games[gid]['sealed_at'], sealed)
+        else:
+            games[gid] = {'kickoff': kickoff, 'sealed_at': sealed, 'label_available_at': label}
+    ordered = sorted(games.items(), key=lambda x: (x[1]['kickoff'], x[0]))
+    folds, missing_labels = [], 0
     for i in range(1, len(ordered)):
         train, test = ordered[:i], ordered[i:]
-        if train[-1][1] + timedelta(hours=embargo_hours) <= test[0][1]:
+        labels = [info['label_available_at'] for _, info in train]
+        if any(label is None for label in labels):
+            missing_labels += 1
+            continue
+        train_end = max(labels)
+        test_info = test[0][1]
+        if train_end <= test_info['sealed_at'] and train_end + timedelta(hours=embargo_hours) <= test_info['kickoff']:
             folds.append({'train_games': [g for g, _ in train], 'test_games': [g for g, _ in test]})
     return {'records': len(records), 'distinct_games': len(games), 'valid_expanding_folds': len(folds),
-            'embargo_hours': embargo_hours, 'note': 'Valid chronology is necessary, not evidence of predictive skill.'}
+            'folds_missing_label_time': missing_labels, 'embargo_hours': embargo_hours,
+            'note': 'Valid chronology is necessary, not evidence of predictive skill. Missing label timestamps block folds.'}
 
 
 def proper_scores(probabilities, outcomes):

@@ -258,7 +258,7 @@
     "authority": "Official Python documentation",
     "scope": "Module overview and central-statistics chunks; implementation also checked against local Python 3.11 documentation and hand examples.",
     "checked_on": "2026-11-12",
-    "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
+    "access": "Arena fetch_page rendered documentation plus local Python 3.11 inspect.getdoc(statistics.correlation)",
     "status": "Content checked"
   },
   {
@@ -318,7 +318,7 @@
     "authority": "Official project repository, not an external factual authority",
     "scope": "Exact baseline contents and explicitly labelled project design choices.",
     "checked_on": "2026-11-12",
-    "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
+    "access": "Local Git objects at frozen commit a989d67; GitHub permalink supplied for manual review",
     "status": "Content checked"
   }
 ]

@@ -8881,5 +8881,8 @@
       "transcription_sha256": null
     }
   ],
-  "boundary": "Row checks establish agreement with the returned official rendered content, not independent second-source truth, raw response integrity, rights, predictive skill or future page stability. Policy/method rows cite only the scopes actually read."
+  "boundary": "Row checks establish agreement with the returned official rendered content, not independent second-source truth, raw response integrity, rights, predictive skill or future page stability. Policy/method rows cite only the scopes actually read. Recheck is a rendered-content comparison, not a raw HTTP archive or independent second publisher.",
+  "rechecked_on": "2026-11-12",
+  "recheck_method": "Re-fetched official injury chunks 0-4 and all ten club depth charts (NE chunks 0-1; others chunk 0) via Arena fetch_page; compared every transcribed row/printed column against the returned markdown tables. No differences found. Trailing empty club columns beyond the fifth are omitted only when empty; shared cells and interior blanks are preserved.",
+  "recheck_result": "match"
 }
