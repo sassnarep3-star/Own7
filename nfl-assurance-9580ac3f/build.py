@@ -78,7 +78,7 @@ def table(table_id, caption, headers, rows, *, note=None, filters=None):
         controls += f'<button type="button" data-export="{table_id}">Export visible CSV</button><span class="count" data-count="{table_id}"></span></div>'
     head = ''.join(f'<th scope="col">{esc(h)}</th>' for h in headers) + '<th scope="col">Official source</th>'
     note_html = f'<p class="note">{note}</p>' if note else ''
-    return f'''{controls}{note_html}<div class="table-wrap"><table id="{table_id}"><caption>{esc(caption)}</caption><thead><tr>{head}</tr></thead><tbody>{''.join(rows)}</tbody></table></div><p class="empty-state" data-empty-for="{table_id}" hidden>No rows match the current filters.</p>'''
+    return f'''{controls}{note_html}<div class="table-wrap" tabindex="0" role="region" aria-label="{esc(caption)}"><table id="{table_id}"><caption>{esc(caption)}</caption><thead><tr>{head}</tr></thead><tbody>{''.join(rows)}</tbody></table></div><p class="empty-state" data-empty-for="{table_id}" hidden>No rows match the current filters.</p>'''
 
 
 def layout(slug, title, body, subtitle=''):
@@ -222,7 +222,7 @@ def build_pages():
 
     comp = strategies['competition']
     lb_body = '<section class="panel"><h2>No eligible strategies</h2><p>The real leaderboard is empty. No strategy has verified all-gate evidence, market economics or a prospective record. No cash prize is funded or promised; the design awards non-transferable merit points only after qualification.</p><p>' + source_links(['A958-REPO'], reg) + '</p></section>'
-    lb_body += '<div class="table-wrap"><table id="leaderboard-table"><caption>Qualified entries</caption><thead><tr><th scope="col">Rank</th><th scope="col">Strategy</th><th scope="col">Market</th><th scope="col">Lower 95% ROI</th><th scope="col">Log loss</th><th scope="col">Merit</th><th scope="col">Official source</th></tr></thead><tbody></tbody></table></div>'
+    lb_body += '<div class="table-wrap" tabindex="0" role="region" aria-label="Qualified entries"><table id="leaderboard-table"><caption>Qualified entries</caption><thead><tr><th scope="col">Rank</th><th scope="col">Strategy</th><th scope="col">Market</th><th scope="col">Lower 95% ROI</th><th scope="col">Log loss</th><th scope="col">Merit</th><th scope="col">Official source</th></tr></thead><tbody></tbody></table></div>'
     rule_rows = [row([cell('Divisions'), cell(', '.join(comp['divisions']))], comp['source_ids'], reg), row([cell('Ranking'), cell(comp['ranking'])], comp['source_ids'], reg), row([cell('Tie-breaks'), cell('; '.join(comp['ties']))], comp['source_ids'], reg), row([cell('Rewards'), cell(comp['reward_type'] + '; 3/2/1 for top three')], comp['source_ids'], reg), row([cell('Cash pool'), blank()], comp['source_ids'], reg), row([cell('Policy'), cell(comp['policy'])], comp['source_ids'], reg)]
     lb_body += table('leaderboard-rules', 'Competition design', ['Rule', 'Value'], rule_rows)
     pages['leaderboard.html'] = layout('leaderboard.html', 'Leaderboard', lb_body, 'Evidence-ranked competition design; empty until strategies qualify')

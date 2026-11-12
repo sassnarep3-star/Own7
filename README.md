@@ -1,6 +1,6 @@
 # OWN7 · research lab (NBA archive · SF rental · NFL)
 
-[Live dashboard](https://sassnarep3-star.github.io/Own7/) · [NFL research site](https://sassnarep3-star.github.io/Own7/nfl/index.html) · [**NFL line-origination lab**](https://sassnarep3-star.github.io/Own7/nfl/origination/index.html) · [NBA executive brief](docs/executive-summary.md) · [Sources](research/sources.json) · [Coordination / release evidence](COORDINATION.md)
+[Live dashboard](https://sassnarep3-star.github.io/Own7/) · [NFL research site](https://sassnarep3-star.github.io/Own7/nfl/index.html) · [**NFL line-origination lab**](https://sassnarep3-star.github.io/Own7/nfl/origination/index.html) · [NFL assurance handoff](https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/index.html) · [NBA executive brief](docs/executive-summary.md) · [Sources](research/sources.json) · [Coordination / release evidence](COORDINATION.md)
 
 > **Sections by status.** The **NFL sections** are the active programme and are split in two layers, described below. The **NBA research** section is an earlier, retained audit and is now an archive of that work. The **SF rental** sections are a separate, unrelated analysis. Shared navigation labels each group; nothing was deleted and no historical claim was relabelled as verified.
 
@@ -25,6 +25,12 @@ Adds the part the first layer withholds, as a model-only demonstration: spreads 
 Reproduce (standard library only, no network): `python nfl/build.py --check`, `python nfl/origination/originate.py --check`, `python -m unittest discover -s nfl/origination -p "test_*.py" -v`.
 
 Detailed evidence: `docs/nfl-executive-summary.md` (research site), `docs/nfl-origination-summary.md` (lab), `docs/nfl-repo-review-2026-11-12.md` (repo review, irregularities I-01…I-11), `COORDINATION.md` (claims, collision and resolution).
+
+### 3. NFL assurance handoff — `nfl-assurance-9580ac3f/` (session `arena/9580ac3f-own7`)
+
+An independent, bounded assurance supplement: 276 official Week 10 injury rows, 289 club-published depth slots across ten clubs, a 150-file / 14,244-line frozen-baseline inventory, executable fail-closed validation/leaderboard primitives, reviewable suggestions/questions and a Flagged for Review register. It preserves shared cells, blank columns and missing statuses; it does not infer replacements, performance deficits, market prices, correlations, ROI or CLV. Source IDs are namespaced `A958-*` to avoid re-pointing canonical registry entries.
+
+Reproduce: `python nfl-assurance-9580ac3f/build.py --check`, `python nfl-assurance-9580ac3f/check.py`, `python -m unittest discover -s nfl-assurance-9580ac3f/tests -v`.
 
 ---
 

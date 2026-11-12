@@ -154,6 +154,7 @@ NAV = [
     ("Rental · SF 94122 (full)", [("rental.html", "Rental overview", "data"), ("rental-summary.html", "Executive summary", "brief"), ("rental-units.html", "Units & scenarios", "lab"), ("rental-law.html", "Law by jurisdiction", "method"), ("rental-notice.html", "Notice procedure", "validation"), ("rental-answers.html", "Questions answered", "sources"), ("rental-flagged.html", "Flagged for review", "review"), ("rental/index.html", "Deep-dive sub-site", "info")]),
     ("NFL research", [("nfl/index.html", "NFL overview", "overview"), ("nfl/executive-summary.html", "NFL executive summary", "brief"), ("nfl/requirements.html", "NFL requirements", "validation"), ("nfl/data.html", "NFL data library", "data"), ("nfl/signals.html", "NFL signal library", "signals"), ("nfl/correlation.html", "NFL correlation", "correlation"), ("nfl/injuries.html", "NFL injuries & backups", "validation"), ("nfl/validation.html", "NFL validation gates", "validation"), ("nfl/leaderboard.html", "NFL leaderboard", "leaderboard"), ("nfl/suggestions.html", "NFL suggestions", "review"), ("nfl/questions.html", "NFL questions & answers", "sources"), ("nfl/review.html", "NFL flagged for review", "review"), ("nfl/independent-verification.html", "NFL independent verification", "validation")]),
     ("NFL line origination", [("nfl/origination/index.html", "Origination dashboard", "overview"), ("nfl/origination/model.html", "Model lines & sensitivity", "lab"), ("nfl/origination/depth.html", "Depth deficiencies", "validation"), ("nfl/origination/suggestions.html", "Suggestions", "brief"), ("nfl/origination/questions.html", "Open questions", "review"), ("nfl/origination/flagged.html", "NFL origination flags", "care")]),
+    ("NFL assurance", [("nfl-assurance-9580ac3f/site/index.html", "Assurance overview", "overview"), ("nfl-assurance-9580ac3f/site/executive-summary.html", "Assurance executive summary", "brief"), ("nfl-assurance-9580ac3f/site/injuries.html", "Assurance injuries", "validation"), ("nfl-assurance-9580ac3f/site/depth.html", "Assurance depth chains", "data"), ("nfl-assurance-9580ac3f/site/strategies.html", "Assurance strategies", "signals"), ("nfl-assurance-9580ac3f/site/validation.html", "Assurance gates", "validation"), ("nfl-assurance-9580ac3f/site/suggestions.html", "Assurance suggestions", "review"), ("nfl-assurance-9580ac3f/site/questions.html", "Assurance questions", "sources"), ("nfl-assurance-9580ac3f/site/flagged.html", "Assurance flagged", "review"), ("nfl-assurance-9580ac3f/site/repo-review.html", "Assurance repo review", "audit")]),
 ]
 
 
@@ -575,6 +576,12 @@ def build():
     lab_pages=load_json('nfl/origination/manifest.json')['pages']
     for name in lab_pages:
         generated.append(f'nfl/origination/{name}')
+    # Independent assurance supplement (session arena/9580ac3f-own7).
+    assurance_result=subprocess.run([sys.executable,str(ROOT/'nfl-assurance-9580ac3f'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if assurance_result.returncode: raise SystemExit(assurance_result.stdout+assurance_result.stderr)
+    assurance_pages=load_json('nfl-assurance-9580ac3f/site/manifest.json')['pages']
+    for name in assurance_pages:
+        generated.append(f'nfl-assurance-9580ac3f/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else "NBA / RESEARCH WORKSPACE"
@@ -589,7 +596,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 
