@@ -369,3 +369,24 @@ Privacy: all personal information (tenant initials) is anonymized everywhere in 
 ### Merge note (arena/cab077aa-own7, 2026-11-06, second merge)
 - Merged origin/main again (PR #19, session arena/692da006-own7: root-level rental*.html pages + research/rental.json). No other session's work discarded; their nav group and pages retained, mine added as "Deep-dive sub-site" → rental/index.html.
 - research/sources.json unioned by ID across both sides; SOURCE_HOSTS in scripts/check_site.py unioned; generated artifacts regenerated deterministically.
+
+---
+
+## Session arena/a129b881-own7 — NFL conversion: decision lab, origins and verified NFL data (2026-11-12)
+
+Session ID: `session-arena-a129b881-own7`. Branch: `arena/a129b881-own7` (fixed by Arena; the requested `session-<id>/<task>` branch naming is not used because this session must stay on its fixed branch). Base commit: `a989d67` (main).
+
+Owner request this session: convert the project to NFL, add a dedicated **Suggestions** section with a review workflow, produce a decision dossier of questions / known information / missing information, originate NFL lines with validation gates and correlation work, track injuries and starter-vs-backup depletion, and publish a live GitHub Pages site.
+
+### Claim (committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| N1 | Claim board entry, then NFL source verification | in progress | session-arena-a129b881-own7 | COORDINATION.md, research/sources.json (append NFL IDs only) | No existing NBA source ID is modified or removed. |
+| N2 | Verified NFL snapshot collection (standings, injury report, terms) | in progress | session-arena-a129b881-own7 | data/nfl-*.csv, data/official-snapshots/nfl-*, research/nfl/** | Row-level official source links only; blanks stay blank. |
+| N3 | NFL line origination + correlation + validation/leaderboard contracts | in progress | session-arena-a129b881-own7 | nfl_lab/**, tests/test_nfl.py, scripts/nfl_*.py | Derived numbers labelled derived; no market line invented. |
+| N4 | Decision lab: Suggestions workflow, questions dossier, missing-information plan | in progress | session-arena-a129b881-own7 | research/nfl/decisions.json, docs/nfl-*.md | Every proposal must state its evidence and its open questions. |
+| N5 | Site integration: NFL pages, nav, checks, exec summary | in progress | session-arena-a129b881-own7 | scripts/build_site.py, scripts/check_site.py, .github/workflows/check.yml, README.md | Generated pages only; deterministic rebuild enforced. |
+| N6 | PR, merge, GitHub Pages deploy confirmation, record | in progress | session-arena-a129b881-own7 | COORDINATION.md | Do not merge a broken site. |
+
+Claim reasons: the repository's last commit predates this session; no other session branch or open PR is being touched; scopes are additive (new `nfl_lab/**`, `research/nfl/**`, `data/nfl-*`) plus shared generator/checker files that this session alone edits. Existing NBA and rental content and values are not modified. Cross-scope requests from earlier boards are noted as history, not re-opened.
