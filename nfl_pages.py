@@ -445,10 +445,11 @@ def nfl_stands():
 def nfl_overview():
     body = notice('NFL research workspace: sourced observations, originated numbers, and honest blanks.',
                   'Thirty-two club rows, twenty injury rows and fourteen fixtures were read from '
-                  'NFL.com on 2026-11-12. Every line on this site is an originated model number, not '
-                  'a market price, and nothing here is a recommendation.')
+                  'NFL.com on 2026-11-12, and a separately built research lab adds 216 more verified '
+                  'source rows. Every line in this section is an originated model number, not a market '
+                  'price, and nothing here is a recommendation.')
     body += metrics([
-        ('Verified rows', NFL['verified_rows']['total'], 'Standings, injuries, fixtures', 'data'),
+        ('Verified rows here', NFL['verified_rows']['total'], 'Plus 216 in the research lab', 'data'),
         ('Originated games', len(NFL['games']), 'Week 10, model only', 'lab'),
         ('Qualified strategies', 0, 'All eight blocked', 'validation'),
         ('Open review items', len(FLAGS['flags']), 'All published', 'review'),
@@ -484,6 +485,27 @@ def nfl_overview():
         f'<span class="card-icon">{_svg_icon(ico)}</span><h3>{title}</h3><p>{description}</p>'
         f'<span class="card-link">{cta} →</span></a>'
         for step, ico, title, description, href, cta in cards) + '</div>'
+    body += section('Two NFL workstreams are published here', table(
+        'nfl-workstreams', 'Which page answers which question',
+        [('Workstream', lambda r: rich(r['lab'], r['id'])), ('What it holds', 'content'),
+         ('Read it when', 'when'), ('Open', 'where')],
+        [
+            {"id": "W1", "lab": "NFL origination lab (this section, 11 pages)",
+             "content": "Originated Week 10 spreads and totals, the decision brief, the ranked suggestions, "
+                        "fourteen open questions, ten validation gates, the competition format and the review register.",
+             "when": "You want to decide what to do next, or to originate and challenge a number.",
+             "where": '<a href="nfl-suggestions.html">Start with the suggestions →</a>',
+             "source_ids": ["REPO"]},
+            {"id": "W2", "lab": "NFL research lab (separately built sub-site, 15 pages)",
+             "content": "216 verified source rows across standings, passing, rushing, receiving, team offense "
+                        "and defense, and a bounded Week 7 injury report; its own audit, requirements and receipts.",
+             "when": "You want the wider statistical record behind the numbers, with per-row sources.",
+             "where": '<a href="nfl/index.html">Open the NFL research lab →</a>',
+             "source_ids": ["REPO"]},
+        ],
+        note='Both are the same snapshot date and the same official league sources. They were built '
+             'independently by two workstreams and are kept separate and attributed rather than silently '
+             'merged into one narrative.'))
     body += section('What the numbers say, and what they do not', table(
         'nfl-headlines', 'Headline findings',
         [('Finding', 'finding'), ('Reading', 'reading'), ('Evidence', lambda r: badge(r['state'], r['kind']))],

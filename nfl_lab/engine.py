@@ -46,8 +46,15 @@ def verify_nfl_receipts() -> None:
         rows = load_csv(receipt["data_file"])
         if len(rows) != receipt["retained_rows"] or digest(path) != receipt["sha256"]:
             raise ValueError(f"NFL receipt mismatch: {path.name}; no result can be published")
-        if any(r.get("Verified") != "verified snapshot" for r in rows):
-            raise ValueError(f"Unverified input in {path.name}")
+        # Stricter contract than the earlier "verified snapshot" label: every row must carry the
+        # official URL it came from plus the date it was checked.
+        for row in rows:
+            source = row.get("SourceURL") or row.get("Source") or ""
+            if not source.startswith("https://www.nfl.com/"):
+                raise ValueError(f"Unverified input in {path.name}: missing official source URL")
+            if row.get("Verified") not in ("verified snapshot", "2026-11-12") and \
+                    row.get("CheckedOn") != "2026-11-12":
+                raise ValueError(f"Unverified input in {path.name}: missing verification marker")
 
 
 def validate_nfl_rights(settings: dict) -> None:

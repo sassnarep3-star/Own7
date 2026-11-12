@@ -41,7 +41,7 @@
   },
   "datasets": [
     {
-      "file": "data/nfl-standings-2026.csv",
+      "file": "data/nfl-standings-week10-2026.csv",
       "source_url": "https://www.nfl.com/standings/",
       "retrieval": "research/nfl/evidence/standings-2026-w10.retrieved.md",
       "rows": 32,

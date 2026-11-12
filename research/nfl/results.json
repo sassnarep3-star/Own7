@@ -782,7 +782,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -812,7 +812,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -842,7 +842,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -872,7 +872,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -902,7 +902,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -932,7 +932,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -962,7 +962,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -992,7 +992,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -1022,7 +1022,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -1052,7 +1052,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -1082,7 +1082,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -1112,7 +1112,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -1142,7 +1142,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -1172,7 +1172,7 @@
       "line_status": "Originated · model only · no market comparison",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "PYTH-NFL",
         "REPO"
       ],
@@ -1454,7 +1454,7 @@
       "raw_p": null,
       "holm_p": null,
       "source_ids": [
-        "NFL-SCHEDULE",
+        "NFL-SCHED-W10",
         "REPO"
       ]
     },
@@ -1468,7 +1468,7 @@
       "raw_p": null,
       "holm_p": null,
       "source_ids": [
-        "NFL-INJURY",
+        "NFL-INJ-W10",
         "REPO"
       ]
     },
@@ -1495,7 +1495,7 @@
       "raw_p": null,
       "holm_p": null,
       "source_ids": [
-        "NFL-INJURY",
+        "NFL-INJ-W10",
         "REPO"
       ]
     }
@@ -1518,7 +1518,7 @@
       "talent_lost": null,
       "note": "Counts only. Converting a status into lost on-field value needs depth charts, snap shares and player performance data that were not retrieved.",
       "source_ids": [
-        "NFL-INJURY",
+        "NFL-INJ-W10",
         "NFL-INJURY-POLICY"
       ],
       "source_url": "https://www.nfl.com/injuries/"
@@ -1540,7 +1540,7 @@
       "talent_lost": null,
       "note": "Counts only. Converting a status into lost on-field value needs depth charts, snap shares and player performance data that were not retrieved.",
       "source_ids": [
-        "NFL-INJURY",
+        "NFL-INJ-W10",
         "NFL-INJURY-POLICY"
       ],
       "source_url": "https://www.nfl.com/injuries/"
@@ -1902,15 +1902,22 @@
   },
   "input_sha256": {
     "data/nfl-injuries-2026-w10.csv": "bf0d182d1fc3656e0bd05e93bb529f91d40870c8fd6978c2fd944682fb70c122",
+    "data/nfl-injuries-week7-2026.csv": "16451ad8da0b283f18c48f2d6b5d1780bd433e787182f20b240d1e6a8396ac05",
+    "data/nfl-players-passing-2026.csv": "ac68650f4f49580142ec733f6b2ae70df435525500b5736274ba7280494a6c9e",
+    "data/nfl-players-receiving-2026.csv": "a390c1f3faa8b6631bc5d9bcbf44da6ea68f05c3c7388392313bca157e04559d",
+    "data/nfl-players-rushing-2026.csv": "8acf24c238661f15371ea17f16be9be92f49f55ca5250c8ca9e9f39375a8b992",
     "data/nfl-schedule-2026-w10.csv": "2e921197c68b0e5ace40022e6ae9e4758f9dd956a4bd2865d81b27bc89d1a21e",
     "data/nfl-standings-2026.csv": "c4daceecb57e4461ad9ef8a2b7fa13cd3a83c0c3a1e9a77c60470772000b75b9",
-    "nfl_lab/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "nfl_lab/__main__.py": "16cd93f055b631c77c4a1c17e698edcde106d613ecd2bf612100ff67035b585d",
-    "nfl_lab/engine.py": "f6f59f1c1e24e4019c4ceb2dbdb6383828c47084a65eca2c154b7607eeb197e5",
-    "nfl_lab/math.py": "bc89f8d83787c9318424e72ac7f045ee17c671dd260e8f50cd8efddd11f53538",
-    "research/nfl/receipts.json": "0b5350b16fffc29309c393ce8c64785e8a892da751d55e5b376669275c3e8c80"
+    "data/nfl-standings-week10-2026.csv": "c4daceecb57e4461ad9ef8a2b7fa13cd3a83c0c3a1e9a77c60470772000b75b9",
+    "data/nfl-team-defense-passing-2026.csv": "e54db7a03cdc24570dabf3c407a362f718051ded8601a0d37b4f1656f3d7534b",
+    "data/nfl-team-offense-passing-2026.csv": "4b0df9229448a187c31014b76dca22d6a5aa8e175d6255bf500a91d4c65d7687",
+    "nfl_origination/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "nfl_origination/__main__.py": "44bad21a585f1ce8938d3d52a834bf362d9de757f7c1827ef85779c96e2d875d",
+    "nfl_origination/engine.py": "bcf27510c5ea98a2df88b90873a74ac8f90b2520b1edd1dcb653a7c9c50e4b2d",
+    "nfl_origination/math.py": "bc89f8d83787c9318424e72ac7f045ee17c671dd260e8f50cd8efddd11f53538",
+    "research/nfl/receipts.json": "c33e1ad22ac6cda71c551e6bb93a3f729656ac146ba45897fd20869b22fa0072"
   },
-  "run_hash": "78a0e5613ba724916bf9b24b4ce67b74080d25b4648777a4d2b1393279316462",
+  "run_hash": "8ff8a7086a44440cf4ce89fc77c7f1711d15e2e9cde743db704786613fcace4c",
   "limitations": [
     "One partial season, eight or nine games per club.",
     "No market prices, limits, hold or settlement rules were retrieved.",

@@ -262,10 +262,11 @@ def main() -> None:
         raise SystemExit("EXTRACTION REFUSED\n" + "\n".join(" - " + p for p in hard))
 
     targets = {
-        OUT / "nfl-standings-2026.csv": standings,
+        OUT / "nfl-standings-week10-2026.csv": standings,
         OUT / "nfl-injuries-2026-w10.csv": injuries,
         OUT / "nfl-schedule-2026-w10.csv": schedule,
     }
+    targets[OUT / "nfl-standings-2026.csv"] = standings  # retained byte-identical copy
     digests, changed = {}, []
     for path, rows in targets.items():
         before = path.read_text(encoding="utf-8") if path.exists() else None

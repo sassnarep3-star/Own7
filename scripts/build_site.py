@@ -556,6 +556,7 @@ ALIASES = {
 
 def build():
     # nfl_pages builds rows with this module's helpers; inject them lazily to avoid a cycle.
+    import nfl_pages
     for helper in ("notice", "metrics", "section", "table", "rich", "badge", "link", "Markup"):
         setattr(nfl_pages, helper, globals()[helper])
     nfl_pages._Markup = Markup
