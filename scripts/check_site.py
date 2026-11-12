@@ -40,6 +40,12 @@ SOURCE_HOSTS.update({
     'FHA-3604': 'uscode.house.gov',
 })
 
+# NFL research lab (session arena/a4e560bc-own7) — official NFL hosts only.
+SOURCE_HOSTS.update({'NFL-STANDINGS': 'www.nfl.com', 'NFL-PASSING': 'www.nfl.com', 'NFL-RUSHING': 'www.nfl.com', 'NFL-RECEIVING': 'www.nfl.com', 'NFL-TEAM-OFF': 'www.nfl.com', 'NFL-TEAM-DEF': 'www.nfl.com', 'NFL-INJURY': 'www.nfl.com', 'NFL-SCHEDULE': 'www.nfl.com', 'NFL-TERMS': 'support.nfl.com', 'NFL-ROSTER': 'www.nfl.com'})
+
+# NFL line-origination lab (session arena/20394b77-own7) — Week 10 snapshot sources.
+SOURCE_HOSTS.update({'NFL-INJURIES': 'www.nfl.com', 'NFL-ROUNDUP': 'www.nfl.com', 'NFL-NEWS-WILLIS': 'www.nfl.com', 'NFL-DATES': 'www.nfl.com', 'NFL-LEGAL-TERMS': 'www.nfl.com', 'NFL-ODDS-PATH': 'www.nfl.com', 'NFL-DEPTH-PATH': 'www.nfl.com', 'AZ-DEPTH': 'www.azcardinals.com', 'CLE-DEPTH': 'www.clevelandbrowns.com', 'SF-DEPTH': 'www.49ers.com'})
+
 # Rental pages from session arena/692da006-own7 (PR #19) — official government/legal hosts only.
 SOURCE_HOSTS.update({'SF-RENTAL-LAWS': 'www.sf.gov', 'SF-RENT-INC': 'www.sf.gov', 'SF-NEWS-AGA': 'www.sf.gov', 'SF-BANKED': 'www.sf.gov', 'SF-HI-LICENSE': 'www.sf.gov', 'CA-AG-RENTCAPS': 'oag.ca.gov', 'CA-AG-TENANTS': 'oag.ca.gov', 'LEGINFO-CIV827': 'leginfo.legislature.ca.gov', 'LEGINFO-CIV1947-12': 'leginfo.legislature.ca.gov', 'LEGINFO-AB1482': 'leginfo.legislature.ca.gov', 'BLS-SF-CPI': 'blsmon1.bls.gov', 'GOVINFO-FHA': 'www.govinfo.gov', 'SF-RTC-EDC': 'evictiondefense.org'})
 
@@ -51,7 +57,7 @@ DESK_HOSTS = {
     'NFL-STANDINGS-2026': 'www.nfl.com', 'NFL-STANDINGS-DIV-2026': 'www.nfl.com',
     'NFL-TEAM-PASS-2026': 'www.nfl.com', 'NFL-INJURY-W10-2026': 'www.nfl.com',
     'NFL-SCHEDULE-2026': 'www.nfl.com', 'NFL-TIEBREAK-2026': 'www.nfl.com',
-    'NFL-TERMS': 'www.nfl.com', 'NFL-NEWS-W10-ROUNDUP': 'www.nfl.com',
+    'NFL-TERMS-LEGAL': 'www.nfl.com', 'NFL-NEWS-W10-ROUNDUP': 'www.nfl.com',
     'NFL-NEWS-WILLIS-IR': 'www.nfl.com', 'NFL-NEWS-NACUA-IR': 'www.nfl.com',
     'NFL-NEWS-DARNOLD': 'www.nfl.com', 'NFL-OPS': 'operations.nfl.com',
     'NFL-CLUB-DC-WAS': 'www.commanders.com', 'NFL-CLUB-DC-NYG': 'www.giants.com',

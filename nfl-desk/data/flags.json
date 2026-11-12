@@ -9,7 +9,7 @@
       "unverified_value": null,
       "status": "Needs review",
       "blocks": "All economic claims; every reward tier",
-      "source_ids": ["NFL-TERMS", "REPO"]
+      "source_ids": ["NFL-TERMS-LEGAL", "REPO"]
     },
     {
       "id": "DF-02",
@@ -117,7 +117,7 @@
       "unverified_value": null,
       "status": "Needs review",
       "blocks": "Any monetary incentive",
-      "source_ids": ["REPO", "NFL-TERMS"]
+      "source_ids": ["REPO", "NFL-TERMS-LEGAL"]
     },
     {
       "id": "DF-14",
@@ -126,7 +126,7 @@
       "unverified_value": null,
       "status": "Needs review",
       "blocks": "Commercial release, price publication, redistribution",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-TERMS-LEGAL"]
     }
   ]
 }

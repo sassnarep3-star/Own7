@@ -372,6 +372,100 @@ Privacy: all personal information (tenant initials) is anonymized everywhere in 
 
 ---
 
+## Session arena/a4e560bc-own7 — NFL lines origination + suggestions/questions + site (2026-11-12)
+
+Session ID: `session-arena-a4e560bc-own7`
+Branch: `arena/a4e560bc-own7` (fixed by Arena; sole active session on this branch as of this claim). Earlier boards above are historical and unchanged.
+
+Scope: NFL research lab addition (new `nfl/**` sub-site + canonical NFL pages via `scripts/build_site.py`), NFL data snapshots under `data/nfl-*` + `research/nfl*.json`, suggestions/questions ledgers, injury-tracking design, executive summary, verification, integration, PR/merge/Pages. No existing NBA content values are modified except additive navigation and source-registry appends. Never infer or fill in values; leave blank + flag as unverified if no official source confirms. Every table row carries an official source link.
+
+### Task board
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| N1 | Claim session + log board | done | session-arena-a4e560bc-own7 | COORDINATION.md | n/a | Committed + pushed immediately |
+| N2 | Official NFL source research (terms, stats, injury, glossary, schedule) | done | session-arena-a4e560bc-own7 | research/sources.json (append NFL IDs), docs/nfl-sources.md | nfl.com / official.nfl.com | Verify each URL + scope line by line via fetch_page; no hallucinations |
+| N3 | NFL data snapshots (verified rows only) | done | session-arena-a4e560bc-own7 | data/nfl-*.csv, research/evidence/nfl-*.csv, receipts | Official NFL tables | Blank + unverified where no official source confirms |
+| N4 | NFL strategies, correlations, gates, leaderboard | done | session-arena-a4e560bc-own7 | research/nfl-catalog.json, research/nfl-protocol.json, nfl_lab/** | Official methods + NFL inputs | Single/parlay/props; no invented lines/ROI/CLV |
+| N5 | Injury / backup tracking system (defense + offense deficiencies) | done | session-arena-a4e560bc-own7 | research/nfl-injuries.json, nfl pages | Official NFL injury reports | Design + blank data; no fake statuses |
+| N6 | Suggestions section + Questions/Information/Answers + missing-info plan | done | session-arena-a4e560bc-own7 | research/nfl-suggestions.json, research/nfl-questions.json | Project policy + official sources | Reviewable before any implementation decision |
+| N7 | NFL executive summary | done | session-arena-a4e560bc-own7 | docs/nfl-executive-summary.md, nfl executive page | All N2–N6 sources | Important details only; no edge claimed |
+| N8 | GitHub Pages site: landing + category subpages, tables | done | session-arena-a4e560bc-own7 | nfl/**, scripts/build_site.py, assets, js | Row-level source contract | Clean dashboard; sortable tables; analysis + findings |
+| N9 | Line-by-line verification + Flagged for Review | needs review | session-arena-a4e560bc-own7 | docs/nfl-verification.md, nfl flagged page | Official sources per row | Irregularities flagged; unverified blank |
+| N10 | Integration: build check, no broken links, tests | done | session-arena-a4e560bc-own7 | All | All task sources | Do not merge a broken site |
+| N11 | PR + merge + GitHub Pages deploy + record | done | session-arena-a4e560bc-own7 | main branch, GitHub Pages | COORDINATION.md | Record PR link + merge result here |
+
+### Rules for this session
+- Claim each task by updating status to `in progress`, commit + push immediately.
+- Never infer or fill in values; leave blank + flag as unverified if no official source confirms. Link the source.
+- Small, frequent commits; `git pull --rebase` before every push.
+- On conflict: stop, resolve without discarding the other session's work, log what happened.
+- Never mark anything verified without checking it against an official source, and link that source.
+
+### Integration progress — session arena/a4e560bc-own7
+- N4–N10 work was begun within the session's previously claimed broad NFL scope, but individual task statuses were not updated and pushed before work started as the board's process required. This is an execution-process irregularity, not a claim of advance task-level coordination. No other current claim on these files was found; all changes remain on this fixed Arena branch.
+- N4–N7: research contracts, injury snapshot and explicitly blank backup/deficiency fields, suggestions/questions and executive summary assembled. Competition is a **design and blocked display**, not an operational ranking implementation. [NFL injury reports](https://www.nfl.com/injuries/league/2026/reg7); [NFL terms](https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions).
+- N8–N10: final integration in progress: 15 generated NFL pages and an NFL-specific requirements ledger added to navigation; NBA input fingerprint isolated from NFL CSVs and recomputed (no NBA observation values changed). Recursive audit checks local routing, registered row links, blank contracts, hashes and determinism; these automated checks do not prove external factual truth or source-use rights. Browser test initially passed 48 desktop + 48 mobile pages before the added requirements page; final rerun pending.
+- Irregularities NF01–NF11 are published on `nfl/review.html`. Snapshots are normalized transcriptions rather than archived original responses; changing NFL URLs are not guaranteed to preserve the historical view. NFL-derived lines, cash and claimed edge remain blocked. No backup or deficiency value inferred.
+- Integration correction: rechecked [NFL defense table](https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all) and corrected an erroneous summary minimum (Minnesota 1,495, not Seattle 1,519). Added a regression test. NF11 clarifies that the offense column mapping is inferred, not directly verified; it remains a review limitation. A pull-before-push attempt was stopped by unstaged integration files; no rebase or conflict occurred. Integration changes will be committed before retry.
+
+- Final integration check: 68 unit tests, 6 NFL site tests, snapshot and auxiliary checks, and recursive audit passed (69 HTML pages, 1,082 table rows). Browser test passed on 49 desktop and 49 mobile pages with WCAG A/AA checks, no runtime errors. Link verification checks local targets and registered source URLs, not continued external availability. [Standings](https://www.nfl.com/standings/), [passing](https://www.nfl.com/stats/player-stats/), [defense](https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all), [injury](https://www.nfl.com/injuries/league/2026/reg7), [terms](https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions).
+- Final NF11 correction: the team-offense header was not displayed in the retrieved official source; do not treat arithmetic as verification. Data are now retained as positional C1–C15, the named offense minimum/leader is withheld, and three dependent correlations are blank. Seven descriptive correlations remain. [Official team offense](https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all). Values are frozen transcriptions, not raw archives. The static proposals page has no approval controls; competition and backup deficiency analysis are designs rather than operational features.
+- Integration PR: https://github.com/sassnarep3-star/Own7/pull/21 — opened from `arena/a4e560bc-own7` to `main`. Merge and GitHub Pages confirmation pending checks.
+
+### NFL integration merge and Pages record
+- PR [#21](https://github.com/sassnarep3-star/Own7/pull/21) merged to `main` at `13a61d49cab1b642e7ec7964793caa6e1d6e0d79` on 2026-11-12 at 16:38:05 UTC after successful [checks](https://github.com/sassnarep3-star/Own7/actions/runs/43260298658).
+- GitHub Pages [build and deployment](https://github.com/sassnarep3-star/Own7/actions/runs/43260810173) succeeded for the same merge commit; Pages API reported `built`, and the published [NFL overview](https://sassnarep3-star.github.io/Own7/nfl/index.html?v=13a61d49) and [Flagged for Review](https://sassnarep3-star.github.io/Own7/nfl/review.html?v=13a61d49) were fetched and confirmed. Cache-busting query used because an initial 404 from before deployment was cached.
+- Known limits remain explicit on the live site: no live line origination, active injury/depth monitoring, operational leaderboard ranking or verified edge. The injury data are a bounded historical snapshot. NF01–NF11 remain review items, not publication blockers.
+
+## NFL line-origination session — `arena/20394b77-own7` (2026-11-12, later the same day)
+
+**Claim.** Scope was claimed at the start of this session in commit `dae296b` ("Claim NFL line-origination session scope on coordination board") against `main` @ `a989d67`, at a time when `origin/main` contained **no** `nfl/` path at all. That claim section was in the tail of `COORDINATION.md`; it was dropped when this branch was merged with `origin/main` (the concurrent session `arena/a4e560bc-own7` had appended to the same tail). It is preserved verbatim in `dae296b` and is not re-asserted here as a live claim.
+
+**Collision, and how it was resolved.** While this branch was under test, `arena/a4e560bc-own7` merged its own NFL research sub-site (PR #21, then #23) at exactly the paths this session had used (`nfl/build.py`, `nfl/index.html`, `nfl/test_build.py`, …), with Week 7 inputs and a deliberate "no NFL lines are originated here" position. Two builders cannot own one directory, so this session **stood down on the duplicate layout instead of overwriting it**:
+
+- The merged sub-site from `arena/a4e560bc-own7` keeps `nfl/**` intact and unmodified. Nothing of theirs was deleted, relabelled or re-specified.
+- This session's Week 10 line-origination work was relocated to the nested sub-site `nfl/origination/` with its own builder (`originate.py`), its own manifest and its own 29 tests, writing a disjoint set of paths.
+- The two sub-sites are cross-linked in shared navigation ("NFL research" → parent, "NFL line origination" → this lab) and each links back to the other. They answer different questions: the parent site withholds prices and documents the compliance position; the child lab originates model-only numbers and documents the model, the depth evidence and the gates.
+- Recorded as irregularity I-11 in `docs/nfl-repo-review-2026-11-12.md`.
+
+**Delivered by this session (all under `nfl/origination/`, `docs/` and the integration touchpoints).** 14 pages (dashboard, executive summary, model & lines, injuries, depth & deficiencies, strategies, gates, correlation, leaderboard, suggestions, open questions, sources, flagged, repo review); `data.json` + `content.json`; `model.py` (standard library only); deterministic `originate.py` with `--check`; `test_origination.py` (29 tests); dated CSVs `standings-2026.csv` (32 rows), `games-2026-w10.csv` (14), `injuries-2026-w10.csv` (210), `depth-2026-w10.csv` (36); `docs/nfl-origination-summary.md`; `docs/nfl-repo-review-2026-11-12.md`.
+
+**Verified.** 32/32 standings rows pass `PCT` and `NET`, and `ΣPF = ΣPA = 6,246` over 272 team-games; 16 clubs on 8 games and 16 on 9; 28 distinct slate clubs with no duplicates; 0 duplicate `(club, player)` injury rows; practice status agrees with the official Wednesday roundup on every overlapping player; all 36 depth starters join the injury report by exact name after three documented chart spellings were normalised (Mack Wilson Sr., Ronnie Hickman Jr., Deebo Samuel Sr.); 0 orphan source IDs in either direction; every table row on every page carries registered IDs and its own official link.
+
+**Deliberately blank and flagged, never inferred.** All market prices, edges, ROI and CLV cells; 21 injury types the official pages do not state; depth charts for 25 of the 28 slate clubs; the reason CHI, DEN, PHI and TB are absent from the slate; every leg-level correlation for parlays and player-prop combos (the mechanism and the gates are published, the values are not).
+
+**Integration touchpoints touched (additive only).** `research/sources.json` (+10 Week 10 IDs, `NFL-TERMS` kept as `arena/a4e560bc-own7` defined it, this session's legal-terms citation registered separately as `NFL-LEGAL-TERMS` to avoid re-pointing another session's ID), `scripts/check_site.py` (`SOURCE_HOSTS` +10), `scripts/build_site.py` (one nav group + `nfl/origination/originate.py` run as an auxiliary sub-site), `.github/workflows/check.yml` (2 steps), `README.md`. `research/results.json` was re-run twice because it hashes `research/sources.json`; the diff each time was hash-only.
+
+**Gates at merge time.** 68 existing unit tests, 6 parent-site NFL tests, 29 origination tests, 6 rental, 8 market-evidence, `nfl_lab run --check`, `nfl/build.py --check` (15 pages), `nfl/origination/originate.py --check` (14 pages) all pass; `scripts/build_site.py` builds 25 canonical pages + 20 redirects + 38 auxiliary pages; `scripts/check_site.py` passes on 83 HTML pages / 1,591 table rows / 85 registered sources; `npm run test:browser` passes on 63 desktop + 63 mobile pages with 0 axe A/AA violations and 0 runtime errors.
+
+### NFL line-origination merge and Pages record (`arena/20394b77-own7`)
+
+- Task status: N1–N10 done.
+- PR [#22](https://github.com/sassnarep3-star/Own7/pull/22) ("NFL Week 10 line lab: 14 source-linked pages, stdlib model, fail-closed gates") merged to `main` at **`d067e082883a881d70af787d4d42c0c701d74ccb`** on 2026-11-12 at 16:48:34 UTC, after both required jobs passed on CI: *Research and recursive site audit* (9 s) and *Desktop, mobile and accessibility* (2 m 36 s) — [run 43262142414](https://github.com/sassnarep3-star/Own7/actions/runs/43262142414).
+- GitHub Pages: the *pages build and deployment* workflow for `d067e08` succeeded and the Pages API reported `status: built`, `error: none`, for that same commit at 16:48:58 UTC ([deployment](https://github.com/sassnarep3-star/Own7/deployments)). The live `sassnarep3-star.github.io` host is not reachable from this sandbox's egress allowlist, so publication is attested by the Pages build API and the deployment record, **not** by fetching the rendered pages. Earlier sessions' fetch-based confirmations of the parent site stand unchanged.
+- Reviewable live paths after this merge: `/nfl/origination/index.html` (lab dashboard), `/nfl/origination/model.html` (model lines and sensitivity), `/nfl/origination/depth.html`, `/nfl/origination/suggestions.html`, `/nfl/origination/questions.html`, `/nfl/origination/flagged.html`, `/nfl/origination/repo-review.html`, alongside the untouched parent `/nfl/index.html`.
+- Reconciliation outcome, restated for anyone reading later: the parent NFL site (`arena/a4e560bc-own7`, Week 7, prices withheld) and this lab (`arena/20394b77-own7`, Week 10, model-only lines) both remain on `main`, cross-linked, writing disjoint files. No page, claim or test of the other session was deleted or re-specified; the only shared edits are additive entries in `research/sources.json`, `scripts/check_site.py`, `scripts/build_site.py`, `.github/workflows/check.yml` and `README.md`.
+- Open items this session did not resolve: PR #17 (historical) remains open and untouched; depth charts for 25 of 28 slate clubs are still missing; a licensed price source is still the gate that blocks any strategy from qualifying.
+### Outcome — session arena/270048f0-own7
+
+**Delivered:** `nfl/verify_independent.py` plus a new `nfl/independent-verification.html` page, eleven new tests, and `docs/nfl-independent-verification.md`.
+
+| Item | Result |
+|---|---|
+| Published correlations reproduced independently | **7/7** to 1e-6 |
+| Standings league identities (32 rows) | **32/32** — NET=PF−PA, PCT formula, home/road partition, division ≤ conference, last-5 |
+| League totals | wins 135 = losses 135; PF 6,246 = PA 6,246; home 136 = road 136 team-games; 16 AFC / 16 NFC; 8 divisions of 4 |
+| Passer rating from own components | **25/25** within 0.15 |
+| Real discrepancy found | **NF12** — Mahomes 2,037/263 printed 7.8 (exact 7.7452), Watson 1,806/249 printed 7.2 (exact 7.2530) |
+| Discrepancy adjudicated | Re-fetched the official page: it still prints both values, so the **publisher's columns disagree** — not a transcription error here |
+| Effect quantified | Yds/Att–Rate Pearson 0.829085 as printed vs 0.831578 on exact yards/att (Δ 0.0025); Spearman Δ 0.0001 |
+| Accessibility bug found and fixed | Scrollable verifier output was an unfocusable `pre`; now `role="region"` + `tabindex="0"`, caught by the browser suite |
+| Gate | `nfl/test_build.py` 6/6, `unittest` 72/72, `check_site.py` clean, `nfl/build.py --check` 16/16, browser 50 desktop + 50 mobile WCAG A/AA with no runtime errors |
+
+**A wrong hypothesis was discarded, not published.** My first explanation was that both rows were half-way rounding. They are not half-way values, so no rounding convention reconciles them. The arithmetic test replaced the story.
+
+**Process note on the parallel claim.** This session and `arena/a4e560bc-own7` both claimed an NFL section within the same window; theirs merged first (PRs #21/#23). I did not merge a competing dashboard, delete their pages, or overwrite their numbers. Their section is intact and is now extended by one additive page. The scope conflict is declared here rather than hidden.
 ## Session arena/382a833e-own7 — NFL decision desk, repo audit, integration (2026-11-12)
 
 Session ID: `session-arena-382a833e-own7`. Branch: `arena/382a833e-own7` (fixed by Arena). Base commit `a989d67`.
@@ -440,17 +534,34 @@ Claim: `nfl-desk/**`, `docs/nfl-desk/**`, append-only additions to `research/des
 - `scripts/check_site.py`: `DESK_SOURCE_FILE` + `DESK_HOSTS` and a merge of the desk ledger into
   the URL map used for row-provenance checks. Supports `data-detail` delegation (a wide-table row
   may point at an in-page detail entry that renders the same registered URLs). No canonical source
-  ID was renamed or removed; `registered_sources` moves 65 → 81 for that reason only.
-- `scripts/browser_test.mjs`: `nfl-desk` added to `allowedFolders`.
-- `.github/workflows/check.yml`: two added steps (desk tests, desk `--check`). Nothing removed.
+  ID was renamed or removed; `registered_sources` grows only because the desk ledger is merged in.
+- `scripts/browser_test.mjs`: `nfl-desk` added to `allowedFolders` (the `nfl` entry from the other
+  session is kept).
+- `.github/workflows/check.yml`: two added steps (desk tests, desk `--check`). Nothing removed —
+  the `nfl` / `nfl_lab` / origination steps merged from `main` all still run.
 - `research/site-manifest.json`: regenerated by `build_site.py`, not hand-edited.
 
-### Numbers, as measured after this work
+### Merge with the other NFL sessions, and the numbers afterwards
 
-81 pre-existing tests still pass (62 + 5 + 8 + 6), plus 33 new = **114**. `check_site.py` passes
-with 25 canonical pages, 20 redirects, **18 auxiliary** pages (was 9), **63** HTML files (was 54),
-1,148 table body rows, 1,600 internal references, **81** registered sources, byte-identical rebuild.
-Browser suite: **43 desktop + 43 mobile** pages (was 34 + 34), WCAG A/AA, no runtime errors.
+`origin/main` moved while this desk was being built (PRs #21/#23/#24/#26 merged the
+`arena/270048f0-own7`, `arena/a4e560bc-own7` and `arena/20394b77-own7` NFL work). The merge was
+resolved **additively**: their `nfl/**` and `nfl/origination/**` nav groups, build hooks and CI steps
+are all retained, and this session's `nfl-desk/**` group, build hook and two CI steps are added
+alongside. `COORDINATION.md` keeps their blocks first, then this one.
+
+One real collision was found and fixed rather than papered over: both sessions had registered an ID
+called `NFL-TERMS` in `research/sources.json`, pointing at **different URLs** (the support-portal
+copy versus `nfl.com/legal/terms/`). Since IDs must be globally unique, this session's desk was
+renamed to `NFL-TERMS-LEGAL` throughout its own data, pages and host map; the canonical registry
+entry is untouched. The desk also no longer depends on any shared ID except `REPO`, whose URL is
+identical on both sides.
+
+Measured after the merge: `check_site.py` passes with 25 canonical pages, 20 redirects,
+**48 auxiliary** pages, **93** HTML files, 2,017 table body rows, 2,902 internal references and
+**101** registered sources, byte-identical rebuild. Tests: 72 + 5 + 8 + 6 + 6 (`nfl`) + 29
+(`nfl/origination`) + **33 (nfl-desk)** = **159**, all passing, plus `nfl_lab run --check`,
+`nfl/build.py --check` (16 pages) and `nfl-desk/build.py --check` (9 pages). Browser suite:
+**73 desktop + 73 mobile** pages, WCAG A/AA, no runtime errors.
 
 ### Findings worth passing on (not repaired — other scopes own these files)
 

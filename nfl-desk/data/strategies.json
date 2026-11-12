@@ -115,7 +115,7 @@
       "leg_correlation": null,
       "gates_failed": ["G01", "G03", "G05", "G06", "G09"],
       "status": "Blocked — no qualified market test",
-      "source_ids": ["NFL-TERMS", "SCIPY-PEARSON"]
+      "source_ids": ["NFL-TERMS-LEGAL", "SCIPY-PEARSON"]
     },
     {
       "id": "S07",
@@ -134,7 +134,7 @@
       "leg_correlation": null,
       "gates_failed": ["G01", "G03", "G05", "G06", "G09"],
       "status": "Blocked — no qualified market test",
-      "source_ids": ["NFL-TERMS", "SCIPY-PEARSON"]
+      "source_ids": ["NFL-TERMS-LEGAL", "SCIPY-PEARSON"]
     },
     {
       "id": "S08",

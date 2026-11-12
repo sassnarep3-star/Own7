@@ -10,7 +10,7 @@
       "current": "Partially met. Row-level official links exist and are re-checked by the build. NFL.com Terms §1.3 limits use to individual non-commercial informational purposes and prohibits systematic retrieval or compilation; no gambling or commercial permission is granted. Commercial or betting-price release therefore fails this gate today.",
       "status": "Blocked",
       "type": "Policy",
-      "source_ids": ["NFL-TERMS", "REPO"]
+      "source_ids": ["NFL-TERMS-LEGAL", "REPO"]
     },
     {
       "id": "G02",
@@ -60,7 +60,7 @@
       "current": "Not met, by design. No licensed price feed is connected and none is claimed. NFL.com publishes no odds, and the repository holds no operator price archive. Every price, hold, ROI and closing-line field is blank.",
       "status": "Blocked",
       "type": "Policy",
-      "source_ids": ["NFL-TERMS", "REPO"]
+      "source_ids": ["NFL-TERMS-LEGAL", "REPO"]
     },
     {
       "id": "G07",
@@ -100,7 +100,7 @@
       "current": "Reproducibility is met: the build is deterministic, snapshots carry SHA-256 hashes, and CI rebuilds and diffs every page. The publishing-rights half is not met: no repository licence exists and NFL terms do not grant redistribution rights.",
       "status": "Blocked",
       "type": "Policy",
-      "source_ids": ["NFL-TERMS", "REPO"]
+      "source_ids": ["NFL-TERMS-LEGAL", "REPO"]
     }
   ]
 }

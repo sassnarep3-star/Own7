@@ -36,6 +36,12 @@ jobs:
           python rental/build.py --check
           python rental/test_build.py -v
           python nfl-desk/build.py --check
+          python -m nfl_lab run --check
+          python nfl/build.py --check
+          python nfl/verify_independent.py
+          python nfl/test_build.py -v
+          python nfl/origination/originate.py --check
+          python -m unittest discover -s nfl/origination -p "test_*.py" -v
       - name: Committed artifacts must already be current
         run: git diff --exit-code
   browser:

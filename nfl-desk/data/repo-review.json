@@ -1,7 +1,7 @@
 {
  "read_date": "2026-11-12",
  "base_commit": "a989d67d9155b43ee2b93c39cbfdde54d8dd0b09",
- "note": "Line-by-line review of the repository as inherited at base commit a989d67d9155b43ee2b93c39cbfdde54d8dd0b09. Each row states what was checked, what was run or read, and the disposition. Nothing here was repaired by this session: those files belong to other scopes. Counts that later grew because this session added an NFL sub-site are NOT silently back-filled; where a number has moved, the row says which state it was measured in.",
+ "note": "Line-by-line review of the repository as inherited at base commit a989d67d9155b43ee2b93c39cbfdde54d8dd0b09, i.e. before any NFL section from any parallel session had merged. Each row states what was checked, what was run or read, and the disposition. Nothing here was repaired by this session: those files belong to other scopes. Counts measured after the later merge with main are larger (93 HTML files, 2017 table rows, 101 registered sources, 159 tests) because three other NFL sessions landed in between; the per-row numbers are deliberately left as measured so they stay comparable with each other.",
  "checks": [
   {
    "id": "R01",
@@ -78,7 +78,7 @@
    "disposition": "Verified",
    "source_ids": [
     "REPO",
-    "NFL-TERMS"
+    "NFL-TERMS-LEGAL"
    ]
   },
   {
@@ -90,7 +90,7 @@
    "disposition": "Verified",
    "source_ids": [
     "REPO",
-    "NFL-TERMS"
+    "NFL-TERMS-LEGAL"
    ]
   },
   {

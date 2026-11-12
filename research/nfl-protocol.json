@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-11-12",
+  "mode": "paper research only",
+  "competition": {
+    "status": "rules specified; evaluation and ranking not implemented; no eligible entries",
+    "categories": ["Single bets", "Parlays", "Player props / combos"],
+    "primary_score": "lower 95% date-block-bootstrap bound on net return per unit staked",
+    "tie_breaks": ["lower log loss", "earlier frozen_at", "strategy_id"],
+    "reward_unit": "non-transferable, non-monetary merit points",
+    "merit_points_by_rank": {"1": 3, "2": 2, "3": 1},
+    "cash_pool": null,
+    "entry_fee": 0,
+    "cash_payments_enabled": false,
+    "required_gates": ["NG01", "NG02", "NG03", "NG04", "NG05", "NG06", "NG07", "NG08", "NG09", "NG10"],
+    "single_bet_exemption": "NG05 may be explicitly not applicable with an artifact; never silently passed",
+    "min_settled_selections": 500,
+    "min_distinct_games": 200,
+    "min_distinct_dates": 60,
+    "familywise_alpha": 0.05,
+    "correction": "Holm over every registered attempt, including failed/retired variants; count all exploratory work before a new sealed competition",
+    "shadow_min_calendar_days": 60,
+    "shadow_min_games": 200,
+    "stake_policy_id": "flat-paper-v1",
+    "paper_unit_per_selection": 1,
+    "max_units_per_game": 1,
+    "max_units_per_day": 5,
+    "max_drawdown_units": 10,
+    "selection_rule": "One contract per game per strategy; sort eligible offers by frozen conservative EV, then stable market ID; reserve exposure before settlement, cap at five games/day. Abstentions and all evaluated offers logged.",
+    "notes": "All thresholds are conservative project design choices, not official standards or a substitute for a preregistered power calculation. Freeze a common future test window, eligible offer universe, fees, settlement and drawdown policy before entries; no rank across different windows or categories. No staking escalation or real-money execution."
+  },
+  "source_rights": {
+    "nfl_gambling_use_authorized": false,
+    "nfl_derived_betting_prices_enabled": false,
+    "bulk_collection_enabled": false,
+    "source_id": "NFL-TERMS",
+    "rule": "NFL Terms §1.3 restricts Services to own individual non-commercial and informational purposes; systematic retrieval prohibited without consent. §11(f) prohibits harvesting for commercial purpose. §12 prohibits gambling/wagering on gaming features or using Services to gamble/wager on any NFL game. No separate permission is evidenced.",
+    "research_boundary": "Frozen, attributed statistical audit and non-commercial methods demonstration only; no executable line or wagering signal is released."
+  },
+  "correlations": {
+    "method": "Pearson cross-sectional across verified season aggregates (descriptive only, not bet-leg correlation)",
+    "limitations": "Season aggregates are retrospective; no game logs collected; no selection adjustment; no confirmatory p-values."
+  }
+}

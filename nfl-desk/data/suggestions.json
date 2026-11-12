@@ -42,7 +42,7 @@
       "risk": "NFL.com Terms §1.3 restricts systematic retrieval and compilation. Any automated capture must be reviewed against those terms before it runs, which is why this is a proposal and not a build.",
       "impact": "High",
       "gate": "Unblocks G02 and G03 for division D-D.",
-      "source_ids": ["NFL-INJURY-W10-2026", "NFL-TERMS"],
+      "source_ids": ["NFL-INJURY-W10-2026", "NFL-TERMS-LEGAL"],
       "disposition": "Proposed"
     },
     {
@@ -112,7 +112,7 @@
       "risk": "The site looks emptier than competitors. That is the correct trade for a verification-first project.",
       "impact": "High",
       "gate": "Required by G06 and G01.",
-      "source_ids": ["NFL-TERMS", "REPO"],
+      "source_ids": ["NFL-TERMS-LEGAL", "REPO"],
       "disposition": "Proposed"
     },
     {

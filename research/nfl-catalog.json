@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-11-12",
+  "strategies": [
+    {
+      "id": "NS01",
+      "category": "Single bets",
+      "name": "Opponent-adjusted margin / moneyline",
+      "hypothesis": "Shrink team strength toward league mean; fit point differential using lagged offense/defense, home field and opponent strength.",
+      "output": "Distribution of home margin; derive spread cover and moneyline from the same coherent score distribution.",
+      "risk": "Win percentage is NOT a matchup win probability. Full-season aggregates may seed a later season only, never earlier games.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-TEAM-OFF",
+        "NFL-TEAM-DEF"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "NS02",
+      "category": "Single bets",
+      "name": "Total points (offense vs defense)",
+      "hypothesis": "Forecast both teams' points using passing efficiency (yards/attempt, rating) and points for/against; allow residuals to co-move.",
+      "output": "Expected total and calibrated distribution at the offered total; overtime/push handling per operator contract.",
+      "risk": "Adding historical PF+PA is not an opponent-adjusted total model. Passing-only snapshot omits rushing/scoring.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-TEAM-OFF",
+        "NFL-TEAM-DEF"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "NS03",
+      "category": "Single bets",
+      "name": "Schedule & availability update",
+      "hypothesis": "Fit rest, bye and travel effects as covariates; timestamp official injury reports and roster changes at a fixed pregame cutoff.",
+      "output": "Update score/participation distributions at cutoff; abstain when material availability is unknown.",
+      "risk": "Schedule rows not transcribed; injury snapshot is bounded (4 teams). Do not use final participation as a pregame feature.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NFL-INJURY",
+        "NFL-SCHEDULE",
+        "NFL-STANDINGS"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "NS04",
+      "category": "Player props / combos",
+      "name": "QB passing distribution",
+      "hypothesis": "Model attempts, completion rate and yards/attempt separately; shrink rates and include opponent pass-defense context.",
+      "output": "P(passing yards > offered line), P(push), and fair decimal price under the documented participation/void contract.",
+      "risk": "Season totals are not a prop distribution; top-25 passing subset is biased. Injury probabilities remain blank without data.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-TEAM-DEF",
+        "NFL-INJURY"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "NS05",
+      "category": "Player props / combos",
+      "name": "Rushing / receiving distribution",
+      "hypothesis": "Model touches, opportunities and conversion with overdispersion; check calibration separately for each market.",
+      "output": "Full predictive count/yard distribution; component totals need the joint distribution, not summed independent variances.",
+      "risk": "Rushing/receiving header labels not rendered — positional only. No sign assumed; role/threshold drift likely.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NFL-RUSHING",
+        "NFL-RECEIVING",
+        "NFL-TEAM-OFF"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "NS06",
+      "category": "Parlays",
+      "name": "Cross-game joint-value filter",
+      "hypothesis": "Start from independently validated single-game probabilities; estimate shared-day/team uncertainty and test dependence.",
+      "output": "Joint win probability vs the actual operator's combined executable quote; disclose every leg and exposure cluster.",
+      "risk": "Different games do NOT automatically mean independence. Product of individual odds is not a verified combined payout.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-TERMS"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "NS07",
+      "category": "Player props / combos",
+      "name": "Same-player passing + rushing/receiving",
+      "hypothesis": "Use aligned game-level outcomes and frozen thresholds; validate joint hit probabilities on later games.",
+      "output": "Estimate joint hits directly or use a calibrated joint simulation; compare with a same-contract combo quote.",
+      "risk": "No game logs collected. Raw-stat correlation does not guarantee threshold-event correlation.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-RUSHING",
+        "NFL-RECEIVING"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    },
+    {
+      "id": "NS08",
+      "category": "Player props / combos",
+      "name": "Teammate / team-total combination",
+      "hypothesis": "Simulate shared play volume, snaps, targets and game script; fit conditional residual dependence.",
+      "output": "Joint probability of all requested legs; use the operator's offered settlement and void matrix.",
+      "risk": "No presumption that teammates are positively or negatively correlated. Pairwise correlations cannot identify a 3+ leg distribution.",
+      "status": "Blocked — no qualified market test",
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-INJURY",
+        "NFL-ROSTER"
+      ],
+      "market_line": null,
+      "p_model": null,
+      "roi": null,
+      "clv": null,
+      "correlation": null
+    }
+  ],
+  "gates": [
+    {
+      "id": "NG01",
+      "name": "Provenance & contract",
+      "pass_rule": "Official-source receipts for every datum, original publication/capture time, dataset hashes, exact market/line/operator and settlement rules. URL presence is insufficient.",
+      "current": "Stats snapshots checked; pregame quotes and contracts missing.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NG02",
+      "name": "Temporal integrity",
+      "pass_rule": "Freeze features, model, selection and calibration before kickoff; join using available_at <= cutoff; purged calendar walk-forward folds group every game's legs.",
+      "current": "No contemporaneous pregame record or sealed test exists.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NFL-INJURY",
+        "NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "NG03",
+      "name": "Coverage & power",
+      "pass_rule": "Screen at 500 settled selections, 200 distinct games, 60 dates, plus a predeclared power calculation and missingness/selection-bias audit. Numbers are project policy, not proof of skill.",
+      "current": "Season aggregates only; no market selections or power study.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-PASSING"
+      ]
+    },
+    {
+      "id": "NG04",
+      "name": "Forecast quality",
+      "pass_rule": "On a common untouched event universe; beat frozen simple and same-contract de-vigged-market baselines in proper scores; inspect reliability.",
+      "current": "No forecast evaluation; no market baseline.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-TEAM-OFF"
+      ]
+    },
+    {
+      "id": "NG05",
+      "name": "Joint dependence",
+      "pass_rule": "Aligned event pairs, n/date/CI, conditional residual study, feasible marginals/joint probabilities and held-out joint calibration.",
+      "current": "Descriptive cross-sectional estimates only; no executable combo evidence. Explicitly N/A for singles with an artifact, not a pass.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-RUSHING"
+      ]
+    },
+    {
+      "id": "NG06",
+      "name": "Executable economics",
+      "pass_rule": "Actual timely quote, offered market, costs/limits, full push/void/overtime/DNP settlement and same-contract close.",
+      "current": "No operator prices/contracts.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NG07",
+      "name": "Uncertainty & robustness",
+      "pass_rule": "Net return lower 95% date-block interval >0 after costs; drawdown, coverage, CLV, block/season sensitivity.",
+      "current": "ROI, CLV and return intervals blank. CLV alone would not establish skill.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NG08",
+      "name": "Selection / multiple testing",
+      "pass_rule": "Every attempted variant logged; valid preregistered null tests; Holm familywise alpha=0.05 over the full family.",
+      "current": "No confirmatory test family or p-values.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NFL-PASSING"
+      ]
+    },
+    {
+      "id": "NG09",
+      "name": "Forward shadow & risk",
+      "pass_rule": "Freeze common future evaluation; at least 60 calendar days and 200 games; paper caps and abstention log.",
+      "current": "No prospective record; cash execution disabled.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "NG10",
+      "name": "Reproducibility & rights",
+      "pass_rule": "Reproduce hashes, probabilities, settlement and scores; establish source rights/operator/contest permissions.",
+      "current": "Reproduction supported. NFL Terms non-commercial + gambling-use restrictions confirmed; separate permission absent.",
+      "status": "Blocked",
+      "type": "Project validation policy",
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "id": "NF01",
+      "status": "Needs review",
+      "item": "Market data and executable lines absent",
+      "finding": "Current spreads, odds, prop lines, combined payouts, closing prices, edge, ROI and CLV are unverified and blank. No feed authorization, paid subscription or credentials were invented.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NF02",
+      "status": "Needs review",
+      "item": "Season aggregates are not skill evidence",
+      "finding": "2026 season-to-date aggregates are retrospective. Cross-sectional correlations are descriptive, not predictive or selection-adjusted.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NF03",
+      "status": "Needs review",
+      "item": "No pregame timestamp archive or untouched test",
+      "finding": "Snapshots retrieved now cannot prove historical pregame availability. Using full-season averages to predict games within that season would leak future data.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "NF04",
+      "status": "Needs review",
+      "item": "Rights, licensing and automated collection",
+      "finding": "Confirmed: NFL Terms §1.3 (non-commercial/informational only; systematic retrieval prohibited without consent), §11(f) (harvesting ban), §12 (gambling/wagering prohibition). Separate permission unverified. NFL-derived betting prices, bulk collection and cash use are disabled. This is not legal advice.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NF05",
+      "status": "Needs review",
+      "item": "Cash prizes not funded or authorized",
+      "finding": "Competition uses explicit non-monetary merit points only. Cash pool and payment amounts are blank; no eligible winner exists.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NF06",
+      "status": "Needs review",
+      "item": "Repository has no LICENSE",
+      "finding": "No LICENSE file exists. No permission, ownership or license was inferred for code or third-party data.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "NF07",
+      "status": "Needs review",
+      "item": "Frozen snapshots and source-check limits",
+      "finding": "Snapshots were checked through fetch_page, not a raw HTTP archive. Automated link health is not factual verification; sources may change or reject bots.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NF08",
+      "status": "Needs review",
+      "item": "Rushing/receiving header labels not rendered",
+      "finding": "Rushing and receiving tables were transcribed in displayed order as positional C1-C9. Column meanings are not asserted and no correlations use them.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-RUSHING",
+        "NFL-RECEIVING"
+      ]
+    },
+    {
+      "id": "NF09",
+      "status": "Needs review",
+      "item": "Schedule and roster not transcribed",
+      "finding": "Schedule page existence observed; no schedule rows transcribed. Roster pages exist; no roster rows transcribed. Rest/travel and backup-depth features remain blank.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-SCHEDULE",
+        "NFL-ROSTER"
+      ]
+    },
+    {
+      "id": "NF10",
+      "status": "Needs review",
+      "item": "Injury replacements and deficiencies blank",
+      "finding": "Injury report states player, position, injury, practice and game status only. Replacement players and quantified deficiencies are not stated on the page and are left blank.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-INJURY"
+      ]
+    },
+    {
+      "id": "NF11",
+      "status": "Needs review",
+      "item": "Team offense header mapping needs confirmation",
+      "finding": "Team offense passing header was not rendered; labels are withheld and data retained positionally. Dependent correlations are blank pending direct verification.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-TEAM-OFF",
+        "NFL-TEAM-DEF"
+      ]
+    },
+    {
+      "id": "NF12",
+      "status": "Needs review",
+      "item": "Two published Yds/Att values disagree with their own listed inputs",
+      "finding": "On the official passing table, Patrick Mahomes is printed as 2,037 yards on 263 attempts with 7.8 yards per attempt, and Deshaun Watson as 1,806 on 249 with 7.2. Dividing the published yards by the published attempts gives 7.7452 and 7.2530, which round to 7.7 and 7.3. Neither printed rate is reachable by rounding from its own row. Re-fetched 2026-11-12 and the page still prints these values, so this is a publisher-side disagreement between columns, not a transcription error here. The Yds/Att vs Rate correlation is therefore reported on the column as printed, with the exposure to using exact yards per attempt quantified on the independent-verification page.",
+      "unverified_value": null,
+      "source_ids": [
+        "NFL-PASSING"
+      ]
+    }
+  ]
+}

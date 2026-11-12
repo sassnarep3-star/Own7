@@ -49,7 +49,7 @@
       "status": "Unknown",
       "owner": "Owner decision",
       "blocks": "S01–S08, all rewards",
-      "source_ids": ["NFL-TERMS", "REPO"]
+      "source_ids": ["NFL-TERMS-LEGAL", "REPO"]
     },
     {
       "id": "Q05",
@@ -85,7 +85,7 @@
       "status": "Unknown",
       "owner": "Owner decision",
       "blocks": "Commercial release, price publication, cash rewards",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-TERMS-LEGAL"]
     },
     {
       "id": "Q08",
@@ -109,7 +109,7 @@
       "status": "Partly answered",
       "owner": "Owner decision",
       "blocks": "Roadmap",
-      "source_ids": ["NFL-INJURY-W10-2026", "NFL-TERMS", "REPO"]
+      "source_ids": ["NFL-INJURY-W10-2026", "NFL-TERMS-LEGAL", "REPO"]
     },
     {
       "id": "Q10",
