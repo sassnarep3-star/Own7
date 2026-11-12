@@ -50,6 +50,14 @@ SOURCE_HOSTS.update({'NFL-INJURIES': 'www.nfl.com', 'NFL-ROUNDUP': 'www.nfl.com'
 SOURCE_HOSTS.update({'A958-NFL-INJURIES': 'www.nfl.com', 'A958-NFL-REPORT-POLICY': 'www.nfl.com', 'A958-NFL-DATES': 'www.nfl.com', 'A958-NFL-TERMS': 'www.nfl.com', 'A958-NFL-ROUNDUP': 'www.nfl.com', 'A958-NFL-SEA-QB': 'www.nfl.com', 'A958-NFL-MIA-QB': 'www.nfl.com', 'A958-NE-DEPTH': 'www.patriots.com', 'A958-DET-DEPTH': 'www.detroitlions.com', 'A958-NYG-DEPTH': 'www.giants.com', 'A958-SEA-DEPTH': 'www.seahawks.com', 'A958-BAL-DEPTH': 'www.baltimoreravens.com', 'A958-MIA-DEPTH': 'www.miamidolphins.com', 'A958-CLE-DEPTH': 'www.clevelandbrowns.com', 'A958-AZ-DEPTH': 'www.azcardinals.com', 'A958-WAS-DEPTH': 'www.commanders.com', 'A958-CLE-QB': 'www.clevelandbrowns.com', 'A958-PIT-DEPTH': 'www.steelers.com', 'A958-NFL-RULES': 'static.www.nfl.com', 'A958-NFL-SCORES': 'www.nfl.com', 'A958-PY-STATS': 'docs.python.org', 'A958-SK-TIME': 'scikit-learn.org', 'A958-SK-CAL': 'scikit-learn.org', 'A958-SM-HOLM': 'www.statsmodels.org', 'A958-AB-HELP': 'myhealth.alberta.ca', 'A958-REPO': 'github.com'})
 
 # Rental pages from session arena/692da006-own7 (PR #19) — official government/legal hosts only.
+# NFL research layer (session arena/a129b881-own7). Official league domains, one tertiary
+# method reference, and the publisher glossary. No odds vendor is registered.
+SOURCE_HOSTS.update({
+    'NFL-STANDINGS': 'www.nfl.com', 'NFL-INJ-W10': 'www.nfl.com', 'NFL-SCHED-W10': 'www.nfl.com',
+    'NFL-INJURY-POLICY': 'www.nfl.com', 'NFL-TERMS-LEGAL': 'www.nfl.com',
+    'PYTH-NFL': 'en.wikipedia.org', 'PFR-GLOSSARY': 'www.pro-football-reference.com',
+})
+
 SOURCE_HOSTS.update({'SF-RENTAL-LAWS': 'www.sf.gov', 'SF-RENT-INC': 'www.sf.gov', 'SF-NEWS-AGA': 'www.sf.gov', 'SF-BANKED': 'www.sf.gov', 'SF-HI-LICENSE': 'www.sf.gov', 'CA-AG-RENTCAPS': 'oag.ca.gov', 'CA-AG-TENANTS': 'oag.ca.gov', 'LEGINFO-CIV827': 'leginfo.legislature.ca.gov', 'LEGINFO-CIV1947-12': 'leginfo.legislature.ca.gov', 'LEGINFO-AB1482': 'leginfo.legislature.ca.gov', 'BLS-SF-CPI': 'blsmon1.bls.gov', 'GOVINFO-FHA': 'www.govinfo.gov', 'SF-RTC-EDC': 'evictiondefense.org'})
 
 

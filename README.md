@@ -1,44 +1,69 @@
-# OWN7 · research lab (NBA archive · SF rental · NFL)
+# OWN7 · NFL Origination Lab
 
-[Live dashboard](https://sassnarep3-star.github.io/Own7/) · [NFL research site](https://sassnarep3-star.github.io/Own7/nfl/index.html) · [**NFL line-origination lab**](https://sassnarep3-star.github.io/Own7/nfl/origination/index.html) · [NFL assurance handoff](https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/index.html) · [NBA executive brief](docs/executive-summary.md) · [Sources](research/sources.json) · [Coordination / release evidence](COORDINATION.md)
+[Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
-> **Sections by status.** The **NFL sections** are the active programme and are split in two layers, described below. The **NBA research** section is an earlier, retained audit and is now an archive of that work. The **SF rental** sections are a separate, unrelated analysis. Shared navigation labels each group; nothing was deleted and no historical claim was relabelled as verified.
+## What this is now
 
-## NFL · two layers, one navigation group
+The landing page is an **NFL research workspace**. It originates its own lines from official NFL
+data, then tries to falsify them. It publishes what it knows, what it does not know, and a ranked
+list of suggestions for closing the gaps, so a change can be reviewed and chosen before anything
+is implemented.
 
-Two sessions built NFL content on the same day. They answer different questions, they are cross-linked, and they write disjoint files. Neither overwrote the other.
+- **66 verified NFL rows**, parsed from saved official page text on 2026-11-12 and re-derived
+  arithmetically before publication: 32 club standings rows, 20 injury-report rows, 14 Week 10
+  fixtures. `scripts/nfl_extract.py` aborts instead of publishing a contradiction.
+- **14 originated games** with a model spread, total and fair price from one coherent score pair.
+  No sportsbook price was retrieved, so market cells, ROI and CLV are blank by rule.
+- **10 ranked suggestions**, **14 decision questions**, **12 review flags**, **10 validation gates**
+  (two pass, one partial, one open on rights) and **8 blocked strategies** with an empty leaderboard.
+- **Zero** qualified strategies, rewards, wagers or recommendations.
 
-### 1. NFL research site — `nfl/` (session `arena/a4e560bc-own7`, Week 7 snapshot)
+NFL data is attributed to NFL.com. This is not affiliated with or endorsed by the NFL. NFL.com terms
+§1.3 permit individual non-commercial informational use and prohibit systematic retrieval to compile
+a collection without written consent, so no dataset is released and nothing is scraped on a schedule.
 
-A source-linked research workspace: standings and player/team statistics, a signal library, generic pricing identities, injuries and backup coverage, validation gates, an empty leaderboard, a requirements ledger, suggestions and questions, and a Flagged for Review register (NF01–NF11). Its position is explicit: **no NFL lines are originated there** and NFL-derived betting prices are withheld under the source-rights gate.
+## Reproduce without manual data entry
 
-### 2. NFL line-origination lab — `nfl/origination/` (session `arena/20394b77-own7`, Week 10 snapshot)
+Python 3.11+; no third-party Python packages.
 
-Adds the part the first layer withholds, as a model-only demonstration: spreads and totals for all 14 Week 10 games from a shrunk win-percentage and Pythagorean baseline with sensitivity bounds, 210 injury rows checked against two official NFL.com pages, depth-chart deficiencies for three clubs joined to that injury report, ten fail-closed gates, and **Suggestions** and **Open questions** registers.
+```sh
+python scripts/nfl_extract.py --check   # re-parse saved official NFL text; refuse contradictions
+python -m nfl_origination run                   # derive lines, calibration, correlations, gates
+python -m unittest discover -s tests    # 86 tests
+python scripts/build_site.py            # regenerate every page deterministically
+python scripts/check_site.py            # links, fragments, per-row sources, blank rules
+npm ci && npm run test:browser          # 46 desktop + 46 mobile pages, WCAG A/AA
+python scripts/serve_site.py --host 0.0.0.0 --port 8080
+```
 
-- **Verified:** 32/32 standings rows pass three arithmetic identities (win percentage, net points, and league-wide points for = points against at 6,246 over 272 team-games); injury practice status agrees with the official Wednesday roundup on every overlapping player; injury-report deadlines are quoted from the league's calendar.
-- **Model-derived, never a market price:** every line is labelled as the model's output. No sportsbook was scraped, and no price, edge, ROI or CLV value exists anywhere in the tree.
-- **Not verified, therefore blank:** every market price, every leg-level correlation, 21 injury types the sources do not publish, depth evidence for 25 of the 28 slate clubs, and the reason four clubs are absent from the slate.
-- **Nothing qualifies.** Eight strategies are registered and all are blocked; the leaderboard is empty; no reward is paid and no cash prize exists.
-- **Rights:** [NFL.com Terms §1.3](https://www.nfl.com/legal/terms/) permits individual, non-commercial, informational use only and prohibits systematic retrieval or compilation. This is a small dated sample under that limit, not a data product.
+## The NFL section
 
-Reproduce (standard library only, no network): `python nfl/build.py --check`, `python nfl/origination/originate.py --check`, `python -m unittest discover -s nfl/origination -p "test_*.py" -v`.
+| Page | What it answers |
+|---|---|
+| `index.html` | Overview, headline findings and the five things that matter |
+| `nfl-suggestions.html` | **Suggestions to review**, ranked by decision value, with acceptance tests |
+| `nfl-decisions.html` | What we know, what we do not know, and what closes each gap |
+| `nfl-questions.html` | Fourteen questions, each split into sourced and open parts |
+| `nfl-lines.html` | Line origination: method, assumptions, originated board |
+| `nfl-correlation.html` | Team-level dependence, and what is deliberately not estimated |
+| `nfl-injuries.html` | Official statuses, and why starter/backup impact is blank |
+| `nfl-standings.html` | All 32 clubs, re-derived; six of sixteen displayed fields withheld and explained |
+| `nfl-validation.html` | Ten gates and the per-strategy gate matrix |
+| `nfl-leaderboard.html` | The frozen competition format, empty by rule |
+| `nfl-review.html` | Twelve flagged irregularities with official source links |
 
-Detailed evidence: `docs/nfl-executive-summary.md` (research site), `docs/nfl-origination-summary.md` (lab), `docs/nfl-repo-review-2026-11-12.md` (repo review, irregularities I-01…I-11), `COORDINATION.md` (claims, collision and resolution).
+## Known limits
 
-### 3. NFL assurance handoff — `nfl-assurance-9580ac3f/` (session `arena/9580ac3f-own7`)
-
-An independent, bounded assurance supplement: 276 official Week 10 injury rows, 289 club-published depth slots across ten clubs, a 150-file / 14,244-line frozen-baseline inventory, executable fail-closed validation/leaderboard primitives, reviewable suggestions/questions and a Flagged for Review register. It preserves shared cells, blank columns and missing statuses; it does not infer replacements, performance deficits, market prices, correlations, ROI or CLV. Source IDs are namespaced `A958-*` to avoid re-pointing canonical registry entries.
-
-Reproduce: `python nfl-assurance-9580ac3f/build.py --check`, `python nfl-assurance-9580ac3f/check.py`, `python -m unittest discover -s nfl-assurance-9580ac3f/tests -v`.
+One partial season, eight or nine games per club. Every NFL value is single-source. No depth chart,
+snap count, player log or market price was retrieved. Division standings columns could not be
+identified from the rendered table and are withheld. Five of ten team correlations are arithmetic
+artefacts and are labelled as such. Team-level correlation is not leg-level dependence, so no parlay
+is priced. Luck cannot be removed. The earlier NBA and rental research remains on the site, unchanged
+and separately scoped.
 
 ---
 
-## NBA research archive
-
-One static, source-linked dashboard replaces the repository’s three inconsistent earlier sites. It contains **107 checked official snapshot rows**, eight strategy hypotheses, six paired-game exploratory estimates plus 17 contributed aggregate-correlation rows (with overlaps), 88 retrospective probability demonstrations, ten fail-closed validation gates, an empty qualified leaderboard, a requirements ledger and a complete baseline file audit.
-
-**No verified betting edge, executable NBA line, ROI, CLV, cash prize or winning strategy is claimed.** Blank values are intentional. Luck cannot be removed.
+## Earlier NBA research workspace (retained, unchanged)
 
 ## Independent verification
 
