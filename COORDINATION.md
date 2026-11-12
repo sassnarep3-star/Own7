@@ -369,3 +369,40 @@ Privacy: all personal information (tenant initials) is anonymized everywhere in 
 ### Merge note (arena/cab077aa-own7, 2026-11-06, second merge)
 - Merged origin/main again (PR #19, session arena/692da006-own7: root-level rental*.html pages + research/rental.json). No other session's work discarded; their nav group and pages retained, mine added as "Deep-dive sub-site" → rental/index.html.
 - research/sources.json unioned by ID across both sides; SOURCE_HOSTS in scripts/check_site.py unioned; generated artifacts regenerated deterministically.
+
+---
+
+## Session arena/382a833e-own7 — NFL decision desk, repo audit, integration (2026-11-12)
+
+Session ID: `session-arena-382a833e-own7`. Branch: `arena/382a833e-own7` (fixed by Arena). Base commit `a989d67`.
+
+**Coordination observation at claim time (16:25 UTC 2026-11-12).** Two sessions had already pushed claims within the previous minute: `arena/270048f0-own7` (tasks N1–N8, claiming `nfl/**`, `research/nfl-sources.json`, `docs/nfl-source-verification.md`, `docs/nfl-repo-review.md`, and the integration touchpoints `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`) and `arena/a4e560bc-own7` (tasks N1–N11, claiming `nfl/**`, `nfl_lab/**`, `research/nfl-*.json`, `data/nfl-*`, `docs/nfl-*.md`). Their scopes overlap each other on `nfl/**`. This session will **not** start any task either session has claimed and will not edit `nfl/**`, `nfl_lab/**`, `research/nfl-*.json`, `data/nfl-*`, `docs/nfl-*.md`.
+
+**Exclusive scope claimed by this session** (no overlap with the two claims above):
+
+- `nfl-desk/**` — new self-contained decision-support sub-site (data, builder, tests, generated pages, style, manifest)
+- `docs/nfl-desk/**` — this session's source verification, repo review and verification notes
+- Append-only: `research/desk-sources.json` (new source IDs only), `COORDINATION.md`
+- Integration touchpoints, claimed **only for additive edits**: `scripts/build_site.py` (one nav group + build hook + manifest entries), `scripts/check_site.py` (SOURCE_HOSTS adds + recursive scan of `nfl-desk/`), `scripts/browser_test.mjs` (allowedFolders add), `.github/workflows/check.yml` (desk check steps), `research/site-manifest.json` (regenerated)
+
+### Task board
+
+| ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
+|---|---|---|---|---|---|
+| D1 | Claim + board entry | done | session-arena-382a833e-own7 | COORDINATION.md (append only) | Committed + pushed immediately, before implementation |
+| D2 | Official NFL source verification (terms, standings, injury report, stats, schedule, rules) | in progress | session-arena-382a833e-own7 | research/desk-sources.json, docs/nfl-desk/sources.md | Every URL read via fetch_page on 2026-11-12; exact checked scope recorded; unreachable/JS-only pages flagged, never inferred |
+| D3 | NFL dataset: 2026 regular-season standings + official weekly injury-report entries | in progress | session-arena-382a833e-own7 | nfl-desk/data.json | One row per official value, `source` on every row; unknown = blank + flag |
+| D4 | Availability & depth-deficiency model (offense/defense starter→backup replacement) | in progress | session-arena-382a833e-own7 | nfl-desk/data.json, generated availability page | Status vocabulary limited to NFL participation designations actually observed; no invented depth-chart ranks |
+| D5 | Line-origination & signal research, validation gates, luck-removal statistics, correlation | in progress | session-arena-382a833e-own7 | nfl-desk/data.json, generated strategies/correlation/gates pages | Derived arithmetic labelled; no invented price/ROI/CLV/edge |
+| D6 | Leaderboard competition spec (scoring, rewards policy, anti-luck admission rules) | in progress | session-arena-382a833e-own7 | nfl-desk/data.json | Non-monetary merit only unless funded; no cash prize claimed |
+| D7 | Decision register: open questions, information held/missing, answers, owners | in progress | session-arena-382a833e-own7 | nfl-desk/data.json, generated questions page | Each item marked answered / partial / unknown with source or explicit gap |
+| D8 | Suggestions board with review workflow before implementation | in progress | session-arena-382a833e-own7 | nfl-desk/data.json, generated suggestions page | Each suggestion: rationale, evidence, effort, risk, decision gate, reviewer choice |
+| D9 | Repo review + irregularities for the existing repository | in progress | session-arena-382a833e-own7 | docs/nfl-desk/repo-review.md | Line-by-line checks against official sources; every irregularity flagged, none silently changed |
+| D10 | Executive summary for the NFL decision desk | in progress | session-arena-382a833e-own7 | nfl-desk/data.json, generated summary page | Only important verified details; explicit unknowns |
+| D11 | Integration: nav, checks, CI, determinism, no broken links | unclaimed | session-arena-382a833e-own7 | integration touchpoints above | Must pass before PR |
+| D12 | PR + merge + Pages deploy confirmation + record | unclaimed | session-arena-382a833e-own7 | main, COORDINATION.md | Do not merge a broken site |
+
+Cross-scope requests to the two NFL sessions (logged here, not applied by this session):
+1. `nfl/**` is claimed twice (`270048f0`, `a4e560bc`). Whoever pushes last must rebase and reconcile; do not delete the other's directory.
+2. If either session adds NFL hosts to `scripts/check_site.py`'s allowlist, use exact official hosts only (`www.nfl.com`, `official.nfl.com`, `static.www.nfl.com`, `operations.nfl.com`, `nflcommunications.com` if used) — never a wildcard.
+3. This session's `nfl-desk/**` pages already carry the decision register, suggestions board and executive summary requested in the brief. If `nfl/**` also delivers those, the integration step must keep one canonical implementation per topic and link, not duplicate the tables.
