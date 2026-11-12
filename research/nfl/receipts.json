@@ -1,0 +1,89 @@
+{
+  "checked_on": "2026-11-12",
+  "conference_reference": {
+    "AFC": [
+      "BUF",
+      "NE",
+      "NYJ",
+      "MIA",
+      "PIT",
+      "CIN",
+      "CLE",
+      "BAL",
+      "JAX",
+      "HOU",
+      "IND",
+      "TEN",
+      "DEN",
+      "KC",
+      "LV",
+      "LAC"
+    ],
+    "NFC": [
+      "NYG",
+      "DAL",
+      "WAS",
+      "PHI",
+      "CHI",
+      "DET",
+      "MIN",
+      "GB",
+      "CAR",
+      "NO",
+      "TB",
+      "ATL",
+      "SF",
+      "SEA",
+      "LA",
+      "AZ"
+    ],
+    "note": "Used only to check that parsed sections and the fixture/bye cover are complete; not an independent NFL source."
+  },
+  "datasets": [
+    {
+      "file": "data/nfl-standings-week10-2026.csv",
+      "source_url": "https://www.nfl.com/standings/",
+      "retrieval": "research/nfl/evidence/standings-2026-w10.retrieved.md",
+      "rows": 32,
+      "checks": [
+        "32 unique clubs",
+        "PCT = (W + T/2)/games",
+        "NET PTS = PF - PA",
+        "HOME + ROAD = overall record",
+        "league wins = league losses",
+        "section matches reference conference list"
+      ],
+      "not_retained": [
+        "DIV",
+        "CONF",
+        "last-10 and other unconfirmed middle positions"
+      ],
+      "reason_not_retained": "The rendered table had no text header row and the displayed field order does not match the page legend, so those columns could not be identified with confidence."
+    },
+    {
+      "file": "data/nfl-injuries-2026-w10.csv",
+      "source_url": "https://www.nfl.com/injuries/",
+      "retrieval": "research/nfl/evidence/injury-report-w10-tnf.retrieved.md",
+      "rows": 20,
+      "checks": [
+        "20 unique player identities",
+        "practice status in the official three categories",
+        "game status in the official categories"
+      ],
+      "scope": "One game (WAS at NYG). League-wide Week 10 coverage is NOT transcribed."
+    },
+    {
+      "file": "data/nfl-schedule-2026-w10.csv",
+      "source_url": "https://www.nfl.com/schedules/",
+      "retrieval": "research/nfl/evidence/schedule-2026-w10.retrieved.md",
+      "rows": 14,
+      "checks": [
+        "14 fixtures",
+        "28 unique participating clubs",
+        "fixtures + 4 byes = 32 clubs"
+      ]
+    }
+  ],
+  "identical_bytes_note": "All three datasets are regenerated from the saved text on every run; the extractor aborts instead of publishing a contradiction.",
+  "flagged": []
+}

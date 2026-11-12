@@ -22,6 +22,10 @@ MARKET = load_json("market-evidence/evidence.json")
 RENT = load_json("research/rent.json")
 RENTAL = load_json("research/rental.json")
 OPEN_FLAGS = sum(x["status"] == "Needs review" for x in CATALOG["flags"])
+NFL_FLAGS = load_json("research/nfl/flags.json")["flags"]
+NFL_OPEN = sum(1 for x in NFL_FLAGS if x["status"] == "Needs review")
+sys.path.insert(0, str(ROOT))
+import nfl_pages
 
 
 class Markup(str):
@@ -147,8 +151,20 @@ def chart():
 
 
 NAV = [
-    ("Workspace", [("index.html", "Overview", "overview"), ("executive-summary.html", "Executive brief", "brief"), ("data.html", "Data library", "data")]),
-    ("Research", [("signals.html", "Signal library", "signals"), ("lines.html", "Probability lab", "lab"), ("correlation.html", "Correlation", "correlation"), ("methodology.html", "Methodology", "method"), ("settlement.html", "Market evidence", "sources"), ("validation.html", "Validation gates", "validation"), ("leaderboard.html", "Leaderboard", "leaderboard")]),
+    ("NFL origination", [("index.html", "NFL overview", "overview"),
+                      ("nfl-suggestions.html", "Suggestions", "signals"),
+                      ("executive-summary.html", "Executive summary", "brief"),
+                      ("nfl-decisions.html", "Decision brief", "brief"),
+                      ("nfl-questions.html", "Questions", "requirements"),
+                      ("nfl-lines.html", "Line origination", "lab"),
+                      ("nfl-correlation.html", "Correlation", "correlation"),
+                      ("nfl-injuries.html", "Injuries & availability", "care"),
+                      ("nfl-standings.html", "Standings snapshot", "data"),
+                      ("nfl-validation.html", "Validation gates", "validation"),
+                      ("nfl-leaderboard.html", "Leaderboard", "leaderboard"),
+                      ("nfl-review.html", "Flagged for review", "review")]),
+    ("NBA workspace", [("nba-overview.html", "NBA overview", "overview"), ("nba-executive-summary.html", "NBA brief", "brief"), ("data.html", "Data library", "data")]),
+    ("NBA research", [("signals.html", "Signal library", "signals"), ("lines.html", "Probability lab", "lab"), ("correlation.html", "Correlation", "correlation"), ("methodology.html", "Methodology", "method"), ("settlement.html", "Market evidence", "sources"), ("validation.html", "Validation gates", "validation"), ("leaderboard.html", "Leaderboard", "leaderboard")]),
     ("Transparency", [("sources.html", "Source register", "sources"), ("review.html", "Flagged for Review", "review"), ("audit.html", "Repository audit", "audit"), ("requirements.html", "Requirements", "requirements"), ("responsible-gambling.html", "Responsible use", "care")]),
     ("Rental analysis", [("rent-overview.html", "SF rent overview", "data"), ("rent-units.html", "Units & caps", "brief"), ("rent-qa.html", "Q&A and compliance", "validation")]),
     ("Rental · SF 94122 (full)", [("rental.html", "Rental overview", "data"), ("rental-summary.html", "Executive summary", "brief"), ("rental-units.html", "Units & scenarios", "lab"), ("rental-law.html", "Law by jurisdiction", "method"), ("rental-notice.html", "Notice procedure", "validation"), ("rental-answers.html", "Questions answered", "sources"), ("rental-flagged.html", "Flagged for review", "review"), ("rental/index.html", "Deep-dive sub-site", "info")]),
@@ -159,21 +175,28 @@ NAV = [
 ]
 
 
-def page(slug, title, subtitle, body, eyebrow="NBA / RESEARCH WORKSPACE"):
+def page(slug, title, subtitle, body, eyebrow=None):
+    parent = next((group for group, entries in NAV if any(e[0] == slug for e in entries)), "Workspace")
+    if eyebrow is None:
+        eyebrow = "NFL / ORIGINATION LAB" if parent.startswith("NFL") else "NBA / RESEARCH WORKSPACE"
     navigation = ''
     for group, entries in NAV:
         navigation += f'<div class="nav-group"><div class="nav-label">{group}</div>'
         for href, label, ico in entries:
             current = ' aria-current="page"' if href == slug else ''
-            count = f'<span class="nav-count">{OPEN_FLAGS}</span>' if href == 'review.html' else ''
+            count = ''
+            if href == 'review.html':
+                count = f'<span class="nav-count">{OPEN_FLAGS}</span>'
+            elif href == 'nfl-review.html':
+                count = f'<span class="nav-count">{NFL_OPEN}</span>'
             navigation += f'<a href="{href}"{current}>{icon(ico)}{label}{count}</a>'
         navigation += '</div>'
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="OWN7 NBA research: source-linked observations, exploratory models, validation and transparent limitations."><meta name="referrer" content="strict-origin-when-cross-origin"><title>{esc(title)} · OWN7 Research</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><script src="js/app.js" defer></script></head>
-<body><a class="skip-link" href="#main-content">Skip to content</a><aside class="sidebar" id="sidebar" aria-label="Research workspace"><a class="brand" href="index.html" aria-label="OWN7 Research Lab home"><span class="brand-mark" aria-hidden="true">7</span><span class="brand-name">OWN7<small>NBA RESEARCH LAB</small></span></a><nav aria-label="Main navigation">{navigation}</nav><div class="sidebar-bottom">{link(SOURCES['REPO']['url'], icon('external')+' View repository', True)}<div class="mode"><span class="dot"></span>NON-COMMERCIAL RESEARCH</div><p>No live lines. No wagers placed.</p></div></aside><button class="nav-backdrop" aria-label="Close navigation" tabindex="-1" hidden></button>
-<div class="layout"><header class="topbar"><button type="button" class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">{icon('menu')}</button><div class="breadcrumb"><span class="crumb-parent">Workspace</span><span class="divider">/</span><strong>{esc(title)}</strong></div><div class="top-right"><label class="search-field">{icon('search')}<span class="sr-only">Search tables on this page</span><input type="search" id="page-search" placeholder="Search this page…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label><div class="snapshot">SNAPSHOT CHECKED<span>03 Nov 2026</span></div></div></header>
+<body><a class="skip-link" href="#main-content">Skip to content</a><aside class="sidebar" id="sidebar" aria-label="Research workspace"><a class="brand" href="index.html" aria-label="OWN7 Research Lab home"><span class="brand-mark" aria-hidden="true">7</span><span class="brand-name">OWN7<small>NFL ORIGINATION LAB</small></span></a><nav aria-label="Main navigation">{navigation}</nav><div class="sidebar-bottom">{link(SOURCES['REPO']['url'], icon('external')+' View repository', True)}<div class="mode"><span class="dot"></span>NON-COMMERCIAL RESEARCH</div><p>No live lines. No wagers placed.</p></div></aside><button class="nav-backdrop" aria-label="Close navigation" tabindex="-1" hidden></button>
+<div class="layout"><header class="topbar"><button type="button" class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">{icon('menu')}</button><div class="breadcrumb"><span class="crumb-parent">{esc(parent)}</span><span class="divider">/</span><strong>{esc(title)}</strong></div><div class="top-right"><label class="search-field">{icon('search')}<span class="sr-only">Search tables on this page</span><input type="search" id="page-search" placeholder="Search this page…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label><div class="snapshot">SNAPSHOT CHECKED<span>12 Nov 2026</span></div></div></header>
 <main class="content" id="main-content"><div class="page-heading"><div><div class="eyebrow">{esc(eyebrow)}</div><h1>{esc(title)}</h1><p>{subtitle}</p></div><div class="heading-actions">{link('research/results.json', icon('download')+' Research JSON', css='button')}{badge('Research only', 'neutral')}</div></div>{body}
-<footer class="footer"><div><strong>OWN7</strong> / INDEPENDENT RESEARCH<br>NBA statistics attributed to NBA.com. Not affiliated with or endorsed by the NBA.</div><div>Frozen snapshots · not a live feed<br>{link('review.html','Limitations')} &nbsp;·&nbsp; {link('sources.html','Sources')} &nbsp;·&nbsp; {link('responsible-gambling.html','Responsible use')}</div></footer></main></div></body></html>\n'''
+<footer class="footer"><div><strong>OWN7</strong> / INDEPENDENT RESEARCH<br>NFL data attributed to NFL.com; NBA data to NBA.com. Not affiliated with or endorsed by either league.</div><div>Frozen snapshots · not a live feed<br>{link('review.html','Limitations')} &nbsp;·&nbsp; {link('sources.html','Sources')} &nbsp;·&nbsp; {link('responsible-gambling.html','Responsible use')}</div></footer></main></div></body></html>\n'''
 
 
 def overview():
@@ -347,7 +370,12 @@ def audit_page():
 def requirements_page():
     rows=load_json('research/requirements.json')
     for r in rows:r['artifact_link']=Markup(link(r['artifact'],'Inspect artifact →'))
-    return notice('A requirements ledger, not a blanket completion claim.', 'Blocked scientific, legal or market requirements remain explicitly blocked; a live website does not turn an unverified model into a qualified strategy.',info=True)+section('Request-to-evidence traceability',table('requirements-ledger','Requirements traceability',[('Requirement',lambda r:rich(r['requirement'],r['id'])),('Disposition / evidence','evidence'),('Artifact','artifact_link'),('Status',lambda r:badge(r['status']))],rows,note='All project design defaults are distinguished from external facts. Release evidence and deployment status are recorded in COORDINATION.md.'))
+    complete=sum(1 for r in rows if r['status']=='Complete')
+    partial=sum(1 for r in rows if r['status'] not in ('Complete',))
+    body=notice('A requirements ledger, not a blanket completion claim.', f'{complete} requirements are complete and {partial} are partial or blocked. A partial requirement means the deliverable exists and the evidence gap is named, not that the underlying claim is satisfied.',info=True)
+    body+=metrics([('Requirements traced',len(rows),'NFL, NBA and rental scope','requirements'),('Complete',complete,'Delivered with evidence','validation'),('Partial or blocked',partial,'Gap named, not hidden','review'),('Owner input needed',1,'One preference question','brief')])
+    body+=section('Request-to-evidence traceability',table('requirements-ledger','Requirements traceability',[('Requirement',lambda r:rich(r['requirement'],r['id'])),('Disposition / evidence','evidence'),('Artifact','artifact_link'),('Status',lambda r:badge(r['status']))],rows,filter_options=['Complete','Partial','Blocked'],note='All project design defaults are distinguished from external facts. Release evidence and deployment status are recorded in COORDINATION.md.'))
+    return body
 
 
 def responsible_use():
@@ -530,10 +558,26 @@ ALIASES = {
 
 
 def build():
+    # nfl_pages builds rows with this module's helpers; inject them lazily to avoid a cycle.
+    import nfl_pages
+    for helper in ("notice", "metrics", "section", "table", "rich", "badge", "link", "Markup"):
+        setattr(nfl_pages, helper, globals()[helper])
+    nfl_pages._Markup = Markup
     verify_receipts()
     pages = {
-        'index.html':('Research overview','An evidence-first workspace for independent NBA probability research. Observe carefully. Test honestly. Know when not to act.',overview()),
-        'executive-summary.html':('Executive brief','The important findings, verified observations, research progress and non-negotiable limits—in one place.',executive()),
+        'index.html':('NFL research overview','An evidence-first NFL workspace: originate your own lines from official data, then prove or reject them.',nfl_pages.nfl_overview()),
+        'nfl-suggestions.html':('Suggestions','Proposals for review, ranked by the decision they unlock. Choose a path before changing anything.',nfl_pages.suggestions(),'NFL / DECISION LAB'),
+        'nfl-decisions.html':('Decision brief','What we know, what we do not know, and what must be answered before any decision is reasonable.',nfl_pages.decisions(),'NFL / DECISION LAB'),
+        'nfl-questions.html':('Questions','Fourteen questions, each split into the sourced part of the answer and the part still open.',nfl_pages.nfl_questions(),'NFL / DECISION LAB'),
+        'nfl-lines.html':('Line origination','Originated spreads and totals from official scoring data. No market price exists in the record.',nfl_pages.nfl_lines(),'NFL / ORIGINATION LAB'),
+        'nfl-correlation.html':('Correlation','Team-level dependence, labelled honestly, and the leg-level dependence that is deliberately not estimated.',nfl_pages.nfl_correlation(),'NFL / ORIGINATION LAB'),
+        'nfl-injuries.html':('Injuries & availability','Official participation and game status. Starter and backup impact is blank because the data needed for it was not retrieved.',nfl_pages.nfl_injuries(),'NFL / AVAILABILITY'),
+        'nfl-standings.html':('Standings snapshot','All 32 clubs, re-derived before publication. Six of sixteen displayed fields are withheld because no header row exists.',nfl_pages.nfl_stands(),'NFL / VERIFIED DATA'),
+        'nfl-validation.html':('Validation gates','Ten gates, two passes, one partial and one open rights question. A missing input never counts as a pass.',nfl_pages.nfl_validation(),'NFL / VALIDATION'),
+        'nfl-leaderboard.html':('Leaderboard','A frozen competition format with no entries, because nothing has earned a place.',nfl_pages.nfl_leaderboard(),'NFL / COMPETITION'),
+        'nfl-review.html':('Flagged for review','Twelve NFL items published with their sources. None blocks publication; all block unsupported claims.',nfl_pages.nfl_review(),'NFL / TRANSPARENCY'),
+        'executive-summary.html':('NFL executive summary','The five findings that matter, the four gaps that block a reward decision, and the sources behind each.',nfl_pages.executive(),'NFL / EXECUTIVE'),
+        'nba-executive-summary.html':('NBA brief','The important findings, verified observations, research progress and non-negotiable limits—in one place.',executive()),
         'data.html':('Data library','Four frozen official-source datasets. Every retained row is attributed, scoped and checked; nothing here is a live market feed.',data_library()),
         'signals.html':('Signal library','Eight testable research hypotheses across singles, parlays and player-prop combinations. None is a proven edge.',signals()),
         'lines.html':('Probability lab','A small, reproducible chronological demonstration. Calculated probabilities—not official forecasts, market lines or evidence of skill.',probability_lab()),
@@ -558,6 +602,7 @@ def build():
         'rental-answers.html':('Questions answered','The specific rental-increase inquiries, answered with official source links.',rental_answers(),'SF / RENTAL ANALYSIS'),
         'rental-flagged.html':('Rental flagged','Unverified rental values (2027-28 rate, banked history) published blank for manual review.',rental_flagged(),'SF / RENTAL ANALYSIS'),
     }
+    pages['nba-overview.html'] = ('NBA research overview','The earlier NBA workspace, kept intact and separately scoped.',overview(),'NBA / RESEARCH WORKSPACE')
     generated=['market-evidence/index.html']
     # Auxiliary sub-site (session arena/cab077aa-own7): anonymized SF rent-increase research.
     rental_result=subprocess.run([sys.executable,str(ROOT/'rental'/'build.py')],cwd=ROOT,capture_output=True,text=True)
@@ -585,7 +630,7 @@ def build():
         generated.append(f'nfl/origination/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
-        eyebrow = entry[3] if len(entry) > 3 else "NBA / RESEARCH WORKSPACE"
+        eyebrow = entry[3] if len(entry) > 3 else None
         (ROOT/slug).write_text(page(slug,title,subtitle,body,eyebrow),encoding='utf-8');generated.append(slug)
     for old,target in ALIASES.items():
         href=('../' if '/' in old else '')+target
