@@ -172,8 +172,9 @@ NAV = [
 
 
 def page(slug, title, subtitle, body, eyebrow=None):
+    parent = next((group for group, entries in NAV if any(e[0] == slug for e in entries)), "Workspace")
     if eyebrow is None:
-        eyebrow = "NFL / ORIGINATION LAB" if slug.startswith("nfl-") or slug == "index.html" else "NBA / RESEARCH WORKSPACE"
+        eyebrow = "NFL / ORIGINATION LAB" if parent.startswith("NFL") else "NBA / RESEARCH WORKSPACE"
     navigation = ''
     for group, entries in NAV:
         navigation += f'<div class="nav-group"><div class="nav-label">{group}</div>'
@@ -189,7 +190,7 @@ def page(slug, title, subtitle, body, eyebrow=None):
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="OWN7 NBA research: source-linked observations, exploratory models, validation and transparent limitations."><meta name="referrer" content="strict-origin-when-cross-origin"><title>{esc(title)} · OWN7 Research</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><script src="js/app.js" defer></script></head>
 <body><a class="skip-link" href="#main-content">Skip to content</a><aside class="sidebar" id="sidebar" aria-label="Research workspace"><a class="brand" href="index.html" aria-label="OWN7 Research Lab home"><span class="brand-mark" aria-hidden="true">7</span><span class="brand-name">OWN7<small>NFL ORIGINATION LAB</small></span></a><nav aria-label="Main navigation">{navigation}</nav><div class="sidebar-bottom">{link(SOURCES['REPO']['url'], icon('external')+' View repository', True)}<div class="mode"><span class="dot"></span>NON-COMMERCIAL RESEARCH</div><p>No live lines. No wagers placed.</p></div></aside><button class="nav-backdrop" aria-label="Close navigation" tabindex="-1" hidden></button>
-<div class="layout"><header class="topbar"><button type="button" class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">{icon('menu')}</button><div class="breadcrumb"><span class="crumb-parent">Workspace</span><span class="divider">/</span><strong>{esc(title)}</strong></div><div class="top-right"><label class="search-field">{icon('search')}<span class="sr-only">Search tables on this page</span><input type="search" id="page-search" placeholder="Search this page…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label><div class="snapshot">SNAPSHOT CHECKED<span>12 Nov 2026</span></div></div></header>
+<div class="layout"><header class="topbar"><button type="button" class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">{icon('menu')}</button><div class="breadcrumb"><span class="crumb-parent">{esc(parent)}</span><span class="divider">/</span><strong>{esc(title)}</strong></div><div class="top-right"><label class="search-field">{icon('search')}<span class="sr-only">Search tables on this page</span><input type="search" id="page-search" placeholder="Search this page…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label><div class="snapshot">SNAPSHOT CHECKED<span>12 Nov 2026</span></div></div></header>
 <main class="content" id="main-content"><div class="page-heading"><div><div class="eyebrow">{esc(eyebrow)}</div><h1>{esc(title)}</h1><p>{subtitle}</p></div><div class="heading-actions">{link('research/results.json', icon('download')+' Research JSON', css='button')}{badge('Research only', 'neutral')}</div></div>{body}
 <footer class="footer"><div><strong>OWN7</strong> / INDEPENDENT RESEARCH<br>NFL data attributed to NFL.com; NBA data to NBA.com. Not affiliated with or endorsed by either league.</div><div>Frozen snapshots · not a live feed<br>{link('review.html','Limitations')} &nbsp;·&nbsp; {link('sources.html','Sources')} &nbsp;·&nbsp; {link('responsible-gambling.html','Responsible use')}</div></footer></main></div></body></html>\n'''
 
@@ -551,6 +552,7 @@ def build():
     # nfl_pages builds rows with this module's helpers; inject them lazily to avoid a cycle.
     for helper in ("notice", "metrics", "section", "table", "rich", "badge", "link", "Markup"):
         setattr(nfl_pages, helper, globals()[helper])
+    nfl_pages._Markup = Markup
     verify_receipts()
     pages = {
         'index.html':('NFL research overview','An evidence-first NFL workspace: originate your own lines from official data, then prove or reject them.',nfl_pages.nfl_overview()),
@@ -600,7 +602,7 @@ def build():
         generated.append(f'rental/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
-        eyebrow = entry[3] if len(entry) > 3 else "NBA / RESEARCH WORKSPACE"
+        eyebrow = entry[3] if len(entry) > 3 else None
         (ROOT/slug).write_text(page(slug,title,subtitle,body,eyebrow),encoding='utf-8');generated.append(slug)
     for old,target in ALIASES.items():
         href=('../' if '/' in old else '')+target

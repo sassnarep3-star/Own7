@@ -14,4 +14,5 @@
 p a,.body-text li a{text-decoration:underline;text-underline-offset:3px}
 .refs a{min-height:26px;line-height:26px;margin-bottom:2px}
 .source-line a{display:inline-block;min-height:24px;line-height:24px;margin:0 6px 2px 0}
+.nowrap{white-space:nowrap}
 .sidebar-bottom a svg{width:15px;height:15px;flex-shrink:0}

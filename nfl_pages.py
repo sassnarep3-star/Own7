@@ -22,6 +22,13 @@ def esc(value):
     return html.escape(str(value), quote=True)
 
 
+class _FallbackMarkup(str):
+    """Stands in for build_site.Markup so cells are not escaped as text."""
+
+
+_Markup = _FallbackMarkup
+
+
 def refs(row):
     """Official-link cell built from the row's own registered source IDs."""
     pieces, direct = [], row.get("source_url")
@@ -164,7 +171,8 @@ def nfl_lines():
               "p_home": pct(g["model_p_home"]), "fair_home": price(g["fair_home_price"]),
               "fair_away": price(g["fair_away_price"]),
               "market_spread": None, "market_total": None, "clv": None,
-              "status": g["line_status"], "source_url": g["game_source_url"],
+              "status": "Model only",
+              "source_url": g["game_source_url"],
               "source_ids": g["source_ids"]} for g in NFL["games"]]
     body = notice('Originated numbers, not market prices, and not recommendations.',
                   'Each game below has one conditional score pair; the spread and total both come '
@@ -193,7 +201,9 @@ def nfl_lines():
                     '</div></div>', eyebrow='ORIGINATION')
     body += section('Originated Week 10 board', table(
         'originated-lines', 'Originated lines',
-        [('Game', lambda r: rich(r['matchup'], r['id'])), ('Kickoff', 'kickoff'), ('TV', 'tv'),
+        [('Game', lambda r: rich(r['matchup'], r['id'])),
+         ('Kickoff', lambda r: _Markup(f'<span class="nowrap">{esc(r["kickoff"])}</span>')),
+         ('TV', 'tv'),
          ('Model spread (home)', 'spread'), ('Model total', 'total'),
          ('Model P(home win)', 'p_home'), ('Fair home', 'fair_home'), ('Fair away', 'fair_away'),
          ('Market spread', 'market_spread'), ('Market total', 'market_total'), ('CLV', 'clv'),
@@ -340,7 +350,8 @@ def nfl_injuries():
     injury_rows = [{"id": r["id"], "team": r["Team"], "player": r["Player"], "pos": r["Position"],
                     "injury": r["Injury"] or None, "practice": r["PracticeStatus"],
                     "game": r["GameStatus"] or None, "player_url": r["PlayerURL"],
-                    "source_url": r["SourceURL"], "source_ids": ["NFL-INJURY", "NFL-INJURY-POLICY"]}
+                    "source_url": r["PlayerURL"],
+                    "source_ids": ["NFL-INJURY", "NFL-INJURY-POLICY"]}
                    for r in _injury_csv()]
     body = notice('Status is published. Impact is not measured.',
                   'The official report gives participation and game status. It does not say who is a '
