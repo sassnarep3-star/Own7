@@ -586,9 +586,9 @@
     {
       "id": "R19",
       "requirement": "Build, test, PR, merge and confirm GitHub Pages",
-      "status": "In progress",
+      "status": "Complete",
       "artifact": "audit/release.json; ../COORDINATION.md",
-      "gap": "Record only actual final results; never label a pending deploy live.",
+      "gap": "PR #28 merged; Pages built and live pages fetched.",
       "source_ids": [
         "A958-REPO"
       ]

@@ -588,3 +588,8 @@ Rules: work only on the fixed branch; commit/push claims before task work; use a
 
 ### A958-5 PR record
 - Integration PR: https://github.com/sassnarep3-star/Own7/pull/28 — opened from `arena/9580ac3f-own7` to `main`. Merge and GitHub Pages confirmation pending checks.
+
+### A958-5 merge and Pages record
+- PR [#28](https://github.com/sassnarep3-star/Own7/pull/28) merged to `main` at `c99f533ce5f6bb48b8c59e8f6d1a327d5074c4e3` on 2026-11-12 at 17:21:32 UTC after successful [PR checks](https://github.com/sassnarep3-star/Own7/actions/runs/43267671082).
+- GitHub Pages [build and deployment](https://github.com/sassnarep3-star/Own7/actions/runs/43268583567) succeeded for the same merge commit; Pages API reported `built`. Live [assurance overview](https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/index.html?v=c99f533c), [Flagged for Review](https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/flagged.html?v=c99f533c) and [root overview](https://sassnarep3-star.github.io/Own7/?v=c99f533c) were fetched and confirmed.
+- A958-1 through A958-5 are done. Known limits remain explicit: no executable NFL prices, verified edge, leg correlations, qualified strategy or cash reward; unknown values stay blank and flagged. Canonical NFL, origination, independent verification, NBA/rental/market-evidence archives and legacy redirects were preserved.
