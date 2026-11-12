@@ -369,3 +369,23 @@ Privacy: all personal information (tenant initials) is anonymized everywhere in 
 ### Merge note (arena/cab077aa-own7, 2026-11-06, second merge)
 - Merged origin/main again (PR #19, session arena/692da006-own7: root-level rental*.html pages + research/rental.json). No other session's work discarded; their nav group and pages retained, mine added as "Deep-dive sub-site" → rental/index.html.
 - research/sources.json unioned by ID across both sides; SOURCE_HOSTS in scripts/check_site.py unioned; generated artifacts regenerated deterministically.
+
+
+---
+
+## Session arena/9580ac3f-own7 — NFL research and integration (2026-11-12)
+
+Session ID: `session-arena-9580ac3f-own7`. Fixed Arena branch: `arena/9580ac3f-own7`; no alternate branch will be created. Baseline: `a989d67d9155b43ee2b93c39cbfdde54d8dd0b09`. The historical boards above are preserved, not inherited as verification. No competing active claim is visible in this checkout; remote changes will be checked before publication.
+
+| ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
+|---|---|---|---|---|---|
+| NFL-01 | Claim NFL work before implementation | in progress | session-arena-9580ac3f-own7 | COORDINATION.md (append only) | Commit and push this claim immediately. |
+| NFL-02 | Full baseline file/line inventory and irregularity audit | unclaimed | session-arena-9580ac3f-own7 | nfl/audit/**, nfl/docs/repo-review.md | Every baseline file gets a line range, hash and repository source; factual claims require separate primary evidence. |
+| NFL-03 | Official NFL source research and automated evidence capture | unclaimed | session-arena-9580ac3f-own7 | nfl/sources/**, nfl/data/**, nfl/collect.py | NFL league/club primary sources only for observed values; no inferred blanks. |
+| NFL-04 | Injury/depth replacement tracking and data contracts | unclaimed | session-arena-9580ac3f-own7 | nfl/availability.py, nfl/tests/test_availability.py | Injury report is not a depth chart; ranks 2/3/4 need separate club confirmation. |
+| NFL-05 | Origination, signals, correlation, validation and competition engine | unclaimed | session-arena-9580ac3f-own7 | nfl/engine.py, nfl/strategies.json, nfl/tests/test_engine.py | Untested real-market metrics remain null; synthetic unit-test outputs never presented as NFL facts. |
+| NFL-06 | Decision questions, suggestions and executive brief | unclaimed | session-arena-9580ac3f-own7 | nfl/decisions.json, nfl/docs/executive-summary.md | Suggestions are reviewable proposals, not silently implemented policy. |
+| NFL-07 | Generated NFL dashboard and browser checks | unclaimed | session-arena-9580ac3f-own7 | nfl/site/**, nfl/build.py, nfl/tests/test_site.py, nfl/check.py | Per-row official links; accessible search/filter/sort/export; no broken local links. |
+| NFL-08 | Final integration and deployment | unclaimed | session-arena-9580ac3f-own7 | Shared index/navigation/generator/workflows/README, nfl release evidence, COORDINATION.md | Only after NFL-02–07 complete. Preserve NBA/rental archives, recheck merged data, PR, merge and actual Pages deployment. |
+
+Rules: work only on the fixed branch; commit/push claims before task work; use append-only board updates; safely fetch/rebase before pushes without discarding parallel work. Shared canonical files are deferred to NFL-08. `needs review` flags are public and nonblocking for honest research publication, but unknown inputs block strategy qualification, price release and rewards. All factual rows must link to an official source actually checked, with scope/date; source availability alone is not verification. No user decisions or manual entry requested.
