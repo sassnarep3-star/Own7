@@ -33,8 +33,9 @@ jobs:
           python market-evidence/test_build.py -v
           python rental/build.py --check
           python rental/test_build.py -v
+          python -m nfl_lab run --check
           python nfl/build.py --check
-          python -m unittest discover -s nfl -p "test_*.py" -v
+          python nfl/test_build.py -v
       - name: Committed artifacts must already be current
         run: git diff --exit-code
   browser:

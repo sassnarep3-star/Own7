@@ -2778,16 +2778,16 @@
     "data/teams-2025-26.csv": "2c88848b57b87696d30eb37fa93499ecac557c7e2dd00b77ee7630ffbad11e6f",
     "nba_lab/__init__.py": "c308344bcfcf89b5bc69fdb61c9637ad0000288c4003e774c5a63f1ab3d006b5",
     "nba_lab/__main__.py": "5305d5d90b492216fcdf499c4e9f1a68224302b54195502ca049a3002781658b",
-    "nba_lab/engine.py": "67fcdb061e3e6b7a2ed8174f3addad3328a3208932e39cbcb9accdf8ec700366",
+    "nba_lab/engine.py": "455ee55af8b4f74d8af0a0e460de10b491516c2744d131a15b3f0c92b4df4584",
     "nba_lab/math.py": "64aefb7effa86a046dca9b530ab3b07f7243b9560b263bf8925aab736d1429f4",
     "nba_lab/models.py": "e215f35ae9005b64a7026622ecf2a4fc3c03ef8251fed1ed0972290f9ab755bc",
     "nba_lab/validation.py": "037dff8f23e6143d133c2d116e095a8cb3c8faea544f27fd365aee8055a373eb",
     "research/catalog.json": "3ed0007af519b07e5c1c3bb50eb7c58bcb15069dc747223663531570dac49ded",
     "research/evidence/receipts.json": "813665038767581ee7981d5beb051f86b2ec80ede955861533229d444f4f8d03",
     "research/protocol.json": "4d40bed6586a473363bf2b9be035d7a30ba2ccf1b611fb152c7dcf25ff00eda8",
-    "research/sources.json": "bddc6ddc2684382add861d9234a27e8ae7171899b6fd27fa166c5e251d7d3148"
+    "research/sources.json": "e4207e3ac2d70a12849cf0e7437f36dbaa210299ce4ebb051524fefdb6094ac2"
   },
-  "run_hash": "bbcbf4e0bde5a3f76b5c507cafbb37086541a8dfb984b65ed81465ec20dcfd16",
+  "run_hash": "78902dd5e8476e7e074d866284b20b1c17c5614bea5175799621a8b5999782a4",
   "limitations": [
     "No operator prices or pregame timestamp archive",
     "No untouched confirmatory or prospective shadow evaluation",

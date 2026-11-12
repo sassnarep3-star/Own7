@@ -118,7 +118,7 @@ def compute() -> dict:
                             "passed_gates": 0, "status": "Blocked", "roi_lcb95": None,
                             "roi": None, "clv": None, "rank": None, "reward": None,
                             "source_ids": strategy["source_ids"]})
-    input_paths = sorted(list((ROOT / "data").glob("*.csv")) + list((ROOT / "nba_lab").glob("*.py"))
+    input_paths = sorted([x for x in (ROOT / "data").glob("*.csv") if not x.name.startswith("nfl-")] + list((ROOT / "nba_lab").glob("*.py"))
                          + [ROOT / f"research/{name}.json" for name in ("protocol", "catalog", "sources")]
                          + [ROOT / "research/evidence/receipts.json"])
     manifest = {str(path.relative_to(ROOT)): digest(path) for path in input_paths}

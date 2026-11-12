@@ -1,0 +1,664 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-11-12",
+  "mode": "Frozen statistical/methods audit; no betting-price release or gambling service",
+  "source_rights": {
+    "nfl_gambling_use_authorized": false,
+    "nfl_derived_betting_prices_enabled": false,
+    "bulk_collection_enabled": false,
+    "source_id": "NFL-TERMS",
+    "rule": "NFL Terms §1.3 restricts Services to own individual non-commercial and informational purposes; systematic retrieval prohibited without consent. §11(f) prohibits harvesting for commercial purpose. §12 prohibits gambling/wagering on gaming features or using Services to gamble/wager on any NFL game. No separate permission is evidenced.",
+    "research_boundary": "Frozen, attributed statistical audit and non-commercial methods demonstration only; no executable line or wagering signal is released."
+  },
+  "verified_observation_rows": 216,
+  "source_verification": "Agent row-by-row comparison to rendered official tables; normalized evidence, not a raw archive",
+  "correlations": [
+    {
+      "pair": "W vs NetPts (standings)",
+      "n": 32,
+      "kind": "Team cross-sectional",
+      "pearson": 0.8462609,
+      "spearman": 0.84354644,
+      "status": "Derived · descriptive",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "pair": "PF vs PA (standings)",
+      "n": 32,
+      "kind": "Team cross-sectional",
+      "pearson": -0.08156453,
+      "spearman": -0.19414894,
+      "status": "Derived · descriptive",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "pair": "PCT vs NetPts (standings)",
+      "n": 32,
+      "kind": "Team cross-sectional",
+      "pearson": 0.86902587,
+      "spearman": 0.85753803,
+      "status": "Derived · descriptive",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "pair": "Off Yds vs Def Yds Allowed",
+      "n": null,
+      "kind": "Not collected",
+      "pearson": null,
+      "spearman": null,
+      "status": "Unverified · blank (NF11)",
+      "source_ids": [
+        "NFL-TEAM-OFF",
+        "NFL-TEAM-DEF"
+      ]
+    },
+    {
+      "pair": "Off Rate vs Def Rate Allowed",
+      "n": null,
+      "kind": "Not collected",
+      "pearson": null,
+      "spearman": null,
+      "status": "Unverified · blank (NF11)",
+      "source_ids": [
+        "NFL-TEAM-OFF",
+        "NFL-TEAM-DEF"
+      ]
+    },
+    {
+      "pair": "Off TD vs Def TD Allowed",
+      "n": null,
+      "kind": "Not collected",
+      "pearson": null,
+      "spearman": null,
+      "status": "Unverified · blank (NF11)",
+      "source_ids": [
+        "NFL-TEAM-OFF",
+        "NFL-TEAM-DEF"
+      ]
+    },
+    {
+      "pair": "Pass Yds vs TD (QBs)",
+      "n": 25,
+      "kind": "Player cross-sectional",
+      "pearson": 0.83922578,
+      "spearman": 0.83762032,
+      "status": "Derived · descriptive",
+      "source_ids": [
+        "NFL-PASSING"
+      ]
+    },
+    {
+      "pair": "Pass Yds vs INT (QBs)",
+      "n": 25,
+      "kind": "Player cross-sectional",
+      "pearson": -0.08889027,
+      "spearman": -0.06399418,
+      "status": "Derived · descriptive",
+      "source_ids": [
+        "NFL-PASSING"
+      ]
+    },
+    {
+      "pair": "Yds/Att vs Rate (QBs)",
+      "n": 25,
+      "kind": "Player cross-sectional",
+      "pearson": 0.82908532,
+      "spearman": 0.87076297,
+      "status": "Derived · descriptive",
+      "source_ids": [
+        "NFL-PASSING"
+      ]
+    },
+    {
+      "pair": "Cmp% vs Rate (QBs)",
+      "n": 25,
+      "kind": "Player cross-sectional",
+      "pearson": 0.76138609,
+      "spearman": 0.72335519,
+      "status": "Derived · descriptive",
+      "source_ids": [
+        "NFL-PASSING"
+      ]
+    },
+    {
+      "pair": "Teammate leg A / leg B",
+      "kind": "Not collected",
+      "n": null,
+      "pearson": null,
+      "spearman": null,
+      "status": "Unverified · blank",
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-RUSHING"
+      ]
+    },
+    {
+      "pair": "Cross-game leg A / leg B",
+      "kind": "Not collected",
+      "n": null,
+      "pearson": null,
+      "spearman": null,
+      "status": "Unverified · blank",
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-RUSHING"
+      ]
+    },
+    {
+      "pair": "Three-or-more-leg joint distribution",
+      "kind": "Not collected",
+      "n": null,
+      "pearson": null,
+      "spearman": null,
+      "status": "Unverified · blank",
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-RUSHING"
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "strategy_id": "NS01",
+      "name": "Opponent-adjusted margin / moneyline",
+      "category": "Single bets",
+      "gate_evidence": {
+        "NG01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG05": {
+          "status": "not applicable",
+          "artifact_url": "https://github.com/sassnarep3-star/Own7/blob/main/research/nfl-protocol.json"
+        },
+        "NG06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-TEAM-OFF",
+        "NFL-TEAM-DEF"
+      ]
+    },
+    {
+      "strategy_id": "NS02",
+      "name": "Total points (offense vs defense)",
+      "category": "Single bets",
+      "gate_evidence": {
+        "NG01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG05": {
+          "status": "not applicable",
+          "artifact_url": "https://github.com/sassnarep3-star/Own7/blob/main/research/nfl-protocol.json"
+        },
+        "NG06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-TEAM-OFF",
+        "NFL-TEAM-DEF"
+      ]
+    },
+    {
+      "strategy_id": "NS03",
+      "name": "Schedule & availability update",
+      "category": "Single bets",
+      "gate_evidence": {
+        "NG01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG05": {
+          "status": "not applicable",
+          "artifact_url": "https://github.com/sassnarep3-star/Own7/blob/main/research/nfl-protocol.json"
+        },
+        "NG06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NFL-INJURY",
+        "NFL-SCHEDULE",
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "strategy_id": "NS04",
+      "name": "QB passing distribution",
+      "category": "Player props / combos",
+      "gate_evidence": {
+        "NG01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG05": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-TEAM-DEF",
+        "NFL-INJURY"
+      ]
+    },
+    {
+      "strategy_id": "NS05",
+      "name": "Rushing / receiving distribution",
+      "category": "Player props / combos",
+      "gate_evidence": {
+        "NG01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG05": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NFL-RUSHING",
+        "NFL-RECEIVING",
+        "NFL-TEAM-OFF"
+      ]
+    },
+    {
+      "strategy_id": "NS06",
+      "name": "Cross-game joint-value filter",
+      "category": "Parlays",
+      "gate_evidence": {
+        "NG01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG05": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "strategy_id": "NS07",
+      "name": "Same-player passing + rushing/receiving",
+      "category": "Player props / combos",
+      "gate_evidence": {
+        "NG01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG05": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-RUSHING",
+        "NFL-RECEIVING"
+      ]
+    },
+    {
+      "strategy_id": "NS08",
+      "name": "Teammate / team-total combination",
+      "category": "Player props / combos",
+      "gate_evidence": {
+        "NG01": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG02": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG03": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG04": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG05": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG06": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG07": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG08": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG09": {
+          "status": "blocked",
+          "artifact_url": null
+        },
+        "NG10": {
+          "status": "blocked",
+          "artifact_url": null
+        }
+      },
+      "passed_gates": 0,
+      "status": "Blocked",
+      "roi_lcb95": null,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "reward": null,
+      "source_ids": [
+        "NFL-PASSING",
+        "NFL-INJURY",
+        "NFL-ROSTER"
+      ]
+    }
+  ],
+  "leaderboard": [],
+  "cash_rewards": null,
+  "input_sha256": {
+    "data/nfl-injuries-week7-2026.csv": "16451ad8da0b283f18c48f2d6b5d1780bd433e787182f20b240d1e6a8396ac05",
+    "data/nfl-players-passing-2026.csv": "ac68650f4f49580142ec733f6b2ae70df435525500b5736274ba7280494a6c9e",
+    "data/nfl-players-receiving-2026.csv": "a390c1f3faa8b6631bc5d9bcbf44da6ea68f05c3c7388392313bca157e04559d",
+    "data/nfl-players-rushing-2026.csv": "8acf24c238661f15371ea17f16be9be92f49f55ca5250c8ca9e9f39375a8b992",
+    "data/nfl-standings-2026.csv": "76ae0197f79cce074605ff8566651437546784d7ef55cf3d73ad23c2968ada0c",
+    "data/nfl-team-defense-passing-2026.csv": "e54db7a03cdc24570dabf3c407a362f718051ded8601a0d37b4f1656f3d7534b",
+    "data/nfl-team-offense-passing-2026.csv": "4b0df9229448a187c31014b76dca22d6a5aa8e175d6255bf500a91d4c65d7687",
+    "nfl_lab/__init__.py": "c9e80975b2a7baf6baacca77547401bb1527523cd597d3341e92626602364cbc",
+    "nfl_lab/__main__.py": "81c01ee87b64e683ed477f057f2615b0e09c94fe3b3fca9567f209a9b1030ceb",
+    "nfl_lab/engine.py": "63c19dd911e819b8be7d56ef7b34b304c5bcd4977565448e4402156f46d27eab",
+    "research/evidence/nfl-receipts.json": "c7af2005822bff4e172d0396d11f36cd6ccebc8772fbc6c3de3e9d190daaf92e",
+    "research/nfl-catalog.json": "d63f009eb29b8c20d0052c60736a1a7ef9b6db952d1e64677e2519a5f9bede8c",
+    "research/nfl-protocol.json": "5667f7d3b9f4b14d7aa90b6e2fcb184faa3416f6ebfa4ce4f9a8382c55178c98"
+  },
+  "run_hash": "c85254a658db95bb3e23bfedb3bce1000bb5fff8f7e426552d6deffb102603ed",
+  "limitations": [
+    "No operator prices or pregame timestamp archive",
+    "No untouched confirmatory or prospective shadow evaluation",
+    "Season aggregates only; no game logs",
+    "Not selection-adjusted or powered for strategy validation",
+    "No verified edge, ROI, CLV, prize payment or live recommendation"
+  ]
+}
