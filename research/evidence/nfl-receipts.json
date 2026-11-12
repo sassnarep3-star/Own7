@@ -1,0 +1,86 @@
+[
+  {
+    "id": "nfl-standings-2026",
+    "source_url": "https://www.nfl.com/standings/",
+    "checked_on": "2026-11-12",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "official_displayed_rows": 32,
+    "retained_rows": 32,
+    "data_file": "data/nfl-standings-2026.csv",
+    "sha256": "76ae0197f79cce074605ff8566651437546784d7ef55cf3d73ad23c2968ada0c",
+    "note": "32 division rows; W,L,T,PCT,PF,PA,Net,Home,Road,Div,Conf,Strk,Last5 compared. Frozen snapshot checked 2026-11-12.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  },
+  {
+    "id": "nfl-players-passing-2026",
+    "source_url": "https://www.nfl.com/stats/player-stats/",
+    "checked_on": "2026-11-12",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "official_displayed_rows": 25,
+    "retained_rows": 25,
+    "data_file": "data/nfl-players-passing-2026.csv",
+    "sha256": "ac68650f4f49580142ec733f6b2ae70df435525500b5736274ba7280494a6c9e",
+    "note": "Top 25 by passing yards; all retained columns compared. Passing-selected subset.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  },
+  {
+    "id": "nfl-players-rushing-2026",
+    "source_url": "https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc",
+    "checked_on": "2026-11-12",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "official_displayed_rows": 25,
+    "retained_rows": 25,
+    "data_file": "data/nfl-players-rushing-2026.csv",
+    "sha256": "8acf24c238661f15371ea17f16be9be92f49f55ca5250c8ca9e9f39375a8b992",
+    "note": "Top 25 by rushing yards; values transcribed in displayed order. Header labels not rendered — positional C1-C9 only, meanings not asserted.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  },
+  {
+    "id": "nfl-players-receiving-2026",
+    "source_url": "https://www.nfl.com/stats/player-stats/category/receiving/2026/reg/all/receivingreceptions/desc",
+    "checked_on": "2026-11-12",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "official_displayed_rows": 25,
+    "retained_rows": 25,
+    "data_file": "data/nfl-players-receiving-2026.csv",
+    "sha256": "a390c1f3faa8b6631bc5d9bcbf44da6ea68f05c3c7388392313bca157e04559d",
+    "note": "Top 25 by receptions; values transcribed in displayed order. Header labels not rendered — positional C1-C9 only, meanings not asserted.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  },
+  {
+    "id": "nfl-team-offense-passing-2026",
+    "source_url": "https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all",
+    "checked_on": "2026-11-12",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "official_displayed_rows": 32,
+    "retained_rows": 32,
+    "data_file": "data/nfl-team-offense-passing-2026.csv",
+    "sha256": "97037dfc0e408c8d6c140914335e034fe470ddb88bfafe6cf1435b40903d5a95",
+    "note": "32 team rows; Att,Cmp,Cmp%,Yds/Att,Yds,TD,INT,Rate,1st,1st%,20+,40+,Lng,Sck,SckY compared. Header confirmed by arithmetic (Cmp/Att, Yds/Att) and defense header.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  },
+  {
+    "id": "nfl-team-defense-passing-2026",
+    "source_url": "https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all",
+    "checked_on": "2026-11-12",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "official_displayed_rows": 32,
+    "retained_rows": 32,
+    "data_file": "data/nfl-team-defense-passing-2026.csv",
+    "sha256": "e54db7a03cdc24570dabf3c407a362f718051ded8601a0d37b4f1656f3d7534b",
+    "note": "32 team rows; Att,Cmp,Cmp%,Yds/Att,Yds,TD,INT,Rate,1st,1st%,20+,40+,Lng,Sck compared.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  },
+  {
+    "id": "nfl-injuries-week7-2026",
+    "source_url": "https://www.nfl.com/injuries/league/2026/reg7",
+    "checked_on": "2026-11-12",
+    "method": "Arena fetch_page rendered official page; agent compared retained fields row by row",
+    "official_displayed_rows": 45,
+    "retained_rows": 45,
+    "data_file": "data/nfl-injuries-week7-2026.csv",
+    "sha256": "16451ad8da0b283f18c48f2d6b5d1780bd433e787182f20b240d1e6a8396ac05",
+    "note": "Bounded: Thu Oct 22 NE+CHI and Sun Oct 25 PIT+NO (45 rows). Player,Position,Injuries,PracticeStatus,GameStatus compared. Replacement/Deficiency blank — not stated on page.",
+    "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
+  }
+]
