@@ -1,0 +1,35 @@
+name: NFL bounded source audit
+on:
+  workflow_dispatch:
+    inputs:
+      authorization:
+        description: 'Type REVIEWED to confirm rights review; this is not a grant of permission'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: own7-nfl-source-audit
+  cancel-in-progress: false
+jobs:
+  capture:
+    if: github.event.inputs.authorization == 'REVIEWED'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Capture only allowlisted official pages (no crawling or odds)
+        run: python nfl/collect.py --output .artifacts/nfl-sources
+      - name: Check capture integrity
+        if: always()
+        run: python nfl/collect.py --check --output .artifacts/nfl-sources
+      - name: Preserve raw response hashes and explicit errors for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nfl-official-source-audit
+          path: .artifacts/nfl-sources/
+          retention-days: 7
