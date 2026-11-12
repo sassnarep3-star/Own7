@@ -1,6 +1,34 @@
-# OWN7 · NBA Research Lab
+# OWN7 · research lab (NBA archive · SF rental · NFL)
 
-[Live dashboard](https://sassnarep3-star.github.io/Own7/) · [Executive brief](docs/executive-summary.md) · [Sources](research/sources.json) · [Coordination / release evidence](COORDINATION.md)
+[Live dashboard](https://sassnarep3-star.github.io/Own7/) · [NFL research site](https://sassnarep3-star.github.io/Own7/nfl/index.html) · [**NFL line-origination lab**](https://sassnarep3-star.github.io/Own7/nfl/origination/index.html) · [NBA executive brief](docs/executive-summary.md) · [Sources](research/sources.json) · [Coordination / release evidence](COORDINATION.md)
+
+> **Sections by status.** The **NFL sections** are the active programme and are split in two layers, described below. The **NBA research** section is an earlier, retained audit and is now an archive of that work. The **SF rental** sections are a separate, unrelated analysis. Shared navigation labels each group; nothing was deleted and no historical claim was relabelled as verified.
+
+## NFL · two layers, one navigation group
+
+Two sessions built NFL content on the same day. They answer different questions, they are cross-linked, and they write disjoint files. Neither overwrote the other.
+
+### 1. NFL research site — `nfl/` (session `arena/a4e560bc-own7`, Week 7 snapshot)
+
+A source-linked research workspace: standings and player/team statistics, a signal library, generic pricing identities, injuries and backup coverage, validation gates, an empty leaderboard, a requirements ledger, suggestions and questions, and a Flagged for Review register (NF01–NF11). Its position is explicit: **no NFL lines are originated there** and NFL-derived betting prices are withheld under the source-rights gate.
+
+### 2. NFL line-origination lab — `nfl/origination/` (session `arena/20394b77-own7`, Week 10 snapshot)
+
+Adds the part the first layer withholds, as a model-only demonstration: spreads and totals for all 14 Week 10 games from a shrunk win-percentage and Pythagorean baseline with sensitivity bounds, 210 injury rows checked against two official NFL.com pages, depth-chart deficiencies for three clubs joined to that injury report, ten fail-closed gates, and **Suggestions** and **Open questions** registers.
+
+- **Verified:** 32/32 standings rows pass three arithmetic identities (win percentage, net points, and league-wide points for = points against at 6,246 over 272 team-games); injury practice status agrees with the official Wednesday roundup on every overlapping player; injury-report deadlines are quoted from the league's calendar.
+- **Model-derived, never a market price:** every line is labelled as the model's output. No sportsbook was scraped, and no price, edge, ROI or CLV value exists anywhere in the tree.
+- **Not verified, therefore blank:** every market price, every leg-level correlation, 21 injury types the sources do not publish, depth evidence for 25 of the 28 slate clubs, and the reason four clubs are absent from the slate.
+- **Nothing qualifies.** Eight strategies are registered and all are blocked; the leaderboard is empty; no reward is paid and no cash prize exists.
+- **Rights:** [NFL.com Terms §1.3](https://www.nfl.com/legal/terms/) permits individual, non-commercial, informational use only and prohibits systematic retrieval or compilation. This is a small dated sample under that limit, not a data product.
+
+Reproduce (standard library only, no network): `python nfl/build.py --check`, `python nfl/origination/originate.py --check`, `python -m unittest discover -s nfl/origination -p "test_*.py" -v`.
+
+Detailed evidence: `docs/nfl-executive-summary.md` (research site), `docs/nfl-origination-summary.md` (lab), `docs/nfl-repo-review-2026-11-12.md` (repo review, irregularities I-01…I-11), `COORDINATION.md` (claims, collision and resolution).
+
+---
+
+## NBA research archive
 
 One static, source-linked dashboard replaces the repository’s three inconsistent earlier sites. It contains **107 checked official snapshot rows**, eight strategy hypotheses, six paired-game exploratory estimates plus 17 contributed aggregate-correlation rows (with overlaps), 88 retrospective probability demonstrations, ten fail-closed validation gates, an empty qualified leaderboard, a requirements ledger and a complete baseline file audit.
 

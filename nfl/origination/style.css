@@ -1,0 +1,5 @@
+/* NFL sub-site additions only. Everything else comes from ../assets/style.css. */
+/* WCAG 2.2 target size: the sidebar footer links are stacked, not inline text. */
+.sidebar-bottom a{min-height:32px;padding:6px 0;line-height:1.4}
+.sidebar-bottom a + a{margin-top:8px}
+.sidebar-bottom a svg{width:16px;height:16px}
