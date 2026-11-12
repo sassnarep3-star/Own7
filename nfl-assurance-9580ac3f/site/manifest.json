@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "index.html",
+    "executive-summary.html",
+    "requirements.html",
+    "injuries.html",
+    "depth.html",
+    "availability.html",
+    "lines.html",
+    "strategies.html",
+    "correlation.html",
+    "validation.html",
+    "leaderboard.html",
+    "suggestions.html",
+    "questions.html",
+    "sources.html",
+    "flagged.html",
+    "methodology.html",
+    "repo-review.html",
+    "data.html",
+    "responsible-use.html"
+  ],
+  "generated": true,
+  "boundary": "Static assurance supplement; no network or inferred values."
+}

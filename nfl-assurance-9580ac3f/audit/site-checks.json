@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "pages": 19,
+  "table_rows": 872,
+  "sources": 26,
+  "errors": [],
+  "scope": "Local routing, row-source contract, blank cells and determinism; not external truth or rights."
+}
