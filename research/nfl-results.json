@@ -650,10 +650,10 @@
     "nfl_lab/__main__.py": "81c01ee87b64e683ed477f057f2615b0e09c94fe3b3fca9567f209a9b1030ceb",
     "nfl_lab/engine.py": "ba3cc3cec699959f62b99a9b2c6b6eb354d1b18728b41752416b3c9231d1c946",
     "research/evidence/nfl-receipts.json": "acb73303cf8610a02cb236da1f2fd658c89b4987fc56a3e7b3de6749ba49500c",
-    "research/nfl-catalog.json": "cc400d80e08ba58456cc05c76728c7b95950fceb84910831c9520647fae2ba6b",
+    "research/nfl-catalog.json": "a9784823139869a81ec8c723124807a69a3058510beadc0b965183ac3c0449ee",
     "research/nfl-protocol.json": "5667f7d3b9f4b14d7aa90b6e2fcb184faa3416f6ebfa4ce4f9a8382c55178c98"
   },
-  "run_hash": "4f914765fa43bff89244603dbbb78e674d91dabd9e312ea13b66d2419f5787a1",
+  "run_hash": "533651f91919236816acbe3671f8c4e566c7ed2938e85c880b9a13d5f8befb28",
   "limitations": [
     "No operator prices or pregame timestamp archive",
     "No untouched confirmatory or prospective shadow evaluation",

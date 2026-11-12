@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "index.html",
+    "executive-summary.html",
+    "requirements.html",
+    "data.html",
+    "signals.html",
+    "lines.html",
+    "correlation.html",
+    "injuries.html",
+    "validation.html",
+    "leaderboard.html",
+    "suggestions.html",
+    "questions.html",
+    "sources.html",
+    "review.html",
+    "methodology.html"
+  ],
+  "generated_html": {
+    "correlation.html": "08dffa2ac5cbe6ec4040f9d944464cf78f90d1c32058e6723fceff279a353dbc",
+    "data.html": "7ea97c6efde90f86664b0600e5761b4c140d1a86e56c4df4d9c6b8a6a4eee509",
+    "executive-summary.html": "5ea0356e1ee62d750c00e81c805d671a0d24f7d540280f10f92d3495529cae1b",
+    "index.html": "41994f2cab3ae0f48dc66068de0fcebec5ab16e00cf01342122aff187abe5c24",
+    "injuries.html": "f504874eeed80fd6df98e17439f9160bd2069c147f3100c4bd90d63d00e47f94",
+    "leaderboard.html": "246a84a439d5a25039df03b62fb63f16348192403ae6c953ad0c8df3dcfb05ed",
+    "lines.html": "f50c8a6090d6a5d119a1310815fac620d602cbf6515aa3962de4a68518c034c4",
+    "methodology.html": "b464d8bc5ec61c546f7630c0cdd180e008f3fdd61e76faf2e8150e793d1bf4eb",
+    "questions.html": "da58ee577ea472baf2079a8d5bd263dda246ac6060bcac477dd96f9ecec6052f",
+    "requirements.html": "bbe9bf00874d2af4b6434ac970451cba4923e7ce2bef377074b136a65a39b56c",
+    "review.html": "8e4390a3a4bce5c515a51b4eaf2e8d070f8790f9499d0499d93a1450bbe59bbc",
+    "signals.html": "65a42fb0f14729d40833b6bd58cc859ef91a8029c1055a9e7e30dccf286d5d03",
+    "sources.html": "53c46dd8e21ba3d86723bbfe68f91d8fde1b0576d2a2aae34ec606621e979aa1",
+    "suggestions.html": "68a46d0ab9a5d1a6fe66c24952eb9049d29c912dc6616c2bcdcd73204da2887a",
+    "validation.html": "1b870392bf4acb346e1706f1aeaef61e268a5aa4b526b04d5d4d113e7c7c1742"
+  },
+  "research_run_hash": "533651f91919236816acbe3671f8c4e566c7ed2938e85c880b9a13d5f8befb28"
+}

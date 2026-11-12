@@ -17,7 +17,7 @@ A substantive constraint was confirmed: [NFL Terms §1.3](https://support.nfl.co
 | Rushing leaders | Top 25 by rushing yards checked (positional C1-C9; headers not rendered). Bijan Robinson leads at 880 (C1). | [NFL rushing](https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc) |
 | Receiving leaders | Top 25 by receptions checked (positional C1-C9). Trey McBride leads at 73 receptions (C1); Jaxon Smith-Njigba 1,036 yards (C2). | [NFL receiving](https://www.nfl.com/stats/player-stats/category/receiving/2026/reg/all/receivingreceptions/desc) |
 | Team offense (passing) | 32 team rows checked. Green Bay leads at 2,618 pass yards. | [NFL team offense](https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all) |
-| Team defense (passing) | 32 team rows checked. Seattle allows fewest at 1,519 pass yards. | [NFL team defense](https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all) |
+| Team defense (passing) | 32 team rows checked. Minnesota allows fewest at 1,495 pass yards. | [NFL team defense](https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all) |
 | Injuries (bounded) | Week 7 Thu Oct 22 NE+CHI and Sun Oct 25 PIT+NO fully transcribed (45 rows). Replacements/deficiencies not stated — blank. | [NFL injury report](https://www.nfl.com/injuries/league/2026/reg7) |
 
 Every retained input field was compared against returned official rendered tables. Evidence files are normalized transcriptions, **not raw HTTP archives**; integrity hashes do not independently establish truth. Exact receipts: [`research/evidence/nfl-receipts.json`](../research/evidence/nfl-receipts.json).

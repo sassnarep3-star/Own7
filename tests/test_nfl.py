@@ -38,6 +38,11 @@ class NflEngineTests(unittest.TestCase):
         self.assertEqual(len(missing), 3)
         self.assertTrue(all(item['pearson'] is None and item['spearman'] is None for item in missing))
 
+    def test_defensive_minimum_summary_matches_all_teams(self):
+        rows = engine.load_csv('data/nfl-team-defense-passing-2026.csv')
+        lowest = min(rows, key=lambda row: int(row['Yds']))
+        self.assertEqual((lowest['Team'], lowest['Yds']), ('Minnesota Vikings', '1495'))
+
     def test_exploratory_correlations_are_labeled(self):
         correlations = engine.compute()['correlations']
         measured = [item for item in correlations if item['kind'] != 'Not collected']
