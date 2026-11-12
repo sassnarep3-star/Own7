@@ -57,9 +57,9 @@
       "access": "Public article, read manually."
     },
     {
-      "id": "NFL-TERMS",
+      "id": "NFL-LEGAL-TERMS",
       "publisher": "NFL.com (National Football League)",
-      "title": "NFL.com - Terms and Conditions (updated 16 May 2024)",
+      "title": "NFL.com Terms and Conditions (updated 16 May 2024)",
       "url": "https://www.nfl.com/legal/terms/",
       "checked_on": "2026-11-12",
       "scope": "Section 1.1 (ownership), 1.2 (marks) and 1.3 Permitted Uses: individual, non-commercial, informational use only; commercial use and systematic retrieval or compilation prohibited absent express written consent.",
@@ -147,9 +147,19 @@
       "signal": "model_home_margin and model_total on the model page, each with a sensitivity band",
       "verified_today": "32 club rows with two arithmetic identities passing on every row",
       "missing": "Closing market prices, a settled-outcome history and a pre-game information archive",
-      "blocking_gates": ["G2", "G3", "G4", "G5", "G6", "G7", "G10"],
+      "blocking_gates": [
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6",
+        "G7",
+        "G10"
+      ],
       "status": "Blocked",
-      "source_ids": ["NFL-STANDINGS"]
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
     },
     {
       "id": "ST-02",
@@ -159,9 +169,21 @@
       "signal": "actual win percentage minus Pythagorean expectation (exponent 2.37, a documented design choice)",
       "verified_today": "The diagnostic correlates 0.877 with actual win percentage (n=32) - which is why it is a diagnostic, not an edge",
       "missing": "Out-of-sample seasons, prices, and an independent sample that is not the data used to fit the exponent",
-      "blocking_gates": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G10"],
+      "blocking_gates": [
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6",
+        "G7",
+        "G8",
+        "G10"
+      ],
       "status": "Blocked",
-      "source_ids": ["NFL-STANDINGS", "SCIPY-CORR"]
+      "source_ids": [
+        "NFL-STANDINGS",
+        "SCIPY-CORR"
+      ]
     },
     {
       "id": "ST-03",
@@ -171,9 +193,14 @@
       "signal": "league average of 23.0104 points per team-game plus the home-field parameter",
       "verified_today": "league average computed from all 32 official rows and checked by the league-wide PF = PA identity",
       "missing": "It is a control, not a claim. It cannot win; it exists so a candidate that does not beat it is rejected.",
-      "blocking_gates": ["G4", "G6"],
+      "blocking_gates": [
+        "G4",
+        "G6"
+      ],
       "status": "Control",
-      "source_ids": ["NFL-STANDINGS"]
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
     },
     {
       "id": "ST-04",
@@ -183,9 +210,21 @@
       "signal": "practice status joined to club depth-chart order",
       "verified_today": "208 injury rows and 36 depth rows across three clubs, each with two official sources",
       "missing": "Position weights, replacement-quality estimates and depth coverage beyond 3 of 28 clubs",
-      "blocking_gates": ["G2", "G3", "G6", "G7", "G10"],
+      "blocking_gates": [
+        "G2",
+        "G3",
+        "G6",
+        "G7",
+        "G10"
+      ],
       "status": "Blocked",
-      "source_ids": ["NFL-INJURIES", "NFL-ROUNDUP", "AZ-DEPTH", "CLE-DEPTH", "SF-DEPTH"]
+      "source_ids": [
+        "NFL-INJURIES",
+        "NFL-ROUNDUP",
+        "AZ-DEPTH",
+        "CLE-DEPTH",
+        "SF-DEPTH"
+      ]
     },
     {
       "id": "ST-05",
@@ -195,9 +234,21 @@
       "signal": "the 'no backup listed' rows on the depth page (for example San Francisco left corner and nickel, Cleveland WILL)",
       "verified_today": "Five first-string players this week have no second string listed on their club chart",
       "missing": "A historical record of how such gaps actually performed, and any price to trade them",
-      "blocking_gates": ["G2", "G3", "G4", "G6", "G7", "G10"],
+      "blocking_gates": [
+        "G2",
+        "G3",
+        "G4",
+        "G6",
+        "G7",
+        "G10"
+      ],
       "status": "Blocked",
-      "source_ids": ["AZ-DEPTH", "CLE-DEPTH", "SF-DEPTH", "NFL-INJURIES"]
+      "source_ids": [
+        "AZ-DEPTH",
+        "CLE-DEPTH",
+        "SF-DEPTH",
+        "NFL-INJURIES"
+      ]
     },
     {
       "id": "ST-06",
@@ -207,9 +258,20 @@
       "signal": "joint distribution of margin and total implied by the ratings",
       "verified_today": "Nothing at leg level: the model gives margins around a mean, not a joint distribution",
       "missing": "Settled leg-level outcomes (margin and total together) to estimate the correlation, plus prices for both legs",
-      "blocking_gates": ["G3", "G4", "G5", "G6", "G7", "G9", "G10"],
+      "blocking_gates": [
+        "G3",
+        "G4",
+        "G5",
+        "G6",
+        "G7",
+        "G9",
+        "G10"
+      ],
       "status": "Blocked",
-      "source_ids": ["NFL-STANDINGS", "SCIPY-CORR"]
+      "source_ids": [
+        "NFL-STANDINGS",
+        "SCIPY-CORR"
+      ]
     },
     {
       "id": "ST-07",
@@ -219,9 +281,19 @@
       "signal": "product of the two leg probabilities, adjusted only if a measured correlation is non-zero",
       "verified_today": "The independence assumption is stated explicitly; no correlation is measured",
       "missing": "Leg-level joint outcomes and prices, plus a shared-factor screen",
-      "blocking_gates": ["G3", "G4", "G5", "G7", "G9", "G10"],
+      "blocking_gates": [
+        "G3",
+        "G4",
+        "G5",
+        "G7",
+        "G9",
+        "G10"
+      ],
       "status": "Blocked",
-      "source_ids": ["NFL-STANDINGS", "SM-HOLM"]
+      "source_ids": [
+        "NFL-STANDINGS",
+        "SM-HOLM"
+      ]
     },
     {
       "id": "ST-08",
@@ -231,9 +303,23 @@
       "signal": "announced starter change (Arizona, Cleveland, Miami) joined to the club depth chart",
       "verified_today": "Three announced quarterback changes with official sources, and the depth order behind each",
       "missing": "Official player game logs, prop prices, and settled prop results",
-      "blocking_gates": ["G2", "G3", "G4", "G5", "G6", "G7", "G9", "G10"],
+      "blocking_gates": [
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6",
+        "G7",
+        "G9",
+        "G10"
+      ],
       "status": "Blocked",
-      "source_ids": ["NFL-ROUNDUP", "NFL-NEWS-WILLIS", "AZ-DEPTH", "CLE-DEPTH"]
+      "source_ids": [
+        "NFL-ROUNDUP",
+        "NFL-NEWS-WILLIS",
+        "AZ-DEPTH",
+        "CLE-DEPTH"
+      ]
     }
   ],
   "gates": [
@@ -243,7 +329,13 @@
       "requirement": "Each number used in a price, probability or score traces to an official publisher, with a check date and the exact scope read.",
       "evidence_today": "Ratings, standings, injuries and depth rows pass. There is no official price input, so price-based strategies cannot pass.",
       "status": "Partial",
-      "source_ids": ["NFL-STANDINGS", "NFL-INJURIES", "AZ-DEPTH", "CLE-DEPTH", "SF-DEPTH"]
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-INJURIES",
+        "AZ-DEPTH",
+        "CLE-DEPTH",
+        "SF-DEPTH"
+      ]
     },
     {
       "id": "G2",
@@ -251,7 +343,10 @@
       "requirement": "Each input carries the timestamp at which it was true, and nothing published after the bet could have been placed is used.",
       "evidence_today": "The Wednesday practice report is verified, but the Sunday Game Status Report is due Friday 4 p.m. New York time and does not exist yet. Publishing a Sunday price from Wednesday data would be stale by rule.",
       "status": "Fail",
-      "source_ids": ["NFL-DATES", "NFL-INJURIES"]
+      "source_ids": [
+        "NFL-DATES",
+        "NFL-INJURIES"
+      ]
     },
     {
       "id": "G3",
@@ -259,7 +354,9 @@
       "requirement": "At least 100 independent settled observations for any claimed relationship, before any ranking or prize.",
       "evidence_today": "32 team rows and 14 upcoming games. n = 32 is a description of one season, not a sample of outcomes.",
       "status": "Fail",
-      "source_ids": ["NFL-STANDINGS"]
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
     },
     {
       "id": "G4",
@@ -267,7 +364,10 @@
       "requirement": "A timestamped, licensed closing price for the exact market and leg being modelled.",
       "evidence_today": "No official NFL price publication was located; https://www.nfl.com/odds/ returned 404 on 2026-11-12. Market columns are blank.",
       "status": "Fail",
-      "source_ids": ["NFL-ODDS-PATH", "NFL-TERMS"]
+      "source_ids": [
+        "NFL-ODDS-PATH",
+        "NFL-LEGAL-TERMS"
+      ]
     },
     {
       "id": "G5",
@@ -275,7 +375,9 @@
       "requirement": "The bookmaker margin is removed with a stated method before any edge is computed.",
       "evidence_today": "Cannot be computed without prices. Left blank rather than assumed.",
       "status": "Fail",
-      "source_ids": ["NFL-ODDS-PATH"]
+      "source_ids": [
+        "NFL-ODDS-PATH"
+      ]
     },
     {
       "id": "G6",
@@ -283,7 +385,9 @@
       "requirement": "Brier score and log loss against the control model, with a reliability check, on data that was not used to build the model.",
       "evidence_today": "Specified; no out-of-sample run exists. Method reference registered.",
       "status": "Fail",
-      "source_ids": ["SK-CAL"]
+      "source_ids": [
+        "SK-CAL"
+      ]
     },
     {
       "id": "G7",
@@ -291,7 +395,9 @@
       "requirement": "A pre-registered test (permutation or circular block bootstrap) with a stated effect size and a confidence interval on both score and return.",
       "evidence_today": "No settled results, so no test. Luck cannot be removed from a 14-game sample by arithmetic.",
       "status": "Fail",
-      "source_ids": ["SCIPY-CORR"]
+      "source_ids": [
+        "SCIPY-CORR"
+      ]
     },
     {
       "id": "G8",
@@ -299,7 +405,9 @@
       "requirement": "Every tested variant is counted and Holm-adjusted; the family is declared before testing.",
       "evidence_today": "The mechanism is specified. Nothing has been tested, so nothing has been adjusted. Eight strategy families are already declared, which sets the size of the family.",
       "status": "Procedural",
-      "source_ids": ["SM-HOLM"]
+      "source_ids": [
+        "SM-HOLM"
+      ]
     },
     {
       "id": "G9",
@@ -307,7 +415,10 @@
       "requirement": "Joint probability for every leg combination, estimated from leg-level outcomes, never from the product of single-leg probabilities.",
       "evidence_today": "Team-level correlations are published (see the correlation page) but they are not leg correlations. Leg-level values are blank.",
       "status": "Fail",
-      "source_ids": ["SCIPY-CORR", "NFL-STANDINGS"]
+      "source_ids": [
+        "SCIPY-CORR",
+        "NFL-STANDINGS"
+      ]
     },
     {
       "id": "G10",
@@ -315,7 +426,9 @@
       "requirement": "Documented permission for the intended use, or a use that clearly falls inside the publisher's permitted individual non-commercial use.",
       "evidence_today": "NFL.com Terms section 1.3 permits individual non-commercial informational use only and prohibits systematic retrieval and compilation. No licence is evidenced. Cash rewards and any gambling-linked use are not cleared.",
       "status": "Fail",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": [
+        "NFL-LEGAL-TERMS"
+      ]
     }
   ],
   "leaderboard": {
@@ -331,10 +444,46 @@
     "not_computed": "Leg-level correlations for spreads, totals and player props. These require settled leg-level outcomes (margin and total observed together) and prices for the exact legs; neither exists here.",
     "blank_policy": "The leg-level cells are left blank and flagged rather than filled with an assumed value. Assuming zero correlation for same-game legs is the specific error G9 exists to prevent.",
     "prospective_legs": [
-      {"id": "C-L1", "legs": "Same game: home spread and game total", "r": "", "n": "", "status": "Unverified - needs settled margin and total pairs", "source_ids": ["NFL-STANDINGS"]},
-      {"id": "C-L2", "legs": "Same game: away moneyline and over", "r": "", "n": "", "status": "Unverified - needs settled leg outcomes", "source_ids": ["NFL-STANDINGS"]},
-      {"id": "C-L3", "legs": "Across games: two independent favourites", "r": "", "n": "", "status": "Unverified - shared-factor screen not run", "source_ids": ["NFL-STANDINGS"]},
-      {"id": "C-L4", "legs": "Player prop combo: quarterback passing yards and team total", "r": "", "n": "", "status": "Unverified - no official player game log collected", "source_ids": ["NFL-NEWS-WILLIS"]}
+      {
+        "id": "C-L1",
+        "legs": "Same game: home spread and game total",
+        "r": "",
+        "n": "",
+        "status": "Unverified - needs settled margin and total pairs",
+        "source_ids": [
+          "NFL-STANDINGS"
+        ]
+      },
+      {
+        "id": "C-L2",
+        "legs": "Same game: away moneyline and over",
+        "r": "",
+        "n": "",
+        "status": "Unverified - needs settled leg outcomes",
+        "source_ids": [
+          "NFL-STANDINGS"
+        ]
+      },
+      {
+        "id": "C-L3",
+        "legs": "Across games: two independent favourites",
+        "r": "",
+        "n": "",
+        "status": "Unverified - shared-factor screen not run",
+        "source_ids": [
+          "NFL-STANDINGS"
+        ]
+      },
+      {
+        "id": "C-L4",
+        "legs": "Player prop combo: quarterback passing yards and team total",
+        "r": "",
+        "n": "",
+        "status": "Unverified - no official player game log collected",
+        "source_ids": [
+          "NFL-NEWS-WILLIS"
+        ]
+      }
     ]
   }
 }

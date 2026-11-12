@@ -14,7 +14,7 @@
       "impact": "Unblocks or forecloses every other suggestion",
       "risk": "Building first and asking later guarantees rework and possible takedown",
       "decision": "Open - choose A, B or C",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "S-02",
@@ -30,7 +30,7 @@
       "impact": "Unlocks gates G4, G5, G6, G7 and the leaderboard",
       "risk": "A single operator's price is not the market; pricing off one book is a known source of false edges",
       "decision": "Open - choose A, B or C",
-      "source_ids": ["NFL-ODDS-PATH", "NFL-TERMS"]
+      "source_ids": ["NFL-ODDS-PATH", "NFL-LEGAL-TERMS"]
     },
     {
       "id": "S-03",
@@ -125,7 +125,7 @@
       "impact": "Prevents a prop strategy from being scored against the wrong settlement rule",
       "risk": "Operator rules differ, so a single register must record the operator, not just the market",
       "decision": "Open - choose A, B or C",
-      "source_ids": ["NFL-NEWS-WILLIS", "NFL-TERMS"]
+      "source_ids": ["NFL-NEWS-WILLIS", "NFL-LEGAL-TERMS"]
     },
     {
       "id": "S-09",
@@ -155,7 +155,7 @@
       "impact": "Makes the suggestion register usable",
       "risk": "A log nobody updates is worse than none; tie each row to a commit",
       "decision": "Open - choose A or B",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "S-11",
@@ -171,7 +171,7 @@
       "impact": "Removes the largest source of reader confusion",
       "risk": "Relabelling can look like a claim change; keep the original pages and add status, do not rewrite history",
       "decision": "Open - choose A, B or C",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "S-12",
@@ -186,7 +186,7 @@
       "impact": "Harm reduction and credibility",
       "risk": "A support line must be official and current; do not invent one",
       "decision": "Open - choose A or B",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     }
   ],
   "questions": [
@@ -198,7 +198,7 @@
       "missing": "A timestamped quote per market and leg, plus the operator's name and the price type (open, current, close).",
       "discovery": "A licensed odds feed, or a manual quote from one operator's own page recorded with a timestamp.",
       "status": "Open - blocking",
-      "source_ids": ["NFL-ODDS-PATH", "NFL-TERMS"]
+      "source_ids": ["NFL-ODDS-PATH", "NFL-LEGAL-TERMS"]
     },
     {
       "id": "Q-02",
@@ -258,7 +258,7 @@
       "missing": "Any written permission, licence or legal opinion specific to this project.",
       "discovery": "A written request to the league; a lawyer's read of the terms for the intended use.",
       "status": "Answered as a restriction, not as a permission",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "Q-08",
@@ -288,7 +288,7 @@
       "missing": "The settlement rules of the specific operator whose prices are used.",
       "discovery": "Read the operator's own published rules and register them before using its prices.",
       "status": "Open - blocking for prop and parlay work",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "Q-11",
@@ -298,7 +298,7 @@
       "missing": "A legal review of a reward scheme, and the regulator's position in the relevant jurisdiction.",
       "discovery": "Legal advice; the applicable gaming regulator's published guidance.",
       "status": "Open - blocked",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "Q-12",
@@ -347,7 +347,7 @@
       "item": "No market price anywhere on this site",
       "detail": "Every market-line, edge, ROI and closing-line-value cell is blank. The NFL.com odds path returned 404 on 2026-11-12 and no official league price source was located. Blank is the verified state, not an oversight.",
       "status": "Unverified - blocked by design",
-      "source_ids": ["NFL-ODDS-PATH", "NFL-TERMS"]
+      "source_ids": ["NFL-ODDS-PATH", "NFL-LEGAL-TERMS"]
     },
     {
       "id": "F-02",
@@ -424,7 +424,7 @@
       "item": "Cash rewards and any gambling-linked use are not cleared",
       "detail": "NFL.com Terms section 1.3 permits individual non-commercial informational use only. No licence and no legal review of a reward scheme exists, so the competition pays nothing.",
       "status": "Blocked",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "F-13",
@@ -438,7 +438,7 @@
       "item": "Legacy sections of this repository still carry pre-NFL claims",
       "detail": "The front page, README and package name still describe an NBA research lab, and older 'verified' directories exist as redirects. Nothing was deleted; the NFL section is additive and this flag records the inconsistency for manual review.",
       "status": "Needs review",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     }
   ],
   "qa": [
@@ -488,7 +488,7 @@
       "id": "A-08",
       "question": "What is the biggest legal risk?",
       "answer": "Treating league data as free to compile and publish. Section 1.3 of the NFL.com Terms permits individual non-commercial informational use and prohibits systematic retrieval and compilation without written consent.",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "A-09",
@@ -512,7 +512,7 @@
       "id": "A-12",
       "question": "What should be decided first?",
       "answer": "S-01 (data rights) and S-02 (price source). Every other suggestion either depends on them or can proceed regardless; these two decide whether the project can be more than a private exercise.",
-      "source_ids": ["NFL-TERMS", "NFL-ODDS-PATH"]
+      "source_ids": ["NFL-LEGAL-TERMS", "NFL-ODDS-PATH"]
     }
   ],
   "repo_review": [
@@ -538,7 +538,7 @@
       "finding": "Registry IDs must match SOURCE_HOSTS exactly, each URL must be HTTPS on the registered host, and each row needs scope, check date and access boundary.",
       "severity": "Constraint",
       "action": "Fourteen NFL source IDs added with scope, date and access notes",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "R-04",
@@ -554,7 +554,7 @@
       "finding": "Twelve legacy HTML files and a deprecated JSON directory remain as redirects. They are explicitly deprecated pointers, but the folder name still reads as a verification claim.",
       "severity": "Naming risk",
       "action": "Left intact to preserve URLs; flagged as F-14",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "R-06",
@@ -562,7 +562,7 @@
       "finding": "Three separate rental presentations coexist (root rental*.html, rental/ deep dive, rent-*.html). They do not contradict each other but they do overlap, and each has its own builder.",
       "severity": "Structural duplication",
       "action": "Recorded for review; not modified by this session",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "R-07",
@@ -570,7 +570,7 @@
       "finding": "origin/main was a989d67 with PR #20 merged; PR #17 from an earlier session was still open and stale.",
       "severity": "Housekeeping",
       "action": "No other session was active; this session works only on its own branch",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "R-08",
@@ -578,7 +578,7 @@
       "finding": "COORDINATION.md carries several historical boards whose ownership claims overlap and whose statuses are not consistent with each other.",
       "severity": "Historical record, ambiguous",
       "action": "Earlier boards retained verbatim; this session appended a scoped board and did not rewrite history",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "R-09",
@@ -626,7 +626,7 @@
       "finding": "No repository licence file exists, so no licence is inferred. Third-party source terms, including the NFL.com Terms, continue to apply to their content.",
       "severity": "Unresolved rights",
       "action": "Stated in the site footer and README; no licence invented",
-      "source_ids": ["NFL-TERMS"]
+      "source_ids": ["NFL-LEGAL-TERMS"]
     },
     {
       "id": "R-15",
