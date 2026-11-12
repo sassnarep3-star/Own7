@@ -528,3 +528,19 @@ Cross-scope note: NBA/rental values were not changed. Adding seven source IDs ch
 - **Landing page corrected.** The overview table said there were two NFL workstreams; there are three. It now states each one's scope and verified row count (11 pages / 66 rows; 15 pages / 216 rows; 14 pages / 210 injury rows), notes that the counts are **not additive**, and repeats the shared finding that all three report zero qualified strategies and an empty leaderboard.
 
 Verification after the second merge: 92 Python tests OK, `nfl/build.py --check` 15 pages reproduce, `nfl/origination/originate.py --check` 14 pages reproduce, `check_site.py` 95 HTML pages / 1,814 sourced rows / 91 registered sources / **0 errors**, NBA + rental + market-evidence builders clean, browser console errors zero on all three NFL sections.
+
+### Close-out — NFL origination lab (session arena/a129b881-own7)
+
+**PR [#25](https://github.com/sassnarep3-star/Own7/pull/25) — merged, not awaiting approval.** Merge commit `e358c37`, merged 2026-11-12T17:08:16Z.
+
+**Branch CI before merge:** both jobs green — `Research and recursive site audit` (15s) and `Desktop, mobile and accessibility` (3m05s) — and GitHub reported `mergeable=MERGEABLE, state=CLEAN`.
+
+**Pages deploy:** `repos/.../pages` reports `status=built` for commit `e358c37` with `error=none`, i.e. the deployed tree is the merge commit itself, not a stale build. The deployed manifest is 37 canonical + 39 auxiliary + 20 compatibility redirects, which matches the locally verified build exactly. Note: `github.io` is outside this sandbox's egress allowlist, so the live URL was confirmed through the Pages builds API and the merged manifest rather than by an HTTP request; the site itself was verified locally over HTTP and by the 61-page browser suite.
+
+**Board status:** N1–N6 closed. This session's claim is released; the branch scope is no longer active.
+
+**What this session delivered.** A verified NFL evidence layer (32 standings / 20 Week 10 injury / 14 fixture rows, every row carrying its official URL), an origination engine producing 14 Week 10 spreads and totals with no market values inferred, ten fail-closed validation gates, a competition format whose leaderboard is empty by design, a correlation register that labels five of ten entries as arithmetic artefacts, a labelled Flagged-for-Review register, a decision brief and fourteen open questions written as known/unknown/needed, an executive summary, a line-by-line repo review, and a suggestions section that implements nothing without selection.
+
+**Integration outcome.** Three independently built NFL workstreams now coexist on `main` without overwriting each other: this session's 11-page origination section at the root, the 16-page research lab at `nfl/`, and the 14-page line-origination lab at `nfl/origination/`. The source registry holds 91 unique IDs with no duplicates, all three sub-site builders run in sequence from `scripts/build_site.py`, and the overview page states each workstream's scope and row count and warns that the counts are not additive. No session's published number was changed by the merge.
+
+**Standing limits, unchanged.** No market price is collected anywhere, so ROI, closing-line value and break-even rates stay blank by rule rather than being estimated. Two of ten gates pass; every registered strategy remains `Blocked`. NFL terms §1.3 and §12 keep this a frozen, non-commercial, attributed audit with no wagering use.
