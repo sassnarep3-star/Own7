@@ -1,6 +1,6 @@
 # Repository review — 12 November 2026 (NFL session `arena/20394b77-own7`)
 
-Scope: the repository as inherited at `a989d67` plus the NFL additions. This is a **consistency and provenance review**, not a re-verification of inherited NBA or rental claims; those are out of scope and untouched.
+Scope: the repository as inherited at `a989d67`, plus this session's additions, plus the reconciliation with the concurrent NFL sub-site merged as PR #21/#23. Paths below refer to the final layout: the parent NFL research site at `nfl/**` (session `arena/a4e560bc-own7`) and this session's line-origination lab at `nfl/origination/**`. This is a **consistency and provenance review**, not a re-verification of inherited NBA or rental claims; those are out of scope and untouched.
 
 ## 1. What the repository contained at session start
 
@@ -11,7 +11,7 @@ Scope: the repository as inherited at `a989d67` plus the NFL additions. This is 
 
 `scripts/check_site.py` enforces: every HTML page registered in `research/site-manifest.json` with a matching SHA-256; every table body row carrying registered source IDs **and** a link to the registered URL; every blank cell genuinely empty; HTTPS only; no protocol-relative links; single `h1`/`main`; `lang="en"`; deterministic rebuild byte-identical. `scripts/build_site.py` regenerates all canonical pages plus auxiliary sub-sites and rewrites the manifest.
 
-The NFL sub-site was built to that contract rather than beside it, so any violation fails the whole site check.
+The line-origination lab was built to that contract rather than beside it, so any violation fails the whole site check.
 
 ## 3. Line-by-line checks performed
 
@@ -28,9 +28,9 @@ The NFL sub-site was built to that contract rather than beside it, so any violat
 | 9 | Every depth-chart starter with a status joins to an injury row by exact name | 36 rows join; 3 name variants documented (Mack Wilson Sr., Ronnie Hickman Jr., Deebo Samuel Sr.) |
 | 10 | Every depth row's status matches the injury table exactly | pass after the three aliases were resolved |
 | 11 | No depth row invents a backup where the club chart lists none | 5 "no backup/no second/no third" rows verified against the chart |
-| 12 | Every source URL is HTTPS on a closed host allowlist | 76 registered IDs; 11 NFL-era hosts |
-| 13 | Every source ID used in any CSV/JSON is registered, and every registered ID is used | 0 orphans both directions |
-| 14 | Every table body row on every page has registered IDs and its own source link | 1,241 rows across 68 HTML pages |
+| 12 | Every source URL is HTTPS on a closed host allowlist | 85 registered IDs; 20 NFL-era host entries |
+| 13 | Every source ID used in any CSV/JSON is registered, and every registered ID is used | 0 orphans both directions (checker enforces set equality) |
+| 14 | Every table body row on every page has registered IDs and its own source link | 1,591 rows across 83 HTML pages (whole site) |
 | 15 | No market price, edge, ROI or leg correlation appears anywhere | 0 found; market column blank on all 14 projections |
 
 ## 4. Irregularities found (and what was done)
@@ -46,7 +46,8 @@ The NFL sub-site was built to that contract rather than beside it, so any violat
 | I-07 | Two source typos in the official roundup ("limted", "hamtring") | Status normalised to the policy's three categories; the typo is recorded in the row note |
 | I-08 | `research/results.json` hashes `research/sources.json`, so adding NFL sources made the NBA research result stale | `python -m nba_lab run` regenerated it; diff confirmed **only** `run_hash` and the `sources.json` input hash changed — no NBA value was altered |
 | I-09 | `nfl.com/teams/depth-chart` and `nfl.com/odds/` both return 404 | Registered as scope-limit sources with the exact paths checked, not as proof of universal absence |
-| I-10 | WCAG 2.2 target-size failure on new sidebar footer links in the browser suite | Fixed with `nfl/style.css` (stacked 32 px targets); suite then passed 48 desktop + 48 mobile pages with zero axe violations |
+| I-10 | WCAG 2.2 target-size failure on new sidebar footer links in the browser suite | Fixed with `nfl/origination/style.css` (stacked 32 px targets); suite then passed with zero axe violations |
+| I-11 | **Two sessions built an NFL sub-site at the same paths on the same day.** This session's branch was opened when `origin/main` had no `nfl/` path; by merge time `arena/a4e560bc-own7` had merged its own site there (PR #21, #23) | Neither site was discarded and no path is written by both builders. The merged site keeps `nfl/**`; this session's Week 10 lab was relocated to `nfl/origination/**` with its own builder, manifest and tests, and both are reachable from shared navigation |
 
 ## 5. What was not verified
 

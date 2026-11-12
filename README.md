@@ -1,19 +1,30 @@
-# OWN7 · research lab (NBA archive · SF rental · NFL line lab)
+# OWN7 · research lab (NBA archive · SF rental · NFL)
 
-[Live dashboard](https://sassnarep3-star.github.io/Own7/) · [**NFL line lab**](https://sassnarep3-star.github.io/Own7/nfl/index.html) · [NFL executive summary](docs/nfl-executive-summary.md) · [NBA executive brief](docs/executive-summary.md) · [Sources](research/sources.json) · [Coordination / release evidence](COORDINATION.md)
+[Live dashboard](https://sassnarep3-star.github.io/Own7/) · [NFL research site](https://sassnarep3-star.github.io/Own7/nfl/index.html) · [**NFL line-origination lab**](https://sassnarep3-star.github.io/Own7/nfl/origination/index.html) · [NBA executive brief](docs/executive-summary.md) · [Sources](research/sources.json) · [Coordination / release evidence](COORDINATION.md)
 
-> **Sections by status.** The **NFL line lab** (`nfl/**`, added 2026-11-12) is the active programme. The **NBA research** section below is an earlier, retained audit and is now an archive of that work. The **SF rental** sections are a separate, unrelated analysis. Shared navigation labels each group; nothing was deleted, and no historical claim was relabelled as verified.
+> **Sections by status.** The **NFL sections** are the active programme and are split in two layers, described below. The **NBA research** section is an earlier, retained audit and is now an archive of that work. The **SF rental** sections are a separate, unrelated analysis. Shared navigation labels each group; nothing was deleted and no historical claim was relabelled as verified.
 
-## NFL line lab (active, Week 10 of the 2026 season)
+## NFL · two layers, one navigation group
 
-A dated, source-linked decision site: model-implied spreads and totals for all 14 Week 10 games, 210 injury rows checked against two official NFL.com pages, club depth charts joined to that injury report for three clubs, a fail-closed validation protocol, an empty leaderboard, a **Suggestions** register with options and a recommendation per decision, and an **Open questions** register stating what is missing and how to obtain it.
+Two sessions built NFL content on the same day. They answer different questions, they are cross-linked, and they write disjoint files. Neither overwrote the other.
 
-- **Verified:** all 32 standings rows pass three arithmetic identities (win percentage, net points, league-wide points for = points against at 6,246 over 272 team-games); injury practice status agrees across the injury page and the official Wednesday roundup on every overlapping player; the injury-report policy deadlines are quoted from the league's calendar.
-- **Not verified, therefore blank:** every market price, every leg-level correlation, 21 injury types the sources do not publish, and depth evidence for 25 of the 28 clubs in the slate.
-- **Nothing qualifies.** Eight strategies are registered and all are blocked; no reward is paid and no cash prize exists.
+### 1. NFL research site — `nfl/` (session `arena/a4e560bc-own7`, Week 7 snapshot)
+
+A source-linked research workspace: standings and player/team statistics, a signal library, generic pricing identities, injuries and backup coverage, validation gates, an empty leaderboard, a requirements ledger, suggestions and questions, and a Flagged for Review register (NF01–NF11). Its position is explicit: **no NFL lines are originated there** and NFL-derived betting prices are withheld under the source-rights gate.
+
+### 2. NFL line-origination lab — `nfl/origination/` (session `arena/20394b77-own7`, Week 10 snapshot)
+
+Adds the part the first layer withholds, as a model-only demonstration: spreads and totals for all 14 Week 10 games from a shrunk win-percentage and Pythagorean baseline with sensitivity bounds, 210 injury rows checked against two official NFL.com pages, depth-chart deficiencies for three clubs joined to that injury report, ten fail-closed gates, and **Suggestions** and **Open questions** registers.
+
+- **Verified:** 32/32 standings rows pass three arithmetic identities (win percentage, net points, and league-wide points for = points against at 6,246 over 272 team-games); injury practice status agrees with the official Wednesday roundup on every overlapping player; injury-report deadlines are quoted from the league's calendar.
+- **Model-derived, never a market price:** every line is labelled as the model's output. No sportsbook was scraped, and no price, edge, ROI or CLV value exists anywhere in the tree.
+- **Not verified, therefore blank:** every market price, every leg-level correlation, 21 injury types the sources do not publish, depth evidence for 25 of the 28 slate clubs, and the reason four clubs are absent from the slate.
+- **Nothing qualifies.** Eight strategies are registered and all are blocked; the leaderboard is empty; no reward is paid and no cash prize exists.
 - **Rights:** [NFL.com Terms §1.3](https://www.nfl.com/legal/terms/) permits individual, non-commercial, informational use only and prohibits systematic retrieval or compilation. This is a small dated sample under that limit, not a data product.
 
-Reproduce: `python nfl/build.py --check` and `python -m unittest discover -s nfl -p "test_*.py" -v` (standard library only; no network).
+Reproduce (standard library only, no network): `python nfl/build.py --check`, `python nfl/origination/originate.py --check`, `python -m unittest discover -s nfl/origination -p "test_*.py" -v`.
+
+Detailed evidence: `docs/nfl-executive-summary.md` (research site), `docs/nfl-origination-summary.md` (lab), `docs/nfl-repo-review-2026-11-12.md` (repo review, irregularities I-01…I-11), `COORDINATION.md` (claims, collision and resolution).
 
 ---
 
