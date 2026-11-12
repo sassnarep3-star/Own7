@@ -40,6 +40,9 @@ SOURCE_HOSTS.update({
     'FHA-3604': 'uscode.house.gov',
 })
 
+# NFL research lab (session arena/a4e560bc-own7) — official NFL hosts only.
+SOURCE_HOSTS.update({'NFL-STANDINGS': 'www.nfl.com', 'NFL-PASSING': 'www.nfl.com', 'NFL-RUSHING': 'www.nfl.com', 'NFL-RECEIVING': 'www.nfl.com', 'NFL-TEAM-OFF': 'www.nfl.com', 'NFL-TEAM-DEF': 'www.nfl.com', 'NFL-INJURY': 'www.nfl.com', 'NFL-SCHEDULE': 'www.nfl.com', 'NFL-TERMS': 'support.nfl.com', 'NFL-ROSTER': 'www.nfl.com'})
+
 # Rental pages from session arena/692da006-own7 (PR #19) — official government/legal hosts only.
 # NFL research layer (session arena/a129b881-own7). Official league domains, one tertiary
 # method reference, and the publisher glossary. No odds vendor is registered.

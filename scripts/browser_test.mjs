@@ -18,7 +18,7 @@ const out=join(root,'.artifacts');
 mkdirSync(out,{recursive:true});
 const report={status:'running',browser:null,desktop_pages:[],mobile_pages:[],accessibility_violations:[],runtime_errors:[],assertions:[]};
 const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript','.svg':'image/svg+xml','.json':'application/json','.csv':'text/csv','.md':'text/plain'};
-const allowedFolders=new Set(['assets','css','js','data','research','docs','pages','verified','handoff','market-evidence','rental']);
+const allowedFolders=new Set(['assets','css','js','data','research','docs','pages','verified','handoff','market-evidence','rental','nfl']);
 const publicRootFiles=new Set([...manifest.canonical_pages,...Object.keys(manifest.legacy_redirects),'README.md','COORDINATION.md']);
 const server=createServer((req,res)=>{
   try{

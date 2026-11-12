@@ -2772,25 +2772,22 @@
   "cash_rewards": null,
   "input_sha256": {
     "data/jokic-games-2025-26.csv": "6aef2e09256d0423a80df850830c7daea7f18142219a07e6b37b17b2e8b6528f",
-    "data/nfl-injuries-2026-w10.csv": "bf0d182d1fc3656e0bd05e93bb529f91d40870c8fd6978c2fd944682fb70c122",
-    "data/nfl-schedule-2026-w10.csv": "2e921197c68b0e5ace40022e6ae9e4758f9dd956a4bd2865d81b27bc89d1a21e",
-    "data/nfl-standings-2026.csv": "c4daceecb57e4461ad9ef8a2b7fa13cd3a83c0c3a1e9a77c60470772000b75b9",
     "data/players-2025-26-top15.csv": "418c0ff25f96990483aba7f7e1f8b2fa234344a3073b0ddb2f7cfa72da254f10",
     "data/standings-2026-27.csv": "3bb2b710822a2e42c887f389ef03df393c11c5c94faaca6979a358e597616d20",
     "data/team-correlations-2025-26.csv": "45190765932f4d89217b55aa32a4ca48acdfb2ab56da95cd1a97f2a8772f24ae",
     "data/teams-2025-26.csv": "2c88848b57b87696d30eb37fa93499ecac557c7e2dd00b77ee7630ffbad11e6f",
     "nba_lab/__init__.py": "c308344bcfcf89b5bc69fdb61c9637ad0000288c4003e774c5a63f1ab3d006b5",
     "nba_lab/__main__.py": "5305d5d90b492216fcdf499c4e9f1a68224302b54195502ca049a3002781658b",
-    "nba_lab/engine.py": "67fcdb061e3e6b7a2ed8174f3addad3328a3208932e39cbcb9accdf8ec700366",
+    "nba_lab/engine.py": "455ee55af8b4f74d8af0a0e460de10b491516c2744d131a15b3f0c92b4df4584",
     "nba_lab/math.py": "64aefb7effa86a046dca9b530ab3b07f7243b9560b263bf8925aab736d1429f4",
     "nba_lab/models.py": "e215f35ae9005b64a7026622ecf2a4fc3c03ef8251fed1ed0972290f9ab755bc",
     "nba_lab/validation.py": "037dff8f23e6143d133c2d116e095a8cb3c8faea544f27fd365aee8055a373eb",
     "research/catalog.json": "3ed0007af519b07e5c1c3bb50eb7c58bcb15069dc747223663531570dac49ded",
     "research/evidence/receipts.json": "813665038767581ee7981d5beb051f86b2ec80ede955861533229d444f4f8d03",
     "research/protocol.json": "4d40bed6586a473363bf2b9be035d7a30ba2ccf1b611fb152c7dcf25ff00eda8",
-    "research/sources.json": "487a03c91611f84ddef54e136f0868e47cd0342e71f70976afffc2ae9ac99392"
+    "research/sources.json": "25ea74c181d1c6c94611d9e7322bba1236c0ebd76fe8dae1a4d0687e557864e7"
   },
-  "run_hash": "67356af537eef8350368d2a71004e4f0ff0c3108b6ecaa0c9de09e0ceca25b4c",
+  "run_hash": "309180a970a91ddae876950288ed883ec2419d417a56ba6d5936a3e51943ab71",
   "limitations": [
     "No operator prices or pregame timestamp archive",
     "No untouched confirmatory or prospective shadow evaluation",
