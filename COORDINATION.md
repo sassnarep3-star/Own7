@@ -369,3 +369,31 @@ Privacy: all personal information (tenant initials) is anonymized everywhere in 
 ### Merge note (arena/cab077aa-own7, 2026-11-06, second merge)
 - Merged origin/main again (PR #19, session arena/692da006-own7: root-level rental*.html pages + research/rental.json). No other session's work discarded; their nav group and pages retained, mine added as "Deep-dive sub-site" → rental/index.html.
 - research/sources.json unioned by ID across both sides; SOURCE_HOSTS in scripts/check_site.py unioned; generated artifacts regenerated deterministically.
+
+---
+
+## Session arena/3daf609a-own7 — NFL Origination, Depth/Injury Intelligence, Decision Gate & Site Audit (2026-11-12)
+
+Session ID: `session-arena-3daf609a-own7`
+Branch: `arena/3daf609a-own7` (fixed by Arena platform; platform branch rule governs over `session-<id>/<task>` naming).
+Base commit: `a989d67d9155b43ee2b93c39cbfdde54d8dd0b09` (`origin/main`).
+
+### Non-overlapping scope design
+Other concurrent 2026-11-12 branches observed via `git ls-remote` (`arena/20394b77-own7`, `arena/270048f0-own7`, `arena/a4e560bc-own7`) claim `nfl/**` and `docs/nfl-*.md`. To keep file scopes strictly non-overlapping and avoid overwriting any concurrent session's work, this session places all new NFL code, datasets, tests, and generated category pages in **`nfl-origination/**`**, markdown reports in **`docs/nfl-origination-*.md`**, and primary-source registry IDs under the **`NFLO-*`** prefix. Integration touchpoints (`research/sources.json`, `scripts/check_site.py`, `scripts/build_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `README.md`, `COORDINATION.md`) are updated strictly additively during final integration after reconciling any changes merged to `origin/main`. No existing NBA, market-evidence, or SF rental data values are altered.
+
+### Task board
+
+| ID | Task | Status | Owner | Exclusive file scope | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| NFLO-1 | Create & claim non-overlapping NFL Origination task board | in progress | session-arena-3daf609a-own7 | `COORDINATION.md` (append-only) | Repo git refs & `COORDINATION.md` | Claimed, committed, and pushed immediately |
+| NFLO-2 | Line-by-line repository review & irregularity audit | unclaimed | session-arena-3daf609a-own7 | `docs/nfl-origination-repo-review.md`, `nfl-origination/audit.json` | Tracked repo files + official primary sources | Verify existing claims, link official sources, flag irregularities |
+| NFLO-3 | Official NFL primary-source verification (stats, standings, injuries, depth charts, rules, terms, regulators) | unclaimed | session-arena-3daf609a-own7 | `nfl-origination/sources.json` | `nfl.com`, `operations.nfl.com`, official NFL club sites, regulators | Fetch & read every official URL on 2026-11-12 before registering |
+| NFLO-4 | Official 2026 NFL data collection & line-by-line transcription | unclaimed | session-arena-3daf609a-own7 | `nfl-origination/snapshots/**` | `www.nfl.com/standings/`, `www.nfl.com/stats/`, `www.nfl.com/injuries/`, official club depth charts | Zero inferred values; unconfirmed cells left blank + flagged |
+| NFLO-5 | Reproducible NFL line-origination math, skill-vs-luck framework & empirical correlation calculations | unclaimed | session-arena-3daf609a-own7 | `nfl-origination/engine.py`, `nfl-origination/results.json` | Verified NFL snapshots + SciPy/scikit-learn/statsmodels method docs | Compute exact Pearson/Spearman + bootstrap CIs; market lines & SGP leg correlations left blank where uncollected |
+| NFLO-6 | Signal strategies (singles, parlays, player prop combos), fail-closed validation gates & leaderboard competition | unclaimed | session-arena-3daf609a-own7 | `nfl-origination/catalog.json` | Official NFL & statistical methodology sources | Reward structure, 10 validation gates, correlation & luck-removal gates |
+| NFLO-7 | Offense & defense injury + 2nd/3rd/4th-string backup deficiency tracking module | unclaimed | session-arena-3daf609a-own7 | `nfl-origination/depth_injuries.json` | Official NFL injury report policy, live NFL injury report, official club depth charts | Starter vs 2nd/3rd/4th-string replacements on defense & offense |
+| NFLO-8 | Dedicated Site Improvement Suggestions review section + Pre-Decision Questions/Knowns/Unknowns & Missing-Info Discovery register | unclaimed | session-arena-3daf609a-own7 | `nfl-origination/decision_hub.json` | Repo audit + official NFL/regulator sources | Reviewable suggestions (unimplemented until chosen) + discovery roadmap |
+| NFLO-9 | Executive summary & clean 13-page GitHub Pages dashboard sub-site | unclaimed | session-arena-3daf609a-own7 | `docs/nfl-origination-executive-summary.md`, `nfl-origination/build.py`, `nfl-origination/style.css`, `nfl-origination/app.js`, `nfl-origination/*.html` | Per-row official source links enforced | Sortable/filterable tables, CSV export, WCAG 2.2 AA |
+| NFLO-10 | Additive integration, deterministic build, unit tests, recursive link/source audit & Chromium WCAG tests | unclaimed | session-arena-3daf609a-own7 | `nfl-origination/test_build.py`, `research/sources.json`, `scripts/check_site.py`, `scripts/build_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `README.md` | All test suites + `check_site.py` + `npm run test:browser` | Reconcile `origin/main` without discarding any parallel session work |
+| NFLO-11 | Pull request to `main`, CI pass, merge, GitHub Pages live verification & final record | unclaimed | session-arena-3daf609a-own7 | `COORDINATION.md` | GitHub PR checks + Pages deployment | Publish Flagged for Review items; never merge a broken site |
+
