@@ -2,30 +2,277 @@
   "schema_version": 1,
   "status": "Research hypotheses; no qualified strategy",
   "strategies": [
-    {"id":"NS01","name":"Opponent-adjusted scoring margin","market":"Single bets","contract":"Home margin / signed spread","signal":"Hierarchical offense/defense scoring strength, opponent and venue adjustments; shrink early-season estimates.","required":"Historical game outcomes; point distributions; timestamps; opening/closing offers; push rules","failure":"Normal margins and constant variance are assumptions; integer pushes need a discrete score model.","correlation_method":"Not a multi-leg strategy; residual dependence across games still affects uncertainty.","source_ids":["NFL-RULES","SK-TIME","REPO"],"model_probability":null,"fair_line":null,"correlation":null,"roi":null,"clv":null},
-    {"id":"NS02","name":"Pace–efficiency total","market":"Single bets","contract":"Combined final points / total","signal":"Possession-count and points-per-possession distributions, opponent adjustment, rest and availability.","required":"Official play-by-play or consistently defined possession data; game totals; weather; market totals","failure":"A normal total is only an approximation; score discreteness, overtime and garbage time matter.","correlation_method":"Model margin/total dependence from aligned game residuals, not season rankings.","source_ids":["NFL-RULES","SK-CAL","REPO"],"model_probability":null,"fair_line":null,"correlation":null,"roi":null,"clv":null},
-    {"id":"NS03","name":"Availability surprise","market":"Single bets","contract":"Spread or total at a sealed information cutoff","signal":"Compare starter/backup scenarios using only information available before the offer timestamp.","required":"Immutable injury/depth/inactive history; snap shares; replacement performance; synchronized market quotes","failure":"A DNP or blank game-status cell does not establish a replacement; news may already be priced.","correlation_method":"Cluster uncertainty by game and team; do not treat repeated player/news rows as independent games.","source_ids":["NFL-INJURIES","NFL-REPORT-POLICY","NE-DEPTH","REPO"],"model_probability":null,"fair_line":null,"correlation":null,"roi":null,"clv":null},
-    {"id":"NS04","name":"Role redistribution player props","market":"Player props / combos","contract":"Player yards/receptions/rushing attempts at operator line","signal":"Project snap share, route/target share and carry share under verified availability scenarios.","required":"Official snap/target/box-score history; player identity map; actual prop lines; DNP/void rules","failure":"Backup quality is not a universal scalar; committee roles and game script change usage.","correlation_method":"Estimate aligned hit-event phi and empirical joint rates by player/role/game context.","source_ids":["NFL-INJURIES","SK-CAL","REPO"],"model_probability":null,"fair_line":null,"correlation":null,"roi":null,"clv":null},
-    {"id":"NS05","name":"Cross-game parlay value","market":"Parlays","contract":"Two or more separate game selections","signal":"Compare exact joint win probability with the operator's offered parlay price after limits and fees.","required":"Joint outcome panel or defensible dependence model; all leg prices; parlay payout and void rules","failure":"Independence is not guaranteed; common weather/slate/model errors create dependence.","correlation_method":"Game/date-block bootstrap; empirical joint rates when aligned; Fréchet bounds are not a point estimate.","source_ids":["PY-STATS","SM-HOLM","REPO"],"model_probability":null,"fair_line":null,"correlation":null,"roi":null,"clv":null},
-    {"id":"NS06","name":"Same-game script combination","market":"Parlays","contract":"Same-game spread/total/player legs","signal":"Simulate coherent game scripts and compare joint hit mass with the actual SGP offer.","required":"Play-level or aligned game/prop outcomes; operator SGP price; exact settlement matrix","failure":"Raw-stat Pearson r is not hit-event correlation; pairwise margins do not identify a three-leg joint.","correlation_method":"Estimate joint outcome frequencies directly; report phi for binary legs and uncertainty by game.","source_ids":["PY-STATS","SK-CAL","REPO"],"model_probability":null,"fair_line":null,"correlation":null,"roi":null,"clv":null},
-    {"id":"NS07","name":"Same-player multi-stat combination","market":"Player props / combos","contract":"Same player's two or more stat thresholds","signal":"Usage/minutes-equivalent snap share and game-script scenarios produce a joint discrete outcome distribution.","required":"Aligned per-game stat lines, thresholds, player availability and combination settlement rules","failure":"A rare combo can beat a naive 50% benchmark through base rates alone; that is not skill.","correlation_method":"Binary hit phi, observed joint rate and paired bootstrap interval; preserve pushes/voids separately.","source_ids":["PY-STATS","NFL-INJURIES","REPO"],"model_probability":null,"fair_line":null,"correlation":null,"roi":null,"clv":null},
-    {"id":"NS08","name":"Teammate and team-total combination","market":"Player props / combos","contract":"Two teammates or player plus team total","signal":"Model shared possessions, target competition, rushing/passing mix and opponent defensive personnel.","required":"Official player/team game logs; verified lineup/depth data; exact operator combo contract","failure":"Teammate props can be positively or negatively dependent; do not hard-code a sign.","correlation_method":"Fit and validate joint outcomes by game; compare with independent-product benchmark without assuming it.","source_ids":["NFL-INJURIES","PY-STATS","REPO"],"model_probability":null,"fair_line":null,"correlation":null,"roi":null,"clv":null}
+    {
+      "id": "NS01",
+      "name": "Opponent-adjusted scoring margin",
+      "market": "Single bets",
+      "contract": "Home margin / signed spread",
+      "signal": "Hierarchical offense/defense scoring strength, opponent and venue adjustments; shrink early-season estimates.",
+      "required": "Historical game outcomes; point distributions; timestamps; opening/closing offers; push rules",
+      "failure": "Normal margins and constant variance are assumptions; integer pushes need a discrete score model.",
+      "correlation_method": "Not a multi-leg strategy; residual dependence across games still affects uncertainty.",
+      "source_ids": [
+        "A958-NFL-RULES",
+        "A958-SK-TIME",
+        "A958-REPO"
+      ],
+      "model_probability": null,
+      "fair_line": null,
+      "correlation": null,
+      "roi": null,
+      "clv": null
+    },
+    {
+      "id": "NS02",
+      "name": "Pace–efficiency total",
+      "market": "Single bets",
+      "contract": "Combined final points / total",
+      "signal": "Possession-count and points-per-possession distributions, opponent adjustment, rest and availability.",
+      "required": "Official play-by-play or consistently defined possession data; game totals; weather; market totals",
+      "failure": "A normal total is only an approximation; score discreteness, overtime and garbage time matter.",
+      "correlation_method": "Model margin/total dependence from aligned game residuals, not season rankings.",
+      "source_ids": [
+        "A958-NFL-RULES",
+        "A958-SK-CAL",
+        "A958-REPO"
+      ],
+      "model_probability": null,
+      "fair_line": null,
+      "correlation": null,
+      "roi": null,
+      "clv": null
+    },
+    {
+      "id": "NS03",
+      "name": "Availability surprise",
+      "market": "Single bets",
+      "contract": "Spread or total at a sealed information cutoff",
+      "signal": "Compare starter/backup scenarios using only information available before the offer timestamp.",
+      "required": "Immutable injury/depth/inactive history; snap shares; replacement performance; synchronized market quotes",
+      "failure": "A DNP or blank game-status cell does not establish a replacement; news may already be priced.",
+      "correlation_method": "Cluster uncertainty by game and team; do not treat repeated player/news rows as independent games.",
+      "source_ids": [
+        "A958-NFL-INJURIES",
+        "A958-NFL-REPORT-POLICY",
+        "A958-NE-DEPTH",
+        "A958-REPO"
+      ],
+      "model_probability": null,
+      "fair_line": null,
+      "correlation": null,
+      "roi": null,
+      "clv": null
+    },
+    {
+      "id": "NS04",
+      "name": "Role redistribution player props",
+      "market": "Player props / combos",
+      "contract": "Player yards/receptions/rushing attempts at operator line",
+      "signal": "Project snap share, route/target share and carry share under verified availability scenarios.",
+      "required": "Official snap/target/box-score history; player identity map; actual prop lines; DNP/void rules",
+      "failure": "Backup quality is not a universal scalar; committee roles and game script change usage.",
+      "correlation_method": "Estimate aligned hit-event phi and empirical joint rates by player/role/game context.",
+      "source_ids": [
+        "A958-NFL-INJURIES",
+        "A958-SK-CAL",
+        "A958-REPO"
+      ],
+      "model_probability": null,
+      "fair_line": null,
+      "correlation": null,
+      "roi": null,
+      "clv": null
+    },
+    {
+      "id": "NS05",
+      "name": "Cross-game parlay value",
+      "market": "Parlays",
+      "contract": "Two or more separate game selections",
+      "signal": "Compare exact joint win probability with the operator's offered parlay price after limits and fees.",
+      "required": "Joint outcome panel or defensible dependence model; all leg prices; parlay payout and void rules",
+      "failure": "Independence is not guaranteed; common weather/slate/model errors create dependence.",
+      "correlation_method": "Game/date-block bootstrap; empirical joint rates when aligned; Fréchet bounds are not a point estimate.",
+      "source_ids": [
+        "A958-PY-STATS",
+        "A958-SM-HOLM",
+        "A958-REPO"
+      ],
+      "model_probability": null,
+      "fair_line": null,
+      "correlation": null,
+      "roi": null,
+      "clv": null
+    },
+    {
+      "id": "NS06",
+      "name": "Same-game script combination",
+      "market": "Parlays",
+      "contract": "Same-game spread/total/player legs",
+      "signal": "Simulate coherent game scripts and compare joint hit mass with the actual SGP offer.",
+      "required": "Play-level or aligned game/prop outcomes; operator SGP price; exact settlement matrix",
+      "failure": "Raw-stat Pearson r is not hit-event correlation; pairwise margins do not identify a three-leg joint.",
+      "correlation_method": "Estimate joint outcome frequencies directly; report phi for binary legs and uncertainty by game.",
+      "source_ids": [
+        "A958-PY-STATS",
+        "A958-SK-CAL",
+        "A958-REPO"
+      ],
+      "model_probability": null,
+      "fair_line": null,
+      "correlation": null,
+      "roi": null,
+      "clv": null
+    },
+    {
+      "id": "NS07",
+      "name": "Same-player multi-stat combination",
+      "market": "Player props / combos",
+      "contract": "Same player's two or more stat thresholds",
+      "signal": "Usage/minutes-equivalent snap share and game-script scenarios produce a joint discrete outcome distribution.",
+      "required": "Aligned per-game stat lines, thresholds, player availability and combination settlement rules",
+      "failure": "A rare combo can beat a naive 50% benchmark through base rates alone; that is not skill.",
+      "correlation_method": "Binary hit phi, observed joint rate and paired bootstrap interval; preserve pushes/voids separately.",
+      "source_ids": [
+        "A958-PY-STATS",
+        "A958-NFL-INJURIES",
+        "A958-REPO"
+      ],
+      "model_probability": null,
+      "fair_line": null,
+      "correlation": null,
+      "roi": null,
+      "clv": null
+    },
+    {
+      "id": "NS08",
+      "name": "Teammate and team-total combination",
+      "market": "Player props / combos",
+      "contract": "Two teammates or player plus team total",
+      "signal": "Model shared possessions, target competition, rushing/passing mix and opponent defensive personnel.",
+      "required": "Official player/team game logs; verified lineup/depth data; exact operator combo contract",
+      "failure": "Teammate props can be positively or negatively dependent; do not hard-code a sign.",
+      "correlation_method": "Fit and validate joint outcomes by game; compare with independent-product benchmark without assuming it.",
+      "source_ids": [
+        "A958-NFL-INJURIES",
+        "A958-PY-STATS",
+        "A958-REPO"
+      ],
+      "model_probability": null,
+      "fair_line": null,
+      "correlation": null,
+      "roi": null,
+      "clv": null
+    }
   ],
   "competition": {
-    "divisions":["Single bets","Parlays","Player props / combos"],
-    "ranking":"Descending lower 95% date-block bootstrap bound on net return per unit, only after all gates pass",
-    "ties":["Lower log loss","Earlier sealed timestamp","Stable strategy ID"],
-    "rewards":{"1":3,"2":2,"3":1},
-    "reward_type":"Non-transferable, non-monetary merit points",
-    "cash_pool":null,"entry_fee":0,"eligible_entries":0,
-    "policy":"Same future window, eligible-offer universe, settlement rules, scored-event hash and flat paper-stake policy in each division. Log every abstention and failed attempt. No real-money execution or cash reward is enabled.",
-    "source_ids":["SM-HOLM","SK-CAL","REPO"]
+    "divisions": [
+      "Single bets",
+      "Parlays",
+      "Player props / combos"
+    ],
+    "ranking": "Descending lower 95% date-block bootstrap bound on net return per unit, only after all gates pass",
+    "ties": [
+      "Lower log loss",
+      "Earlier sealed timestamp",
+      "Stable strategy ID"
+    ],
+    "rewards": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+    },
+    "reward_type": "Non-transferable, non-monetary merit points",
+    "cash_pool": null,
+    "entry_fee": 0,
+    "eligible_entries": 0,
+    "policy": "Same future window, eligible-offer universe, settlement rules, scored-event hash and flat paper-stake policy in each division. Log every abstention and failed attempt. No real-money execution or cash reward is enabled.",
+    "source_ids": [
+      "A958-SM-HOLM",
+      "A958-SK-CAL",
+      "A958-REPO"
+    ]
   },
-  "correlations":[
-    {"id":"C01","pair":"Same-player receiving + rushing hit events","scope":"Aligned NFL game outcomes at specified operator thresholds","n":null,"pearson":null,"phi":null,"joint_rate":null,"interval":null,"status":"Unverified","discovery":"Collect a complete preregistered player/game window and exact thresholds; preserve voids/pushes.","source_ids":["PY-STATS","REPO"]},
-    {"id":"C02","pair":"Teammate receiving hit events","scope":"Same games, settled operator thresholds","n":null,"pearson":null,"phi":null,"joint_rate":null,"interval":null,"status":"Unverified","discovery":"Use stable player IDs and aligned game rows; estimate target competition versus game-script effects.","source_ids":["PY-STATS","REPO"]},
-    {"id":"C03","pair":"QB passing + receiver receiving hit events","scope":"Same games, settled operator thresholds","n":null,"pearson":null,"phi":null,"joint_rate":null,"interval":null,"status":"Unverified","discovery":"Collect paired box-score outcomes and actual combination lines; do not substitute raw-yard correlation.","source_ids":["PY-STATS","REPO"]},
-    {"id":"C04","pair":"Spread cover + total over","scope":"Same-game residual/hit events","n":null,"pearson":null,"phi":null,"joint_rate":null,"interval":null,"status":"Unverified","discovery":"Archive synchronized lines and final scores; model discrete pushes and overtime explicitly.","source_ids":["NFL-RULES","PY-STATS","REPO"]},
-    {"id":"C05","pair":"Separate-game selections","scope":"Common-slate strategy outcomes","n":null,"pearson":null,"phi":null,"joint_rate":null,"interval":null,"status":"Unverified","discovery":"Use date-block resampling and a prospective outcome panel; do not assume independence from different kickoff times.","source_ids":["SM-HOLM","REPO"]}
+  "correlations": [
+    {
+      "id": "C01",
+      "pair": "Same-player receiving + rushing hit events",
+      "scope": "Aligned NFL game outcomes at specified operator thresholds",
+      "n": null,
+      "pearson": null,
+      "phi": null,
+      "joint_rate": null,
+      "interval": null,
+      "status": "Unverified",
+      "discovery": "Collect a complete preregistered player/game window and exact thresholds; preserve voids/pushes.",
+      "source_ids": [
+        "A958-PY-STATS",
+        "A958-REPO"
+      ]
+    },
+    {
+      "id": "C02",
+      "pair": "Teammate receiving hit events",
+      "scope": "Same games, settled operator thresholds",
+      "n": null,
+      "pearson": null,
+      "phi": null,
+      "joint_rate": null,
+      "interval": null,
+      "status": "Unverified",
+      "discovery": "Use stable player IDs and aligned game rows; estimate target competition versus game-script effects.",
+      "source_ids": [
+        "A958-PY-STATS",
+        "A958-REPO"
+      ]
+    },
+    {
+      "id": "C03",
+      "pair": "QB passing + receiver receiving hit events",
+      "scope": "Same games, settled operator thresholds",
+      "n": null,
+      "pearson": null,
+      "phi": null,
+      "joint_rate": null,
+      "interval": null,
+      "status": "Unverified",
+      "discovery": "Collect paired box-score outcomes and actual combination lines; do not substitute raw-yard correlation.",
+      "source_ids": [
+        "A958-PY-STATS",
+        "A958-REPO"
+      ]
+    },
+    {
+      "id": "C04",
+      "pair": "Spread cover + total over",
+      "scope": "Same-game residual/hit events",
+      "n": null,
+      "pearson": null,
+      "phi": null,
+      "joint_rate": null,
+      "interval": null,
+      "status": "Unverified",
+      "discovery": "Archive synchronized lines and final scores; model discrete pushes and overtime explicitly.",
+      "source_ids": [
+        "A958-NFL-RULES",
+        "A958-PY-STATS",
+        "A958-REPO"
+      ]
+    },
+    {
+      "id": "C05",
+      "pair": "Separate-game selections",
+      "scope": "Common-slate strategy outcomes",
+      "n": null,
+      "pearson": null,
+      "phi": null,
+      "joint_rate": null,
+      "interval": null,
+      "status": "Unverified",
+      "discovery": "Use date-block resampling and a prospective outcome panel; do not assume independence from different kickoff times.",
+      "source_ids": [
+        "A958-SM-HOLM",
+        "A958-REPO"
+      ]
+    }
   ]
 }

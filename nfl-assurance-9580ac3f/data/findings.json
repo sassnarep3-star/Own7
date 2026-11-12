@@ -1,18 +1,207 @@
 [
-  {"id":"F01","title":"Concurrent claims omitted from local board","finding":"The checkout's COORDINATION.md had no active NFL claim, but remote branches contained several overlapping NFL scopes. Work was moved into this unique assurance directory; no competing file was overwritten.","action":"Final integrator must reconcile append-only boards and preserve canonical NFL contributions.","status":"Corrected","source_ids":["REPO"],"unverified_value":null},
-  {"id":"F02","title":"Repository is not an NFL-only project","finding":"Baseline a989d67 contains 150 files / 14,244 text lines spanning NBA, operator evidence and two rental sections. Old counts refer to earlier baselines, not this checkout.","action":"Keep archives; use the exact baseline permalink for this independent coverage audit.","status":"Needs review","source_ids":["REPO"],"unverified_value":null},
-  {"id":"F03","title":"NFL data-use restriction","finding":"NFL.com terms §1.3 restrict systematic retrieval and commercial use; §12 prohibits using Services to gamble/wager on NFL games. No separate permission is evidenced.","action":"Informational audit only; NFL-derived betting-price release, automated bulk collection and wagering remain disabled.","status":"Needs review","source_ids":["NFL-TERMS"],"unverified_value":null},
-  {"id":"F04","title":"Injury report is not a depth chart","finding":"The official table has 276 rows across 26 teams. Blank game/injury cells are not proof of health or final availability. LAC and BAL display No Injuries Reported for this early-week view, not a verified zero-injury roster.","action":"Preserve blanks; reconcile final inactives and club lineup evidence separately.","status":"Needs review","source_ids":["NFL-INJURIES","NFL-REPORT-POLICY"],"unverified_value":null},
-  {"id":"F05","title":"Official club domains can publish unofficial charts","finding":"Patriots.com explicitly labels its chart writers' opinions; Detroit labels its football-communications chart unofficial. Official publication does not make the ordering a confirmed starting lineup.","action":"Label printed order, not confirmed starter truth; never infer a replacement from DNP alone.","status":"Needs review","source_ids":["NE-DEPTH","DET-DEPTH"],"unverified_value":null},
-  {"id":"F06","title":"Shared cells and missing depth columns","finding":"Seattle WR, Arizona OLB and Pittsburgh TE contain multiple names in one printed cell. Washington LB has a blank second column followed by a third-column name; Miami K is empty.","action":"Do not assign arbitrary ranks, compress gaps or invent a replacement. Shared listings have null individual rank.","status":"Needs review","source_ids":["SEA-DEPTH","AZ-DEPTH","PIT-DEPTH","WAS-DEPTH","MIA-DEPTH"],"unverified_value":null},
-  {"id":"F07","title":"No verified chart publication timestamp","finding":"The checked rendered club charts do not supply a reliable machine-readable effective timestamp in the returned content.","action":"Use retrieval date only; do not claim the chart was published or unchanged on that date.","status":"Needs review","source_ids":["NE-DEPTH","DET-DEPTH","NYG-DEPTH","SEA-DEPTH","BAL-DEPTH","MIA-DEPTH","CLE-DEPTH","AZ-DEPTH","WAS-DEPTH","PIT-DEPTH"],"unverified_value":null},
-  {"id":"F08","title":"News expectations are not final participation","finding":"Seattle's Lock, Miami's McCord, Cleveland's Watson and Arizona's Beck have named expected-start reports. These are distinct from final inactive/participation confirmation.","action":"Keep announcement evidence separate; do not convert expected into guaranteed or infer replacement performance.","status":"Needs review","source_ids":["NFL-SEA-QB","NFL-MIA-QB","CLE-QB","NFL-ROUNDUP"],"unverified_value":null},
-  {"id":"F09","title":"Third-party status disagreement excluded","finding":"A search result from a third-party aggregator showed statuses conflicting with the official league injury table. It was not used to fill any field.","action":"Use official league/club rows for this snapshot; retain published-vs-published conflicts for review when they occur.","status":"Corrected","source_ids":["NFL-INJURIES"],"unverified_value":null},
-  {"id":"F10","title":"No actual NFL fair line or leg correlation","finding":"No authorized fitted scoring panel, operator offers or aligned settled prop thresholds are present. Generic math tests use synthetic numbers only.","action":"Leave actual probabilities, lines, correlations, ROI and CLV blank; discover prerequisites through P01–P07.","status":"Needs review","source_ids":["NFL-TERMS","PY-STATS","REPO"],"unverified_value":null},
-  {"id":"F11","title":"Luck cannot be eliminated","finding":"Proper scores, chronological tests and multiplicity correction reduce avoidable evaluation errors but do not remove random outcomes or establish guaranteed skill.","action":"No skill guarantee, cash prize or qualified winner until prospective all-gate evidence exists.","status":"Needs review","source_ids":["SK-TIME","SK-CAL","SM-HOLM","REPO"],"unverified_value":null},
-  {"id":"F12","title":"Source capture is not a raw archive","finding":"Values were compared with Arena-rendered official pages. The sandbox's direct NFL HTTPS request failed; a manual-dispatch collector exists but was not registered on the default branch and could not be dispatched.","action":"Treat hashes as transcription integrity, not original-response proof. Run bounded capture only after rights review and default-branch workflow registration.","status":"Needs review","source_ids":["NFL-INJURIES","NFL-TERMS","REPO"],"unverified_value":null},
-  {"id":"F13","title":"Guessed operations URLs returned 404","finding":"Two guessed operations.nfl.com injury/roster paths returned NFL 404 pages. They are excluded from evidence; the readable league policy announcement and calendar are used instead.","action":"Do not cite a guessed official-looking URL as verification. Full current personnel-policy coverage remains incomplete.","status":"Corrected","source_ids":["NFL-REPORT-POLICY","NFL-DATES"],"unverified_value":null},
-  {"id":"F14","title":"Rulebook fetch has a page limit","finding":"The official 2026 rulebook was identified and its preface/early pages read, but the fetch tool exposes only the first 30 PDF pages. Later scoring/overtime details were not independently read in full.","action":"Do not claim a full rulebook audit; verify exact later rule sections before settlement implementation.","status":"Needs review","source_ids":["NFL-RULES"],"unverified_value":null},
-  {"id":"F15","title":"Static shortlist is not shared approval","finding":"The suggestions UI can save a browser-local shortlist and export it. There is no identity, shared database or audit trail capable of granting implementation approval.","action":"Require a reviewed, versioned decision record before implementation; do not label a local click Approved.","status":"Needs review","source_ids":["REPO"],"unverified_value":null},
-  {"id":"F16","title":"Identity aliases are explicit and limited","finding":"Only Kevin Byard III/Kevin Byard, Ronnie Hickman/Ronnie Hickman Jr. and Mack Wilson Sr./Mack Wilson are normalized across the checked club/league rows. No fuzzy matching is used.","action":"Review aliases against stable player IDs when an authorized roster feed exists; unmatched means unknown, not healthy.","status":"Needs review","source_ids":["NFL-INJURIES","NE-DEPTH","CLE-DEPTH","AZ-DEPTH"],"unverified_value":null}
+  {
+    "id": "F01",
+    "title": "Concurrent claims omitted from local board",
+    "finding": "The checkout's COORDINATION.md had no active NFL claim, but remote branches contained several overlapping NFL scopes. Work was moved into this unique assurance directory; no competing file was overwritten.",
+    "action": "Final integrator must reconcile append-only boards and preserve canonical NFL contributions.",
+    "status": "Corrected",
+    "source_ids": [
+      "A958-REPO"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F02",
+    "title": "Repository is not an NFL-only project",
+    "finding": "Baseline a989d67 contains 150 files / 14,244 text lines spanning NBA, operator evidence and two rental sections. Old counts refer to earlier baselines, not this checkout.",
+    "action": "Keep archives; use the exact baseline permalink for this independent coverage audit.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-REPO"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F03",
+    "title": "NFL data-use restriction",
+    "finding": "NFL.com terms §1.3 restrict systematic retrieval and commercial use; §12 prohibits using Services to gamble/wager on NFL games. No separate permission is evidenced.",
+    "action": "Informational audit only; NFL-derived betting-price release, automated bulk collection and wagering remain disabled.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-NFL-TERMS"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F04",
+    "title": "Injury report is not a depth chart",
+    "finding": "The official table has 276 rows across 26 teams. Blank game/injury cells are not proof of health or final availability. LAC and BAL display No Injuries Reported for this early-week view, not a verified zero-injury roster.",
+    "action": "Preserve blanks; reconcile final inactives and club lineup evidence separately.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-NFL-INJURIES",
+      "A958-NFL-REPORT-POLICY"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F05",
+    "title": "Official club domains can publish unofficial charts",
+    "finding": "Patriots.com explicitly labels its chart writers' opinions; Detroit labels its football-communications chart unofficial. Official publication does not make the ordering a confirmed starting lineup.",
+    "action": "Label printed order, not confirmed starter truth; never infer a replacement from DNP alone.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-NE-DEPTH",
+      "A958-DET-DEPTH"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F06",
+    "title": "Shared cells and missing depth columns",
+    "finding": "Seattle WR, Arizona OLB and Pittsburgh TE contain multiple names in one printed cell. Washington LB has a blank second column followed by a third-column name; Miami K is empty.",
+    "action": "Do not assign arbitrary ranks, compress gaps or invent a replacement. Shared listings have null individual rank.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-SEA-DEPTH",
+      "A958-AZ-DEPTH",
+      "A958-PIT-DEPTH",
+      "A958-WAS-DEPTH",
+      "A958-MIA-DEPTH"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F07",
+    "title": "No verified chart publication timestamp",
+    "finding": "The checked rendered club charts do not supply a reliable machine-readable effective timestamp in the returned content.",
+    "action": "Use retrieval date only; do not claim the chart was published or unchanged on that date.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-NE-DEPTH",
+      "A958-DET-DEPTH",
+      "A958-NYG-DEPTH",
+      "A958-SEA-DEPTH",
+      "A958-BAL-DEPTH",
+      "A958-MIA-DEPTH",
+      "A958-CLE-DEPTH",
+      "A958-AZ-DEPTH",
+      "A958-WAS-DEPTH",
+      "A958-PIT-DEPTH"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F08",
+    "title": "News expectations are not final participation",
+    "finding": "Seattle's Lock, Miami's McCord, Cleveland's Watson and Arizona's Beck have named expected-start reports. These are distinct from final inactive/participation confirmation.",
+    "action": "Keep announcement evidence separate; do not convert expected into guaranteed or infer replacement performance.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-NFL-SEA-QB",
+      "A958-NFL-MIA-QB",
+      "A958-CLE-QB",
+      "A958-NFL-ROUNDUP"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F09",
+    "title": "Third-party status disagreement excluded",
+    "finding": "A search result from a third-party aggregator showed statuses conflicting with the official league injury table. It was not used to fill any field.",
+    "action": "Use official league/club rows for this snapshot; retain published-vs-published conflicts for review when they occur.",
+    "status": "Corrected",
+    "source_ids": [
+      "A958-NFL-INJURIES"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F10",
+    "title": "No actual NFL fair line or leg correlation",
+    "finding": "No authorized fitted scoring panel, operator offers or aligned settled prop thresholds are present. Generic math tests use synthetic numbers only.",
+    "action": "Leave actual probabilities, lines, correlations, ROI and CLV blank; discover prerequisites through P01–P07.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-NFL-TERMS",
+      "A958-PY-STATS",
+      "A958-REPO"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F11",
+    "title": "Luck cannot be eliminated",
+    "finding": "Proper scores, chronological tests and multiplicity correction reduce avoidable evaluation errors but do not remove random outcomes or establish guaranteed skill.",
+    "action": "No skill guarantee, cash prize or qualified winner until prospective all-gate evidence exists.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-SK-TIME",
+      "A958-SK-CAL",
+      "A958-SM-HOLM",
+      "A958-REPO"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F12",
+    "title": "Source capture is not a raw archive",
+    "finding": "Values were compared with Arena-rendered official pages. The sandbox's direct NFL HTTPS request failed; a manual-dispatch collector exists but was not registered on the default branch and could not be dispatched.",
+    "action": "Treat hashes as transcription integrity, not original-response proof. Run bounded capture only after rights review and default-branch workflow registration.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-NFL-INJURIES",
+      "A958-NFL-TERMS",
+      "A958-REPO"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F13",
+    "title": "Guessed operations URLs returned 404",
+    "finding": "Two guessed operations.nfl.com injury/roster paths returned NFL 404 pages. They are excluded from evidence; the readable league policy announcement and calendar are used instead.",
+    "action": "Do not cite a guessed official-looking URL as verification. Full current personnel-policy coverage remains incomplete.",
+    "status": "Corrected",
+    "source_ids": [
+      "A958-NFL-REPORT-POLICY",
+      "A958-NFL-DATES"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F14",
+    "title": "Rulebook fetch has a page limit",
+    "finding": "The official 2026 rulebook was identified and its preface/early pages read, but the fetch tool exposes only the first 30 PDF pages. Later scoring/overtime details were not independently read in full.",
+    "action": "Do not claim a full rulebook audit; verify exact later rule sections before settlement implementation.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-NFL-RULES"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F15",
+    "title": "Static shortlist is not shared approval",
+    "finding": "The suggestions UI can save a browser-local shortlist and export it. There is no identity, shared database or audit trail capable of granting implementation approval.",
+    "action": "Require a reviewed, versioned decision record before implementation; do not label a local click Approved.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-REPO"
+    ],
+    "unverified_value": null
+  },
+  {
+    "id": "F16",
+    "title": "Identity aliases are explicit and limited",
+    "finding": "Only Kevin Byard III/Kevin Byard, Ronnie Hickman/Ronnie Hickman Jr. and Mack Wilson Sr./Mack Wilson are normalized across the checked club/league rows. No fuzzy matching is used.",
+    "action": "Review aliases against stable player IDs when an authorized roster feed exists; unmatched means unknown, not healthy.",
+    "status": "Needs review",
+    "source_ids": [
+      "A958-NFL-INJURIES",
+      "A958-NE-DEPTH",
+      "A958-CLE-DEPTH",
+      "A958-AZ-DEPTH"
+    ],
+    "unverified_value": null
+  }
 ]

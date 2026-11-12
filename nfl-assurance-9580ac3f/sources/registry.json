@@ -1,6 +1,6 @@
 [
   {
-    "id": "NFL-INJURIES",
+    "id": "A958-NFL-INJURIES",
     "publisher": "National Football League",
     "title": "Week 10 · 2026 official injury report",
     "url": "https://www.nfl.com/injuries/league/2026/REG10",
@@ -12,7 +12,7 @@
     "status": "Content checked"
   },
   {
-    "id": "NFL-REPORT-POLICY",
+    "id": "A958-NFL-REPORT-POLICY",
     "publisher": "National Football League",
     "title": "Competition Committee injury-report revisions",
     "url": "https://www.nfl.com/news/competition-committee-approves-revisions-to-injury-report-0ap3000000688693",
@@ -24,7 +24,7 @@
     "status": "Content checked"
   },
   {
-    "id": "NFL-DATES",
+    "id": "A958-NFL-DATES",
     "publisher": "National Football League",
     "title": "2026–27 important dates",
     "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
@@ -36,7 +36,7 @@
     "status": "Content checked"
   },
   {
-    "id": "NFL-TERMS",
+    "id": "A958-NFL-TERMS",
     "publisher": "NFL Enterprises, LLC",
     "title": "NFL.com Terms and Conditions",
     "url": "https://www.nfl.com/legal/terms/",
@@ -48,7 +48,7 @@
     "status": "Content checked"
   },
   {
-    "id": "NFL-ROUNDUP",
+    "id": "A958-NFL-ROUNDUP",
     "publisher": "NFL.com",
     "title": "League news roundup · November 11, 2026",
     "url": "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-wednesday-nov-11",
@@ -60,7 +60,7 @@
     "status": "Content checked"
   },
   {
-    "id": "NFL-SEA-QB",
+    "id": "A958-NFL-SEA-QB",
     "publisher": "NFL.com",
     "title": "Darnold out; Lock expected to start · Week 10",
     "url": "https://www.nfl.com/news/sam-darnold-ruled-out-for-seahawks-week-10-game-vs-raiders-drew-lock-expected-to-start-again",
@@ -72,7 +72,7 @@
     "status": "Content checked"
   },
   {
-    "id": "NFL-MIA-QB",
+    "id": "A958-NFL-MIA-QB",
     "publisher": "NFL.com",
     "title": "Willis to IR; McCord expected to fill in",
     "url": "https://www.nfl.com/news/dolphins-place-qb-malik-willis-groin-on-injured-reserve-kyle-mccord-in-line-for-first-start",
@@ -84,7 +84,7 @@
     "status": "Content checked"
   },
   {
-    "id": "NE-DEPTH",
+    "id": "A958-NE-DEPTH",
     "publisher": "Patriots.com",
     "title": "New England unofficial depth chart",
     "url": "https://www.patriots.com/team/depth-chart",
@@ -97,7 +97,7 @@
     "status": "Content checked"
   },
   {
-    "id": "DET-DEPTH",
+    "id": "A958-DET-DEPTH",
     "publisher": "DetroitLions.com",
     "title": "Detroit unofficial depth chart",
     "url": "https://www.detroitlions.com/team/depth-chart",
@@ -110,7 +110,7 @@
     "status": "Content checked"
   },
   {
-    "id": "NYG-DEPTH",
+    "id": "A958-NYG-DEPTH",
     "publisher": "Giants.com",
     "title": "New York Giants depth chart",
     "url": "https://www.giants.com/team/depth-chart",
@@ -123,7 +123,7 @@
     "status": "Content checked"
   },
   {
-    "id": "SEA-DEPTH",
+    "id": "A958-SEA-DEPTH",
     "publisher": "Seahawks.com",
     "title": "Seattle depth chart",
     "url": "https://www.seahawks.com/team/depth-chart/",
@@ -136,7 +136,7 @@
     "status": "Content checked"
   },
   {
-    "id": "BAL-DEPTH",
+    "id": "A958-BAL-DEPTH",
     "publisher": "BaltimoreRavens.com",
     "title": "Baltimore depth chart",
     "url": "https://www.baltimoreravens.com/team/depth-chart",
@@ -149,7 +149,7 @@
     "status": "Content checked"
   },
   {
-    "id": "MIA-DEPTH",
+    "id": "A958-MIA-DEPTH",
     "publisher": "MiamiDolphins.com",
     "title": "Miami depth chart",
     "url": "https://www.miamidolphins.com/team/depth-chart",
@@ -162,7 +162,7 @@
     "status": "Content checked"
   },
   {
-    "id": "CLE-DEPTH",
+    "id": "A958-CLE-DEPTH",
     "publisher": "ClevelandBrowns.com",
     "title": "Cleveland depth chart",
     "url": "https://www.clevelandbrowns.com/team/depth-chart",
@@ -175,7 +175,7 @@
     "status": "Content checked"
   },
   {
-    "id": "AZ-DEPTH",
+    "id": "A958-AZ-DEPTH",
     "publisher": "Arizona Cardinals",
     "title": "Arizona depth chart",
     "url": "https://www.azcardinals.com/team/depth-chart",
@@ -188,7 +188,7 @@
     "status": "Content checked"
   },
   {
-    "id": "WAS-DEPTH",
+    "id": "A958-WAS-DEPTH",
     "publisher": "Washington Commanders",
     "title": "Washington depth chart",
     "url": "https://www.commanders.com/team/depth-chart",
@@ -201,7 +201,7 @@
     "status": "Content checked"
   },
   {
-    "id": "CLE-QB",
+    "id": "A958-CLE-QB",
     "publisher": "Cleveland Browns",
     "title": "Watson set to start Week 10",
     "url": "https://www.clevelandbrowns.com/news/deshaun-watson-set-to-start-week-10-against-the-texans",
@@ -213,7 +213,7 @@
     "status": "Content checked"
   },
   {
-    "id": "PIT-DEPTH",
+    "id": "A958-PIT-DEPTH",
     "publisher": "Steelers.com",
     "title": "Pittsburgh depth chart",
     "url": "https://www.steelers.com/team/depth-chart/",
@@ -226,7 +226,7 @@
     "status": "Content checked"
   },
   {
-    "id": "NFL-RULES",
+    "id": "A958-NFL-RULES",
     "publisher": "National Football League",
     "title": "2026 Official Playing Rules",
     "url": "https://static.www.nfl.com/image/upload/fl_attachment/league/tqivdkzt9mu6wdgsh1ku.pdf",
@@ -238,7 +238,7 @@
     "status": "Content checked"
   },
   {
-    "id": "NFL-SCORES",
+    "id": "A958-NFL-SCORES",
     "publisher": "National Football League",
     "title": "2026 Week 10 scores/schedule",
     "url": "https://www.nfl.com/scores/2026/REG10",
@@ -250,7 +250,7 @@
     "status": "Content checked"
   },
   {
-    "id": "PY-STATS",
+    "id": "A958-PY-STATS",
     "publisher": "Python Software Foundation",
     "title": "statistics.correlation documentation",
     "url": "https://docs.python.org/3/library/statistics.html#statistics.correlation",
@@ -262,7 +262,7 @@
     "status": "Content checked"
   },
   {
-    "id": "SK-TIME",
+    "id": "A958-SK-TIME",
     "publisher": "scikit-learn developers",
     "title": "TimeSeriesSplit",
     "url": "https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html",
@@ -274,7 +274,7 @@
     "status": "Content checked"
   },
   {
-    "id": "SK-CAL",
+    "id": "A958-SK-CAL",
     "publisher": "scikit-learn developers",
     "title": "Probability calibration",
     "url": "https://scikit-learn.org/stable/modules/calibration.html",
@@ -286,7 +286,7 @@
     "status": "Content checked"
   },
   {
-    "id": "SM-HOLM",
+    "id": "A958-SM-HOLM",
     "publisher": "statsmodels developers",
     "title": "Multiple testing and Holm correction",
     "url": "https://www.statsmodels.org/stable/generated/statsmodels.stats.multitest.multipletests.html",
@@ -298,7 +298,7 @@
     "status": "Content checked"
   },
   {
-    "id": "AB-HELP",
+    "id": "A958-AB-HELP",
     "publisher": "Government of Alberta / Recovery Alberta",
     "title": "Addiction: helping others — finding help",
     "url": "https://myhealth.alberta.ca/alberta/Pages/Find-help-for-drug-or-gambling-problem.aspx",
@@ -310,7 +310,7 @@
     "status": "Content checked"
   },
   {
-    "id": "REPO",
+    "id": "A958-REPO",
     "publisher": "Own7 repository",
     "title": "Frozen baseline and project policy",
     "url": "https://github.com/sassnarep3-star/Own7/tree/a989d67d9155b43ee2b93c39cbfdde54d8dd0b09",
