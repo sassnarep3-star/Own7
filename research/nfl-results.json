@@ -48,11 +48,11 @@
     },
     {
       "pair": "Off Yds vs Def Yds Allowed",
-      "n": 32,
-      "kind": "Team cross-sectional",
-      "pearson": 0.18816618,
-      "spearman": 0.12061223,
-      "status": "Derived · descriptive",
+      "n": null,
+      "kind": "Not collected",
+      "pearson": null,
+      "spearman": null,
+      "status": "Unverified · blank (NF11)",
       "source_ids": [
         "NFL-TEAM-OFF",
         "NFL-TEAM-DEF"
@@ -60,11 +60,11 @@
     },
     {
       "pair": "Off Rate vs Def Rate Allowed",
-      "n": 32,
-      "kind": "Team cross-sectional",
-      "pearson": -0.09204153,
-      "spearman": -0.06488864,
-      "status": "Derived · descriptive",
+      "n": null,
+      "kind": "Not collected",
+      "pearson": null,
+      "spearman": null,
+      "status": "Unverified · blank (NF11)",
       "source_ids": [
         "NFL-TEAM-OFF",
         "NFL-TEAM-DEF"
@@ -72,11 +72,11 @@
     },
     {
       "pair": "Off TD vs Def TD Allowed",
-      "n": 32,
-      "kind": "Team cross-sectional",
-      "pearson": -0.02896407,
-      "spearman": -0.07585485,
-      "status": "Derived · descriptive",
+      "n": null,
+      "kind": "Not collected",
+      "pearson": null,
+      "spearman": null,
+      "status": "Unverified · blank (NF11)",
       "source_ids": [
         "NFL-TEAM-OFF",
         "NFL-TEAM-DEF"
@@ -645,15 +645,15 @@
     "data/nfl-players-rushing-2026.csv": "8acf24c238661f15371ea17f16be9be92f49f55ca5250c8ca9e9f39375a8b992",
     "data/nfl-standings-2026.csv": "76ae0197f79cce074605ff8566651437546784d7ef55cf3d73ad23c2968ada0c",
     "data/nfl-team-defense-passing-2026.csv": "e54db7a03cdc24570dabf3c407a362f718051ded8601a0d37b4f1656f3d7534b",
-    "data/nfl-team-offense-passing-2026.csv": "97037dfc0e408c8d6c140914335e034fe470ddb88bfafe6cf1435b40903d5a95",
+    "data/nfl-team-offense-passing-2026.csv": "4b0df9229448a187c31014b76dca22d6a5aa8e175d6255bf500a91d4c65d7687",
     "nfl_lab/__init__.py": "c9e80975b2a7baf6baacca77547401bb1527523cd597d3341e92626602364cbc",
     "nfl_lab/__main__.py": "81c01ee87b64e683ed477f057f2615b0e09c94fe3b3fca9567f209a9b1030ceb",
-    "nfl_lab/engine.py": "ba3cc3cec699959f62b99a9b2c6b6eb354d1b18728b41752416b3c9231d1c946",
-    "research/evidence/nfl-receipts.json": "acb73303cf8610a02cb236da1f2fd658c89b4987fc56a3e7b3de6749ba49500c",
-    "research/nfl-catalog.json": "a9784823139869a81ec8c723124807a69a3058510beadc0b965183ac3c0449ee",
+    "nfl_lab/engine.py": "63c19dd911e819b8be7d56ef7b34b304c5bcd4977565448e4402156f46d27eab",
+    "research/evidence/nfl-receipts.json": "c7af2005822bff4e172d0396d11f36cd6ccebc8772fbc6c3de3e9d190daaf92e",
+    "research/nfl-catalog.json": "d63f009eb29b8c20d0052c60736a1a7ef9b6db952d1e64677e2519a5f9bede8c",
     "research/nfl-protocol.json": "5667f7d3b9f4b14d7aa90b6e2fcb184faa3416f6ebfa4ce4f9a8382c55178c98"
   },
-  "run_hash": "533651f91919236816acbe3671f8c4e566c7ed2938e85c880b9a13d5f8befb28",
+  "run_hash": "c85254a658db95bb3e23bfedb3bce1000bb5fff8f7e426552d6deffb102603ed",
   "limitations": [
     "No operator prices or pregame timestamp archive",
     "No untouched confirmatory or prospective shadow evaluation",

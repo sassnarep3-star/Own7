@@ -1,6 +1,6 @@
 # NFL Research Lab (sub-site)
 
-Deterministic, source-linked NFL research. Checked 2026-11-12. 216 verified rows, 8 hypotheses, 10 gates, 10 descriptive correlations, empty leaderboard.
+Deterministic, source-linked NFL research. Checked 2026-11-12. 216 verified rows, 8 hypotheses, 10 gates, 7 descriptive correlations, empty leaderboard.
 
 No verified betting edge, executable NFL line, ROI, CLV, cash prize or winning strategy is claimed. Blank values are intentional. Luck cannot be removed.
 

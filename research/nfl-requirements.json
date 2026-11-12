@@ -95,7 +95,7 @@
       "id": "NR11",
       "requirement": "Determine correlations",
       "status": "Partial",
-      "evidence": "Ten descriptive correlations computed; bet-leg and joint-event correlations blank.",
+      "evidence": "Seven descriptive correlations computed; bet-leg and joint-event correlations blank.",
       "source_ids": [
         "NFL-PASSING"
       ]

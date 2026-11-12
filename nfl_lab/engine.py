@@ -89,16 +89,9 @@ def compute() -> dict:
     for label, rows, a, b in team_pairs:
         r, s = _corr(rows, a, b)
         correlations.append({"pair": label, "n": len(rows), "kind": "Team cross-sectional", "pearson": r, "spearman": s, "status": "Derived · descriptive", "source_ids": ["NFL-STANDINGS"]})
-    # Offense vs defense passing (join on Team, 32 teams)
-    off_by = {r["Team"]: r for r in off}
-    dfn_by = {r["Team"]: r for r in dfn}
-    common = sorted(set(off_by) & set(dfn_by))
-    assert len(common) == 32, f"expected 32 common teams, got {len(common)}"
-    joined = [{"off_y": float(off_by[t]["Yds"]), "def_y": float(dfn_by[t]["Yds"]), "off_rate": float(off_by[t]["Rate"]), "def_rate": float(dfn_by[t]["Rate"]), "off_td": float(off_by[t]["TD"]), "def_td": float(dfn_by[t]["TD"])} for t in common]
-    for label, a, b in [("Off Yds vs Def Yds Allowed", "off_y", "def_y"), ("Off Rate vs Def Rate Allowed", "off_rate", "def_rate"), ("Off TD vs Def TD Allowed", "off_td", "def_td")]:
-        x = [r[a] for r in joined]
-        y = [r[b] for r in joined]
-        correlations.append({"pair": label, "n": len(joined), "kind": "Team cross-sectional", "pearson": pearson(x, y), "spearman": spearman(x, y), "status": "Derived · descriptive", "source_ids": ["NFL-TEAM-OFF", "NFL-TEAM-DEF"]})
+    # Unconfirmed team-offense headers cannot support named correlations (NF11).
+    for label in ("Off Yds vs Def Yds Allowed", "Off Rate vs Def Rate Allowed", "Off TD vs Def TD Allowed"):
+        correlations.append({"pair": label, "n": None, "kind": "Not collected", "pearson": None, "spearman": None, "status": "Unverified · blank (NF11)", "source_ids": ["NFL-TEAM-OFF", "NFL-TEAM-DEF"]})
     # Player passing cross-sectional (25 QBs)
     for label, a, b in [("Pass Yds vs TD (QBs)", "PassYds", "TD"), ("Pass Yds vs INT (QBs)", "PassYds", "INT"), ("Yds/Att vs Rate (QBs)", "YdsPerAtt", "Rate"), ("Cmp% vs Rate (QBs)", "CmpPct", "Rate")]:
         r, s = _corr(passing, a, b)

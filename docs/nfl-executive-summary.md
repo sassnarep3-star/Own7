@@ -16,7 +16,7 @@ A substantive constraint was confirmed: [NFL Terms §1.3](https://support.nfl.co
 | Passing leaders | Top 25 by passing yards checked. Jordan Love leads at 2,618 yards; Joe Burrow 2,386; Dak Prescott 2,381. Passing-selected subset, not a complete universe. | [NFL passing](https://www.nfl.com/stats/player-stats/) |
 | Rushing leaders | Top 25 by rushing yards checked (positional C1-C9; headers not rendered). Bijan Robinson leads at 880 (C1). | [NFL rushing](https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc) |
 | Receiving leaders | Top 25 by receptions checked (positional C1-C9). Trey McBride leads at 73 receptions (C1); Jaxon Smith-Njigba 1,036 yards (C2). | [NFL receiving](https://www.nfl.com/stats/player-stats/category/receiving/2026/reg/all/receivingreceptions/desc) |
-| Team offense (passing) | 32 team rows checked. Green Bay leads at 2,618 pass yards. | [NFL team offense](https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all) |
+| Team offense (passing) | 32 team rows checked positionally; headers and named leader withheld (NF11). | [NFL team offense](https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all) |
 | Team defense (passing) | 32 team rows checked. Minnesota allows fewest at 1,495 pass yards. | [NFL team defense](https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all) |
 | Injuries (bounded) | Week 7 Thu Oct 22 NE+CHI and Sun Oct 25 PIT+NO fully transcribed (45 rows). Replacements/deficiencies not stated — blank. | [NFL injury report](https://www.nfl.com/injuries/league/2026/reg7) |
 
@@ -24,7 +24,7 @@ Every retained input field was compared against returned official rendered table
 
 ## Calculated research results — not official NFL statistics or proof of edge
 
-Ten descriptive cross-sectional Pearson correlations were calculated from verified season aggregates (see `research/nfl-results.json`). Examples: W vs Net Pts r=0.846 (n=32); Pass Yds vs TD (QBs) r=0.839 (n=25). These describe the snapshot; they are **not** bet-leg correlations and not predictive. Bet-leg correlations (teammate, cross-game, 3+ leg) are blank — no game logs collected.
+Seven descriptive cross-sectional Pearson correlations were calculated from verified season aggregates (see `research/nfl-results.json`). Examples: W vs Net Pts r=0.846 (n=32); Pass Yds vs TD (QBs) r=0.839 (n=25). These describe the snapshot; they are **not** bet-leg correlations and not predictive. Bet-leg correlations (teammate, cross-game, 3+ leg) are blank — no game logs collected.
 
 ## Strategy and competition design
 
@@ -44,4 +44,4 @@ Twelve proposals (SU-01..SU-12) and fifteen questions (Q-01..Q-15) are published
 
 ## Repository and site
 
-216 NFL rows across 7 datasets, 8 strategies, 10 gates, 10 correlations, 12 suggestions, 15 questions and 11 flags. The NFL requirement ledger, official data tables, source receipts, methods, gate matrix, correlations, results and **Flagged for Review** are public site categories. Review flags do not block publishing an honest site, but do block unsupported strategy/price/cash release.
+216 NFL rows across 7 datasets, 8 strategies, 10 gates, 7 correlations, 12 suggestions, 15 questions and 11 flags. The NFL requirement ledger, official data tables, source receipts, methods, gate matrix, correlations, results and **Flagged for Review** are public site categories. Review flags do not block publishing an honest site, but do block unsupported strategy/price/cash release.

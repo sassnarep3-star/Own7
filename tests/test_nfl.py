@@ -35,7 +35,7 @@ class NflEngineTests(unittest.TestCase):
         self.assertIsNone(result['cash_rewards'])
         self.assertTrue(all(entry['status'] == 'Blocked' for entry in result['evaluations']))
         missing = [item for item in result['correlations'] if item['kind'] == 'Not collected']
-        self.assertEqual(len(missing), 3)
+        self.assertEqual(len(missing), 6)
         self.assertTrue(all(item['pearson'] is None and item['spearman'] is None for item in missing))
 
     def test_defensive_minimum_summary_matches_all_teams(self):
@@ -46,7 +46,7 @@ class NflEngineTests(unittest.TestCase):
     def test_exploratory_correlations_are_labeled(self):
         correlations = engine.compute()['correlations']
         measured = [item for item in correlations if item['kind'] != 'Not collected']
-        self.assertEqual(len(measured), 10)
+        self.assertEqual(len(measured), 7)
         self.assertTrue(all(item['status'] == 'Derived · descriptive' for item in measured))
         self.assertAlmostEqual(measured[0]['pearson'], 0.8463, places=4)
 

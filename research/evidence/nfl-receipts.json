@@ -32,7 +32,7 @@
     "retained_rows": 25,
     "data_file": "data/nfl-players-rushing-2026.csv",
     "sha256": "8acf24c238661f15371ea17f16be9be92f49f55ca5250c8ca9e9f39375a8b992",
-    "note": "Top 25 by rushing yards; values transcribed in displayed order. Header labels not rendered — positional C1-C9 only, meanings not asserted.",
+    "note": "Top 25 by rushing yards; values transcribed in displayed order. Header labels not rendered \u2014 positional C1-C9 only, meanings not asserted.",
     "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
   },
   {
@@ -44,7 +44,7 @@
     "retained_rows": 25,
     "data_file": "data/nfl-players-receiving-2026.csv",
     "sha256": "a390c1f3faa8b6631bc5d9bcbf44da6ea68f05c3c7388392313bca157e04559d",
-    "note": "Top 25 by receptions; values transcribed in displayed order. Header labels not rendered — positional C1-C9 only, meanings not asserted.",
+    "note": "Top 25 by receptions; values transcribed in displayed order. Header labels not rendered \u2014 positional C1-C9 only, meanings not asserted.",
     "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
   },
   {
@@ -55,8 +55,8 @@
     "official_displayed_rows": 32,
     "retained_rows": 32,
     "data_file": "data/nfl-team-offense-passing-2026.csv",
-    "sha256": "97037dfc0e408c8d6c140914335e034fe470ddb88bfafe6cf1435b40903d5a95",
-    "note": "32 team rows; Att,Cmp,Cmp%,Yds/Att,Yds,TD,INT,Rate,1st,1st%,20+,40+,Lng,Sck,SckY compared. Header confirmed by arithmetic (Cmp/Att, Yds/Att) and defense header.",
+    "sha256": "4b0df9229448a187c31014b76dca22d6a5aa8e175d6255bf500a91d4c65d7687",
+    "note": "32 team rows, columns transcribed positionally C1-C15. Column meanings unconfirmed (NF11).",
     "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
   },
   {
@@ -80,7 +80,7 @@
     "retained_rows": 45,
     "data_file": "data/nfl-injuries-week7-2026.csv",
     "sha256": "16451ad8da0b283f18c48f2d6b5d1780bd433e787182f20b240d1e6a8396ac05",
-    "note": "Bounded: Thu Oct 22 NE+CHI and Sun Oct 25 PIT+NO (45 rows). Player,Position,Injuries,PracticeStatus,GameStatus compared. Replacement/Deficiency blank — not stated on page.",
+    "note": "Bounded: Thu Oct 22 NE+CHI and Sun Oct 25 PIT+NO (45 rows). Player,Position,Injuries,PracticeStatus,GameStatus compared. Replacement/Deficiency blank \u2014 not stated on page.",
     "evidence_format": "Normalized transcription, not a raw HTTP response. Hash proves integrity, not independent truth."
   }
 ]

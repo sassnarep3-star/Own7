@@ -174,7 +174,7 @@ def metrics(urls):
     items = [
         ("Verified NFL rows", "216", "7 datasets, source-linked", "NFL-STANDINGS"),
         ("Research hypotheses", "8", "Singles, parlays & prop combos", "NFL-PASSING"),
-        ("Descriptive correlations", "10", "Cross-sectional, not bet-leg", "NFL-TEAM-OFF"),
+        ("Descriptive correlations", "7", "Cross-sectional, not bet-leg", "NFL-TEAM-OFF"),
         ("Strategies approved", "0", "No live lines or cash awards", "NFL-TERMS"),
     ]
     return '<div class="metric-grid">' + "".join(
@@ -210,7 +210,7 @@ def render():
 
     # Landing
     landing = (
-        '<div class="notice warning"><strong>Evidence is available. A betting edge is not.</strong><p>216 official snapshot rows checked; ten descriptive correlations calculated. No strategy has cleared all validation gates. Source rights and market-data gaps block betting-price release.</p></div>'
+        '<div class="notice warning"><strong>Evidence is available. A betting edge is not.</strong><p>216 official snapshot rows checked; seven descriptive correlations calculated. No strategy has cleared all validation gates. Source rights and market-data gaps block betting-price release.</p></div>'
         + metrics(urls) + cards()
         + "<section><h2>What this project covers</h2><p>An evidence-first workspace for independent NFL probability research. Observe carefully. Test honestly. Know when not to act.</p>"
         + '<p><strong>Rights:</strong> NFL Terms restrict Services to non-commercial/informational use and prohibit gambling/wagering use. This lab is a frozen, attributed statistical audit only. No executable line, odds, ROI, CLV, cash prize or wagering signal is released.</p></section>'
@@ -225,9 +225,9 @@ def render():
         {"id": "E1", "finding": "Decision: no live lines", "detail": "Do not release live NFL betting lines or assert a skill-based edge. No candidate passes all gates.", "status": "Project decision", "source_ids": ["NFL-TERMS"]},
         {"id": "E2", "finding": "Standings leader", "detail": "Buffalo and San Francisco lead at 7-1 (.875); Chargers 0-8 (.000). 32 rows checked.", "status": "Verified · official", "source_ids": ["NFL-STANDINGS"]},
         {"id": "E3", "finding": "Passing leader", "detail": "Jordan Love 2,618 yards leads top-25 passing table. Subset, not universe.", "status": "Verified · official", "source_ids": ["NFL-PASSING"]},
-        {"id": "E4", "finding": "Team offense leader", "detail": "Green Bay 2,618 pass yards lead 32-team passing offense table.", "status": "Verified · official", "source_ids": ["NFL-TEAM-OFF"]},
+        {"id": "E4", "finding": "Team offense headers", "detail": "Header labels were not rendered. Columns are positional; named team-offense comparisons are withheld (NF11).", "status": "Unverified · review", "source_ids": ["NFL-TEAM-OFF"]},
         {"id": "E5", "finding": "Team defense leader", "detail": "Minnesota allows fewest at 1,495 pass yards (32 teams).", "status": "Verified · official", "source_ids": ["NFL-TEAM-DEF"]},
-        {"id": "E6", "finding": "Correlations descriptive", "detail": "Ten cross-sectional estimates (e.g. W vs Net Pts r=0.846). Not bet-leg, not predictive.", "status": "Derived · descriptive", "source_ids": ["NFL-STANDINGS"]},
+        {"id": "E6", "finding": "Correlations descriptive", "detail": "Seven cross-sectional estimates (e.g. W vs Net Pts r=0.846). Not bet-leg, not predictive.", "status": "Derived · descriptive", "source_ids": ["NFL-STANDINGS"]},
         {"id": "E7", "finding": "Injuries bounded", "detail": "45 rows (NE, CHI, PIT, NO). Replacements/deficiencies blank.", "status": "Verified · official", "source_ids": ["NFL-INJURY"]},
         {"id": "E8", "finding": "Leaderboard empty", "detail": "No eligible entries. Non-monetary merit points only. Cash blank.", "status": "Project policy", "source_ids": ["NFL-TERMS"]},
     ]
@@ -247,7 +247,7 @@ def render():
         + table("rushing", "Player rushing top 25 (positional)", [("Player", "Player"), ("C1", "C1"), ("C2", "C2"), ("C3", "C3"), ("C4", "C4"), ("C5", "C5"), ("C6", "C6"), ("C7", "C7"), ("C8", "C8"), ("C9", "C9")], rushing, urls)
         + '<p class="table-note">Rushing/receiving headers were not rendered in the fetched page. C1-C9 are positional only; meanings are not asserted (NF08).</p>'
         + table("receiving", "Player receiving top 25 (positional)", [("Player", "Player"), ("C1", "C1"), ("C2", "C2"), ("C3", "C3"), ("C4", "C4"), ("C5", "C5"), ("C6", "C6"), ("C7", "C7"), ("C8", "C8"), ("C9", "C9")], receiving, urls)
-        + table("team-off", "Team offense passing (32 teams)", [("Team", "Team"), ("Att", "Att"), ("Cmp", "Cmp"), ("Cmp %", "CmpPct"), ("Yds/Att", "YdsPerAtt"), ("Yds", "Yds"), ("TD", "TD"), ("INT", "INT"), ("Rate", "Rate")], off, urls)
+        + table("team-off", "Team offense passing (32 teams; positional)", [("Team", "Team")] + [(f"C{i}", f"C{i}") for i in range(1, 16)], off, urls)
         + table("team-def", "Team defense passing (32 teams)", [("Team", "Team"), ("Att", "Att"), ("Cmp", "Cmp"), ("Cmp %", "CmpPct"), ("Yds/Att", "YdsPerAtt"), ("Yds", "Yds"), ("TD", "TD"), ("INT", "INT"), ("Rate", "Rate")], dfn, urls)
     )
     pages["data.html"] = page("data.html", "Data library", "Seven frozen official-source datasets. Every retained row is attributed, scoped and checked; nothing here is a live market feed.", data_body)
@@ -340,7 +340,7 @@ def render():
     meth_body = (
         "<section><h2>Reproduce without manual entry</h2><div class=\"notice\"><p>python -m nfl_lab run<br>python -m unittest discover -s tests -v<br>python nfl/build.py<br>python scripts/check_site.py</p></div>"
         + "<p>The build is offline and deterministic from committed, receipt-checked snapshots. The analysis manifest contains input/code hashes and a run hash. No accounts, API keys, price entry, real-money wagers or source-data scraping is required.</p></section>"
-        + "<section><h2>Boundaries</h2><p>Season aggregates are retrospective. Cross-sectional correlations are descriptive, not predictive. Rushing/receiving headers are positional. Schedule/roster not transcribed. Injury replacements/deficiencies blank. NFL-derived betting prices withheld under NFL Terms.</p></section>"
+        + "<section><h2>Boundaries</h2><p>Season aggregates are retrospective. Cross-sectional correlations are descriptive, not predictive. Rushing, receiving and team-offense headers are positional. Schedule/roster not transcribed. Injury replacements/deficiencies blank. NFL-derived betting prices withheld under NFL Terms.</p></section>"
         + table("method-refs", "Method references", [("Reference", "title"), ("Use", "use")], [{"id": "M1", "title": "NFL standings", "use": "Team W/L/PF/PA inputs", "source_ids": ["NFL-STANDINGS"]}, {"id": "M2", "title": "NFL passing", "use": "QB distribution inputs", "source_ids": ["NFL-PASSING"]}, {"id": "M3", "title": "NFL terms", "use": "Rights gate", "source_ids": ["NFL-TERMS"]}], urls)
     )
     pages["methodology.html"] = page("methodology.html", "Methodology", "Clear model contracts, correct pricing mathematics and a reproducible pipeline — with explicit release boundaries.", meth_body)
