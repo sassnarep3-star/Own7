@@ -466,3 +466,14 @@ Scope: NFL research lab addition (new `nfl/**` sub-site + canonical NFL pages vi
 **A wrong hypothesis was discarded, not published.** My first explanation was that both rows were half-way rounding. They are not half-way values, so no rounding convention reconciles them. The arithmetic test replaced the story.
 
 **Process note on the parallel claim.** This session and `arena/a4e560bc-own7` both claimed an NFL section within the same window; theirs merged first (PRs #21/#23). I did not merge a competing dashboard, delete their pages, or overwrite their numbers. Their section is intact and is now extended by one additive page. The scope conflict is declared here rather than hidden.
+### PR and deployment record (session arena/270048f0-own7)
+
+- **PR [#26](https://github.com/sassnarep3-star/Own7/pull/26)** — "NFL: independent verification of every published figure, and one real data finding (NF12)" — opened from `arena/270048f0-own7` to `main`.
+- **Checks:** [Research and recursive site audit](https://github.com/sassnarep3-star/Own7/actions/runs/43264014856) **pass** (11s); Desktop, mobile and accessibility **pass** (2m12s). Merged only after both passed.
+- **Merged** at `2026-11-12T16:58:54Z` as `64d1fbd4ff59d62266a3ed9f0725fd83abbb4925`.
+- **GitHub Pages [deployment](https://github.com/sassnarep3-star/Own7/actions/runs/43264014856) succeeded** for the same commit (`pages-build-deployment` → completed/success at 16:58:57Z).
+- **Live page confirmed fetched:** [nfl/independent-verification.html](https://sassnarep3-star.github.io/Own7/nfl/independent-verification.html) returns the full page with the verifier output, the 7/7 reproduction table, the NF12 rows and the sensitivity figures.
+
+**No broken site was merged.** Before merge, the full gate ran green: `nfl_lab run --check`, `nfl/build.py --check` (16/16), `nfl/verify_independent.py`, `nfl/test_build.py` 6/6, `originate.py --check` (14 pages), `unittest discover -s tests` 72/72, `nfl/origination` 29/29, `rental` and `market-evidence` build tests, and `scripts/check_site.py` with zero errors.
+
+**Final state of the parallel-work question.** Three sessions touched NFL paths today. All three survive: `arena/a4e560bc-own7`'s research lab (15 pages, unmodified), `arena/20394b77-own7`'s origination lab (14 pages, unmodified), and this session's single additive verification page plus `nfl/verify_independent.py`. No session's numbers were overwritten, no page was deleted, and no scope was silently reclaimed.
