@@ -44,6 +44,23 @@ SOURCE_HOSTS.update({
 SOURCE_HOSTS.update({'SF-RENTAL-LAWS': 'www.sf.gov', 'SF-RENT-INC': 'www.sf.gov', 'SF-NEWS-AGA': 'www.sf.gov', 'SF-BANKED': 'www.sf.gov', 'SF-HI-LICENSE': 'www.sf.gov', 'CA-AG-RENTCAPS': 'oag.ca.gov', 'CA-AG-TENANTS': 'oag.ca.gov', 'LEGINFO-CIV827': 'leginfo.legislature.ca.gov', 'LEGINFO-CIV1947-12': 'leginfo.legislature.ca.gov', 'LEGINFO-AB1482': 'leginfo.legislature.ca.gov', 'BLS-SF-CPI': 'blsmon1.bls.gov', 'GOVINFO-FHA': 'www.govinfo.gov', 'SF-RTC-EDC': 'evictiondefense.org'})
 
 
+# NFL decision desk (session arena/382a833e-own7). It keeps its own source ledger so that the
+# canonical NBA registry above is not rewritten by this scope; both ledgers are validated here.
+DESK_SOURCE_FILE = 'nfl-desk/data/sources.json'
+DESK_HOSTS = {
+    'NFL-STANDINGS-2026': 'www.nfl.com', 'NFL-STANDINGS-DIV-2026': 'www.nfl.com',
+    'NFL-TEAM-PASS-2026': 'www.nfl.com', 'NFL-INJURY-W10-2026': 'www.nfl.com',
+    'NFL-SCHEDULE-2026': 'www.nfl.com', 'NFL-TIEBREAK-2026': 'www.nfl.com',
+    'NFL-TERMS': 'www.nfl.com', 'NFL-NEWS-W10-ROUNDUP': 'www.nfl.com',
+    'NFL-NEWS-WILLIS-IR': 'www.nfl.com', 'NFL-NEWS-NACUA-IR': 'www.nfl.com',
+    'NFL-NEWS-DARNOLD': 'www.nfl.com', 'NFL-OPS': 'operations.nfl.com',
+    'NFL-CLUB-DC-WAS': 'www.commanders.com', 'NFL-CLUB-DC-NYG': 'www.giants.com',
+    'NFL-CLUB-DC-SEA': 'www.seahawks.com', 'SCIPY-PEARSON': 'docs.scipy.org',
+    # Shared with the canonical registry; the desk cites the repository itself for project policy.
+    'REPO': 'github.com',
+}
+
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)
@@ -69,7 +86,8 @@ class Page(HTMLParser):
             self.ids.add(attrs['id'])
         if tag == 'tbody': self.in_body_rows = True
         if tag == 'tr' and self.in_body_rows:
-            self.row = {'refs': [], 'source_ids': attrs.get('data-source-ids', '').split()}
+            self.row = {'refs': [], 'source_ids': attrs.get('data-source-ids', '').split(),
+                        'detail': attrs.get('data-detail', '')}
         for key in ('href', 'src'):
             ref = attrs.get(key)
             if ref:
@@ -146,7 +164,28 @@ def validate_data(errors):
             errors.append(f'{file.name}: stale legacy source of truth still active')
         target=(file.parent/data.get('canonical','')).resolve()
         if not target.is_file(): errors.append(f'{file.name}: missing canonical pointer')
-    return {r['id']: r['url'] for r in registry}
+    urls = {r['id']: r['url'] for r in registry}
+    # NFL desk ledger: separate file, separate exact-host map, merged only for row-link checking.
+    try:
+        desk_registry = json.loads((ROOT/DESK_SOURCE_FILE).read_text(encoding='utf-8'))['sources']
+    except (OSError, ValueError) as exc:
+        errors.append(f'{DESK_SOURCE_FILE}: unreadable ({exc})')
+        desk_registry = []
+    desk_ids = [r['id'] for r in desk_registry]
+    if len(desk_ids) != len(set(desk_ids)):
+        errors.append('nfl-desk: duplicate source IDs')
+    if set(desk_ids) != set(DESK_HOSTS):
+        errors.append('nfl-desk: source IDs do not match the registered official host map')
+    for row in desk_registry:
+        parsed = urlparse(row['url'])
+        if parsed.scheme != 'https' or parsed.netloc != DESK_HOSTS.get(row['id']):
+            errors.append(f'nfl-desk:{row["id"]}: incorrect official primary source host')
+        if not row.get('scope') or not row.get('checked_on'):
+            errors.append(f'nfl-desk:{row["id"]}: missing verification scope/date')
+        if row.get('id') in urls and urls[row['id']] != row['url']:
+            errors.append(f'nfl-desk:{row["id"]}: disagrees with the canonical registry URL')
+    urls.update({r['id']: r['url'] for r in desk_registry})
+    return urls
 
 
 def main():
@@ -193,7 +232,17 @@ def main():
             ids=row['source_ids']
             if not ids or any(s not in registry for s in ids):
                 errors.append(f'{path.name}: table row missing registered primary source IDs')
-            if not any(registry.get(s) in row['refs'] for s in ids):
+                continue
+            if any(registry.get(s) in row['refs'] for s in ids):
+                continue
+            # A row may delegate its link to a detail anchor, but only if that anchor renders the
+            # same registered source URLs. Provenance stays visible; it is one click away instead
+            # of repeated in every wide table.
+            detail = row.get('detail') or ''
+            detail_path = detail.split('#')[0]
+            target = pages.get((ROOT/path.parent/detail_path).resolve()) if detail_path else None
+            if not (detail and target is not None
+                    and any(registry[s] in target.refs for s in ids)):
                 errors.append(f'{path.name}: row lacks its official registered source link')
     # Local CSS dependencies, including the retired compatibility imports.
     for path in (ROOT/'assets/style.css',ROOT/'css/style.css',ROOT/'verified/assets/style.css'):

@@ -152,6 +152,8 @@ NAV = [
     ("Transparency", [("sources.html", "Source register", "sources"), ("review.html", "Flagged for Review", "review"), ("audit.html", "Repository audit", "audit"), ("requirements.html", "Requirements", "requirements"), ("responsible-gambling.html", "Responsible use", "care")]),
     ("Rental analysis", [("rent-overview.html", "SF rent overview", "data"), ("rent-units.html", "Units & caps", "brief"), ("rent-qa.html", "Q&A and compliance", "validation")]),
     ("Rental · SF 94122 (full)", [("rental.html", "Rental overview", "data"), ("rental-summary.html", "Executive summary", "brief"), ("rental-units.html", "Units & scenarios", "lab"), ("rental-law.html", "Law by jurisdiction", "method"), ("rental-notice.html", "Notice procedure", "validation"), ("rental-answers.html", "Questions answered", "sources"), ("rental-flagged.html", "Flagged for review", "review"), ("rental/index.html", "Deep-dive sub-site", "info")]),
+    # NFL decision desk (session arena/382a833e-own7): additive sub-site under nfl-desk/**.
+    ("NFL decision desk", [("nfl-desk/index.html", "Desk overview", "signals"), ("nfl-desk/summary.html", "Executive summary", "brief"), ("nfl-desk/decisions.html", "Decision register", "requirements"), ("nfl-desk/suggestions.html", "Suggestions board", "review"), ("nfl-desk/availability.html", "Availability & depth", "care"), ("nfl-desk/strategies.html", "Strategies & signals", "signals"), ("nfl-desk/competition.html", "Gates & competition", "leaderboard"), ("nfl-desk/evidence.html", "Evidence & repo review", "data"), ("nfl-desk/review.html", "Flagged for review", "review")]),
 ]
 
 
@@ -561,6 +563,12 @@ def build():
     rental_pages=load_json('rental/manifest.json')['pages']
     for name in rental_pages:
         generated.append(f'rental/{name}')
+    # NFL decision-desk sub-site (session arena/382a833e-own7): its own deterministic generator.
+    desk_result=subprocess.run([sys.executable,str(ROOT/'nfl-desk'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if desk_result.returncode: raise SystemExit(desk_result.stdout+desk_result.stderr)
+    desk_pages=load_json('nfl-desk/manifest.json')['pages']
+    for name in desk_pages:
+        generated.append(f'nfl-desk/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else "NBA / RESEARCH WORKSPACE"
@@ -575,7 +583,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl-desk/{n}' for n in desk_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 

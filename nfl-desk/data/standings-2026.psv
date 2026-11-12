@@ -1,0 +1,39 @@
+# Official source: https://www.nfl.com/standings/league/2026/reg (read 2026-11-12)
+# Columns after team: W|L|T|PCT|PF|PA|NET PTS, exactly as rendered in the league table.
+# Only these seven numeric fields are transcribed. Record strings (home/road/division/streak)
+# were NOT transcribed: their column order could not be confirmed from the captured page,
+# so they stay blank and are flagged DF-04 rather than inferred.
+# PCT is the displayed value; the build verifies it equals (W + T/2) / (W + L + T) to 3 d.p.
+abbr|team|w|l|t|pct|pf|pa|net
+BUF|Buffalo Bills|7|1|0|0.875|256|187|69
+SF|San Francisco 49ers|7|1|0|0.875|235|156|79
+CHI|Chicago Bears|7|2|0|0.778|241|184|57
+DEN|Denver Broncos|7|2|0|0.778|198|186|12
+CIN|Cincinnati Bengals|6|2|0|0.750|240|175|65
+DET|Detroit Lions|6|2|0|0.750|222|189|33
+JAX|Jacksonville Jaguars|6|2|0|0.750|229|121|108
+KC|Kansas City Chiefs|6|2|0|0.750|202|143|59
+MIN|Minnesota Vikings|6|2|0|0.750|146|116|30
+PIT|Pittsburgh Steelers|6|2|0|0.750|180|144|36
+NYG|New York Giants|5|2|1|0.688|182|172|10
+GB|Green Bay Packers|6|3|0|0.667|216|191|25
+CLE|Cleveland Browns|5|4|0|0.556|161|196|-35
+LA|Los Angeles Rams|5|4|0|0.556|214|181|33
+NE|New England Patriots|5|4|0|0.556|211|207|4
+SEA|Seattle Seahawks|5|4|0|0.556|202|162|40
+BAL|Baltimore Ravens|4|5|0|0.444|189|236|-47
+DAL|Dallas Cowboys|4|5|0|0.444|246|236|10
+LV|Las Vegas Raiders|4|5|0|0.444|238|268|-30
+CAR|Carolina Panthers|3|5|0|0.375|199|219|-20
+HOU|Houston Texans|3|5|0|0.375|209|192|17
+NO|New Orleans Saints|3|5|0|0.375|185|216|-31
+AZ|Arizona Cardinals|3|6|0|0.333|178|255|-77
+ATL|Atlanta Falcons|3|6|0|0.333|188|223|-35
+TB|Tampa Bay Buccaneers|3|6|0|0.333|202|178|24
+WAS|Washington Commanders|2|5|1|0.313|172|202|-30
+IND|Indianapolis Colts|2|7|0|0.222|184|249|-65
+NYJ|New York Jets|2|7|0|0.222|182|223|-41
+PHI|Philadelphia Eagles|2|7|0|0.222|148|221|-73
+MIA|Miami Dolphins|1|7|0|0.125|126|200|-74
+TEN|Tennessee Titans|1|7|0|0.125|144|199|-55
+LAC|Los Angeles Chargers|0|8|0|0.000|121|219|-98

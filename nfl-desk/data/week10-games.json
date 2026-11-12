@@ -1,0 +1,22 @@
+{
+  "source_id": "NFL-SCHEDULE-2026",
+  "read_date": "2026-11-12",
+  "note": "Week 10 fixtures exactly as listed on the official 2026 schedule page. 'kickoff' is the time string the page rendered for the reader's locale; it has not been converted or normalised. Away club is listed first because the page renders 'away at home'.",
+  "games": [
+    {"away": "WAS", "home": "NYG", "kickoff": "Nov 12, 8:15 PM", "network": "PRIME", "label": "Thursday Night Football"},
+    {"away": "NE", "home": "DET", "kickoff": "Nov 15, 9:30 AM", "network": "FOX", "label": "International Game (Munich)"},
+    {"away": "KC", "home": "ATL", "kickoff": "Nov 15, 1:00 PM", "network": "CBS", "label": ""},
+    {"away": "HOU", "home": "CLE", "kickoff": "Nov 15, 1:00 PM", "network": "FOX", "label": ""},
+    {"away": "MIN", "home": "GB", "kickoff": "Nov 15, 1:00 PM", "network": "FOX", "label": ""},
+    {"away": "JAX", "home": "TEN", "kickoff": "Nov 15, 1:00 PM", "network": "FOX", "label": ""},
+    {"away": "BUF", "home": "NYJ", "kickoff": "Nov 15, 1:00 PM", "network": "CBS", "label": ""},
+    {"away": "MIA", "home": "IND", "kickoff": "Nov 15, 1:00 PM", "network": "CBS", "label": ""},
+    {"away": "CAR", "home": "NO", "kickoff": "Nov 15, 1:00 PM", "network": "FOX", "label": ""},
+    {"away": "LA", "home": "AZ", "kickoff": "Nov 15, 4:05 PM", "network": "CBS", "label": ""},
+    {"away": "SEA", "home": "LV", "kickoff": "Nov 15, 4:05 PM", "network": "CBS", "label": ""},
+    {"away": "SF", "home": "DAL", "kickoff": "Nov 15, 4:25 PM", "network": "FOX", "label": ""},
+    {"away": "PIT", "home": "CIN", "kickoff": "Nov 15, 8:20 PM", "network": "NBC", "label": "Sunday Night Football"},
+    {"away": "LAC", "home": "BAL", "kickoff": "Nov 16, 8:15 PM", "network": "ESPN", "label": "Monday Night Football"}
+  ],
+  "bye": ["CHI", "DEN", "PHI", "TB"]
+}

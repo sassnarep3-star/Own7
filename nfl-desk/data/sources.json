@@ -1,0 +1,159 @@
+{
+  "read_date": "2026-11-12",
+  "note": "Every entry was opened and read with the page reader on 2026-11-12. 'scope' records exactly what was observed. A reachable page is not a factual or rights certification.",
+  "sources": [
+    {
+      "id": "NFL-STANDINGS-2026",
+      "publisher": "NFL.com (National Football League)",
+      "title": "2026 NFL League Standings — regular season",
+      "url": "https://www.nfl.com/standings/league/2026/reg",
+      "scope": "Both result chunks read. All 32 club rows transcribed for W, L, T, PCT, PF, PA, NET PTS. Division/conference, home/road, streak and clinch columns were not transcribed because the rendered table has no header row in the capture (flag DF-04).",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-STANDINGS-DIV-2026",
+      "publisher": "NFL.com (National Football League)",
+      "title": "2026 NFL Division Standings",
+      "url": "https://www.nfl.com/standings/division/2026/REG",
+      "scope": "Both chunks read. Confirms each club's division grouping (AFC East/North/South/West, NFC East/North/South/West) and that the same seven numeric fields repeat identically. Used only for division assignment, cross-checked against the league table.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-TEAM-PASS-2026",
+      "publisher": "NFL.com (National Football League)",
+      "title": "2026 NFL offense points stats by Team",
+      "url": "https://www.nfl.com/stats/team-stats/offense/points/2026/reg/all",
+      "scope": "Full 32-row table read. The captured table is unlabeled. Only ATT, CMP, PCT, AVG, YDS were transcribed, and only after the build verified round(CMP/ATT*100,1)==PCT and round(YDS/ATT,1)==AVG on every row. TD/INT/longest and five further columns were not identified and are not filled (flag DF-03).",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-INJURY-W10-2026",
+      "publisher": "NFL.com (National Football League)",
+      "title": "Official Latest NFL Injury Report — Week 10 of the 2026 season",
+      "url": "https://www.nfl.com/injuries/",
+      "scope": "All seven result chunks read. 278 player rows across 26 clubs transcribed with the four rendered fields (Position, Injuries, Practice Status, Game Status); two clubs rendered 'No Injuries Reported'. Four clubs were on bye and are absent. This is one page state, not a live feed.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-SCHEDULE-2026",
+      "publisher": "NFL.com (National Football League)",
+      "title": "2026 NFL Schedule — Week 10",
+      "url": "https://www.nfl.com/schedules/2026/REG/",
+      "scope": "All three chunks read. Confirmed the Week 10 fixture list used for the availability table (14 games), kickoff times, and the four clubs on bye (CHI, DEN, PHI, TB). Start times are the site's displayed local-to-user times and are not re-expressed.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-TIEBREAK-2026",
+      "publisher": "NFL.com (National Football League)",
+      "title": "NFL Tiebreaking Procedures",
+      "url": "https://www.nfl.com/standings/tie-breaking-procedures",
+      "scope": "Read. Used only to describe why division rank cannot be computed from win-loss record alone: head-to-head, division, common-games and strength-of-victory steps precede points. This is why DF-05 leaves tie-break-dependent fields blank.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-TERMS",
+      "publisher": "NFL Enterprises, LLC",
+      "title": "NFL.com Terms and Conditions (updated 16 May 2024)",
+      "url": "https://www.nfl.com/legal/terms/",
+      "scope": "Read sections 1.1–1.3, 7–11. §1.3 limits use to individual non-commercial informational purposes and prohibits systematic retrieval or compilation without prior written consent. §11(f) prohibits using the Services to harvest information for a commercial purpose. No gambling permission is granted and none is inferred here.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-OPS",
+      "publisher": "NFL Football Operations",
+      "title": "NFL Football Operations",
+      "url": "https://operations.nfl.com/",
+      "scope": "Read. Confirmed the 2026 Rulebook hub and the league calendar exist. A guessed injury-report-policy URL under this host returned an empty capture, so no policy paragraph is attributed to it (flag DF-08).",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-NEWS-W10-ROUNDUP",
+      "publisher": "NFL.com (National Football League)",
+      "title": "NFL news roundup: Browns to start QB Deshaun Watson vs. Texans; Cardinals' Carson Beck to start vs. Rams",
+      "url": "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-wednesday-nov-11",
+      "scope": "Chunks 0–1 read. Used only for quarterback starter changes that are stated in the article text (WAS, ARI, CLE) and for nothing else.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-NEWS-WILLIS-IR",
+      "publisher": "NFL.com (National Football League)",
+      "title": "Dolphins place QB Malik Willis (groin) on injured reserve; Kyle McCord in line for first start",
+      "url": "https://www.nfl.com/news/dolphins-place-qb-malik-willis-groin-on-injured-reserve-kyle-mccord-in-line-for-first-start",
+      "scope": "Read. Source of the MIA quarterback replacement chain (Willis to IR; McCord to start) and of the statement that Brady Cook is on the practice squad.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-NEWS-NACUA-IR",
+      "publisher": "NFL.com (National Football League)",
+      "title": "Rams WR Puka Nacua likely to be placed on injured reserve with turf toe, sprained MCL and PCL",
+      "url": "https://www.nfl.com/news/rams-wr-puka-nacua-likely-to-be-placed-on-injured-reserve-with-turf-toe-sprained-mcl-and-pcl",
+      "scope": "Read. Source of the LAR receiver-room statement (Atwell, Mumpfield, Whittington, Daniels) and of the 44.2%/48% target-share figures quoted by the article. Treats 'likely' as reported, not as a confirmed roster move.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-NEWS-DARNOLD",
+      "publisher": "NFL.com (National Football League)",
+      "title": "Sam Darnold ruled out for Seahawks' Week 10 game vs. Raiders; Drew Lock expected to start again",
+      "url": "https://www.nfl.com/news/sam-darnold-ruled-out-for-seahawks-week-10-game-vs-raiders-drew-lock-expected-to-start-again",
+      "scope": "Read. Source of the SEA quarterback replacement chain (Darnold out; Lock expected to start; Milroe backing up).",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-CLUB-DC-WAS",
+      "publisher": "Washington Commanders (official club site)",
+      "title": "Washington Commanders Depth Chart",
+      "url": "https://www.commanders.com/team/depth-chart",
+      "scope": "Read. Offense and defense two-deep transcribed for the positions the club lists. Club depth charts are unofficial coaching estimates in general; only the listing order on this page is reported here.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-CLUB-DC-NYG",
+      "publisher": "New York Giants (official club site)",
+      "title": "Giants Team Depth Chart",
+      "url": "https://www.giants.com/team/depth-chart",
+      "scope": "Read. Offense and defense listings transcribed as displayed, including multi-player first-string cells (WR, CB).",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "NFL-CLUB-DC-SEA",
+      "publisher": "Seattle Seahawks (official club site)",
+      "title": "Seattle Seahawks Depth Chart",
+      "url": "https://www.seahawks.com/team/depth-chart/",
+      "scope": "Read. Offense and defense listings transcribed as displayed, including the two-player WR1 cell and the four-deep RB cell.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "SCIPY-PEARSON",
+      "publisher": "SciPy",
+      "title": "scipy.stats.pearsonr",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html",
+      "scope": "Read. Reference for the Pearson coefficient and its p-value definition used in the engine's documentation. The repository's own implementation is dependency-free and is unit-tested against known values.",
+      "access": "public, no login",
+      "checked_on": "2026-11-12"
+    },
+    {
+      "id": "REPO",
+      "publisher": "This repository",
+      "title": "OWN7 repository",
+      "url": "https://github.com/sassnarep3-star/Own7",
+      "scope": "Project policy, build scripts and this session's coordination record.",
+      "access": "public",
+      "checked_on": "2026-11-12"
+    }
+  ]
+}

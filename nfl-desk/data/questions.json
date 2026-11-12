@@ -1,0 +1,151 @@
+{
+  "read_date": "2026-11-12",
+  "note": "The decision register. Each item states the question, what is answerable today from a source actually read, and what is missing. 'Status' is deliberately blunt: an item is 'Unknown' when no source in this repository answers it, and it stays Unknown until one does.",
+  "statuses": ["Answered", "Partly answered", "Unknown"],
+  "questions": [
+    {
+      "id": "Q01",
+      "question": "What is each club's current regular-season record and scoring profile?",
+      "why_it_matters": "Every ranking, residual and baseline in this project depends on it.",
+      "answer": "Established. All 32 clubs: W, L, T, win percentage, points for, points against and net points, transcribed from the official league standings. Win percentage and net points are re-derived from the integers on every build.",
+      "information_held": "32 club rows; two official NFL pages that agree (league and division views).",
+      "information_missing": "Per-week history. The page shows season-to-date only, so no week-by-week replay is possible.",
+      "status": "Answered",
+      "owner": "Research",
+      "blocks": "S01, S02",
+      "source_ids": ["NFL-STANDINGS-2026", "NFL-STANDINGS-DIV-2026"]
+    },
+    {
+      "id": "Q02",
+      "question": "Which clubs had whom on the Week 10 injury report, and in what status?",
+      "why_it_matters": "It is the only official, dated availability signal available without a licensed feed.",
+      "answer": "Established for the 26 clubs that listed players, plus 2 clubs that rendered 'No Injuries Reported'. Four clubs were on bye and are absent from the page entirely.",
+      "information_held": "276 player rows with position, injury, practice status and game status; verbatim notes for LAC and BAL.",
+      "information_missing": "Report timestamps, snap counts, and whether a listed player actually started. A listed player is not an absent player.",
+      "status": "Answered",
+      "owner": "Research",
+      "blocks": "S03, S04",
+      "source_ids": ["NFL-INJURY-W10-2026", "NFL-SCHEDULE-2026"]
+    },
+    {
+      "id": "Q03",
+      "question": "Who replaces a first-string player, and is that replacement a second, third or fourth string option?",
+      "why_it_matters": "This is the owner's stated requirement: know when a backup is covering for a starter.",
+      "answer": "Partly answered. For three clubs (WAS, NYG, SEA) the club's own published depth chart is transcribed, so the listed order at each position is known and the next name is the chart's own replacement. For the other 29 clubs no chart is held, so nothing is claimed.",
+      "information_held": "154 chart rows across three clubs, joined to the Week 10 injury report by club and player name.",
+      "information_missing": "Depth charts for 29 clubs; snap share; confirmation that a chart position equals a starting role. Club charts are unofficial and revised silently.",
+      "status": "Partly answered",
+      "owner": "Research",
+      "blocks": "S03, S04",
+      "source_ids": ["NFL-CLUB-DC-WAS", "NFL-CLUB-DC-NYG", "NFL-CLUB-DC-SEA", "NFL-INJURY-W10-2026"]
+    },
+    {
+      "id": "Q04",
+      "question": "What price could actually be taken on any of these candidates?",
+      "why_it_matters": "Without a price there is no economic question to answer, and no return can be computed.",
+      "answer": "Unknown. No licensed or archiveable price source is held. NFL.com publishes no odds. Every price, hold, ROI and closing-line field in this project is blank.",
+      "information_held": "None.",
+      "information_missing": "A timestamped price archive from a licensed source, with the operator's settlement rules for the same market.",
+      "status": "Unknown",
+      "owner": "Owner decision",
+      "blocks": "S01–S08, all rewards",
+      "source_ids": ["NFL-TERMS", "REPO"]
+    },
+    {
+      "id": "Q05",
+      "question": "How dependent are the legs of a combination?",
+      "why_it_matters": "Multiplying marginal probabilities across dependent legs overstates the joint probability, which is the error that makes a bad parlay look good.",
+      "answer": "Unknown for any real combination. What is measured here is club-season correlation across 32 clubs, which is a different unit of analysis and cannot be reused as a leg correlation.",
+      "information_held": "Eight club-season correlation pairs with permutation p-values, clearly labelled as descriptive.",
+      "information_missing": "Same-game and same-player leg outcomes; for parlay work, a per-leg settlement archive.",
+      "status": "Unknown",
+      "owner": "Research",
+      "blocks": "S06, S07, S08",
+      "source_ids": ["NFL-STANDINGS-2026", "SCIPY-PEARSON"]
+    },
+    {
+      "id": "Q06",
+      "question": "Does any signal here survive a forward, untouched test?",
+      "why_it_matters": "This is the only question that separates skill from a fit.",
+      "answer": "Unknown. Zero forward periods have elapsed. Nothing has been staked, simulated for money, or frozen for observation.",
+      "information_held": "Nothing forward-looking.",
+      "information_missing": "At least one frozen forward period per division, with the rules fixed before it starts.",
+      "status": "Unknown",
+      "owner": "Research",
+      "blocks": "Leaderboard ranking, all rewards",
+      "source_ids": ["REPO"]
+    },
+    {
+      "id": "Q07",
+      "question": "May this data be used and republished for the intended purpose?",
+      "why_it_matters": "A rights failure invalidates the whole exercise regardless of statistical quality.",
+      "answer": "Not established. NFL.com Terms limit use to individual non-commercial informational purposes, prohibit systematic retrieval or compilation without prior written consent, and grant no gambling-related permission. No repository licence exists either.",
+      "information_held": "The published terms text, read directly and quoted by section.",
+      "information_missing": "Any written permission from the rights holder; an explicit licence decision by the owner.",
+      "status": "Unknown",
+      "owner": "Owner decision",
+      "blocks": "Commercial release, price publication, cash rewards",
+      "source_ids": ["NFL-TERMS"]
+    },
+    {
+      "id": "Q08",
+      "question": "Is a stated cash reward funded and lawful?",
+      "why_it_matters": "An unfunded prize is a false promise, and a funded prize in a gambling context raises licensing questions.",
+      "answer": "Unknown and, as written, not authorised. No prize is funded or promised. The competition rewards in this repository are non-monetary only, and every monetary value field is blank.",
+      "information_held": "The competition rules, which deliberately award merit only.",
+      "information_missing": "A funding source, a legal review by jurisdiction, and a documented prize policy.",
+      "status": "Unknown",
+      "owner": "Owner decision",
+      "blocks": "R1–R4 monetary tiers",
+      "source_ids": ["REPO"]
+    },
+    {
+      "id": "Q09",
+      "question": "Which of the eight strategies should be pursued first?",
+      "why_it_matters": "Effort is finite; the choice should follow evidence, not enthusiasm.",
+      "answer": "Partly answered. On current evidence the availability overlay (S03) and the replacement chain (S04) are closest to the owner's stated interest and have official, dated inputs. The combination strategies (S06–S08) cannot be started at all without a leg-level archive, and the economic strategies cannot be priced.",
+      "information_held": "Eight declared hypotheses with inputs, tests and kill conditions.",
+      "information_missing": "A price archive, an injury-report archive and a per-player usage sample.",
+      "status": "Partly answered",
+      "owner": "Owner decision",
+      "blocks": "Roadmap",
+      "source_ids": ["NFL-INJURY-W10-2026", "NFL-TERMS", "REPO"]
+    },
+    {
+      "id": "Q10",
+      "question": "How should a backup replacement be scored so that luck does not decide it?",
+      "why_it_matters": "Replacement performance is a small, noisy sample; a single big game can dominate a naive ranking.",
+      "answer": "Partly answered. The mechanism is specified: rank on a lower confidence bound, require a declared trial count, and require a frozen forward period. It is not implemented against real data because there is no multi-week sample yet.",
+      "information_held": "The scoring rules in the competition ledger.",
+      "information_missing": "Several weeks of archived reports joined to results and usage.",
+      "status": "Partly answered",
+      "owner": "Research",
+      "blocks": "Division D-D ranking",
+      "source_ids": ["REPO"]
+    },
+    {
+      "id": "Q11",
+      "question": "Is the repository's own description accurate?",
+      "why_it_matters": "A verification project whose summary numbers are stale has no standing to verify anything else.",
+      "answer": "No. The root README quotes row and page counts from an earlier build, the committed static-check evidence records 36 pages and 541 rows against a current 54 pages and 738 rows, and the shared chrome stamps a snapshot date of 03 Nov 2026 on pages holding 06 Nov 2026 rental content.",
+      "information_held": "The current build output, which prints the true counts on every run.",
+      "information_missing": "Nothing factual; the fix is a regeneration step owned by the shared-file owner.",
+      "status": "Answered",
+      "owner": "Integration",
+      "blocks": "Nothing, but it undermines trust",
+      "source_ids": ["REPO"]
+    },
+    {
+      "id": "Q12",
+      "question": "What would make this project stop?",
+      "why_it_matters": "A research programme with no stop condition will keep generating plausible-looking tables forever.",
+      "answer": "Answered. Three stop conditions are declared: no written source permission for the intended use; no price archive after a defined research window; or a full forward period in which no candidate beats its naive baseline. Any one of the three ends the project rather than extending it.",
+      "information_held": "The three conditions, written here before a result exists.",
+      "information_missing": "The owner's decision to enforce them.",
+      "status": "Answered",
+      "owner": "Owner decision",
+      "blocks": "Nothing",
+      "source_ids": ["REPO"]
+    }
+  ]
+}

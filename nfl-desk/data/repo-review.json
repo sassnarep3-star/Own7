@@ -1,0 +1,207 @@
+{
+ "read_date": "2026-11-12",
+ "base_commit": "a989d67d9155b43ee2b93c39cbfdde54d8dd0b09",
+ "note": "Line-by-line review of the repository as inherited at base commit a989d67d9155b43ee2b93c39cbfdde54d8dd0b09. Each row states what was checked, what was run or read, and the disposition. Nothing here was repaired by this session: those files belong to other scopes. Counts that later grew because this session added an NFL sub-site are NOT silently back-filled; where a number has moved, the row says which state it was measured in.",
+ "checks": [
+  {
+   "id": "R01",
+   "area": "Unit tests",
+   "claim_checked": "The test suites pass on a clean checkout.",
+   "method": "Ran python -m unittest discover -s tests, scripts/test_research.py, market-evidence/test_build.py and rental/test_build.py.",
+   "result": "62 + 5 + 8 + 6 = 81 tests pass at the inherited state, zero failures, zero skips. This session's own suite adds 33 more (114 total), and CI now runs it.",
+   "disposition": "Verified",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R02",
+   "area": "Site integrity",
+   "claim_checked": "Every page builds, every internal link resolves, every table row carries a registered HTTPS official source, and every blank cell is genuinely empty.",
+   "method": "Ran scripts/check_site.py, which also performs a deterministic rebuild and byte-compares every generated file.",
+   "result": "Passed at the inherited state: 25 canonical pages, 20 legacy redirects, 9 auxiliary pages, 54 HTML files, 738 table body rows, 1,148 internal references, 65 registered sources, rebuild byte-identical. Re-run after this session's NFL sub-site was added, the same check passes at 25 canonical, 20 redirects, 18 auxiliary, 63 HTML files, 1,148 body rows, 1,600 internal references and 81 registered sources. Both states pass with no errors; the first column here is the inherited one so the row stays comparable with the rest of the review.",
+   "disposition": "Verified",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R03",
+   "area": "README summary metrics",
+   "claim_checked": "The README's stated inventory matches the repository.",
+   "method": "Read README.md and compared each stated number with a fresh measurement.",
+   "result": "Discrepancy. The README still quotes '36 HTML paths', '541 source-linked table rows', '75 Python tests' and '18 open flags' from an earlier integration. Measured at the inherited state: 54 HTML files, 738 table rows, 81 tests, 22 open review flags in research/catalog.json. The '107 checked official snapshot rows' figure does still match (30 + 15 + 30 + 32 = 107).",
+   "disposition": "Irregular",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R04",
+   "area": "Committed audit evidence",
+   "claim_checked": "research/audit/static-checks.json describes the current site.",
+   "method": "Read the file and compared it with a fresh check_site.py run.",
+   "result": "Stale. The committed artefact records 15 canonical pages, 36 recursive pages and 541 table rows; the inherited run reports 25, 54 and 738. The file is only rewritten when check_site.py is run with --report, which CI does not do, so it cannot refresh itself.",
+   "disposition": "Irregular",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R05",
+   "area": "Snapshot date stamp",
+   "claim_checked": "The date shown in the page header is an accurate snapshot date for the page it appears on.",
+   "method": "Read the rendered header on a rental page and compared with the rental dataset's own check dates.",
+   "result": "Discrepancy. Every page shares one header stamp reading 'SNAPSHOT CHECKED 03 Nov 2026', including rental pages whose data was read on 2026-11-06. The stamp is hard-coded in the shared page template, so it is right for the NBA data and wrong for the rental data.",
+   "disposition": "Irregular",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R06",
+   "area": "HTML inventory versus manifest",
+   "claim_checked": "Every HTML file on disk is managed by the build manifest.",
+   "method": "Compared find output with research/site-manifest.json, and read check_site.py's manifest comparison.",
+   "result": "Consistent at the inherited state. 54 HTML files on disk and 54 manifest entries; the checker fails if the two sets differ. findings.html is present in the manifest as a generated redirect. After this session's additions the same check passes at 63 files and 63 entries.",
+   "disposition": "Verified",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R07",
+   "area": "Repository licence",
+   "claim_checked": "A licence exists that permits reuse of the repository's contents.",
+   "method": "Looked for LICENSE/LICENSE.md at the repository root and read the README's licensing statement.",
+   "result": "No licence file exists. The README states that no licence was inferred or granted and that third-party source terms still apply. That statement is accurate about the repository, and it is a real limitation for anyone who wanted to reuse the code.",
+   "disposition": "Verified",
+   "source_ids": [
+    "REPO",
+    "NFL-TERMS"
+   ]
+  },
+  {
+   "id": "R08",
+   "area": "Source-rights guard",
+   "claim_checked": "The research pipeline cannot silently enable betting-price release or bulk collection.",
+   "method": "Read research/protocol.json source_rights flags and the corresponding check in scripts/check_site.py, then confirmed the checker fails if either flag is true.",
+   "result": "Consistent. Both switches are false, and validate_data() raises an error if either is set. The guard is enforced by code rather than by prose.",
+   "disposition": "Verified",
+   "source_ids": [
+    "REPO",
+    "NFL-TERMS"
+   ]
+  },
+  {
+   "id": "R09",
+   "area": "Blank-cell contract",
+   "claim_checked": "Unknown values are empty rather than zero, dash or 'N/A'.",
+   "method": "Read the table renderer's blank branch, the browser test's data-empty assertion, and the parser check that a data-empty cell contains no text.",
+   "result": "Consistent. Unknown cells render as an empty td with data-empty=true, the browser suite asserts they contain no text, and the checker rejects any non-empty 'blank' cell.",
+   "disposition": "Verified",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R10",
+   "area": "Coordinated parallel sessions",
+   "claim_checked": "The coordination board reflects the current state of work rather than a historical one.",
+   "method": "Read COORDINATION.md and listed the remote branches and their latest commits.",
+   "result": "Irregular. The board contains 18 rows marked 'in progress' and 3 marked 'unclaimed' from earlier sessions whose branches were merged days ago, plus at least five separate 2026-11-12 NFL claims in different scopes. A reader cannot tell from the board alone which scopes are live.",
+   "disposition": "Irregular",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R11",
+   "area": "Historical claim wording",
+   "claim_checked": "Earlier sessions' statements about exclusivity do not contradict each other silently.",
+   "method": "Compared the exclusivity statements in the 7a0b6563, e09e45e6, a934e8c3 and 29e51225 boards against each other.",
+   "result": "Contradictory as written: several sessions each asserted exclusive ownership of the same overlapping files at the same time. The repository already documents this and says not to treat it as a resolution of ownership.",
+   "disposition": "Irregular",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R12",
+   "area": "NBA share of the site",
+   "claim_checked": "The published NBA research is clearly non-actionable.",
+   "method": "Read research/results.json leaderboard and cash_rewards fields and the checker assertions on them.",
+   "result": "Consistent. leaderboard is an empty list, cash_rewards is null, eight strategies are blocked, and the checker fails if a leaderboard row or a cash figure appears. The site does not present an executable NBA edge.",
+   "disposition": "Verified",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R13",
+   "area": "Rental privacy",
+   "claim_checked": "Tenant identifiers are anonymised throughout the repository.",
+   "method": "Read rental/data.json and the rental test that enforces placeholder labels.",
+   "result": "Consistent with its stated policy: placeholder labels (Tenant U1-A and similar) are used, and a test enforces that no personal initials appear. Not independently audited against the original documents, which this session does not hold.",
+   "disposition": "Verified",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R14",
+   "area": "Cross-domain scope drift",
+   "claim_checked": "The repository contains only what its title describes.",
+   "method": "Read the README, the navigation manifest and the file tree.",
+   "result": "Irregular but disclosed. The repository is titled as an NBA research lab and now also carries a San Francisco rent-increase analysis in three separate implementations (rent-*.html, rental*.html and a rental/ sub-site). The duplication is intentional per the coordination board, but a visitor landing on the root sees an NBA dashboard with no signal that half the repository is housing law.",
+   "disposition": "Irregular",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R15",
+   "area": "CI coverage",
+   "claim_checked": "CI verifies the same things a local run does, including generated-file freshness.",
+   "method": "Read .github/workflows/check.yml and compared its steps with the local test and check commands.",
+   "result": "Mostly consistent: CI runs the unit tests, the site checker (without --report), the snapshot verifier, the correlation and market-evidence builds, the rental build, a git diff --exit-code freshness gate, JavaScript syntax and the full browser suite. One coverage gap remains as inherited: because CI omits --report, research/audit/static-checks.json is never refreshed, which is how R04 survived. This session added the NFL desk's own test and byte-identity steps to CI, but did not change the NBA reporting step because that file belongs to another scope.",
+   "disposition": "Irregular",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R16",
+   "area": "Open pull request",
+   "claim_checked": "No stale open pull request is left describing work already merged.",
+   "method": "Listed pull requests and their states.",
+   "result": "PR #17 is open and reports CONFLICTING against main. It records a deployment and automation step from 2026-11-04, which the later merges appear to have superseded. Leaving it open makes the repository's own history ambiguous.",
+   "disposition": "Irregular",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R17",
+   "area": "Official-source discipline",
+   "claim_checked": "Every table row in the existing site links to an official, registered source.",
+   "method": "Relied on check_site.py's row contract and spot-read the allowlist of registered hosts.",
+   "result": "Consistent. Each body row must carry a data-source-id present in the registry, and every registry entry's host must match an exact allowlist entry. No wildcard hosts are accepted. This verifies provenance, not factual truth.",
+   "disposition": "Verified",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "R18",
+   "area": "Documentation of limits",
+   "claim_checked": "The site states its own limitations rather than burying them.",
+   "method": "Read the Flagged for Review page, the methodology page and the README's limits section.",
+   "result": "Consistent. 22 open review flags are published with sources and blank unverified value fields, and the README states plainly that no edge, line, ROI, CLV or prize is claimed.",
+   "disposition": "Verified",
+   "source_ids": [
+    "REPO"
+   ]
+  }
+ ]
+}

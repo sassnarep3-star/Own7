@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OWN7 · NFL Decision Desk</title>
+<style>
+:root{
+  --ink:#12211f;--muted:#5c6b68;--line:#dfe5e2;--bg:#f6f7f6;--paper:#fff;
+  --green:#0f5f4a;--green-soft:#eaf3ef;--amber:#8a5a12;--amber-soft:#fdf4e6;
+  --red:#8d2f2f;--red-soft:#fbeeee;--blue:#2c5478;--blue-soft:#eef3f8;
+  --radius:10px;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--green);text-decoration:underline;text-decoration-color:rgba(15,95,74,.35);text-underline-offset:2px}
+a:hover{text-decoration-color:var(--green);text-underline-offset:3px}
+:focus-visible{outline:3px solid #2f7ad1;outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#fff;padding:10px 16px;z-index:100;
+  border:2px solid var(--green);border-radius:0 0 var(--radius) 0}
+.skip:focus{left:0}
+
+/* ---------- shell ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+header.top{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:40}
+.top-inner{display:flex;align-items:center;gap:22px;min-height:62px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.2px;color:var(--ink)}
+.brand .mark{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;
+  background:var(--green);color:#fff;font-size:14px}
+.brand small{display:block;font-size:10px;letter-spacing:.14em;color:var(--muted);font-weight:600}
+.back{font-size:12.5px;color:var(--muted);margin-left:14px;padding-left:15px;border-left:1px solid var(--line);text-decoration:none;white-space:nowrap}
+.back:hover{color:var(--green)}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:7px 11px;border-radius:8px;font-size:13.5px;font-weight:550;color:var(--muted)}
+nav.main a:hover{background:var(--green-soft);color:var(--green);text-decoration:none}
+nav.main a[aria-current="page"]{background:var(--green-soft);color:var(--green);font-weight:650}
+
+main{padding:34px 0 60px}
+h1{font-size:30px;line-height:1.22;letter-spacing:-.7px;margin:0 0 10px;font-weight:680}
+h2{font-size:19px;line-height:1.35;letter-spacing:-.25px;margin:0 0 6px;font-weight:660}
+h3{font-size:15px;margin:0 0 4px;font-weight:660}
+p{margin:0 0 14px;color:var(--muted);max-width:88ch}
+p.lead{font-size:16px;color:#3c4b48;max-width:80ch}
+.eyebrow{font-size:10.5px;letter-spacing:.16em;font-weight:700;color:var(--green);
+  text-transform:uppercase;margin-bottom:8px}
+
+/* ---------- blocks ---------- */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;margin-bottom:18px}
+.card h2{margin-top:0}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.g6{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(168px,1fr))}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px}
+.stat .k{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.stat .v{font-size:26px;font-weight:680;letter-spacing:-.8px;margin:5px 0 2px;font-variant-numeric:tabular-nums}
+.stat .n{font-size:12px;color:var(--muted)}
+.stat.blank .v{color:#5c6b68;font-weight:500}
+.stat .k{min-height:2.4em}
+
+.notice{display:flex;gap:14px;border:1px solid var(--line);border-left:3px solid var(--amber);
+  background:var(--amber-soft);border-radius:var(--radius);padding:15px 18px;margin-bottom:20px}
+.notice.stop{border-left-color:var(--red);background:var(--red-soft)}
+.notice.ok{border-left-color:var(--green);background:var(--green-soft)}
+.notice .body p{margin:2px 0 0;color:#4a5854;font-size:13.5px}
+.notice strong{font-size:14px}
+
+.badge{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:20px;
+  font-size:11.5px;font-weight:650;white-space:nowrap;border:1px solid transparent}
+.badge.good{background:var(--green-soft);color:var(--green);border-color:#cbe2d8}
+.badge.warn{background:var(--amber-soft);color:var(--amber);border-color:#f0dcb8}
+.badge.stop{background:var(--red-soft);color:var(--red);border-color:#efcaca}
+.badge.info{background:var(--blue-soft);color:var(--blue);border-color:#cfdeea}
+.badge.mute{background:#f0f2f1;color:var(--muted);border-color:var(--line)}
+.dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+
+/* ---------- tables ---------- */
+.table-wrap{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  margin-bottom:22px;overflow:hidden}
+.table-head{display:flex;gap:14px;align-items:baseline;padding:14px 18px 10px;flex-wrap:wrap;
+  border-bottom:1px solid var(--line)}
+.table-head h2{margin:0;font-size:15.5px}
+.table-head .meta{font-size:12px;color:var(--muted);margin-left:auto}
+.scroll{overflow-x:auto}
+.table-wrap.narrow{max-width:1000px}
+.table-wrap{max-width:1180px}
+table{width:100%}
+td,th{overflow-wrap:anywhere}
+.table-wrap.narrow .scroll table{table-layout:auto}
+td .cv{display:block}
+table{border-collapse:collapse;width:100%;font-size:13px}
+caption{text-align:left;padding:0 18px 10px;font-size:12px;color:var(--muted)}
+th,td{text-align:left;padding:7px 11px;border-bottom:1px solid #eef1ef;vertical-align:top}
+thead th{position:sticky;top:0;background:#f9faf9;font-size:11px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);font-weight:700;white-space:nowrap;
+  border-bottom:1px solid var(--line)}
+tbody tr:hover{background:#fafbfa}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:12.5px}
+td.blank{background:repeating-linear-gradient(135deg,#f7f8f7,#f7f8f7 5px,#f1f3f1 5px,#f1f3f1 10px);min-width:44px}
+td.chips{white-space:normal;min-width:180px}
+td.chips .badge{margin:1px 3px 1px 0}
+td .id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--green);font-weight:700;white-space:nowrap}
+td .id a,a.id{text-decoration:none}
+td .sub{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
+.refs{font-size:11.5px;white-space:normal;display:inline;overflow-wrap:anywhere}
+.refs a{margin-right:6px}
+.table-note{padding:9px 18px;font-size:12px;color:var(--muted);background:#fbfcfb;
+  border-top:1px solid var(--line);margin:0}
+.empty{padding:16px 18px;color:var(--muted);font-size:13px}
+
+/* ---------- misc ---------- */
+.list{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px}
+.list li{margin-bottom:6px}
+.list li strong{color:var(--ink)}
+.kv{display:grid;grid-template-columns:180px minmax(0,1fr);gap:7px 20px;font-size:13.5px;margin:0}
+.kv dd{margin:0;overflow-wrap:anywhere}
+@media(max-width:560px){.kv{grid-template-columns:1fr;gap:2px 0}.kv dt{margin-top:9px;color:var(--muted)}.kv dt:first-child{margin-top:0}}
+@media(max-width:560px){.table-wrap{max-width:100%}.card,.notice{padding:16px}}
+.kv dd{color:#3f4d49}
+.kv dt{color:var(--muted);font-weight:600}
+.kv dd{margin:0}
+code{font-family:var(--mono);font-size:12px;background:#f0f3f1;padding:1px 5px;border-radius:4px}
+footer{border-top:1px solid var(--line);padding:22px 0 44px;font-size:12.5px;color:var(--muted);
+  display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
+footer a{color:var(--muted);text-decoration:underline}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap top-inner">
+<a class="brand" href="index.html"><span class="mark" aria-hidden="true">7</span>
+<span>OWN7<small>NFL DECISION DESK</small></span></a>
+<a class="back" href="../index.html">← OWN7 research home</a>
+<nav class="main" aria-label="Sections">
+<a href="index.html">Overview</a>
+<a href="summary.html" aria-current="page">Executive summary</a>
+<a href="decisions.html">Decisions</a>
+<a href="suggestions.html">Suggestions</a>
+<a href="availability.html">Availability</a>
+<a href="strategies.html">Strategies</a>
+<a href="competition.html">Competition</a>
+<a href="evidence.html">Evidence</a>
+<a href="review.html">Flagged</a>
+</nav>
+</div></header>
+<main id="main"><div class="wrap">
+<div class="eyebrow">Executive summary · read date 12 November 2026</div><h1>What is verified, what is blocked, and what you have to decide</h1><p class="lead">This page is the short version. It states the few things that survived checking, the things that did not, and the decisions that are yours rather than mine.</p><section class="card"><div class=eyebrow>Verified</div><h2>1 · The dataset is real, small and re-checkable</h2><p>Thirty-two clubs of 2026 regular-season standings, thirty-two clubs of team passing totals, and 276 player rows from the official Week 10 injury report. Every file is committed as a plain text snapshot with a SHA-256 hash, and the build refuses to publish a number that no longer agrees with its own file. Win percentage is recomputed from wins-losses-ties, net points from points for minus points against, and completion percentage from completions over attempts on every club on every run. See <a href="evidence.html">Evidence</a>.</p><p>Three things that looked like data were rejected rather than repaired: the standings capture has no header row, the passing capture has no header row, and the displayed yards-per-attempt figure cannot be reproduced from that same table on four of thirty-two rows. Those three gaps are published as flags DF-03 and DF-04 instead of being filled in.</p></section><section class="card"><div class=eyebrow>Blocked</div><h2>2 · Everything economic is blank, and that is the finding</h2><p>There is no price, no line, no hold, no return and no closing line anywhere in this desk. NFL.com publishes no odds, no licensed feed is connected, and the site's terms grant no gambling-related use. Rather than display a fair-odds number that looks executable, every price field is empty.</p><p>The consequence is blunt: eight candidate strategies were written down before any of them was scored, and all eight are blocked. A strategy cannot be called skilful when its return cannot be computed at all. See <a href="strategies.html">Strategies</a> and <a href="review.html">Flagged for review</a>.</p></section><section class="card"><div class=eyebrow>Partly answered</div><h2>3 · The availability picture is honest about its coverage</h2><p>The official Week 10 report lists 276 players across 26 clubs; two clubs rendered the literal note 'No Injuries Reported' and 4 were on bye, and those states are shown separately so that a bye week never reads as a healthy team.</p><p>The backup question, which is the one that matters most to you, is answered only where a club's own depth chart is held: three clubs, 69 first-string entries, joined to the report by name. For the other twenty-nine clubs the replacement cell is empty. A club depth chart is an unofficial coaching estimate, so even the three charts are a statement about a web page on 12 November, not about a game plan. See <a href="availability.html">Availability</a>.</p></section><section class="card"><div class=eyebrow>Measured</div><h2>4 · The only measured dependence is at club level</h2><p>Eight correlation pairs across 32 club-seasons, each with a permutation p-value from twenty thousand reshuffles. The strongest relationship is between net points and win percentage (+0.869); the weakest is between points for and points against (-0.082), which is what you would expect if scoring and conceding are largely separate skills.</p><p>None of this is a bet-leg correlation. Reusing a club-season coefficient as though it were a same-game leg correlation is precisely the error that gate G05 exists to stop, and it is not done here. See <a href="strategies.html#correlation">Correlation</a>.</p></section><section class="card"><div class=eyebrow>Decisions</div><h2>5 · What has to be decided, and by whom</h2><ul class="list"><li><strong>Source rights.</strong> The site's terms limit use to individual non-commercial purposes and prohibit systematic collection without written consent. Nothing beyond a bounded research snapshot can proceed until this is settled. Owner decision.</li><li><strong>Price source.</strong> Without a licensed, timestamped price archive there is no economic question to answer and no reward can be earned. Owner decision.</li><li><strong>Injury archive.</strong> One page state cannot establish what was knowable before kickoff. A dated capture is the single highest-value addition available from an official source. Research decision, subject to the rights question.</li><li><strong>Depth-chart coverage.</strong> Three clubs is a demonstration, not a system. Extending coverage club by club is mechanical work with a known cost.</li><li><strong>Stop conditions.</strong> Three are declared: no permission, no price archive within a defined window, or a full forward period with no candidate beating its naive baseline. Any one of them ends the project rather than extending it.</li></ul></section><section class="card"><div class=eyebrow>Boundaries</div><h2>6 · What was deliberately not done</h2><ul class="list"><li>No number was inferred from a page layout, and no column was guessed from position.</li><li>No price, hold, edge or return was estimated or simulated for display.</li><li>No division rank was published, because ranking a division needs tie-breakers that are not in the data held.</li><li>No club was credited with a healthy roster because it was absent from the report.</li><li>No cash reward was promised, funded or implied.</li><li>No earlier session's work was overwritten; the repository review is published as disagreements rather than silent edits.</li></ul></section><p class="table-note">Reproduce every figure on this page: <code>python3 nfl-desk/build.py --check</code> then <code>python3 nfl-desk/test_build.py</code>.</p>
+<footer>
+<div><strong>OWN7 NFL Decision Desk</strong><br>Non-commercial research. Not affiliated with or endorsed by the NFL.<br>
+No wagers are placed, offered or facilitated here.</div>
+<div><a href="https://github.com/sassnarep3-star/Own7">Repository</a> ·
+<a href="review.html">Flagged for review</a> ·
+<a href="evidence.html">Sources</a><br>Snapshot read 12 Nov 2026 · frozen, not a live feed</div>
+</footer>
+</div></main>
+</body>
+</html>

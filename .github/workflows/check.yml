@@ -21,6 +21,8 @@ jobs:
           python-version: '3.11'
       - name: Test statistical math, chronology, rights and eligibility
         run: python -m unittest discover -s tests -v
+      - name: NFL decision desk snapshot integrity and page contract
+        run: python nfl-desk/test_build.py -v
       - name: Reproduce research, sources, blanks, all links and generated pages
         run: python scripts/check_site.py
       - name: Verify retained snapshots and parallel source contributions
@@ -33,6 +35,7 @@ jobs:
           python market-evidence/test_build.py -v
           python rental/build.py --check
           python rental/test_build.py -v
+          python nfl-desk/build.py --check
       - name: Committed artifacts must already be current
         run: git diff --exit-code
   browser:
