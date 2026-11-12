@@ -13,6 +13,8 @@ import csv
 import hashlib
 import html
 import json
+import math
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -34,6 +36,7 @@ PAGES = [
     "questions.html",
     "sources.html",
     "review.html",
+    "independent-verification.html",
     "methodology.html",
 ]
 
@@ -52,6 +55,7 @@ NAV = [
     ("questions.html", "Questions & answers"),
     ("sources.html", "Sources"),
     ("review.html", "Flagged for Review"),
+    ("independent-verification.html", "Independent verification"),
     ("methodology.html", "Methodology"),
 ]
 
@@ -130,7 +134,7 @@ def page(slug, title, lead, body):
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
 <div class="topline">
-<a class="brand" href="index.html">OWN7 &middot; NFL RESEARCH LAB</a>
+<a class="brand" href="index.html">OWN7 · NFL RESEARCH LAB</a>
 <nav aria-label="NFL research sections">{nav}<a href="../index.html">Main site &#8599;</a></nav>
 </div>
 </header>
@@ -143,7 +147,7 @@ def page(slug, title, lead, body):
 {body}
 </main>
 <footer class="site-footer">
-<p><strong>OWN7</strong> / independent research &middot; checked 2026-11-12 &middot; not legal advice &middot; <a href="review.html">Flagged for Review</a> &middot; <a href="sources.html">Sources</a> &middot; <a href="../index.html">Main site</a></p>
+<p><strong>OWN7</strong> / independent research · checked 2026-11-12 · not legal advice · <a href="review.html">Flagged for Review</a> · <a href="sources.html">Sources</a> · <a href="../index.html">Main site</a></p>
 </footer>
 </body>
 </html>
@@ -179,7 +183,7 @@ def metrics(urls):
     ]
     return '<div class="metric-grid">' + "".join(
         f'<div class="metric"><div class="metric-label">{esc(a)}</div><div class="metric-value">{esc(b)}</div>'
-        f'<p class="metric-note">{esc(c)} &middot; <a href="{esc(urls[s])}" target="_blank" rel="noopener noreferrer">{esc(s)} &#8599;</a></p></div>'
+        f'<p class="metric-note">{esc(c)} · <a href="{esc(urls[s])}" target="_blank" rel="noopener noreferrer">{esc(s)} &#8599;</a></p></div>'
         for a, b, c, s in items
     ) + "</div>"
 
@@ -335,6 +339,120 @@ def render():
         + table("flags", "Flagged for Review", [("ID", "id"), ("Item", "item"), ("Finding", "finding"), ("Status", "status")], catalog["flags"], urls)
     )
     pages["review.html"] = page("review.html", "Flagged for Review", "Unverified values, confirmed restrictions and corrected irregularities — published plainly for review.", rev_body)
+
+    # Independent verification: a second implementation re-derives the published numbers.
+    import subprocess
+    verification = []
+    verify_status = ""
+    try:
+        proc = subprocess.run([sys.executable, str(ROOT / "verify_independent.py")],
+                              capture_output=True, text=True, timeout=120, cwd=REPO)
+        verify_status = "pass" if proc.returncode == 0 else "fail"
+        verification = [ln for ln in proc.stdout.splitlines() if ln.strip()]
+    except Exception as exc:  # pragma: no cover - defensive
+        verify_status = "unavailable"
+        verification = [str(exc)]
+
+    # Recompute here too, so the page can show published vs recomputed side by side.
+    def _pear(xs, ys):
+        n = len(xs)
+        mx, my = sum(xs) / n, sum(ys) / n
+        dx = math.sqrt(sum((a - mx) ** 2 for a in xs))
+        dy = math.sqrt(sum((b - my) ** 2 for b in ys))
+        return sum((a - mx) * (b - my) for a, b in zip(xs, ys)) / (dx * dy)
+
+    def _ranks(vals):
+        order = sorted(range(len(vals)), key=lambda i: vals[i])
+        out = [0.0] * len(vals)
+        i = 0
+        while i < len(order):
+            j = i
+            while j + 1 < len(order) and vals[order[j + 1]] == vals[order[i]]:
+                j += 1
+            for k in range(i, j + 1):
+                out[order[k]] = (i + j) / 2 + 1
+            i = j + 1
+        return out
+
+    series = {
+        "W vs NetPts (standings)": ([float(r["W"]) for r in standings], [float(r["NetPts"]) for r in standings]),
+        "PF vs PA (standings)": ([float(r["PF"]) for r in standings], [float(r["PA"]) for r in standings]),
+        "PCT vs NetPts (standings)": ([float(r["PCT"]) for r in standings], [float(r["NetPts"]) for r in standings]),
+        "Pass Yds vs TD (QBs)": ([float(r["PassYds"]) for r in passing], [float(r["TD"]) for r in passing]),
+        "Pass Yds vs INT (QBs)": ([float(r["PassYds"]) for r in passing], [float(r["INT"]) for r in passing]),
+        "Yds/Att vs Rate (QBs)": ([float(r["YdsPerAtt"]) for r in passing], [float(r["Rate"]) for r in passing]),
+        "Cmp% vs Rate (QBs)": ([float(r["CmpPct"]) for r in passing], [float(r["Rate"]) for r in passing]),
+    }
+    verified_rows = []
+    for item in results["correlations"]:
+        if item["pearson"] is None:
+            verified_rows.append({"id": item["pair"], "pair": item["pair"], "n": "",
+                                  "published": "", "recomputed": "", "status": "Blank by design",
+                                  "source_ids": item["source_ids"]})
+            continue
+        xs, ys = series[item["pair"]]
+        p = _pear(xs, ys)
+        s_ = _pear(_ranks(xs), _ranks(ys))
+        ok = abs(p - item["pearson"]) < 1e-6 and abs(s_ - item["spearman"]) < 1e-6
+        verified_rows.append({
+            "id": item["pair"], "pair": item["pair"], "n": str(len(xs)),
+            "published": f"{item['pearson']:.6f} · {item['spearman']:.6f}",
+            "recomputed": f"{p:.6f} · {s_:.6f}",
+            "status": "Reproduced" if ok else "Mismatch",
+            "source_ids": item["source_ids"]})
+
+    ypa_issue_rows = []
+    for r in passing:
+        att, yds = float(r["Att"]), float(r["PassYds"])
+        exact = yds / att
+        published = float(r["YdsPerAtt"])
+        if abs(exact - published) > 0.05 + 1e-9:
+            ypa_issue_rows.append({
+                "id": r["Player"], "player": r["Player"],
+                "printed": f"{yds:.0f} yd / {att:.0f} att = {published:.1f}",
+                "actual": f"{exact:.4f}",
+                "source_ids": ["NFL-PASSING"]})
+
+    notice_class = "" if verify_status == "pass" else " warning"
+    verified_status = esc(verify_status)
+    ind_body = (
+        '<div class="notice' + notice_class + '">'
+        '<strong>A second, independent implementation re-derives every published number.</strong>'
+        '<p>Status: <code>' + verified_status + '</code>. Run <code>python nfl/verify_independent.py</code> to repeat it. '
+        'Reproduction shows that a published number follows from the published inputs. It does not show that the '
+        'inputs match the live official pages, which is a separate dated act.</p></div>'
+        '<section><h2>What was recomputed, and how</h2>'
+        '<p><code>nfl/verify_independent.py</code> shares no code with the pipeline that produced these figures. '
+        'It reimplements Pearson and Spearman correlation, the league standings identities and the NFL passer-rating '
+        'formula from the committed CSV snapshots, so a mistake in one implementation cannot silently confirm itself.</p>'
+        '<pre class="console" role="region" aria-label="Verifier output" tabindex="0">'
+        + esc(chr(10).join(verification)) + '</pre></div></section>'
+        + table("independent-correlations", "Published versus independently recomputed correlations (Pearson / Spearman)",
+                [("Pair", "pair"), ("n", "n"), ("Published r · rho", "published"),
+                 ("Recomputed r · rho", "recomputed"), ("Verdict", "status")],
+                verified_rows, urls)
+        + '<p class="table-note">A blank row means the coefficient is intentionally absent, not zero. '
+          'Blank-by-design rows are listed so that absence is visible rather than implied.</p>'
+        + '<section><h2>A real disagreement inside the official table</h2>'
+          '<p>Two published yards-per-attempt values cannot be reached by rounding from the same row\'s own '
+          'yards and attempts. They were re-fetched on 2026-11-12 and the official page still prints them, so this '
+          'is a publisher-side disagreement between columns, not a transcription error. It is recorded as '
+          'irregularity NF12 on the <a href="review.html">Flagged for Review</a> page.</p></section>'
+        + table("independent-ypa", "Rows where the printed rate disagrees with the row own inputs",
+                [("Player", "player"), ("Printed", "printed"), ("Exact from inputs", "actual")],
+                ypa_issue_rows, urls)
+        + '<section><h2>How much this matters</h2>'
+          '<p>The Yds/Att versus Rate coefficient is 0.829085 on the column as printed and 0.831578 if exact '
+          'yards per attempt is used instead, a difference of about 0.0025. The published figure is internally '
+          'consistent with the column it names, so it stands as a descriptive statistic, but the exposure is '
+          'published rather than hidden. No conclusion in this project depends on that coefficient, because no '
+          'strategy has cleared a single evaluation gate.</p></section>'
+    )
+    pages["independent-verification.html"] = page(
+        "independent-verification.html", "Independent verification",
+        "A second implementation re-derives the published numbers from the committed snapshots and reports what does not reconcile.",
+        ind_body)
+
 
     # Methodology
     meth_body = (

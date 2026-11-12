@@ -51,5 +51,49 @@ class NflEngineTests(unittest.TestCase):
         self.assertAlmostEqual(measured[0]['pearson'], 0.8463, places=4)
 
 
+class NflIndependentVerificationTests(unittest.TestCase):
+    """The independent verifier must agree, and must fail closed if it cannot."""
+
+    def test_published_correlations_reproduce_independently(self):
+        import subprocess, sys
+        from nfl_lab.engine import ROOT
+        proc = subprocess.run([sys.executable, str(ROOT / 'nfl' / 'verify_independent.py')],
+                              capture_output=True, text=True, cwd=ROOT)
+        self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+        self.assertIn('7/7 reproduced', proc.stdout)
+
+    def test_verifier_detects_a_tampered_coefficient(self):
+        from nfl.verify_independent import check_correlations, pearson, spearman
+        import json
+        standings = engine.load_csv('data/nfl-standings-2026.csv')
+        passing = engine.load_csv('data/nfl-players-passing-2026.csv')
+        published = json.loads((engine.ROOT / 'research' / 'nfl-results.json').read_text(encoding='utf-8'))
+        errors, _ = check_correlations(standings, passing, published)
+        self.assertEqual(errors, [])
+
+        tampered = copy.deepcopy(published)
+        tampered['correlations'][0]['pearson'] = 0.5
+        errors, checked = check_correlations(standings, passing, tampered)
+        self.assertTrue(errors, 'a tampered coefficient must be reported')
+        self.assertTrue(any(c['verdict'] == 'Mismatch' for c in checked))
+
+    def test_standings_identities_hold_for_every_club(self):
+        from nfl.verify_independent import check_standings
+        rows = engine.load_csv('data/nfl-standings-2026.csv')
+        errors, facts = check_standings(rows)
+        self.assertEqual(errors, [])
+        self.assertEqual(facts['rows'], 32)
+        self.assertEqual(facts['wins'], facts['losses'])
+        self.assertEqual(facts['pf'], facts['pa'])
+        self.assertEqual((facts['afc'], facts['nfc']), (16, 16))
+
+    def test_known_column_disagreement_is_recorded_not_hidden(self):
+        catalog = engine.load_json('research/nfl-catalog.json')
+        flags = {f['id']: f for f in catalog['flags']}
+        self.assertIn('NF12', flags)
+        self.assertEqual(flags['NF12']['source_ids'], ['NFL-PASSING'])
+        self.assertIsNone(flags['NF12']['unverified_value'])
+
+
 if __name__ == '__main__':
     unittest.main()
