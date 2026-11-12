@@ -369,3 +369,35 @@ Privacy: all personal information (tenant initials) is anonymized everywhere in 
 ### Merge note (arena/cab077aa-own7, 2026-11-06, second merge)
 - Merged origin/main again (PR #19, session arena/692da006-own7: root-level rental*.html pages + research/rental.json). No other session's work discarded; their nav group and pages retained, mine added as "Deep-dive sub-site" → rental/index.html.
 - research/sources.json unioned by ID across both sides; SOURCE_HOSTS in scripts/check_site.py unioned; generated artifacts regenerated deterministically.
+
+---
+
+## Session arena/a4e560bc-own7 — NFL lines origination + suggestions/questions + site (2026-11-12)
+
+Session ID: `session-arena-a4e560bc-own7`
+Branch: `arena/a4e560bc-own7` (fixed by Arena; sole active session on this branch as of this claim). Earlier boards above are historical and unchanged.
+
+Scope: NFL research lab addition (new `nfl/**` sub-site + canonical NFL pages via `scripts/build_site.py`), NFL data snapshots under `data/nfl-*` + `research/nfl*.json`, suggestions/questions ledgers, injury-tracking design, executive summary, verification, integration, PR/merge/Pages. No existing NBA content values are modified except additive navigation and source-registry appends. Never infer or fill in values; leave blank + flag as unverified if no official source confirms. Every table row carries an official source link.
+
+### Task board
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| N1 | Claim session + log board | in progress | session-arena-a4e560bc-own7 | COORDINATION.md | n/a | Committed + pushed immediately |
+| N2 | Official NFL source research (terms, stats, injury, glossary, schedule) | unclaimed | session-arena-a4e560bc-own7 | research/sources.json (append NFL IDs), docs/nfl-sources.md | nfl.com / official.nfl.com | Verify each URL + scope line by line via fetch_page; no hallucinations |
+| N3 | NFL data snapshots (verified rows only) | unclaimed | session-arena-a4e560bc-own7 | data/nfl-*.csv, research/evidence/nfl-*.csv, receipts | Official NFL tables | Blank + unverified where no official source confirms |
+| N4 | NFL strategies, correlations, gates, leaderboard | unclaimed | session-arena-a4e560bc-own7 | research/nfl-catalog.json, research/nfl-protocol.json, nfl_lab/** | Official methods + NFL inputs | Single/parlay/props; no invented lines/ROI/CLV |
+| N5 | Injury / backup tracking system (defense + offense deficiencies) | unclaimed | session-arena-a4e560bc-own7 | research/nfl-injuries.json, nfl pages | Official NFL injury reports | Design + blank data; no fake statuses |
+| N6 | Suggestions section + Questions/Information/Answers + missing-info plan | unclaimed | session-arena-a4e560bc-own7 | research/nfl-suggestions.json, research/nfl-questions.json | Project policy + official sources | Reviewable before any implementation decision |
+| N7 | NFL executive summary | unclaimed | session-arena-a4e560bc-own7 | docs/nfl-executive-summary.md, nfl executive page | All N2–N6 sources | Important details only; no edge claimed |
+| N8 | GitHub Pages site: landing + category subpages, tables | unclaimed | session-arena-a4e560bc-own7 | nfl/**, scripts/build_site.py, assets, js | Row-level source contract | Clean dashboard; sortable tables; analysis + findings |
+| N9 | Line-by-line verification + Flagged for Review | unclaimed | session-arena-a4e560bc-own7 | docs/nfl-verification.md, nfl flagged page | Official sources per row | Irregularities flagged; unverified blank |
+| N10 | Integration: build check, no broken links, tests | unclaimed | session-arena-a4e560bc-own7 | All | All task sources | Do not merge a broken site |
+| N11 | PR + merge + GitHub Pages deploy + record | unclaimed | session-arena-a4e560bc-own7 | main branch, GitHub Pages | COORDINATION.md | Record PR link + merge result here |
+
+### Rules for this session
+- Claim each task by updating status to `in progress`, commit + push immediately.
+- Never infer or fill in values; leave blank + flag as unverified if no official source confirms. Link the source.
+- Small, frequent commits; `git pull --rebase` before every push.
+- On conflict: stop, resolve without discarding the other session's work, log what happened.
+- Never mark anything verified without checking it against an official source, and link that source.
