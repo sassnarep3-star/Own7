@@ -129,6 +129,7 @@ def page(slug, title, lead, body):
 <meta name="description" content="OWN7 NFL research: source-linked observations, exploratory models, validation and transparent limitations. Checked 2026-11-12.">
 <title>{esc(title)} | NFL research</title>
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>

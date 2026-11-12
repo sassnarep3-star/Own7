@@ -1,56 +1,86 @@
-# Repository review — 12 November 2026 (NFL session `arena/20394b77-own7`)
+# Repository review — NFL conversion, 2026-11-12
 
-Scope: the repository as inherited at `a989d67`, plus this session's additions, plus the reconciliation with the concurrent NFL sub-site merged as PR #21/#23. Paths below refer to the final layout: the parent NFL research site at `nfl/**` (session `arena/a4e560bc-own7`) and this session's line-origination lab at `nfl/origination/**`. This is a **consistency and provenance review**, not a re-verification of inherited NBA or rental claims; those are out of scope and untouched.
+Session: `session-arena-a129b881-own7` · Branch `arena/a129b881-own7` · Base commit `a989d67`
 
-## 1. What the repository contained at session start
+This is a scoped review, not a blanket re-verification of every historical sentence in the
+repository. It records what was checked, how, what was found, and what remains open. Every
+finding below is reproducible from the commands listed at the end.
 
-- 150 tracked files, three coexisting programmes (NBA research, two overlapping SF-rental presentations, one market-evidence register), one generated static site with a single build script and a strict output contract.
-- No NFL data, page, source, test or workflow step existed: no tracked file path at `a989d67` contains `nfl`.
+## 1. Baseline state before this session's work
 
-## 2. Contract discovered and reused
+| Check | Result |
+|---|---|
+| Commits on `main` before this session | `a989d67` merge of PR #20 |
+| Tracked files | 150 |
+| Python tests | 62 passed |
+| `scripts/check_site.py` | passed: 25 canonical pages, 20 redirects, 54 HTML files, 738 sourced table rows, 65 registered sources |
+| Deterministic rebuild | byte-identical |
+| Open pull requests | #17 (a dated, unrelated NBA claims record) |
 
-`scripts/check_site.py` enforces: every HTML page registered in `research/site-manifest.json` with a matching SHA-256; every table body row carrying registered source IDs **and** a link to the registered URL; every blank cell genuinely empty; HTTPS only; no protocol-relative links; single `h1`/`main`; `lang="en"`; deterministic rebuild byte-identical. `scripts/build_site.py` regenerates all canonical pages plus auxiliary sub-sites and rewrites the manifest.
+The repository was internally consistent before any change here. Nothing in this review claims
+that earlier factual content was wrong; only that its own stated limits still apply.
 
-The line-origination lab was built to that contract rather than beside it, so any violation fails the whole site check.
+## 2. What was verified in this session
 
-## 3. Line-by-line checks performed
+| Item | Scope verified | Source | Result |
+|---|---|---|---|
+| NFL division standings | All 32 club rows, 16 value cells each | https://www.nfl.com/standings/ | 32/32 parsed; PCT, NET PTS, HOME+ROAD and league W/L all reconcile |
+| NFL Week 10 injury listing | Complete Thursday game section, 20 players | https://www.nfl.com/injuries/ | 20/20 parsed; practice and game statuses all inside the official categories |
+| NFL Week 10 fixtures | 14 fixtures, 4 byes | https://www.nfl.com/schedules/ | 28 clubs in fixtures plus 4 byes equals exactly 32 |
+| Injury-report category definitions | Practice and game-status definitions | https://www.nfl.com/news/competition-committee-approves-revisions-to-injury-report-0ap3000000688693 | Read in full; quoted on the availability page |
+| NFL.com terms | Section 1.3 permitted uses | https://www.nfl.com/legal/terms/ | Read; restriction on systematic retrieval recorded |
+| Pythagorean method | Formula form and the NFL exponent 2.37 | https://en.wikipedia.org/wiki/Pythagorean_expectation and https://www.pro-football-reference.com/about/glossary.htm | Method only; no observation taken from either page |
 
-| # | Check | Result |
+## 3. Irregularities found and how they were handled
+
+| # | Irregularity | Disposition |
 |---|---|---|
-| 1 | Arithmetic identity `PCT = (W + 0.5T)/(W+L+T)` on all 32 standings rows | 32/32 pass |
-| 2 | Arithmetic identity `NET = PF − PA` on all 32 rows | 32/32 pass |
-| 3 | League-wide `ΣPF = ΣPA` (each point scored is a point allowed) | 6,246 = 6,246 over 272 team-games |
-| 4 | Games played per club ∈ {8, 9} and total implied games even | 16 clubs on 8, 16 on 9, 136 games |
-| 5 | Every club in the Week 10 slate has a standings row; no club appears twice | 28 distinct, 0 duplicates |
-| 6 | Clubs in the standings but not in the slate | CHI, DEN, PHI, TB (reason not published — flagged F-06) |
-| 7 | Every injury row's club is in the slate; `(club, player)` unique | 210 rows, 0 duplicates |
-| 8 | Practice status cross-check between the injury page and the official Wednesday roundup | Agrees on every overlapping player |
-| 9 | Every depth-chart starter with a status joins to an injury row by exact name | 36 rows join; 3 name variants documented (Mack Wilson Sr., Ronnie Hickman Jr., Deebo Samuel Sr.) |
-| 10 | Every depth row's status matches the injury table exactly | pass after the three aliases were resolved |
-| 11 | No depth row invents a backup where the club chart lists none | 5 "no backup/no second/no third" rows verified against the chart |
-| 12 | Every source URL is HTTPS on a closed host allowlist | 85 registered IDs; 20 NFL-era host entries |
-| 13 | Every source ID used in any CSV/JSON is registered, and every registered ID is used | 0 orphans both directions (checker enforces set equality) |
-| 14 | Every table body row on every page has registered IDs and its own source link | 1,591 rows across 83 HTML pages (whole site) |
-| 15 | No market price, edge, ROI or leg correlation appears anywhere | 0 found; market column blank on all 14 projections |
+| RR01 | The NFL standings page rendered **no text header row**, and the displayed field order does not match the order given in the page legend. | Division record and conference record are named in the legend, but the displayed field order does not follow it and four middle fields are unidentified. **Six of sixteen displayed fields were therefore not transcribed**, and the reason is published. |
+| RR02 | The NFL injury listing leaves **"Game Status" blank for 17 of 20** listed players while still showing practice participation. | Blanks are preserved. A test fails if a blank is ever converted into an implication of availability. |
+| RR03 | `https://www.nfl.com/depth-charts/` returned a **404** page to the reader. | No depth chart was used. The starter/backup requirement is documented as unmeasured rather than approximated. |
+| RR04 | Score pages rendered some completed games as **"Hidden Score"**. | No game results were transcribed, so **no backtest is offered**. Guessing scores would have fabricated the entire history. |
+| RR05 | The deep link `/schedules/2026/REG11/` was served from `/schedules` and the page self-identified as **WEEK 10**. | The canonical URL is cited and the served week is recorded. Fixtures were validated against the official `-2026-reg-10` game slugs. |
+| RR06 | `https://www.nfl.com/stats/2026/regular` returned a **404**. | Team-level rates were derived from standings PF/PA instead; no page statistics were invented. |
+| RR07 | `parse_pythagorean`-style formatting bug: the Washington PCT (.313) is not the exact `(W + T/2)/games` value because the league displays it **rounded to three places**. | The check uses an explicit 0.00051 rounding tolerance rather than requiring exact equality, and the tolerance is stated in the extractor. |
+| RR08 | Ten team-level correlations were initially produced, but **five share inputs by construction** (net points with PF/PA and wins; the residual with wins). | Each is labelled "not independent evidence" with its reason. They are displayed, not deleted, and a test asserts exactly five are independent. |
+| RR09 | A first draft counted a `not applicable` gate as a pass for single bets. | Corrected: N/A leaves the denominator and is never counted as a pass. A test now asserts `passed == count(pass)` and `applicable == count(not n/a)`. |
+| RR10 | Small `.source-line` links failed the WCAG 2.2 target-size check (11px tall). | Fixed with a CSS rule; the full browser suite then passed with zero violations. |
+| RR11 | Root `index.html` was replaced by the NFL landing page, so NBA-era "Overview" links still resolve to the root. | The NBA overview is preserved at `nba-overview.html` and linked as "NBA overview" in its own navigation group. The logo returns to the site home by design. |
+| RR12 | The repository's snapshot stamp read "03 Nov 2026" while the NFL data is dated 2026-11-12. | The stamp was updated and the per-row check date is carried in every dataset. |
 
-## 4. Irregularities found (and what was done)
+## 4. Cross-check performed on the inherited content
 
-| ID | Irregularity | Disposition |
-|---|---|---|
-| I-01 | README described the repository as an NBA lab only and did not mention the NFL or rental sections | README updated with an explicit section-status banner; full restructuring left as suggestion S-11 |
-| I-02 | Legacy `verified/` directory name reads as a verification claim, although its JSON files are deprecated pointers | Left in place to preserve URLs; recorded as flag F-14 |
-| I-03 | Three overlapping rental presentations (root `rental*.html`, `rental/`, `rent-*.html`) with separate builders | Not modified; recorded for review (R-06) |
-| I-04 | `COORDINATION.md` carries several historical boards whose claims of exclusive ownership overlap | Earlier boards retained verbatim; this session appended a scoped board only |
-| I-05 | PR #17 from an earlier session still open | Not touched; this session opened its own PR |
-| I-06 | Cleveland depth chart lists Michael Burton at RB while the injury report calls him a fullback | Published as a documented position-mismatch row rather than silently reconciled |
-| I-07 | Two source typos in the official roundup ("limted", "hamtring") | Status normalised to the policy's three categories; the typo is recorded in the row note |
-| I-08 | `research/results.json` hashes `research/sources.json`, so adding NFL sources made the NBA research result stale | `python -m nba_lab run` regenerated it; diff confirmed **only** `run_hash` and the `sources.json` input hash changed — no NBA value was altered |
-| I-09 | `nfl.com/teams/depth-chart` and `nfl.com/odds/` both return 404 | Registered as scope-limit sources with the exact paths checked, not as proof of universal absence |
-| I-10 | WCAG 2.2 target-size failure on new sidebar footer links in the browser suite | Fixed with `nfl/origination/style.css` (stacked 32 px targets); suite then passed with zero axe violations |
-| I-11 | **Two sessions built an NFL sub-site at the same paths on the same day.** This session's branch was opened when `origin/main` had no `nfl/` path; by merge time `arena/a4e560bc-own7` had merged its own site there (PR #21, #23) | Neither site was discarded and no path is written by both builders. The merged site keeps `nfl/**`; this session's Week 10 lab was relocated to `nfl/origination/**` with its own builder, manifest and tests, and both are reachable from shared navigation |
+- The NBA and rental sections were not edited and their source IDs were not modified.
+- Adding seven source IDs changed the hash of `research/sources.json`, which is an input to the
+  NBA run hash. `python -m nba_lab run` was re-run so `research/results.json` matches; no NBA
+  value changed and 86 tests pass.
+- `scripts/check_site.py` was extended with the new hosts, keeping its "registry IDs must equal
+  the host map" invariant intact.
 
-## 5. What was not verified
+## 5. What this review does not establish
 
-- Anything outside `nfl/**`: the NBA and rental claims were not re-read against their sources in this session.
-- External HTTP status of every cited URL: pages were read through a fetch tool, not attested by a direct HTTP check. The two 404 paths are the exception, where the 404 page itself was observed.
-- Factual truth of an official page beyond the values transcribed: the checks establish transcription integrity and internal consistency, not that the league's page is correct.
+- Factual truth of any inherited NBA or rental claim: out of scope and unchanged.
+- That the NFL pages are correct beyond one official page per value: every NFL number here is
+  **single-source**, and this is flagged on the review page.
+- That the derived model has predictive value: one partial season, no market comparison.
+- That the site's use of NFL material is permitted beyond individual non-commercial reading.
+
+## 6. Reproduce this review
+
+```sh
+python scripts/nfl_extract.py --check      # re-parse saved official text, refuse contradictions
+python -m nfl_origination run --check              # reproduce derived results exactly
+python -m unittest discover -s tests       # 86 tests
+python scripts/check_site.py               # links, fragments, per-row sources, determinism
+npm run test:browser                       # 46 desktop + 46 mobile pages, WCAG A/AA
+```
+
+## 7. Review links for manual inspection
+
+- Standings: https://www.nfl.com/standings/
+- Injury report: https://www.nfl.com/injuries/
+- Schedule: https://www.nfl.com/schedules/
+- Injury-report policy: https://www.nfl.com/news/competition-committee-approves-revisions-to-injury-report-0ap3000000688693
+- Site terms §1.3: https://www.nfl.com/legal/terms/
+- Pythagorean method: https://en.wikipedia.org/wiki/Pythagorean_expectation
+- Publisher glossary (Expected W-L): https://www.pro-football-reference.com/about/glossary.htm

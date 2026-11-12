@@ -21,6 +21,10 @@ jobs:
           python-version: '3.11'
       - name: Test statistical math, chronology, rights and eligibility
         run: python -m unittest discover -s tests -v
+      - name: Reproduce NFL extraction from saved official text (refuses contradictions)
+        run: python scripts/nfl_extract.py --check
+      - name: Reproduce NFL origination and gates
+        run: python -m nfl_origination run --check
       - name: Reproduce research, sources, blanks, all links and generated pages
         run: python scripts/check_site.py
       - name: Verify retained snapshots and parallel source contributions
