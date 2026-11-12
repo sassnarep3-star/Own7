@@ -46,6 +46,9 @@ SOURCE_HOSTS.update({'NFL-STANDINGS': 'www.nfl.com', 'NFL-PASSING': 'www.nfl.com
 # NFL line-origination lab (session arena/20394b77-own7) — Week 10 snapshot sources.
 SOURCE_HOSTS.update({'NFL-INJURIES': 'www.nfl.com', 'NFL-ROUNDUP': 'www.nfl.com', 'NFL-NEWS-WILLIS': 'www.nfl.com', 'NFL-DATES': 'www.nfl.com', 'NFL-LEGAL-TERMS': 'www.nfl.com', 'NFL-ODDS-PATH': 'www.nfl.com', 'NFL-DEPTH-PATH': 'www.nfl.com', 'AZ-DEPTH': 'www.azcardinals.com', 'CLE-DEPTH': 'www.clevelandbrowns.com', 'SF-DEPTH': 'www.49ers.com'})
 
+# NFL assurance handoff (session arena/9580ac3f-own7) — namespaced official sources.
+SOURCE_HOSTS.update({'A958-NFL-INJURIES': 'www.nfl.com', 'A958-NFL-REPORT-POLICY': 'www.nfl.com', 'A958-NFL-DATES': 'www.nfl.com', 'A958-NFL-TERMS': 'www.nfl.com', 'A958-NFL-ROUNDUP': 'www.nfl.com', 'A958-NFL-SEA-QB': 'www.nfl.com', 'A958-NFL-MIA-QB': 'www.nfl.com', 'A958-NE-DEPTH': 'www.patriots.com', 'A958-DET-DEPTH': 'www.detroitlions.com', 'A958-NYG-DEPTH': 'www.giants.com', 'A958-SEA-DEPTH': 'www.seahawks.com', 'A958-BAL-DEPTH': 'www.baltimoreravens.com', 'A958-MIA-DEPTH': 'www.miamidolphins.com', 'A958-CLE-DEPTH': 'www.clevelandbrowns.com', 'A958-AZ-DEPTH': 'www.azcardinals.com', 'A958-WAS-DEPTH': 'www.commanders.com', 'A958-CLE-QB': 'www.clevelandbrowns.com', 'A958-PIT-DEPTH': 'www.steelers.com', 'A958-NFL-RULES': 'static.www.nfl.com', 'A958-NFL-SCORES': 'www.nfl.com', 'A958-PY-STATS': 'docs.python.org', 'A958-SK-TIME': 'scikit-learn.org', 'A958-SK-CAL': 'scikit-learn.org', 'A958-SM-HOLM': 'www.statsmodels.org', 'A958-AB-HELP': 'myhealth.alberta.ca', 'A958-REPO': 'github.com'})
+
 # Rental pages from session arena/692da006-own7 (PR #19) — official government/legal hosts only.
 # NFL research layer (session arena/a129b881-own7). Official league domains, one tertiary
 # method reference, and the publisher glossary. No odds vendor is registered.
