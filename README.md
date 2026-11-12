@@ -34,6 +34,15 @@ One static, source-linked dashboard replaces the repository’s three inconsiste
 
 **No verified betting edge, executable NBA line, ROI, CLV, cash prize or winning strategy is claimed.** Blank values are intentional. Luck cannot be removed.
 
+## Independent verification
+
+`nfl/verify_independent.py` is a second implementation that shares no code with the
+pipeline that produced the published figures. It re-derives all 7 published
+correlations, the 32 standings rows against league identities, and the passer-rating
+formula from the committed snapshots, and reports 2 printed yards-per-attempt values
+that disagree with their own row (recorded as NF12, a publisher-side disagreement
+confirmed by re-fetch). See `docs/nfl-independent-verification.md`.
+
 ## Important source restriction
 
 [NBA terms §9(iv)](https://www.nba.com/termsofuse) expressly prohibit using NBA Statistics in connection with gambling activity, including legal gambling. Separate authorization is not evidenced. NBA-derived betting-price release, bulk data harvesting, wagering and cash payments are disabled. This is a frozen, attributed statistical audit and non-commercial methods demonstration, not a licensed gambling data product or legal advice.
