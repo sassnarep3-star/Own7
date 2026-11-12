@@ -494,13 +494,13 @@ def nfl_overview():
              "content": "Originated Week 10 spreads and totals, the decision brief, the ranked suggestions, "
                         "fourteen open questions, ten validation gates, the competition format and the review register.",
              "when": "You want to decide what to do next, or to originate and challenge a number.",
-             "where": '<a href="nfl-suggestions.html">Start with the suggestions →</a>',
+             "where": _Markup('<a href="nfl-suggestions.html">Suggestions and decision brief</a>'),
              "source_ids": ["REPO"]},
             {"id": "W2", "lab": "NFL research lab (separately built sub-site, 15 pages)",
              "content": "216 verified source rows across standings, passing, rushing, receiving, team offense "
                         "and defense, and a bounded Week 7 injury report; its own audit, requirements and receipts.",
              "when": "You want the wider statistical record behind the numbers, with per-row sources.",
-             "where": '<a href="nfl/index.html">Open the NFL research lab →</a>',
+             "where": _Markup('<a href="nfl/index.html">NFL research lab</a>'),
              "source_ids": ["REPO"]},
         ],
         note='Both are the same snapshot date and the same official league sources. They were built '
