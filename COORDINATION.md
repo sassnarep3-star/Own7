@@ -379,9 +379,9 @@ Session ID: `session-arena-9580ac3f-own7`. Fixed Arena branch: `arena/9580ac3f-o
 
 | ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
 |---|---|---|---|---|---|
-| NFL-01 | Claim NFL work before implementation | in progress | session-arena-9580ac3f-own7 | COORDINATION.md (append only) | Commit and push this claim immediately. |
-| NFL-02 | Full baseline file/line inventory and irregularity audit | unclaimed | session-arena-9580ac3f-own7 | nfl/audit/**, nfl/docs/repo-review.md | Every baseline file gets a line range, hash and repository source; factual claims require separate primary evidence. |
-| NFL-03 | Official NFL source research and automated evidence capture | unclaimed | session-arena-9580ac3f-own7 | nfl/sources/**, nfl/data/**, nfl/collect.py | NFL league/club primary sources only for observed values; no inferred blanks. |
+| NFL-01 | Claim NFL work before implementation | done | session-arena-9580ac3f-own7 | COORDINATION.md (append only) | Commit and push this claim immediately. |
+| NFL-02 | Full baseline file/line inventory and irregularity audit | in progress | session-arena-9580ac3f-own7 | nfl/audit/**, nfl/docs/repo-review.md | Every baseline file gets a line range, hash and repository source; factual claims require separate primary evidence. |
+| NFL-03 | Official NFL source research and automated evidence capture | in progress | session-arena-9580ac3f-own7 | nfl/sources/**, nfl/data/**, nfl/collect.py | NFL league/club primary sources only for observed values; no inferred blanks. |
 | NFL-04 | Injury/depth replacement tracking and data contracts | unclaimed | session-arena-9580ac3f-own7 | nfl/availability.py, nfl/tests/test_availability.py | Injury report is not a depth chart; ranks 2/3/4 need separate club confirmation. |
 | NFL-05 | Origination, signals, correlation, validation and competition engine | unclaimed | session-arena-9580ac3f-own7 | nfl/engine.py, nfl/strategies.json, nfl/tests/test_engine.py | Untested real-market metrics remain null; synthetic unit-test outputs never presented as NFL facts. |
 | NFL-06 | Decision questions, suggestions and executive brief | unclaimed | session-arena-9580ac3f-own7 | nfl/decisions.json, nfl/docs/executive-summary.md | Suggestions are reviewable proposals, not silently implemented policy. |
@@ -389,3 +389,6 @@ Session ID: `session-arena-9580ac3f-own7`. Fixed Arena branch: `arena/9580ac3f-o
 | NFL-08 | Final integration and deployment | unclaimed | session-arena-9580ac3f-own7 | Shared index/navigation/generator/workflows/README, nfl release evidence, COORDINATION.md | Only after NFL-02–07 complete. Preserve NBA/rental archives, recheck merged data, PR, merge and actual Pages deployment. |
 
 Rules: work only on the fixed branch; commit/push claims before task work; use append-only board updates; safely fetch/rebase before pushes without discarding parallel work. Shared canonical files are deferred to NFL-08. `needs review` flags are public and nonblocking for honest research publication, but unknown inputs block strategy qualification, price release and rewards. All factual rows must link to an official source actually checked, with scope/date; source availability alone is not verification. No user decisions or manual entry requested.
+
+### NFL claim publication log
+- Claim commit `1ea0167` created before implementation. The session branch did not yet exist remotely, so pulling its named remote ref failed without changing files. Rebased against `origin/main` (already up to date) and pushed the new fixed branch successfully. No other branch was modified.
