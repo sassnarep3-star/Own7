@@ -415,13 +415,13 @@ def nfl_stands():
     body = notice('A snapshot, not a live table.',
                   'All 32 rows were parsed from saved official text on 2026-11-12 and each value was '
                   're-derived from the others before publication. Division and conference record '
-                  'columns are deliberately absent.')
+                  'fields are deliberately absent: division record, conference record and four middle columns that could not be identified from the rendered table.')
     body += metrics([
         ('Clubs checked', len(rows), 'All 32 league clubs', 'data'),
         ('Team-games in scope', NFL['league']['team_games'], 'Eight or nine per club', 'brief'),
         ('League scoring', f"{NFL['league']['league_points_per_team_game']:.2f}",
          'Points per team-game', 'signals'),
-        ('Columns withheld', 6, 'Header could not be confirmed', 'review'),
+        ('Fields withheld', 6, 'Of 16 displayed; no header to confirm them', 'review'),
     ])
     body += section('Standings and derived strength', table(
         'nfl-standings', 'Standings snapshot',

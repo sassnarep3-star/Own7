@@ -567,7 +567,7 @@ def build():
         'nfl-lines.html':('Line origination','Originated spreads and totals from official scoring data. No market price exists in the record.',nfl_pages.nfl_lines(),'NFL / ORIGINATION LAB'),
         'nfl-correlation.html':('Correlation','Team-level dependence, labelled honestly, and the leg-level dependence that is deliberately not estimated.',nfl_pages.nfl_correlation(),'NFL / ORIGINATION LAB'),
         'nfl-injuries.html':('Injuries & availability','Official participation and game status. Starter and backup impact is blank because the data needed for it was not retrieved.',nfl_pages.nfl_injuries(),'NFL / AVAILABILITY'),
-        'nfl-standings.html':('Standings snapshot','All 32 clubs, re-derived before publication. Six columns withheld because the page header could not be confirmed.',nfl_pages.nfl_stands(),'NFL / VERIFIED DATA'),
+        'nfl-standings.html':('Standings snapshot','All 32 clubs, re-derived before publication. Six of sixteen displayed fields are withheld because no header row exists.',nfl_pages.nfl_stands(),'NFL / VERIFIED DATA'),
         'nfl-validation.html':('Validation gates','Ten gates, two passes, one partial and one open rights question. A missing input never counts as a pass.',nfl_pages.nfl_validation(),'NFL / VALIDATION'),
         'nfl-leaderboard.html':('Leaderboard','A frozen competition format with no entries, because nothing has earned a place.',nfl_pages.nfl_leaderboard(),'NFL / COMPETITION'),
         'nfl-review.html':('Flagged for review','Twelve NFL items published with their sources. None blocks publication; all block unsupported claims.',nfl_pages.nfl_review(),'NFL / TRANSPARENCY'),

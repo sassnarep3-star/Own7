@@ -35,7 +35,7 @@ that earlier factual content was wrong; only that its own stated limits still ap
 
 | # | Irregularity | Disposition |
 |---|---|---|
-| RR01 | The NFL standings page rendered **no text header row**, and the displayed field order does not match the order given in the page legend. | Division and conference records, last-ten and several middle columns were **not transcribed**. Six columns are withheld and the reason is published. |
+| RR01 | The NFL standings page rendered **no text header row**, and the displayed field order does not match the order given in the page legend. | Division record and conference record are named in the legend, but the displayed field order does not follow it and four middle fields are unidentified. **Six of sixteen displayed fields were therefore not transcribed**, and the reason is published. |
 | RR02 | The NFL injury listing leaves **"Game Status" blank for 17 of 20** listed players while still showing practice participation. | Blanks are preserved. A test fails if a blank is ever converted into an implication of availability. |
 | RR03 | `https://www.nfl.com/depth-charts/` returned a **404** page to the reader. | No depth chart was used. The starter/backup requirement is documented as unmeasured rather than approximated. |
 | RR04 | Score pages rendered some completed games as **"Hidden Score"**. | No game results were transcribed, so **no backtest is offered**. Guessing scores would have fabricated the entire history. |

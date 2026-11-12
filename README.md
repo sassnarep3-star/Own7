@@ -47,7 +47,7 @@ python scripts/serve_site.py --host 0.0.0.0 --port 8080
 | `nfl-lines.html` | Line origination: method, assumptions, originated board |
 | `nfl-correlation.html` | Team-level dependence, and what is deliberately not estimated |
 | `nfl-injuries.html` | Official statuses, and why starter/backup impact is blank |
-| `nfl-standings.html` | All 32 clubs, re-derived, with six columns withheld and explained |
+| `nfl-standings.html` | All 32 clubs, re-derived; six of sixteen displayed fields withheld and explained |
 | `nfl-validation.html` | Ten gates and the per-strategy gate matrix |
 | `nfl-leaderboard.html` | The frozen competition format, empty by rule |
 | `nfl-review.html` | Twelve flagged irregularities with official source links |
