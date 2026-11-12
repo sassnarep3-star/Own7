@@ -35,6 +35,7 @@ jobs:
           python rental/test_build.py -v
           python -m nfl_lab run --check
           python nfl/build.py --check
+          python nfl/verify_independent.py
           python nfl/test_build.py -v
           python nfl/origination/originate.py --check
           python -m unittest discover -s nfl/origination -p "test_*.py" -v

@@ -447,6 +447,25 @@ Scope: NFL research lab addition (new `nfl/**` sub-site + canonical NFL pages vi
 - Reviewable live paths after this merge: `/nfl/origination/index.html` (lab dashboard), `/nfl/origination/model.html` (model lines and sensitivity), `/nfl/origination/depth.html`, `/nfl/origination/suggestions.html`, `/nfl/origination/questions.html`, `/nfl/origination/flagged.html`, `/nfl/origination/repo-review.html`, alongside the untouched parent `/nfl/index.html`.
 - Reconciliation outcome, restated for anyone reading later: the parent NFL site (`arena/a4e560bc-own7`, Week 7, prices withheld) and this lab (`arena/20394b77-own7`, Week 10, model-only lines) both remain on `main`, cross-linked, writing disjoint files. No page, claim or test of the other session was deleted or re-specified; the only shared edits are additive entries in `research/sources.json`, `scripts/check_site.py`, `scripts/build_site.py`, `.github/workflows/check.yml` and `README.md`.
 - Open items this session did not resolve: PR #17 (historical) remains open and untouched; depth charts for 25 of 28 slate clubs are still missing; a licensed price source is still the gate that blocks any strategy from qualifying.
+### Outcome — session arena/270048f0-own7
+
+**Delivered:** `nfl/verify_independent.py` plus a new `nfl/independent-verification.html` page, eleven new tests, and `docs/nfl-independent-verification.md`.
+
+| Item | Result |
+|---|---|
+| Published correlations reproduced independently | **7/7** to 1e-6 |
+| Standings league identities (32 rows) | **32/32** — NET=PF−PA, PCT formula, home/road partition, division ≤ conference, last-5 |
+| League totals | wins 135 = losses 135; PF 6,246 = PA 6,246; home 136 = road 136 team-games; 16 AFC / 16 NFC; 8 divisions of 4 |
+| Passer rating from own components | **25/25** within 0.15 |
+| Real discrepancy found | **NF12** — Mahomes 2,037/263 printed 7.8 (exact 7.7452), Watson 1,806/249 printed 7.2 (exact 7.2530) |
+| Discrepancy adjudicated | Re-fetched the official page: it still prints both values, so the **publisher's columns disagree** — not a transcription error here |
+| Effect quantified | Yds/Att–Rate Pearson 0.829085 as printed vs 0.831578 on exact yards/att (Δ 0.0025); Spearman Δ 0.0001 |
+| Accessibility bug found and fixed | Scrollable verifier output was an unfocusable `pre`; now `role="region"` + `tabindex="0"`, caught by the browser suite |
+| Gate | `nfl/test_build.py` 6/6, `unittest` 72/72, `check_site.py` clean, `nfl/build.py --check` 16/16, browser 50 desktop + 50 mobile WCAG A/AA with no runtime errors |
+
+**A wrong hypothesis was discarded, not published.** My first explanation was that both rows were half-way rounding. They are not half-way values, so no rounding convention reconciles them. The arithmetic test replaced the story.
+
+**Process note on the parallel claim.** This session and `arena/a4e560bc-own7` both claimed an NFL section within the same window; theirs merged first (PRs #21/#23). I did not merge a competing dashboard, delete their pages, or overwrite their numbers. Their section is intact and is now extended by one additive page. The scope conflict is declared here rather than hidden.
 
 ---
 
