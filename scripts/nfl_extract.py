@@ -266,7 +266,6 @@ def main() -> None:
         OUT / "nfl-injuries-2026-w10.csv": injuries,
         OUT / "nfl-schedule-2026-w10.csv": schedule,
     }
-    targets[OUT / "nfl-standings-2026.csv"] = standings  # retained byte-identical copy
     digests, changed = {}, []
     for path, rows in targets.items():
         before = path.read_text(encoding="utf-8") if path.exists() else None

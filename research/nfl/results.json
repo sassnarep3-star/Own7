@@ -1907,7 +1907,7 @@
     "data/nfl-players-receiving-2026.csv": "a390c1f3faa8b6631bc5d9bcbf44da6ea68f05c3c7388392313bca157e04559d",
     "data/nfl-players-rushing-2026.csv": "8acf24c238661f15371ea17f16be9be92f49f55ca5250c8ca9e9f39375a8b992",
     "data/nfl-schedule-2026-w10.csv": "2e921197c68b0e5ace40022e6ae9e4758f9dd956a4bd2865d81b27bc89d1a21e",
-    "data/nfl-standings-2026.csv": "c4daceecb57e4461ad9ef8a2b7fa13cd3a83c0c3a1e9a77c60470772000b75b9",
+    "data/nfl-standings-2026.csv": "76ae0197f79cce074605ff8566651437546784d7ef55cf3d73ad23c2968ada0c",
     "data/nfl-standings-week10-2026.csv": "c4daceecb57e4461ad9ef8a2b7fa13cd3a83c0c3a1e9a77c60470772000b75b9",
     "data/nfl-team-defense-passing-2026.csv": "e54db7a03cdc24570dabf3c407a362f718051ded8601a0d37b4f1656f3d7534b",
     "data/nfl-team-offense-passing-2026.csv": "4b0df9229448a187c31014b76dca22d6a5aa8e175d6255bf500a91d4c65d7687",
@@ -1917,7 +1917,7 @@
     "nfl_origination/math.py": "bc89f8d83787c9318424e72ac7f045ee17c671dd260e8f50cd8efddd11f53538",
     "research/nfl/receipts.json": "c33e1ad22ac6cda71c551e6bb93a3f729656ac146ba45897fd20869b22fa0072"
   },
-  "run_hash": "8ff8a7086a44440cf4ce89fc77c7f1711d15e2e9cde743db704786613fcace4c",
+  "run_hash": "5b089f9dd22c9b61f87e97a311e965d199b20b0938a2b1f48b01f554d91cd7f4",
   "limitations": [
     "One partial season, eight or nine games per club.",
     "No market prices, limits, hold or settlement rules were retrieved.",

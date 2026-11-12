@@ -14,24 +14,26 @@
     "questions.html",
     "sources.html",
     "review.html",
+    "independent-verification.html",
     "methodology.html"
   ],
   "generated_html": {
-    "correlation.html": "744128f745fb410ea61c426c67243f72ddcaae320cf33d8efac4a442b0328e56",
-    "data.html": "889f20763f496796651add1d1ae9ce075463cb38de40eac461590f3c6be5b869",
-    "executive-summary.html": "6468a26a06f87d819a5251f650f421b2bdd34dc665077378751bc32ff548004a",
-    "index.html": "7505af756db8f306c7c3c02aab34e58852e175cc468e31a3bce49632f2a0e888",
-    "injuries.html": "d12277189097d0b431528f94e92fccd9a4d77a3f40d09f6e4bdc71b90bb32fcd",
-    "leaderboard.html": "06a89bd92040844a6c78b7c6e7e6a2fb5ec194a2cd68303bb14481932bf3579a",
-    "lines.html": "5ed2064d29b906c991ae8cc18bacc5d411f7f6cba9ce7f13c19f8ad132e8045c",
-    "methodology.html": "7ca6b6ca2c1e3d4562ae05142a17d0bf56aaec3499ceb25a51b7ae96e7e9128e",
-    "questions.html": "6cda22535692558029d51f19bf9283c7a112f42d09ebcc29f294b4993e47ef1b",
-    "requirements.html": "8bd92fb00d90dd896e9f324f678775e587c59e9545eb064cd5e66891abb9b64e",
-    "review.html": "3c3f9283110ad633ea730210108e5e18b65de4c2679288735cdfb750f2aad3d4",
-    "signals.html": "5d19155ca4072f1ac3605c611074718b6d8fba2f0413d23374459cd1ded2957a",
-    "sources.html": "0beddd030e185701a193cef6b5f7a9926dd97d747cbe54bc43e6f02d505c5a0b",
-    "suggestions.html": "1e14843773f4329ecd66a6b4a7536c51aa369d70187d61e5d423867a6937d25f",
-    "validation.html": "c5232f1905fe04754902568d3446d5b149552ca535aad29e3a820512364d914a"
+    "correlation.html": "76ea1694b2e9f6fa53ffb1511226315b2bad9e34b53af1259e4227416770167c",
+    "data.html": "2678b8a8c94a26a925096f71a9e514aed9150c6ccae63e5c4b8cb670c4694d1a",
+    "executive-summary.html": "2c35bc9db2f7409648decce17beefbd8c06f982aa1f71896fda2bc8106e08220",
+    "independent-verification.html": "a029cfd9b1011a413d77d2e005766daa6863d7488d5dbce8ddab18734bb1d4eb",
+    "index.html": "df3a2f733a0d0351a3fe392df3316b6b24855323214cfaff509f8d2823119e8a",
+    "injuries.html": "f5718b0ef4c1427722b27b0d3bb6cda1806a57bdc5e097cbbfcf7e344de058d9",
+    "leaderboard.html": "430a150c1632988c679255ca37326d98127aa7099ccb2caa1c10d24ed8cfefe8",
+    "lines.html": "a799676de48132808630be536d6afbdcfde3cba546de24391578297d0e89d3a6",
+    "methodology.html": "5cb051ca988d1f1e8b0f2ed023f19dccfe71963619c47062ae3511645400a2f1",
+    "questions.html": "66d26c58bda506faccdab1ef75352acf687a36a5865357880b2d677ef50d00d4",
+    "requirements.html": "c31503b21a78392e037f269d6c7d15463da2225475016b859647c33c01c9a570",
+    "review.html": "c0ac734db5e2b193e60a9dfdcef31c2bca24052d6a8fee437c3f7c2f509a1a63",
+    "signals.html": "4d36ac3679fd5e673f4fea43d4dd83cfc0c3eaa2cceb28a146b3f7ee0c2c6bd6",
+    "sources.html": "53d31e658588259afc4be3126b96fb55e2c84828a193f4a1a484f1160343c372",
+    "suggestions.html": "fc004b1af4b51b2c1c015784891d29f6ff6b14dd10066d0f93ed0edd76beeea0",
+    "validation.html": "e70d7e64e78c393297769fb450c7f3e3351cbc045a43e03b5958fe958aa3bef8"
   },
-  "research_run_hash": "68409f765e5024944eec71a4ea86615b4a2e8ff5e24ed5ce878a5dbe4de64aa5"
+  "research_run_hash": "0bff95585fb044bc111e998b15b11f06ab13b2ad0277c37102df435d827355b9"
 }

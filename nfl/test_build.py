@@ -70,7 +70,7 @@ class NflBuildTests(unittest.TestCase):
 
     def test_page_inventory(self):
         self.assertEqual(set(self.pages), set(build.PAGES))
-        self.assertEqual(len(build.PAGES), 15)
+        self.assertEqual(len(build.PAGES), 16)
 
     def test_every_row_has_registered_source(self):
         for name, text in self.pages.items():

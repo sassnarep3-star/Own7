@@ -46,8 +46,8 @@ def verify_nfl_receipts() -> None:
         rows = load_csv(receipt["data_file"])
         if len(rows) != receipt["retained_rows"] or digest(path) != receipt["sha256"]:
             raise ValueError(f"NFL receipt mismatch: {path.name}; no result can be published")
-        # Stricter contract than the earlier "verified snapshot" label: every row must carry the
-        # official URL it came from plus the date it was checked.
+        # Every row must carry the official URL it came from, and an explicit verification marker:
+        # either the shared "verified snapshot" label or this session's check date.
         for row in rows:
             source = row.get("SourceURL") or row.get("Source") or ""
             if not source.startswith("https://www.nfl.com/"):
