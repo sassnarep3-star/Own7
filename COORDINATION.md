@@ -369,3 +369,32 @@ Privacy: all personal information (tenant initials) is anonymized everywhere in 
 ### Merge note (arena/cab077aa-own7, 2026-11-06, second merge)
 - Merged origin/main again (PR #19, session arena/692da006-own7: root-level rental*.html pages + research/rental.json). No other session's work discarded; their nav group and pages retained, mine added as "Deep-dive sub-site" → rental/index.html.
 - research/sources.json unioned by ID across both sides; SOURCE_HOSTS in scripts/check_site.py unioned; generated artifacts regenerated deterministically.
+
+---
+
+## Session arena/20394b77-own7 — NFL line origination, injury/depth tracking, suggestions & questions registers (2026-11-12)
+
+Session ID: `session-arena-20394b77-own7`. Branch: `arena/20394b77-own7` (fixed by Arena; sole active session on this branch as of this claim). Base commit `a989d67` (= `origin/main`).
+
+**Scope (exclusive):** new self-contained sub-site `nfl/**` (data, builder, tests, generated pages), new docs `docs/nfl-*.md`, plus the integration touchpoints needed to publish it: `research/sources.json` (append-only new source IDs), `scripts/check_site.py` (SOURCE_HOSTS append for verified official NFL/club/regulator hosts), `scripts/build_site.py` (nav entry + NFT build hook + manifest auxiliary pages), `scripts/browser_test.mjs` (allowedFolders += `nfl`), `.github/workflows/check.yml` (nfl test/build steps), `README.md`, `COORDINATION.md`. No existing NBA/rental/market-evidence **values** are modified.
+
+**Why NFL:** the request in this session is NFL-specific ("originate my own NFL lines", NFL injury/depth tracking). The existing NBA/rental sub-sites are retained unchanged; the NFL work is additive and lives under `nfl/`.
+
+### Task board
+
+| # | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|------|--------|-------|---------------|------------------------|-------|
+| N1 | Claim board + repo review with irregularities | in progress | session-arena-20394b77-own7 | COORDINATION.md, docs/nfl-repo-review-2026-11-12.md | repo files + official URLs | Line-by-line review of the NFL-relevant state of the repo |
+| N2 | Verify official NFL source set and register IDs | unclaimed | session-arena-20394b77-own7 | research/sources.json, scripts/check_site.py | nfl.com, club sites, regulators | Re-read each page before registering |
+| N3 | Week 10 official data snapshot (standings, slate, injury report) | unclaimed | session-arena-20394b77-own7 | nfl/data/**, nfl/raw/** | nfl.com standings / schedules / injuries | Normalized transcription + arithmetic/identity checks |
+| N4 | Line origination model, sensitivity, correlation values | unclaimed | session-arena-20394b77-own7 | nfl/model.py, nfl/data.json | derived from N3 (official inputs) | Model outputs explicitly labelled derived, not market prices |
+| N5 | Injury + depth-deficiency framework and pilot depth data | unclaimed | session-arena-20394b77-own7 | nfl/data.json | club-published depth charts + injury report | Coverage limits and blanks flagged |
+| N6 | Strategy catalog, validation gates, leaderboard rules | unclaimed | session-arena-20394b77-own7 | nfl/data.json | method sources | Fail-closed: nothing qualifies without market prices |
+| N7 | Suggestions register + open-questions/information register | unclaimed | session-arena-20394b77-own7 | nfl/data.json | n/a (project design) | New site sections requested in this session |
+| N8 | Executive summary (markdown + site page) | unclaimed | session-arena-20394b77-own7 | docs/nfl-executive-summary.md | N1–N7 | |
+| N9 | NFL sub-site build + integration + tests | unclaimed | session-arena-20394b77-own7 | nfl/**, scripts/*, workflows | n/a | Deterministic build, links, rows, blanks |
+| N10 | PR, merge, Pages deploy confirmation, record | unclaimed | session-arena-20394b77-own7 | COORDINATION.md | GitHub | Fix and retry until Pages is live |
+
+### Notes on concurrent work
+- `origin/main` @ `a989d67`. No other branch of this repo showed an active claim at claim time; open PR #17 (`arena/a934e8c3-own7`) is a historical record PR and is not modified by this session.
+- All generated NFL pages and data are new paths (`nfl/**`), so scopes stay non-overlapping; the only shared files are the integration touchpoints listed above, which are edited additively.
