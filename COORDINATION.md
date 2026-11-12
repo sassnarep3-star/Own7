@@ -528,3 +528,124 @@ Cross-scope note: NBA/rental values were not changed. Adding seven source IDs ch
 - **Landing page corrected.** The overview table said there were two NFL workstreams; there are three. It now states each one's scope and verified row count (11 pages / 66 rows; 15 pages / 216 rows; 14 pages / 210 injury rows), notes that the counts are **not additive**, and repeats the shared finding that all three report zero qualified strategies and an empty leaderboard.
 
 Verification after the second merge: 92 Python tests OK, `nfl/build.py --check` 15 pages reproduce, `nfl/origination/originate.py --check` 14 pages reproduce, `check_site.py` 95 HTML pages / 1,814 sourced rows / 91 registered sources / **0 errors**, NBA + rental + market-evidence builders clean, browser console errors zero on all three NFL sections.
+## Session arena/382a833e-own7 — NFL decision desk, repo audit, integration (2026-11-12)
+
+Session ID: `session-arena-382a833e-own7`. Branch: `arena/382a833e-own7` (fixed by Arena). Base commit `a989d67`.
+
+**Coordination observation at claim time (16:25 UTC 2026-11-12).** Two sessions had already pushed claims within the previous minute: `arena/270048f0-own7` (tasks N1–N8, claiming `nfl/**`, `research/nfl-sources.json`, `docs/nfl-source-verification.md`, `docs/nfl-repo-review.md`, and the integration touchpoints `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`) and `arena/a4e560bc-own7` (tasks N1–N11, claiming `nfl/**`, `nfl_lab/**`, `research/nfl-*.json`, `data/nfl-*`, `docs/nfl-*.md`). Their scopes overlap each other on `nfl/**`. This session will **not** start any task either session has claimed and will not edit `nfl/**`, `nfl_lab/**`, `research/nfl-*.json`, `data/nfl-*`, `docs/nfl-*.md`.
+
+**Exclusive scope claimed by this session** (no overlap with the two claims above):
+
+- `nfl-desk/**` — new self-contained decision-support sub-site (data, builder, tests, generated pages, style, manifest)
+- `docs/nfl-desk/**` — this session's source verification, repo review and verification notes
+- Append-only: `research/desk-sources.json` (new source IDs only), `COORDINATION.md`
+- Integration touchpoints, claimed **only for additive edits**: `scripts/build_site.py` (one nav group + build hook + manifest entries), `scripts/check_site.py` (SOURCE_HOSTS adds + recursive scan of `nfl-desk/`), `scripts/browser_test.mjs` (allowedFolders add), `.github/workflows/check.yml` (desk check steps), `research/site-manifest.json` (regenerated)
+
+### Task board
+
+| ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
+|---|---|---|---|---|---|
+| D1 | Claim + board entry | done | session-arena-382a833e-own7 | COORDINATION.md (append only) | Committed + pushed immediately, before implementation |
+| D2 | Official NFL source verification (terms, standings, injury report, stats, schedule, rules) | in progress | session-arena-382a833e-own7 | research/desk-sources.json, docs/nfl-desk/sources.md | Every URL read via fetch_page on 2026-11-12; exact checked scope recorded; unreachable/JS-only pages flagged, never inferred |
+| D3 | NFL dataset: 2026 regular-season standings + official weekly injury-report entries | in progress | session-arena-382a833e-own7 | nfl-desk/data.json | One row per official value, `source` on every row; unknown = blank + flag |
+| D4 | Availability & depth-deficiency model (offense/defense starter→backup replacement) | in progress | session-arena-382a833e-own7 | nfl-desk/data.json, generated availability page | Status vocabulary limited to NFL participation designations actually observed; no invented depth-chart ranks |
+| D5 | Line-origination & signal research, validation gates, luck-removal statistics, correlation | in progress | session-arena-382a833e-own7 | nfl-desk/data.json, generated strategies/correlation/gates pages | Derived arithmetic labelled; no invented price/ROI/CLV/edge |
+| D6 | Leaderboard competition spec (scoring, rewards policy, anti-luck admission rules) | in progress | session-arena-382a833e-own7 | nfl-desk/data.json | Non-monetary merit only unless funded; no cash prize claimed |
+| D7 | Decision register: open questions, information held/missing, answers, owners | in progress | session-arena-382a833e-own7 | nfl-desk/data.json, generated questions page | Each item marked answered / partial / unknown with source or explicit gap |
+| D8 | Suggestions board with review workflow before implementation | in progress | session-arena-382a833e-own7 | nfl-desk/data.json, generated suggestions page | Each suggestion: rationale, evidence, effort, risk, decision gate, reviewer choice |
+| D9 | Repo review + irregularities for the existing repository | in progress | session-arena-382a833e-own7 | docs/nfl-desk/repo-review.md | Line-by-line checks against official sources; every irregularity flagged, none silently changed |
+| D10 | Executive summary for the NFL decision desk | in progress | session-arena-382a833e-own7 | nfl-desk/data.json, generated summary page | Only important verified details; explicit unknowns |
+| D11 | Integration: nav, checks, CI, determinism, no broken links | unclaimed | session-arena-382a833e-own7 | integration touchpoints above | Must pass before PR |
+| D12 | PR + merge + Pages deploy confirmation + record | unclaimed | session-arena-382a833e-own7 | main, COORDINATION.md | Do not merge a broken site |
+
+Cross-scope requests to the two NFL sessions (logged here, not applied by this session):
+1. `nfl/**` is claimed twice (`270048f0`, `a4e560bc`). Whoever pushes last must rebase and reconcile; do not delete the other's directory.
+2. If either session adds NFL hosts to `scripts/check_site.py`'s allowlist, use exact official hosts only (`www.nfl.com`, `official.nfl.com`, `static.www.nfl.com`, `operations.nfl.com`, `nflcommunications.com` if used) — never a wildcard.
+3. This session's `nfl-desk/**` pages already carry the decision register, suggestions board and executive summary requested in the brief. If `nfl/**` also delivers those, the integration step must keep one canonical implementation per topic and link, not duplicate the tables.
+
+## 2026-11-12 · NFL decision desk (`arena/382a833e-own7`, base `a989d67`)
+
+Claim: `nfl-desk/**`, `docs/nfl-desk/**`, append-only additions to `research/desk-sources.json`
+(not used in the end — the desk keeps its own ledger at `nfl-desk/data/sources.json`), and
+**additive only** integration edits listed below. No file outside this list was edited.
+
+### Delivered (all committed and deployed on this branch)
+
+- `nfl-desk/desk.py` — dependency-free engine: PSV readers, arithmetic identity checks
+  (PCT, NET, PCT-from-attempts), Pearson/Spearman, deterministic permutation p (20,000 draws,
+  seed 20261112), Wilson interval, Pythagorean expectation, depth chains, integrity hashes.
+  Raises `DataError` and refuses to render if any identity fails.
+- `nfl-desk/build.py` — renders 9 pages from `template.tmpl`; `--check` verifies byte identity.
+  Writes `nfl-desk/manifest.json`.
+- `nfl-desk/test_build.py` — 33 tests: snapshot identities, tamper rejection, statistics against
+  known values, ledger vocabulary, source-host allow-list, page semantics, per-row provenance,
+  no price/ROI claim, deterministic double render.
+- `nfl-desk/data/` — `standings-2026.psv` (32), `passing-2026.psv` (32), `injury-week10-2026.psv`
+  (276 rows / 26 clubs), `injury-week10-team-notes.psv` (2 verbatim notes), `week10-games.json`
+  (14 fixtures + 4 byes), plus `sources/gates/strategies/competition/questions/suggestions/flags/
+  repo-review.json`.
+- `nfl-desk/*.html` — 9 pages: index, summary, decisions, suggestions, availability, strategies,
+  competition, evidence, review.
+- `docs/nfl-desk/sources.md`, `docs/nfl-desk/repo-review.md` — long-form source ledger and the
+  18-row repository review with the 8 irregularities written out.
+
+### Integration edits (additive, no existing row rewritten)
+
+- `scripts/build_site.py`: one new nav group ("NFL decision desk", 9 pages) and a call to
+  `nfl-desk/build.py` so `check_site.py` can byte-verify the pages. Existing groups untouched.
+- `scripts/check_site.py`: `DESK_SOURCE_FILE` + `DESK_HOSTS` and a merge of the desk ledger into
+  the URL map used for row-provenance checks. Supports `data-detail` delegation (a wide-table row
+  may point at an in-page detail entry that renders the same registered URLs). No canonical source
+  ID was renamed or removed; `registered_sources` grows only because the desk ledger is merged in.
+- `scripts/browser_test.mjs`: `nfl-desk` added to `allowedFolders` (the `nfl` entry from the other
+  session is kept).
+- `.github/workflows/check.yml`: two added steps (desk tests, desk `--check`). Nothing removed —
+  the `nfl` / `nfl_lab` / origination steps merged from `main` all still run.
+- `research/site-manifest.json`: regenerated by `build_site.py`, not hand-edited.
+
+### Merge with the other NFL sessions, and the numbers afterwards
+
+`origin/main` moved while this desk was being built (PRs #21/#23/#24/#26 merged the
+`arena/270048f0-own7`, `arena/a4e560bc-own7` and `arena/20394b77-own7` NFL work). The merge was
+resolved **additively**: their `nfl/**` and `nfl/origination/**` nav groups, build hooks and CI steps
+are all retained, and this session's `nfl-desk/**` group, build hook and two CI steps are added
+alongside. `COORDINATION.md` keeps their blocks first, then this one.
+
+One real collision was found and fixed rather than papered over: both sessions had registered an ID
+called `NFL-TERMS` in `research/sources.json`, pointing at **different URLs** (the support-portal
+copy versus `nfl.com/legal/terms/`). Since IDs must be globally unique, this session's desk was
+renamed to `NFL-TERMS-LEGAL` throughout its own data, pages and host map; the canonical registry
+entry is untouched. The desk also no longer depends on any shared ID except `REPO`, whose URL is
+identical on both sides.
+
+`origin/main` then advanced twice more (PR #25 and the `nfl_extract` / `nfl_origination` work).
+Each time the same additive resolution was applied, and each time the whole suite was re-run rather
+than assumed. The merge was repeated rather than left stale because an unmerged branch cannot be
+verified by review.
+
+Measured at the final state of this branch: `check_site.py` passes with 37 canonical pages,
+20 redirects, **48 auxiliary** pages, **105** HTML files, 2,240 table body rows, 4,157 internal
+references and **106** registered sources, byte-identical rebuild. Tests: 96 + 5 + 8 + 6 (`nfl`) +
+6 (`nfl/test_build`) + 29 (`nfl/origination`) + **33 (nfl-desk)** = **183**, all passing, plus
+`scripts/nfl_extract.py --check`, `nfl_origination run --check`, `nfl_lab run --check`,
+`nfl/build.py --check` (16 pages) and `nfl-desk/build.py --check` (9 pages). Browser suite:
+**85 desktop + 85 mobile** pages, WCAG A/AA, no runtime errors.
+
+### Findings worth passing on (not repaired — other scopes own these files)
+
+`repo-review.md` records 10 Verified / 8 Irregular. The ones a later session will care about:
+README inventory numbers are stale (`R03`); `research/audit/static-checks.json` is stale because CI
+runs `check_site.py` **without** `--report` (`R04`, `R15`); the shared header stamp reads
+`SNAPSHOT CHECKED 03 Nov 2026` on every page (`R05`); no `LICENSE` file exists (`R07`); PR #17 is
+still open and conflicting (`R16`). Proposed fixes are `SG-10` and `SG-12` on
+`nfl-desk/suggestions.html`, deliberately **not implemented** so the owner can choose.
+
+### For the next session
+
+- The desk publishes **no** line, price, ROI, CLV or leg-correlation value anywhere. All ten gates
+  are Blocked. Do not "improve" a page by filling one of those fields: the empty cell is the finding.
+- Injury/depth coverage is 3 of 32 clubs on purpose. 29 clubs are blank, not estimated.
+- `passing-2026.psv` deliberately excludes the official AVG column (unreproducible on 4/32 rows).
+  Do not re-add it; publish the derived `ypa` instead.
+- NFL.com §1.3 terms forbid systematic compilation and gambling use. Anything beyond a bounded,
+  attributed, dated transcribe needs a written answer first (flag `DF-14`, gate `G01`).

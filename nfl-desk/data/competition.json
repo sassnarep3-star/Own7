@@ -1,0 +1,114 @@
+{
+  "read_date": "2026-11-12",
+  "note": "The competition is specified so that a lucky run cannot win it. Nothing is currently ranked, because no candidate has cleared a single admission gate. A blank board is the honest state, not a placeholder.",
+  "divisions": [
+    {
+      "id": "D-A",
+      "name": "Singles",
+      "unit": "one selection per entry",
+      "admission": "G01, G02, G03, G04, G06, G09",
+      "note": "Settlement is the simplest to audit, which is why this division opens first."
+    },
+    {
+      "id": "D-B",
+      "name": "Parlays",
+      "unit": "one combination per entry",
+      "admission": "G01, G03, G05, G06, G09 plus the singles gates for every leg",
+      "note": "A parlay entry must satisfy every gate its legs satisfy, and must additionally show measured leg dependence."
+    },
+    {
+      "id": "D-C",
+      "name": "Player props and prop combinations",
+      "unit": "one player selection, or one explicit combination",
+      "admission": "D-B plus a per-player usage sample",
+      "note": "Player-level data is the weakest input here: this repository holds none."
+    },
+    {
+      "id": "D-D",
+      "name": "Availability overlay",
+      "unit": "one fixture, judged on how well the report-based adjustment predicted the game",
+      "admission": "D-A plus several weeks of timestamped reports",
+      "note": "Scored on prediction of the game outcome, not on whether a trade was profitable, so it can be evaluated before any price exists."
+    }
+  ],
+  "scoring": [
+    {
+      "id": "K1",
+      "name": "Skill score, not accuracy",
+      "rule": "Entries are ranked by a proper scoring rule against the declared naive baseline (log score or Brier for probabilities, absolute error for totals). Hit rate alone is not scored, because it hides stake and price.",
+      "why": "A 55% hit rate at a bad price loses money; ranking by hit rate rewards luck and punishes honesty."
+    },
+    {
+      "id": "K2",
+      "name": "Luck-adjusted interval",
+      "rule": "Every entry is ranked with an interval that accounts for its number of independent events. Ranking uses the lower bound, not the point estimate.",
+      "why": "Ranking on point estimates means the entry with the most variance can win a small sample by chance."
+    },
+    {
+      "id": "K3",
+      "name": "Declared trial count",
+      "rule": "The number of variants each entrant tried is declared before scoring and the significance level is corrected for it.",
+      "why": "Without this, the leaderboard rewards whoever searched hardest, not whoever found something real."
+    },
+    {
+      "id": "K4",
+      "name": "Frozen forward period",
+      "rule": "An entry becomes eligible only after one full forward period with its rules frozen and untouched.",
+      "why": "This is the only mechanism here that measures skill rather than fit."
+    },
+    {
+      "id": "K5",
+      "name": "Reproduction by a second party",
+      "rule": "An independent rebuild from the committed snapshots must reproduce the entry's numbers exactly before it is ranked.",
+      "why": "An unreproducible number cannot be checked for error, so it cannot be compared."
+    },
+    {
+      "id": "K6",
+      "name": "Withdrawal for unrealised claims",
+      "rule": "Any claim of profit or edge without an executable, timestamped price is struck from the entry, not merely footnoted.",
+      "why": "A claim that cannot be settled is not a result."
+    }
+  ],
+  "rewards": [
+    {
+      "id": "R1",
+      "tier": "Participation",
+      "reward": "Public listing in the division table with its evidence links",
+      "monetary_value": null,
+      "status": "Not awarded",
+      "note": "Non-monetary. No cash prize is funded, authorised, promised or implied anywhere in this project."
+    },
+    {
+      "id": "R2",
+      "tier": "Qualified",
+      "reward": "Entry earns a rank in its division",
+      "monetary_value": null,
+      "status": "Not awarded",
+      "note": "Zero entries are qualified, so zero ranks exist."
+    },
+    {
+      "id": "R3",
+      "tier": "Verified replication",
+      "reward": "Independent reproduction badge, with the reproducing party named",
+      "monetary_value": null,
+      "status": "Not awarded",
+      "note": "Requires a second party. A self-reproduction does not qualify."
+    },
+    {
+      "id": "R4",
+      "tier": "Season recognition",
+      "reward": "Recorded in the season ledger, subject to the rights review in G01",
+      "monetary_value": null,
+      "status": "Not awarded",
+      "note": "Publication itself is conditional on G01 and G10, which are both currently blocked."
+    }
+  ],
+  "anti_luck_rules": [
+    "No ranking from a single game, a single week, or any sample smaller than the pre-declared minimum.",
+    "No ranking of an entry whose price is unknown, because the return cannot be computed at all.",
+    "No 'best of N' display: every declared variant stays visible with its own result.",
+    "No mid-period rule change. A change resets the entry's forward clock to zero.",
+    "No reward is denominated in money unless a funded prize is separately documented; none is.",
+    "Ties are broken by the entry with the wider evidence base, not by the better point estimate."
+  ]
+}

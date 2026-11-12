@@ -25,6 +25,8 @@ jobs:
         run: python scripts/nfl_extract.py --check
       - name: Reproduce NFL origination and gates
         run: python -m nfl_origination run --check
+      - name: NFL decision desk snapshot integrity and page contract
+        run: python nfl-desk/test_build.py -v
       - name: Reproduce research, sources, blanks, all links and generated pages
         run: python scripts/check_site.py
       - name: Verify retained snapshots and parallel source contributions
@@ -37,6 +39,7 @@ jobs:
           python market-evidence/test_build.py -v
           python rental/build.py --check
           python rental/test_build.py -v
+          python nfl-desk/build.py --check
           python -m nfl_lab run --check
           python nfl/build.py --check
           python nfl/verify_independent.py

@@ -1,0 +1,132 @@
+{
+  "read_date": "2026-11-12",
+  "note": "Every item is a known gap. A flag never blocks publication; it blocks qualification. No value attached to a flag is filled in anywhere on this site.",
+  "flags": [
+    {
+      "id": "DF-01",
+      "item": "No executable price or line exists anywhere in the repository",
+      "detail": "There is no licensed feed, no archived price, and no operator quote. Every line, price, hold, ROI, closing-line and edge field on the strategy, correlation and leaderboard pages is blank by construction.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "All economic claims; every reward tier",
+      "source_ids": ["NFL-TERMS-LEGAL", "REPO"]
+    },
+    {
+      "id": "DF-02",
+      "item": "The injury report is one undated page state, not an archive",
+      "detail": "The official injury page shows the current week's latest state. It carries no per-report timestamp in its content, and earlier states of the same week are not retrievable from it. What was knowable before a specific kickoff therefore cannot be established from this snapshot.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "G02 temporal integrity; availability strategies S03 and S04",
+      "source_ids": ["NFL-INJURY-W10-2026"]
+    },
+    {
+      "id": "DF-03",
+      "item": "Official team passing table has unlabeled columns and an unreproducible rate",
+      "detail": "The captured table renders 15 numeric columns with no header row. Attempts, completions, completion percentage and yards were identified because they reproduce each other arithmetically. The displayed per-attempt average could NOT be reproduced from those integers on four of 32 rows (KC 7.745 shown as 7.8; JAX 8.546 as 8.6; SEA 7.253 as 7.2; PIT 6.452 as 6.4), so that column is excluded and yards per attempt is published only as a derived value. Touchdowns, interceptions, longest and five further columns are unidentified and are not published.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Any passing-volume or efficiency model; S05",
+      "source_ids": ["NFL-TEAM-PASS-2026"]
+    },
+    {
+      "id": "DF-04",
+      "item": "Standings table rendered without a header row",
+      "detail": "The league standings capture shows text placeholders instead of headers and then 20 unlabeled cells per club. Seven numeric fields were transcribed because they are self-consistent (PCT reproduces from W-L-T; NET PTS equals PF minus PA). Division and conference records, home and road splits, streak and clinch columns could not be mapped with confidence and are blank.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Home/road and division-split analysis",
+      "source_ids": ["NFL-STANDINGS-2026", "NFL-STANDINGS-DIV-2026"]
+    },
+    {
+      "id": "DF-05",
+      "item": "Division rank cannot be derived from win percentage",
+      "detail": "The official tiebreaking procedure applies head-to-head, division record, common games, conference record and strength of victory before points. None of those inputs are held, so division rank is blank everywhere and only a plainly labelled record rank is shown.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Playoff-seeding views",
+      "source_ids": ["NFL-TIEBREAK-2026"]
+    },
+    {
+      "id": "DF-06",
+      "item": "Club depth charts are unofficial coaching estimates, and only three are held",
+      "detail": "Three club charts (WAS, NYG, SEA) are transcribed; 29 clubs are not covered. Charts list players in the club's own order, which is a coaching estimate rather than a confirmed lineup, and clubs revise them without notice. Any statement that a player is 'second string' is therefore a statement about a web page on 2026-11-12, not about the game plan.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Club-wide depth and deficiency coverage",
+      "source_ids": ["NFL-CLUB-DC-WAS", "NFL-CLUB-DC-NYG", "NFL-CLUB-DC-SEA"]
+    },
+    {
+      "id": "DF-07",
+      "item": "The league site's club depth-chart URL pattern is not reliable",
+      "detail": "https://www.nfl.com/teams/washington-commanders/depth-chart returned the site's 404 page on 2026-11-12, while the club's own domain served a complete chart. Depth-chart URLs must be verified per club rather than constructed from a pattern.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Automated depth-chart coverage",
+      "source_ids": ["NFL-CLUB-DC-WAS", "NFL-OPS"]
+    },
+    {
+      "id": "DF-08",
+      "item": "No official injury-reporting policy paragraph is cited here",
+      "detail": "The injury page states its own deadlines in its header text, and that statement is the only policy source used. A guessed path under the operations host returned an empty capture, so no policy text is attributed to that host. Third-party descriptions of the policy were found but are not official and are not used.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Formal citation of the reporting rule",
+      "source_ids": ["NFL-INJURY-W10-2026", "NFL-OPS"]
+    },
+    {
+      "id": "DF-09",
+      "item": "Backup depth rank is only known where a chart is transcribed",
+      "detail": "For WAS, NYG and SEA the chart's own ordering gives first, second, third and fourth string. For the other 29 clubs the number of backups already used cannot be computed at all, so no club-wide 'third-string' claim is made. Where a chart lists one name at a position, the replacement cell stays blank.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "League-wide deficiency scoring",
+      "source_ids": ["NFL-CLUB-DC-WAS", "NFL-CLUB-DC-NYG", "NFL-CLUB-DC-SEA"]
+    },
+    {
+      "id": "DF-10",
+      "item": "Kickoff times are locale-rendered, not a fixed time zone",
+      "detail": "The schedule page rendered times without a zone label. They are reproduced exactly as displayed and are not converted to Eastern Time, because the reader's locale determines the rendering.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Any timestamp-joined research",
+      "source_ids": ["NFL-SCHEDULE-2026"]
+    },
+    {
+      "id": "DF-11",
+      "item": "Reported intent is not a transaction",
+      "detail": "The Nacua article says the Rams' receiver is 'likely to be placed' on injured reserve. That is reported intent by the head coach, not a confirmed roster move, and it is shown as such. The Willis article describes a completed placement and is treated as completed.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Roster-state claims",
+      "source_ids": ["NFL-NEWS-NACUA-IR", "NFL-NEWS-WILLIS-IR"]
+    },
+    {
+      "id": "DF-12",
+      "item": "Absence from the injury page is not evidence of health",
+      "detail": "Four clubs (CHI, DEN, PHI, TB) do not appear on the Week 10 page at all because they are on bye. Two clubs (LAC, BAL) appear with the literal note 'No Injuries Reported'. These are three different states and are displayed separately rather than merged into a zero.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Comparing clubs on injury counts",
+      "source_ids": ["NFL-INJURY-W10-2026", "NFL-SCHEDULE-2026"]
+    },
+    {
+      "id": "DF-13",
+      "item": "No cash reward is funded, authorised or promised",
+      "detail": "All four reward tiers are non-monetary and carry no value. Prize funding and per-jurisdiction legality have not been reviewed, and no monetary amount appears anywhere in the competition ledger.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Any monetary incentive",
+      "source_ids": ["REPO", "NFL-TERMS-LEGAL"]
+    },
+    {
+      "id": "DF-14",
+      "item": "Source rights for republication and for gambling-related use are not established",
+      "detail": "NFL.com Terms limit use to individual, non-commercial, informational purposes, prohibit systematic retrieval or compilation absent prior written consent, and grant no gambling permission. The repository also has no LICENSE. This site is a bounded, attributed, non-commercial research snapshot; no permission is inferred.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "blocks": "Commercial release, price publication, redistribution",
+      "source_ids": ["NFL-TERMS-LEGAL"]
+    }
+  ]
+}

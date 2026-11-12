@@ -1,0 +1,106 @@
+{
+  "read_date": "2026-11-12",
+  "note": "Ten admission gates for the competition. They are project policy, not NFL rules. Every gate is a hard stop: 'Blocked' means no observation is released, no ranking is awarded and no reward accrues. Gates were written before any candidate was scored so that they cannot be tuned to a result.",
+  "gates": [
+    {
+      "id": "G01",
+      "name": "Provenance and source rights",
+      "question": "Is every input traceable to a primary source that permits this use?",
+      "pass_rule": "Each input row links to an official source URL that was actually read, with a read date and a stated scope. A second, independent check reproduces the row. If the source's terms do not permit the intended use, the gate fails regardless of data quality.",
+      "current": "Partially met. Row-level official links exist and are re-checked by the build. NFL.com Terms §1.3 limits use to individual non-commercial informational purposes and prohibits systematic retrieval or compilation; no gambling or commercial permission is granted. Commercial or betting-price release therefore fails this gate today.",
+      "status": "Blocked",
+      "type": "Policy",
+      "source_ids": ["NFL-TERMS-LEGAL", "REPO"]
+    },
+    {
+      "id": "G02",
+      "name": "Temporal integrity",
+      "question": "Was every input available before the event it is used to predict?",
+      "pass_rule": "Each feature carries the timestamp at which it became public. A prediction may use only features published before its own kickoff. Any feature whose publication time is unknown fails the gate rather than being treated as pregame.",
+      "current": "Not met. Injury-report page states carry no per-report timestamp in this snapshot, only the Week 10 designation. Standings and passing totals are through each club's last completed game, so they cannot be replayed for a single week without a historical archive.",
+      "status": "Blocked",
+      "type": "Policy",
+      "source_ids": ["NFL-INJURY-W10-2026", "NFL-SCHEDULE-2026"]
+    },
+    {
+      "id": "G03",
+      "name": "Coverage and statistical power",
+      "question": "Is there enough independent data to distinguish signal from noise?",
+      "pass_rule": "The candidate must report n, the number of independent units, and a confidence interval for its claimed effect. An interval that cannot exclude the no-effect value on the pre-declared sample fails. Selection of the sample after seeing results fails.",
+      "current": "Not met. The largest verified cross-section here is 32 club-seasons, and the only per-event sample is a single week (14 games). 32 units can detect only large correlations; a single week cannot support a season claim.",
+      "status": "Blocked",
+      "type": "Policy",
+      "source_ids": ["NFL-STANDINGS-2026", "NFL-SCHEDULE-2026", "SCIPY-PEARSON"]
+    },
+    {
+      "id": "G04",
+      "name": "Forecast quality",
+      "question": "Does the candidate beat a declared naive baseline out of sample?",
+      "pass_rule": "Walk-forward evaluation only. The candidate must beat the pre-declared baseline (for totals and margins, the league-average line implied by scored and allowed points) on a proper scoring rule, with the baseline declared before the run.",
+      "current": "Not run. No baseline-beating forecast has been produced, because no historical pregame archive exists in this repository and G02 is unresolved.",
+      "status": "Blocked",
+      "type": "Policy",
+      "source_ids": ["NFL-STANDINGS-2026", "REPO"]
+    },
+    {
+      "id": "G05",
+      "name": "Joint dependence for combinations",
+      "question": "For any parlay or prop combination, is the dependence measured rather than assumed independent?",
+      "pass_rule": "A combination may only be priced from a joint probability that was measured on the same events, or from a stated copula with its assumption disclosed. Multiplying marginal probabilities is a failing answer for same-game or same-player legs unless the measured dependence is shown to be negligible.",
+      "current": "Not met. No same-game leg-level data is available. The only measured dependence in this repository is club-season correlation, which is a different unit and cannot be reused as a leg correlation.",
+      "status": "Blocked",
+      "type": "Policy",
+      "source_ids": ["NFL-STANDINGS-2026", "SCIPY-PEARSON"]
+    },
+    {
+      "id": "G06",
+      "name": "Executable economics",
+      "question": "Did the candidate survive the actual price and the actual settlement rule?",
+      "pass_rule": "Every claimed return must be reproducible from a timestamped, executable price that a retail bettor could have taken, net of vig, and settled under the rules of a named operator in a named jurisdiction. If no auditable price history exists, the claimed return stays blank.",
+      "current": "Not met, by design. No licensed price feed is connected and none is claimed. NFL.com publishes no odds, and the repository holds no operator price archive. Every price, hold, ROI and closing-line field is blank.",
+      "status": "Blocked",
+      "type": "Policy",
+      "source_ids": ["NFL-TERMS-LEGAL", "REPO"]
+    },
+    {
+      "id": "G07",
+      "name": "Uncertainty and robustness",
+      "question": "Does the result survive reasonable re-specification and resampling?",
+      "pass_rule": "Report a resampling interval, the effect of dropping the largest contributor, and at least one plausible re-specification (a different but defensible window, weighting or control). A result that reverses under those is recorded as fragile, not qualified.",
+      "current": "Partially met for the descriptive correlations: permutation p-values are reported. Not met for any candidate strategy, because no candidate has an out-of-sample sample to resample.",
+      "status": "Blocked",
+      "type": "Policy",
+      "source_ids": ["SCIPY-PEARSON", "REPO"]
+    },
+    {
+      "id": "G08",
+      "name": "Selection and multiple testing",
+      "question": "How many ideas were tried before this one looked good?",
+      "pass_rule": "The number of candidates tested must be declared before the run, and the reported significance corrected for that number (for example Holm). A winner chosen from an undeclared pool fails.",
+      "current": "Not met. The eight hypotheses in the strategy ledger were written before scoring, but no correction has been applied because no candidate has a testable sample yet.",
+      "status": "Blocked",
+      "type": "Policy",
+      "source_ids": ["REPO"]
+    },
+    {
+      "id": "G09",
+      "name": "Forward shadow and risk",
+      "question": "Did the candidate survive untouched forward observation, within a stated risk limit?",
+      "pass_rule": "A minimum of one full forward period with the rules frozen and no edits to the candidate. Stake sizing, maximum drawdown and stop conditions must be declared in advance. Any mid-period change resets the clock.",
+      "current": "Not started. Zero forward periods have elapsed. Nothing here has been bet, simulated for money, or staked.",
+      "status": "Blocked",
+      "type": "Policy",
+      "source_ids": ["REPO"]
+    },
+    {
+      "id": "G10",
+      "name": "Reproducibility and rights to publish",
+      "question": "Can an independent reader rebuild this exactly, and may it be published?",
+      "pass_rule": "A clean checkout must rebuild every published number byte-for-byte from the committed snapshots, with hashes recorded. Publication must be permitted by the source terms and by the repository's own licence position.",
+      "current": "Reproducibility is met: the build is deterministic, snapshots carry SHA-256 hashes, and CI rebuilds and diffs every page. The publishing-rights half is not met: no repository licence exists and NFL terms do not grant redistribution rights.",
+      "status": "Blocked",
+      "type": "Policy",
+      "source_ids": ["NFL-TERMS-LEGAL", "REPO"]
+    }
+  ]
+}

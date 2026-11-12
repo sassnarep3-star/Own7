@@ -1,0 +1,283 @@
+# Official source: https://www.nfl.com/injuries/ — "2026 NFL Injury Report / Injuries - WEEK 10", read 2026-11-12.
+# One row per player row shown on that official page. Fields are transcribed exactly as rendered:
+#   team | player | pos | injury | practice | game
+# A blank "injury" or "game" cell means the official page rendered that cell empty at read time.
+# Practice status values are limited to what the page actually displayed. No status is inferred.
+# This is a WEEK 10 snapshot of one page state, not a live feed and not a depth chart.
+team|player|pos|injury|practice|game
+WAS|John Bates|TE||Full Participation in Practice|
+WAS|Treylon Burks|WR||Did Not Participate In Practice|
+WAS|Jayden Daniels|QB||Full Participation in Practice|
+WAS|Matt Gulbin|C||Full Participation in Practice|
+WAS|Chig Okonkwo|TE||Full Participation in Practice|
+WAS|Lucas Patrick|C|Concussion|Did Not Participate In Practice|Out
+WAS|Amik Robertson|CB||Limited Participation in Practice|
+WAS|Shy Tuttle|DT||Full Participation in Practice|
+WAS|Colson Yankoff|TE|Knee|Did Not Participate In Practice|Out
+NYG|Abdul Carter|LB||Full Participation in Practice|
+NYG|Jermaine Eluemunor|T||Full Participation in Practice|
+NYG|Malik Harrison|LB|Groin|Limited Participation in Practice|Questionable
+NYG|Colton Hood|CB||Full Participation in Practice|
+NYG|Theo Johnson|TE||Full Participation in Practice|
+NYG|Charlie Jones|WR||Full Participation in Practice|
+NYG|J.J. McCarthy|QB||Full Participation in Practice|
+NYG|Darnell Mooney|WR||Full Participation in Practice|
+NYG|Malik Nabers|WR||Full Participation in Practice|
+NYG|Cam Skattebo|RB||Full Participation in Practice|
+NYG|Andrew Thomas|T||Full Participation in Practice|
+NE|Ben Brown|C|Knee|Did Not Participate In Practice|Out
+NE|A.J. Brown|WR||Limited Participation in Practice|
+NE|Kevin Byard|S||Limited Participation in Practice|
+NE|Carlton Davis III|CB|Knee|Did Not Participate In Practice|Out
+NE|Reggie Gilliam|FB||Limited Participation in Practice|
+NE|TreVeyon Henderson|RB|Illness|Did Not Participate In Practice|Out
+NE|Hunter Henry|TE||Limited Participation in Practice|
+NE|Cameron Latu|TE||Did Not Participate In Practice|
+NE|Drake Maye|QB||Full Participation in Practice|
+NE|Morgan Moses|T||Limited Participation in Practice|
+NE|Walter Rouse|T||Did Not Participate In Practice|
+NE|Brenden Schooler|S||Did Not Participate In Practice|
+NE|Rhamondre Stevenson|RB||Did Not Participate In Practice|
+NE|Greg Van Roten|G||Limited Participation in Practice|
+NE|Charles Woods|CB||Limited Participation in Practice|
+DET|Brian Branch|S||Limited Participation in Practice|
+DET|Jared Goff|QB||Limited Participation in Practice|
+DET|Kerby Joseph|S||Limited Participation in Practice|
+DET|Cade Mays|C||Did Not Participate In Practice|
+DET|D.J. Reed|CB||Did Not Participate In Practice|
+DET|Jacob Saylors|RB||Full Participation in Practice|
+DET|Amon-Ra St. Brown|WR||Limited Participation in Practice|
+DET|Sione Vaki|RB||Did Not Participate In Practice|
+DET|DJ Wonnum|DE||Full Participation in Practice|
+KC|Jeffrey Bassa|LB||Full Participation in Practice|
+KC|Mansoor Delane|CB||Full Participation in Practice|
+KC|Justin Fields|QB||Full Participation in Practice|
+KC|Jaden Hicks|S||Full Participation in Practice|
+KC|Travis Kelce|TE||Full Participation in Practice|
+KC|Patrick Mahomes|QB||Full Participation in Practice|
+KC|Jaylon Moore|T||Did Not Participate In Practice|
+KC|Omarr Norman-Lott|DT||Limited Participation in Practice|
+KC|Rashee Rice|WR||Full Participation in Practice|
+KC|Peter Woods|DT||Did Not Participate In Practice|
+KC|Xavier Worthy|WR||Full Participation in Practice|
+ATL|Zachariah Branch|WR||Did Not Participate In Practice|
+ATL|Divine Deablo|LB||Limited Participation in Practice|
+ATL|Gervon Dexter Sr.|DT||Did Not Participate In Practice|
+ATL|James Pearce Jr.|DE||Did Not Participate In Practice|
+ATL|Za'Darius Smith|DE||Did Not Participate In Practice|
+ATL|Josh Woods|LB||Did Not Participate In Practice|
+MIN|Blake Cashman|LB||Did Not Participate In Practice|
+MIN|T.J. Hockenson|TE||Did Not Participate In Practice|
+MIN|Tyrion Ingram-Dawkins|DT||Did Not Participate In Practice|
+MIN|Theo Jackson|S||Full Participation in Practice|
+MIN|Jauan Jennings|WR||Did Not Participate In Practice|
+MIN|Kyler Murray|QB||Did Not Participate In Practice|
+MIN|Kyle Van Noy|LB||Did Not Participate In Practice|
+MIN|Jay Ward|S||Limited Participation in Practice|
+MIN|Carson Wentz|QB||Limited Participation in Practice|
+GB|Aaron Banks|G||Limited Participation in Practice|
+GB|Chris Brooks|RB||Limited Participation in Practice|
+GB|Javon Bullard|S||Did Not Participate In Practice|
+GB|Zaire Franklin|LB||Did Not Participate In Practice|
+GB|Travis Glover|G||Limited Participation in Practice|
+GB|Ty'Ron Hopper|LB||Limited Participation in Practice|
+GB|Josh Jacobs|RB||Did Not Participate In Practice|
+GB|Bo Melton|WR||Full Participation in Practice|
+GB|Skyy Moore|WR||Limited Participation in Practice|
+GB|Micah Parsons|LB||Limited Participation in Practice|
+GB|Sean Rhyan|C||Did Not Participate In Practice|
+GB|Trey Smack|K||Limited Participation in Practice|
+GB|Lukas Van Ness|LB||Did Not Participate In Practice|
+GB|Josh Whyle|TE||Did Not Participate In Practice|
+GB|Savion Williams|WR||Limited Participation in Practice|
+GB|Kevin Zeitler|G||Limited Participation in Practice|
+JAX|Jessie Bates|S||Did Not Participate In Practice|
+JAX|Ezra Cleveland|G||Limited Participation in Practice|
+JAX|Branson Combs|LB||Limited Participation in Practice|
+JAX|Jordan Davis|DT||Did Not Participate In Practice|
+JAX|Robert Hainsey|C||Limited Participation in Practice|
+JAX|Antonio Johnson|S||Limited Participation in Practice|
+JAX|Jakobi Meyers|WR||Did Not Participate In Practice|
+JAX|Chris Rodriguez Jr.|RB||Limited Participation in Practice|
+JAX|Bhayshul Tuten|RB||Did Not Participate In Practice|
+JAX|Travon Walker|DE||Did Not Participate In Practice|
+TEN|Cody Barton|LB||Did Not Participate In Practice|
+TEN|John Franklin-Myers|DE||Full Participation in Practice|
+TEN|Marcus Harris|CB||Full Participation in Practice|
+TEN|Anthony Hill Jr.|LB||Did Not Participate In Practice|
+TEN|Jaylon Jones|CB||Full Participation in Practice|
+TEN|JC Latham|T||Full Participation in Practice|
+TEN|Tony Pollard|RB||Full Participation in Practice|
+TEN|Peter Skoronski|G||Did Not Participate In Practice|
+TEN|Tyjae Spears|RB||Did Not Participate In Practice|
+TEN|Carnell Tate|WR||Did Not Participate In Practice|
+TEN|Tommy Townsend|P||Full Participation in Practice|
+TEN|Kevin Winston Jr.|S||Full Participation in Practice|
+BUF|Alec Anderson|G||Limited Participation in Practice|
+BUF|Christian Benford|CB||Limited Participation in Practice|
+BUF|Spencer Brown|T||Limited Participation in Practice|
+BUF|Dion Dawkins|T||Limited Participation in Practice|
+BUF|Greg Gaines|DT||Full Participation in Practice|
+BUF|Jordan Hancock|CB||Full Participation in Practice|
+BUF|Dalton Kincaid|TE||Limited Participation in Practice|
+BUF|Connor McGovern|C||Limited Participation in Practice|
+BUF|Ar'maj Reed-Adams|G||Full Participation in Practice|
+BUF|T.J. Sanders|DE||Full Participation in Practice|
+BUF|Tyrell Shavers|WR||Full Participation in Practice|
+NYJ|Omar Cooper Jr.|WR||Limited Participation in Practice|
+NYJ|Joseph Ossai|DE||Limited Participation in Practice|
+NYJ|VJ Payne|S||Full Participation in Practice|
+NYJ|Harrison Phillips|DT||Did Not Participate In Practice|
+NYJ|Trevin Wallace|LB||Did Not Participate In Practice|
+NYJ|Garrett Wilson|WR||Limited Participation in Practice|
+NYJ|Nahshon Wright|CB||Limited Participation in Practice|
+MIA|Tucker Addington|LS||Limited Participation in Practice|
+MIA|Kaytron Allen|RB||Full Participation in Practice|
+MIA|Darrell Baker Jr.|CB||Limited Participation in Practice|
+MIA|Chris Bell|WR||Limited Participation in Practice|
+MIA|Aaron Brewer|C||Did Not Participate In Practice|
+MIA|Malik Herring|DE||Limited Participation in Practice|
+MIA|Will Kacmarek|TE||Did Not Participate In Practice|
+MIA|Michael Taaffe|S||Full Participation in Practice|
+MIA|Dante Trader Jr.|S||Full Participation in Practice|
+MIA|Jaylen Wright|RB||Full Participation in Practice|
+IND|Mo Alie-Cox|TE||Did Not Participate In Practice|
+IND|Jaylon Carlies|LB||Did Not Participate In Practice|
+IND|Akeem Davis-Gaither|LB||Did Not Participate In Practice|
+IND|A.J. Haulcy|S||Did Not Participate In Practice|
+IND|Arden Key|DE||Full Participation in Practice|
+IND|Luke Rhodes|LS||Did Not Participate In Practice|
+IND|Jonathan Taylor|RB||Limited Participation in Practice|
+IND|Jerry Tillery|DT||Limited Participation in Practice|
+IND|Jalen Travis|T||Did Not Participate In Practice|
+IND|Justin Walley|CB||Full Participation in Practice|
+IND|Charvarius Ward|CB||Did Not Participate In Practice|
+CAR|Jonathon Brooks|RB||Full Participation in Practice|
+CAR|Brady Christensen|G||Full Participation in Practice|
+CAR|Trevor Etienne|RB||Full Participation in Practice|
+CAR|Chuba Hubbard|RB||Did Not Participate In Practice|
+CAR|Lee Hunter|DT||Full Participation in Practice|
+CAR|Mike Jackson|CB||Full Participation in Practice|
+CAR|Will Lee III|CB||Full Participation in Practice|
+CAR|Xavier Legette|WR||Full Participation in Practice|
+CAR|Damien Lewis|G||Full Participation in Practice|
+CAR|Bobby Okereke|LB||Did Not Participate In Practice|
+CAR|Jaelan Phillips|LB||Full Participation in Practice|
+CAR|Torricelli Simpkins III|G||Full Participation in Practice|
+NO|Kelvin Banks Jr.|T||Limited Participation in Practice|
+NO|CJ Donaldson|RB||Did Not Participate In Practice|
+NO|David Edwards|G||Limited Participation in Practice|
+NO|Martin Emerson|CB||Limited Participation in Practice|
+NO|Travis Etienne|RB||Limited Participation in Practice|
+NO|Noah Fant|TE||Limited Participation in Practice|
+NO|Alvin Kamara|RB||Did Not Participate In Practice|
+NO|Erik McCoy|C||Did Not Participate In Practice|
+NO|Christen Miller|DT||Limited Participation in Practice|
+NO|Asim Richards|T||Full Participation in Practice|
+HOU|Azeez Al-Shaair|LB||Did Not Participate In Practice|
+HOU|Reed Blankenship|S||Limited Participation in Practice|
+HOU|Tank Dell|WR||Limited Participation in Practice|
+HOU|Blake Fisher|T||Full Participation in Practice|
+HOU|Marvin Harrison Jr.|WR||Limited Participation in Practice|
+HOU|Jacob Hummel|LB||Limited Participation in Practice|
+HOU|Brevin Jordan|TE||Did Not Participate In Practice|
+HOU|Woody Marks|RB||Limited Participation in Practice|
+HOU|David Montgomery|RB||Did Not Participate In Practice|
+HOU|Keylan Rutledge|G||Did Not Participate In Practice|
+HOU|Jaylin Smith|CB||Limited Participation in Practice|
+HOU|Wyatt Teller|G||Limited Participation in Practice|
+HOU|Tommy Togiai|DT||Full Participation in Practice|
+CLE|Austin Barber|T||Limited Participation in Practice|
+CLE|Denzel Boston|WR||Did Not Participate In Practice|
+CLE|Michael Burton|FB||Did Not Participate In Practice|
+CLE|Maliek Collins|DT||Limited Participation in Practice|
+CLE|Harold Fannin Jr.|TE||Limited Participation in Practice|
+CLE|Ronnie Hickman Jr.|S||Did Not Participate In Practice|
+CLE|Tytus Howard|T||Limited Participation in Practice|
+CLE|Elgton Jenkins|C||Did Not Participate In Practice|
+CLE|Carson Schwesinger|LB||Limited Participation in Practice|
+CLE|Denzel Ward|CB||Limited Participation in Practice|
+CLE|Quincy Williams|LB||Limited Participation in Practice|
+LA|Davis Allen|TE||Limited Participation in Practice|
+LA|Steve Avila|G||Did Not Participate In Practice|
+LA|Joe Cardona|LS||Limited Participation in Practice|
+LA|Kam Curl|S||Did Not Participate In Practice|
+LA|Terrance Ferguson|TE||Did Not Participate In Practice|
+LA|Myles Garrett|LB||Limited Participation in Practice|
+LA|Trent McDuffie|CB||Did Not Participate In Practice|
+LA|Puka Nacua|WR||Did Not Participate In Practice|
+LA|Colby Parkinson|TE||Limited Participation in Practice|
+LA|Matthew Stafford|QB||Full Participation in Practice|
+AZ|Budda Baker|S||Did Not Participate In Practice|
+AZ|Zachary Carter|DT||Limited Participation in Practice|
+AZ|Hjalte Froholdt|C||Did Not Participate In Practice|
+AZ|Jon Gaines II|G||Did Not Participate In Practice|
+AZ|Bam Knight|RB||Limited Participation in Practice|
+AZ|Hunter Long|TE||Limited Participation in Practice|
+AZ|Roy Lopez|DT||Did Not Participate In Practice|
+AZ|Max Melton|CB||Limited Participation in Practice|
+AZ|Isaac Seumalo|G||Did Not Participate In Practice|
+AZ|Dante Stills|DT||Limited Participation in Practice|
+AZ|Josh Sweat|LB||Did Not Participate In Practice|
+AZ|Jayden Williams|T||Limited Participation in Practice|
+AZ|Mack Wilson|LB||Did Not Participate In Practice|
+AZ|Andrew Wingard|S||Limited Participation in Practice|
+SEA|AJ Barner|TE||Full Participation in Practice|
+SEA|Anthony Bradford|G||Limited Participation in Practice|
+SEA|Charles Cross|T||Did Not Participate In Practice|
+SEA|Sam Darnold|QB||Did Not Participate In Practice|
+SEA|Derick Hall|LB||Limited Participation in Practice|
+SEA|Drew Lock|QB||Limited Participation in Practice|
+SEA|Quenton Nelson|G||Did Not Participate In Practice|
+SEA|Uchenna Nwosu|LB||Limited Participation in Practice|
+SEA|Patrick O'Connell|LB||Limited Participation in Practice|
+SEA|Connor O'Toole|LB||Limited Participation in Practice|
+SEA|Brandon Pili|DT||Did Not Participate In Practice|
+SEA|Jarran Reed|DT||Did Not Participate In Practice|
+SEA|Rashid Shaheed|WR||Full Participation in Practice|
+SEA|Jaxon Smith-Njigba|WR||Did Not Participate In Practice|
+SEA|Leonard Williams|DT||Did Not Participate In Practice|
+LV|Thomas Booker|DT||Limited Participation in Practice|
+LV|Foley Fatukasi|DT||Limited Participation in Practice|
+LV|Ian Thomas|TE||Full Participation in Practice|
+LV|Trey Zuhn III|C||Limited Participation in Practice|
+SF|Mike Evans|WR||Did Not Participate In Practice|
+SF|Renardo Green|CB||Did Not Participate In Practice|
+SF|Dre Greenlaw|LB||Did Not Participate In Practice|
+SF|Nate Hobbs|CB||Full Participation in Practice|
+SF|Deommodore Lenoir|CB||Did Not Participate In Practice|
+SF|Christian McCaffrey|RB||Did Not Participate In Practice|
+SF|Siran Neal|S||Limited Participation in Practice|
+SF|Demarcus Robinson|WR||Full Participation in Practice|
+SF|Deebo Samuel Sr.|WR||Limited Participation in Practice|
+SF|Upton Stout|CB||Limited Participation in Practice|
+SF|C.J. West|DT||Limited Participation in Practice|
+SF|Trent Williams|T||Did Not Participate In Practice|
+DAL|Jonathan Bullard|DT||Full Participation in Practice|
+DAL|Donovan Ezeiruaku|LB||Did Not Participate In Practice|
+DAL|Jake Ferguson|TE||Did Not Participate In Practice|
+DAL|Tyler Goodson|RB||Did Not Participate In Practice|
+DAL|Malik Hooker|S||Did Not Participate In Practice|
+DAL|Marist Liufau|LB||Full Participation in Practice|
+DAL|P.J. Locke|S||Did Not Participate In Practice|
+DAL|Von Miller|LB||Did Not Participate In Practice|
+DAL|Jonathan Mingo|WR||Did Not Participate In Practice|
+DAL|Devin Moore|CB||Full Participation in Practice|
+DAL|DeMarvion Overshown|LB||Limited Participation in Practice|
+DAL|George Pickens|WR||Limited Participation in Practice|
+DAL|Joey Porter Jr.|CB||Did Not Participate In Practice|
+DAL|Luke Schoonmaker|TE||Full Participation in Practice|
+DAL|Brevyn Spann-Ford|TE||Full Participation in Practice|
+DAL|KaVontae Turpin|WR||Limited Participation in Practice|
+PIT|Brandin Echols|CB||Full Participation in Practice|
+PIT|DeShon Elliott|S||Limited Participation in Practice|
+PIT|Derrick Harmon|DT||Limited Participation in Practice|
+PIT|Cameron Heyward|DT||Did Not Participate In Practice|
+PIT|Ben Skowronek|WR||Full Participation in Practice|
+PIT|Doneiko Slaughter|CB||Full Participation in Practice|
+PIT|Darnell Washington|TE||Did Not Participate In Practice|
+PIT|T.J. Watt|LB||Did Not Participate In Practice|
+CIN|Jonathan Allen|DT||Did Not Participate In Practice|
+CIN|Kyle Dugger|S||Did Not Participate In Practice|
+CIN|Dylan Fairchild|G||Limited Participation in Practice|
+CIN|DJ Turner II|CB||Limited Participation in Practice|

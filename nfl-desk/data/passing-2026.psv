@@ -1,0 +1,42 @@
+# Official source: https://www.nfl.com/stats/team-stats/offense/points/2026/reg/all (read 2026-11-12)
+# The captured table is unlabeled. Four fields are transcribed because their meaning is forced by
+# the page's own arithmetic: round(CMP / ATT * 100, 1) reproduces the displayed PCT on 32 of 32
+# rows (max deviation 0.05 percentage points, caused by truncation on WAS 61.65 -> 61.6).
+# Everything else in that table is excluded rather than guessed (flag DF-03):
+#   * The displayed per-attempt average could NOT be reproduced from the displayed integers on
+#     4 of 32 rows (KC 2037/263 = 7.75 shown as 7.8; JAX 8.55 -> 8.6; SEA 7.25 -> 7.2;
+#     PIT 6.45 -> 6.4). Its definition is therefore unconfirmed and it is NOT published.
+#   * TD, INT, longest and five further columns could not be identified from the capture.
+abbr|att|cmp|pct|yds
+SF|236|163|69.1|1980
+CHI|312|211|67.6|2310
+CIN|296|219|74.0|2386
+BUF|236|156|66.1|2027
+DEN|287|174|60.6|1730
+CLE|283|185|65.4|2105
+TB|240|146|60.8|1423
+AZ|359|232|64.6|2080
+LAC|243|146|60.1|1615
+KC|263|177|67.3|2037
+IND|304|184|60.5|1730
+WAS|266|164|61.6|1776
+DAL|336|218|64.9|2381
+MIA|209|122|58.4|1442
+PHI|303|179|59.1|1740
+ATL|256|156|60.9|1766
+NYG|268|165|61.6|1900
+JAX|227|147|64.8|1940
+NYJ|271|183|67.5|2078
+DET|274|186|67.9|2145
+GB|341|215|63.0|2618
+CAR|313|189|60.4|2244
+NE|281|183|65.1|2349
+LV|324|209|64.5|2401
+LA|349|232|66.5|2387
+BAL|247|165|66.8|1842
+NO|308|204|66.2|1986
+SEA|288|182|63.2|2089
+PIT|290|175|60.3|1871
+HOU|285|182|63.9|2258
+TEN|248|155|62.5|1483
+MIN|225|137|60.9|1437
