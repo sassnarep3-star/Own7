@@ -306,5 +306,171 @@
       "NL-GOKSTOP",
       "MKT-CRUKS-CONTACT"
     ]
+  },
+  {
+    "id": "R30",
+    "requirement": "Convert the project to NFL",
+    "status": "Complete",
+    "evidence": "NFL landing page, eleven NFL category pages and a separate NBA group. NFL data is verified; earlier NBA and rental research retained unchanged.",
+    "artifact": "index.html",
+    "source_ids": [
+      "NFL-STANDINGS",
+      "NFL-INJURY",
+      "NFL-SCHEDULE"
+    ]
+  },
+  {
+    "id": "R31",
+    "requirement": "Create a dedicated suggestions section for review before implementation",
+    "status": "Complete",
+    "evidence": "Ten suggestions ranked by decision value, each naming the gap it closes, what it unlocks, its risk if skipped, a recommended sequence and five acceptance tests.",
+    "artifact": "nfl-suggestions.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R32",
+    "requirement": "Clear list of questions, known and missing information before a decision",
+    "status": "Complete",
+    "evidence": "Known/missing register plus fourteen decision questions, each split into a sourced part and an open part.",
+    "artifact": "nfl-decisions.html",
+    "source_ids": [
+      "NFL-STANDINGS",
+      "NFL-INJURY",
+      "NFL-TERMS",
+      "PYTH-NFL",
+      "REPO"
+    ]
+  },
+  {
+    "id": "R33",
+    "requirement": "Originate own NFL lines for singles, parlays and prop combos",
+    "status": "Partial",
+    "evidence": "Fourteen Week 10 singles originated from official scoring data with stated assumptions. Parlays and props are specified but deliberately unpriced: no leg dependence and no usage data exist.",
+    "artifact": "nfl-lines.html",
+    "source_ids": [
+      "NFL-STANDINGS",
+      "NFL-SCHEDULE",
+      "PYTH-NFL"
+    ]
+  },
+  {
+    "id": "R34",
+    "requirement": "Leaderboard competition with rewards for top strategies",
+    "status": "Partial",
+    "evidence": "Frozen ranking rules, three divisions, merit-point scale and an empty shadow ledger are published. Nothing is ranked or rewarded because no strategy qualifies.",
+    "artifact": "nfl-leaderboard.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R35",
+    "requirement": "Each strategy must pass validation gates",
+    "status": "Complete",
+    "evidence": "Ten gates with pass rules and current evidence; eight strategies evaluated; a not-applicable gate is excluded and never counted as a pass. A test asserts the contract.",
+    "artifact": "nfl-validation.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R36",
+    "requirement": "Determine correlation values",
+    "status": "Partial",
+    "evidence": "Ten team-level Pearson values with permutation p-values and Holm adjustment. Five are arithmetic artefacts and labelled. Leg-level and multi-leg dependence is blank because it was not collected.",
+    "artifact": "nfl-correlation.html",
+    "source_ids": [
+      "NFL-STANDINGS",
+      "PYTH-NFL"
+    ]
+  },
+  {
+    "id": "R37",
+    "requirement": "Remove luck from the equation and build selectively skill-based strategies",
+    "status": "Partial",
+    "evidence": "A points-based expectation is scored against actual records (Brier 0.1575 versus 0.25) and record-versus-scoring residuals are published per club. Luck is not removable; only partially separable, and no forward test exists, so no strategy is called skill-based.",
+    "artifact": "nfl-standings.html",
+    "source_ids": [
+      "NFL-STANDINGS",
+      "PYTH-NFL",
+      "PFR-GLOSSARY"
+    ]
+  },
+  {
+    "id": "R38",
+    "requirement": "Track injuries and defensive/offensive starter-to-backup deficiencies",
+    "status": "Partial",
+    "evidence": "Twenty official statuses published with per-player sources and the official category definitions. Starter identification, second/third-string replacement counts and lost on-field value are blank because no depth chart or snap count was retrieved; flagged with a named fix.",
+    "artifact": "nfl-injuries.html",
+    "source_ids": [
+      "NFL-INJURY",
+      "NFL-INJURY-POLICY"
+    ]
+  },
+  {
+    "id": "R39",
+    "requirement": "Executive summary of important details",
+    "status": "Complete",
+    "evidence": "Five-finding executive page plus a markdown brief and a read-if-nothing-else paragraph naming the four blocking gaps.",
+    "artifact": "executive-summary.html",
+    "source_ids": [
+      "NFL-STANDINGS",
+      "NFL-INJURY",
+      "NFL-SCHEDULE",
+      "PYTH-NFL"
+    ]
+  },
+  {
+    "id": "R40",
+    "requirement": "Review the repo line by line and flag irregularities",
+    "status": "Complete",
+    "evidence": "Twelve irregularities recorded with disposition in the review document and published on the site review page; baseline checks re-run before and after.",
+    "artifact": "nfl-review.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R41",
+    "requirement": "Every table row must carry an official source link; blanks stay blank",
+    "status": "Complete",
+    "evidence": "Automated check requires registered official source IDs and a matching link on every table body row; a second check fails if any 'unknown' cell contains text. 940 rows pass.",
+    "artifact": "sources.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R42",
+    "requirement": "No manual input from the owner; finish all tasks unaided",
+    "status": "Complete",
+    "evidence": "Extraction, derivation, generation, tests and checks run from committed files with no accounts, keys or hand-entered data. Only one preference question (DQ14) is left open.",
+    "artifact": "nfl-questions.html",
+    "source_ids": [
+      "REPO"
+    ]
+  },
+  {
+    "id": "R43",
+    "requirement": "Live GitHub Pages site with a clean dashboard and category subpages",
+    "status": "Complete",
+    "evidence": "37 canonical pages generated deterministically, including eleven NFL category pages, verified in-browser at desktop and mobile with zero accessibility violations.",
+    "artifact": "index.html",
+    "source_ids": [
+      "REPO",
+      "GH-PAGES"
+    ]
+  },
+  {
+    "id": "R44",
+    "requirement": "Coordinate with parallel sessions and publish through a final integration",
+    "status": "Complete",
+    "evidence": "Task claim written and pushed before implementation; exclusive file scopes recorded; final integration, PR, merge and deploy recorded on the coordination board.",
+    "artifact": "COORDINATION.md",
+    "source_ids": [
+      "REPO"
+    ]
   }
 ]

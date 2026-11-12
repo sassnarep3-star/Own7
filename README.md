@@ -1,10 +1,69 @@
-# OWN7 · NBA Research Lab
+# OWN7 · NFL Origination Lab
 
-[Live dashboard](https://sassnarep3-star.github.io/Own7/) · [Executive brief](docs/executive-summary.md) · [Sources](research/sources.json) · [Coordination / release evidence](COORDINATION.md)
+[Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-executive-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
-One static, source-linked dashboard replaces the repository’s three inconsistent earlier sites. It contains **107 checked official snapshot rows**, eight strategy hypotheses, six paired-game exploratory estimates plus 17 contributed aggregate-correlation rows (with overlaps), 88 retrospective probability demonstrations, ten fail-closed validation gates, an empty qualified leaderboard, a requirements ledger and a complete baseline file audit.
+## What this is now
 
-**No verified betting edge, executable NBA line, ROI, CLV, cash prize or winning strategy is claimed.** Blank values are intentional. Luck cannot be removed.
+The landing page is an **NFL research workspace**. It originates its own lines from official NFL
+data, then tries to falsify them. It publishes what it knows, what it does not know, and a ranked
+list of suggestions for closing the gaps, so a change can be reviewed and chosen before anything
+is implemented.
+
+- **66 verified NFL rows**, parsed from saved official page text on 2026-11-12 and re-derived
+  arithmetically before publication: 32 club standings rows, 20 injury-report rows, 14 Week 10
+  fixtures. `scripts/nfl_extract.py` aborts instead of publishing a contradiction.
+- **14 originated games** with a model spread, total and fair price from one coherent score pair.
+  No sportsbook price was retrieved, so market cells, ROI and CLV are blank by rule.
+- **10 ranked suggestions**, **14 decision questions**, **12 review flags**, **10 validation gates**
+  (two pass, one partial, one open on rights) and **8 blocked strategies** with an empty leaderboard.
+- **Zero** qualified strategies, rewards, wagers or recommendations.
+
+NFL data is attributed to NFL.com. This is not affiliated with or endorsed by the NFL. NFL.com terms
+§1.3 permit individual non-commercial informational use and prohibit systematic retrieval to compile
+a collection without written consent, so no dataset is released and nothing is scraped on a schedule.
+
+## Reproduce without manual data entry
+
+Python 3.11+; no third-party Python packages.
+
+```sh
+python scripts/nfl_extract.py --check   # re-parse saved official NFL text; refuse contradictions
+python -m nfl_lab run                   # derive lines, calibration, correlations, gates
+python -m unittest discover -s tests    # 86 tests
+python scripts/build_site.py            # regenerate every page deterministically
+python scripts/check_site.py            # links, fragments, per-row sources, blank rules
+npm ci && npm run test:browser          # 46 desktop + 46 mobile pages, WCAG A/AA
+python scripts/serve_site.py --host 0.0.0.0 --port 8080
+```
+
+## The NFL section
+
+| Page | What it answers |
+|---|---|
+| `index.html` | Overview, headline findings and the five things that matter |
+| `nfl-suggestions.html` | **Suggestions to review**, ranked by decision value, with acceptance tests |
+| `nfl-decisions.html` | What we know, what we do not know, and what closes each gap |
+| `nfl-questions.html` | Fourteen questions, each split into sourced and open parts |
+| `nfl-lines.html` | Line origination: method, assumptions, originated board |
+| `nfl-correlation.html` | Team-level dependence, and what is deliberately not estimated |
+| `nfl-injuries.html` | Official statuses, and why starter/backup impact is blank |
+| `nfl-standings.html` | All 32 clubs, re-derived, with six columns withheld and explained |
+| `nfl-validation.html` | Ten gates and the per-strategy gate matrix |
+| `nfl-leaderboard.html` | The frozen competition format, empty by rule |
+| `nfl-review.html` | Twelve flagged irregularities with official source links |
+
+## Known limits
+
+One partial season, eight or nine games per club. Every NFL value is single-source. No depth chart,
+snap count, player log or market price was retrieved. Division standings columns could not be
+identified from the rendered table and are withheld. Five of ten team correlations are arithmetic
+artefacts and are labelled as such. Team-level correlation is not leg-level dependence, so no parlay
+is priced. Luck cannot be removed. The earlier NBA and rental research remains on the site, unchanged
+and separately scoped.
+
+---
+
+## Earlier NBA research workspace (retained, unchanged)
 
 ## Important source restriction
 

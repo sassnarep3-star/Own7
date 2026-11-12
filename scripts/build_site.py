@@ -366,7 +366,12 @@ def audit_page():
 def requirements_page():
     rows=load_json('research/requirements.json')
     for r in rows:r['artifact_link']=Markup(link(r['artifact'],'Inspect artifact →'))
-    return notice('A requirements ledger, not a blanket completion claim.', 'Blocked scientific, legal or market requirements remain explicitly blocked; a live website does not turn an unverified model into a qualified strategy.',info=True)+section('Request-to-evidence traceability',table('requirements-ledger','Requirements traceability',[('Requirement',lambda r:rich(r['requirement'],r['id'])),('Disposition / evidence','evidence'),('Artifact','artifact_link'),('Status',lambda r:badge(r['status']))],rows,note='All project design defaults are distinguished from external facts. Release evidence and deployment status are recorded in COORDINATION.md.'))
+    complete=sum(1 for r in rows if r['status']=='Complete')
+    partial=sum(1 for r in rows if r['status'] not in ('Complete',))
+    body=notice('A requirements ledger, not a blanket completion claim.', f'{complete} requirements are complete and {partial} are partial or blocked. A partial requirement means the deliverable exists and the evidence gap is named, not that the underlying claim is satisfied.',info=True)
+    body+=metrics([('Requirements traced',len(rows),'NFL, NBA and rental scope','requirements'),('Complete',complete,'Delivered with evidence','validation'),('Partial or blocked',partial,'Gap named, not hidden','review'),('Owner input needed',1,'One preference question','brief')])
+    body+=section('Request-to-evidence traceability',table('requirements-ledger','Requirements traceability',[('Requirement',lambda r:rich(r['requirement'],r['id'])),('Disposition / evidence','evidence'),('Artifact','artifact_link'),('Status',lambda r:badge(r['status']))],rows,filter_options=['Complete','Partial','Blocked'],note='All project design defaults are distinguished from external facts. Release evidence and deployment status are recorded in COORDINATION.md.'))
+    return body
 
 
 def responsible_use():
