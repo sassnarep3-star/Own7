@@ -1,0 +1,37 @@
+club,position,starter,starter_status,starter_injury,second_string,third_string,deficiency,note,sources
+AZ,QB,Carson Beck,no injury listed,,Josh Johnson,Joey Aguilar,first career NFL start,"NFL.com roundup: Beck will start Sunday vs the Rams, per head coach",AZ-DEPTH NFL-ROUNDUP
+AZ,LT,Jayden Williams,Limited,knee,Jedrick Wills,,no third-string tackle listed,Depth chart lists two tackles only,AZ-DEPTH NFL-ROUNDUP
+AZ,LG,Isaac Seumalo,DNP,,Hayden Conner,,no third-string guard listed,Injury type not published on the pages checked,AZ-DEPTH NFL-INJURIES
+AZ,C,Hjalte Froholdt,DNP,concussion,Kingsley Eguakun,,no third-string center listed,,AZ-DEPTH NFL-ROUNDUP
+AZ,RG,Isaiah Adams,no injury listed,,Jon Gaines II,,second string out (DNP),Starter healthy; backup did not practice,AZ-DEPTH NFL-ROUNDUP
+AZ,TE,Trey McBride,no injury listed,,Elijah Higgins,,no third-string tight end listed,Hunter Long (IR return) is limited and is not on the depth-chart rows,AZ-DEPTH NFL-ROUNDUP NFL-INJURIES
+AZ,RB,Tyler Allgeier,no injury listed,,Bam Knight,Evan Hull,second string limited (concussion),,AZ-DEPTH NFL-ROUNDUP
+AZ,DT,Dante Stills,Limited,shoulder,Darius Robinson,,none listed at second string,,AZ-DEPTH NFL-ROUNDUP
+AZ,NT,Roy Lopez,DNP,toe/ankle,Andrew Billings,,no third-string nose tackle listed,,AZ-DEPTH NFL-ROUNDUP
+AZ,OLB,Josh Sweat,DNP,,Jordan Burch,Eku Leota,two-deep intact,Injury type not published on the pages checked,AZ-DEPTH NFL-INJURIES
+AZ,ILB,Mack Wilson,DNP,,Cody Simon,,no third-string inside linebacker listed,Listed as Mack Wilson Sr. on the club depth chart; injury type not published,AZ-DEPTH NFL-INJURIES
+AZ,CB,Max Melton,Limited,knee/hand,Kei'Trel Clark,,no third-string corner listed,,AZ-DEPTH NFL-ROUNDUP
+AZ,S,Budda Baker,DNP,,Dadrion Taylor-Demerson,,no third-string safety listed,Injury type not published on the pages checked,AZ-DEPTH NFL-INJURIES
+AZ,S,Andrew Wingard,Limited,groin,Kitan Crawford,,no third-string safety listed,,AZ-DEPTH NFL-ROUNDUP
+CLE,QB,Deshaun Watson,no injury listed,,Shedeur Sanders,Dillon Gabriel,fourth string also listed,Club announced Watson as the Week 10 starter; Taylen Green is fourth,CLE-DEPTH NFL-ROUNDUP
+CLE,LT,Spencer Fano,no injury listed,,,,no second-string left tackle listed,,CLE-DEPTH
+CLE,C,Elgton Jenkins,DNP,knee,Luke Wypler,Parker Brailsford,three-deep intact,,CLE-DEPTH NFL-ROUNDUP
+CLE,RG,Austin Barber,Limited,calf,,,no second-string right guard listed,,CLE-DEPTH NFL-ROUNDUP
+CLE,RT,Tytus Howard,Limited,knee,Dawand Jones,,no third-string tackle listed,,CLE-DEPTH NFL-ROUNDUP
+CLE,WR,Denzel Boston,DNP,toe,Malachi Corley,,no third-string receiver listed,,CLE-DEPTH NFL-ROUNDUP
+CLE,LDT,Maliek Collins,Limited,elbow,Mike Hall Jr.,Sam Kamara,three-deep intact,,CLE-DEPTH NFL-ROUNDUP
+CLE,WILL,Carson Schwesinger,Limited,wrist/ankle,,,no backup listed at WILL,,CLE-DEPTH NFL-ROUNDUP
+CLE,MIKE,Quincy Williams,Limited,hamstring,Justin Jefferson,,no third-string linebacker listed,,CLE-DEPTH NFL-ROUNDUP
+CLE,CB,Denzel Ward,Limited,quadricep,Mekhi Blackmon,Toriano Pride Jr.,three-deep intact,,CLE-DEPTH NFL-ROUNDUP
+CLE,FS,Ronnie Hickman Jr.,DNP,concussion,Donovan McMillon,,no third-string free safety listed,Depth chart lists him as Ronnie Hickman,CLE-DEPTH NFL-ROUNDUP
+CLE,FB,no fullback row on depth chart,,,,,position mismatch,Michael Burton is listed at RB on the club depth chart; he was reported as FB and did not practice,CLE-DEPTH NFL-ROUNDUP
+SF,QB,Brock Purdy,no injury listed,,Mac Jones,Kurtis Rourke,three-deep intact,,SF-DEPTH
+SF,WR,Mike Evans,DNP,Achilles,Jordan Watkins,Brandin Cooks,three-deep intact,,SF-DEPTH NFL-ROUNDUP
+SF,WR,Deebo Samuel,Limited,hamstring,Demarcus Robinson,Jacob Cowing,three-deep intact,Depth chart lists him as Deebo Samuel Sr.,SF-DEPTH NFL-ROUNDUP
+SF,LT,Trent Williams,DNP,,Vederian Lowe,Enrique Cruz Jr.,three-deep intact,Injury type not published on the pages checked,SF-DEPTH NFL-INJURIES
+SF,RB,Christian McCaffrey,DNP,,Kaelon Black,Jordan James,three-deep intact,Injury type not published on the pages checked,SF-DEPTH NFL-INJURIES
+SF,WILL,Dre Greenlaw,DNP,,Garret Wallow,,no third-string linebacker listed,Injury type not published on the pages checked,SF-DEPTH NFL-INJURIES
+SF,LCB,Renardo Green,DNP,back,,,no backup listed at left corner,Starter out with no second string on the depth chart,SF-DEPTH NFL-ROUNDUP
+SF,RCB,Deommodore Lenoir,DNP,foot,Ephesians Prysock,,no third-string corner listed,,SF-DEPTH NFL-ROUNDUP
+SF,NB,Upton Stout,Limited,,,,no backup listed at nickel,Injury type not published on the pages checked,SF-DEPTH NFL-INJURIES
+SF,FS,Ji'Ayir Brown,no injury listed,,Siran Neal,,second string limited,,SF-DEPTH NFL-INJURIES

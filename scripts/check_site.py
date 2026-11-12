@@ -43,6 +43,9 @@ SOURCE_HOSTS.update({
 # NFL research lab (session arena/a4e560bc-own7) — official NFL hosts only.
 SOURCE_HOSTS.update({'NFL-STANDINGS': 'www.nfl.com', 'NFL-PASSING': 'www.nfl.com', 'NFL-RUSHING': 'www.nfl.com', 'NFL-RECEIVING': 'www.nfl.com', 'NFL-TEAM-OFF': 'www.nfl.com', 'NFL-TEAM-DEF': 'www.nfl.com', 'NFL-INJURY': 'www.nfl.com', 'NFL-SCHEDULE': 'www.nfl.com', 'NFL-TERMS': 'support.nfl.com', 'NFL-ROSTER': 'www.nfl.com'})
 
+# NFL line-origination lab (session arena/20394b77-own7) — Week 10 snapshot sources.
+SOURCE_HOSTS.update({'NFL-INJURIES': 'www.nfl.com', 'NFL-ROUNDUP': 'www.nfl.com', 'NFL-NEWS-WILLIS': 'www.nfl.com', 'NFL-DATES': 'www.nfl.com', 'NFL-LEGAL-TERMS': 'www.nfl.com', 'NFL-ODDS-PATH': 'www.nfl.com', 'NFL-DEPTH-PATH': 'www.nfl.com', 'AZ-DEPTH': 'www.azcardinals.com', 'CLE-DEPTH': 'www.clevelandbrowns.com', 'SF-DEPTH': 'www.49ers.com'})
+
 # Rental pages from session arena/692da006-own7 (PR #19) — official government/legal hosts only.
 # NFL research layer (session arena/a129b881-own7). Official league domains, one tertiary
 # method reference, and the publisher glossary. No odds vendor is registered.
