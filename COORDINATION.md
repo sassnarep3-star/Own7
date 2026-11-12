@@ -383,8 +383,8 @@ Scope: NFL research lab addition (new `nfl/**` sub-site + canonical NFL pages vi
 
 | # | Task | Status | Owner | Files touched | Sources / verification | Notes |
 |---|------|--------|-------|---------------|------------------------|-------|
-| N1 | Claim session + log board | in progress | session-arena-a4e560bc-own7 | COORDINATION.md | n/a | Committed + pushed immediately |
-| N2 | Official NFL source research (terms, stats, injury, glossary, schedule) | unclaimed | session-arena-a4e560bc-own7 | research/sources.json (append NFL IDs), docs/nfl-sources.md | nfl.com / official.nfl.com | Verify each URL + scope line by line via fetch_page; no hallucinations |
+| N1 | Claim session + log board | done | session-arena-a4e560bc-own7 | COORDINATION.md | n/a | Committed + pushed immediately |
+| N2 | Official NFL source research (terms, stats, injury, glossary, schedule) | in progress | session-arena-a4e560bc-own7 | research/sources.json (append NFL IDs), docs/nfl-sources.md | nfl.com / official.nfl.com | Verify each URL + scope line by line via fetch_page; no hallucinations |
 | N3 | NFL data snapshots (verified rows only) | unclaimed | session-arena-a4e560bc-own7 | data/nfl-*.csv, research/evidence/nfl-*.csv, receipts | Official NFL tables | Blank + unverified where no official source confirms |
 | N4 | NFL strategies, correlations, gates, leaderboard | unclaimed | session-arena-a4e560bc-own7 | research/nfl-catalog.json, research/nfl-protocol.json, nfl_lab/** | Official methods + NFL inputs | Single/parlay/props; no invented lines/ROI/CLV |
 | N5 | Injury / backup tracking system (defense + offense deficiencies) | unclaimed | session-arena-a4e560bc-own7 | research/nfl-injuries.json, nfl pages | Official NFL injury reports | Design + blank data; no fake statuses |
