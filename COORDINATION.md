@@ -384,17 +384,33 @@ Session ID: `session-arena-20394b77-own7`. Branch: `arena/20394b77-own7` (fixed 
 
 | # | Task | Status | Owner | Files touched | Sources / verification | Notes |
 |---|------|--------|-------|---------------|------------------------|-------|
-| N1 | Claim board + repo review with irregularities | in progress | session-arena-20394b77-own7 | COORDINATION.md, docs/nfl-repo-review-2026-11-12.md | repo files + official URLs | Line-by-line review of the NFL-relevant state of the repo |
-| N2 | Verify official NFL source set and register IDs | unclaimed | session-arena-20394b77-own7 | research/sources.json, scripts/check_site.py | nfl.com, club sites, regulators | Re-read each page before registering |
-| N3 | Week 10 official data snapshot (standings, slate, injury report) | unclaimed | session-arena-20394b77-own7 | nfl/data/**, nfl/raw/** | nfl.com standings / schedules / injuries | Normalized transcription + arithmetic/identity checks |
-| N4 | Line origination model, sensitivity, correlation values | unclaimed | session-arena-20394b77-own7 | nfl/model.py, nfl/data.json | derived from N3 (official inputs) | Model outputs explicitly labelled derived, not market prices |
-| N5 | Injury + depth-deficiency framework and pilot depth data | unclaimed | session-arena-20394b77-own7 | nfl/data.json | club-published depth charts + injury report | Coverage limits and blanks flagged |
-| N6 | Strategy catalog, validation gates, leaderboard rules | unclaimed | session-arena-20394b77-own7 | nfl/data.json | method sources | Fail-closed: nothing qualifies without market prices |
-| N7 | Suggestions register + open-questions/information register | unclaimed | session-arena-20394b77-own7 | nfl/data.json | n/a (project design) | New site sections requested in this session |
-| N8 | Executive summary (markdown + site page) | unclaimed | session-arena-20394b77-own7 | docs/nfl-executive-summary.md | N1–N7 | |
-| N9 | NFL sub-site build + integration + tests | unclaimed | session-arena-20394b77-own7 | nfl/**, scripts/*, workflows | n/a | Deterministic build, links, rows, blanks |
-| N10 | PR, merge, Pages deploy confirmation, record | unclaimed | session-arena-20394b77-own7 | COORDINATION.md | GitHub | Fix and retry until Pages is live |
+| N1 | Claim board + repo review with irregularities | done | session-arena-20394b77-own7 | COORDINATION.md, docs/nfl-repo-review-2026-11-12.md | repo files + official URLs | Line-by-line review of the NFL-relevant state of the repo |
+| N2 | Verify official NFL source set and register IDs | done | session-arena-20394b77-own7 | research/sources.json, scripts/check_site.py | nfl.com, club sites, regulators | Re-read each page before registering |
+| N3 | Week 10 official data snapshot (standings, slate, injury report) | done | session-arena-20394b77-own7 | nfl/data/**, nfl/raw/** | nfl.com standings / schedules / injuries | Normalized transcription + arithmetic/identity checks |
+| N4 | Line origination model, sensitivity, correlation values | done | session-arena-20394b77-own7 | nfl/model.py, nfl/data.json | derived from N3 (official inputs) | Model outputs explicitly labelled derived, not market prices |
+| N5 | Injury + depth-deficiency framework and pilot depth data | done | session-arena-20394b77-own7 | nfl/data.json | club-published depth charts + injury report | Coverage limits and blanks flagged |
+| N6 | Strategy catalog, validation gates, leaderboard rules | done | session-arena-20394b77-own7 | nfl/data.json | method sources | Fail-closed: nothing qualifies without market prices |
+| N7 | Suggestions register + open-questions/information register | done | session-arena-20394b77-own7 | nfl/data.json | n/a (project design) | New site sections requested in this session |
+| N8 | Executive summary (markdown + site page) | done | session-arena-20394b77-own7 | docs/nfl-executive-summary.md | N1–N7 | |
+| N9 | NFL sub-site build + integration + tests | done | session-arena-20394b77-own7 | nfl/**, scripts/*, workflows | n/a | Deterministic build, links, rows, blanks |
+| N10 | PR, merge, Pages deploy confirmation, record | in progress | session-arena-20394b77-own7 | COORDINATION.md | GitHub | Fix and retry until Pages is live |
 
 ### Notes on concurrent work
 - `origin/main` @ `a989d67`. No other branch of this repo showed an active claim at claim time; open PR #17 (`arena/a934e8c3-own7`) is a historical record PR and is not modified by this session.
 - All generated NFL pages and data are new paths (`nfl/**`), so scopes stay non-overlapping; the only shared files are the integration touchpoints listed above, which are edited additively.
+
+## NFL session log — 12 November 2026 (session `arena/20394b77-own7`, PR pending)
+
+**Delivered.** 14 pages under `nfl/` (dashboard, executive summary, model & lines, injuries, depth, strategies, validation gates, correlation, leaderboard, suggestions, open questions, source register, flagged for review, repo review), plus `docs/nfl-executive-summary.md` and `docs/nfl-repo-review-2026-11-12.md`. Data: `nfl/data.json`, `nfl/content.json`, four dated CSVs (32 standings rows, 14 slate games, 210 injury rows, 36 depth rows), `nfl/model.py` (stdlib only), deterministic `nfl/build.py` with `--check`, and `nfl/test_build.py` (29 tests).
+
+**Verified this session.** Standings identities 32/32 (`PCT`, `NET`, `ΣPF = ΣPA = 6,246` over 272 team-games); games per club 8/9 with no gaps; slate clubs 28 distinct with no duplicates; 0 duplicate `(club, player)` injury rows; practice status agrees with the official Wednesday roundup on every overlapping player; all 36 depth starters join the injury report by exact name after three documented name variants were normalised (Mack Wilson Sr., Ronnie Hickman Jr., Deebo Samuel Sr.); every source ID used is registered and every registered ID is used (0 orphans); 1,241 table rows across 68 HTML pages each carry source IDs and a per-row official link.
+
+**Published as blank + flagged, not inferred.** All 14 market prices, edges, ROI and CLV cells; 21 injury types the official page does not state; 25 of 28 clubs' depth charts that are not published; 4 clubs absent from the slate without a stated reason (CHI, DEN, PHI, TB); leg-level correlation for parlay and player-prop combinations.
+
+**Irregularities found and dispositions** are itemised in `docs/nfl-repo-review-2026-11-12.md` §4 (I-01 … I-10). The two that touched shared files: README described only an NBA lab (now carries a section-status banner, restructuring left as suggestion S-11), and `research/results.json` hashed `research/sources.json`, so registering NFL sources made the NBA run stale — `python -m nba_lab run` was re-run and the diff confirmed only `run_hash` and the `sources.json` input hash changed.
+
+**Integration touchpoints touched by this session (additive only).** `research/sources.json` (+11 NFL IDs), `scripts/check_site.py` (`SOURCE_HOSTS` +11), `scripts/build_site.py` (NFL nav group, `nfl/build.py` invoked as an auxiliary sub-site, `nfl/*` added to `auxiliary_pages`), `.github/workflows/check.yml` (`nfl/build.py --check` + NFL test discovery), `scripts/browser_test.mjs` (`allowedFolders` += `nfl`), `README.md`, and the regenerated root HTML (nav change only). No other session's content was removed or relabelled.
+
+**Verification gates at commit time.** `python -m unittest discover -s tests` 62/62; `python -m unittest discover -s nfl -p "test_*.py"` 29/29; `python nfl/build.py --check` OK; `python rental/test_build.py` 6/6; `market-evidence/test_build.py` 8/8; `nba_lab run --check` OK; `scripts/build_site.py` 25 canonical + 20 redirects + 23 auxiliary; `scripts/check_site.py` passed (68 pages, 1,241 rows, 76 registered sources); `npm run test:browser` passed (48 desktop + 48 mobile pages, 0 axe violations, 9 interaction groups, 0 runtime errors).
+
+**Hand-off for the next NFL session.** Nothing in this build may be promoted to a live recommendation until a licensed price source exists (S-02, gate G4). The next useful work is depth charts for the 25 uncovered clubs, injury-type fields the league does not publish (needs a licensed feed), and re-snapshotting Week 11 from the same three official pages.

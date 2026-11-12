@@ -740,5 +740,126 @@
     "status": "Content checked",
     "scope": "3604(a): unlawful to refuse to rent or make unavailable a dwelling because of race, color, religion, sex, familial status, or national origin; 3604(b): unlawful to discriminate against any person in the terms, conditions, or privileges of rental, or in services/facilities, because of race, color, religion, sex, familial status, national origin (and 3604(f) adds handicap/disability).",
     "access": "Arena fetch_page 2026-11-06; statute text read"
+  },
+  {
+    "id": "NFL-STANDINGS",
+    "publisher": "NFL.com (National Football League)",
+    "title": "2026 NFL Division Standings",
+    "url": "https://www.nfl.com/standings/",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "All 32 club rows: W, L, T, PCT, PF, PA and NET PTS columns only. Legend confirms the column names. Column identification independently checked by two arithmetic identities on all 32 rows (PCT and NET).",
+    "access": "Public page, read manually. No bulk retrieval.; read for the NFL sub-site session arena/20394b77-own7"
+  },
+  {
+    "id": "NFL-INJURIES",
+    "publisher": "NFL.com (National Football League)",
+    "title": "Official Latest NFL Injury Report for Players - Week 10 of the 2026 Season",
+    "url": "https://www.nfl.com/injuries/",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "Game headers (date, kickoff time, network, both clubs), practice status per listed player, game status where assigned, and the two clubs whose sections read 'No Injuries Reported' (BAL, LAC). The 'Injuries' (injury type) column is empty for most rows on this page.",
+    "access": "Public page, read manually. No bulk retrieval.; read for the NFL sub-site session arena/20394b77-own7"
+  },
+  {
+    "id": "NFL-ROUNDUP",
+    "publisher": "NFL.com (National Football League)",
+    "title": "NFL news roundup: Browns to start QB Deshaun Watson; Cardinals' Carson Beck to start (Wednesday, Nov 11)",
+    "url": "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-wednesday-nov-11",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "Club-by-club injury wording (injury type and practice status) and depth-chart news for the clubs it names. Used as the second, independent official page for the same Wednesday practice report; every player matched against the injury page where the page lists him.",
+    "access": "Public article, read manually.; read for the NFL sub-site session arena/20394b77-own7"
+  },
+  {
+    "id": "NFL-NEWS-WILLIS",
+    "publisher": "NFL.com (National Football League)",
+    "title": "Dolphins place QB Malik Willis (groin) on injured reserve; Kyle McCord in line for first start",
+    "url": "https://www.nfl.com/news/dolphins-place-qb-malik-willis-groin-on-injured-reserve-kyle-mccord-in-line-for-first-start",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "Willis placed on injured reserve 2026-11-10; Kyle McCord to start at Indianapolis; Willis eligible to return for the 13 December home game. Explains why Willis does not appear on the weekly injury page.",
+    "access": "Public article, read manually.; read for the NFL sub-site session arena/20394b77-own7"
+  },
+  {
+    "id": "NFL-DATES",
+    "publisher": "NFL.com (National Football League)",
+    "title": "2026-27 National Football League important dates",
+    "url": "https://www.nfl.com/news/2026-27-national-football-league-important-dates",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "Quoted paragraphs on the Personnel (Injury) Report Policy: practice-report deadlines by game day and the weekly Game Status Report deadline (Friday 4 p.m. New York time for a Sunday game).",
+    "access": "Public article, read manually.; read for the NFL sub-site session arena/20394b77-own7"
+  },
+  {
+    "id": "NFL-TERMS",
+    "publisher": "NFL.com (National Football League)",
+    "title": "NFL.com - Terms and Conditions (updated 16 May 2024)",
+    "url": "https://www.nfl.com/legal/terms/",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "Section 1.1 (ownership), 1.2 (marks) and 1.3 Permitted Uses: individual, non-commercial, informational use only; commercial use and systematic retrieval or compilation prohibited absent express written consent.",
+    "access": "Public legal page, read manually.; read for the NFL sub-site session arena/20394b77-own7"
+  },
+  {
+    "id": "NFL-ODDS-PATH",
+    "publisher": "NFL.com (National Football League)",
+    "title": "https://www.nfl.com/odds/ (checked: no odds page at this path)",
+    "url": "https://www.nfl.com/odds/",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "Returned the NFL.com 404 page on 2026-11-12. This documents only that no odds publication was found at this path; it is not proof that the league publishes no prices anywhere.",
+    "access": "Public page, read manually.; read for the NFL sub-site session arena/20394b77-own7"
+  },
+  {
+    "id": "NFL-DEPTH-PATH",
+    "publisher": "NFL.com (National Football League)",
+    "title": "https://www.nfl.com/teams/depth-chart (checked: no league-wide depth chart at this path)",
+    "url": "https://www.nfl.com/teams/depth-chart",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "Returned the NFL.com 404 page on 2026-11-12, as did https://www.nfl.com/teams/kansas-city-chiefs/depth-chart. No league-wide depth-chart endpoint was located; club sites publish their own.",
+    "access": "Public page, read manually.; read for the NFL sub-site session arena/20394b77-own7"
+  },
+  {
+    "id": "AZ-DEPTH",
+    "publisher": "Arizona Cardinals (NFL member club)",
+    "title": "Arizona Cardinals Official Depth Chart",
+    "url": "https://www.azcardinals.com/team/depth-chart",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "Offence, defence and special-teams rows in depth order (first name listed = first string). No 'as of' date is printed on the page.",
+    "access": "Public club page, read manually.; read for the NFL sub-site session arena/20394b77-own7"
+  },
+  {
+    "id": "CLE-DEPTH",
+    "publisher": "Cleveland Browns (NFL member club)",
+    "title": "Browns Depth Chart",
+    "url": "https://www.clevelandbrowns.com/team/depth-chart",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "Offence, defence and special-teams rows in depth order. No 'as of' date is printed on the page.",
+    "access": "Public club page, read manually.; read for the NFL sub-site session arena/20394b77-own7"
+  },
+  {
+    "id": "SF-DEPTH",
+    "publisher": "San Francisco 49ers (NFL member club)",
+    "title": "San Francisco 49ers Depth Chart",
+    "url": "https://www.49ers.com/team/depth-chart",
+    "authority": "Official publisher (NFL.com / NFL member club / method documentation)",
+    "checked_on": "2026-11-12",
+    "status": "Content checked",
+    "scope": "Offence, defence and special-teams rows in depth order. Page states 'Updated as of 11/10/26'.",
+    "access": "Public club page, read manually.; read for the NFL sub-site session arena/20394b77-own7"
   }
 ]

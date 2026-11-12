@@ -1,6 +1,23 @@
-# OWN7 · NBA Research Lab
+# OWN7 · research lab (NBA archive · SF rental · NFL line lab)
 
-[Live dashboard](https://sassnarep3-star.github.io/Own7/) · [Executive brief](docs/executive-summary.md) · [Sources](research/sources.json) · [Coordination / release evidence](COORDINATION.md)
+[Live dashboard](https://sassnarep3-star.github.io/Own7/) · [**NFL line lab**](https://sassnarep3-star.github.io/Own7/nfl/index.html) · [NFL executive summary](docs/nfl-executive-summary.md) · [NBA executive brief](docs/executive-summary.md) · [Sources](research/sources.json) · [Coordination / release evidence](COORDINATION.md)
+
+> **Sections by status.** The **NFL line lab** (`nfl/**`, added 2026-11-12) is the active programme. The **NBA research** section below is an earlier, retained audit and is now an archive of that work. The **SF rental** sections are a separate, unrelated analysis. Shared navigation labels each group; nothing was deleted, and no historical claim was relabelled as verified.
+
+## NFL line lab (active, Week 10 of the 2026 season)
+
+A dated, source-linked decision site: model-implied spreads and totals for all 14 Week 10 games, 210 injury rows checked against two official NFL.com pages, club depth charts joined to that injury report for three clubs, a fail-closed validation protocol, an empty leaderboard, a **Suggestions** register with options and a recommendation per decision, and an **Open questions** register stating what is missing and how to obtain it.
+
+- **Verified:** all 32 standings rows pass three arithmetic identities (win percentage, net points, league-wide points for = points against at 6,246 over 272 team-games); injury practice status agrees across the injury page and the official Wednesday roundup on every overlapping player; the injury-report policy deadlines are quoted from the league's calendar.
+- **Not verified, therefore blank:** every market price, every leg-level correlation, 21 injury types the sources do not publish, and depth evidence for 25 of the 28 clubs in the slate.
+- **Nothing qualifies.** Eight strategies are registered and all are blocked; no reward is paid and no cash prize exists.
+- **Rights:** [NFL.com Terms §1.3](https://www.nfl.com/legal/terms/) permits individual, non-commercial, informational use only and prohibits systematic retrieval or compilation. This is a small dated sample under that limit, not a data product.
+
+Reproduce: `python nfl/build.py --check` and `python -m unittest discover -s nfl -p "test_*.py" -v` (standard library only; no network).
+
+---
+
+## NBA research archive
 
 One static, source-linked dashboard replaces the repository’s three inconsistent earlier sites. It contains **107 checked official snapshot rows**, eight strategy hypotheses, six paired-game exploratory estimates plus 17 contributed aggregate-correlation rows (with overlaps), 88 retrospective probability demonstrations, ten fail-closed validation gates, an empty qualified leaderboard, a requirements ledger and a complete baseline file audit.
 
