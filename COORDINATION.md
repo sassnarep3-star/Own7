@@ -390,3 +390,20 @@ Owner request this session: convert the project to NFL, add a dedicated **Sugges
 | N6 | PR, merge, GitHub Pages deploy confirmation, record | in progress | session-arena-a129b881-own7 | COORDINATION.md | Do not merge a broken site. |
 
 Claim reasons: the repository's last commit predates this session; no other session branch or open PR is being touched; scopes are additive (new `nfl_lab/**`, `research/nfl/**`, `data/nfl-*`) plus shared generator/checker files that this session alone edits. Existing NBA and rental content and values are not modified. Cross-scope requests from earlier boards are noted as history, not re-opened.
+
+### N1-N5 completion — session-arena-a129b881-own7 (2026-11-12)
+
+Status: N1–N5 **done**; N6 (PR, merge, deploy record) **in progress** at the foot of this entry.
+
+Sources re-read this session (all fetched 2026-11-12, rendered text saved under `research/nfl/evidence/`):
+`https://www.nfl.com/standings/` (both chunks, all 32 rows) · `https://www.nfl.com/injuries/` (chunks 1–3: the complete Thursday WAS@NYG section, 20 players) · `https://www.nfl.com/schedules/` (deep link `/schedules/2026/REG11/` served as `/schedules`; week self-identified as WEEK 10) · `https://www.nfl.com/news/competition-committee-approves-revisions-to-injury-report-0ap3000000688693` (full) · `https://www.nfl.com/legal/terms/` (chunk 1, §1.3) · `https://en.wikipedia.org/wiki/Pythagorean_expectation` (chunk 1, method only) · `https://www.pro-football-reference.com/about/glossary.htm` (chunk 1, publisher definition only).
+
+Verification performed (not inherited):
+- 32/32 standings rows parsed from saved text; PCT re-derived from (W + T/2)/games within the display rounding tolerance, NET PTS from PF − PA, HOME + ROAD from the overall record, league wins = league losses. Any failure aborts the build.
+- 20/20 injury rows parsed; every practice status inside the official three categories and every game status inside Out/Doubtful/Questionable. Blanks preserved; a test fails if a blank is ever read as availability.
+- 14/14 fixtures; clubs plus the four byes equal exactly the 32-club set; every fixture link carries the official `-2026-reg-10` slug.
+- Derived results reproduced byte-identically; 86 tests pass; `scripts/check_site.py` reports 37 canonical pages, 955 sourced table rows, 0 errors; browser suite 46 desktop + 46 mobile pages with zero WCAG A/AA violations and no runtime errors.
+
+Irregularities found and dispositioned (full list in `docs/nfl-repo-review-2026-11-12.md`, published on `nfl-review.html`): RR01 standings rendered without a header and with a field order that contradicts its own legend (six columns withheld); RR02 blank game status for 17 of 20 players; RR03 `nfl.com/depth-charts/` returned 404 (starter/backup impact left blank); RR04 score pages rendered "Hidden Score" (no game results transcribed, therefore no backtest); RR05 deep link served from `/schedules`; RR06 `nfl.com/stats/2026/regular` returned 404; RR07 PCT is displayed rounded to three places; RR08 five of ten team correlations are arithmetic artefacts (labelled, not deleted); RR09 a draft counted an N/A gate as a pass (corrected, now test-enforced); RR10 small source links failed WCAG target size (CSS fixed); RR11 root `index.html` became the NFL landing page while NBA content moved to `nba-overview.html`/`nba-executive-summary.html`; RR12 snapshot stamp updated to 12 Nov 2026.
+
+Cross-scope note: NBA/rental values were not changed. Adding seven source IDs changed the `research/sources.json` hash, which is an NBA run input, so `python -m nba_lab run` was re-executed; no NBA value moved.
