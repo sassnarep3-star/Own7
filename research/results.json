@@ -2772,6 +2772,9 @@
   "cash_rewards": null,
   "input_sha256": {
     "data/jokic-games-2025-26.csv": "6aef2e09256d0423a80df850830c7daea7f18142219a07e6b37b17b2e8b6528f",
+    "data/nfl-injuries-2026-w10.csv": "bf0d182d1fc3656e0bd05e93bb529f91d40870c8fd6978c2fd944682fb70c122",
+    "data/nfl-schedule-2026-w10.csv": "2e921197c68b0e5ace40022e6ae9e4758f9dd956a4bd2865d81b27bc89d1a21e",
+    "data/nfl-standings-2026.csv": "c4daceecb57e4461ad9ef8a2b7fa13cd3a83c0c3a1e9a77c60470772000b75b9",
     "data/players-2025-26-top15.csv": "418c0ff25f96990483aba7f7e1f8b2fa234344a3073b0ddb2f7cfa72da254f10",
     "data/standings-2026-27.csv": "3bb2b710822a2e42c887f389ef03df393c11c5c94faaca6979a358e597616d20",
     "data/team-correlations-2025-26.csv": "45190765932f4d89217b55aa32a4ca48acdfb2ab56da95cd1a97f2a8772f24ae",
@@ -2785,9 +2788,9 @@
     "research/catalog.json": "3ed0007af519b07e5c1c3bb50eb7c58bcb15069dc747223663531570dac49ded",
     "research/evidence/receipts.json": "813665038767581ee7981d5beb051f86b2ec80ede955861533229d444f4f8d03",
     "research/protocol.json": "4d40bed6586a473363bf2b9be035d7a30ba2ccf1b611fb152c7dcf25ff00eda8",
-    "research/sources.json": "55513f61cc3f63802dd20d16ba6189094b83159baec445aadb19f5bf62864f08"
+    "research/sources.json": "487a03c91611f84ddef54e136f0868e47cd0342e71f70976afffc2ae9ac99392"
   },
-  "run_hash": "c5db2a1cc80bf1a0ec8c7efd5f02b627f6b8baf6ebf7fc55f6602a268daf78c1",
+  "run_hash": "67356af537eef8350368d2a71004e4f0ff0c3108b6ecaa0c9de09e0ceca25b4c",
   "limitations": [
     "No operator prices or pregame timestamp archive",
     "No untouched confirmatory or prospective shadow evaluation",

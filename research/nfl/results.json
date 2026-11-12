@@ -1,0 +1,1921 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-11-12",
+  "mode": "Non-commercial NFL research; no wagering, no dataset release, no live odds",
+  "verified_rows": {
+    "standings": 32,
+    "injuries": 20,
+    "fixtures": 14,
+    "total": 66
+  },
+  "assumptions": {
+    "pythagorean_exponent": 2.37,
+    "pythagorean_source": "Published NFL convention (Football Outsiders / Pro-Football-Reference; see PYTH-NFL). Not fitted here.",
+    "home_adjustment_points": 2.0,
+    "home_adjustment_source": "Project assumption chosen before evaluation; no official NFL home-field value was retrieved.",
+    "win_probability_sd": 13.86,
+    "win_probability_source": "Project assumption for the normal approximation; no official NFL margin variance was retrieved."
+  },
+  "league": {
+    "team_games": 272,
+    "league_points_per_team_game": 22.9632
+  },
+  "teams": [
+    {
+      "id": "BUF",
+      "team": "Buffalo Bills",
+      "conference": "AFC",
+      "games": 8,
+      "w": 7,
+      "l": 1,
+      "t": 0,
+      "pct": 0.875,
+      "pf": 256,
+      "pa": 187,
+      "net": 69,
+      "off_ppg": 32.0,
+      "def_ppa": 23.375,
+      "pyth_pct": 0.6779,
+      "expected_wins": 5.4236,
+      "luck_residual": 1.5764,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "NE",
+      "team": "New England Patriots",
+      "conference": "AFC",
+      "games": 9,
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pct": 0.556,
+      "pf": 211,
+      "pa": 207,
+      "net": 4,
+      "off_ppg": 23.4444,
+      "def_ppa": 23.0,
+      "pyth_pct": 0.5113,
+      "expected_wins": 4.602,
+      "luck_residual": 0.398,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "NYJ",
+      "team": "New York Jets",
+      "conference": "AFC",
+      "games": 9,
+      "w": 2,
+      "l": 7,
+      "t": 0,
+      "pct": 0.222,
+      "pf": 182,
+      "pa": 223,
+      "net": -41,
+      "off_ppg": 20.2222,
+      "def_ppa": 24.7778,
+      "pyth_pct": 0.3819,
+      "expected_wins": 3.4371,
+      "luck_residual": -1.4371,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "MIA",
+      "team": "Miami Dolphins",
+      "conference": "AFC",
+      "games": 8,
+      "w": 1,
+      "l": 7,
+      "t": 0,
+      "pct": 0.125,
+      "pf": 126,
+      "pa": 200,
+      "net": -74,
+      "off_ppg": 15.75,
+      "def_ppa": 25.0,
+      "pyth_pct": 0.2507,
+      "expected_wins": 2.0054,
+      "luck_residual": -1.0054,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "PIT",
+      "team": "Pittsburgh Steelers",
+      "conference": "AFC",
+      "games": 8,
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pct": 0.75,
+      "pf": 180,
+      "pa": 144,
+      "net": 36,
+      "off_ppg": 22.5,
+      "def_ppa": 18.0,
+      "pyth_pct": 0.6292,
+      "expected_wins": 5.0337,
+      "luck_residual": 0.9663,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "CIN",
+      "team": "Cincinnati Bengals",
+      "conference": "AFC",
+      "games": 8,
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pct": 0.75,
+      "pf": 240,
+      "pa": 175,
+      "net": 65,
+      "off_ppg": 30.0,
+      "def_ppa": 21.875,
+      "pyth_pct": 0.6789,
+      "expected_wins": 5.4309,
+      "luck_residual": 0.5691,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "CLE",
+      "team": "Cleveland Browns",
+      "conference": "AFC",
+      "games": 9,
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pct": 0.556,
+      "pf": 161,
+      "pa": 196,
+      "net": -35,
+      "off_ppg": 17.8889,
+      "def_ppa": 21.7778,
+      "pyth_pct": 0.3855,
+      "expected_wins": 3.4696,
+      "luck_residual": 1.5304,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "BAL",
+      "team": "Baltimore Ravens",
+      "conference": "AFC",
+      "games": 9,
+      "w": 4,
+      "l": 5,
+      "t": 0,
+      "pct": 0.444,
+      "pf": 189,
+      "pa": 236,
+      "net": -47,
+      "off_ppg": 21.0,
+      "def_ppa": 26.2222,
+      "pyth_pct": 0.3714,
+      "expected_wins": 3.3423,
+      "luck_residual": 0.6577,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "JAX",
+      "team": "Jacksonville Jaguars",
+      "conference": "AFC",
+      "games": 8,
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pct": 0.75,
+      "pf": 229,
+      "pa": 121,
+      "net": 108,
+      "off_ppg": 28.625,
+      "def_ppa": 15.125,
+      "pyth_pct": 0.8193,
+      "expected_wins": 6.5547,
+      "luck_residual": -0.5547,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "HOU",
+      "team": "Houston Texans",
+      "conference": "AFC",
+      "games": 8,
+      "w": 3,
+      "l": 5,
+      "t": 0,
+      "pct": 0.375,
+      "pf": 209,
+      "pa": 192,
+      "net": 17,
+      "off_ppg": 26.125,
+      "def_ppa": 24.0,
+      "pyth_pct": 0.5501,
+      "expected_wins": 4.4008,
+      "luck_residual": -1.4008,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "IND",
+      "team": "Indianapolis Colts",
+      "conference": "AFC",
+      "games": 9,
+      "w": 2,
+      "l": 7,
+      "t": 0,
+      "pct": 0.222,
+      "pf": 184,
+      "pa": 249,
+      "net": -65,
+      "off_ppg": 20.4444,
+      "def_ppa": 27.6667,
+      "pyth_pct": 0.3281,
+      "expected_wins": 2.9526,
+      "luck_residual": -0.9526,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "TEN",
+      "team": "Tennessee Titans",
+      "conference": "AFC",
+      "games": 8,
+      "w": 1,
+      "l": 7,
+      "t": 0,
+      "pct": 0.125,
+      "pf": 144,
+      "pa": 199,
+      "net": -55,
+      "off_ppg": 18.0,
+      "def_ppa": 24.875,
+      "pyth_pct": 0.3172,
+      "expected_wins": 2.5376,
+      "luck_residual": -1.5376,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "DEN",
+      "team": "Denver Broncos",
+      "conference": "AFC",
+      "games": 9,
+      "w": 7,
+      "l": 2,
+      "t": 0,
+      "pct": 0.778,
+      "pf": 198,
+      "pa": 186,
+      "net": 12,
+      "off_ppg": 22.0,
+      "def_ppa": 20.6667,
+      "pyth_pct": 0.537,
+      "expected_wins": 4.8328,
+      "luck_residual": 2.1672,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "KC",
+      "team": "Kansas City Chiefs",
+      "conference": "AFC",
+      "games": 8,
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pct": 0.75,
+      "pf": 202,
+      "pa": 143,
+      "net": 59,
+      "off_ppg": 25.25,
+      "def_ppa": 17.875,
+      "pyth_pct": 0.694,
+      "expected_wins": 5.5516,
+      "luck_residual": 0.4484,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "LV",
+      "team": "Las Vegas Raiders",
+      "conference": "AFC",
+      "games": 9,
+      "w": 4,
+      "l": 5,
+      "t": 0,
+      "pct": 0.444,
+      "pf": 238,
+      "pa": 268,
+      "net": -30,
+      "off_ppg": 26.4444,
+      "def_ppa": 29.7778,
+      "pyth_pct": 0.4301,
+      "expected_wins": 3.8711,
+      "luck_residual": 0.1289,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "LAC",
+      "team": "Los Angeles Chargers",
+      "conference": "AFC",
+      "games": 8,
+      "w": 0,
+      "l": 8,
+      "t": 0,
+      "pct": 0.0,
+      "pf": 121,
+      "pa": 219,
+      "net": -98,
+      "off_ppg": 15.125,
+      "def_ppa": 27.375,
+      "pyth_pct": 0.1969,
+      "expected_wins": 1.5748,
+      "luck_residual": -1.5748,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "NYG",
+      "team": "New York Giants",
+      "conference": "NFC",
+      "games": 8,
+      "w": 5,
+      "l": 2,
+      "t": 1,
+      "pct": 0.688,
+      "pf": 182,
+      "pa": 172,
+      "net": 10,
+      "off_ppg": 22.75,
+      "def_ppa": 21.5,
+      "pyth_pct": 0.5334,
+      "expected_wins": 4.2675,
+      "luck_residual": 1.2325,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "DAL",
+      "team": "Dallas Cowboys",
+      "conference": "NFC",
+      "games": 9,
+      "w": 4,
+      "l": 5,
+      "t": 0,
+      "pct": 0.444,
+      "pf": 246,
+      "pa": 236,
+      "net": 10,
+      "off_ppg": 27.3333,
+      "def_ppa": 26.2222,
+      "pyth_pct": 0.5246,
+      "expected_wins": 4.7211,
+      "luck_residual": -0.7211,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "WAS",
+      "team": "Washington Commanders",
+      "conference": "NFC",
+      "games": 8,
+      "w": 2,
+      "l": 5,
+      "t": 1,
+      "pct": 0.313,
+      "pf": 172,
+      "pa": 202,
+      "net": -30,
+      "off_ppg": 21.5,
+      "def_ppa": 25.25,
+      "pyth_pct": 0.4059,
+      "expected_wins": 3.247,
+      "luck_residual": -0.747,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "PHI",
+      "team": "Philadelphia Eagles",
+      "conference": "NFC",
+      "games": 9,
+      "w": 2,
+      "l": 7,
+      "t": 0,
+      "pct": 0.222,
+      "pf": 148,
+      "pa": 221,
+      "net": -73,
+      "off_ppg": 16.4444,
+      "def_ppa": 24.5556,
+      "pyth_pct": 0.2788,
+      "expected_wins": 2.5095,
+      "luck_residual": -0.5095,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "CHI",
+      "team": "Chicago Bears",
+      "conference": "NFC",
+      "games": 9,
+      "w": 7,
+      "l": 2,
+      "t": 0,
+      "pct": 0.778,
+      "pf": 241,
+      "pa": 184,
+      "net": 57,
+      "off_ppg": 26.7778,
+      "def_ppa": 20.4444,
+      "pyth_pct": 0.6547,
+      "expected_wins": 5.8919,
+      "luck_residual": 1.1081,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "DET",
+      "team": "Detroit Lions",
+      "conference": "NFC",
+      "games": 8,
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pct": 0.75,
+      "pf": 222,
+      "pa": 189,
+      "net": 33,
+      "off_ppg": 27.75,
+      "def_ppa": 23.625,
+      "pyth_pct": 0.5942,
+      "expected_wins": 4.7537,
+      "luck_residual": 1.2463,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "MIN",
+      "team": "Minnesota Vikings",
+      "conference": "NFC",
+      "games": 8,
+      "w": 6,
+      "l": 2,
+      "t": 0,
+      "pct": 0.75,
+      "pf": 146,
+      "pa": 116,
+      "net": 30,
+      "off_ppg": 18.25,
+      "def_ppa": 14.5,
+      "pyth_pct": 0.633,
+      "expected_wins": 5.0641,
+      "luck_residual": 0.9359,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "GB",
+      "team": "Green Bay Packers",
+      "conference": "NFC",
+      "games": 9,
+      "w": 6,
+      "l": 3,
+      "t": 0,
+      "pct": 0.667,
+      "pf": 216,
+      "pa": 191,
+      "net": 25,
+      "off_ppg": 24.0,
+      "def_ppa": 21.2222,
+      "pyth_pct": 0.5724,
+      "expected_wins": 5.1513,
+      "luck_residual": 0.8487,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "CAR",
+      "team": "Carolina Panthers",
+      "conference": "NFC",
+      "games": 8,
+      "w": 3,
+      "l": 5,
+      "t": 0,
+      "pct": 0.375,
+      "pf": 199,
+      "pa": 219,
+      "net": -20,
+      "off_ppg": 24.875,
+      "def_ppa": 27.375,
+      "pyth_pct": 0.4435,
+      "expected_wins": 3.548,
+      "luck_residual": -0.548,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "NO",
+      "team": "New Orleans Saints",
+      "conference": "NFC",
+      "games": 8,
+      "w": 3,
+      "l": 5,
+      "t": 0,
+      "pct": 0.375,
+      "pf": 185,
+      "pa": 216,
+      "net": -31,
+      "off_ppg": 23.125,
+      "def_ppa": 27.0,
+      "pyth_pct": 0.4092,
+      "expected_wins": 3.2738,
+      "luck_residual": -0.2738,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "TB",
+      "team": "Tampa Bay Buccaneers",
+      "conference": "NFC",
+      "games": 9,
+      "w": 3,
+      "l": 6,
+      "t": 0,
+      "pct": 0.333,
+      "pf": 202,
+      "pa": 178,
+      "net": 24,
+      "off_ppg": 22.4444,
+      "def_ppa": 19.7778,
+      "pyth_pct": 0.5744,
+      "expected_wins": 5.1695,
+      "luck_residual": -2.1695,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "ATL",
+      "team": "Atlanta Falcons",
+      "conference": "NFC",
+      "games": 9,
+      "w": 3,
+      "l": 6,
+      "t": 0,
+      "pct": 0.333,
+      "pf": 188,
+      "pa": 223,
+      "net": -35,
+      "off_ppg": 20.8889,
+      "def_ppa": 24.7778,
+      "pyth_pct": 0.4002,
+      "expected_wins": 3.6018,
+      "luck_residual": -0.6018,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "SF",
+      "team": "San Francisco 49ers",
+      "conference": "NFC",
+      "games": 8,
+      "w": 7,
+      "l": 1,
+      "t": 0,
+      "pct": 0.875,
+      "pf": 235,
+      "pa": 156,
+      "net": 79,
+      "off_ppg": 29.375,
+      "def_ppa": 19.5,
+      "pyth_pct": 0.7253,
+      "expected_wins": 5.8026,
+      "luck_residual": 1.1974,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "SEA",
+      "team": "Seattle Seahawks",
+      "conference": "NFC",
+      "games": 9,
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pct": 0.556,
+      "pf": 202,
+      "pa": 162,
+      "net": 40,
+      "off_ppg": 22.4444,
+      "def_ppa": 18.0,
+      "pyth_pct": 0.6278,
+      "expected_wins": 5.6506,
+      "luck_residual": -0.6506,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "LA",
+      "team": "Los Angeles Rams",
+      "conference": "NFC",
+      "games": 9,
+      "w": 5,
+      "l": 4,
+      "t": 0,
+      "pct": 0.556,
+      "pf": 214,
+      "pa": 181,
+      "net": 33,
+      "off_ppg": 23.7778,
+      "def_ppa": 20.1111,
+      "pyth_pct": 0.5979,
+      "expected_wins": 5.3815,
+      "luck_residual": -0.3815,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    },
+    {
+      "id": "AZ",
+      "team": "Arizona Cardinals",
+      "conference": "NFC",
+      "games": 9,
+      "w": 3,
+      "l": 6,
+      "t": 0,
+      "pct": 0.333,
+      "pf": 178,
+      "pa": 255,
+      "net": -77,
+      "off_ppg": 19.7778,
+      "def_ppa": 28.3333,
+      "pyth_pct": 0.299,
+      "expected_wins": 2.6912,
+      "luck_residual": 0.3088,
+      "source_url": "https://www.nfl.com/standings/",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL"
+      ]
+    }
+  ],
+  "games": [
+    {
+      "id": "W10-01",
+      "matchup": "WAS @ NYG",
+      "away_team": "Washington Commanders",
+      "home_team": "New York Giants",
+      "kickoff": "2026-11-12 8:15 PM ET",
+      "tv": "PRIME",
+      "game_url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+      "model_home_points": 25.6544,
+      "model_away_points": 21.9877,
+      "originated_spread_home": -3.6667,
+      "originated_total": 47.6422,
+      "model_p_home": 0.6043,
+      "fair_home_price": -153,
+      "fair_away_price": 153,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-02",
+      "matchup": "NE @ DET",
+      "away_team": "New England Patriots",
+      "home_team": "Detroit Lions",
+      "kickoff": "2026-11-15 9:30 AM ET",
+      "tv": "FOX",
+      "game_url": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+      "model_home_points": 26.5711,
+      "model_away_points": 23.3442,
+      "originated_spread_home": -3.2269,
+      "originated_total": 49.9153,
+      "model_p_home": 0.592,
+      "fair_home_price": -145,
+      "fair_away_price": 145,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-03",
+      "matchup": "KC @ ATL",
+      "away_team": "Kansas City Chiefs",
+      "home_team": "Atlanta Falcons",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "tv": "CBS",
+      "game_url": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+      "model_home_points": 22.5757,
+      "model_away_points": 24.3303,
+      "originated_spread_home": 1.7546,
+      "originated_total": 46.906,
+      "model_p_home": 0.4496,
+      "fair_home_price": 122,
+      "fair_away_price": -122,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-04",
+      "matchup": "HOU @ CLE",
+      "away_team": "Houston Texans",
+      "home_team": "Cleveland Browns",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "tv": "FOX",
+      "game_url": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+      "model_home_points": 23.6174,
+      "model_away_points": 23.622,
+      "originated_spread_home": 0.0046,
+      "originated_total": 47.2394,
+      "model_p_home": 0.4999,
+      "fair_home_price": 100,
+      "fair_away_price": -100,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-05",
+      "matchup": "MIN @ GB",
+      "away_team": "Minnesota Vikings",
+      "home_team": "Green Bay Packers",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "tv": "FOX",
+      "game_url": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+      "model_home_points": 22.4877,
+      "model_away_points": 20.8118,
+      "originated_spread_home": -1.6759,
+      "originated_total": 43.2996,
+      "model_p_home": 0.5481,
+      "fair_home_price": -121,
+      "fair_away_price": 121,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-06",
+      "matchup": "MIA @ IND",
+      "away_team": "Miami Dolphins",
+      "home_team": "Indianapolis Colts",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "tv": "CBS",
+      "game_url": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+      "model_home_points": 24.8026,
+      "model_away_points": 22.1266,
+      "originated_spread_home": -2.6759,
+      "originated_total": 46.9292,
+      "model_p_home": 0.5765,
+      "fair_home_price": -136,
+      "fair_away_price": 136,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-07",
+      "matchup": "CAR @ NO",
+      "away_team": "Carolina Panthers",
+      "home_team": "New Orleans Saints",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "tv": "FOX",
+      "game_url": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+      "model_home_points": 26.4877,
+      "model_away_points": 24.9461,
+      "originated_spread_home": -1.5417,
+      "originated_total": 51.4338,
+      "model_p_home": 0.5443,
+      "fair_home_price": -119,
+      "fair_away_price": 119,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-08",
+      "matchup": "BUF @ NYJ",
+      "away_team": "Buffalo Bills",
+      "home_team": "New York Jets",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "tv": "CBS",
+      "game_url": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+      "model_home_points": 24.1868,
+      "model_away_points": 26.5803,
+      "originated_spread_home": 2.3935,
+      "originated_total": 50.7672,
+      "model_p_home": 0.4314,
+      "fair_home_price": 132,
+      "fair_away_price": -132,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-09",
+      "matchup": "JAX @ TEN",
+      "away_team": "Jacksonville Jaguars",
+      "home_team": "Tennessee Titans",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "tv": "FOX",
+      "game_url": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+      "model_home_points": 20.6961,
+      "model_away_points": 25.4877,
+      "originated_spread_home": 4.7917,
+      "originated_total": 46.1838,
+      "model_p_home": 0.3648,
+      "fair_home_price": 174,
+      "fair_away_price": -174,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-10",
+      "matchup": "LA @ AZ",
+      "away_team": "Los Angeles Rams",
+      "home_team": "Arizona Cardinals",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "tv": "CBS",
+      "game_url": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+      "model_home_points": 22.9507,
+      "model_away_points": 25.0248,
+      "originated_spread_home": 2.0741,
+      "originated_total": 47.9755,
+      "model_p_home": 0.4405,
+      "fair_home_price": 127,
+      "fair_away_price": -127,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-11",
+      "matchup": "SEA @ LV",
+      "away_team": "Seattle Seahawks",
+      "home_team": "Las Vegas Raiders",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "tv": "CBS",
+      "game_url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+      "model_home_points": 24.4692,
+      "model_away_points": 25.0618,
+      "originated_spread_home": 0.5926,
+      "originated_total": 49.531,
+      "model_p_home": 0.4829,
+      "fair_home_price": 107,
+      "fair_away_price": -107,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-12",
+      "matchup": "SF @ DAL",
+      "away_team": "San Francisco 49ers",
+      "home_team": "Dallas Cowboys",
+      "kickoff": "2026-11-15 4:25 PM ET",
+      "tv": "FOX",
+      "game_url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "model_home_points": 25.2655,
+      "model_away_points": 26.1868,
+      "originated_spread_home": 0.9213,
+      "originated_total": 51.4523,
+      "model_p_home": 0.4735,
+      "fair_home_price": 111,
+      "fair_away_price": -111,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-13",
+      "matchup": "PIT @ CIN",
+      "away_team": "Pittsburgh Steelers",
+      "home_team": "Cincinnati Bengals",
+      "kickoff": "2026-11-15 8:20 PM ET",
+      "tv": "NBC",
+      "game_url": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+      "model_home_points": 25.6544,
+      "model_away_points": 22.4461,
+      "originated_spread_home": -3.2083,
+      "originated_total": 48.1005,
+      "model_p_home": 0.5915,
+      "fair_home_price": -145,
+      "fair_away_price": 145,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-14",
+      "matchup": "LAC @ BAL",
+      "away_team": "Los Angeles Chargers",
+      "home_team": "Baltimore Ravens",
+      "kickoff": "2026-11-16 8:15 PM ET",
+      "tv": "ESPN",
+      "game_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+      "model_home_points": 25.7794,
+      "model_away_points": 21.4368,
+      "originated_spread_home": -4.3426,
+      "originated_total": 47.2162,
+      "model_p_home": 0.623,
+      "fair_home_price": -165,
+      "fair_away_price": 165,
+      "market_spread": null,
+      "market_total": null,
+      "market_prices": null,
+      "clv": null,
+      "closing_price": null,
+      "line_status": "Originated · model only · no market comparison",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHEDULE",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    }
+  ],
+  "calibration": {
+    "scored_rows": 32,
+    "outcome_definition": "1 if the club's displayed PCT is at least .500, else 0",
+    "scores": {
+      "Pythagorean (PF/PA, x=2.37)": {
+        "brier": 0.1575,
+        "bins": [
+          {
+            "bin": "[0.0, 0.2)",
+            "n": 1,
+            "mean_forecast": 0.1969,
+            "observed_rate": 0.0,
+            "difference": 0.1969
+          },
+          {
+            "bin": "[0.2, 0.4)",
+            "n": 8,
+            "mean_forecast": 0.3266,
+            "observed_rate": 0.125,
+            "difference": 0.2016
+          },
+          {
+            "bin": "[0.4, 0.6)",
+            "n": 14,
+            "mean_forecast": 0.506,
+            "observed_rate": 0.4286,
+            "difference": 0.0774
+          },
+          {
+            "bin": "[0.6, 0.8)",
+            "n": 8,
+            "mean_forecast": 0.6651,
+            "observed_rate": 1.0,
+            "difference": -0.3349
+          },
+          {
+            "bin": "[0.8, 1.0]",
+            "n": 1,
+            "mean_forecast": 0.8193,
+            "observed_rate": 1.0,
+            "difference": -0.1807
+          }
+        ]
+      },
+      "Flat .500 (no information)": {
+        "brier": 0.25,
+        "bins": [
+          {
+            "bin": "[0.0, 0.2)",
+            "n": 0,
+            "mean_forecast": null,
+            "observed_rate": null,
+            "difference": null
+          },
+          {
+            "bin": "[0.2, 0.4)",
+            "n": 0,
+            "mean_forecast": null,
+            "observed_rate": null,
+            "difference": null
+          },
+          {
+            "bin": "[0.4, 0.6)",
+            "n": 32,
+            "mean_forecast": 0.5,
+            "observed_rate": 0.5,
+            "difference": 0.0
+          },
+          {
+            "bin": "[0.6, 0.8)",
+            "n": 0,
+            "mean_forecast": null,
+            "observed_rate": null,
+            "difference": null
+          },
+          {
+            "bin": "[0.8, 1.0]",
+            "n": 0,
+            "mean_forecast": null,
+            "observed_rate": null,
+            "difference": null
+          }
+        ]
+      }
+    },
+    "interpretation": "A lower Brier score than the flat .500 reference means the scoring profile carried information about the displayed record in this snapshot. It does not establish predictive skill for future games.",
+    "source_ids": [
+      "NFL-STANDINGS",
+      "PYTH-NFL"
+    ]
+  },
+  "correlations": [
+    {
+      "id": "off_ppg~def_ppa",
+      "pair": "Points scored per game vs Points allowed per game",
+      "n": 32,
+      "pearson": -0.2061,
+      "raw_p": 0.2531,
+      "kind": "Team-level cross-sectional",
+      "evidence": "Derived · exploratory",
+      "caveat": null,
+      "counts_as_independent_evidence": true,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "holm_p": 0.2531
+    },
+    {
+      "id": "off_ppg~net",
+      "pair": "Points scored per game vs Net point differential",
+      "n": 32,
+      "pearson": 0.7957,
+      "raw_p": 0.0002,
+      "kind": "Team-level cross-sectional",
+      "evidence": "Derived · not independent evidence",
+      "caveat": "Mechanical: net points is defined as PF minus PA and this column is PF per game, so the two series share the same scoring totals.",
+      "counts_as_independent_evidence": false,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "holm_p": 0.002
+    },
+    {
+      "id": "off_ppg~pct",
+      "pair": "Points scored per game vs Displayed win percentage",
+      "n": 32,
+      "pearson": 0.6936,
+      "raw_p": 0.0002,
+      "kind": "Team-level cross-sectional",
+      "evidence": "Derived · exploratory",
+      "caveat": null,
+      "counts_as_independent_evidence": true,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "holm_p": 0.002
+    },
+    {
+      "id": "off_ppg~luck_residual",
+      "pair": "Points scored per game vs Actual minus expected wins",
+      "n": 32,
+      "pearson": 0.3455,
+      "raw_p": 0.0556,
+      "kind": "Team-level cross-sectional",
+      "evidence": "Derived · exploratory",
+      "caveat": null,
+      "counts_as_independent_evidence": true,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "holm_p": 0.1668
+    },
+    {
+      "id": "def_ppa~net",
+      "pair": "Points allowed per game vs Net point differential",
+      "n": 32,
+      "pearson": -0.7544,
+      "raw_p": 0.0002,
+      "kind": "Team-level cross-sectional",
+      "evidence": "Derived · not independent evidence",
+      "caveat": "Mechanical: net points is defined as PF minus PA and this column is PA per game, so the two series share the same scoring totals.",
+      "counts_as_independent_evidence": false,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "holm_p": 0.002
+    },
+    {
+      "id": "def_ppa~pct",
+      "pair": "Points allowed per game vs Displayed win percentage",
+      "n": 32,
+      "pearson": -0.6664,
+      "raw_p": 0.0002,
+      "kind": "Team-level cross-sectional",
+      "evidence": "Derived · exploratory",
+      "caveat": null,
+      "counts_as_independent_evidence": true,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "holm_p": 0.002
+    },
+    {
+      "id": "def_ppa~luck_residual",
+      "pair": "Points allowed per game vs Actual minus expected wins",
+      "n": 32,
+      "pearson": -0.3126,
+      "raw_p": 0.0816,
+      "kind": "Team-level cross-sectional",
+      "evidence": "Derived · exploratory",
+      "caveat": null,
+      "counts_as_independent_evidence": true,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "holm_p": 0.1668
+    },
+    {
+      "id": "net~pct",
+      "pair": "Net point differential vs Displayed win percentage",
+      "n": 32,
+      "pearson": 0.869,
+      "raw_p": 0.0002,
+      "kind": "Team-level cross-sectional",
+      "evidence": "Derived · not independent evidence",
+      "caveat": "Mechanical: wins and net points move together by construction in a small sample.",
+      "counts_as_independent_evidence": false,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "holm_p": 0.002
+    },
+    {
+      "id": "net~luck_residual",
+      "pair": "Net point differential vs Actual minus expected wins",
+      "n": 32,
+      "pearson": 0.4134,
+      "raw_p": 0.0192,
+      "kind": "Team-level cross-sectional",
+      "evidence": "Derived · not independent evidence",
+      "caveat": "Structurally induced: the expectation is computed from PF and PA, which also define net points, so the two sides are not independent measurements.",
+      "counts_as_independent_evidence": false,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "holm_p": 0.0768
+    },
+    {
+      "id": "pct~luck_residual",
+      "pair": "Displayed win percentage vs Actual minus expected wins",
+      "n": 32,
+      "pearson": 0.8042,
+      "raw_p": 0.0002,
+      "kind": "Team-level cross-sectional",
+      "evidence": "Derived · not independent evidence",
+      "caveat": "Tautological: the residual subtracts a function of PF/PA from wins while PCT is wins divided by games, so both series contain the same win count.",
+      "counts_as_independent_evidence": false,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "holm_p": 0.002
+    }
+  ],
+  "not_collected": [
+    {
+      "id": "NC-1",
+      "pair": "Same-game leg dependence (spread vs total)",
+      "kind": "Not collected — needs play-by-play or closing-line archive",
+      "evidence": "Unverified · blank",
+      "n": null,
+      "pearson": null,
+      "raw_p": null,
+      "holm_p": null,
+      "source_ids": [
+        "NFL-SCHEDULE",
+        "REPO"
+      ]
+    },
+    {
+      "id": "NC-2",
+      "pair": "Player prop to team outcome dependence",
+      "kind": "Not collected — needs player game logs and snap counts",
+      "evidence": "Unverified · blank",
+      "n": null,
+      "pearson": null,
+      "raw_p": null,
+      "holm_p": null,
+      "source_ids": [
+        "NFL-INJURY",
+        "REPO"
+      ]
+    },
+    {
+      "id": "NC-3",
+      "pair": "Multi-leg parlay joint distribution (3+ legs)",
+      "kind": "Not collected — pairwise values cannot identify a 3+ leg joint",
+      "evidence": "Unverified · blank",
+      "n": null,
+      "pearson": null,
+      "raw_p": null,
+      "holm_p": null,
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "NC-4",
+      "pair": "Backup-versus-starter performance gap by position",
+      "kind": "Not collected — no published depth chart and no snap counts retrieved",
+      "evidence": "Unverified · blank",
+      "n": null,
+      "pearson": null,
+      "raw_p": null,
+      "holm_p": null,
+      "source_ids": [
+        "NFL-INJURY",
+        "REPO"
+      ]
+    }
+  ],
+  "availability": [
+    {
+      "id": "AV-COM",
+      "team": "Commanders",
+      "listed_players": 9,
+      "out": 2,
+      "doubtful": 0,
+      "questionable": 0,
+      "full_practice": 5,
+      "limited": 1,
+      "did_not_practice": 3,
+      "unavailable_due_to_g_league": null,
+      "starters_affected": null,
+      "backup_replacement_count": null,
+      "depth_chart_status": "Not published in retrieved sources",
+      "talent_lost": null,
+      "note": "Counts only. Converting a status into lost on-field value needs depth charts, snap shares and player performance data that were not retrieved.",
+      "source_ids": [
+        "NFL-INJURY",
+        "NFL-INJURY-POLICY"
+      ],
+      "source_url": "https://www.nfl.com/injuries/"
+    },
+    {
+      "id": "AV-GIA",
+      "team": "Giants",
+      "listed_players": 11,
+      "out": 0,
+      "doubtful": 0,
+      "questionable": 1,
+      "full_practice": 10,
+      "limited": 1,
+      "did_not_practice": 0,
+      "unavailable_due_to_g_league": null,
+      "starters_affected": null,
+      "backup_replacement_count": null,
+      "depth_chart_status": "Not published in retrieved sources",
+      "talent_lost": null,
+      "note": "Counts only. Converting a status into lost on-field value needs depth charts, snap shares and player performance data that were not retrieved.",
+      "source_ids": [
+        "NFL-INJURY",
+        "NFL-INJURY-POLICY"
+      ],
+      "source_url": "https://www.nfl.com/injuries/"
+    }
+  ],
+  "injury_flags": [],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "Provenance and contract",
+      "rule": "Every input row carries an official URL, a check date and an exact scope.",
+      "current": "PASS for the snapshot layer: 32 standings rows, 20 injury rows and 14 fixtures each carry an NFL.com URL and the 2026-11-12 check date, and are regenerated from saved text."
+    },
+    {
+      "id": "G02",
+      "name": "Temporal integrity",
+      "rule": "No input may post-date the moment a projection is made.",
+      "current": "PASS for the originated lines: inputs are pre-kickoff (standings and injury report published before the Week 10 games). FAIL for the probability calibration, which scores models against outcomes already inside the same snapshot."
+    },
+    {
+      "id": "G03",
+      "name": "Coverage and power",
+      "rule": "Adequate sample, complete universe, pre-declared scope.",
+      "current": "FAIL. Eight or nine games per club, one partial season, no multi-season history, and the injury sample is one game."
+    },
+    {
+      "id": "G04",
+      "name": "Forecast quality",
+      "rule": "Proper scores against a stated reference, measured before any price is used.",
+      "current": "PARTIAL. A Brier comparison against a flat .500 reference exists for the team record; no sequential, multi-season or out-of-sample forecast evaluation exists."
+    },
+    {
+      "id": "G05",
+      "name": "Joint dependence",
+      "rule": "Leg dependence measured on the actual pairing, not asserted.",
+      "current": "FAIL for parlays and props. No pairwise or 3+ leg joint estimate exists; only team-level cross-sectional correlations are available, which are a different quantity."
+    },
+    {
+      "id": "G06",
+      "name": "Executable economics",
+      "rule": "A real, timestamped, settlement-complete price from an identified operator.",
+      "current": "FAIL. No sportsbook price, limit, hold or settlement rule for these NFL markets was retrieved, so ROI, CLV and stake sizing cannot be computed."
+    },
+    {
+      "id": "G07",
+      "name": "Uncertainty and robustness",
+      "rule": "Uncertainty quantified and conclusions stable to reasonable choices.",
+      "current": "FAIL. The projections use a published exponent and a single assumed home-field constant with no interval, and no sensitivity sweep is published."
+    },
+    {
+      "id": "G08",
+      "name": "Selection and multiple testing",
+      "rule": "All trials counted; multiplicity controlled.",
+      "current": "FAIL. The 10 team-level correlations are Holm-adjusted and displayed as exploratory, but no strategy search with a pre-registered family of trials exists."
+    },
+    {
+      "id": "G09",
+      "name": "Forward shadow and risk",
+      "rule": "A dated, prospective, stake-capped record before any reward.",
+      "current": "FAIL. No forward record exists yet; the shadow ledger is specified but empty."
+    },
+    {
+      "id": "G10",
+      "name": "Reproducibility and rights",
+      "rule": "Deterministic rebuild and recorded permission for the intended use.",
+      "current": "PASS for reproducibility (byte-identical rebuilds, hashed inputs) and OPEN for rights: NFL.com terms 1.3 restrict systematic retrieval and commercial use, so nothing here is released as a dataset or a betting service."
+    }
+  ],
+  "evaluations": [
+    {
+      "id": "NS01",
+      "name": "Home spread from scoring profiles",
+      "category": "Single bets",
+      "hypothesis": "Price the home club's margin from its own scoring rate, the visitor's concession rate and a fixed home adjustment; compare with any offered line.",
+      "failure": "Ignores injuries, rest, weather, travel, quarterback changes and market movement. One assumed home-field constant cannot represent 32 clubs.",
+      "gates": {
+        "G01": "pass",
+        "G02": "pass",
+        "G03": "blocked",
+        "G04": "blocked",
+        "G05": "n/a",
+        "G06": "blocked",
+        "G07": "blocked",
+        "G08": "blocked",
+        "G09": "blocked",
+        "G10": "open"
+      },
+      "passed": 2,
+      "applicable": 9,
+      "qualified": false,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "merit_points": 0,
+      "cash_reward": null,
+      "status": "Blocked",
+      "source_ids": [
+        "REPO",
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NS02",
+      "name": "Away spread mirror",
+      "category": "Single bets",
+      "hypothesis": "The same two-sided projection read from the visitor's side, used to test whether the originated number is symmetric and internally consistent.",
+      "failure": "Derived arithmetically from NS01, so it shares every weakness and cannot confirm it.",
+      "gates": {
+        "G01": "pass",
+        "G02": "pass",
+        "G03": "blocked",
+        "G04": "blocked",
+        "G05": "n/a",
+        "G06": "blocked",
+        "G07": "blocked",
+        "G08": "blocked",
+        "G09": "blocked",
+        "G10": "open"
+      },
+      "passed": 2,
+      "applicable": 9,
+      "qualified": false,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "merit_points": 0,
+      "cash_reward": null,
+      "status": "Blocked",
+      "source_ids": [
+        "REPO",
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NS03",
+      "name": "Game total from combined scoring rates",
+      "category": "Single bets",
+      "hypothesis": "Sum the two conditional scoring means; compare with an offered total and its over/under prices.",
+      "failure": "Scoring rates are season-to-date and heavily influenced by opponent quality; pace and weather are absent.",
+      "gates": {
+        "G01": "pass",
+        "G02": "pass",
+        "G03": "blocked",
+        "G04": "blocked",
+        "G05": "n/a",
+        "G06": "blocked",
+        "G07": "blocked",
+        "G08": "blocked",
+        "G09": "blocked",
+        "G10": "open"
+      },
+      "passed": 2,
+      "applicable": 9,
+      "qualified": false,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "merit_points": 0,
+      "cash_reward": null,
+      "status": "Blocked",
+      "source_ids": [
+        "REPO",
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NS04",
+      "name": "Record-versus-scoring regression signal",
+      "category": "Single bets",
+      "hypothesis": "Clubs whose actual record is far from their points-based expectation are candidates whose future results may move toward the expectation.",
+      "failure": "The residual is descriptive. It mixes schedule strength, special teams and luck, and the sample is one partial season.",
+      "gates": {
+        "G01": "pass",
+        "G02": "blocked",
+        "G03": "blocked",
+        "G04": "blocked",
+        "G05": "n/a",
+        "G06": "blocked",
+        "G07": "blocked",
+        "G08": "blocked",
+        "G09": "blocked",
+        "G10": "open"
+      },
+      "passed": 1,
+      "applicable": 9,
+      "qualified": false,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "merit_points": 0,
+      "cash_reward": null,
+      "status": "Blocked",
+      "source_ids": [
+        "REPO",
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NP01",
+      "name": "Two-leg spread plus total pair",
+      "category": "Parlays",
+      "hypothesis": "Combine NS01 and NS03 on the same game after measuring their dependence.",
+      "failure": "No joint distribution exists. Multiplying the two probabilities assumes a correlation of zero, which is exactly the assumption this project refuses to make.",
+      "gates": {
+        "G01": "pass",
+        "G02": "pass",
+        "G03": "blocked",
+        "G04": "blocked",
+        "G05": "blocked",
+        "G06": "blocked",
+        "G07": "blocked",
+        "G08": "blocked",
+        "G09": "blocked",
+        "G10": "open"
+      },
+      "passed": 2,
+      "applicable": 10,
+      "qualified": false,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "merit_points": 0,
+      "cash_reward": null,
+      "status": "Blocked",
+      "source_ids": [
+        "REPO",
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NP02",
+      "name": "Cross-game two-leg parlay",
+      "category": "Parlays",
+      "hypothesis": "Combine two clubs' independent games and test whether the product of the single-leg probabilities is adequate.",
+      "failure": "Cross-game legs are plausibly independent, but that is untested here and each leg still fails its own gates.",
+      "gates": {
+        "G01": "pass",
+        "G02": "pass",
+        "G03": "blocked",
+        "G04": "blocked",
+        "G05": "blocked",
+        "G06": "blocked",
+        "G07": "blocked",
+        "G08": "blocked",
+        "G09": "blocked",
+        "G10": "open"
+      },
+      "passed": 2,
+      "applicable": 10,
+      "qualified": false,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "merit_points": 0,
+      "cash_reward": null,
+      "status": "Blocked",
+      "source_ids": [
+        "REPO",
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NPR01",
+      "name": "Availability-adjusted team line",
+      "category": "Player props / combos",
+      "hypothesis": "Adjust a club's scoring projection by which listed players are out, doubtful or questionable, using the official game-status categories.",
+      "failure": "Status is not contribution. Without depth charts, snap shares or a published starter list, an 'Out' cannot be converted into points.",
+      "gates": {
+        "G01": "pass",
+        "G02": "pass",
+        "G03": "blocked",
+        "G04": "blocked",
+        "G05": "blocked",
+        "G06": "blocked",
+        "G07": "blocked",
+        "G08": "blocked",
+        "G09": "blocked",
+        "G10": "open"
+      },
+      "passed": 2,
+      "applicable": 10,
+      "qualified": false,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "merit_points": 0,
+      "cash_reward": null,
+      "status": "Blocked",
+      "source_ids": [
+        "REPO",
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NPR02",
+      "name": "Next-man-up team combo",
+      "category": "Player props / combos",
+      "hypothesis": "When a starter is out, test whether the replacement's usage and the team's scoring change in a repeatable direction.",
+      "failure": "Requires snap counts, target shares and player logs, none of which were retrieved. No claim about a second- or third-string player is made.",
+      "gates": {
+        "G01": "blocked",
+        "G02": "blocked",
+        "G03": "blocked",
+        "G04": "blocked",
+        "G05": "blocked",
+        "G06": "blocked",
+        "G07": "blocked",
+        "G08": "blocked",
+        "G09": "blocked",
+        "G10": "open"
+      },
+      "passed": 0,
+      "applicable": 10,
+      "qualified": false,
+      "roi": null,
+      "clv": null,
+      "rank": null,
+      "merit_points": 0,
+      "cash_reward": null,
+      "status": "Blocked",
+      "source_ids": [
+        "REPO",
+        "NFL-STANDINGS"
+      ]
+    }
+  ],
+  "leaderboard": {
+    "divisions": [
+      "Single bets",
+      "Parlays",
+      "Player props / combos"
+    ],
+    "entries": [],
+    "counts": {
+      "Single bets": 0,
+      "Parlays": 0,
+      "Player props / combos": 0
+    },
+    "not_applicable_rule": "G05 is not applicable to single bets. It is excluded from the denominator and is never counted as a pass.",
+    "ranking_metric": "Verified ROI lower 95% bound on a frozen common test window, with log loss as tie-break",
+    "merit_points": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+    },
+    "cash_reward": null,
+    "empty_because": "No candidate has an executable price, a joint-dependence estimate or a forward record, so no entry can be ranked.",
+    "shadow_ledger": {
+      "status": "Open and empty",
+      "rules": [
+        "One row per pre-kickoff entry: timestamp, game, market, line, price, operator and a screenshot-free text capture of the quote.",
+        "Stake capped at a fixed fraction of a notional bankroll; no chasing and no stake increase after a loss.",
+        "Score only after settlement using the operator's published rule.",
+        "Report closing-line value and the lower confidence bound, never a single hot run.",
+        "Every entry keeps its losing rows; deleting a row disqualifies the strategy."
+      ],
+      "entries": []
+    }
+  },
+  "input_sha256": {
+    "data/nfl-injuries-2026-w10.csv": "bf0d182d1fc3656e0bd05e93bb529f91d40870c8fd6978c2fd944682fb70c122",
+    "data/nfl-schedule-2026-w10.csv": "2e921197c68b0e5ace40022e6ae9e4758f9dd956a4bd2865d81b27bc89d1a21e",
+    "data/nfl-standings-2026.csv": "c4daceecb57e4461ad9ef8a2b7fa13cd3a83c0c3a1e9a77c60470772000b75b9",
+    "nfl_lab/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "nfl_lab/__main__.py": "16cd93f055b631c77c4a1c17e698edcde106d613ecd2bf612100ff67035b585d",
+    "nfl_lab/engine.py": "f6f59f1c1e24e4019c4ceb2dbdb6383828c47084a65eca2c154b7607eeb197e5",
+    "nfl_lab/math.py": "bc89f8d83787c9318424e72ac7f045ee17c671dd260e8f50cd8efddd11f53538",
+    "research/nfl/receipts.json": "0b5350b16fffc29309c393ce8c64785e8a892da751d55e5b376669275c3e8c80"
+  },
+  "run_hash": "78a0e5613ba724916bf9b24b4ce67b74080d25b4648777a4d2b1393279316462",
+  "limitations": [
+    "One partial season, eight or nine games per club.",
+    "No market prices, limits, hold or settlement rules were retrieved.",
+    "No depth chart, snap count or player game log was retrieved.",
+    "Team-level correlation is not leg-level dependence.",
+    "The NFL.com terms restrict systematic retrieval and commercial use."
+  ]
+}
