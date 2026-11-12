@@ -1,9 +1,16 @@
 {
   "pr_number": 28,
   "pr_url": "https://github.com/sassnarep3-star/Own7/pull/28",
-  "state": "open",
-  "merge_commit": null,
-  "pages_status": "pending",
-  "checks": "pending",
-  "note": "Record only actual final results; never label a pending deploy live."
+  "state": "merged",
+  "merged_at": "2026-11-12T17:21:32Z",
+  "merge_commit": "c99f533ce5f6bb48b8c59e8f6d1a327d5074c4e3",
+  "pages_status": "built",
+  "pages_run": "https://github.com/sassnarep3-star/Own7/actions/runs/43268583567",
+  "checks": "success",
+  "live_urls": [
+    "https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/index.html?v=c99f533c",
+    "https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/flagged.html?v=c99f533c",
+    "https://sassnarep3-star.github.io/Own7/?v=c99f533c"
+  ],
+  "note": "Pages build API reported built and live pages were fetched. Known limits/flags remain public."
 }
