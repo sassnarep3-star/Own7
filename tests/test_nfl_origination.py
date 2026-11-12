@@ -3,8 +3,8 @@ import json
 import unittest
 from pathlib import Path
 
-from nfl_lab import engine
-from nfl_lab import math as m
+from nfl_origination import engine
+from nfl_origination import math as m
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -14,7 +14,7 @@ class ExtractionTests(unittest.TestCase):
         engine.verify_receipts()
 
     def test_row_counts_are_the_verified_counts(self):
-        standings = engine.load_csv("data/nfl-standings-2026.csv")
+        standings = engine.load_csv("data/nfl-standings-week10-2026.csv")
         injuries = engine.load_csv("data/nfl-injuries-2026-w10.csv")
         fixtures = engine.load_csv("data/nfl-schedule-2026-w10.csv")
         self.assertEqual((len(standings), len(injuries), len(fixtures)), (32, 20, 14))
@@ -23,19 +23,19 @@ class ExtractionTests(unittest.TestCase):
         self.assertEqual(len({r["GameURL"] for r in fixtures}), 14)
 
     def test_every_row_has_an_official_https_source_and_a_date(self):
-        for name in ("data/nfl-standings-2026.csv", "data/nfl-injuries-2026-w10.csv",
+        for name in ("data/nfl-standings-week10-2026.csv", "data/nfl-injuries-2026-w10.csv",
                      "data/nfl-schedule-2026-w10.csv"):
             for row in engine.load_csv(name):
                 self.assertTrue(row["SourceURL"].startswith("https://www.nfl.com/"), name)
                 self.assertEqual(row["CheckedOn"], "2026-11-12", name)
 
     def test_standings_arithmetic_is_self_consistent(self):
-        for row in engine.load_csv("data/nfl-standings-2026.csv"):
+        for row in engine.load_csv("data/nfl-standings-week10-2026.csv"):
             games = int(row["W"]) + int(row["L"]) + int(row["T"])
             implied = (int(row["W"]) + int(row["T"]) / 2) / games
             self.assertAlmostEqual(implied, float(row["PCT"]), delta=0.00051)
             self.assertEqual(int(row["PF"]) - int(row["PA"]), int(row["NetPts"]))
-        rows = engine.load_csv("data/nfl-standings-2026.csv")
+        rows = engine.load_csv("data/nfl-standings-week10-2026.csv")
         self.assertEqual(sum(int(r["W"]) for r in rows), sum(int(r["L"]) for r in rows))
 
     def test_injury_statuses_use_only_official_categories(self):

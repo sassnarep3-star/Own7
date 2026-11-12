@@ -151,7 +151,7 @@ def chart():
 
 
 NAV = [
-    ("NFL research", [("index.html", "NFL overview", "overview"),
+    ("NFL origination", [("index.html", "NFL overview", "overview"),
                       ("nfl-suggestions.html", "Suggestions", "signals"),
                       ("executive-summary.html", "Executive summary", "brief"),
                       ("nfl-decisions.html", "Decision brief", "brief"),

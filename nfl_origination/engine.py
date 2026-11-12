@@ -109,7 +109,7 @@ def originated_games(fixtures: list[dict], teams: list[dict], league_ppg: float)
             "market_spread": None, "market_total": None, "market_prices": None,
             "clv": None, "closing_price": None,
             "line_status": "Originated · model only · no market comparison",
-            "source_ids": ["NFL-STANDINGS", "NFL-SCHEDULE", "PYTH-NFL", "REPO"],
+            "source_ids": ["NFL-STANDINGS", "NFL-SCHED-W10", "PYTH-NFL", "REPO"],
             "game_source_url": fixture["GameURL"],
             "source_url": fixture["SourceURL"],
         })
@@ -192,11 +192,11 @@ def not_collected() -> list[dict]:
         {"id": "NC-1", "pair": "Same-game leg dependence (spread vs total)",
          "kind": "Not collected — needs play-by-play or closing-line archive",
          "evidence": "Unverified · blank", **blank,
-         "source_ids": ["NFL-SCHEDULE", "REPO"]},
+         "source_ids": ["NFL-SCHED-W10", "REPO"]},
         {"id": "NC-2", "pair": "Player prop to team outcome dependence",
          "kind": "Not collected — needs player game logs and snap counts",
          "evidence": "Unverified · blank", **blank,
-         "source_ids": ["NFL-INJURY", "REPO"]},
+         "source_ids": ["NFL-INJ-W10", "REPO"]},
         {"id": "NC-3", "pair": "Multi-leg parlay joint distribution (3+ legs)",
          "kind": "Not collected — pairwise values cannot identify a 3+ leg joint",
          "evidence": "Unverified · blank", **blank,
@@ -204,7 +204,7 @@ def not_collected() -> list[dict]:
         {"id": "NC-4", "pair": "Backup-versus-starter performance gap by position",
          "kind": "Not collected — no published depth chart and no snap counts retrieved",
          "evidence": "Unverified · blank", **blank,
-         "source_ids": ["NFL-INJURY", "REPO"]},
+         "source_ids": ["NFL-INJ-W10", "REPO"]},
     ]
 
 
@@ -387,7 +387,7 @@ def availability() -> list[dict]:
             "talent_lost": None,
             "note": "Counts only. Converting a status into lost on-field value needs depth charts, "
                     "snap shares and player performance data that were not retrieved.",
-            "source_ids": ["NFL-INJURY", "NFL-INJURY-POLICY"],
+            "source_ids": ["NFL-INJ-W10", "NFL-INJURY-POLICY"],
             "source_url": "https://www.nfl.com/injuries/",
         })
     return out
@@ -404,7 +404,7 @@ def injury_flags(injuries: list[dict]) -> list[dict]:
                            f"'{row['Injury'] or 'blank'}'. The rendered page does not explain why.",
                 "unverified_value": None,
                 "status": "Needs review",
-                "source_ids": ["NFL-INJURY"],
+                "source_ids": ["NFL-INJ-W10"],
                 "source_url": row["PlayerURL"],
             })
     return flags
@@ -412,14 +412,14 @@ def injury_flags(injuries: list[dict]) -> list[dict]:
 
 def build() -> dict:
     receipts = verify_receipts()
-    standings = load_csv("data/nfl-standings-2026.csv")
+    standings = load_csv("data/nfl-standings-week10-2026.csv")
     fixtures = load_csv("data/nfl-schedule-2026-w10.csv")
     injuries = load_csv("data/nfl-injuries-2026-w10.csv")
     teams, league_ppg = team_table(standings)
     games = originated_games(fixtures, teams, league_ppg)
     evaluations = evaluate(STRATEGIES)
     inputs = sorted(list((ROOT / "data").glob("nfl-*.csv"))
-                    + list((ROOT / "nfl_lab").glob("*.py"))
+                    + list((ROOT / "nfl_origination").glob("*.py"))
                     + [ROOT / "research/nfl/receipts.json"])
     manifest = {str(p.relative_to(ROOT)): digest(p) for p in inputs}
     result = {
@@ -471,7 +471,7 @@ def run(check: bool = False) -> None:
     text = json.dumps(build(), indent=2, ensure_ascii=False, allow_nan=False) + "\n"
     if check:
         if not target.exists() or target.read_text(encoding="utf-8") != text:
-            raise SystemExit("STALE: run python -m nfl_lab run")
+            raise SystemExit("STALE: run python -m nfl_origination run")
         print("OK: NFL results reproduce exactly from receipt-checked inputs")
         return
     target.write_text(text, encoding="utf-8")

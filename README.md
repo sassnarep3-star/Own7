@@ -1,6 +1,6 @@
 # OWN7 · NFL Origination Lab
 
-[Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-executive-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
+[Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
 ## What this is now
 
@@ -28,7 +28,7 @@ Python 3.11+; no third-party Python packages.
 
 ```sh
 python scripts/nfl_extract.py --check   # re-parse saved official NFL text; refuse contradictions
-python -m nfl_lab run                   # derive lines, calibration, correlations, gates
+python -m nfl_origination run                   # derive lines, calibration, correlations, gates
 python -m unittest discover -s tests    # 86 tests
 python scripts/build_site.py            # regenerate every page deterministically
 python scripts/check_site.py            # links, fragments, per-row sources, blank rules

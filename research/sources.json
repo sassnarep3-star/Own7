@@ -754,7 +754,7 @@
     "chunks_read": "1–2 of 2"
   },
   {
-    "id": "NFL-INJURY",
+    "id": "NFL-INJ-W10",
     "publisher": "NFL",
     "title": "Official injury report, Week 10 2026 (Thursday game)",
     "url": "https://www.nfl.com/injuries/",
@@ -766,7 +766,7 @@
     "chunks_read": "1–3 of 7"
   },
   {
-    "id": "NFL-SCHEDULE",
+    "id": "NFL-SCHED-W10",
     "publisher": "NFL",
     "title": "2026 Week 10 schedule",
     "url": "https://www.nfl.com/schedules/",
@@ -790,7 +790,7 @@
     "chunks_read": "1 of 1"
   },
   {
-    "id": "NFL-TERMS",
+    "id": "NFL-TERMS-LEGAL",
     "publisher": "NFL Enterprises, LLC",
     "title": "NFL.com terms and conditions",
     "url": "https://www.nfl.com/legal/terms/",

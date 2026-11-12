@@ -44,8 +44,8 @@ SOURCE_HOSTS.update({
 # NFL research layer (session arena/a129b881-own7). Official league domains, one tertiary
 # method reference, and the publisher glossary. No odds vendor is registered.
 SOURCE_HOSTS.update({
-    'NFL-STANDINGS': 'www.nfl.com', 'NFL-INJURY': 'www.nfl.com', 'NFL-SCHEDULE': 'www.nfl.com',
-    'NFL-INJURY-POLICY': 'www.nfl.com', 'NFL-TERMS': 'www.nfl.com',
+    'NFL-STANDINGS': 'www.nfl.com', 'NFL-INJ-W10': 'www.nfl.com', 'NFL-SCHED-W10': 'www.nfl.com',
+    'NFL-INJURY-POLICY': 'www.nfl.com', 'NFL-TERMS-LEGAL': 'www.nfl.com',
     'PYTH-NFL': 'en.wikipedia.org', 'PFR-GLOSSARY': 'www.pro-football-reference.com',
 })
 

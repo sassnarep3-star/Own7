@@ -287,7 +287,7 @@ def main() -> None:
                                  "note": "Used only to check that parsed sections and the fixture/bye "
                                          "cover are complete; not an independent NFL source."},
         "datasets": [
-            {"file": "data/nfl-standings-2026.csv", "source_url": STANDINGS_URL,
+            {"file": "data/nfl-standings-week10-2026.csv", "source_url": STANDINGS_URL,
              "retrieval": "research/nfl/evidence/standings-2026-w10.retrieved.md",
              "rows": len(standings),
              "checks": ["32 unique clubs", "PCT = (W + T/2)/games", "NET PTS = PF - PA",

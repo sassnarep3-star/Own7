@@ -384,12 +384,12 @@ Owner request this session: convert the project to NFL, add a dedicated **Sugges
 |---|---|---|---|---|---|
 | N1 | Claim board entry, then NFL source verification | in progress | session-arena-a129b881-own7 | COORDINATION.md, research/sources.json (append NFL IDs only) | No existing NBA source ID is modified or removed. |
 | N2 | Verified NFL snapshot collection (standings, injury report, terms) | in progress | session-arena-a129b881-own7 | data/nfl-*.csv, data/official-snapshots/nfl-*, research/nfl/** | Row-level official source links only; blanks stay blank. |
-| N3 | NFL line origination + correlation + validation/leaderboard contracts | in progress | session-arena-a129b881-own7 | nfl_lab/**, tests/test_nfl.py, scripts/nfl_*.py | Derived numbers labelled derived; no market line invented. |
+| N3 | NFL line origination + correlation + validation/leaderboard contracts | in progress | session-arena-a129b881-own7 | nfl_origination/**, tests/test_nfl.py, scripts/nfl_*.py | Derived numbers labelled derived; no market line invented. |
 | N4 | Decision lab: Suggestions workflow, questions dossier, missing-information plan | in progress | session-arena-a129b881-own7 | research/nfl/decisions.json, docs/nfl-*.md | Every proposal must state its evidence and its open questions. |
 | N5 | Site integration: NFL pages, nav, checks, exec summary | in progress | session-arena-a129b881-own7 | scripts/build_site.py, scripts/check_site.py, .github/workflows/check.yml, README.md | Generated pages only; deterministic rebuild enforced. |
 | N6 | PR, merge, GitHub Pages deploy confirmation, record | in progress | session-arena-a129b881-own7 | COORDINATION.md | Do not merge a broken site. |
 
-Claim reasons: the repository's last commit predates this session; no other session branch or open PR is being touched; scopes are additive (new `nfl_lab/**`, `research/nfl/**`, `data/nfl-*`) plus shared generator/checker files that this session alone edits. Existing NBA and rental content and values are not modified. Cross-scope requests from earlier boards are noted as history, not re-opened.
+Claim reasons: the repository's last commit predates this session; no other session branch or open PR is being touched; scopes are additive (new `nfl_origination/**`, `research/nfl/**`, `data/nfl-*`) plus shared generator/checker files that this session alone edits. Existing NBA and rental content and values are not modified. Cross-scope requests from earlier boards are noted as history, not re-opened.
 
 ### N1-N5 completion — session-arena-a129b881-own7 (2026-11-12)
 

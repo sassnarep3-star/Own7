@@ -1,4 +1,4 @@
-"""Entry point: python -m nfl_lab [run|--check]"""
+"""Entry point: python -m nfl_origination [run|--check]"""
 import sys
 
 from .engine import run

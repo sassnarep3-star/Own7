@@ -77,7 +77,7 @@ def suggestions():
     rows = [{"id": s["id"], "rank": s["rank"], "title": s["title"], "category": s["category"],
              "problem": s["problem"], "proposal": s["proposal"], "unlocks": s["unlocks"],
              "effort": s["effort"], "risk": s["risk_if_skipped"], "status": s["status"],
-             "source_ids": ["REPO", "NFL-TERMS"] if s["category"] == "Rights" else ["REPO"]}
+             "source_ids": ["REPO", "NFL-TERMS-LEGAL"] if s["category"] == "Rights" else ["REPO"]}
             for s in DECISIONS["suggestions"]]
     blocking = [q for q in DECISIONS["missing_information"]
                 if q["id"] in DECISIONS["blocking_before_any_reward"]]
@@ -273,7 +273,7 @@ def nfl_correlation():
              '<p>This identity holds for two binary legs with matching marginals. Multiplying two '
              'prices silently sets rho to zero. For three or more legs even a full pairwise matrix is '
              'insufficient, which is why no combination product is priced on this site.</p>'
-             + refs({"source_ids": ["REPO", "NFL-SCHEDULE"]}) + '</div>')
+             + refs({"source_ids": ["REPO", "NFL-SCHED-W10"]}) + '</div>')
     return body
 
 
@@ -337,7 +337,7 @@ def nfl_leaderboard():
          {"id": "R4", "rule": "Every losing row stays in the record.",
           "why": "Deleting rows is the easiest way to fake a winning record.", "source_ids": ["REPO"]},
          {"id": "R5", "rule": "Score only after settlement under the operator's published rule.",
-          "why": "Pushes and voids change results; see the market evidence section.", "source_ids": ["REPO", "NFL-TERMS"]}],
+          "why": "Pushes and voids change results; see the market evidence section.", "source_ids": ["REPO", "NFL-TERMS-LEGAL"]}],
         note='These are project rules, not an offer of a prize.'))
     body += section('The shadow ledger is open and empty', '<div class="panel body-text"><p>'
                     + esc(ledger["status"]) + '.</p>' + lines(ledger["rules"]) + '</div>',
@@ -351,7 +351,7 @@ def nfl_injuries():
                     "injury": r["Injury"] or None, "practice": r["PracticeStatus"],
                     "game": r["GameStatus"] or None, "player_url": r["PlayerURL"],
                     "source_url": r["PlayerURL"],
-                    "source_ids": ["NFL-INJURY", "NFL-INJURY-POLICY"]}
+                    "source_ids": ["NFL-INJ-W10", "NFL-INJURY-POLICY"]}
                    for r in _injury_csv()]
     body = notice('Status is published. Impact is not measured.',
                   'The official report gives participation and game status. It does not say who is a '
@@ -395,7 +395,7 @@ def nfl_injuries():
              '<p>Neither was retrieved. The depth-chart address on NFL.com returned a 404 to the '
              'reader, and no snap-count page was obtained. Rather than estimate, the fields stay '
              'blank and the gap is published.</p>'
-             + refs({"source_ids": ["REPO", "NFL-INJURY"]}) + '</div></div>')
+             + refs({"source_ids": ["REPO", "NFL-INJ-W10"]}) + '</div></div>')
     return body
 
 
@@ -503,14 +503,14 @@ def nfl_overview():
             {"id": "H4", "finding": "The injury snapshot covers one game and names no starters",
              "reading": "Twenty players are listed with official statuses. Converting that into lost "
                         "on-field value needs data that was not retrieved.",
-             "state": "Unverified", "kind": "warn", "source_ids": ["NFL-INJURY", "NFL-INJURY-POLICY"]},
+             "state": "Unverified", "kind": "warn", "source_ids": ["NFL-INJ-W10", "NFL-INJURY-POLICY"]},
             {"id": "H5", "finding": "No priced market, so no performance claim",
              "reading": "ROI, closing-line value and break-even tests are blank by rule rather than zero.",
-             "state": "Blocked", "kind": "warn", "source_ids": ["NFL-TERMS", "REPO"]},
+             "state": "Blocked", "kind": "warn", "source_ids": ["NFL-TERMS-LEGAL", "REPO"]},
         ],
         note='Each row is either a re-derived calculation or an explicit statement of a limit.'))
-    body += '<p class="source-line">' + refs({"source_ids": ["NFL-STANDINGS", "NFL-INJURY", "NFL-SCHEDULE",
-                                                              "NFL-INJURY-POLICY", "NFL-TERMS", "PYTH-NFL"]}) + '</p>'
+    body += '<p class="source-line">' + refs({"source_ids": ["NFL-STANDINGS", "NFL-INJ-W10", "NFL-SCHED-W10",
+                                                              "NFL-INJURY-POLICY", "NFL-TERMS-LEGAL", "PYTH-NFL"]}) + '</p>'
     return body
 
 
@@ -563,7 +563,7 @@ def executive():
                    f"Every value is re-derived arithmetically before publication and the build aborts "
                    f"on any contradiction.",
          "state": "Verified snapshot", "kind": "good",
-         "source_ids": ["NFL-STANDINGS", "NFL-INJURY", "NFL-SCHEDULE"]},
+         "source_ids": ["NFL-STANDINGS", "NFL-INJ-W10", "NFL-SCHED-W10"]},
         {"id": "E2", "headline": "Points-based expectation carried real information in this snapshot",
          "detail": f"Scored against the displayed records of all 32 clubs, the Pythagorean baseline "
                    f"returned a Brier score of {pyth:.4f} against {flat:.2f} for a flat .500 guess. "
@@ -583,13 +583,13 @@ def executive():
                    "pair. No sportsbook quote was retrieved, so every market cell, ROI and closing-line "
                    "value is blank rather than zero.",
          "state": "Blocked", "kind": "warn",
-         "source_ids": ["NFL-SCHEDULE", "NFL-STANDINGS", "NFL-TERMS"]},
+         "source_ids": ["NFL-SCHED-W10", "NFL-STANDINGS", "NFL-TERMS-LEGAL"]},
         {"id": "E5", "headline": "The injury requirement is documented but not measured",
          "detail": "Official statuses are published for 20 players in one game. Starter and "
                    "second-, third- and fourth-string impact is blank because no depth chart and no "
                    "snap share was retrieved. The gap is published with a proposed fix.",
          "state": "Unverified", "kind": "warn",
-         "source_ids": ["NFL-INJURY", "NFL-INJURY-POLICY"]},
+         "source_ids": ["NFL-INJ-W10", "NFL-INJURY-POLICY"]},
         {"id": "E6", "headline": "Nothing is ranked, rewarded or recommended",
          "detail": "All eight strategies are blocked, two of ten gates pass, the leaderboard is empty "
                    "and no cash reward exists. The four blocking gaps are a dated market price, depth "

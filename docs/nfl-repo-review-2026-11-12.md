@@ -69,7 +69,7 @@ that earlier factual content was wrong; only that its own stated limits still ap
 
 ```sh
 python scripts/nfl_extract.py --check      # re-parse saved official text, refuse contradictions
-python -m nfl_lab run --check              # reproduce derived results exactly
+python -m nfl_origination run --check              # reproduce derived results exactly
 python -m unittest discover -s tests       # 86 tests
 python scripts/check_site.py               # links, fragments, per-row sources, determinism
 npm run test:browser                       # 46 desktop + 46 mobile pages, WCAG A/AA
