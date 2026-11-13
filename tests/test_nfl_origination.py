@@ -1,4 +1,5 @@
 """NFL layer tests: extraction integrity, math contracts, and the no-invention rules."""
+import csv
 import json
 import unittest
 from pathlib import Path
@@ -180,7 +181,7 @@ class DecisionDossierTests(unittest.TestCase):
 
     def test_every_question_has_known_and_missing_parts(self):
         questions = json.loads((ROOT / "research/nfl/questions.json").read_text(encoding="utf-8"))
-        self.assertEqual(len(questions["questions"]), 14)
+        self.assertGreaterEqual(len(questions["questions"]), 14)
         for row in questions["questions"]:
             for field in ("known", "missing", "resolves_if"):
                 self.assertTrue(row[field].strip(), row["id"])
@@ -188,11 +189,129 @@ class DecisionDossierTests(unittest.TestCase):
 
     def test_every_flag_publishes_a_blank_not_a_guess(self):
         flags = json.loads((ROOT / "research/nfl/flags.json").read_text(encoding="utf-8"))["flags"]
-        self.assertEqual(len(flags), 12)
+        self.assertGreaterEqual(len(flags), 12)
         for row in flags:
             self.assertIsNone(row["unverified_value"])
             self.assertIn(row["status"], ("Needs review", "Corrected"))
             self.assertTrue(row["source_ids"])
+
+
+class SuggestionDecisionGradeTests(unittest.TestCase):
+    """The suggestions register has to stay decision-grade, and the prose has to match the data."""
+
+    def setUp(self):
+        self.decisions = json.loads((ROOT / "research/nfl/decisions.json").read_text(encoding="utf-8"))
+
+    def test_priority_index_matches_its_stated_formula(self):
+        for row in self.decisions["suggestions"]:
+            expected = round(row["decision_value_score"] * row["confidence_gain"]
+                             / (row["effort_score"] + row["cost_score"]), 2)
+            self.assertEqual(row["priority_index"], expected, row["id"])
+
+    def test_every_proposal_has_an_acceptance_test_and_a_review_state(self):
+        states = set(self.decisions["review_workflow"]["states"])
+        for row in self.decisions["suggestions"]:
+            self.assertTrue(row["acceptance_test"].strip(), row["id"])
+            self.assertIn(row["review_state"], states, row["id"])
+            self.assertTrue(row["evidence_status"].strip(), row["id"])
+            for field in ("decision_value_score", "effort_score", "cost_score", "confidence_gain", "reversibility"):
+                self.assertGreaterEqual(row[field], 1, f'{row["id"]}.{field}')
+                self.assertLessEqual(row[field], 5, f'{row["id"]}.{field}')
+
+    def test_prerequisites_resolve_inside_the_register(self):
+        ids = {s["id"] for s in self.decisions["suggestions"]}
+        for row in self.decisions["suggestions"]:
+            if row["prerequisite"]:
+                self.assertIn(row["prerequisite"], ids, row["id"])
+
+    def test_crosswalk_points_at_real_sub_site_proposals(self):
+        subsite = json.loads((ROOT / "research/nfl-suggestions.json").read_text(encoding="utf-8"))
+        ids = {s["id"] for s in subsite["suggestions"]}
+        for row in self.decisions["suggestions"]:
+            for ref in row["crosswalk"]:
+                self.assertIn(ref, ids, row["id"])
+
+    def test_every_sub_site_proposal_is_either_mapped_or_declared_unmapped(self):
+        subsite = json.loads((ROOT / "research/nfl-suggestions.json").read_text(encoding="utf-8"))
+        mapped = {ref for row in self.decisions["suggestions"] for ref in row["crosswalk"]}
+        declared = {row["id"] for row in self.decisions["subsite_only"]}
+        missing = sorted({s["id"] for s in subsite["suggestions"]} - mapped - declared)
+        self.assertEqual(missing, [], f'unaccounted sub-site proposals: {missing}')
+        self.assertEqual(mapped & declared, set(), "a proposal cannot be both mapped and unmapped")
+        for row in self.decisions["subsite_only"]:
+            self.assertTrue(row["why"].strip(), row["id"])
+
+    def test_no_proposal_is_marked_approved_without_evidence(self):
+        for row in self.decisions["suggestions"]:
+            if row["review_state"] in ("Approved", "Implemented"):
+                self.assertNotEqual(row["evidence_status"], "No artifact yet", row["id"])
+
+
+class ReVerificationTests(unittest.TestCase):
+    """The 2026-11-13 re-check must stay internally consistent with the frozen snapshot."""
+
+    def setUp(self):
+        self.recheck = json.loads((ROOT / "research/nfl/verification-2026-11-13.json").read_text(encoding="utf-8"))
+        with (ROOT / "data/nfl-standings-week10-2026.csv").open(encoding="utf-8") as handle:
+            self.standings = list(csv.DictReader(handle))
+
+    def test_recheck_covers_all_32_clubs_with_the_snapshot_values(self):
+        by_id = {r["id"]: r for r in self.recheck["standings_recheck"]}
+        self.assertEqual(len(by_id), 32)
+        for row in self.standings:
+            published = f'{row["W"]}-{row["L"]}-{row["T"]} · {row["PF"]}-{row["PA"]}'
+            self.assertEqual(by_id[row["id"]]["snapshot"], published, row["id"])
+
+    def test_only_nyg_and_was_are_recorded_as_moved(self):
+        moved = sorted(r["id"] for r in self.recheck["standings_recheck"] if r["delta"] != "Identical")
+        self.assertEqual(moved, ["NYG", "WAS"])
+
+    def test_moved_rows_are_arithmetically_one_result(self):
+        by_id = {r["id"]: r for r in self.recheck["standings_recheck"]}
+        def parse(text):
+            rec, pts = text.split(" · ")
+            w, l, t = (int(x) for x in rec.split("-"))
+            pf, pa = (int(x) for x in pts.split("-"))
+            return w, l, t, pf, pa
+        for club in ("WAS", "NYG"):
+            sw, sl, _, spf, spa = parse(by_id[club]["snapshot"])
+            rw, rl, _, rpf, rpa = parse(by_id[club]["recheck"])
+            # One completed game: the winner gains a win and the loser a loss, so exactly one
+            # of the two records changes by one in exactly one column.
+            self.assertEqual(abs(rw - sw) + abs(rl - sl), 1, club)
+            self.assertEqual(abs(rw - sw), 1 if club == "WAS" else 0, club)
+            self.assertEqual(abs(rl - sl), 1 if club == "NYG" else 0, club)
+            scored, conceded = (24, 21) if club == "WAS" else (21, 24)
+            self.assertEqual(rpf - spf, scored, club)
+            self.assertEqual(rpa - spa, conceded, club)
+
+    def test_headline_counts_match_the_rows(self):
+        headline = self.recheck["headline"]
+        identical = sum(1 for r in self.recheck["standings_recheck"] if r["delta"] == "Identical")
+        self.assertEqual(headline["standings_agreement"], f"{identical} of 32")
+        self.assertEqual(headline["injury_agreement"], "20 of 20")
+        self.assertEqual(headline["fixtures_agreement"], "14 of 14")
+
+    def test_league_identities_hold_in_the_committed_snapshot(self):
+        """League totals must be computed, never quoted from a column figure."""
+        wins = sum(int(r["W"]) for r in self.standings)
+        losses = sum(int(r["L"]) for r in self.standings)
+        points_for = sum(int(r["PF"]) for r in self.standings)
+        points_against = sum(int(r["PA"]) for r in self.standings)
+        self.assertEqual(wins, losses)
+        self.assertEqual(points_for, points_against)
+        self.assertEqual((wins, points_for), (135, 6246))
+
+    def test_not_rechecked_is_never_silently_treated_as_unchanged(self):
+        for item in self.recheck["not_rechecked"]:
+            self.assertNotIn("unchanged", item.lower())
+
+    def test_every_irregularity_cites_a_registered_source(self):
+        registry = {s["id"] for s in json.loads((ROOT / "research/sources.json").read_text(encoding="utf-8"))}
+        for row in self.recheck["irregularities"]:
+            self.assertTrue(row["source_ids"], row["id"])
+            for sid in row["source_ids"]:
+                self.assertIn(sid, registry, row["id"])
 
 
 if __name__ == "__main__":

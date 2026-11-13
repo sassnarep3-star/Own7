@@ -22,8 +22,13 @@ MARKET = load_json("market-evidence/evidence.json")
 RENT = load_json("research/rent.json")
 RENTAL = load_json("research/rental.json")
 OPEN_FLAGS = sum(x["status"] == "Needs review" for x in CATALOG["flags"])
+NFL_QUESTIONS = load_json("research/nfl/questions.json")["questions"]
+NFL_FLAG_ROWS = load_json("research/nfl/flags.json")["flags"]
+NFL_FLAG_TOTAL = len(NFL_FLAG_ROWS)
 NFL_FLAGS = load_json("research/nfl/flags.json")["flags"]
 NFL_OPEN = sum(1 for x in NFL_FLAGS if x["status"] == "Needs review")
+# A-RR16: the badge must say what it counts.
+NFL_BADGE = f'{NFL_OPEN} open of {NFL_FLAG_TOTAL}'
 sys.path.insert(0, str(ROOT))
 import nfl_pages
 
@@ -162,6 +167,7 @@ NAV = [
                       ("nfl-standings.html", "Standings snapshot", "data"),
                       ("nfl-validation.html", "Validation gates", "validation"),
                       ("nfl-leaderboard.html", "Leaderboard", "leaderboard"),
+                      ("nfl-verification-2026-11-13.html", "Re-verification 13 Nov", "validation"),
                       ("nfl-review.html", "Flagged for review", "review")]),
     ("NBA workspace", [("nba-overview.html", "NBA overview", "overview"), ("nba-executive-summary.html", "NBA brief", "brief"), ("data.html", "Data library", "data")]),
     ("NBA research", [("signals.html", "Signal library", "signals"), ("lines.html", "Probability lab", "lab"), ("correlation.html", "Correlation", "correlation"), ("methodology.html", "Methodology", "method"), ("settlement.html", "Market evidence", "sources"), ("validation.html", "Validation gates", "validation"), ("leaderboard.html", "Leaderboard", "leaderboard")]),
@@ -174,10 +180,15 @@ NAV = [
 ]
 
 
-def page(slug, title, subtitle, body, eyebrow=None):
+def page(slug, title, subtitle, body, eyebrow=None, description=None):
     parent = next((group for group, entries in NAV if any(e[0] == slug for e in entries)), "Workspace")
     if eyebrow is None:
         eyebrow = "NFL / ORIGINATION LAB" if parent.startswith("NFL") else "NBA / RESEARCH WORKSPACE"
+    if description is None:
+        description = ("OWN7 NFL origination lab: source-linked observations, originated lines, "
+                       "validation gates and explicit blanks. Not a betting service."
+                       if (parent.startswith("NFL") or eyebrow.startswith("NFL"))
+                       else "OWN7 NBA research: source-linked observations, exploratory models, validation and transparent limitations.")
     navigation = ''
     for group, entries in NAV:
         navigation += f'<div class="nav-group"><div class="nav-label">{group}</div>'
@@ -187,11 +198,11 @@ def page(slug, title, subtitle, body, eyebrow=None):
             if href == 'review.html':
                 count = f'<span class="nav-count">{OPEN_FLAGS}</span>'
             elif href == 'nfl-review.html':
-                count = f'<span class="nav-count">{NFL_OPEN}</span>'
+                count = f'<span class="nav-count" title="{NFL_BADGE} flagged items need review">{NFL_OPEN}</span>'
             navigation += f'<a href="{href}"{current}>{icon(ico)}{label}{count}</a>'
         navigation += '</div>'
     return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="OWN7 NBA research: source-linked observations, exploratory models, validation and transparent limitations."><meta name="referrer" content="strict-origin-when-cross-origin"><title>{esc(title)} · OWN7 Research</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><script src="js/app.js" defer></script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{esc(description)}"><meta name="referrer" content="strict-origin-when-cross-origin"><title>{esc(title)} · OWN7 Research</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><script src="js/app.js" defer></script></head>
 <body><a class="skip-link" href="#main-content">Skip to content</a><aside class="sidebar" id="sidebar" aria-label="Research workspace"><a class="brand" href="index.html" aria-label="OWN7 Research Lab home"><span class="brand-mark" aria-hidden="true">7</span><span class="brand-name">OWN7<small>NFL ORIGINATION LAB</small></span></a><nav aria-label="Main navigation">{navigation}</nav><div class="sidebar-bottom">{link(SOURCES['REPO']['url'], icon('external')+' View repository', True)}<div class="mode"><span class="dot"></span>NON-COMMERCIAL RESEARCH</div><p>No live lines. No wagers placed.</p></div></aside><button class="nav-backdrop" aria-label="Close navigation" tabindex="-1" hidden></button>
 <div class="layout"><header class="topbar"><button type="button" class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">{icon('menu')}</button><div class="breadcrumb"><span class="crumb-parent">{esc(parent)}</span><span class="divider">/</span><strong>{esc(title)}</strong></div><div class="top-right"><label class="search-field">{icon('search')}<span class="sr-only">Search tables on this page</span><input type="search" id="page-search" placeholder="Search this page…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label><div class="snapshot">SNAPSHOT CHECKED<span>12 Nov 2026</span></div></div></header>
 <main class="content" id="main-content"><div class="page-heading"><div><div class="eyebrow">{esc(eyebrow)}</div><h1>{esc(title)}</h1><p>{subtitle}</p></div><div class="heading-actions">{link('research/results.json', icon('download')+' Research JSON', css='button')}{badge('Research only', 'neutral')}</div></div>{body}
@@ -567,14 +578,15 @@ def build():
         'index.html':('NFL research overview','An evidence-first NFL workspace: originate your own lines from official data, then prove or reject them.',nfl_pages.nfl_overview()),
         'nfl-suggestions.html':('Suggestions','Proposals for review, ranked by the decision they unlock. Choose a path before changing anything.',nfl_pages.suggestions(),'NFL / DECISION LAB'),
         'nfl-decisions.html':('Decision brief','What we know, what we do not know, and what must be answered before any decision is reasonable.',nfl_pages.decisions(),'NFL / DECISION LAB'),
-        'nfl-questions.html':('Questions','Fourteen questions, each split into the sourced part of the answer and the part still open.',nfl_pages.nfl_questions(),'NFL / DECISION LAB'),
+        'nfl-questions.html':('Questions',f'{len(NFL_QUESTIONS)} questions, each split into the sourced part of the answer and the part still open.',nfl_pages.nfl_questions(),'NFL / DECISION LAB'),
         'nfl-lines.html':('Line origination','Originated spreads and totals from official scoring data. No market price exists in the record.',nfl_pages.nfl_lines(),'NFL / ORIGINATION LAB'),
         'nfl-correlation.html':('Correlation','Team-level dependence, labelled honestly, and the leg-level dependence that is deliberately not estimated.',nfl_pages.nfl_correlation(),'NFL / ORIGINATION LAB'),
         'nfl-injuries.html':('Injuries & availability','Official participation and game status. Starter and backup impact is blank because the data needed for it was not retrieved.',nfl_pages.nfl_injuries(),'NFL / AVAILABILITY'),
         'nfl-standings.html':('Standings snapshot','All 32 clubs, re-derived before publication. Six of sixteen displayed fields are withheld because no header row exists.',nfl_pages.nfl_stands(),'NFL / VERIFIED DATA'),
         'nfl-validation.html':('Validation gates','Ten gates, two passes, one partial and one open rights question. A missing input never counts as a pass.',nfl_pages.nfl_validation(),'NFL / VALIDATION'),
         'nfl-leaderboard.html':('Leaderboard','A frozen competition format with no entries, because nothing has earned a place.',nfl_pages.nfl_leaderboard(),'NFL / COMPETITION'),
-        'nfl-review.html':('Flagged for review','Twelve NFL items published with their sources. None blocks publication; all block unsupported claims.',nfl_pages.nfl_review(),'NFL / TRANSPARENCY'),
+        'nfl-review.html':('Flagged for review',f'{NFL_FLAG_TOTAL} NFL items published with their sources; {NFL_OPEN} are open. None blocks publication; all block unsupported claims.',nfl_pages.nfl_review(),'NFL / TRANSPARENCY'),
+        'nfl-verification-2026-11-13.html':('Re-verification, 13 Nov','Every published NFL value re-read from the publisher. Thirty of 32 standings rows, 20 of 20 injury rows and 14 of 14 fixtures agree; two rows moved because a game was played.',nfl_pages.nfl_verification(),'NFL / TRANSPARENCY'),
         'executive-summary.html':('NFL executive summary','The five findings that matter, the four gaps that block a reward decision, and the sources behind each.',nfl_pages.executive(),'NFL / EXECUTIVE'),
         'nba-executive-summary.html':('NBA brief','The important findings, verified observations, research progress and non-negotiable limits—in one place.',executive()),
         'data.html':('Data library','Four frozen official-source datasets. Every retained row is attributed, scoped and checked; nothing here is a live market feed.',data_library()),

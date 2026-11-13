@@ -1,0 +1,411 @@
+{
+  "checked_on": "2026-11-13",
+  "headline": {
+    "standings_agreement": "30 of 32",
+    "injury_agreement": "20 of 20",
+    "fixtures_agreement": "14 of 14",
+    "moved": "2",
+    "access_note": "Rendered page text via the Arena page reader. Direct HTTPS to nfl.com from the sandbox fails with code 000, so no HTTP-status claim is made."
+  },
+  "standings_recheck": [
+    {
+      "id": "BUF",
+      "team": "Buffalo Bills",
+      "snapshot": "7-1-0 · 256-187",
+      "recheck": "7-1-0 · 256-187",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NE",
+      "team": "New England Patriots",
+      "snapshot": "5-4-0 · 211-207",
+      "recheck": "5-4-0 · 211-207",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NYJ",
+      "team": "New York Jets",
+      "snapshot": "2-7-0 · 182-223",
+      "recheck": "2-7-0 · 182-223",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "MIA",
+      "team": "Miami Dolphins",
+      "snapshot": "1-7-0 · 126-200",
+      "recheck": "1-7-0 · 126-200",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "PIT",
+      "team": "Pittsburgh Steelers",
+      "snapshot": "6-2-0 · 180-144",
+      "recheck": "6-2-0 · 180-144",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "CIN",
+      "team": "Cincinnati Bengals",
+      "snapshot": "6-2-0 · 240-175",
+      "recheck": "6-2-0 · 240-175",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "CLE",
+      "team": "Cleveland Browns",
+      "snapshot": "5-4-0 · 161-196",
+      "recheck": "5-4-0 · 161-196",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "BAL",
+      "team": "Baltimore Ravens",
+      "snapshot": "4-5-0 · 189-236",
+      "recheck": "4-5-0 · 189-236",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "JAX",
+      "team": "Jacksonville Jaguars",
+      "snapshot": "6-2-0 · 229-121",
+      "recheck": "6-2-0 · 229-121",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "HOU",
+      "team": "Houston Texans",
+      "snapshot": "3-5-0 · 209-192",
+      "recheck": "3-5-0 · 209-192",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "IND",
+      "team": "Indianapolis Colts",
+      "snapshot": "2-7-0 · 184-249",
+      "recheck": "2-7-0 · 184-249",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "TEN",
+      "team": "Tennessee Titans",
+      "snapshot": "1-7-0 · 144-199",
+      "recheck": "1-7-0 · 144-199",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "DEN",
+      "team": "Denver Broncos",
+      "snapshot": "7-2-0 · 198-186",
+      "recheck": "7-2-0 · 198-186",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "KC",
+      "team": "Kansas City Chiefs",
+      "snapshot": "6-2-0 · 202-143",
+      "recheck": "6-2-0 · 202-143",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "LV",
+      "team": "Las Vegas Raiders",
+      "snapshot": "4-5-0 · 238-268",
+      "recheck": "4-5-0 · 238-268",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "LAC",
+      "team": "Los Angeles Chargers",
+      "snapshot": "0-8-0 · 121-219",
+      "recheck": "0-8-0 · 121-219",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NYG",
+      "team": "New York Giants",
+      "snapshot": "5-2-1 · 182-172",
+      "recheck": "5-3-1 · 203-196",
+      "delta": "Moved — fixture played",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "DAL",
+      "team": "Dallas Cowboys",
+      "snapshot": "4-5-0 · 246-236",
+      "recheck": "4-5-0 · 246-236",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "WAS",
+      "team": "Washington Commanders",
+      "snapshot": "2-5-1 · 172-202",
+      "recheck": "3-5-1 · 196-223",
+      "delta": "Moved — fixture played",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "PHI",
+      "team": "Philadelphia Eagles",
+      "snapshot": "2-7-0 · 148-221",
+      "recheck": "2-7-0 · 148-221",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "CHI",
+      "team": "Chicago Bears",
+      "snapshot": "7-2-0 · 241-184",
+      "recheck": "7-2-0 · 241-184",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "DET",
+      "team": "Detroit Lions",
+      "snapshot": "6-2-0 · 222-189",
+      "recheck": "6-2-0 · 222-189",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "MIN",
+      "team": "Minnesota Vikings",
+      "snapshot": "6-2-0 · 146-116",
+      "recheck": "6-2-0 · 146-116",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "GB",
+      "team": "Green Bay Packers",
+      "snapshot": "6-3-0 · 216-191",
+      "recheck": "6-3-0 · 216-191",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "CAR",
+      "team": "Carolina Panthers",
+      "snapshot": "3-5-0 · 199-219",
+      "recheck": "3-5-0 · 199-219",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "NO",
+      "team": "New Orleans Saints",
+      "snapshot": "3-5-0 · 185-216",
+      "recheck": "3-5-0 · 185-216",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "TB",
+      "team": "Tampa Bay Buccaneers",
+      "snapshot": "3-6-0 · 202-178",
+      "recheck": "3-6-0 · 202-178",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "ATL",
+      "team": "Atlanta Falcons",
+      "snapshot": "3-6-0 · 188-223",
+      "recheck": "3-6-0 · 188-223",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "SF",
+      "team": "San Francisco 49ers",
+      "snapshot": "7-1-0 · 235-156",
+      "recheck": "7-1-0 · 235-156",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "SEA",
+      "team": "Seattle Seahawks",
+      "snapshot": "5-4-0 · 202-162",
+      "recheck": "5-4-0 · 202-162",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "LA",
+      "team": "Los Angeles Rams",
+      "snapshot": "5-4-0 · 214-181",
+      "recheck": "5-4-0 · 214-181",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "AZ",
+      "team": "Arizona Cardinals",
+      "snapshot": "3-6-0 · 178-255",
+      "recheck": "3-6-0 · 178-255",
+      "delta": "Identical",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    }
+  ],
+  "injury_recheck": {
+    "rows_read": 20,
+    "identical": 20,
+    "blank_game_status": 17,
+    "out": 2,
+    "questionable": 1,
+    "doubtful": 0,
+    "detail": "Nine Commanders and eleven Giants, same positions, same practice statuses, same game statuses as the 2026-11-12 capture.",
+    "not_in_source": [
+      "starter flag",
+      "depth rank",
+      "who replaces an absent player",
+      "snap share",
+      "offence/defence side beyond listed position"
+    ],
+    "source_ids": [
+      "NFL-INJ-W10"
+    ]
+  },
+  "fixture_recheck": {
+    "rows_read": 14,
+    "identical": 14,
+    "byes": [
+      "CHI 7-2",
+      "DEN 7-2",
+      "PHI 2-7",
+      "TB 3-6"
+    ],
+    "result_text": "Link text prints 'Commanders 24, Giants 21, FINAL'. Both score banners on the same page print 'Hidden Score'. The two statements contradict each other.",
+    "handling": "The 24-21 reading is recorded because it is the only one consistent with the same day's standings arithmetic. The contradiction is published, not resolved. No model is scored on it.",
+    "source_ids": [
+      "NFL-SCHED-W10"
+    ]
+  },
+  "not_rechecked": [
+    "player passing, rushing and receiving tables",
+    "team offence and defence tables",
+    "Week 7 injury report",
+    "every NBA, rental and market-evidence value",
+    "any price, prop line or snap count"
+  ],
+  "irregularities": [
+    {
+      "id": "V01",
+      "item": "Publisher contradicts itself on one score",
+      "detail": "One page prints a final score in a link and hides the same score in both banners.",
+      "handling": "Both strings quoted; arithmetic used only as a tie-breaker between the publisher's two statements.",
+      "source_ids": [
+        "NFL-SCHED-W10"
+      ]
+    },
+    {
+      "id": "V02",
+      "item": "Snapshot values are no longer current for two clubs",
+      "detail": "WAS and NYG moved by a consistent 24-21 result. 30 of 32 rows are unchanged.",
+      "handling": "Frozen snapshot kept with its capture date; the side-by-side table above shows every row so nothing looks silently stale.",
+      "source_ids": [
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "V03",
+      "item": "Depth and usage still unavailable from official league pages",
+      "detail": "League depth-chart path serves no chart; a club path returned 404 on 2026-11-13.",
+      "handling": "Starter/backup columns stay blank. No replacement is inferred.",
+      "source_ids": [
+        "NFL-DEPTH-PATH"
+      ]
+    },
+    {
+      "id": "V04",
+      "item": "No price exists to verify against",
+      "detail": "No operator quote was retrieved and NFL.com terms section 1.3 restricts systematic retrieval.",
+      "handling": "Every market, ROI and CLV cell stays blank rather than zero.",
+      "source_ids": [
+        "NFL-TERMS-LEGAL"
+      ]
+    }
+  ]
+}

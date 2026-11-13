@@ -29,7 +29,7 @@ Python 3.11+; no third-party Python packages.
 ```sh
 python scripts/nfl_extract.py --check   # re-parse saved official NFL text; refuse contradictions
 python -m nfl_origination run                   # derive lines, calibration, correlations, gates
-python -m unittest discover -s tests    # 86 tests
+python -m unittest discover -s tests    # 108 tests
 python scripts/build_site.py            # regenerate every page deterministically
 python scripts/check_site.py            # links, fragments, per-row sources, blank rules
 npm ci && npm run test:browser          # 46 desktop + 46 mobile pages, WCAG A/AA
@@ -41,16 +41,27 @@ python scripts/serve_site.py --host 0.0.0.0 --port 8080
 | Page | What it answers |
 |---|---|
 | `index.html` | Overview, headline findings and the five things that matter |
-| `nfl-suggestions.html` | **Suggestions to review**, ranked by decision value, with acceptance tests |
+| `nfl-suggestions.html` | **Suggestions to review** — a decision hub: ranked proposals, 1-5 scores, prerequisites, an acceptance test and a review workflow, plus a crosswalk to the sub-site register |
 | `nfl-decisions.html` | What we know, what we do not know, and what closes each gap |
-| `nfl-questions.html` | Fourteen questions, each split into sourced and open parts |
+| `nfl-questions.html` | 17 questions, each split into sourced and open parts |
 | `nfl-lines.html` | Line origination: method, assumptions, originated board |
 | `nfl-correlation.html` | Team-level dependence, and what is deliberately not estimated |
 | `nfl-injuries.html` | Official statuses, and why starter/backup impact is blank |
 | `nfl-standings.html` | All 32 clubs, re-derived; six of sixteen displayed fields withheld and explained |
 | `nfl-validation.html` | Ten gates and the per-strategy gate matrix |
 | `nfl-leaderboard.html` | The frozen competition format, empty by rule |
-| `nfl-review.html` | Twelve flagged irregularities with official source links |
+| `nfl-verification-2026-11-13.html` | **Re-verification, 13 Nov 2026** — every published NFL value re-read from the publisher, all 32 rows side by side |
+| `nfl-review.html` | 21 flagged irregularities with official source links (17 open, 4 corrected) |
+
+## Re-verification (2026-11-13)
+
+Every published NFL value was re-read from the publisher on 2026-11-13, one week after the frozen
+snapshot: **30 of 32** standings rows, **20 of 20** injury rows and **14 of 14** fixtures are identical.
+Two rows moved (WAS and NYG) because the Thursday fixture was played, and the publisher now prints a
+final score on one page while still printing "Hidden Score" on the same page. Both are published on
+`nfl-verification-2026-11-13.html`; nothing was back-filled into the frozen snapshot. The audit of that
+work, including the four defects it fixed and the seven it flagged, is in
+`docs/nfl-repo-review-2026-11-13.md` and `docs/nfl-verification-2026-11-13.md`.
 
 ## Known limits
 
