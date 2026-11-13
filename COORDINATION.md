@@ -649,3 +649,31 @@ https://www.nfl.com/standings/ · https://www.nfl.com/stats/player-stats/ · htt
 - E2-E3 complete and green locally.
 - E4 browser suite started; result to be recorded before merge.
 - E5-E8 pending. No canonical NFL, NBA, rental, market-evidence or assurance value, page or test will be overwritten; all changes are additive (verification record + this board).
+
+---
+
+## Session arena/a97a5100-own7 — repo re-verification, suggestions upgrade, integration (2026-11-13)
+
+Session ID: `session-arena-a97a5100-own7`. Fixed Arena branch: `arena/a97a5100-own7`, based on `b5e3957` (merge of PR #29).
+Historical boards above are preserved as history and are **not** inherited as verification. No competing open PR or
+active claim is visible at claim time; `origin/main` will be re-checked before publication.
+
+Owner request restated for this session: NFL focus; review the repo line by line against official sources and flag
+irregularities; strengthen the **Suggestions** area so a reviewer can compare and choose a path before implementation;
+publish an explicit list of questions / information held / information missing that must be answered before a decision;
+originate own NFL lines with validated signals, correlation values, parlays and player-prop combos; track injuries and
+starter-vs-backup depletion; executive summary; live GitHub Pages site; PR + merge without waiting for approval.
+
+### Claim (committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|---|
+| A97-1 | Repo audit + toolchain replay (all builders/tests/checks) | in progress | session-arena-a97a5100-own7 | docs/nfl-audit-2026-11-13.md, COORDINATION.md |
+| A97-2 | Official-source re-verification (bounded by sandbox egress allowlist) | in progress | session-arena-a97a5100-own7 | research/nfl/evidence-2026-11-13/**, docs/nfl-verification-2026-11-13.md |
+| A97-3 | Suggestions upgrade: decision-grade scoring, review workflow, missing-information plan | in progress | session-arena-a97a5100-own7 | research/nfl/suggestions*.json, research/nfl/questions*.json, nfl_pages.py |
+| A97-4 | Integration: regenerate site, full checks, PR, merge, Pages confirmation | unclaimed | session-arena-a97a5100-own7 | scripts/**, COORDINATION.md |
+
+Rules for this session: work only on the fixed branch; never infer or fill a value; every table row keeps an official
+source link; a value that cannot be confirmed this session is left blank and flagged, not silently trusted from an
+earlier session. `needs review` items are published and non-blocking for honest publication, but they still block
+priced lines, skill claims and rewards.
