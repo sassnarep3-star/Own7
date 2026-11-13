@@ -24,6 +24,11 @@ REPO = DESK.parent
 DATA = DESK / "data"
 SITE = DESK / "site"
 
+# The desk scripts import their shared emit helper, so the desk directory must be importable
+# however the runner is invoked (repo root, desk root, or unittest discovery).
+if str(DESK) not in sys.path:
+    sys.path.insert(0, str(DESK))
+
 INJURY_VOCAB = {"", "Out", "Doubtful", "Questionable"}
 PRACTICE_VOCAB = {
     "Did Not Participate In Practice",
