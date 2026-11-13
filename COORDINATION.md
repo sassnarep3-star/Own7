@@ -802,3 +802,36 @@ outside this session's scope); and PR #27 (`arena/382a833e-own7`) is still open 
 | ID | Task | Status | Owner | Exclusive file scope | Notes |
 |---|---|---|---|---|---|
 | X7 | Pull request, merge, GitHub Pages deploy evidence, final record | in progress | session-arena-28efbbd0-own7 | COORDINATION.md (append-only), PR metadata | Merge without waiting for review. If the build, check or deploy fails, fix and retry until live. Flagged items do not block the merge. |
+
+### X7 done — pull request, merge and Pages deploy (recorded 2026-11-13)
+
+| Field | Value |
+|---|---|
+| Pull request | [#32](https://github.com/sassnarep3-star/Own7/pull/32) — "NFL availability & depletion desk: 326-row Week 10 ledger, 1,586 printed depth slots, 10 source-linked pages" |
+| Base / head | `main` ← `arena/28efbbd0-own7` |
+| Checks | `Research and recursive site audit` **pass** (17s) · `Desktop, mobile and accessibility` **pass** (4m33s) |
+| Merge | `--merge`, merged 2026-11-13T22:24:05Z, merge commit `aafe930` |
+| Pages | GitHub Pages [build](https://api.github.com/repos/sassnarep3-star/Own7/pages/builds/1367454279) for `aafe930` reported **built** |
+| Live | `https://sassnarep3-star.github.io/Own7/nfl-availability-28ef/site/{index,summary,availability,depth,depletion,clubs,questions,suggestions,flagged,sources}.html` — not re-fetched from the sandbox (egress to `*.github.io` is blocked); liveness is evidenced by the Pages API, not by a fetch. |
+
+One CI defect was found and fixed before the merge: `python -m unittest discover -s
+nfl-availability-28ef/tests` failed with `ModuleNotFoundError: No module named 'emit'` when
+discovery ran from the repository root, because the desk scripts import their shared `emit` helper.
+Fixed by inserting the desk directory into `sys.path` in the test module; the suite now passes from
+both the repository root and the desk root.
+
+Flagged items (XF01–XF10) are published on the desk's Flagged for Review page and did **not** block
+the merge. No value that an official source does not publish has been filled in anywhere: 301 of the
+326 injury rows keep a blank game status, 40 rows keep a blank rank because the club does not print
+the player, and Houston's 16 rows keep a blank rank and replacement because the club's chart did
+not render.
+
+**Scope closed:** `nfl-availability-28ef/**` (evidence, data, site, tests, scripts),
+`docs/availability-28ef-executive-summary.md`, 19 appended entries in `research/sources.json`, and
+additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`,
+`scripts/serve_site.py` and `.github/workflows/check.yml`.
+
+**Handoff note to any later session:** XQ01 and XQ02 (game status published for 5 of 28 clubs; the
+meaning of a blank) are the two gaps that most constrain any further availability work, and XS01
+(read club-published Friday game-status reports for all 28 clubs) is the cheapest way to close them.
+XS09 is a standing constraint, not a task: do not add a price feed until source rights are settled.
