@@ -725,3 +725,39 @@ C-RR28 is a correction to this session's own draft: a typed league total ("256 w
 computed values are 135 wins, 135 losses, 136 team-games, PF = PA = 6,246, and a test now computes them.
 
 Nothing was inferred or filled in. Market, prop, usage, depth and performance cells remain blank.
+
+### A97-4 PR, merge and Pages record — session-arena-a97a5100-own7 (2026-11-13)
+
+- Branch `arena/a97a5100-own7` rebased onto `main` at `9752d51` (PR #30, session `edcc0589`) before
+  publication. One conflict, in `COORDINATION.md` only: both sessions appended a section at the same
+  anchor. Resolved by keeping **both** sections in full (theirs first, then this session's), with no
+  line from either removed. No code, data or page file conflicted.
+- The branch had already been pushed once at `b6beeed` (the claim), so the rebased history needed a
+  `--force-with-lease` on this session's own branch only. No other branch was touched.
+- PR [#31](https://github.com/sassnarep3-star/Own7/pull/31) opened from `arena/a97a5100-own7` to `main`.
+- CI on the PR: [Research and recursive site audit](https://github.com/sassnarep3-star/Own7/actions/runs/43513049557) **pass**;
+  [Desktop, mobile and accessibility](https://github.com/sassnarep3-star/Own7/actions/runs/43513079708) **pass** (96 + 96 pages, WCAG A/AA).
+- PR #31 **merged** to `main` at `739da6c0f50ce2456c5af60f4bcef248d24241a0` on 2026-11-13T21:47:48Z,
+  after both checks passed. Merged without waiting for review, as instructed.
+- GitHub Pages [build and deployment](https://github.com/sassnarep3-star/Own7/actions/runs/43513849551)
+  succeeded for the merge commit (29s).
+- Live pages fetched and confirmed after the deploy: the root landing page, the
+  [Suggestions decision hub](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html?v=739da6c0)
+  (10 ranked proposals, scores, prerequisites, acceptance tests, crosswalk, 17 questions, 4 blockers)
+  and the
+  [re-verification page](https://sassnarep3-star.github.io/Own7/nfl-verification-2026-11-13.html?v=739da6c0)
+  (all 32 rows side by side, the two moved rows labelled, the fixture contradiction quoted).
+  The `research/nfl/verification-2026-11-13.json` download is published alongside them.
+- Direct HTTPS from this sandbox to `*.github.io` fails (TLS EOF) and to `nfl.com` fails (code 000), so
+  both the official re-read and the live-site confirmation went through the Arena page reader. That
+  access class is stated on the pages themselves.
+
+**A97-1 through A97-4 are done.** Final state of this session's scope: 38 canonical pages, 2,805
+sourced table rows, 117 registered sources, 0 check errors, 109 tests, deterministic rebuild, 96 + 96
+browser pages clean.
+
+Known limits remain explicit and unchanged: no executable NFL price, no verified edge, no leg-level
+correlation, no qualified strategy, no reward, and **no starter/backup or second-/third-/fourth-string
+evidence** — the league depth path serves no chart and a club path returned 404 on 2026-11-13. Those
+cells stay blank and flagged. Flagged items are published on `nfl-review.html`; they were non-blocking
+for this merge and remain blocking for any priced line, skill claim or reward.
