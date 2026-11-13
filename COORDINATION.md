@@ -593,3 +593,59 @@ Rules: work only on the fixed branch; commit/push claims before task work; use a
 - PR [#28](https://github.com/sassnarep3-star/Own7/pull/28) merged to `main` at `c99f533ce5f6bb48b8c59e8f6d1a327d5074c4e3` on 2026-11-12 at 17:21:32 UTC after successful [PR checks](https://github.com/sassnarep3-star/Own7/actions/runs/43267671082).
 - GitHub Pages [build and deployment](https://github.com/sassnarep3-star/Own7/actions/runs/43268583567) succeeded for the same merge commit; Pages API reported `built`. Live [assurance overview](https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/index.html?v=c99f533c), [Flagged for Review](https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/flagged.html?v=c99f533c) and [root overview](https://sassnarep3-star.github.io/Own7/?v=c99f533c) were fetched and confirmed.
 - A958-1 through A958-5 are done. Known limits remain explicit: no executable NFL prices, verified edge, leg correlations, qualified strategy or cash reward; unknown values stay blank and flagged. Canonical NFL, origination, independent verification, NBA/rental/market-evidence archives and legacy redirects were preserved.
+
+---
+
+## Session arena/edcc0589-own7 — NFL verification and integration (2026-11-13)
+
+Session ID: `session-arena-edcc0589-own7`. Fixed Arena branch: `arena/edcc0589-own7`; base `b5e3957` (= origin/main at claim time). All prior sessions' NFL, NBA, rental, market-evidence and assurance work is already on `main`; this session verifies, integrates and deploys.
+
+No other session has claimed any scope on this branch; all claims below are this session's.
+
+| ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
+|---|---|---|---|---|---|
+| E1 | Claim session + log board | in progress | session-arena-edcc0589-own7 | COORDINATION.md (append only) | This entry; commit + push immediately |
+| E2 | Line-by-line verification of NFL observations vs official NFL.com sources | done | session-arena-edcc0589-own7 | data/nfl-*.csv, research/nfl-*.json, research/nfl-verification-2026-11-13.md (new) | See verification record below |
+| E3 | Site build + integrity checks | done | session-arena-edcc0589-own7 | scripts/build_site.py, scripts/check_site.py, nfl/build.py, tests/ | All pass; 0 errors |
+| E4 | Browser + accessibility tests | in progress | session-arena-edcc0589-own7 | scripts/browser_test.mjs, js/app.js | npm run test:browser in progress |
+| E5 | Push session branch | pending | session-arena-edcc0589-own7 | arena/edcc0589-own7 | After E1-E4 |
+| E6 | PR to main + merge (no approval wait) | pending | session-arena-edcc0589-own7 | main branch, GitHub Pages | Do not merge a broken site |
+| E7 | Confirm GitHub Pages deployment | pending | session-arena-edcc0589-own7 | Pages API / deployment record | Record run ID |
+| E8 | Record PR link + merge result in COORDINATION.md | pending | session-arena-edcc0589-own7 | COORDINATION.md | After merge |
+
+### E2 verification results (2026-11-13, official sources)
+
+Full record: `research/nfl-verification-2026-11-13.md`. Every NFL source link re-opened and compared cell-by-cell:
+
+- **Standings**: 30/32 committed rows match today's official table; WAS and NYG advanced exactly one game (Commanders 24, Giants 21 FINAL, Nov 12) past the 2026-11-12 snapshot — delta matches the official final score; snapshot retained as dated transcription.
+- **Team defense**: 30/32 rows match; Minnesota fewest pass yards allowed (1,495) confirmed.
+- **Team offense**: 30/32 rows match; headers not rendered on official page → positional C1-C15 retained, meanings not asserted (NF11).
+- **Player passing**: ranks 1-24 match exactly (Jordan Love leads at 2,618); rank 25 not re-confirmed on today's rendering.
+- **Injuries**: 20 Week-10 TNF rows match the official injury report exactly; replacements/deficiencies intentionally blank (NF10).
+- **Terms**: §1.3 (non-commercial/informational only; systematic retrieval prohibited without consent), §11(f) (harvesting for commercial purpose), §12 (no gambling/wagering on NFL games) all confirmed verbatim at https://www.nfl.com/legal/terms/ and the support.nfl.com mirror.
+- **NF12 confirmed live**: Mahomes 2,037/263 printed 7.8 vs 7.7452 exact; Watson 1,806/249 printed 7.2 vs 7.2530 exact — publisher-side column disagreement, persisted on re-fetch.
+- **Correlations**: 7/7 descriptive correlations independently reproduced to 1e-6; bet-leg/joint correlations blank.
+
+No value was inferred or filled in. Blanks stay blank. No executable NFL line, edge, ROI, CLV, cash prize, or winning strategy is claimed.
+
+### E2 verification links for manual review
+
+https://www.nfl.com/standings/ · https://www.nfl.com/stats/player-stats/ · https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all · https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all · https://www.nfl.com/schedules/ · https://www.nfl.com/injuries/ · https://www.nfl.com/games/commanders-at-giants-2026-reg-10 · https://www.nfl.com/legal/terms/ · https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions
+
+### E3 check results
+
+- `python -m unittest discover -s tests`: 96 tests OK
+- `python scripts/check_site.py`: 115 HTML pages, 2,728 table body rows, 4435 internal + 4686 external references, 117 registered sources, 0 errors
+- `python -m nfl_lab run --check`: OK
+- `python nfl/build.py --check`: 16 pages reproduce exactly
+- `python nfl/verify_independent.py`: OK; 7/7 correlations reproduced; 2 column disagreements reported
+- `python nfl/test_build.py -v`: 6 tests OK
+- `python nfl/origination/originate.py --check`: 14 pages match
+- market-evidence, rental, nfl-assurance checks: all pass
+
+### Session log (arena/edcc0589-own7)
+
+- E1 claimed (this entry). Commit + push follows.
+- E2-E3 complete and green locally.
+- E4 browser suite started; result to be recorded before merge.
+- E5-E8 pending. No canonical NFL, NBA, rental, market-evidence or assurance value, page or test will be overwritten; all changes are additive (verification record + this board).
