@@ -84,7 +84,7 @@ def suggestions():
              "category": s["category"], "problem": s["problem"], "unlocks": s["unlocks"],
              "dv": s["decision_value_score"], "effort": s["effort_score"], "cost": s["cost_score"],
              "gain": s["confidence_gain"], "rev": s["reversibility"],
-             "pre": s["prerequisite"] or "None",
+             "pre": s["prerequisite"],
              "state": s["review_state"], "evidence": s["evidence_status"],
              "cw": ", ".join(s["crosswalk"]) or "No equivalent in the sub-site register",
              "source_ids": ["REPO", "NFL-TERMS-LEGAL"] if s["category"] == "Rights" else ["REPO"]}
