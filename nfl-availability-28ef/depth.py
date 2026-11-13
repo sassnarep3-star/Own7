@@ -16,6 +16,8 @@ import json
 import re
 from pathlib import Path
 
+from emit import emit_csv, emit_json, parse_args
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent
 EVIDENCE = HERE / "evidence"
@@ -238,19 +240,9 @@ def build():
     return slots, failures
 
 
-def write_csv(path: Path, rows: list[dict]) -> None:
-    if not rows:
-        raise SystemExit(f"refusing to write an empty table: {path}")
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
-        writer.writeheader()
-        writer.writerows(rows)
-
-
 def main() -> None:
     slots, failures = build()
-    write_csv(DATA / "depth-slots-week10-2026.csv", slots)
+    emit_csv(DATA / "depth-slots-week10-2026.csv", slots)
     summary = {
         "slots": len(slots),
         "clubs": len({r["club_abbr"] for r in slots}),
@@ -262,9 +254,10 @@ def main() -> None:
         "blank_slots": sum(1 for r in slots if not r["player"]),
         "failures": failures,
     }
-    (DATA / "depth-summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    emit_json(DATA / "depth-summary.json", summary)
     print(json.dumps(summary, indent=2))
 
 
 if __name__ == "__main__":
+    parse_args("Parse the saved printed depth charts into one slot table.")
     main()

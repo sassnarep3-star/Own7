@@ -13,6 +13,7 @@ import json
 from pathlib import Path
 
 from depth import norm_name
+from emit import emit_csv, emit_json, parse_args
 
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "data"
@@ -24,15 +25,6 @@ RANK_LABELS = {1: "1st string (printed starter)", 2: "2nd string", 3: "3rd strin
 def load_csv(path: Path):
     with path.open(newline="", encoding="utf-8") as fh:
         return list(csv.DictReader(fh))
-
-
-def write_csv(path: Path, rows: list[dict]) -> None:
-    if not rows:
-        raise SystemExit(f"refusing to write an empty table: {path}")
-    with path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
-        writer.writeheader()
-        writer.writerows(rows)
 
 
 def build_index(slots):
@@ -171,7 +163,7 @@ def main() -> None:
                "injury_source_url", "injury_checked_on", "depth_source_url", "depth_checked_on",
                "evidence_file"]
     rows = [{k: r[k] for k in ordered} for r in rows]
-    write_csv(DATA / "depletion-week10-2026.csv", rows)
+    emit_csv(DATA / "depletion-week10-2026.csv", rows)
 
     # ---- per-club summary -------------------------------------------------
     chart_date = {}
@@ -208,7 +200,7 @@ def main() -> None:
             "not_named_on_chart": sum(1 for r in club_rows
                                       if r["chart_available"] == "yes" and not r["depth_rank"]),
         })
-    write_csv(DATA / "club-summary-week10-2026.csv", summary)
+    emit_csv(DATA / "club-summary-week10-2026.csv", summary)
 
     flagged = [r for r in rows if r["game_status"] in ("Out", "Doubtful", "Questionable")
                and r["depth_rank"] == "1"]
@@ -239,7 +231,7 @@ def main() -> None:
             1 for r in rows if r["game_status"] == "Out" and r["depth_rank"] == "1"
             and not r["next_in_line"]),
     }
-    (DATA / "depletion-summary.json").write_text(json.dumps(stats, indent=2) + "\n", encoding="utf-8")
+    emit_json(DATA / "depletion-summary.json", stats)
     print(json.dumps(stats, indent=2))
 
 
@@ -248,4 +240,5 @@ def getattr_match(row, key, value) -> bool:
 
 
 if __name__ == "__main__":
+    parse_args("Join the official injury report to the printed depth charts.")
     main()

@@ -12,6 +12,8 @@ import json
 import re
 from pathlib import Path
 
+from emit import emit, emit_csv, emit_json, parse_args
+
 HERE = Path(__file__).resolve().parent
 EVIDENCE = HERE / "evidence"
 DATA = HERE / "data"
@@ -65,7 +67,7 @@ def write_joined(text: str) -> None:
         "#           restores the original rendered text byte for byte.\n"
         f"# sha256(joined): {hashlib.sha256(text.encode('utf-8')).hexdigest()}\n\n"
     )
-    JOINED.write_text(header + text, encoding="utf-8")
+    emit(JOINED, header + text)
 
 
 def parse(text: str):
@@ -200,23 +202,13 @@ def parse(text: str):
     return games, injuries
 
 
-def write_csv(path: Path, rows: list[dict]) -> None:
-    if not rows:
-        raise SystemExit(f"refusing to write an empty table: {path}")
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
-        writer.writeheader()
-        writer.writerows(rows)
-
-
 def main() -> None:
     text = joined_text()
     write_joined(text)
     games, injuries = parse(text)
     DATA.mkdir(parents=True, exist_ok=True)
-    write_csv(DATA / "games-week10-2026.csv", games)
-    write_csv(DATA / "injuries-week10-2026.csv", injuries)
+    emit_csv(DATA / "games-week10-2026.csv", games)
+    emit_csv(DATA / "injuries-week10-2026.csv", injuries)
 
     clubs = sorted({g["away_abbr"] for g in games} | {g["home_abbr"] for g in games})
     by_club: dict[str, list[dict]] = {}
@@ -243,9 +235,10 @@ def main() -> None:
         },
         "joined_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
     }
-    (DATA / "capture-summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps(summary, indent=2))
+    emit_json(DATA / "capture-summary.json", summary)
+    print(json.dumps({k: v for k, v in summary.items() if k != "rows_per_club"}, indent=2))
 
 
 if __name__ == "__main__":
+    parse_args("Transcribe the saved official NFL Week 10 injury report.")
     main()
