@@ -604,14 +604,14 @@ No other session has claimed any scope on this branch; all claims below are this
 
 | ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
 |---|---|---|---|---|---|
-| E1 | Claim session + log board | in progress | session-arena-edcc0589-own7 | COORDINATION.md (append only) | This entry; commit + push immediately |
-| E2 | Line-by-line verification of NFL observations vs official NFL.com sources | done | session-arena-edcc0589-own7 | data/nfl-*.csv, research/nfl-*.json, research/nfl-verification-2026-11-13.md (new) | See verification record below |
+| E1 | Claim session + log board | done | session-arena-edcc0589-own7 | COORDINATION.md (append only) | Committed 4c7c743, pushed to origin/arena/edcc0589-own7 |
+| E2 | Line-by-line verification of NFL observations vs official NFL.com sources | done | session-arena-edcc0589-own7 | data/nfl-*.csv, research/nfl-*.json, research/nfl-verification-2026-11-13.md | See verification record below |
 | E3 | Site build + integrity checks | done | session-arena-edcc0589-own7 | scripts/build_site.py, scripts/check_site.py, nfl/build.py, tests/ | All pass; 0 errors |
-| E4 | Browser + accessibility tests | in progress | session-arena-edcc0589-own7 | scripts/browser_test.mjs, js/app.js | npm run test:browser in progress |
-| E5 | Push session branch | pending | session-arena-edcc0589-own7 | arena/edcc0589-own7 | After E1-E4 |
-| E6 | PR to main + merge (no approval wait) | pending | session-arena-edcc0589-own7 | main branch, GitHub Pages | Do not merge a broken site |
-| E7 | Confirm GitHub Pages deployment | pending | session-arena-edcc0589-own7 | Pages API / deployment record | Record run ID |
-| E8 | Record PR link + merge result in COORDINATION.md | pending | session-arena-edcc0589-own7 | COORDINATION.md | After merge |
+| E4 | Browser + accessibility tests | done | session-arena-edcc0589-own7 | scripts/browser_test.mjs, js/app.js | 95 desktop + 95 mobile, WCAG A/AA, no runtime errors |
+| E5 | Push session branch | done | session-arena-edcc0589-own7 | arena/edcc0589-own7 | Pushed 4c7c743 |
+| E6 | PR to main + merge (no approval wait) | done | session-arena-edcc0589-own7 | main branch, GitHub Pages | PR #30 merged at 9752d51519a88403699ed7275bdc345d75a299b2 |
+| E7 | Confirm GitHub Pages deployment | done | session-arena-edcc0589-own7 | Pages API / deployment record | Pages deployment 7777054799 success; run 43512203285; CI run 43512204018 success |
+| E8 | Record PR link + merge result in COORDINATION.md | done | session-arena-edcc0589-own7 | COORDINATION.md | This entry |
 
 ### E2 verification results (2026-11-13, official sources)
 
@@ -631,6 +631,15 @@ No value was inferred or filled in. Blanks stay blank. No executable NFL line, e
 ### E2 verification links for manual review
 
 https://www.nfl.com/standings/ · https://www.nfl.com/stats/player-stats/ · https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all · https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all · https://www.nfl.com/schedules/ · https://www.nfl.com/injuries/ · https://www.nfl.com/games/commanders-at-giants-2026-reg-10 · https://www.nfl.com/legal/terms/ · https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions
+
+### E6-E8 merge and deployment record
+
+- PR: https://github.com/sassnarep3-star/Own7/pull/30 (`arena/edcc0589-own7` → `main`)
+- Merge commit: `9752d51519a88403699ed7275bdc345d75a299b2` (merged 2026-11-13; state MERGED)
+- PR checks: Research and dashboard checks run 43512204018 — success
+- GitHub Pages: deployment 7777054799 (environment github-pages, ref main) — success; pages build and deployment run 43512203285 — completed; Pages site status: built
+- Live site publishes from `main` root at https://sassnarep3-star.github.io/Own7/ (attested via Pages API/deployment record; the github.io host is not reachable from this sandbox's egress allowlist, so publication is confirmed by the deployment record rather than a live fetch)
+- Flagged irregularities NF01-NF12 remain published on Flagged for Review and do not block the merge; no executable NFL line, edge, ROI, CLV, cash prize, or winning strategy is claimed.
 
 ### E3 check results
 
