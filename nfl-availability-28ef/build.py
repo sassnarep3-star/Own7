@@ -320,7 +320,7 @@ def depth_page():
     body += kpis([
         (summary["slots"], "printed slots"), (summary["clubs"], "clubs"),
         (summary["multi_name_cells"], "cells printed with two names"),
-        (summary["blank_slots"], "blank first-string cells kept blank"),
+        (summary["blank_slots"], "blank printed cells kept blank"),
         (len(summary["failures"]), "clubs whose chart did not render"),
     ])
     body += table(
@@ -336,7 +336,7 @@ def depth_page():
             attrs=f' data-club="{esc(s["club_abbr"])}"')
             for s in slots],
         note="Trailing empty columns on a club's chart are dropped; a blank the club printed before a "
-             "named player is kept.",
+             "named player is kept and labelled in the note column.",
         filters=[("club", "Club", sorted({s["club_abbr"] for s in slots})),
                  ("unit", "Unit", ["Offense", "Defense", "Special Teams"])])
     body += panel("Pages that returned no chart",
@@ -647,11 +647,12 @@ FLAGS = [
      "The league page is not a complete source of Friday statuses. This is a publisher disagreement, "
      "not a transcription error, and no reconciliation is asserted.",
      "Needs review", "X28-NFL-INJ-W10"),
-    ("XF07", "One club prints an empty first-string cell",
+    ("XF07", "Two clubs print an empty cell inside a chain",
      "The New York Jets print a defensive-line row whose first cell is empty and whose second names "
-     "Jack Heflin.",
-     "The blank is preserved rather than filled. The chart does not say who the first string is.",
-     "Needs review", "X28-NYJ-DEPTH"),
+     "Jack Heflin; Washington prints a linebacker row whose second-string cell is empty and whose "
+     "third names Kain Medrano.",
+     "Both blanks are preserved rather than filled. Neither chart says who occupies the empty rank.",
+     "Needs review", ("X28-NYJ-DEPTH", "A958-WAS-DEPTH")),
     ("XF08", "Twenty cells print two players in one slot",
      "Clubs including Minnesota, Jacksonville, Tennessee, Las Vegas, the Los Angeles Rams and New "
      "Orleans print two names in a single depth cell.",
@@ -677,7 +678,8 @@ def flagged_page():
     body += table(
         "tbl-flagged", "Flagged for review",
         ["ID", "Item", "What was found", "What it means for the numbers", "Status"],
-        [row([cell(f[0]), cell(f[1]), cell(f[2]), cell(f[3]), cell(f[4])], [f[5]]) for f in FLAGS],
+        [row([cell(f[0]), cell(f[1]), cell(f[2]), cell(f[3]), cell(f[4])],
+             f[5] if isinstance(f[5], tuple) else (f[5],)) for f in FLAGS],
         filters=[("status", "Status", ["Needs review", "Standing"])])
     return body
 

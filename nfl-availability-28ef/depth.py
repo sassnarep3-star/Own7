@@ -183,14 +183,36 @@ def _drop_trailing_blanks(slots: list[dict]) -> list[dict]:
 
 def import_assurance_rows():
     """Reuse the in-repo 2026-11-12 club transcription as its own dated snapshot."""
+    ranks = ("first", "second", "third", "fourth", "fifth")
+    rank_of = {key: i + 1 for i, key in enumerate(ranks)}
     out = []
     with IMPORT.open(newline="", encoding="utf-8") as fh:
         for row in csv.DictReader(fh):
-            for rank_key in ("first", "second", "third", "fourth", "fifth"):
-                if not row.get(rank_key):
-                    continue
-                rank = {"first": 1, "second": 2, "third": 3, "fourth": 4, "fifth": 5}[rank_key]
+            # A blank cell the club printed *before* a named player is kept blank; only trailing
+            # blanks are dropped (see _drop_trailing_blanks). An interior blank means the club
+            # printed no name at that rank, which is a finding, not a gap to fill.
+            last_named = max((rank_of[k] for k in ranks if row.get(k, "").strip()), default=0)
+            for rank_key in ranks[:last_named]:
+                rank = rank_of[rank_key]
                 value = row[rank_key].strip()
+                if not value:
+                    out.append(
+                        {
+                            "club_abbr": row["team"],
+                            "unit": row["unit"],
+                            "position": row["position"],
+                            "slot": int(row["slot"]),
+                            "rank": rank,
+                            "player": "",
+                            "cell_holds_multiple": "no",
+                            "player_urls": "",
+                            "source_url": row["source_url"],
+                            "checked_on": "2026-11-12",
+                            "evidence_file": "nfl-assurance-9580ac3f/data/depth.csv",
+                            "note": "the club printed no name at this rank; left blank, not filled in",
+                        }
+                    )
+                    continue
                 names = [n.strip() for n in value.split("/")] if "/" in value else [value]
                 out.append(
                     {

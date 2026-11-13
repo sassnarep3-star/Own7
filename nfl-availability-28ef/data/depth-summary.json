@@ -1,5 +1,5 @@
 {
-  "slots": 1585,
+  "slots": 1586,
   "clubs": 27,
   "clubs_by_date": {
     "2026-11-12": [
@@ -35,7 +35,7 @@
     ]
   },
   "multi_name_cells": 20,
-  "blank_slots": 1,
+  "blank_slots": 2,
   "failures": [
     {
       "club_abbr": "HOU",

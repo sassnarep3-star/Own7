@@ -48,6 +48,7 @@ jobs:
           python nfl-availability-28ef/depth.py --check
           python nfl-availability-28ef/depletion.py --check
           python nfl-availability-28ef/build.py --check
+          python -m unittest discover -s nfl-availability-28ef/tests -v
           python nfl-assurance-9580ac3f/build.py --check
           python nfl-assurance-9580ac3f/check.py --report
           python -m unittest discover -s nfl-assurance-9580ac3f/tests -v
