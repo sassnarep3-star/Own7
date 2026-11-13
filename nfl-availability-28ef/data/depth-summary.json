@@ -1,0 +1,47 @@
+{
+  "slots": 1585,
+  "clubs": 27,
+  "clubs_by_date": {
+    "2026-11-12": [
+      "AZ",
+      "BAL",
+      "CLE",
+      "DET",
+      "MIA",
+      "NE",
+      "NYG",
+      "PIT",
+      "SEA",
+      "WAS"
+    ],
+    "2026-11-13": [
+      "ATL",
+      "BUF",
+      "CAR",
+      "CIN",
+      "DAL",
+      "GB",
+      "IND",
+      "JAX",
+      "KC",
+      "LAC",
+      "LAR",
+      "LV",
+      "MIN",
+      "NO",
+      "NYJ",
+      "SF",
+      "TEN"
+    ]
+  },
+  "multi_name_cells": 20,
+  "blank_slots": 1,
+  "failures": [
+    {
+      "club_abbr": "HOU",
+      "url": "https://www.houstontexans.com/team/depth-chart",
+      "read_on": "2026-11-13",
+      "reason": "no depth-chart table in the rendered text"
+    }
+  ]
+}

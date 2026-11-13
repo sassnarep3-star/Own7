@@ -1,0 +1,15 @@
+game_id,day,month,day_of_month,kickoff_et,tv,away_abbr,away_name,away_record,home_abbr,home_name,home_record,source_url
+W10-01,THURSDAY,NOVEMBER,12,8:15 PM,Prime Video,WAS,Commanders,3-5-1,NYG,Giants,5-3-1,https://www.nfl.com/injuries/league/2026/REG10
+W10-02,SUNDAY,NOVEMBER,15,9:30 AM,"FOX, FOX DEPORTES",NE,Patriots,5-4,DET,Lions,6-2,https://www.nfl.com/injuries/league/2026/REG10
+W10-03,SUNDAY,NOVEMBER,15,1:00 PM,CBS,KC,Chiefs,6-2,ATL,Falcons,3-6,https://www.nfl.com/injuries/league/2026/REG10
+W10-04,SUNDAY,NOVEMBER,15,1:00 PM,FOX,MIN,Vikings,6-2,GB,Packers,6-3,https://www.nfl.com/injuries/league/2026/REG10
+W10-05,SUNDAY,NOVEMBER,15,1:00 PM,FOX,JAX,Jaguars,6-2,TEN,Titans,1-7,https://www.nfl.com/injuries/league/2026/REG10
+W10-06,SUNDAY,NOVEMBER,15,1:00 PM,CBS,BUF,Bills,7-1,NYJ,Jets,2-7,https://www.nfl.com/injuries/league/2026/REG10
+W10-07,SUNDAY,NOVEMBER,15,1:00 PM,CBS,MIA,Dolphins,1-7,IND,Colts,2-7,https://www.nfl.com/injuries/league/2026/REG10
+W10-08,SUNDAY,NOVEMBER,15,1:00 PM,FOX,CAR,Panthers,3-5,NO,Saints,3-5,https://www.nfl.com/injuries/league/2026/REG10
+W10-09,SUNDAY,NOVEMBER,15,1:00 PM,FOX,HOU,Texans,3-5,CLE,Browns,5-4,https://www.nfl.com/injuries/league/2026/REG10
+W10-10,SUNDAY,NOVEMBER,15,4:05 PM,CBS,LAR,Rams,5-4,AZ,Cardinals,3-6,https://www.nfl.com/injuries/league/2026/REG10
+W10-11,SUNDAY,NOVEMBER,15,4:05 PM,CBS,SEA,Seahawks,5-4,LV,Raiders,4-5,https://www.nfl.com/injuries/league/2026/REG10
+W10-12,SUNDAY,NOVEMBER,15,4:25 PM,"FOX, FOX DEPORTES",SF,49ers,7-1,DAL,Cowboys,4-5,https://www.nfl.com/injuries/league/2026/REG10
+W10-13,SUNDAY,NOVEMBER,15,8:20 PM,"NBC, UNIVERSO",PIT,Steelers,6-2,CIN,Bengals,6-2,https://www.nfl.com/injuries/league/2026/REG10
+W10-14,MONDAY,NOVEMBER,16,8:15 PM,"ESPN, ABC, ESPN2, ESPN DEPORTES",LAC,Chargers,0-8,BAL,Ravens,4-5,https://www.nfl.com/injuries/league/2026/REG10

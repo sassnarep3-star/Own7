@@ -1,0 +1,16 @@
+{
+  "injury_rows": 326,
+  "clubs_on_report": 28,
+  "clubs_with_chart": 27,
+  "matched_to_chart": 270,
+  "matched_but_unnamed": 40,
+  "no_chart": 16,
+  "starters_with_status": 10,
+  "starters_ruled_out": 7,
+  "starters_questionable": 3,
+  "defence_starters_out": 4,
+  "offence_starters_out": 2,
+  "second_string_in_line_for_out_starter": 6,
+  "third_or_deeper_in_line_for_out_starter": 0,
+  "no_name_printed_behind_out_starter": 1
+}
