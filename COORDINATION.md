@@ -677,3 +677,51 @@ Rules for this session: work only on the fixed branch; never infer or fill a val
 source link; a value that cannot be confirmed this session is left blank and flagged, not silently trusted from an
 earlier session. `needs review` items are published and non-blocking for honest publication, but they still block
 priced lines, skill claims and rewards.
+
+### A97-1..A97-3 completion — session-arena-a97a5100-own7 (2026-11-13)
+
+Status: A97-1, A97-2 and A97-3 **done**. A97-4 (PR, merge, Pages confirmation) is the next entry.
+
+Concurrent-work note: `origin/main` advanced to `9752d51` (PR #30, session `arena/edcc0589-own7`) while
+this session worked. That session independently re-read the **same** official pages on the **same** day
+and reached the **same** result — 30/32 standings rows, WAS and NYG moved by the Commanders' 24-21 win,
+20/20 Week 10 injury rows. Nothing was discarded: this branch was rebased onto `9752d51`, that session's
+`research/nfl-verification-2026-11-13.md` and its board entry are retained verbatim, and this session's
+board entry was appended below it. The two verification records are independent and agree; this
+session's adds the standing side-by-side table, the fixture-by-fixture re-check, the depth-path 404
+probe and the Suggestions decision hub.
+
+Sources re-read this session (all fetched 2026-11-13, verbatim captures committed under
+`research/nfl/evidence-2026-11-13/`):
+`https://www.nfl.com/standings/` (2/2 chunks, all 32 rows) · `https://www.nfl.com/injuries/` (chunk 1,
+the complete Thursday block, 20 rows) · `https://www.nfl.com/schedules/` (2/3 chunks, 14 fixtures, 4
+byes, one printed final score) · `https://www.nfl.com/legal/terms/` (chunks 1, 3, 4; §1.3 and the §12
+gaming paragraph, terms dated 16 May 2024) · `https://www.nfl.com/teams/new-england-patriots/depth-chart`
+(404).
+
+Access limitation recorded for the first time: direct HTTPS from the sandbox to `nfl.com` returns code
+`000`; every retrieval went through the Arena page reader. That is a rendered-text evidence class, not
+an HTTP archive, and the site now says so on the re-verification page and in question DQ16.
+
+Verification performed: 30/32 standings rows identical field by field; 20/20 injury rows identical;
+14/14 fixtures and 4 byes identical; two rows moved and both are arithmetically one 24-21 result
+(test-enforced). 108 → 109 tests pass. `check_site.py`: 38 canonical pages, 2,803 sourced rows, 0
+errors, deterministic rebuild. Browser suite: 96 desktop + 96 mobile pages, WCAG A/AA, no runtime
+errors.
+
+Defects fixed (all previously passing their own checks): page and question counts typed as prose and
+drifted (11 vs 12 pages, "fourteen" vs fifteen questions); every page carrying an NBA meta description;
+the review badge reading 10 beside a 12-row register without saying what it counted.
+
+Irregularities published, not resolved: NF13–NF21 in `research/nfl/flags.json`, and RR13–RR28 in
+`docs/nfl-repo-review-2026-11-13.md`. NF13: a completed game's result is now printed by the publisher,
+so the earlier "no result exists" statement is stale. NF14: two clubs' records moved. NF15: the league
+depth path serves no chart and a club path 404s. NF16: two suggestion registers with different IDs.
+NF17: the validation gates are a declared matrix, not executed tests. NF18: the no-information baseline
+is an unstated 50% forecast. NF19: an originated line is shown for a fixture already played. NF20/NF21
+are corrected.
+
+C-RR28 is a correction to this session's own draft: a typed league total ("256 wins") was wrong; the
+computed values are 135 wins, 135 losses, 136 team-games, PF = PA = 6,246, and a test now computes them.
+
+Nothing was inferred or filled in. Market, prop, usage, depth and performance cells remain blank.

@@ -291,6 +291,16 @@ class ReVerificationTests(unittest.TestCase):
         self.assertEqual(headline["injury_agreement"], "20 of 20")
         self.assertEqual(headline["fixtures_agreement"], "14 of 14")
 
+    def test_league_identities_hold_in_the_committed_snapshot(self):
+        """League totals must be computed, never quoted from a column figure."""
+        wins = sum(int(r["W"]) for r in self.standings)
+        losses = sum(int(r["L"]) for r in self.standings)
+        points_for = sum(int(r["PF"]) for r in self.standings)
+        points_against = sum(int(r["PA"]) for r in self.standings)
+        self.assertEqual(wins, losses)
+        self.assertEqual(points_for, points_against)
+        self.assertEqual((wins, points_for), (135, 6246))
+
     def test_not_rechecked_is_never_silently_treated_as_unchanged(self):
         for item in self.recheck["not_rechecked"]:
             self.assertNotIn("unchanged", item.lower())

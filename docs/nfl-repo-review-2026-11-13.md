@@ -155,6 +155,13 @@ the verification runs through a page-reading proxy and that raw HTTP from the sa
 fails (`curl` returns code 000). A later reader cannot tell whether a row was fetched or recalled.
 *Disposition:* today's verification page states the access method per row and records the failure mode.
 
+### C-RR28 — My own draft contained a typed league total, and it was wrong
+While writing `docs/nfl-verification-2026-11-13.md` I typed "league total wins (256) = league total
+losses (256) across 288 team-games". The real sums over the 32 committed rows are **135 wins, 135
+losses, 136 team-games, PF = PA = 6,246**. 256 is Buffalo's points-for. The error is recorded in place
+in that document and the correct value is now computed by a test, not typed. This is exactly the class
+of defect the review is supposed to catch, so it is listed rather than quietly corrected.
+
 ---
 
 ## D. What is in good order, and was re-checked rather than assumed

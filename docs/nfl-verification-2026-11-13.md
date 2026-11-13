@@ -85,7 +85,12 @@ and the legend order contradicts the rendered field order. That is unchanged and
 
 Arithmetic re-checked on today's capture as well: PCT = (W + T/2)/games for all 32 clubs;
 NET PTS = PF − PA for all 32; HOME + ROAD = overall record for all 32 (including the two 9-game ties);
-league total wins (256) = league total losses (256) across 288 team-games.
+league total wins (135) = league total losses (135) across 136 team-games, with PF = PA = 6,246.
+
+I first wrote "256 wins / 288 team-games" in this line. That was wrong: 256 and 187 are Buffalo's
+points for and against, and I mistyped a column figure as a league total. The arithmetic above is the
+computed sum over all 32 committed rows, re-run after the error was noticed. It is recorded here rather
+than silently edited, because a re-verification document that quietly corrects itself is not auditable.
 
 ## 2. Injury report — 20 of 20 rows compared
 
