@@ -725,3 +725,44 @@ C-RR28 is a correction to this session's own draft: a typed league total ("256 w
 computed values are 135 wins, 135 losses, 136 team-games, PF = PA = 6,246, and a test now computes them.
 
 Nothing was inferred or filled in. Market, prop, usage, depth and performance cells remain blank.
+## Session arena/28efbbd0-own7 — NFL availability & depletion desk (2026-11-13)
+
+Session ID: `session-arena-28efbbd0-own7`. Branch: `arena/28efbbd0-own7` (fixed by Arena; the
+requested `session-<id>/<task>` naming is not used because this session must stay on its fixed
+branch). Base commit: `b5e3957` (main, the merge of PR #29).
+
+Owner request this session: (a) improve the site for decision making and keep a dedicated
+Suggestions review section where a proposal can be chosen before it is implemented; (b) publish the
+questions / information-we-have / information-we-lack dossier with a discovery plan; (c) originate
+NFL lines with validation gates, correlation work and a leaderboard competition; (d) **track
+injuries and know defensive and offensive deficiencies when 2nd, 3rd or 4th string players must
+replace starters**; (e) executive summary; (f) line-by-line repo review with official links and
+irregularities flagged; (g) live GitHub Pages site; (h) PR + merge.
+
+Observed starting state (read, not assumed): main already carries the NFL origination lab
+(`nfl_origination/`, `nfl/`, `nfl/origination/`, `nfl-assurance-9580ac3f/`), the NBA and rental
+archives, and `market-evidence/`. PR #27 (`arena/382a833e-own7`, "NFL decision desk") is **still
+open** and touches shared files (`scripts/build_site.py`, `scripts/check_site.py`,
+`scripts/browser_test.mjs`, every root HTML nav line). This session will not merge, close, rebase
+or edit that PR's branch.
+
+### Claim (written before implementation; committed and pushed first)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| X1 | Coordination claim + freeze of current main | in progress | session-arena-28efbbd0-own7 | COORDINATION.md (append-only) | No other session's board section is modified. |
+| X2 | Official Week 10/11 availability capture: full league injury report, all 32 clubs, game statuses | in progress | session-arena-28efbbd0-own7 | `nfl-availability-28ef/**` (new directory), `research/availability-28ef/**` | Rendered official text saved to evidence files; every row carries its source URL + retrieval date. No value inferred from a blank. |
+| X3 | Printed starter/backup chains for the clubs not yet covered, from official club depth-chart pages | in progress | session-arena-28efbbd0-own7 | `nfl-availability-28ef/data/depth-*.csv`, `nfl-availability-28ef/evidence/*.md` | Club pages state they are unofficial unless they say otherwise; that caveat is published, not hidden. |
+| X4 | Depletion join: injury status × depth rank → named replacement (2nd/3rd/4th string), offence and defence separated | in progress | session-arena-28efbbd0-own7 | `nfl-availability-28ef/depletion.py`, `nfl-availability-28ef/data/depletion-*.csv` | Rank is what the printed chart says; no performance deficit, snap count or point value is invented. |
+| X5 | Suggestions review workflow (propose → evidence → acceptance test → choose → record decision) and decision dossier refresh | in progress | session-arena-28efbbd0-own7 | `nfl-availability-28ef/`, `docs/` (new file `docs/availability-28ef-executive-summary.md`) | Every suggestion states evidence, cost, risk, acceptance test and its open questions. |
+| X6 | Self-contained pages, tests, and additive integration (nav group, source hosts, browser folder, CI) | in progress | session-arena-28efbbd0-own7 | `nfl-availability-28ef/site/**`, additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, README.md | Additive only; no canonical NFL value, page or test overwritten. |
+| X7 | Verification, PR, merge, GitHub Pages deploy evidence, record | in progress | session-arena-28efbbd0-own7 | COORDINATION.md | Do not merge a broken site. |
+
+Rules this session follows: never infer or fill a value that no official source confirms — leave it
+blank and flag it; every table row links to the official page actually read; `git pull --rebase`
+before every push; small frequent commits; additive shared-file edits only; do not touch PR #27.
+
+### Cross-scope note to session-arena-382a833e-own7 (PR #27)
+This session adds one nav group and a host allowlist entry. It does not edit `nfl-desk/**` and will
+not merge or close PR #27. If PR #27 merges after this session's PR, its shared-file additions are
+additive and should rebase cleanly; if it conflicts, resolve by keeping both sides' added lines.
