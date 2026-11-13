@@ -252,7 +252,8 @@ class ReVerificationTests(unittest.TestCase):
 
     def setUp(self):
         self.recheck = json.loads((ROOT / "research/nfl/verification-2026-11-13.json").read_text(encoding="utf-8"))
-        self.standings = list(csv.DictReader((ROOT / "data/nfl-standings-week10-2026.csv").open(encoding="utf-8")))
+        with (ROOT / "data/nfl-standings-week10-2026.csv").open(encoding="utf-8") as handle:
+            self.standings = list(csv.DictReader(handle))
 
     def test_recheck_covers_all_32_clubs_with_the_snapshot_values(self):
         by_id = {r["id"]: r for r in self.recheck["standings_recheck"]}
