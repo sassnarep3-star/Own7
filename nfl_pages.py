@@ -15,7 +15,11 @@ DECISIONS = json.loads((ROOT / "research/nfl/decisions.json").read_text(encoding
 QUESTIONS = json.loads((ROOT / "research/nfl/questions.json").read_text(encoding="utf-8"))
 FLAGS = json.loads((ROOT / "research/nfl/flags.json").read_text(encoding="utf-8"))
 RECEIPTS = json.loads((ROOT / "research/nfl/receipts.json").read_text(encoding="utf-8"))
+RECHECK = json.loads((ROOT / "research/nfl/verification-2026-11-13.json").read_text(encoding="utf-8"))
+SUB_SUGGESTIONS = json.loads((ROOT / "research/nfl-suggestions.json").read_text(encoding="utf-8"))["suggestions"]
 SOURCES = {s["id"]: s for s in json.loads((ROOT / "research/sources.json").read_text(encoding="utf-8"))}
+# A-RR17: the origination section's own page count, kept next to the pages it counts.
+ORIGINATION_PAGES = 13
 
 
 def esc(value):
@@ -74,35 +78,113 @@ def pn(value):
 # ---------------------------------------------------------------------------
 
 def suggestions():
-    rows = [{"id": s["id"], "rank": s["rank"], "title": s["title"], "category": s["category"],
-             "problem": s["problem"], "proposal": s["proposal"], "unlocks": s["unlocks"],
-             "effort": s["effort"], "risk": s["risk_if_skipped"], "status": s["status"],
+    """The decision hub: what to change, what it costs, what closes it, and how to choose."""
+    ranked = sorted(DECISIONS["suggestions"], key=lambda r: -r["priority_index"])
+    rows = [{"id": s["id"], "pr": s["priority_index"], "title": s["title"],
+             "category": s["category"], "problem": s["problem"], "unlocks": s["unlocks"],
+             "dv": s["decision_value_score"], "effort": s["effort_score"], "cost": s["cost_score"],
+             "gain": s["confidence_gain"], "rev": s["reversibility"],
+             "pre": s["prerequisite"] or "None",
+             "state": s["review_state"], "evidence": s["evidence_status"],
+             "cw": ", ".join(s["crosswalk"]) or "No equivalent in the sub-site register",
              "source_ids": ["REPO", "NFL-TERMS-LEGAL"] if s["category"] == "Rights" else ["REPO"]}
-            for s in DECISIONS["suggestions"]]
+            for s in ranked]
     blocking = [q for q in DECISIONS["missing_information"]
                 if q["id"] in DECISIONS["blocking_before_any_reward"]]
     body = notice(
-        "Ranked by decision value, not by effort.",
-        "Each suggestion exists to close a named gap. A change that adds a number without adding "
-        "verification is rejected by the acceptance tests at the bottom of this page.")
+        "Ten proposals, ranked by what they unlock rather than by how easy they are.",
+        "Each row states the question it closes, the score it earns, what it depends on, and the "
+        "test it must pass before anyone may call it done. Nothing here is implemented, and the "
+        "page has no approve button: a decision is recorded by editing the register and rebuilding, "
+        "which leaves an auditable commit.")
     body += metrics([
-        ('Suggestions on the table', len(DECISIONS["suggestions"]), 'Each closes a named gap', 'signals'),
-        ('Open questions', len(QUESTIONS["questions"]), 'Answered or explicitly unresolved', 'validation'),
-        ('Blocking before any reward', len(blocking), 'All four are data gaps, not opinions', 'leaderboard'),
-        ('Suggestions completed', 0, 'Proposals only; nothing implemented', 'requirements'),
+        ('Proposals on the table', len(DECISIONS["suggestions"]), 'Nothing implemented', 'signals'),
+        ('Questions to answer', len(QUESTIONS["questions"]), 'Sourced part versus open part', 'validation'),
+        ('Blocking a reward', len(blocking), 'All four are data gaps', 'leaderboard'),
+        ('Approved today', 0, 'No reviewer decision recorded', 'requirements'),
     ])
-    body += section('Review the options before changing anything', table(
+
+    body += section('How to choose: one page, four columns', '<div class="grid-2">'
+        '<div class="panel body-text"><h3>Read a row in this order</h3>'
+        '<ol><li><strong>What it closes</strong> — the named missing item. If a proposal closes no '
+        'named gap, reject it.</li><li><strong>Priority index</strong> — decision value times '
+        'confidence gain, divided by effort plus cost. It is a judgement, published so you can '
+        'disagree with it.</li><li><strong>What it unlocks</strong> — the decision that becomes '
+        'possible.</li><li><strong>Acceptance test</strong> — what must exist before it counts as '
+        'done.</li></ol></div>'
+        '<div class="panel body-text"><h3>Read the scores as opinions</h3>'
+        + lines([f'{k}: {v}' for k, v in DECISIONS["scoring"].items() if k != "note"]) +
+        f'<p class="footnote">{esc(DECISIONS["scoring"]["note"])}</p></div></div>',
+        eyebrow='DECISION PROCEDURE')
+
+    body += section('The register, ranked by decision value', table(
         'suggestion-register', 'Suggestions register',
-        [('Suggestion', lambda r: rich(r['title'], r['id'])), ('Effort', 'effort'),
-         ('What it closes', 'problem'), ('What it unlocks', 'unlocks'),
-         ('Risk if skipped', 'risk'), ('Status', lambda r: badge(r['status'], 'blue'))],
+        [('Suggestion', lambda r: rich(r['title'], r['id'])),
+         ('Priority', 'pr'), ('Closes', 'problem'), ('Unlocks', 'unlocks'),
+         ('Value', 'dv'), ('Effort', 'effort'), ('Cost', 'cost'),
+         ('Confidence gain', 'gain'), ('Reversible', 'rev'), ('Depends on', 'pre'),
+         ('Review state', lambda r: badge(r['state'], 'blue')),
+         ('Evidence today', 'evidence')],
         rows,
-        note='Reading order is the "Sequence" section below. None of these proposals changes a '
-             'published value; each one adds evidence that does not yet exist.')) 
+        note='Scores are 1-5 and are not measurements. "Depends on" means the proposal cannot be '
+             'completed first; it does not mean it cannot be started. A priority index is a sorting '
+             'aid, not a recommendation to spend money.'))
+
+    body += section('Acceptance test per proposal', table(
+        'acceptance-register', 'Acceptance tests',
+        [('Suggestion', lambda r: rich(r['title'], r['id'])), ('Evidence that must exist', 'test'),
+         ('Crosswalk to the sub-site register', 'cw')],
+        [{"id": s["id"], "title": s["title"], "test": s["acceptance_test"],
+          "cw": ", ".join(s["crosswalk"]) or None, "source_ids": ["REPO"]}
+         for s in DECISIONS["suggestions"]],
+        note='A proposal that produces a number without producing this evidence is rejected by the '
+             'rule below, regardless of how good the number looks.'))
+
+    body += section('Two registers exist; here is how to read them', '<div class="panel body-text">'
+        '<p>This page ranks ten proposals as <strong>S01-S10</strong>. The NFL research lab, a '
+        'separately built section, publishes twelve proposals as <strong>SU-01-SU-12</strong>. They '
+        'overlap: depth charts are <span class="mono">S02</span> here and '
+        '<span class="mono">SU-03</span> plus <span class="mono">SU-07</span> there. Neither was '
+        'deleted, because deleting another workstream\'s register would lose its reasoning.</p>'
+        '<p><strong>The decision you are asked to make:</strong> adopt this register, adopt the '
+        'sub-site register, or ask for a merged one. Until one is chosen, follow the crosswalk column '
+        'above rather than assuming two identifiers mean two different pieces of work.</p></div>',
+        eyebrow='CROSSWALK')
+
+    body += section('Status of the twelve sub-site proposals', table(
+        'subsite-register', 'Sub-site suggestions',
+        [('Proposal', lambda r: rich(r['title'], r['id'])), ('What it closes', 'missing_info'),
+         ('Decision needed', 'decision_needed'), ('State', lambda r: badge(r['status'], 'blue')),
+         ('Main-register equivalent', lambda r: r['equiv'])],
+        [{"id": s["id"], "title": s["title"], "missing_info": s["missing_info"],
+          "decision_needed": s["decision_needed"], "status": s["status"],
+          "equiv": next((m["id"] for m in DECISIONS["suggestions"] if s["id"] in m["crosswalk"]), None),
+          "source_ids": s["source_ids"]}
+         for s in SUB_SUGGESTIONS],
+        note='Read-only mirror of research/nfl-suggestions.json, so both registers are visible in one '
+             'place. A blank equivalence cell means the proposal has no counterpart in the main '
+             'register yet — not that it is unimportant.'))
+    body += section('Sub-site proposals with no equivalent here, and why', table(
+        'subsite-only', 'Unmapped proposals',
+        [('Proposal', lambda r: rich(r['title'], r['id'])), ('Reason it is not in the main register', 'why')],
+        [{"id": r["id"], "title": r["title"], "why": r["why"], "source_ids": r["source_ids"]}
+         for r in DECISIONS["subsite_only"]],
+        note='Each of these is either folded into a larger proposal, already published by another '
+             'section, or impossible to source officially today. None was quietly dropped.'))
+
+    body += section('Review workflow and what an approval must contain', '<div class="grid-2">'
+        '<div class="panel body-text"><h3>The states</h3>'
+        + lines(DECISIONS["review_workflow"]["states"]) +
+        f'<p>{esc(DECISIONS["review_workflow"]["rule"])}</p></div>'
+        '<div class="panel body-text"><h3>Required at approval</h3>'
+        + lines(DECISIONS["review_workflow"]["required_at_approval"]) +
+        f'<p>{esc(DECISIONS["review_workflow"]["rejection_rule"])}</p></div></div>',
+        eyebrow='REVIEW, NOT IMPLEMENTATION')
+
     body += section('Sequence: what to do first', '<div class="panel body-text">'
                     + lines(DECISIONS["sequence"]) + '</div>',
                     eyebrow='CHEAPEST BLOCKING ITEM FIRST')
-    body += section('Acceptance tests for any proposal', '<div class="panel body-text">'
+    body += section('Acceptance tests for any proposal at all', '<div class="panel body-text">'
                     + lines(DECISIONS["acceptance_tests"]) + '</div>',
                     eyebrow='HOW TO JUDGE A CHANGE')
     body += section('What is blocking a reward decision', table(
@@ -110,7 +192,87 @@ def suggestions():
         [('Question', lambda r: rich(r['question'], r['id'])), ('Why it matters', 'why_it_matters'),
          ('Blocks', 'blocks'), ('Resolved by', 'suggestion')],
         blocking,
-        note='These four are the reason no strategy is ranked and no reward is awarded.'))
+        note='These four are the reason no strategy is ranked and no reward is awarded. None of them '
+             'is a matter of opinion or of better modelling.'))
+    body += '<div class="download-list">' + ''.join([
+        '<a class="button" href="nfl-decisions.html">Decision brief →</a>',
+        '<a class="button" href="nfl-questions.html">All questions →</a>',
+        '<a class="button" href="nfl-verification-2026-11-13.html">Re-verification 13 Nov →</a>',
+        '<a class="button" href="research/nfl/decisions.json">Register JSON</a>',
+    ]) + '</div>'
+    return body
+
+
+def nfl_verification():
+    """Same-week re-check of every published NFL value against the publisher."""
+    st = RECHECK["standings_recheck"]
+    h = RECHECK["headline"]
+    body = notice(
+        f"Re-checked {RECHECK['checked_on']}: {h['standings_agreement']} standings rows, "
+        f"{h['injury_agreement']} injury rows, {h['fixtures_agreement']} fixtures agree with the snapshot.",
+        "This page exists because an internal check can pass while a published value has gone stale. "
+        "It re-reads the publisher and shows every row, including the two that moved.")
+    body += metrics([
+        ('Standings rows identical', h['standings_agreement'], 'of 32, field by field', 'data'),
+        ('Injury rows identical', h['injury_agreement'], 'of 20, same game', 'validation'),
+        ('Fixtures identical', h['fixtures_agreement'], 'of 14, plus 4 byes', 'lab'),
+        ('Rows that moved', h['moved'], 'Both explained by one result', 'review'),
+    ])
+    body += section('How the publisher was reached', '<div class="panel body-text">'
+        f'<p>{esc(h["access_note"])}</p>'
+        '<p>Evidence class: rendered page text through a page reader. Not an HTTP archive, and not a '
+        'second independent source. Every value on this site is single-source and says so.</p>'
+        '<p>The verbatim captures are committed under '
+        '<span class="mono">research/nfl/evidence-2026-11-13/</span>, so this comparison can be '
+        're-run without trusting this page.</p></div>', eyebrow='EVIDENCE CLASS')
+    body += section('Standings, all 32 rows, snapshot beside today', table(
+        'recheck-standings', 'Standings re-check',
+        [('Club', lambda r: rich(r['team'], r['id'])),
+         ('Published snapshot 2026-11-12', 'snapshot'),
+         ('Read again 2026-11-13', 'recheck'),
+         ('Delta', lambda r: badge(r['delta'], 'warn' if r['delta'] != 'Identical' else 'good'))],
+        st, filter_options=['Identical', 'Moved — fixture played'],
+        note='Fields compared: W, L, T, PF, PA. PCT, NET PTS, home and road records and the streak '
+             'were also re-derived arithmetically on today\'s capture and all agree. Division and '
+             'conference columns remain withheld, because even today the rendered table has no '
+             'header row and its field order contradicts its own legend.'))
+
+    inj = RECHECK["injury_recheck"]
+    body += section('Injury report, one game, twenty rows', '<div class="grid-2">'
+        '<div class="panel body-text"><h3>What agrees</h3>'
+        + lines([f'{inj["rows_read"]} rows read, {inj["identical"]} identical to the snapshot',
+                 f'{inj["blank_game_status"]} game-status cells still blank',
+                 f'{inj["out"]} Out, {inj["doubtful"]} Doubtful, {inj["questionable"]} Questionable',
+                 inj["detail"]]) +
+        '</div><div class="panel body-text"><h3>What the source still does not contain</h3>'
+        + lines(inj["not_in_source"]) +
+        '<p class="footnote">These are the fields the starter-versus-backup requirement needs. None '
+        'was inferred, and every one stays blank.</p></div></div>',
+        eyebrow='INJURIES AND AVAILABILITY')
+
+    fix = RECHECK["fixture_recheck"]
+    body += section('Fixtures, and one contradiction worth reading', '<div class="panel body-text">'
+        f'<p>{esc(fix["result_text"])}</p><p>{esc(fix["handling"])}</p>'
+        '<p>Byes as printed today: ' + esc(", ".join(fix["byes"])) + '.</p></div>',
+        eyebrow='SCHEDULE')
+
+    body += section('Irregularities found by this re-check', table(
+        'recheck-irregularities', 'Re-check irregularities',
+        [('Item', lambda r: rich(r['item'], r['id'])), ('Finding', 'detail'), ('Handling', 'handling'),
+         ('State', lambda r: badge('Needs review', 'warn'))],
+        RECHECK["irregularities"],
+        note='All four are published rather than resolved. None of them changes a value on this site '
+             'without a source saying so.'))
+
+    body += section('What was not re-checked', '<div class="panel body-text">'
+        + lines(RECHECK["not_rechecked"]) +
+        '<p>These are marked <strong>not re-checked</strong>, not "unchanged". A value nobody read '
+        'today cannot be called current.</p></div>', eyebrow='HONEST LIMITS')
+    body += '<div class="download-list">' + ''.join([
+        '<a class="button" href="nfl-review.html">Flagged for review →</a>',
+        '<a class="button" href="nfl-standings.html">Standings snapshot →</a>',
+        '<a class="button" href="research/nfl/verification-2026-11-13.json">Re-check JSON</a>',
+    ]) + '</div>'
     return body
 
 
@@ -150,9 +312,11 @@ def nfl_questions():
     rows = [{"id": q["id"], "group": q["group"], "q": q["q"], "known": q["known"],
              "missing": q["missing"], "resolves": q["resolves_if"], "blocks": q["blocks"],
              "source_ids": q["source_ids"]} for q in QUESTIONS["questions"]]
-    body = notice('Fourteen questions; none of them is answered by guessing.',
+    owner = sum(1 for q in QUESTIONS["questions"] if q["owner_needed"] == "Yes")
+    body = notice(f'{len(QUESTIONS["questions"])} questions; none of them is answered by guessing.',
                   'Each row separates the sourced part of the answer from the part that is still '
-                  'open, and names what would settle it. Only one question needs the owner: DQ14.')
+                  f'open, and names what would settle it. {owner} of them needs a decision from you; '
+                  'the rest are research tasks.')
     body += section('Questions that must be answered before a decision', table(
         'question-register', 'Decision questions',
         [('Question', lambda r: rich(r['q'], r['id'])), ('Group', 'group'),
@@ -491,9 +655,10 @@ def nfl_overview():
          ('What it holds', 'content'), ('Read it when', 'when'), ('Open', 'where')],
         [
             {"id": "W1", "lab": "NFL origination lab — this section",
-             "size": "11 pages · 66 verified rows",
+             "size": f"{ORIGINATION_PAGES} pages · {NFL['verified_rows']['total']} verified rows",
              "content": "Originated Week 10 spreads and totals, the decision brief, ranked suggestions, "
-                        "fourteen open questions, ten validation gates, the competition format and the review register.",
+                        f"{len(QUESTIONS['questions'])} remaining questions, ten validation gates, the "
+                        "competition format, the review register and a dated re-verification log.",
              "when": "You want to decide what to do next, or to originate and challenge a number.",
              "where": _Markup('<a href="nfl-suggestions.html">Suggestions and decision brief</a>'),
              "source_ids": ["REPO"]},
@@ -562,9 +727,12 @@ def nfl_review():
     rows = [{"id": f["id"], "item": f["item"], "finding": f["finding"],
              "unverified": f["unverified_value"], "impact": f["impact"],
              "status": f["status"], "source_ids": f["source_ids"]} for f in FLAGS["flags"]]
-    body = notice('Twelve NFL items for review. None blocks publication.',
+    open_n = sum(1 for f in FLAGS["flags"] if f["status"] == "Needs review")
+    body = notice(f'{len(FLAGS["flags"])} NFL items for review; {open_n} are open and '
+                  f'{len(FLAGS["flags"]) - open_n} are corrected. None blocks publication.',
                   'Review items block unsupported claims and rewards, not an honest research page. '
-                  'Each row links to the official source that produced it.')
+                  'Each row links to the official source that produced it. The navigation badge on '
+                  'this site counts open items only, which is why it is smaller than the row count.')
     body += section('Flagged for review — NFL', table(
         'nfl-flags', 'NFL review register',
         [('Item', lambda r: rich(r['item'], r['id'])), ('Finding', 'finding'),
