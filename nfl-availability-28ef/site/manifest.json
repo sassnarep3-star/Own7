@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "index.html",
+    "summary.html",
+    "availability.html",
+    "depth.html",
+    "depletion.html",
+    "clubs.html",
+    "questions.html",
+    "suggestions.html",
+    "flagged.html",
+    "sources.html"
+  ],
+  "generated": true,
+  "boundary": "Static desk; no network calls, no inferred values, no prices."
+}

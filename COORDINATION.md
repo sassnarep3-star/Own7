@@ -725,3 +725,80 @@ C-RR28 is a correction to this session's own draft: a typed league total ("256 w
 computed values are 135 wins, 135 losses, 136 team-games, PF = PA = 6,246, and a test now computes them.
 
 Nothing was inferred or filled in. Market, prop, usage, depth and performance cells remain blank.
+## Session arena/28efbbd0-own7 — NFL availability & depletion desk (2026-11-13)
+
+Session ID: `session-arena-28efbbd0-own7`. Branch: `arena/28efbbd0-own7` (fixed by Arena; the
+requested `session-<id>/<task>` naming is not used because this session must stay on its fixed
+branch). Base commit: `b5e3957` (main, the merge of PR #29).
+
+Owner request this session: (a) improve the site for decision making and keep a dedicated
+Suggestions review section where a proposal can be chosen before it is implemented; (b) publish the
+questions / information-we-have / information-we-lack dossier with a discovery plan; (c) originate
+NFL lines with validation gates, correlation work and a leaderboard competition; (d) **track
+injuries and know defensive and offensive deficiencies when 2nd, 3rd or 4th string players must
+replace starters**; (e) executive summary; (f) line-by-line repo review with official links and
+irregularities flagged; (g) live GitHub Pages site; (h) PR + merge.
+
+Observed starting state (read, not assumed): main already carries the NFL origination lab
+(`nfl_origination/`, `nfl/`, `nfl/origination/`, `nfl-assurance-9580ac3f/`), the NBA and rental
+archives, and `market-evidence/`. PR #27 (`arena/382a833e-own7`, "NFL decision desk") is **still
+open** and touches shared files (`scripts/build_site.py`, `scripts/check_site.py`,
+`scripts/browser_test.mjs`, every root HTML nav line). This session will not merge, close, rebase
+or edit that PR's branch.
+
+### Claim (written before implementation; committed and pushed first)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| X1 | Coordination claim + freeze of current main | in progress | session-arena-28efbbd0-own7 | COORDINATION.md (append-only) | No other session's board section is modified. |
+| X2 | Official Week 10/11 availability capture: full league injury report, all 32 clubs, game statuses | in progress | session-arena-28efbbd0-own7 | `nfl-availability-28ef/**` (new directory), `research/availability-28ef/**` | Rendered official text saved to evidence files; every row carries its source URL + retrieval date. No value inferred from a blank. |
+| X3 | Printed starter/backup chains for the clubs not yet covered, from official club depth-chart pages | in progress | session-arena-28efbbd0-own7 | `nfl-availability-28ef/data/depth-*.csv`, `nfl-availability-28ef/evidence/*.md` | Club pages state they are unofficial unless they say otherwise; that caveat is published, not hidden. |
+| X4 | Depletion join: injury status × depth rank → named replacement (2nd/3rd/4th string), offence and defence separated | in progress | session-arena-28efbbd0-own7 | `nfl-availability-28ef/depletion.py`, `nfl-availability-28ef/data/depletion-*.csv` | Rank is what the printed chart says; no performance deficit, snap count or point value is invented. |
+| X5 | Suggestions review workflow (propose → evidence → acceptance test → choose → record decision) and decision dossier refresh | in progress | session-arena-28efbbd0-own7 | `nfl-availability-28ef/`, `docs/` (new file `docs/availability-28ef-executive-summary.md`) | Every suggestion states evidence, cost, risk, acceptance test and its open questions. |
+| X6 | Self-contained pages, tests, and additive integration (nav group, source hosts, browser folder, CI) | in progress | session-arena-28efbbd0-own7 | `nfl-availability-28ef/site/**`, additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, README.md | Additive only; no canonical NFL value, page or test overwritten. |
+| X7 | Verification, PR, merge, GitHub Pages deploy evidence, record | in progress | session-arena-28efbbd0-own7 | COORDINATION.md | Do not merge a broken site. |
+
+Rules this session follows: never infer or fill a value that no official source confirms — leave it
+blank and flag it; every table row links to the official page actually read; `git pull --rebase`
+before every push; small frequent commits; additive shared-file edits only; do not touch PR #27.
+
+### Cross-scope note to session-arena-382a833e-own7 (PR #27)
+This session adds one nav group and a host allowlist entry. It does not edit `nfl-desk/**` and will
+not merge or close PR #27. If PR #27 merges after this session's PR, its shared-file additions are
+additive and should rebase cleanly; if it conflicts, resolve by keeping both sides' added lines.
+
+### Progress (X1–X6 done, recorded 2026-11-13)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| X1 | Coordination claim + freeze of current main | **done** | Claim written before implementation, committed `f7d25f1`, pushed. Rebased onto `main` (`739da6c`, the merges of PRs #30 and #31); `COORDINATION.md` conflict resolved by keeping both sessions' sections — no other session's line was discarded. |
+| X2 | Official Week 10 availability capture | **done** | `nfl-availability-28ef/evidence/injury-report-week10-2026.chunk0..7.md` (rendered text saved verbatim) + `evidence/injury-report-week10-2026.joined.md` (sha256 `b4c5332…`). 14 games, 28 clubs, **326 player rows** in `data/injuries-week10-2026.csv`. Source `X28-NFL-INJ-W10` = `https://www.nfl.com/injuries/league/2026/REG10`, read 2026-11-13. |
+| X3 | Printed starter/backup chains | **done** | 17 club pages read 2026-11-13 (`evidence/depth-*.md`, sources `X28-{ABBR}-DEPTH`) plus the 10-club 2026-11-12 transcription already in the repo, reused as its own dated snapshot. **1,586 printed slots / 27 clubs** in `data/depth-slots-week10-2026.csv`. Houston (`X28-HOU-DEPTH`) returned a heading and no table — recorded as a failure, nothing substituted. |
+| X4 | Depletion join | **done** | `data/depletion-week10-2026.csv` (326 rows), `data/club-summary-week10-2026.csv` (28 clubs), `data/depletion-summary.json`. 270 rows matched to a chart, 40 not printed by their club, 16 with no chart (all HOU). **10 printed starters carry a game status: 7 Out, 3 Questionable.** 6 of the 7 have a printed 2nd string in line; 1 (IND LS Luke Rhodes) has no further name printed. NE RB is already two deep (1st string Q, 2nd string Out → 3rd string next). No point value, probability or performance deficit is produced. |
+| X5 | Suggestions review workflow + decision dossier + executive summary | **done** | `nfl-availability-28ef/site/suggestions.html`: 10 proposals, each with evidence, what it unlocks, cost, risk and an acceptance test, plus an Adopt / Defer / Reject control and a local export (explicitly labelled a preference, not an authorisation). `site/questions.html`: 8 questions split into known-with-source / still missing / what would close it / what it blocks. `docs/availability-28ef-executive-summary.md`. |
+| X6 | Self-contained pages, tests, additive integration | **done** | 10 pages under `nfl-availability-28ef/site/**` (2,033 table rows, every row carrying `data-source-ids` and an official link in `td.src`). 28 tests in `nfl-availability-28ef/tests/test_desk.py`. Additive edits only: one nav group in `scripts/build_site.py`, host allowlist entries in `scripts/check_site.py`, folder allowance in `scripts/browser_test.mjs` and `scripts/serve_site.py`, four `--check` lines in `.github/workflows/check.yml`, 19 appended entries in `research/sources.json`. No canonical NFL value, page or test overwritten. |
+
+Verification actually run (all green after the rebase onto PRs #30/#31):
+`python3 nfl-availability-28ef/{collect,depth,depletion,build}.py --check` (all four byte-identical) ·
+`python -m unittest discover -s nfl-availability-28ef/tests -v` (28 pass) ·
+`python scripts/nfl_extract.py --check` · `python -m nfl_origination run` ·
+`python -m unittest discover -s tests` (109 pass) · `python scripts/build_site.py` (38 canonical pages) ·
+`python scripts/check_site.py` (passed; 5,192 table rows, 136 registered sources) ·
+`npm run test:browser` (105 desktop + 105 mobile pages, WCAG A/AA, no runtime errors).
+
+Irregularities found and published on `site/flagged.html` (XF01–XF10, each with an official link):
+game status published for only 5 of 28 clubs; Houston chart not rendered; two read dates in one
+table; publishers calling their own charts unofficial; six players with a status who are not printed
+on their club's chart; two official publishers disagreeing on New Orleans (a club headline states
+four Saints out and two questionable while the league page shows blank for all twelve Saints rows);
+two clubs printing an empty cell inside a chain; twenty cells printing two names in one slot;
+name-based rather than identifier-based matching; and the standing absence of any price or result.
+Two further observations are recorded here only: `scripts/serve_site.py` does not allow
+`nfl-assurance-9580ac3f/**`, so that published sub-site 404s in the local preview (not fixed —
+outside this session's scope); and PR #27 (`arena/382a833e-own7`) is still open and untouched.
+
+### Claim X7 (written before starting)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| X7 | Pull request, merge, GitHub Pages deploy evidence, final record | in progress | session-arena-28efbbd0-own7 | COORDINATION.md (append-only), PR metadata | Merge without waiting for review. If the build, check or deploy fails, fix and retry until live. Flagged items do not block the merge. |
