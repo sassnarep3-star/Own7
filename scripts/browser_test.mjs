@@ -114,6 +114,22 @@ try{
   assert((await page.locator('main').innerText()).includes('No eligible strategies'));
   report.assertions.push('No fictional ranks, ROI, CLV or rewards; all 40 missing cells stay blank');
 
+  // Skill desk: the choice controls are a preference record, and the export must carry every
+  // suggestion even when no choice was made - a blank decision is a valid, and the default, state.
+  await page.goto(base+'nfl-skill-cfdd/site/suggestions.html',{waitUntil:'networkidle'});
+  const choiceCount=await page.locator('input[type=radio]').count();
+  assert.equal(choiceCount,30,'skill desk: 10 suggestions x adopt/defer/reject');
+  assert.equal(await page.locator('input[type=radio]:checked').count(),0,'skill desk: nothing preselected');
+  await page.locator('input[name="d-P02"][value="adopt"]').check();
+  const choiceDownload=page.waitForEvent('download');
+  await page.locator('#export-choices').click();
+  const choiceFile=await choiceDownload;
+  await choiceFile.saveAs(join(out,'skill-desk-choices.csv'));
+  const choiceCsv=readFileSync(join(out,'skill-desk-choices.csv'),'utf8');
+  assert(choiceCsv.includes('"P02","adopt"'),'skill desk: chosen suggestion exported');
+  assert(choiceCsv.includes('"P01",""'),'skill desk: unchosen suggestions export blank, not implied');
+  report.assertions.push('Skill desk choice record exports a preference and leaves unchosen items blank');
+
   for(const [old,target] of Object.entries(manifest.legacy_redirects)){
     await page.goto(base+old,{waitUntil:'networkidle'});
     await page.waitForURL(base+target);

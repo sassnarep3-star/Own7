@@ -102,6 +102,14 @@ def table(headers: list[str], rows: list[str], caption: str = "", note: str = ""
     return "".join(out)
 
 
+def fmt_stat(value, places=3) -> str:
+    """Display formatting only. The committed CSV/JSON always keeps full precision."""
+    try:
+        return f"{float(value):.{places}f}"
+    except (TypeError, ValueError):
+        return value
+
+
 def kpi(value, label, blank=False) -> str:
     shown = value if not blank else "&mdash;"
     return (f'<div class="kpi"><span class="kpi-value">{shown}</span>'
@@ -194,8 +202,8 @@ def build_index() -> str:
         f'match from the earlier desk to <strong>{dep["rows_matched_to_printed_chart"]} of '
         f'{dep["injury_rows"]}</strong>. It then ran the test that answers your actual question - '
         f'can luck be removed - and got a hard answer: the Pythagorean residuals give a '
-        f'chi-square of <strong>{over["statistic"]}</strong> on {over["degrees_of_freedom"]} degrees '
-        f'of freedom, <strong>p = {over["p_value_upper_tail"]}</strong>. That is inside the null, so '
+        f'chi-square of <strong>{fmt_stat(over["statistic"], 2)}</strong> on {over["degrees_of_freedom"]} degrees '
+        f'of freedom, <strong>p = {fmt_stat(over["p_value_upper_tail"], 3)}</strong>. That is inside the null, so '
         f'there is no club-level skill this data can detect, and a leaderboard built on eight or '
         f'nine games would be ranking noise. <strong>Zero strategies qualify and zero rewards are '
         f'paid.</strong> Every parlay, prop combo and correlation stage is blank because no price '
@@ -595,19 +603,19 @@ def build_luck() -> str:
 
     body = (
         '<div class="kpis">'
-        + kpi(over["statistic"], f"chi-square statistic, {over['degrees_of_freedom']} df")
-        + kpi(over["p_value_upper_tail"], "upper-tail p-value under the null")
-        + kpi(over["variance_inflation"], "variance inflation (1.0 = chance)")
+        + kpi(fmt_stat(over["statistic"], 2), f"chi-square statistic, {over['degrees_of_freedom']} df")
+        + kpi(fmt_stat(over["p_value_upper_tail"], 3), "upper-tail p-value under the null")
+        + kpi(fmt_stat(over["variance_inflation"], 2), "variance inflation (1.0 = a coin flip)")
         + kpi("153", "settled bets needed at a 60% rate, 80% power")
         + '</div>'
         '<section class="panel"><h2>The test, and what it says</h2>'
         f'<p>Each club has a Pythagorean expectation from its own scoring. If that expectation were '
         f'the true per-game probability and games were independent, the standardised residuals '
         f'would square and sum to a chi-square with {over["degrees_of_freedom"]} degrees of '
-        f'freedom. The observed sum is <strong>{over["statistic"]}</strong>, against an expected '
+        f'freedom. The observed sum is <strong>{fmt_stat(over["statistic"], 2)}</strong>, against an expected '
         f'{over["mean_under_null"]}.</p>'
         f'<p><strong>{esc(over["interpretation"])}</strong></p>'
-        f'<p>The variance inflation of {over["variance_inflation"]} deserves a sentence: it is '
+        f'<p>The variance inflation of {fmt_stat(over["variance_inflation"], 2)} deserves a sentence: it is '
         f'below 1, meaning the clubs are <em>less</em> spread out than independent coin flips would '
         f'make them. That is the opposite of the usual story where a few clubs are secretly much '
         f'better. On this data, scoring already explains essentially all of the win variation.</p>'
@@ -1089,7 +1097,7 @@ def build_method() -> str:
         '</ol></section>'
         '<section class="panel"><h2>Reproduce every number</h2>'
         '<p>Python 3.11+, standard library only. From the repository root:</p>'
-        '<pre><code>cd nfl-skill-cfdd\n'
+        '<pre tabindex="0" role="group" aria-label="Commands to reproduce every number"><code>cd nfl-skill-cfdd\n'
         'python collect.py       # standings, arithmetic + identity checks\n'
         'python depth.py         # the 4 newly captured charts\n'
         'python index.py         # depletion join, all 32 clubs\n'
@@ -1167,9 +1175,9 @@ def build_summary() -> str:
         '<p>You asked to remove luck from the equation and build strategies that are selectively '
         'skill based. The honest answer is a measured one, and it is not encouraging:</p>'
         f'<p>The Pythagorean residuals across all 32 clubs sum to a chi-square of '
-        f'<strong>{over["statistic"]}</strong> on {over["degrees_of_freedom"]} degrees of freedom, '
-        f'giving <strong>p = {over["p_value_upper_tail"]}</strong>. The variance inflation is '
-        f'<strong>{over["variance_inflation"]}</strong>. On this snapshot the clubs are '
+        f'<strong>{fmt_stat(over["statistic"], 2)}</strong> on {over["degrees_of_freedom"]} degrees of freedom, '
+        f'giving <strong>p = {fmt_stat(over["p_value_upper_tail"], 3)}</strong>. The variance inflation is '
+        f'<strong>{fmt_stat(over["variance_inflation"], 2)}</strong>. On this snapshot the clubs are '
         f'<em>less</em> dispersed than independent coin flips would make them, which is the '
         f'opposite of the hidden-skill story. A leaderboard built on eight or nine games would be '
         f'ranking noise, and the desk can demonstrate that rather than assert it.</p>'
@@ -1262,7 +1270,7 @@ def build_summary() -> str:
         'the competition cannot start.</li>'
         '</ol>'
         '<p>What is <em>not</em> worth doing now: refining a model against this snapshot. The '
-        f'residuals are at p = {over["p_value_upper_tail"]}; there is nothing there to refine yet, '
+        f'residuals are at p = {fmt_stat(over["p_value_upper_tail"], 3)}; there is nothing there to refine yet, '
         'and more modelling on eight games would produce confidence that is not warranted.</p>'
         '</section>'
         '<section class="panel"><h2>The one-sentence version</h2>'

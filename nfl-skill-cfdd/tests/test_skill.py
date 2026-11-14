@@ -388,3 +388,44 @@ class StrategyLedger(unittest.TestCase):
         blocked = [g for g in res["gates"] if g["status"] == "blocked"]
         self.assertEqual([g["gate_id"] for g in blocked], ["V8"])
         self.assertIn("rights", blocked[0]["evidence"].lower())
+
+
+class SiteContract(unittest.TestCase):
+    """The generated site must keep the row-source contract and the blank rule."""
+
+    SITE = DESK / "site"
+
+    def test_every_page_has_one_h1_and_a_main(self):
+        for path in sorted(self.SITE.glob("*.html")):
+            text = path.read_text(encoding="utf-8")
+            self.assertEqual(text.count("<h1>"), 1, path.name)
+            self.assertIn("<main", text, path.name)
+            self.assertIn('lang="en"', text, path.name)
+
+    def test_every_internal_link_resolves(self):
+        import re
+        files = {p.name for p in self.SITE.iterdir()}
+        for path in sorted(self.SITE.glob("*.html")):
+            for ref in re.findall(r'href="([^"#:]+)"', path.read_text(encoding="utf-8")):
+                if ref.startswith(("http", "mailto")):
+                    continue
+                self.assertIn(ref, files, f"{path.name} links missing {ref}")
+
+    def test_manifest_matches_the_files_present(self):
+        manifest = json.loads((self.SITE / "manifest.json").read_text())
+        on_disk = {p.name for p in self.SITE.glob("*.html")}
+        self.assertEqual(set(manifest["pages"]), on_disk)
+
+    def test_no_page_invents_a_price(self):
+        """No page may state a price, an ROI or a reward amount for an NFL market."""
+        for path in sorted(self.SITE.glob("*.html")):
+            text = path.read_text(encoding="utf-8").lower()
+            for claim in ("roi of", "clv of", "payout of", "stake $", "profit of $"):
+                self.assertNotIn(claim, text, path.name)
+
+    def test_blank_cells_are_marked_and_empty(self):
+        import re
+        for path in sorted(self.SITE.glob("*.html")):
+            for cell_html in re.findall(r'<td data-empty="true"[^>]*>(.*?)</td>',
+                                        path.read_text(encoding="utf-8")):
+                self.assertEqual(cell_html.strip(), "", f"{path.name}: blank cell has content")
