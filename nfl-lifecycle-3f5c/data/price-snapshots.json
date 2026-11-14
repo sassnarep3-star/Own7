@@ -1,0 +1,1951 @@
+{
+  "schema_version": 1,
+  "store": "nfl-lifecycle-3f5c/price-snapshots",
+  "built_from": [
+    {
+      "vintage": "v2026-11-12",
+      "purpose": "opening snapshots",
+      "checked_on": "2026-11-12",
+      "source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "vintage": "v2026-11-14",
+      "purpose": "closing snapshots (pre-kickoff games)",
+      "checked_on": "2026-11-14",
+      "source_url": "https://www.nfl.com/standings/"
+    }
+  ],
+  "schedule_source": "https://www.nfl.com/schedules/2026/REG10/",
+  "policy": {
+    "append_only": "snapshot entries are identified by (captured_on, vintage); entries are never mutated or removed; a correction is a new entry",
+    "closing_rule": "the closing number is the last origination recorded before kickoff; after kickoff a market is terminal and its close is frozen",
+    "market_fields": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+    "difference_rule": "fair minus market is published only when both exist; otherwise it stays blank (never inferred)",
+    "reconciliation": "the ordered pipeline reproduces the canonical engine's numbers exactly on the frozen vintage (stages.reconcile_with_canonical)"
+  },
+  "counts": {
+    "markets": 42,
+    "games": 14,
+    "markets_per_game": 3
+  },
+  "markets": [
+    {
+      "market_id": "W10-01:side",
+      "game_id": "W10-01",
+      "matchup": "WAS @ Giants",
+      "kickoff": "2026-11-12 8:15 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "kickoff passed",
+        "detail": "kickoff 2026-11-12 8:15 PM ET precedes the 2026-11-14 read; no post-kickoff origination is recorded"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": -3.6667,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": -3.6667,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "terminal - equals opening; no post-kickoff origination"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-01:total",
+      "game_id": "W10-01",
+      "matchup": "WAS @ Giants",
+      "kickoff": "2026-11-12 8:15 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "kickoff passed",
+        "detail": "kickoff 2026-11-12 8:15 PM ET precedes the 2026-11-14 read; no post-kickoff origination is recorded"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 47.6422,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 47.6422,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "terminal - equals opening; no post-kickoff origination"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-01:moneyline",
+      "game_id": "W10-01",
+      "matchup": "WAS @ Giants",
+      "kickoff": "2026-11-12 8:15 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "kickoff passed",
+        "detail": "kickoff 2026-11-12 8:15 PM ET precedes the 2026-11-14 read; no post-kickoff origination is recorded"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": -153,
+        "fair_away_price": 153,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": -153,
+        "fair_away_price": 153,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "terminal - equals opening; no post-kickoff origination"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-02:side",
+      "game_id": "W10-02",
+      "matchup": "Patriots @ Lions",
+      "kickoff": "2026-11-15 9:30 AM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 9:30 AM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": -3.2269,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": -3.2269,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-02:total",
+      "game_id": "W10-02",
+      "matchup": "Patriots @ Lions",
+      "kickoff": "2026-11-15 9:30 AM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 9:30 AM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 49.9153,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 49.9131,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0022,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-02:moneyline",
+      "game_id": "W10-02",
+      "matchup": "Patriots @ Lions",
+      "kickoff": "2026-11-15 9:30 AM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 9:30 AM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": -145,
+        "fair_away_price": 145,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": -145,
+        "fair_away_price": 145,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-03:side",
+      "game_id": "W10-03",
+      "matchup": "KC @ Falcons",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 1.7546,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 1.7546,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-03:total",
+      "game_id": "W10-03",
+      "matchup": "KC @ Falcons",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 46.906,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 46.9038,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0022,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-03:moneyline",
+      "game_id": "W10-03",
+      "matchup": "KC @ Falcons",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": 122,
+        "fair_away_price": -122,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": 122,
+        "fair_away_price": -122,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-04:side",
+      "game_id": "W10-04",
+      "matchup": "Texans @ Browns",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 0.0046,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 0.0046,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-04:total",
+      "game_id": "W10-04",
+      "matchup": "Texans @ Browns",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 47.2394,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 47.2371,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0023,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-04:moneyline",
+      "game_id": "W10-04",
+      "matchup": "Texans @ Browns",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": 100,
+        "fair_away_price": -100,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": 100,
+        "fair_away_price": -100,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-05:side",
+      "game_id": "W10-05",
+      "matchup": "Vikings @ Packers",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": -1.6759,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": -1.6759,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-05:total",
+      "game_id": "W10-05",
+      "matchup": "Vikings @ Packers",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 43.2996,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 43.2973,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0023,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-05:moneyline",
+      "game_id": "W10-05",
+      "matchup": "Vikings @ Packers",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": -121,
+        "fair_away_price": 121,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": -121,
+        "fair_away_price": 121,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-06:side",
+      "game_id": "W10-06",
+      "matchup": "Dolphins @ Colts",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": -2.6759,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": -2.6759,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-06:total",
+      "game_id": "W10-06",
+      "matchup": "Dolphins @ Colts",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 46.9292,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 46.9269,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0023,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-06:moneyline",
+      "game_id": "W10-06",
+      "matchup": "Dolphins @ Colts",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": -136,
+        "fair_away_price": 136,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": -136,
+        "fair_away_price": 136,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-07:side",
+      "game_id": "W10-07",
+      "matchup": "Panthers @ Saints",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": -1.5417,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": -1.5417,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-07:total",
+      "game_id": "W10-07",
+      "matchup": "Panthers @ Saints",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 51.4338,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 51.4316,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0022,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-07:moneyline",
+      "game_id": "W10-07",
+      "matchup": "Panthers @ Saints",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": -119,
+        "fair_away_price": 119,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": -119,
+        "fair_away_price": 119,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-08:side",
+      "game_id": "W10-08",
+      "matchup": "Bills @ Jets",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 2.3935,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 2.3935,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-08:total",
+      "game_id": "W10-08",
+      "matchup": "Bills @ Jets",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 50.7672,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 50.7649,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0023,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-08:moneyline",
+      "game_id": "W10-08",
+      "matchup": "Bills @ Jets",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": 132,
+        "fair_away_price": -132,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": 132,
+        "fair_away_price": -132,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-09:side",
+      "game_id": "W10-09",
+      "matchup": "Jaguars @ Titans",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 4.7917,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 4.7917,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-09:total",
+      "game_id": "W10-09",
+      "matchup": "Jaguars @ Titans",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 46.1838,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 46.1816,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0022,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-09:moneyline",
+      "game_id": "W10-09",
+      "matchup": "Jaguars @ Titans",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 1:00 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": 174,
+        "fair_away_price": -174,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": 174,
+        "fair_away_price": -174,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-10:side",
+      "game_id": "W10-10",
+      "matchup": "LA @ AZ",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 4:05 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 2.0741,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 2.0741,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-10:total",
+      "game_id": "W10-10",
+      "matchup": "LA @ AZ",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 4:05 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 47.9755,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 47.9732,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0023,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-10:moneyline",
+      "game_id": "W10-10",
+      "matchup": "LA @ AZ",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 4:05 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": 127,
+        "fair_away_price": -127,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": 127,
+        "fair_away_price": -127,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-11:side",
+      "game_id": "W10-11",
+      "matchup": "Seahawks @ LV",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 4:05 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 0.5926,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 0.5926,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-11:total",
+      "game_id": "W10-11",
+      "matchup": "Seahawks @ LV",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 4:05 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 49.531,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 49.5288,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0022,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-11:moneyline",
+      "game_id": "W10-11",
+      "matchup": "Seahawks @ LV",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 4:05 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": 107,
+        "fair_away_price": -107,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": 107,
+        "fair_away_price": -107,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-12:side",
+      "game_id": "W10-12",
+      "matchup": "SF @ Cowboys",
+      "kickoff": "2026-11-15 4:25 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 4:25 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 0.9213,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 0.9213,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-12:total",
+      "game_id": "W10-12",
+      "matchup": "SF @ Cowboys",
+      "kickoff": "2026-11-15 4:25 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 4:25 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 51.4523,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 51.4501,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0022,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-12:moneyline",
+      "game_id": "W10-12",
+      "matchup": "SF @ Cowboys",
+      "kickoff": "2026-11-15 4:25 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 4:25 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": 111,
+        "fair_away_price": -111,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": 111,
+        "fair_away_price": -111,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-13:side",
+      "game_id": "W10-13",
+      "matchup": "Steelers @ Bengals",
+      "kickoff": "2026-11-15 8:20 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 8:20 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": -3.2083,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": -3.2083,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-13:total",
+      "game_id": "W10-13",
+      "matchup": "Steelers @ Bengals",
+      "kickoff": "2026-11-15 8:20 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 8:20 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 48.1005,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 48.0982,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0023,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-13:moneyline",
+      "game_id": "W10-13",
+      "matchup": "Steelers @ Bengals",
+      "kickoff": "2026-11-15 8:20 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-15 8:20 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": -145,
+        "fair_away_price": 145,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": -145,
+        "fair_away_price": 145,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-14:side",
+      "game_id": "W10-14",
+      "matchup": "Chargers @ Ravens",
+      "kickoff": "2026-11-16 8:15 PM ET",
+      "market": "side",
+      "kind": "spread",
+      "definition": "Originated spread, stated from the home club's point of view (negative = home favoured)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-16 8:15 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": -4.3426,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": -4.3426,
+        "unit": "points (home POV)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0.0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-14:total",
+      "game_id": "W10-14",
+      "matchup": "Chargers @ Ravens",
+      "kickoff": "2026-11-16 8:15 PM ET",
+      "market": "total",
+      "kind": "total",
+      "definition": "Originated total (expected combined points)",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-16 8:15 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_line": 47.2162,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_line": 47.214,
+        "unit": "points",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": -0.0022,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "market_id": "W10-14:moneyline",
+      "game_id": "W10-14",
+      "matchup": "Chargers @ Ravens",
+      "kickoff": "2026-11-16 8:15 PM ET",
+      "market": "moneyline",
+      "kind": "price",
+      "definition": "Two-sided model fair prices (zero-hold), home and away",
+      "kickoff_state": {
+        "status": "pre-kickoff as of 2026-11-14",
+        "detail": "kickoff 2026-11-16 8:15 PM ET is after the 2026-11-14 read"
+      },
+      "opening": {
+        "captured_on": "2026-11-12",
+        "vintage": "v2026-11-12",
+        "fair_home_price": -165,
+        "fair_away_price": 165,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "opening - first origination recorded"
+      },
+      "closing": {
+        "captured_on": "2026-11-14",
+        "vintage": "v2026-11-14",
+        "fair_home_price": -165,
+        "fair_away_price": 165,
+        "unit": "American odds (fair, zero-hold)",
+        "market_line": null,
+        "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+        "status": "current - last pre-kickoff origination to date"
+      },
+      "open_to_close_move": 0,
+      "market_line": null,
+      "market_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred.",
+      "fair_minus_market": null,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO",
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-SCHED-REG10-1114"
+      ],
+      "game_source_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    }
+  ]
+}

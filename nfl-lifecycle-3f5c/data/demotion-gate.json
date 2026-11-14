@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "gate_id": "DG-1",
+  "defined_on": "2026-11-14",
+  "state_machine": {
+    "paper": "under paper trial; no stakes, no rewards",
+    "live": "promotion gates passed (engine's qualified tier); stakes allowed only inside the registered plan",
+    "paper (demoted)": "returned by a gate trigger; re-promotion restarts the full promotion path and counts as a new trial"
+  },
+  "triggers": [
+    {
+      "id": "D1",
+      "name": "Signal collapse",
+      "rule": "One-sided binomial P(X <= observed wins | n window, declared baseline) <= 0.01 over the last 20 graded selections (minimum 10 to evaluate).",
+      "effect": "automatic demotion to paper"
+    },
+    {
+      "id": "D2",
+      "name": "Repeated failure",
+      "rule": "Two consecutive windows both evaluate at P <= 0.05 against the declared baseline; fires even when neither window alone reached the D1 threshold.",
+      "effect": "automatic demotion to paper"
+    },
+    {
+      "id": "D3",
+      "name": "Calibration drift",
+      "rule": "Window mean Brier exceeds the promotion-time Brier by 0.05 or more (0.25 is the no-information reference).",
+      "effect": "automatic demotion to paper"
+    },
+    {
+      "id": "D4",
+      "name": "Integrity breach",
+      "rule": "Any settlement number in the graded record is not traceable to a registered official source.",
+      "effect": "immediate demotion; affected selections quarantined pending re-verification"
+    },
+    {
+      "id": "D5",
+      "name": "Governance breach",
+      "rule": "Any stake placed outside the pre-registered staking plan recorded at promotion.",
+      "effect": "immediate demotion; plan must be re-registered before re-promotion"
+    }
+  ],
+  "evaluation_rule": "runs after every graded round while a strategy is live; the first firing trigger is recorded with its window",
+  "applied_to": {
+    "live_entries": 0,
+    "because": "nothing has reached the engine's qualified tier and no executable price exists (RG03/RG10), so nothing is live"
+  },
+  "demotions": [],
+  "demotion_count": 0,
+  "armed": true,
+  "source_ids": [
+    "REPO"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "read_on": "2026-11-14",
+  "checks": [
+    {
+      "id": "V1",
+      "name": "Standings evidence trace (32 rows, v2026-11-14)",
+      "status": "PASS",
+      "detail": "32/32 rows re-found verbatim in nfl-lifecycle-3f5c/evidence/standings-2026-11-14.md",
+      "source_ids": [
+        "LC-NFL-STANDINGS-1114",
+        "NFL-STANDINGS"
+      ]
+    },
+    {
+      "id": "V2",
+      "name": "Fixture evidence trace (14 fixtures, REG10 page)",
+      "status": "PASS",
+      "detail": "14/14 fixtures re-found verbatim in nfl-lifecycle-3f5c/evidence/schedule-reg10-2026-11-14.md",
+      "source_ids": [
+        "LC-NFL-SCHED-REG10-1114",
+        "NFL-SCHED-W10"
+      ]
+    },
+    {
+      "id": "V3",
+      "name": "Vintage transition (2026-11-12 → 2026-11-14)",
+      "status": "PASS",
+      "detail": "moved clubs exactly NYG, WAS; scoring delta equals the officially published final WAS 24 - NYG 21 (FINAL, Thursday, November 12th)",
+      "source_ids": [
+        "LC-NFL-STANDINGS-1114",
+        "LC-NFL-GAME-W10-01"
+      ]
+    },
+    {
+      "id": "V4",
+      "name": "Ordered pipeline reconciles with the canonical engine",
+      "status": "PASS",
+      "detail": "14/14 games field-for-field, 0 mismatches",
+      "source_ids": [
+        "NFL-STANDINGS",
+        "REPO"
+      ]
+    },
+    {
+      "id": "V5",
+      "name": "Snapshot store invariants",
+      "status": "PASS",
+      "detail": "42 market records; market cells blank with a stated reason; difference blank whenever the market line is blank",
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "V6",
+      "name": "Correlation audit (n and official source per value)",
+      "status": "PASS",
+      "detail": "22 rows audited: 18 with coefficients (each with n), 4 blank by rule with a stated reason, 0 failures",
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "V7",
+      "name": "Replacement-depth spot re-verification",
+      "status": "PASS",
+      "detail": "12/12 sampled rows re-found in the capturing sessions' saved evidence",
+      "source_ids": [
+        "X28-NFL-INJ-W10",
+        "CFDD-NFL-STANDINGS"
+      ]
+    }
+  ]
+}

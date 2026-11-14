@@ -63,6 +63,12 @@ SOURCE_HOSTS.update({'CFDD-NFL-STANDINGS': 'www.nfl.com', 'CFDD-NFL-TERMS': 'www
                      'CFDD-PHI-DEPTH': 'www.philadelphiaeagles.com', 'CFDD-TB-DEPTH': 'www.buccaneers.com',
                      'CFDD-HOU-DEPTH': 'www.houstontexans.com'})
 
+# Market-lifecycle desk (session arena/3f5c4cd6-own7) — official league hosts only; each entry is
+# the page actually read for this desk on 2026-11-14.
+SOURCE_HOSTS.update({'LC-NFL-STANDINGS-1114': 'www.nfl.com',
+                     'LC-NFL-SCHED-REG10-1114': 'www.nfl.com',
+                     'LC-NFL-GAME-W10-01': 'www.nfl.com'})
+
 # Rental pages from session arena/692da006-own7 (PR #19) — official government/legal hosts only.
 # NFL research layer (session arena/a129b881-own7). Official league domains, one tertiary
 # method reference, and the publisher glossary. No odds vendor is registered.
