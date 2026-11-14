@@ -56,7 +56,14 @@ jobs:
           python nfl-assurance-9580ac3f/check.py --report
           python -m unittest discover -s nfl-assurance-9580ac3f/tests -v
       - name: Committed artifacts must already be current
-        run: git diff --exit-code
+        run: |
+          echo "Working tree status:"
+          git status --porcelain
+          echo "Diff stat:"
+          git diff --stat
+          echo "Full diff (first 400 lines):"
+          git diff | head -400
+          git diff --exit-code
   browser:
     name: Desktop, mobile and accessibility
     needs: research-static
