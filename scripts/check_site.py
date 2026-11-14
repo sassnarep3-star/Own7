@@ -76,6 +76,32 @@ SOURCE_HOSTS.update({
 })
 
 
+# NFL session 243828fc (arena/243828fc-own7) — official hosts and repo records registered by register_sources.py.
+SOURCE_HOSTS.update({
+    "X243-DET-CHART": "www.detroitlions.com",
+    "X243-GRA-HOME": "www.gra.gov.sg",
+    "X243-GRA-PROBLEM": "www.gra.gov.sg",
+    "X243-GRA-UNLAWFUL": "www.gra.gov.sg",
+    "X243-NFL-INACTIVES-W9": "www.nfl.com",
+    "X243-NFL-INJ-W10": "www.nfl.com",
+    "X243-NFL-STANDINGS": "www.nfl.com",
+    "X243-NFL-STATS": "www.nfl.com",
+    "X243-NFL-TERMS": "www.nfl.com",
+    "X243-REPO-01": "github.com",
+    "X243-REPO-02": "github.com",
+    "X243-REPO-03": "github.com",
+    "X243-REPO-04": "github.com",
+    "X243-REPO-05": "github.com",
+    "X243-REPO-06": "github.com",
+    "X243-REPO-07": "github.com",
+    "X243-REPO-08": "github.com",
+    "X243-REPO-09": "github.com",
+    "X243-REPO-10": "github.com",
+    "X243-REPO-11": "github.com",
+    "X243-RGA-2014": "sso.agc.gov.sg"
+})
+
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)

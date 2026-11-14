@@ -836,6 +836,57 @@ meaning of a blank) are the two gaps that most constrain any further availabilit
 (read club-published Friday game-status reports for all 28 clubs) is the cheapest way to close them.
 XS09 is a standing constraint, not a task: do not add a price feed until source rights are settled.
 
+---
+
+## Session arena/243828fc-own7 — NFL status re-verification, repo review, and gap dossier (2026-11-14)
+
+Session ID: `session-arena-243828fc-own7`. Branch: `arena/243828fc-own7` (fixed by Arena; the requested
+`session-<id>/<task>` naming is not used because this session must stay on its fixed branch). Base commit:
+`b735a6b` (main, the merge of PR #33).
+
+Observed starting state (read, not assumed): main carries the NFL origination lab (`nfl_origination/`),
+the NFL research workspace (`nfl/`, `research/nfl*`), the NFL assurance sub-site (`nfl-assurance-9580ac3f/`),
+the availability and depletion desk (`nfl-availability-28ef/`, merged by PR #32), NBA and rental archives,
+and `market-evidence/`. PR #27 (`arena/382a833e-own7`) is **still open** and touches shared files; this
+session will not merge, close, rebase or edit it. No open PR touches the branch of this session.
+
+Constraints that shape this session (stated, not hidden): no sportsbook, exchange or licensed odds feed is
+reachable from this sandbox and NFL publishes none, so no market line, price, ROI, correlation coefficient or
+strategy qualification can be verified here. Requests that depend on those are recorded as blocked, not filled.
+
+### Claim (written before implementation; committed and pushed first)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| P1 | Claim + baseline reproduction of the repo's own CI checks on this branch | done (27 of 27 CI-equivalent commands exit 0 before this session's changes) | session-arena-243828fc-own7 | COORDINATION.md (append-only) | Record pass/fail per command; no fix to other sessions' files without a log entry. |
+| P2 | Live spot re-verification of Week 10 injury rows and standings rows against nfl.com (fetched this session) | done, partial: standings 24 of 32 checked (22 match; NYG and WAS differ, unresolved); injury transcription NOT verified, so row values withheld (UNVERIFIED) | session-arena-243828fc-own7 | `session-243828fc/evidence/**` | Spot check only; reported as n of N rows checked, never as full verification. |
+| P3 | Repo irregularity audit (duplicate sub-sites, orphaned pages, open PR, rights terms) | done (`repo-audit.html`, `audit.md`) | session-arena-243828fc-own7 | `session-243828fc/audit.md` | Each finding carries a file path and an official link where one exists. |
+| P4 | Singapore legal and responsible-gambling context, verified from official government sources | done, partial: GRA pages read; statute text UNVERIFIED (sso.agc.gov.sg not reachable) (`legal.html`, `legal-context.md`) | session-arena-243828fc-own7 | `session-243828fc/legal-context.md` | Only official gov.sg / statute / regulator pages are cited; no advice on wagering. |
+| P5 | Gap dossier: questions, information we have, information we lack, discovery steps; self-contained page | done (`gaps.html`, `index.html`, `data/questions.json`, `data/suggestions.json`, `data/findings.json`) | session-arena-243828fc-own7 | `session-243828fc/index.html`, `session-243828fc/data/**` | Every row sourced or marked UNVERIFIED with blank values. |
+| P6 | PR to main, merge, GitHub Pages deploy evidence, record | in progress (PR link and merge result to be recorded below) | session-arena-243828fc-own7 | COORDINATION.md (append-only), PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+### Results and deviations (14 Nov 2026)
+
+- Built `session-243828fc/` pages with `build_site.py` (`--check` passes). Pages: `index.html`, `live-check.html`, `depletion.html`, `gaps.html`, `legal.html`, `repo-audit.html`, `flagged.html`. Every table row has an allowed official or repo source link (checked by the generator).
+- **Deviation 1 (owner rule: unverified values left blank).** The live-report transcription (`data/live-injury-report-*.psv`) was NOT verified line by line against the 8 chunks. The psv, the row-level diff, and the depletion join are git-ignored and not published. Counts from them are shown only as UNVERIFIED. Depletion (starter/backup) is withheld until verification.
+- **Deviation 2.** The earlier explanation for the NYG and WAS standings mismatch (the Thursday game) is withdrawn as unsupported. The cause is unresolved and flagged (F05).
+- **Deviation 3.** Standings: 8 teams (ARI, ATL, CAR, LAR, NO, SEA, SF, TB) not yet checked.
+- **Deviation 4.** The Remote Gambling Act 2014 text could not be checked (sso.agc.gov.sg: Page Not Found). GRA pages used; statute UNVERIFIED.
+- Verification log: `session-243828fc/evidence/verification-log.md`.
+- Owner decisions pending (not implemented): S04 (rights position for compiled NFL.com data), S05 (legal review before any reward or wagering use), S01–S08 (suggestions; nothing implemented).
+- Strategy work: no market line, price, ROI, closing-line value, or correlation coefficient could be verified from an official source. None is published; the strategy leaderboard is not built (blocked, see Q05 and Q06).
+- PR #27 and PR #17 are untouched.
+
+### Integration (P6), 14 Nov 2026
+
+- Pages: `session-243828fc/site/` (7 pages + manifest), registered in the root build like the NFL desk (`scripts/build_site.py`).
+- Sources: 21 `X243-*` records appended to `research/sources.json` (append-only; `session-243828fc/register_sources.py`). Hosts added to `scripts/check_site.py`. Every table row carries `data-source-ids`.
+- Regenerated: `research/results.json` (its hash input includes `research/sources.json`), `research/site-manifest.json`, `sources.html` (source register).
+- Test harness: `scripts/browser_test.mjs` now serves `session-243828fc/` (same as the desk folder).
+- Results: all 28 repo CI commands pass on this branch, plus `npm run test:browser` (113 desktop and 113 mobile pages; WCAG A/AA; no runtime errors).
+- Flagged items and unverified values are published on `session-243828fc/site/flagged.html` and do not block the merge.
+- Not done: line-by-line verification of the live injury transcription; standings for 8 teams; the Remote Gambling Act text; strategy leaderboard (blocked: no official price source).
+
 ## Session arena/500eb178-own7 — NFL integration verification (2026-11-14)
 
 Session ID: `session-arena-500eb178-own7`
@@ -1111,3 +1162,4 @@ The two highest-value blockers are unchanged and both are now precisely scoped:
 **RG03** (no executable price → no ROI, no CLV, no reward) and **RG10** (NFL.com §1.3 → no dataset
 release). Player-prop combinations are blank only because per-game player logs were not retrieved;
 `nfl-results-flagged.html` R29-F05 names the exact page type that would close it.
+- PR: https://github.com/sassnarep3-star/Own7/pull/44 (head `arena/243828fc-own7`, base `main`). `main` moved (PR #40 and later commits); conflicts in generated and append-only files were resolved by keeping both sides and regenerating from the merged code. Merge result: recorded after the merge.

@@ -1,0 +1,82 @@
+[
+ {
+  "id": "S01",
+  "suggestion": "Treat the 13 Nov desk ledger as a superseded snapshot; add a dated capture log with one read time per capture.",
+  "evidence": "About 183 of 326 ledger rows differ from the live page read on 14 Nov (UNVERIFIED until the transcription check is complete).",
+  "cost_estimate": "Low (about 1–2 hours of agent work, estimate).",
+  "risk": "More files to keep in step.",
+  "acceptance_test": "Every published row carries a read time, and the diff script reproduces the published counts.",
+  "source_url": "https://www.nfl.com/injuries/league/2026/REG10",
+  "source_label": "NFL.com injury report, Week 10 2026"
+ },
+ {
+  "id": "S02",
+  "suggestion": "Show the club's own label on every chart-derived cell, and show 'not printed' instead of leaving the row out.",
+  "evidence": "Detroit's chart is headed 'Unofficial Depth Chart'. Several alert players are not matched to any printed slot (count UNVERIFIED pending transcription check).",
+  "cost_estimate": "Low (estimate).",
+  "risk": "Pages look more cautious than before.",
+  "acceptance_test": "No chart-derived value appears without its label and its capture date.",
+  "source_url": "https://www.detroitlions.com/team/depth-chart",
+  "source_label": "Detroit Lions depth chart (read 14 Nov 2026)"
+ },
+ {
+  "id": "S03",
+  "suggestion": "Use the official game-day inactive lists, not the club charts, as the source for who is out.",
+  "evidence": "The live report prints a game status for 26 clubs and changes until kickoff; NFL publishes inactive lists per game (Week 9 example linked).",
+  "cost_estimate": "Medium (estimate; one check per game).",
+  "risk": "Lists appear close to kickoff, so the timing of the check matters.",
+  "acceptance_test": "Every Out player is checked against the inactive list for his game, with the list's read time.",
+  "source_url": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+  "source_label": "Example of the NFL inactives page (Week 9)"
+ },
+ {
+  "id": "S04",
+  "suggestion": "Owner decision on the compiled-data rights position: (a) keep row tables, (b) publish only counts and links, or (c) seek written permission from the NFL.",
+  "evidence": "NFL.com terms §1.3 prohibit compiling a collection without written consent.",
+  "cost_estimate": "Low to decide; legal cost for (c) not estimated.",
+  "risk": "Option (a) keeps a compliance risk that the owner would be accepting.",
+  "acceptance_test": "A recorded owner decision, and the site matches it.",
+  "source_url": "https://www.nfl.com/legal/terms",
+  "source_label": "NFL.com Terms and Conditions"
+ },
+ {
+  "id": "S05",
+  "suggestion": "Pause every reward, leaderboard prize or wagering-linked idea until a Singapore legal review is complete.",
+  "evidence": "GRA: participating in unlicensed remote gambling is an offence; Singapore Pools is the only licensed remote operator named.",
+  "cost_estimate": "External legal cost, not estimated.",
+  "risk": "The project stays research-only in the meantime.",
+  "acceptance_test": "Written legal advice on file, linked from the legal page.",
+  "source_url": "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities",
+  "source_label": "GRA: unlawful remote gambling"
+ },
+ {
+  "id": "S06",
+  "suggestion": "Name one canonical NFL site and mark the others as archives. Four NFL sub-sites currently exist.",
+  "evidence": "NFL pages are spread across several folders (nfl/, nfl_origination/, nfl-assurance-9580ac3f/, nfl-availability-28ef/); the folder list was read on 14 Nov.",
+  "cost_estimate": "Medium to high (estimate); touches shared navigation.",
+  "risk": "Broken links for anyone who bookmarked an archived page.",
+  "acceptance_test": "One nav, every old URL either redirects or is labelled archive, and the link check passes.",
+  "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/README.md",
+  "source_label": "Repo README (file for review)"
+ },
+ {
+  "id": "S07",
+  "suggestion": "Make nfl/verify_independent.py exit non-zero when it prints column disagreements.",
+  "evidence": "The script prints disagreements, then returns 0 (lines 267–280).",
+  "cost_estimate": "Low (estimate).",
+  "risk": "The CI job may turn red until the disagreements are resolved.",
+  "acceptance_test": "A deliberately altered value makes the check fail.",
+  "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl/verify_independent.py",
+  "source_label": "nfl/verify_independent.py (file for review)"
+ },
+ {
+  "id": "S08",
+  "suggestion": "Archive old COORDINATION.md sections and close stale 'in progress' rows, leaving one current board.",
+  "evidence": "39 'in progress' occurrences across older sessions; the file is about 116 KB.",
+  "cost_estimate": "Low (estimate).",
+  "risk": "Losing history if archiving is done carelessly; keep the archive in the repo.",
+  "acceptance_test": "One current board; every archived row points to its PR.",
+  "source_url": "https://github.com/sassnarep3-star/Own7/blob/main/COORDINATION.md",
+  "source_label": "COORDINATION.md (file for review)"
+ }
+]

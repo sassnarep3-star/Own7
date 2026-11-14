@@ -1,0 +1,82 @@
+[
+ {
+  "id": "Q01",
+  "question": "Is the Week 10 injury report current, and how often does it change?",
+  "have": "Full live page read 14 Nov 2026 (8 chunks), 345 rows, 28 clubs.",
+  "missing": "A publication or update time for each row; the page shows none.",
+  "close_by": "Re-read on a fixed schedule, logging the read time with every capture (subject to the rights decision in F07).",
+  "blocks": "Any claim that a status is current at a given time.",
+  "source_url": "https://www.nfl.com/injuries/league/2026/REG10",
+  "source_label": "NFL.com injury report, Week 10 2026"
+ },
+ {
+  "id": "Q02",
+  "question": "Who actually starts on Sunday, and who is inactive?",
+  "have": "Club charts captured 12–13 Nov (desk data). Detroit's chart is labelled unofficial by the club.",
+  "missing": "Official game-day inactive lists for the Week 10 games (not yet published when read).",
+  "close_by": "Read the NFL game-day inactives for each game when published and match them to every Out player.",
+  "blocks": "Any starter or backup claim, and every depletion row.",
+  "source_url": "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season",
+  "source_label": "Example of the NFL inactives page (Week 9)"
+ },
+ {
+  "id": "Q03",
+  "question": "What does a blank game status mean?",
+  "have": "The live page leaves game status blank for most players.",
+  "missing": "The league's own definition of a blank game status.",
+  "close_by": "Find the NFL's injury-report explanation page. Not retrieved in this session.",
+  "blocks": "Any reading of blank as healthy or as expected to play.",
+  "source_url": "https://www.nfl.com/injuries/league/2026/REG10",
+  "source_label": "NFL.com injury report, Week 10 2026 (where blank game status appears)"
+ },
+ {
+  "id": "Q04",
+  "question": "Is there an official measure of how much a backup drops off when he replaces a starter?",
+  "have": "None collected in this session. The only printed information is the chart order.",
+  "missing": "Official snap counts, player statistics or game logs by player.",
+  "close_by": "Collect official NFL player statistics pages for the same players and seasons, with the same read-date logging.",
+  "blocks": "Any performance-deficit, skill or strategy claim.",
+  "source_url": "https://www.nfl.com/stats/player-stats/",
+  "source_label": "NFL.com 2026 player stats (page read 14 Nov 2026; no backup-comparison data collected)"
+ },
+ {
+  "id": "Q05",
+  "question": "Are there official betting lines or prices that could be used to test any signal?",
+  "have": "No official source for prices was identified in this session. The GRA states that Singapore Pools is the only licensed remote-gambling operator.",
+  "missing": "Any lawful, licensed and rights-cleared price source.",
+  "close_by": "Legal review (Q06) first; then a licensed data source with written terms. No scraping of odds.",
+  "blocks": "Line validation, edge, ROI, closing-line value and every correlation that depends on prices.",
+  "source_url": "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities",
+  "source_label": "GRA: unlawful remote gambling"
+ },
+ {
+  "id": "Q06",
+  "question": "Is any leaderboard reward, or any wagering-linked use of these signals, lawful for a Singapore resident?",
+  "have": "GRA states participating in unlicensed remote gambling is an offence and gives the penalties.",
+  "missing": "A legal opinion on the specific design; the statute text could not be retrieved from this sandbox.",
+  "close_by": "Written advice from a Singapore lawyer before any reward or wagering-linked design is built or run.",
+  "blocks": "Rewards, leaderboard prizes, and any wager placed or recommended.",
+  "source_url": "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities",
+  "source_label": "GRA: unlawful remote gambling"
+ },
+ {
+  "id": "Q07",
+  "question": "May NFL.com data be compiled into a dataset and published in a public repository?",
+  "have": "NFL.com terms §1.3 restrict personal, non-commercial, informational use and prohibit systematic retrieval to compile a collection without written consent.",
+  "missing": "Written consent from the NFL, or a decision to publish only facts and links.",
+  "close_by": "Owner decision (F07). Either stop compiling rows, or seek written permission.",
+  "blocks": "Every compiled table on this site and in the desk.",
+  "source_url": "https://www.nfl.com/legal/terms",
+  "source_label": "NFL.com Terms and Conditions §1.3"
+ },
+ {
+  "id": "Q08",
+  "question": "Which standings file is the canonical one?",
+  "have": "Two standings files with 32 rows each and different column layouts; 24 team rows spot-checked on 14 Nov.",
+  "missing": "A recorded decision on which file is canonical.",
+  "close_by": "Owner decision; mark the other as superseded in the repo.",
+  "blocks": "Any standings-based analysis.",
+  "source_url": "https://www.nfl.com/standings/",
+  "source_label": "NFL.com standings (spot-check source)"
+ }
+]

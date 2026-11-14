@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Executive summary · Session 243828fc · NFL Week 10 check</title><style>
+:root{--ink:#1d2430;--mut:#5b6575;--line:#dfe3ea;--bg:#f6f7f9;--card:#fff;--acc:#1f5fbf;--warn:#9a5b00;--bad:#a1260d;--ok:#1e6b34}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#14213d;color:#fff;padding:14px 22px}header a{color:#fff;margin-right:14px;text-decoration:none;font-size:14px}
+header .brand{font-weight:700;margin-right:24px}nav a:hover{text-decoration:underline}
+header nav a{display:inline-block;padding:4px 8px;margin:2px 6px 2px 0;line-height:24px;min-height:24px}
+main{max-width:1180px;margin:0 auto;padding:22px}h1{font-size:24px;margin:6px 0 4px}h2{font-size:18px;margin:28px 0 8px}
+p.lead{color:var(--mut);margin-top:0}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}.card b{display:block;font-size:24px}.card span{color:var(--mut);font-size:13px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:13.5px;margin:8px 0 18px}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#eef1f6;position:sticky;top:0}
+td.num{text-align:right;font-variant-numeric:tabular-nums}.tag{display:inline-block;padding:1px 7px;border-radius:999px;font-size:12px;border:1px solid var(--line)}
+.unv{color:var(--warn);font-weight:600}.flag{color:var(--bad);font-weight:600}.ok{color:var(--ok);font-weight:600}
+.note{background:#fff8e6;border:1px solid #f1d894;border-radius:8px;padding:10px 14px;margin:12px 0}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:10px 0}
+input.filter{width:100%;max-width:420px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:6px 0}
+main,main p,main li,main td,main th,.note,.box{overflow-wrap:anywhere}.tscroll{overflow-x:auto;max-width:100%;margin:8px 0 18px}.tscroll table{margin:0}td,th{min-width:7ch}
+footer{color:var(--mut);font-size:12.5px;padding:18px 22px;max-width:1180px;margin:0 auto}
+</style></head>
+<body><header><span class="brand">NFL Week 10 · 243828fc</span><nav><a href="index.html" aria-current="page">Executive summary</a><a href="live-check.html">Live check (14 Nov)</a><a href="depletion.html">Starter &amp; backup depletion</a><a href="gaps.html">Questions &amp; suggestions</a><a href="legal.html">Legal &amp; responsible gambling</a><a href="repo-audit.html">Repo audit</a><a href="flagged.html">Flagged for Review</a></nav></header>
+<main><h1>Executive summary</h1><p class="lead">NFL Week 10 (2026): live injury check, depletion status, gaps and flags.</p>
+<div class="note"><b>Bottom line.</b> The Week 10 official injury report was read on 14 Nov 2026 and does not match the
+saved desk ledger (13 Nov). Its game-status column also covers more clubs than the ledger does. The row-level values are
+<b>not published here</b>: the transcription has not been checked line by line against the report, so every value from it is
+UNVERIFIED and withheld. No betting line, price, edge, correlation or strategy can be verified from an official source,
+so none is shown.</div>
+<div class="cards"><div class="card"><b>326</b><span>rows in the saved desk ledger (repo file, read 14 Nov)</span></div><div class="card"><b>5 of 28</b><span>clubs with any game status in the saved ledger (repo file)</span></div><div class="card"><b>UNVERIFIED</b><span>live Week 10 report: row counts withheld until the transcription is checked</span></div><div class="card"><b>22 of 24</b><span>team rows spot-checked against NFL.com standings that match (NYG and WAS differ)</span></div></div>
+
+<h2>What was checked, and how</h2>
+<div class="box"><ul>
+<li><b>Live injury report:</b> <a href="https://www.nfl.com/injuries/league/2026/REG10" rel="noopener">https://www.nfl.com/injuries/league/2026/REG10</a>: read through the fetch tool on 14 Nov 2026 (8 chunks). The rows were
+transcribed into a working file, which is <b>not yet verified</b> against the page. Unverified rows are not shown.</li>
+<li><b>Saved ledger</b> nfl-availability-28ef/data/injuries-week10-2026.csv: counts above were taken from the file itself.</li>
+<li><b>Standings spot check:</b> 24 of 32 team rows compared with <a href="https://www.nfl.com/standings/" rel="noopener">https://www.nfl.com/standings/</a>: 22 match on W-L-T, points for and
+against, and streak. NYG and WAS differ and the cause is not established (see <a href="flagged.html">Flagged for Review</a>).
+Eight teams are not yet checked.</li>
+<li><b>Depletion:</b> starter-to-backup analysis is not published. It needs the verified injury data, and the club charts
+are labelled unofficial by the clubs that publish them (Detroit: <a href="https://www.detroitlions.com/team/depth-chart" rel="noopener">depth chart</a>).</li>
+<li><b>Rights and law:</b> <a href="https://www.nfl.com/legal/terms" rel="noopener">NFL.com terms §1.3</a> and the Gambling Regulatory Authority pages
+(see <a href="legal.html">Legal</a>).</li>
+</ul></div>
+
+<h2>Open questions and how to close them</h2>
+<p>See <a href="gaps.html">Questions &amp; suggestions</a>. Priority: (1) verify the Week 10 transcription and decide how the injury
+data is refreshed; (2) decide whether compiled NFL.com rows may stay in a public repository (<a href="flagged.html">F07</a>);
+(3) confirm the legal position for any wagering-linked use from Singapore (<a href="flagged.html">F08</a>); (4) find an
+official game-day inactive list to answer "who is out" (<a href="gaps.html">Q02</a>).</p>
+</main>
+<footer>Unofficial research page. Not affiliated with or endorsed by the NFL or any club. Data read from the
+publishers named in each row on 14 Nov 2026 (Singapore time); statuses change until kickoff. Nothing here is a
+betting recommendation. Values not confirmed by an official source are blank or marked UNVERIFIED.</footer>
+</body></html>

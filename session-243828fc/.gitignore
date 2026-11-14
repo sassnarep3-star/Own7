@@ -1,0 +1,6 @@
+# Unverified transcription and the outputs derived from it: kept out of Git.
+# NFL.com terms §1.3 restrict compiling collections; see flags F07 and S04.
+data/live-injury-report-*.psv
+data/diff-ledger-vs-live.csv
+data/live-depletion.csv
+data/summary.json
