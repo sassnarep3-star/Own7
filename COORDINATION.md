@@ -949,6 +949,16 @@ Session ID: `session-arena-6b86c2eb-own7`. Fixed Arena branch: `arena/6b86c2eb-o
 
 | ID | Task | Status | Owner | Exclusive file scope | Notes |
 |---|---|---|---|---|---|
-| I1 | Re-run integrated NFL research, recursive site, and release verification; record any newly observed issues without altering prior sessions' work | in progress | session-arena-6b86c2eb-own7 | `COORDINATION.md` (append only), `docs/nfl-integration-review-2026-11-14.md` (new) | Existing site/data are treated as frozen until fresh verification. Official-source facts are not updated unless re-opened and checked. |
+| I1 | Re-run integrated NFL research, recursive site, and release verification; record newly observed official-source freshness findings | in progress | session-arena-6b86c2eb-own7 | `COORDINATION.md` (append only), `docs/nfl-integration-review-2026-11-14.md` (new), `research/sources.json`, `research/nfl/flags.json`, additive `SOURCE_HOSTS` entries in `scripts/check_site.py`, generated NFL review/source pages and manifests only | No raw game data will be refreshed. Only source metadata and the existing review flag may change after live official-source recheck. |
 
 Open unrelated PRs at claim time: #27 (`arena/382a833e-own7`) and #17 (`arena/a934e8c3-own7`). This session will not edit, merge, or close either PR. It will use only the current fixed branch.
+
+### I1 verification results (2026-11-14)
+
+- Official [NFL standings](https://www.nfl.com/standings/) rendered page re-read (both chunks). Manually transcribed and compared all 32 club names and W/L/T/PF/PA fields to the dated standings CSV: 30 match; WAS and NYG are the only differences, corresponding to the previously reported Nov 12 24–21 final. Frozen CSV retained unchanged.
+- Official [NFL injury report](https://www.nfl.com/injuries/) opening chunk re-read (1 of 8 chunks only): Week 10 page includes the Thursday WAS–NYG section and Sunday Nov 15 sections. The repo's 20-row origination table is Thursday only; the separate 326-row, 28-club Week 10 availability snapshot is dated Nov 13 and was not fully re-audited on Nov 14. Explicit freshness limitation added to NF09; no live claim or new row was made.
+- Official [NFL Terms](https://www.nfl.com/legal/terms/) opened; §1.3's restriction on systematic collection absent express written consent confirmed. NFL data pages are not used as an automated feed.
+- Registered the two dated source checks in `research/sources.json`, added exact official hosts to the recursive audit allowlist, and updated NF09 / NF14 on the published NFL Flagged for Review page. Full fresh bounded record: `docs/nfl-integration-review-2026-11-14.md`.
+- Checks after regeneration: 109 root unit tests pass; NFL extractor/origination/independent verification pass; recursive audit passes (38 canonical + 20 redirects + 68 auxiliary = 126 HTML pages, 5,197 table rows, 138 source IDs, 0 errors); browser/accessibility passes on 106 desktop + 106 mobile pages. All ancillary NBA, market-evidence, rental, assurance and availability/depletion builders/tests passed. `git diff --check` clean.
+
+This is a bounded refresh, not an assertion that every dataset was re-fetched on Nov 14. The report lists the precise coverage. I1 remains in progress pending PR checks, merge and Pages deployment record.

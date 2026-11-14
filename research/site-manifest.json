@@ -179,7 +179,7 @@
     "nfl-leaderboard.html": "c5be1b295fdfce7ced06f972d489af4e3e7984c65d1f6ef291ffec527e50b9dd",
     "nfl-lines.html": "4de13d70a344495d9eddd5e9e26b6a9b9b2f92d674f373485617b44630ff9814",
     "nfl-questions.html": "7dca7274a9a839cc3bf1c6aa9ff1dbe5b6caf0cb4cfb1b5d28c45e3f0b7d8bc9",
-    "nfl-review.html": "ac59a1a2444096304a3815f6140ac7812a21bca0454a8eb8fda991c63cf78287",
+    "nfl-review.html": "0e136bb6bb6693643e72549a0f8bf58aaa3dd61a5edae1d0b330a8db3feb26a9",
     "nfl-standings.html": "bb5143cae9591a2b4de4b3a6a8093d08102d96718baa0a314e31bd600981f5a8",
     "nfl-suggestions.html": "f7812b38dd2e01fde8ac07fc0b243b9764e01ce348d53f7891b6d81a35376656",
     "nfl-validation.html": "a9839f1ac5bedc6e07b702a6ad339bf4c7dc699651322e61c6497cc7f09639e1",
@@ -211,7 +211,7 @@
     "nfl/requirements.html": "c31503b21a78392e037f269d6c7d15463da2225475016b859647c33c01c9a570",
     "nfl/review.html": "c0ac734db5e2b193e60a9dfdcef31c2bca24052d6a8fee437c3f7c2f509a1a63",
     "nfl/signals.html": "4d36ac3679fd5e673f4fea43d4dd83cfc0c3eaa2cceb28a146b3f7ee0c2c6bd6",
-    "nfl/sources.html": "53d31e658588259afc4be3126b96fb55e2c84828a193f4a1a484f1160343c372",
+    "nfl/sources.html": "e27e7f087b05f4d7156c0dbe4aff6f084d0a30e26faca2c89185fb4d71719014",
     "nfl/suggestions.html": "fc004b1af4b51b2c1c015784891d29f6ff6b14dd10066d0f93ed0edd76beeea0",
     "nfl/validation.html": "e70d7e64e78c393297769fb450c7f3e3351cbc045a43e03b5958fe958aa3bef8",
     "pages/correlation.html": "0bece3d46a2088faebf0b35f3869dc7d1509bbc33cf1e0847fd0926ddaecb1ae",
@@ -245,7 +245,7 @@
     "review.html": "dc5038690d08dd255228ec609099cba6a717e250296a3d9c2fb91148523422a8",
     "settlement.html": "c4f519f8152bbfdb57c26a269226ab1105d06a2e75c8ae53eb397120cb9d4775",
     "signals.html": "5fddf761f3c2a4066f3a45bfd8df8022dfc423f673539fd67af4761d662cc99f",
-    "sources.html": "54512b8b1c163eab668565be51ee9281398a9b35e39b72c313499610d74b117c",
+    "sources.html": "02f87d8b9b31b4d6bd806485e3b9b432bb22caaa3d69b9b0c53d8dbcb5a38c38",
     "validation.html": "5d5a75c49017f7c7ef25cf2c0f4a1f9bf5bfac8e2f4f452ae43c4e5b6516d61c",
     "verified/betting-rules.html": "fd70be817c7da2ef8dd56eeb65f15372dd214882bdf9a07fc06e90b0918ce897",
     "verified/correlation.html": "0bece3d46a2088faebf0b35f3869dc7d1509bbc33cf1e0847fd0926ddaecb1ae",
@@ -259,5 +259,5 @@
     "verified/strategies.html": "a7b30d435deb49af1a5bb41ee34ddde08ba7e3315cc1cbb1d0e4a6fc7efd125b",
     "verified/validation-gates.html": "1e1584f1ff9e10a208e60ee45ecb2d113c9a98eda06db944ec01bdbd8f4702cd"
   },
-  "research_run_hash": "9433ff4318954719eb736adfc5a65c8c859bb733a9f1a044df44efa97004b00b"
+  "research_run_hash": "2ba1c3f36941b18d56b70d377a753a3c706dc4ec80657aafa1752eb021a3c5ce"
 }
