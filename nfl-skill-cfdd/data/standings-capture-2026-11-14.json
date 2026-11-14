@@ -1,0 +1,32 @@
+{
+  "source_id": "CFDD-NFL-STANDINGS",
+  "url": "https://www.nfl.com/standings/",
+  "read_on": "2026-11-14",
+  "retrieval_class": "rendered text via the Arena page reader; direct HTTPS to nfl.com returns curl code 000 from the build sandbox",
+  "rows_parsed": 32,
+  "rows_expected": 32,
+  "frozen_snapshot_rows": 32,
+  "rows_byte_identical_to_frozen": 30,
+  "rows_with_any_moved_field": 2,
+  "moved_fields": 12,
+  "arithmetic": "every row re-derived: W+L+T, PCT=(W+T/2)/(W+L+T), NET=PF-PA",
+  "arithmetic_failures": 0,
+  "league_identity": {
+    "total_wins": 136,
+    "total_losses": 136,
+    "total_ties": 2,
+    "total_points_for": 6291,
+    "total_points_against": 6291,
+    "check": "PF == PA and W == L, else the build aborts"
+  },
+  "move_consistency": {
+    "clubs_moved": 2,
+    "implied_result": "WAS scored 24, NYG scored 21",
+    "consistency": "consistent with exactly one result"
+  },
+  "withheld_columns": [
+    "the three unnamed 3-part records, because the rendered column order does not identify which is HOME, ROAD, DIV or CONF",
+    "the two unnamed decimal columns for the same reason"
+  ],
+  "scope": "Values as printed on 2026-11-14. Not a forecast and not a market price."
+}

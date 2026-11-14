@@ -1,0 +1,11 @@
+true_win_rate,target_power,alpha_one_sided,bets_needed_normal_approx,bets_needed_exact_binomial,note,exact_power_at_that_n,wins_needed_out_of_n
+0.500,0.80,0.050,,,no edge to detect: break-even cannot be distinguished from itself,,
+0.500,0.90,0.050,,,no edge to detect: break-even cannot be distinguished from itself,,
+0.524,0.80,0.050,2682,2682,,0.801,1384
+0.524,0.90,0.050,3714,3714,,0.898,1908
+0.550,0.80,0.050,617,618,,0.8,330
+0.550,0.90,0.050,853,854,,0.895,452
+0.575,0.80,0.050,273,274,,0.806,151
+0.575,0.90,0.050,377,378,,0.909,205
+0.600,0.80,0.050,153,154,,0.79,88
+0.600,0.90,0.050,211,212,,0.913,118

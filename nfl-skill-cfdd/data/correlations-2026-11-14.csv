@@ -1,0 +1,4 @@
+correlation_id,quantity_a,quantity_b,n,pearson_r,fisher_95_low,fisher_95_high,p_value,source_id,source_url,holm_adjusted_p,reject_null_at_0.05,caveat
+C-PF-PA,points_for per club,points_against per club,32,-0.0869,-0.4228,0.27,0.636173,CFDD-NFL-STANDINGS,https://www.nfl.com/standings/,0.8887,no,
+C-PYTH-ACTUAL,Pythagorean expected wins (derived from PF/PA),actual wins (with ties counted as half),32,0.8668,0.7424,0.9334,0.0,CFDD-NFL-STANDINGS,https://www.nfl.com/standings/,0.0,yes,"method validity check, not an independent finding: both sides come from the same PF/PA pair, so a high r is expected and is not evidence of a tradable edge"
+C-PASS-OFF-DEF,team offensive passing yards per attempt (printed C4),team defensive passing yards per attempt allowed,32,-0.1401,-0.466,0.2193,0.444328,NFL-TEAM-OFF,https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all,0.8887,no,

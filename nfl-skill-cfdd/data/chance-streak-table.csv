@@ -1,0 +1,5 @@
+consecutive_wins,probability_if_true_rate_is_50pct,probability_if_true_rate_is_50pct_pct,clubs_expected_to_hit_this_at_least_once,interpretation
+5,0.031250,3.1250,95.82,expected under pure chance among 100 bettors
+10,0.000977,0.0977,9.31,expected under pure chance among 100 bettors
+20,0.000001,0.0001,0.01,expected under pure chance among 100 bettors
+30,0.000000,0.0000,0.0,expected under pure chance among 100 bettors

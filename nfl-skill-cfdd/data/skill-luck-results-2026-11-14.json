@@ -1,0 +1,51 @@
+{
+  "read_on": "2026-11-14",
+  "overdispersion": {
+    "test": "chi-square overdispersion of Pythagorean residuals",
+    "clubs": 32,
+    "degrees_of_freedom": 32,
+    "statistic": 19.0254,
+    "mean_under_null": 32,
+    "p_value_upper_tail": 0.966189,
+    "variance_inflation": 0.5945,
+    "interpretation": "The statistic sits inside the null distribution, so this snapshot contains no detectable club-level variance beyond what scoring already explains. A leaderboard ranked on these 8-9 game records would be ranking noise.",
+    "null_hypothesis": "Pythagorean win probability is the true per-game probability and games are independent within a club.",
+    "source_id": "CFDD-NFL-STANDINGS"
+  },
+  "streak_note": "Under a true 50% rate, one bettor in 32 wins 5 in a row by chance alone. A streak is not evidence of skill, and this table is why a leaderboard must not reward small samples.",
+  "not_computed": [
+    {
+      "quantity": "single-bet leg correlation",
+      "why_blank": "no two-outcome settlement data exists for any priced market: no price was ever retrieved, so there is no bet to correlate",
+      "blocks": "any single-bet strategy claim"
+    },
+    {
+      "quantity": "parlay leg correlation (2, 3 and 4 leg)",
+      "why_blank": "leg dependence needs joint outcomes on the same tickets; no ticket, no price and no settled leg history exist in this repository",
+      "blocks": "parlay pricing and parlay leaderboard entries"
+    },
+    {
+      "quantity": "player-prop combination correlation",
+      "why_blank": "no prop line, no prop settlement and no snap-count or usage series were retrieved; a prop correlation without those is an invented number",
+      "blocks": "prop and same-game-parlay strategies"
+    },
+    {
+      "quantity": "injury impact per starter lost, in points",
+      "why_blank": "no before/after performance series and no snap counts; a printed depth rank is an ordering, not a measured point value",
+      "blocks": "converting the depletion index into a line adjustment"
+    },
+    {
+      "quantity": "skill persistence across seasons",
+      "why_blank": "one partial 2026 season only; persistence requires at least two seasons of the same measured quantity",
+      "blocks": "any claim that a strategy is 'selectively skill based' on this data"
+    },
+    {
+      "quantity": "closing-line value and ROI",
+      "why_blank": "NFL.com publishes no odds and the rights question (XS09) is unsettled",
+      "blocks": "every economic gate, reward and prize"
+    }
+  ],
+  "verdict": "no strategy qualifies",
+  "verdict_reason": "no price, no settled bet record, no forward shadow, and a single partial season. A leaderboard cannot be populated without inventing numbers.",
+  "cash_rewards": null
+}
