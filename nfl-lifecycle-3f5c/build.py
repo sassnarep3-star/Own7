@@ -127,7 +127,7 @@ def esc(value) -> str:
 def cell(value, *, num=False, blank_note=None) -> str:
     if value is None or value == "":
         note = esc(blank_note or "Blank — unverified, withheld or not applicable")
-        return f'<td class="blank{" num" if num else ""}" data-empty="true" title="{note}">{note}</td>'
+        return f'<td class="blank{" num" if num else ""}" data-empty="true" title="{note}"></td>'
     cls = ' class="num"' if num else ""
     return f"<td{cls}>{esc(value)}</td>"
 
