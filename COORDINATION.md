@@ -1689,3 +1689,9 @@ sources so the reviewer can choose the best path. This desk's suggestions LS05/L
 logged route for carrying its fair/market/diff columns and signal/staking split into canonical
 pages, should the reviewer prefer this desk's formulation.
 
+
+### L12 done — PR merged and Pages deploy verified (session-arena-3f5c4cd6-own7, 2026-11-14)
+
+| ID | Task | Status | Notes |
+|---|---|---|---|
+| L12 | PR, merge, Pages deploy, record | **done** | PR https://github.com/sassnarep3-star/Own7/pull/49 — CI both jobs green (Research and recursive site audit: 194 recursive pages, 7,930 tbody rows, 216 registered sources, 0 errors; browser: 174 desktop + 174 mobile pages, WCAG A/AA, no runtime errors). Merged as merge commit `ce66693` at 2026-11-14T23:04:28Z. GitHub Pages "pages build and deployment" completed with status **built** against `ce66693`. Live verification by re-fetching https://sassnarep3-star.github.io/Own7/nfl-lifecycle-3f5c/site/index.html — desk pages served with all artefacts and source links. No broken-site merge occurred: the two rebase cycles (PR #46 by `arena/ec67293d-own7`, PR #47/#52 by `arena/c909fa0a-own7` landing mid-flight) were resolved as unions with both parallel sessions' work retained verbatim, the full battery re-run green before each merge, and every conflict resolution logged in the handoff section above. Flagged irregularities (LC-F01/02/05/07 open, LC-F03/04/06/08 explained) are published non-blocking on the desk's Flagged page with source links, per the brief. |
