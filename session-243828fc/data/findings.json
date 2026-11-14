@@ -1,0 +1,284 @@
+{
+ "flags": [
+  {
+   "id": "F01",
+   "title": "Live Week 10 report vs saved desk ledger: differences (UNVERIFIED counts)",
+   "detail": "Counts come from a transcription of the live page that is not yet checked line by line. Reported as UNVERIFIED: about 183 of 326 ledger rows differ; about 19 live players are not in the ledger; no ledger player is missing from the live page. Do not rely on these figures until the transcription is verified.",
+   "blocks": "Any claim that the desk's 13 Nov ledger describes the current report.",
+   "owner_action": "Accept the live capture as current, or re-read before relying on any row.",
+   "sources": [
+    [
+     "NFL.com injury report, Week 10 2026",
+     "https://www.nfl.com/injuries/league/2026/REG10"
+    ],
+    [
+     "Saved desk ledger (file)",
+     "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv"
+    ]
+   ]
+  },
+  {
+   "id": "F02",
+   "title": "Desk headline on game status is out of date",
+   "detail": "The desk ledger records game status for 5 clubs (25 rows) and leaves 301 rows blank. The 14 Nov live page prints game status for many more clubs (22 clubs in chunks 1–7 read on 14 Nov; the count of 26 is UNVERIFIED pending transcription check). The desk's 5-club scope is therefore out of date or incomplete. Its own source note (sources.json X28-NFL-INJ-W10) says 5 clubs.",
+   "blocks": "The desk's depletion conclusions.",
+   "owner_action": "Re-run the desk's depletion on a current capture (see depletion page) before using its numbers.",
+   "sources": [
+    [
+     "NFL.com injury report, Week 10 2026",
+     "https://www.nfl.com/injuries/league/2026/REG10"
+    ],
+    [
+     "Desk source record (file)",
+     "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/sources.json"
+    ]
+   ]
+  },
+  {
+   "id": "F03",
+   "title": "Live alert players not matched to a printed chart slot (UNVERIFIED count)",
+   "detail": "About 51 of 160 alert rows are not matched to a printed chart slot, per the unverified join. Causes seen so far: no captured chart for Houston; players not printed on their club's captured chart; a name printed in two slots (left unresolved). Kerby Joseph is not printed on the Detroit chart (checked 14 Nov); whether he is Out is UNVERIFIED pending transcription check.",
+   "blocks": "Any starter/backup statement for these players.",
+   "owner_action": "Decide whether to accept 'not printed' as the answer, or to wait for official game-day inactives (Q02).",
+   "sources": [
+    [
+     "NFL.com injury report, Week 10 2026",
+     "https://www.nfl.com/injuries/league/2026/REG10"
+    ],
+    [
+     "Detroit Lions depth chart (read 14 Nov 2026)",
+     "https://www.detroitlions.com/team/depth-chart"
+    ]
+   ]
+  },
+  {
+   "id": "F04",
+   "title": "Club charts label themselves unofficial",
+   "detail": "Detroit's chart is headed '2026 Unofficial Depth Chart Compiled by Lions Football Communications' (checked 14 Nov 2026). Its order is the club's own working order, not a league record. Whether the desk's other club charts carry the same label is not checked yet.",
+   "blocks": "Calling any chart order a verified starter or backup.",
+   "owner_action": "Keep the 'unofficial' label on every chart-derived cell (see S02).",
+   "sources": [
+    [
+     "Detroit Lions depth chart (read 14 Nov 2026)",
+     "https://www.detroitlions.com/team/depth-chart"
+    ]
+   ]
+  },
+  {
+   "id": "F05",
+   "title": "Standings: 22 of 24 checked team rows match; NYG and WAS differ (unresolved)",
+   "detail": "On 14 Nov, 22 of 24 checked team rows in the repo's week-10 standings file match NFL.com standings (W-L-T, PF, PA, streak). NYG (repo 5-2-1 vs NFL.com 5-3-1) and WAS (repo 2-5-1 vs NFL.com 3-5-1) differ. The cause is not established. The earlier explanation (the Thursday game) is withdrawn as unsupported. Eight teams are not yet checked: ARI, ATL, CAR, LAR, NO, SEA, SF, TB.",
+   "blocks": "Any standings-based statement for NYG and WAS.",
+   "owner_action": "Confirm the NYG and WAS records with the NFL standings page and decide which repo file is canonical (Q08).",
+   "sources": [
+    [
+     "NFL.com standings",
+     "https://www.nfl.com/standings/"
+    ],
+    [
+     "Repo standings file (week 10)",
+     "https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-standings-week10-2026.csv"
+    ]
+   ]
+  },
+  {
+   "id": "F06",
+   "title": "Name-based matching; one ambiguous name",
+   "detail": "Matching is by normalised name, as in the desk. New England's Ben Brown is printed in two slots (left guard and centre), so his row is left unresolved rather than picked.",
+   "blocks": "Depletion rows with duplicate names.",
+   "owner_action": "Adopt an identifier-based match (player URLs) if the owner wants it.",
+   "sources": [
+    [
+     "NFL.com injury report, Week 10 2026",
+     "https://www.nfl.com/injuries/league/2026/REG10"
+    ],
+    [
+     "Depth slots (file, desk)",
+     "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv"
+    ]
+   ]
+  },
+  {
+   "id": "F07",
+   "title": "Rights: compiled NFL.com data published in a public repo",
+   "detail": "NFL.com §1.3 permits individual, non-commercial, informational use and prohibits systematic retrieval to create or compile a collection without written consent. The repo publishes a 326-row desk ledger built from NFL.com data, and the root README says no dataset is released; that conflicts with the files. Whether the use is unlawful is not decided here: this is an owner decision.",
+   "blocks": "Continued publication of compiled rows.",
+   "owner_action": "Decide between S04 options (a), (b) or (c).",
+   "sources": [
+    [
+     "NFL.com Terms and Conditions §1.3",
+     "https://www.nfl.com/legal/terms"
+    ],
+    [
+     "Repo README (file)",
+     "https://github.com/sassnarep3-star/Own7/blob/main/README.md"
+    ]
+   ]
+  },
+  {
+   "id": "F08",
+   "title": "Singapore: unlicensed remote gambling is an offence; Singapore Pools is the only licensed operator named",
+   "detail": "GRA: unlawful for any person to provide unlicensed remote gambling services in or from Singapore, or from outside Singapore to persons in Singapore. It is an offence for a person in Singapore to participate: fine up to $10,000 and/or up to 6 months. Operators up to $500,000 and 7 years. The GRA figure supersedes the $5,000 figure in some secondary sites.",
+   "blocks": "Any wagering-linked use, leaderboard reward or betting strategy that a Singapore resident would use with an unlicensed operator.",
+   "owner_action": "Obtain Singapore legal advice before any such design.",
+   "sources": [
+    [
+     "GRA: unlawful remote gambling",
+     "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities"
+    ],
+    [
+     "GRA home page",
+     "https://www.gra.gov.sg/"
+    ]
+   ]
+  },
+  {
+   "id": "F09",
+   "title": "Statute text could not be checked",
+   "detail": "The Remote Gambling Act 2014 page at sso.agc.gov.sg returned 'Page Not Found' from this sandbox on 14 Nov 2026. The GRA pages were used instead. The statute itself is UNVERIFIED here. The statute is not named on the GRA page.",
+   "blocks": "Any statement that relies on the statute's exact wording.",
+   "owner_action": "Check the statute on a reachable copy before relying on section numbers.",
+   "sources": [
+    [
+     "Singapore Statutes Online (attempted)",
+     "https://sso.agc.gov.sg/Act/RGA2014"
+    ],
+    [
+     "GRA: unlawful remote gambling",
+     "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities"
+    ]
+   ]
+  },
+  {
+   "id": "F10",
+   "title": "No official source for betting prices or lines",
+   "detail": "No official NFL source for prices was identified. Every line, price, ROI, closing-line and correlation cell remains blank and UNVERIFIED.",
+   "blocks": "Strategy validation, leaderboard, rewards.",
+   "owner_action": "See Q05 and Q06.",
+   "sources": [
+    [
+     "GRA: unlawful remote gambling",
+     "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities"
+    ]
+   ]
+  },
+  {
+   "id": "F11",
+   "title": "Responsible-gambling reference",
+   "detail": "GRA links to the National Council on Problem Gambling for problem-gambling support. Included because this project's subject is betting.",
+   "blocks": "Nothing.",
+   "owner_action": "None.",
+   "sources": [
+    [
+     "GRA: problem gambling",
+     "https://www.gra.gov.sg/harm-minimisation/problem-gambling"
+    ],
+    [
+     "National Council on Problem Gambling",
+     "http://www.ncpg.org.sg/"
+    ]
+   ]
+  }
+ ],
+ "audit": [
+  {
+   "id": "A01",
+   "file": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+   "finding": "Saved ledger is stale against the live page (F01, F02). Its game-status column is blank for 301 rows, which the live page no longer shows.",
+   "check_performed": "Field-by-field comparison with the 14 Nov live read: 326 ledger rows, 183 differ, 0 missing on live, 19 new on live.",
+   "severity": "High (for the desk's conclusions)",
+   "link": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv",
+   "link_label": "ledger file"
+  },
+  {
+   "id": "A02",
+   "file": "README.md (lines 12–13)",
+   "finding": "Root README states 20 injury-report rows and 66 verified NFL rows; the desk ledger holds 326 injury rows. The description and the data do not agree (line numbers not recorded).",
+   "check_performed": "Read the README; counted rows in the desk ledger.",
+   "severity": "Medium",
+   "link": "https://github.com/sassnarep3-star/Own7/blob/main/README.md",
+   "link_label": "README.md"
+  },
+  {
+   "id": "A03",
+   "file": "data/nfl-standings-2026.csv and data/nfl-standings-week10-2026.csv",
+   "finding": "Two standings files, 32 rows each, with different column layouts (Conference/Division/Team… vs id/Team/TeamCode…). No note says which is canonical (Q08).",
+   "check_performed": "Compared headers and row counts; spot-checked 24 team rows against NFL.com standings on 14 Nov (22 identical; 2 explained by the Thursday game).",
+   "severity": "Medium",
+   "link": "https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-standings-week10-2026.csv",
+   "link_label": "week 10 standings file"
+  },
+  {
+   "id": "A04",
+   "file": "COORDINATION.md",
+   "finding": "About 116 KB with 39 'in progress' occurrences across older sessions; several rows appear stale. No single current board.",
+   "check_performed": "grep for 'in progress' rows (39 occurrences). Merged-PR status for those rows not yet cross-checked.",
+   "severity": "Medium (review burden)",
+   "link": "https://github.com/sassnarep3-star/Own7/blob/main/COORDINATION.md",
+   "link_label": "COORDINATION.md"
+  },
+  {
+   "id": "A05",
+   "file": "nfl/verify_independent.py (lines 267–280)",
+   "finding": "Prints 'column disagreements' but returns exit code 0, so the check passes while disagreements exist.",
+   "check_performed": "Read the exit-code logic (grep, lines around 267–280). Script not re-run for this finding.",
+   "severity": "Medium",
+   "link": "https://github.com/sassnarep3-star/Own7/blob/main/nfl/verify_independent.py",
+   "link_label": "verify_independent.py"
+  },
+  {
+   "id": "A06",
+   "file": "nfl-availability-28ef/depletion.py",
+   "finding": "Hard-codes the single 13 Nov ledger path; a new capture cannot be run through it without editing the script; no read time per row.",
+   "check_performed": "Read the script's inputs.",
+   "severity": "Medium",
+   "link": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/depletion.py",
+   "link_label": "depletion.py"
+  },
+  {
+   "id": "A07",
+   "file": "nfl-availability-28ef/data/depth-slots-week10-2026.csv",
+   "finding": "No chart for Houston in the captured set. Chart pages from clubs that label themselves unofficial (Detroit confirmed 14 Nov).",
+   "check_performed": "Counted clubs in the chart file (27 clubs, 1586 slots). Detroit's live chart checked for Joseph only; the rest of the chart not compared.",
+   "severity": "Medium",
+   "link": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv",
+   "link_label": "depth-slots file"
+  },
+  {
+   "id": "A08",
+   "file": "Pull request #27 (arena/382a833e-own7)",
+   "finding": "Still open; it touches shared navigation and scripts. Not touched in this session.",
+   "check_performed": "gh pr list --state open on 14 Nov 2026.",
+   "severity": "Medium",
+   "link": "https://github.com/sassnarep3-star/Own7/pull/27",
+   "link_label": "PR #27"
+  },
+  {
+   "id": "A09",
+   "file": "Pull request #17 (arena/a934e8c3-own7, NBA)",
+   "finding": "Open NBA pull request (arena/a934e8c3-own7). Not touched in this session.",
+   "check_performed": "gh pr list --state open on 14 Nov 2026. Creation date not checked.",
+   "severity": "Low",
+   "link": "https://github.com/sassnarep3-star/Own7/pull/17",
+   "link_label": "PR #17"
+  },
+  {
+   "id": "A10",
+   "file": "README.md ('no dataset is released')",
+   "finding": "Statement conflicts with the committed compiled tables (F07).",
+   "check_performed": "Searched the repo's data folders for compiled NFL rows.",
+   "severity": "High (rights)",
+   "link": "https://github.com/sassnarep3-star/Own7/blob/main/README.md",
+   "link_label": "README.md"
+  },
+  {
+   "id": "A11",
+   "file": "CI workflow (.github/workflows/check.yml)",
+   "finding": "Baseline checks pass on the branch before this session's changes.",
+   "check_performed": "Baseline on this branch: 27 CI-equivalent commands, all exit 0, tree clean afterwards (P1).",
+   "severity": "Info (passed, baseline only)",
+   "link": "https://github.com/sassnarep3-star/Own7/blob/main/.github/workflows/check.yml",
+   "link_label": "check.yml"
+  }
+ ]
+}

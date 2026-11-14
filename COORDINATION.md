@@ -858,9 +858,22 @@ strategy qualification can be verified here. Requests that depend on those are r
 
 | ID | Task | Status | Owner | Exclusive file scope | Notes |
 |---|---|---|---|---|---|
-| P1 | Claim + baseline reproduction of the repo's own CI checks on this branch | in progress | session-arena-243828fc-own7 | COORDINATION.md (append-only) | Record pass/fail per command; no fix to other sessions' files without a log entry. |
-| P2 | Live spot re-verification of Week 10 injury rows and standings rows against nfl.com (fetched this session) | unclaimed | session-arena-243828fc-own7 | `session-243828fc/evidence/**` | Spot check only; reported as n of N rows checked, never as full verification. |
-| P3 | Repo irregularity audit (duplicate sub-sites, orphaned pages, open PR, rights terms) | unclaimed | session-arena-243828fc-own7 | `session-243828fc/audit.md` | Each finding carries a file path and an official link where one exists. |
-| P4 | Singapore legal and responsible-gambling context, verified from official government sources | unclaimed | session-arena-243828fc-own7 | `session-243828fc/legal-context.md` | Only official gov.sg / statute / regulator pages are cited; no advice on wagering. |
-| P5 | Gap dossier: questions, information we have, information we lack, discovery steps; self-contained page | unclaimed | session-arena-243828fc-own7 | `session-243828fc/index.html`, `session-243828fc/data/**` | Every row sourced or marked UNVERIFIED with blank values. |
-| P6 | PR to main, merge, GitHub Pages deploy evidence, record | unclaimed | session-arena-243828fc-own7 | COORDINATION.md (append-only), PR metadata | Do not merge a broken site. Flagged items do not block. |
+| P1 | Claim + baseline reproduction of the repo's own CI checks on this branch | done (27 of 27 CI-equivalent commands exit 0 before this session's changes) | session-arena-243828fc-own7 | COORDINATION.md (append-only) | Record pass/fail per command; no fix to other sessions' files without a log entry. |
+| P2 | Live spot re-verification of Week 10 injury rows and standings rows against nfl.com (fetched this session) | done, partial: standings 24 of 32 checked (22 match; NYG and WAS differ, unresolved); injury transcription NOT verified, so row values withheld (UNVERIFIED) | session-arena-243828fc-own7 | `session-243828fc/evidence/**` | Spot check only; reported as n of N rows checked, never as full verification. |
+| P3 | Repo irregularity audit (duplicate sub-sites, orphaned pages, open PR, rights terms) | done (`repo-audit.html`, `audit.md`) | session-arena-243828fc-own7 | `session-243828fc/audit.md` | Each finding carries a file path and an official link where one exists. |
+| P4 | Singapore legal and responsible-gambling context, verified from official government sources | done, partial: GRA pages read; statute text UNVERIFIED (sso.agc.gov.sg not reachable) (`legal.html`, `legal-context.md`) | session-arena-243828fc-own7 | `session-243828fc/legal-context.md` | Only official gov.sg / statute / regulator pages are cited; no advice on wagering. |
+| P5 | Gap dossier: questions, information we have, information we lack, discovery steps; self-contained page | done (`gaps.html`, `index.html`, `data/questions.json`, `data/suggestions.json`, `data/findings.json`) | session-arena-243828fc-own7 | `session-243828fc/index.html`, `session-243828fc/data/**` | Every row sourced or marked UNVERIFIED with blank values. |
+| P6 | PR to main, merge, GitHub Pages deploy evidence, record | in progress (PR link and merge result to be recorded below) | session-arena-243828fc-own7 | COORDINATION.md (append-only), PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+### Results and deviations (14 Nov 2026)
+
+- Built `session-243828fc/` pages with `build_site.py` (`--check` passes). Pages: `index.html`, `live-check.html`, `depletion.html`, `gaps.html`, `legal.html`, `repo-audit.html`, `flagged.html`. Every table row has an allowed official or repo source link (checked by the generator).
+- **Deviation 1 (owner rule: unverified values left blank).** The live-report transcription (`data/live-injury-report-*.psv`) was NOT verified line by line against the 8 chunks. The psv, the row-level diff, and the depletion join are git-ignored and not published. Counts from them are shown only as UNVERIFIED. Depletion (starter/backup) is withheld until verification.
+- **Deviation 2.** The earlier explanation for the NYG and WAS standings mismatch (the Thursday game) is withdrawn as unsupported. The cause is unresolved and flagged (F05).
+- **Deviation 3.** Standings: 8 teams (ARI, ATL, CAR, LAR, NO, SEA, SF, TB) not yet checked.
+- **Deviation 4.** The Remote Gambling Act 2014 text could not be checked (sso.agc.gov.sg: Page Not Found). GRA pages used; statute UNVERIFIED.
+- Verification log: `session-243828fc/evidence/verification-log.md`.
+- Owner decisions pending (not implemented): S04 (rights position for compiled NFL.com data), S05 (legal review before any reward or wagering use), S01–S08 (suggestions; nothing implemented).
+- Strategy work: no market line, price, ROI, closing-line value, or correlation coefficient could be verified from an official source. None is published; the strategy leaderboard is not built (blocked, see Q05 and Q06).
+- PR #27 and PR #17 are untouched.
+
