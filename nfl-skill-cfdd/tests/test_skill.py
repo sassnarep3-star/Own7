@@ -281,11 +281,15 @@ class DepletionIndex(unittest.TestCase):
         self.assertNotIn("starters_ruled_out", header)
 
     def test_no_point_or_probability_column(self):
-        for name in ("club-depletion-index-2026-11-14.csv", "depletion-join-2026-11-14.csv"):
+        """No market-value column may exist. Checked on exact names, because 'next_in_line' is a
+        depth slot and not a betting line."""
+        forbidden = {"point_value", "probability", "expected_points", "market_line", "price",
+                     "line", "spread", "total", "odds", "roi", "clv", "stake"}
+        for name in ("club-depletion-index-2026-11-14.csv", "depletion-join-2026-11-14.csv",
+                     "depth-slots-2026-11-14.csv"):
             with (DATA / name).open() as fh:
-                header = [h.lower() for h in next(csv.reader(fh))]
-            for bad in ("point_value", "probability", "expected_points", "line", "price"):
-                self.assertFalse(any(bad in h for h in header), f"{name}: {bad}")
+                header = {h.lower() for h in next(csv.reader(fh))}
+            self.assertEqual(header & forbidden, set(), name)
 
     def test_weighting_is_disclosed(self):
         res = json.loads((DATA / "depletion-index-2026-11-14.json").read_text())
@@ -429,3 +433,108 @@ class SiteContract(unittest.TestCase):
             for cell_html in re.findall(r'<td data-empty="true"[^>]*>(.*?)</td>',
                                         path.read_text(encoding="utf-8")):
                 self.assertEqual(cell_html.strip(), "", f"{path.name}: blank cell has content")
+
+
+class NextInLineMatching(unittest.TestCase):
+    """Regression guard for a defect found while building the depletion page.
+
+    A club restarts its slot numbering for every printed position, so 'slot 1' occurs several
+    times inside one unit. Matching a starter to a backup on position alone attached the wrong
+    player. The fix keys on (club, unit, printed position, slot). These tests fail if that key is
+    ever loosened again.
+    """
+
+    def setUp(self):
+        self.res = json.loads((DATA / "depletion-index-2026-11-14.json").read_text())
+        self.join = {(r["club_abbr"], r["player"]): r
+                     for r in rows("depletion-join-2026-11-14.csv")}
+
+    def test_a_club_reuses_slot_numbers_per_position(self):
+        """The defect's root cause, asserted on the earlier transcription.
+
+        That snapshot numbers slots per unit, so many positions share slot 1. Keying a lookup on
+        (club, unit, slot) alone therefore mixes positions and attaches the wrong backup. This test
+        documents the reason the four-part key exists.
+        """
+        path = DESK.parent / "nfl-availability-28ef" / "data" / "depth-slots-week10-2026.csv"
+        keyed = {}
+        for r in csv.DictReader(path.open(encoding="utf-8")):
+            keyed.setdefault((r["club_abbr"], r["unit"], r["slot"]), set()).add(r["position"])
+        reused = [k for k, v in keyed.items() if len(v) > 1]
+        self.assertTrue(reused, "expected the earlier snapshot to reuse a slot number")
+
+    def test_the_four_part_key_has_no_collisions(self):
+        for name in ("depth-slots-2026-11-14.csv",):
+            keyed = {}
+            for r in rows(name):
+                keyed.setdefault((r["club_abbr"], r["unit"], r["position"], r["slot"]),
+                                 []).append(r["rank"])
+            clashes = {k: v for k, v in keyed.items() if len(v) != len(set(v))}
+            self.assertEqual(clashes, {}, f"{name}: duplicate rank inside one printed slot")
+
+    def test_every_named_replacement_is_the_next_printed_name_in_that_slot(self):
+        """The replacement must be the rank+1 name printed in the same slot of the SAME chart the
+        join row used. Verified against the slot tables directly, because the replacement is often
+        a player who is not on the injury report and so has no join row at all."""
+        import csv as _csv
+        tables = []
+        for rel in ("data/depth-slots-2026-11-14.csv",
+                    "../nfl-availability-28ef/data/depth-slots-week10-2026.csv"):
+            path = (DESK / rel).resolve()
+            with path.open(encoding="utf-8") as fh:
+                tables.append(list(_csv.DictReader(fh)))
+        for b in self.res["backed_up_starters"]:
+            row = self.join[(b["club"], b["player"])]
+            key = (b["club"], row["printed_unit"], row["printed_position_key"],
+                   row["printed_slot"])
+            slot = {}
+            for table in tables:
+                for r in table:
+                    if (r["club_abbr"], r["unit"], r["position"], r["slot"]) != key:
+                        continue
+                    if r["source_url"] != row["depth_source_url"]:
+                        continue
+                    slot[int(r["rank"])] = r["player"].split(" / ")[0]
+            self.assertNotEqual(b["next_in_line"], "", b)
+            self.assertNotEqual(b["next_in_line"], b["player"], "a player cannot replace himself")
+            start_rank = int(row["printed_rank"])
+            self.assertIn(start_rank + 1, slot,
+                          f"{b['club']} {b['player']}: no rank+1 in the slot it was matched to")
+            self.assertEqual(b["next_in_line"], slot[start_rank + 1],
+                             f"{b['club']} {b['player']}: advertised replacement is not rank+1")
+
+    def test_counts_add_up(self):
+        self.assertEqual(self.res["starters_ruled_out"],
+                         self.res["starters_ruled_out_with_backup_in_line"]
+                         + self.res["starters_ruled_out_with_no_backup_printed"])
+        self.assertEqual(len(self.res["backed_up_starters"]),
+                         self.res["starters_ruled_out_with_backup_in_line"])
+
+    def test_a_row_without_a_chart_has_no_replacement(self):
+        for r in rows("depletion-join-2026-11-14.csv"):
+            if r["on_printed_chart"] == "no":
+                self.assertEqual(r["next_in_line"], "")
+                self.assertEqual(r["slot_has_backup"], "")
+
+
+class AmbiguityDisclosure(unittest.TestCase):
+    """A player printed in several slots is a real ambiguity; it must stay counted and visible."""
+
+    def test_ambiguous_rows_are_counted_and_marked(self):
+        res = json.loads((DATA / "depletion-index-2026-11-14.json").read_text())
+        rows_ = rows("depletion-join-2026-11-14.csv")
+        marked = [r for r in rows_ if r["ambiguous_printed_slot"] == "yes"]
+        self.assertEqual(len(marked), res["injury_rows_printed_in_more_than_one_slot"])
+        for r in marked:
+            self.assertGreater(int(r["printed_slot_count"]), 1)
+
+    def test_unmatched_rows_do_not_claim_ambiguity(self):
+        for r in rows("depletion-join-2026-11-14.csv"):
+            if r["on_printed_chart"] == "no":
+                self.assertEqual(r["ambiguous_printed_slot"], "")
+
+    def test_flag_cf13_exists_and_links_the_report(self):
+        flags = {f["flag_id"]: f for f in rows("flags-2026-11-14.csv")}
+        self.assertIn("CF13", flags)
+        self.assertIn("more than one", flags["CF13"]["title"])
+        self.assertTrue(flags["CF13"]["source_url"].startswith("https://"))

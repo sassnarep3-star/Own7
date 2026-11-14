@@ -13,7 +13,8 @@ code{font-size:.85rem}
 .choices{white-space:nowrap;min-width:11rem}
 .choice{display:inline-flex;align-items:center;gap:.2rem;margin-right:.4rem;font-size:.8rem;white-space:nowrap}
 .reason{display:block;margin-top:.4rem;width:100%;min-width:9rem;font:inherit;font-size:.8rem;padding:.3rem .4rem;border:1px solid var(--line);border-radius:.3rem}
-td.src{white-space:normal;max-width:15rem}
+td.src{white-space:nowrap;max-width:none}
+table{min-width:860px}
 td.src a{display:inline-block;font-size:.78rem;margin-right:.4rem;min-height:1.6rem;line-height:1.6rem}
 kpi-value{font-variant-numeric:tabular-nums}
 .kpi-value{overflow-wrap:anywhere}

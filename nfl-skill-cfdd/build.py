@@ -434,35 +434,58 @@ def build_depletion() -> str:
              "usually because the club publishes no game status at all.",
     )
 
-    out_club = dep["starters_ruled_out_by_club"]
-    named = "".join(
-        f'<li><strong>{esc(club)}</strong>: {esc(", ".join(players))}</li>'
-        for club, players in out_club.items()
-    )
+    backups = dep["backed_up_starters"]
+    nobackup = dep["no_backup_printed"]
+    per_club = {}
+    for b in backups:
+        per_club.setdefault(b["club"], []).append(b)
+    club_lines = ""
+    for club, rows_ in sorted(per_club.items()):
+        items = "; ".join(
+            f'{esc(b["player"])} ({esc(b["position"])}) &rarr; next printed name '
+            f'<strong>{esc(b["next_in_line"])}</strong>'
+            for b in rows_)
+        club_lines += f'<li><strong>{esc(club)}</strong> &mdash; {items}</li>'
+    nobackup_lines = "".join(
+        f'<li><strong>{esc(n["club"])}</strong> &mdash; {esc(n["player"])} '
+        f'({esc(n["position"])}) has no further name printed in that slot.</li>'
+        for n in nobackup)
+
     kpis = "".join([
         kpi(dep["rows_matched_to_printed_chart"], "injury rows matched to a printed slot"),
         kpi(dep["starters_ruled_out"], "printed starters ruled Out"),
-        kpi(len(out_club), "clubs with a provable starter out"),
-        kpi(dep["clubs_on_injury_report"], "clubs on the Week 10 report"),
+        kpi(dep["starters_ruled_out_with_backup_in_line"], "with a named next player in the slot"),
+        kpi(dep["starters_ruled_out_with_no_backup_printed"], "with nobody printed behind him"),
     ])
     body = (
         f'<div class="kpis">{kpis}</div>'
         '<section class="panel"><h2>What "depletion" means here, precisely</h2>'
-        '<p>A club is depleted at a position when <strong>the player its own chart prints as first '
-        'string is ruled Out</strong> and the chart prints somebody behind him. That is it. The desk '
-        'names the player, the printed rank and the next printed name, and it stops there.</p>'
+        '<p>A club is depleted at a slot when <strong>the player its own chart prints as first '
+        'string is ruled Out</strong> and the chart prints somebody behind him in that same slot. '
+        'That is it. The desk names the player, the printed position, and the next name the club '
+        'prints in that slot, and it stops there.</p>'
         '<p>It does <em>not</em> say the backup is three points worse, because no data in this '
         'repository can measure that. Snap counts and a before/after performance series would be '
         'needed, and neither was retrieved. That gap is question Q12 and suggestion P04.</p>'
-        f'<p>Only four clubs publish a game status at all, so most clubs show a zero index because '
-        f'nothing is provable, not because nobody is hurt. That is flag CF07 and it caps every '
-        f'conclusion on this page.</p></section>'
-        '<section class="panel"><h2>The starters it can prove are out</h2>'
-        f'<ul>{named}</ul>'
-        '<p>Six of the seven have a printed second string in line. One does not: the Colts print a '
-        'long snapper with no name behind him, so the replacement cell is blank. The New England '
-        'running back is already two deep - first string questionable, second string out - so the '
-        'third string is next, and that is stated rather than picking one of the two.</p></section>'
+        '<p>Only four clubs publish a game status at all, so most clubs show a zero index because '
+        'nothing is provable, not because nobody is hurt. That is flag CF07 and it caps every '
+        'conclusion on this page.</p></section>'
+        f'<section class="panel"><h2>The {len(backups)} starters it can prove are out, and who is '
+        f'printed behind them</h2><ul>{club_lines}</ul>'
+        f'<p>One more starter is out with nobody printed behind him:</p>'
+        f'<ul>{nobackup_lines}</ul>'
+        '<p>A slot is matched on the club, the unit, the printed position and the slot number the '
+        'club itself uses - because a club restarts slot numbering for every position, so there are '
+        'several "slot 1" rows in one unit. Matching on position alone would have attached the wrong '
+        'backup to the wrong starter; that defect was found and fixed while building this page.</p>'
+        f'<p><strong>One ambiguity is left and it is published rather than resolved.</strong> '
+        f'{dep["injury_rows_printed_in_more_than_one_slot"]} of the '
+        f'{dep["rows_matched_to_printed_chart"]} matched rows are players their own club prints in '
+        f'more than one slot, and {dep["starters_ruled_out_in_more_than_one_slot"]} of them is a '
+        f'ruled-out starter. The join uses one printed slot per player - the most prominent one - '
+        f'and marks every affected row. For an ambiguous starter the next name comes from that '
+        f'chosen slot, so it could differ in another slot the club also lists him in. Flag CF13.</p>'
+        '</section>'
         f'<h2>Every club</h2>{tbl}'
     )
     return page("depletion.html", "Starter depletion index",
@@ -478,8 +501,6 @@ def build_join() -> str:
         sid = CLUB_CHART_SOURCE.get(r["club_abbr"])
         if sid:
             ids.append(sid)
-        elif r["on_printed_chart"] == "yes":
-            ids.append("X28-NFL-INJ-W10") if False else None
         note = ""
         if r["on_printed_chart"] == "no":
             note = "not printed on the club's chart"
@@ -841,11 +862,6 @@ def build_leaderboard() -> str:
     return page("leaderboard.html", "Leaderboard",
                 "The competition format is frozen and published. The board is ranked on evidence "
                 "debt because no settled bet exists yet.", body)
-
-
-def build_gates_page_redirect() -> None:
-    """The gates live on the strategies page; no separate page is generated."""
-    return None
 
 
 def build_questions() -> str:

@@ -489,6 +489,18 @@ FLAGS = [
         "source_url": STANDINGS,
     },
     {
+        "flag_id": "CF13",
+        "title": "Some players are printed in more than one depth slot",
+        "detail": "24 of 265 matched injury rows are players their own club prints in more than one "
+                  "slot, and 1 of the 8 ruled-out starters is one of them. The join uses one "
+                  "printed slot per player (the most prominent) and marks every affected row, so "
+                  "the named replacement is correct for that slot but could differ in another slot "
+                  "the club also lists him in.",
+        "severity": "open",
+        "status": "open",
+        "source_url": "https://www.nfl.com/injuries/league/2026/REG10",
+    },
+    {
         "flag_id": "CF12",
         "title": "The depletion index weights are a project choice, not a measurement",
         "detail": "Rank weights (1.00 / 0.45 / 0.20 / 0.10) and status multipliers order clubs "

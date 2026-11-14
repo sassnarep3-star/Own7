@@ -6,8 +6,8 @@
   "questions_blocked": 2,
   "questions_constraining": 2,
   "suggestions": 10,
-  "flags": 12,
-  "flags_open": 7,
+  "flags": 13,
+  "flags_open": 8,
   "flags_explained": 5,
   "decisions_recorded": 0,
   "decision_policy": "This desk proposes and tests. It does not adopt. Any decision is recorded in choice-record-2026-11-14.csv by the reviewer."
