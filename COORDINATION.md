@@ -1276,3 +1276,53 @@ touched. XS09 stands.
 | ID | Task | Status | Notes |
 |---|---|---|---|
 | C9 | PR, merge, Pages deploy, record | in progress | Next entry. |
+
+---
+
+## Session arena/ec67293d-own7 — market price store, three-market origination, signal/staking split (2026-11-14)
+
+Session ID: `session-arena-ec67293d-own7`. Fixed Arena branch: `arena/ec67293d-own7`, based on
+`a7febe9` (merge of PR #43). Historical boards above are retained verbatim and are **not** inherited
+as verification.
+
+### Observed starting state (read, not assumed)
+
+`git log -1` = `a7febe9`. Baseline replayed green before any change: `python -m unittest discover -s tests`
+→ **111 pass**. `nfl-results/analysis.json` shows 30 graded candidates, 1 provisional, 0 qualified, and
+every `roi`, `clv` and `cash_reward` field blank because `RG03 (executable price)` is blocked. That is the
+gap this session attacks: prior sessions recorded "no price anywhere". This session tested that premise
+and found it false — see below.
+
+### Discovery that re-frames the price question (verified this session)
+
+| Check | Result |
+|---|---|
+| `https://www.nfl.com/odds/` | **404** ("Flag on the Play"). NFL.com publishes no odds page. |
+| `https://www.espn.com/nfl/odds` | Renders current-week open + current spread/total/ML, attributed "Odds by DraftKings". |
+| `https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873038/competitions/401873038/odds` | Returns `open`, `close` **and** `current` blocks for spread, total and moneyline, `provider: {id: 100, name: DraftKings}`. Verified on the CIN@ATL Week 9 game: open total 48.5, close 52.5; open spread CIN −4.5, close −3. |
+| `http://sports.core.api.espn.com/...` via `curl` from this sandbox | code **000** — all direct HTTP is blocked; every capture is through the Arena page reader. Same access class earlier sessions recorded for nfl.com. |
+
+So a price store is possible, but it is a **relay**: DraftKings' numbers as distributed by ESPN's odds API.
+No operator-direct page was read. Every price row is labelled relayed, never "operator-confirmed".
+
+### Claim (written, committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| M1 | Coordination claim + baseline replay | done | session-arena-ec67293d-own7 | COORDINATION.md (append-only) | This entry. |
+| M2 | Price-snapshot store: open and close per market (spread, total, moneyline) with capture timestamps | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` (new directory) | Every row carries its publisher, provider and retrieval time. No inferred number; absent = blank + flag. |
+| M3 | Verified results feed bound to the price store, enough to compute ROI and CLV | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Results reconcile against the existing 136-game official score capture; a mismatch aborts the build. |
+| M4 | Origination order: side, then total, then moneyline | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Three separate boards, produced in that order, each with its own sample and gates. |
+| M5 | Fair line, market line and difference as separate columns | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Never merged into one "edge" field. |
+| M6 | Signal vs staking separated on the leaderboard | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | A staking-only column set says so; a lucky stake run cannot promote a strategy. |
+| M7 | Replacement depth: how deep the replacement is, not just that one happened | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Joins the existing 231 printed depth slots; prints the rank of the man stepping in. |
+| M8 | Correlations from officially sourced numbers only, with n published per value | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Every coefficient carries n and a source id, or is blank. |
+| M9 | Demotion gate: live → paper, with stated trigger and consequence | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Executable, not prose: evaluated from the store, prints the trigger that fired. |
+| M10 | Questions / information-held / information-missing dossier + suggestions review section | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Each question states what closes it and what it blocks. Suggestions carry Adopt/Defer/Reject with a blank decision record. |
+| M11 | Source-linked site, tests, additive nav integration | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**`, additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md` | No existing page, value or test overwritten. |
+| M12 | Verification, PR, merge, Pages deploy evidence, record | unclaimed | session-arena-ec67293d-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: fixed branch only; never infer or fill a value an official source does not
+publish — leave it blank and flag it; every table row keeps a registered source link; `git pull --rebase`
+before every push; small frequent commits; additive edits to shared files only; do not merge, close or
+edit another session's PR.
