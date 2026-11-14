@@ -1276,3 +1276,55 @@ touched. XS09 stands.
 | ID | Task | Status | Notes |
 |---|---|---|---|
 | C9 | PR, merge, Pages deploy, record | in progress | Next entry. |
+
+---
+
+## Session arena/064da913-own7 — competition lab: price store, results feed, origination order, signal/staking split, replacement depth, correlation provenance, demotion gate (2026-11-14)
+
+Session ID: `session-arena-064da913-own7`. Fixed Arena branch: `arena/064da913-own7`, based on
+`a7febe9` (merge of PR #43). Historical boards above are retained verbatim and are **not** inherited
+as verification. Sole active session on this branch at claim time.
+
+### Observed starting state (read, not assumed)
+
+`git log -1` = `a7febe9`. Baseline replayed before any change:
+`python -m unittest discover -s tests` → **111 pass** ·
+`python scripts/nfl_extract.py --check` → OK (32 standings, 20 injury, 14 fixtures) ·
+`python -m nfl_origination run --check` → OK (reproduces exactly).
+
+### Requirement trace (the eight items this session implements)
+
+| # | Requirement | Owner task | Exclusive file scope |
+|---|---|---|---|
+| R1 | Price-snapshot store recording opening and closing numbers for every originated market | P3 | `nfl-competition/prices.py` |
+| R2 | Verified results feed so backtests and ROI can be computed | P4 | `nfl-competition/results.py`, `nfl-competition/evidence/**` |
+| R3 | Originate the side first, then the total, then the moneyline | P5 | `nfl-competition/originate.py` |
+| R4 | Publish fair line, market line and the difference as separate columns | P6 | `nfl-competition/boards.py` |
+| R5 | Separate signal from staking in the leaderboard | P7 | `nfl-competition/leaderboard.py` |
+| R6 | Track the depth of the replacement, not just the fact of one | P8 | `nfl-competition/depth.py` |
+| R7 | Correlations only from officially sourced numbers, publish n with each value | P9 | `nfl-competition/correlations.py` |
+| R8 | Demotion gate that sends a live strategy back to paper | P10 | `nfl-competition/demotion.py` |
+
+### Claim table
+
+| ID | Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|---|
+| P1 | Coordination claim + baseline replay | in progress | session-arena-064da913-own7 | `COORDINATION.md` (append only) |
+| P2 | Official source verification: current standings, Week 10 result, injury report, whether any official NFL page publishes a price | in progress | session-arena-064da913-own7 | `nfl-competition/evidence/**`, `nfl-competition/sources.py` |
+| P3–P10 | The eight requirements above | unclaimed → in progress | session-arena-064da913-own7 | `nfl-competition/**` |
+| P11 | Questions dossier (known / missing / what closes it) and suggestions review section with an Adopt-Defer-Reject record | unclaimed | session-arena-064da913-own7 | `nfl-competition/questions.py`, `nfl-competition/suggestions.py` |
+| P12 | Executive summary | unclaimed | session-arena-064da913-own7 | `docs/nfl-competition-executive-summary.md` |
+| P13 | Self-contained site section + additive integration + tests | unclaimed | session-arena-064da913-own7 | `nfl-competition/site/**`; additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md` |
+| P14 | Repo review, verification, PR, merge, Pages deploy evidence, record | unclaimed | session-arena-064da913-own7 | `COORDINATION.md`, PR metadata, `docs/nfl-competition-repo-review.md` |
+
+Rules this session follows: never infer or fill a value no official source confirms — leave it blank
+with `data-empty` and flag it; every table row links to the official page actually read;
+`git pull --rebase` before every push; additive shared-file edits only; small frequent commits; no
+price, stake, wager, ROI figure or cash reward is manufactured; no existing page, value or test
+overwritten; PR #27 and PR #17 not touched.
+
+### Standing source constraint (inherited, re-checked)
+
+NFL.com terms §1.3 permit individual non-commercial informational use and prohibit systematic
+retrieval to compile a collection without written consent. Pages are read at human pace, the
+rendered text actually read is saved verbatim as evidence, and no dataset or feed is released.
