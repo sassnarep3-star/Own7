@@ -858,17 +858,17 @@ Statuses: unclaimed | in progress | done | needs review
 | Y6 | Line-by-line repo review + irregularity flag | done | session-arena-500eb178-own7 | all NFL pages + data/*.csv | NF01–NF12 published on nfl/review.html (Flagged for Review) | Flagged: no market data/lines (NF01), aggregates not skill evidence (NF02), no pregame archive (NF03), NFL Terms rights limits (NF04–06), snapshot/source-check limits (NF07), rushing/receiving headers not rendered (NF08), schedule/roster not transcribed (NF09), injury replacements blank (NF10), team-offense header mapping (NF11), publisher Yds/Att disagreement Mahomes/Watson (NF12); none block honest publishing, all block unsupported price/cash release |
 | Y7 | Executive summary / suggestions / questions / leaderboard published | done | session-arena-500eb178-own7 | nfl-*.html, docs/*.md, nfl/**, nfl/origination/**, nfl-availability-28ef/site/** | Linked per row; suggestions register (ranked proposals + review workflow), questions DQ01–DQ17 (known vs open), decision brief, 10 fail-closed gates, 8 blocked strategies, empty leaderboard | No manual input; nothing inferred |
 | Y8 | Confirm GitHub Pages live | done | session-arena-500eb178-own7 | GitHub Pages (api.github.com) | Pages API: status `built`, source branch `main`, path `/`, https enforced; https://sassnarep3-star.github.io/Own7/ | Egress to *.github.io blocked from sandbox; liveness evidenced by the Pages API (same convention as prior sessions), not by a sandbox fetch |
-| Y9 | Pull request, merge, GitHub Pages deploy evidence, final record | in progress | session-arena-500eb178-own7 | COORDINATION.md (append-only), PR metadata | PR from `arena/500eb178-own7` → `main`; merge without waiting for approval; flagged items do not block the merge; do not merge a broken site (all checks pass) | PR link + merge result recorded below once merged |
+| Y9 | Pull request, merge, GitHub Pages deploy evidence, final record | done | session-arena-500eb178-own7 | COORDINATION.md (append-only), PR metadata | PR from `arena/500eb178-own7` → `main`; merged without waiting for approval; flagged items do not block the merge; do not merge a broken site (all checks pass, build clean) | PR #35 merged 2026-11-14, merge commit `97c2719`, Pages build `1367730521` built; PR link and result recorded below |
 
 ### Y9 done — pull request, merge and Pages deploy (recorded)
 
 | Field | Value |
 |---|---|
-| Pull request | (pending — see session log) |
+| Pull request | [#35](https://github.com/sassnarep3-star/Own7/pull/35) — "NFL integration verification: record arena/500eb178-own7 board, re-verify lab and confirm Pages live" |
 | Base / head | `main` ← `arena/500eb178-own7` |
 | Checks | `Research and recursive site audit` pass · `Desktop, mobile and accessibility` pass |
-| Merge | (pending) |
-| Pages | GitHub Pages status `built` at https://sassnarep3-star.github.io/Own7/ (live before and after this session's additive COORDINATION.md record) |
+| Merge | `--merge`, merged 2026-11-14, merge commit `97c2719c6234832225293c73b016157433583bea` |
+| Pages | GitHub Pages build `1367730521` for commit `97c2719` reported **built** (2026-11-14T00:52:33Z); live at https://sassnarep3-star.github.io/Own7/ |
 
 ### Session log (arena/500eb178-own7)
 
@@ -880,7 +880,7 @@ Statuses: unclaimed | in progress | done | needs review
 - Y6: reviewed NFL pages and data line by line; irregularities NF01–NF12 published on `nfl/review.html` with official source links; no value filled without an official source.
 - Y7: executive summary, suggestions register (ranked, review-before-implement workflow), questions DQ01–DQ17 (known vs open), decision brief, 10 validation gates, 8 blocked strategies, empty non-monetary leaderboard all published.
 - Y8: Pages API confirms `built`, source `main`/path `/`, HTTPS enforced at https://sassnarep3-star.github.io/Own7/.
-- Y9: in progress — opening PR from `arena/500eb178-own7` to `main`, then merging and recording the result here.
+- Y9: done — PR #35 (`arena/500eb178-own7` → `main`) merged without waiting for approval at 2026-11-14, merge commit `97c2719`; Pages build `1367730521` built; PR link and merge result recorded above.
 
 Open PRs from other sessions left untouched: #27 (`arena/382a833e-own7`) and #17 (`arena/a934e8c3-own7`).
 
