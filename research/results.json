@@ -2785,9 +2785,9 @@
     "research/catalog.json": "3ed0007af519b07e5c1c3bb50eb7c58bcb15069dc747223663531570dac49ded",
     "research/evidence/receipts.json": "813665038767581ee7981d5beb051f86b2ec80ede955861533229d444f4f8d03",
     "research/protocol.json": "4d40bed6586a473363bf2b9be035d7a30ba2ccf1b611fb152c7dcf25ff00eda8",
-    "research/sources.json": "6363667e81b76d550cf7b3f3e3858c82e6cad849cd82a13463648505dbc9a8f1"
+    "research/sources.json": "4c08aa01d9f79f3ca06bbb81a513f249031f2161a4f3c0271bf7d6deaaf4779c"
   },
-  "run_hash": "208c8992f55f7d0fe5ccc6677db879fb67f1cca3bd30486c459a82289f5aca7b",
+  "run_hash": "91788d674d4b2e6ed356df6d1826fba493bdd2b9e2b2bbbe531c95085eb3048d",
   "limitations": [
     "No operator prices or pregame timestamp archive",
     "No untouched confirmatory or prospective shadow evaluation",

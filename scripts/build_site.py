@@ -280,6 +280,40 @@ def pricing_nav_group():
 NAV.extend(pricing_nav_group())
 
 
+LIFECYCLE_NAV_PATH = "nfl-lifecycle-3f5c/site/index.html"
+
+
+def lifecycle_nav_group():
+    """Additive nav group for the market-lifecycle desk (session arena/3f5c4cd6-own7).
+
+    Built from the desk's own manifest so this generator never restates a page list that could
+    drift. Returns an empty list if the desk has not been built, so a fresh clone still works.
+    """
+    manifest = ROOT / "nfl-lifecycle-3f5c" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    import json as _json
+    labels = {
+        "index.html": "Lifecycle overview", "summary.html": "Lifecycle executive summary",
+        "origination-order.html": "Origination order", "price-snapshots.html": "Price snapshots",
+        "fair-market-diff.html": "Fair / market / diff", "leaderboard.html": "Signal vs staking",
+        "demotion.html": "Demotion gate", "replacement-depth.html": "Replacement depth",
+        "correlation-audit.html": "Correlation audit", "questions.html": "Lifecycle questions",
+        "suggestions.html": "Lifecycle suggestions", "verification.html": "Lifecycle verification",
+        "flagged.html": "Lifecycle flagged", "sources.html": "Lifecycle sources",
+    }
+    pages = _json.loads(manifest.read_text())["pages"]
+    return [("NFL market lifecycle",
+             [(f"nfl-lifecycle-3f5c/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+
+NAV.extend(lifecycle_nav_group())
+
+
+
+
+
+
 def page(slug, title, subtitle, body, eyebrow=None, description=None):
     parent = next((group for group, entries in NAV if any(e[0] == slug for e in entries)), "Workspace")
     if eyebrow is None:
@@ -794,6 +828,13 @@ def build():
     pricing_pages=load_json('nfl-pricing/site/manifest.json')['pages']
     for name in pricing_pages:
         generated.append(f'nfl-pricing/site/{name}')
+    # Market-lifecycle desk (session arena/3f5c4cd6-own7). Runs the desk's own deterministic
+    # build first so a stale artefact fails the site build rather than publishing quietly.
+    lifecycle_result=subprocess.run([sys.executable,str(ROOT/'nfl-lifecycle-3f5c'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if lifecycle_result.returncode: raise SystemExit(f'nfl-lifecycle-3f5c/build.py failed: '+lifecycle_result.stdout+lifecycle_result.stderr)
+    lifecycle_pages=load_json('nfl-lifecycle-3f5c/site/manifest.json')['pages']
+    for name in lifecycle_pages:
+        generated.append(f'nfl-lifecycle-3f5c/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
@@ -808,7 +849,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 

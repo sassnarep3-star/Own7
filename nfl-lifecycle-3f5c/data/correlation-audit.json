@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "rule": "a published correlation must carry n >= 3 and registered official sources; a blank must carry a stated reason",
+  "audited_rows": 22,
+  "with_coefficients": 18,
+  "blank_by_rule": 4,
+  "failed": 0,
+  "sections": [
+    {
+      "artifact": "engine team-level (research/nfl/results.json)",
+      "rows": [
+        {
+          "id": "off_ppg~def_ppa",
+          "pair": "Points scored per game vs Points allowed per game",
+          "coefficient": -0.2061,
+          "n": 32,
+          "source_ids": [
+            "NFL-STANDINGS",
+            "PYTH-NFL",
+            "REPO"
+          ],
+          "reason": "Derived · exploratory",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "off_ppg~net",
+          "pair": "Points scored per game vs Net point differential",
+          "coefficient": 0.7957,
+          "n": 32,
+          "source_ids": [
+            "NFL-STANDINGS",
+            "PYTH-NFL",
+            "REPO"
+          ],
+          "reason": "Mechanical: net points is defined as PF minus PA and this column is PF per game, so the two series share the same scoring totals.",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "off_ppg~pct",
+          "pair": "Points scored per game vs Displayed win percentage",
+          "coefficient": 0.6936,
+          "n": 32,
+          "source_ids": [
+            "NFL-STANDINGS",
+            "PYTH-NFL",
+            "REPO"
+          ],
+          "reason": "Derived · exploratory",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "off_ppg~luck_residual",
+          "pair": "Points scored per game vs Actual minus expected wins",
+          "coefficient": 0.3455,
+          "n": 32,
+          "source_ids": [
+            "NFL-STANDINGS",
+            "PYTH-NFL",
+            "REPO"
+          ],
+          "reason": "Derived · exploratory",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "def_ppa~net",
+          "pair": "Points allowed per game vs Net point differential",
+          "coefficient": -0.7544,
+          "n": 32,
+          "source_ids": [
+            "NFL-STANDINGS",
+            "PYTH-NFL",
+            "REPO"
+          ],
+          "reason": "Mechanical: net points is defined as PF minus PA and this column is PA per game, so the two series share the same scoring totals.",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "def_ppa~pct",
+          "pair": "Points allowed per game vs Displayed win percentage",
+          "coefficient": -0.6664,
+          "n": 32,
+          "source_ids": [
+            "NFL-STANDINGS",
+            "PYTH-NFL",
+            "REPO"
+          ],
+          "reason": "Derived · exploratory",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "def_ppa~luck_residual",
+          "pair": "Points allowed per game vs Actual minus expected wins",
+          "coefficient": -0.3126,
+          "n": 32,
+          "source_ids": [
+            "NFL-STANDINGS",
+            "PYTH-NFL",
+            "REPO"
+          ],
+          "reason": "Derived · exploratory",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "net~pct",
+          "pair": "Net point differential vs Displayed win percentage",
+          "coefficient": 0.869,
+          "n": 32,
+          "source_ids": [
+            "NFL-STANDINGS",
+            "PYTH-NFL",
+            "REPO"
+          ],
+          "reason": "Mechanical: wins and net points move together by construction in a small sample.",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "net~luck_residual",
+          "pair": "Net point differential vs Actual minus expected wins",
+          "coefficient": 0.4134,
+          "n": 32,
+          "source_ids": [
+            "NFL-STANDINGS",
+            "PYTH-NFL",
+            "REPO"
+          ],
+          "reason": "Structurally induced: the expectation is computed from PF and PA, which also define net points, so the two sides are not independent measurements.",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "pct~luck_residual",
+          "pair": "Displayed win percentage vs Actual minus expected wins",
+          "coefficient": 0.8042,
+          "n": 32,
+          "source_ids": [
+            "NFL-STANDINGS",
+            "PYTH-NFL",
+            "REPO"
+          ],
+          "reason": "Tautological: the residual subtracts a function of PF/PA from wins while PCT is wins divided by games, so both series contain the same win count.",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "NC-1",
+          "pair": "Same-game leg dependence (spread vs total)",
+          "coefficient": null,
+          "n": null,
+          "source_ids": [
+            "NFL-SCHED-W10",
+            "REPO"
+          ],
+          "reason": "Not collected — needs play-by-play or closing-line archive",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "NC-2",
+          "pair": "Player prop to team outcome dependence",
+          "coefficient": null,
+          "n": null,
+          "source_ids": [
+            "NFL-INJ-W10",
+            "REPO"
+          ],
+          "reason": "Not collected — needs player game logs and snap counts",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "NC-3",
+          "pair": "Multi-leg parlay joint distribution (3+ legs)",
+          "coefficient": null,
+          "n": null,
+          "source_ids": [
+            "REPO"
+          ],
+          "reason": "Not collected — pairwise values cannot identify a 3+ leg joint",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "NC-4",
+          "pair": "Backup-versus-starter performance gap by position",
+          "coefficient": null,
+          "n": null,
+          "source_ids": [
+            "NFL-INJ-W10",
+            "REPO"
+          ],
+          "reason": "Not collected — no published depth chart and no snap counts retrieved",
+          "status": "PASS",
+          "problems": []
+        }
+      ]
+    },
+    {
+      "artifact": "results lab (nfl-results/analysis.json)",
+      "rows": [
+        {
+          "id": "RES-LEG-PHI",
+          "pair": "leg dependence: home-cover x over (phi)",
+          "coefficient": -0.068401,
+          "n": 114,
+          "source_ids": [
+            "NFL-SCHEDULE",
+            "REPO"
+          ],
+          "reason": "measured on the originated board over saved official by-week scores",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "RES-MS-MARGIN-TOTAL",
+          "pair": "Home margin vs game total",
+          "coefficient": -0.141737,
+          "n": 120,
+          "source_ids": [
+            "NFL-SCHEDULE",
+            "REPO"
+          ],
+          "reason": "computed from official scores and the originated board",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "RES-MS-BOARD_LINE-BOARD_TOTAL",
+          "pair": "Originated line vs originated total",
+          "coefficient": 0.03098,
+          "n": 120,
+          "source_ids": [
+            "NFL-SCHEDULE",
+            "REPO"
+          ],
+          "reason": "computed from official scores and the originated board",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "RES-MS-FORECAST-ACTUAL_MARGIN",
+          "pair": "Forecast margin vs actual margin",
+          "coefficient": 0.040325,
+          "n": 120,
+          "source_ids": [
+            "NFL-SCHEDULE",
+            "REPO"
+          ],
+          "reason": "computed from official scores and the originated board",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "RES-MS-RESIDUAL-TOTAL",
+          "pair": "Spread residual vs game total",
+          "coefficient": 0.040325,
+          "n": 120,
+          "source_ids": [
+            "NFL-SCHEDULE",
+            "REPO"
+          ],
+          "reason": "computed from official scores and the originated board",
+          "status": "PASS",
+          "problems": []
+        }
+      ]
+    },
+    {
+      "artifact": "cfdd desk (nfl-skill-cfdd/data)",
+      "rows": [
+        {
+          "id": "C-PF-PA",
+          "pair": "points_for per club vs points_against per club",
+          "coefficient": -0.0869,
+          "n": 32,
+          "source_ids": [
+            "CFDD-NFL-STANDINGS"
+          ],
+          "reason": "",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "C-PYTH-ACTUAL",
+          "pair": "Pythagorean expected wins (derived from PF/PA) vs actual wins (with ties counted as half)",
+          "coefficient": 0.8668,
+          "n": 32,
+          "source_ids": [
+            "CFDD-NFL-STANDINGS"
+          ],
+          "reason": "method validity check, not an independent finding: both sides come from the same PF/PA pair, so a high r is expected and is not evidence of a tradable edge",
+          "status": "PASS",
+          "problems": []
+        },
+        {
+          "id": "C-PASS-OFF-DEF",
+          "pair": "team offensive passing yards per attempt (printed C4) vs team defensive passing yards per attempt allowed",
+          "coefficient": -0.1401,
+          "n": 32,
+          "source_ids": [
+            "NFL-TEAM-OFF"
+          ],
+          "reason": "",
+          "status": "PASS",
+          "problems": []
+        }
+      ]
+    }
+  ],
+  "source_ids": [
+    "NFL-STANDINGS",
+    "NFL-SCHEDULE",
+    "REPO"
+  ]
+}

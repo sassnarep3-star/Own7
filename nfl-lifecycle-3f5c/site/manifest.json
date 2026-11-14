@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "index.html",
+    "summary.html",
+    "origination-order.html",
+    "price-snapshots.html",
+    "fair-market-diff.html",
+    "leaderboard.html",
+    "demotion.html",
+    "replacement-depth.html",
+    "correlation-audit.html",
+    "questions.html",
+    "suggestions.html",
+    "verification.html",
+    "flagged.html",
+    "sources.html"
+  ],
+  "desk": "nfl-lifecycle-3f5c",
+  "built_from": [
+    "research/nfl/results.json",
+    "nfl-results/analysis.json",
+    "nfl-skill-cfdd/data",
+    "data/nfl-schedule-2026-w10.csv",
+    "data/nfl-standings-2026.csv"
+  ],
+  "market_blank_reason": "No sportsbook price is licensed or retrieved in this repository (standing constraints XS09/CF10). The column exists so a rights-cleared source can fill it later; it is never inferred."
+}

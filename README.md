@@ -30,6 +30,32 @@ python -m unittest discover -s nfl-results/tests   # 23 tests
 
 Full write-up: [`docs/nfl-results-executive-summary.md`](docs/nfl-results-executive-summary.md).
 
+## New: market-lifecycle desk (2026-11-14, session arena/3f5c4cd6-own7)
+
+The eight lifecycle requirements from the brief now have deterministic, source-linked artefacts in
+`nfl-lifecycle-3f5c/` (14 pages, 8 data files, 37 tests; additive to every prior desk):
+
+| Requirement | Where |
+|---|---|
+| Price-snapshot store (open + close per originated market) | [`nfl-lifecycle-3f5c/site/price-snapshots.html`](nfl-lifecycle-3f5c/site/price-snapshots.html) — 42 records, append-only, market cells blank by rights |
+| Originate side → total → moneyline | [`nfl-lifecycle-3f5c/site/origination-order.html`](nfl-lifecycle-3f5c/site/origination-order.html) — reconciles exactly with the canonical engine (14/14) |
+| Fair / market / difference as separate columns | [`nfl-lifecycle-3f5c/site/fair-market-diff.html`](nfl-lifecycle-3f5c/site/fair-market-diff.html) — difference blank whenever the market line is blank |
+| Signal separated from staking | [`nfl-lifecycle-3f5c/site/leaderboard.html`](nfl-lifecycle-3f5c/site/leaderboard.html) — rank computed from signal fields only, proven by test |
+| Depth of the replacement | [`nfl-lifecycle-3f5c/site/replacement-depth.html`](nfl-lifecycle-3f5c/site/replacement-depth.html) — 173 starter losses, 158 printed named replacements, 12/12 spot-traced |
+| Correlations from official numbers with n | [`nfl-lifecycle-3f5c/site/correlation-audit.html`](nfl-lifecycle-3f5c/site/correlation-audit.html) — 22 rows audited, 0 failures |
+| Demotion gate (live → paper) | [`nfl-lifecycle-3f5c/site/demotion.html`](nfl-lifecycle-3f5c/site/demotion.html) — DG-1 pre-registered, armed, 0 live entries |
+| Questions / suggestions for review | [`nfl-lifecycle-3f5c/site/questions.html`](nfl-lifecycle-3f5c/site/questions.html) · [`nfl-lifecycle-3f5c/site/suggestions.html`](nfl-lifecycle-3f5c/site/suggestions.html) |
+
+Fresh official reads this session: nfl.com standings + REG10 schedule (2026-11-14), including the
+official final **Commanders 24, Giants 21**. Executive summary:
+[`docs/nfl-lifecycle-3f5c-executive-summary.md`](docs/nfl-lifecycle-3f5c-executive-summary.md).
+
+```sh
+python nfl-lifecycle-3f5c/build.py            # rebuild desk artefacts + pages
+python nfl-lifecycle-3f5c/build.py --check    # byte-identical reproduction
+python -m unittest discover -s nfl-lifecycle-3f5c/tests   # 37 tests
+```
+
 ## What this is now
 
 The landing page is an **NFL research workspace**. It originates its own lines from official NFL

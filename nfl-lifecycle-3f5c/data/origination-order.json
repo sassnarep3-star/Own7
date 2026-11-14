@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "stages": [
+    {
+      "order": 1,
+      "id": "side",
+      "name": "Side",
+      "inputs": "each club's points-per-game scored and conceded from the standings vintage, league scoring mean, home-field assumption (2.0 points, disclosed constant)",
+      "depends_on": [],
+      "output": "originated spread, stated from the home club's point of view"
+    },
+    {
+      "order": 2,
+      "id": "total",
+      "name": "Total",
+      "inputs": "the same two per-club point expectations computed for the side",
+      "depends_on": [
+        "side"
+      ],
+      "output": "originated total (expected combined points)"
+    },
+    {
+      "order": 3,
+      "id": "moneyline",
+      "name": "Moneyline",
+      "inputs": "the stage-1 projected margin through a normal win-probability map (sd 13.86, disclosed assumption); zero-hold conversion to American prices",
+      "depends_on": [
+        "side"
+      ],
+      "output": "model fair home and away prices (not prices anyone offers)"
+    }
+  ],
+  "games": [
+    {
+      "id": "W10-01",
+      "matchup": "WAS @ Giants",
+      "away_team": "Washington Commanders",
+      "home_team": "New York Giants",
+      "kickoff_date": "2026-11-12",
+      "kickoff": "2026-11-12 8:15 PM ET",
+      "stage_side_spread_home": -3.2593,
+      "stage_total": 47.6029,
+      "stage_model_p_home": 0.593,
+      "stage_fair_home_price": -146,
+      "stage_fair_away_price": 146,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-02",
+      "matchup": "Patriots @ Lions",
+      "away_team": "New England Patriots",
+      "home_team": "Detroit Lions",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 9:30 AM ET",
+      "stage_side_spread_home": -3.2269,
+      "stage_total": 49.9131,
+      "stage_model_p_home": 0.592,
+      "stage_fair_home_price": -145,
+      "stage_fair_away_price": 145,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-03",
+      "matchup": "KC @ Falcons",
+      "away_team": "Kansas City Chiefs",
+      "home_team": "Atlanta Falcons",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "stage_side_spread_home": 1.7546,
+      "stage_total": 46.9038,
+      "stage_model_p_home": 0.4496,
+      "stage_fair_home_price": 122,
+      "stage_fair_away_price": -122,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-04",
+      "matchup": "Texans @ Browns",
+      "away_team": "Houston Texans",
+      "home_team": "Cleveland Browns",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "stage_side_spread_home": 0.0046,
+      "stage_total": 47.2371,
+      "stage_model_p_home": 0.4999,
+      "stage_fair_home_price": 100,
+      "stage_fair_away_price": -100,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-05",
+      "matchup": "Vikings @ Packers",
+      "away_team": "Minnesota Vikings",
+      "home_team": "Green Bay Packers",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "stage_side_spread_home": -1.6759,
+      "stage_total": 43.2973,
+      "stage_model_p_home": 0.5481,
+      "stage_fair_home_price": -121,
+      "stage_fair_away_price": 121,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-06",
+      "matchup": "Dolphins @ Colts",
+      "away_team": "Miami Dolphins",
+      "home_team": "Indianapolis Colts",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "stage_side_spread_home": -2.6759,
+      "stage_total": 46.9269,
+      "stage_model_p_home": 0.5765,
+      "stage_fair_home_price": -136,
+      "stage_fair_away_price": 136,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-07",
+      "matchup": "Panthers @ Saints",
+      "away_team": "Carolina Panthers",
+      "home_team": "New Orleans Saints",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "stage_side_spread_home": -1.5417,
+      "stage_total": 51.4316,
+      "stage_model_p_home": 0.5443,
+      "stage_fair_home_price": -119,
+      "stage_fair_away_price": 119,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-08",
+      "matchup": "Bills @ Jets",
+      "away_team": "Buffalo Bills",
+      "home_team": "New York Jets",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "stage_side_spread_home": 2.3935,
+      "stage_total": 50.7649,
+      "stage_model_p_home": 0.4314,
+      "stage_fair_home_price": 132,
+      "stage_fair_away_price": -132,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-09",
+      "matchup": "Jaguars @ Titans",
+      "away_team": "Jacksonville Jaguars",
+      "home_team": "Tennessee Titans",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "stage_side_spread_home": 4.7917,
+      "stage_total": 46.1816,
+      "stage_model_p_home": 0.3648,
+      "stage_fair_home_price": 174,
+      "stage_fair_away_price": -174,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-10",
+      "matchup": "LA @ AZ",
+      "away_team": "Los Angeles Rams",
+      "home_team": "Arizona Cardinals",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "stage_side_spread_home": 2.0741,
+      "stage_total": 47.9732,
+      "stage_model_p_home": 0.4405,
+      "stage_fair_home_price": 127,
+      "stage_fair_away_price": -127,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-11",
+      "matchup": "Seahawks @ LV",
+      "away_team": "Seattle Seahawks",
+      "home_team": "Las Vegas Raiders",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "stage_side_spread_home": 0.5926,
+      "stage_total": 49.5288,
+      "stage_model_p_home": 0.4829,
+      "stage_fair_home_price": 107,
+      "stage_fair_away_price": -107,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-12",
+      "matchup": "SF @ Cowboys",
+      "away_team": "San Francisco 49ers",
+      "home_team": "Dallas Cowboys",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 4:25 PM ET",
+      "stage_side_spread_home": 0.9213,
+      "stage_total": 51.4501,
+      "stage_model_p_home": 0.4735,
+      "stage_fair_home_price": 111,
+      "stage_fair_away_price": -111,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-13",
+      "matchup": "Steelers @ Bengals",
+      "away_team": "Pittsburgh Steelers",
+      "home_team": "Cincinnati Bengals",
+      "kickoff_date": "2026-11-15",
+      "kickoff": "2026-11-15 8:20 PM ET",
+      "stage_side_spread_home": -3.2083,
+      "stage_total": 48.0982,
+      "stage_model_p_home": 0.5915,
+      "stage_fair_home_price": -145,
+      "stage_fair_away_price": 145,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    },
+    {
+      "id": "W10-14",
+      "matchup": "Chargers @ Ravens",
+      "away_team": "Los Angeles Chargers",
+      "home_team": "Baltimore Ravens",
+      "kickoff_date": "2026-11-16",
+      "kickoff": "2026-11-16 8:15 PM ET",
+      "stage_side_spread_home": -4.3426,
+      "stage_total": 47.214,
+      "stage_model_p_home": 0.623,
+      "stage_fair_home_price": -165,
+      "stage_fair_away_price": 165,
+      "source_ids": [
+        "NFL-STANDINGS",
+        "NFL-SCHED-W10",
+        "PYTH-NFL",
+        "REPO"
+      ],
+      "game_source_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+      "source_url": "https://www.nfl.com/schedules/"
+    }
+  ],
+  "reconciliation": {
+    "checked_games": 14,
+    "mismatches": [],
+    "status": "PASS",
+    "canonical_artifact": "research/nfl/results.json",
+    "canonical_run_hash": "5b089f9dd22c9b61f87e97a311e965d199b20b0938a2b1f48b01f554d91cd7f4"
+  },
+  "source_ids": [
+    "NFL-STANDINGS",
+    "NFL-SCHED-W10",
+    "PYTH-NFL",
+    "REPO"
+  ]
+}

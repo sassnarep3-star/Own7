@@ -50,6 +50,8 @@ jobs:
           python nfl-skill-cfdd/ledger.py --check
           python nfl-skill-cfdd/decisions.py --check
           python -m unittest discover -s nfl-skill-cfdd/tests -v
+          python nfl-lifecycle-3f5c/build.py --check
+          python -m unittest discover -s nfl-lifecycle-3f5c/tests -v
           python nfl-assurance-9580ac3f/availability.py
           python nfl-results/extract.py
           python nfl-results/engine.py
