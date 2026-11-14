@@ -191,6 +191,37 @@ NAV = [
 ]
 
 
+SKILL_NAV_PATH = "nfl-skill-cfdd/site/index.html"
+
+
+def skill_nav_group():
+    """Additive nav group for the skill-separation desk (session arena/cfdd5580-own7).
+
+    Built from the desk's own manifest so this generator never restates a page list that could
+    drift. Returns an empty list if the desk has not been built, so a fresh clone still works.
+    """
+    manifest = ROOT / "nfl-skill-cfdd" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    import json as _json
+    labels = {
+        "index.html": "Skill desk overview", "summary.html": "Skill desk executive summary",
+        "verification.html": "Standings re-verification 14 Nov", "depth.html": "Printed depth coverage",
+        "depletion.html": "Starter depletion index", "join.html": "Injury x depth join",
+        "luck.html": "Skill vs luck", "correlation.html": "Correlation",
+        "strategies.html": "Strategies & gates", "leaderboard.html": "Leaderboard",
+        "questions.html": "Skill desk questions", "suggestions.html": "Skill desk suggestions",
+        "flagged.html": "Skill desk flagged", "sources.html": "Skill desk sources",
+        "method.html": "Method & limits",
+    }
+    pages = _json.loads(manifest.read_text())["pages"]
+    return [("NFL skill & availability desk",
+             [(f"nfl-skill-cfdd/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+
+NAV.extend(skill_nav_group())
+
+
 def page(slug, title, subtitle, body, eyebrow=None, description=None):
     parent = next((group for group, entries in NAV if any(e[0] == slug for e in entries)), "Workspace")
     if eyebrow is None:
@@ -674,6 +705,16 @@ def build():
     s243_pages=load_json('session-243828fc/site/manifest.json')['pages']
     for name in s243_pages:
         generated.append(f'session-243828fc/site/{name}')
+    # Skill-separation desk (session arena/cfdd5580-own7), 2026-11-14 snapshot. Runs the desk's
+    # own pipeline first so a stale artifact fails the site build rather than publishing quietly.
+    for script in ('collect','depth','index','luck','ledger','decisions'):
+        res=subprocess.run([sys.executable,str(ROOT/'nfl-skill-cfdd'/f'{script}.py')],cwd=ROOT,capture_output=True,text=True)
+        if res.returncode: raise SystemExit(f'nfl-skill-cfdd/{script}.py failed: '+res.stdout+res.stderr)
+    skill_result=subprocess.run([sys.executable,str(ROOT/'nfl-skill-cfdd'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if skill_result.returncode: raise SystemExit(skill_result.stdout+skill_result.stderr)
+    skill_pages=load_json('nfl-skill-cfdd/site/manifest.json')['pages']
+    for name in skill_pages:
+        generated.append(f'nfl-skill-cfdd/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
@@ -688,7 +729,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 

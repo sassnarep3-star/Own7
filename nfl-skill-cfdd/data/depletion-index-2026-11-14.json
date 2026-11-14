@@ -1,0 +1,177 @@
+{
+  "read_on": "2026-11-14",
+  "injury_rows": 326,
+  "clubs_on_injury_report": 28,
+  "clubs_with_printed_chart": 31,
+  "clubs_with_no_readable_chart": [
+    "HOU"
+  ],
+  "clubs_absent_from_injury_report": [
+    "CHI",
+    "DEN",
+    "PHI",
+    "TB"
+  ],
+  "clubs_absent_reason": "these four clubs were on bye in Week 10, so the league publishes no Week 10 injury row for them; their charts are captured and ready for Week 11",
+  "rows_matched_to_printed_chart": 265,
+  "rows_not_on_printed_chart": 61,
+  "starters_ruled_out": 8,
+  "injury_rows_printed_in_more_than_one_slot": 24,
+  "starters_ruled_out_in_more_than_one_slot": 1,
+  "ambiguous_slot_statement": "Some players are printed in more than one slot by their own club. The join uses one printed slot per player - the most prominent one - and every such row is marked. Where a starter is ambiguous his replacement comes from that chosen slot, so the next name could differ in another listed slot.",
+  "starters_ruled_out_with_backup_in_line": 7,
+  "starters_ruled_out_with_no_backup_printed": 1,
+  "backed_up_starters": [
+    {
+      "club": "NE",
+      "player": "Ben Brown",
+      "unit": "Offense",
+      "position": "LG",
+      "next_in_line": "Walter Rouse",
+      "next_in_line_rank": 2
+    },
+    {
+      "club": "NE",
+      "player": "Carlton Davis III",
+      "unit": "Defense",
+      "position": "CB",
+      "next_in_line": "Channing Canada",
+      "next_in_line_rank": 2
+    },
+    {
+      "club": "DET",
+      "player": "Cade Mays",
+      "unit": "Offense",
+      "position": "C",
+      "next_in_line": "Juice Scruggs",
+      "next_in_line_rank": 2
+    },
+    {
+      "club": "DET",
+      "player": "D.J. Reed",
+      "unit": "Defense",
+      "position": "CB",
+      "next_in_line": "Rock Ya-Sin",
+      "next_in_line_rank": 2
+    },
+    {
+      "club": "IND",
+      "player": "Jaylon Carlies",
+      "unit": "Defense",
+      "position": "WLB",
+      "next_in_line": "Bryce Boettcher",
+      "next_in_line_rank": 2
+    },
+    {
+      "club": "IND",
+      "player": "Akeem Davis-Gaither",
+      "unit": "Defense",
+      "position": "MLB",
+      "next_in_line": "CJ Allen",
+      "next_in_line_rank": 2
+    },
+    {
+      "club": "IND",
+      "player": "Jalen Travis",
+      "unit": "Offense",
+      "position": "RT",
+      "next_in_line": "Luke Tenuta",
+      "next_in_line_rank": 2
+    }
+  ],
+  "no_backup_printed": [
+    {
+      "club": "IND",
+      "player": "Luke Rhodes",
+      "unit": "Special Teams",
+      "position": "LS"
+    }
+  ],
+  "starters_ruled_out_names": [
+    {
+      "club": "NE",
+      "player": "Ben Brown",
+      "unit": "Offense",
+      "position": "LG"
+    },
+    {
+      "club": "NE",
+      "player": "Carlton Davis III",
+      "unit": "Defense",
+      "position": "CB"
+    },
+    {
+      "club": "DET",
+      "player": "Cade Mays",
+      "unit": "Offense",
+      "position": "C"
+    },
+    {
+      "club": "DET",
+      "player": "D.J. Reed",
+      "unit": "Defense",
+      "position": "CB"
+    },
+    {
+      "club": "IND",
+      "player": "Jaylon Carlies",
+      "unit": "Defense",
+      "position": "WLB"
+    },
+    {
+      "club": "IND",
+      "player": "Akeem Davis-Gaither",
+      "unit": "Defense",
+      "position": "MLB"
+    },
+    {
+      "club": "IND",
+      "player": "Luke Rhodes",
+      "unit": "Special Teams",
+      "position": "LS"
+    },
+    {
+      "club": "IND",
+      "player": "Jalen Travis",
+      "unit": "Offense",
+      "position": "RT"
+    }
+  ],
+  "starters_ruled_out_by_club": {
+    "DET": [
+      "Cade Mays",
+      "D.J. Reed"
+    ],
+    "IND": [
+      "Jaylon Carlies",
+      "Akeem Davis-Gaither",
+      "Luke Rhodes",
+      "Jalen Travis"
+    ],
+    "NE": [
+      "Ben Brown",
+      "Carlton Davis III"
+    ]
+  },
+  "weigthing_disclosure": {
+    "rank_weight": {
+      "1": 1.0,
+      "2": 0.45,
+      "3": 0.2,
+      "4": 0.1
+    },
+    "status_multiplier": {
+      "Out": 1.0,
+      "Doubtful": 0.75,
+      "Questionable": 0.4
+    },
+    "statement": "Project design choice, chosen before any club ranking was read. Used to order clubs only. Never converted to points, probability or price."
+  },
+  "what_is_not_produced": [
+    "a point value for an injured player",
+    "a performance deficit for a backup, which needs snap counts and a before/after series",
+    "a probability that a backup 'holds up'",
+    "any line adjustment derived from this index"
+  ],
+  "scope": "Availability accounting from official printed sources. Not a forecast."
+}

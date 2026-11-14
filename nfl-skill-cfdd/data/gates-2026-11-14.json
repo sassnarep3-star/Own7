@@ -1,0 +1,109 @@
+{
+  "gates": [
+    {
+      "gate_id": "V1",
+      "name": "Provenance",
+      "rule": "every input row carries an official URL and a read date",
+      "status": "pass",
+      "evidence": "32/32 standings rows and 231/231 depth slots carry an official URL and 2026-11-14; 326/326 injury rows keep the 2026-11-13 URL from the ledger",
+      "produced_by": "nfl-skill-cfdd/collect.py, depth.py, index.py"
+    },
+    {
+      "gate_id": "V2",
+      "name": "Internal arithmetic",
+      "rule": "the publisher's own row must reproduce W+L+T, PCT and NET PTS",
+      "status": "pass",
+      "evidence": "32/32 rows reproduce PCT and NET; league identity PF==PA==6291 and W==L==136",
+      "produced_by": "nfl-skill-cfdd/collect.py"
+    },
+    {
+      "gate_id": "V3",
+      "name": "Temporal integrity",
+      "rule": "no input may post-date the projection it feeds",
+      "status": "fail",
+      "evidence": "the Week 10 Thursday fixture was already settled when this snapshot was read; a strategy evaluated on that fixture would be using a result",
+      "produced_by": "nfl-skill-cfdd/collect.py"
+    },
+    {
+      "gate_id": "V4",
+      "name": "Coverage and power",
+      "rule": "at least 153 settled independent bets are required to distinguish a 60% true rate from break-even at 80% power",
+      "status": "fail",
+      "evidence": "0 settled bets exist; the required threshold computed from the binomial is 154",
+      "produced_by": "nfl-skill-cfdd/luck.py"
+    },
+    {
+      "gate_id": "V5",
+      "name": "Forecast skill over a stated reference",
+      "rule": "a proper score must beat a stated naive baseline out of sample",
+      "status": "fail",
+      "evidence": "Pythagorean residuals are indistinguishable from null noise: chi-square 19.0254 on 32 df, p=0.966189",
+      "produced_by": "nfl-skill-cfdd/luck.py"
+    },
+    {
+      "gate_id": "V6",
+      "name": "Leg dependence measured, not assumed",
+      "rule": "a parlay or combo may be priced only after its joint dependence is measured on settled legs",
+      "status": "fail",
+      "evidence": "no leg-level settlement data exists; the correlations that can be measured are club-level and are labelled as a different quantity",
+      "produced_by": "nfl-skill-cfdd/luck.py"
+    },
+    {
+      "gate_id": "V7",
+      "name": "Multiplicity controlled",
+      "rule": "all trials counted and Holm-adjusted",
+      "status": "pass",
+      "evidence": "3 correlations computed, each with a Fisher interval and a Holm-adjusted p-value; the count of trials is published",
+      "produced_by": "nfl-skill-cfdd/luck.py"
+    },
+    {
+      "gate_id": "V8",
+      "name": "Executable price",
+      "rule": "a timestamped, settlement-complete price from an identified operator",
+      "status": "blocked",
+      "evidence": "NFL.com publishes no odds and the rights question XS09 is unsettled, so no price has been retrieved and none may be computed",
+      "produced_by": "none: this is a rights constraint, not a data gap"
+    },
+    {
+      "gate_id": "V9",
+      "name": "Forward shadow record",
+      "rule": "a dated, prospective, stake-capped record before any reward",
+      "status": "fail",
+      "evidence": "0 shadow bets; a forward record cannot be created retrospectively",
+      "produced_by": "nfl-skill-cfdd/ledger.py"
+    },
+    {
+      "gate_id": "V10",
+      "name": "Reproducibility",
+      "rule": "every artifact regenerates byte-identically from the committed evidence",
+      "status": "pass",
+      "evidence": "collect.py, depth.py, index.py, luck.py, ledger.py all support --check and are run in CI",
+      "produced_by": "nfl-skill-cfdd/emit.py"
+    },
+    {
+      "gate_id": "V11",
+      "name": "Depletion measured, not asserted",
+      "rule": "an injury claim names the player, the printed rank and the next printed name",
+      "status": "pass",
+      "evidence": "265 of 326 injury rows matched a printed slot; 8 printed starters are ruled Out",
+      "produced_by": "nfl-skill-cfdd/index.py"
+    },
+    {
+      "gate_id": "V12",
+      "name": "Blanks preserved",
+      "rule": "a value no official source publishes stays blank and is flagged",
+      "status": "pass",
+      "evidence": "Houston has no readable chart on two independent reads and stays blank; 301 of 326 injury rows keep a blank game status",
+      "produced_by": "nfl-skill-cfdd/index.py, tests"
+    }
+  ],
+  "counts": {
+    "total": 12,
+    "pass": 6,
+    "fail": 5,
+    "blocked": 1
+  },
+  "note": "Every gate is produced by a script over committed data. A gate that no data can test is 'blocked', never 'pass'.",
+  "cash_rewards": null,
+  "reward_statement": "No monetary reward is defined or paid. Non-monetary merit points would still require V4, V5 and V9 to pass first."
+}

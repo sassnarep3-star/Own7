@@ -1,0 +1,71 @@
+{
+  "clubs_captured": [
+    "CHI",
+    "DEN",
+    "PHI",
+    "TB"
+  ],
+  "clubs_requested": [
+    "CHI",
+    "DEN",
+    "PHI",
+    "TB"
+  ],
+  "total_printed_slots": 231,
+  "per_club": [
+    {
+      "club_abbr": "CHI",
+      "club_name": "Chicago Bears",
+      "slots": 59,
+      "offense": 23,
+      "defense": 27,
+      "special_teams": 9,
+      "multi_name_cells": 0,
+      "deepest_rank": 3,
+      "chart_date_printed": "Depth Chart (As of 10/31/2026)",
+      "source_url": "https://www.chicagobears.com/team/depth-chart"
+    },
+    {
+      "club_abbr": "DEN",
+      "club_name": "Denver Broncos",
+      "slots": 60,
+      "offense": 25,
+      "defense": 27,
+      "special_teams": 8,
+      "multi_name_cells": 0,
+      "deepest_rank": 4,
+      "chart_date_printed": "no chart date printed on the rendered page",
+      "source_url": "https://www.denverbroncos.com/team/depth-chart/"
+    },
+    {
+      "club_abbr": "PHI",
+      "club_name": "Philadelphia Eagles",
+      "slots": 52,
+      "offense": 21,
+      "defense": 22,
+      "special_teams": 9,
+      "multi_name_cells": 2,
+      "deepest_rank": 3,
+      "chart_date_printed": "no chart date printed on the rendered page",
+      "source_url": "https://www.philadelphiaeagles.com/team/depth-chart"
+    },
+    {
+      "club_abbr": "TB",
+      "club_name": "Tampa Bay Buccaneers",
+      "slots": 60,
+      "offense": 25,
+      "defense": 25,
+      "special_teams": 10,
+      "multi_name_cells": 0,
+      "deepest_rank": 4,
+      "chart_date_printed": "no chart date printed on the rendered page",
+      "source_url": "https://www.buccaneers.com/team/depth-chart"
+    }
+  ],
+  "not_captured": {
+    "HOU": "club page renders a heading and an image, no table; the 2026-11-13 failure was reproduced on 2026-11-14 and Houston stays a published blank"
+  },
+  "blank_printed_cells": 1,
+  "read_on": "2026-11-14",
+  "scope": "Printed chart ranks only. No snap count, no snap share, no performance value and no point contribution is produced from a rank."
+}

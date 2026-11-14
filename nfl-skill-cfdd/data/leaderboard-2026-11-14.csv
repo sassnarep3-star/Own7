@@ -1,0 +1,11 @@
+rank,strategy_id,name,bet_type,settled_bets,gates_unresolved,score,eligible_for_reward,why
+1,S1,Pythagorean regression to the mean (team total),single,0,5,,no,"zero settled bets: the ranking reflects the amount of evidence still missing, not performance"
+2,S10,Rest advantage after a bye,single,0,5,,no,"zero settled bets: the ranking reflects the amount of evidence still missing, not performance"
+3,S2,Point-differential outlier fade,single,0,5,,no,"zero settled bets: the ranking reflects the amount of evidence still missing, not performance"
+4,S3,Starter-depletion fade,single,0,5,,no,"zero settled bets: the ranking reflects the amount of evidence still missing, not performance"
+5,S7,Backup-quarterback downgrade,single,0,5,,no,"zero settled bets: the ranking reflects the amount of evidence still missing, not performance"
+6,S8,Injury-news timing (stale line),single,0,5,,no,"zero settled bets: the ranking reflects the amount of evidence still missing, not performance"
+7,S9,Divisional underdog (record vs division),single,0,5,,no,"zero settled bets: the ranking reflects the amount of evidence still missing, not performance"
+8,S4,Two-leg same-conference parlay,parlay_2,0,6,,no,"zero settled bets: the ranking reflects the amount of evidence still missing, not performance"
+9,S5,Three-leg divergence parlay,parlay_3,0,6,,no,"zero settled bets: the ranking reflects the amount of evidence still missing, not performance"
+10,S6,Player-prop combo (passing + receiving),prop_combo,0,6,,no,"zero settled bets: the ranking reflects the amount of evidence still missing, not performance"
