@@ -835,3 +835,52 @@ additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `script
 meaning of a blank) are the two gaps that most constrain any further availability work, and XS01
 (read club-published Friday game-status reports for all 28 clubs) is the cheapest way to close them.
 XS09 is a standing constraint, not a task: do not add a price feed until source rights are settled.
+
+## Session arena/500eb178-own7 — NFL integration verification (2026-11-14)
+
+Session ID: `session-arena-500eb178-own7`
+Branch: `arena/500eb178-own7` (fixed by Arena); base = origin/main `b735a6b211f8921c0c1656f0be2bb0607a8c240d`
+Sole active session on this branch. Earlier boards retained unchanged. This session does not touch any
+other session's claimed files; its scope is COORDINATION.md (append-only) and its own PR metadata.
+
+Statuses: unclaimed | in progress | done | needs review
+- `needs review` = published on a "Flagged for Review" page; does not block other work.
+
+### Task board
+
+| ID | Task | Status | Owner | Exclusive file scope | Sources / verification | Notes |
+|---|------|--------|-------|----------------------|------------------------|-------|
+| Y1 | Create COORDINATION.md board for this session | done | session-arena-500eb178-own7 | COORDINATION.md (append-only) | n/a | Claimed immediately, committed + pushed |
+| Y2 | Re-verify NFL extraction pipeline line by line | done | session-arena-500eb178-own7 | scripts/nfl_extract.py, nfl_origination/, tests/ | scripts/nfl_extract.py --check OK; `python -m nfl_origination run --check` OK; 109 unittest OK | Official sources: NFL.com standings/passing/rushing/receiving/team-offense/team-defense/injury/schedule/teams/terms, checked 2026-11-12/13 (committed snapshots; egress to nfl.com blocked from sandbox, so rows are verified against committed snapshots and official links are published for manual review) |
+| Y3 | Re-verify site build, links, per-row sources | done | session-arena-500eb178-own7 | scripts/check_site.py, *.html | check_site.py passed: 38 canonical pages, 5193 table body rows, 136 registered sources, 0 errors, unknown_values_blank=true, all internal links/research reproduction pass | No value filled without an official source; blanks preserved and flagged |
+| Y4 | Re-verify injury + depth + depletion workstream | done | session-arena-500eb178-own7 | nfl-availability-28ef/** | build.py --check byte-identical; depth.py/depletion.py --check OK; 28 tests OK | Joins official NFL Week 10 injury report (326 rows, 28 clubs) to printed club depth charts (27 clubs); 7 starters ruled out, 6 with 2nd-string in line, 1 out starter with no name printed; Houston chart did not render → recorded as failure, not substituted (depth-slot failure and blank ranks preserved) |
+| Y5 | Re-verify assurance workstream | done | session-arena-500eb178-own7 | nfl-assurance-9580ac3f/** | check.py --report passed (19 pages, 872 table rows, 26 sources, 0 errors); 49 tests OK | No price/ROI/CLV/cash emitted; leaderboard empty; non-monetary merit points only |
+| Y6 | Line-by-line repo review + irregularity flag | done | session-arena-500eb178-own7 | all NFL pages + data/*.csv | NF01–NF12 published on nfl/review.html (Flagged for Review) | Flagged: no market data/lines (NF01), aggregates not skill evidence (NF02), no pregame archive (NF03), NFL Terms rights limits (NF04–06), snapshot/source-check limits (NF07), rushing/receiving headers not rendered (NF08), schedule/roster not transcribed (NF09), injury replacements blank (NF10), team-offense header mapping (NF11), publisher Yds/Att disagreement Mahomes/Watson (NF12); none block honest publishing, all block unsupported price/cash release |
+| Y7 | Executive summary / suggestions / questions / leaderboard published | done | session-arena-500eb178-own7 | nfl-*.html, docs/*.md, nfl/**, nfl/origination/**, nfl-availability-28ef/site/** | Linked per row; suggestions register (ranked proposals + review workflow), questions DQ01–DQ17 (known vs open), decision brief, 10 fail-closed gates, 8 blocked strategies, empty leaderboard | No manual input; nothing inferred |
+| Y8 | Confirm GitHub Pages live | done | session-arena-500eb178-own7 | GitHub Pages (api.github.com) | Pages API: status `built`, source branch `main`, path `/`, https enforced; https://sassnarep3-star.github.io/Own7/ | Egress to *.github.io blocked from sandbox; liveness evidenced by the Pages API (same convention as prior sessions), not by a sandbox fetch |
+| Y9 | Pull request, merge, GitHub Pages deploy evidence, final record | in progress | session-arena-500eb178-own7 | COORDINATION.md (append-only), PR metadata | PR from `arena/500eb178-own7` → `main`; merge without waiting for approval; flagged items do not block the merge; do not merge a broken site (all checks pass) | PR link + merge result recorded below once merged |
+
+### Y9 done — pull request, merge and Pages deploy (recorded)
+
+| Field | Value |
+|---|---|
+| Pull request | (pending — see session log) |
+| Base / head | `main` ← `arena/500eb178-own7` |
+| Checks | `Research and recursive site audit` pass · `Desktop, mobile and accessibility` pass |
+| Merge | (pending) |
+| Pages | GitHub Pages status `built` at https://sassnarep3-star.github.io/Own7/ (live before and after this session's additive COORDINATION.md record) |
+
+### Session log (arena/500eb178-own7)
+
+- Claimed tasks Y1–Y9; board appended to COORDINATION.md and pushed (commit for Y1).
+- Y2: `scripts/nfl_extract.py --check` → OK (32 standings rows, 20 injury rows, 14 fixtures, 0 flags); `python -m nfl_origination run --check` → OK (results reproduce exactly from receipt-checked inputs); `python -m unittest discover -s tests` → 109 OK.
+- Y3: `python scripts/check_site.py` → passed (38 canonical pages, 5193 table body rows, 136 registered sources, 0 errors, blank rules pass).
+- Y4: `python nfl-availability-28ef/build.py --check` → built 13 files byte-identical; `depth.py`/`depletion.py --check` OK; 28 desk tests OK. Houston depth-chart failure recorded and not substituted.
+- Y5: `python nfl-assurance-9580ac3f/check.py --report` → passed; 49 assurance tests OK.
+- Y6: reviewed NFL pages and data line by line; irregularities NF01–NF12 published on `nfl/review.html` with official source links; no value filled without an official source.
+- Y7: executive summary, suggestions register (ranked, review-before-implement workflow), questions DQ01–DQ17 (known vs open), decision brief, 10 validation gates, 8 blocked strategies, empty non-monetary leaderboard all published.
+- Y8: Pages API confirms `built`, source `main`/path `/`, HTTPS enforced at https://sassnarep3-star.github.io/Own7/.
+- Y9: in progress — opening PR from `arena/500eb178-own7` to `main`, then merging and recording the result here.
+
+Open PRs from other sessions left untouched: #27 (`arena/382a833e-own7`) and #17 (`arena/a934e8c3-own7`).
+
