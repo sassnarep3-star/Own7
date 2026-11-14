@@ -501,6 +501,21 @@ FLAGS = [
         "source_url": "https://www.nfl.com/injuries/league/2026/REG10",
     },
     {
+        "flag_id": "CF14",
+        "title": "The standings page updates its columns on different cadences, so a mid-update "
+                 "read looks arithmetically wrong",
+        "detail": "Read on 2026-11-14 after the Thursday game, all 32 rows are self-consistent and "
+                  "PCT equals (W + T/2) / (W + L + T) on every one (NYG 5-3-1 gives 0.611; WAS "
+                  "3-5-1 gives 0.389). An earlier render of the same page on the same day still "
+                  "showed the pre-game W/L columns while PCT had already moved, which makes the "
+                  "publisher appear to use a private convention. It does not; the page was mid-"
+                  "update. Any capture must therefore be rejected if its own PCT does not "
+                  "re-derive from its own W/L/T, and that check is enforced by collect.py.",
+        "severity": "open",
+        "status": "open",
+        "source_url": STANDINGS,
+    },
+    {
         "flag_id": "CF12",
         "title": "The depletion index weights are a project choice, not a measurement",
         "detail": "Rank weights (1.00 / 0.45 / 0.20 / 0.10) and status multipliers order clubs "
