@@ -938,3 +938,17 @@ Rules: work only on the fixed branch; never infer or fill a value; every table r
 | Pages | [GitHub Pages build API](https://api.github.com/repos/sassnarep3-star/Own7/pages/builds/latest) reports `built` for the same commit, updated 2026-11-14T01:08:25Z; source `main` / `/`, HTTPS enforced; site URL: https://sassnarep3-star.github.io/Own7/. The sandbox cannot fetch `*.github.io`, so liveness is evidenced by the official Pages API rather than a direct fetch. |
 
 - **Concurrent-work record (second rebase):** after PR #38 merged, `origin/main` advanced from `11d9771` to `8de4d5f` through PR #37 from session `arena/c5036cd8-own7`. Rebasing conflicted in `COORDINATION.md`; this session retained the complete C1–C4 board and the P1 integration record, discarding no other session lines. PR #37 merged independently; PRs #39, #40, #27 and #17 were left untouched by this session.
+
+---
+
+## Session arena/6b86c2eb-own7 — fresh integration verification (2026-11-14)
+
+Session ID: `session-arena-6b86c2eb-own7`. Fixed Arena branch: `arena/6b86c2eb-own7`; base `b735a6b211f8921c0c1656f0be2bb0607a8c240d` (current `main` at claim time).
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| I1 | Re-run integrated NFL research, recursive site, and release verification; record any newly observed issues without altering prior sessions' work | in progress | session-arena-6b86c2eb-own7 | `COORDINATION.md` (append only), `docs/nfl-integration-review-2026-11-14.md` (new) | Existing site/data are treated as frozen until fresh verification. Official-source facts are not updated unless re-opened and checked. |
+
+Open unrelated PRs at claim time: #27 (`arena/382a833e-own7`) and #17 (`arena/a934e8c3-own7`). This session will not edit, merge, or close either PR. It will use only the current fixed branch.
