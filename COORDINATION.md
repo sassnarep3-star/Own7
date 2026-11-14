@@ -932,3 +932,10 @@ PR [#27](https://github.com/sassnarep3-star/Own7/pull/27) (`arena/382a833e-own7`
 is still open and is **not** touched by this session. `nfl-availability-28ef/**`,
 `nfl-assurance-9580ac3f/**`, `nfl/**`, `nfl_origination/**` and the canonical root pages are not
 rewritten; this session's new work is additive under `nfl-skill-lab/**` and `nfl_skill/**`.
+
+### Session arena/64211dd2-own7 — progress note (2026-11-14)
+
+- Rebased onto origin/main `0abba52` (conflict in this file resolved by keeping both boards, append-only). Branch pushed as `arena/64211dd2-own7`.
+- Week 10 injury ledger (`nfl-skill-lab/data/injuries-week10-2026.csv`): 345 rows, 28 clubs, 160 populated game statuses (84 Questionable, 66 Out, 10 Doubtful). BAL and LAC publish no game status. The 30 rows that differ from `nfl-availability-28ef` were checked against the official NFL.com chunks; four practice statuses were corrected (Harrison Smith, Tyler Higbee, Colby Parkinson, Matthew Stafford). The other 315 rows are not yet re-checked line by line.
+- Player-log routes: Drake Maye (9 regular-season rows) and Brock Purdy (8 rows) added as usable captures. CJ Stroud's route returned a generic `player.DisplayName` page and is not used.
+- Still open: line-by-line verification of the remaining injury rows, official receipts under reserved Y2/Y3 paths, box-score and player-log schema mapping, and Y4–Y9 implementation.
