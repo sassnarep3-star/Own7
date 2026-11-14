@@ -1,0 +1,11 @@
+strategy_id,name,bet_type,gates_failed_or_blocked,gates_passed,status,settled_bets,score,reason
+S1,Pythagorean regression to the mean (team total),single,V3 V4 V5 V8 V9,V1 V2 V7 V10 V11 V12,BLOCKED,0,,"unresolved gates: V3, V4, V5, V8, V9"
+S2,Point-differential outlier fade,single,V3 V4 V5 V8 V9,V1 V2 V7 V10 V11 V12,BLOCKED,0,,"unresolved gates: V3, V4, V5, V8, V9"
+S3,Starter-depletion fade,single,V3 V4 V5 V8 V9,V1 V2 V7 V10 V11 V12,BLOCKED,0,,"unresolved gates: V3, V4, V5, V8, V9"
+S4,Two-leg same-conference parlay,parlay_2,V3 V4 V5 V6 V8 V9,V1 V2 V7 V10 V11 V12,BLOCKED,0,,"unresolved gates: V3, V4, V5, V6, V8, V9"
+S5,Three-leg divergence parlay,parlay_3,V3 V4 V5 V6 V8 V9,V1 V2 V7 V10 V11 V12,BLOCKED,0,,"unresolved gates: V3, V4, V5, V6, V8, V9"
+S6,Player-prop combo (passing + receiving),prop_combo,V3 V4 V5 V6 V8 V9,V1 V2 V7 V10 V11 V12,BLOCKED,0,,"unresolved gates: V3, V4, V5, V6, V8, V9"
+S7,Backup-quarterback downgrade,single,V3 V4 V5 V8 V9,V1 V2 V7 V10 V11 V12,BLOCKED,0,,"unresolved gates: V3, V4, V5, V8, V9"
+S8,Injury-news timing (stale line),single,V3 V4 V5 V8 V9,V1 V2 V7 V10 V11 V12,BLOCKED,0,,"unresolved gates: V3, V4, V5, V8, V9"
+S9,Divisional underdog (record vs division),single,V3 V4 V5 V8 V9,V1 V2 V7 V10 V11 V12,BLOCKED,0,,"unresolved gates: V3, V4, V5, V8, V9"
+S10,Rest advantage after a bye,single,V3 V4 V5 V8 V9,V1 V2 V7 V10 V11 V12,BLOCKED,0,,"unresolved gates: V3, V4, V5, V8, V9"

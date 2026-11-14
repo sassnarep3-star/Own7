@@ -232,7 +232,8 @@ class NoInventedMarket(unittest.TestCase):
     def test_no_price_or_roi_column(self):
         forbidden = ("price", "odds", "roi", "clv", "stake", "wager", "payout")
         for path in DATA.glob("*.csv"):
-            header = [h.lower() for h in next(csv.reader(path.open(encoding="utf-8")))]
+            with path.open(encoding="utf-8") as fh:
+                header = [h.lower() for h in next(csv.reader(fh))]
             for bad in forbidden:
                 self.assertFalse(any(bad in h for h in header),
                                  f"{path.name} has a market column containing {bad}")
@@ -273,14 +274,16 @@ class DepletionIndex(unittest.TestCase):
             self.assertAlmostEqual(float(r["total_index"]), parts, places=3, msg=r["club_abbr"])
 
     def test_offense_and_defence_are_separate_columns(self):
-        header = next(csv.reader((DATA / "club-depletion-index-2026-11-14.csv").open()))
+        with (DATA / "club-depletion-index-2026-11-14.csv").open() as fh:
+            header = next(csv.reader(fh))
         self.assertIn("offense_starters_ruled_out", header)
         self.assertIn("defense_starters_ruled_out", header)
         self.assertNotIn("starters_ruled_out", header)
 
     def test_no_point_or_probability_column(self):
         for name in ("club-depletion-index-2026-11-14.csv", "depletion-join-2026-11-14.csv"):
-            header = [h.lower() for h in next(csv.reader((DATA / name).open()))]
+            with (DATA / name).open() as fh:
+                header = [h.lower() for h in next(csv.reader(fh))]
             for bad in ("point_value", "probability", "expected_points", "line", "price"):
                 self.assertFalse(any(bad in h for h in header), f"{name}: {bad}")
 
@@ -288,3 +291,100 @@ class DepletionIndex(unittest.TestCase):
         res = json.loads((DATA / "depletion-index-2026-11-14.json").read_text())
         self.assertIn("rank_weight", res["weigthing_disclosure"])
         self.assertIn("Project design choice", res["weigthing_disclosure"]["statement"])
+
+
+class DecisionLayer(unittest.TestCase):
+
+    def test_every_open_question_states_what_closes_it(self):
+        for q in rows("questions-2026-11-14.csv"):
+            self.assertTrue(q["what_closes_it"].strip(), q["question_id"])
+            self.assertTrue(q["blocks"].strip(), q["question_id"])
+            if q["status"] in ("open", "blocked"):
+                self.assertTrue(q["missing"].strip(),
+                                f"{q['question_id']} is open but names nothing missing")
+
+    def test_an_answered_question_carries_a_source(self):
+        for q in rows("questions-2026-11-14.csv"):
+            if q["status"].startswith("answered"):
+                self.assertTrue(q["known_source"].strip(),
+                                f"{q['question_id']} claims an answer with no source")
+                self.assertTrue(q["known"].strip())
+
+    def test_a_blocked_question_is_not_answered(self):
+        for q in rows("questions-2026-11-14.csv"):
+            if q["status"] == "blocked":
+                self.assertEqual(q["known"].strip(),
+                                 "cannot be known: there is no market line to compare against"
+                                 if q["question_id"] == "Q14" else q["known"].strip())
+
+    def test_every_suggestion_has_an_runnable_acceptance_test(self):
+        for s in rows("suggestions-2026-11-14.csv"):
+            for field in ("evidence", "unlocks", "cost", "risk", "acceptance_test"):
+                self.assertTrue(s[field].strip(), f"{s['suggestion_id']} missing {field}")
+            self.assertIn(s["priority"], {"1", "2", "3", "4"})
+
+    def test_suggestions_address_real_questions(self):
+        question_ids = {q["question_id"] for q in rows("questions-2026-11-14.csv")}
+        for s in rows("suggestions-2026-11-14.csv"):
+            for qid in s["addresses"].split():
+                self.assertIn(qid, question_ids, f"{s['suggestion_id']} cites unknown {qid}")
+
+    def test_choice_record_is_blank(self):
+        choice = rows("choice-record-2026-11-14.csv")
+        self.assertEqual(len(choice), len(rows("suggestions-2026-11-14.csv")))
+        for c in choice:
+            self.assertEqual(c["decision"], "",
+                             "this session must not record a decision on the reviewer's behalf")
+
+    def test_every_flag_links_an_official_source(self):
+        for f in rows("flags-2026-11-14.csv"):
+            self.assertTrue(f["source_url"].startswith("https://"), f["flag_id"])
+
+    def test_flags_have_valid_status(self):
+        for f in rows("flags-2026-11-14.csv"):
+            self.assertIn(f["status"], {"open", "explained"})
+            self.assertIn(f["severity"], {"open", "blocking", "informational"})
+
+
+class StrategyLedger(unittest.TestCase):
+
+    def test_all_ten_strategies_present_and_blocked(self):
+        data = rows("strategies-2026-11-14.csv")
+        self.assertEqual(len(data), 10)
+        for r in data:
+            self.assertEqual(r["status"], "BLOCKED")
+            self.assertEqual(r["settled_bets"], "0")
+            self.assertEqual(r["score"], "")
+
+    def test_bet_types_cover_single_parlay_and_prop(self):
+        types = {r["bet_type"] for r in rows("strategies-2026-11-14.csv")}
+        self.assertIn("single", types)
+        self.assertIn("parlay_2", types)
+        self.assertIn("parlay_3", types)
+        self.assertIn("prop_combo", types)
+
+    def test_no_leaderboard_entry_is_reward_eligible(self):
+        for r in rows("leaderboard-2026-11-14.csv"):
+            self.assertEqual(r["eligible_for_reward"], "no")
+            self.assertEqual(r["score"], "")
+            self.assertEqual(r["settled_bets"], "0")
+
+    def test_gates_are_computed_and_carry_producers(self):
+        res = json.loads((DATA / "gates-2026-11-14.json").read_text())
+        self.assertEqual(len(res["gates"]), 12)
+        for g in res["gates"]:
+            self.assertIn(g["status"], {"pass", "fail", "blocked"})
+            self.assertTrue(g["evidence"].strip())
+            self.assertTrue(g["produced_by"].strip())
+        self.assertIsNone(res["cash_rewards"])
+
+    def test_no_gate_is_blocked_and_passed_at_once(self):
+        res = json.loads((DATA / "gates-2026-11-14.json").read_text())
+        ids = [g["gate_id"] for g in res["gates"]]
+        self.assertEqual(len(ids), len(set(ids)))
+
+    def test_blocked_gate_names_rights_not_data(self):
+        res = json.loads((DATA / "gates-2026-11-14.json").read_text())
+        blocked = [g for g in res["gates"] if g["status"] == "blocked"]
+        self.assertEqual([g["gate_id"] for g in blocked], ["V8"])
+        self.assertIn("rights", blocked[0]["evidence"].lower())
