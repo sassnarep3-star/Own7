@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "purpose": "Paper-only NFL market research controls. This is a project design, not a licence, wager, recommendation, or finding of profitability.",
+  "origination_order": [
+    {
+      "priority": 1,
+      "market": "spread",
+      "label": "Side · point spread",
+      "research_state": "First priority. Historical directional signal is provisional; no executable quote, ROI, CLV, or live release.",
+      "advance_only_if": [
+        "official inputs and result reconciliation pass",
+        "the frozen side signal survives pre-registered prospective validation",
+        "an authorized opening/closing price source is registered",
+        "all release and risk controls pass"
+      ],
+      "source_ids": ["X29-NFL-SCHEDULE", "NFL-SCHED-W10", "NFL-TERMS", "REPO"]
+    },
+    {
+      "priority": 2,
+      "market": "total",
+      "label": "Total",
+      "research_state": "Second priority. The current result board is 60–60; no fair over/under probability or price is established.",
+      "advance_only_if": [
+        "the side-stage evidence and rights gates are reviewed first",
+        "a total model is registered before its prospective test",
+        "pace, drive, and game-context inputs have dated provenance",
+        "an authorized opening/closing price source is registered"
+      ],
+      "source_ids": ["X29-NFL-SCHEDULE", "NFL-STANDINGS", "NFL-TERMS", "REPO"]
+    },
+    {
+      "priority": 3,
+      "market": "moneyline",
+      "label": "Moneyline",
+      "research_state": "Third priority. A model fair win probability / American price exists for the frozen Week 10 snapshot only; it is not a market quote and is not calibrated as a future edge.",
+      "advance_only_if": [
+        "side and total stages have completed their review gates",
+        "moneyline probabilities pass independent prospective calibration",
+        "both sides of an authorized price are captured with timestamps and settlement rules",
+        "the same paper, rights, risk, and demotion controls pass"
+      ],
+      "source_ids": ["NFL-SCHED-W10", "NFL-STANDINGS", "NFL-TERMS", "REPO"]
+    }
+  ],
+  "price_snapshot_contract": {
+    "store": "data/quote_snapshots.jsonl",
+    "write_mode": "append only; a repeated event/market/selection/phase/operator slot is rejected",
+    "one_record_per": "game × market × mainline variant × selection × operator × phase",
+    "phases": ["opening", "closing"],
+    "markets": {
+      "spread": {"selections": ["home", "away"], "line_unit": "points", "line_convention": "selected side's handicap; home and away are opposite-signed"},
+      "total": {"selections": ["over", "under"], "line_unit": "points", "line_convention": "same total threshold for over and under"},
+      "moneyline": {"selections": ["home", "away"], "line_unit": null, "line_convention": "American odds only; no point line"}
+    },
+    "required_fields": ["snapshot_id", "game_id", "market", "market_variant", "selection", "phase", "operator", "line", "american_odds", "captured_at_utc", "source_id", "source_url", "rights_status", "rights_reference", "verification_status", "evidence_sha256"],
+    "source_registry_authorization": "The registered source must itself state rights_status=authorized, a non-empty rights_scope and a non-sensitive rights_reference; the quote must carry that exact rights_reference. The quote URL must remain within the registered HTTPS host/path.",
+    "publish_only_when": ["HTTPS publisher is in the source registry", "timestamp includes a timezone", "quote is source-checked", "registered authorized-use scope and reference match the quote", "evidence SHA-256 is present and format-valid; this project does not retain source evidence or compare the digest to it"],
+    "empty_is_not_zero": "No quote record means unknown, not 0, not an independent market line, and not a pass."
+  },
+  "line_comparison": {
+    "line_markets": ["spread", "total"],
+    "line_difference": "model fair line − market line, in points; published separately for opening and closing",
+    "moneyline_comparison": "model fair win probability − raw probability implied by American odds; includes vig and is not called edge",
+    "fair_total_probability": null,
+    "not_a_market_quote": "A model fair line or fair price is never copied into opening/closing market fields."
+  },
+  "leaderboard": {
+    "signal_plane": ["forecast record", "hit rate", "pre-registered null test", "multiple-testing adjustment", "uncertainty and stability"],
+    "staking_plane": ["authorized opening and closing prices", "settlement-complete net ROI", "CLV", "stake policy", "exposure and reward"],
+    "ranking_rule": "Signal status cannot be improved by a staking outcome; staking status cannot qualify a weak signal. No cross-plane composite score.",
+    "current_state": "No live strategy, no authorized market quote, no stake, no ROI, no CLV, no reward."
+  },
+  "demotion_gate": {
+    "from": "live",
+    "to": "paper",
+    "automatic_promotion": false,
+    "minimum_settled_bets": 100,
+    "confidence_level": 0.95,
+    "roi_lower_bound_trigger": 0.0,
+    "performance_rule": "After at least 100 settled bets in the locked evaluation cohort, demote when the pre-registered one-sided 95% lower confidence bound for net ROI is at or below 0. The bound must account for the registered sampling/dependence design and the full tested strategy family.",
+    "immediate_triggers": [
+      "provenance_failure",
+      "rights_invalid_or_revoked",
+      "price_snapshot_missing_or_stale",
+      "settlement_mismatch",
+      "risk_limit_exceeded",
+      "model_or_input_version_changed_without_revalidation",
+      "non_reproducible_build"
+    ],
+    "reentry": "Demoted strategy returns to paper. It cannot auto-promote; it must repeat the release gates on a newly frozen prospective record.",
+    "threshold_note": "The 100-bet minimum matches the existing NFL results sample gate RG04. It is a disclosed project policy choice, not an NFL-published rule or a claim that 100 bets are sufficient for every market."
+  },
+  "source_policy": {
+    "observed_game_results": "Existing NFL.com by-week schedule captures, reconciliation checked against standings by the results extractor.",
+    "market_prices": "No licensed quote provider or quote record is currently registered in this repository.",
+    "rights": "Do not systematically retrieve, redistribute, or publish a price feed until the specific source and use rights are documented."
+  }
+}

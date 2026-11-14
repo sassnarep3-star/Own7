@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "decision_state": "No recommendation selected. Review proposals before any future implementation.",
+  "questions": [
+    {
+      "id": "Q01",
+      "question": "Which market-price provider can lawfully supply NFL opening and closing quotes for the intended use?",
+      "evidence": "The committed originations and result analyses contain no sportsbook quote rows; the price store is empty.",
+      "missing": "Named provider, markets/books covered, quote timestamps, price limits, retention and redistribution terms.",
+      "next_step": "Obtain and record a written licence or an explicitly permitted official feed; register its publisher and source scope before ingesting any quote.",
+      "status": "Open · blocks economics and every reward",
+      "source_ids": ["REPO", "NFL-TERMS"]
+    },
+    {
+      "id": "Q02",
+      "question": "What exactly counts as opening and closing for each event, market, selection and operator?",
+      "evidence": "The schema requires separate timezone-aware opening and closing observations; no timestamps are present yet.",
+      "missing": "A pre-registered cutoff (including postponed games), operator identity, market settlement rules and handling of line movement.",
+      "next_step": "Put the quote-time definition and void/postponement rules in a versioned feed contract before capturing observations.",
+      "status": "Open · blocks CLV and fair-vs-market comparison",
+      "source_ids": ["NFL-SCHED-W10", "NFL-TERMS", "REPO"]
+    },
+    {
+      "id": "Q03",
+      "question": "Does the provisional side signal remain predictive on an untouched forward sample?",
+      "evidence": "The existing NFL.com result feed contains 136 official final scores for Weeks 1–9; the reported side board is a retrospective walk-forward signal, not a prospective price test.",
+      "missing": "A frozen strategy version and a new future test period that cannot be selected after seeing results.",
+      "next_step": "Register the side hypothesis, cutoffs, comparator, scoring rule and multiplicity family, then run a paper-only prospective evaluation.",
+      "status": "Open · signal is provisional",
+      "source_ids": ["X29-NFL-SCHEDULE", "REPO"]
+    },
+    {
+      "id": "Q04",
+      "question": "Can totals produce a calibrated over/under probability rather than only a projected points threshold?",
+      "evidence": "The existing result board is 60–60 on 120 scored games; a model total is available, but no fair over/under probability is present.",
+      "missing": "Distributional calibration and pre-kickoff pace, drive, weather and availability inputs with licensed or otherwise authorized provenance.",
+      "next_step": "Register a totals model separately from the side model and evaluate it prospectively against proper scores and a fixed market comparator.",
+      "status": "Open · no total signal established",
+      "source_ids": ["X29-NFL-SCHEDULE", "NFL-STANDINGS", "REPO"]
+    },
+    {
+      "id": "Q05",
+      "question": "Are moneyline fair probabilities calibrated and comparable with both market sides?",
+      "evidence": "The Week 10 model snapshot has fair win probabilities and zero-hold American prices derived by the project model.",
+      "missing": "A prospective calibration record, both market prices, a vig-removal policy, quote timestamp and settlement definition.",
+      "next_step": "Keep moneyline third in the origination order; unlock only after side and total review and a separate probability-calibration gate.",
+      "status": "Open · model fair price is not an offer",
+      "source_ids": ["NFL-STANDINGS", "NFL-SCHED-W10", "NFL-TERMS"]
+    },
+    {
+      "id": "Q06",
+      "question": "What is the performance of a second-, third- or fourth-string replacement by position and side of ball?",
+      "evidence": "Official injury statuses and several club depth-chart captures exist in separate research pages; the league injury report alone does not state every player's depth rank or snap share.",
+      "missing": "Complete date-aligned depth charts, official active/inactive status, historical snap shares and a verified player-game log for each scored game.",
+      "next_step": "Extend the existing depth/injury join only with each club's dated official chart and published snap/result data; leave unrendered or conflicting rows flagged.",
+      "status": "Open · do not translate injury status into points",
+      "source_ids": ["NFL-INJ-W10", "NFL-DEPTH-PATH", "NFL-TERMS"]
+    },
+    {
+      "id": "Q07",
+      "question": "Can player-prop combinations be measured without assuming independence?",
+      "evidence": "The results lab measures spread/total leg dependence from 114 joint outcomes and publishes n; it does not contain the per-player game logs needed for props.",
+      "missing": "Per-player per-game official statistics, participation/snap denominators, prop quote lines, and same-game joint outcomes.",
+      "next_step": "Keep prop rows blank until an authorized player-log and price source is registered; publish each measured pair with n and uncertainty.",
+      "status": "Open · player-prop correlation unmeasured",
+      "source_ids": ["X29-NFL-SCHEDULE", "NFL-PASSING", "NFL-TERMS"]
+    },
+    {
+      "id": "Q08",
+      "question": "Which risk limits and statistical threshold should govern any live-to-paper demotion?",
+      "evidence": "A fail-closed demotion rule is proposed: immediate control failures, or a non-positive one-sided 95% lower ROI bound after at least 100 settled bets.",
+      "missing": "A selected dependence-aware confidence-sequence method, the operational risk limits, and approval of the disclosed 100-bet policy minimum.",
+      "next_step": "Keep the gate inactive while every strategy is paper-only; review the method and thresholds before any live designation.",
+      "status": "Open · gate designed but not activated",
+      "source_ids": ["REPO", "NFL-TERMS"]
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "S01",
+      "rank": 1,
+      "title": "Secure a rights-cleared opening/closing quote feed",
+      "evidence": "Market prices, ROI and CLV are blank in the current result and origination records.",
+      "cost": "High · commercial licence, source review, storage and reconciliation work.",
+      "risk": "High if terms, timestamps, limits or publication rights are misunderstood.",
+      "acceptance_test": "A source is registered with a checked scope and authorized-use reference; every quote has a unique game/market/selection/operator/phase ID, UTC capture time and evidence hash; a reviewer reproduces the open/close matrix with no duplicate or unsupported values.",
+      "review_state": "Unselected",
+      "source_ids": ["NFL-TERMS", "NFL-SCHED-W10", "REPO"]
+    },
+    {
+      "id": "S02",
+      "rank": 2,
+      "title": "Run the side market as a frozen paper-only prospective test first",
+      "evidence": "The side result is the only provisional signal in the existing 30-variant test family; a retrospective hit rate is not a price-based return.",
+      "cost": "Medium · prospective collection, locked specs and independent monitoring.",
+      "risk": "Selection leakage if model versions or windows change after observing outcomes.",
+      "acceptance_test": "A pre-registration names the model hash, dates, eligible games, null, metrics, multiplicity family and stop rules; every expected event is retained, including misses and losses; no stake or reward is enabled.",
+      "review_state": "Unselected",
+      "source_ids": ["X29-NFL-SCHEDULE", "REPO"]
+    },
+    {
+      "id": "S03",
+      "rank": 3,
+      "title": "Keep totals second and add only time-stamped, authorized pregame inputs",
+      "evidence": "The current total board is 60–60; the model has a threshold but no calibrated over/under probability.",
+      "cost": "Medium-to-high · collection, feature definitions and calibration.",
+      "risk": "Feature leakage, source-rights issues and overfitting a small single-season sample.",
+      "acceptance_test": "A separately versioned total model beats a frozen baseline on a future period under proper scoring, reports uncertainty and keeps all trials in the corrected family.",
+      "review_state": "Unselected",
+      "source_ids": ["X29-NFL-SCHEDULE", "NFL-STANDINGS", "REPO"]
+    },
+    {
+      "id": "S04",
+      "rank": 4,
+      "title": "Unlock moneyline only after probability calibration and both-side price capture",
+      "evidence": "The current fair moneyline is model-derived; no sportsbook offer or vig-adjusted edge is known.",
+      "cost": "Medium · calibration, quote capture and settlement mapping.",
+      "risk": "Confusing a zero-hold model fair price with an executable price.",
+      "acceptance_test": "Both sides have authorized opening and closing quotes; calibrated probabilities beat a registered reference on a prospective set; vig handling and exact settlement rules are tested.",
+      "review_state": "Unselected",
+      "source_ids": ["NFL-SCHED-W10", "NFL-STANDINGS", "NFL-TERMS"]
+    },
+    {
+      "id": "S05",
+      "rank": 5,
+      "title": "Complete official replacement-depth and player-usage coverage before prop combos",
+      "evidence": "An injury label does not establish starter status, snap share or replacement impact; prop-joint values remain unmeasured.",
+      "cost": "High · date-aligned club charts, snap logs and player-game data.",
+      "risk": "Mislabeling a player's depth rank, mixing offense/defense, or leaking post-game participation.",
+      "acceptance_test": "Every join matches the same club, game, date, printed position and side of ball; unmatched/contradictory names stay flagged; all leg correlations publish source links and n.",
+      "review_state": "Unselected",
+      "source_ids": ["NFL-INJ-W10", "NFL-DEPTH-PATH", "NFL-PASSING"]
+    },
+    {
+      "id": "S06",
+      "rank": 6,
+      "title": "Keep signal and staking boards separate; audit the demotion gate before any live state",
+      "evidence": "A signal hit rate exists without a market price; staking performance is therefore unknown. A live-to-paper state machine is defined but inactive.",
+      "cost": "Low-to-medium · policy review and continued tests.",
+      "risk": "Treating an arbitrary sample floor or repeated confidence interval as universal evidence.",
+      "acceptance_test": "A test proves no staking field affects signal tier; hard integrity/rights/settlement/risk triggers force paper immediately; the statistical trigger uses a reviewed, pre-registered lower confidence sequence; no automatic re-promotion exists.",
+      "review_state": "Unselected",
+      "source_ids": ["REPO", "NFL-TERMS"]
+    }
+  ],
+  "flags": [
+    {
+      "id": "F01",
+      "item": "No authorized market quote is in the local price store",
+      "evidence": "The repository contains model-only lines and an empty append-only quote ledger; this is a repository inventory finding, not a claim that NFL.com or an operator publishes no odds.",
+      "unverified_value": null,
+      "impact": "Opening/closing market values, line differences, ROI, CLV, stakes and rewards remain blank.",
+      "status": "Needs review",
+      "source_ids": ["REPO", "NFL-SCHED-W10", "NFL-TERMS"]
+    },
+    {
+      "id": "F02",
+      "item": "Price-feed use rights are not evidenced",
+      "evidence": "No provider, written license, permitted-use record or market source ID is registered for this work.",
+      "unverified_value": null,
+      "impact": "Do not ingest or publish market quotes until the exact source and use are authorized.",
+      "status": "Needs review",
+      "source_ids": ["NFL-TERMS", "REPO"]
+    },
+    {
+      "id": "F03",
+      "item": "The originated Week 10 board is a frozen snapshot, not a live board",
+      "evidence": "The source receipt for standings, injuries and fixtures is dated 2026-11-12; the board has 14 games and is not refreshed by this project.",
+      "unverified_value": null,
+      "impact": "Do not treat the table as a current actionable offer; event times and results must be rechecked from the official schedule.",
+      "status": "Needs review",
+      "source_ids": ["NFL-SCHED-W10", "NFL-STANDINGS", "REPO"]
+    },
+    {
+      "id": "F04",
+      "item": "A fair over/under probability is not available",
+      "evidence": "The model emits a projected total in points but does not emit a calibrated outcome distribution for the over or under.",
+      "unverified_value": null,
+      "impact": "No total fair price or probability edge may be shown.",
+      "status": "Needs review",
+      "source_ids": ["NFL-STANDINGS", "REPO"]
+    },
+    {
+      "id": "F05",
+      "item": "Moneyline model prices are not sportsbook prices",
+      "evidence": "The fair American odds are conversions of the model's Week 10 home-win probability; no market quote or vig is present.",
+      "unverified_value": null,
+      "impact": "Do not call the displayed fair price executable, profitable or an edge.",
+      "status": "Needs review",
+      "source_ids": ["NFL-SCHED-W10", "NFL-STANDINGS", "NFL-TERMS"]
+    },
+    {
+      "id": "F06",
+      "item": "Observed signal metrics do not establish staking performance",
+      "evidence": "The official-results lab reports hit rates and adjusted tests but the ROI and CLV fields are null because prices are absent.",
+      "unverified_value": null,
+      "impact": "Signal and staking remain separate; no risk-sized wager or reward is inferred.",
+      "status": "Needs review",
+      "source_ids": ["X29-NFL-SCHEDULE", "REPO"]
+    },
+    {
+      "id": "F07",
+      "item": "Player-prop outcomes and prop correlations are not in the result feed",
+      "evidence": "The current captured result rows are final game scores; per-player logs and prop quotes are not included in this dataset.",
+      "unverified_value": null,
+      "impact": "Prop-combo lines, correlation and leaderboard rows stay blank.",
+      "status": "Needs review",
+      "source_ids": ["X29-NFL-SCHEDULE", "NFL-PASSING", "NFL-TERMS"]
+    },
+    {
+      "id": "F08",
+      "item": "Demotion policy is designed but not activated",
+      "evidence": "No strategy is in a live state; the new policy is a control design that requires method and threshold review before use.",
+      "unverified_value": null,
+      "impact": "The live-to-paper function is exercised in tests only; no live strategy is claimed.",
+      "status": "Needs review",
+      "source_ids": ["REPO", "NFL-TERMS"]
+    }
+  ]
+}

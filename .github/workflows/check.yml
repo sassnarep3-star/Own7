@@ -62,8 +62,12 @@ jobs:
           python nfl-assurance-9580ac3f/build.py --check
           python nfl-assurance-9580ac3f/check.py --report
           python -m unittest discover -s nfl-assurance-9580ac3f/tests -v
+          python -m py_compile nfl-market-control/engine.py nfl-market-control/build.py nfl-market-control/tests/test_market_control.py
+          python -m unittest discover -s nfl-market-control/tests -v
+          python nfl-market-control/build.py --check
       - name: Committed artifacts must already be current
         run: |
+          git diff --check
           git status --porcelain
           git diff --stat
           git diff --exit-code
@@ -80,7 +84,9 @@ jobs:
       - name: Install pinned browser test dependencies (no postinstall scripts)
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Check client JavaScript syntax
-        run: node --check js/app.js
+        run: |
+          node --check js/app.js
+          node --check nfl-market-control/site/app.js
       - name: Test every page at the GitHub project path
         run: npm run test:browser
       - name: Save browser evidence and screenshots

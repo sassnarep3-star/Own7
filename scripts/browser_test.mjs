@@ -17,8 +17,8 @@ const visitPages=[...manifest.canonical_pages,...(manifest.auxiliary_pages||[])]
 const out=join(root,'.artifacts');
 mkdirSync(out,{recursive:true});
 const report={status:'running',browser:null,desktop_pages:[],mobile_pages:[],accessibility_violations:[],runtime_errors:[],assertions:[]};
-const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript','.svg':'image/svg+xml','.json':'application/json','.csv':'text/csv','.md':'text/plain'};
-const allowedFolders=new Set(['assets','css','js','data','research','docs','pages','verified','handoff','market-evidence','rental','nfl','nfl-assurance-9580ac3f','nfl-availability-28ef','session-243828fc','nfl-skill-cfdd']);
+const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript','.svg':'image/svg+xml','.json':'application/json','.jsonl':'application/x-ndjson','.csv':'text/csv','.md':'text/plain'};
+const allowedFolders=new Set(['assets','css','js','data','research','docs','pages','verified','handoff','market-evidence','rental','nfl','nfl-assurance-9580ac3f','nfl-availability-28ef','session-243828fc','nfl-skill-cfdd','nfl-market-control']);
 const publicRootFiles=new Set([...manifest.canonical_pages,...Object.keys(manifest.legacy_redirects),'README.md','COORDINATION.md']);
 const server=createServer((req,res)=>{
   try{
@@ -129,6 +129,34 @@ try{
   assert(choiceCsv.includes('"P02","adopt"'),'skill desk: chosen suggestion exported');
   assert(choiceCsv.includes('"P01",""'),'skill desk: unchosen suggestions export blank, not implied');
   report.assertions.push('Skill desk choice record exports a preference and leaves unchosen items blank');
+
+  // NFL market-control desk: complete slot coverage, blank quote handling, CSV and separate boards.
+  await page.goto(base+'nfl-market-control/site/prices.html',{waitUntil:'networkidle'});
+  const quoteMatrix=page.locator('#snapshot-matrix');
+  assert.equal(await quoteMatrix.locator('tbody tr').count(),84,'market desk: 14 games x 3 markets x 2 selections');
+  assert.equal(await quoteMatrix.locator('td[data-empty]').evaluateAll(cells=>cells.every(c=>!c.textContent.trim())),true,'market desk: missing market values stay blank');
+  await page.locator('[data-search-for="snapshot-matrix"]').fill('WAS @ NYG');
+  assert.equal(await quoteMatrix.locator('tbody tr:visible').count(),6,'market desk: six outcome rows for one game');
+  const matrixDownload=page.waitForEvent('download');
+  await page.locator('[data-export="snapshot-matrix"]').click();
+  const matrixFile=await matrixDownload;
+  await matrixFile.saveAs(join(out,'nfl-price-matrix.csv'));
+  const matrixCsv=readFileSync(join(out,'nfl-price-matrix.csv'),'utf8');
+  assert.equal(matrixCsv.trim().split(/\r?\n/).length,7,'market desk: filtered CSV has a header and six rows');
+  assert(matrixCsv.includes('https://www.nfl.com/games/commanders-at-giants-2026-reg-10'));
+  report.assertions.push('NFL price matrix has 84 expected selections, 168 blank open/close slots and source-linked CSV');
+
+  await page.goto(base+'nfl-market-control/site/leaderboard.html',{waitUntil:'networkidle'});
+  assert.equal(await page.locator('#signal-board tbody tr').count(),30,'signal board keeps all tested variants');
+  assert.equal(await page.locator('#staking-board tbody tr').count(),30,'staking board is a separate ledger');
+  assert.equal(await page.locator('#staking-board td[data-empty]').count(),180,'price, stake, ROI, CLV and reward cells remain blank');
+  assert((await page.locator('main').innerText()).includes('One provisional signal is not one qualified strategy'));
+  report.assertions.push('Signal evidence and staking economics are separate ledgers');
+
+  await page.goto(base+'nfl-market-control/site/demotion.html',{waitUntil:'networkidle'});
+  assert((await page.locator('main').innerText()).includes('no live strategy exists to demote today'));
+  assert((await page.locator('main').innerText()).includes('at or below 0%'));
+  report.assertions.push('Live-to-paper demotion rule is visible and explicitly inactive');
 
   for(const [old,target] of Object.entries(manifest.legacy_redirects)){
     await page.goto(base+old,{waitUntil:'networkidle'});

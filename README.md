@@ -1,6 +1,6 @@
 # OWN7 · NFL Origination Lab
 
-[Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
+[Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [NFL market-control desk](nfl-market-control/site/index.html) · [Coordination board](COORDINATION.md)
 
 ## New: official results & skill lab (2026-11-14)
 
@@ -107,6 +107,16 @@ python collect.py && python depth.py && python index.py && python luck.py \
 python -m unittest discover -s tests -v      # 49 tests
 ```
 
+## NFL market-control desk (2026-11-14)
+
+New paper-only controls at [`nfl-market-control/site/index.html`](nfl-market-control/site/index.html), with the executive summary, opening/closing quote-slot matrix, signal and staking ledgers, market sequence, demotion gate, questions, reviewable suggestions and flagged items. It is linked from the shared site navigation. The quote ledger is intentionally empty: 84 expected game/market/selection rows reserve 168 opening/closing slots, but no quote, ROI, CLV, stake or reward is asserted. Model values remain distinct from market values. See [`nfl-market-control/docs/executive-summary.md`](nfl-market-control/docs/executive-summary.md) and the implementation contract in [`nfl-market-control/README.md`](nfl-market-control/README.md).
+
+```sh
+python nfl-market-control/build.py --check
+python -m unittest discover -s nfl-market-control/tests -v
+python scripts/check_site.py
+```
+
 ## Re-verification (2026-11-13)
 
 Every published NFL value was re-read from the publisher on 2026-11-13, one week after the frozen
@@ -119,12 +129,15 @@ work, including the four defects it fixed and the seven it flagged, is in
 
 ## Known limits
 
-One partial season, eight or nine games per club. Every NFL value is single-source. No depth chart,
-snap count, player log or market price was retrieved. Division standings columns could not be
-identified from the rendered table and are withheld. Five of ten team correlations are arithmetic
-artefacts and are labelled as such. Team-level correlation is not leg-level dependence, so no parlay
-is priced. Luck cannot be removed. The earlier NBA and rental research remains on the site, unchanged
-and separately scoped.
+One partial season, eight or nine games per club. Every NFL value is single-source. The original
+origination/results datasets contain no player-game snap logs, prop outcomes or market prices. Dated
+official printed depth charts and injury/depth joins are maintained separately in
+`nfl-skill-cfdd/` and `nfl-availability-28ef/`; they do not supply measured snap shares or point
+adjustments. Division standings columns could not be identified from the rendered table and are
+withheld. Five of ten team correlations are arithmetic artefacts and are labelled as such. Team-level
+correlation is not leg-level dependence, so no parlay is priced. A single-season signal remains
+vulnerable to luck; a provisional result is not qualification. The earlier NBA and rental research
+remains on the site, unchanged and separately scoped.
 
 ---
 

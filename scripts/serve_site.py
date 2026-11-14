@@ -7,8 +7,8 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 ROOT=Path(__file__).resolve().parent.parent
-FOLDERS={'assets','css','js','data','research','docs','pages','verified','handoff','market-evidence','rental','nfl','nfl_origination','nfl_lab','nfl-availability-28ef','nfl-assurance-9580ac3f','nfl-skill-cfdd'}
-EXTENSIONS={'.html','.css','.js','.svg','.json','.csv','.md','.py'}
+FOLDERS={'assets','css','js','data','research','docs','pages','verified','handoff','market-evidence','rental','nfl','nfl_origination','nfl_lab','nfl-availability-28ef','nfl-assurance-9580ac3f','nfl-skill-cfdd','nfl-market-control','session-243828fc'}
+EXTENSIONS={'.html','.css','.js','.svg','.json','.jsonl','.csv','.md','.py'}
 ROOT_FILES={'README.md','COORDINATION.md'}
 
 
@@ -30,6 +30,10 @@ class Handler(SimpleHTTPRequestHandler):
     def translate_path(self,path):
         target=self.public_path()
         return str(target) if target else str(ROOT/'__not_a_public_file__')
+
+    def guess_type(self,path):
+        if Path(path).suffix.lower()=='.jsonl':return 'application/x-ndjson'
+        return super().guess_type(path)
 
     def end_headers(self):
         self.send_header('X-Content-Type-Options','nosniff')

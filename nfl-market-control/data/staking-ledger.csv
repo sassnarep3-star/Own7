@@ -1,0 +1,31 @@
+id,strategy,market,opening_price,closing_price,stake,net_roi,clv,reward,staking_status,source_url,source_ids
+BOARD-SA,Originated board (directional),spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+BOARD-TA,Originated board (directional),total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M00-SA,Null (home field only),spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M00-SS,Null (home field only),spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M00-TA,Null (home field only),total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M00-TS,Null (home field only),total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M01-SA,Originator (shrunk scoring),spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M01-SS,Originator (shrunk scoring),spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M01-TA,Originator (shrunk scoring),total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M01-TS,Originator (shrunk scoring),total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M02-SA,Pythagorean win rate,spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M02-SS,Pythagorean win rate,spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M02-TA,Pythagorean win rate,total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M02-TS,Pythagorean win rate,total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M03-SA,Recency-weighted scoring,spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M03-SS,Recency-weighted scoring,spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M03-TA,Recency-weighted scoring,total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M03-TS,Recency-weighted scoring,total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M04-SA,Bye / rest differential,spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M04-SS,Bye / rest differential,spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M04-TA,Bye / rest differential,total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M04-TS,Bye / rest differential,total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M05-SA,Home-only / road-only rates,spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M05-SS,Home-only / road-only rates,spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M05-TA,Home-only / road-only rates,total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M05-TS,Home-only / road-only rates,total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M06-SA,Win-streak momentum,spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M06-SS,Win-streak momentum,spread,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M06-TA,Win-streak momentum,total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO
+M06-TS,Win-streak momentum,total,,,,,,,Blocked · no authorized opening/closing quote,https://www.nfl.com/schedules/2026/by-week/week-1,X29-NFL-SCHEDULE REPO

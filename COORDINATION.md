@@ -1306,3 +1306,32 @@ must retain a registered source link, with NFL.com used for official game/result
 repository identified for project-design rules. New work is isolated under `nfl-market-control/`;
 shared integration changes are additive. Use only this fixed branch; run `git pull --rebase` before
 every push; do not touch PR #27 or #17.
+
+### Implementation and verification (2026-11-14; PR/deployment still pending)
+
+| ID | Status | Result |
+|---|---|---|
+| M1 | **done** | Coordination claim was committed/pushed before implementation as `e8dace6`; baseline checks and PR #43 merge state were recorded above. |
+| M2 | **done** | Added append-only `nfl-market-control/data/quote_snapshots.jsonl`, fail-closed quote validation and 84 × 2 expected opening/closing slots. The ledger remains empty: **0** authorized market observations. Registered source rights must explicitly state authorization and match the quote reference; URL host/path, time zone, market/selection, game, duplicate slot and chronology are validated. |
+| M3 | **done** | Display order is side/point spread → total → moneyline. Model fair fields, opening/closing market line or raw implied probability, and differences are distinct; unavailable fields remain blank. |
+| M4 | **done** | Forecast evidence (30 variants) and staking economics (30 separate rows) are distinct. No price, stake, ROI, CLV or reward is populated. Implemented immediate integrity/rights/settlement/risk/version/build stops and the disclosed 100-settled-bet, one-sided 95% lower-bound rule. No live strategy exists; demotion logic is inactive and promotion is never automatic. |
+| M5 | **done** | Nine desk pages, CSV ledgers, source-linked questions, six unselected suggestions and eight flags. The summary links to the official NFL context and the printed-depth/replacement desk; no claim is made of a fresh NFL fetch in this session. |
+| M6 | **implementation done; PR pending** | Integrated the desk into shared navigation and generated-page manifest; added static-preview support for the site assets/JSONL, browser coverage, CI tests and README entry. See local verification below. |
+
+**Verification actually run (all passing):** 111 root unit tests; 23 market-control tests; full repository extraction, origination, research, NFL results, skill/depth, assurance, rental, market-evidence and subsite build/check commands; `python nfl-market-control/build.py --check`; `python scripts/build_site.py`; `python scripts/check_site.py` → **46 canonical pages, 20 redirects, 99 auxiliary pages, 165 recursive HTML pages, 6,521 table rows, 167 registered sources, 0 errors**; `node --check` for both client bundles; `npm run test:browser` → **145 desktop + 145 mobile pages, WCAG A/AA, 13 interaction groups, 0 runtime errors**. NFL extract replay: 32 standings rows, 20 injury rows, 14 fixtures, 0 flags; results replay: 136 games; skill analysis: 30 variants, 1 provisional, 0 qualified; same-game spread/total dependence **n=114, phi −0.068401, p=0.468094**. No external NFL page was fetched in this session; these are repository/receipt replays, not a new source verification or licence check.
+
+**Line-by-line review: irregularities found and recorded/fixed**
+
+1. The executive-summary replacement-depth link went up only one directory and did not resolve; fixed to the correct repo-relative path and the recursive checker now validates it.
+2. Draft documentation said a mismatched evidence digest would be rejected, but the implementation only checked its format and did not retain external source evidence. Text now states this limit plainly; authorization was strengthened to require a registered authorized-use scope/reference and an exact quote-to-registry match. Digest authenticity remains an explicit limitation, not claimed as verified.
+3. Initial browser audit found table source links only 17.6 px tall (WCAG target-size failure). They now meet a 24 px minimum; the complete desktop/mobile and accessibility suite passes.
+4. The public preview/browser allowlists did not consistently cover the JSONL ledger and all already-manifested NFL sub-sites. Added `.jsonl` MIME support and the market-control/`session-243828fc` folder allowances; the package-level preview regression test covers the new desk.
+5. Fair-vs-market values originally had generic “market value” headings; labels now explicitly distinguish model fair line/probability, opening/closing market line or implied probability, and opening/closing difference.
+
+**Known, deliberately unresolved items:** no market-price source or rights authorization is registered, so the quote store, prices, differences, ROI, CLV and stake fields stay empty. Exact open/close cutoff and settlement/void rules remain open. The Week 10 model board is a frozen 2026-11-12 snapshot, not live. The existing results feed has no player-prop joint outcomes; prop-combination correlation/coverage stays unmeasured. Total over/under probability is uncalibrated; moneyline probabilities are model-only. See the nine-page desk's questions and flags. PR/merge/Pages status will be appended after the GitHub operations.
+
+### Additional signal-ledger audit finding
+
+6. Inspection of all 30 result-analysis candidates found that `bets` counts decisive non-push trials while `pushes` is reported separately; the initial display omitted pushes from its record. The desk now exports and displays a **W–L–P** record, labels its bet count “decisive bets (no pushes),” explicitly states the hit-rate denominator, and exposes first-/second-half rates. Regression coverage checks a candidate with two pushes (46–59–2).
+
+7. Repository README's older global “no depth chart was retrieved” sentence contradicted the newly integrated printed-depth/replacement desks. Reworded it to distinguish the original line/results inputs (no player-game snap or prop data) from the separate dated depth-chart snapshots; no depth rank or injury label is turned into a point adjustment.

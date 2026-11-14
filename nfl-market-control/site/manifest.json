@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "pages": [
+    "demotion.html",
+    "flagged.html",
+    "index.html",
+    "leaderboard.html",
+    "prices.html",
+    "questions.html",
+    "sequence.html",
+    "sources.html",
+    "suggestions.html"
+  ],
+  "data_files": [
+    "price-slot-matrix.csv",
+    "signal-leaderboard.csv",
+    "staking-ledger.csv",
+    "quote_snapshots.jsonl"
+  ],
+  "input_sha256": {
+    "nfl-market-control/policy.json": "c7aa2f60e10ef4c6dd7f536d4773949ad0fd2a86740ec8ba17e0a87373eb1693",
+    "nfl-market-control/data/review-register.json": "1e343b48de7f7906858db79039835ed05569c8025f3093d0b6212425221c7660",
+    "nfl-market-control/data/quote_snapshots.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/nfl/results.json": "d8a8f70f79dec83c2b1e17b452c1c9de776957a936fa6aefdd9cb892beb26bcd",
+    "research/nfl/receipts.json": "c33e1ad22ac6cda71c551e6bb93a3f729656ac146ba45897fd20869b22fa0072",
+    "research/sources.json": "0344f3f3cce7d9060ed388a65ae167f4494cac815db680e6ce41eaa22dbfe6fa",
+    "data/nfl-schedule-2026-w10.csv": "2e921197c68b0e5ace40022e6ae9e4758f9dd956a4bd2865d81b27bc89d1a21e",
+    "nfl-results/analysis.json": "aabe7a4e92537b5da758d12c0e4bb85eec07541a7310409289d7b52503e2d4ec",
+    "nfl-results/data/games-2026-w1-9.csv": "4c7a91c3d41282a1eb8224add0d7ca8c98d3f85cabb55d7dddf49f19beccb269"
+  },
+  "page_sha256": {
+    "demotion.html": "78c2f06152c8a6fa74f261bbeb963e297462ef9336175ab15a3dba05e87cbc17",
+    "flagged.html": "3eaa692d64d9282eff188f1837d904ef9dcfab7537151955019886791afd39b1",
+    "index.html": "3ba34bc08bcffecfc926f67eb97141ae37e72a0e97d7585edad78ac7345a8aa5",
+    "leaderboard.html": "a21766b20944bfc61f7b0a258723638bf2a8917b7641a9cadfc5e7f9dd1dd7c6",
+    "prices.html": "bbe939a6536904293409e6222bd9a75d44956d637ad7eb68906592a7f38f50f8",
+    "questions.html": "7986d0ec3e29c87b9f1c68e82f40852c313aaad7792a2a4420893047aaa3f3d8",
+    "sequence.html": "fe6728a641d8e7d1cde469eba1266090e542b5caeb466aaff6682b5bcca5410d",
+    "sources.html": "20624fe263250bdd2856eec1295ffb2ec8d647531fb34f26a8a06f0eddb33c43",
+    "suggestions.html": "a8144465deaed9a593b27b290d2e5d66e720716347d7b17a8153eb5effc95360"
+  },
+  "summary": {
+    "result_games": 136,
+    "result_game_source": "https://www.nfl.com/schedules/2026/by-week/week-1",
+    "results_check": "136 NFL schedule rows; extraction reconciles W-L-T, PF and PA to the official standings",
+    "spread_bets": 120,
+    "spread_wins": 77,
+    "spread_losses": 43,
+    "spread_hit_rate": 0.641667,
+    "spread_p": 0.0021,
+    "total_bets": 120,
+    "total_wins": 60,
+    "total_losses": 60,
+    "total_hit_rate": 0.5,
+    "provisional": 1,
+    "qualified": 0,
+    "variants_tested": 30,
+    "correlation_n": 114,
+    "correlation_phi": -0.068401,
+    "correlation_p": 0.468094,
+    "originated_games": 14,
+    "market_selection_rows": 84,
+    "expected_open_close_slots": 168,
+    "captured_quote_records": 0,
+    "opening_records": 0,
+    "closing_records": 0,
+    "price_status": "No authorized quote records in the repository; all market values remain blank"
+  }
+}

@@ -191,6 +191,18 @@ NAV = [
 ]
 
 
+NAV.append(("NFL price & release controls", [
+    ("nfl-market-control/site/index.html", "Market-control executive summary", "overview"),
+    ("nfl-market-control/site/prices.html", "Opening / closing snapshots", "data"),
+    ("nfl-market-control/site/leaderboard.html", "Signal vs staking", "leaderboard"),
+    ("nfl-market-control/site/sequence.html", "Origination order", "lab"),
+    ("nfl-market-control/site/demotion.html", "Live-to-paper gate", "validation"),
+    ("nfl-market-control/site/questions.html", "Market-control questions", "requirements"),
+    ("nfl-market-control/site/suggestions.html", "Market-control suggestions", "review"),
+    ("nfl-market-control/site/flagged.html", "Market-control flagged", "care"),
+    ("nfl-market-control/site/sources.html", "Market-control sources", "sources"),
+]))
+
 SKILL_NAV_PATH = "nfl-skill-cfdd/site/index.html"
 
 
@@ -715,6 +727,12 @@ def build():
     skill_pages=load_json('nfl-skill-cfdd/site/manifest.json')['pages']
     for name in skill_pages:
         generated.append(f'nfl-skill-cfdd/site/{name}')
+    # NFL market-control desk: price snapshots, separate signal/staking ledgers and demotion policy.
+    price_result=subprocess.run([sys.executable,str(ROOT/'nfl-market-control'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if price_result.returncode: raise SystemExit(price_result.stdout+price_result.stderr)
+    market_pages=load_json('nfl-market-control/site/manifest.json')['pages']
+    for name in market_pages:
+        generated.append(f'nfl-market-control/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
@@ -729,7 +747,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-control/site/{n}' for n in market_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 
