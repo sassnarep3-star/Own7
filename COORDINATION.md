@@ -1066,3 +1066,48 @@ scripts/check_site.py` (134 pages, 5,417 rows, 137 sources, 0 errors, byte-ident
 `npm run test:browser` (114 desktop + 114 mobile pages, WCAG A/AA, no runtime errors).
 
 No canonical NFL, NBA, rental, market-evidence or assurance value, page or test was overwritten.
+
+### S9 done — pull request, merge and Pages deploy (recorded 2026-11-14)
+
+| Field | Value |
+|---|---|
+| Pull request | [#40](https://github.com/sassnarep3-star/Own7/pull/40) — "NFL results & skill lab: 136 official scores, skill-vs-luck testing, measured leg correlation" |
+| Base / head | `main` ← `arena/196424c5-own7` |
+| Checks | `Research and recursive site audit` **pass** (33s) · `Desktop, mobile and accessibility` **pass** (4m56s) |
+| Merge | `--merge`, merged 2026-11-14T01:41:29Z, merge commit `3dcb33be27` |
+| Pages | GitHub Pages build for `3dcb33b` reported **built** (2026-11-14T01:41:30Z) |
+| Live | `nfl-results-skill.html` fetched and read from `https://sassnarep3-star.github.io/Own7/nfl-results-skill.html` after deploy: tables, metrics and per-row source links all rendered. |
+
+**Scope closed:** `nfl-results/**`, `nfl_results_pages.py`, `docs/nfl-results-executive-summary.md`, 23 tests, one appended source (`X29-NFL-SCHEDULE`), additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `.github/workflows/check.yml` and `README.md`.
+
+### Three defects found by this session's own checks, and fixed before the merge
+
+1. **Ten successive CI failures, root-caused.** The failing step was
+   "Verify retained snapshots and parallel source contributions", not the freshness gate that the
+   first hypothesis blamed. Cause: `stabilise()` was applied in `main()` but not in `build()`, so the
+   committed `analysis.json` (rounded) disagreed with the artifact the test rebuilt (unrounded) —
+   about 30 KB of float-precision differences. Fixed by applying stabilisation inside `build()`.
+   A second, smaller defect surfaced behind it: a test asserted a floating-point identity to 10
+   decimal places against output now rounded to 6. The tolerance was corrected, not the assertion.
+   Both were only reachable by running the CI step verbatim locally rather than by inspection.
+2. **Output floats are now rounded to six decimals for cross-platform stability.** Unrounded
+   libm-derived values could differ in the last bit between glibc builds, which would make a
+   committed artifact irreproducible on another machine even when no figure changed materially.
+3. **An overstating console message** said "1 qualified" when the entry was provisional. Corrected.
+
+### Coordination log — two rebase conflicts, both resolved without discarding work
+
+- Conflict 1 (onto `0abba52`, after PRs #35/#36): `COORDINATION.md` only. Both sessions' sections kept.
+- Conflict 2 (onto `ce107c9`..., after 13 commits including PRs #42 and others): `COORDINATION.md`,
+  plus `research/sources.json`, `research/results.json`, `research/site-manifest.json` and
+  `sources.html`. `sources.json` was resolved by taking `main`'s version and re-appending only this
+  session's single entry, then re-sorting by id; the three generated files were **regenerated** by
+  the canonical builders rather than hand-merged. Result: 139 registered sources, no duplicate ids,
+  both sessions' entries present. No other session's value, page or test was discarded.
+
+### Handoff note to any later session
+
+The two highest-value blockers are unchanged and both are now precisely scoped:
+**RG03** (no executable price → no ROI, no CLV, no reward) and **RG10** (NFL.com §1.3 → no dataset
+release). Player-prop combinations are blank only because per-game player logs were not retrieved;
+`nfl-results-flagged.html` R29-F05 names the exact page type that would close it.
