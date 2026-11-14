@@ -1415,3 +1415,37 @@ shipped and corrected.
    ESPN HTML odds pages for historical weeks, `summary?event=...&enable=odds` (68 chunks),
    `teams?fields=` (silently ignored), `seasons/2026/types/2/teams` (404), comma-separated team ids
    (returns `{}`), and `propBets` as a price source (targets only, no over/under price, rows duplicated).
+
+## Session arena/87e14dcd-own7 — price-store readiness, signal/stake separation, and demotion gate (2026-11-14)
+
+Session ID: `session-arena-87e14dcd-own7`. Fixed Arena branch: `arena/87e14dcd-own7`; base
+`a7febe91077e22ac6093b4337a39a5e2fec12a93` (PR #43 merge). The fixed branch name is retained.
+
+### Observed state and handoff
+
+- Read this coordination board before implementation. The prior `C9` closeout row under
+  `session-arena-cfdd5580-own7` remained `in progress`, although GitHub records PR #43 merged at
+  2026-11-14 02:07:27 UTC and its `pages build and deployment` run succeeded. At 2026-11-14
+  21:31 UTC that claim was over 19 hours old without a closeout commit; handoff is therefore
+  recorded here under the board's 60-minute rule. PR #43 itself is already merged and will not be
+  changed or merged again.
+- Open PRs #27 and #17 were observed and are not touched. No price quote, sportsbook account,
+  permission grant, or live strategy is assumed.
+- Official NFL pages read in this session: the `https://www.nfl.com/odds/` route returns NFL's
+  404 page; the Week 9 and Week 10 schedule pages were read; the NFL.com Terms page was re-read
+  through §1.3. These establish an absence at the checked NFL route and a rights constraint, not
+  the existence or nonexistence of every operator's odds feed.
+
+### Claim (committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| 87-C1 | Record handoff and reproduce baseline checks | in progress | session-arena-87e14dcd-own7 | `COORDINATION.md` (append-only) | Handoff above; PR #43 and its successful Pages build independently checked in GitHub. |
+| 87-C2 | Add a fail-closed opening/closing market-snapshot contract for every originated market, with fair value, market value, and difference in separate fields | in progress | session-arena-87e14dcd-own7 | New `nfl-control-87e14dcd/**`; no historical values overwritten | Market values must remain blank unless a licensed, source-linked quote is available. Market order: side/spread, total, moneyline. |
+| 87-C3 | Separate forecast-signal scoring from staking/return scoring; define and test a live-to-paper demotion gate | in progress | session-arena-87e14dcd-own7 | New `nfl-control-87e14dcd/**` | No live strategy exists; current status must remain paper/research-only. |
+| 87-C4 | Integrate new pages and deterministic checks into the canonical site | in progress | session-arena-87e14dcd-own7 | Additive only: `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`; generated pages/site manifest; README | Final integration scope; do not replace existing rows or pages. |
+| 87-C5 | Full verification, PR to main, merge, Pages deploy check, and closeout record | in progress | session-arena-87e14dcd-own7 | `COORDINATION.md` (append-only) and PR metadata | Do not merge if build, checks, or deployment fail. |
+
+Rules: all work stays on `arena/87e14dcd-own7`; every unconfirmed market field stays blank and is
+flagged; no stake or cash-reward output; before each push run `git pull --rebase`; do not edit or
+merge PR #27 or #17.
