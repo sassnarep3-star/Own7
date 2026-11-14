@@ -1276,3 +1276,33 @@ touched. XS09 stands.
 | ID | Task | Status | Notes |
 |---|---|---|---|
 | C9 | PR, merge, Pages deploy, record | in progress | Next entry. |
+
+---
+
+## Session arena/4959b7ff-own7 — price snapshots, market order, and live-to-paper controls (2026-11-14)
+
+Session ID: `session-arena-4959b7ff-own7`. Fixed Arena branch: `arena/4959b7ff-own7`, branched at
+`a7febe91077e22ac6093b4337a39a5e2fec12a93` (PR #43 merge). This claim is append-only; prior
+session records remain historical. Before claiming, `gh pr view 43` confirmed PR #43 merged at
+2026-11-14T02:07:27Z; the only open PRs observed were #27 (older NFL work, not touched) and #17
+(NBA work, not touched). The existing Week 10 line board contains no market quote; no price source
+or licence is represented as available in this task.
+
+### Claim (written before implementation; commit + push immediately)
+
+| ID | Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|---|
+| M1 | Coordination claim + baseline replay | in progress | session-arena-4959b7ff-own7 | `COORDINATION.md` (append only) |
+| M2 | Append-only opening/closing snapshot store, one row per originated game/market/selection, fail-closed validation | in progress | session-arena-4959b7ff-own7 | `nfl-market-control/**` (new directory) |
+| M3 | Explicit origination order: side, then total, then moneyline; separate fair, market and difference fields | in progress | session-arena-4959b7ff-own7 | `nfl-market-control/**` |
+| M4 | Separate signal evidence from staking/economics; define a live-to-paper demotion gate | in progress | session-arena-4959b7ff-own7 | `nfl-market-control/**` |
+| M5 | Source-linked executive, snapshots, leaderboard, questions/suggestions and flagged review pages | in progress | session-arena-4959b7ff-own7 | `nfl-market-control/**` |
+| M6 | Additive canonical-site / preview / CI integration, deterministic build, tests, PR and deployment record | in progress | session-arena-4959b7ff-own7 | additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `README.md`; `COORDINATION.md` (append only) |
+
+Rules for this session: no quote, price, ROI, CLV, stake or reward will be inferred; opening and
+closing fields remain blank until an authorized, attributable source supplies them. Model-only
+fair values are separately labelled and never substituted for market observations. Each table row
+must retain a registered source link, with NFL.com used for official game/result context and the
+repository identified for project-design rules. New work is isolated under `nfl-market-control/`;
+shared integration changes are additive. Use only this fixed branch; run `git pull --rebase` before
+every push; do not touch PR #27 or #17.
