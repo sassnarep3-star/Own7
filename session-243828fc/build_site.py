@@ -6,6 +6,8 @@ source link. Values that could not be confirmed are written as UNVERIFIED with a
 
 Usage:  python3 build_site.py          (write pages)
         python3 build_site.py --check  (fail if committed pages differ from a fresh render)
+
+Output goes to site/ (the root scripts/build_site.py registers these pages in the manifest).
 """
 from __future__ import annotations
 
@@ -18,6 +20,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "data"
+OUT = HERE / "site"
+REGISTRY = HERE.parent / "research" / "sources.json"
 REPO_BLOB = "https://github.com/sassnarep3-star/Own7/blob/main/"
 LIVE = "https://www.nfl.com/injuries/league/2026/REG10"
 LEDGER_PATH = "nfl-availability-28ef/data/injuries-week10-2026.csv"
@@ -25,7 +29,6 @@ LEGAL_TERMS = "https://www.nfl.com/legal/terms"
 GRA_UNLAWFUL = "https://www.gra.gov.sg/harm-minimisation/unlawful-remote-gambling-activities"
 GRA_PROBLEM = "https://www.gra.gov.sg/harm-minimisation/problem-gambling"
 GRA_HOME = "https://www.gra.gov.sg/"
-NCPG = "http://www.ncpg.org.sg/"
 DET_CHART = "https://www.detroitlions.com/team/depth-chart"
 NFL_STANDINGS = "https://www.nfl.com/standings/"
 NFL_INACTIVES_WK9 = "https://www.nfl.com/news/nfl-week-9-inactives-players-ruled-out-sunday-2026-season"
@@ -63,17 +66,40 @@ def link(url: str, label: str | None = None) -> str:
     return f'<a href="{e(url)}" rel="noopener">{e(label or url)}</a>'
 
 
+def _url_ids():
+    """URL -> registry ID for this session's X243-* records (research/sources.json, append-only)."""
+    reg = json.loads(REGISTRY.read_text(encoding="utf-8"))
+    out = {}
+    for r in reg:
+        if r["id"].startswith("X243-"):
+            out[r["url"]] = r["id"]
+    return out
+
+
+URL_IDS = _url_ids()
+
 ALLOWED_SOURCE = re.compile(
     r'href="(https://www\.nfl\.com/|https://www\.gra\.gov\.sg/|https://sso\.agc\.gov\.sg/|'
-    r'https://www\.detroitlions\.com/|https://github\.com/sassnarep3-star/Own7/|http://www\.ncpg\.org\.sg/)[^"]+"')
+    r'https://www\.detroitlions\.com/|https://github\.com/sassnarep3-star/Own7/)[^"]*"')
 
 
 def row(cells: list[str], source_html: str, *, classes: str = "") -> str:
-    """One table row. A row without an allowed official or repo source link is a build error by design."""
-    if not ALLOWED_SOURCE.search(source_html):
-        raise ValueError("row without an allowed source link: %r" % (cells[:2],))
+    """One table row. Every link in the source cell must be a registered official or repo source.
+
+    The row carries data-source-ids (the registry IDs of those links), which the repo audit requires.
+    A row without a registered link is a build error by design.
+    """
+    hrefs = re.findall(r'href="([^"]+)"', source_html)
+    if not hrefs:
+        raise ValueError("row without a source link: %r" % (cells[:2],))
+    for h in hrefs:
+        if not ALLOWED_SOURCE.search('href="%s"' % h):
+            raise ValueError("source link not on an allowed official or repo host: %s" % h)
+        if h not in URL_IDS:
+            raise ValueError("source link not registered in research/sources.json: %s" % h)
+    ids = " ".join(sorted({URL_IDS[h] for h in hrefs}))
     tds = "".join(f"<td>{c}</td>" for c in cells)
-    return f'<tr class="{classes}">{tds}<td>{source_html}</td></tr>'
+    return f'<tr class="{classes}" data-source-ids="{ids}">{tds}<td>{source_html}</td></tr>'
 
 
 def table(headers: list[str], rows: list[str], *, source_header: str = "Source (official / repo)",
@@ -225,31 +251,23 @@ def page_gaps():
     sg = load_json("suggestions.json")
     qrows = []
     for q in qs:
-        src = link(q["source_url"], q["source_label"]) if q.get("source_url") else '<span class="unv">UNVERIFIED — no official source yet</span>'
-        qrows.append(f'<tr><td>{e(q["id"])}</td><td>{e(q["question"])}</td><td>{e(q["have"])}</td>'
-                     f'<td>{e(q["missing"])}</td><td>{e(q["close_by"])}</td><td>{e(q["blocks"])}</td><td>{src}</td></tr>')
-    qt = ('<table><thead><tr><th>ID</th><th>Question</th><th>What we have (sourced)</th><th>What is missing</th>'
-          '<th>How to close it</th><th>Blocks</th><th>Source</th></tr></thead><tbody>' + "\n".join(qrows)
-          + "</tbody></table>")
+        src = link(q["source_url"], q["source_label"])
+        qrows.append(row([e(q["id"]), e(q["question"]), e(q["have"]), e(q["missing"]), e(q["close_by"]), e(q["blocks"])], src))
+    qt = table(["ID", "Question", "What we have (sourced)", "What is missing", "How to close it", "Blocks"], qrows,
+               source_header="Source")
     srows = []
     for s_ in sg:
-        if s_.get("source_url"):
-            src = link(s_["source_url"], s_["source_label"])
-        else:
-            src = '<span class="unv">UNVERIFIED</span>'
-        srows.append(f'<tr><td>{e(s_["id"])}</td><td>{e(s_["suggestion"])}</td><td>{e(s_["evidence"])}</td>'
-                     f'<td>{e(s_["cost_estimate"])}</td><td>{e(s_["risk"])}</td><td>{e(s_["acceptance_test"])}</td>'
-                     f'<td>{src}</td><td><span class="tag">Decision: pending — nothing implemented</span></td></tr>')
-    st = ('<table><thead><tr><th>ID</th><th>Suggestion</th><th>Evidence</th><th>Cost (estimate)</th><th>Risk</th>'
-          '<th>Acceptance test</th><th>Source</th><th>Decision</th></tr></thead><tbody>' + "\n".join(srows)
-          + "</tbody></table>")
+        src = link(s_["source_url"], s_["source_label"])
+        srows.append(row([e(s_["id"]), e(s_["suggestion"]), e(s_["evidence"]), e(s_["cost_estimate"]), e(s_["risk"]),
+                          e(s_["acceptance_test"]), '<span class="tag">Decision: pending, nothing implemented</span>'], src))
+    st = table(["ID", "Suggestion", "Evidence", "Cost (estimate)", "Risk", "Acceptance test", "Decision"], srows,
+               source_header="Source")
     body = f"""<p class="lead">Two lists. The first says what the data can and cannot answer. The second is a set of proposals.
 Nothing in the second list has been implemented; each needs an owner decision.</p>
 <h2>Questions, information we have, information we lack</h2>{qt}
 <h2>Suggestions to review and choose from (not implemented)</h2>{st}"""
     return page("Questions & suggestions", "gaps.html", body,
                 lead="A decision list. Each suggestion states its evidence, cost, risk and an acceptance test.")
-
 
 def page_legal():
     rows = [
@@ -291,32 +309,25 @@ project can verify. It stays blocked until the legal review is done.</p>"""
 def page_repo_audit(audit):
     rows = []
     for a in audit:
-        src = link(a["link"], a["link_label"]) if a.get("link") else '<span class="unv">UNVERIFIED</span>'
-        rows.append(f'<tr><td>{e(a["id"])}</td><td>{e(a["file"])}</td><td>{e(a["finding"])}</td>'
-                    f'<td>{e(a["check_performed"])}</td><td>{e(a["severity"])}</td><td>{src}</td></tr>')
-    t = ('<table><thead><tr><th>ID</th><th>File / area</th><th>Finding</th><th>Check performed</th><th>Severity</th>'
-         '<th>Source / file for review</th></tr></thead><tbody>' + "\n".join(rows) + "</tbody></table>")
+        rows.append(row([e(a["id"]), e(a["file"]), e(a["finding"]), e(a["check_performed"]), e(a["severity"])],
+                        link(a["link"], a["link_label"])))
+    t = table(["ID", "File / area", "Finding", "Check performed", "Severity"], rows, source_header="Source / file for review")
     body = f"""<p class="lead">A line-by-line look at the parts of the repo this session touched, and what each
 check showed. Baseline on this branch: 27 of 27 CI-equivalent commands passed before this session's changes (see COORDINATION.md, P1).</p>{t}"""
     return page("Repo audit", "repo-audit.html", body, lead="Irregularities for review, each with the file or source to check.")
 
-
 def page_flagged(flags):
     rows = []
     for f_ in flags:
-        src = " · ".join(link(u, lbl) for lbl, u in f_["sources"])  # every flag must carry at least one link
         if not f_["sources"]:
             raise ValueError("flag without a source: " + f_["id"])
-        rows.append(f'<tr><td>{e(f_["id"])}</td><td>{e(f_["title"])}</td><td>{e(f_["detail"])}</td>'
-                    f'<td>{e(f_["blocks"])}</td><td>{e(f_["owner_action"])}</td><td>{src}</td></tr>')
-    t = ('<table><thead><tr><th>ID</th><th>Flag</th><th>Detail</th><th>Blocks</th><th>Owner action</th>'
-         '<th>Source (official or repo)</th></tr></thead><tbody>' + "\n".join(rows) + "</tbody></table>")
+        src = " · ".join(link(u, lbl) for lbl, u in f_["sources"])
+        rows.append(row([e(f_["id"]), e(f_["title"]), e(f_["detail"]), e(f_["blocks"]), e(f_["owner_action"])], src))
+    t = table(["ID", "Flag", "Detail", "Blocks", "Owner action"], rows, source_header="Source (official or repo)")
     body = f"""<div class="note"><b>Flagged for Review.</b> These items are published for your review and do not block the
 merge. Each has a source link, so it can be checked without the agent.</div>{t}"""
     return page("Flagged for Review", "flagged.html", body, lead="Irregularities, unverified items and decisions for the owner.")
 
-
-# ---------------------------------------------------------------- data
 def build_pages():
     findings = load_json("findings.json")
     return {
@@ -333,15 +344,19 @@ def build_pages():
 def main(check: bool) -> int:
     pages = build_pages()
     if check:
-        stale = [n for n, t in pages.items() if not (HERE / n).exists() or (HERE / n).read_text(encoding="utf-8") != t]
+        stale = [n for n, t in pages.items() if not (OUT / n).exists() or (OUT / n).read_text(encoding="utf-8") != t]
         if stale:
             print("STALE pages:", *stale)
             return 1
         print(f"OK: {len(pages)} pages reproduce exactly.")
         return 0
+    OUT.mkdir(parents=True, exist_ok=True)
     for n, t in pages.items():
-        (HERE / n).write_text(t, encoding="utf-8", newline="\n")
-    print("wrote", ", ".join(pages))
+        (OUT / n).write_text(t, encoding="utf-8", newline="\n")
+    (OUT / "manifest.json").write_text(json.dumps({"pages": sorted(pages), "generated": True,
+        "boundary": "Static pages; every table row carries a registered source link; unverified values are blank."},
+        indent=2) + "\n", encoding="utf-8")
+    print("wrote", ", ".join(sorted(pages)))
     return 0
 
 

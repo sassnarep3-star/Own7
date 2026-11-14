@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "depletion.html",
+    "flagged.html",
+    "gaps.html",
+    "index.html",
+    "legal.html",
+    "live-check.html",
+    "repo-audit.html"
+  ],
+  "generated": true,
+  "boundary": "Static pages; every table row carries a registered source link; unverified values are blank."
+}

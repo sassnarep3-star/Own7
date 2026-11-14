@@ -165,17 +165,13 @@
   {
    "id": "F11",
    "title": "Responsible-gambling reference",
-   "detail": "GRA links to the National Council on Problem Gambling for problem-gambling support. Included because this project's subject is betting.",
+   "detail": "GRA links support resources for problem gambling from its page on problem gambling (the page names the National Council on Problem Gambling; that organisation's own link is http-only and is not cited here). Included because this project's subject is betting.",
    "blocks": "Nothing.",
    "owner_action": "None.",
    "sources": [
     [
      "GRA: problem gambling",
      "https://www.gra.gov.sg/harm-minimisation/problem-gambling"
-    ],
-    [
-     "National Council on Problem Gambling",
-     "http://www.ncpg.org.sg/"
     ]
    ]
   }

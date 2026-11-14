@@ -107,7 +107,14 @@
     "nfl-availability-28ef/site/questions.html",
     "nfl-availability-28ef/site/suggestions.html",
     "nfl-availability-28ef/site/flagged.html",
-    "nfl-availability-28ef/site/sources.html"
+    "nfl-availability-28ef/site/sources.html",
+    "session-243828fc/site/depletion.html",
+    "session-243828fc/site/flagged.html",
+    "session-243828fc/site/gaps.html",
+    "session-243828fc/site/index.html",
+    "session-243828fc/site/legal.html",
+    "session-243828fc/site/live-check.html",
+    "session-243828fc/site/repo-audit.html"
   ],
   "legacy_redirects": {
     "findings.html": "data.html",
@@ -243,9 +250,16 @@
     "requirements.html": "cb536fc0c666dfb8bddb0e99f030c98c14f3e67d086e409a6176c9f38b6d9072",
     "responsible-gambling.html": "67dd2687c6f19a88d79f5386092bb91b2392e9de2077837a2b6fa0b111e80631",
     "review.html": "dc5038690d08dd255228ec609099cba6a717e250296a3d9c2fb91148523422a8",
+    "session-243828fc/site/depletion.html": "32670a8e2415c693b3db2ee34065db99da10bd169bab42bf2cd25613a7c6a48d",
+    "session-243828fc/site/flagged.html": "bda84fcf8fe84c4cbad4c9e15ba1694a3f1c6d8773aab375f62a4492cf30dbfc",
+    "session-243828fc/site/gaps.html": "bcc14bc44677361583e2c98855d9198e9d58aa56bf2d7fe2a04b4b0d17816173",
+    "session-243828fc/site/index.html": "677012acfac3225749a3c99f40a7b8bea2ea3789ed30f7320c462a6ae53c9b34",
+    "session-243828fc/site/legal.html": "8a21c57137c32f9c163d6f038429093ff49dbc021d43d15e5772c21a3eecd2cd",
+    "session-243828fc/site/live-check.html": "05a085af88ef2bf094ddf314821dce801c1ee68d16efa3a8c969ca40889c6f81",
+    "session-243828fc/site/repo-audit.html": "869556de04aa4b01d96a3f6f3688ee897926d81f2a7784fecdea0d4be305495b",
     "settlement.html": "c4f519f8152bbfdb57c26a269226ab1105d06a2e75c8ae53eb397120cb9d4775",
     "signals.html": "5fddf761f3c2a4066f3a45bfd8df8022dfc423f673539fd67af4761d662cc99f",
-    "sources.html": "54512b8b1c163eab668565be51ee9281398a9b35e39b72c313499610d74b117c",
+    "sources.html": "040bef2ce50ac1e34b677b1e4b156b18e36e87c13b99939aab88fe82de78dae6",
     "validation.html": "5d5a75c49017f7c7ef25cf2c0f4a1f9bf5bfac8e2f4f452ae43c4e5b6516d61c",
     "verified/betting-rules.html": "fd70be817c7da2ef8dd56eeb65f15372dd214882bdf9a07fc06e90b0918ce897",
     "verified/correlation.html": "0bece3d46a2088faebf0b35f3869dc7d1509bbc33cf1e0847fd0926ddaecb1ae",
@@ -259,5 +273,5 @@
     "verified/strategies.html": "a7b30d435deb49af1a5bb41ee34ddde08ba7e3315cc1cbb1d0e4a6fc7efd125b",
     "verified/validation-gates.html": "1e1584f1ff9e10a208e60ee45ecb2d113c9a98eda06db944ec01bdbd8f4702cd"
   },
-  "research_run_hash": "9433ff4318954719eb736adfc5a65c8c859bb733a9f1a044df44efa97004b00b"
+  "research_run_hash": "c061c19ad46fa02197719e8fd45de6f29a6b1ce9eb905c821f4aec1212a618e2"
 }
