@@ -34,7 +34,8 @@ def payout_units(price: float, won: bool, push: bool = False) -> float:
     if push:
         return 0.0
     if won:
-        return 100.0 / price if price > 0 else 100.0 / abs(price)
+        # Profit in units on a 1-unit stake: a +150 winner returns 1.5, a -200 winner returns 0.5.
+        return price / 100.0 if price > 0 else 100.0 / abs(price)
     return -1.0
 
 

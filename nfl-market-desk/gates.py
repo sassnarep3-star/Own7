@@ -53,7 +53,12 @@ DEMOTION_GATE = {
         {"key": "rolling_50_hit_rate", "threshold": None, "op": "<=",
          "measures": "hit rate over the most recent 50 settled bets against the promoted rate",
          "why": "a rate that has collapsed over a 50-bet window is stale, not unlucky",
-         "comparator": "promoted_rate - 2 * binomial_sd(promoted_rate, 50)"},
+         "comparator": "promoted_rate - 2 * binomial_sd(promoted_rate, 50)",
+         # A 2-sd band on 50 bets is wide, so it is widened again by 10% to keep this trigger
+         # genuinely extreme. Without the margin the trigger would fire on ordinary noise: at a
+         # promoted 55%, the 2-sd floor is 41.0%, and a normal 50-bet run lands below it far too
+         # often for the trigger to mean "collapsed" rather than "unlucky".
+         "slack_factor": 0.9},
         {"key": "clv_mean_bps", "threshold": 0.0, "op": "<=",
          "measures": "mean closing-line value in basis points over the live ledger",
          "why": "a strategy that consistently loses at the close is on the wrong side of the market, "
@@ -138,6 +143,7 @@ def evaluate_demotion(ledger: dict) -> dict:
                 fired.append({"key": key, "status": "unevaluable", "why": "promoted_rate missing"})
                 continue
             threshold = p - 2 * sqrt(p * (1 - p) / 50)
+            threshold *= t.get("slack_factor", 1.0)
         if t["op"] == "<=" and val <= threshold:
             fired.append({"key": key, "value": val, "threshold": round(threshold, 4),
                           "status": "fired", "why": t["why"]})

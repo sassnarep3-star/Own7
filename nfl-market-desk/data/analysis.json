@@ -28,27 +28,47 @@
       "model_mae": 10.877,
       "market_mae": 10.233
     },
-    "mean_abs_side_edge": 7.164,
+    "mean_abs_side_edge": 4.036,
     "verdict": "model_error_exceeds_market",
     "reading": "The model is less accurate than the market on both markets. That does not make a hit rate impossible, but it means any positive result on this capture is not evidence of skill. It is evidence that 15 games is noise."
   },
   "luck_decomposition": {
     "n_settled": 15,
-    "observed_wins": 13,
-    "model_expected_wins": 10.38,
+    "observed_wins": 2,
+    "model_expected_wins": 9.26,
     "coin_expected_wins": 7.5,
-    "excess_over_model_expectation": 2.62,
-    "excess_over_coin": 5.5,
-    "p_vs_model_expectation": 0.171614,
+    "excess_over_model_expectation": -7.26,
+    "excess_over_coin": -5.5,
+    "p_vs_model_expectation": 0.000167,
     "p_vs_coin": 0.007385,
-    "reading": "If the observed wins sit far above the wins the model itself expected, the record is being produced by variance, not by the probabilities. The number to watch is excess_over_model_expectation, not the hit rate."
+    "reading": "The number to watch is excess_over_model_expectation, not the hit rate. Wins far ABOVE the model's own expectation mean variance flattered it; wins far BELOW mean the model's own probabilities were overconfident and the record was worse than the model predicted. Either way the hit rate alone misleads, in opposite directions."
+  },
+  "selection_test": {
+    "side": {
+      "market": "side",
+      "n_bets": 15,
+      "picked_home": 10,
+      "picked_away": 5,
+      "share_home": 0.6667,
+      "p_versus_balanced": 0.301758,
+      "reading": "If the share of home picks is far from half, the model is making a directional claim rather than adding noise. Combined with the hit rate, that distinguishes an uninformative model from one whose signal is inverted."
+    },
+    "total": {
+      "market": "total",
+      "n_bets": 14,
+      "picked_over": 6,
+      "picked_under": 8,
+      "share_over": 0.4286,
+      "p_versus_balanced": 0.790527,
+      "reading": "If the share of home picks is far from half, the model is making a directional claim rather than adding noise. Combined with the hit rate, that distinguishes an uninformative model from one whose signal is inverted."
+    }
   },
   "closing_line_value": {
     "side": {
       "n": 15,
-      "mean_points": 1.77,
-      "median_points": 0.5,
-      "share_beat_close": 0.533,
+      "mean_points": -1.77,
+      "median_points": -0.5,
+      "share_beat_close": 0.2,
       "basis": "picked side's own line at open minus the same side's line at close, in points",
       "reading": "A strategy with a real edge beats the close on most bets. Positive CLV in points means we consistently took the better number. A record that wins while losing at the close is winning on variance."
     },
@@ -66,22 +86,22 @@
       "market": "side",
       "n_rows": 15,
       "n_bets": 15,
-      "wins": 13,
-      "losses": 2,
+      "wins": 2,
+      "losses": 13,
       "pushes": 0,
-      "signal_hit_rate": 0.8667,
+      "signal_hit_rate": 0.1333,
       "signal_hit_ci": [
-        0.6212,
-        0.9626
+        0.0374,
+        0.3788
       ],
       "signal_p_value": 0.007385,
-      "required_n_at_this_rate_CIRCULAR": 12,
+      "required_n_at_this_rate_CIRCULAR": 0,
       "required_n_at_55pct": 783,
       "required_n_at_60pct": 194,
       "adequately_powered": false,
       "staking_units_staked": 15.0,
-      "staking_units_returned": 9.8654,
-      "staking_roi": 0.6577,
+      "staking_units_returned": -11.1818,
+      "staking_roi": -0.7455,
       "staking_snapshot": "open",
       "staking_basis": "flat 1 unit, relayed DraftKings open, push refunded",
       "staking_caveats": [
@@ -126,10 +146,10 @@
       "market": "side",
       "signal": {
         "n_settled_bets": 15,
-        "signal_hit_rate": 0.8667,
+        "signal_hit_rate": 0.1333,
         "signal_hit_ci": [
-          0.6212,
-          0.9626
+          0.0374,
+          0.3788
         ],
         "signal_p_value": 0.007385,
         "required_n_at_55pct": 783,
@@ -139,10 +159,10 @@
         "price_provenance": "pass"
       },
       "staking": {
-        "staking_roi_at_relayed_close": 0.6577,
+        "staking_roi_at_relayed_close": -0.7455,
         "staking_snapshot": "open",
         "units_staked": 15.0,
-        "units_returned": 9.8654,
+        "units_returned": -11.1818,
         "pushes": 0
       },
       "calibration": {
@@ -157,7 +177,7 @@
         "clv_mean_bps: missing"
       ],
       "restates_side": false,
-      "clv_points": 1.77
+      "clv_points": -1.77
     },
     {
       "id": "MD-S2",
@@ -269,7 +289,7 @@
       "name": "Demotion gate armed",
       "definition": "A live strategy carries explicit numeric demotion triggers, evaluated on the live ledger, that send it back to paper. PASS if the rules are numeric and executable.",
       "status": "pass",
-      "evidence": "Five numeric triggers armed. On a probe ledger all 5 fired, so the gate returns live to paper. No strategy is live yet, so the gate has been exercised but not triggered in production."
+      "evidence": "Five numeric triggers armed. On a probe ledger all 4 fired, so the gate returns live to paper. No strategy is live yet, so the gate has been exercised but not triggered in production."
     }
   ],
   "demotion_gate": {
@@ -292,7 +312,8 @@
         "op": "<=",
         "measures": "hit rate over the most recent 50 settled bets against the promoted rate",
         "why": "a rate that has collapsed over a 50-bet window is stale, not unlucky",
-        "comparator": "promoted_rate - 2 * binomial_sd(promoted_rate, 50)"
+        "comparator": "promoted_rate - 2 * binomial_sd(promoted_rate, 50)",
+        "slack_factor": 0.9
       },
       {
         "key": "clv_mean_bps",
@@ -427,12 +448,12 @@
     "strategies_live": 0
   },
   "roi": {
-    "side_at_open": 0.6577,
+    "side_at_open": -0.7455,
     "total_at_open": -0.1818,
     "basis": "flat 1 unit at the relayed open price; paper only, nothing wagered"
   },
   "clv": {
-    "side_mean_points": 1.77,
+    "side_mean_points": -1.77,
     "total_mean_points": 0.57,
     "gate_units_required": "basis points of implied probability",
     "gate_satisfiable_by_this_capture": false

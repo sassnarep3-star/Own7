@@ -26,9 +26,9 @@
     },
     {
       "id": "Q3",
-      "question": "The side strategy hit 13 of 15 at the open. Is that skill?",
+      "question": "The side model's record is 2-13. Is that bad luck?",
       "status": "answered_no",
-      "answer": "Not on this evidence. The model's own probabilities expected 10.38 wins, so the excess is 2.62 wins; and the model is less accurate than the market. A rate that exceeds the model's own expectation is variance by definition. The 95% interval on 13 of 15 also spans roughly 0.60 to 0.98, which contains rates that would not be profitable at these prices.",
+      "answer": "No. The model's own probabilities expected 9.26 wins on its 15 bets and it produced 2, which is p = 0.000167 against its own forecast: it was overconfident, not unlucky. It is also less accurate than the market (13.55 points RMSE against 10.01). A model that is worse than the price and then loses to the price is behaving consistently.",
       "depends_on": [
         "MD-ESPN-ODDS"
       ]
@@ -46,7 +46,7 @@
       "id": "Q5",
       "question": "Can a strategy be promoted live on a good staking run?",
       "status": "answered_no_and_enforced",
-      "answer": "No. The promotion function rejects a strategy outright if a staking field is present, so a profitable paper record cannot promote anything. Promotion needs 200 settled bets, a signal p-value at or below 0.05, a Holm-adjusted q at or below 0.10, verified prices and positive closing-line value.",
+      "answer": "No. The promotion function rejects a strategy outright if a staking field is present, so a profitable paper record cannot promote anything. Promotion needs 200 settled bets, a signal p-value at or below 0.05, a Holm-adjusted q at or below 0.10, verified prices and positive closing-line value. The separation also protects the other direction: the side board here has a p-value that clears 0.05 and a staking ROI of -74.6%, and neither figure is allowed to decide anything on its own.",
       "depends_on": [
         "MD-G06"
       ]
@@ -93,7 +93,7 @@
       "id": "Q10",
       "question": "What is the single largest gap between what is held and what the strategy needs?",
       "status": "answered",
-      "answer": "Sample. Detecting a 55% hit rate against a coin at 80% power needs 783 settled bets. The capture holds 15. Every rate on this site is therefore a description, not an estimate, and the site says so on the page rather than in a footnote.",
+      "answer": "Sample, and it is no longer the only gap. Detecting a 55% rate against a coin at 80% power needs 783 settled bets and the capture holds 15. But the more immediate finding is that the model is worse than the market and significantly underperformed its own probabilities at n=15, so more data would most likely confirm the model is broken rather than reveal an edge. Data and model both need work, and the desk reports which is which.",
       "depends_on": [
         "MD-G07"
       ]
@@ -230,6 +230,15 @@
         "MD-S1 promotion"
       ],
       "how_to_discover": "Rewrite the gate in points of line, or capture prices tightly enough that the probability and the line move together. The first is a documentation change and can be done deliberately; the second needs more data."
+    },
+    {
+      "id": "M8",
+      "missing": "A pre-registered sign convention, checked before any result was read",
+      "why_it_matters": "This desk shipped an inverted spread sign that turned a 2-13 model into a 13-2 record, and only caught it by hand-checking one game. The bug was invisible in every summary statistic, because a sign error produces a plausible story in whichever direction it points.",
+      "blocks": [
+        "trust in any result produced before the convention was fixed"
+      ],
+      "how_to_discover": "Already closed for the sign: the conversion now lives in one tested function and two regression tests pin both the side and the total conventions. The general lesson is not closed: a convention that can invert a result should be asserted before the first result is computed, not after a human notices."
     }
   ],
   "suggestions": [
@@ -328,6 +337,12 @@
       "decision": "Label every price relayed and never claim operator confirmation",
       "why": "No sportsbook was read directly. A relay may lag or re-round.",
       "consequence": "Gate MD-G01 passes on provenance completeness and carries an explicit relay caveat rather than a clean bill."
+    },
+    {
+      "id": "D6",
+      "decision": "Treat the home side's printed spread as a LINE, not as a margin",
+      "why": "`market_line` is the home club's own spread, so a home favourite prints -9.5 and the market's implied home margin is +9.5. The first build compared the model's expected margin directly against the printed line, which inverted every side pick and produced a 13-2 record from a losing model.",
+      "consequence": "The conversion lives in one tested function, `market_home_margin`, and the total board has its own separate conversion because a total is not signed like a spread. Both conventions are pinned by regression tests."
     }
   ]
 }

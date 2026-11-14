@@ -221,6 +221,35 @@ def skill_nav_group():
 
 NAV.extend(skill_nav_group())
 
+MARKET_NAV_PATH = "nfl-market-desk/site/index.html"
+
+
+def market_nav_group():
+    """Additive nav group for the market desk (session arena/ec67293d-own7).
+
+    Read from the desk's own manifest so this generator never restates a page list that could
+    drift, and so a fresh clone without the desk still builds.
+    """
+    manifest = ROOT / "nfl-market-desk" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    import json as _json
+    labels = {
+        "index.html": "Market desk overview", "summary.html": "Market desk summary",
+        "prices.html": "Price store", "origination.html": "Ordered origination",
+        "leaderboard.html": "Market leaderboard", "correlation.html": "Market correlation",
+        "availability.html": "Replacement depth", "gates.html": "Gates & demotion",
+        "questions.html": "Market dossier", "suggestions.html": "Market suggestions",
+        "flagged.html": "Market flagged", "sources.html": "Market sources",
+        "method.html": "Market method & limits",
+    }
+    pages = _json.loads(manifest.read_text())["pages"]
+    return [("NFL market desk",
+             [(f"nfl-market-desk/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+
+NAV.extend(market_nav_group())
+
 
 def page(slug, title, subtitle, body, eyebrow=None, description=None):
     parent = next((group for group, entries in NAV if any(e[0] == slug for e in entries)), "Workspace")
@@ -715,6 +744,15 @@ def build():
     skill_pages=load_json('nfl-skill-cfdd/site/manifest.json')['pages']
     for name in skill_pages:
         generated.append(f'nfl-skill-cfdd/site/{name}')
+    # Market desk (session arena/ec67293d-own7). The desk's artifacts are recomputed first, so a
+    # stale price store fails this build rather than publishing quietly.
+    desk_build=subprocess.run([sys.executable,str(ROOT/'nfl-market-desk'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if desk_build.returncode: raise SystemExit('nfl-market-desk/build.py failed: '+desk_build.stdout+desk_build.stderr)
+    desk_site=subprocess.run([sys.executable,str(ROOT/'nfl-market-desk'/'site_build.py')],cwd=ROOT,capture_output=True,text=True)
+    if desk_site.returncode: raise SystemExit('nfl-market-desk/site_build.py failed: '+desk_site.stdout+desk_site.stderr)
+    market_pages=load_json('nfl-market-desk/site/manifest.json')['pages']
+    for name in market_pages:
+        generated.append(f'nfl-market-desk/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
@@ -729,7 +767,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 

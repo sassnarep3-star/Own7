@@ -121,9 +121,10 @@ def luck_decomposition(side_graded: dict, board_side: list[dict]) -> dict:
         "p_vs_model_expectation": _binom_p(observed, n, expected / n if n else 0.5),
         "p_vs_coin": staking.exact_binomial_two_sided(observed, losses),
         "reading": (
-            "If the observed wins sit far above the wins the model itself expected, the record "
-            "is being produced by variance, not by the probabilities. The number to watch is "
-            "excess_over_model_expectation, not the hit rate."
+            "The number to watch is excess_over_model_expectation, not the hit rate. Wins far "
+            "ABOVE the model's own expectation mean variance flattered it; wins far BELOW mean the "
+            "model's own probabilities were overconfident and the record was worse than the model "
+            "predicted. Either way the hit rate alone misleads, in opposite directions."
         ),
     }
 
@@ -140,6 +141,55 @@ def _binom_p(k: int, n: int, p: float) -> float | None:
         if pj <= tol:
             total += pj
     return round(min(1.0, total), 6)
+
+
+def selection_test(rows: list[dict], graded: dict, market: str) -> dict:
+    """Does the model disagree with the market in a consistent direction?
+
+    A model that is merely noisy picks each side about half the time, and its record is
+    uninformative. A model that is systematically one-sided is making a directional claim, and
+    that claim can be tested on its own: how often did it like the home side, and was it right
+    to? This separates "no signal" from "a signal with the wrong sign", which are very different
+    findings and look identical if you only report a hit rate.
+    """
+    by_event = {r["event_id"]: r for r in rows}
+    # For the side board the two directions are home and away; for the total board they are over
+    # and under. Either way the question is the same: is the model one-sided?
+    if market == "side":
+        first, second = "home", "away"
+    else:
+        first, second = "OVER", "UNDER"
+    picked_first = 0
+    bets = 0
+    for d in graded["decisions"]:
+        if d["decision"] != "bet":
+            continue
+        bets += 1
+        if d["pick"] == first or (market == "side" and d["pick"] == by_event[d["event_id"]]["home"]):
+            picked_first += 1
+    from math import comb
+    if bets == 0:
+        return {"n_bets": 0}
+    obs = comb(bets, picked_first) * 0.5 ** bets
+    tol = obs * (1 + 1e-9)
+    p = min(1.0, sum(comb(bets, k) * 0.5 ** bets for k in range(bets + 1)
+                     if comb(bets, k) * 0.5 ** bets <= tol))
+    return {
+        "market": market,
+        "n_bets": bets,
+        "picked_home" if market == "side" else "picked_over": picked_first,
+        "picked_away" if market == "side" else "picked_under": bets - picked_first,
+        "share_home" if market == "side" else "share_over": round(picked_first / bets, 4),
+        "p_versus_balanced": round(p, 6),
+        "reading": (
+            "If the share of home picks is far from half, the model is making a directional claim "
+            "rather than adding noise. Combined with the hit rate, that distinguishes an "
+            "uninformative model from one whose signal is inverted."
+            if abs(picked_first / bets - 0.5) < 0.25 else
+            "The model is strongly one-sided. That is a directional claim, and the hit rate then "
+            "measures whether the direction was right, not whether the model was lucky."
+        ),
+    }
 
 
 def closing_line_value(rows: list[dict], graded: dict, market: str = "side") -> dict:

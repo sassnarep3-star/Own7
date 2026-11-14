@@ -161,9 +161,25 @@ def projected_total(home: str, away: str, ratings: dict) -> float:
     return (h["off_shrunk"] + a["def_shrunk"] + a["off_shrunk"] + h["def_shrunk"]) / 2.0
 
 
+def market_home_margin(market_line: float) -> float:
+    """The home margin the market implies.
+
+    `market_line` is the HOME side's own printed spread, so a home favourite prints -9.5 and the
+    market's implied home margin is +9.5, not -9.5. Getting this sign wrong inverts every pick on
+    the board, which is what happened in the first build: the desk bet the side it rated *worse*
+    than the market and went 13-2 for it. This function exists so the conversion lives in one
+    place and is tested.
+    """
+    return -market_line
+
+
 def prob_home_covers(fair_margin: float, market_line: float) -> float:
-    """P(home beats a market spread of `market_line`, home perspective, no push credit)."""
-    return 1.0 - ND.cdf((market_line - fair_margin) / PARAMS["margin_sd"])
+    """P(home covers its own spread `market_line`).
+
+    Home covers iff actual home margin > -market_line. With a home spread of -9.5 the club must
+    win by more than 9.5; with +9.5 it covers by losing by fewer than 9.5.
+    """
+    return 1.0 - ND.cdf((market_home_margin(market_line) - fair_margin) / PARAMS["margin_sd"])
 
 
 def prob_over(fair_total: float, market_total: float) -> float:
@@ -183,6 +199,23 @@ def price_index(prices: list[dict]) -> dict:
 
 
 def edge_points(fair: float, market: float):
+    """Model minus market on the SIDE board, in points.
+
+    Compares like with like: the model's expected home margin against the market's implied home
+    margin, which is the negative of the home side's printed spread.
+    """
+    if market is None:
+        return None
+    return round(fair - market_home_margin(market), 2)
+
+
+def edge_total(fair: float, market: float):
+    """Model minus market on the TOTAL board, in points.
+
+    A total is not signed the way a spread is: the market's implied total IS the printed number.
+    Applying the margin conversion here would add the line to itself and manufacture an
+    eighty-point edge, which is exactly the failure this separate function prevents.
+    """
     if market is None:
         return None
     return round(fair - market, 2)
@@ -271,14 +304,14 @@ def build_board(games: list[dict], prices: list[dict]) -> dict:
             "order": 2, "event_id": event_id, "game": game_label, "week": g["week"],
             "model_fair_total": round(fair_total, 2),
             "market_total": mkt_total,
-            "edge_points": edge_points(round(fair_total, 2), mkt_total),
+            "edge_points": edge_total(round(fair_total, 2), mkt_total),
             "model_over_prob": round(prob_over(fair_total, mkt_total), 4) if mkt_total is not None else None,
             "market_over_price": mkt_over["price_american"] if mkt_over else None,
             "market_under_price": mkt_under["price_american"] if mkt_under else None,
             "market_total_open": mkt_total_o,
             "market_over_price_open": mkt_over_o["price_american"] if mkt_over_o else None,
             "market_under_price_open": mkt_under_o["price_american"] if mkt_under_o else None,
-            "open_edge_points": edge_points(round(fair_total, 2), mkt_total_o),
+            "open_edge_points": edge_total(round(fair_total, 2), mkt_total_o),
             "line_movement_points": round(mkt_total - mkt_total_o, 2) if (mkt_total is not None and mkt_total_o is not None) else None,
             "actual_total": actual_total,
             "settled": True,

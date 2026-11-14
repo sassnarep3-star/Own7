@@ -58,6 +58,8 @@ def compute() -> dict:
     side_clv = analysis.closing_line_value(board["boards"]["side"], side_graded, "side")
     total_clv = analysis.closing_line_value(board["boards"]["total"], total_graded, "total")
     luck = analysis.luck_decomposition(side_graded, board["boards"]["side"])
+    sel_side = analysis.selection_test(board["boards"]["side"], side_graded, "side")
+    sel_total = analysis.selection_test(board["boards"]["total"], total_graded, "total")
     corr = correlation.build(board["boards"]["side"], board["boards"]["total"], results)
 
     board_lb = leaderboard.build(side_graded, total_graded, side_clv, total_clv, cal)
@@ -77,6 +79,7 @@ def compute() -> dict:
         "side_clv": side_clv,
         "total_clv": total_clv,
         "luck": luck,
+        "selection": {"side": sel_side, "total": sel_total},
         "correlation": corr,
         "leaderboard": board_lb,
         "availability": avail,
@@ -250,6 +253,7 @@ def main(argv: list[str]) -> int:
         "params": c["board"]["params"],
         "calibration": c["calibration"],
         "luck_decomposition": c["luck"],
+        "selection_test": c["selection"],
         "closing_line_value": {
             "side": {k: v for k, v in c["side_clv"].items() if k != "detail"},
             "total": {k: v for k, v in c["total_clv"].items() if k != "detail"},
