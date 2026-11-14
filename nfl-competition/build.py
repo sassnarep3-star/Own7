@@ -8,6 +8,7 @@ as a dash, a zero or an estimate.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from html import escape
 from pathlib import Path
@@ -1209,7 +1210,73 @@ def build():
     return generated
 
 
+def check() -> int:
+    """Re-read every committed artifact and fail loudly on a broken contract.
+
+    `--check` never writes. It exists so CI can prove the published pages agree with the
+    committed data without trusting that the generator was run.
+    """
+    problems: list[str] = []
+
+    def load(name):
+        path = DATA / name
+        if not path.is_file():
+            problems.append(f"missing artifact: data/{name}")
+            return {}
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    prices = load("price-store.json")
+    if prices and prices.get("rows"):
+        problems.append("price store is not empty; a price must never be published unsourced")
+    boards = load("boards.json")
+    for row in boards.get("rows", []):
+        if row.get("market_line") not in (None, ""):
+            problems.append(f"{row.get('market_id')}: market line published without a price")
+        if row.get("market_price") not in (None, ""):
+            problems.append(f"{row.get('market_id')}: market price published without a price")
+        if row.get("difference") not in (None, ""):
+            problems.append(f"{row.get('market_id')}: difference published without a market line")
+    leaderboard = load("leaderboard.json")
+    if leaderboard.get("staking_table", {}).get("rows"):
+        problems.append("staking table is not empty; no stake can be computed without a price")
+    correlations = load("correlations.json")
+    for row in correlations.get("rows", []):
+        if row.get("value") is None:
+            continue
+        if not row.get("n"):
+            problems.append(f"{row.get('id')}: published a value without its sample size")
+        if not row.get("source_ids"):
+            problems.append(f"{row.get('id')}: published a value without an official source")
+    results = load("results-feed.json")
+    recon = results.get("reconciliation", {})
+    if recon and recon.get("mismatches"):
+        problems.append("results feed no longer reconciles against the official standings")
+    for page in PAGES:
+        path = SITE / page[0]
+        if not path.is_file():
+            problems.append(f"missing page: {path}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        if text.count("<h1>") != 1 or text.count("<main") != 1:
+            problems.append(f"{page[0]}: document semantics incomplete")
+        for row in re.findall(r'<tr data-source-ids="([^"]*)">(.*?)</tr>', text, re.S):
+            ids, body = row[0].split(), row[1]
+            if not ids:
+                problems.append(f"{page[0]}: row with no source ids")
+                continue
+            hrefs = re.findall(r'href="([^"]+)"', body)
+            if not any(REGISTRY.get(sid) in hrefs for sid in ids):
+                problems.append(f"{page[0]}: row lacks its official source link")
+    for problem in problems:
+        print("FAIL", problem)
+    print(f"checked {len(PAGES)} pages and 8 requirements: "
+          f"{'FAILED' if problems else 'ok'}")
+    return 1 if problems else 0
+
+
 def main():
+    if "--check" in sys.argv:
+        raise SystemExit(check())
     generated = build()
     print(f"  built {len(generated)} pages into nfl-competition/site/")
 
