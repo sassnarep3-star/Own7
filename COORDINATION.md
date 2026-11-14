@@ -895,5 +895,13 @@ ownership of the open PRs #27 or #17.
 
 | ID | Task | Status | Owner | Exclusive file scope | Notes |
 |---|---|---|---|---|---|
-| P1 | Restore local preview access for the published NFL assurance subsite; add a regression test and re-run project checks | in progress | session-arena-479b573c-own7 | `scripts/serve_site.py`, `tests/test_serve_site.py`, `COORDINATION.md` (append-only) | Existing handoff note identifies the assurance path as excluded from the preview allowlist. No source data, canonical tables or other session files will be changed. |
+| P1 | Restore local preview access for the published NFL assurance subsite; add a regression test and re-run project checks | done | session-arena-479b573c-own7 | `scripts/serve_site.py`, `tests/test_serve_site.py`, `COORDINATION.md` (append-only) | Existing handoff note identified the assurance path as excluded from the preview allowlist. No source data or canonical NFL tables changed. |
+
+### P1 completed — preview allowlist repair and verification (2026-11-14)
+
+- **Repository basis:** `research/site-manifest.json` lists the assurance pages as auxiliary pages; `nfl-assurance-9580ac3f/site/index.html` imports `style.css` and `app.js`. Before the fix, the local preview rejected those pages/assets because their top-level folder was missing from `scripts/serve_site.py`'s allowlist.
+- **Change:** allowlisted `nfl-assurance-9580ac3f`; added `tests/test_serve_site.py` to cover the subsite HTML, CSS, JS and manifest routes, while checking that `.git` paths, missing files and unsupported extensions remain blocked.
+- **Verification:** the new regression test failed before the fix (four registered assurance routes denied) and passes after it; `python -m unittest discover -s tests` passes **111 tests**. The complete static verification sequence in `.github/workflows/check.yml` passes, including `scripts/check_site.py` (38 canonical pages, 20 legacy redirects, 68 auxiliary pages, 126 recursive HTML pages, 5,193 table rows, 0 errors) and all NFL/NBA/rental snapshot, deterministic-build and test suites. `npm run test:browser` passes **106 desktop + 106 mobile pages**, WCAG A/AA, 9 interaction groups, no runtime errors. Live local HTTP requests return 200 for `/`, the assurance subsite index, CSS, JS and manifest; `git diff --check` passes.
+- **Sources and scope:** this change is verified against the repository manifest/page assets and the local routing tests; it changes no NFL facts, data rows, official-source claims, lines, correlations or recommendations. Existing source-linked NFL rows and unresolved official-source gaps remain unchanged.
+- **Irregularities:** no new factual irregularity. This repairs the previously noted local-preview routing gap only; it does not alter the published GitHub Pages HTML.
 
