@@ -877,3 +877,13 @@ strategy qualification can be verified here. Requests that depend on those are r
 - Strategy work: no market line, price, ROI, closing-line value, or correlation coefficient could be verified from an official source. None is published; the strategy leaderboard is not built (blocked, see Q05 and Q06).
 - PR #27 and PR #17 are untouched.
 
+### Integration (P6), 14 Nov 2026
+
+- Pages: `session-243828fc/site/` (7 pages + manifest), registered in the root build like the NFL desk (`scripts/build_site.py`).
+- Sources: 21 `X243-*` records appended to `research/sources.json` (append-only; `session-243828fc/register_sources.py`). Hosts added to `scripts/check_site.py`. Every table row carries `data-source-ids`.
+- Regenerated: `research/results.json` (its hash input includes `research/sources.json`), `research/site-manifest.json`, `sources.html` (source register).
+- Test harness: `scripts/browser_test.mjs` now serves `session-243828fc/` (same as the desk folder).
+- Results: all 28 repo CI commands pass on this branch, plus `npm run test:browser` (113 desktop and 113 mobile pages; WCAG A/AA; no runtime errors).
+- Flagged items and unverified values are published on `session-243828fc/site/flagged.html` and do not block the merge.
+- Not done: line-by-line verification of the live injury transcription; standings for 8 teams; the Remote Gambling Act text; strategy leaderboard (blocked: no official price source).
+
