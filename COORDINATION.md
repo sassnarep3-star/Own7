@@ -835,3 +835,32 @@ additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `script
 meaning of a blank) are the two gaps that most constrain any further availability work, and XS01
 (read club-published Friday game-status reports for all 28 clubs) is the cheapest way to close them.
 XS09 is a standing constraint, not a task: do not add a price feed until source rights are settled.
+
+---
+
+## Session arena/243828fc-own7 — NFL status re-verification, repo review, and gap dossier (2026-11-14)
+
+Session ID: `session-arena-243828fc-own7`. Branch: `arena/243828fc-own7` (fixed by Arena; the requested
+`session-<id>/<task>` naming is not used because this session must stay on its fixed branch). Base commit:
+`b735a6b` (main, the merge of PR #33).
+
+Observed starting state (read, not assumed): main carries the NFL origination lab (`nfl_origination/`),
+the NFL research workspace (`nfl/`, `research/nfl*`), the NFL assurance sub-site (`nfl-assurance-9580ac3f/`),
+the availability and depletion desk (`nfl-availability-28ef/`, merged by PR #32), NBA and rental archives,
+and `market-evidence/`. PR #27 (`arena/382a833e-own7`) is **still open** and touches shared files; this
+session will not merge, close, rebase or edit it. No open PR touches the branch of this session.
+
+Constraints that shape this session (stated, not hidden): no sportsbook, exchange or licensed odds feed is
+reachable from this sandbox and NFL publishes none, so no market line, price, ROI, correlation coefficient or
+strategy qualification can be verified here. Requests that depend on those are recorded as blocked, not filled.
+
+### Claim (written before implementation; committed and pushed first)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| P1 | Claim + baseline reproduction of the repo's own CI checks on this branch | in progress | session-arena-243828fc-own7 | COORDINATION.md (append-only) | Record pass/fail per command; no fix to other sessions' files without a log entry. |
+| P2 | Live spot re-verification of Week 10 injury rows and standings rows against nfl.com (fetched this session) | unclaimed | session-arena-243828fc-own7 | `session-243828fc/evidence/**` | Spot check only; reported as n of N rows checked, never as full verification. |
+| P3 | Repo irregularity audit (duplicate sub-sites, orphaned pages, open PR, rights terms) | unclaimed | session-arena-243828fc-own7 | `session-243828fc/audit.md` | Each finding carries a file path and an official link where one exists. |
+| P4 | Singapore legal and responsible-gambling context, verified from official government sources | unclaimed | session-arena-243828fc-own7 | `session-243828fc/legal-context.md` | Only official gov.sg / statute / regulator pages are cited; no advice on wagering. |
+| P5 | Gap dossier: questions, information we have, information we lack, discovery steps; self-contained page | unclaimed | session-arena-243828fc-own7 | `session-243828fc/index.html`, `session-243828fc/data/**` | Every row sourced or marked UNVERIFIED with blank values. |
+| P6 | PR to main, merge, GitHub Pages deploy evidence, record | unclaimed | session-arena-243828fc-own7 | COORDINATION.md (append-only), PR metadata | Do not merge a broken site. Flagged items do not block. |
