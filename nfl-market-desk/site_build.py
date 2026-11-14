@@ -419,7 +419,7 @@ def build_prices() -> str:
     body += (
         '<section class="panel"><h2>The schema, proven on one payload</h2>'
         '<p>Each odds payload carries, for the same competition and the same provider:</p>'
-        '<pre><code>open.total / close.total                     the total line at each snapshot\n'
+        '<pre tabindex="0"><code>open.total / close.total                     the total line at each snapshot\n'
         'open.over / close.over, open.under / close.under   the two-way prices on the total\n'
         'open.{home,away}TeamOdds.pointSpread          that side\'s own spread, signed for that side\n'
         'open.{home,away}TeamOdds.moneyLine            that side\'s moneyline</code></pre>'
@@ -1089,9 +1089,12 @@ def build_suggestions() -> str:
     rows = []
     for s in sugg:
         kind = {"Adopt": "live", "Defer": "warn", "Reject": "blocked"}.get(s["recommendation"], "neutral")
-        choices = ('<span class="choice"><input type="radio" disabled> Adopt</span>'
-                   '<span class="choice"><input type="radio" disabled> Defer</span>'
-                   '<span class="choice"><input type="radio" disabled> Reject</span>')
+        # Radios are wrapped in <label> so each control has an accessible name, and they are
+        # enabled: a decision record the operator cannot actually set is not a record. Nothing is
+        # preselected, and the static page stores no state — the downloadable CSV carries blanks.
+        choices = (f'<label class="choice"><input type="radio" name="d-{s["id"]}" value="adopt"> Adopt</label>'
+                   f'<label class="choice"><input type="radio" name="d-{s["id"]}" value="defer"> Defer</label>'
+                   f'<label class="choice"><input type="radio" name="d-{s["id"]}" value="reject"> Reject</label>')
         rows.append(
             f'<tr data-source-ids="EC6-REPO" data-status="{esc(s["recommendation"])}">'
             f'<td>{esc(s["id"])}</td><td>{esc(s["title"])}</td>'
@@ -1249,7 +1252,7 @@ def build_method() -> str:
 
     body += (
         '<section class="panel"><h2>How to reproduce every figure</h2>'
-        '<pre><code>python3 nfl-market-desk/build.py            # write the artifacts\n'
+        '<pre tabindex="0"><code>python3 nfl-market-desk/build.py            # write the artifacts\n'
         'python3 nfl-market-desk/build.py --check    # reproduce and compare, byte for byte\n'
         'python3 nfl-market-desk/site_build.py       # regenerate this site\n'
         'python3 -m unittest discover -s nfl-market-desk/tests\n'
