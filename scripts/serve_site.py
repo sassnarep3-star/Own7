@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 ROOT=Path(__file__).resolve().parent.parent
-FOLDERS={'assets','css','js','data','research','docs','pages','verified','handoff','market-evidence','rental','nfl','nfl_origination','nfl_lab','nfl-availability-28ef','nfl-assurance-9580ac3f','nfl-skill-cfdd','nfl-market-desk'}
+FOLDERS={'assets','css','js','data','research','docs','pages','verified','handoff','market-evidence','rental','nfl','nfl_origination','nfl_lab','nfl-availability-28ef','nfl-assurance-9580ac3f','nfl-skill-cfdd','nfl-market-desk','nfl-control-87e14dcd'}
 EXTENSIONS={'.html','.css','.js','.svg','.json','.csv','.md','.py'}
 ROOT_FILES={'README.md','COORDINATION.md'}
 

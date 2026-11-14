@@ -81,6 +81,13 @@ SOURCE_HOSTS.update({
     'NFL-INJ-W10-RECHECK-1114': 'www.nfl.com',
 })
 
+# NFL price-store and demotion desk (session arena/87e14dcd-own7), 2026-11-14.
+SOURCE_HOSTS.update({
+    'X87-NFL-ODDS-1414': 'www.nfl.com',
+    'X87-NFL-TERMS-1414': 'www.nfl.com',
+    'X87-NFL-W10-1414': 'www.nfl.com',
+})
+
 
 # NFL session 243828fc (arena/243828fc-own7) — official hosts and repo records registered by register_sources.py.
 SOURCE_HOSTS.update({

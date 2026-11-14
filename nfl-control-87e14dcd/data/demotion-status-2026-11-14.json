@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-14",
+  "actual_project_state": {
+    "mode": "paper research only",
+    "live_strategy_records": 0,
+    "cash_payments_enabled": false,
+    "demotion_event_executed": false,
+    "statement_limit": "Repository configuration only; no sportsbook account or external live deployment was inspected."
+  },
+  "counterfactual_live_check": {
+    "from_mode": "live",
+    "to_mode": "paper",
+    "decision": "demote_to_paper",
+    "demoted": true,
+    "reasons": [
+      {
+        "gate": "source rights",
+        "reason": "rights_authorized is missing or not true; fail closed."
+      },
+      {
+        "gate": "price-source authorization",
+        "reason": "price_source_authorized is missing or not true; fail closed."
+      },
+      {
+        "gate": "source provenance/integrity",
+        "reason": "source_integrity_ok is missing or not true; fail closed."
+      },
+      {
+        "gate": "quote freshness",
+        "reason": "quote_fresh is missing or not true; fail closed."
+      },
+      {
+        "gate": "market/settlement contract",
+        "reason": "settlement_contract_match is missing or not true; fail closed."
+      },
+      {
+        "gate": "frozen model and data hashes",
+        "reason": "model_hash_matches is missing or not true; fail closed."
+      },
+      {
+        "gate": "all required promotion gates",
+        "reason": "all_required_gates_pass is missing or not true; fail closed."
+      },
+      {
+        "gate": "prospective evaluation window",
+        "reason": "evaluation_window_frozen is missing or not true; fail closed."
+      },
+      {
+        "gate": "all attempted strategies registered for multiplicity control",
+        "reason": "attempt_registry_complete is missing or not true; fail closed."
+      },
+      {
+        "gate": "risk telemetry",
+        "reason": "risk_telemetry_complete is missing or not true; fail closed."
+      },
+      {
+        "gate": "sample maturity",
+        "reason": "settled selections is missing or below the project floor (0.0 / 500.0)."
+      },
+      {
+        "gate": "sample maturity",
+        "reason": "distinct games is missing or below the project floor (0.0 / 200.0)."
+      },
+      {
+        "gate": "sample maturity",
+        "reason": "distinct dates is missing or below the project floor (0.0 / 60.0)."
+      },
+      {
+        "gate": "sample maturity",
+        "reason": "prospective shadow games is missing or below the project floor (0.0 / 200.0)."
+      },
+      {
+        "gate": "sample maturity",
+        "reason": "prospective shadow days is missing or below the project floor (0.0 / 60.0)."
+      },
+      {
+        "gate": "signal skill",
+        "reason": "95% lower bound for signal skill versus the frozen baseline is blank."
+      },
+      {
+        "gate": "signal multiplicity",
+        "reason": "Familywise-adjusted p-value is blank."
+      },
+      {
+        "gate": "economics",
+        "reason": "Net-return lower 95% bound after costs is blank; authorized prices and matched settlements are required."
+      },
+      {
+        "gate": "risk limits",
+        "reason": "Observed units per game is missing or exceeds the project cap (blank / 1.0)."
+      },
+      {
+        "gate": "risk limits",
+        "reason": "Observed units per day is missing or exceeds the project cap (blank / 5.0)."
+      },
+      {
+        "gate": "risk limits",
+        "reason": "Observed drawdown units is missing or exceeds the project cap (blank / 10.0)."
+      }
+    ],
+    "operational_gate_pass": false,
+    "signal_gate_pass": false,
+    "economics_gate_pass": false,
+    "risk_gate_pass": false,
+    "stake_roi_used_for_signal": false,
+    "signal_inputs": {
+      "settled_selections": 0,
+      "distinct_games": 0,
+      "distinct_dates": 0,
+      "shadow_games": 0,
+      "shadow_calendar_days": 0,
+      "signal_skill_lower_95": null,
+      "familywise_adjusted_p": null,
+      "attempt_registry_complete": false
+    },
+    "economics_inputs": {
+      "net_return_lower_95": null
+    },
+    "risk_inputs": {
+      "max_units_per_game_observed": null,
+      "max_units_per_day_observed": null,
+      "drawdown_units_observed": null
+    }
+  },
+  "decision": "No live strategy exists in this project state; no actual demotion event occurred. If one were marked live under current known evidence, this gate returns it to paper.",
+  "policy": {
+    "minimum_settled_selections": 500,
+    "minimum_distinct_games": 200,
+    "minimum_distinct_dates": 60,
+    "minimum_shadow_games": 200,
+    "minimum_shadow_calendar_days": 60,
+    "maximum_units_per_game": 1,
+    "maximum_units_per_day": 5,
+    "maximum_drawdown_units": 10,
+    "familywise_alpha": 0.05,
+    "signal_skill_lower_95_must_exceed": 0.0,
+    "net_return_lower_95_must_exceed": 0.0,
+    "notes": "500 settled selections, 200 distinct games, 60 dates, 200 prospective shadow games, 60 prospective shadow days and exposure caps are OWN7 project policy. Signal quality is evaluated independently of staking returns; a positive stake run cannot override a failed signal gate."
+  },
+  "source_ids": [
+    "X87-NFL-TERMS-1414",
+    "X87-NFL-ODDS-1414",
+    "REPO"
+  ]
+}

@@ -30,6 +30,20 @@ python -m unittest discover -s nfl-results/tests   # 23 tests
 
 Full write-up: [`docs/nfl-results-executive-summary.md`](docs/nfl-results-executive-summary.md).
 
+## NFL market controls & snapshot desk (2026-11-14)
+
+The [market-control landing page](https://sassnarep3-star.github.io/Own7/nfl-control-87e14dcd/site/index.html) is an additive category desk linked from the canonical site navigation. It has separate pages for [fair / market / difference](https://sassnarep3-star.github.io/Own7/nfl-control-87e14dcd/site/prices.html), [opening and closing snapshots](https://sassnarep3-star.github.io/Own7/nfl-control-87e14dcd/site/snapshots.html), [signal vs staking](https://sassnarep3-star.github.io/Own7/nfl-control-87e14dcd/site/leaderboard.html), the [live-to-paper gate](https://sassnarep3-star.github.io/Own7/nfl-control-87e14dcd/site/demotion.html), and [Flagged for Review](https://sassnarep3-star.github.io/Own7/nfl-control-87e14dcd/site/flagged.html).
+
+The price store indexes every model-originated Week 10 game in side/spread → total → moneyline order and allocates distinct opening/closing slots. The checked NFL odds path has no quote at that URL, and the repository has no authorized quote feed or NFL-data permission for betting use; therefore all market quotes, market values, differences, ROI and CLV remain blank. Model-originated estimates are labelled uncalibrated, not treated as proven fair prices. The 15-minute closing window and sample thresholds are explicitly OWN7 project policy, not NFL standards.
+
+Reproduce/check the additions:
+
+```sh
+python nfl-control-87e14dcd/store.py --check
+python nfl-control-87e14dcd/build.py --check
+python -m unittest discover -s nfl-control-87e14dcd/tests -v
+```
+
 ## What this is now
 
 The landing page is an **NFL research workspace**. It originates its own lines from official NFL
@@ -44,7 +58,7 @@ is implemented.
   No sportsbook price was retrieved, so market cells, ROI and CLV are blank by rule.
 - **10 ranked suggestions**, **14 decision questions**, **12 review flags**, **10 validation gates**
   (two pass, one partial, one open on rights) and **8 blocked strategies** with an empty leaderboard.
-- **Zero** qualified strategies, rewards, wagers or recommendations. Since 2026-11-14 a retrieval gap has been closed: 136 official final scores are captured and graded, and the results are on the `nfl-results` pages.
+- **W1 line-origination workstream:** zero qualified strategies out of eight; all eight remain blocked. The separate `nfl-results` pipeline evaluates 30 variants (0 qualified, 1 provisional, 29 rejected); its provisional result is not a live strategy, market edge, or reward winner. These scopes are not merged. The results pipeline uses 136 official final scores.
 
 NFL data is attributed to NFL.com. This is not affiliated with or endorsed by the NFL. NFL.com terms
 §1.3 permit individual non-commercial informational use and prohibit systematic retrieval to compile
@@ -57,10 +71,13 @@ Python 3.11+; no third-party Python packages.
 ```sh
 python scripts/nfl_extract.py --check   # re-parse saved official NFL text; refuse contradictions
 python -m nfl_origination run                   # derive lines, calibration, correlations, gates
-python -m unittest discover -s tests    # 108 tests
-python scripts/build_site.py            # regenerate every page deterministically
-python scripts/check_site.py            # links, fragments, per-row sources, blank rules
-npm ci && npm run test:browser          # 46 desktop + 46 mobile pages, WCAG A/AA
+python -m unittest discover -s tests -v  # core research tests
+python -m unittest discover -s nfl-control-87e14dcd/tests -v
+python nfl-control-87e14dcd/store.py --check
+python nfl-control-87e14dcd/build.py --check
+python scripts/build_site.py             # regenerate every page deterministically
+python scripts/check_site.py             # links, fragments, per-row sources, blank rules
+npm ci && npm run test:browser           # all canonical and auxiliary pages, desktop/mobile, WCAG A/AA
 python scripts/serve_site.py --host 0.0.0.0 --port 8080
 ```
 

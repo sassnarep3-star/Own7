@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-14",
+  "flags": [
+    {
+      "id": "PC01",
+      "item": "No odds at the checked NFL odds route",
+      "finding": "The official NFL.com /odds/ path returned the NFL 404 page on 2026-11-14. This says nothing definitive about every independent operator feed.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "impact": "No verified opening/closing market line or price; market values, differences, ROI and CLV stay blank.",
+      "source_url": "https://www.nfl.com/odds/",
+      "source_ids": [
+        "X87-NFL-ODDS-1414",
+        "X87-NFL-TERMS-1414"
+      ]
+    },
+    {
+      "id": "PC02",
+      "item": "No documented NFL-data permission for a betting/market feed",
+      "finding": "The current NFL.com Terms §1.3 page limits use to individual non-commercial informational purposes and bars systematic collection absent express prior written consent. No separate permission is evidenced in the repository.",
+      "unverified_value": null,
+      "status": "Blocked",
+      "impact": "A new quote provider alone does not authorize combining NFL.com-derived features with betting use.",
+      "source_url": "https://www.nfl.com/legal/terms/",
+      "source_ids": [
+        "X87-NFL-TERMS-1414",
+        "REPO"
+      ]
+    },
+    {
+      "id": "PC03",
+      "item": "Week 10 model snapshot lacks an exact capture/cutoff timestamp",
+      "finding": "The saved model result has a snapshot date only. The official Week 10 schedule page displayed WAS–NYG as FINAL on the current re-read; the historical model output is therefore not treated as a live or fully pregame-verified quote.",
+      "unverified_value": null,
+      "status": "Needs review",
+      "impact": "Existing model numbers are reproducible historical outputs, not executable opening lines.",
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "source_ids": [
+        "X87-NFL-W10-1414",
+        "NFL-STANDINGS",
+        "REPO"
+      ]
+    },
+    {
+      "id": "PC04",
+      "item": "No qualified strategy or live strategy exists in the project record",
+      "finding": "The NFL project protocol is paper research only and disables cash payments. Separately, the 30-candidate NFL results pipeline has zero qualified entries; one provisional result is not a live strategy.",
+      "unverified_value": null,
+      "status": "Research-only",
+      "impact": "The demotion policy is defined and tested but has not executed against an actual live strategy.",
+      "source_url": "https://www.nfl.com/legal/terms/",
+      "source_ids": [
+        "X87-NFL-TERMS-1414",
+        "REPO"
+      ]
+    },
+    {
+      "id": "PC05",
+      "item": "Model-originated estimates are not independently market-calibrated fair values",
+      "finding": "The stored Week 10 output contains model-originated spread, total and win-probability estimates, but no corresponding authorized quote snapshot or independently verified market calibration.",
+      "unverified_value": null,
+      "status": "Needs validation",
+      "impact": "These model-only numbers are displayed as derived estimates and are not presented as validated fair prices or an edge.",
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "source_ids": [
+        "X87-NFL-W10-1414",
+        "NFL-STANDINGS",
+        "REPO"
+      ]
+    }
+  ]
+}

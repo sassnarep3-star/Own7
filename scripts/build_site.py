@@ -251,6 +251,28 @@ def market_nav_group():
 NAV.extend(market_nav_group())
 
 
+def nfl_control_nav_group():
+    """Add the market-control desk from its own page manifest."""
+    manifest = ROOT / "nfl-control-87e14dcd" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    pages = json.loads(manifest.read_text(encoding="utf-8"))["pages"]
+    labels = {
+        "index.html": "Market controls overview",
+        "prices.html": "Fair / market / difference",
+        "snapshots.html": "Opening & closing store",
+        "leaderboard.html": "Signal vs staking",
+        "demotion.html": "Live-to-paper gate",
+        "flagged.html": "Market flags",
+        "sources.html": "Market sources",
+    }
+    return [("NFL market & risk controls",
+             [(f"nfl-control-87e14dcd/site/{name}", labels.get(name, name), "validation") for name in pages])]
+
+
+NAV.extend(nfl_control_nav_group())
+
+
 def page(slug, title, subtitle, body, eyebrow=None, description=None):
     parent = next((group for group, entries in NAV if any(e[0] == slug for e in entries)), "Workspace")
     if eyebrow is None:
@@ -753,6 +775,12 @@ def build():
     market_pages=load_json('nfl-market-desk/site/manifest.json')['pages']
     for name in market_pages:
         generated.append(f'nfl-market-desk/site/{name}')
+    # NFL market snapshot, signal/staking separation and demotion controls (session arena/87e14dcd-own7).
+    control_result=subprocess.run([sys.executable,str(ROOT/'nfl-control-87e14dcd'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if control_result.returncode: raise SystemExit(control_result.stdout+control_result.stderr)
+    control_pages=load_json('nfl-control-87e14dcd/site/manifest.json')['pages']
+    for name in control_pages:
+        generated.append(f'nfl-control-87e14dcd/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
@@ -767,7 +795,25 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    auxiliary_pages = (
+        ['market-evidence/index.html']
+        + [f'rental/{name}' for name in rental_pages]
+        + [f'nfl/{name}' for name in nfl_pages]
+        + [f'nfl/origination/{name}' for name in lab_pages]
+        + [f'nfl-assurance-9580ac3f/site/{name}' for name in assurance_pages]
+        + [f'nfl-availability-28ef/site/{name}' for name in desk_pages]
+        + [f'session-243828fc/site/{name}' for name in s243_pages]
+        + [f'nfl-skill-cfdd/site/{name}' for name in skill_pages]
+        + [f'nfl-market-desk/site/{name}' for name in market_pages]
+        + [f'nfl-control-87e14dcd/site/{name}' for name in control_pages]
+    )
+    manifest = {
+        'canonical_pages': list(pages),
+        'auxiliary_pages': auxiliary_pages,
+        'legacy_redirects': ALIASES,
+        'generated_html': {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},
+        'research_run_hash': RESULTS['run_hash'],
+    }
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 
