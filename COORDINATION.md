@@ -1035,3 +1035,34 @@ NFL.com terms §1.3 permit individual non-commercial informational use and prohi
 compile a collection without written consent. This session reads published pages at human pace, saves the
 rendered text it actually read, and releases no dataset and no feed. Nothing here is a betting product; no
 price, wager, recommendation or cash reward is produced.
+
+### S1–S9 progress and results (2026-11-14)
+
+| ID | Status | Result |
+|---|---|---|
+| S1 | **done** | Claim pushed as `98f4804` before any implementation. Baseline replayed: 109 root tests OK, origination reproduced, 38 pages built, site check 0 errors. |
+| S2 | **done** | 136 official games + 16 bye rows captured from `https://www.nfl.com/schedules/2026/by-week/week-{1..9}`, read 2026-11-14. Rendered text saved verbatim under `nfl-results/evidence/`. `nfl-results/extract.py` re-parses only those files and refuses to publish unless W-L-T, PF and PA reconcile with the frozen standings for all 32 clubs: **160/160 fields match**. |
+| S3 | **done** | Leakage-free walk-forward grading in `nfl-results/engine.py`. A week-w forecast uses only weeks < w; week 1 is excluded because it has no prior form. 120 games scored. Two defects found and fixed before publication: a per-team/per-game units error that doubled implied totals, and circular grading. |
+| S4 | **done** | Five defences: exact binomial null, Benjamini–Hochberg across 30 variants, a 20,000-shuffle permutation test, split-half plus leave-one-week-out, and a power calculation. |
+| S5 | **done** | Leg dependence from real joint outcomes: phi = −0.0684 (p = 0.4681, n = 114); P(home & over) 20.2% observed vs 21.9% independent. Player-prop combos left blank: no per-game player logs retrieved. |
+| S6 | **done** | 30 variants graded; **0 qualified, 1 provisional, 29 rejected**. Every ROI and CLV cell is `None`, enforced by test. |
+| S7 | **done** | 8 questions and 6 ranked suggestions, each with evidence, cost, risk and a pre-written acceptance test. |
+| S8 | **done** | `docs/nfl-results-executive-summary.md`. |
+| S9 | **in progress** | Additive integration only: one nav group, one `SOURCE_HOSTS` entry, one appended source (`X29-NFL-SCHEDULE`), three CI lines, README section. PR/merge/Pages evidence to be recorded below. |
+
+### Key finding (recorded, not asserted)
+
+The originated **spread** board beat the result 77–43 (**64.2%**, permutation p = 0.0021, BH
+q = 0.022, both halves above 50%, leave-one-week-out range 57.7–65.4%). The originated **total**
+board scored 60–60 (**50.0%**). Same model, same data, opposite conclusions. Both are published;
+no price exists, so ROI, CLV and every reward remain blank.
+
+### Verification run for S9 (all green)
+
+`python nfl-results/extract.py` (160/160) · `python nfl-results/engine.py` · `python -m unittest
+discover -s nfl-results/tests` (23) · root tests (109) · availability (28) · assurance (49) ·
+origination (29) · `python scripts/build_site.py` (46 canonical pages) · `python
+scripts/check_site.py` (134 pages, 5,417 rows, 137 sources, 0 errors, byte-identical rebuild) ·
+`npm run test:browser` (114 desktop + 114 mobile pages, WCAG A/AA, no runtime errors).
+
+No canonical NFL, NBA, rental, market-evidence or assurance value, page or test was overwritten.
