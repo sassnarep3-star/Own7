@@ -835,3 +835,24 @@ additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `script
 meaning of a blank) are the two gaps that most constrain any further availability work, and XS01
 (read club-published Friday game-status reports for all 28 clubs) is the cheapest way to close them.
 XS09 is a standing constraint, not a task: do not add a price feed until source rights are settled.
+
+---
+
+## Session arena/81ddda65-own7 — independent NFL verification, defect hunt, and final integration (2026-11-14)
+
+Session ID: `session-arena-81ddda65-own7`. Fixed Arena branch: `arena/81ddda65-own7`; no alternate branch will be created. Baseline: `b735a6b211f8921c0c1656f0be2bb0607a8c240d` (= origin/main tip, the merge of PR #33). All prior sessions' NFL, NBA, rental, market-evidence and assurance work is already on `main`; this session verifies independently, hunts defects, integrates, and deploys. Historical boards above are preserved as history and are **not** inherited as verification.
+
+### Claim (written before implementation; committed and pushed first)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|----|------|--------|-------|----------------------|-------|
+| V1 | Claim board entry | in progress | session-arena-81ddda65-own7 | COORDINATION.md (append-only) | This entry; commit + push immediately |
+| V2 | Fresh line-by-line re-verification of NFL observations vs official NFL.com sources (Arena reader) | pending | session-arena-81ddda65-own7 | `research/nfl/evidence-81ddda65/**` (new), `docs/nfl-verification-81ddda65.md` (new) | Every source link re-opened and compared; no value inferred; blanks stay blank |
+| V3 | Audit the Suggestions / Questions / Decisions ledgers; consolidate the missing-information plan | pending | session-arena-81ddda65-own7 | `docs/nfl-suggestions-audit-81ddda65.md` (new), additive `research/nfl/` entries with unique `81ddda65` prefix | Strengthen the review-before-decision workflow; do not silently change other sessions' values |
+| V4 | Independently reproduce correlation values, validation gates and leaderboard contracts | pending | session-arena-81ddda65-own7 | additive scripts under `scripts/` with unique `81ddda65` prefix, additive `tests/` | Recomputed from verified inputs; no market price, edge, ROI or CLV invented |
+| V5 | Rebuild site + full checks (tests, check_site, browser, auxiliary builders); fix defects within additive scope | pending | session-arena-81ddda65-own7 | `scripts/**` (additive only), `README.md` (additive) | Do not overwrite another session's canonical pages/tests |
+| V6 | PR to main + merge (no approval wait) + GitHub Pages deploy confirmation + record | pending | session-arena-81ddda65-own7 | COORDINATION.md (append-only) | Do not merge a broken site |
+
+Rules this session follows: work only on the fixed branch; never infer or fill a value no official source confirms — leave blank and flag it; every table row keeps its official source link; `git pull --rebase --ff-only` (or merge that preserves topology) before pushes; small frequent commits; additive shared-file edits only; declare any scope overlap rather than hiding it.
+
+Cross-scope note: no competing claim observed on this branch at claim time. This session will not overwrite canonical NFL, NBA, rental, market-evidence or assurance values/pages/tests; it adds verification evidence, an audit, additive recomputation, and integration touchpoints.
