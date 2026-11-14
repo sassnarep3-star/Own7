@@ -1,0 +1,463 @@
+{
+  "generated_by": "nfl-market-desk/build.py",
+  "read_on": "2026-11-14",
+  "session": "arena/ec67293d-own7",
+  "params": {
+    "pythagorean_exponent": 2.37,
+    "home_field_points": 2.0,
+    "shrink_to_league_games": 4.0,
+    "margin_sd": 13.5,
+    "total_sd": 12.5,
+    "league_ppg_prior": 24.71875,
+    "history_window": "strictly before the graded week; the graded week is never in the inputs",
+    "note": "margin_sd and total_sd are stated priors, not fitted values: 14 or 15 games per week cannot identify them. They are registered here so a reader can see exactly what produced each probability, and they are not tuned on the graded weeks."
+  },
+  "calibration": {
+    "n_games": 15,
+    "side": {
+      "model_rmse": 13.552,
+      "market_rmse": 10.007,
+      "model_mae": 11.447,
+      "market_mae": 8.267,
+      "model_sd": 2.648,
+      "market_sd": 6.248
+    },
+    "total": {
+      "model_rmse": 14.539,
+      "market_rmse": 14.061,
+      "model_mae": 10.877,
+      "market_mae": 10.233
+    },
+    "mean_abs_side_edge": 4.036,
+    "verdict": "model_error_exceeds_market",
+    "reading": "A forecast with more error than the price has no reason to beat the price, and this one does not: both boards lost or added nothing. The gap is the explanation, not a separate observation."
+  },
+  "luck_decomposition": {
+    "n_settled": 15,
+    "observed_wins": 2,
+    "model_expected_wins": 9.26,
+    "coin_expected_wins": 7.5,
+    "excess_over_model_expectation": -7.26,
+    "excess_over_coin": -5.5,
+    "p_vs_model_expectation": 0.000167,
+    "p_vs_coin": 0.007385,
+    "reading": "The number to watch is excess_over_model_expectation, not the hit rate. Wins far ABOVE the model's own expectation mean variance flattered it; wins far BELOW mean the model's own probabilities were overconfident and the record was worse than the model predicted. Either way the hit rate alone misleads, in opposite directions."
+  },
+  "selection_test": {
+    "side": {
+      "market": "side",
+      "n_bets": 15,
+      "picked_home": 10,
+      "picked_away": 5,
+      "share_home": 0.6667,
+      "p_versus_balanced": 0.301758,
+      "reading": "If the share of home picks is far from half, the model is making a directional claim rather than adding noise. Combined with the hit rate, that distinguishes an uninformative model from one whose signal is inverted."
+    },
+    "total": {
+      "market": "total",
+      "n_bets": 14,
+      "picked_over": 6,
+      "picked_under": 8,
+      "share_over": 0.4286,
+      "p_versus_balanced": 0.790527,
+      "reading": "If the share of home picks is far from half, the model is making a directional claim rather than adding noise. Combined with the hit rate, that distinguishes an uninformative model from one whose signal is inverted."
+    }
+  },
+  "closing_line_value": {
+    "side": {
+      "n": 15,
+      "mean_points": -1.77,
+      "median_points": -0.5,
+      "share_beat_close": 0.2,
+      "basis": "picked side's own line at open minus the same side's line at close, in points",
+      "reading": "A strategy with a real edge beats the close on most bets. Positive CLV in points means we consistently took the better number. A record that wins while losing at the close is winning on variance."
+    },
+    "total": {
+      "n": 14,
+      "mean_points": 0.57,
+      "median_points": 1.0,
+      "share_beat_close": 0.571,
+      "basis": "picked side's own line at open minus the same side's line at close, in points",
+      "reading": "A strategy with a real edge beats the close on most bets. Positive CLV in points means we consistently took the better number. A record that wins while losing at the close is winning on variance."
+    }
+  },
+  "signal": {
+    "side": {
+      "market": "side",
+      "n_rows": 15,
+      "n_bets": 15,
+      "wins": 2,
+      "losses": 13,
+      "pushes": 0,
+      "signal_hit_rate": 0.1333,
+      "signal_hit_ci": [
+        0.0374,
+        0.3788
+      ],
+      "signal_p_value": 0.007385,
+      "required_n_at_this_rate_CIRCULAR": 0,
+      "required_n_at_55pct": 783,
+      "required_n_at_60pct": 194,
+      "adequately_powered": false,
+      "staking_units_staked": 15.0,
+      "staking_units_returned": -11.1818,
+      "staking_roi": -0.7455,
+      "staking_snapshot": "open",
+      "staking_basis": "flat 1 unit, relayed DraftKings open, push refunded",
+      "staking_caveats": [
+        "Nothing was wagered. This is a paper computation on a relayed price, not obtained profit.",
+        "The price is one provider's number at one snapshot. A real fill could be worse, and limits and availability are unknown.",
+        "ROI on this sample is dominated by variance: see the sample-size column before reading the number."
+      ]
+    },
+    "total": {
+      "market": "total",
+      "n_rows": 15,
+      "n_bets": 14,
+      "wins": 6,
+      "losses": 8,
+      "pushes": 0,
+      "signal_hit_rate": 0.4286,
+      "signal_hit_ci": [
+        0.2138,
+        0.6741
+      ],
+      "signal_p_value": 0.790527,
+      "required_n_at_this_rate_CIRCULAR": 0,
+      "required_n_at_55pct": 783,
+      "required_n_at_60pct": 194,
+      "adequately_powered": false,
+      "staking_units_staked": 14.0,
+      "staking_units_returned": -2.5454,
+      "staking_roi": -0.1818,
+      "staking_snapshot": "open",
+      "staking_basis": "flat 1 unit, relayed DraftKings open, push refunded",
+      "staking_caveats": [
+        "Nothing was wagered. This is a paper computation on a relayed price, not obtained profit.",
+        "The price is one provider's number at one snapshot. A real fill could be worse, and limits and availability are unknown.",
+        "ROI on this sample is dominated by variance: see the sample-size column before reading the number."
+      ]
+    }
+  },
+  "leaderboard": [
+    {
+      "id": "MD-S1",
+      "name": "Side: shrunk rating split, thresholds at half a point",
+      "market": "side",
+      "signal": {
+        "n_settled_bets": 15,
+        "signal_hit_rate": 0.1333,
+        "signal_hit_ci": [
+          0.0374,
+          0.3788
+        ],
+        "signal_p_value": 0.007385,
+        "required_n_at_55pct": 783,
+        "required_n_at_60pct": 194,
+        "adequately_powered": false,
+        "clv_mean_bps": null,
+        "price_provenance": "pass"
+      },
+      "staking": {
+        "staking_roi_at_relayed_close": -0.7455,
+        "staking_snapshot": "open",
+        "units_staked": 15.0,
+        "units_returned": -11.1818,
+        "pushes": 0
+      },
+      "calibration": {
+        "model_rmse": 13.552,
+        "market_rmse": 10.007,
+        "model_worse_than_market": true
+      },
+      "tier": "paper",
+      "promotion_failures": [
+        "n_settled_bets=15 < 200",
+        "q_value_holm: missing",
+        "clv_mean_bps: missing"
+      ],
+      "restates_side": false,
+      "clv_points": -1.77
+    },
+    {
+      "id": "MD-S2",
+      "name": "Total: same rating split, thresholds at half a point",
+      "market": "total",
+      "signal": {
+        "n_settled_bets": 14,
+        "signal_hit_rate": 0.4286,
+        "signal_hit_ci": [
+          0.2138,
+          0.6741
+        ],
+        "signal_p_value": 0.790527,
+        "required_n_at_55pct": 783,
+        "required_n_at_60pct": 194,
+        "adequately_powered": false,
+        "clv_mean_bps": null,
+        "price_provenance": "pass"
+      },
+      "staking": {
+        "staking_roi_at_relayed_close": -0.1818,
+        "staking_snapshot": "open",
+        "units_staked": 14.0,
+        "units_returned": -2.5454,
+        "pushes": 0
+      },
+      "calibration": {
+        "model_rmse": 14.539,
+        "market_rmse": 14.061,
+        "model_worse_than_market": true
+      },
+      "tier": "paper",
+      "promotion_failures": [
+        "n_settled_bets=14 < 200",
+        "signal_p_value=0.790527 > 0.05",
+        "q_value_holm: missing",
+        "clv_mean_bps: missing"
+      ],
+      "restates_side": false,
+      "clv_points": 0.57
+    }
+  ],
+  "gates": [
+    {
+      "id": "MD-G01",
+      "name": "Price provenance",
+      "definition": "Every priced row names provider, provider id, source id, https url and retrieval date, and is labelled relayed. PASS if zero rows lack any of these.",
+      "status": "pass",
+      "evidence": "180 price rows checked, 0 without complete provenance. All rows are relayed via ESPN from provider DraftKings (100); none is operator-direct."
+    },
+    {
+      "id": "MD-G02",
+      "name": "Open and close both present",
+      "definition": "Every originated market carries an opening and a closing observation, so a movement series exists rather than a single stale number.",
+      "status": "pass",
+      "evidence": "90 market legs, 0 lacking an open or a close."
+    },
+    {
+      "id": "MD-G03",
+      "name": "Official result binding",
+      "definition": "Every priced game binds to an official final score with a source url, and the binding is on the club pair, not on a position in a list.",
+      "status": "pass",
+      "evidence": "15 of 15 priced games bound to an official final score on the club pair; 0 unbound."
+    },
+    {
+      "id": "MD-G04",
+      "name": "Three-column publication",
+      "definition": "Each board publishes model, market and difference as separate columns, and never omits the market column when the model disagrees.",
+      "status": "pass",
+      "evidence": "15 side rows each publish model, market and difference separately; 0 rows with a missing column."
+    },
+    {
+      "id": "MD-G05",
+      "name": "No synthetic price",
+      "definition": "No ROI, CLV or edge uses an assumed price such as -110. Where a price is absent the figure is blank and flagged.",
+      "status": "pass",
+      "evidence": "Every ROI and CLV uses a captured price. No -110 or other notional price appears anywhere in the store; where a price is absent the figure is blank."
+    },
+    {
+      "id": "MD-G06",
+      "name": "Signal/staking separation",
+      "definition": "Promotion reads the signal tier only. Staking figures are reported but cannot qualify a strategy. PASS if the promotion function never receives a staking field.",
+      "status": "pass",
+      "evidence": "promote() raises when a staking field is present: staking field(s) ['staking_roi_at_relayed_close'] reached the promotion gate."
+    },
+    {
+      "id": "MD-G07",
+      "name": "Sample-size honesty",
+      "definition": "Every published rate carries n and the n required to detect it at 80% power, so a rate on a small sample is visibly non-evidential.",
+      "status": "pass",
+      "evidence": "2 strategies each publish n, the n needed at a pre-specified 55% rate (783) and at 60% (194); 0 rows lacking it. n published is 15 and 14, so both are reported as inadequately powered."
+    },
+    {
+      "id": "MD-G08",
+      "name": "Push accounting",
+      "definition": "Pushes are counted and excluded from the hit-rate denominator before the p-value, and the count is published.",
+      "status": "pass",
+      "evidence": "Pushes are counted before the hit rate: 0 on the side board and 0 on the total board. The count is published on the leaderboard."
+    },
+    {
+      "id": "MD-G09",
+      "name": "Correlation provenance",
+      "definition": "Every correlation is computed from official-sourced numbers and publishes its n.",
+      "status": "pass",
+      "evidence": "4 correlations, each with n and registered source ids; 1 have n at or above 30 and may be ranked. Uneven pairs are shown with their n and marked unrankable."
+    },
+    {
+      "id": "MD-G10",
+      "name": "Demotion gate armed",
+      "definition": "A live strategy carries explicit numeric demotion triggers, evaluated on the live ledger, that send it back to paper. PASS if the rules are numeric and executable.",
+      "status": "pass",
+      "evidence": "Five numeric triggers armed. On a probe ledger all 4 fired, so the gate returns live to paper. No strategy is live yet, so the gate has been exercised but not triggered in production."
+    }
+  ],
+  "demotion_gate": {
+    "id": "MD-G10",
+    "name": "Demotion gate (live -> paper)",
+    "applies_to": "any strategy with tier == 'live'",
+    "holding": "demote to paper when any trigger fires",
+    "promotion_back": "requires a fresh out-of-sample window that satisfies every promotion gate again",
+    "triggers": [
+      {
+        "key": "drawdown_units",
+        "threshold": -20.0,
+        "op": "<=",
+        "measures": "cumulative flat-stake units from the peak of the live ledger",
+        "why": "a live strategy that has given back 20 units at flat stake is not a 2% edge"
+      },
+      {
+        "key": "rolling_50_hit_rate",
+        "threshold": null,
+        "op": "<=",
+        "measures": "hit rate over the most recent 50 settled bets against the promoted rate",
+        "why": "a rate that has collapsed over a 50-bet window is stale, not unlucky",
+        "comparator": "promoted_rate - 2 * binomial_sd(promoted_rate, 50)",
+        "slack_factor": 0.9
+      },
+      {
+        "key": "clv_mean_bps",
+        "threshold": 0.0,
+        "op": "<=",
+        "measures": "mean closing-line value in basis points over the live ledger",
+        "why": "a strategy that consistently loses at the close is on the wrong side of the market, regardless of results"
+      },
+      {
+        "key": "price_integrity_failures",
+        "threshold": 1,
+        "op": ">=",
+        "measures": "count of live bets whose captured price failed provenance or reconciliation",
+        "why": "one bad price invalidates the ledger it sits in; demote until it is rebuilt"
+      },
+      {
+        "key": "days_since_last_pass",
+        "threshold": 30,
+        "op": ">=",
+        "measures": "days since the strategy last cleared every promotion gate on a full re-run",
+        "why": "a stale pass is not a pass"
+      }
+    ]
+  },
+  "promotion_rules": {
+    "paper_to_live": [
+      {
+        "key": "n_settled_bets",
+        "min": 200,
+        "why": "below 200 settled bets a 55% rate is inside two standard errors of a coin"
+      },
+      {
+        "key": "signal_p_value",
+        "max": 0.05,
+        "why": "the signal, not the stake, decides promotion"
+      },
+      {
+        "key": "q_value_holm",
+        "max": 0.1,
+        "why": "the leaderboard tests many strategies; the family-wise error must be controlled"
+      },
+      {
+        "key": "price_provenance",
+        "equals": "pass",
+        "why": "a strategy priced from unverified numbers cannot go live"
+      },
+      {
+        "key": "clv_mean_bps",
+        "min": 0.0,
+        "why": "positive closing-line value is the only forward-looking proof of an edge"
+      }
+    ],
+    "explicitly_excluded": [
+      "staking_roi_at_relayed_close",
+      "units_returned",
+      "best_run",
+      "hot_streak"
+    ]
+  },
+  "correlation_summary": {
+    "min_n_for_ranking": 30,
+    "dropped": [
+      {
+        "pair": "availability weight difference vs margin",
+        "why": "only 2 complete observations",
+        "source_ids": [
+          "CFDD-NFL-DEPTH",
+          "CFDD-NFL-RESULTS"
+        ]
+      }
+    ],
+    "n_pairs": 4,
+    "n_powered": 1,
+    "note": "Holm-adjusted across the pairs tested in this register. A pair with n below 30 is shown with its n and is not ranked: at n=15 the 95% interval on r spans most of the range, so the point estimate carries almost no information."
+  },
+  "depth_coverage": {
+    "clubs_with_depth": [
+      "CHI",
+      "DEN",
+      "PHI",
+      "TB"
+    ],
+    "n_clubs_with_depth": 4,
+    "n_clubs_league": 32,
+    "coverage_note": "Depth charts were read for 4 of 32 clubs (CHI, DEN, PHI, TB). The other 28 clubs have no captured chart, so requirement 6 is satisfied for those four clubs only. No claim is made about the rest.",
+    "charts": {
+      "CHI": {
+        "club": "Chicago Bears",
+        "chart_date_printed": "Depth Chart (As of 10/31/2026)",
+        "dated": true,
+        "source_url": "https://www.chicagobears.com/team/depth-chart",
+        "slots": 59,
+        "deepest_rank": 3
+      },
+      "DEN": {
+        "club": "Denver Broncos",
+        "chart_date_printed": "no chart date printed on the rendered page",
+        "dated": false,
+        "source_url": "https://www.denverbroncos.com/team/depth-chart/",
+        "slots": 60,
+        "deepest_rank": 4
+      },
+      "PHI": {
+        "club": "Philadelphia Eagles",
+        "chart_date_printed": "no chart date printed on the rendered page",
+        "dated": false,
+        "source_url": "https://www.philadelphiaeagles.com/team/depth-chart",
+        "slots": 52,
+        "deepest_rank": 3
+      },
+      "TB": {
+        "club": "Tampa Bay Buccaneers",
+        "chart_date_printed": "no chart date printed on the rendered page",
+        "dated": false,
+        "source_url": "https://www.buccaneers.com/team/depth-chart",
+        "slots": 60,
+        "deepest_rank": 4
+      }
+    },
+    "slots_total": 231,
+    "injury_rows_total": 326,
+    "injury_rows_with_game_status": 25,
+    "clubs_in_injury_join": 28
+  },
+  "counts": {
+    "price_observations": 180,
+    "games_priced": 15,
+    "official_results": 136,
+    "replacement_rows": 25,
+    "correlations": 4,
+    "strategies_entered": 2,
+    "strategies_live": 0
+  },
+  "roi": {
+    "side_at_open": -0.7455,
+    "total_at_open": -0.1818,
+    "basis": "flat 1 unit at the relayed open price; paper only, nothing wagered"
+  },
+  "clv": {
+    "side_mean_points": -1.77,
+    "total_mean_points": 0.57,
+    "gate_units_required": "basis points of implied probability",
+    "gate_satisfiable_by_this_capture": false
+  },
+  "cash_reward": null,
+  "cash_reward_reason": "No strategy is live. No reward is due and none is paid."
+}

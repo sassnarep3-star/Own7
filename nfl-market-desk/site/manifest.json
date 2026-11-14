@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "index.html",
+    "summary.html",
+    "prices.html",
+    "origination.html",
+    "leaderboard.html",
+    "correlation.html",
+    "availability.html",
+    "gates.html",
+    "questions.html",
+    "suggestions.html",
+    "flagged.html",
+    "sources.html",
+    "method.html"
+  ],
+  "read_on": "2026-11-14"
+}

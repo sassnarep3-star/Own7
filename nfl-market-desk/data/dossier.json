@@ -1,0 +1,348 @@
+{
+  "register": "market-desk research dossier",
+  "written_on": "2026-11-14",
+  "session": "arena/ec67293d-own7",
+  "purpose": "State what was asked, what is actually held, and what is missing, so a reader can see the boundary of every claim on this site.",
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "Can this desk originate its own side, total and moneyline before the market moves, and show the difference?",
+      "status": "answered_for_week_9",
+      "answer": "Yes, mechanically: three ordered boards on 15 games, each publishing model, market and difference. The answer is not 'yes, profitably'. See Q3.",
+      "depends_on": [
+        "MD-ESPN-ODDS",
+        "CFDD-NFL-RESULTS"
+      ]
+    },
+    {
+      "id": "Q2",
+      "question": "Is the originated line better than the market line?",
+      "status": "answered_no",
+      "answer": "No. On the same 15 games the model's margin error is 13.55 points RMSE against the market's 10.01, and its total error is 14.54 against 14.06. A model that is less accurate than the price cannot be said to have found an edge.",
+      "depends_on": [
+        "MD-ESPN-ODDS",
+        "CFDD-NFL-RESULTS"
+      ]
+    },
+    {
+      "id": "Q3",
+      "question": "The side model's record is 2-13. Is that bad luck?",
+      "status": "answered_no",
+      "answer": "No. The model's own probabilities expected 9.26 wins on its 15 bets and it produced 2, which is p = 0.000167 against its own forecast: it was overconfident, not unlucky. It is also less accurate than the market (13.55 points RMSE against 10.01). A model that is worse than the price and then loses to the price is behaving consistently.",
+      "depends_on": [
+        "MD-ESPN-ODDS"
+      ]
+    },
+    {
+      "id": "Q4",
+      "question": "Do the numbers come from the operator or through a relay?",
+      "status": "answered_relayed",
+      "answer": "Relayed. Prices are DraftKings' numbers as published by ESPN, read on 2026-11-14. No sportsbook API or page was read directly. Every price row is labelled relayed and the label is not decorative: a relay can lag, re-round, or omit markets the operator offered.",
+      "depends_on": [
+        "MD-ESPN-ODDS"
+      ]
+    },
+    {
+      "id": "Q5",
+      "question": "Can a strategy be promoted live on a good staking run?",
+      "status": "answered_no_and_enforced",
+      "answer": "No. The promotion function rejects a strategy outright if a staking field is present, so a profitable paper record cannot promote anything. Promotion needs 200 settled bets, a signal p-value at or below 0.05, a Holm-adjusted q at or below 0.10, verified prices and positive closing-line value. The separation also protects the other direction: the side board here has a p-value that clears 0.05 and a staking ROI of -74.6%, and neither figure is allowed to decide anything on its own.",
+      "depends_on": [
+        "MD-G06"
+      ]
+    },
+    {
+      "id": "Q6",
+      "question": "Is there a live demotion gate?",
+      "status": "armed_not_yet_exercised",
+      "answer": "The gate is defined with five numeric triggers and is executable. Nothing is live, so no row has been demoted yet. That means the gate is implemented but unproven in anger, and it is reported as such rather than as 'operational'.",
+      "depends_on": [
+        "MD-G10"
+      ]
+    },
+    {
+      "id": "Q7",
+      "question": "How deep is the replacement when a starter is out?",
+      "status": "answered_for_four_clubs",
+      "answer": "For CHI, DEN, PHI and TB the chart was read in full, so the string that dresses is known. Of 25 players carrying an official game status league-wide, 5 have no healthy body printed behind them, 12 cause the club to reach one string down, and 8 cannot be placed because the player is not on the captured chart or carries no printed rank.",
+      "depends_on": [
+        "CFDD-NFL-DEPTH",
+        "CFDD-NFL-INJURY"
+      ]
+    },
+    {
+      "id": "Q8",
+      "question": "Can player-prop combos be priced from the captured data?",
+      "status": "answered_no",
+      "answer": "No. The prop endpoint returns markets and their open and current targets, but no over or under price, and every row is duplicated. A combo cannot be priced without a price. This is recorded as a blocked capability rather than a strategy awaiting data.",
+      "depends_on": [
+        "MD-ESPN-PROPS"
+      ]
+    },
+    {
+      "id": "Q9",
+      "question": "Are the correlations in the register real?",
+      "status": "answered_within_limits",
+      "answer": "Two of five pairs have enough observations to rank. The official-score correlations use n=136 finals (margin vs total r=-0.16, not significant after adjustment). The rest use n=15 and are shown with that n and marked unrankable, because at n=15 the interval on r spans most of its range.",
+      "depends_on": [
+        "CFDD-NFL-RESULTS",
+        "MD-ESPN-ODDS"
+      ]
+    },
+    {
+      "id": "Q10",
+      "question": "What is the single largest gap between what is held and what the strategy needs?",
+      "status": "answered",
+      "answer": "Sample, and it is no longer the only gap. Detecting a 55% rate against a coin at 80% power needs 783 settled bets and the capture holds 15. But the more immediate finding is that the model is worse than the market and significantly underperformed its own probabilities at n=15, so more data would most likely confirm the model is broken rather than reveal an edge. Data and model both need work, and the desk reports which is which.",
+      "depends_on": [
+        "MD-G07"
+      ]
+    }
+  ],
+  "held": [
+    {
+      "item": "Opening and closing prices for side, total and moneyline",
+      "quantity": "180 observations across 15 games, one provider",
+      "source_ids": [
+        "MD-ESPN-ODDS"
+      ],
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873037/competitions/401873037/odds",
+      "operator_direct": false
+    },
+    {
+      "item": "Official final scores",
+      "quantity": "136 games, weeks 1 to 9",
+      "source_ids": [
+        "CFDD-NFL-RESULTS"
+      ],
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "operator_direct": true
+    },
+    {
+      "item": "Club identity for all 32 clubs, bound to ESPN team ids",
+      "quantity": "32 of 32",
+      "source_ids": [
+        "MD-ESPN-TEAMS"
+      ],
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/1",
+      "operator_direct": false
+    },
+    {
+      "item": "Official injury report rows with game status",
+      "quantity": "326 joined rows, 28 clubs, 25 carrying a game status",
+      "source_ids": [
+        "CFDD-NFL-INJURY"
+      ],
+      "source_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "operator_direct": true
+    },
+    {
+      "item": "Printed depth charts",
+      "quantity": "231 slots, 4 of 32 clubs",
+      "source_ids": [
+        "CFDD-NFL-DEPTH"
+      ],
+      "source_url": "https://www.chicagobears.com/team/depth-chart",
+      "operator_direct": true
+    },
+    {
+      "item": "Standings with points for and against",
+      "quantity": "32 clubs as printed on 2026-11-14",
+      "source_ids": [
+        "CFDD-NFL-STANDINGS"
+      ],
+      "source_url": "https://www.nfl.com/standings/",
+      "operator_direct": true
+    },
+    {
+      "item": "Player-prop market list with open and current targets",
+      "quantity": "781 markets on one game, no prices",
+      "source_ids": [
+        "MD-ESPN-PROPS"
+      ],
+      "source_url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873046/competitions/401873046/odds/100/propBets",
+      "operator_direct": false
+    }
+  ],
+  "missing": [
+    {
+      "id": "M1",
+      "missing": "Direct operator prices",
+      "why_it_matters": "Every price is a relay. A relay can differ from what the operator would have filled.",
+      "blocks": [
+        "MD-G01 full pass",
+        "any live claim"
+      ],
+      "how_to_discover": "A licensed sportsbook API with historical closing lines, or an operator's own market-history export. Until then the relay label stands and the desk does not claim operator confirmation."
+    },
+    {
+      "id": "M2",
+      "missing": "Prices for weeks 1 to 8",
+      "why_it_matters": "15 games cannot distinguish a 55% rate from a coin. 135 games still cannot, but it is the difference between a description and a test.",
+      "blocks": [
+        "MD-G07",
+        "any promotion"
+      ],
+      "how_to_discover": "The same two calls per game (event identity, then the competition odds) against event ids for weeks 1 to 8, listed by the week-events endpoint. The method is proven on week 9; the cost is roughly sixteen games per week."
+    },
+    {
+      "id": "M3",
+      "missing": "Over and under prices for player props",
+      "why_it_matters": "Player-prop combos are a stated requirement and cannot be priced at all without a two-way price.",
+      "blocks": [
+        "player-prop strategies",
+        "prop combos"
+      ],
+      "how_to_discover": "A prop feed with two-way prices. The captured endpoint publishes targets only, so no amount of re-reading it will produce a price."
+    },
+    {
+      "id": "M4",
+      "missing": "Depth charts for 28 of 32 clubs",
+      "why_it_matters": "Requirement 6 is satisfied for four clubs. For the rest the replacement's string is unknown, and a blank is not a zero.",
+      "blocks": [
+        "league-wide availability weighting"
+      ],
+      "how_to_discover": "Read each club's own depth-chart page. Four clubs are already done, one of them undated, and the undated chart is itself a finding to chase."
+    },
+    {
+      "id": "M5",
+      "missing": "A source for the salary cap, contract and scheme context",
+      "why_it_matters": "Without it the desk cannot separate a genuinely thin room from a club that drafted for it.",
+      "blocks": [
+        "availability interpretation"
+      ],
+      "how_to_discover": "Official league cap reporting and club transaction pages. Not attempted this session."
+    },
+    {
+      "id": "M6",
+      "missing": "Line-move timing, not just open and close",
+      "why_it_matters": "Open and close hide the path. A line that moved because of injury news is a different signal from one that drifted on volume.",
+      "blocks": [
+        "attributing movement to information"
+      ],
+      "how_to_discover": "A time series of prices, or repeated capture at fixed intervals during the week. The current capture is two points in time."
+    },
+    {
+      "id": "M7",
+      "missing": "A CLV figure in the units the promotion gate requires",
+      "why_it_matters": "The gate is written in basis points of implied probability; this capture measures CLV in points of line. The two are not convertible without an invented exchange rate, so the cell is blank and the strategy stays on paper.",
+      "blocks": [
+        "MD-S1 promotion"
+      ],
+      "how_to_discover": "Rewrite the gate in points of line, or capture prices tightly enough that the probability and the line move together. The first is a documentation change and can be done deliberately; the second needs more data."
+    },
+    {
+      "id": "M8",
+      "missing": "A pre-registered sign convention, checked before any result was read",
+      "why_it_matters": "This desk shipped an inverted spread sign that turned a 2-13 model into a 13-2 record, and only caught it by hand-checking one game. The bug was invisible in every summary statistic, because a sign error produces a plausible story in whichever direction it points.",
+      "blocks": [
+        "trust in any result produced before the convention was fixed"
+      ],
+      "how_to_discover": "Already closed for the sign: the conversion now lives in one tested function and two regression tests pin both the side and the total conventions. The general lesson is not closed: a convention that can invert a result should be asserted before the first result is computed, not after a human notices."
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "SG1",
+      "title": "Backfill weeks 1 to 8 prices before anything else",
+      "recommendation": "Adopt",
+      "effort": "medium",
+      "why": "It is the only item that changes what any rate on this site means. The method is proven and the bottleneck is call count, not uncertainty.",
+      "risk": "The relay may not retain every historical market; where it does not, the row is dropped and the drop is published."
+    },
+    {
+      "id": "SG2",
+      "title": "Re-express the CLV gate in points of line",
+      "recommendation": "Adopt",
+      "effort": "small",
+      "why": "The gate currently cannot be satisfied by any capture, because it asks for basis points while the data is in points. A gate that cannot be satisfied is not a gate.",
+      "risk": "Changing a gate after seeing results invites tuning. Mitigation: the new threshold is set from the distribution of line moves, not from our own record."
+    },
+    {
+      "id": "SG3",
+      "title": "Grade on a per-week rolling window, including the models",
+      "recommendation": "Adopt",
+      "effort": "small",
+      "why": "The first version of this desk rated week 9 using a standings page published after week 9. That is lookahead and it flatters any model. The window is now explicit and per-week, and it must stay that way.",
+      "risk": "Early-season weeks have thin history, so week 1 and 2 rows carry almost no information. They are marked rather than hidden."
+    },
+    {
+      "id": "SG4",
+      "title": "Publish the model's own error next to every hit rate",
+      "recommendation": "Adopt",
+      "effort": "small",
+      "why": "This is what stopped a 13-of-15 record being read as an edge. Without the error comparison, the site would have led with the flattering number.",
+      "risk": "None identified. It makes the desk look worse, which is the intended effect."
+    },
+    {
+      "id": "SG5",
+      "title": "Expand depth charts from 4 clubs to all 32",
+      "recommendation": "Defer",
+      "effort": "large",
+      "why": "Requirement 6 is satisfied where the chart exists, and the join already demonstrates the mechanism. Doing 28 more clubs before the price backfill would trade the decisive gap for a supporting one.",
+      "risk": "Leaves requirement 6 partially satisfied, which is stated on the page rather than glossed."
+    },
+    {
+      "id": "SG6",
+      "title": "Model player props from the captured target series",
+      "recommendation": "Reject",
+      "effort": "medium",
+      "why": "The data has targets but no prices. A prop model without a two-way price produces a number that cannot be bet and cannot be graded against a market. It would be activity, not evidence.",
+      "risk": "None: the requirement stays open and blocked, honestly labelled."
+    },
+    {
+      "id": "SG7",
+      "title": "Add a second price provider for cross-checking",
+      "recommendation": "Defer",
+      "effort": "small",
+      "why": "A second provider would let the desk test whether a movement is market-wide or book-specific. Valuable, but it multiplies the relay problem rather than solving it, so it waits behind a direct source.",
+      "risk": "Two relays are still relays. The desk must not average them and call the result a market price."
+    },
+    {
+      "id": "SG8",
+      "title": "Exercise the demotion gate on a replayed live ledger",
+      "recommendation": "Adopt",
+      "effort": "small",
+      "why": "The gate is defined and executable but has never fired. A trigger that has never been exercised is a configuration, not a control. Replaying a week of paper bets through it would prove it fires.",
+      "risk": "A replay is not a live test. The page must say so and must not claim the gate is proven in production."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D1",
+      "decision": "Refuse to stake at the close",
+      "why": "Staking at the close makes closing-line value identically zero and assumes we could trade on information we publish late. Bets are taken at the open.",
+      "consequence": "Every ROI is an open-price ROI and is labelled as such."
+    },
+    {
+      "id": "D2",
+      "decision": "Report CLV in points, not basis points",
+      "why": "Lines moved up to fourteen points on this capture; a probability-only measure reports near-zero for a move worth a dozen points of handicap.",
+      "consequence": "The promotion gate, written in basis points, is reported as unsatisfiable rather than quietly converted."
+    },
+    {
+      "id": "D3",
+      "decision": "Rate from official scores per week, never from a standings snapshot",
+      "why": "A standings page is a snapshot of now, so using it to rate an earlier week silently includes that week's own result.",
+      "consequence": "Ratings are rebuilt per graded week and the window is printed on every row."
+    },
+    {
+      "id": "D4",
+      "decision": "Make the promotion function raise on a staking field",
+      "why": "A rule in a document can be forgotten; a raise cannot. This is how 'a lucky run cannot mask a bad signal' becomes true rather than asserted.",
+      "consequence": "The leaderboard passes only signal fields and the guard is tested."
+    },
+    {
+      "id": "D5",
+      "decision": "Label every price relayed and never claim operator confirmation",
+      "why": "No sportsbook was read directly. A relay may lag or re-round.",
+      "consequence": "Gate MD-G01 passes on provenance completeness and carries an explicit relay caveat rather than a clean bill."
+    },
+    {
+      "id": "D6",
+      "decision": "Treat the home side's printed spread as a LINE, not as a margin",
+      "why": "`market_line` is the home club's own spread, so a home favourite prints -9.5 and the market's implied home margin is +9.5. The first build compared the model's expected margin directly against the printed line, which inverted every side pick and produced a 13-2 record from a losing model.",
+      "consequence": "The conversion lives in one tested function, `market_home_margin`, and the total board has its own separate conversion because a total is not signed like a spread. Both conventions are pinned by regression tests."
+    }
+  ]
+}

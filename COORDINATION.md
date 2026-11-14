@@ -1276,3 +1276,113 @@ touched. XS09 stands.
 | ID | Task | Status | Notes |
 |---|---|---|---|
 | C9 | PR, merge, Pages deploy, record | in progress | Next entry. |
+
+---
+
+## Session arena/ec67293d-own7 — market price store, three-market origination, signal/staking split (2026-11-14)
+
+Session ID: `session-arena-ec67293d-own7`. Fixed Arena branch: `arena/ec67293d-own7`, based on
+`a7febe9` (merge of PR #43). Historical boards above are retained verbatim and are **not** inherited
+as verification.
+
+### Observed starting state (read, not assumed)
+
+`git log -1` = `a7febe9`. Baseline replayed green before any change: `python -m unittest discover -s tests`
+→ **111 pass**. `nfl-results/analysis.json` shows 30 graded candidates, 1 provisional, 0 qualified, and
+every `roi`, `clv` and `cash_reward` field blank because `RG03 (executable price)` is blocked. That is the
+gap this session attacks: prior sessions recorded "no price anywhere". This session tested that premise
+and found it false — see below.
+
+### Discovery that re-frames the price question (verified this session)
+
+| Check | Result |
+|---|---|
+| `https://www.nfl.com/odds/` | **404** ("Flag on the Play"). NFL.com publishes no odds page. |
+| `https://www.espn.com/nfl/odds` | Renders current-week open + current spread/total/ML, attributed "Odds by DraftKings". |
+| `https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873038/competitions/401873038/odds` | Returns `open`, `close` **and** `current` blocks for spread, total and moneyline, `provider: {id: 100, name: DraftKings}`. Verified on the CIN@ATL Week 9 game: open total 48.5, close 52.5; open spread CIN −4.5, close −3. |
+| `http://sports.core.api.espn.com/...` via `curl` from this sandbox | code **000** — all direct HTTP is blocked; every capture is through the Arena page reader. Same access class earlier sessions recorded for nfl.com. |
+
+So a price store is possible, but it is a **relay**: DraftKings' numbers as distributed by ESPN's odds API.
+No operator-direct page was read. Every price row is labelled relayed, never "operator-confirmed".
+
+### Claim (written, committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| M1 | Coordination claim + baseline replay | done | session-arena-ec67293d-own7 | COORDINATION.md (append-only) | This entry. |
+| M2 | Price-snapshot store: open and close per market (spread, total, moneyline) with capture timestamps | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` (new directory) | Every row carries its publisher, provider and retrieval time. No inferred number; absent = blank + flag. |
+| M3 | Verified results feed bound to the price store, enough to compute ROI and CLV | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Results reconcile against the existing 136-game official score capture; a mismatch aborts the build. |
+| M4 | Origination order: side, then total, then moneyline | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Three separate boards, produced in that order, each with its own sample and gates. |
+| M5 | Fair line, market line and difference as separate columns | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Never merged into one "edge" field. |
+| M6 | Signal vs staking separated on the leaderboard | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | A staking-only column set says so; a lucky stake run cannot promote a strategy. |
+| M7 | Replacement depth: how deep the replacement is, not just that one happened | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Joins the existing 231 printed depth slots; prints the rank of the man stepping in. |
+| M8 | Correlations from officially sourced numbers only, with n published per value | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Every coefficient carries n and a source id, or is blank. |
+| M9 | Demotion gate: live → paper, with stated trigger and consequence | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Executable, not prose: evaluated from the store, prints the trigger that fired. |
+| M10 | Questions / information-held / information-missing dossier + suggestions review section | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**` | Each question states what closes it and what it blocks. Suggestions carry Adopt/Defer/Reject with a blank decision record. |
+| M11 | Source-linked site, tests, additive nav integration | in progress | session-arena-ec67293d-own7 | `nfl-market-desk/**`, additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md` | No existing page, value or test overwritten. |
+| M12 | Verification, PR, merge, Pages deploy evidence, record | unclaimed | session-arena-ec67293d-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: fixed branch only; never infer or fill a value an official source does not
+publish — leave it blank and flag it; every table row keeps a registered source link; `git pull --rebase`
+before every push; small frequent commits; additive edits to shared files only; do not merge, close or
+edit another session's PR.
+
+### Progress update (session-arena-ec67293d-own7) — M2–M11 implemented
+
+All work is inside `nfl-market-desk/**` with additive-only edits to `scripts/build_site.py`,
+`scripts/check_site.py`, `.github/workflows/check.yml` and `research/sources.json`. No existing page,
+value or test was overwritten.
+
+| ID | Task | Status | Evidence |
+|---|---|---|---|
+| M2 | Price store, open and close | **done** | 180 observations, 15 games, side + total + moneyline, DraftKings via ESPN provider 100. Every row carries provider, provider id, source id, https url, retrieval date. Gate MD-G01 passes on provenance completeness. |
+| M3 | Verified results feed | **done** | 136 official final scores (weeks 1–9) reused from `nfl-results/`; 15/15 priced games bound to a score on the club pair. Unbound games abort the build rather than dropping silently. |
+| M4 | Order: side → total → moneyline | **done** | `origination.build_board` emits three boards with explicit `order` 1/2/3; the moneyline is flagged `is_restatement_of_side`. |
+| M5 | Model / market / difference separate | **done** | Three separate columns on every row; the difference is blank when the market column is blank and is never defaulted against zero. |
+| M6 | Signal vs staking separated | **done** | `gates.promote` raises `ValueError` if a staking field is passed; exercised on every build (gate MD-G06's evidence is the raise). |
+| M7 | Replacement depth | **partial, and stated** | 25 players with an official game status classified by which string dresses. Depth charts were read for **4 of 32 clubs** (CHI, DEN, PHI, TB) — the earlier note of "231 slots across 31 clubs" was wrong and is corrected below. |
+| M8 | Correlation with n published | **done** | 4 pairs, each with n, Fisher CI, p and Holm q. Only n=136 is rankable; the n=15 pairs are published and marked unpowered. Dropped pairs are published too. |
+| M9 | Demotion gate | **done, unexercised in production** | 5 numeric triggers, all firing on a probe ledger. Nothing is live, so no real demotion has occurred and the site says so. |
+| M10 | Dossier + suggestions | **done** | 10 questions, 7 held items, 8 missing gaps each with a route to closing it, 8 suggestions with Adopt/Defer/Reject and a blank decision record, 6 decisions. |
+| M11 | Site, tests, integration | **done** | 13 pages; 54 desk tests; `scripts/check_site.py` passes with 169 recursive pages, 6,755 body rows, 179 registered sources, 0 errors. |
+
+### Correction to an inherited figure
+
+The previous session note recorded "231 depth slots across 31 clubs". Re-reading
+`nfl-skill-cfdd/data/depth-slots-2026-11-14.csv` shows **231 slots across 4 clubs** (`Counter({'DEN': 60,
+'TB': 60, 'CHI': 59, 'PHI': 52})`). The league-wide depth claim in earlier sessions is therefore not
+supported by the committed data, and this session does not repeat it. Requirement 6 is satisfied for four
+clubs and is reported as such.
+
+### Irregularity found by this session (published on the Flagged page)
+
+**This desk shipped an inverted spread sign, and it changed the conclusion.** `market_line` is the home
+club's own printed spread, so a home favourite prints −9.5 and the market's implied home margin is +9.5.
+The first build compared the model's expected margin directly against the printed line, which inverted
+every side pick. That build produced a **13–2 record from a model that is worse than the market**
+(margin RMSE 13.55 v 10.01) and was one commit away from being published as a result.
+
+It was caught by hand-checking one game (ARI@SEA) against its official score, not by any summary
+statistic: a sign error produces a plausible story in whichever direction it points. The convention now
+lives in a single function (`origination.market_home_margin`), the total board has its own separate
+conversion (`edge_total`, because a total is not signed like a spread), and two regression tests pin both.
+Corrected record: side **2–13**, total **6–8**.
+
+### Findings, stated so the next session does not have to re-derive them
+
+1. The model does not beat the market: margin RMSE 13.55 v 10.01, total 14.54 v 14.06.
+2. The side model significantly *underperformed its own probabilities*: expected 9.26 wins, got 2,
+   p = 0.000167. That is overconfidence, not bad luck.
+3. Side CLV is −1.77 points on the open; total CLV +0.67. Both far from the gate's basis-point definition.
+4. Detecting a 55% rate at 80% power needs 783 settled bets. This capture has 15.
+5. Player props are reachable but **price-less**: 781 markets on one game, open/current targets only, no
+   over/under price, every row duplicated. Prop combos are blocked, not pending.
+6. The promotion gate (basis points) is **unsatisfiable by any capture in this schema** (points of line).
+   Recorded as unsatisfiable rather than quietly converted — see suggestion SG2.
+
+### Verification run before this update
+
+`python -m unittest discover -s tests` → 111 pass. `python -m unittest discover -s nfl-market-desk/tests`
+→ 54 pass. `python nfl-market-desk/build.py --check` → 11 artifacts reproduce byte-identically.
+`python scripts/check_site.py` → passed, 0 errors. Every other command in
+`.github/workflows/check.yml` replayed locally → all pass. Working tree clean after build.

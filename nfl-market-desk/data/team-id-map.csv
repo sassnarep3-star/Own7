@@ -1,0 +1,33 @@
+espn_team_id,abbreviation,display_name,evidence_type,evidence_url,checked_on
+1,ATL,Atlanta Falcons,team resource read,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/1,2026-11-14
+2,BUF,Buffalo Bills,team resource read,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/2,2026-11-14
+3,CHI,Chicago Bears,team resource read,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/3,2026-11-14
+4,CIN,Cincinnati Bengals,team resource read,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/4,2026-11-14
+5,CLE,Cleveland Browns,team resource read,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/5,2026-11-14
+6,DAL,Dallas Cowboys,team resource read,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/6,2026-11-14
+7,DEN,Denver Broncos,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873041,2026-11-14
+8,DET,Detroit Lions,team resource read,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/8,2026-11-14
+9,GB,Green Bay Packers,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873049,2026-11-14
+10,TEN,Tennessee Titans,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873057,2026-11-14
+11,IND,Indianapolis Colts,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873040,2026-11-14
+12,KC,Kansas City Chiefs,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873045,2026-11-14
+13,LV,Las Vegas Raiders,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873047,2026-11-14
+14,LA,Los Angeles Rams,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873043,2026-11-14
+15,MIA,Miami Dolphins,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873042,2026-11-14
+16,MIN,Minnesota Vikings,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873051,2026-11-14
+17,NE,New England Patriots,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873049,2026-11-14
+18,NO,New Orleans Saints,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873039,2026-11-14
+19,NYG,New York Giants,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873044,2026-11-14
+20,NYJ,New York Jets,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873045,2026-11-14
+21,PHI,Philadelphia Eagles,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873044,2026-11-14
+22,ARI,Arizona Cardinals,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873048,2026-11-14
+23,PIT,Pittsburgh Steelers,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873064,2026-11-14
+24,LAC,Los Angeles Chargers,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873046,2026-11-14
+25,SF,San Francisco 49ers,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873047,2026-11-14
+26,SEA,Seattle Seahawks,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873048,2026-11-14
+27,TB,Tampa Bay Buccaneers,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873050,2026-11-14
+28,WAS,Washington Commanders,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873043,2026-11-14
+29,CAR,Carolina Panthers,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873041,2026-11-14
+30,JAX,Jacksonville Jaguars,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873037,2026-11-14
+33,BAL,Baltimore Ravens,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873037,2026-11-14
+34,HOU,Houston Texans,event payload home/away,https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401873046,2026-11-14

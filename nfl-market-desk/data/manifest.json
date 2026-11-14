@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "desk": "nfl-market-desk",
+  "generated_by": "nfl-market-desk/build.py",
+  "price_observations": 180,
+  "games_with_prices": 15,
+  "markets": [
+    "moneyline",
+    "spread",
+    "total"
+  ],
+  "provider": {
+    "publisher": "ESPN",
+    "provider": "DraftKings",
+    "provider_id": 100,
+    "access_class": "Arena page reader (rendered JSON); direct HTTPS from the sandbox returns curl 000",
+    "label": "RELAYED through ESPN from sportsbook provider 100 (DraftKings)"
+  },
+  "inputs": {
+    "price-observations-part1.csv": {
+      "sha256": "0bb52b2060e39c79592144bd461646f7956142f17f6905829a822091662886a9",
+      "bytes": 11817
+    },
+    "price-observations-part2.csv": {
+      "sha256": "94792d14a9eb3237f33ecb7f232e213befd4f9927ed9a9dd269a498def20f17a",
+      "bytes": 9477
+    },
+    "price-observations-part3.csv": {
+      "sha256": "90779f4472e77ad83e6715a20594fd9b81201210c9b69989b37368855d3e61c1",
+      "bytes": 14098
+    },
+    "team-id-map.csv": {
+      "sha256": "6360b81c0ba051446d30f0e2ea571cb14e8373a95ed67cf276d1e663db9bc6a1",
+      "bytes": 4554
+    }
+  },
+  "results_input": {
+    "path": "nfl-results/data/games-2026-w1-9.csv",
+    "sha256": "4c7a91c3d41282a1eb8224add0d7ca8c98d3f85cabb55d7dddf49f19beccb269",
+    "rows": 136
+  }
+}
