@@ -537,7 +537,7 @@ def build_origination() -> str:
             + cell(fmt(r["line_movement_points"], 1, signed=True), numeric=True)
             + cell(pct(r["model_home_cover_prob"]), numeric=True)
             + cell(fmt(r["actual_margin"], 0, signed=True), numeric=True)
-            + f'<td>{esc(win)}<span class="sub">{esc(r["rating_games_used"])} club-games</span></td>'
+            + f'<td>{esc(win)}<span class="sub">{esc(r["rating_games_used"])} club-games used</span></td>'
             f'<td class="src">{src(["EC6-ESPN-ODDS", "EC6-NFL-SCHEDULE"])}</td></tr>'
         )
     body += '<section><h2>1 · Side board</h2>'
