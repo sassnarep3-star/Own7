@@ -761,7 +761,7 @@ def build():
     # artifact breaks the site build instead of publishing quietly.
     for script in ('sources','results','backtest','originate','boards',
                    'prices','correlations','leaderboard','depth','demotion','questions',
-                   'suggestions','injuries','review'):
+                   'suggestions','injuries','review','exec_summary'):
         res=subprocess.run([sys.executable,str(ROOT/'nfl-competition'/f'{script}.py')],cwd=ROOT,capture_output=True,text=True)
         if res.returncode: raise SystemExit(f'nfl-competition/{script}.py failed: '+res.stdout+res.stderr)
     competition_result=subprocess.run([sys.executable,str(ROOT/'nfl-competition'/'build.py')],cwd=ROOT,capture_output=True,text=True)

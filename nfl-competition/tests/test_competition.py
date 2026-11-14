@@ -449,6 +449,33 @@ class ReviewContract(unittest.TestCase):
         self.assertTrue(artifact("review.json")["price_search"])
 
 
+class ExecutiveSummaryContract(unittest.TestCase):
+    """P12: the written summary is generated from the artifacts, so it cannot drift."""
+
+    def test_the_document_is_current(self):
+        """Re-generating must reproduce the committed file byte for byte."""
+        import importlib
+
+        sys.path.insert(0, str(DESK))
+        module = importlib.import_module("exec_summary")
+        current = (DESK / "EXECUTIVE-SUMMARY.md").read_text(encoding="utf-8")
+        self.assertEqual("\n".join(module.lines()) + "\n", current)
+
+    def test_it_states_the_headline_numbers(self):
+        text = (DESK / "EXECUTIVE-SUMMARY.md").read_text(encoding="utf-8")
+        feed = artifact("results-feed.json")
+        self.assertIn(str(feed["games"]), text)
+        self.assertIn("192 of 192", text)
+        self.assertIn("nfl.com returns HTTP 404", text)
+
+    def test_it_claims_no_reward_and_no_price(self):
+        text = (DESK / "EXECUTIVE-SUMMARY.md").read_text(encoding="utf-8").lower()
+        for banned in ("guaranteed", "risk-free", "sure thing", "lock of the week"):
+            self.assertNotIn(banned, text)
+        self.assertIn("no reward is paid", text)
+        self.assertIn("no price is published", text)
+
+
 class PublishedSiteContract(unittest.TestCase):
     """P13: the pages the reader sees keep the guarantees the data claims."""
 
