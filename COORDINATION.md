@@ -949,7 +949,7 @@ Session ID: `session-arena-6b86c2eb-own7`. Fixed Arena branch: `arena/6b86c2eb-o
 
 | ID | Task | Status | Owner | Exclusive file scope | Notes |
 |---|---|---|---|---|---|
-| I1 | Re-run integrated NFL research, recursive site, and release verification; record newly observed official-source freshness findings | in progress | session-arena-6b86c2eb-own7 | `COORDINATION.md` (append only), `docs/nfl-integration-review-2026-11-14.md` (new), `research/sources.json`, `research/nfl/flags.json`, additive `SOURCE_HOSTS` entries in `scripts/check_site.py`, generated NFL review/source pages and manifests only | No raw game data will be refreshed. Only source metadata and the existing review flag may change after live official-source recheck. |
+| I1 | Re-run integrated NFL research, recursive site, and release verification; record newly observed official-source freshness findings | done | session-arena-6b86c2eb-own7 | `COORDINATION.md` (append only), `docs/nfl-integration-review-2026-11-14.md` (new), `research/sources.json`, `research/nfl/flags.json`, additive `SOURCE_HOSTS` entries in `scripts/check_site.py`, generated NFL review/source pages and manifests only | PR #39 merged; Pages API confirms build 1367784320 built for merge commit 8b77973. No raw game data was refreshed. |
 
 Open unrelated PRs at claim time: #27 (`arena/382a833e-own7`) and #17 (`arena/a934e8c3-own7`). This session will not edit, merge, or close either PR. It will use only the current fixed branch.
 
@@ -976,3 +976,16 @@ The first PR check failed at the recursive site-audit step. Reproduction isolate
 A second `git pull --rebase origin main` brought in the C1/C2 NFL verification contribution (PRs #37/#38) and conflicted only at the append-only coordination board. The complete C1/C2 board, its evidence and scripts were preserved; this session's section was appended afterward. No other files conflicted. PR #40 (`arena/196424c5-own7`) was observed open later and edits the shared root-page navigation, including `nfl-review.html`; this session will not edit that branch or merge it. The eventual integration must retain both its navigation addition and this session's updated NF09/NF14 review text and rerun the site generator/checks. The current PR remains limited to its own source/flag refresh.
 
 A third rebase (PR #39 publication) incorporated PR #41's append-only Pages-deployment record on top of the already preserved PR #37/#38 C1/C2 work. The coordination file had another append conflict; all main-side deployment and verification text was retained and this session's record remains at EOF. No other path changed in conflict resolution.
+
+### I1 complete — PR, merge and Pages deployment (2026-11-14)
+
+| Field | Result |
+|---|---|
+| Pull request | [#39](https://github.com/sassnarep3-star/Own7/pull/39) — “NFL Nov 14 source recheck and flagged-site refresh” |
+| Base / head | `main` ← `arena/6b86c2eb-own7` |
+| Checks | `Research and recursive site audit` passed; `Desktop, mobile and accessibility` passed (both PR-triggered runs passed after the source-hash regeneration fix) |
+| Merge | `--merge`, merged 2026-11-14T01:20:47Z; merge commit `8b779735b85ca4e12cfe3bb595c9f4e9325b9019` |
+| Pages deployment | GitHub Pages workflow [43540034407](https://github.com/sassnarep3-star/Own7/actions/runs/43540034407) succeeded. Pages build [1367784320](https://api.github.com/repos/sassnarep3-star/Own7/pages/builds/1367784320) reports `built` for merge commit `8b779735b85ca4e12cfe3bb595c9f4e9325b9019`. Pages API reports source `main:/`, HTTPS enforced, public site `https://sassnarep3-star.github.io/Own7/`. |
+| Post-merge checks | Research and dashboard check [43540035314](https://github.com/sassnarep3-star/Own7/actions/runs/43540035314) succeeded. |
+
+I1 is **done**. The independent NFL results/skill lab PR #40 and older PRs #27/#17 remain outside this session's scope and were not merged or closed here. Their work must be integrated and re-verified separately before describing it as live.
