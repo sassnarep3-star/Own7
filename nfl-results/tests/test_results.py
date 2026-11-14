@@ -165,7 +165,9 @@ class LegDependence(unittest.TestCase):
     def test_independence_baseline_is_the_product_of_marginals(self):
         leg = engine.build()["correlations"]["leg_dependence"]
         expected = leg["p_home_cover"] * leg["p_over"]
-        self.assertAlmostEqual(leg["p_home_and_over_independent"], expected, places=10)
+        # Output floats are rounded to six decimals for cross-platform stability, so the
+        # identity only holds to that precision; assert the tolerance rather than exactness.
+        self.assertAlmostEqual(leg["p_home_and_over_independent"], expected, places=5)
 
 
 class Math(unittest.TestCase):
