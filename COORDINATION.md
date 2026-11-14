@@ -927,3 +927,15 @@ Rules: work only on the fixed branch; never infer or fill a value; every table r
 
 - Claim written before implementation; commit + push follows immediately.
 - No existing NBA, rental, market-evidence, assurance or canonical NFL value, page or test will be overwritten; all changes are additive or corrective with a source.
+### P1 integration — PR #38 merged and Pages build confirmed
+
+| Field | Value |
+|---|---|
+| Pull request | [#38](https://github.com/sassnarep3-star/Own7/pull/38) — “Fix local preview routing for NFL assurance pages” |
+| Base / head | `main` ← `arena/479b573c-own7` |
+| Checks | `Research and recursive site audit` pass (18s) · `Desktop, mobile and accessibility` pass (4m27s) |
+| Merge | `--merge`, merged 2026-11-14T01:07:55Z, commit `11d9771149010f99f25b09162563dda2767b79f0` |
+| Pages | [GitHub Pages build API](https://api.github.com/repos/sassnarep3-star/Own7/pages/builds/latest) reports `built` for the same commit, updated 2026-11-14T01:08:25Z; source `main` / `/`, HTTPS enforced; site URL: https://sassnarep3-star.github.io/Own7/. The sandbox cannot fetch `*.github.io`, so liveness is evidenced by the official Pages API rather than a direct fetch. |
+
+Other sessions' open PRs #37, #27 and #17 were left untouched.
+
