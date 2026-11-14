@@ -1,0 +1,762 @@
+{
+  "requirement": "walk-forward grading of the originated board",
+  "built_on": "2026-11-14",
+  "weeks_scored": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "forecast_rows": 121,
+  "games_excluded": "week 1 is never scored; a club with no prior game is skipped",
+  "leakage_control": "A forecast for week w uses only weeks strictly less than w, including the home allowance, the margin spread and the league mean.",
+  "permutation": {
+    "reps": 5000,
+    "seed": 20261114,
+    "null": "forecasts are shuffled across games; only the pairing is destroyed"
+  },
+  "multiplicity": {
+    "method": "Benjamini-Hochberg across all graded strategies",
+    "level": 0.1,
+    "tested": 16
+  },
+  "forecast_quality": {
+    "n": 121,
+    "margin_mae": 10.215543,
+    "margin_bias": 0.59426,
+    "margin_rmse": 13.268723,
+    "total_mae": 11.790422,
+    "total_bias": 1.312501,
+    "total_rmse": 14.653109,
+    "total_residual_sd": 14.654893
+  },
+  "sensitivity": [
+    {
+      "home_allowance": "measured from prior games (this desk)",
+      "n": 120,
+      "wins": 70,
+      "hit_rate": 0.583333,
+      "binomial_p": 0.082407
+    },
+    {
+      "home_allowance": "fixed at 0.0 points",
+      "n": 120,
+      "wins": 72,
+      "hit_rate": 0.6,
+      "binomial_p": 0.035324
+    },
+    {
+      "home_allowance": "fixed at 2.0 points (the older board's assumption)",
+      "n": 120,
+      "wins": 62,
+      "hit_rate": 0.516667,
+      "binomial_p": 0.784328
+    },
+    {
+      "home_allowance": "reference: back the home club in every game, no model",
+      "n": 120,
+      "wins": 57,
+      "hit_rate": 0.475,
+      "binomial_p": 0.64826
+    }
+  ],
+  "strategies": [
+    {
+      "id": "SB-01",
+      "name": "Board side, every game",
+      "division": "Single bets",
+      "market": "Side (directional)",
+      "rule": "Back the club the stage-1 margin favours, in every forecastable game.",
+      "kind": "directional",
+      "signal": {
+        "n": 120,
+        "wins": 70,
+        "losses": 50,
+        "hit_rate": 0.583333,
+        "null_rate": 0.5,
+        "p_value": 0.086383,
+        "binomial_p": 0.082407,
+        "ci_low": 0.49388,
+        "ci_high": 0.667616,
+        "statistic": "hit rate vs a 50% reference",
+        "first_half_hit_rate": 0.55,
+        "second_half_hit_rate": 0.616667,
+        "stable_across_halves": true,
+        "permutation": {
+          "observed": 0.583333,
+          "n": 120,
+          "reps": 5000,
+          "p_value": 0.086383,
+          "null_median": 0.5,
+          "null_p95": 0.575
+        },
+        "q_value": 0.230354,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "SB-02",
+      "name": "Board side, conviction at least 3 points",
+      "division": "Single bets",
+      "market": "Side (directional)",
+      "rule": "As SB-01, but only where the stage-1 margin is at least 3 points from zero.",
+      "kind": "directional",
+      "signal": {
+        "n": 48,
+        "wins": 29,
+        "losses": 19,
+        "hit_rate": 0.604167,
+        "null_rate": 0.5,
+        "p_value": 0.174565,
+        "binomial_p": 0.193413,
+        "ci_low": 0.463104,
+        "ci_high": 0.729792,
+        "statistic": "hit rate vs a 50% reference",
+        "first_half_hit_rate": 0.5,
+        "second_half_hit_rate": 0.708333,
+        "stable_across_halves": false,
+        "permutation": {
+          "observed": 0.604167,
+          "n": 48,
+          "reps": 5000,
+          "p_value": 0.174565,
+          "null_median": 0.489362,
+          "null_p95": 0.604167
+        },
+        "q_value": 0.342041,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "SB-03",
+      "name": "Board side, conviction at least 6 points",
+      "division": "Single bets",
+      "market": "Side (directional)",
+      "rule": "As SB-01, but only where the stage-1 margin is at least 6 points from zero.",
+      "kind": "directional",
+      "signal": {
+        "n": 18,
+        "wins": 12,
+        "losses": 6,
+        "hit_rate": 0.666667,
+        "null_rate": 0.5,
+        "p_value": 0.221556,
+        "binomial_p": 0.237885,
+        "ci_low": 0.437495,
+        "ci_high": 0.837212,
+        "statistic": "hit rate vs a 50% reference",
+        "first_half_hit_rate": 0.444444,
+        "second_half_hit_rate": 0.888889,
+        "stable_across_halves": false,
+        "permutation": {
+          "observed": 0.666667,
+          "n": 18,
+          "reps": 5000,
+          "p_value": 0.221556,
+          "null_median": 0.5,
+          "null_p95": 0.666667
+        },
+        "q_value": 0.342041,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "SB-04",
+      "name": "Pythagorean differential side",
+      "division": "Single bets",
+      "market": "Side (directional)",
+      "rule": "Back the club with the higher Pythagorean expectation from prior points.",
+      "kind": "directional",
+      "signal": {
+        "n": 120,
+        "wins": 74,
+        "losses": 46,
+        "hit_rate": 0.616667,
+        "null_rate": 0.5,
+        "p_value": 0.014397,
+        "binomial_p": 0.013376,
+        "ci_low": 0.527341,
+        "ci_high": 0.698755,
+        "statistic": "hit rate vs a 50% reference",
+        "first_half_hit_rate": 0.583333,
+        "second_half_hit_rate": 0.65,
+        "stable_across_halves": true,
+        "permutation": {
+          "observed": 0.616667,
+          "n": 120,
+          "reps": 5000,
+          "p_value": 0.014397,
+          "null_median": 0.5,
+          "null_p95": 0.575
+        },
+        "q_value": 0.115177,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "SB-05",
+      "name": "Net-points differential side",
+      "division": "Single bets",
+      "market": "Side (directional)",
+      "rule": "Back the club with the better prior net points per game, plus the measured home allowance. Ignores the opponent's defence entirely.",
+      "kind": "directional",
+      "signal": {
+        "n": 120,
+        "wins": 73,
+        "losses": 47,
+        "hit_rate": 0.608333,
+        "null_rate": 0.5,
+        "p_value": 0.024595,
+        "binomial_p": 0.022083,
+        "ci_low": 0.518938,
+        "ci_high": 0.691008,
+        "statistic": "hit rate vs a 50% reference",
+        "first_half_hit_rate": 0.566667,
+        "second_half_hit_rate": 0.65,
+        "stable_across_halves": true,
+        "permutation": {
+          "observed": 0.608333,
+          "n": 120,
+          "reps": 5000,
+          "p_value": 0.024595,
+          "null_median": 0.5,
+          "null_p95": 0.575
+        },
+        "q_value": 0.131174,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "SB-06",
+      "name": "Shrunk-rates side",
+      "division": "Single bets",
+      "market": "Side (directional)",
+      "rule": "As SB-01, with each club's rates shrunk toward the league mean by games/(games+4).",
+      "kind": "directional",
+      "signal": {
+        "n": 120,
+        "wins": 71,
+        "losses": 49,
+        "hit_rate": 0.591667,
+        "null_rate": 0.5,
+        "p_value": 0.05159,
+        "binomial_p": 0.05478,
+        "ci_low": 0.502208,
+        "ci_high": 0.675439,
+        "statistic": "hit rate vs a 50% reference",
+        "first_half_hit_rate": 0.583333,
+        "second_half_hit_rate": 0.6,
+        "stable_across_halves": true,
+        "permutation": {
+          "observed": 0.591667,
+          "n": 120,
+          "reps": 5000,
+          "p_value": 0.05159,
+          "null_median": 0.5,
+          "null_p95": 0.575
+        },
+        "q_value": 0.206359,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "SB-07",
+      "name": "Defence-weighted side",
+      "division": "Single bets",
+      "market": "Side (directional)",
+      "rule": "As SB-01, with the opponent's concession rate weighted double.",
+      "kind": "directional",
+      "signal": {
+        "n": 120,
+        "wins": 67,
+        "losses": 53,
+        "hit_rate": 0.558333,
+        "null_rate": 0.5,
+        "p_value": 0.235153,
+        "binomial_p": 0.235203,
+        "ci_low": 0.469045,
+        "ci_high": 0.644003,
+        "statistic": "hit rate vs a 50% reference",
+        "first_half_hit_rate": 0.566667,
+        "second_half_hit_rate": 0.55,
+        "stable_across_halves": true,
+        "permutation": {
+          "observed": 0.558333,
+          "n": 120,
+          "reps": 5000,
+          "p_value": 0.235153,
+          "null_median": 0.5,
+          "null_p95": 0.575
+        },
+        "q_value": 0.342041,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "SB-08",
+      "name": "Recency-weighted side",
+      "division": "Single bets",
+      "market": "Side (directional)",
+      "rule": "As SB-01, with prior games weighted geometrically at 0.85 per game of age.",
+      "kind": "directional",
+      "signal": {
+        "n": 120,
+        "wins": 70,
+        "losses": 50,
+        "hit_rate": 0.583333,
+        "null_rate": 0.5,
+        "p_value": 0.086383,
+        "binomial_p": 0.082407,
+        "ci_low": 0.49388,
+        "ci_high": 0.667616,
+        "statistic": "hit rate vs a 50% reference",
+        "first_half_hit_rate": 0.55,
+        "second_half_hit_rate": 0.616667,
+        "stable_across_halves": true,
+        "permutation": {
+          "observed": 0.583333,
+          "n": 120,
+          "reps": 5000,
+          "p_value": 0.086383,
+          "null_median": 0.5,
+          "null_p95": 0.575
+        },
+        "q_value": 0.230354,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "SB-09",
+      "name": "Over the board's own total",
+      "division": "Single bets",
+      "market": "Total (control)",
+      "rule": "Back the over on the stage-2 total in every game. Published as a control: a forecast graded against its own number is a coin flip by construction, so any deviation from 50% here is noise or bias, never edge.",
+      "kind": "total_control",
+      "signal": {
+        "n": 121,
+        "wins": 61,
+        "losses": 60,
+        "hit_rate": 0.504132,
+        "null_rate": 0.5,
+        "p_value": 1.0,
+        "ci_low": 0.4163,
+        "ci_high": 0.59171,
+        "statistic": "hit rate vs a 50% reference (control: grading a forecast against its own number)",
+        "permutation": null,
+        "q_value": 1.0,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Control"
+    },
+    {
+      "id": "SB-10",
+      "name": "Total accuracy against the league mean",
+      "division": "Single bets",
+      "market": "Total (accuracy)",
+      "rule": "Score the stage-2 total by squared error against the league-mean total, which is the reference a forecaster must beat.",
+      "kind": "skill",
+      "signal": {
+        "n": 121,
+        "wins": null,
+        "losses": null,
+        "hit_rate": null,
+        "null_rate": 0.0,
+        "p_value": 0.347331,
+        "ci_low": null,
+        "ci_high": null,
+        "statistic": "skill score = 1 - MSE(model)/MSE(reference); positive is better than the reference",
+        "skill_score": -0.103965,
+        "mae": 11.790422,
+        "bias": 1.312501,
+        "permutation": {
+          "observed": -0.103965,
+          "n": 121,
+          "reps": 5000,
+          "p_value": 0.347331,
+          "null_median": -0.079971,
+          "null_p95": 0.01977
+        },
+        "q_value": 0.463107,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "SB-11",
+      "name": "Margin accuracy against a zero margin",
+      "division": "Single bets",
+      "market": "Side (accuracy)",
+      "rule": "Score the stage-1 margin by squared error against a forecast of zero, which is the reference a forecaster must beat.",
+      "kind": "skill",
+      "signal": {
+        "n": 121,
+        "wins": null,
+        "losses": null,
+        "hit_rate": null,
+        "null_rate": 0.0,
+        "p_value": 0.90122,
+        "ci_low": null,
+        "ci_high": null,
+        "statistic": "skill score = 1 - MSE(model)/MSE(reference); positive is better than the reference",
+        "skill_score": -0.035339,
+        "mae": 10.215543,
+        "bias": 0.59426,
+        "permutation": {
+          "observed": -0.035339,
+          "n": 121,
+          "reps": 5000,
+          "p_value": 0.90122,
+          "null_median": -0.109967,
+          "null_p95": -0.012822
+        },
+        "q_value": 0.961301,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "SB-12",
+      "name": "Moneyline probability, proper scores",
+      "division": "Single bets",
+      "market": "Moneyline",
+      "rule": "Score the stage-3 win probability with Brier and log loss against a flat 50% reference, on every game that did not end tied.",
+      "kind": "proper",
+      "signal": {
+        "n": 120,
+        "wins": null,
+        "losses": null,
+        "hit_rate": null,
+        "null_rate": 0.25,
+        "p_value": 0.888622,
+        "ci_low": null,
+        "ci_high": null,
+        "statistic": "Brier score; lower is better. Reference is a flat 50% forecast.",
+        "brier": 0.246608,
+        "log_loss": 0.687585,
+        "null_brier": 0.25,
+        "null_log_loss": 0.693147,
+        "permutation": {
+          "observed": 0.246608,
+          "n": 120,
+          "reps": 5000,
+          "p_value": 0.888622,
+          "null_median": 0.263827,
+          "null_p95": 0.280865
+        },
+        "q_value": 0.961301,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "PB-01",
+      "name": "Favoured side plus over the board total",
+      "division": "Parlays",
+      "market": "Two-leg, same game",
+      "rule": "Both legs must win: the favoured club wins, and the total beats the stage-2 total.",
+      "kind": "same_game",
+      "signal": {
+        "n": 120,
+        "wins": 36,
+        "losses": 84,
+        "hit_rate": 0.3,
+        "null_rate": 0.291667,
+        "p_value": 0.84111,
+        "ci_low": 0.225256,
+        "ci_high": 0.387151,
+        "statistic": "joint hit rate vs the rate implied if the two legs were independent",
+        "leg_1_rate": 0.583333,
+        "leg_2_rate": 0.5,
+        "dependence_note": "The null here is the product of the two observed leg rates, not 25%. Legs that move together make the joint rate differ from the product.",
+        "q_value": 0.961301,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "PB-02",
+      "name": "Favoured side plus the same side again",
+      "division": "Parlays",
+      "market": "Two-leg, same event",
+      "rule": "Both legs are the same event, so the slip is not a parlay at all. Published as a control to show what a dependence of 1.0 costs.",
+      "kind": "duplicate",
+      "signal": {
+        "n": 120,
+        "wins": 70,
+        "losses": 50,
+        "hit_rate": 0.583333,
+        "null_rate": 0.340278,
+        "p_value": 0.0,
+        "ci_low": 0.49388,
+        "ci_high": 0.667616,
+        "statistic": "joint hit rate vs the independence-implied rate",
+        "leg_1_rate": 0.583333,
+        "leg_2_rate": 0.583333,
+        "dependence_note": "Both legs are the same event, so the hit rate equals the single-leg rate rather than its square. A slip like this is one bet wearing two legs, and pricing it as a parlay would be wrong.",
+        "q_value": 1e-06,
+        "reject_null_at_fdr_10pct": true
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Control"
+    },
+    {
+      "id": "PB-03",
+      "name": "Two highest-conviction sides of the week",
+      "division": "Parlays",
+      "market": "Two-leg, cross-game",
+      "rule": "In each week, back the two games with the largest stage-1 margin. Both must win.",
+      "kind": "cross",
+      "signal": {
+        "n": 8,
+        "wins": 5,
+        "losses": 3,
+        "hit_rate": 0.625,
+        "null_rate": 0.340278,
+        "p_value": 0.131126,
+        "ci_low": 0.305742,
+        "ci_high": 0.863156,
+        "statistic": "joint hit rate vs the rate implied if the legs were independent",
+        "leg_rate": 0.583333,
+        "legs": 2,
+        "dependence_note": "Cross-game legs share a week, so a common shock can move them together. The independence-implied rate is a reference, not a claim that the legs are independent.",
+        "q_value": 0.299716,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "PB-04",
+      "name": "Three highest-conviction sides of the week",
+      "division": "Parlays",
+      "market": "Three-leg, cross-game",
+      "rule": "In each week, back the three games with the largest stage-1 margin. All three must win.",
+      "kind": "cross",
+      "signal": {
+        "n": 8,
+        "wins": 3,
+        "losses": 5,
+        "hit_rate": 0.375,
+        "null_rate": 0.198495,
+        "p_value": 0.199778,
+        "ci_low": 0.136844,
+        "ci_high": 0.694258,
+        "statistic": "joint hit rate vs the rate implied if the legs were independent",
+        "leg_rate": 0.583333,
+        "legs": 3,
+        "dependence_note": "Cross-game legs share a week, so a common shock can move them together. The independence-implied rate is a reference, not a claim that the legs are independent.",
+        "q_value": 0.342041,
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Graded"
+    },
+    {
+      "id": "PP-01",
+      "name": "Replacement-back usage combo",
+      "division": "Player props / combos",
+      "market": "Player props",
+      "rule": "Would test whether a named replacement's usage moves in a repeatable direction when a starter is ruled out.",
+      "kind": "blocked",
+      "signal": {
+        "n": null,
+        "wins": null,
+        "losses": null,
+        "hit_rate": null,
+        "null_rate": null,
+        "p_value": null,
+        "q_value": null,
+        "ci_low": null,
+        "ci_high": null,
+        "statistic": null,
+        "blocked_because": "No per-game player log, target share or snap count was retrieved from any official source. The NFL.com injury report gives a status, not a usage number.",
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Blocked"
+    },
+    {
+      "id": "PP-02",
+      "name": "Quarterback passing combo with the game total",
+      "division": "Player props / combos",
+      "market": "Prop combo",
+      "rule": "Would test the dependence between a passing prop and the game total.",
+      "kind": "blocked",
+      "signal": {
+        "n": null,
+        "wins": null,
+        "losses": null,
+        "hit_rate": null,
+        "null_rate": null,
+        "p_value": null,
+        "q_value": null,
+        "ci_low": null,
+        "ci_high": null,
+        "statistic": null,
+        "blocked_because": "Same as PP-01. Publishing a dependence for a prop without the underlying per-game numbers would be a fabrication.",
+        "reject_null_at_fdr_10pct": false
+      },
+      "staking": {
+        "stake_units": null,
+        "roi": null,
+        "profit_units": null,
+        "max_drawdown_units": null,
+        "closing_line_value": null,
+        "blank_because": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+      },
+      "status": "Blocked"
+    }
+  ],
+  "staking_columns": {
+    "stake_units": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate.",
+    "roi": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate.",
+    "profit_units": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate.",
+    "max_drawdown_units": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate.",
+    "closing_line_value": "No consulted official source publishes an executable price, so no return, stake, drawdown or closing-line value can be computed. The cell is blank by rule and is never filled with an estimate."
+  }
+}

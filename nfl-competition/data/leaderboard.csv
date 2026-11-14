@@ -1,0 +1,19 @@
+id,division,market,name,tier,signal_rank,n,hit_rate,null_rate,p_value,q_value,signal_score,staking_rank,roi,units,drawdown,merit_points,cash_reward,failed_gates
+SB-04,Single bets,Side (directional),Pythagorean differential side,Paper,1,120,0.616667,0.5,0.014397,0.115177,0.4467513457244013,,,,,0,,G04;G06;G10
+SB-05,Single bets,Side (directional),Net-points differential side,Paper,2,120,0.608333,0.5,0.024595,0.131174,0.3624520038761651,,,,,0,,G04;G06;G10
+SB-06,Single bets,Side (directional),Shrunk-rates side,Paper,3,120,0.591667,0.5,0.05159,0.206359,0.24537510651629885,,,,,0,,G04;G06;G10
+PB-03,Parlays,"Two-leg, cross-game",Two highest-conviction sides of the week,Paper,4,8,0.625,0.340278,0.131126,0.299716,0.2268683112973639,,,,,0,,G03;G04;G06;G10
+SB-01,Single bets,Side (directional),"Board side, every game",Paper,5,120,0.583333,0.5,0.086383,0.230354,0.1842791269324449,,,,,0,,G04;G06;G10
+SB-08,Single bets,Side (directional),Recency-weighted side,Paper,6,120,0.583333,0.5,0.086383,0.230354,0.1842791269324449,,,,,0,,G04;G06;G10
+SB-03,Single bets,Side (directional),"Board side, conviction at least 6 points",Paper,7,18,0.666667,0.5,0.221556,0.342041,0.13693303167067514,,,,,0,,G03;G04;G05;G06;G10
+SB-02,Single bets,Side (directional),"Board side, conviction at least 3 points",Paper,8,48,0.604167,0.5,0.174565,0.342041,0.13275593115699705,,,,,0,,G04;G05;G06;G10
+PB-04,Parlays,"Three-leg, cross-game",Three highest-conviction sides of the week,Paper,9,8,0.375,0.198495,0.199778,0.342041,0.11149263159320394,,,,,0,,G03;G04;G06;G10
+SB-10,Single bets,Total (accuracy),Total accuracy against the league mean,Paper,10,121,,0.0,0.347331,0.463107,0.0994459140606261,,,,,0,,G04;G06;G10
+SB-07,Single bets,Side (directional),Defence-weighted side,Paper,11,120,0.558333,0.5,0.235153,0.342041,0.07624567606040311,,,,,0,,G04;G06;G10
+SB-11,Single bets,Side (accuracy),Margin accuracy against a zero margin,Paper,12,121,,0.0,0.90122,0.961301,0.003324612018359421,,,,,0,,G04;G06;G10
+PB-01,Parlays,"Two-leg, same game",Favoured side plus over the board total,Paper,13,120,0.3,0.291667,0.84111,0.961301,0.0013019867227001662,,,,,0,,G04;G06;G10
+SB-12,Single bets,Moneyline,"Moneyline probability, proper scores",Paper,14,120,,0.25,0.888622,0.961301,0.0003616771724517583,,,,,0,,G04;G06;G10
+SB-09,Single bets,Total (control),Over the board's own total,Control,,121,0.504132,0.5,1.0,1.0,,,,,,0,,G06;G10
+PB-02,Parlays,"Two-leg, same event",Favoured side plus the same side again,Control,,120,0.583333,0.340278,0.0,1e-06,,,,,,0,,G06;G10
+PP-01,Player props / combos,Player props,Replacement-back usage combo,Blocked on data,,,,,,,,,,,,0,,
+PP-02,Player props / combos,Prop combo,Quarterback passing combo with the game total,Blocked on data,,,,,,,,,,,,0,,
