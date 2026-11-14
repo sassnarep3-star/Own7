@@ -53,6 +53,10 @@ SOURCE_HOSTS.update({'A958-NFL-INJURIES': 'www.nfl.com', 'A958-NFL-REPORT-POLICY
 # member-club hosts only; each host is the page actually read on 2026-11-13.
 SOURCE_HOSTS.update({'X28-NFL-INJ-W10': 'www.nfl.com', 'X28-ATL-DEPTH': 'www.atlantafalcons.com', 'X28-BUF-DEPTH': 'www.buffalobills.com', 'X28-CAR-DEPTH': 'www.panthers.com', 'X28-CIN-DEPTH': 'www.bengals.com', 'X28-DAL-DEPTH': 'www.dallascowboys.com', 'X28-GB-DEPTH': 'www.packers.com', 'X28-IND-DEPTH': 'www.colts.com', 'X28-JAX-DEPTH': 'www.jaguars.com', 'X28-KC-DEPTH': 'www.chiefs.com', 'X28-LAC-DEPTH': 'www.chargers.com', 'X28-LAR-DEPTH': 'www.therams.com', 'X28-LV-DEPTH': 'www.raiders.com', 'X28-MIN-DEPTH': 'www.vikings.com', 'X28-NO-DEPTH': 'www.neworleanssaints.com', 'X28-NYJ-DEPTH': 'www.newyorkjets.com', 'X28-SF-DEPTH': 'www.49ers.com', 'X28-TEN-DEPTH': 'www.tennesseetitans.com', 'X28-HOU-DEPTH': 'www.houstontexans.com'})
 
+# NFL results & skill lab (session arena/196424c5-own7) — the official by-week schedule
+# pages read on 2026-11-14 to capture final scores. One host, one publisher.
+SOURCE_HOSTS.update({'X29-NFL-SCHEDULE': 'www.nfl.com'})
+
 # Rental pages from session arena/692da006-own7 (PR #19) — official government/legal hosts only.
 # NFL research layer (session arena/a129b881-own7). Official league domains, one tertiary
 # method reference, and the publisher glossary. No odds vendor is registered.
@@ -63,6 +67,13 @@ SOURCE_HOSTS.update({
 })
 
 SOURCE_HOSTS.update({'SF-RENTAL-LAWS': 'www.sf.gov', 'SF-RENT-INC': 'www.sf.gov', 'SF-NEWS-AGA': 'www.sf.gov', 'SF-BANKED': 'www.sf.gov', 'SF-HI-LICENSE': 'www.sf.gov', 'CA-AG-RENTCAPS': 'oag.ca.gov', 'CA-AG-TENANTS': 'oag.ca.gov', 'LEGINFO-CIV827': 'leginfo.legislature.ca.gov', 'LEGINFO-CIV1947-12': 'leginfo.legislature.ca.gov', 'LEGINFO-AB1482': 'leginfo.legislature.ca.gov', 'BLS-SF-CPI': 'blsmon1.bls.gov', 'GOVINFO-FHA': 'www.govinfo.gov', 'SF-RTC-EDC': 'evictiondefense.org'})
+
+
+# Fresh official-source rechecks (session arena/6b86c2eb-own7, 2026-11-14).
+SOURCE_HOSTS.update({
+    'NFL-STANDINGS-RECHECK-1114': 'www.nfl.com',
+    'NFL-INJ-W10-RECHECK-1114': 'www.nfl.com',
+})
 
 
 # NFL session 243828fc (arena/243828fc-own7) — official hosts and repo records registered by register_sources.py.

@@ -99,13 +99,15 @@
     {
       "id": "NF09",
       "item": "One partial season and one game of injury data",
-      "finding": "Clubs have played eight or nine games. The injury snapshot covers only the Thursday fixture.",
+      "finding": "The NFL origination dataset contains 20 Thursday Nov 12 player rows. A separate availability desk in this repository contains a 326-row Week 10 snapshot for 28 clubs, captured 2026-11-13. The official live page opening chunk re-read on 2026-11-14 shows Sunday Nov 15 injury sections too; remaining chunks and the 326-row snapshot were not re-audited on 2026-11-14, so the snapshot is not claimed to be current.",
       "unverified_value": null,
       "impact": "No forward predictive claim is made and coverage fails its gate.",
       "status": "Needs review",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-INJ-W10"
+        "NFL-INJ-W10",
+        "NFL-INJ-W10-RECHECK-1114",
+        "X28-NFL-INJ-W10"
       ]
     },
     {
@@ -156,13 +158,14 @@
     {
       "id": "NF14",
       "item": "Two clubs' records moved after the snapshot date",
-      "finding": "WAS was 2-5-1 with 172 PF / 202 PA on 2026-11-12 and is 3-5-1 with 196 PF / 223 PA on 2026-11-13. NYG moved the other way, 5-2-1 / 182 / 172 to 5-3-1 / 203 / 196. The deltas are a consistent 24-21 result. 30 of 32 rows are unchanged.",
+      "finding": "WAS was 2-5-1 with 172 PF / 202 PA on 2026-11-12 and is 3-5-1 with 196 PF / 223 PA on 2026-11-13. NYG moved the other way, 5-2-1 / 182 / 172 to 5-3-1 / 203 / 196. The deltas are a consistent 24-21 result. 30 of 32 rows are unchanged. Rechecked 2026-11-14 against all 32 rendered official club rows (W/L/T/PF/PA): the same 30 rows match and WAS/NYG remain the only two differences; the frozen snapshot was not changed.",
       "unverified_value": null,
       "impact": "The published table is a 2026-11-12 snapshot and says so. A reader comparing it with today's page will see a difference; the re-check page lists all 32 rows side by side so nothing looks silently stale.",
       "status": "Needs review",
       "source_ids": [
         "NFL-STANDINGS",
-        "NFL-SCHED-W10"
+        "NFL-SCHED-W10",
+        "NFL-STANDINGS-RECHECK-1114"
       ]
     },
     {

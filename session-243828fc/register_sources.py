@@ -99,7 +99,7 @@ def main() -> int:
                         "scope": "Project file, checked on this branch 14 Nov 2026; not an external official source.",
                         "access": "Repository read on the session branch"})
             added.append(rid)
-    REGISTRY.write_text(json.dumps(reg, indent=2) + "\n", encoding="utf-8")
+    REGISTRY.write_text(json.dumps(reg, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     # audit host table: insert once, before class Page
     text = CHECK_SITE.read_text(encoding="utf-8")
     marker = "# NFL session 243828fc (arena/243828fc-own7)"
