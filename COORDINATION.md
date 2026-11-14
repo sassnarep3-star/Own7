@@ -883,4 +883,17 @@ Statuses: unclaimed | in progress | done | needs review
 - Y9: done — PR #35 (`arena/500eb178-own7` → `main`) merged without waiting for approval at 2026-11-14, merge commit `97c2719`; Pages build `1367730521` built; PR link and merge result recorded above.
 
 Open PRs from other sessions left untouched: #27 (`arena/382a833e-own7`) and #17 (`arena/a934e8c3-own7`).
+---
+
+## Session arena/479b573c-own7 — local preview allowlist repair (2026-11-14)
+
+Session ID: `session-arena-479b573c-own7`. Fixed Arena branch: `arena/479b573c-own7`, based on
+`b735a6b211f8921c0c1656f0be2bb0607a8c240d`. This session remains on that branch and does not take
+ownership of the open PRs #27 or #17.
+
+### Claim (written before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| P1 | Restore local preview access for the published NFL assurance subsite; add a regression test and re-run project checks | in progress | session-arena-479b573c-own7 | `scripts/serve_site.py`, `tests/test_serve_site.py`, `COORDINATION.md` (append-only) | Existing handoff note identifies the assurance path as excluded from the preview allowlist. No source data, canonical tables or other session files will be changed. |
 
