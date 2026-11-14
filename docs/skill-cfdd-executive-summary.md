@@ -12,7 +12,8 @@ published rows without consulting the score. Four clubs had never had a printed 
 captured — CHI, DEN, PHI, TB — and they turn out to be **the four Week 10 bye clubs**, which is
 exactly why the gap stayed silent: a bye club has no injury row, so a missing chart never showed up
 as an unmatched player. All four are now captured (231 printed slots), raising the injury-to-chart
-match to **265 of 326 rows**. Finally the skill question was tested rather than asserted: the
+match to **265 of 326 rows**, with 127 of those rows on offence, 126 on defence and 12 on special
+teams. Finally the skill question was tested rather than asserted: the
 Pythagorean residuals across 32 clubs give a chi-square of **19.03 on 32 degrees of freedom,
 p = 0.966**, a variance inflation of **0.59**. That is inside the null and on the *under*-dispersed
 side, so this snapshot contains no detectable club-level skill. **Zero strategies qualify, zero
@@ -64,11 +65,12 @@ Luck is not removed by a better model. It is removed by this table.
 
 ```
 python -m unittest discover -s tests                        # 109 pass (inherited, unchanged)
-python -m unittest discover -s nfl-skill-cfdd/tests         # 49 pass (new)
+python -m unittest discover -s nfl-skill-cfdd/tests         # 66 pass (new)
 python scripts/nfl_extract.py --check                       # OK
 python -m nfl_origination run                               # 14 originated games
 python scripts/build_site.py                                # 38 canonical + 20 redirects + 83 auxiliary
-python scripts/check_site.py                                # 141 pages, 6,024 sourced rows, 0 errors
+python scripts/check_site.py                                # 141 pages, 0 errors
+npm run test:browser                                        # 121 desktop + 121 mobile, WCAG A/AA
 ```
 
 Special functions are checked against published table values (chi-square, normal, Student-t,
@@ -85,6 +87,32 @@ than publishing a wrong number.
 
 What is *not* worth doing: refining a model against this snapshot. At p = 0.966 there is nothing
 there to refine, and more modelling on eight games would manufacture confidence.
+
+## Three defects found in this session's own work, and fixed
+
+Kept here because they are the useful part of the audit trail, and because each one would have
+published a plausible-looking wrong number.
+
+1. **Depth slots were matched on the wrong key.** A club restarts its slot numbering for every
+   printed position, so "slot 1" appears many times inside one unit. Keying a lookup on
+   (club, unit, slot) attached the wrong backup to the wrong starter. The key now includes the
+   printed position, and every named replacement is verified by a test to be the rank+1 name
+   printed in the same slot of the same chart.
+2. **118 of 265 matched rows carried a position label that did not match between the club's chart
+   and the league's report**, and several were on the wrong side of the ball - a receiver located
+   at his punt-return slot (PR), a linebacker at SAM. That silently moved players between the
+   offence and defence columns of the depletion index. Fixed with a published position-group map
+   and three stated precedence rules; zero wrong-side matches remain, and a test asserts it.
+3. **Typed prose drifted from the computed value** - a sentence said "seven" beside a computed 8.
+   Every count on the affected pages is now read from the JSON, so prose cannot drift again.
+
+Two ambiguities remain and are **published rather than resolved**:
+
+- **24 of 265 matched rows** are players their own club prints in more than one slot, one of them a
+  ruled-out starter. The join uses one slot per player (highest printed rank wins) and marks every
+  affected row (flag CF13).
+- **Houston** prints no readable chart on two independent reads, so its 16 injury rows keep a blank
+  rank and a blank replacement (flag CF06).
 
 ## Limits
 

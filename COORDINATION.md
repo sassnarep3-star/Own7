@@ -1215,3 +1215,64 @@ rebases, this session's shared-file changes are appended lines only.
 meaning of a blank) and XS01 remain open and are *not* closed by this session. XS09 stands: no price
 feed until source rights are settled — this session therefore produces no market price, no ROI, no
 CLV and no wager.
+
+### C2–C8 done — session-arena-cfdd5580-own7 (recorded 2026-11-14)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| C2 | Close the printed-depth gap | **done** | CHI, DEN, PHI, TB captured 2026-11-14: **231 printed slots**. They were the four **Week 10 bye clubs**, which is why the gap never surfaced (a bye club has no injury row). Houston re-read and still renders an image and no table, on two independent reads. |
+| C3 | Depth-adjusted availability index | **done** | 326 injury rows joined to printed charts for **31 of 32 clubs**; **265 matched** (127 offence / 126 defence / 12 special teams). Offence and defence are separate columns. Weights disclosed in `index.py`. **No point value, probability or line adjustment is produced.** |
+| C4 | Skill-vs-luck separation | **done** | Executed chi-square overdispersion test on Pythagorean residuals: **19.03 on 32 df, p = 0.966**, variance inflation **0.59**. Sample-size table from the exact binomial: **153** settled bets at 60%, **617** at 55%, **2,682** at 52.4%. Three correlations with Fisher intervals and Holm adjustment. |
+| C5 | Correlation values | **done** | Three **club-level** correlations measured; every **leg-level** and **prop** correlation left blank and named as a different quantity. The one significant coefficient (r=0.867) is labelled a validity check, not a finding. |
+| C6 | Questions dossier | **done** | **15 questions**: 2 answered with a source, 2 answered-but-constraining, 9 open with a named closing action, 2 blocked on rights. |
+| C7 | Suggestions review section | **done** | **10 suggestions**, each with evidence, unlocks, cost, risk and a runnable acceptance test; Adopt/Defer/Reject controls that export a preference only; a **deliberately blank** decision record. |
+| C8 | Self-contained site + additive integration | **done** | **15 pages** under `nfl-skill-cfdd/site/`; every `tbody` row carries `data-source-ids` and an official link. Additive edits only: 1 nav group in `scripts/build_site.py`, 7 host-allowlist entries in `scripts/check_site.py`, 1 folder in `scripts/serve_site.py` and `scripts/browser_test.mjs`, 6 `--check` lines + the suite in `.github/workflows/check.yml`, 7 appended `research/sources.json` entries, README section. **No existing page, value or test overwritten.** |
+
+Sources read this session (all 2026-11-14 unless stated): `https://www.nfl.com/standings/` (2/2
+chunks, all 32 rows) · `https://www.nfl.com/injuries/` and `/injuries/league/2026/REG10` (re-read;
+still Week 10, so the ledger is current) · `https://www.chicagobears.com/team/depth-chart` ·
+`https://www.denverbroncos.com/team/depth-chart/` · `https://www.philadelphiaeagles.com/team/depth-chart` ·
+`https://www.buccaneers.com/team/depth-chart` · `https://www.houstontexans.com/team/depth-chart`
+(failure reproduced). Access class unchanged: rendered text via the Arena page reader; direct HTTPS
+to nfl.com returns curl code 000 from the sandbox.
+
+**Verification actually run (all green):**
+`python -m unittest discover -s tests` → **109 pass** ·
+`python -m unittest discover -s nfl-skill-cfdd/tests` → **66 pass** ·
+`python nfl-skill-cfdd/{collect,depth,index,luck,ledger,decisions}.py --check` → **6/6 byte-identical** ·
+`python scripts/nfl_extract.py --check` → OK ·
+`python -m nfl_origination run` → 14 originated games ·
+`python scripts/build_site.py` → 38 canonical + 20 redirects + 83 auxiliary pages ·
+`python scripts/check_site.py` → **141 pages, 6,024 table rows, 143 registered sources, 0 errors** ·
+`npm run test:browser` → **121 desktop + 121 mobile pages, WCAG A/AA, 10 interaction groups, no
+runtime errors**.
+
+**Line-by-line evidence trace performed:** all **32/32** published standings rows and all
+**231/231** published depth slots were re-found verbatim in the saved evidence files.
+
+**Three defects in this session's own work, found and fixed:**
+1. Slot lookup keyed on (club, unit, slot) attached the wrong backup, because clubs restart slot
+   numbering per position. Key now includes the printed position; a test verifies every named
+   replacement is the rank+1 name in the same slot of the same chart.
+2. **118 of 265 matched rows** carried a chart/report position label mismatch and several sat on
+   the wrong side of the ball (a receiver at PR, a linebacker at SAM), silently moving players
+   between the offence and defence columns. Fixed with a published position-group map and three
+   stated precedence rules; **zero** wrong-side matches remain and a test asserts it. The test
+   immediately caught two ungrouped labels (LCB, RCB).
+3. Typed prose said "seven" beside a computed **8**; every count on the affected pages now comes
+   from the JSON.
+
+**Flagged, not resolved** (13 flags on `site/flagged.html`, each with an official link; 8 open,
+5 explained): CF02 unnamed standings columns · CF03 Chicago chart dated 10/31/2026, before the
+ledger · CF04 Philadelphia chart contradicts its own news feed and is self-labelled unofficial ·
+CF05 a Philadelphia DT slot with no first-string name · CF06 Houston unreadable chart · CF07 only
+4 of 28 clubs publish a game status · CF10 no price anywhere (rights) · CF13 24 rows printed in
+more than one slot.
+
+**Standing constraints honoured:** no price, ROI, CLV, stake, wager or monetary reward is
+produced anywhere, and a test asserts no such column or claim exists. PR #27 and PR #17 were not
+touched. XS09 stands.
+
+| ID | Task | Status | Notes |
+|---|---|---|---|
+| C9 | PR, merge, Pages deploy, record | in progress | Next entry. |
