@@ -1,0 +1,56 @@
+{
+  "read_on": "2026-11-14",
+  "injury_rows": 326,
+  "clubs_on_injury_report": 28,
+  "clubs_with_printed_chart": 31,
+  "clubs_with_no_readable_chart": [
+    "HOU"
+  ],
+  "clubs_absent_from_injury_report": [
+    "CHI",
+    "DEN",
+    "PHI",
+    "TB"
+  ],
+  "clubs_absent_reason": "these four clubs were on bye in Week 10, so the league publishes no Week 10 injury row for them; their charts are captured and ready for Week 11",
+  "rows_matched_to_printed_chart": 265,
+  "rows_not_on_printed_chart": 61,
+  "starters_ruled_out": 8,
+  "starters_ruled_out_by_club": {
+    "DET": [
+      "Cade Mays",
+      "D.J. Reed"
+    ],
+    "IND": [
+      "Jaylon Carlies",
+      "Akeem Davis-Gaither",
+      "Luke Rhodes",
+      "Jalen Travis"
+    ],
+    "NE": [
+      "Ben Brown",
+      "Carlton Davis III"
+    ]
+  },
+  "weigthing_disclosure": {
+    "rank_weight": {
+      "1": 1.0,
+      "2": 0.45,
+      "3": 0.2,
+      "4": 0.1
+    },
+    "status_multiplier": {
+      "Out": 1.0,
+      "Doubtful": 0.75,
+      "Questionable": 0.4
+    },
+    "statement": "Project design choice, chosen before any club ranking was read. Used to order clubs only. Never converted to points, probability or price."
+  },
+  "what_is_not_produced": [
+    "a point value for an injured player",
+    "a performance deficit for a backup, which needs snap counts and a before/after series",
+    "a probability that a backup 'holds up'",
+    "any line adjustment derived from this index"
+  ],
+  "scope": "Availability accounting from official printed sources. Not a forecast."
+}

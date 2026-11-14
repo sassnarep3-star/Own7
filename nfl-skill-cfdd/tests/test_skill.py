@@ -240,3 +240,51 @@ class NoInventedMarket(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DepletionIndex(unittest.TestCase):
+    """The index must be a count-based ordering and must never become a point value."""
+
+    def test_one_join_row_per_injury_row(self):
+        self.assertEqual(len(rows("depletion-join-2026-11-14.csv")), 326)
+
+    def test_all_32_clubs_appear_in_the_summary(self):
+        summary = rows("club-depletion-index-2026-11-14.csv")
+        self.assertEqual(len(summary), 32)
+        self.assertEqual(len({r["club_abbr"] for r in summary}), 32)
+
+    def test_houston_chart_absent_not_filled(self):
+        summary = {r["club_abbr"]: r for r in rows("club-depletion-index-2026-11-14.csv")}
+        self.assertEqual(summary["HOU"]["printed_chart_available"], "no")
+        self.assertEqual(summary["HOU"]["matched_to_printed_chart"], "0")
+        self.assertEqual(float(summary["HOU"]["total_index"]), 0.0)
+
+    def test_unmatched_rows_keep_blank_rank_and_url(self):
+        for r in rows("depletion-join-2026-11-14.csv"):
+            if r["on_printed_chart"] == "no":
+                self.assertEqual(r["printed_rank"], "")
+                self.assertEqual(r["depth_source_url"], "")
+                self.assertEqual(r["depletion_points"], "")
+
+    def test_index_equals_sum_of_its_parts(self):
+        for r in rows("club-depletion-index-2026-11-14.csv"):
+            parts = (float(r["offense_index"]) + float(r["defense_index"])
+                     + float(r["special teams_index"]))
+            self.assertAlmostEqual(float(r["total_index"]), parts, places=3, msg=r["club_abbr"])
+
+    def test_offense_and_defence_are_separate_columns(self):
+        header = next(csv.reader((DATA / "club-depletion-index-2026-11-14.csv").open()))
+        self.assertIn("offense_starters_ruled_out", header)
+        self.assertIn("defense_starters_ruled_out", header)
+        self.assertNotIn("starters_ruled_out", header)
+
+    def test_no_point_or_probability_column(self):
+        for name in ("club-depletion-index-2026-11-14.csv", "depletion-join-2026-11-14.csv"):
+            header = [h.lower() for h in next(csv.reader((DATA / name).open()))]
+            for bad in ("point_value", "probability", "expected_points", "line", "price"):
+                self.assertFalse(any(bad in h for h in header), f"{name}: {bad}")
+
+    def test_weighting_is_disclosed(self):
+        res = json.loads((DATA / "depletion-index-2026-11-14.json").read_text())
+        self.assertIn("rank_weight", res["weigthing_disclosure"])
+        self.assertIn("Project design choice", res["weigthing_disclosure"]["statement"])

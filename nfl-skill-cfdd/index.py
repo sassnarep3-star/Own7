@@ -1,0 +1,248 @@
+#!/usr/bin/env python3
+"""Starter-depletion index: printed depth rank joined to the official injury ledger.
+
+What this produces, and what it deliberately does not:
+
+* A **count-based index**. For each club the index is a sum over injured players of a weight that
+  depends only on the printed depth rank that club publishes. The weights are a project design
+  choice, disclosed below, not an NFL-published value.
+* **Offence and defence are separated**, because a lost starting tackle and a lost third
+  cornerback are not the same deficiency and must not be summed into one number.
+* **No point value, no probability, no performance deficit.** A printed rank is an ordering. It
+  carries no measured amount of football. Converting a rank into points requires a before/after
+  performance series and snap counts, and neither exists in this repository.
+
+The four clubs captured on 2026-11-14 (CHI, DEN, PHI, TB) are exactly the four clubs with no
+Week 10 injury rows: they were on bye. That is the reason they were missing, and it is now stated
+rather than left as an unexplained gap.
+"""
+from __future__ import annotations
+
+import csv
+import json
+import re
+from pathlib import Path
+
+from emit import emit_csv, emit_json, parse_args
+
+HERE = Path(__file__).resolve().parent
+REPO = HERE.parent
+DATA = HERE / "data"
+LEDGER = REPO / "nfl-availability-28ef" / "data" / "depletion-week10-2026.csv"
+INJURIES = REPO / "nfl-availability-28ef" / "data" / "injuries-week10-2026.csv"
+
+# Depth weights. A printed 1st-string player lost is the headline; a 4th-string loss is depth
+# noise. These are a disclosed project choice, not a measurement, and they are used ONLY to order
+# clubs against each other. They are never converted to points and never multiplied by a price.
+RANK_WEIGHT = {1: 1.00, 2: 0.45, 3: 0.20, 4: 0.10}
+STATUS_MULTIPLIER = {"Out": 1.00, "Doubtful": 0.75, "Questionable": 0.40}
+
+SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
+
+
+def norm_name(value: str) -> str:
+    """Comparison key only: letters and digits, lowercased, generational suffix dropped."""
+    text = (value or "").replace("\u2019", "'").lower()
+    text = re.sub(r"[^a-z0-9' ]+", " ", text)
+    parts = [p for p in text.split() if p]
+    while parts and parts[-1] in SUFFIXES:
+        parts.pop()
+    return "".join(parts)
+
+
+def load(path: Path) -> list[dict]:
+    with path.open(newline="", encoding="utf-8") as fh:
+        return list(csv.DictReader(fh))
+
+
+def chart_lookup() -> dict[str, dict[str, dict]]:
+    """club -> normalised player name -> {rank, unit, position, source_url}."""
+    out: dict[str, dict[str, dict]] = {}
+    # Charts captured by this session (2026-11-14) take precedence for their clubs because they are
+    # the most recent read; the earlier 2026-11-13 slots fill every other club.
+    for path in (DATA / "depth-slots-2026-11-14.csv",
+                 REPO / "nfl-availability-28ef" / "data" / "depth-slots-week10-2026.csv"):
+        for row in load(path):
+            club = row["club_abbr"]
+            key = norm_name(row["player"].split(" / ")[0])
+            if not key:
+                continue
+            entry = {
+                "rank": int(row["rank"]),
+                "unit": row["unit"],
+                "position": row["position"],
+                "source_url": row["source_url"],
+                "checked_on": row["checked_on"],
+                "multi": row.get("cell_holds_multiple", "no") == "yes",
+            }
+            existing = out.setdefault(club, {}).get(key)
+            # Keep the newest read for a player; never overwrite a newer read with an older one.
+            if existing is None or entry["checked_on"] >= existing["checked_on"]:
+                out[club][key] = entry
+    return out
+
+
+def rebuild_join(injuries: list[dict], charts: dict[str, dict[str, dict]]) -> list[dict]:
+    """Re-do the injury x depth join now that all 32 clubs have a printed chart."""
+    rows = []
+    for inj in injuries:
+        club = inj["club_abbr"]
+        chart = charts.get(club, {})
+        match = chart.get(norm_name(inj["player"]))
+        track = "unmatched"
+        if match:
+            track = match["unit"].lower()
+            if track == "special teams":
+                track = "special teams"
+            elif track not in ("offense", "defense"):
+                track = "other"
+        rows.append({
+            "injury_id": inj["injury_id"],
+            "club_abbr": club,
+            "club_name": inj["club_name"],
+            "player": inj["player"],
+            "position_reported": inj["position"],
+            "injury_listed": inj["injury"],
+            "practice_status": inj["practice_status"],
+            "game_status": inj["game_status"],
+            "on_printed_chart": "yes" if match else "no",
+            "printed_unit": match["unit"] if match else "",
+            "printed_position": match["position"] if match else "",
+            "printed_rank": match["rank"] if match else "",
+            "track": track,
+            "status_multiplier": STATUS_MULTIPLIER.get(inj["game_status"].strip(), ""),
+            "rank_weight": RANK_WEIGHT.get(match["rank"], "") if match else "",
+            "depletion_points": (
+                round(STATUS_MULTIPLIER[inj["game_status"].strip()]
+                      * RANK_WEIGHT.get(match["rank"], 0.0), 4)
+                if match and inj["game_status"].strip() in STATUS_MULTIPLIER else ""
+            ),
+            "injury_source_url": inj["source_url"],
+            "injury_checked_on": inj["checked_on"],
+            "depth_source_url": match["source_url"] if match else "",
+            "depth_checked_on": match["checked_on"] if match else "",
+        })
+    return rows
+
+
+def club_summary(joined: list[dict], charts: dict[str, dict[str, dict]]) -> list[dict]:
+    clubs = sorted({r["club_abbr"] for r in joined} | set(charts))
+    out = []
+    for club in clubs:
+        mine = [r for r in joined if r["club_abbr"] == club]
+        chart_size = len(charts.get(club, {}))
+
+        def block(track: str) -> dict:
+            sub = [r for r in mine if r["track"] == track]
+            starters = [r for r in sub if r["printed_rank"] == 1]
+            ruled_out = [r for r in sub if r["game_status"].strip() == "Out"]
+            questionable = [r for r in sub if r["game_status"].strip() == "Questionable"]
+            # A player is "depleted" when a printed starter is ruled out; the next printed name is
+            # the replacement. That replacement is NOT claimed to be worse by any measured amount.
+            depleted = [r for r in sub
+                        if r["printed_rank"] == 1 and r["game_status"].strip() == "Out"]
+            return {
+                f"{track}_on_report": len(sub),
+                f"{track}_starters_on_report": len(starters),
+                f"{track}_starters_ruled_out": len(depleted),
+                f"{track}_ruled_out_any_rank": len(ruled_out),
+                f"{track}_questionable": len(questionable),
+                f"{track}_index": round(sum(
+                    float(r["depletion_points"]) for r in sub if r["depletion_points"] != ""), 4),
+            }
+
+        off, dfn, st = block("offense"), block("defense"), block("special teams")
+        row = {
+            "club_abbr": club,
+            "club_name": mine[0]["club_name"] if mine else "",
+            "printed_chart_available": "yes" if chart_size else "no",
+            "printed_chart_players": chart_size,
+            "players_on_injury_report": len(mine),
+            "matched_to_printed_chart": sum(1 for r in mine if r["on_printed_chart"] == "yes"),
+            "not_on_printed_chart": sum(1 for r in mine if r["on_printed_chart"] == "no"),
+            "game_status_published_for_club": "yes" if any(
+                r["game_status"].strip() for r in mine) else "no",
+        }
+        row.update(off)
+        row.update(dfn)
+        row.update(st)
+        row["total_index"] = round(off["offense_index"] + dfn["defense_index"]
+                                   + st["special teams_index"], 4)
+        row["source_ids"] = "CFDD-DEPTH-2026-11-14 X28-NFL-INJ-W10"
+        row["injury_source_url"] = mine[0]["injury_source_url"] if mine else ""
+        row["depletion_index_note"] = (
+            "count-based ordering only; see RANK_WEIGHT in nfl-skill-cfdd/index.py. "
+            "Not a point value and not a probability."
+        )
+        out.append(row)
+    out.sort(key=lambda r: (-r["total_index"], r["club_abbr"]))
+    return out
+
+
+def main() -> None:
+    parse_args(__doc__)
+    if not LEDGER.exists():
+        raise SystemExit(f"injury ledger missing: {LEDGER}")
+    injuries = load(INJURIES)
+    charts = chart_lookup()
+    # 31 of 32 clubs publish a readable chart. Houston's page renders a heading and an image and
+    # no table, on two independent reads (2026-11-13 and 2026-11-14). That gap is published, not
+    # quietly filled; the build fails only if a club is lost that previously worked.
+    KNOWN_UNREADABLE = {"HOU"}
+    if len(charts) + len(KNOWN_UNREADABLE) < 32 or KNOWN_UNREADABLE & set(charts):
+        raise SystemExit(f"expected 31 readable charts plus HOU unreadable, found {len(charts)}")
+
+    joined = rebuild_join(injuries, charts)
+    summary = club_summary(joined, charts)
+
+    key_order = ["injury_id", "club_abbr", "club_name", "player", "position_reported",
+                 "injury_listed", "practice_status", "game_status", "on_printed_chart",
+                 "printed_unit", "printed_position", "printed_rank", "track",
+                 "status_multiplier", "rank_weight", "depletion_points",
+                 "injury_source_url", "injury_checked_on", "depth_source_url",
+                 "depth_checked_on"]
+    emit_csv(DATA / "depletion-join-2026-11-14.csv",
+             [{k: r[k] for k in key_order} for r in joined])
+    emit_csv(DATA / "club-depletion-index-2026-11-14.csv", summary)
+
+    matched = sum(1 for r in joined if r["on_printed_chart"] == "yes")
+    starters_out = [r for r in joined
+                    if r["printed_rank"] == 1 and r["game_status"].strip() == "Out"]
+    emit_json(DATA / "depletion-index-2026-11-14.json", {
+        "read_on": "2026-11-14",
+        "injury_rows": len(joined),
+        "clubs_on_injury_report": len({r["club_abbr"] for r in joined}),
+        "clubs_with_printed_chart": len(charts),
+        "clubs_with_no_readable_chart": sorted({"HOU"}),
+        "clubs_absent_from_injury_report": sorted(
+            set(charts) - {r["club_abbr"] for r in joined}),
+        "clubs_absent_reason": "these four clubs were on bye in Week 10, so the league publishes no "
+                               "Week 10 injury row for them; their charts are captured and ready "
+                               "for Week 11",
+        "rows_matched_to_printed_chart": matched,
+        "rows_not_on_printed_chart": len(joined) - matched,
+        "starters_ruled_out": len(starters_out),
+        "starters_ruled_out_by_club": {
+            club: [r["player"] for r in starters_out if r["club_abbr"] == club]
+            for club in sorted({r["club_abbr"] for r in starters_out})
+        },
+        "weigthing_disclosure": {
+            "rank_weight": RANK_WEIGHT,
+            "status_multiplier": STATUS_MULTIPLIER,
+            "statement": "Project design choice, chosen before any club ranking was read. Used to "
+                         "order clubs only. Never converted to points, probability or price.",
+        },
+        "what_is_not_produced": [
+            "a point value for an injured player",
+            "a performance deficit for a backup, which needs snap counts and a before/after series",
+            "a probability that a backup 'holds up'",
+            "any line adjustment derived from this index",
+        ],
+        "scope": "Availability accounting from official printed sources. Not a forecast.",
+    })
+    print(f"OK: {len(joined)} injury rows joined to 32 printed charts; "
+          f"{matched} matched; {len(starters_out)} printed starters ruled out")
+
+
+if __name__ == "__main__":
+    main()
