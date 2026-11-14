@@ -81,6 +81,32 @@ python scripts/serve_site.py --host 0.0.0.0 --port 8080
 | `nfl-verification-2026-11-13.html` | **Re-verification, 13 Nov 2026** — every published NFL value re-read from the publisher, all 32 rows side by side |
 | `nfl-review.html` | 21 flagged irregularities with official source links (17 open, 4 corrected) |
 
+## Skill & availability desk (2026-11-14)
+
+New self-contained desk at `nfl-skill-cfdd/`, published at
+[`nfl-skill-cfdd/site/index.html`](nfl-skill-cfdd/site/index.html). Executive summary:
+[`docs/skill-cfdd-executive-summary.md`](docs/skill-cfdd-executive-summary.md).
+
+- **32/32 standings rows re-verified** on 2026-11-14 with `PCT`, `NET`, `PF = PA` and `W = L`
+  re-derived; the build aborts on any contradiction. Two clubs moved and their deltas imply
+  exactly one result, WAS 24 - NYG 21.
+- **The four clubs with no captured depth chart were the four Week 10 bye clubs** (CHI, DEN, PHI,
+  TB). All four are now captured: 231 printed slots, 265 of 326 injury rows matched, and Houston
+  recorded as unreadable on two independent reads.
+- **Skill was tested, not asserted.** Pythagorean residuals give chi-square 19.03 on 32 df,
+  **p = 0.966**, variance inflation 0.59 - no detectable club-level skill in this snapshot.
+  10 strategies, **12 computed gates** (6 pass, 5 fail, 1 blocked on source rights),
+  **0 qualified, 0 rewards**. At 80% power a 60% true rate needs **153 settled bets**; a 52.4%
+  rate needs 2,682. There are 0.
+- **15 questions, 10 suggestions, 12 flags**, with a decision record that is deliberately blank.
+
+```sh
+cd nfl-skill-cfdd
+python collect.py && python depth.py && python index.py && python luck.py \
+  && python ledger.py && python decisions.py && python build.py
+python -m unittest discover -s tests -v      # 49 tests
+```
+
 ## Re-verification (2026-11-13)
 
 Every published NFL value was re-read from the publisher on 2026-11-13, one week after the frozen

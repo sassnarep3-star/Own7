@@ -56,6 +56,12 @@ SOURCE_HOSTS.update({'X28-NFL-INJ-W10': 'www.nfl.com', 'X28-ATL-DEPTH': 'www.atl
 # NFL results & skill lab (session arena/196424c5-own7) — the official by-week schedule
 # pages read on 2026-11-14 to capture final scores. One host, one publisher.
 SOURCE_HOSTS.update({'X29-NFL-SCHEDULE': 'www.nfl.com'})
+# NFL skill-separation desk (session arena/cfdd5580-own7). League and member-club hosts only;
+# each host is a page actually read for this desk, 2026-11-13/14.
+SOURCE_HOSTS.update({'CFDD-NFL-STANDINGS': 'www.nfl.com', 'CFDD-NFL-TERMS': 'www.nfl.com',
+                     'CFDD-CHI-DEPTH': 'www.chicagobears.com', 'CFDD-DEN-DEPTH': 'www.denverbroncos.com',
+                     'CFDD-PHI-DEPTH': 'www.philadelphiaeagles.com', 'CFDD-TB-DEPTH': 'www.buccaneers.com',
+                     'CFDD-HOU-DEPTH': 'www.houstontexans.com'})
 
 # Rental pages from session arena/692da006-own7 (PR #19) — official government/legal hosts only.
 # NFL research layer (session arena/a129b881-own7). Official league domains, one tertiary
