@@ -481,11 +481,14 @@ def build_origination() -> str:
 
     body = (
         '<div class="verdict"><h2>Read this before the numbers</h2>'
-        f'<p class="lede">The model is less accurate than the market on both markets. Margin error '
+        f'<p class="lede">The model is less accurate than the market on both markets: margin error '
         f'<strong>{cal["side"]["model_rmse"]}</strong> points RMSE against the market\'s '
-        f'<strong>{cal["side"]["market_rmse"]}</strong>. Total error {cal["total"]["model_rmse"]} against '
+        f'<strong>{cal["side"]["market_rmse"]}</strong>, total error {cal["total"]["model_rmse"]} against '
         f'{cal["total"]["market_rmse"]}.</p>'
-        '<p>' + esc(cal["reading"]) + '</p></div>'
+        '<p>That gap is the whole story of these boards. A forecast with more error than the price has no '
+        'reason to beat the price, and this one does not. Both boards below lose or add nothing, and each row '
+        'shows the model line, the market line and the difference side by side so the failure is visible rather '
+        'than summarised.</p></div>'
     )
 
     body += (
@@ -649,8 +652,8 @@ def build_leaderboard() -> str:
         'the reason they are reported on separate pages of the ledger.</p></div>'
     )
 
-    heads = ["Strategy", "Tier", "Signal: n", "Signal: hit rate", "95% interval", "Signal: p",
-             "n needed at 55%", "Powered", "Staking: ROI", "Staking: staked", "Pushes",
+    heads = ["ID", "Strategy", "Tier", "Signal: n", "Hit rate", "95% interval", "Signal: p",
+             "n needed at 55%", "Powered", "Staking: ROI", "Staked", "Pushes",
              "Model RMSE", "Market RMSE", "Source"]
     rows = []
     for r in lb:
@@ -659,7 +662,7 @@ def build_leaderboard() -> str:
         tier_kind = "live" if r["tier"] == "live" else "paper"
         rows.append(
             f'<tr data-source-ids="EC6-ESPN-ODDS EC6-NFL-SCHEDULE" data-status="{esc(r["tier"])}">'
-            f'<td>{esc(r["id"])}<span class="sub">{esc(r["name"])}</span></td>'
+            f'<td>{esc(r["id"])}</td><td class="strat">{esc(r["name"])}</td>'
             f'<td>{badge(r["tier"], tier_kind)}</td>'
             + cell(s["n_settled_bets"], numeric=True)
             + cell(pct(s["signal_hit_rate"]), numeric=True)
@@ -845,7 +848,9 @@ def build_availability() -> str:
             "with no healthy body behind them"),
         kpi(sum(1 for r in rows_csv if r["replacement_tier"] == "reached_down_chart"),
             "where the club reached down a string"),
-        kpi(sum(1 for r in rows_csv if not r["depth_known"]), "cannot be placed on a captured chart"),
+        # CSV values are strings, so "False" is truthy: compare explicitly or the count is wrong.
+        kpi(sum(1 for r in rows_csv if r["depth_known"].strip().lower() != "true"),
+            "cannot be placed on a captured chart"),
     ]) + "</div>"
 
     body += (

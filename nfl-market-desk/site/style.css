@@ -36,3 +36,4 @@ kpi-value{font-variant-numeric:tabular-nums}
 .order h3{margin:.3rem 0 .3rem;color:var(--accent)}
 .order p{margin:0;font-size:.88rem;color:var(--muted)}
 td.num{text-align:right;font-variant-numeric:tabular-nums}
+td.strat{min-width:15rem;max-width:20rem}

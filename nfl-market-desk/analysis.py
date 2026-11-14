@@ -70,9 +70,9 @@ def calibration(rows_side: list[dict], rows_total: list[dict]) -> dict:
         "mean_abs_side_edge": round(sum(edges) / len(edges), 3) if edges else None,
         "verdict": verdict,
         "reading": (
-            "The model is less accurate than the market on both markets. That does not make a "
-            "hit rate impossible, but it means any positive result on this capture is not "
-            "evidence of skill. It is evidence that 15 games is noise."
+            "A forecast with more error than the price has no reason to beat the price, and this "
+            "one does not: both boards lost or added nothing. The gap is the explanation, not a "
+            "separate observation."
             if verdict == "model_error_exceeds_market" else
             "The model error is below the market error on the margin. That is necessary but not "
             "sufficient: with 15 games the difference is well inside sampling error."

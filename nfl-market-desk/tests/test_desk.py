@@ -38,6 +38,11 @@ import staking  # noqa: E402
 REPO = DESK.parent
 
 
+def load_csv_rows(name: str) -> list[dict]:
+    with (DESK / "data" / name).open(newline="", encoding="utf-8") as fh:
+        return list(csv.DictReader(fh))
+
+
 def _graph():
     prices = sources.load_prices()
     results = sources.load_results()
@@ -414,6 +419,22 @@ class TestSiteContract(unittest.TestCase):
             text = f.read_text()
             self.assertIn("<h1>", text, p)
             self.assertIn('aria-current="page"', text, p)
+
+    def test_availability_kpis_agree_with_the_artifact(self):
+        """CSV booleans arrive as the strings "True"/"False", and "False" is truthy. That mistake
+        once printed zero unplaced players when the data held six."""
+        import re
+        text = (DESK / "site" / "availability.html").read_text()
+        kpis = re.findall(r'kpi-value">([^<]*)</span><span class="kpi-label">([^<]*)', text)
+        by_label = {label: value for value, label in kpis}
+        rows = load_csv_rows("replacement-depth-2026-11-14.csv")
+        self.assertEqual(int(by_label["with no healthy body behind them"]),
+                         sum(1 for r in rows if r["replacement_tier"] == "no_healthy_body_behind"))
+        self.assertEqual(int(by_label["where the club reached down a string"]),
+                         sum(1 for r in rows if r["replacement_tier"] == "reached_down_chart"))
+        self.assertEqual(int(by_label["cannot be placed on a captured chart"]),
+                         sum(1 for r in rows if r["depth_known"].lower() != "true"))
+        self.assertEqual(len(rows), 25)
 
     def test_every_table_row_names_a_registered_source(self):
         registered = {r["id"] for r in json.loads((REPO / "research" / "sources.json").read_text())}

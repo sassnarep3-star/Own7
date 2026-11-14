@@ -30,7 +30,7 @@
     },
     "mean_abs_side_edge": 4.036,
     "verdict": "model_error_exceeds_market",
-    "reading": "The model is less accurate than the market on both markets. That does not make a hit rate impossible, but it means any positive result on this capture is not evidence of skill. It is evidence that 15 games is noise."
+    "reading": "A forecast with more error than the price has no reason to beat the price, and this one does not: both boards lost or added nothing. The gap is the explanation, not a separate observation."
   },
   "luck_decomposition": {
     "n_settled": 15,
