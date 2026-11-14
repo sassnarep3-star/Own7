@@ -1449,3 +1449,12 @@ Session ID: `session-arena-87e14dcd-own7`. Fixed Arena branch: `arena/87e14dcd-o
 Rules: all work stays on `arena/87e14dcd-own7`; every unconfirmed market field stays blank and is
 flagged; no stake or cash-reward output; before each push run `git pull --rebase`; do not edit or
 merge PR #27 or #17.
+
+### 87-C1–C4 implementation and verification update (2026-11-14)
+
+- **C1–C4 implementation complete.** The additive desk now has source-linked model/market/difference fields; 42 market rows and 84 opening/closing slots; strict append-only, authorization-reference, opening-basis and UTC timing validation; separate signal and staking ledgers; and a fail-closed paper transition. Current values remain blank: 0 authorized quotes, 0 filled market values, and 0 filled differences. No operator feed, NFL betting-use permission, live strategy, wager, or actual demotion is claimed.
+- **Scope separation retained.** This desk reads the 30-variant `nfl-results` pipeline (0 qualified, 1 provisional, 29 rejected) and explicitly does not merge it with the W1 eight-strategy overview (0 qualified, eight blocked).
+- **Integration complete.** Seven pages are in canonical navigation and the recursive site manifest; the generated pages, server/browser allowlists, CI, package checks, source registry and README are updated additively.
+- **Local verification:** `npm run check` passed (111 root tests, NFL reproduction/build, 43 control tests, site audit: 46 canonical pages, 20 redirects, 97 auxiliary pages, 163 recursive HTML pages, 6,572 table rows, 170 registered sources, 0 errors). `npm run test:browser` passed (143 desktop + 143 mobile pages, WCAG A/AA, 0 accessibility violations, 0 runtime errors, 10 interaction groups). `python scripts/build_site.py`, `store.py --check`, `build.py --check`, and `git diff --check` passed.
+- The first browser audit found undersized source-link targets on the new desk; the table-link hit areas were enlarged and the full browser suite passed afterward.
+- **PR #50** is open from the fixed branch to `main`. Both GitHub Actions checks pass: research/site audit and desktop/mobile/accessibility. C5 remains in progress until the PR is merged, the post-merge Pages deployment is checked, and final closeout is recorded. PRs #27 and #17 remain untouched.
