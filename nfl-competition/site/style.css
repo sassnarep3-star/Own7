@@ -12,6 +12,10 @@ body{margin:0;color:var(--ink);background:var(--bg);
   -webkit-font-smoothing:antialiased}
 a{color:var(--green);text-decoration:none}
 a:hover{text-decoration:underline;text-underline-offset:3px}
+/* A link inside a run of text must be distinguishable without relying on colour
+   contrast against the surrounding grey, so keep it underlined (WCAG 1.4.1). */
+main p a,main li a,main dd a,.table-note a,.notice a,.card p a,footer a{
+  text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
 h1,h2,h3,p{margin-top:0}
 h1{font-size:34px;line-height:1.2;letter-spacing:-1.1px;font-weight:650;margin-bottom:10px}
 h2{font-size:19px;line-height:1.4;letter-spacing:-.4px;margin-bottom:8px;font-weight:650}
