@@ -835,3 +835,48 @@ additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `script
 meaning of a blank) are the two gaps that most constrain any further availability work, and XS01
 (read club-published Friday game-status reports for all 28 clubs) is the cheapest way to close them.
 XS09 is a standing constraint, not a task: do not add a price feed until source rights are settled.
+
+---
+
+## Session arena/522cf658-own7 — NFL decision desk: one category-organized dashboard (2026-11-14)
+
+Session ID: `session-arena-522cf658-own7`. Fixed Arena branch: `arena/522cf658-own7` (the
+`session-<id>/<task>` naming in the brief is not used because Arena fixes this session's branch and
+all work must stay on it). Base commit: `b735a6b` (main, the merge of PR #33).
+
+Owner request this session: (a) review the repo line by line against official sources and flag
+irregularities; (b) a clean landing page with subpages organised by category that hold every entry
+and finding in simple readable tables; (c) a dedicated **Suggestions** section where a proposal can
+be reviewed and chosen before anything is implemented; (d) one clear list of questions, the
+information held, the information missing, and suggestions for discovering it; (e) originate NFL
+lines as a leaderboard competition covering single bets, parlays and player-prop combos, each
+strategy passing validation gates, with correlation values and luck removed; (f) track injuries and
+name the 2nd/3rd/4th-string replacements on both offence and defence; (g) an executive summary;
+(h) every table row carrying an official source link, unconfirmable values left blank and flagged;
+(i) live GitHub Pages site; (j) PR, merge and Pages deploy without waiting for review.
+
+Observed starting state (read, not assumed): `main` already carries four overlapping NFL
+workstreams — the origination lab (`nfl/`, `nfl/origination/`), the assurance handoff
+(`nfl-assurance-9580ac3f/`), the availability/depletion desk (`nfl-availability-28ef/`) and the
+root canonical pages — plus the NBA and rental archives. PR #27 (`arena/382a833e-own7`) and PR #17
+(`arena/a934e8c3-own7`) are still open; this session will not touch, merge or close either branch.
+The last completed board (PR #32/#33) records that "two suggestion registers with different IDs"
+(NF16) and that three NFL workstreams report overlapping, non-additive row counts.
+
+### Claim (written before implementation; committed and pushed first)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| D1 | Coordination claim + freeze of current `main` | in progress | session-arena-522cf658-own7 | COORDINATION.md (append-only) | Earlier boards are preserved unchanged. |
+| D2 | Official re-verification, 14 Nov 2026: standings, injuries, schedule, terms; verbatim captures | in progress | session-arena-522cf658-own7 | `nfl-desk-522cf/evidence/**`, `docs/nfl-verification-2026-11-14.md` | Rendered text saved with retrieval date; every row compared field by field against the committed snapshot. |
+| D3 | Line-by-line repo review + new irregularity register | in progress | session-arena-522cf658-own7 | `docs/repo-review-2026-11-14.md` | Official source links per finding; prior IDs (NF/RR/XF) referenced, new IDs prefixed `IR`. |
+| D4 | Canonical merged decision registers (suggestions, questions, strategies, availability) | in progress | session-arena-522cf658-own7 | `nfl-desk-522cf/data/*.json` | Merge the fragmented registers into one ID space; keep the origin register of every row; no value invented. |
+| D5 | Clean category-organised dashboard: landing page + subpages | in progress | session-arena-522cf658-own7 | `nfl-desk-522cf/build.py`, `nfl-desk-522cf/site/**` | Deterministic generator; every row carries `data-source-ids` and the official link; blanks stay blank. |
+| D6 | Tests and additive integration (nav, manifest, host allowlist, browser folder, CI) | in progress | session-arena-522cf658-own7 | `nfl-desk-522cf/tests/**`, additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `scripts/serve_site.py`, `.github/workflows/check.yml` | Additive only; no canonical NFL value, page or test overwritten. |
+| D7 | Executive summary, integration, PR, merge, Pages deploy evidence | in progress | session-arena-522cf658-own7 | `docs/nfl-desk-executive-summary.md`, COORDINATION.md | Flagged items do not block the merge. |
+
+Rules this session follows: never infer or fill in a value that no official source confirms — leave
+the cell blank and flag it; every table row links to the official page actually read; `git pull
+--rebase` before every push; small frequent commits; additive shared-file edits only; no edit to
+another session's claimed scope.
+
