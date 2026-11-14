@@ -108,6 +108,24 @@ SOURCE_HOSTS.update({
 })
 
 
+# NFL market desk (session arena/ec67293d-own7). One publisher host per id: ESPN for the
+# relayed market feed, NFL.com for the official results, injury and standings pages, member-club
+# hosts for the four depth charts actually read, and this repository for the method record.
+SOURCE_HOSTS.update({
+    'EC6-ESPN-ODDS': 'sports.core.api.espn.com',
+    'EC6-ESPN-EVENT': 'sports.core.api.espn.com',
+    'EC6-ESPN-TEAMS': 'sports.core.api.espn.com',
+    'EC6-ESPN-PROPS': 'sports.core.api.espn.com',
+    'EC6-NFL-SCHEDULE': 'www.nfl.com',
+    'EC6-NFL-STANDINGS': 'www.nfl.com',
+    'EC6-NFL-INJURY': 'www.nfl.com',
+    'EC6-CHI-DEPTH': 'www.chicagobears.com',
+    'EC6-DEN-DEPTH': 'www.denverbroncos.com',
+    'EC6-PHI-DEPTH': 'www.philadelphiaeagles.com',
+    'EC6-TB-DEPTH': 'www.buccaneers.com',
+    'EC6-REPO': 'github.com',
+})
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)
