@@ -1,0 +1,46 @@
+{
+  "session": "session-arena-81ddda65-own7",
+  "retrieved_on": "2026-11-14",
+  "description": "Irregularities found during independent line-by-line re-verification of committed NFL observations against official NFL.com sources on 2026-11-14. Each flag links the official source actually read.",
+  "flags": [
+    {
+      "id": "81-01",
+      "severity": "review",
+      "category": "snapshot-dating",
+      "summary": "The committed NFL snapshot is dated 2026-11-12 and predates the Thursday Night Football result (Commanders 24, Giants 21, played 2026-11-12). The official NFL.com source retrieved 2026-11-14 reflects that completed game.",
+      "detail": "Affected committed rows: standings New York Giants (5-2-1 -> official 5-3-1) and Washington Commanders (2-5-1 -> official 3-5-1); team defense passing and team offense passing rows for New York Giants and Washington Commanders (pre-game attempts/yards vs post-game); player passing ranks 23-25 (committed: Cam Ward 23, Sam Darnold 24, Michael Penix Jr. 25; official: Jayden Daniels 23, Cam Ward 24, Sam Darnold 25). Jayden Daniels (Commanders QB) is absent from the committed top-25 and Michael Penix Jr. (1,444 yds) is present; this is consistent with the snapshot pre-dating Daniels' TNF passing total. All other rows matched exactly. This is a dated-snapshot divergence, not a transcription error; no value was inferred.",
+      "sources": [
+        "https://www.nfl.com/standings/",
+        "https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all",
+        "https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all",
+        "https://www.nfl.com/stats/player-stats/",
+        "https://www.nfl.com/games/commanders-at-giants-2026-reg-10"
+      ],
+      "recommended_action": "Publish a dated post-TNF refresh of the standings, team-stats and player-stats snapshots; retain the 2026-11-12 snapshot as a dated historical transcription."
+    },
+    {
+      "id": "81-02",
+      "severity": "review",
+      "category": "publisher-column-disagreement",
+      "summary": "NFL.com's printed passer-rating column disagrees with the rating implied by its own printed yards/attempts for two players; re-confirmed 2026-11-14.",
+      "detail": "Patrick Mahomes 2,037 yds / 263 att prints 7.8 (exact 7.7452); Deshaun Watson 1,806 yds / 249 att prints 7.2 (exact 7.2530). Neither is a half-way rounding value, so no rounding convention reconciles them. The publisher's columns disagree with each other; the committed snapshot transcribes the printed values. Effect on a Yds/Att-vs-Rate correlation is small (Pearson 0.829085 as printed vs 0.831578 on exact values).",
+      "sources": [
+        "https://www.nfl.com/stats/player-stats/"
+      ],
+      "recommended_action": "Treat the printed Rate column as publisher-supplied and flag; do not derive Rate from components when both are displayed."
+    },
+    {
+      "id": "81-03",
+      "severity": "review",
+      "category": "provenance",
+      "summary": "The player-passing and team-stats snapshots carry no explicit CheckedOn retrieval date; their snapshot date is inferred from context.",
+      "detail": "data/nfl-players-passing-2026.csv, data/nfl-team-defense-passing-2026.csv and data/nfl-team-offense-passing-2026.csv have Source/Verified columns but no retrieval-date field. The standings and injuries snapshots do carry CheckedOn=2026-11-12. Adding an explicit retrieval date to every snapshot removes ambiguity about which official rendering a transcription reflects.",
+      "sources": [
+        "https://www.nfl.com/stats/player-stats/",
+        "https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all",
+        "https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all"
+      ],
+      "recommended_action": "Add an explicit retrieval-date column to all NFL snapshot CSVs."
+    }
+  ]
+}

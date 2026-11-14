@@ -1,0 +1,2279 @@
+{
+  "retrieved_on": "2026-11-14",
+  "method": "Arena page reader (fetch_page) rendered text; direct sandbox HTTPS to nfl.com is blocked, so these are rendered-text captures, not raw HTTP archives.",
+  "sources": {
+    "standings": "https://www.nfl.com/standings/",
+    "player_passing": "https://www.nfl.com/stats/player-stats/",
+    "team_defense": "https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all",
+    "team_offense": "https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all",
+    "injuries": "https://www.nfl.com/injuries/",
+    "terms": "https://www.nfl.com/legal/terms/"
+  },
+  "standings": [
+    {
+      "team": "Buffalo Bills",
+      "W": 7,
+      "L": 1,
+      "T": 0,
+      "PCT": 0.875,
+      "PF": 256,
+      "PA": 187,
+      "NetPts": 69
+    },
+    {
+      "team": "New England Patriots",
+      "W": 5,
+      "L": 4,
+      "T": 0,
+      "PCT": 0.556,
+      "PF": 211,
+      "PA": 207,
+      "NetPts": 4
+    },
+    {
+      "team": "New York Jets",
+      "W": 2,
+      "L": 7,
+      "T": 0,
+      "PCT": 0.222,
+      "PF": 182,
+      "PA": 223,
+      "NetPts": -41
+    },
+    {
+      "team": "Miami Dolphins",
+      "W": 1,
+      "L": 7,
+      "T": 0,
+      "PCT": 0.125,
+      "PF": 126,
+      "PA": 200,
+      "NetPts": -74
+    },
+    {
+      "team": "Pittsburgh Steelers",
+      "W": 6,
+      "L": 2,
+      "T": 0,
+      "PCT": 0.75,
+      "PF": 180,
+      "PA": 144,
+      "NetPts": 36
+    },
+    {
+      "team": "Cincinnati Bengals",
+      "W": 6,
+      "L": 2,
+      "T": 0,
+      "PCT": 0.75,
+      "PF": 240,
+      "PA": 175,
+      "NetPts": 65
+    },
+    {
+      "team": "Cleveland Browns",
+      "W": 5,
+      "L": 4,
+      "T": 0,
+      "PCT": 0.556,
+      "PF": 161,
+      "PA": 196,
+      "NetPts": -35
+    },
+    {
+      "team": "Baltimore Ravens",
+      "W": 4,
+      "L": 5,
+      "T": 0,
+      "PCT": 0.444,
+      "PF": 189,
+      "PA": 236,
+      "NetPts": -47
+    },
+    {
+      "team": "Jacksonville Jaguars",
+      "W": 6,
+      "L": 2,
+      "T": 0,
+      "PCT": 0.75,
+      "PF": 229,
+      "PA": 121,
+      "NetPts": 108
+    },
+    {
+      "team": "Houston Texans",
+      "W": 3,
+      "L": 5,
+      "T": 0,
+      "PCT": 0.375,
+      "PF": 209,
+      "PA": 192,
+      "NetPts": 17
+    },
+    {
+      "team": "Indianapolis Colts",
+      "W": 2,
+      "L": 7,
+      "T": 0,
+      "PCT": 0.222,
+      "PF": 184,
+      "PA": 249,
+      "NetPts": -65
+    },
+    {
+      "team": "Tennessee Titans",
+      "W": 1,
+      "L": 7,
+      "T": 0,
+      "PCT": 0.125,
+      "PF": 144,
+      "PA": 199,
+      "NetPts": -55
+    },
+    {
+      "team": "Denver Broncos",
+      "W": 7,
+      "L": 2,
+      "T": 0,
+      "PCT": 0.778,
+      "PF": 198,
+      "PA": 186,
+      "NetPts": 12
+    },
+    {
+      "team": "Kansas City Chiefs",
+      "W": 6,
+      "L": 2,
+      "T": 0,
+      "PCT": 0.75,
+      "PF": 202,
+      "PA": 143,
+      "NetPts": 59
+    },
+    {
+      "team": "Las Vegas Raiders",
+      "W": 4,
+      "L": 5,
+      "T": 0,
+      "PCT": 0.444,
+      "PF": 238,
+      "PA": 268,
+      "NetPts": -30
+    },
+    {
+      "team": "Los Angeles Chargers",
+      "W": 0,
+      "L": 8,
+      "T": 0,
+      "PCT": 0.0,
+      "PF": 121,
+      "PA": 219,
+      "NetPts": -98
+    },
+    {
+      "team": "New York Giants",
+      "W": 5,
+      "L": 3,
+      "T": 1,
+      "PCT": 0.611,
+      "PF": 203,
+      "PA": 196,
+      "NetPts": 7
+    },
+    {
+      "team": "Dallas Cowboys",
+      "W": 4,
+      "L": 5,
+      "T": 0,
+      "PCT": 0.444,
+      "PF": 246,
+      "PA": 236,
+      "NetPts": 10
+    },
+    {
+      "team": "Washington Commanders",
+      "W": 3,
+      "L": 5,
+      "T": 1,
+      "PCT": 0.389,
+      "PF": 196,
+      "PA": 223,
+      "NetPts": -27
+    },
+    {
+      "team": "Philadelphia Eagles",
+      "W": 2,
+      "L": 7,
+      "T": 0,
+      "PCT": 0.222,
+      "PF": 148,
+      "PA": 221,
+      "NetPts": -73
+    },
+    {
+      "team": "Chicago Bears",
+      "W": 7,
+      "L": 2,
+      "T": 0,
+      "PCT": 0.778,
+      "PF": 241,
+      "PA": 184,
+      "NetPts": 57
+    },
+    {
+      "team": "Detroit Lions",
+      "W": 6,
+      "L": 2,
+      "T": 0,
+      "PCT": 0.75,
+      "PF": 222,
+      "PA": 189,
+      "NetPts": 33
+    },
+    {
+      "team": "Minnesota Vikings",
+      "W": 6,
+      "L": 2,
+      "T": 0,
+      "PCT": 0.75,
+      "PF": 146,
+      "PA": 116,
+      "NetPts": 30
+    },
+    {
+      "team": "Green Bay Packers",
+      "W": 6,
+      "L": 3,
+      "T": 0,
+      "PCT": 0.667,
+      "PF": 216,
+      "PA": 191,
+      "NetPts": 25
+    },
+    {
+      "team": "Carolina Panthers",
+      "W": 3,
+      "L": 5,
+      "T": 0,
+      "PCT": 0.375,
+      "PF": 199,
+      "PA": 219,
+      "NetPts": -20
+    },
+    {
+      "team": "New Orleans Saints",
+      "W": 3,
+      "L": 5,
+      "T": 0,
+      "PCT": 0.375,
+      "PF": 185,
+      "PA": 216,
+      "NetPts": -31
+    },
+    {
+      "team": "Tampa Bay Buccaneers",
+      "W": 3,
+      "L": 6,
+      "T": 0,
+      "PCT": 0.333,
+      "PF": 202,
+      "PA": 178,
+      "NetPts": 24
+    },
+    {
+      "team": "Atlanta Falcons",
+      "W": 3,
+      "L": 6,
+      "T": 0,
+      "PCT": 0.333,
+      "PF": 188,
+      "PA": 223,
+      "NetPts": -35
+    },
+    {
+      "team": "San Francisco 49ers",
+      "W": 7,
+      "L": 1,
+      "T": 0,
+      "PCT": 0.875,
+      "PF": 235,
+      "PA": 156,
+      "NetPts": 79
+    },
+    {
+      "team": "Seattle Seahawks",
+      "W": 5,
+      "L": 4,
+      "T": 0,
+      "PCT": 0.556,
+      "PF": 202,
+      "PA": 162,
+      "NetPts": 40
+    },
+    {
+      "team": "Los Angeles Rams",
+      "W": 5,
+      "L": 4,
+      "T": 0,
+      "PCT": 0.556,
+      "PF": 214,
+      "PA": 181,
+      "NetPts": 33
+    },
+    {
+      "team": "Arizona Cardinals",
+      "W": 3,
+      "L": 6,
+      "T": 0,
+      "PCT": 0.333,
+      "PF": 178,
+      "PA": 255,
+      "NetPts": -77
+    }
+  ],
+  "team_defense_passing": [
+    {
+      "team": "San Francisco 49ers",
+      "vals": [
+        280,
+        188,
+        67.1,
+        6.4,
+        1783,
+        11,
+        6,
+        88.7,
+        86,
+        30.7,
+        18,
+        2,
+        "77T",
+        15
+      ]
+    },
+    {
+      "team": "Chicago Bears",
+      "vals": [
+        260,
+        161,
+        61.9,
+        8.2,
+        2120,
+        13,
+        7,
+        93.1,
+        88,
+        33.8,
+        26,
+        12,
+        "58T",
+        26
+      ]
+    },
+    {
+      "team": "Cincinnati Bengals",
+      "vals": [
+        273,
+        174,
+        63.7,
+        7.3,
+        1989,
+        9,
+        5,
+        88.9,
+        93,
+        34.1,
+        26,
+        2,
+        "48T",
+        23
+      ]
+    },
+    {
+      "team": "Buffalo Bills",
+      "vals": [
+        300,
+        183,
+        61.0,
+        6.7,
+        2022,
+        15,
+        6,
+        89.3,
+        107,
+        35.7,
+        28,
+        1,
+        "44T",
+        17
+      ]
+    },
+    {
+      "team": "Denver Broncos",
+      "vals": [
+        344,
+        207,
+        60.2,
+        6.5,
+        2249,
+        14,
+        8,
+        83.4,
+        106,
+        30.8,
+        26,
+        6,
+        "73T",
+        26
+      ]
+    },
+    {
+      "team": "Cleveland Browns",
+      "vals": [
+        297,
+        177,
+        59.6,
+        6.7,
+        1982,
+        12,
+        6,
+        84.6,
+        88,
+        29.6,
+        26,
+        5,
+        "58",
+        26
+      ]
+    },
+    {
+      "team": "Tampa Bay Buccaneers",
+      "vals": [
+        307,
+        190,
+        61.9,
+        6.6,
+        2040,
+        12,
+        16,
+        72.7,
+        86,
+        28,
+        21,
+        6,
+        "76",
+        17
+      ]
+    },
+    {
+      "team": "Arizona Cardinals",
+      "vals": [
+        258,
+        166,
+        64.3,
+        8.0,
+        2076,
+        19,
+        3,
+        108.9,
+        92,
+        35.7,
+        25,
+        6,
+        "82T",
+        19
+      ]
+    },
+    {
+      "team": "Los Angeles Chargers",
+      "vals": [
+        233,
+        153,
+        65.7,
+        7.9,
+        1845,
+        13,
+        7,
+        95.9,
+        85,
+        36.5,
+        23,
+        5,
+        "63T",
+        13
+      ]
+    },
+    {
+      "team": "Kansas City Chiefs",
+      "vals": [
+        276,
+        170,
+        61.6,
+        6.4,
+        1764,
+        7,
+        6,
+        79.4,
+        88,
+        31.9,
+        20,
+        5,
+        "57",
+        14
+      ]
+    },
+    {
+      "team": "Indianapolis Colts",
+      "vals": [
+        264,
+        162,
+        61.4,
+        8.1,
+        2145,
+        16,
+        2,
+        104.1,
+        89,
+        33.7,
+        30,
+        11,
+        "80T",
+        19
+      ]
+    },
+    {
+      "team": "Washington Commanders",
+      "vals": [
+        332,
+        217,
+        65.4,
+        7.0,
+        2341,
+        17,
+        6,
+        95.5,
+        110,
+        33.1,
+        29,
+        4,
+        "66T",
+        18
+      ]
+    },
+    {
+      "team": "Dallas Cowboys",
+      "vals": [
+        296,
+        194,
+        65.5,
+        7.2,
+        2133,
+        16,
+        4,
+        99.1,
+        106,
+        35.8,
+        28,
+        4,
+        "64",
+        17
+      ]
+    },
+    {
+      "team": "Miami Dolphins",
+      "vals": [
+        221,
+        168,
+        76.0,
+        8.1,
+        1797,
+        16,
+        5,
+        114.0,
+        87,
+        39.4,
+        22,
+        8,
+        "60",
+        12
+      ]
+    },
+    {
+      "team": "Philadelphia Eagles",
+      "vals": [
+        300,
+        180,
+        60.0,
+        7.2,
+        2150,
+        13,
+        3,
+        92.2,
+        102,
+        34,
+        31,
+        4,
+        "53",
+        16
+      ]
+    },
+    {
+      "team": "Atlanta Falcons",
+      "vals": [
+        318,
+        210,
+        66.0,
+        6.8,
+        2171,
+        14,
+        3,
+        96.3,
+        108,
+        34,
+        26,
+        5,
+        "55",
+        20
+      ]
+    },
+    {
+      "team": "New York Giants",
+      "vals": [
+        286,
+        179,
+        62.6,
+        6.2,
+        1763,
+        17,
+        8,
+        88.1,
+        89,
+        31.1,
+        20,
+        2,
+        "64",
+        17
+      ]
+    },
+    {
+      "team": "Jacksonville Jaguars",
+      "vals": [
+        261,
+        172,
+        65.9,
+        7.3,
+        1907,
+        8,
+        11,
+        80.1,
+        89,
+        34.1,
+        21,
+        5,
+        "62T",
+        16
+      ]
+    },
+    {
+      "team": "New York Jets",
+      "vals": [
+        270,
+        174,
+        64.4,
+        7.1,
+        1909,
+        16,
+        1,
+        103.5,
+        98,
+        36.3,
+        23,
+        4,
+        "63T",
+        22
+      ]
+    },
+    {
+      "team": "Detroit Lions",
+      "vals": [
+        313,
+        203,
+        64.9,
+        7.2,
+        2265,
+        18,
+        6,
+        97.5,
+        114,
+        36.4,
+        34,
+        6,
+        "51",
+        27
+      ]
+    },
+    {
+      "team": "Green Bay Packers",
+      "vals": [
+        325,
+        203,
+        62.5,
+        6.4,
+        2087,
+        13,
+        13,
+        77.6,
+        101,
+        31.1,
+        22,
+        4,
+        "68",
+        26
+      ]
+    },
+    {
+      "team": "Carolina Panthers",
+      "vals": [
+        278,
+        176,
+        63.3,
+        6.4,
+        1774,
+        12,
+        5,
+        88.3,
+        92,
+        33.1,
+        14,
+        4,
+        "57",
+        12
+      ]
+    },
+    {
+      "team": "New England Patriots",
+      "vals": [
+        286,
+        193,
+        67.5,
+        7.9,
+        2256,
+        14,
+        5,
+        100.2,
+        99,
+        34.6,
+        32,
+        7,
+        "58",
+        25
+      ]
+    },
+    {
+      "team": "Las Vegas Raiders",
+      "vals": [
+        279,
+        183,
+        65.6,
+        8.0,
+        2238,
+        20,
+        7,
+        103.6,
+        112,
+        40.1,
+        27,
+        6,
+        "55",
+        19
+      ]
+    },
+    {
+      "team": "Los Angeles Rams",
+      "vals": [
+        293,
+        179,
+        61.1,
+        6.4,
+        1882,
+        11,
+        7,
+        82.3,
+        93,
+        31.7,
+        21,
+        6,
+        "57",
+        16
+      ]
+    },
+    {
+      "team": "Baltimore Ravens",
+      "vals": [
+        287,
+        187,
+        65.2,
+        7.6,
+        2177,
+        12,
+        4,
+        96.1,
+        102,
+        35.5,
+        26,
+        7,
+        "52",
+        17
+      ]
+    },
+    {
+      "team": "New Orleans Saints",
+      "vals": [
+        261,
+        171,
+        65.5,
+        7.8,
+        2045,
+        13,
+        4,
+        99.6,
+        91,
+        34.9,
+        28,
+        6,
+        "64T",
+        23
+      ]
+    },
+    {
+      "team": "Seattle Seahawks",
+      "vals": [
+        277,
+        178,
+        64.3,
+        5.5,
+        1519,
+        9,
+        8,
+        77.3,
+        73,
+        26.4,
+        14,
+        1,
+        "44",
+        21
+      ]
+    },
+    {
+      "team": "Pittsburgh Steelers",
+      "vals": [
+        280,
+        183,
+        65.4,
+        6.9,
+        1936,
+        7,
+        7,
+        83.3,
+        88,
+        31.4,
+        27,
+        4,
+        "63",
+        26
+      ]
+    },
+    {
+      "team": "Houston Texans",
+      "vals": [
+        276,
+        178,
+        64.5,
+        7.4,
+        2056,
+        12,
+        4,
+        95.3,
+        91,
+        33,
+        31,
+        7,
+        "58T",
+        29
+      ]
+    },
+    {
+      "team": "Tennessee Titans",
+      "vals": [
+        272,
+        193,
+        71.0,
+        8.0,
+        2182,
+        11,
+        8,
+        95.9,
+        105,
+        38.6,
+        30,
+        2,
+        "52",
+        20
+      ]
+    },
+    {
+      "team": "Minnesota Vikings",
+      "vals": [
+        234,
+        135,
+        57.7,
+        6.4,
+        1495,
+        5,
+        9,
+        67.9,
+        68,
+        29.1,
+        16,
+        5,
+        "81T",
+        29
+      ]
+    }
+  ],
+  "team_offense_passing": [
+    {
+      "team": "San Francisco 49ers",
+      "vals": [
+        236,
+        163,
+        69.1,
+        8.4,
+        1980,
+        17,
+        5,
+        109.8,
+        97,
+        41.1,
+        27,
+        4,
+        "82T",
+        8,
+        48
+      ]
+    },
+    {
+      "team": "Chicago Bears",
+      "vals": [
+        312,
+        211,
+        67.6,
+        7.4,
+        2310,
+        10,
+        9,
+        88,
+        108,
+        34.6,
+        35,
+        4,
+        "58T",
+        20,
+        141
+      ]
+    },
+    {
+      "team": "Cincinnati Bengals",
+      "vals": [
+        296,
+        219,
+        74,
+        8.1,
+        2386,
+        23,
+        6,
+        114.8,
+        119,
+        40.2,
+        27,
+        5,
+        "47T",
+        15,
+        102
+      ]
+    },
+    {
+      "team": "Buffalo Bills",
+      "vals": [
+        236,
+        156,
+        66.1,
+        8.6,
+        2027,
+        12,
+        6,
+        99.3,
+        93,
+        39.4,
+        32,
+        8,
+        "57",
+        17,
+        109
+      ]
+    },
+    {
+      "team": "Denver Broncos",
+      "vals": [
+        287,
+        174,
+        60.6,
+        6,
+        1730,
+        11,
+        4,
+        84.7,
+        85,
+        29.6,
+        21,
+        4,
+        "52T",
+        11,
+        57
+      ]
+    },
+    {
+      "team": "Cleveland Browns",
+      "vals": [
+        283,
+        185,
+        65.4,
+        7.4,
+        2105,
+        9,
+        3,
+        93.7,
+        93,
+        32.9,
+        28,
+        5,
+        "64T",
+        38,
+        211
+      ]
+    },
+    {
+      "team": "Tampa Bay Buccaneers",
+      "vals": [
+        240,
+        146,
+        60.8,
+        5.9,
+        1423,
+        6,
+        9,
+        70.2,
+        67,
+        27.9,
+        16,
+        5,
+        "64",
+        27,
+        146
+      ]
+    },
+    {
+      "team": "Arizona Cardinals",
+      "vals": [
+        359,
+        232,
+        64.6,
+        5.8,
+        2080,
+        13,
+        7,
+        84,
+        110,
+        30.6,
+        19,
+        0,
+        "38",
+        23,
+        142
+      ]
+    },
+    {
+      "team": "Los Angeles Chargers",
+      "vals": [
+        243,
+        146,
+        60.1,
+        6.6,
+        1615,
+        7,
+        11,
+        70.6,
+        71,
+        29.2,
+        18,
+        6,
+        "58",
+        31,
+        198
+      ]
+    },
+    {
+      "team": "Kansas City Chiefs",
+      "vals": [
+        263,
+        177,
+        67.3,
+        7.8,
+        2037,
+        14,
+        4,
+        101.8,
+        94,
+        35.7,
+        22,
+        7,
+        "73T",
+        11,
+        66
+      ]
+    },
+    {
+      "team": "Indianapolis Colts",
+      "vals": [
+        304,
+        184,
+        60.5,
+        5.7,
+        1730,
+        6,
+        10,
+        69.1,
+        86,
+        28.3,
+        18,
+        3,
+        "55T",
+        25,
+        167
+      ]
+    },
+    {
+      "team": "Washington Commanders",
+      "vals": [
+        299,
+        187,
+        62.5,
+        6.8,
+        2025,
+        15,
+        3,
+        95,
+        95,
+        31.8,
+        29,
+        5,
+        "53",
+        21,
+        133
+      ]
+    },
+    {
+      "team": "Dallas Cowboys",
+      "vals": [
+        336,
+        218,
+        64.9,
+        7.1,
+        2381,
+        16,
+        5,
+        95.4,
+        119,
+        35.4,
+        28,
+        6,
+        "53",
+        14,
+        69
+      ]
+    },
+    {
+      "team": "Miami Dolphins",
+      "vals": [
+        209,
+        122,
+        58.4,
+        6.9,
+        1442,
+        6,
+        6,
+        77.1,
+        64,
+        30.6,
+        18,
+        5,
+        "77T",
+        24,
+        124
+      ]
+    },
+    {
+      "team": "Philadelphia Eagles",
+      "vals": [
+        303,
+        179,
+        59.1,
+        5.7,
+        1740,
+        10,
+        6,
+        78,
+        81,
+        26.7,
+        14,
+        3,
+        "64",
+        30,
+        195
+      ]
+    },
+    {
+      "team": "Atlanta Falcons",
+      "vals": [
+        256,
+        156,
+        60.9,
+        6.9,
+        1766,
+        11,
+        12,
+        76.4,
+        74,
+        28.9,
+        23,
+        4,
+        "76",
+        16,
+        97
+      ]
+    },
+    {
+      "team": "New York Giants",
+      "vals": [
+        304,
+        188,
+        61.8,
+        7.2,
+        2193,
+        13,
+        7,
+        88.3,
+        101,
+        33.2,
+        30,
+        6,
+        "66T",
+        28,
+        142
+      ]
+    },
+    {
+      "team": "Jacksonville Jaguars",
+      "vals": [
+        227,
+        147,
+        64.8,
+        8.6,
+        1940,
+        18,
+        4,
+        110.8,
+        91,
+        40.1,
+        27,
+        4,
+        "52",
+        13,
+        106
+      ]
+    },
+    {
+      "team": "New York Jets",
+      "vals": [
+        271,
+        183,
+        67.5,
+        7.7,
+        2078,
+        12,
+        3,
+        100.4,
+        89,
+        32.8,
+        24,
+        9,
+        "60",
+        28,
+        236
+      ]
+    },
+    {
+      "team": "Detroit Lions",
+      "vals": [
+        274,
+        186,
+        67.9,
+        7.8,
+        2145,
+        15,
+        2,
+        106.5,
+        104,
+        38,
+        23,
+        5,
+        "57",
+        19,
+        129
+      ]
+    },
+    {
+      "team": "Green Bay Packers",
+      "vals": [
+        341,
+        215,
+        63,
+        7.7,
+        2618,
+        19,
+        6,
+        97.9,
+        110,
+        32.3,
+        40,
+        12,
+        "81T",
+        17,
+        101
+      ]
+    },
+    {
+      "team": "Carolina Panthers",
+      "vals": [
+        313,
+        189,
+        60.4,
+        7.2,
+        2244,
+        16,
+        6,
+        91.3,
+        111,
+        35.5,
+        28,
+        4,
+        "55",
+        26,
+        155
+      ]
+    },
+    {
+      "team": "New England Patriots",
+      "vals": [
+        281,
+        183,
+        65.1,
+        8.4,
+        2349,
+        18,
+        11,
+        96.2,
+        102,
+        36.3,
+        33,
+        6,
+        "63",
+        20,
+        103
+      ]
+    },
+    {
+      "team": "Las Vegas Raiders",
+      "vals": [
+        324,
+        209,
+        64.5,
+        7.4,
+        2401,
+        20,
+        8,
+        97,
+        121,
+        37.4,
+        31,
+        5,
+        "45",
+        11,
+        64
+      ]
+    },
+    {
+      "team": "Los Angeles Rams",
+      "vals": [
+        349,
+        232,
+        66.5,
+        6.8,
+        2387,
+        16,
+        9,
+        90.5,
+        122,
+        35,
+        24,
+        6,
+        "64",
+        13,
+        97
+      ]
+    },
+    {
+      "team": "Baltimore Ravens",
+      "vals": [
+        247,
+        165,
+        66.8,
+        7.5,
+        1842,
+        10,
+        5,
+        93.9,
+        90,
+        36.4,
+        20,
+        6,
+        "54",
+        23,
+        146
+      ]
+    },
+    {
+      "team": "New Orleans Saints",
+      "vals": [
+        308,
+        204,
+        66.2,
+        6.4,
+        1986,
+        14,
+        6,
+        91.2,
+        99,
+        32.1,
+        21,
+        5,
+        "52",
+        20,
+        142
+      ]
+    },
+    {
+      "team": "Seattle Seahawks",
+      "vals": [
+        288,
+        182,
+        63.2,
+        7.2,
+        2089,
+        15,
+        9,
+        89.3,
+        109,
+        37.8,
+        24,
+        4,
+        "82",
+        19,
+        136
+      ]
+    },
+    {
+      "team": "Pittsburgh Steelers",
+      "vals": [
+        290,
+        175,
+        60.3,
+        6.4,
+        1871,
+        13,
+        6,
+        85.6,
+        82,
+        28.3,
+        24,
+        6,
+        "80T",
+        23,
+        187
+      ]
+    },
+    {
+      "team": "Houston Texans",
+      "vals": [
+        285,
+        182,
+        63.9,
+        7.9,
+        2258,
+        16,
+        2,
+        104.1,
+        98,
+        34.4,
+        32,
+        7,
+        "63T",
+        16,
+        103
+      ]
+    },
+    {
+      "team": "Tennessee Titans",
+      "vals": [
+        248,
+        155,
+        62.5,
+        6,
+        1483,
+        6,
+        5,
+        78.8,
+        73,
+        29.4,
+        16,
+        1,
+        "41",
+        13,
+        99
+      ]
+    },
+    {
+      "team": "Minnesota Vikings",
+      "vals": [
+        225,
+        137,
+        60.9,
+        6.4,
+        1437,
+        8,
+        5,
+        82,
+        68,
+        30.2,
+        19,
+        2,
+        "51T",
+        23,
+        151
+      ]
+    }
+  ],
+  "player_passing": [
+    {
+      "rank": 1,
+      "player": "Jordan Love",
+      "vals": [
+        2618,
+        7.7,
+        341,
+        215,
+        63,
+        19,
+        6,
+        97.9,
+        110,
+        32.3,
+        40,
+        12,
+        81,
+        17,
+        101
+      ]
+    },
+    {
+      "rank": 2,
+      "player": "Joe Burrow",
+      "vals": [
+        2386,
+        8.1,
+        296,
+        219,
+        74,
+        23,
+        6,
+        114.8,
+        119,
+        40.2,
+        27,
+        5,
+        47,
+        15,
+        102
+      ]
+    },
+    {
+      "rank": 3,
+      "player": "Dak Prescott",
+      "vals": [
+        2381,
+        7.1,
+        336,
+        218,
+        64.9,
+        16,
+        5,
+        95.4,
+        119,
+        35.4,
+        28,
+        6,
+        53,
+        14,
+        69
+      ]
+    },
+    {
+      "rank": 4,
+      "player": "Matthew Stafford",
+      "vals": [
+        2374,
+        6.9,
+        346,
+        230,
+        66.5,
+        16,
+        9,
+        90.6,
+        121,
+        35,
+        24,
+        6,
+        64,
+        13,
+        97
+      ]
+    },
+    {
+      "rank": 5,
+      "player": "Kirk Cousins",
+      "vals": [
+        2340,
+        7.4,
+        315,
+        202,
+        64.1,
+        20,
+        8,
+        97.1,
+        117,
+        37.1,
+        31,
+        5,
+        45,
+        11,
+        64
+      ]
+    },
+    {
+      "rank": 6,
+      "player": "Drake Maye",
+      "vals": [
+        2282,
+        8.4,
+        272,
+        178,
+        65.4,
+        18,
+        11,
+        96.8,
+        99,
+        36.4,
+        31,
+        6,
+        63,
+        20,
+        103
+      ]
+    },
+    {
+      "rank": 7,
+      "player": "C.J. Stroud",
+      "vals": [
+        2251,
+        8,
+        282,
+        181,
+        64.2,
+        16,
+        2,
+        104.8,
+        98,
+        34.8,
+        32,
+        7,
+        63,
+        16,
+        103
+      ]
+    },
+    {
+      "rank": 8,
+      "player": "Bryce Young",
+      "vals": [
+        2197,
+        7.1,
+        308,
+        186,
+        60.4,
+        16,
+        6,
+        91.3,
+        109,
+        35.4,
+        27,
+        4,
+        55,
+        26,
+        155
+      ]
+    },
+    {
+      "rank": 9,
+      "player": "Jared Goff",
+      "vals": [
+        2134,
+        7.8,
+        273,
+        185,
+        67.8,
+        15,
+        2,
+        106.4,
+        103,
+        37.7,
+        23,
+        5,
+        57,
+        19,
+        129
+      ]
+    },
+    {
+      "rank": 10,
+      "player": "Geno Smith",
+      "vals": [
+        2078,
+        7.7,
+        271,
+        183,
+        67.5,
+        12,
+        3,
+        100.4,
+        89,
+        32.8,
+        24,
+        9,
+        60,
+        28,
+        236
+      ]
+    },
+    {
+      "rank": 11,
+      "player": "Patrick Mahomes",
+      "vals": [
+        2037,
+        7.8,
+        263,
+        177,
+        67.3,
+        14,
+        4,
+        101.8,
+        94,
+        35.7,
+        22,
+        7,
+        73,
+        11,
+        66
+      ]
+    },
+    {
+      "rank": 12,
+      "player": "Josh Allen",
+      "vals": [
+        2027,
+        8.6,
+        236,
+        156,
+        66.1,
+        12,
+        6,
+        99.3,
+        93,
+        39.4,
+        32,
+        8,
+        57,
+        17,
+        109
+      ]
+    },
+    {
+      "rank": 13,
+      "player": "Tyler Shough",
+      "vals": [
+        1986,
+        6.4,
+        308,
+        204,
+        66.2,
+        14,
+        6,
+        91.2,
+        99,
+        32.1,
+        21,
+        5,
+        52,
+        20,
+        142
+      ]
+    },
+    {
+      "rank": 14,
+      "player": "Brock Purdy",
+      "vals": [
+        1980,
+        8.4,
+        236,
+        163,
+        69.1,
+        17,
+        5,
+        109.8,
+        97,
+        41.1,
+        27,
+        4,
+        82,
+        8,
+        48
+      ]
+    },
+    {
+      "rank": 15,
+      "player": "Trevor Lawrence",
+      "vals": [
+        1932,
+        8.6,
+        224,
+        146,
+        65.2,
+        18,
+        4,
+        111.7,
+        91,
+        40.6,
+        27,
+        4,
+        52,
+        13,
+        106
+      ]
+    },
+    {
+      "rank": 16,
+      "player": "Aaron Rodgers",
+      "vals": [
+        1871,
+        6.5,
+        288,
+        175,
+        60.8,
+        13,
+        6,
+        86.2,
+        82,
+        28.5,
+        24,
+        6,
+        80,
+        23,
+        187
+      ]
+    },
+    {
+      "rank": 17,
+      "player": "Deshaun Watson",
+      "vals": [
+        1806,
+        7.2,
+        249,
+        163,
+        65.5,
+        7,
+        3,
+        91.2,
+        83,
+        33.3,
+        24,
+        3,
+        60,
+        33,
+        174
+      ]
+    },
+    {
+      "rank": 18,
+      "player": "Bo Nix",
+      "vals": [
+        1730,
+        6,
+        287,
+        174,
+        60.6,
+        11,
+        4,
+        84.7,
+        85,
+        29.6,
+        21,
+        4,
+        52,
+        11,
+        57
+      ]
+    },
+    {
+      "rank": 19,
+      "player": "Daniel Jones",
+      "vals": [
+        1722,
+        5.7,
+        302,
+        182,
+        60.3,
+        6,
+        10,
+        68.9,
+        86,
+        28.5,
+        18,
+        3,
+        55,
+        24,
+        157
+      ]
+    },
+    {
+      "rank": 20,
+      "player": "Jacoby Brissett",
+      "vals": [
+        1719,
+        5.6,
+        305,
+        193,
+        63.3,
+        10,
+        7,
+        79.7,
+        94,
+        30.8,
+        15,
+        0,
+        38,
+        19,
+        118
+      ]
+    },
+    {
+      "rank": 21,
+      "player": "Justin Herbert",
+      "vals": [
+        1591,
+        6.8,
+        235,
+        144,
+        61.3,
+        6,
+        11,
+        70.4,
+        70,
+        29.8,
+        18,
+        6,
+        58,
+        31,
+        198
+      ]
+    },
+    {
+      "rank": 22,
+      "player": "Caleb Williams",
+      "vals": [
+        1546,
+        7.9,
+        195,
+        134,
+        68.7,
+        8,
+        5,
+        95.4,
+        67,
+        34.4,
+        24,
+        3,
+        58,
+        14,
+        94
+      ]
+    },
+    {
+      "rank": 23,
+      "player": "Jayden Daniels",
+      "vals": [
+        1499,
+        7,
+        213,
+        138,
+        64.8,
+        10,
+        2,
+        97.1,
+        71,
+        33.3,
+        22,
+        3,
+        53,
+        17,
+        111
+      ]
+    },
+    {
+      "rank": 24,
+      "player": "Cam Ward",
+      "vals": [
+        1483,
+        6,
+        248,
+        155,
+        62.5,
+        6,
+        5,
+        78.8,
+        73,
+        29.4,
+        16,
+        1,
+        41,
+        13,
+        99
+      ]
+    },
+    {
+      "rank": 25,
+      "player": "Sam Darnold",
+      "vals": [
+        1478,
+        7,
+        211,
+        127,
+        60.2,
+        10,
+        9,
+        79.4,
+        79,
+        37.4,
+        19,
+        2,
+        43,
+        17,
+        113
+      ]
+    }
+  ],
+  "injuries_thursday_tnf": [
+    {
+      "team": "Commanders",
+      "player": "John Bates",
+      "position": "TE",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Commanders",
+      "player": "Treylon Burks",
+      "position": "WR",
+      "injury": "",
+      "practice": "Did Not Participate In Practice",
+      "game": ""
+    },
+    {
+      "team": "Commanders",
+      "player": "Jayden Daniels",
+      "position": "QB",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Commanders",
+      "player": "Matt Gulbin",
+      "position": "C",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Commanders",
+      "player": "Chig Okonkwo",
+      "position": "TE",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Commanders",
+      "player": "Lucas Patrick",
+      "position": "C",
+      "injury": "Concussion",
+      "practice": "Did Not Participate In Practice",
+      "game": "Out"
+    },
+    {
+      "team": "Commanders",
+      "player": "Amik Robertson",
+      "position": "CB",
+      "injury": "",
+      "practice": "Limited Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Commanders",
+      "player": "Shy Tuttle",
+      "position": "DT",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Commanders",
+      "player": "Colson Yankoff",
+      "position": "TE",
+      "injury": "Knee",
+      "practice": "Did Not Participate In Practice",
+      "game": "Out"
+    },
+    {
+      "team": "Giants",
+      "player": "Abdul Carter",
+      "position": "LB",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Giants",
+      "player": "Jermaine Eluemunor",
+      "position": "T",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Giants",
+      "player": "Malik Harrison",
+      "position": "LB",
+      "injury": "Groin",
+      "practice": "Limited Participation in Practice",
+      "game": "Questionable"
+    },
+    {
+      "team": "Giants",
+      "player": "Colton Hood",
+      "position": "CB",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Giants",
+      "player": "Theo Johnson",
+      "position": "TE",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Giants",
+      "player": "Charlie Jones",
+      "position": "WR",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Giants",
+      "player": "J.J. McCarthy",
+      "position": "QB",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Giants",
+      "player": "Darnell Mooney",
+      "position": "WR",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Giants",
+      "player": "Malik Nabers",
+      "position": "WR",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Giants",
+      "player": "Cam Skattebo",
+      "position": "RB",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    },
+    {
+      "team": "Giants",
+      "player": "Andrew Thomas",
+      "position": "T",
+      "injury": "",
+      "practice": "Full Participation in Practice",
+      "game": ""
+    }
+  ],
+  "terms": {
+    "updated": "May 16, 2024",
+    "section_1_3": "You may use the Services solely for your own individual non-commercial and informational purposes only. Any other use, including for any commercial purposes, is strictly prohibited without our express prior written consent. Systematic retrieval of data or other content from the Services, whether to create or compile, directly or indirectly, a collection, compilation, database, or directory, is prohibited absent our express prior written consent."
+  }
+}
