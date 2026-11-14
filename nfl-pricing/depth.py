@@ -112,8 +112,19 @@ def build() -> dict:
             "replacement_player": replaces,
             "slot_deepest_rank": deepest,
             "remaining_depth_behind_replacement": remaining,
-            "loses_last_printed_name": replacement_rank is None,
+            # Two distinct situations were previously counted under one label. Keep them apart:
+            # ``no_printed_name_behind`` means the INJURED player was bottom of the chain, so no
+            # replacement is printed at all. ``replacement_is_last`` means a replacement exists and
+            # is himself the last printed name. Neither is a missing value.
+            "no_printed_name_behind": replacement_rank is None,
+            "replacement_is_last": replacement_rank is not None and replacement_rank == deepest,
+            "thin_reason": (
+                None if replacement_rank is not None and replacement_rank < deepest
+                else ("no printed name behind the injured player" if replacement_rank is None
+                      else "replacement is the last printed name")
+            ),
             "slot_source": slot_origin.get(row["club_abbr"]),
+            "loses_last_printed_name": replacement_rank is None,
             "loses_one_deep": replacement_rank is not None and replacement_rank == deepest,
             "depth_points": slot_weight(rank),
             "injury_source_url": row["injury_source_url"],
@@ -190,6 +201,9 @@ def build() -> dict:
             "injury_rows_matched_to_a_printed_slot": len(replacements),
             "injury_rows_on_a_ranked_slot": len(replacements),
             "injury_rows_unmatched": unmatched,
+            "replacements_that_are_the_last_printed_name": len(one_deep),
+            "injury_rows_with_no_printed_name_behind": len(flagged),
+            # Kept for older readers of this artifact; both names now say exactly what they mean.
             "replacements_at_the_last_printed_name": len(one_deep),
             "replacements_with_no_one_behind_them": len(flagged),
             "offence_rows": sum(1 for r in replacements if r["unit"] == "Offense"),
@@ -197,13 +211,22 @@ def build() -> dict:
             "special_teams_rows": sum(1 for r in replacements if r["unit"] == "Special Teams"),
         },
         "sources": {
+            # No single registry ID can stand for 31 club pages: a rendered site links the exact
+            # page, and the registry holds one row per club page. The placeholder that used to sit
+            # here ("CLUB-DEPTH-2026", a URL pattern) was not a registered source, so it could not
+            # back a source-linked row. It is replaced by the real registration state.
             "depth": {
-                "id": "CLUB-DEPTH-2026",
-                "url_pattern": "https://www.<club>.com/team/depth-chart",
-                "note": "One official club page per club; every slot row carries its own club URL.",
+                "id": None,
+                "registered_as": "one row per club page in research/sources.json",
+                "clubs_with_registered_page": 31,
+                "clubs_total": 32,
+                "unregistered": ["HOU"],
+                "note": ("Every slot row carries its own club URL and that exact URL is the "
+                         "registered source cited for the row. Houston's chart renders as an image "
+                         "and no chain is published (CFDD-HOU-DEPTH), so it is absent, not blank."),
             },
             "injury": {
-                "id": "NFL-INJURY-W10",
+                "id": "X28-NFL-INJ-W10",
                 "url": "https://www.nfl.com/injuries/league/2026/REG10",
             },
         },
@@ -237,7 +260,7 @@ def main() -> int:
     print(
         f"Wrote {OUT.relative_to(ROOT)} — {c['printed_slots']} printed slots, "
         f"{c['injury_rows_matched_to_a_printed_slot']} matched, "
-        f"{c['replacements_with_no_one_behind_them']} with no one behind"
+        f"{c['injury_rows_with_no_printed_name_behind']} with no name behind the injured player"
     )
     return 0
 

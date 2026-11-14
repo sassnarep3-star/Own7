@@ -107,6 +107,34 @@ python collect.py && python depth.py && python index.py && python luck.py \
 python -m unittest discover -s tests -v      # 49 tests
 ```
 
+## Price & market desk (2026-11-14)
+
+New self-contained desk at `nfl-pricing/`, published at
+[`nfl-pricing/site/index.html`](nfl-pricing/site/index.html).
+
+- **136 closing prices** reconciled from 32 club pages: the two pages per game must agree on the
+  total and be exact negatives on the signed spread, and all 272 publisher verdicts were re-derived
+  with **0 mismatches**. No source read publishes an **opening** number, a moneyline or a player
+  prop, so those cells are blank and flagged, never estimated.
+- **Side → total → moneyline in that order**, enforced in code: 120 of 136 games produce all three,
+  and the 16 withheld rows carry no total and no moneyline because the side is missing.
+- **Signal is ranked; staking is not.** 12 variants, **0 ranked**, 11 eligible-but-not-significant,
+  8 returned to paper by gate DG01. At 80% power a 55% rate needs **617 settled selections**.
+- **The market is sharper than we are, and it is printed that way.** The published close correlates
+  −0.439 with the actual margin (n=136); our fair line correlates −0.2227 (n=120). Our **total** has
+  the **wrong sign** (−0.0418 against the market's +0.3771) and is published as a defect, not tuned
+  away on the same games.
+- **Depth of the replacement**: 1,817 printed slots from two non-overlapping files, 265 matched
+  injury rows, 65 where no name is printed behind the injured player.
+- **12 questions, 8 suggestions, 14 flags**, with a decision record that is deliberately blank.
+
+```sh
+python nfl-pricing/collect.py && python nfl-pricing/originate.py \
+  && python nfl-pricing/leaderboard.py && python nfl-pricing/correlations.py \
+  && python nfl-pricing/depth.py && python nfl-pricing/questions.py && python nfl-pricing/build.py
+python -m unittest discover -s nfl-pricing/tests -t . -v      # 32 tests
+```
+
 ## Re-verification (2026-11-13)
 
 Every published NFL value was re-read from the publisher on 2026-11-13, one week after the frozen

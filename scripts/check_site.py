@@ -72,6 +72,19 @@ SOURCE_HOSTS.update({
     'PYTH-NFL': 'en.wikipedia.org', 'PFR-GLOSSARY': 'www.pro-football-reference.com',
 })
 
+# NFL price, market-relative grading and replacement-depth desk (session arena/c909fa0a-own7).
+# Targeted retrieval of one page per club, not harvesting: each club's own 2026 closing-line
+# page, plus the publisher's provenance statement. No odds vendor, book or licensed feed.
+SOURCE_HOSTS.update({
+    'PFR-VEGAS-2026': 'www.pro-football-reference.com',
+    'PFR-SOURCES': 'www.pro-football-reference.com',
+})
+SOURCE_HOSTS.update({
+    **{f'PFR-VEGAS-2026-{c}': 'www.pro-football-reference.com' for c in (
+        'ATL','BUF','CAR','CHI','CIN','CLE','DAL','DEN','DET','GB','HOU','IND','JAX','KC','LV','LAC',
+        'LAR','MIA','MIN','NE','NO','NYG','NYJ','PHI','PIT','SF','SEA','TB','TEN','WAS','ARI','BAL')},
+})
+
 SOURCE_HOSTS.update({'SF-RENTAL-LAWS': 'www.sf.gov', 'SF-RENT-INC': 'www.sf.gov', 'SF-NEWS-AGA': 'www.sf.gov', 'SF-BANKED': 'www.sf.gov', 'SF-HI-LICENSE': 'www.sf.gov', 'CA-AG-RENTCAPS': 'oag.ca.gov', 'CA-AG-TENANTS': 'oag.ca.gov', 'LEGINFO-CIV827': 'leginfo.legislature.ca.gov', 'LEGINFO-CIV1947-12': 'leginfo.legislature.ca.gov', 'LEGINFO-AB1482': 'leginfo.legislature.ca.gov', 'BLS-SF-CPI': 'blsmon1.bls.gov', 'GOVINFO-FHA': 'www.govinfo.gov', 'SF-RTC-EDC': 'evictiondefense.org'})
 
 
