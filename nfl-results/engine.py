@@ -777,7 +777,7 @@ def build() -> dict:
     else:
         unlucky, family_wise, best_block = None, None, None
 
-    return {
+    return stabilise({
         "schema_version": 1,
         "generated_for": "2026 NFL season through week 9",
         "inputs": {
@@ -852,7 +852,7 @@ def build() -> dict:
                            "adjustment cannot be fitted without inventing one."),
              "how_to_close": "Archive each week's official injury report before kickoff."},
         ],
-    }
+    })
 
 
 def stabilise(value, places: int = 6):
@@ -875,7 +875,7 @@ def stabilise(value, places: int = 6):
 
 
 def main() -> int:
-    result = stabilise(build())
+    result = build()
     OUT.write_text(json.dumps(result, indent=2, sort_keys=False) + "\n", encoding="utf-8")
     counts = result["leaderboard_counts"]
     print(f"OK: {result['inputs']['rows_scored']} games scored, "
