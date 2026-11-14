@@ -1415,3 +1415,41 @@ shipped and corrected.
    ESPN HTML odds pages for historical weeks, `summary?event=...&enable=odds` (68 chunks),
    `teams?fields=` (silently ignored), `seasons/2026/types/2/teams` (404), comma-separated team ids
    (returns `{}`), and `propBets` as a price source (targets only, no over/under price, rows duplicated).
+
+## Session arena/c909fa0a-own7 — price store, market-relative grading, depromotion gates (2026-11-14)
+
+Session ID: `session-arena-c909fa0a-own7`. Fixed Arena branch: `arena/c909fa0a-own7`, branched from
+`a7febe9` (merge of PR #43). Historical boards above are retained verbatim and are **not** inherited
+as verification.
+
+### Baseline replayed before any change (observed, not assumed)
+
+`python -m unittest discover -s tests` → 111 pass · `python scripts/nfl_extract.py --check` → OK
+(32 standings, 20 injury, 14 fixtures) · `python -m nfl_origination run --check` → OK ·
+`python scripts/build_site.py` → 46 canonical + 20 redirects + 90 auxiliary ·
+`python scripts/check_site.py` → passed, 156 recursive pages, 6,352 table rows, 167 sources, 0 errors.
+
+### Claim (written, committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|---|
+| P1 | Coordination claim + baseline replay | done | session-arena-c909fa0a-own7 | COORDINATION.md (append only) |
+| P2 | Price-snapshot store: opening + closing per market, per source, with capture timestamps | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P3 | Originate side → total → moneyline in that order; fair line / market line / difference as separate columns | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P4 | Leaderboard: signal score separated from staking score | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P5 | Replacement-depth tracking (starter → 2nd/3rd/4th string), offence and defence | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P6 | Correlations only from officially sourced numbers, with n on every value | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P7 | Demotion gate: documented rule sending a live strategy back to paper | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P8 | Questions / information-held / information-missing dossier + suggestions review section | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P9 | Verification, PR, merge, Pages deploy evidence, record | unclaimed | session-arena-c909fa0a-own7 | COORDINATION.md, PR metadata |
+
+Exclusive scope is the **new** directory `nfl-pricing/`. Shared files receive **appended lines only**
+(`scripts/build_site.py` nav group, `scripts/check_site.py` host allowlist, `scripts/serve_site.py`,
+`scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md`).
+No existing page, value, test or claim is overwritten. Rules followed: fixed branch only; never infer
+a value a source does not publish; every table row keeps a registered source link; `git pull --rebase`
+before every push; small frequent commits; no other session's PR merged or closed by this session.
+
+**Standing constraints restated:** no wager, stake, bankroll or real-money execution is produced
+anywhere. A "market line" here is a **published reference price**, not an executable offer; ROI is
+computed only on games where a published price exists, and n is printed beside every such figure.
