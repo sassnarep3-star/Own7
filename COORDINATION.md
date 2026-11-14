@@ -884,3 +884,24 @@ Statuses: unclaimed | in progress | done | needs review
 
 Open PRs from other sessions left untouched: #27 (`arena/382a833e-own7`) and #17 (`arena/a934e8c3-own7`).
 
+---
+
+## Session arena/c5036cd8-own7 — NFL verification, site improvement and integration (2026-11-14)
+
+Session ID: `session-arena-c5036cd8-own7`. Branch: `arena/c5036cd8-own7` (fixed by Arena; base `b735a6b` = origin/main at claim time). Sole active session on this branch as of this claim. Earlier boards above are historical and unchanged. No other session's branch or open PR is touched.
+
+Owner request restated for this session: NFL focus; review the repo line by line against official sources and flag irregularities; strengthen the **Suggestions** area so a reviewer can compare and choose a path before implementation; publish an explicit list of questions / information held / information missing that must be answered before a decision; originate own NFL lines with validated signals, correlation values, parlays and player-prop combos; track injuries and starter-vs-backup depletion; executive summary; live GitHub Pages site; PR + merge without waiting for approval; record PR link and merge result here.
+
+Rules: work only on the fixed branch; never infer or fill a value; every table row keeps an official source link; a value that cannot be confirmed this session is left blank and flagged, not silently trusted from an earlier session. `needs review` items are published and non-blocking for honest publication, but they still block priced lines, skill claims and rewards. `git pull --rebase --ff-only` before every push (safe no-op when origin/main is an ancestor); small frequent commits.
+
+| ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
+|---|---|---|---|---|---|
+| C1 | Independent line-by-line re-verification of NFL snapshots vs official NFL.com sources (standings, injuries, schedule, team offense/defense, terms) | in progress | session-arena-c5036cd8-own7 | docs/nfl-verification-2026-11-14.md (new), research/nfl/evidence-2026-11-14/ (new) | Dated snapshots are never overwritten; deltas are recorded as "moved since snapshot" |
+| C2 | Site improvements: suggestions review section, Q/I/A dossier accuracy, executive summary, landing page, Flagged for Review page prominence | in progress | session-arena-c5036cd8-own7 | nfl-suggestions.html (generated via nfl_pages.py), research/nfl/decisions.json, research/nfl/questions.json, docs/nfl-executive-summary.md, index.html (generated) | No invented values; blanks stay blank |
+| C3 | Full build + integrity checks: scripts/build_site.py, scripts/check_site.py, unittest, browser tests | unclaimed | session-arena-c5036cd8-own7 | All generated pages | Do not merge a broken site |
+| C4 | PR + merge + GitHub Pages deploy evidence + record in COORDINATION.md | unclaimed | session-arena-c5036cd8-own7 | main branch, GitHub Pages, COORDINATION.md | Record PR link, merge commit, Pages build ID |
+
+### Session log (arena/c5036cd8-own7)
+
+- Claim written before implementation; commit + push follows immediately.
+- No existing NBA, rental, market-evidence, assurance or canonical NFL value, page or test will be overwritten; all changes are additive or corrective with a source.
