@@ -962,3 +962,7 @@ Open unrelated PRs at claim time: #27 (`arena/382a833e-own7`) and #17 (`arena/a9
 - Checks after regeneration: 109 root unit tests pass; NFL extractor/origination/independent verification pass; recursive audit passes (38 canonical + 20 redirects + 68 auxiliary = 126 HTML pages, 5,197 table rows, 138 source IDs, 0 errors); browser/accessibility passes on 106 desktop + 106 mobile pages. All ancillary NBA, market-evidence, rental, assurance and availability/depletion builders/tests passed. `git diff --check` clean.
 
 This is a bounded refresh, not an assertion that every dataset was re-fetched on Nov 14. The report lists the precise coverage. I1 remains in progress pending PR checks, merge and Pages deployment record.
+
+### Rebase note (2026-11-14)
+
+Before publication, `git pull --rebase origin main` brought in the concurrent NFL integration board and merge commits PR #35/#36. `COORDINATION.md` had an add/append conflict because both sessions appended at EOF. Resolved by retaining the complete main-side session-arena/500eb178-own7 board and deployment record, then appending this session's claim/results; no other session's content was discarded. The remaining files rebased cleanly.
