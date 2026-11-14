@@ -107,6 +107,10 @@ SOURCE_HOSTS.update({
     "X243-RGA-2014": "sso.agc.gov.sg"
 })
 
+# Competition lab (session arena/064da913-own7): price store, verified results feed,
+# origination boards, replacement depth, correlations, demotion gate.
+SOURCE_HOSTS.update({'CP-NFL-DEPTH-27': 'www.atlantafalcons.com', 'CP-NFL-DEPTH-BYE4': 'www.chicagobears.com', 'CP-NFL-INJ-W10': 'www.nfl.com', 'CP-NFL-ODDS-ABSENT': 'www.nfl.com', 'CP-NFL-RESULTS-W1-9': 'www.nfl.com', 'CP-NFL-STANDINGS': 'www.nfl.com', 'CP-NFL-TERMS': 'support.nfl.com', 'CP-NFL-W10-GAME-WASNYG': 'www.nfl.com', 'CP-NFL-W10-SCHEDULE': 'www.nfl.com', 'X243-DET-CHART': 'www.detroitlions.com', 'X243-GRA-HOME': 'www.gra.gov.sg', 'X243-GRA-PROBLEM': 'www.gra.gov.sg', 'X243-GRA-UNLAWFUL': 'www.gra.gov.sg', 'X243-NFL-INACTIVES-W9': 'www.nfl.com', 'X243-NFL-INJ-W10': 'www.nfl.com', 'X243-NFL-STANDINGS': 'www.nfl.com', 'X243-NFL-STATS': 'www.nfl.com', 'X243-NFL-TERMS': 'www.nfl.com', 'X243-REPO-01': 'github.com', 'X243-REPO-02': 'github.com', 'X243-REPO-03': 'github.com', 'X243-REPO-04': 'github.com', 'X243-REPO-05': 'github.com', 'X243-REPO-06': 'github.com', 'X243-REPO-07': 'github.com', 'X243-REPO-08': 'github.com', 'X243-REPO-09': 'github.com', 'X243-REPO-10': 'github.com', 'X243-REPO-11': 'github.com', 'X243-RGA-2014': 'sso.agc.gov.sg'})
+
 
 class Page(HTMLParser):
     def __init__(self, path):

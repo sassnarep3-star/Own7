@@ -1,0 +1,106 @@
+{
+  "note": "Empty on purpose. A suggestion becomes work only when someone chooses it here. This file is not written by the build: it is the one artifact a person owns.",
+  "choices_offered": [
+    "Adopt",
+    "Defer",
+    "Reject"
+  ],
+  "decisions": [
+    {
+      "id": "SG-01",
+      "title": "Capture an executable price: opening and closing, for every market the lab originates",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-02",
+      "title": "Retrieve official per-game player logs",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-03",
+      "title": "Close the game-status gap in the injury report",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-04",
+      "title": "Reconcile the two directional records on one frozen forecast table",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-05",
+      "title": "Extend the results feed every week and re-run the reconciliation",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-06",
+      "title": "Record the printed as-of date on every depth chart and drop stale charts",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-07",
+      "title": "Identify the unnamed standings columns from a page that names them",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-08",
+      "title": "Keep the signal and staking tables on separate pages with the one-way rule stated on both",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-09",
+      "title": "Keep the decision record on the suggestions page manual",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-10",
+      "title": "Publish the sample-size table next to every skill claim",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-11",
+      "title": "Keep control entries visibly separated from competitors",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    },
+    {
+      "id": "SG-12",
+      "title": "Settle the source-rights question before building any price capture",
+      "choice": null,
+      "reason": null,
+      "decided_by": null,
+      "decided_on": null
+    }
+  ]
+}

@@ -1,7 +1,17 @@
 {
   "source_register": "nfl-competition (session arena/064da913-own7)",
   "read_on": "2026-11-14",
-  "id_collisions_with_research_sources_json": [],
+  "id_collisions_with_research_sources_json": [
+    "CP-NFL-STANDINGS",
+    "CP-NFL-W10-SCHEDULE",
+    "CP-NFL-W10-GAME-WASNYG",
+    "CP-NFL-ODDS-ABSENT",
+    "CP-NFL-RESULTS-W1-9",
+    "CP-NFL-INJ-W10",
+    "CP-NFL-DEPTH-27",
+    "CP-NFL-DEPTH-BYE4",
+    "CP-NFL-TERMS"
+  ],
   "count": 10,
   "sources": [
     {

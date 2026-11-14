@@ -222,6 +222,46 @@ def skill_nav_group():
 NAV.extend(skill_nav_group())
 
 
+COMPETITION_LABELS = {
+    "index.html": "Competition overview",
+    "executive-summary.html": "Competition executive summary",
+    "prices.html": "Price snapshot store",
+    "results.html": "Verified results feed",
+    "origination.html": "Origination: side → total → moneyline",
+    "boards.html": "Published boards",
+    "leaderboard.html": "Signal & staking leaderboard",
+    "depth.html": "Replacement depth",
+    "correlations.html": "Correlations with n",
+    "demotion.html": "Demotion gate",
+    "injuries.html": "Injuries & defensive deficiencies",
+    "questions.html": "Questions & information held",
+    "suggestions.html": "Suggestions",
+    "review.html": "Flagged for review",
+    "sources.html": "Sources",
+    "method.html": "Method & limits",
+}
+
+
+def competition_nav_group():
+    """Additive nav group for the competition lab (session arena/064da913-own7).
+
+    Reads the desk's own manifest so this generator never duplicates a page list that
+    could drift. Returns an empty list before the desk has been built, so a fresh
+    clone without the artifact still builds the rest of the site.
+    """
+    manifest = ROOT / "nfl-competition" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    import json as _json
+    pages = _json.loads(manifest.read_text())["pages"]
+    return [("NFL competition lab",
+             [(f"nfl-competition/site/{p}", COMPETITION_LABELS.get(p, p), "leaderboard")
+              for p in pages])]
+
+
+NAV.extend(competition_nav_group())
+
+
 def page(slug, title, subtitle, body, eyebrow=None, description=None):
     parent = next((group for group, entries in NAV if any(e[0] == slug for e in entries)), "Workspace")
     if eyebrow is None:
@@ -715,6 +755,20 @@ def build():
     skill_pages=load_json('nfl-skill-cfdd/site/manifest.json')['pages']
     for name in skill_pages:
         generated.append(f'nfl-skill-cfdd/site/{name}')
+    # Competition lab (session arena/064da913-own7): price store, verified results feed,
+    # three-stage origination, boards, split signal/staking leaderboard, replacement depth,
+    # correlations with n, demotion gate. The pipeline runs first so a stale or failed
+    # artifact breaks the site build instead of publishing quietly.
+    for script in ('sources','results','backtest','originate','boards',
+                   'prices','correlations','leaderboard','depth','demotion','questions',
+                   'suggestions','injuries','review'):
+        res=subprocess.run([sys.executable,str(ROOT/'nfl-competition'/f'{script}.py')],cwd=ROOT,capture_output=True,text=True)
+        if res.returncode: raise SystemExit(f'nfl-competition/{script}.py failed: '+res.stdout+res.stderr)
+    competition_result=subprocess.run([sys.executable,str(ROOT/'nfl-competition'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if competition_result.returncode: raise SystemExit(competition_result.stdout+competition_result.stderr)
+    competition_pages=load_json('nfl-competition/site/manifest.json')['pages']
+    for name in competition_pages:
+        generated.append(f'nfl-competition/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
@@ -729,7 +783,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-competition/site/{n}' for n in competition_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 
