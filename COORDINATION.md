@@ -906,3 +906,24 @@ ownership of the open PRs #27 or #17.
 - **Concurrent-work record:** after this task's first push, `origin/main` advanced through PRs #35 and #36 from session `arena/500eb178-own7`. Rebasing onto `0abba52` produced an append/append conflict in `COORDINATION.md`; both the complete Y1–Y9 board and this session's P1 record were retained, with no other session lines discarded. PRs #27 and #17 remain untouched.
 - **Irregularities:** no new factual irregularity. This repairs the previously noted local-preview routing gap only; it does not alter the published GitHub Pages HTML.
 
+---
+
+## Session arena/c5036cd8-own7 — NFL verification, site improvement and integration (2026-11-14)
+
+Session ID: `session-arena-c5036cd8-own7`. Branch: `arena/c5036cd8-own7` (fixed by Arena; base `b735a6b` = origin/main at claim time). Sole active session on this branch as of this claim. Earlier boards above are historical and unchanged. No other session's branch or open PR is touched.
+
+Owner request restated for this session: NFL focus; review the repo line by line against official sources and flag irregularities; strengthen the **Suggestions** area so a reviewer can compare and choose a path before implementation; publish an explicit list of questions / information held / information missing that must be answered before a decision; originate own NFL lines with validated signals, correlation values, parlays and player-prop combos; track injuries and starter-vs-backup depletion; executive summary; live GitHub Pages site; PR + merge without waiting for approval; record PR link and merge result here.
+
+Rules: work only on the fixed branch; never infer or fill a value; every table row keeps an official source link; a value that cannot be confirmed this session is left blank and flagged, not silently trusted from an earlier session. `needs review` items are published and non-blocking for honest publication, but they still block priced lines, skill claims and rewards. `git pull --rebase --ff-only` before every push (safe no-op when origin/main is an ancestor); small frequent commits.
+
+| ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
+|---|---|---|---|---|---|
+| C1 | Independent line-by-line re-verification of NFL snapshots vs official NFL.com sources (standings, injuries, schedule, team offense/defense, terms) | done | session-arena-c5036cd8-own7 | docs/nfl-verification-2026-11-14.md, research/nfl/evidence-2026-11-14/*, scripts/nfl_verify_standings_2026_11_14.py | 32/32 standings, 20/20 injury rows, 30/32 offense rows with 2 documented post-snapshot deltas (WAS, NYG played after snapshot), schedule final + terms §1.3 all confirmed verbatim. No snapshot overwritten; no value inferred. |
+| C2 | Site improvements: suggestions review section, Q/I/A dossier accuracy, executive summary, landing page, Flagged for Review page prominence | done | session-arena-c5036cd8-own7 | nfl-suggestions.html (generated via nfl_pages.py), research/nfl/decisions.json, research/nfl/questions.json, docs/nfl-executive-summary.md, index.html (generated) | Sections exist, source-linked and accurate (Brier 0.1575 vs 0.25, 2/10 gates pass, 8 blocked strategies, merit points 3/2/1 no cash). Review workflow (Proposed→Under review→Approved→Rejected→Implemented, acceptance tests, crosswalk) confirmed present; no values changed. |
+| C3 | Full build + integrity checks: scripts/build_site.py, scripts/check_site.py, unittest, browser tests | done | session-arena-c5036cd8-own7 | All generated pages | Build: 38 canonical + 20 redirects; check_site: 126 pages, 5,193 rows, all rows source-linked, 0 errors; unittest 109 OK; all NFL sub-builders and checks OK; browser 106 desktop + 106 mobile, WCAG A/AA, no runtime errors |
+| C4 | PR + merge + GitHub Pages deploy evidence + record in COORDINATION.md | in progress | session-arena-c5036cd8-own7 | main branch, GitHub Pages, COORDINATION.md | Record PR link, merge commit, Pages build ID |
+
+### Session log (arena/c5036cd8-own7)
+
+- Claim written before implementation; commit + push follows immediately.
+- No existing NBA, rental, market-evidence, assurance or canonical NFL value, page or test will be overwritten; all changes are additive or corrective with a source.
