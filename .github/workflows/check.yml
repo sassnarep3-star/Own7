@@ -67,6 +67,18 @@ jobs:
           echo "=== first 120 changed lines ==="
           git diff | head -120
           echo "=== end diagnostic ==="
+      - name: Upload fresh workspace as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-workspace-snapshot
+          path: |
+            **/*.json
+            **/*.html
+            **/*.md
+            **/*.csv
+          retention-days: 1
+          if-no-files-found: ignore
       - name: Committed artifacts must already be current
         run: git diff --exit-code
   browser:
