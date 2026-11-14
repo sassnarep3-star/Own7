@@ -1,0 +1,106 @@
+{
+ "schema_version": 1,
+ "rule": "Computed only from registered official numbers. n is printed on every value. Anything without an official source is blank and named, never assumed to be zero.",
+ "publisher_source": {
+  "id": "PFR-VEGAS-2026",
+  "url": "https://www.pro-football-reference.com/teams/{club}/2026_lines.htm",
+  "role": "closing spread and total, both clubs per game"
+ },
+ "result_source": {
+  "id": "NFL-SCHEDULE-2026",
+  "url": "https://www.nfl.com/schedules/2026/by-week/week-{week}",
+  "role": "final scores used for every outcome"
+ },
+ "sign_convention": "A line is written from the favoured side as a negative number. So a home line of -7 means the home club is favoured by a touchdown, and the expected home margin is +7. That makes the EXPECTED correlation between the signed home line and the home margin NEGATIVE, and between the closing total and the actual total POSITIVE. A coefficient with the opposite sign to this convention would mean the number is pointing the wrong way, not that the forecast is strong.",
+ "measured": {
+  "market_line_vs_actual_margin": {
+   "n": 136,
+   "r": -0.439,
+   "ci_low": -0.5655,
+   "ci_high": -0.2922,
+   "risk_note": "Nominal interval; assumes independent pairs, which division games violate.",
+   "pair": "published closing home line ~ actual home margin",
+   "expected_sign": "negative",
+   "kind": "market benchmark; this is how good the price itself is"
+  },
+  "market_total_vs_actual_total": {
+   "n": 136,
+   "r": 0.3771,
+   "ci_low": 0.223,
+   "ci_high": 0.5129,
+   "risk_note": "Nominal interval; assumes independent pairs, which division games violate.",
+   "pair": "published closing total ~ actual game total",
+   "expected_sign": "positive",
+   "kind": "market benchmark; this is how good the price itself is"
+  },
+  "market_line_vs_market_total": {
+   "n": 136,
+   "r": 0.0233,
+   "ci_low": -0.1456,
+   "ci_high": 0.1909,
+   "risk_note": "Nominal interval; assumes independent pairs, which division games violate.",
+   "pair": "|closing spread| ~ closing total",
+   "population": "all reconciled games",
+   "kind": "market structure, not leg dependence"
+  },
+  "home_cover_vs_over": {
+   "n": 126,
+   "phi": -0.1741,
+   "table": {
+    "home_and_over": 22,
+    "home_and_under": 32,
+    "away_and_over": 42,
+    "away_and_under": 30
+   },
+   "note": "Joint frequency of home-cover and over on the published closing numbers.",
+   "pair": "home covers ~ total goes over",
+   "kind": "leg dependence for a two-leg parlay"
+  },
+  "fair_line_vs_actual_margin": {
+   "n": 120,
+   "r": -0.2227,
+   "ci_low": -0.3865,
+   "ci_high": -0.0453,
+   "risk_note": "Nominal interval; assumes independent pairs, which division games violate.",
+   "pair": "our fair line ~ actual home margin",
+   "expected_sign": "negative",
+   "kind": "forecast skill on the side",
+   "compare_to": "market_line_vs_actual_margin"
+  },
+  "fair_total_vs_actual_total": {
+   "n": 120,
+   "r": -0.0418,
+   "ci_low": -0.2194,
+   "ci_high": 0.1384,
+   "risk_note": "Nominal interval; assumes independent pairs, which division games violate.",
+   "pair": "our fair total ~ actual game total",
+   "expected_sign": "positive",
+   "kind": "forecast skill on the total",
+   "compare_to": "market_total_vs_actual_total"
+  }
+ },
+ "not_measured": [
+  {
+   "quantity": "Correlation between two player props in the same game",
+   "why_blank": "No published player price exists in the store, so the numbers behind the dependence are not official numbers this project holds.",
+   "do_not_assume": "Not zero. Treating it as zero would misprice every same-game combination. The correct state is 'unpriced'.",
+   "what_would_close_it": "A licensed feed with player prices for enough games to estimate the joint distribution, plus a rights decision."
+  },
+  {
+   "quantity": "Correlation between the side and the moneyline",
+   "why_blank": "The moneyline is derived from the same margin distribution as the side, so they are functionally dependent by construction. A correlation coefficient on two derived views of one number would be an artefact, not a finding.",
+   "do_not_assume": "Do not quote a coefficient for it. State the functional dependence instead.",
+   "what_would_close_it": "Nothing: it is dependent by definition, not an empirical question."
+  },
+  {
+   "quantity": "Team-level season correlations carried over from the earlier work",
+   "why_blank": "Those are club-season aggregates across teams, a different quantity from the dependence between two legs of one bet. Mixing them would be a category error.",
+   "do_not_assume": "Do not substitute a team-season correlation for a leg dependence.",
+   "what_would_close_it": "Nothing needed; they answer a different question."
+  }
+ ],
+ "counts": {
+  "games_in_scope": 136,
+  "forecast_rows": 120
+ }
+}

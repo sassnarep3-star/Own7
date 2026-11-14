@@ -54,6 +54,14 @@ jobs:
           python nfl-results/extract.py
           python nfl-results/engine.py
           python -m unittest discover -s nfl-results/tests -v
+          python nfl-pricing/collect.py --check
+          python nfl-pricing/originate.py --check
+          python nfl-pricing/leaderboard.py --check
+          python nfl-pricing/correlations.py --check
+          python nfl-pricing/depth.py --check
+          python nfl-pricing/questions.py --check
+          python nfl-pricing/build.py --check
+          python -m unittest discover -s nfl-pricing/tests -t . -v
           python nfl-availability-28ef/collect.py --check
           python nfl-availability-28ef/depth.py --check
           python nfl-availability-28ef/depletion.py --check

@@ -1415,3 +1415,116 @@ shipped and corrected.
    ESPN HTML odds pages for historical weeks, `summary?event=...&enable=odds` (68 chunks),
    `teams?fields=` (silently ignored), `seasons/2026/types/2/teams` (404), comma-separated team ids
    (returns `{}`), and `propBets` as a price source (targets only, no over/under price, rows duplicated).
+
+## Session arena/c909fa0a-own7 — price store, market-relative grading, depromotion gates (2026-11-14)
+
+Session ID: `session-arena-c909fa0a-own7`. Fixed Arena branch: `arena/c909fa0a-own7`, branched from
+`a7febe9` (merge of PR #43). Historical boards above are retained verbatim and are **not** inherited
+as verification.
+
+### Baseline replayed before any change (observed, not assumed)
+
+`python -m unittest discover -s tests` → 111 pass · `python scripts/nfl_extract.py --check` → OK
+(32 standings, 20 injury, 14 fixtures) · `python -m nfl_origination run --check` → OK ·
+`python scripts/build_site.py` → 46 canonical + 20 redirects + 90 auxiliary ·
+`python scripts/check_site.py` → passed, 156 recursive pages, 6,352 table rows, 167 sources, 0 errors.
+
+### Claim (written, committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|---|
+| P1 | Coordination claim + baseline replay | done | session-arena-c909fa0a-own7 | COORDINATION.md (append only) |
+| P2 | Price-snapshot store: opening + closing per market, per source, with capture timestamps | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P3 | Originate side → total → moneyline in that order; fair line / market line / difference as separate columns | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P4 | Leaderboard: signal score separated from staking score | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P5 | Replacement-depth tracking (starter → 2nd/3rd/4th string), offence and defence | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P6 | Correlations only from officially sourced numbers, with n on every value | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P7 | Demotion gate: documented rule sending a live strategy back to paper | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P8 | Questions / information-held / information-missing dossier + suggestions review section | in progress | session-arena-c909fa0a-own7 | `nfl-pricing/**` |
+| P9 | Verification, PR, merge, Pages deploy evidence, record | unclaimed | session-arena-c909fa0a-own7 | COORDINATION.md, PR metadata |
+
+Exclusive scope is the **new** directory `nfl-pricing/`. Shared files receive **appended lines only**
+(`scripts/build_site.py` nav group, `scripts/check_site.py` host allowlist, `scripts/serve_site.py`,
+`scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md`).
+No existing page, value, test or claim is overwritten. Rules followed: fixed branch only; never infer
+a value a source does not publish; every table row keeps a registered source link; `git pull --rebase`
+before every push; small frequent commits; no other session's PR merged or closed by this session.
+
+**Standing constraints restated:** no wager, stake, bankroll or real-money execution is produced
+anywhere. A "market line" here is a **published reference price**, not an executable offer; ROI is
+computed only on games where a published price exists, and n is printed beside every such figure.
+
+---
+
+## Session arena/c909fa0a-own7 — P-progress (2026-11-14, append only)
+
+Everything below re-ran in this working tree. Numbers are the artifacts' own, not restated from a
+previous board entry.
+
+### P-status
+
+| ID | Task | Status | Evidence |
+|---|---|---|---|
+| P1 | Coordination claim + baseline replay | done | board entry above, commit `40e6eb3` |
+| P2 | Price-snapshot store, closing per market per game | done, opening half **unmet** | `data/price-snapshots.json`: 32 club pages, 274 transcribed rows, 136 games reconciled, 0 problems, 272 publisher verdicts re-derived with 0 mismatches. No source examined publishes an **opening** number (PD03). |
+| P3 | Side → total → moneyline, three separate columns | done | `data/origination.json`: 120 of 136 games produce all three; the 16 withheld rows are `withheld_no_prior_games`. Dependency enforced in code: no total without a side, no moneyline without both. |
+| P4 | Leaderboard, signal separated from staking | done | `data/leaderboard.json`: 12 variants, 0 ranked, 11 eligible-but-not-significant, 1 below floor, 8 in `demote_to_paper`. Ranking reads signal only. |
+| P5 | Replacement depth, offence and defence | done | `data/depth.json`: 1,817 printed slots from **two** non-overlapping files, 31 clubs, 265 matched injury rows, 65 with no name behind the injured player, 129 whose replacement is the last printed name. |
+| P6 | Correlations with n, official numbers only | done | `data/correlations.json`: 6 measured with n and interval, 3 named blanks with what would close them. |
+| P7 | Demotion gate DG01 | done | 4 written clauses with thresholds, applied to all 12 variants; 8 breached. |
+| P8 | Questions / held / missing + suggestions review | done | `data/questions.csv` (12), `data/suggestions.csv` (8, each with evidence, cost, risk, acceptance test), `data/decision-record.csv` (8 rows, **all decision cells blank**). |
+| P9 | Site, verification, PR, merge, deploy | in progress | 11 desk pages built and audited; PR pending. |
+
+### Fixes made after the artifacts existed (recorded, not quietly applied)
+
+| ID | Defect found | Fix |
+|---|---|---|
+| PD01 | Depth lived in two files with **zero overlap**; reading one silently reported 27 clubs instead of 31 | both files read; per-club `slot_source` recorded |
+| PD02 | Joining two clubs on the publisher's `G#` produced 96 false mismatches (`G#` is per-club and shifts after a bye) | positional pairing on the proved opponent sequence |
+| PD12 | **Mislabelled count**: `replacements_with_no_one_behind_them` (65) actually counted injuries with **no printed name behind the injured player**; the 129 "replacement is last printed name" case was separate | both are now named explicitly (`no_printed_name_behind`, `replacement_is_last`, `thin_reason`); old keys retained so nothing breaks |
+| PD13 | `depth.sources.depth` carried a **placeholder ID** (`CLUB-DEPTH-2026`) and a URL *pattern* that no registry row matches, so it could not back a source-linked row | removed; the artifact now states that the 31 club pages are registered individually and that HOU publishes no chain |
+| PD14 | `nfl-pricing/site/manifest.json` listed two source IDs that do not exist in `research/sources.json` | manifest now built only from resolvable registered IDs |
+
+### Verification actually run (this tree, 2026-11-14)
+
+- `python -m unittest discover -s tests` → **111 pass**
+- `python -m unittest discover -s nfl-pricing/tests -t .` → **32 pass** (new contract suite)
+- `nfl-pricing/{collect,originate,leaderboard,correlations,depth,questions}.py --check` → each OK
+- `nfl-pricing/build.py --check` → 11 pages reproduce exactly
+- `python scripts/check_site.py` → **passed**: 167 recursive HTML pages, 7,001 table rows,
+  10,259 external references, **201** registered sources, 0 errors, deterministic rebuild unchanged
+- whole CI reproduction block replayed locally (extract, origination, snapshots, correlations,
+  research, handoff, market-evidence, rental, nfl_lab, nfl build, skill desk, assurance, results,
+  availability desk) → all OK
+- `nba_lab run` and `nfl_lab run --check` re-run because `research/sources.json` gained rows and the
+  NBA run hash covers that file
+
+### Registry additions (append only, no existing row altered except X29 scope wording)
+
+- 32 × `PFR-VEGAS-2026-{CLUB}` — one row per club's `2026_lines.htm`, scope stated as **targeted
+  retrieval of one page per club, weeks 1–9, no bulk collection** (`bulk_collection_enabled: false`
+  unchanged).
+- `PFR-VEGAS-2026` (season parent page) and `PFR-SOURCES` (publisher's own provenance statement:
+  historical line data from Warren Repole / Sports Odds History).
+- `X29-NFL-SCHEDULE` scope extended from "one page" to the nine-page by-week set it always covered;
+  every week-1..9 URL is now genuinely addressable under its registered scope.
+- `scripts/check_site.py` gained a matching `SOURCE_HOSTS` block (34 IDs, one host).
+
+### Claims still open, stated plainly
+
+1. No **opening** price exists in any source read, so requirement (1) is half met and labelled so.
+2. No **moneyline** or **player prop** price exists in the capture; the fair moneyline is ours.
+3. Our **total** model correlates −0.042 with the actual total (market +0.377): wrong sign, published
+   as PD07, deliberately not recalibrated in-sample.
+4. Nothing ranks. At 80% power a 55% edge needs 617 settled selections; the store holds 136 games.
+5. One publisher only: the two pages per game are the same publisher, so agreement is internal
+   consistency, not independent verification (PD08).
+6. The strategy family was not pre-registered (PD09).
+
+### Files touched outside `nfl-pricing/`
+
+Appended: `scripts/build_site.py` (NAV group + build hook + manifest), `scripts/check_site.py`
+(host block), `scripts/browser_test.mjs` (one allowed folder), `.github/workflows/check.yml`
+(desk reproduction steps), `research/sources.json` (34 rows + one scope wording), `COORDINATION.md`
+(this entry). Regenerated: root `*.html`, `research/site-manifest.json`, `research/results.json`.
+No other session's PR was opened, merged or closed.
