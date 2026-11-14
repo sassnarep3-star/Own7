@@ -1,0 +1,66 @@
+{
+  "injury_rows_read": 20,
+  "matched": 18,
+  "unmatched": 2,
+  "clubs_with_chart": [
+    "ATL",
+    "AZ",
+    "BAL",
+    "BUF",
+    "CAR",
+    "CHI",
+    "CIN",
+    "CLE",
+    "DAL",
+    "DEN",
+    "DET",
+    "GB",
+    "IND",
+    "JAX",
+    "KC",
+    "LAC",
+    "LAR",
+    "LV",
+    "MIA",
+    "MIN",
+    "NE",
+    "NO",
+    "NYG",
+    "NYJ",
+    "PHI",
+    "PIT",
+    "SEA",
+    "SF",
+    "TB",
+    "TEN",
+    "WAS"
+  ],
+  "clubs_without_chart": [
+    "HOU"
+  ],
+  "unmatched_reasons": {
+    "not printed on the captured chart": 2
+  },
+  "unavailable_matched": 1,
+  "uncovered_slots": 6,
+  "multiple_slot_players": 2,
+  "quantity_defined": "ranks_consumed = printed names that must move up to cover the injury = queue_depth - printed_rank + 1. A count of printed bodies. Not a point value, not a probability, not a line adjustment.",
+  "limits": [
+    "printed depth counts names printed by the club, not names healthy and available",
+    "no snap count, target share or player grade is available, so no value is assigned",
+    "charts are dated; a stale chart can understate a queue that has since lost a body",
+    "practice-participation labels are recorded but are not used to infer game availability"
+  ],
+  "unmatched_rows": [
+    {
+      "player": "Lucas Patrick",
+      "club_printed": "Commanders",
+      "reason": "not printed on the captured chart"
+    },
+    {
+      "player": "Malik Harrison",
+      "club_printed": "Giants",
+      "reason": "not printed on the captured chart"
+    }
+  ]
+}

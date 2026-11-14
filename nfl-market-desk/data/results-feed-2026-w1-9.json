@@ -1,0 +1,24 @@
+{
+  "games": 136,
+  "byes": 16,
+  "weeks_covered": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "clubs": 32,
+  "fields_reconciled": 160,
+  "mismatches": 0,
+  "method": "W-L-T, PF and PA recomputed for all 32 clubs from the feed rows alone and compared to the official NFL.com standings snapshot; the build aborts on any difference.",
+  "not_included": [
+    "Week 10 results (the four Week 10 games are not all final at the snapshot date)",
+    "play-by-play, drive data, injuries per game, or any player-level outcome",
+    "any price, spread, total or moneyline"
+  ]
+}

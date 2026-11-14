@@ -1,0 +1,114 @@
+{
+  "snapshot_date": "2026-11-14",
+  "promotion": {
+    "min_settled_bets": 210,
+    "min_settled_bets_justification": "Exact binomial: 210 settled bets is the smallest n at which a true 60% forecaster is detected against 50% at two-sided alpha 0.05 with 80% power. A one-sided criterion would need 158; the stricter two-sided number is used because the leaderboard publishes many strategies and a two-sided floor cannot be gamed by only counting the good tail.",
+    "max_signal_p": 0.05,
+    "multiplicity": "Benjamini-Hochberg at q = 0.10 across the registered family",
+    "forward_record": "at least 4 consecutive weeks graded after the parameters were frozen",
+    "price_required": "an opening AND closing number per bet, from a registered licensed source"
+  },
+  "demotion": {
+    "min_settled_for_demotion_check": 40,
+    "signal_p_worse_than": 0.5,
+    "max_drawdown_units": 20.0,
+    "consecutive_losing_weeks": 6,
+    "reentry_rule": "a demoted strategy may not be re-promoted until it clears the full promotion gate again on data collected entirely after the demotion date",
+    "asymmetry_note": "demotion needs one condition; promotion needs all of them"
+  },
+  "family": {
+    "family_size": 8,
+    "settled_bets_graded": 640,
+    "priced_bets": 0,
+    "promotable": 0,
+    "live": 0,
+    "on_paper": 8,
+    "demote_to_paper": 2,
+    "min_settled_for_promotion": 210,
+    "best_signal": "S-ML-BOARD",
+    "multiplicity_control": "Holm-Bonferroni at family level, applied to the signal p-values",
+    "why_no_staking_column": "Staking return needs a price. No price exists (see the price store), so the column is blank and the strategy cannot be scored on money. That is precisely what stops a lucky staking run from masking a bad signal: there is no staking column to run."
+  },
+  "demotion_drill": {
+    "cases": 6,
+    "fired": 4,
+    "held": 2,
+    "all_matched": "yes",
+    "synthetic": "yes \u2014 these series are constructed fixtures used to prove the gate fires, not results from any strategy",
+    "rows": [
+      {
+        "case": "signal decays to a coin flip over a long sample",
+        "settled_bets": 300,
+        "signal_p": 0.94,
+        "drawdown_units": 0.0,
+        "losing_weeks": 0,
+        "price_state": "priced",
+        "gate_fires": "yes",
+        "expected": "yes",
+        "matched": "yes",
+        "reasons": "signal decays to p = 0.940 over 300 settled bets, i.e. indistinguishable from a coin flip at the published threshold"
+      },
+      {
+        "case": "bankroll drawdown beyond the published cap",
+        "settled_bets": 100,
+        "signal_p": 0.01,
+        "drawdown_units": 24.5,
+        "losing_weeks": 1,
+        "price_state": "priced",
+        "gate_fires": "yes",
+        "expected": "yes",
+        "matched": "yes",
+        "reasons": "bankroll drawdown 24.5 units exceeds 20"
+      },
+      {
+        "case": "six consecutive losing weeks with a still-good long-run signal",
+        "settled_bets": 250,
+        "signal_p": 0.02,
+        "drawdown_units": 12.0,
+        "losing_weeks": 6,
+        "price_state": "priced",
+        "gate_fires": "yes",
+        "expected": "yes",
+        "matched": "yes",
+        "reasons": "6 consecutive losing weeks"
+      },
+      {
+        "case": "marked live with no priced bet, so it cannot be scored at all",
+        "settled_bets": 60,
+        "signal_p": 0.03,
+        "drawdown_units": 1.0,
+        "losing_weeks": 0,
+        "price_state": "unpriced",
+        "gate_fires": "yes",
+        "expected": "yes",
+        "matched": "yes",
+        "reasons": "strategy is marked live but has no priced bet in the store: an unpriced live strategy cannot be scored and must return to paper"
+      },
+      {
+        "case": "healthy control: good signal, small sample, no drawdown, no streak",
+        "settled_bets": 120,
+        "signal_p": 0.04,
+        "drawdown_units": 2.0,
+        "losing_weeks": 1,
+        "price_state": "priced",
+        "gate_fires": "no",
+        "expected": "no",
+        "matched": "yes",
+        "reasons": "none"
+      },
+      {
+        "case": "short sample is exempt from the signal check, so a small bad run does not demote",
+        "settled_bets": 25,
+        "signal_p": 0.9,
+        "drawdown_units": 3.0,
+        "losing_weeks": 2,
+        "price_state": "priced",
+        "gate_fires": "no",
+        "expected": "no",
+        "matched": "yes",
+        "reasons": "none"
+      }
+    ]
+  },
+  "asymmetry": "Promotion requires every condition; demotion requires any one. The rule is stated once here and applied to every row on the leaderboard."
+}

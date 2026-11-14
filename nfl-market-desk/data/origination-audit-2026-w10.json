@@ -1,0 +1,793 @@
+{
+  "snapshot_date": "2026-11-14",
+  "parameters": {
+    "home_field_points": 2.0,
+    "shrink_games": 4.0,
+    "margin_sd": 13.86,
+    "note": "half-point lines are avoided in origination, so no push term is used"
+  },
+  "audit": {
+    "games": 14,
+    "order": [
+      "spread",
+      "total",
+      "moneyline"
+    ],
+    "dependency_rule": "moneyline consumes the side; total consumes the same two point estimates as the side; none of the three is built before its inputs",
+    "independence_disclosure": "Because the moneyline is the side's margin through a normal mapping, it adds no independent information to the board. A moneyline strategy and a spread strategy built from this desk are the same signal in two units, and the leaderboard counts them as one family member, not two.",
+    "per_game": [
+      {
+        "game_id": "W10-01",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-02",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-03",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-04",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-05",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-06",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-07",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-08",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-09",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-10",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-11",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-12",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-13",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      },
+      {
+        "game_id": "W10-14",
+        "order_respected": "yes",
+        "total_equals_sum_of_side_inputs": "yes",
+        "moneyline_is_side_margin_transformed": "yes"
+      }
+    ]
+  },
+  "board": [
+    {
+      "game": {
+        "id": "W10-01",
+        "matchup": "WAS @ NYG",
+        "away_team": "Washington Commanders",
+        "home_team": "New York Giants",
+        "kickoff": "2026-11-12 8:15 PM ET",
+        "tv": "PRIME",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": -5.28,
+          "side": "home",
+          "margin": 5.282,
+          "home_points": 25.336,
+          "away_points": 20.054
+        },
+        "total": {
+          "model_fair": 45.39,
+          "side": "over",
+          "margin": "",
+          "home_points": 25.336,
+          "away_points": 20.054
+        },
+        "moneyline": {
+          "model_fair": -184,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.6484,
+          "p_away_win": 0.3516,
+          "away_fair": 184
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 22.8211,
+        "away_offence_rate": 21.9877,
+        "home_defence_rate": 21.9877,
+        "away_defence_rate": 24.4877,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-02",
+        "matchup": "NE @ DET",
+        "away_team": "New England Patriots",
+        "home_team": "Detroit Lions",
+        "kickoff": "2026-11-15 9:30 AM ET",
+        "tv": "FOX",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": -4.44,
+          "side": "home",
+          "margin": 4.439,
+          "home_points": 27.183,
+          "away_points": 22.744
+        },
+        "total": {
+          "model_fair": 49.93,
+          "side": "over",
+          "margin": "",
+          "home_points": 27.183,
+          "away_points": 22.744
+        },
+        "moneyline": {
+          "model_fair": -167,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.6256,
+          "p_away_win": 0.3744,
+          "away_fair": 167
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 26.1544,
+        "away_offence_rate": 23.2964,
+        "home_defence_rate": 23.4044,
+        "away_defence_rate": 22.9887,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-03",
+        "matchup": "KC @ ATL",
+        "away_team": "Kansas City Chiefs",
+        "home_team": "Atlanta Falcons",
+        "kickoff": "2026-11-15 1:00 PM ET",
+        "tv": "CBS",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": 5.48,
+          "side": "away",
+          "margin": -5.48,
+          "home_points": 19.347,
+          "away_points": 24.827
+        },
+        "total": {
+          "model_fair": 44.17,
+          "side": "over",
+          "margin": "",
+          "home_points": 19.347,
+          "away_points": 24.827
+        },
+        "moneyline": {
+          "model_fair": 189,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.3463,
+          "p_away_win": 0.6537,
+          "away_fair": -189
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 21.5271,
+        "away_offence_rate": 24.4877,
+        "home_defence_rate": 24.2195,
+        "away_defence_rate": 19.5711,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-04",
+        "matchup": "HOU @ CLE",
+        "away_team": "Houston Texans",
+        "home_team": "Cleveland Browns",
+        "kickoff": "2026-11-15 1:00 PM ET",
+        "tv": "FOX",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": 2.14,
+          "side": "away",
+          "margin": -2.139,
+          "home_points": 21.036,
+          "away_points": 23.175
+        },
+        "total": {
+          "model_fair": 44.21,
+          "side": "over",
+          "margin": "",
+          "home_points": 21.036,
+          "away_points": 23.175
+        },
+        "moneyline": {
+          "model_fair": 128,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.4387,
+          "p_away_win": 0.5613,
+          "away_fair": -128
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 19.4502,
+        "away_offence_rate": 25.0711,
+        "home_defence_rate": 22.1425,
+        "away_defence_rate": 23.6544,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-05",
+        "matchup": "MIN @ GB",
+        "away_team": "Minnesota Vikings",
+        "home_team": "Green Bay Packers",
+        "kickoff": "2026-11-15 1:00 PM ET",
+        "tv": "FOX",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": -1.08,
+          "side": "home",
+          "margin": 1.082,
+          "home_points": 18.862,
+          "away_points": 17.781
+        },
+        "total": {
+          "model_fair": 36.64,
+          "side": "over",
+          "margin": "",
+          "home_points": 18.862,
+          "away_points": 17.781
+        },
+        "moneyline": {
+          "model_fair": -113,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.5311,
+          "p_away_win": 0.4689,
+          "away_fair": 113
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 23.681,
+        "away_offence_rate": 19.8211,
+        "home_defence_rate": 21.7579,
+        "away_defence_rate": 17.3211,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-06",
+        "matchup": "MIA @ IND",
+        "away_team": "Miami Dolphins",
+        "home_team": "Indianapolis Colts",
+        "kickoff": "2026-11-15 1:00 PM ET",
+        "tv": "CBS",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": -3.75,
+          "side": "home",
+          "margin": 3.745,
+          "home_points": 23.474,
+          "away_points": 19.729
+        },
+        "total": {
+          "model_fair": 43.2,
+          "side": "over",
+          "margin": "",
+          "home_points": 23.474,
+          "away_points": 19.729
+        },
+        "moneyline": {
+          "model_fair": -154,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.6065,
+          "p_away_win": 0.3935,
+          "away_fair": 154
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 21.2195,
+        "away_offence_rate": 18.1544,
+        "home_defence_rate": 26.2195,
+        "away_defence_rate": 24.3211,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-07",
+        "matchup": "CAR @ NO",
+        "away_team": "Carolina Panthers",
+        "home_team": "New Orleans Saints",
+        "kickoff": "2026-11-15 1:00 PM ET",
+        "tv": "FOX",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": -0.95,
+          "side": "home",
+          "margin": 0.948,
+          "home_points": 27.026,
+          "away_points": 26.078
+        },
+        "total": {
+          "model_fair": 53.1,
+          "side": "over",
+          "margin": "",
+          "home_points": 27.026,
+          "away_points": 26.078
+        },
+        "moneyline": {
+          "model_fair": -112,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.5273,
+          "p_away_win": 0.4727,
+          "away_fair": 112
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 23.0711,
+        "away_offence_rate": 24.2377,
+        "home_defence_rate": 25.6544,
+        "away_defence_rate": 25.9044,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-08",
+        "matchup": "BUF @ NYJ",
+        "away_team": "Buffalo Bills",
+        "home_team": "New York Jets",
+        "kickoff": "2026-11-15 1:00 PM ET",
+        "tv": "CBS",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": 7.26,
+          "side": "away",
+          "margin": -7.256,
+          "home_points": 22.317,
+          "away_points": 29.574
+        },
+        "total": {
+          "model_fair": 51.89,
+          "side": "over",
+          "margin": "",
+          "home_points": 22.317,
+          "away_points": 29.574
+        },
+        "moneyline": {
+          "model_fair": 233,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.3003,
+          "p_away_win": 0.6997,
+          "away_fair": -233
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 21.0656,
+        "away_offence_rate": 28.9877,
+        "home_defence_rate": 24.2195,
+        "away_defence_rate": 23.2377,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-09",
+        "matchup": "JAX @ TEN",
+        "away_team": "Jacksonville Jaguars",
+        "home_team": "Tennessee Titans",
+        "kickoff": "2026-11-15 1:00 PM ET",
+        "tv": "FOX",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": 11.04,
+          "side": "away",
+          "margin": -11.04,
+          "home_points": 16.182,
+          "away_points": 27.222
+        },
+        "total": {
+          "model_fair": 43.4,
+          "side": "over",
+          "margin": "",
+          "home_points": 16.182,
+          "away_points": 27.222
+        },
+        "moneyline": {
+          "model_fair": 370,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.2129,
+          "p_away_win": 0.7871,
+          "away_fair": -370
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 19.6544,
+        "away_offence_rate": 26.7377,
+        "home_defence_rate": 24.2377,
+        "away_defence_rate": 17.7377,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-10",
+        "matchup": "LA @ AZ",
+        "away_team": "Los Angeles Rams",
+        "home_team": "Arizona Cardinals",
+        "kickoff": "2026-11-15 4:05 PM ET",
+        "tv": "CBS",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": 6.36,
+          "side": "away",
+          "margin": -6.363,
+          "home_points": 19.973,
+          "away_points": 26.336
+        },
+        "total": {
+          "model_fair": 46.31,
+          "side": "over",
+          "margin": "",
+          "home_points": 19.973,
+          "away_points": 26.336
+        },
+        "moneyline": {
+          "model_fair": 210,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.3231,
+          "p_away_win": 0.6769,
+          "away_fair": -210
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 20.7579,
+        "away_offence_rate": 23.5271,
+        "home_defence_rate": 26.681,
+        "away_defence_rate": 20.9887,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-11",
+        "matchup": "SEA @ LV",
+        "away_team": "Seattle Seahawks",
+        "home_team": "Las Vegas Raiders",
+        "kickoff": "2026-11-15 4:05 PM ET",
+        "tv": "CBS",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": 3.67,
+          "side": "away",
+          "margin": -3.671,
+          "home_points": 22.577,
+          "away_points": 26.248
+        },
+        "total": {
+          "model_fair": 48.82,
+          "side": "over",
+          "margin": "",
+          "home_points": 22.577,
+          "away_points": 26.248
+        },
+        "moneyline": {
+          "model_fair": 153,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.3956,
+          "p_away_win": 0.6044,
+          "away_fair": -153
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 25.3733,
+        "away_offence_rate": 22.6041,
+        "home_defence_rate": 27.681,
+        "away_defence_rate": 19.5271,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-12",
+        "matchup": "SF @ DAL",
+        "away_team": "San Francisco 49ers",
+        "home_team": "Dallas Cowboys",
+        "kickoff": "2026-11-15 4:25 PM ET",
+        "tv": "FOX",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": 4.54,
+          "side": "away",
+          "margin": -4.538,
+          "home_points": 24.376,
+          "away_points": 28.914
+        },
+        "total": {
+          "model_fair": 53.29,
+          "side": "over",
+          "margin": "",
+          "home_points": 24.376,
+          "away_points": 28.914
+        },
+        "moneyline": {
+          "model_fair": 169,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.3717,
+          "p_away_win": 0.6283,
+          "away_fair": -169
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 25.9887,
+        "away_offence_rate": 27.2377,
+        "home_defence_rate": 25.2195,
+        "away_defence_rate": 20.6544,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-13",
+        "matchup": "PIT @ CIN",
+        "away_team": "Pittsburgh Steelers",
+        "home_team": "Cincinnati Bengals",
+        "kickoff": "2026-11-15 8:20 PM ET",
+        "tv": "NBC",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": -3.73,
+          "side": "home",
+          "margin": 3.731,
+          "home_points": 24.67,
+          "away_points": 20.939
+        },
+        "total": {
+          "model_fair": 45.61,
+          "side": "over",
+          "margin": "",
+          "home_points": 24.67,
+          "away_points": 20.939
+        },
+        "moneyline": {
+          "model_fair": -154,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.6061,
+          "p_away_win": 0.3939,
+          "away_fair": 154
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 27.6544,
+        "away_offence_rate": 22.6544,
+        "home_defence_rate": 22.2377,
+        "away_defence_rate": 19.6544,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    },
+    {
+      "game": {
+        "id": "W10-14",
+        "matchup": "LAC @ BAL",
+        "away_team": "Los Angeles Chargers",
+        "home_team": "Baltimore Ravens",
+        "kickoff": "2026-11-16 8:15 PM ET",
+        "tv": "ESPN",
+        "week": 10,
+        "game_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+        "source_url": "https://www.nfl.com/schedules/"
+      },
+      "markets": {
+        "spread": {
+          "model_fair": -6.89,
+          "side": "home",
+          "margin": 6.891,
+          "home_points": 25.371,
+          "away_points": 18.481
+        },
+        "total": {
+          "model_fair": 43.85,
+          "side": "over",
+          "margin": "",
+          "home_points": 25.371,
+          "away_points": 18.481
+        },
+        "moneyline": {
+          "model_fair": -223,
+          "side": "home",
+          "margin": "",
+          "home_points": "",
+          "away_points": "",
+          "p_home_win": 0.6905,
+          "p_away_win": 0.3095,
+          "away_fair": 223
+        }
+      },
+      "inputs": {
+        "home_offence_rate": 21.6041,
+        "away_offence_rate": 17.7377,
+        "home_defence_rate": 25.2195,
+        "away_defence_rate": 25.9044,
+        "league_mean_points": 22.9632,
+        "home_field_points": 2.0,
+        "shrink_games": 4.0,
+        "margin_sd": 13.86
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+club_abbr,printed_chart_available,printed_slots,injury_rows_matched,unmatched_injury_rows,chart_date_printed,chart_read_on,source_url,offense_players_listed,offense_unavailable,offense_ranks_consumed,offense_uncovered_slots,offense_listed_slots,defense_players_listed,defense_unavailable,defense_ranks_consumed,defense_uncovered_slots,defense_listed_slots,special_teams_players_listed,special_teams_unavailable,special_teams_ranks_consumed,special_teams_uncovered_slots,special_teams_listed_slots
+ATL,yes,28,0,0,not printed,2026-11-13,https://www.atlantafalcons.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AZ,yes,29,0,0,not printed,2026-11-12,(see nfl-assurance-9580ac3f/sources/registry.json entry A958-AZ-DEPTH),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BAL,yes,29,0,0,not printed,2026-11-12,(see nfl-assurance-9580ac3f/sources/registry.json entry A958-BAL-DEPTH),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUF,yes,29,0,0,not printed,2026-11-13,https://www.buffalobills.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CAR,yes,28,0,0,not printed,2026-11-13,https://www.panthers.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CHI,yes,29,0,0,Depth Chart (As of 10/31/2026),2026-11-14,https://www.chicagobears.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CIN,yes,28,0,0,not printed,2026-11-13,https://www.bengals.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CLE,yes,28,0,0,not printed,2026-11-12,(see nfl-assurance-9580ac3f/sources/registry.json entry A958-CLE-DEPTH),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DAL,yes,30,0,0,not printed,2026-11-13,https://www.dallascowboys.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DEN,yes,31,0,0,no chart date printed on the rendered page,2026-11-14,https://www.denverbroncos.com/team/depth-chart/,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DET,yes,28,0,0,not printed,2026-11-12,(see nfl-assurance-9580ac3f/sources/registry.json entry A958-DET-DEPTH),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GB,yes,28,0,0,"Unofficial, Nov. 10, 2026",2026-11-13,https://www.packers.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+IND,yes,28,0,0,not printed,2026-11-13,https://www.colts.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+JAX,yes,29,0,0,not printed,2026-11-13,https://www.jaguars.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KC,yes,28,0,0,not printed,2026-11-13,https://www.chiefs.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+LAC,yes,29,0,0,not printed,2026-11-13,https://www.chargers.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+LAR,yes,28,0,0,not printed,2026-11-13,https://www.therams.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+LV,yes,28,0,0,"The Las Vegas Raiders depth chart as of November 10, 2026 | Week 10 vs. Seattle Seahawks",2026-11-13,https://www.raiders.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+MIA,yes,28,0,0,not printed,2026-11-12,(see nfl-assurance-9580ac3f/sources/registry.json entry A958-MIA-DEPTH),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+MIN,yes,29,0,0,not printed,2026-11-13,https://www.vikings.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+NE,yes,29,0,0,not printed,2026-11-12,(see nfl-assurance-9580ac3f/sources/registry.json entry A958-NE-DEPTH),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+NO,yes,30,0,0,not printed,2026-11-13,https://www.neworleanssaints.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+NYG,yes,29,10,1,not printed,2026-11-12,(see nfl-assurance-9580ac3f/sources/registry.json entry A958-NYG-DEPTH),8,0,0,0,7,2,0,0,0,2,0,0,0,0,0
+NYJ,yes,30,0,0,not printed,2026-11-13,https://www.newyorkjets.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PHI,yes,29,0,0,no chart date printed on the rendered page,2026-11-14,https://www.philadelphiaeagles.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PIT,yes,30,0,0,not printed,2026-11-12,(see nfl-assurance-9580ac3f/sources/registry.json entry A958-PIT-DEPTH),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SEA,yes,29,0,0,not printed,2026-11-12,(see nfl-assurance-9580ac3f/sources/registry.json entry A958-SEA-DEPTH),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SF,yes,29,0,0,Updated as of 11/10/26,2026-11-13,https://www.49ers.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+TB,yes,30,0,0,no chart date printed on the rendered page,2026-11-14,https://www.buccaneers.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+TEN,yes,30,0,0,UNOFFICIAL DEPTH CHART (as of 11/10/26),2026-11-13,https://www.tennesseetitans.com/team/depth-chart,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+WAS,yes,29,8,1,not printed,2026-11-12,(see nfl-assurance-9580ac3f/sources/registry.json entry A958-WAS-DEPTH),6,1,1,1,5,2,0,0,0,2,0,0,0,0,0

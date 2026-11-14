@@ -1,0 +1,23 @@
+{
+  "markets_originated": 42,
+  "markets_priced": 0,
+  "markets_unpriced": 42,
+  "coverage_pct": 0.0,
+  "by_market": {
+    "spread": 14,
+    "total": 14,
+    "moneyline": 14
+  },
+  "clv_computable": 0,
+  "note": "Coverage counts rows that carry a real opening AND closing number. A row exists for every originated market so that adding a licensed feed fills the table rather than changing its shape.",
+  "snapshot_date": "2026-11-14",
+  "schema_fields": {
+    "open_line": "the opening number, from a licensed source; blank until one is registered",
+    "open_price": "the opening price in American odds; blank for the same reason",
+    "close_line": "the closing number; blank",
+    "close_price": "the closing price; blank",
+    "line_move": "close_line - open_line; computable only when both exist",
+    "clv_points": "closing value in points for the originated side; blank without a close"
+  },
+  "empty_because": "NFL.com publishes no price for any fixture (verified on the Week 10 schedule page, 2026-11-14); no sportsbook is a registered source in this repository; and NFL.com Terms \u00a71.3 prohibits systematic compilation. The market therefore has no executable number."
+}

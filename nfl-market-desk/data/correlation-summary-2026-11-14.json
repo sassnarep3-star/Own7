@@ -1,0 +1,10 @@
+{
+  "measured": 4,
+  "refused": 8,
+  "min_publish_n": 8,
+  "min_exploratory_n": 20,
+  "significant_at_0.05": 1,
+  "exploratory_only": 3,
+  "policy": "A value is published only when both quantities come from an official source for the same unit, and only with its n. Anything else is refused with the reason and the action that would close it.",
+  "warning": "With this many pairs tested, one 'significant' result at 0.05 is close to what chance produces. The number of tests is published so the reader can discount accordingly; no correlation here is presented as an edge."
+}
