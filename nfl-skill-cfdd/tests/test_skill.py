@@ -538,3 +538,50 @@ class AmbiguityDisclosure(unittest.TestCase):
         self.assertIn("CF13", flags)
         self.assertIn("more than one", flags["CF13"]["title"])
         self.assertTrue(flags["CF13"]["source_url"].startswith("https://"))
+
+
+class PositionVocabulary(unittest.TestCase):
+    """Chart and injury-report vocabularies differ; a player must not cross sides of the ball."""
+
+    def test_no_matched_row_sits_on_the_wrong_side_of_the_ball(self):
+        import sys as _s
+        if str(DESK) not in _s.path:
+            _s.path.insert(0, str(DESK))
+        from index import group_of, SIDE_OF_GROUP
+        for r in rows("depletion-join-2026-11-14.csv"):
+            if r["on_printed_chart"] != "yes":
+                continue
+            a = group_of(r["position_reported"])
+            b = group_of(r["printed_position"])
+            if a in SIDE_OF_GROUP and b in SIDE_OF_GROUP:
+                self.assertEqual(SIDE_OF_GROUP[a], SIDE_OF_GROUP[b],
+                                 f"{r['club_abbr']} {r['player']}: {r['position_reported']} "
+                                 f"located at {r['printed_position']}")
+
+    def test_the_group_map_covers_every_position_printed(self):
+        import sys as _s
+        if str(DESK) not in _s.path:
+            _s.path.insert(0, str(DESK))
+        from index import group_of
+        unknown = set()
+        for name in ("depth-slots-2026-11-14.csv",):
+            for r in rows(name):
+                if not group_of(r["position"]):
+                    unknown.add(r["position"])
+        for r in rows("depletion-join-2026-11-14.csv"):
+            if r["position_reported"] and not group_of(r["position_reported"]):
+                unknown.add(r["position_reported"])
+        self.assertEqual(unknown, set(), f"ungrouped position labels: {sorted(unknown)}")
+
+    def test_all_three_tracks_are_populated(self):
+        import collections
+        counts = collections.Counter(r["track"] for r in rows("depletion-join-2026-11-14.csv"))
+        self.assertGreater(counts["offense"], 0)
+        self.assertGreater(counts["defense"], 0)
+        self.assertGreater(counts["special teams"], 0)
+
+    def test_offence_and_defence_indexes_are_not_the_same_number(self):
+        data = rows("club-depletion-index-2026-11-14.csv")
+        differing = [r for r in data if r["offense_index"] != r["defense_index"]]
+        self.assertGreater(len(differing), 0,
+                           "offence and defence must be measured separately, not mirrored")

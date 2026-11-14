@@ -39,6 +39,31 @@ STATUS_MULTIPLIER = {"Out": 1.00, "Doubtful": 0.75, "Questionable": 0.40}
 
 SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
 
+# A club's depth chart and the league injury report use different position vocabularies for the
+# same job (T vs RT/LT, LB vs ILB/SAM/MLB, DE vs EDGE, DB vs CB/S/NB). Matching a player to a
+# chart slot therefore has to compare GROUPS, not raw labels. This map is the desk's own reading of
+# the two vocabularies; it is published on the method page and it never assigns a value from it.
+POSITION_GROUP = {
+    # offense
+    "QB": "QB", "RB": "RB", "FB": "RB", "HB": "RB", "WR": "WR", "TE": "TE",
+    "T": "OL", "OT": "OL", "LT": "OL", "RT": "OL", "G": "OL", "OG": "OL", "LG": "OL", "RG": "OL",
+    "C": "OL", "OL": "OL",
+    # defense
+    "DE": "DL", "DT": "DL", "NT": "DL", "DL": "DL", "EDGE": "DL", "IDL": "DL",
+    "LB": "LB", "ILB": "LB", "OLB": "LB", "MLB": "LB", "WLB": "LB", "SLB": "LB", "SAM": "LB",
+    "WILL": "LB", "MIKE": "LB",
+    "CB": "DB", "DB": "DB", "S": "DB", "FS": "DB", "SS": "DB", "NB": "DB", "NCB": "DB",
+    "SAF": "DB", "LCB": "DB", "RCB": "DB", "SCB": "DB",
+    # special teams
+    "K": "ST", "PK": "ST", "P": "ST", "LS": "ST", "KR": "ST", "PR": "ST", "H": "ST", "KO": "ST",
+}
+SIDE_OF_GROUP = {"QB": "offense", "RB": "offense", "WR": "offense", "TE": "offense",
+                 "OL": "offense", "DL": "defense", "LB": "defense", "DB": "defense"}
+
+
+def group_of(position: str) -> str:
+    return POSITION_GROUP.get((position or "").strip().upper(), "")
+
 
 def norm_name(value: str) -> str:
     """Comparison key only: letters and digits, lowercased, generational suffix dropped."""
@@ -84,21 +109,41 @@ def chart_lookup() -> dict[str, dict[str, dict]]:
                 "checked_on": row["checked_on"],
                 "multi": row.get("cell_holds_multiple", "no") == "yes",
             }
+            entry["group"] = group_of(entry["position"])
             seen.setdefault((club, key), set()).add(
                 (entry["unit"], entry["position_key"], entry["slot"]))
+            out.setdefault(club, {}).setdefault("_alternatives", {}).setdefault(
+                key, []).append(entry)
             if row.get("first_cell_blank") == "yes":
                 # A slot whose first-string cell is empty is the least authoritative place to
                 # locate a player, so it does not displace a real first-string entry.
                 out.setdefault(club, {}).setdefault(key, entry)
                 continue
             existing = out.setdefault(club, {}).get(key)
-            # Keep the newest read for a player; never overwrite a newer read with an older one.
-            # Among equally recent reads, prefer the highest printed rank (1st string beats 3rd).
-            if existing is None or entry["checked_on"] >= existing["checked_on"]:
+            if existing is None:
+                out[club][key] = entry
+                continue
+            # Precedence, applied in order and stated on the method page:
+            #   1. the newest read wins (never regress to an older snapshot);
+            #   2. within one read, a slot whose position group matches the injury report wins,
+            #      so a receiver listed by the league at WR is not located by his punt-return slot;
+            #   3. then the higher printed rank (1st string beats 3rd).
+            if entry["checked_on"] > existing["checked_on"]:
+                out[club][key] = entry
+            elif entry["checked_on"] == existing["checked_on"] and entry["rank"] < existing["rank"]:
                 out[club][key] = entry
     for (club, key), slots in seen.items():
-        out[club][key]["printed_slot_count"] = len(slots)
+        if key in out[club]:
+            out[club][key]["printed_slot_count"] = len(slots)
     return out
+
+
+def _best_slot_for_group(charts, club, key, group):
+    """The newest, highest-ranked chart slot for this player in the given position group."""
+    for entry in charts.get(club, {}).get("_alternatives", {}).get(key, []):
+        if entry.get("group") == group:
+            return entry
+    return None
 
 
 def rebuild_join(injuries: list[dict], charts: dict[str, dict[str, dict]]) -> list[dict]:
@@ -108,6 +153,15 @@ def rebuild_join(injuries: list[dict], charts: dict[str, dict[str, dict]]) -> li
         club = inj["club_abbr"]
         chart = charts.get(club, {})
         match = chart.get(norm_name(inj["player"]))
+        # If the player is printed in several slots and the chosen one is on a different side of
+        # the ball from the position the league reports, prefer a slot that agrees with the report.
+        reported_group = group_of(inj["position"])
+        if match is not None and match.get("group") and reported_group:
+            if (match["group"] in SIDE_OF_GROUP and reported_group in SIDE_OF_GROUP
+                    and SIDE_OF_GROUP[match["group"]] != SIDE_OF_GROUP[reported_group]):
+                alt = _best_slot_for_group(charts, club, norm_name(inj["player"]), reported_group)
+                if alt is not None:
+                    match = alt
         track = "unmatched"
         if match:
             track = match["unit"].lower()
