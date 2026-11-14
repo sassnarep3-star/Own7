@@ -1326,3 +1326,63 @@ Rules this session follows: fixed branch only; never infer or fill a value an of
 publish — leave it blank and flag it; every table row keeps a registered source link; `git pull --rebase`
 before every push; small frequent commits; additive edits to shared files only; do not merge, close or
 edit another session's PR.
+
+### Progress update (session-arena-ec67293d-own7) — M2–M11 implemented
+
+All work is inside `nfl-market-desk/**` with additive-only edits to `scripts/build_site.py`,
+`scripts/check_site.py`, `.github/workflows/check.yml` and `research/sources.json`. No existing page,
+value or test was overwritten.
+
+| ID | Task | Status | Evidence |
+|---|---|---|---|
+| M2 | Price store, open and close | **done** | 180 observations, 15 games, side + total + moneyline, DraftKings via ESPN provider 100. Every row carries provider, provider id, source id, https url, retrieval date. Gate MD-G01 passes on provenance completeness. |
+| M3 | Verified results feed | **done** | 136 official final scores (weeks 1–9) reused from `nfl-results/`; 15/15 priced games bound to a score on the club pair. Unbound games abort the build rather than dropping silently. |
+| M4 | Order: side → total → moneyline | **done** | `origination.build_board` emits three boards with explicit `order` 1/2/3; the moneyline is flagged `is_restatement_of_side`. |
+| M5 | Model / market / difference separate | **done** | Three separate columns on every row; the difference is blank when the market column is blank and is never defaulted against zero. |
+| M6 | Signal vs staking separated | **done** | `gates.promote` raises `ValueError` if a staking field is passed; exercised on every build (gate MD-G06's evidence is the raise). |
+| M7 | Replacement depth | **partial, and stated** | 25 players with an official game status classified by which string dresses. Depth charts were read for **4 of 32 clubs** (CHI, DEN, PHI, TB) — the earlier note of "231 slots across 31 clubs" was wrong and is corrected below. |
+| M8 | Correlation with n published | **done** | 4 pairs, each with n, Fisher CI, p and Holm q. Only n=136 is rankable; the n=15 pairs are published and marked unpowered. Dropped pairs are published too. |
+| M9 | Demotion gate | **done, unexercised in production** | 5 numeric triggers, all firing on a probe ledger. Nothing is live, so no real demotion has occurred and the site says so. |
+| M10 | Dossier + suggestions | **done** | 10 questions, 7 held items, 8 missing gaps each with a route to closing it, 8 suggestions with Adopt/Defer/Reject and a blank decision record, 6 decisions. |
+| M11 | Site, tests, integration | **done** | 13 pages; 54 desk tests; `scripts/check_site.py` passes with 169 recursive pages, 6,755 body rows, 179 registered sources, 0 errors. |
+
+### Correction to an inherited figure
+
+The previous session note recorded "231 depth slots across 31 clubs". Re-reading
+`nfl-skill-cfdd/data/depth-slots-2026-11-14.csv` shows **231 slots across 4 clubs** (`Counter({'DEN': 60,
+'TB': 60, 'CHI': 59, 'PHI': 52})`). The league-wide depth claim in earlier sessions is therefore not
+supported by the committed data, and this session does not repeat it. Requirement 6 is satisfied for four
+clubs and is reported as such.
+
+### Irregularity found by this session (published on the Flagged page)
+
+**This desk shipped an inverted spread sign, and it changed the conclusion.** `market_line` is the home
+club's own printed spread, so a home favourite prints −9.5 and the market's implied home margin is +9.5.
+The first build compared the model's expected margin directly against the printed line, which inverted
+every side pick. That build produced a **13–2 record from a model that is worse than the market**
+(margin RMSE 13.55 v 10.01) and was one commit away from being published as a result.
+
+It was caught by hand-checking one game (ARI@SEA) against its official score, not by any summary
+statistic: a sign error produces a plausible story in whichever direction it points. The convention now
+lives in a single function (`origination.market_home_margin`), the total board has its own separate
+conversion (`edge_total`, because a total is not signed like a spread), and two regression tests pin both.
+Corrected record: side **2–13**, total **6–8**.
+
+### Findings, stated so the next session does not have to re-derive them
+
+1. The model does not beat the market: margin RMSE 13.55 v 10.01, total 14.54 v 14.06.
+2. The side model significantly *underperformed its own probabilities*: expected 9.26 wins, got 2,
+   p = 0.000167. That is overconfidence, not bad luck.
+3. Side CLV is −1.77 points on the open; total CLV +0.67. Both far from the gate's basis-point definition.
+4. Detecting a 55% rate at 80% power needs 783 settled bets. This capture has 15.
+5. Player props are reachable but **price-less**: 781 markets on one game, open/current targets only, no
+   over/under price, every row duplicated. Prop combos are blocked, not pending.
+6. The promotion gate (basis points) is **unsatisfiable by any capture in this schema** (points of line).
+   Recorded as unsatisfiable rather than quietly converted — see suggestion SG2.
+
+### Verification run before this update
+
+`python -m unittest discover -s tests` → 111 pass. `python -m unittest discover -s nfl-market-desk/tests`
+→ 54 pass. `python nfl-market-desk/build.py --check` → 11 artifacts reproduce byte-identically.
+`python scripts/check_site.py` → passed, 0 errors. Every other command in
+`.github/workflows/check.yml` replayed locally → all pass. Working tree clean after build.
