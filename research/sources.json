@@ -1610,5 +1610,29 @@
     "checked_on": "2026-11-13",
     "access": "Arena fetch_page rendered text; not an HTTP-status attestation and not a licensed feed; attempt recorded in nfl-availability-28ef/evidence/depth-HOU.md",
     "status": "Not obtained"
+  },
+  {
+    "id": "NFL-STANDINGS-RECHECK-1114",
+    "publisher": "NFL",
+    "title": "2026 NFL division standings — 2026-11-14 recheck",
+    "url": "https://www.nfl.com/standings/",
+    "authority": "Official league standings",
+    "checked_on": "2026-11-14",
+    "status": "Content checked",
+    "scope": "Rendered standings: all 32 club names and W/L/T/PF/PA cells were manually compared with data/nfl-standings-2026.csv. Thirty rows match; WAS and NYG remain the only differences, exactly those explained by the Nov 12 WAS 24–21 NYG final. No new values were written into the frozen CSV.",
+    "access": "Arena fetch_page; rendered text, both chunks read; manual transcription for comparison, not an HTTP archive",
+    "chunks_read": "1–2 of 2"
+  },
+  {
+    "id": "NFL-INJ-W10-RECHECK-1114",
+    "publisher": "NFL",
+    "title": "Official NFL injury report — Week 10 live page opening chunk, 2026-11-14",
+    "url": "https://www.nfl.com/injuries/",
+    "authority": "Official league participation reporting",
+    "checked_on": "2026-11-14",
+    "status": "Partial page checked; not a complete weekly audit",
+    "scope": "Opening rendered chunk read. It shows the Week 10 heading, the Thursday Nov 12 WAS–NYG section and Sunday Nov 15 matchup sections (including NE–DET). The NFL origination dataset has 20 Thursday rows; a separate NFL availability desk stores a 326-row Week 10 snapshot for 28 clubs checked 2026-11-13. Remaining live-report chunks and that 326-row snapshot were not re-audited on 2026-11-14; no claim of current completeness is made.",
+    "access": "Arena fetch_page; rendered text only; one of eight chunks read",
+    "chunks_read": "1 of 8"
   }
 ]

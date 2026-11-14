@@ -938,3 +938,41 @@ Rules: work only on the fixed branch; never infer or fill a value; every table r
 | Pages | [GitHub Pages build API](https://api.github.com/repos/sassnarep3-star/Own7/pages/builds/latest) reports `built` for the same commit, updated 2026-11-14T01:08:25Z; source `main` / `/`, HTTPS enforced; site URL: https://sassnarep3-star.github.io/Own7/. The sandbox cannot fetch `*.github.io`, so liveness is evidenced by the official Pages API rather than a direct fetch. |
 
 - **Concurrent-work record (second rebase):** after PR #38 merged, `origin/main` advanced from `11d9771` to `8de4d5f` through PR #37 from session `arena/c5036cd8-own7`. Rebasing conflicted in `COORDINATION.md`; this session retained the complete C1–C4 board and the P1 integration record, discarding no other session lines. PR #37 merged independently; PRs #39, #40, #27 and #17 were left untouched by this session.
+
+---
+
+## Session arena/6b86c2eb-own7 — fresh integration verification (2026-11-14)
+
+Session ID: `session-arena-6b86c2eb-own7`. Fixed Arena branch: `arena/6b86c2eb-own7`; base `b735a6b211f8921c0c1656f0be2bb0607a8c240d` (current `main` at claim time).
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| I1 | Re-run integrated NFL research, recursive site, and release verification; record newly observed official-source freshness findings | in progress | session-arena-6b86c2eb-own7 | `COORDINATION.md` (append only), `docs/nfl-integration-review-2026-11-14.md` (new), `research/sources.json`, `research/nfl/flags.json`, additive `SOURCE_HOSTS` entries in `scripts/check_site.py`, generated NFL review/source pages and manifests only | No raw game data will be refreshed. Only source metadata and the existing review flag may change after live official-source recheck. |
+
+Open unrelated PRs at claim time: #27 (`arena/382a833e-own7`) and #17 (`arena/a934e8c3-own7`). This session will not edit, merge, or close either PR. It will use only the current fixed branch.
+
+### I1 verification results (2026-11-14)
+
+- Official [NFL standings](https://www.nfl.com/standings/) rendered page re-read (both chunks). Manually transcribed and compared all 32 club names and W/L/T/PF/PA fields to the dated standings CSV: 30 match; WAS and NYG are the only differences, corresponding to the previously reported Nov 12 24–21 final. Frozen CSV retained unchanged.
+- Official [NFL injury report](https://www.nfl.com/injuries/) opening chunk re-read (1 of 8 chunks only): Week 10 page includes the Thursday WAS–NYG section and Sunday Nov 15 sections. The repo's 20-row origination table is Thursday only; the separate 326-row, 28-club Week 10 availability snapshot is dated Nov 13 and was not fully re-audited on Nov 14. Explicit freshness limitation added to NF09; no live claim or new row was made.
+- Official [NFL Terms](https://www.nfl.com/legal/terms/) opened; §1.3's restriction on systematic collection absent express written consent confirmed. NFL data pages are not used as an automated feed.
+- Registered the two dated source checks in `research/sources.json`, added exact official hosts to the recursive audit allowlist, and updated NF09 / NF14 on the published NFL Flagged for Review page. Full fresh bounded record: `docs/nfl-integration-review-2026-11-14.md`.
+- Checks after regeneration: 109 root unit tests pass; NFL extractor/origination/independent verification pass; recursive audit passes (38 canonical + 20 redirects + 68 auxiliary = 126 HTML pages, 5,197 table rows, 138 source IDs, 0 errors); browser/accessibility passes on 106 desktop + 106 mobile pages. All ancillary NBA, market-evidence, rental, assurance and availability/depletion builders/tests passed. `git diff --check` clean.
+
+This is a bounded refresh, not an assertion that every dataset was re-fetched on Nov 14. The report lists the precise coverage. I1 remains in progress pending PR checks, merge and Pages deployment record.
+
+### Rebase note (2026-11-14)
+
+Before publication, `git pull --rebase origin main` brought in the concurrent NFL integration board and merge commits PR #35/#36. `COORDINATION.md` had an add/append conflict because both sessions appended at EOF. Resolved by retaining the complete main-side session-arena/500eb178-own7 board and deployment record, then appending this session's claim/results; no other session's content was discarded. The remaining files rebased cleanly.
+
+### CI correction before merge (PR #39)
+
+The first PR check failed at the recursive site-audit step. Reproduction isolated the cause: after the manual whitespace-only reindent of the two appended source records, the raw `research/sources.json` hash no longer matched the committed `research/results.json` receipt. No fact or table value was wrong. Regenerated `research/results.json`, `research/nfl-results.json` and the site from the now-final source registry; `python scripts/check_site.py` then passed again with 0 errors (126 pages, 5,197 table rows, 138 sources). Changes are being pushed so PR CI reruns before merge. The Actions log download endpoint was inaccessible from the sandbox, so diagnosis is based on the reproducible local check failure.
+
+### Rebase / concurrent-scope note (2026-11-14, PR #39)
+
+A second `git pull --rebase origin main` brought in the C1/C2 NFL verification contribution (PRs #37/#38) and conflicted only at the append-only coordination board. The complete C1/C2 board, its evidence and scripts were preserved; this session's section was appended afterward. No other files conflicted. PR #40 (`arena/196424c5-own7`) was observed open later and edits the shared root-page navigation, including `nfl-review.html`; this session will not edit that branch or merge it. The eventual integration must retain both its navigation addition and this session's updated NF09/NF14 review text and rerun the site generator/checks. The current PR remains limited to its own source/flag refresh.
+
+A third rebase (PR #39 publication) incorporated PR #41's append-only Pages-deployment record on top of the already preserved PR #37/#38 C1/C2 work. The coordination file had another append conflict; all main-side deployment and verification text was retained and this session's record remains at EOF. No other path changed in conflict resolution.
