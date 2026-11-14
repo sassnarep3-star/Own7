@@ -855,8 +855,27 @@ def build() -> dict:
     }
 
 
+def stabilise(value, places: int = 6):
+    """Round every float to a fixed precision before serialisation.
+
+    Transcribed data is exact, but statistics pass through libm functions (erf, sqrt,
+    exp) whose last bit can differ between platforms. Unrounded floats would make the
+    committed artifact differ from a rebuild on another machine by a single digit,
+    which is a real reproducibility failure even though no number changed materially.
+    Rounding to six decimals keeps every published figure identical and the output
+    byte-stable across platforms.
+    """
+    if isinstance(value, float):
+        return round(value, places)
+    if isinstance(value, dict):
+        return {k: stabilise(v, places) for k, v in value.items()}
+    if isinstance(value, list):
+        return [stabilise(v, places) for v in value]
+    return value
+
+
 def main() -> int:
-    result = build()
+    result = stabilise(build())
     OUT.write_text(json.dumps(result, indent=2, sort_keys=False) + "\n", encoding="utf-8")
     counts = result["leaderboard_counts"]
     print(f"OK: {result['inputs']['rows_scored']} games scored, "
