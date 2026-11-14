@@ -858,10 +858,11 @@ def build() -> dict:
 def main() -> int:
     result = build()
     OUT.write_text(json.dumps(result, indent=2, sort_keys=False) + "\n", encoding="utf-8")
-    lb = result["leaderboard"]
+    counts = result["leaderboard_counts"]
     print(f"OK: {result['inputs']['rows_scored']} games scored, "
-          f"{len(result['candidates'])} strategy variants tested, "
-          f"{len(lb)} qualified for the leaderboard.")
+          f"{counts['tested']} strategy variants tested, "
+          f"{counts['qualified']} qualified, {counts['provisional']} provisional, "
+          f"{counts['rejected']} rejected.")
     lbc = result["correlations"]["leg_dependence"]
     print(f"    leg dependence phi = {lbc['phi']:+.4f} (p={lbc['p_value']:.4f}, n={lbc['n_games']})")
     print(f"    -> {OUT.relative_to(ROOT)}")

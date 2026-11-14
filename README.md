@@ -2,6 +2,34 @@
 
 [Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
+## New: official results & skill lab (2026-11-14)
+
+Every earlier session recorded that no NFL result archive existed, so the leaderboard stayed empty
+and luck could not be removed. **That premise was wrong.** NFL.com publishes a final score for
+every past game on its by-week pages, and 136 of them are now captured and reconciled
+(160/160 standings fields) with a build that aborts on any mismatch.
+
+That unlocks the analysis the requirements actually asked for:
+
+| Page | What it answers |
+|---|---|
+| `nfl-results.html` | Overview and the five findings |
+| `nfl-results-games.html` | All 136 official scores and 16 byes, each with its source page |
+| `nfl-results-skill.html` | Skill vs luck: spread board **64.2%** (permutation p=0.0021, BH q=0.022) against a total board at exactly **50.0%** |
+| `nfl-results-correlation.html` | Leg dependence measured from joint outcomes: phi −0.068 (p=0.47), not independent enough to reprice |
+| `nfl-results-leaderboard.html` | 30 variants graded; 1 provisional, 0 qualified, **every reward blank** because no price exists |
+| `nfl-results-decisions.html` | 8 questions split into known-with-source and still-missing |
+| `nfl-results-suggestions.html` | 6 ranked suggestions with evidence, cost, risk and an acceptance test |
+| `nfl-results-flagged.html` | 10 irregularities, including two bugs found and fixed before publication |
+
+```sh
+python nfl-results/extract.py    # re-parse saved official text; refuses contradictions
+python nfl-results/engine.py     # leakage-free walk-forward grading, permutation null, FDR
+python -m unittest discover -s nfl-results/tests   # 23 tests
+```
+
+Full write-up: [`docs/nfl-results-executive-summary.md`](docs/nfl-results-executive-summary.md).
+
 ## What this is now
 
 The landing page is an **NFL research workspace**. It originates its own lines from official NFL
@@ -16,7 +44,7 @@ is implemented.
   No sportsbook price was retrieved, so market cells, ROI and CLV are blank by rule.
 - **10 ranked suggestions**, **14 decision questions**, **12 review flags**, **10 validation gates**
   (two pass, one partial, one open on rights) and **8 blocked strategies** with an empty leaderboard.
-- **Zero** qualified strategies, rewards, wagers or recommendations.
+- **Zero** qualified strategies, rewards, wagers or recommendations. Since 2026-11-14 a retrieval gap has been closed: 136 official final scores are captured and graded, and the results are on the `nfl-results` pages.
 
 NFL data is attributed to NFL.com. This is not affiliated with or endorsed by the NFL. NFL.com terms
 §1.3 permit individual non-commercial informational use and prohibit systematic retrieval to compile
