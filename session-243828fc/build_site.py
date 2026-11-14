@@ -39,6 +39,7 @@ CSS = """
 *{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
 header{background:#14213d;color:#fff;padding:14px 22px}header a{color:#fff;margin-right:14px;text-decoration:none;font-size:14px}
 header .brand{font-weight:700;margin-right:24px}nav a:hover{text-decoration:underline}
+header nav a{display:inline-block;padding:4px 8px;margin:2px 6px 2px 0;line-height:24px;min-height:24px}
 main{max-width:1180px;margin:0 auto;padding:22px}h1{font-size:24px;margin:6px 0 4px}h2{font-size:18px;margin:28px 0 8px}
 p.lead{color:var(--mut);margin-top:0}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
 .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}.card b{display:block;font-size:24px}.card span{color:var(--mut);font-size:13px}
@@ -49,6 +50,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}.tag{display:inline-bl
 .note{background:#fff8e6;border:1px solid #f1d894;border-radius:8px;padding:10px 14px;margin:12px 0}
 .box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:10px 0}
 input.filter{width:100%;max-width:420px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:6px 0}
+main,main p,main li,main td,main th,.note,.box{overflow-wrap:anywhere}.tscroll{overflow-x:auto;max-width:100%;margin:8px 0 18px}.tscroll table{margin:0}td,th{min-width:7ch}
 footer{color:var(--mut);font-size:12.5px;padding:18px 22px;max-width:1180px;margin:0 auto}
 """
 
@@ -107,7 +109,8 @@ def table(headers: list[str], rows: list[str], *, source_header: str = "Source (
     th = "".join(f"<th>{e(h)}</th>" for h in headers + [source_header])
     body = "\n".join(rows)
     tid = f' id="{table_id}"' if table_id else ""
-    return f'<table{tid}><thead><tr>{th}</tr></thead><tbody>\n{body}\n</tbody></table>'
+    return (f'<div class="tscroll" role="region" aria-label="Scrollable table" tabindex="0">'
+            f'<table{tid}><thead><tr>{th}</tr></thead><tbody>\n{body}\n</tbody></table></div>')
 
 
 def page(title: str, active: str, body: str, lead: str = "") -> str:
@@ -206,12 +209,12 @@ check. Until then, read the source directly.</div>
 file in the repo.</p>
 {ledger_table()}
 <h2>Live report</h2>
-<table><thead><tr><th>Measure</th><th>Value</th><th>Source (official)</th></tr></thead><tbody>
+<div class="tscroll" role="region" aria-label="Scrollable table" tabindex="0"><table><thead><tr><th>Measure</th><th>Value</th><th>Source (official)</th></tr></thead><tbody>
 {row(["Rows on the live report", UNV], link(LIVE, "nfl.com live report"))}
 {row(["Rows different from the saved ledger", UNV], link(LIVE, "nfl.com live report"))}
 {row(["Players added on the live page", UNV], link(LIVE, "nfl.com live report"))}
 {row(["Clubs with game status on the live page", UNV], link(LIVE, "nfl.com live report"))}
-</tbody></table>"""
+</tbody></table></div>"""
     return page("Live check, 14 Nov 2026", "live-check.html", body,
                 lead="Saved desk ledger compared with the live Week 10 report. Live values withheld until verified.")
 
