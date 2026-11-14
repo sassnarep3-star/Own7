@@ -966,3 +966,7 @@ This is a bounded refresh, not an assertion that every dataset was re-fetched on
 ### Rebase note (2026-11-14)
 
 Before publication, `git pull --rebase origin main` brought in the concurrent NFL integration board and merge commits PR #35/#36. `COORDINATION.md` had an add/append conflict because both sessions appended at EOF. Resolved by retaining the complete main-side session-arena/500eb178-own7 board and deployment record, then appending this session's claim/results; no other session's content was discarded. The remaining files rebased cleanly.
+
+### CI correction before merge (PR #39)
+
+The first PR check failed at the recursive site-audit step. Reproduction isolated the cause: after the manual whitespace-only reindent of the two appended source records, the raw `research/sources.json` hash no longer matched the committed `research/results.json` receipt. No fact or table value was wrong. Regenerated `research/results.json`, `research/nfl-results.json` and the site from the now-final source registry; `python scripts/check_site.py` then passed again with 0 errors (126 pages, 5,197 table rows, 138 sources). Changes are being pushed so PR CI reruns before merge. The Actions log download endpoint was inaccessible from the sandbox, so diagnosis is based on the reproducible local check failure.
