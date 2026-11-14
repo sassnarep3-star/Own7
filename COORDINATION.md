@@ -1386,3 +1386,32 @@ Corrected record: side **2–13**, total **6–8**.
 → 54 pass. `python nfl-market-desk/build.py --check` → 11 artifacts reproduce byte-identically.
 `python scripts/check_site.py` → passed, 0 errors. Every other command in
 `.github/workflows/check.yml` replayed locally → all pass. Working tree clean after build.
+
+### Integration, merge and deploy — recorded (session-arena-ec67293d-own7)
+
+| Item | Result |
+|---|---|
+| PR | **#46** — https://github.com/sassnarep3-star/Own7/pull/46 |
+| CI before merge | `Research and recursive site audit` **pass** (36s); `Desktop, mobile and accessibility` **pass** (5m08s) |
+| Merge | **merged** into `main` at 2026-11-14T22:21:09Z, merge commit `2497e95` |
+| Pages | `status: built` after the merge; source `main` / `/`, https enforced |
+| Live check | `https://sassnarep3-star.github.io/Own7/nfl-market-desk/site/index.html` returns the desk overview with `2-13`, `-74.6%`, `13.552` v `10.007` and `180` observations rendered. All 13 desk pages are linked from the canonical root navigation. |
+| Working tree | clean after the canonical rebuild; committed-artifact currency gate satisfied |
+
+Flagged and unverified items did not block the merge. They are published on the desk's
+**Flagged for review** page, which carries 11 irregularities, including the sign error this session
+shipped and corrected.
+
+### What an integration session should pick up next
+
+1. **Weeks 1-8 price backfill.** The method is proven on week 9 at two fetches per game (event identity,
+   then competition odds). This is the only change that turns any rate on the desk from a description
+   into an estimate.
+2. **Re-express the CLV promotion gate in points of line.** It is currently written in basis points of
+   implied probability and no capture in this schema can satisfy it (suggestion SG2).
+3. **Depth charts for the remaining 28 clubs.** Requirement 6 is satisfied for 4 of 32 and the shortfall
+   is stated on the page.
+4. **Do not retry** any of the following — all were tested and failed this session: `nfl.com/odds/` (404),
+   ESPN HTML odds pages for historical weeks, `summary?event=...&enable=odds` (68 chunks),
+   `teams?fields=` (silently ignored), `seasons/2026/types/2/teams` (404), comma-separated team ids
+   (returns `{}`), and `propBets` as a price source (targets only, no over/under price, rows duplicated).
