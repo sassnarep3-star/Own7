@@ -883,4 +883,26 @@ Statuses: unclaimed | in progress | done | needs review
 - Y9: done — PR #35 (`arena/500eb178-own7` → `main`) merged without waiting for approval at 2026-11-14, merge commit `97c2719`; Pages build `1367730521` built; PR link and merge result recorded above.
 
 Open PRs from other sessions left untouched: #27 (`arena/382a833e-own7`) and #17 (`arena/a934e8c3-own7`).
+---
+
+## Session arena/479b573c-own7 — local preview allowlist repair (2026-11-14)
+
+Session ID: `session-arena-479b573c-own7`. Fixed Arena branch: `arena/479b573c-own7`, based on
+`b735a6b211f8921c0c1656f0be2bb0607a8c240d`. This session remains on that branch and does not take
+ownership of the open PRs #27 or #17.
+
+### Claim (written before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| P1 | Restore local preview access for the published NFL assurance subsite; add a regression test and re-run project checks | done | session-arena-479b573c-own7 | `scripts/serve_site.py`, `tests/test_serve_site.py`, `COORDINATION.md` (append-only) | Existing handoff note identified the assurance path as excluded from the preview allowlist. No source data or canonical NFL tables changed. |
+
+### P1 completed — preview allowlist repair and verification (2026-11-14)
+
+- **Repository basis:** `research/site-manifest.json` lists the assurance pages as auxiliary pages; `nfl-assurance-9580ac3f/site/index.html` imports `style.css` and `app.js`. Before the fix, the local preview rejected those pages/assets because their top-level folder was missing from `scripts/serve_site.py`'s allowlist.
+- **Change:** allowlisted `nfl-assurance-9580ac3f`; added `tests/test_serve_site.py` to cover the subsite HTML, CSS, JS and manifest routes, while checking that `.git` paths, missing files and unsupported extensions remain blocked.
+- **Verification:** the new regression test failed before the fix (four registered assurance routes denied) and passes after it; `python -m unittest discover -s tests` passes **111 tests**. The complete static verification sequence in `.github/workflows/check.yml` passes, including `scripts/check_site.py` (38 canonical pages, 20 legacy redirects, 68 auxiliary pages, 126 recursive HTML pages, 5,193 table rows, 0 errors) and all NFL/NBA/rental snapshot, deterministic-build and test suites. `npm run test:browser` passes **106 desktop + 106 mobile pages**, WCAG A/AA, 9 interaction groups, no runtime errors. Live local HTTP requests return 200 for `/`, the assurance subsite index, CSS, JS and manifest; `git diff --check` passes.
+- **Sources and scope:** this change is verified against the repository manifest/page assets and the local routing tests; it changes no NFL facts, data rows, official-source claims, lines, correlations or recommendations. Existing source-linked NFL rows and unresolved official-source gaps remain unchanged.
+- **Concurrent-work record:** after this task's first push, `origin/main` advanced through PRs #35 and #36 from session `arena/500eb178-own7`. Rebasing onto `0abba52` produced an append/append conflict in `COORDINATION.md`; both the complete Y1–Y9 board and this session's P1 record were retained, with no other session lines discarded. PRs #27 and #17 remain untouched.
+- **Irregularities:** no new factual irregularity. This repairs the previously noted local-preview routing gap only; it does not alter the published GitHub Pages HTML.
 
