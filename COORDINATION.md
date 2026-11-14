@@ -989,3 +989,80 @@ A third rebase (PR #39 publication) incorporated PR #41's append-only Pages-depl
 | Post-merge checks | Research and dashboard check [43540035314](https://github.com/sassnarep3-star/Own7/actions/runs/43540035314) succeeded. |
 
 I1 is **done**. The independent NFL results/skill lab PR #40 and older PRs #27/#17 remain outside this session's scope and were not merged or closed here. Their work must be integrated and re-verified separately before describing it as live.
+---
+
+## Session arena/196424c5-own7 — official game results, skill testing, and integration (2026-11-14)
+
+Session ID: `session-arena-196424c5-own7`. Fixed Arena branch: `arena/196424c5-own7`, based on `b735a6b`
+(merge of PR #33). This is the only active session; `origin/main` was re-checked at claim time and is
+unchanged at `b735a6b`, and no other session has an open PR (`#27` remains open from an older session and
+is not touched).
+
+Prior boards are preserved as history and are **not** inherited as verification. Every claim below will be
+re-checked before publication.
+
+### The gap this session closes
+
+Every earlier session recorded the same blocking limitation: *no result archive existed*, so the leaderboard
+stayed empty, ROI/CLV stayed blank and "luck cannot be removed". **That premise is wrong.** NFL.com publishes
+a complete final score for every past game on the by-week schedule pages, e.g.
+`https://www.nfl.com/schedules/2026/by-week/week-9` returns `Jaguars 33, Ravens 10, FINAL, Thursday, November 5th`.
+Scores were never missing; the retrieval path was. This session retrieves Weeks 1-9, and uses them to do what
+prior sessions could not: grade originated lines out of sample, separate skill from luck, and measure
+correlation from real outcomes instead of asserting it cannot be measured.
+
+### Claim (written and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|---|
+| S1 | Coordination claim + baseline replay of every existing check | in progress | session-arena-196424c5-own7 | COORDINATION.md (append only) |
+| S2 | Official results capture: Weeks 1-9 rendered text + parsed CSV, every row date+URL stamped | in progress | session-arena-196424c5-own7 | `nfl-results/**` (new directory) |
+| S3 | Walk-forward grading of originated lines (no leakage: pre-kickoff information only) | in progress | session-arena-196424c5-own7 | `nfl-results/**` |
+| S4 | Skill-vs-luck decomposition with an explicit permutation null and multiplicity control | in progress | session-arena-196424c5-own7 | `nfl-results/**` |
+| S5 | Empirical leg correlation from real joint outcomes (parlay and player-prop combos) | in progress | session-arena-196424c5-own7 | `nfl-results/**` |
+| S6 | Leaderboard: real graded entries that passed/failed the gates | in progress | session-arena-196424c5-own7 | `nfl-results/site/**` |
+| S7 | Suggestions / questions dossier refresh, crosswalked to the new evidence | in progress | session-arena-196424c5-own7 | `nfl-results/site/**` |
+| S8 | Executive summary update | in progress | session-arena-196424c5-own7 | `docs/nfl-results-executive-summary.md` |
+| S9 | Additive integration only (nav group, source hosts, CI lines), tests, PR, merge, Pages evidence | in progress | session-arena-196424c5-own7 | additive lines in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md` |
+
+Rules this session follows: never infer or fill a value no official source confirms; every table row links
+to the official page actually read; `git pull --rebase` before every push; additive shared-file edits only;
+small frequent commits.
+
+### Standing source constraint (unchanged)
+
+NFL.com terms §1.3 permit individual non-commercial informational use and prohibit systematic retrieval to
+compile a collection without written consent. This session reads published pages at human pace, saves the
+rendered text it actually read, and releases no dataset and no feed. Nothing here is a betting product; no
+price, wager, recommendation or cash reward is produced.
+
+### S1–S9 progress and results (2026-11-14)
+
+| ID | Status | Result |
+|---|---|---|
+| S1 | **done** | Claim pushed as `98f4804` before any implementation. Baseline replayed: 109 root tests OK, origination reproduced, 38 pages built, site check 0 errors. |
+| S2 | **done** | 136 official games + 16 bye rows captured from `https://www.nfl.com/schedules/2026/by-week/week-{1..9}`, read 2026-11-14. Rendered text saved verbatim under `nfl-results/evidence/`. `nfl-results/extract.py` re-parses only those files and refuses to publish unless W-L-T, PF and PA reconcile with the frozen standings for all 32 clubs: **160/160 fields match**. |
+| S3 | **done** | Leakage-free walk-forward grading in `nfl-results/engine.py`. A week-w forecast uses only weeks < w; week 1 is excluded because it has no prior form. 120 games scored. Two defects found and fixed before publication: a per-team/per-game units error that doubled implied totals, and circular grading. |
+| S4 | **done** | Five defences: exact binomial null, Benjamini–Hochberg across 30 variants, a 20,000-shuffle permutation test, split-half plus leave-one-week-out, and a power calculation. |
+| S5 | **done** | Leg dependence from real joint outcomes: phi = −0.0684 (p = 0.4681, n = 114); P(home & over) 20.2% observed vs 21.9% independent. Player-prop combos left blank: no per-game player logs retrieved. |
+| S6 | **done** | 30 variants graded; **0 qualified, 1 provisional, 29 rejected**. Every ROI and CLV cell is `None`, enforced by test. |
+| S7 | **done** | 8 questions and 6 ranked suggestions, each with evidence, cost, risk and a pre-written acceptance test. |
+| S8 | **done** | `docs/nfl-results-executive-summary.md`. |
+| S9 | **in progress** | Additive integration only: one nav group, one `SOURCE_HOSTS` entry, one appended source (`X29-NFL-SCHEDULE`), three CI lines, README section. PR/merge/Pages evidence to be recorded below. |
+
+### Key finding (recorded, not asserted)
+
+The originated **spread** board beat the result 77–43 (**64.2%**, permutation p = 0.0021, BH
+q = 0.022, both halves above 50%, leave-one-week-out range 57.7–65.4%). The originated **total**
+board scored 60–60 (**50.0%**). Same model, same data, opposite conclusions. Both are published;
+no price exists, so ROI, CLV and every reward remain blank.
+
+### Verification run for S9 (all green)
+
+`python nfl-results/extract.py` (160/160) · `python nfl-results/engine.py` · `python -m unittest
+discover -s nfl-results/tests` (23) · root tests (109) · availability (28) · assurance (49) ·
+origination (29) · `python scripts/build_site.py` (46 canonical pages) · `python
+scripts/check_site.py` (134 pages, 5,417 rows, 137 sources, 0 errors, byte-identical rebuild) ·
+`npm run test:browser` (114 desktop + 114 mobile pages, WCAG A/AA, no runtime errors).
+
+No canonical NFL, NBA, rental, market-evidence or assurance value, page or test was overwritten.

@@ -44,6 +44,9 @@ jobs:
           python nfl/origination/originate.py --check
           python -m unittest discover -s nfl/origination -p "test_*.py" -v
           python nfl-assurance-9580ac3f/availability.py
+          python nfl-results/extract.py
+          python nfl-results/engine.py
+          python -m unittest discover -s nfl-results/tests -v
           python nfl-availability-28ef/collect.py --check
           python nfl-availability-28ef/depth.py --check
           python nfl-availability-28ef/depletion.py --check
@@ -53,7 +56,10 @@ jobs:
           python nfl-assurance-9580ac3f/check.py --report
           python -m unittest discover -s nfl-assurance-9580ac3f/tests -v
       - name: Committed artifacts must already be current
-        run: git diff --exit-code
+        run: |
+          git status --porcelain
+          git diff --stat
+          git diff --exit-code
   browser:
     name: Desktop, mobile and accessibility
     needs: research-static

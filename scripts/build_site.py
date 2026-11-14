@@ -30,7 +30,9 @@ NFL_OPEN = sum(1 for x in NFL_FLAGS if x["status"] == "Needs review")
 # A-RR16: the badge must say what it counts.
 NFL_BADGE = f'{NFL_OPEN} open of {NFL_FLAG_TOTAL}'
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "nfl-results"))
 import nfl_pages
+import nfl_results_pages
 
 
 class Markup(str):
@@ -169,6 +171,14 @@ NAV = [
                       ("nfl-leaderboard.html", "Leaderboard", "leaderboard"),
                       ("nfl-verification-2026-11-13.html", "Re-verification 13 Nov", "validation"),
                       ("nfl-review.html", "Flagged for review", "review")]),
+    ("NFL results & skill lab", [("nfl-results.html", "Results overview", "overview"),
+                      ("nfl-results-games.html", "Official game results", "data"),
+                      ("nfl-results-skill.html", "Skill vs luck", "validation"),
+                      ("nfl-results-correlation.html", "Leg correlation", "correlation"),
+                      ("nfl-results-leaderboard.html", "Leaderboard", "leaderboard"),
+                      ("nfl-results-decisions.html", "Questions", "requirements"),
+                      ("nfl-results-suggestions.html", "Suggestions", "review"),
+                      ("nfl-results-flagged.html", "Flagged for review", "care")]),
     ("NBA workspace", [("nba-overview.html", "NBA overview", "overview"), ("nba-executive-summary.html", "NBA brief", "brief"), ("data.html", "Data library", "data")]),
     ("NBA research", [("signals.html", "Signal library", "signals"), ("lines.html", "Probability lab", "lab"), ("correlation.html", "Correlation", "correlation"), ("methodology.html", "Methodology", "method"), ("settlement.html", "Market evidence", "sources"), ("validation.html", "Validation gates", "validation"), ("leaderboard.html", "Leaderboard", "leaderboard")]),
     ("Transparency", [("sources.html", "Source register", "sources"), ("review.html", "Flagged for Review", "review"), ("audit.html", "Repository audit", "audit"), ("requirements.html", "Requirements", "requirements"), ("responsible-gambling.html", "Responsible use", "care")]),
@@ -574,6 +584,10 @@ def build():
     for helper in ("notice", "metrics", "section", "table", "rich", "badge", "link", "Markup"):
         setattr(nfl_pages, helper, globals()[helper])
     nfl_pages._Markup = Markup
+    import nfl_results_pages
+    for helper in ("notice", "metrics", "section", "table", "rich", "badge", "link"):
+        setattr(nfl_results_pages, helper, globals()[helper])
+    nfl_results_pages.Markup = Markup
     verify_receipts()
     pages = {
         'index.html':('NFL research overview','An evidence-first NFL workspace: originate your own lines from official data, then prove or reject them.',nfl_pages.nfl_overview()),
@@ -589,6 +603,14 @@ def build():
         'nfl-review.html':('Flagged for review',f'{NFL_FLAG_TOTAL} NFL items published with their sources; {NFL_OPEN} are open. None blocks publication; all block unsupported claims.',nfl_pages.nfl_review(),'NFL / TRANSPARENCY'),
         'nfl-verification-2026-11-13.html':('Re-verification, 13 Nov','Every published NFL value re-read from the publisher. Thirty of 32 standings rows, 20 of 20 injury rows and 14 of 14 fixtures agree; two rows moved because a game was played.',nfl_pages.nfl_verification(),'NFL / TRANSPARENCY'),
         'executive-summary.html':('NFL executive summary','The five findings that matter, the four gaps that block a reward decision, and the sources behind each.',nfl_pages.executive(),'NFL / EXECUTIVE'),
+        'nfl-results.html':('Results & skill lab','136 verified NFL results turned into a leakage-free test of whether any strategy is skill or luck.',nfl_results_pages.page_summary()),
+        'nfl-results-games.html':('Official game results','Every captured score, week by week, with the official page each one came from.',nfl_results_pages.page_results(),'NFL / VERIFIED DATA'),
+        'nfl-results-skill.html':('Skill vs luck','Which strategies beat an exact chance null, survive multiplicity control and hold up out of sample.',nfl_results_pages.page_skill(),'NFL / VALIDATION'),
+        'nfl-results-correlation.html':('Leg correlation','Same-game dependence measured from real joint outcomes instead of asserted.',nfl_results_pages.page_correlation(),'NFL / CORRELATION'),
+        'nfl-results-leaderboard.html':('Leaderboard','Graded entries, with rewards withheld because no executable price exists.',nfl_results_pages.page_leaderboard(),'NFL / COMPETITION'),
+        'nfl-results-decisions.html':('Questions','What is known, what is still missing, and what each gap blocks.',nfl_results_pages.page_questions(),'NFL / DECISION LAB'),
+        'nfl-results-suggestions.html':('Suggestions','Ranked proposals to review and choose between before implementing anything.',nfl_results_pages.page_suggestions(),'NFL / DECISION LAB'),
+        'nfl-results-flagged.html':('Flagged for review','Irregularities and unverified items found in this session, with official links.',nfl_results_pages.page_flagged(),'NFL / TRANSPARENCY'),
         'nba-executive-summary.html':('NBA brief','The important findings, verified observations, research progress and non-negotiable limits—in one place.',executive()),
         'data.html':('Data library','Four frozen official-source datasets. Every retained row is attributed, scoped and checked; nothing here is a live market feed.',data_library()),
         'signals.html':('Signal library','Eight testable research hypotheses across singles, parlays and player-prop combinations. None is a proven edge.',signals()),
