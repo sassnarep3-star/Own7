@@ -1163,3 +1163,55 @@ The two highest-value blockers are unchanged and both are now precisely scoped:
 release). Player-prop combinations are blank only because per-game player logs were not retrieved;
 `nfl-results-flagged.html` R29-F05 names the exact page type that would close it.
 - PR: https://github.com/sassnarep3-star/Own7/pull/44 (head `arena/243828fc-own7`, base `main`). `main` moved (PR #40 and later commits); conflicts in generated and append-only files were resolved by keeping both sides and regenerating from the merged code. Merge result: PR #44 merged (merge commit `ae63940`, 2026-11-14 01:51 UTC). Pages build for `ae63940`: built, no error. Live check: https://sassnarep3-star.github.io/Own7/session-243828fc/site/flagged.html returns the page with its rows and source links. Landing page for this session: https://sassnarep3-star.github.io/Own7/session-243828fc/site/index.html
+
+- PR: https://github.com/sassnarep3-star/Own7/pull/44 (head `arena/243828fc-own7`, base `main`). `main` moved (PR #40 and later commits); conflicts in generated and append-only files were resolved by keeping both sides and regenerating from the merged code. Merge result: recorded after the merge.
+
+
+---
+
+## Session arena/cfdd5580-own7 — skill separation, depth coverage, decision layer (2026-11-14)
+
+Session ID: `session-arena-cfdd5580-own7`. Fixed Arena branch: `arena/cfdd5580-own7`, based on
+`b735a6b` (merge of PR #33). Historical boards above are retained verbatim and are **not** inherited
+as verification.
+
+### Observed starting state (read, not assumed)
+
+`git log -1` = `b735a6b`. Baseline replayed green before any change: `python -m unittest discover -s
+tests` → **109 pass**; `python scripts/nfl_extract.py --check` → OK (32 standings, 20 injury, 14
+fixtures); `python -m nfl_origination run` → built 14 originated games; `python scripts/build_site.py`
+→ 38 canonical pages + 20 redirects; `python scripts/check_site.py` → **passed**, 126 recursive pages,
+5,193 table rows, 136 registered sources, 0 errors.
+
+Open PRs observed and **not touched** by this session: #27 (`arena/382a833e-own7`), #17
+(`arena/a934e8c3-own7`). No other claim newer than the X7 record exists, so this session claims a new
+scope below.
+
+### Claim (written, committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| C1 | Coordination claim + baseline replay | done | session-arena-cfdd5580-own7 | COORDINATION.md (append-only) | This entry. |
+| C2 | Close the printed-depth gap for the clubs no chart was captured for | in progress | session-arena-cfdd5580-own7 | `nfl-skill-cfdd/**` (new directory) | Official club depth-chart pages only. A page that will not render is recorded as a failure, never substituted. |
+| C3 | Depth-adjusted availability index: starter loss weighted by printed rank, offence and defence separated | in progress | session-arena-cfdd5580-own7 | `nfl-skill-cfdd/**` | Index is a count of printed slots, not a point value or probability. |
+| C4 | Skill-vs-luck separation with a pre-registered trial family, null simulation and multiplicity control | in progress | session-arena-cfdd5580-own7 | `nfl-skill-cfdd/**` | Every strategy row states its lucky-pass probability. No strategy is promoted on a point estimate. |
+| C5 | Correlation values: measured leg dependence where data permits, explicitly blank where it does not | in progress | session-arena-cfdd5580-own7 | `nfl-skill-cfdd/**` | Team-level dependence is labelled as a different quantity from leg dependence. |
+| C6 | Questions / information-held / information-missing dossier with a discovery plan | in progress | session-arena-cfdd5580-own7 | `nfl-skill-cfdd/**` | Each question states what closes it and what it blocks. |
+| C7 | Suggestions review section with Adopt/Defer/Reject choice record and acceptance tests | in progress | session-arena-cfdd5580-own7 | `nfl-skill-cfdd/**` | No implementation is presented as decided. |
+| C8 | Self-contained source-linked site, tests, additive nav integration | in progress | session-arena-cfdd5580-own7 | `nfl-skill-cfdd/**`, additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json` | No existing page, value or test overwritten. |
+| C9 | Verification, PR, merge, Pages deploy evidence, record | unclaimed | session-arena-cfdd5580-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: fixed branch only; never infer or fill a value that an official source does
+not publish — leave it blank with `data-empty` and flag it; every table row keeps a registered
+official source link; `git pull --rebase` before every push; small frequent commits; additive edits to
+shared files only; do not merge, close or edit PR #27 or PR #17.
+
+### Cross-scope note
+This session adds one nav group and one host-allowlist block. It does not edit any existing page
+generator output, and will not merge or close another session's PR. If a later integration session
+rebases, this session's shared-file changes are appended lines only.
+
+**Handoff note from X7 restated as context:** XQ01/XQ02 (game status published for only 5 of 28 clubs;
+meaning of a blank) and XS01 remain open and are *not* closed by this session. XS09 stands: no price
+feed until source rights are settled — this session therefore produces no market price, no ROI, no
+CLV and no wager.
