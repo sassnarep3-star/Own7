@@ -989,3 +989,49 @@ A third rebase (PR #39 publication) incorporated PR #41's append-only Pages-depl
 | Post-merge checks | Research and dashboard check [43540035314](https://github.com/sassnarep3-star/Own7/actions/runs/43540035314) succeeded. |
 
 I1 is **done**. The independent NFL results/skill lab PR #40 and older PRs #27/#17 remain outside this session's scope and were not merged or closed here. Their work must be integrated and re-verified separately before describing it as live.
+---
+
+## Session arena/196424c5-own7 — official game results, skill testing, and integration (2026-11-14)
+
+Session ID: `session-arena-196424c5-own7`. Fixed Arena branch: `arena/196424c5-own7`, based on `b735a6b`
+(merge of PR #33). This is the only active session; `origin/main` was re-checked at claim time and is
+unchanged at `b735a6b`, and no other session has an open PR (`#27` remains open from an older session and
+is not touched).
+
+Prior boards are preserved as history and are **not** inherited as verification. Every claim below will be
+re-checked before publication.
+
+### The gap this session closes
+
+Every earlier session recorded the same blocking limitation: *no result archive existed*, so the leaderboard
+stayed empty, ROI/CLV stayed blank and "luck cannot be removed". **That premise is wrong.** NFL.com publishes
+a complete final score for every past game on the by-week schedule pages, e.g.
+`https://www.nfl.com/schedules/2026/by-week/week-9` returns `Jaguars 33, Ravens 10, FINAL, Thursday, November 5th`.
+Scores were never missing; the retrieval path was. This session retrieves Weeks 1-9, and uses them to do what
+prior sessions could not: grade originated lines out of sample, separate skill from luck, and measure
+correlation from real outcomes instead of asserting it cannot be measured.
+
+### Claim (written and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|---|
+| S1 | Coordination claim + baseline replay of every existing check | in progress | session-arena-196424c5-own7 | COORDINATION.md (append only) |
+| S2 | Official results capture: Weeks 1-9 rendered text + parsed CSV, every row date+URL stamped | in progress | session-arena-196424c5-own7 | `nfl-results/**` (new directory) |
+| S3 | Walk-forward grading of originated lines (no leakage: pre-kickoff information only) | in progress | session-arena-196424c5-own7 | `nfl-results/**` |
+| S4 | Skill-vs-luck decomposition with an explicit permutation null and multiplicity control | in progress | session-arena-196424c5-own7 | `nfl-results/**` |
+| S5 | Empirical leg correlation from real joint outcomes (parlay and player-prop combos) | in progress | session-arena-196424c5-own7 | `nfl-results/**` |
+| S6 | Leaderboard: real graded entries that passed/failed the gates | in progress | session-arena-196424c5-own7 | `nfl-results/site/**` |
+| S7 | Suggestions / questions dossier refresh, crosswalked to the new evidence | in progress | session-arena-196424c5-own7 | `nfl-results/site/**` |
+| S8 | Executive summary update | in progress | session-arena-196424c5-own7 | `docs/nfl-results-executive-summary.md` |
+| S9 | Additive integration only (nav group, source hosts, CI lines), tests, PR, merge, Pages evidence | in progress | session-arena-196424c5-own7 | additive lines in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md` |
+
+Rules this session follows: never infer or fill a value no official source confirms; every table row links
+to the official page actually read; `git pull --rebase` before every push; additive shared-file edits only;
+small frequent commits.
+
+### Standing source constraint (unchanged)
+
+NFL.com terms §1.3 permit individual non-commercial informational use and prohibit systematic retrieval to
+compile a collection without written consent. This session reads published pages at human pace, saves the
+rendered text it actually read, and releases no dataset and no feed. Nothing here is a betting product; no
+price, wager, recommendation or cash reward is produced.
