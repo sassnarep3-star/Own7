@@ -884,3 +884,51 @@ Statuses: unclaimed | in progress | done | needs review
 
 Open PRs from other sessions left untouched: #27 (`arena/382a833e-own7`) and #17 (`arena/a934e8c3-own7`).
 
+
+---
+
+## Session arena/64211dd2-own7 — NFL skill lab, availability refresh, decision hub and final integration (2026-11-14)
+
+Session ID: `session-arena-64211dd2-own7`. Fixed Arena branch: `arena/64211dd2-own7`, based on
+`b735a6b` (= `origin/main` at claim time). This session is the **sole active session** and the
+**final integration owner** for the scopes below. Historical boards above are preserved verbatim as
+history and are **not** inherited as verification: nothing is trusted here unless it is re-read from an
+official source during this session and linked.
+
+Owner request restated: NFL focus; review the repo line by line against official sources and flag
+irregularities; a dedicated **Suggestions** section where a reviewer can compare and choose a path
+before anything is implemented; an explicit list of **questions / information held / information
+missing** that must be answered before a decision is reasonable, plus suggestions for discovering the
+missing information; **originate own NFL lines** with validated signals, correlation values, single
+bets, parlays and player-prop combos, each strategy passing validation gates; a leaderboard
+competition with rewards for top-performing strategies; **remove luck** and build selectively
+skill-based strategies; **track injuries** and defender/offence **depth deficiencies** (2nd/3rd/4th
+string replacing starters); an **executive summary**; a live **GitHub Pages** site with a clean landing
+page and category subpages; every table row linked to an official source, blanks left blank and
+flagged; PR + merge + Pages deploy without waiting for approval.
+
+### Claim (written before implementation, committed and pushed immediately)
+
+| ID | Task | Status | Owner | Exclusive file scope |
+|---|---|---|---|---|
+| Y1 | Claim session + log board | in progress | session-arena-64211dd2-own7 | `COORDINATION.md` (append-only) |
+| Y2 | Repo audit: replay every builder, test, checker and CI step; line-by-line irregularity review | unclaimed | session-arena-64211dd2-own7 | `docs/nfl-skill-lab-repo-review-2026-11-14.md`, `COORDINATION.md` |
+| Y3 | Official-source capture (2026 game results, live Week 10 injury report with game status, official box scores) | unclaimed | session-arena-64211dd2-own7 | `nfl-skill-lab/evidence/**`, `nfl-skill-lab/data/**`, `research/nfl-skill-lab/**` |
+| Y4 | Skill lab engine: walk-forward evaluation, skill-vs-luck decomposition, leg correlation, player-prop combos, gated leaderboard with rewards | unclaimed | session-arena-64211dd2-own7 | `nfl_skill/**`, `nfl-skill-lab/tests/**` |
+| Y5 | Availability refresh: close XQ01/XQ02 (game status published for only 5 of 28 clubs) and publish starter→2nd/3rd/4th-string offence/defence deficiencies | unclaimed | session-arena-64211dd2-own7 | `nfl-skill-lab/site/**`, `nfl-skill-lab/build.py`, `nfl-skill-lab/collect.py` |
+| Y6 | Consolidated Suggestions decision hub + Questions/known/unknown/missing-information register + executive summary | unclaimed | session-arena-64211dd2-own7 | `nfl-skill-lab/site/**`, `docs/nfl-skill-lab-executive-summary.md` |
+| Y7 | Additive integration: nav, source registry, CI, README, build + link checks | unclaimed | session-arena-64211dd2-own7 | `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `scripts/serve_site.py`, `.github/workflows/check.yml`, `research/sources.json`, `README.md` |
+| Y8 | Re-verify combined data line by line, confirm build with no broken links | unclaimed | session-arena-64211dd2-own7 | All |
+| Y9 | PR to main, merge without waiting for approval, confirm GitHub Pages deploy, record result | unclaimed | session-arena-64211dd2-own7 | `main`, GitHub Pages, `COORDINATION.md` |
+
+Rules this session follows: work only on the fixed branch; never infer or fill a value that no
+official source confirms — leave the cell blank and flag it; every table row keeps an official source
+link; a value is marked verified only when it was read this session from the official publisher.
+`needs review` items are published and non-blocking for honest publication, but they still block
+priced lines, skill claims and rewards. Small frequent commits; `git pull --rebase` before every push.
+
+### Concurrent-work note
+PR [#27](https://github.com/sassnarep3-star/Own7/pull/27) (`arena/382a833e-own7`, NFL decision desk)
+is still open and is **not** touched by this session. `nfl-availability-28ef/**`,
+`nfl-assurance-9580ac3f/**`, `nfl/**`, `nfl_origination/**` and the canonical root pages are not
+rewritten; this session's new work is additive under `nfl-skill-lab/**` and `nfl_skill/**`.
