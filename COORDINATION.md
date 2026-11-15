@@ -1695,3 +1695,13 @@ pages, should the reviewer prefer this desk's formulation.
 | ID | Task | Status | Notes |
 |---|---|---|---|
 | L12 | PR, merge, Pages deploy, record | **done** | PR https://github.com/sassnarep3-star/Own7/pull/49 — CI both jobs green (Research and recursive site audit: 194 recursive pages, 7,930 tbody rows, 216 registered sources, 0 errors; browser: 174 desktop + 174 mobile pages, WCAG A/AA, no runtime errors). Merged as merge commit `ce66693` at 2026-11-14T23:04:28Z. GitHub Pages "pages build and deployment" completed with status **built** against `ce66693`. Live verification by re-fetching https://sassnarep3-star.github.io/Own7/nfl-lifecycle-3f5c/site/index.html — desk pages served with all artefacts and source links. No broken-site merge occurred: the two rebase cycles (PR #46 by `arena/ec67293d-own7`, PR #47/#52 by `arena/c909fa0a-own7` landing mid-flight) were resolved as unions with both parallel sessions' work retained verbatim, the full battery re-run green before each merge, and every conflict resolution logged in the handoff section above. Flagged irregularities (LC-F01/02/05/07 open, LC-F03/04/06/08 explained) are published non-blocking on the desk's Flagged page with source links, per the brief. |
+
+## Session arena/3422b07f-own7 — current NFL executive summary reconciliation (2026-11-15)
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| R1 | Reconcile the canonical NFL executive summary with the already integrated results, availability, pricing and lifecycle desks; replace stale headline claims with bounded, linked current status | in progress | session-arena-3422b07f-own7 | `nfl_pages.py`, `docs/nfl-executive-summary.md`, `COORDINATION.md` | Existing registered official NFL source records and saved read receipts; no new official-source read claimed | Preserve uncertainty, identify distinct model results and rights blockers; do not modify data values or other sessions' pages. |
+
+Scope is limited to the NFL executive-summary function and its companion doc. Existing data artefacts and findings will be linked, not re-derived or silently reconciled. Any discrepancy discovered will be reported as a flagged limitation.
