@@ -725,7 +725,7 @@ def build():
         'nfl-leaderboard.html':('Leaderboard','A frozen competition format with no entries, because nothing has earned a place.',nfl_pages.nfl_leaderboard(),'NFL / COMPETITION'),
         'nfl-review.html':('Flagged for review',f'{NFL_FLAG_TOTAL} NFL items published with their sources; {NFL_OPEN} are open. None blocks publication; all block unsupported claims.',nfl_pages.nfl_review(),'NFL / TRANSPARENCY'),
         'nfl-verification-2026-11-13.html':('Re-verification, 13 Nov','Every published NFL value re-read from the publisher. Thirty of 32 standings rows, 20 of 20 injury rows and 14 of 14 fixtures agree; two rows moved because a game was played.',nfl_pages.nfl_verification(),'NFL / TRANSPARENCY'),
-        'executive-summary.html':('NFL executive summary','The five findings that matter, the four gaps that block a reward decision, and the sources behind each.',nfl_pages.executive(),'NFL / EXECUTIVE'),
+        'executive-summary.html':('NFL executive summary','Reconciled results, market-price, availability and validation evidence; decision questions and remaining gates.',nfl_pages.executive(),'NFL / EXECUTIVE'),
         'nfl-results.html':('Results & skill lab','136 verified NFL results turned into a leakage-free test of whether any strategy is skill or luck.',nfl_results_pages.page_summary()),
         'nfl-results-games.html':('Official game results','Every captured score, week by week, with the official page each one came from.',nfl_results_pages.page_results(),'NFL / VERIFIED DATA'),
         'nfl-results-skill.html':('Skill vs luck','Which strategies beat an exact chance null, survive multiplicity control and hold up out of sample.',nfl_results_pages.page_skill(),'NFL / VALIDATION'),

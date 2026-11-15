@@ -1695,3 +1695,15 @@ pages, should the reviewer prefer this desk's formulation.
 | ID | Task | Status | Notes |
 |---|---|---|---|
 | L12 | PR, merge, Pages deploy, record | **done** | PR https://github.com/sassnarep3-star/Own7/pull/49 — CI both jobs green (Research and recursive site audit: 194 recursive pages, 7,930 tbody rows, 216 registered sources, 0 errors; browser: 174 desktop + 174 mobile pages, WCAG A/AA, no runtime errors). Merged as merge commit `ce66693` at 2026-11-14T23:04:28Z. GitHub Pages "pages build and deployment" completed with status **built** against `ce66693`. Live verification by re-fetching https://sassnarep3-star.github.io/Own7/nfl-lifecycle-3f5c/site/index.html — desk pages served with all artefacts and source links. No broken-site merge occurred: the two rebase cycles (PR #46 by `arena/ec67293d-own7`, PR #47/#52 by `arena/c909fa0a-own7` landing mid-flight) were resolved as unions with both parallel sessions' work retained verbatim, the full battery re-run green before each merge, and every conflict resolution logged in the handoff section above. Flagged irregularities (LC-F01/02/05/07 open, LC-F03/04/06/08 explained) are published non-blocking on the desk's Flagged page with source links, per the brief. |
+
+## Session arena/3422b07f-own7 — current NFL executive summary reconciliation (2026-11-15)
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| R1 | Reconcile the canonical NFL executive summary with the already integrated results, availability, pricing and lifecycle desks; replace stale headline claims with bounded, linked current status | done | session-arena-3422b07f-own7 | `nfl_pages.py`, `scripts/build_site.py`, `docs/nfl-executive-summary.md`, generated `executive-summary.html`, `research/site-manifest.json`, `COORDINATION.md` | Existing official source register and saved receipts: NFL schedule/results, injury report, standings, Terms; PFR attribution checked in `research/sources.json`. `python scripts/check_site.py` passed (194 pages, 7,920 table rows, 216 registered sources, 0 errors); `npm run check` passed (111 tests); results/lifecycle/pricing checks passed; browser suite passed (174 desktop + 174 mobile, WCAG A/AA, no runtime errors). | No new official-source fetch claimed; evidence reads through 2026-11-14. Summary distinguishes NFL official evidence from derived research and PFR market observations. |
+
+**Flagged irregularity published in the summary:** pricing evidence differs by desk: PFR closing-price observations exist in one desk, while the lifecycle store intentionally keeps market values blank pending its price/rights policy. These are not a canonical unified feed; ROI/CLV/reward claims remain blocked. Existing source-policy flags and the [Flagged for Review page](https://sassnarep3-star.github.io/Own7/nfl-review.html) remain the review path. No source value was altered.
+
+Scope note: the build's executive-summary description was updated additively with the page. Existing data artefacts and findings were linked, not re-derived or silently reconciled.

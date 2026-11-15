@@ -1,85 +1,52 @@
-# Executive summary · OWN7 NFL Research Lab
+# NFL executive summary · OWN7 research lab
 
-Snapshot checked: **2026-11-12**. Scope: an auditable statistical-research dashboard, not an approved betting system.
+**Compiled:** 2026-11-15 · **Underlying official-source reads:** through 2026-11-14, as recorded in the linked evidence registers. This reconciliation did not perform a new live fetch. It is a research dashboard, not a betting service, recommendation or legal opinion.
 
-## Decision
+## Executive decision
 
-**Do not release live NFL betting lines or assert a skill-based wagering edge.** No candidate passes all applicable gates. No ROI, closing-line value (CLV), executable price, cash prize or qualified winner is known; those fields are blank. Luck cannot be eliminated.
+**Do not treat any result here as a validated, live wagering edge or pay out rewards.** The repository now contains several useful but deliberately separate research desks: an official-results backtest, market-price studies, and availability/depth analyses. Their samples and source policies are not yet one governed, prospective evaluation. One historical spread result is promising, but it is a one-season retrospective finding; the total result is null, and there is no prospective qualification. No strategy is currently qualified for live deployment or reward.
 
-A substantive constraint was confirmed: [NFL Terms §1.3](https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions) restricts Services to own individual non-commercial and informational purposes; systematic retrieval prohibited without consent. §11(f) prohibits harvesting for commercial purpose. §12 prohibits gambling/wagering on gaming features or using Services to gamble/wager on any NFL game. No separate permission is evidenced. NFL-derived betting-price release, bulk data harvesting, wagering and cash payments are disabled. This is a frozen, attributed statistical audit and non-commercial methods demonstration, not a licensed gambling data product or legal advice.
+There is a real source-policy blocker. NFL.com’s [Terms and Conditions](https://www.nfl.com/legal/terms/) restrict systematic retrieval and describe limitations on commercial use and wagering. The repository has not recorded a permission or licensing decision that clears those uses. Consequently, do not automate NFL-site collection, publish a paid product, or use the site to place wagers based on this work. Resolve the policy with an authorized source and appropriate legal review before any such use.
 
-## Verified observations
+## What the evidence currently says
 
-All values below were re-read from the publisher on **2026-11-13** and compared row by row with the
-frozen 2026-11-12 snapshot. The comparison is published on
-[`nfl-verification-2026-11-13.html`](../nfl-verification-2026-11-13.html) and its verbatim captures sit
-in `research/nfl/evidence-2026-11-13/`.
-
-| Item | Finding | Official source |
+| Question | Current evidence and boundary | Source(s) |
 |---|---|---|
-| Standings | All 32 division rows re-checked; **30 of 32 identical**. Buffalo and San Francisco lead at 7-1 (.875); Los Angeles Chargers 0-8 (.000). | [NFL standings](https://www.nfl.com/standings/) |
-| Standings, moved rows | Washington moved 2-5-1 → 3-5-1 and the Giants 5-2-1 → 5-3-1 after the Thursday fixture. | [NFL standings](https://www.nfl.com/standings/) |
-| Passing leaders | Top 25 by passing yards checked. Jordan Love leads at 2,618 yards; Joe Burrow 2,386; Dak Prescott 2,381. Passing-selected subset, not a complete universe. | [NFL passing](https://www.nfl.com/stats/player-stats/) |
-| Rushing leaders | Top 25 by rushing yards checked (positional C1-C9; headers not rendered). Bijan Robinson leads at 880 (C1). | [NFL rushing](https://www.nfl.com/stats/player-stats/category/rushing/2026/reg/all/rushingyards/desc) |
-| Receiving leaders | Top 25 by receptions checked (positional C1-C9). Trey McBride leads at 73 receptions (C1); Jaxon Smith-Njigba 1,036 yards (C2). | [NFL receiving](https://www.nfl.com/stats/player-stats/category/receiving/2026/reg/all/receivingreceptions/desc) |
-| Team offense (passing) | 32 team rows checked positionally; headers and named leader withheld (NF11). | [NFL team offense](https://www.nfl.com/stats/team-stats/offense/passing/2026/reg/all) |
-| Team defense (passing) | 32 team rows checked. Minnesota allows fewest at 1,495 pass yards. | [NFL team defense](https://www.nfl.com/stats/team-stats/defense/passing/2026/reg/all) |
-| Injuries (bounded) | Week 7 Thu Oct 22 NE+CHI and Sun Oct 25 PIT+NO fully transcribed (45 rows). The Week 10 Thursday block was re-read on 2026-11-13: 20 of 20 rows identical, 17 game-status cells still blank. Replacements/deficiencies not stated — blank. | [NFL injury report](https://www.nfl.com/injuries/league/2026/reg7) |
-| Fixtures | 14 of 14 Week 10 fixtures and the four byes identical. One fixture now prints "Commanders 24, Giants 21, FINAL" in link text while both of its score banners still print "Hidden Score". | [NFL schedule](https://www.nfl.com/schedules/) |
+| Are official outcomes available for retrospective testing? | Yes. The results desk captured 136 final scores (weeks 1–9 of the 2026 season) and reconciled 160 standings fields. This proves a saved-results pipeline, not a complete multi-season corpus or a prospective forecast record. | [NFL 2026 week-by-week schedules](https://www.nfl.com/schedules/2026/by-week/week-1) · [results audit](../nfl-results-games.html) |
+| Is any signal distinguishable from chance? | In one explicitly bounded, retrospective board test, the spread board was 77–43 (64.2%; permutation p=0.0021; BH q=0.022) over 120 scored games; the total board was 60–60 (50.0%). This is not profit evidence, does not establish future skill, and must be read beside the search/selection procedure and holdout limitations. | [official schedule/results source](https://www.nfl.com/schedules/2026/by-week/week-1) · [skill and luck analysis](../nfl-results-skill.html) |
+| Can parlays be priced from measured dependence? | The results desk reports spread/total phi = −0.068 (p=0.47, n=114) for its bounded same-game sample. This does not validate independence, does not support a joint-probability model, and says nothing about player-prop combos. Keep parlay and prop-combo entries blocked until directly validated joint probabilities and settlement/void rules exist. | [official schedule/results source](https://www.nfl.com/schedules/2026/by-week/week-1) · [correlation analysis](../nfl-results-correlation.html) |
+| Do market-price observations exist? | A separate research desk reports historical closing-line observations attributed to Pro-Football-Reference. They are **not official NFL prices** and this summary leaves the official-source-verified price count blank; no canonical feed or rights decision is approved, and opening-price coverage remains unresolved. The lifecycle desk therefore leaves its own market cells blank under its policy gate. Do not combine desk-specific price sets or claim unified ROI/CLV. | [NFL Terms](https://www.nfl.com/legal/terms/) — official policy source; no official NFL odds source is claimed · [PFR source directory](https://www.pro-football-reference.com/about/sources.htm) — secondary price-desk attribution · [pricing desk](../nfl-pricing/site/prices.html) · [lifecycle price-policy record](../nfl-lifecycle-3f5c/site/price-snapshots.html) |
+| Can injury replacements be confirmed? | The repository contains dated injury reports and club depth-chart transcriptions, including 326 Week 10 report rows and a depth/depletion join. Coverage, chart freshness, shared/empty slots, roster transactions and Houston’s chart-as-image remain material caveats. A chart rank is not playing time. Official inactive lists, game books and snap-share evidence must be joined before calling a player an actual replacement or estimating an effect. | [NFL Week 10 injury report](https://www.nfl.com/injuries/league/2026/REG10) · [club depth evidence and flagged items](../nfl-availability-28ef/site/flagged.html) · [replacement-depth review](../nfl-lifecycle-3f5c/site/replacement-depth.html) |
+| Are price snapshots and fair/market/residual fields available? | The lifecycle desk records an append-only snapshot schema and separate fair, market and difference columns. Its market inputs are intentionally blank under its current policy; another desk has historical closing prices under a different provenance/policy. A single source, timestamp convention, opening/closing definition and rights decision must be registered before a unified benchmark is published. | [Official NFL Terms](https://www.nfl.com/legal/terms/) — policy source; no official NFL odds source is claimed · [price snapshot ledger](../nfl-lifecycle-3f5c/site/price-snapshots.html) · [fair / market / difference](../nfl-lifecycle-3f5c/site/fair-market-diff.html) |
+| Is there a usable leaderboard and reward? | No strategy is qualified for live use or reward. The results leaderboard separates provisional research performance from qualification and leaves rewards blank; the lifecycle desk also separates signal from staking. Its demotion gate is specified and tested but has not been exercised on live entries. | [Official NFL Terms](https://www.nfl.com/legal/terms/) — wagering boundary · [results leaderboard](../nfl-results-leaderboard.html) · [signal/staking and demotion desk](../nfl-lifecycle-3f5c/site/leaderboard.html) · [demotion gate](../nfl-lifecycle-3f5c/site/demotion.html) |
 
-Every retained input field was compared against returned official rendered tables. Evidence files are
-normalized transcriptions, **not raw HTTP archives**; integrity hashes do not establish truth, and the
-site's own check suite cannot detect a stale value. That limitation is now itself a published question
-(DQ16). Direct HTTPS from the build sandbox to `nfl.com` fails (code 000), so all retrievals went
-through a page reader; that access class is stated rather than implied to be stronger.
+The numerical findings above are outputs of the named repository analyses, **not official NFL statistics**. Official links identify underlying schedules, results, reports or publisher policy; method and limits are on the linked analysis pages. Different desks deliberately use different samples and price policies; figures must not be pooled without a documented reconciliation.
 
-## Calculated research results — not official NFL statistics or proof of edge
+## Decision-readiness questions
 
-Seven descriptive cross-sectional Pearson correlations were calculated from verified season aggregates (see `research/nfl-results.json`). Examples: W vs Net Pts r=0.846 (n=32); Pass Yds vs TD (QBs) r=0.839 (n=25). These describe the snapshot; they are **not** bet-leg correlations and not predictive. Bet-leg correlations (teammate, cross-game, 3+ leg) are blank — no game logs collected.
+- **What price source can be used and published?** Information held: separate historical closing-line observations and a blank-until-cleared lifecycle ledger. Missing: a recorded rights decision, one market universe, opening/closing timestamps, vig and settlement/void rules. Clear it by authorizing a source, freezing policy and validating coverage. [Official NFL Terms](https://www.nfl.com/legal/terms/)
+- **Does the model beat a fair benchmark out of sample?** Information held: one-season retrospective outcomes and spread/total analyses. Missing: chronological train/validation/final holdout seasons, pre-registration and prospective forecasts. Clear it with a versioned registration, untouched holdout, benchmark-relative proper scores, uncertainty and multiplicity control. [Official NFL schedules/results](https://www.nfl.com/schedules/2026/by-week/week-1)
+- **What is the actual replacement and its effect?** Information held: dated injury/depth evidence and a preliminary chart join. Missing: official game-day inactives/Game Books, snap counts and transaction-aware point-in-time roster/depth evidence. Clear it by joining expected starters to verified participation and snaps. [Official NFL injury report](https://www.nfl.com/injuries/league/2026/REG10)
+- **Are injury labels predictive?** Information held: official designations and some outcomes. Missing: multi-season designation-to-play/inactive rates with uncertainty, including designation changes. Clear it with chronological identical-model ablations with and without verified availability features. [Official NFL injury report](https://www.nfl.com/injuries/league/2026/REG10)
+- **Can parlays or prop combos be ranked?** Information held: a limited spread/total co-outcome estimate. Missing: validated joint probabilities at exact thresholds, adequate joint/player samples and operator-specific push/void/settlement rules. Clear it with prospective joint calibration; keep each class blocked until its gate passes. [Official NFL schedules/results](https://www.nfl.com/schedules/2026/by-week/week-1)
+- **What should happen when a live signal deteriorates?** Information held: a pre-registered paper/live/demote state machine and triggers. Missing: prospective operation and monitoring; no live strategy qualifies. Clear it by shadow-testing alerts and rollback before any strategy is live. [Official NFL Terms](https://www.nfl.com/legal/terms/)
 
-## Strategy and competition design
+## Suggested order of work (review before implementation)
 
-Eight explicit hypotheses cover opponent-adjusted margin/moneyline, total points, schedule/availability, QB passing props, rushing/receiving props, cross-game parlays, same-player combos and teammate/team-total combos. Inputs, output contracts and failure modes are documented. None is a demonstrated profitable strategy.
+1. **Resolve rights and price policy first.** Select an authorized source, market universe, timestamp, vig treatment and settlement policy. Until then, no unified market residual, ROI, CLV or reward claim.
+2. **Choose one pre-registered singles-only shadow baseline.** Freeze rule text, markets, benchmarks, sample window and all gates in version control before evaluating an untouched future window.
+3. **Build a permissible point-in-time availability record.** Retain dated source snapshots only where allowed; record hashes, timestamps, source/schema changes and conflicts. Join official inactive evidence and snap counts instead of inferring replacement depth from jersey number or chart rank alone.
+4. **Run chronological ablations.** Compare the same model with/without verified availability features and with/without fixture-context features; report proper scores and uncertainty, not fixed injury-point penalties.
+5. **Keep parlay and prop divisions blocked pending joint evidence.** Do not multiply marginal probabilities as a substitute for observed and validated joint probabilities.
+6. **Operate the existing review workflow.** Compare proposal evidence, prerequisites, cost, risk and acceptance tests on the [Suggestions page](../nfl-suggestions.html); inspect the [Questions & Answers](../nfl-questions.html) and [Flagged for Review](../nfl-review.html) pages before recording a decision. No proposal is marked approved by this summary.
 
-Ten fail-closed gates cover provenance/contract, chronology, coverage/power, forecast quality, joint dependence, executable economics, uncertainty, multiple testing, forward shadow/risk, and reproducibility/rights. Numerical floors and exposure limits are **project policy**, not externally established skill thresholds.
+## Review links
 
-The proposed leaderboard specifies separate market classes, common frozen windows/offer/exposure rules, a positive lower-bound-return ranking, deterministic ties and explicit abstention logging. Evaluation and ranking are not implemented; every current entry is blocked. Only qualified ranks receive **non-transferable, non-monetary merit points (3/2/1)**. No cash pool or payment amount is inferred. Current leaderboard: empty.
+- [NFL dashboard](../index.html) · [decision-readiness brief](../nfl-decisions.html) · [Suggestions to review](../nfl-suggestions.html)
+- [Official results and skill panel](../nfl-results.html) · [questions from the results desk](../nfl-results-decisions.html)
+- [Injuries and replacements](../nfl-injuries.html) · [availability evidence and flags](../nfl-availability-28ef/site/index.html)
+- [NFL source register](../sources.html) · [Flagged for Review](../nfl-review.html) · [official NFL Terms](https://www.nfl.com/legal/terms/)
 
-## Injury / backup tracking — the requirement that is not met
+## Provenance and limits
 
-The tracker records official injury status (player, position, injury, practice, game status) for 45
-players across 4 teams, plus 20 players in the Week 10 Thursday block. **The second-, third- and
-fourth-string requirement is not satisfied.** Neither source names a starter, a depth rank, a
-replacement, a snap count or a share of targets or carries. On 2026-11-13 the league depth-chart path
-served no chart and a club depth-chart path returned a 404, so no league-site citation exists for a
-depth ordering at all.
-
-Replacement players and quantified deficiencies therefore stay **blank**. The design (schema,
-deficiency method, abstention rules) is documented; the data is not collected. This is the single
-largest gap between what was asked for and what this repository can support, and it is ranked second
-in the suggestions register for that reason.
-
-## Suggestions and questions — how to choose a path
-
-A reviewer now has one decision page: **`nfl-suggestions.html`**. It publishes ten ranked proposals
-(`S01`–`S10`) with a 1-5 score for decision value, effort, cost, confidence gain and reversibility, a
-priority index that is the arithmetic of those scores, an explicit prerequisite, the question each
-proposal closes, the evidence that must exist before it is called done, and the review workflow
-(`Proposed → Under review → Approved / Rejected → Implemented`).
-
-Two honest caveats are published on that page rather than hidden:
-
-- The sub-site publishes a **second** register of twelve proposals (`SU-01`–`SU-12`) under different
-  identifiers for overlapping work. Both are kept and a crosswalk maps them; the reviewer is asked to
-  adopt one.
-- **No proposal is approved, and nothing is implemented.** There is no approve button, by design: a
-  decision is recorded in the register and rebuilt, which leaves an auditable commit.
-
-Elsewhere: 17 questions (`DQ01`–`DQ17`) each split into what is known with a source and what is still
-open, 21 review flags of which 17 are open, ten validation gates and an empty leaderboard.
-
-## Repository and site
-
-216 NFL rows across 7 datasets, 8 strategies, 10 gates, 7 correlations, 10+12 suggestions across two
-registers, 17 questions and 21 flags (17 open, 4 corrected). The 2026-11-13 re-verification adds a
-38th canonical page and 70 further sourced rows. The NFL requirement ledger, official data tables, source receipts, methods, gate matrix, correlations, results and **Flagged for Review** are public site categories. Review flags do not block publishing an honest site, but do block unsupported strategy/price/cash release.
+This summary consolidates existing repository evidence. The latest NFL official-source reads cited by the lifecycle/results desks are dated 2026-11-14; the compiled date above is not a claim of a new source fetch. Source pages are linked so they can be manually reviewed. Saved rendered text/transcriptions are not raw HTTP archives; a hash establishes file integrity, not publisher truth. NFL.com direct retrieval, automation and permitted use are distinct questions. No scheduled NFL-site scraper is enabled here. Prices from non-NFL publishers are separately attributed and not re-labelled as official NFL data. Unknowns stay blank and are listed on [Flagged for Review](../nfl-review.html).

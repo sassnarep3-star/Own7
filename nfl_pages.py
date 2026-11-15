@@ -753,85 +753,96 @@ def nfl_review():
 
 
 def executive():
-    """NFL executive summary: five findings, four blockers, one decision."""
-    cal = NFL["calibration"]["scores"]
-    pyth = cal["Pythagorean (PF/PA, x=2.37)"]["brier"]
-    flat = cal["Flat .500 (no information)"]["brier"]
-    widest = sorted(NFL["teams"], key=lambda t: -abs(t["luck_residual"]))[:2]
-    findings = [
-        {"id": "E1", "headline": "The record now rests on official NFL sources, not inherited claims",
-         "detail": f"{NFL['verified_rows']['total']} rows were parsed from saved NFL.com text on "
-                   f"2026-11-12: 32 club standings rows, 20 injury-report rows and 14 Week 10 fixtures. "
-                   f"Every value is re-derived arithmetically before publication and the build aborts "
-                   f"on any contradiction.",
-         "state": "Verified snapshot", "kind": "good",
-         "source_ids": ["NFL-STANDINGS", "NFL-INJ-W10", "NFL-SCHED-W10"]},
-        {"id": "E2", "headline": "Points-based expectation carried real information in this snapshot",
-         "detail": f"Scored against the displayed records of all 32 clubs, the Pythagorean baseline "
-                   f"returned a Brier score of {pyth:.4f} against {flat:.2f} for a flat .500 guess. "
-                   f"The exponent is the published NFL convention, not fitted here, but the comparison "
-                   f"is inside one partial season and is not a forward test.",
-         "state": "Derived · exploratory", "kind": "blue",
-         "source_ids": ["NFL-STANDINGS", "PYTH-NFL"]},
-        {"id": "E3", "headline": "No club is far from its scoring expectation",
-         "detail": f"The widest record-versus-scoring gaps are {widest[0]['id']} at "
-                   f"{widest[0]['luck_residual']:+.2f} wins and {widest[1]['id']} at "
-                   f"{widest[1]['luck_residual']:+.2f} wins. In an eight- or nine-game sample that is "
-                   f"ordinary variation, not evidence of a mispriced market.",
-         "state": "Derived · exploratory", "kind": "blue",
-         "source_ids": ["NFL-STANDINGS", "PYTH-NFL"]},
-        {"id": "E4", "headline": "Fourteen originated lines exist and cannot yet be judged",
-         "detail": "Each Week 10 game has a model spread, total and fair price from one coherent score "
-                   "pair. No sportsbook quote was retrieved, so every market cell, ROI and closing-line "
-                   "value is blank rather than zero.",
-         "state": "Blocked", "kind": "warn",
-         "source_ids": ["NFL-SCHED-W10", "NFL-STANDINGS", "NFL-TERMS-LEGAL"]},
-        {"id": "E5", "headline": "The injury requirement is documented but not measured",
-         "detail": "Official statuses are published for 20 players in one game. Starter and "
-                   "second-, third- and fourth-string impact is blank because no depth chart and no "
-                   "snap share was retrieved. The gap is published with a proposed fix.",
-         "state": "Unverified", "kind": "warn",
-         "source_ids": ["NFL-INJ-W10", "NFL-INJURY-POLICY"]},
-        {"id": "E6", "headline": "Nothing is ranked, rewarded or recommended",
-         "detail": "All eight strategies are blocked, two of ten gates pass, the leaderboard is empty "
-                   "and no cash reward exists. The four blocking gaps are a dated market price, depth "
-                   "and snap data, and a measured leg dependence.",
-         "state": "Blocked", "kind": "warn",
-         "source_ids": ["REPO"]},
-    ]
-    body = notice('One paragraph, if you read nothing else.',
-                  'The NFL section is built, sourced and reproducible, and it overturns nothing: the '
-                  'scoring information is real, the originated lines are coherent, and the market '
-                  'comparison is simply absent. Until a dated price, depth and snap data, and a '
-                  'leg-dependence estimate exist, no NFL strategy may be ranked or rewarded.')
-    body += metrics([
-        ('Verified NFL rows', NFL['verified_rows']['total'], 'Official, re-derived', 'data'),
-        ('Originated games', len(NFL['games']), 'Model only', 'lab'),
-        ('Gates passing', 2, 'Of ten; one partial, one open', 'validation'),
-        ('Qualified strategies', 0, 'Of eight candidates', 'leaderboard'),
-    ])
-    body += section('Findings', table(
-        'nfl-exec-findings', 'Executive findings',
-        [('Finding', lambda r: rich(r['headline'], r['id'])), ('Detail', 'detail'),
-         ('Evidence class', lambda r: badge(r['state'], r['kind']))],
-        findings, note='A row marked Derived is a calculation over the snapshot, not an external fact. '
-                       'A row marked Blocked is missing an input, not a negative result.'))
-    body += '<div class="grid-2"><div class="panel body-text"><h3>The decision that is ready</h3>' \
-            '<p>Publish this as a non-commercial research note with every blank visible.</p>' \
-            + lines(DECISIONS["decision_frame"]["what_can_be_decided_today"]) + \
-            '</div><div class="panel body-text"><h3>The decisions that are not ready</h3>' \
-            + lines(DECISIONS["decision_frame"]["what_cannot_be_decided_today"]) + '</div></div>'
-    body += section('Four gaps blocking any reward decision', table(
-        'nfl-exec-blockers', 'Blocking gaps',
-        [('Gap', lambda r: rich(r['question'], r['id'])), ('Why it blocks', 'why_it_matters'),
-         ('Proposed fix', 'suggestion')],
-        [m for m in DECISIONS["missing_information"] if m["id"] in DECISIONS["blocking_before_any_reward"]],
-        note='These are data gaps with named fixes, not disagreements about method.'))
-    body += '<div class="download-list">' + ''.join([
-        '<a class="button" href="nfl-decisions.html">Full decision brief →</a>',
-        '<a class="button" href="nfl-suggestions.html">Suggestions to review →</a>',
-        '<a class="button" href="research/nfl/results.json">Reproducible results</a>',
-        '<a class="button" href="research/nfl/receipts.json">Source receipts</a>',
-        '<a class="button" href="nfl-review.html">Flagged for review</a>',
-    ]) + '</div>'
+    """Reconciled NFL executive brief; links distinguish official evidence from project analyses."""
+    body = notice(
+        'Do not treat this research as a validated live wagering edge or reward decision.',
+        'The repository now contains separate results, market-price, and availability research desks. '
+        'Their samples and price policies are not yet one governed prospective evaluation. A historical '
+        'spread finding is promising but retrospective; totals are null. No strategy is qualified for '
+        'live deployment or reward. Compiled 2026-11-15 from source reads dated through 2026-11-14; '
+        'this reconciliation did not perform a new live fetch.')
+    body += section('Executive findings',
+        '<div class="grid-2">'
+        '<article class="panel body-text"><h3>Official results make retrospective tests possible</h3>'
+        '<p>The results desk records 136 final scores (weeks 1–9 of 2026) and reconciles 160 standings '
+        'fields. This is a saved-results pipeline, not a multi-season or prospective test. '
+        '<a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">Official NFL schedule/results ↗</a> · '
+        '<a href="nfl-results-games.html">Results audit</a></p></article>'
+        '<article class="panel body-text"><h3>Signal is not yet deployment evidence</h3>'
+        '<p>One bounded retrospective spread board reports 77–43 (64.2%; permutation p=0.0021; '
+        'BH q=0.022) over 120 scored games; its total board reports 60–60 (50%). These are analyses, '
+        'not official NFL statistics, proof of future skill, or profit. Read the complete selection, '
+        'holdout and uncertainty limits. '
+        '<a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">Official outcome source ↗</a> · '
+        '<a href="nfl-results-skill.html">Skill and luck analysis</a></p></article>'
+        '<article class="panel body-text"><h3>Market prices exist in separate research desks</h3>'
+        '<p>A price desk contains 136 historical closing-line observations attributed to Pro-Football-Reference, '
+        'not an official NFL source. The lifecycle desk leaves its market cells blank pending its own '
+        'price-policy gate. Do not combine these as a canonical price feed or claim unified ROI/CLV. '
+        '<a href="https://www.pro-football-reference.com/about/sources.htm" target="_blank" rel="noopener noreferrer">Publisher source information ↗</a> · '
+        '<a href="nfl-pricing/site/prices.html">Pricing desk</a> · '
+        '<a href="nfl-lifecycle-3f5c/site/price-snapshots.html">Lifecycle policy and ledger</a></p></article>'
+        '<article class="panel body-text"><h3>Injury reports are not participation evidence</h3>'
+        '<p>Dated reports and club depth transcriptions support a preliminary replacement analysis, '
+        'but chart rank is not playing time. Chart freshness, shared/empty slots, roster changes, '
+        'and Houston’s image chart remain flagged. Official inactives, Game Books and snap counts '
+        'are needed before confirming who replaced whom. '
+        '<a href="https://www.nfl.com/injuries/league/2026/REG10" target="_blank" rel="noopener noreferrer">Official NFL injury report ↗</a> · '
+        '<a href="nfl-lifecycle-3f5c/site/replacement-depth.html">Replacement-depth analysis</a> · '
+        '<a href="nfl-availability-28ef/site/flagged.html">Availability flags</a></p></article>'
+        '<article class="panel body-text"><h3>Correlation is narrowly measured</h3>'
+        '<p>The results desk reports spread/total phi −0.068 (p=0.47, n=114) for its bounded same-game '
+        'sample. This neither validates independence nor supports player-prop combo pricing. Parlays '
+        'and combos stay blocked until direct joint probabilities and settlement rules are validated. '
+        '<a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">Official outcome source ↗</a> · '
+        '<a href="nfl-results-correlation.html">Correlation analysis</a></p></article>'
+        '<article class="panel body-text"><h3>Leaderboard and demotion gates are research controls</h3>'
+        '<p>There are no strategies qualified for live use or rewards. Signal and staking are separated; '
+        'the documented demotion gate has not been exercised on a live entry. '
+        '<a href="nfl-results-leaderboard.html">Results leaderboard</a> · '
+        '<a href="nfl-lifecycle-3f5c/site/leaderboard.html">Signal vs staking</a> · '
+        '<a href="nfl-lifecycle-3f5c/site/demotion.html">Demotion gate</a></p></article>'
+        '</div>')
+    body += section('Questions that block a reasonable decision',
+        '<div class="panel body-text"><ol>'
+        '<li><strong>Which price source is permitted?</strong> Missing: recorded rights decision, '
+        'one market universe, opening/closing timestamp convention, vig and settlement/void rules. '
+        'Clear with an authorized provider, frozen policy and field-level coverage validation. '
+        '<a href="https://www.nfl.com/legal/terms/" target="_blank" rel="noopener noreferrer">NFL Terms ↗</a></li>'
+        '<li><strong>Does the signal generalize?</strong> Missing: a pre-registered model, multiple '
+        'chronological seasons, untouched final holdout and prospective shadow forecasts. Clear with '
+        'version-frozen rules, benchmark-relative proper scores, uncertainty and multiple-testing control. '
+        '<a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">Official result source ↗</a></li>'
+        '<li><strong>Who actually replaced the starter?</strong> Missing: point-in-time official '
+        'inactives/Game Books, transaction-aware roster evidence and snap counts. Clear by joining '
+        'expected starters to actual participation and playing-time evidence; do not infer from jersey number. '
+        '<a href="https://www.nfl.com/injuries/league/2026/REG10" target="_blank" rel="noopener noreferrer">Official injury report ↗</a></li>'
+        '<li><strong>Do injury labels add information?</strong> Missing: multi-season designation-to-play '
+        'rates and uncertainty. Clear with chronological, identical-model ablations with and without '
+        'verified availability; use surprise/change features rather than fixed penalties. <a href=\"https://www.nfl.com/injuries/league/2026/REG10\" target=\"_blank\" rel=\"noopener noreferrer\">Official NFL injury report ↗</a></li>'
+        '<li><strong>Can parlays or player-prop combos qualify?</strong> Missing: calibrated joint '
+        'probabilities at the relevant thresholds and operator-specific push/void rules. Clear with '
+        'prospective joint calibration; do not multiply marginal probabilities. <a href=\"https://www.nfl.com/schedules/2026/by-week/week-1\" target=\"_blank\" rel=\"noopener noreferrer\">Official NFL outcome source ↗</a></li>'
+        '<li><strong>What sends a live strategy back to paper?</strong> Gate rules exist but have no '
+        'live operational history. Clear by shadow-testing alerts/rollback, freezing thresholds and '
+        'publishing trigger counts before any candidate is considered live. <a href=\"https://www.nfl.com/legal/terms/\" target=\"_blank\" rel=\"noopener noreferrer\">Official NFL Terms ↗</a></li>'
+        '</ol></div>')
+    body += section('Suggested sequence — review before implementation',
+        '<ol class="body-text">'
+        '<li>Resolve source rights and price policy; do not publish unified market residual, ROI, CLV or rewards before that gate.</li>'
+        '<li>Pre-register one singles-only shadow baseline, benchmarks, sample windows and gates before the evaluation window.</li>'
+        '<li>Build permissible point-in-time availability evidence with dates, hashes and conflicts; capture inactives and snap counts only from authorized sources.</li>'
+        '<li>Run chronological injury/personnel and fixture-context ablations with uncertainty; keep totals visible beside competing estimators until walk-forward comparison.</li>'
+        '<li>Keep parlays and prop combos blocked pending validated joint evidence and settlement rules.</li>'
+        '</ol><p class="body-text">Review the <a href="nfl-suggestions.html">ranked Suggestions register</a>, '
+        '<a href="nfl-questions.html">Questions &amp; Answers</a>, <a href="nfl-decisions.html">decision-readiness brief</a> '
+        'and <a href="nfl-review.html">Flagged for Review</a>. No proposal is approved by this summary.</p>')
+    body += section('Provenance and limits',
+        '<p class="body-text">This page consolidates existing repository records; it does not claim a fresh official-source read '
+        'on its compile date. Linked NFL pages are the official publishers for schedules, reports and terms. '
+        'The findings are calculated project outputs, not official NFL statistics. Saved rendered text is not a raw HTTP archive; '
+        'integrity hashes establish file integrity, not truth. Price observations from non-NFL publishers remain separately '
+        'attributed. No automated NFL-site scraper is enabled. See <a href="https://www.nfl.com/legal/terms/" '
+        'target="_blank" rel="noopener noreferrer">NFL Terms ↗</a>, the <a href="sources.html">source register</a> '
+        'and <a href="nfl-review.html">Flagged for Review</a>.</p>')
     return body
