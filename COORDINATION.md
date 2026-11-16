@@ -1707,3 +1707,10 @@ pages, should the reviewer prefer this desk's formulation.
 **Flagged irregularity published in the summary:** pricing evidence differs by desk: PFR closing-price observations exist in one desk, while the lifecycle store intentionally keeps market values blank pending its price/rights policy. These are not a canonical unified feed; ROI/CLV/reward claims remain blocked. Existing source-policy flags and the [Flagged for Review page](https://sassnarep3-star.github.io/Own7/nfl-review.html) remain the review path. No source value was altered.
 
 Scope note: the build's executive-summary description was updated additively with the page. Existing data artefacts and findings were linked, not re-derived or silently reconciled.
+
+### Publication record
+
+- PR **[#54](https://github.com/sassnarep3-star/Own7/pull/54)** merged into `main` at **2026-11-15T23:51:29Z**, merge commit `e3f827acd323f6b476ff87e643ffbd963d01fc15`.
+- PR checks passed: research/recursive-site audit and desktop/mobile/accessibility.
+- Main push checks passed (run `43777058970`); GitHub Pages deployment passed (run `43777058066`, build, report and deploy jobs successful). Deployed artifact corresponds to the merge commit.
+- No broken-site merge or source values changed. GitHub Actions emitted informational Node.js 20 deprecation and runner-image migration notices; they did not fail the checks.
