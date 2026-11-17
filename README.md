@@ -2,6 +2,23 @@
 
 [Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
+## New: integration, Week 10 extension, decision-readiness landing (2026-11-17, session arena/e15f05e0-own7)
+
+- **The verified results feed now reaches Week 10.** Official reads on 2026-11-17 (standings +
+  REG10 schedule) extend the feed from 136 to **149 finals**. Three reconciliations hold: weeks
+  1-9 vs the frozen pre-kickoff snapshot, weeks 1-10 (minus the one scheduled-not-final game,
+  Chargers at Ravens) vs the fresh 2026-11-17 snapshot, and fresh = frozen + parsed Week 10
+  deltas. The frozen origination input was not touched (no lookahead).
+- **The landing page now carries the decision-readiness ledger** the brief asked for: one row per
+  requirement, the gate that blocks it, and the number that would clear it (`research/nfl-decision-readiness.json`, 70 rows).
+- **The competition lab (PR #51) was merged additively** into the integrated tree (16 pages, 59
+  tests, its own price store/origination-order/boards/leaderboard/depth/correlations/demotion
+  artifacts). Four stale sibling PRs (#17, #27, #48, #50) were closed with documented rationale —
+  published as flag NF22 on the Flagged for Review page.
+- All batteries green on the combined tree: 111 + 27 + 59 + desk suites, every desk `--check`,
+  recursive site check (registered row sources, blank rules, receipts, deterministic rebuilds),
+  and 190 desktop + 190 mobile browser pages at WCAG A/AA.
+
 ## New: official results & skill lab (2026-11-14)
 
 Every earlier session recorded that no NFL result archive existed, so the leaderboard stayed empty

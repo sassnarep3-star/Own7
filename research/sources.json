@@ -2762,5 +2762,27 @@
    "originate.py",
    "boards.py"
   ]
+ },
+{
+  "id": "E15-NFL-STANDINGS-1117",
+  "publisher": "NFL.com",
+  "title": "2026 NFL Division Standings",
+  "url": "https://www.nfl.com/standings/",
+  "kind": "standings",
+  "checked_on": "2026-11-17",
+  "scope": "All 32 clubs: W, L, T, PCT, PF, PA, NET PTS, HOME, ROAD, STRK, LAST5. Read on 2026-11-17 between the 13 completed Week 10 finals and the Monday night kickoff; the read is used to reconcile the weeks 1-10 results feed and to prove fresh = frozen + parsed Week 10 deltas.",
+  "access": "Arena fetch_page rendered content, 2 chunks; read after 13 Week 10 finals and before the Week 10 Monday night kickoff. Saved verbatim as research/nfl/evidence/standings-2026-11-17.retrieved.md.",
+  "status": "Verified"
+ },
+{
+  "id": "E15-NFL-SCHED-REG10-1117",
+  "publisher": "NFL.com",
+  "title": "2026 NFL Schedule: Week 10 (REG10)",
+  "url": "https://www.nfl.com/schedules/2026/REG10",
+  "kind": "schedule",
+  "checked_on": "2026-11-17",
+  "scope": "Week 10 fixtures as printed: 13 dated finals, 1 scheduled-not-final fixture (kickoff printed, no score), 4 clubs on bye, and the league 2026 TBD-games announcement. Read on 2026-11-17; consumed only as evidence for the results feed, the scheduled-fixture table and the schedule-announcement record.",
+  "access": "Arena fetch_page rendered content, 2 chunks; 13 dated finals, 1 scheduled-not-final fixture (Chargers at Ravens, Monday, November 16th, 8:15 PM, ESPN), 4 clubs on bye, and the league's 2026 TBD-games flexible-scheduling announcement. Saved as nfl-results/evidence/week-10.schedule.md.",
+  "status": "Verified"
  }
 ]

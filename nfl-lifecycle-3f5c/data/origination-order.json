@@ -331,7 +331,7 @@
     "mismatches": [],
     "status": "PASS",
     "canonical_artifact": "research/nfl/results.json",
-    "canonical_run_hash": "5b089f9dd22c9b61f87e97a311e965d199b20b0938a2b1f48b01f554d91cd7f4"
+    "canonical_run_hash": "f0628ecab5e4a20785d2b1aa934c046f08258485b05b28bcde7ad20df5e156e7"
   },
   "source_ids": [
     "NFL-STANDINGS",

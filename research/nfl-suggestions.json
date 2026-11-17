@@ -1,20 +1,197 @@
 {
-  "schema_version": 1,
-  "snapshot_date": "2026-11-12",
-  "review_workflow": ["Proposed", "Under review", "Approved", "Rejected", "Implemented"],
-  "rule": "No suggestion is implemented until a reviewer records an Approved decision in this ledger. The static page displays decisions; it does not provide an approval control.",
-  "suggestions": [
-    {"id": "SU-01", "title": "Add play-by-play game logs", "proposal": "Transcribe bounded game logs (e.g. one QB, 8-16 games) from official NFL boxscores to enable paired correlations and walk-forward demos.", "rationale": "Season aggregates cannot support bet-leg dependence or temporal validation.", "missing_info": "Official game-log URLs + bounded window + rights check.", "decision_needed": "Approve bounded window and player.", "status": "Proposed", "source_ids": ["NFL-PASSING", "NFL-TERMS"]},
-    {"id": "SU-02", "title": "Transcribe full schedule (rest/travel)", "proposal": "Transcribe Week 7-10 schedule rows to compute rest days, bye weeks and travel distance.", "rationale": "NS03 cannot be tested without schedule features.", "missing_info": "Bounded schedule transcription.", "decision_needed": "Approve weeks to transcribe.", "status": "Proposed", "source_ids": ["NFL-SCHEDULE"]},
-    {"id": "SU-03", "title": "Transcribe rosters / depth charts", "proposal": "Transcribe bounded roster rows (e.g. NE, CHI, PIT, NO) to map 2nd/3rd/4th-string backups.", "rationale": "Injury tracker cannot name replacements without depth data.", "missing_info": "Bounded roster transcription + depth ordering definition.", "decision_needed": "Approve teams and depth definition.", "status": "Proposed", "source_ids": ["NFL-ROSTER", "NFL-INJURY"]},
-    {"id": "SU-04", "title": "Add rushing/scoring team stats", "proposal": "Transcribe team rushing and scoring tables to complete offense/defense picture.", "rationale": "Passing-only snapshot omits half the game.", "missing_info": "Official rushing/scoring URLs.", "decision_needed": "Approve tables to transcribe.", "status": "Proposed", "source_ids": ["NFL-TEAM-OFF"]},
-    {"id": "SU-05", "title": "Add weather data", "proposal": "Add official game-site weather (temperature, wind, precipitation) as a total-points covariate.", "rationale": "Weather affects passing efficiency and totals.", "missing_info": "Official weather source + game-site mapping.", "decision_needed": "Approve source and scope.", "status": "Proposed", "source_ids": ["NFL-SCHEDULE"]},
-    {"id": "SU-06", "title": "Add licensed odds feed", "proposal": "Obtain licensed pregame odds (open/close) to enable de-vigging and CLV.", "rationale": "No market baseline exists without prices.", "missing_info": "License + rights review (currently blocked by NFL Terms).", "decision_needed": "Rights review before any feed.", "status": "Proposed", "source_ids": ["NFL-TERMS"]},
-    {"id": "SU-07", "title": "Add snap counts / targets", "proposal": "Add official snap/target data for prop modeling.", "rationale": "Touches drive rushing/receiving props.", "missing_info": "Official snap/target source.", "decision_needed": "Approve source.", "status": "Proposed", "source_ids": ["NFL-RECEIVING"]},
-    {"id": "SU-08", "title": "Add betting-market settlement rules", "proposal": "Document operator-specific settlement (voids, pushes, DNP, overtime) from official operator pages.", "rationale": "Executable economics require exact contracts.", "missing_info": "Operator pages + jurisdiction scope.", "decision_needed": "Approve operators to document.", "status": "Proposed", "source_ids": ["NFL-TERMS"]},
-    {"id": "SU-09", "title": "Add preseason priors", "proposal": "Add prior-season team/player aggregates as shrinkage priors.", "rationale": "Early-season snapshot (8-9 games) is noisy.", "missing_info": "Prior-season official tables.", "decision_needed": "Approve seasons.", "status": "Proposed", "source_ids": ["NFL-STANDINGS"]},
-    {"id": "SU-10", "title": "Add injury-history panel", "proposal": "Transcribe multi-week injury reports to track availability trends.", "rationale": "Single-week snapshot cannot show trends.", "missing_info": "Multi-week bounded transcription.", "decision_needed": "Approve weeks.", "status": "Proposed", "source_ids": ["NFL-INJURY"]},
-    {"id": "SU-11", "title": "Add coaching / scheme data", "proposal": "Add official coaching/scheme indicators.", "rationale": "Scheme affects efficiency and variance.", "missing_info": "Official coaching source + encoding.", "decision_needed": "Approve encoding.", "status": "Proposed", "source_ids": ["NFL-STANDINGS"]},
-    {"id": "SU-12", "title": "Improve site decision aids", "proposal": "Add filterable deficiency matrix, abstention log and gate-evidence checklist to the dashboard.", "rationale": "Decision-making needs explicit abstention and evidence tracking.", "missing_info": "None — design only.", "decision_needed": "Approve layout.", "status": "Proposed", "source_ids": ["NFL-STANDINGS"]}
-  ]
+ "schema_version": 1,
+ "snapshot_date": "2026-11-17",
+ "review_workflow": [
+  "Proposed",
+  "Under review",
+  "Approved",
+  "Rejected",
+  "Implemented"
+ ],
+ "rule": "No suggestion is implemented until a reviewer records an Approved decision in this ledger. The static page displays decisions; it does not provide an approval control.",
+ "suggestions": [
+  {
+   "id": "SU-01",
+   "title": "Add play-by-play game logs",
+   "proposal": "Transcribe bounded game logs (e.g. one QB, 8-16 games) from official NFL boxscores to enable paired correlations and walk-forward demos.",
+   "rationale": "Season aggregates cannot support bet-leg dependence or temporal validation.",
+   "missing_info": "Official game-log URLs + bounded window + rights check.",
+   "decision_needed": "Approve bounded window and player.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-PASSING",
+    "NFL-TERMS"
+   ]
+  },
+  {
+   "id": "SU-02",
+   "title": "Transcribe full schedule (rest/travel)",
+   "proposal": "Transcribe Week 7-10 schedule rows to compute rest days, bye weeks and travel distance.",
+   "rationale": "NS03 cannot be tested without schedule features.",
+   "missing_info": "Bounded schedule transcription.",
+   "decision_needed": "Approve weeks to transcribe.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-SCHEDULE"
+   ]
+  },
+  {
+   "id": "SU-03",
+   "title": "Transcribe rosters / depth charts",
+   "proposal": "Transcribe bounded roster rows (e.g. NE, CHI, PIT, NO) to map 2nd/3rd/4th-string backups.",
+   "rationale": "Injury tracker cannot name replacements without depth data.",
+   "missing_info": "Bounded roster transcription + depth ordering definition.",
+   "decision_needed": "Approve teams and depth definition.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-ROSTER",
+    "NFL-INJURY"
+   ]
+  },
+  {
+   "id": "SU-04",
+   "title": "Add rushing/scoring team stats",
+   "proposal": "Transcribe team rushing and scoring tables to complete offense/defense picture.",
+   "rationale": "Passing-only snapshot omits half the game.",
+   "missing_info": "Official rushing/scoring URLs.",
+   "decision_needed": "Approve tables to transcribe.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-TEAM-OFF"
+   ]
+  },
+  {
+   "id": "SU-05",
+   "title": "Add weather data",
+   "proposal": "Add official game-site weather (temperature, wind, precipitation) as a total-points covariate.",
+   "rationale": "Weather affects passing efficiency and totals.",
+   "missing_info": "Official weather source + game-site mapping.",
+   "decision_needed": "Approve source and scope.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-SCHEDULE"
+   ]
+  },
+  {
+   "id": "SU-06",
+   "title": "Add licensed odds feed",
+   "proposal": "Obtain licensed pregame odds (open/close) to enable de-vigging and CLV.",
+   "rationale": "No market baseline exists without prices.",
+   "missing_info": "License + rights review (currently blocked by NFL Terms).",
+   "decision_needed": "Rights review before any feed.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-TERMS"
+   ]
+  },
+  {
+   "id": "SU-07",
+   "title": "Add snap counts / targets",
+   "proposal": "Add official snap/target data for prop modeling.",
+   "rationale": "Touches drive rushing/receiving props.",
+   "missing_info": "Official snap/target source.",
+   "decision_needed": "Approve source.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-RECEIVING"
+   ]
+  },
+  {
+   "id": "SU-08",
+   "title": "Add betting-market settlement rules",
+   "proposal": "Document operator-specific settlement (voids, pushes, DNP, overtime) from official operator pages.",
+   "rationale": "Executable economics require exact contracts.",
+   "missing_info": "Operator pages + jurisdiction scope.",
+   "decision_needed": "Approve operators to document.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-TERMS"
+   ]
+  },
+  {
+   "id": "SU-09",
+   "title": "Add preseason priors",
+   "proposal": "Add prior-season team/player aggregates as shrinkage priors.",
+   "rationale": "Early-season snapshot (8-9 games) is noisy.",
+   "missing_info": "Prior-season official tables.",
+   "decision_needed": "Approve seasons.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-STANDINGS"
+   ]
+  },
+  {
+   "id": "SU-10",
+   "title": "Add injury-history panel",
+   "proposal": "Transcribe multi-week injury reports to track availability trends.",
+   "rationale": "Single-week snapshot cannot show trends.",
+   "missing_info": "Multi-week bounded transcription.",
+   "decision_needed": "Approve weeks.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-INJURY"
+   ]
+  },
+  {
+   "id": "SU-11",
+   "title": "Add coaching / scheme data",
+   "proposal": "Add official coaching/scheme indicators.",
+   "rationale": "Scheme affects efficiency and variance.",
+   "missing_info": "Official coaching source + encoding.",
+   "decision_needed": "Approve encoding.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-STANDINGS"
+   ]
+  },
+  {
+   "id": "SU-12",
+   "title": "Improve site decision aids",
+   "proposal": "Add filterable deficiency matrix, abstention log and gate-evidence checklist to the dashboard.",
+   "rationale": "Decision-making needs explicit abstention and evidence tracking.",
+   "missing_info": "None \u2014 design only.",
+   "decision_needed": "Approve layout.",
+   "status": "Proposed",
+   "source_ids": [
+    "NFL-STANDINGS"
+   ]
+  },
+  {
+   "id": "SU-13",
+   "title": "Extend the verified results feed every week on a fixed cadence",
+   "proposal": "After each week's games finish, read the official by-week schedule page and the standings page once, save the rendered text as evidence, extend the feed, and re-run the three reconciliations (weeks 1-9 vs frozen, weeks 1-N vs fresh, fresh = frozen + deltas). The 2026-11-17 read did this for Week 10 (13 finals; LAC at BAL was not final at read time).",
+   "rationale": "Every skill, luck and correlation number improves as the feed grows; the reconciliation aborts instead of publishing a contradiction, so the cadence is safe.",
+   "missing_info": "The next week's official finals and the Monday-night result for Week 10.",
+   "decision_needed": "Confirm the weekly cadence and who reviews the reconciliation output.",
+   "status": "Proposed",
+   "source_ids": [
+    "E15-NFL-SCHED-REG10-1117",
+    "E15-NFL-STANDINGS-1117"
+   ]
+  },
+  {
+   "id": "SU-14",
+   "title": "Transcribe the venue of every fixture from the official game centre (bounded pilot)",
+   "proposal": "For one bounded week (14 fixtures), open each game centre link already captured in the schedule evidence and transcribe the venue field with its per-game URL. No inference; a blank stays blank if a game centre does not print it.",
+   "rationale": "Requirement DR-23 is the last fixture-context field with no artifact; venue enables the roof/surface and weather lines (DR-58) without leaving official sources.",
+   "missing_info": "Whether every 2026 game centre prints the venue consistently.",
+   "decision_needed": "Approve the bounded week and the transcription template.",
+   "status": "Proposed",
+   "source_ids": [
+    "CP-NFL-W10-SCHEDULE"
+   ]
+  },
+  {
+   "id": "SU-15",
+   "title": "Publish a weekly 'what changed' diff beside the snapshot",
+   "proposal": "Keep each weekly snapshot (feed, standings, availability) as a dated artifact and render a diff column: rank change, rating change, availability change. Two dated snapshots already exist (2026-11-12/14 and 2026-11-17), so the first diff is computable now.",
+   "rationale": "A static snapshot hides the surprise; the brief requires the delta ('surprise, never a level') and a decision-maker reads change faster than level.",
+   "missing_info": "The choice of diff columns to publish.",
+   "decision_needed": "Pick the diff columns and where the diff view lives.",
+   "status": "Proposed",
+   "source_ids": [
+    "E15-NFL-STANDINGS-1117"
+   ]
+  }
+ ]
 }

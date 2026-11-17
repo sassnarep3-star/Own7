@@ -14,6 +14,7 @@ NFL = json.loads((ROOT / "research/nfl/results.json").read_text(encoding="utf-8"
 DECISIONS = json.loads((ROOT / "research/nfl/decisions.json").read_text(encoding="utf-8"))
 QUESTIONS = json.loads((ROOT / "research/nfl/questions.json").read_text(encoding="utf-8"))
 FLAGS = json.loads((ROOT / "research/nfl/flags.json").read_text(encoding="utf-8"))
+DECISION_READINESS = json.loads((ROOT / "research/nfl-decision-readiness.json").read_text(encoding="utf-8"))
 RECEIPTS = json.loads((ROOT / "research/nfl/receipts.json").read_text(encoding="utf-8"))
 RECHECK = json.loads((ROOT / "research/nfl/verification-2026-11-13.json").read_text(encoding="utf-8"))
 SUB_SUGGESTIONS = json.loads((ROOT / "research/nfl-suggestions.json").read_text(encoding="utf-8"))["suggestions"]
@@ -710,6 +711,31 @@ def nfl_overview():
         note='Each row is either a re-derived calculation or an explicit statement of a limit.'))
     body += '<p class="source-line">' + refs({"source_ids": ["NFL-STANDINGS", "NFL-INJ-W10", "NFL-SCHED-W10",
                                                               "NFL-INJURY-POLICY", "NFL-TERMS-LEGAL", "PYTH-NFL"]}) + '</p>'
+    status_kind = {"Implemented": "good", "Partial": "warn", "Open": "blue",
+                   "Blocked": "warn", "Rejected": "neutral"}
+    counts = {}
+    for row in DECISION_READINESS["requirements"]:
+        counts[row["status"]] = counts.get(row["status"], 0) + 1
+    count_text = " \u00b7 ".join(f"{v} {k}" for k, v in sorted(counts.items()))
+    body += section('Decision readiness: one row per requirement, its gate, and the number that clears it',
+                    table('nfl-decision-readiness', 'Decision readiness ledger (graded ' + DECISION_READINESS["snapshot_date"] + ')',
+        [('Requirement', lambda r: rich(r['requirement'], r['category'])),
+         ('Status', lambda r: badge(r['status'], status_kind.get(r['status']))),
+         ('Gate that blocks it', 'gate'),
+         ('The number that clears it', 'clears_when'),
+         ('Artifact and official source', lambda r: _Markup(
+             '<span class="refs">' + f'<a href="{esc(r["artifact"])}">Artifact ↗</a> ' + str(refs(r)) + '</span>'))],
+        [{"id": row["id"], "requirement": row["requirement"], "category": row["category"],
+          "status": row["status"], "gate": row["gate"], "clears_when": row["clears_when"],
+          "artifact": row["artifact"], "source_ids": row["source_ids"]}
+         for row in DECISION_READINESS["requirements"]],
+        note=f'One row per requirement line in the project brief, graded as of {DECISION_READINESS["snapshot_date"]}: '
+             f'{count_text}. The gate column names what actually blocks the requirement today; the clearing column names '
+             'the number or condition that would lift it. Statuses are re-graded only against artifacts that exist in '
+             'the tree \u2014 never filled in. Open questions that sit behind these gates: '
+             '<a href="nfl-questions.html">questions</a>; the ranked proposals for closing them: '
+             '<a href="nfl-suggestions.html">suggestions</a>.'))
+
     return body
 
 

@@ -1895,3 +1895,22 @@ gates they cannot compute.
   the desk pipeline runs before `build.py`, so a stale artifact fails the site build.
 - `.github/workflows/check.yml` — two added lines running the desk check and its tests.
 - Every other shared page changed only because the site was rebuilt with the new nav entry.
+
+### E1–E8 completion record — session-arena-e15f05e0-own7 (2026-11-17)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| E1 | Baseline replay | **done** | 111 tests green on `be2462d` before any change; claim pushed first. |
+| E2 | Merge PR #51 additively | **done** | Histories technically unrelated (squash-merged ancestors), so the merge used `--allow-unrelated-histories -X ours`; the desk arrives under `nfl-competition/**` and main's canonical pages were kept, then their shared-file wiring (build_site nav+hook, check_site hosts, check.yml tests, browser/serve folders, `research/sources.json` CP-NFL-* entries, COORDINATION board) was ported manually. All suites green on the combined tree (111 + 27 + 59 + desk suites). |
+| E3 | Fresh official reads (2026-11-17) | **done** | `https://www.nfl.com/standings/` and `https://www.nfl.com/schedules/2026/REG10` read via fetch_page in 2 chunks each; evidence saved verbatim (`research/nfl/evidence/standings-2026-11-17.retrieved.md`, `nfl-results/evidence/week-10.schedule.md`); registered as E15-NFL-STANDINGS-1117 and E15-NFL-SCHED-REG10-1117 with scope/access boundaries. The REG10 page also carries the league's 2026 TBD-games announcement (Weeks 16–18 windows, flexible-scheduling procedures), recorded beside the schedule evidence per the brief. |
+| E4 | Extend the results feed | **done** | 149 official finals (136 + 13 Week 10 finals). Three reconciliations enforced in `nfl-results/extract.py`: weeks 1-9 vs frozen snapshot (160/160), weeks 1-10 minus the scheduled game vs the fresh snapshot (160/160), and fresh = frozen + parsed Week 10 deltas (32 clubs × 5 fields). Chargers-at-Ravens is published as scheduled-not-final and stays out of the feed; the frozen origination input `data/nfl-standings-2026.csv` was not modified (no lookahead). Engine re-run leakage-free on weeks 2-10 (133 scored rows); `analysis.json` regenerated; results pages + README counts updated. |
+| E5 | Decision-readiness table on the landing page | **done** | `research/nfl-decision-readiness.json` (70 rows, one per brief requirement line) rendered on `index.html` with per-row status, gate, clearing number, artifact link and registered official sources. |
+| E6 | Stale-PR reconciliation | **done** | PR #51 merged additively (see E2). PRs #17, #27, #48, #50 closed with rationale comments (takeover basis: claims >60 h stale; duplicates superseded by merged desks; #27 failing browser checks). Published as flag NF22 (Needs review) on the Flagged for Review page. Branches remain in history. |
+| E7 | Suggestions review additions | **done** | SU-13 (weekly feed cadence), SU-14 (venue transcription pilot), SU-15 (weekly what-changed diff) added to the hub register and declared unmapped in `research/nfl/decisions.json` per the existing contract test. Adopt/Defer/Reject decisions stay human-owned (0 recorded). |
+| E8 | Full checks, PR, merge, Pages deploy, record | **in progress → recorded below** | Battery: `python -m unittest discover -s tests` 111 pass; `nfl-results/tests` 27 pass; `nfl-competition/tests` 59 pass; `nfl/origination` + skill-cfdd + lifecycle + pricing + availability + assurance + market-desk suites pass; every desk `build.py --check` green; `scripts/check_site.py` OK (recursive pages, per-row registered sources, blank rules, receipts, deterministic rebuild); `npm run test:browser` 190 desktop + 190 mobile, WCAG A/AA, no runtime errors; `git status --porcelain` clean before push. |
+
+**Verification actually run this session (all green):** listed in E8. `python scripts/nfl_extract.py --check` → 32 standings, 20 injury, 14 fixtures, 0 flags.
+
+**Flagged, not resolved (published non-blocking):** NF22 (stale-PR takeover decisions — needs review); one Week 10 game (LAC at BAL) was scheduled-not-final at the 2026-11-17 read and joins the feed when its final posts (SU-13 cadence); all prior desks' open flags (LC-F01/02/05/07 etc.) remain open and unchanged.
+
+**Sources read this session (2026-11-17):** `https://www.nfl.com/standings/` · `https://www.nfl.com/schedules/2026/REG10` (both via Arena fetch_page rendered text, 2 chunks each, saved verbatim). No scheduled scraping was added; the terms §1.3 constraint stands.
