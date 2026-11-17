@@ -1,0 +1,310 @@
+[
+  {
+    "id": "R01",
+    "item": "Originate lines in order: side, then total, then moneyline",
+    "status": "Implemented (data)",
+    "evidence": "Stage order in origination-order.json: Side, Total, Moneyline; 14 games.",
+    "gate": "None for the order itself",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/origination-order.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R02",
+    "item": "Publish fair line, market line and difference as separate columns",
+    "status": "Columns present; market values blank",
+    "evidence": "Fair line and market-line fields exist in price-snapshots.json. Market line is filled for 0 of 42 markets; difference is filled for 0.",
+    "gate": "RG03 / XS09: no licensed sportsbook price",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/price-snapshots.json",
+      "nfl-injuries"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R03",
+    "item": "Price-snapshot store, opening and closing",
+    "status": "Partly implemented",
+    "evidence": "42 markets across 14 games with opening and closing entries. Closing equals opening for 29 of 42 (LC-F01).",
+    "gate": "Price data policy (XS09 / CF10)",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/price-snapshots.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R04",
+    "item": "Verified results feed (136-game log)",
+    "status": "Implemented (data)",
+    "evidence": "nfl-results/data/games-2026-w1-9.csv has 136 game rows (brief says 136).",
+    "gate": "None for the feed; price data needed for ROI",
+    "clearing": "136",
+    "sources": [
+      "repo:nfl-results/data/games-2026-w1-9.csv"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R05",
+    "item": "Backtest and ROI computable from snapshots and results",
+    "status": "Blocked",
+    "evidence": "No licensed closing price exists in the repository, so ROI cannot be computed from it.",
+    "gate": "RG03 / RG10: price rights and terms",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/price-snapshots.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R06",
+    "item": "Signal and staking separated in the leaderboard",
+    "status": "Implemented (data)",
+    "evidence": "leaderboard.json states ranking reads only signal fields; the staking table has no rank.",
+    "gate": "None",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/leaderboard.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R07",
+    "item": "Strategies pre-registered (commit hash as registration)",
+    "status": "Unverified",
+    "evidence": "Demotion gate DG-1 states defined_on 2026-11-14, but its rule and code first appear in commit 8332d25 with the desk code. A self-declared date is not a registration.",
+    "gate": "Commit-hash registration per strategy",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/demotion-gate.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R08",
+    "item": "Proper-score ranking with benchmark and uncertainty",
+    "status": "Not implemented",
+    "evidence": "Ranking fields are id, name, market, selective, bets, wins, losses, hit_rate, p_value, q_value, ci_low, ci_high. None is a proper score (no Brier, log score or CRPS field) and no benchmark field is present.",
+    "gate": "Proper score definition and baseline",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/leaderboard.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R09",
+    "item": "Leaderboard divisions: singles, game parlays, SGPs, prop combos",
+    "status": "Partly implemented",
+    "evidence": "Graded rows use markets spread, total only. No moneyline, parlay, SGP or prop-combo division is present. Leaderboard rows: graded 30, provisional 1, qualified 0, rejected 29.",
+    "gate": "Joint-evidence gate (for parlays / SGPs / props)",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/leaderboard.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R10",
+    "item": "Demotion gate",
+    "status": "Implemented, armed",
+    "evidence": "DG-1: armed=True, demotions=0. Pre-registration of the rule is R07.",
+    "gate": "Pre-registration (R07)",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/demotion-gate.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R11",
+    "item": "Control baselines",
+    "status": "Partly implemented",
+    "evidence": "Demotion trigger D1 uses a declared baseline. The leaderboard has no baseline field.",
+    "gate": "Baseline definition per strategy",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/demotion-gate.json",
+      "repo:nfl-lifecycle-3f5c/data/leaderboard.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R12",
+    "item": "Correlations published with n",
+    "status": "Implemented (data)",
+    "evidence": "correlation-audit.json: 22 audited rows, 18 with coefficients, 4 blank by rule, 0 failed; 18 rows carry n.",
+    "gate": "None for the rule",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/correlation-audit.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R13",
+    "item": "Availability and depth from official sources only; no jersey-order depth",
+    "status": "Partly implemented",
+    "evidence": "Depth desk captured 27 clubs; the skill desk captured 4. Some charts are unofficial club copies (for example the Packers chart is stamped 'Unofficial'). Houston is image-only. No script in the repository derives depth from jersey number (not exhaustively audited).",
+    "gate": "Official-source rule; club-site charts",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-availability-28ef/data/depth-slots-week10-2026.csv",
+      "repo:nfl-skill-cfdd/data/depth-slots-2026-11-14.csv"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R14",
+    "item": "Injury signal as surprise (change), never level; publish deltas",
+    "status": "Not implemented",
+    "evidence": "None of the 5 injury files has a delta or change column. The published injury values are levels.",
+    "gate": "Injury-change definition and delta column",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-availability-28ef/data/injuries-week10-2026.csv"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R15",
+    "item": "Roster and IR sweep of 32 teams",
+    "status": "Partly implemented",
+    "evidence": "Depth coverage: 31 of 32 clubs have a captured chart in either desk; 1 clubs have none. The November reserve list was read (25 rows); October was not.",
+    "gate": "Official reserve-list read for October and the 32-club sweep",
+    "clearing": "",
+    "sources": [
+      "nfl-reserve",
+      "nfl-trades"
+    ],
+    "source_kind": "Official NFL page"
+  },
+  {
+    "id": "R16",
+    "item": "Snapshot store of injury reports, inactives and depth charts with hashes",
+    "status": "Partly implemented",
+    "evidence": "Availability capture records joined_sha256 (True). No hash-keyed store of injury reports or inactives exists in the repository.",
+    "gate": "Snapshot policy for inactives and injury reports",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-availability-28ef/data/capture-summary.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R17",
+    "item": "'What would change our mind' per strategy",
+    "status": "Not implemented",
+    "evidence": "The leaderboard data has no such field. The phrase 'would change the answer' appears 1 times in nfl-results-leaderboard.html. Coverage per strategy is not checked.",
+    "gate": "Per-strategy field",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-results-leaderboard.html"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R18",
+    "item": "Injury and depth data: Lions Week 10 status cross-checked against official page",
+    "status": "Mismatch in 3 desks",
+    "evidence": "Official page (read 2026-11-17): Joseph, Mays and Reed all Out. Desks in scope that disagree: 2.",
+    "gate": "Source correction (flagged, not changed)",
+    "clearing": "",
+    "sources": [
+      "nfl-injuries",
+      "repo:nfl-assurance-9580ac3f/data/injuries.csv"
+    ],
+    "source_kind": "Official NFL page"
+  },
+  {
+    "id": "R19",
+    "item": "Stale-depth flag against official transactions",
+    "status": "Flagged",
+    "evidence": "12 November trades checked: 1 stale (still printed on the former club), 4 printed on the new club, 7 not printed on the new club (review only), 0 with no chart.",
+    "gate": "Chart refresh for flagged clubs",
+    "clearing": "",
+    "sources": [
+      "nfl-trades",
+      "repo:nfl-availability-28ef/data/depth-slots-week10-2026.csv"
+    ],
+    "source_kind": "Official NFL page"
+  },
+  {
+    "id": "R20",
+    "item": "Baltimore QB order against the club page",
+    "status": "Mismatch",
+    "evidence": "Repository chart (checked 2026-11-12) names Jackson and Huntley. Club page (read 2026-11-17) Offense table names Brissett and Fagnano and Slovis. Brief's 'placed on IR' is not on the November reserve list.",
+    "gate": "October reserve list (not read)",
+    "clearing": "",
+    "sources": [
+      "bal-depth",
+      "nfl-reserve",
+      "repo:nfl-availability-28ef/data/depth-slots-week10-2026.csv"
+    ],
+    "source_kind": "Club website"
+  },
+  {
+    "id": "R21",
+    "item": "Kickoff/onside regime priors filter published as stated in the brief",
+    "status": "Stated in repository",
+    "evidence": "'onside' appears in repository code and pages (13 files).",
+    "gate": "Filter values to be checked against the brief text",
+    "clearing": "",
+    "sources": [
+      "repo:nfl_pages.py"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R22",
+    "item": "Two model totals published with gap column until walk-forward picks one",
+    "status": "Partly implemented",
+    "evidence": "decisions.json mentions 'gap' 1 time(s). Two-estimator totals with a gap column are not in the published leaderboard.",
+    "gate": "Walk-forward comparison",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/decisions.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R23",
+    "item": "Parlays and prop combos behind a joint-evidence gate",
+    "status": "Stated; no ranked strategies",
+    "evidence": "'joint' appears 8 times in nfl_pages.py. The leaderboard has 0 qualified strategies.",
+    "gate": "Joint-evidence definition",
+    "clearing": "",
+    "sources": [
+      "repo:nfl_pages.py"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R24",
+    "item": "Public site shows derived analysis only; raw rows kept private until terms are read",
+    "status": "Not met as written",
+    "evidence": "Row-level files are committed to the public repository: price-snapshots.json (42 rows), games-2026-w1-9.csv (136 rows), and 5 injury CSVs. Terms are cited at NFL.com (see Flagged FL-13).",
+    "gate": "Owner decision on the private-store policy",
+    "clearing": "",
+    "sources": [
+      "repo:nfl-lifecycle-3f5c/data/price-snapshots.json"
+    ],
+    "source_kind": "Repository artifact"
+  },
+  {
+    "id": "R25",
+    "item": "Repository review, line by line, with official links",
+    "status": "Present (in main)",
+    "evidence": "docs/nfl-repo-review-2026-11-17.md is on main (commit 7c4d04f). This tracker does not restate it.",
+    "gate": "None",
+    "clearing": "",
+    "sources": [
+      "repo:docs/nfl-repo-review-2026-11-17.md"
+    ],
+    "source_kind": "Repository artifact"
+  }
+]

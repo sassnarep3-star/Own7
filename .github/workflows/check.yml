@@ -21,6 +21,8 @@ jobs:
           python-version: '3.11'
       - name: Test statistical math, chronology, rights and eligibility
         run: python -m unittest discover -s tests -v
+      - name: Test NFL brief tracker checks, evidence receipts and source contracts
+        run: python -m unittest discover -s nfl-brief-77b1/tests -v
       - name: Reproduce NFL extraction from saved official text (refuses contradictions)
         run: python scripts/nfl_extract.py --check
       - name: Reproduce NFL origination and gates

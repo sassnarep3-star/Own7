@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requirement register · NFL brief tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<p class="eyebrow">NFL brief tracker · Own7 · session arena/77b177da-own7</p>
+<nav aria-label="Brief sections"><ul><li><a href="index.html">Overview</a></li><li><a href="register.html" aria-current="page">Requirement register</a></li><li><a href="depth-injuries.html">Depth and injuries</a></li><li><a href="roster-ir.html">Reserve list and 32-club sweep</a></li><li><a href="questions.html">Questions</a></li><li><a href="suggestions.html">Suggestions</a></li><li><a href="flagged.html">Flagged for Review</a></li><li><a href="executive-summary.html">Executive summary</a></li></ul></nav>
+</header>
+<main id="main">
+<h1>Requirement register</h1>
+<p class="lede">Each brief item is listed with a status computed from files in the repository. Clearing numbers are blank where no verified number exists.</p>
+<h2>Status counts</h2><ul><li>Blocked: 1</li><li>Columns present; market values blank: 1</li><li>Flagged: 1</li><li>Implemented (data): 4</li><li>Implemented, armed: 1</li><li>Mismatch: 1</li><li>Mismatch in 3 desks: 1</li><li>Not implemented: 3</li><li>Not met as written: 1</li><li>Partly implemented: 7</li><li>Present (in main): 1</li><li>Stated in repository: 1</li><li>Stated; no ranked strategies: 1</li><li>Unverified: 1</li></ul><table><caption>Requirement register: one row per brief item, status computed from repository artefacts</caption><thead><tr>
+<th scope="col">ID</th>
+<th scope="col">Brief item</th>
+<th scope="col">Status</th>
+<th scope="col">Evidence (computed)</th>
+<th scope="col">Blocking gate</th>
+<th scope="col">Clearing number</th>
+</tr></thead><tbody>
+<tr data-source-ids="B77-R13">
+<td>R01</td>
+<td>Originate lines in order: side, then total, then moneyline</td>
+<td>Implemented (data)</td>
+<td>Stage order in origination-order.json: Side, Total, Moneyline; 14 games.</td>
+<td>None for the order itself</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/origination-order.json">Repo: nfl-lifecycle-3f5c/data/origination-order.json</a></td></tr>
+<tr data-source-ids="B77-R14 NFL-INJURIES">
+<td>R02</td>
+<td>Publish fair line, market line and difference as separate columns</td>
+<td>Columns present; market values blank</td>
+<td>Fair line and market-line fields exist in price-snapshots.json. Market line is filled for 0 of 42 markets; difference is filled for 0.</td>
+<td>RG03 / XS09: no licensed sportsbook price</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/price-snapshots.json">Repo: nfl-lifecycle-3f5c/data/price-snapshots.json</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+<tr data-source-ids="B77-R14">
+<td>R03</td>
+<td>Price-snapshot store, opening and closing</td>
+<td>Partly implemented</td>
+<td>42 markets across 14 games with opening and closing entries. Closing equals opening for 29 of 42 (LC-F01).</td>
+<td>Price data policy (XS09 / CF10)</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/price-snapshots.json">Repo: nfl-lifecycle-3f5c/data/price-snapshots.json</a></td></tr>
+<tr data-source-ids="B77-R18">
+<td>R04</td>
+<td>Verified results feed (136-game log)</td>
+<td>Implemented (data)</td>
+<td>nfl-results/data/games-2026-w1-9.csv has 136 game rows (brief says 136).</td>
+<td>None for the feed; price data needed for ROI</td>
+<td>136</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-results/data/games-2026-w1-9.csv">Repo: nfl-results/data/games-2026-w1-9.csv</a></td></tr>
+<tr data-source-ids="B77-R14">
+<td>R05</td>
+<td>Backtest and ROI computable from snapshots and results</td>
+<td>Blocked</td>
+<td>No licensed closing price exists in the repository, so ROI cannot be computed from it.</td>
+<td>RG03 / RG10: price rights and terms</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/price-snapshots.json">Repo: nfl-lifecycle-3f5c/data/price-snapshots.json</a></td></tr>
+<tr data-source-ids="B77-R12">
+<td>R06</td>
+<td>Signal and staking separated in the leaderboard</td>
+<td>Implemented (data)</td>
+<td>leaderboard.json states ranking reads only signal fields; the staking table has no rank.</td>
+<td>None</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/leaderboard.json">Repo: nfl-lifecycle-3f5c/data/leaderboard.json</a></td></tr>
+<tr data-source-ids="B77-R11">
+<td>R07</td>
+<td>Strategies pre-registered (commit hash as registration)</td>
+<td>Unverified</td>
+<td>Demotion gate DG-1 states defined_on 2026-11-14, but its rule and code first appear in commit 8332d25 with the desk code. A self-declared date is not a registration.</td>
+<td>Commit-hash registration per strategy</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/demotion-gate.json">Repo: nfl-lifecycle-3f5c/data/demotion-gate.json</a></td></tr>
+<tr data-source-ids="B77-R12">
+<td>R08</td>
+<td>Proper-score ranking with benchmark and uncertainty</td>
+<td>Not implemented</td>
+<td>Ranking fields are id, name, market, selective, bets, wins, losses, hit_rate, p_value, q_value, ci_low, ci_high. None is a proper score (no Brier, log score or CRPS field) and no benchmark field is present.</td>
+<td>Proper score definition and baseline</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/leaderboard.json">Repo: nfl-lifecycle-3f5c/data/leaderboard.json</a></td></tr>
+<tr data-source-ids="B77-R12">
+<td>R09</td>
+<td>Leaderboard divisions: singles, game parlays, SGPs, prop combos</td>
+<td>Partly implemented</td>
+<td>Graded rows use markets spread, total only. No moneyline, parlay, SGP or prop-combo division is present. Leaderboard rows: graded 30, provisional 1, qualified 0, rejected 29.</td>
+<td>Joint-evidence gate (for parlays / SGPs / props)</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/leaderboard.json">Repo: nfl-lifecycle-3f5c/data/leaderboard.json</a></td></tr>
+<tr data-source-ids="B77-R11">
+<td>R10</td>
+<td>Demotion gate</td>
+<td>Implemented, armed</td>
+<td>DG-1: armed=True, demotions=0. Pre-registration of the rule is R07.</td>
+<td>Pre-registration (R07)</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/demotion-gate.json">Repo: nfl-lifecycle-3f5c/data/demotion-gate.json</a></td></tr>
+<tr data-source-ids="B77-R11 B77-R12">
+<td>R11</td>
+<td>Control baselines</td>
+<td>Partly implemented</td>
+<td>Demotion trigger D1 uses a declared baseline. The leaderboard has no baseline field.</td>
+<td>Baseline definition per strategy</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/demotion-gate.json">Repo: nfl-lifecycle-3f5c/data/demotion-gate.json</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/leaderboard.json">Repo: nfl-lifecycle-3f5c/data/leaderboard.json</a></td></tr>
+<tr data-source-ids="B77-R09">
+<td>R12</td>
+<td>Correlations published with n</td>
+<td>Implemented (data)</td>
+<td>correlation-audit.json: 22 audited rows, 18 with coefficients, 4 blank by rule, 0 failed; 18 rows carry n.</td>
+<td>None for the rule</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/correlation-audit.json">Repo: nfl-lifecycle-3f5c/data/correlation-audit.json</a></td></tr>
+<tr data-source-ids="X243-REPO-05 B77-R19">
+<td>R13</td>
+<td>Availability and depth from official sources only; no jersey-order depth</td>
+<td>Partly implemented</td>
+<td>Depth desk captured 27 clubs; the skill desk captured 4. Some charts are unofficial club copies (for example the Packers chart is stamped &#x27;Unofficial&#x27;). Houston is image-only. No script in the repository derives depth from jersey number (not exhaustively audited).</td>
+<td>Official-source rule; club-site charts</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-skill-cfdd/data/depth-slots-2026-11-14.csv">Repo: nfl-skill-cfdd/data/depth-slots-2026-11-14.csv</a></td></tr>
+<tr data-source-ids="X243-REPO-06">
+<td>R14</td>
+<td>Injury signal as surprise (change), never level; publish deltas</td>
+<td>Not implemented</td>
+<td>None of the 5 injury files has a delta or change column. The published injury values are levels.</td>
+<td>Injury-change definition and delta column</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv">Repo: nfl-availability-28ef/data/injuries-week10-2026.csv</a></td></tr>
+<tr data-source-ids="B77-NFL-RESERVE B77-NFL-TRADES">
+<td>R15</td>
+<td>Roster and IR sweep of 32 teams</td>
+<td>Partly implemented</td>
+<td>Depth coverage: 31 of 32 clubs have a captured chart in either desk; 1 clubs have none. The November reserve list was read (25 rows); October was not.</td>
+<td>Official reserve-list read for October and the 32-club sweep</td>
+<td data-empty="true"></td>
+<td><a href="https://www.nfl.com/transactions/league/reserve-list/2026/11">NFL.com reserve list</a> · <a href="https://www.nfl.com/transactions/">NFL.com transactions</a></td></tr>
+<tr data-source-ids="B77-R06">
+<td>R16</td>
+<td>Snapshot store of injury reports, inactives and depth charts with hashes</td>
+<td>Partly implemented</td>
+<td>Availability capture records joined_sha256 (True). No hash-keyed store of injury reports or inactives exists in the repository.</td>
+<td>Snapshot policy for inactives and injury reports</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/capture-summary.json">Repo: nfl-availability-28ef/data/capture-summary.json</a></td></tr>
+<tr data-source-ids="B77-R17">
+<td>R17</td>
+<td>&#x27;What would change our mind&#x27; per strategy</td>
+<td>Not implemented</td>
+<td>The leaderboard data has no such field. The phrase &#x27;would change the answer&#x27; appears 1 times in nfl-results-leaderboard.html. Coverage per strategy is not checked.</td>
+<td>Per-strategy field</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-results-leaderboard.html">Repo: nfl-results-leaderboard.html</a></td></tr>
+<tr data-source-ids="NFL-INJURIES B77-R04">
+<td>R18</td>
+<td>Injury and depth data: Lions Week 10 status cross-checked against official page</td>
+<td>Mismatch in 3 desks</td>
+<td>Official page (read 2026-11-17): Joseph, Mays and Reed all Out. Desks in scope that disagree: 2.</td>
+<td>Source correction (flagged, not changed)</td>
+<td data-empty="true"></td>
+<td><a href="https://www.nfl.com/injuries/">NFL.com injuries</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-assurance-9580ac3f/data/injuries.csv">Repo: nfl-assurance-9580ac3f/data/injuries.csv</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X243-REPO-05">
+<td>R19</td>
+<td>Stale-depth flag against official transactions</td>
+<td>Flagged</td>
+<td>12 November trades checked: 1 stale (still printed on the former club), 4 printed on the new club, 7 not printed on the new club (review only), 0 with no chart.</td>
+<td>Chart refresh for flagged clubs</td>
+<td data-empty="true"></td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a></td></tr>
+<tr data-source-ids="A958-BAL-DEPTH B77-NFL-RESERVE X243-REPO-05">
+<td>R20</td>
+<td>Baltimore QB order against the club page</td>
+<td>Mismatch</td>
+<td>Repository chart (checked 2026-11-12) names Jackson and Huntley. Club page (read 2026-11-17) Offense table names Brissett and Fagnano and Slovis. Brief&#x27;s &#x27;placed on IR&#x27; is not on the November reserve list.</td>
+<td>October reserve list (not read)</td>
+<td data-empty="true"></td>
+<td><a href="https://www.baltimoreravens.com/team/depth-chart">Ravens depth chart</a> · <a href="https://www.nfl.com/transactions/league/reserve-list/2026/11">NFL.com reserve list</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a></td></tr>
+<tr data-source-ids="B77-R21">
+<td>R21</td>
+<td>Kickoff/onside regime priors filter published as stated in the brief</td>
+<td>Stated in repository</td>
+<td>&#x27;onside&#x27; appears in repository code and pages (13 files).</td>
+<td>Filter values to be checked against the brief text</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl_pages.py">Repo: nfl_pages.py</a></td></tr>
+<tr data-source-ids="B77-R10">
+<td>R22</td>
+<td>Two model totals published with gap column until walk-forward picks one</td>
+<td>Partly implemented</td>
+<td>decisions.json mentions &#x27;gap&#x27; 1 time(s). Two-estimator totals with a gap column are not in the published leaderboard.</td>
+<td>Walk-forward comparison</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/decisions.json">Repo: nfl-lifecycle-3f5c/data/decisions.json</a></td></tr>
+<tr data-source-ids="B77-R21">
+<td>R23</td>
+<td>Parlays and prop combos behind a joint-evidence gate</td>
+<td>Stated; no ranked strategies</td>
+<td>&#x27;joint&#x27; appears 8 times in nfl_pages.py. The leaderboard has 0 qualified strategies.</td>
+<td>Joint-evidence definition</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl_pages.py">Repo: nfl_pages.py</a></td></tr>
+<tr data-source-ids="B77-R14">
+<td>R24</td>
+<td>Public site shows derived analysis only; raw rows kept private until terms are read</td>
+<td>Not met as written</td>
+<td>Row-level files are committed to the public repository: price-snapshots.json (42 rows), games-2026-w1-9.csv (136 rows), and 5 injury CSVs. Terms are cited at NFL.com (see Flagged FL-13).</td>
+<td>Owner decision on the private-store policy</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/price-snapshots.json">Repo: nfl-lifecycle-3f5c/data/price-snapshots.json</a></td></tr>
+<tr data-source-ids="B77-R03">
+<td>R25</td>
+<td>Repository review, line by line, with official links</td>
+<td>Present (in main)</td>
+<td>docs/nfl-repo-review-2026-11-17.md is on main (commit 7c4d04f). This tracker does not restate it.</td>
+<td>None</td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/docs/nfl-repo-review-2026-11-17.md">Repo: docs/nfl-repo-review-2026-11-17.md</a></td></tr>
+</tbody></table>
+</main>
+<footer><p>Derived from repository files and official pages read on 2026-11-17. Blank cells are unverified or not applicable and are left blank on purpose. Flagged items are not corrected here.</p></footer>
+</body>
+</html>

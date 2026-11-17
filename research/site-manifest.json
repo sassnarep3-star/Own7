@@ -175,7 +175,15 @@
     "nfl-lifecycle-3f5c/site/suggestions.html",
     "nfl-lifecycle-3f5c/site/verification.html",
     "nfl-lifecycle-3f5c/site/flagged.html",
-    "nfl-lifecycle-3f5c/site/sources.html"
+    "nfl-lifecycle-3f5c/site/sources.html",
+    "nfl-brief-77b1/site/depth-injuries.html",
+    "nfl-brief-77b1/site/executive-summary.html",
+    "nfl-brief-77b1/site/flagged.html",
+    "nfl-brief-77b1/site/index.html",
+    "nfl-brief-77b1/site/questions.html",
+    "nfl-brief-77b1/site/register.html",
+    "nfl-brief-77b1/site/roster-ir.html",
+    "nfl-brief-77b1/site/suggestions.html"
   ],
   "legacy_redirects": {
     "findings.html": "data.html",
@@ -241,6 +249,14 @@
     "nfl-availability-28ef/site/sources.html": "2c848097a7aa279a60f949f6e21647a49f6091ee838fd2e5e06b42b9f26e3e6f",
     "nfl-availability-28ef/site/suggestions.html": "aa800221b0ce08ddfa5837a234b9984f07c6d3aea7286a4fb7801cf9ca40f58d",
     "nfl-availability-28ef/site/summary.html": "78f08e5b04d1dde9f26aca4db41d77c537df989595682b864b6e985f26f98762",
+    "nfl-brief-77b1/site/depth-injuries.html": "01c50232587a70a11c43c3e56e95d21c50b370732c53be0f34ad366f09ad0569",
+    "nfl-brief-77b1/site/executive-summary.html": "b254279eda190426ac2bc34a6e46cc0dd753080d87d6ef25e7e3636770509651",
+    "nfl-brief-77b1/site/flagged.html": "2405fbaca11fd016b986f515aade1483ad58993c5f080d7e6210ee0b63056d2a",
+    "nfl-brief-77b1/site/index.html": "f8c8db6e71588ea350cbb329a0c7ab8f820fcaf0cd5927e67d7db2f8ac78e9c1",
+    "nfl-brief-77b1/site/questions.html": "a3eaa0faeefd28df453e5892983c7572e790886da91254272a4783af67452a86",
+    "nfl-brief-77b1/site/register.html": "b49cface7dfebc3467118b3b07b834c98e62b35971f4420cf38c29a5909e4246",
+    "nfl-brief-77b1/site/roster-ir.html": "6cea3a55b2593f36f1c647a8abf70c451bb80309bc9f7b96e44500a777379d1b",
+    "nfl-brief-77b1/site/suggestions.html": "a6e977c9666c81a398e6fe78ce7fa26ba05e0f413ba50446635f40e5f3e88a0d",
     "nfl-correlation.html": "8ba7a1d1b7df826fb1d00474c37e6c32c32ed58e7b6490fe52362321b1540794",
     "nfl-decisions.html": "b7f407d0776bb60e19eb001cf36e091aa4d14c67549b0bf6d0df83b022b40e03",
     "nfl-injuries.html": "f2cb4861980031c8222e20e3f2a58d3b6803c795f15cff856f44cdf4827d4213",
@@ -381,7 +397,7 @@
     "session-243828fc/site/repo-audit.html": "ad13c307541267b0ac42a1825ef95ec3b1cc40667f10c3be3b8563f6d5f1c3aa",
     "settlement.html": "de021df9cd0c4d24164d5fa0decc23e62017d8983543911363cdc3bce5e511c8",
     "signals.html": "f5a633fadc598299beaf850cba468f945fa7bb0df1e63ea6e063b19641f43ac4",
-    "sources.html": "abb453b113c94074cbaa95df718341c0be4b0cba5134b95f23a3e9d152dfc0c8",
+    "sources.html": "a912ae4300fecfc86ea8a5ecc70e43d976cdf84be5785de73446765efcda68c2",
     "validation.html": "fc83819b4ac7deab13c1329b107ce3223946de10725c2290d439c64ea48ca1d6",
     "verified/betting-rules.html": "fd70be817c7da2ef8dd56eeb65f15372dd214882bdf9a07fc06e90b0918ce897",
     "verified/correlation.html": "0bece3d46a2088faebf0b35f3869dc7d1509bbc33cf1e0847fd0926ddaecb1ae",
@@ -395,5 +411,5 @@
     "verified/strategies.html": "a7b30d435deb49af1a5bb41ee34ddde08ba7e3315cc1cbb1d0e4a6fc7efd125b",
     "verified/validation-gates.html": "1e1584f1ff9e10a208e60ee45ecb2d113c9a98eda06db944ec01bdbd8f4702cd"
   },
-  "research_run_hash": "91788d674d4b2e6ed356df6d1826fba493bdd2b9e2b2bbbe531c95085eb3048d"
+  "research_run_hash": "d12733228221293d9060606c2970b056f324253532c840d2957faa0818f83281"
 }

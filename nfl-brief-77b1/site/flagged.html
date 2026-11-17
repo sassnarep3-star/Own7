@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review · NFL brief tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<p class="eyebrow">NFL brief tracker · Own7 · session arena/77b177da-own7</p>
+<nav aria-label="Brief sections"><ul><li><a href="index.html">Overview</a></li><li><a href="register.html">Requirement register</a></li><li><a href="depth-injuries.html">Depth and injuries</a></li><li><a href="roster-ir.html">Reserve list and 32-club sweep</a></li><li><a href="questions.html">Questions</a></li><li><a href="suggestions.html">Suggestions</a></li><li><a href="flagged.html" aria-current="page">Flagged for Review</a></li><li><a href="executive-summary.html">Executive summary</a></li></ul></nav>
+</header>
+<main id="main">
+<h1>Flagged for Review</h1>
+<p class="lede">Irregularities found in the repository and official pages. They are flagged and not corrected, and they do not block the merge.</p>
+<table><caption>Flagged for Review</caption><thead><tr>
+<th scope="col">ID</th>
+<th scope="col">Irregularity</th>
+<th scope="col">Status</th>
+</tr></thead><tbody>
+<tr data-source-ids="NFL-INJURIES B77-R04">
+<td>FL-01</td>
+<td>Kerby Joseph status: the official page says Out, the assurance file has a blank game status and the origination file says Limited.</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://www.nfl.com/injuries/">NFL.com injuries</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-assurance-9580ac3f/data/injuries.csv">Repo: nfl-assurance-9580ac3f/data/injuries.csv</a></td></tr>
+<tr data-source-ids="NFL-INJURIES B77-R20">
+<td>FL-02</td>
+<td>Lions Week 10 rows: the assurance and origination files do not match the official page for Joseph, Mays and Reed.</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://www.nfl.com/injuries/">NFL.com injuries</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl/origination/data/injuries-2026-w10.csv">Repo: nfl/origination/data/injuries-2026-w10.csv</a></td></tr>
+<tr data-source-ids="A958-BAL-DEPTH B77-NFL-RESERVE">
+<td>FL-03</td>
+<td>Baltimore QB order: repository chart (2026-11-12) names Jackson and Huntley; club Offense table (2026-11-17) does not. The brief&#x27;s &#x27;placed on IR&#x27; is not in the November reserve list.</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://www.baltimoreravens.com/team/depth-chart">Ravens depth chart</a> · <a href="https://www.nfl.com/transactions/league/reserve-list/2026/11">NFL.com reserve list</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X243-REPO-05">
+<td>FL-04</td>
+<td>Stale Chargers depth row: Daiyan Henley still printed as LB1 on the Chargers chart after the 11/10 trade to Denver.</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a></td></tr>
+<tr data-source-ids="X243-REPO-05 B77-R19">
+<td>FL-05</td>
+<td>Rank-1 depth groups: brief says 149; repository gives 134 (availability desk) and 156 (both desks).</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-skill-cfdd/data/depth-slots-2026-11-14.csv">Repo: nfl-skill-cfdd/data/depth-slots-2026-11-14.csv</a></td></tr>
+<tr data-source-ids="X243-REPO-06 B77-R01">
+<td>FL-06</td>
+<td>Injury row counts differ across five files for overlapping weeks (326, 276, 210, 20, 45).</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv">Repo: nfl-availability-28ef/data/injuries-week10-2026.csv</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-injuries-2026-w10.csv">Repo: data/nfl-injuries-2026-w10.csv</a></td></tr>
+<tr data-source-ids="B77-R04 X243-REPO-06">
+<td>FL-07</td>
+<td>Assurance Week 10 file covers fewer clubs than the availability file (26 against 28 club codes).</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-assurance-9580ac3f/data/injuries.csv">Repo: nfl-assurance-9580ac3f/data/injuries.csv</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv">Repo: nfl-availability-28ef/data/injuries-week10-2026.csv</a></td></tr>
+<tr data-source-ids="B77-R20 B77-NFL-TRADES">
+<td>FL-08</td>
+<td>Club code inconsistency: the origination file uses &#x27;LA&#x27; where the depth and injury files use &#x27;LAR&#x27;.</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl/origination/data/injuries-2026-w10.csv">Repo: nfl/origination/data/injuries-2026-w10.csv</a> · <a href="https://www.nfl.com/transactions/">NFL.com transactions</a></td></tr>
+<tr data-source-ids="B77-R11 B77-R15">
+<td>FL-09</td>
+<td>Demotion rule pre-registration is not shown: defined_on 2026-11-14 is self-declared and the rule shares commit 8332d25 with the code.</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/demotion-gate.json">Repo: nfl-lifecycle-3f5c/data/demotion-gate.json</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/demotion.py">Repo: nfl-lifecycle-3f5c/demotion.py</a></td></tr>
+<tr data-source-ids="B77-R12 B77-R17">
+<td>FL-10</td>
+<td>Public leaderboard rows show hit rate, wins, losses and p-values for graded strategies; the brief forbids backtest numbers on the leaderboard.</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/leaderboard.json">Repo: nfl-lifecycle-3f5c/data/leaderboard.json</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-results-leaderboard.html">Repo: nfl-results-leaderboard.html</a></td></tr>
+<tr data-source-ids="B77-R12 B77-R21">
+<td>FL-11</td>
+<td>Requested leaderboard divisions (moneyline, parlays, SGPs, prop combos) are absent; graded rows cover spread and total only.</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/leaderboard.json">Repo: nfl-lifecycle-3f5c/data/leaderboard.json</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl_pages.py">Repo: nfl_pages.py</a></td></tr>
+<tr data-source-ids="B77-R14 B77-R16">
+<td>FL-12</td>
+<td>No sportsbook price is recorded; market-line and difference columns are blank in all markets.</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/price-snapshots.json">Repo: nfl-lifecycle-3f5c/data/price-snapshots.json</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/snapshots.py">Repo: nfl-lifecycle-3f5c/snapshots.py</a></td></tr>
+<tr data-source-ids="B77-R14 B77-R18">
+<td>FL-13</td>
+<td>Row-level data is committed to the public repository, while the brief says raw rows stay private until the terms are read.</td>
+<td>Flagged, owner decision</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/price-snapshots.json">Repo: nfl-lifecycle-3f5c/data/price-snapshots.json</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-results/data/games-2026-w1-9.csv">Repo: nfl-results/data/games-2026-w1-9.csv</a></td></tr>
+<tr data-source-ids="B77-R08 B77-R07">
+<td>FL-14</td>
+<td>Depth sourcing: some charts are club copies stamped &#x27;Unofficial&#x27; (Packers) and Houston is image-only; the brief requires official sources.</td>
+<td>Flagged, not corrected</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/evidence/depth-GB.md">Repo: nfl-availability-28ef/evidence/depth-GB.md</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-summary.json">Repo: nfl-availability-28ef/data/depth-summary.json</a></td></tr>
+<tr data-source-ids="B77-R21 B77-R05">
+<td>FL-15</td>
+<td>Jersey-number depth rejection: the rule is stated, but no audit proves that no script orders depth by jersey number.</td>
+<td>Flagged, not audited</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl_pages.py">Repo: nfl_pages.py</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/build.py">Repo: nfl-availability-28ef/build.py</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X243-REPO-05">
+<td>FL-16</td>
+<td>Stale-depth &#x27;NOT PRINTED&#x27; class (7 trades) is weak evidence: printed charts show only a few names per slot.</td>
+<td>Review only</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a></td></tr>
+</tbody></table>
+</main>
+<footer><p>Derived from repository files and official pages read on 2026-11-17. Blank cells are unverified or not applicable and are left blank on purpose. Flagged items are not corrected here.</p></footer>
+</body>
+</html>
