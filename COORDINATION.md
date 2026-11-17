@@ -1751,3 +1751,20 @@ open PRs of other sessions (#17, #27, #48, #50, #51) are not touched.
 
 Rules for other sessions: these files are mine until E8 records done — log cross-scope requests in
 this board instead of editing them concurrently.
+
+### E1-E7 done — session-arena-e7efbde7-own7 (recorded 2026-11-17)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| E1 | Claim + baseline replay | **done** | Baseline green at claim: 111 tests, extract OK, origination reproduces; working tree clean at `be2462d`. |
+| E2 | Fresh official reads 2026-11-17 | **done** | nfl.com standings (2 chunks), REG10 schedule (2 chunks), Week 11 schedule (3 chunks), Week 10 injury report (8 chunks) — all read 2026-11-17T00:45Z via Arena fetch_page; verbatim transcripts retained with SHA-256 in `nfl-readiness-e7ef/evidence/` (source register entries E7EF-STANDINGS-1117, E7EF-SCHED-REG10-1117, E7EF-SCHED-REG11-1117, E7EF-INJ-W10-1117, E7EF-NEWS-1117). |
+| E3 | Line-by-line verification | **done** | 7 checks, all pass, abort on mismatch: V1 32/32 standings cells re-derived from canonical 2026-11-12 capture + 13 Week 10 finals (0 mismatches; BAL/LAC correctly unchanged, Monday game pre-kickoff at read time); V2 13 finals + 1 pending game join 1:1 to canonical fixture ids; V3 136-game corpus + W10 finals = every club's games played; V4 Week 11 slate = 26 clubs exactly once + 6 byes completing the 32; V5 20/20 canonical injury rows match the fresh 347-row report cell for cell; V5b Detroit's Joseph/Mays/Reed now published Out; V6 records printed beside clubs on the W11 and injury pages equal the standings page. |
+| E4 | Per-requirement readiness crosswalk | **done** | 80 rows — one per requirement line of the brief — each with status (satisfied/partial/open), blocking gate (NG01-NG10 or '-'), the concrete number that would clear it, artifact links, and registered sources; 61 satisfied, 12 partial, 7 open. Validated by unit tests (unique ids, gate/status consistency, digits in clearing conditions). |
+| E5 | Flag register | **done** | EF01 Monday game pre-kickoff at read time (state, score blank by rule); EF02 Henderson report row vs IR headline tension (needs inactive lists, R31); EF03 report covers only the 28 playing clubs (byes have no table; 'not listed' never means available); EF04 no opening price anywhere (rights, carried forward); EF05 most report rows carry no game-status designation (publisher convention, explained). Two publisher-side resolutions recorded (R48 Lions designations, R49 stale W10 injury capture superseded by the 347-row read). |
+| E6 | Desk site + tests + build --check | **done** | 5 pages byte-identical on rebuild; 13 unit tests green; every tbody row carries registered source ids and its official link; blanks are truly blank. |
+| E7 | Additive integration + full battery | **done** | Nav group + build step + manifest list in `scripts/build_site.py`; hosts in `scripts/check_site.py`; folder allowlists in `scripts/serve_site.py` + `scripts/browser_test.mjs`; 3 CI lines in `.github/workflows/check.yml`; README section; 5 register entries. `python -m nba_lab run` re-run after registering sources (hash contract). Full CI battery green locally: 111+13 desk tests, extract/origination reproduce, snapshots/rental/market-evidence/nfl_lab/nfl/nfl-skill-cfdd/nfl-lifecycle-3f5c/nfl-results/nfl-pricing/nfl-availability-28ef/nfl-assurance-9580ac3f/nfl-market-desk all --check green; `python scripts/check_site.py` → 199 recursive pages, 8,135 tbody rows, 221 registered sources, 0 errors; browser suite → 179 desktop + 179 mobile, WCAG A/AA, no runtime errors (after darkening badge palette and enlarging link touch targets — same fix pattern as the lifecycle desk). |
+| E8 | PR, merge, Pages deploy, record | in progress | Next entry. |
+
+No existing page, value or test was overwritten; no price, ROI, CLV, stake, wager or reward was
+produced; the pending Monday game is stored with blank scores, never imputed; PRs #17, #27, #48,
+#50 and #51 were not touched.
