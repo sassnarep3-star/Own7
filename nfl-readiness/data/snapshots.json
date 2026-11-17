@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "policy": "Immutable captures: each evidence file is committed, never rewritten in place, and its SHA-256 is recorded here. No scheduled retrieval is enabled because NFL.com terms section 1.3 prohibits systematic retrieval without written consent (see PG-SCHEDULE).",
+  "captures": [
+    {
+      "id": "CAP-2026-11-17-INJ",
+      "artefact": "Week 10 injury report, all printed sections",
+      "url": "https://www.nfl.com/injuries/",
+      "read": "2026-11-17",
+      "clock": "unpublished by the publisher",
+      "sha256": "7893cecf47e4cfb31899438abc2bfca17ebcd9bd35dc23541f9a9ea6a85b7b1d",
+      "rows": 347,
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ],
+      "schema_pins": [
+        "5 columns: Player, Position, Injuries, Practice Status, Game Status",
+        "28 club sections each with a header row"
+      ]
+    },
+    {
+      "id": "CAP-2026-11-17-DEPTH",
+      "artefact": "Six club depth charts as printed",
+      "url": "https://www.detroitlions.com/team/depth-chart (and five other club pages)",
+      "read": "2026-11-17",
+      "clock": "unpublished except Green Bay, which prints 'Unofficial, Nov. 10, 2026'",
+      "sha256": "f621b27f4574abd7e58ae4ae3c47b3f7258b7cc51a80948795c9d29c52053d35",
+      "rows": 172,
+      "source_ids": [
+        "RD-DET-CHART",
+        "RD-GB-CHART",
+        "RD-SEA-CHART",
+        "RD-BAL-CHART",
+        "RD-WAS-CHART",
+        "RD-IND-CHART",
+        "RD-HOU-CHART"
+      ],
+      "schema_pins": [
+        "slot label plus rank columns",
+        "no date on 5 of 6 charts"
+      ]
+    },
+    {
+      "id": "CAP-2026-11-17-SCHED",
+      "artefact": "Weeks 10 and 11 schedule pages",
+      "url": "https://www.nfl.com/schedules/2026/by-week/week-11",
+      "read": "2026-11-17",
+      "clock": "unpublished",
+      "sha256": "f693f233d35ca06c25c7a658351a46823387c846647412a8e36489abd599e2e6",
+      "rows": 28,
+      "source_ids": [
+        "RD-NFL-SCHED-W10",
+        "RD-NFL-SCHED-W11"
+      ],
+      "schema_pins": [
+        "winner line prints 'Away N, Home N, FINAL, date'",
+        "venue only via ticket/hotel links"
+      ]
+    }
+  ],
+  "prior_captures": [
+    {
+      "read": "2026-11-12",
+      "artefact": "Week 10 injury report",
+      "where": "data/nfl-injuries-2026-w10.csv",
+      "note": "The inherited capture. Counts in it are stale (see the recount on the availability page) and it is not re-used."
+    },
+    {
+      "read": "2026-11-13",
+      "artefact": "Week 10 injury report and 19 club depth charts",
+      "where": "nfl-availability-28ef/evidence/",
+      "note": "Read-only. Not re-parsed here; the pins above are this desk's own."
+    },
+    {
+      "read": "2026-11-14",
+      "artefact": "Some club depth charts",
+      "where": "nfl-skill-cfdd/evidence/",
+      "note": "Read-only."
+    }
+  ],
+  "delta_available": true,
+  "series_length": 3
+}
