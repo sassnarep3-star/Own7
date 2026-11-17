@@ -1,0 +1,9 @@
+club,unit,unit_label,position,slot,game_status,replacement_depth,depth_label,replacement_player,reach,slot_exhausted,no_backup_printed,depth_source_url,depth_checked_on,injury_source_url
+DET,Defense,Defence,CB,1,Out,2,Second string,Rock Ya-Sin,1,False,False,https://www.detroitlions.com/team/depth-chart,2026-11-12,https://www.nfl.com/injuries/league/2026/REG10
+DET,Offense,Offence,C,1,Out,2,Second string,Juice Scruggs,1,False,False,https://www.detroitlions.com/team/depth-chart,2026-11-12,https://www.nfl.com/injuries/league/2026/REG10
+IND,Defense,Defence,MLB,1,Out,2,Second string,CJ Allen,1,False,False,https://www.colts.com/team/depth-chart,2026-11-13,https://www.nfl.com/injuries/league/2026/REG10
+IND,Defense,Defence,WLB,1,Out,2,Second string,Bryce Boettcher,1,False,False,https://www.colts.com/team/depth-chart,2026-11-13,https://www.nfl.com/injuries/league/2026/REG10
+IND,Offense,Offence,RT,1,Out,2,Second string,Luke Tenuta,1,False,False,https://www.colts.com/team/depth-chart,2026-11-13,https://www.nfl.com/injuries/league/2026/REG10
+IND,Special Teams,Special teams,LS,1,Out,,,,,True,True,https://www.colts.com/team/depth-chart,2026-11-13,https://www.nfl.com/injuries/league/2026/REG10
+NE,Defense,Defence,CB,1,Out,2,Second string,Channing Canada,1,False,False,https://www.patriots.com/team/depth-chart,2026-11-12,https://www.nfl.com/injuries/league/2026/REG10
+NE,Offense,Offence,LG,1,Out,2,Second string,Walter Rouse,1,False,False,https://www.patriots.com/team/depth-chart,2026-11-12,https://www.nfl.com/injuries/league/2026/REG10

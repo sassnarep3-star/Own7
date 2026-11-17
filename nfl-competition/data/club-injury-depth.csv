@@ -1,0 +1,33 @@
+club,injury_rows,rows_with_game_status,rows_without_game_status,ruled_out,questionable,defence_replacements,offence_replacements,special_teams_replacements,deepest_reach,slots_with_no_printed_replacement,printed_slots_captured,note
+ATL,9,0,9,0,0,0,0,0,,0,28,
+AZ,15,0,15,0,0,0,0,0,,0,29,
+BAL,8,0,8,0,0,0,0,0,,0,29,
+BUF,12,0,12,0,0,0,0,0,,0,29,
+CAR,12,0,12,0,0,0,0,0,,0,28,
+CHI,0,0,0,0,0,0,0,0,,0,29,On bye in Week 10; the league publishes no Week 10 injury row.
+CIN,8,0,8,0,0,0,0,0,,0,28,
+CLE,12,0,12,0,0,0,0,0,,0,28,
+DAL,18,0,18,0,0,0,0,0,,0,30,
+DEN,0,0,0,0,0,0,0,0,,0,31,On bye in Week 10; the league publishes no Week 10 injury row.
+DET,9,3,6,3,0,1,1,0,1,0,28,
+GB,16,0,16,0,0,0,0,0,,0,28,
+HOU,16,0,16,0,0,0,0,0,,0,0,"The club site renders its depth chart as an image with no table, on two independent reads. No printed ranks, so no depth can be computed."
+IND,13,7,6,6,1,2,1,0,1,1,28,
+JAX,11,0,11,0,0,0,0,0,,0,29,
+KC,12,0,12,0,0,0,0,0,,0,28,
+LAC,18,0,18,0,0,0,0,0,,0,29,
+LAR,11,0,11,0,0,0,0,0,,0,28,
+LV,4,0,4,0,0,0,0,0,,0,28,
+MIA,11,0,11,0,0,0,0,0,,0,28,
+MIN,9,0,9,0,0,0,0,0,,0,29,
+NE,15,12,3,3,9,1,1,0,1,0,29,
+NO,12,0,12,0,0,0,0,0,,0,30,
+NYG,11,1,10,0,1,0,0,0,,0,29,
+NYJ,8,0,8,0,0,0,0,0,,0,30,
+PHI,0,0,0,0,0,0,0,0,,0,29,On bye in Week 10; the league publishes no Week 10 injury row.
+PIT,8,0,8,0,0,0,0,0,,0,30,
+SEA,15,0,15,0,0,0,0,0,,0,29,
+SF,12,0,12,0,0,0,0,0,,0,29,
+TB,0,0,0,0,0,0,0,0,,0,30,On bye in Week 10; the league publishes no Week 10 injury row.
+TEN,12,0,12,0,0,0,0,0,,0,30,
+WAS,9,2,7,2,0,0,0,0,,0,29,

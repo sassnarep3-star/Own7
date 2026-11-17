@@ -1,0 +1,204 @@
+{
+  "requirement": "R8 - a demotion gate that sends a live strategy back to paper",
+  "built_on": "2026-11-14",
+  "ladder": {
+    "promotion": "Paper -> Provisional -> Live",
+    "demotion": "Live -> Paper. Not to Provisional: a demoted strategy re-enters at the bottom and passes G03, G04, G05 and G08 again on new data.",
+    "why_one_way": "A strategy that was trusted and then stopped is more dangerous than one never trusted, because it has already carried a stake."
+  },
+  "live_strategies": 0,
+  "status": "No strategy has ever reached the live tier, so no demotion has fired. Every trigger is published with the value it would read today so the gate can be inspected before it is needed.",
+  "triggers": [
+    {
+      "id": "D01",
+      "name": "Signal decay",
+      "metric": "Two-sided binomial p on the last 50 settled selections, against the strategy's own reference rate",
+      "threshold": "p > 0.10 on the rolling window",
+      "window": "50 settled selections",
+      "consequence": "Live -> Paper",
+      "computable": true,
+      "reason_if_not": null,
+      "state": "Not evaluated: no live strategy",
+      "current_value": null
+    },
+    {
+      "id": "D02",
+      "name": "Multiplicity breach",
+      "metric": "Benjamini-Hochberg adjusted p across the current family of strategies",
+      "threshold": "q > 0.10",
+      "window": "Every strategy graded in the current run",
+      "consequence": "Live -> Paper",
+      "computable": true,
+      "reason_if_not": null,
+      "state": "Not evaluated: no live strategy",
+      "current_value": "family reading if it were live: worst adjusted p 1.0 (would fire)"
+    },
+    {
+      "id": "D03",
+      "name": "Out-of-sample break",
+      "metric": "Both halves of the evaluation window beat the reference rate",
+      "threshold": "Either half at or below the reference",
+      "window": "The full graded sample, split in order",
+      "consequence": "Live -> Paper",
+      "computable": true,
+      "reason_if_not": null,
+      "state": "Not evaluated: no live strategy",
+      "current_value": "family reading if it were live: 2 of 18 entries fail the split-half check"
+    },
+    {
+      "id": "D04",
+      "name": "Negative return",
+      "metric": "Lower 95% bound of the return on investment over settled bets",
+      "threshold": "Lower bound below zero",
+      "window": "100 settled bets",
+      "consequence": "Live -> Paper",
+      "computable": false,
+      "reason_if_not": "Needs an executable price. The store holds zero rows, so the trigger is armed and cannot fire. It is not evaluated, not assumed to pass.",
+      "state": "Armed, cannot fire",
+      "current_value": null
+    },
+    {
+      "id": "D05",
+      "name": "Drawdown breach",
+      "metric": "Peak-to-trough fall in units",
+      "threshold": "20 units",
+      "window": "Since promotion",
+      "consequence": "Live -> Paper",
+      "computable": false,
+      "reason_if_not": "Needs an executable price. The store holds zero rows, so the trigger is armed and cannot fire. It is not evaluated, not assumed to pass.",
+      "state": "Armed, cannot fire",
+      "current_value": null
+    },
+    {
+      "id": "D06",
+      "name": "Closing-line value turns negative",
+      "metric": "Mean closing-line value per selection",
+      "threshold": "Below zero over the window",
+      "window": "50 settled selections with both an opening and a closing row",
+      "consequence": "Live -> Paper, and a review of whether the edge ever existed",
+      "computable": false,
+      "reason_if_not": "Needs an executable price. The store holds zero rows, so the trigger is armed and cannot fire. It is not evaluated, not assumed to pass.",
+      "state": "Armed, cannot fire",
+      "current_value": null
+    },
+    {
+      "id": "D07",
+      "name": "Settlement integrity failure",
+      "metric": "Every graded row must re-derive from an official final score, and the feed must reconcile with the official standings",
+      "threshold": "Any mismatch at all",
+      "window": "Every build",
+      "consequence": "Immediate demotion of every live strategy; the build aborts before publishing",
+      "computable": true,
+      "reason_if_not": null,
+      "state": "Pass",
+      "current_value": "192/192 club fields reconcile"
+    },
+    {
+      "id": "D08",
+      "name": "Look-ahead detected",
+      "metric": "A forecast for week w must use only weeks strictly less than w",
+      "threshold": "Any breach",
+      "window": "Every build",
+      "consequence": "Immediate demotion of every live strategy",
+      "computable": true,
+      "reason_if_not": null,
+      "state": "Pass",
+      "current_value": "Every forecast is built only from weeks before the target week"
+    },
+    {
+      "id": "D09",
+      "name": "Rule changed after the fact",
+      "metric": "The decision rule recorded in code must match the rule the entry was graded under",
+      "threshold": "Any change to a rule or a parameter after its window closed",
+      "window": "Since promotion",
+      "consequence": "Live -> Paper, and the affected record is voided rather than repaired",
+      "computable": true,
+      "reason_if_not": null,
+      "state": "Pass",
+      "current_value": "No rule or parameter has been changed since grading began"
+    },
+    {
+      "id": "D10",
+      "name": "Source rights lapse",
+      "metric": "Written permission to retain and release the material behind a published price",
+      "threshold": "Permission lapses, is withdrawn, or was never evidenced",
+      "window": "Continuous",
+      "consequence": "Live -> Paper, and the price store is frozen",
+      "computable": true,
+      "reason_if_not": null,
+      "state": "TRIGGERED",
+      "current_value": "No written consent to retain prices is evidenced"
+    }
+  ],
+  "count": {
+    "computable": 7,
+    "blocked_on_price": 3,
+    "triggered_now": 1
+  },
+  "worked_example": {
+    "explanation": "D01 is the trigger a live strategy would meet first. This is what it would read today, on the selections that exist. Read it as a caution as much as a demonstration: the last 50 selections look much stronger than the full 120 for four of the six strategies, which is exactly the pattern a rolling window can mistake for an improvement. D01 exists to catch the move in the other direction, and would fire on the same kind of swing.",
+    "strategies": [
+      {
+        "strategy": "SB-01",
+        "window": 50,
+        "available": 50,
+        "wins": 34,
+        "hit_rate": 0.68,
+        "p_value": 0.015347,
+        "would_demote": false,
+        "note": "Worked example on the selections that exist today."
+      },
+      {
+        "strategy": "SB-04",
+        "window": 50,
+        "available": 50,
+        "wins": 35,
+        "hit_rate": 0.7,
+        "p_value": 0.0066,
+        "would_demote": false,
+        "note": "Worked example on the selections that exist today."
+      },
+      {
+        "strategy": "SB-05",
+        "window": 50,
+        "available": 50,
+        "wins": 35,
+        "hit_rate": 0.7,
+        "p_value": 0.0066,
+        "would_demote": false,
+        "note": "Worked example on the selections that exist today."
+      },
+      {
+        "strategy": "SB-06",
+        "window": 50,
+        "available": 50,
+        "wins": 33,
+        "hit_rate": 0.66,
+        "p_value": 0.032839,
+        "would_demote": false,
+        "note": "Worked example on the selections that exist today."
+      },
+      {
+        "strategy": "SB-07",
+        "window": 50,
+        "available": 50,
+        "wins": 30,
+        "hit_rate": 0.6,
+        "p_value": 0.202639,
+        "would_demote": true,
+        "note": "Worked example on the selections that exist today."
+      },
+      {
+        "strategy": "SB-08",
+        "window": 50,
+        "available": 50,
+        "wins": 34,
+        "hit_rate": 0.68,
+        "p_value": 0.015347,
+        "would_demote": false,
+        "note": "Worked example on the selections that exist today."
+      }
+    ]
+  },
+  "monitoring": "Every trigger is re-evaluated on every build. A trigger that cannot be evaluated is reported as such rather than as a pass."
+}

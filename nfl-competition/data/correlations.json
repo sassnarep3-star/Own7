@@ -1,0 +1,216 @@
+{
+  "requirement": "R7 - correlations from officially sourced numbers, n published",
+  "built_on": "2026-11-14",
+  "rules": [
+    "Every value is computed from numbers an official page printed.",
+    "Every row states its n. A row that cannot state one carries no value.",
+    "Club-level correlation is a different quantity from leg-level dependence and is labelled as such."
+  ],
+  "counts": {
+    "rows": 10,
+    "with_values": 8,
+    "blank": 2,
+    "labelled_mechanical": 2
+  },
+  "league_mean_total_used_as_threshold": 45.919708,
+  "rows": [
+    {
+      "id": "C01",
+      "quantity": "Same-game dependence: home win vs over the league mean total",
+      "level": "Leg level (two legs in one game)",
+      "n": 137,
+      "value": -0.08081,
+      "p_value": 0.34422,
+      "ci95_low": null,
+      "ci95_high": null,
+      "method": "Phi coefficient on the 2x2 joint outcome table",
+      "provenance": "Official final scores for 137 games; the threshold is the league mean total of 45.9197 points, itself derived from the same official scores",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "note": "This is the quantity a same-game parlay price depends on. Both legs use only official numbers, so the estimate needs no model.",
+      "mechanical_caveat": null,
+      "counts_as_independent_evidence": true
+    },
+    {
+      "id": "C02",
+      "quantity": "Dependence between a leg and itself (the same event twice)",
+      "level": "Leg level",
+      "n": 137,
+      "value": 1.0,
+      "p_value": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "method": "Not estimated. Two legs on the same event cannot disagree, so the dependence is 1 by definition.",
+      "provenance": "Definition, not measurement. Recorded so that a slip built this way is never priced as if its legs were independent.",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "note": "Included because it is the failure mode that matters: a two-leg slip built from one event looks like a parlay and is not one.",
+      "mechanical_caveat": null,
+      "counts_as_independent_evidence": false
+    },
+    {
+      "id": "C03",
+      "quantity": "Cross-game dependence: two home-win legs in the same week",
+      "level": "Leg level (two legs in different games, same week)",
+      "n": 963,
+      "value": 0.014077,
+      "p_value": 0.662236,
+      "ci95_low": null,
+      "ci95_high": null,
+      "method": "Phi coefficient over every unordered pair of games played in the same week",
+      "provenance": "Official final scores; 963 game pairs drawn from 10 weeks",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "note": "Legs in different games share a week, so a common shock can move them together. The estimate is small, but with this n the interval is wide.",
+      "mechanical_caveat": null,
+      "counts_as_independent_evidence": true
+    },
+    {
+      "id": "C04",
+      "quantity": "Home margin against total points",
+      "level": "Game level",
+      "n": 137,
+      "value": -0.160655,
+      "p_value": 0.060739,
+      "ci95_low": -0.319755,
+      "ci95_high": 0.007256,
+      "method": "Pearson correlation",
+      "provenance": "Official final scores for 137 games",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "note": "A negative value would mean blowouts tend to be low scoring. It is a description of the season, not a betting relationship.",
+      "mechanical_caveat": null,
+      "counts_as_independent_evidence": true
+    },
+    {
+      "id": "C05",
+      "quantity": "Club points scored per game against points allowed per game",
+      "level": "Club level",
+      "n": 32,
+      "value": -0.204062,
+      "p_value": 0.262602,
+      "ci95_low": -0.516038,
+      "ci95_high": 0.155711,
+      "method": "Pearson correlation",
+      "provenance": "Official standings read on 2026-11-14; PF and PA divided by games played",
+      "source_ids": [
+        "CP-NFL-STANDINGS"
+      ],
+      "source_url": "https://www.nfl.com/standings/",
+      "note": null,
+      "mechanical_caveat": "Both series are built from the same club's same games, so the pair is not two independent measurements. Published as a description of the season, not as evidence.",
+      "counts_as_independent_evidence": false
+    },
+    {
+      "id": "C06",
+      "quantity": "Pythagorean expectation against actual win percentage",
+      "level": "Club level",
+      "n": 32,
+      "value": 0.878896,
+      "p_value": 0.0,
+      "ci95_low": 0.764494,
+      "ci95_high": 0.939627,
+      "method": "Pearson correlation",
+      "provenance": "Official standings read on 2026-11-14; the exponent 2.37 is a published convention, not fitted here",
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "PYTH-NFL"
+      ],
+      "source_url": "https://www.nfl.com/standings/",
+      "note": null,
+      "mechanical_caveat": "Pythagorean expectation is computed from the same points-for and points-against that decide the games, so a high correlation is a validity check on the formula, not a discovery.",
+      "counts_as_independent_evidence": false
+    },
+    {
+      "id": "C07",
+      "quantity": "Forecast home margin against actual home margin (walk-forward)",
+      "level": "Game level",
+      "n": 121,
+      "value": 0.114231,
+      "p_value": 0.212184,
+      "ci95_low": -0.065604,
+      "ci95_high": 0.286878,
+      "method": "Pearson correlation",
+      "provenance": "Official final scores; the forecast is built only from weeks before each game, so all 121 pairs are out of sample",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "note": "The one correlation that carries information about the model rather than about the season.",
+      "mechanical_caveat": null,
+      "counts_as_independent_evidence": true
+    },
+    {
+      "id": "C08",
+      "quantity": "Forecast total against actual total (walk-forward)",
+      "level": "Game level",
+      "n": 121,
+      "value": -0.035487,
+      "p_value": 0.699184,
+      "ci95_low": -0.212636,
+      "ci95_high": 0.143922,
+      "method": "Pearson correlation",
+      "provenance": "Official final scores; 121 out-of-sample pairs",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "note": "Near zero here is the reason the totals board scores 50.4% against its own number (see backtest SB-09). Forecast residual SD 14.654893 points.",
+      "mechanical_caveat": null,
+      "counts_as_independent_evidence": true
+    },
+    {
+      "id": "C09",
+      "quantity": "Player prop to team outcome dependence",
+      "level": "Leg level",
+      "n": null,
+      "value": null,
+      "p_value": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "method": "Not computed",
+      "provenance": "No per-game player log, target share or snap count was retrieved from any official source. The official injury report prints a status, not a usage number, so both series are missing.",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "source_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "note": "Blank by rule. A number here would be a guess presented as a measurement.",
+      "mechanical_caveat": null,
+      "counts_as_independent_evidence": true
+    },
+    {
+      "id": "C10",
+      "quantity": "Three-leg parlay joint distribution",
+      "level": "Leg level",
+      "n": null,
+      "value": null,
+      "p_value": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "method": "Not computed",
+      "provenance": "Only 8 weeks carry enough games to build a three-leg slip, and the joint cell counts are too small to estimate a dependence. Published blank rather than estimated from 8 slips.",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "note": "Blank by rule. A number here would be a guess presented as a measurement.",
+      "mechanical_caveat": null,
+      "counts_as_independent_evidence": true
+    }
+  ]
+}
