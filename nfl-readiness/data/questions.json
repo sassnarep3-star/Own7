@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "read": "2026-11-17",
+  "note": "Every question is split into what is held, what is missing, what it blocks and what closes it. 'answered' is used only where a number on file settles the question, and that number is quoted in the held cell.",
+  "counts": {
+    "questions": 26,
+    "answered": 9,
+    "open": 17
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "group": "Market price",
+      "question": "May any market number be published at all?",
+      "held": "NFL.com section 1.3 permits individual non-commercial informational use and prohibits systematic retrieval without written consent. No odds publisher is registered.",
+      "missing": "A written permission, or a price source whose terms permit republication of the number.",
+      "blocks": "Every market column, every residual against the market, every ROI and CLV claim, every reward.",
+      "closes": "A licence or a permitted source is recorded in research/sources.json with its terms quoted.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-TERMS"
+      ]
+    },
+    {
+      "id": "Q02",
+      "group": "Market price",
+      "question": "Is there a source that prints an opening and a closing number for NFL games?",
+      "held": "The repository's own price desks record closing observations from a secondary publisher; this desk registers none.",
+      "missing": "One publisher that prints both an opening and a closing number with timestamps and that permits the use.",
+      "blocks": "R01 and R18: an opening/closing store and a residual against the market.",
+      "closes": "A registered source whose page prints both numbers for the same game.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-TERMS"
+      ]
+    },
+    {
+      "id": "Q03",
+      "group": "Who played",
+      "question": "Who actually started, as opposed to who was expected to start?",
+      "held": "3 dated announced-starter statements (Seattle, Cleveland, Arizona) and 6 club depth charts, both read 2026-11-17.",
+      "missing": "An official participation record: an inactive list, a Game Book or a snap count. 0 of 136 games are covered.",
+      "blocks": "R10 (the availability graph), R25, R123, R124 and the cross-side mismatch matrix.",
+      "closes": "One Game Book or inactive list per captured game, joined to the expected starter.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-INJ-W10",
+        "RD-NFL-LOCK"
+      ]
+    },
+    {
+      "id": "Q04",
+      "group": "Depth",
+      "question": "Is the printed depth chart the right source for depth order?",
+      "held": "26 of 32 clubs serve a text chart; this desk verified 6 of them by reading them. Houston serves an image.",
+      "missing": "A club-by-club verification of the remaining 26, and a structured source for Houston.",
+      "blocks": "Route (a) for all 32 clubs, which is what R77/R78 require before any backup-deficiency feature.",
+      "closes": "32 of 32 clubs read and parsed from text.",
+      "state": "open",
+      "source_ids": [
+        "RD-HOU-CHART",
+        "RD-DET-CHART",
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "Q05",
+      "group": "Injuries",
+      "question": "What does each game designation actually mean on the field?",
+      "held": "216 game designations across 347 report rows, from one dated read (70 Out, 11 Doubtful, 90 Questionable, 176 blank).",
+      "missing": "The play outcome behind each designation. Without it a designation is a label, not a probability.",
+      "blocks": "R61, R79, R80 and any model that uses an injury label as a feature.",
+      "closes": "Designations joined to inactive lists across at least 200 player-games per designation.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "Q06",
+      "group": "Injuries",
+      "question": "Is 'not on the report' the same as 'available'?",
+      "held": "The Week 10 report lists 347 rows for 28 clubs. No reserve or injured-reserve list is captured, so an absent name cannot be explained.",
+      "missing": "The 32 roster pages' reserve sections, or a transaction log that states IR placements.",
+      "blocks": "R13, R99, R100: any claim that a club is healthy because a name is missing.",
+      "closes": "32 of 32 reserve lists captured with dates.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-INJ-W10",
+        "RD-NFL-ROUNDUP-NOV13"
+      ]
+    },
+    {
+      "id": "Q07",
+      "group": "Injuries",
+      "question": "How many players does one report actually cover, and are the inherited counts right?",
+      "held": "347 rows, 28 clubs (the 4 bye clubs have no section), 171 rows with a game designation. Recomputed from the live page on 2026-11-17.",
+      "missing": "Nothing for the count itself. The count is settled.",
+      "blocks": "Nothing; the stale 254/6 figures are corrected here.",
+      "closes": "Settled: 347 rows and 171 designations is the live count.",
+      "state": "answered",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "Q08",
+      "group": "Schedule",
+      "question": "Can a venue be published for every fixture from an official page?",
+      "held": "12 of 13 Week 11 fixtures print a stadium string in the schedule page's own ticket and hotel links; the Mexico City game prints a label, not a stadium.",
+      "missing": "A league or club page that prints the stadium for the international fixture.",
+      "blocks": "R23: complete venue transcription.",
+      "closes": "13 of 13 fixtures with a printed stadium.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-SCHED-W11"
+      ]
+    },
+    {
+      "id": "Q09",
+      "group": "Schedule",
+      "question": "Is there an official dated schedule announcement to publish beside the live schedule?",
+      "held": "Two dated documents are cited: the flexible-scheduling procedures page and the dated Week 16-18 TBD announcement text.",
+      "missing": "Nothing for the requirement. It is met.",
+      "blocks": "Nothing.",
+      "closes": "Settled.",
+      "state": "answered",
+      "source_ids": [
+        "RD-NFL-SCHED-W11"
+      ]
+    },
+    {
+      "id": "Q10",
+      "group": "Weather",
+      "question": "Does weather belong in the model?",
+      "held": "Nothing: no forecast feed and no roof/surface register are captured. One page prints a 'Clear' label.",
+      "missing": "A registered hourly forecast source and a stadium roof/surface register.",
+      "blocks": "R89 and R90, and any totals or passing-prop adjustment for wind.",
+      "closes": "A forecast grid per stadium plus a roof register.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-SCHED-W10"
+      ]
+    },
+    {
+      "id": "Q11",
+      "group": "Signal",
+      "question": "Is the side signal real?",
+      "held": "The best side entry scores +0.057 Brier skill on weeks 6-9 (n=57), cluster lower bound +0.015, family-wise p 0.348 over 21 trials.",
+      "missing": "A prospective window of pre-kickoff forecasts, and enough games for the required-n bar.",
+      "blocks": "Any claim of skill. The family null does not clear.",
+      "closes": "A prospective window with a cluster lower bound above zero after adjustment.",
+      "state": "open",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "Q12",
+      "group": "Signal",
+      "question": "Is the total signal real?",
+      "held": "No. Every total entry sits within 0.024 Brier skill of zero, and the best total entry has a negative lower bound.",
+      "missing": "Nothing to answer this question; it is answered negatively.",
+      "blocks": "Any total-based strategy.",
+      "closes": "Settled: the total model is not distinguishable from the benchmark on this window.",
+      "state": "answered",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "Q13",
+      "group": "Signal",
+      "question": "Does the ranking survive the development window?",
+      "held": "No: the development order and the evaluation order agree in 1 of 21 positions.",
+      "missing": "A longer corpus, or a prospective window.",
+      "blocks": "Trusting the ranking as a property of the model rather than of weeks 6-9.",
+      "closes": "A window in which the order is stable across halves.",
+      "state": "answered",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "Q14",
+      "group": "Signal",
+      "question": "How many selections before an edge would even be visible?",
+      "held": "2,241 settled selections for a 55% model at 80% power, or 173 weeks at this season's 13 games a week.",
+      "missing": "Nothing; the arithmetic is settled.",
+      "blocks": "Any short-window reward or ranking claim.",
+      "closes": "Settled.",
+      "state": "answered",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "Q15",
+      "group": "Combinations",
+      "question": "Can two legs in the same game be multiplied?",
+      "held": "No. Measured phi for side x total is -0.096 (n=120, 95% interval -0.271 to +0.085); side x moneyline is +0.935 (n=120).",
+      "missing": "A directly validated joint probability at the exact thresholds, plus the operator's void/push rule.",
+      "blocks": "Every same-game parlay and prop combo.",
+      "closes": "An operator rule registered and a joint probability validated on a prospective sample.",
+      "state": "open",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "Q16",
+      "group": "Combinations",
+      "question": "Is a player prop combination measurable at all here?",
+      "held": "No player-level outcome is captured. 0 prop lines, 0 prop outcomes.",
+      "missing": "Per-player per-game logs for the players in each proposed pair.",
+      "blocks": "R119 and the prop-combo division.",
+      "closes": "A per-player game log for every player in a proposed combination.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-PLAYER-STATS"
+      ]
+    },
+    {
+      "id": "Q17",
+      "group": "Automation",
+      "question": "May the collection be automated?",
+      "held": "No. Section 1.3 prohibits systematic retrieval without written consent, so no schedule is enabled and each capture is a single targeted read.",
+      "missing": "Written consent, or an authorised structured feed.",
+      "blocks": "R31, R33, R34, R51, R52, R67 and every daily-series requirement.",
+      "closes": "A consent record or an authorised feed.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-TERMS"
+      ]
+    },
+    {
+      "id": "Q18",
+      "group": "Automation",
+      "question": "Is one capture a series?",
+      "held": "No. Three dated captures exist for this desk; a delta needs two reads of the same scope and a trend needs more.",
+      "missing": "Daily captures from Wednesday to kickoff.",
+      "blocks": "R21, R82, R83, R84, R93, R94.",
+      "closes": "Two reads of the same scope with timestamps.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "Q19",
+      "group": "Ablation",
+      "question": "Does availability information improve the model?",
+      "held": "Unknown by construction. The 'with personnel' arm is empty because no absence is confirmed in the corpus.",
+      "missing": "Confirmed absences per game, from inactive lists or Game Books.",
+      "blocks": "R27, R28, R29, R30 and the personnnel weighting of the originated line.",
+      "closes": "136 games with a confirmed absence set.",
+      "state": "open",
+      "source_ids": [
+        "X29-NFL-SCHEDULE",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "Q20",
+      "group": "Ablation",
+      "question": "Is a fixed points penalty for a missing starter defensible?",
+      "held": "No test in this repository supports one. The pipeline contains 0 fixed penalties.",
+      "missing": "The same evidence the ablation needs; a penalty is a placeholder for it.",
+      "blocks": "Any injury-adjusted line.",
+      "closes": "A measured effect with an interval, not a constant.",
+      "state": "answered",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "Q21",
+      "group": "Competition",
+      "question": "Can a reward be paid?",
+      "held": "No. 0 of 21 entries qualify: V7 (price) and V8 (prospective record) cannot pass.",
+      "missing": "A price, a prospective record, and a funding decision.",
+      "blocks": "R118 and the whole reward schedule.",
+      "closes": "One entry passing V1-V8.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-TERMS"
+      ]
+    },
+    {
+      "id": "Q22",
+      "group": "Competition",
+      "question": "Should the leaderboard rank on return?",
+      "held": "No. Return at n=57 is dominated by the noise term; the power table shows why.",
+      "missing": "Nothing; the proposal is rejected with arithmetic.",
+      "blocks": "Nothing.",
+      "closes": "Settled: rejected.",
+      "state": "answered",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "Q23",
+      "group": "Governance",
+      "question": "Is the leaderboard free of backtest numbers presented as results?",
+      "held": "Yes. Every entry is labelled `evaluation weeks 6-9` and every one is `qualified: false`.",
+      "missing": "Nothing.",
+      "blocks": "Nothing.",
+      "closes": "Settled, and enforced by a build check.",
+      "state": "answered",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "Q24",
+      "group": "Governance",
+      "question": "Is the pre-registration prospective?",
+      "held": "No. It was written after weeks 1-9 were played, and it says so on every page that cites it.",
+      "missing": "A window that opens after the registration is committed.",
+      "blocks": "Any prospective claim, and V8.",
+      "closes": "A forecast recorded before its kickoff.",
+      "state": "answered",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "Q25",
+      "group": "Governance",
+      "question": "Can the previous desks' claims be inherited without re-checking?",
+      "held": "The specific claims that were re-read did not reproduce (Baltimore's quarterback row, Washington's empty slot). Each is flagged with the fresh text.",
+      "missing": "A re-read of every claim in every desk, which no desk has done line by line.",
+      "blocks": "Any cross-desk synthesis presented as verified fact.",
+      "closes": "A re-read of the claim against the publisher, recorded with the text.",
+      "state": "open",
+      "source_ids": [
+        "RD-BAL-CHART",
+        "RD-NFL-ROUNDUP-NOV13",
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "Q26",
+      "group": "Governance",
+      "question": "What is the single most useful next purchase of information?",
+      "held": "The cheapest large gain would be inactive lists: they turn 'suspected replacement' into 'confirmed replacement' and unblock the ablation.",
+      "missing": "The lists themselves.",
+      "blocks": "Q03, Q19 and R25 all close on the same datum.",
+      "closes": "One season of inactive lists.",
+      "state": "open",
+      "source_ids": [
+        "RD-NFL-TERMS"
+      ]
+    }
+  ]
+}
