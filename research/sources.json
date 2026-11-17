@@ -2784,5 +2784,65 @@
   "scope": "Week 10 fixtures as printed: 13 dated finals, 1 scheduled-not-final fixture (kickoff printed, no score), 4 clubs on bye, and the league 2026 TBD-games announcement. Read on 2026-11-17; consumed only as evidence for the results feed, the scheduled-fixture table and the schedule-announcement record.",
   "access": "Arena fetch_page rendered content, 2 chunks; 13 dated finals, 1 scheduled-not-final fixture (Chargers at Ravens, Monday, November 16th, 8:15 PM, ESPN), 4 clubs on bye, and the league's 2026 TBD-games flexible-scheduling announcement. Saved as nfl-results/evidence/week-10.schedule.md.",
   "status": "Verified"
+ },
+{
+  "id": "GB-NFL-GAMEBOOK-PDF",
+  "publisher": "National Football League",
+  "title": "Official NFL Game Book (PDF) for 2026 Week 10 fixtures",
+  "url": "https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf",
+  "kind": "gamebook",
+  "authority": "Official league game record published by NFL.com",
+  "scope": "Game-day venue, roof/open state, field surface, weather, officials, actual starting lineups and the official Not Active list for one fixture. Each fixture has its own PDF; this URL is the representative registered artefact and every row links the exact PDF it used.",
+  "checked_on": "2026-11-17",
+  "access": "Arena fetch_page rendered PDF text; not a direct HTTP-status attestation",
+  "status": "Content checked"
+ },
+{
+  "id": "GB-NFL-GAMECENTER",
+  "publisher": "National Football League",
+  "title": "NFL Game Centre - Week 10 fixture pages",
+  "url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+  "kind": "fixture",
+  "authority": "Official league game centre",
+  "scope": "Location, stadium, kickoff and the link to the official Game Book PDF for a fixture. Carries the W10-14 fixture that had no Game Book at capture.",
+  "checked_on": "2026-11-17",
+  "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
+  "status": "Content checked"
+ },
+{
+  "id": "GB-NFL-INJURY-W10",
+  "publisher": "National Football League",
+  "title": "Official NFL Injury Report - Week 10 of the 2026 season",
+  "url": "https://www.nfl.com/injuries/league/2026/REG10",
+  "kind": "injury",
+  "authority": "Official league injury report",
+  "scope": "Practice participation and game designation per player, captured 2026-11-13 before kickoff. Joined to official Game Book Not Active lists to measure designation reliability and the as-known-to-actual delta.",
+  "checked_on": "2026-11-17",
+  "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
+  "status": "Content checked"
+ },
+{
+  "id": "GB-NFL-SCHEDULE-W10",
+  "publisher": "National Football League",
+  "title": "NFL 2026 schedule - Week 10",
+  "url": "https://www.nfl.com/schedules/2026/REG10/",
+  "kind": "schedule",
+  "authority": "Official league schedule",
+  "scope": "The 14 Week 10 fixtures, kickoff times, broadcasters and final scores used to confirm the fixture list.",
+  "checked_on": "2026-11-17",
+  "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
+  "status": "Content checked"
+ },
+{
+  "id": "GB-CLUB-DEPTH",
+  "publisher": "Chicago Bears",
+  "title": "Official club depth chart (representative of the four captured clubs)",
+  "url": "https://www.chicagobears.com/team/depth-chart",
+  "kind": "depth",
+  "authority": "Official member-club depth chart",
+  "scope": "Club-published depth order per unit and position, read read-only from nfl-skill-cfdd. Captured for CHI, DEN, PHI and TB only; this URL is the representative registered chart and each row links its own club page.",
+  "checked_on": "2026-11-14",
+  "access": "Prior session capture carried read-only; not re-fetched this session",
+  "status": "Content checked"
  }
 ]

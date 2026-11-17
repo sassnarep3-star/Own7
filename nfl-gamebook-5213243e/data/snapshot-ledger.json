@@ -1,0 +1,137 @@
+[
+  {
+    "artifact": "Game Book W10-01 WAS@NYG",
+    "vintage": "2026-11-12 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "9d06871a62c89420953f84b09a7558a5897074628de8d851d709f8e37906904f",
+    "raw_file": "g01-WAS-NYG.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-02 PIT@CIN",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "789c2096698ac5ffcb6ea0dbd33bca6b2b51ea73130d7bb3c0ebc561178e086c",
+    "raw_file": "g02-PIT-CIN.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-03 NE@DET",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "97f2b51974fb5c164beddad597a38b7680e5421cd5b9419d35a4f926f6082149",
+    "raw_file": "g03-NE-DET.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-04 KC@ATL",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "e44c6282ca00789b424dab95466ba005fa6a5eae17f2f8128ee201651969d813",
+    "raw_file": "g04-KC-ATL.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-05 HOU@CLE",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "8ac3b744a996169c5e0f13e2b03184b2686ac3e790837b75f95e65e9f00d4068",
+    "raw_file": "g05-HOU-CLE.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-06 MIN@GB",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "9e81831d552b1b912ec9ce242e99a6f1b4bdfa8f23e9c57528ed3897fe566d9c",
+    "raw_file": "g06-MIN-GB.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-07 MIA@IND",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "59f0f8ee6e275b083901e31650360cc01caf81f5d3c953a06559786669eaaa52",
+    "raw_file": "g07-MIA-IND.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-08 CAR@NO",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "6c5e310820aed9750827399fc2fc07513a71fdaaa747127903052ab85912aae4",
+    "raw_file": "g08-CAR-NO.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-09 BUF@NYJ",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "aed4f3f99295d5a4c8f61f9c7040a3ddf811ecaada0ee8d2237ea12d58df0385",
+    "raw_file": "g09-BUF-NYJ.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-10 JAX@TEN",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "3a937a90c58d9b9eeb3728bec296a28b7acb63472132a29d0e7fdf1586dd8893",
+    "raw_file": "g10-JAX-TEN.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-11 SEA@LV",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "294667bace78024a70748cbc20a4a5c3c0b25e6931a5bf8ea7c60e21a8d00407",
+    "raw_file": "g11-SEA-LV.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-12 SF@DAL",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "9dd9c5b086d3c7716c030b5206391bcc2c915161457f44968b2fbc741c31c6b8",
+    "raw_file": "g12-SF-DAL.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-13 LAR@AZ",
+    "vintage": "2026-11-15 game; captured 2026-11-17",
+    "captured_utc": "2026-11-17",
+    "sha256": "fd6dffd07f88166004e9a4463e07259afa38bb853dad718cc9f2a7690380d501",
+    "raw_file": "g13-LAR-AZ.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Official injury report Week 10 (as-known snapshot)",
+    "vintage": "captured 2026-11-13, before kickoff",
+    "captured_utc": "2026-11-13",
+    "sha256": "14478adac1f32a5888891cb04a8b63aee25dac9a55144a773ea3d8fd910e1a5f",
+    "raw_file": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+    "source_url": "https://www.nfl.com/injuries/league/2026/REG10",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Official club depth charts (32 clubs)",
+    "vintage": "chart date as printed per row",
+    "captured_utc": "2026-11-14",
+    "sha256": "c94988cc1d8490076873717ddd1ca8a469e09d35348487d17e4fbe6eda3d688e",
+    "raw_file": "nfl-skill-cfdd/data/depth-slots-2026-11-14.csv",
+    "source_url": "per-club official depth chart pages (see depth_source_url column)",
+    "immutable": "yes"
+  }
+]
