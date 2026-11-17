@@ -1714,3 +1714,27 @@ Scope note: the build's executive-summary description was updated additively wit
 - PR checks passed: research/recursive-site audit and desktop/mobile/accessibility.
 - Main push checks passed (run `43777058970`); GitHub Pages deployment passed (run `43777058066`, build, report and deploy jobs successful). Deployed artifact corresponds to the merge commit.
 - No broken-site merge or source values changed. GitHub Actions emitted informational Node.js 20 deprecation and runner-image migration notices; they did not fail the checks.
+
+---
+
+## Session arena/e15f05e0-own7 — integration takeover: stale-PR reconciliation, fresh official verification, decision-readiness landing (2026-11-17)
+
+Session ID: `session-arena-e15f05e0-own7`. Fixed Arena branch: `arena/e15f05e0-own7`, based on `be2462d` (merge of PR #55). Earlier boards above are historical records, not inherited verification.
+
+### Takeover basis
+All five open PRs (#17, #27, #48, #50, #51) belong to sessions whose claims are >60 hours old with no commits, so per the brief this session may take over and note the handoff. Their branches remain in Git history; nothing is deleted.
+
+### Claim (written, committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| E1 | Baseline replay on `be2462d` | in progress | session-arena-e15f05e0-own7 | COORDINATION.md (append only) | 111 tests green at claim. |
+| E2 | Integration of open PR #51 (`arena/064da913-own7`, competition lab) into this branch, additive; conflicts resolved by keeping main's canonical pages + regenerating | in progress | session-arena-e15f05e0-own7 | `nfl-competition/**` (new dir from PR #51), additive lines in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `research/site-manifest.json`, `README.md`, `COORDINATION.md` | PR #51 implements the brief's first ten requirement lines (price store, results feed, origination order, signal/staking, replacement depth, correlations with n, demotion gate, deficiencies matrix, decision record). |
+| E3 | Fresh official-source reads (2026-11-17): standings (post-W10), REG10 schedule finals, REG11 schedule, injury report; evidence saved verbatim; sources registered | in progress | session-arena-e15f05e0-own7 | `nfl-results/evidence/**`, `research/nfl/**`, `research/sources.json` | fetch_page reads only; no scheduled scraping (terms §1.3 constraint inherited). |
+| E4 | Extend verified results feed with completed Week 10 finals + re-run standings reconciliation | in progress | session-arena-e15f05e0-own7 | `nfl-results/**`, `data/nfl-standings-2026.csv` (if regenerated) | SG-05 continuation; reconciliation must stay 100% or build aborts. |
+| E5 | Decision-readiness table on the landing page: one row per requirement, the gate that blocks it, the number that would clear it | unclaimed | session-arena-e15f05e0-own7 | `scripts/build_site.py` (index generation), `research/nfl-requirements.json` additive | Brief line "Put a decision-readiness table on the landing page". |
+| E6 | Stale-PR closure decisions recorded (close #17, #27, #48, #50 as superseded; rationale + links; user-reviewable flag) | unclaimed | session-arena-e15f05e0-own7 | COORDINATION.md, flag register | Published on the Flagged for Review page. |
+| E7 | Suggestions review additions from this session's findings | unclaimed | session-arena-e15f05e0-own7 | `research/nfl-suggestions.json` additive | Adopt-Defer-Reject ballot stays human-owned. |
+| E8 | Full checks, integration PR to main, merge, Pages deploy evidence, record | unclaimed | session-arena-e15f05e0-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: fixed branch only; never infer or fill a value an official source does not publish — leave blank and flag; every table row keeps a registered official source link; additive shared-file edits only; small frequent commits; rebase before every push; PRs #17/#27/#48/#50 are closed only with a documented rationale comment pointing at the superseding merged work, never silently.
