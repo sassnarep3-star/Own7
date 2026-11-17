@@ -107,6 +107,34 @@ python scripts/serve_site.py --host 0.0.0.0 --port 8080
 | `nfl-verification-2026-11-13.html` | **Re-verification, 13 Nov 2026** — every published NFL value re-read from the publisher, all 32 rows side by side |
 | `nfl-review.html` | 21 flagged irregularities with official source links (17 open, 4 corrected) |
 
+## New: readiness-audit desk (2026-11-17, session arena/e7efbde7-own7)
+
+A fresh session re-verified the published NFL data line by line against new official reads and
+published the brief's decision-readiness table in full:
+
+| Page | What it answers |
+|---|---|
+| [`nfl-readiness-e7ef/site/index.html`](nfl-readiness-e7ef/site/index.html) | Desk overview: what was read, what was reconciled, what was found |
+| [`nfl-readiness-e7ef/site/verification-2026-11-17.html`](nfl-readiness-e7ef/site/verification-2026-11-17.html) | Line-by-line verification: 32 standings rows, 13 Week 10 finals + 1 pending game, 13 Week 11 fixtures + 6 byes, 347 injury rows — each with its official source |
+| [`nfl-readiness-e7ef/site/requirement-readiness.html`](nfl-readiness-e7ef/site/requirement-readiness.html) | **One row per requirement of the brief**, with the gate that blocks it and the number that would clear it (80 rows: satisfied / partial / open) |
+| [`nfl-readiness-e7ef/site/flagged.html`](nfl-readiness-e7ef/site/flagged.html) | 5 desk flags (2 state/open, 3 explained) + 2 publisher-side resolutions since 2026-11-14 |
+| [`nfl-readiness-e7ef/site/sources.html`](nfl-readiness-e7ef/site/sources.html) | The four hashed evidence transcripts and the desk's registered sources |
+
+Fresh official reads (2026-11-17 00:45 UTC): [standings](https://www.nfl.com/standings/),
+[REG10 schedule](https://www.nfl.com/schedules/2026/REG10/),
+[Week 11](https://www.nfl.com/schedules/2026/by-week/week-11),
+[injury report](https://www.nfl.com/injuries/). The Monday LAC@BAL game was pre-kickoff at read
+time and is stored as pending, never imputed. Verification checks (three-way standings
+reconciliation, fixture joins, games-played ledger against the 136-game corpus, Week 11 slate
+completeness, injury-row matching, cross-page record consistency) re-run on every build and in
+CI; a single mismatch aborts.
+
+```sh
+python nfl-readiness-e7ef/collect.py --check   # re-parse evidence, refuse contradictions
+python nfl-readiness-e7ef/build.py --check     # byte-identical desk pages
+python -m unittest discover -s nfl-readiness-e7ef/tests -t .   # 13 tests
+```
+
 ## Skill & availability desk (2026-11-14)
 
 New self-contained desk at `nfl-skill-cfdd/`, published at

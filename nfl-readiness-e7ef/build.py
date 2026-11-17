@@ -396,7 +396,8 @@ hashed so any later change is detectable.</p>
 STYLE = """
 :root{--bg:#f6f7f9;--fg:#1c2430;--muted:#5a6779;--line:#d9dee6;--panel:#fff;--ok:#1a7f37;--warn:#9a6700;--bad:#b42318;--accent:#12459e}
 *{box-sizing:border-box}html{font-size:16px}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}
+p a,.lead a,li a{text-decoration:underline}
 .skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:10}
 header.top{background:var(--panel);border-bottom:1px solid var(--line);padding:10px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 header.top .brand{display:flex;flex-direction:column;font-size:14px;color:var(--muted)}header.top .brand strong{font-size:16px;color:var(--fg)}
@@ -416,9 +417,11 @@ th{position:sticky;top:0;background:#eef1f5;text-align:left;padding:8px 10px;bor
 td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 tbody tr:hover{background:#f2f6ff}
 td.blank{background:#fbf6e9;min-width:26px}
+td a{display:inline-block;font-size:12.5px;min-height:1.7rem;line-height:1.7rem;margin-right:.45rem}
 td.src a{font-size:12px}
 .badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600}
-.badge-ok{background:#dafbe1;color:var(--ok)}.badge-warn{background:#fff3c2;color:var(--warn)}.badge-bad{background:#ffe2dd;color:var(--bad)}
+.badge{white-space:nowrap}
+.badge-ok{background:#e3f4e8;color:#14532d}.badge-warn{background:#fff4e0;color:#8a4b00}.badge-bad{background:#fbe6e6;color:#7f1d1d}
 .note{color:var(--muted);font-size:12.5px;max-width:100ch}
 footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12.5px}
 """
