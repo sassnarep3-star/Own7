@@ -1,0 +1,516 @@
+{
+  "complete_clubs_compared": [
+    "DET",
+    "NE",
+    "NYG",
+    "WAS"
+  ],
+  "desk_rows_in_complete_clubs_not_in_official_text": [],
+  "desk_source": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+  "evidence_file": "nfl-readiness-1467fdf7/evidence/nfl-injuries-week10-2026-official-read-2026-11-17.md",
+  "evidence_read_on": "2026-11-17",
+  "evidence_sha256": "8bc949124864a6739ac8850ea1068d306758f373a6eda2c54c565eacff8ab7c5",
+  "evidence_source_url": "https://www.nfl.com/injuries/",
+  "not_compared": [
+    "KC (table truncated after Patrick Mahomes in the saved text; 6 of 12 desk rows read)"
+  ],
+  "official_rows_missing_from_desk": [],
+  "official_rows_parsed": 50,
+  "rows": [
+    {
+      "club": "WAS",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "John Bates"
+    },
+    {
+      "club": "WAS",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Did Not Participate In Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Did Not Participate In Practice",
+      "player": "Treylon Burks"
+    },
+    {
+      "club": "WAS",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Jayden Daniels"
+    },
+    {
+      "club": "WAS",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Matt Gulbin"
+    },
+    {
+      "club": "WAS",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Chig Okonkwo"
+    },
+    {
+      "club": "WAS",
+      "desk_game": "Out",
+      "desk_injury": "Concussion",
+      "desk_practice": "Did Not Participate In Practice",
+      "mismatch_fields": [],
+      "official_game": "Out",
+      "official_injury": "Concussion",
+      "official_practice": "Did Not Participate In Practice",
+      "player": "Lucas Patrick"
+    },
+    {
+      "club": "WAS",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Limited Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Limited Participation in Practice",
+      "player": "Amik Robertson"
+    },
+    {
+      "club": "WAS",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Shy Tuttle"
+    },
+    {
+      "club": "WAS",
+      "desk_game": "Out",
+      "desk_injury": "Knee",
+      "desk_practice": "Did Not Participate In Practice",
+      "mismatch_fields": [],
+      "official_game": "Out",
+      "official_injury": "Knee",
+      "official_practice": "Did Not Participate In Practice",
+      "player": "Colson Yankoff"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Abdul Carter"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Jermaine Eluemunor"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "Questionable",
+      "desk_injury": "Groin",
+      "desk_practice": "Limited Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "Questionable",
+      "official_injury": "Groin",
+      "official_practice": "Limited Participation in Practice",
+      "player": "Malik Harrison"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Colton Hood"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Theo Johnson"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Charlie Jones"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "J.J. McCarthy"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Darnell Mooney"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Malik Nabers"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Cam Skattebo"
+    },
+    {
+      "club": "NYG",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Andrew Thomas"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Out",
+      "desk_injury": "Knee",
+      "desk_practice": "Did Not Participate In Practice",
+      "mismatch_fields": [],
+      "official_game": "Out",
+      "official_injury": "Knee",
+      "official_practice": "Did Not Participate In Practice",
+      "player": "Ben Brown"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Questionable",
+      "desk_injury": "Ankle, Knee",
+      "desk_practice": "Limited Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "Questionable",
+      "official_injury": "Ankle, Knee",
+      "official_practice": "Limited Participation in Practice",
+      "player": "A.J. Brown"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Questionable",
+      "desk_injury": "Chest",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "Questionable",
+      "official_injury": "Chest",
+      "official_practice": "Full Participation in Practice",
+      "player": "Kevin Byard"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Out",
+      "desk_injury": "Knee",
+      "desk_practice": "Did Not Participate In Practice",
+      "mismatch_fields": [],
+      "official_game": "Out",
+      "official_injury": "Knee",
+      "official_practice": "Did Not Participate In Practice",
+      "player": "Carlton Davis III"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Questionable",
+      "desk_injury": "Knee",
+      "desk_practice": "Limited Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "Questionable",
+      "official_injury": "Knee",
+      "official_practice": "Limited Participation in Practice",
+      "player": "Reggie Gilliam"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Out",
+      "desk_injury": "Illness",
+      "desk_practice": "Did Not Participate In Practice",
+      "mismatch_fields": [],
+      "official_game": "Out",
+      "official_injury": "Illness",
+      "official_practice": "Did Not Participate In Practice",
+      "player": "TreVeyon Henderson"
+    },
+    {
+      "club": "NE",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Limited Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Limited Participation in Practice",
+      "player": "Hunter Henry"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Questionable",
+      "desk_injury": "Back",
+      "desk_practice": "Limited Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "Questionable",
+      "official_injury": "Back",
+      "official_practice": "Limited Participation in Practice",
+      "player": "Cameron Latu"
+    },
+    {
+      "club": "NE",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Drake Maye"
+    },
+    {
+      "club": "NE",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Morgan Moses"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Questionable",
+      "desk_injury": "Concussion",
+      "desk_practice": "Limited Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "Questionable",
+      "official_injury": "Concussion",
+      "official_practice": "Limited Participation in Practice",
+      "player": "Walter Rouse"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Questionable",
+      "desk_injury": "Hamstring",
+      "desk_practice": "Limited Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "Questionable",
+      "official_injury": "Hamstring",
+      "official_practice": "Limited Participation in Practice",
+      "player": "Brenden Schooler"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Questionable",
+      "desk_injury": "Knee",
+      "desk_practice": "Limited Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "Questionable",
+      "official_injury": "Knee",
+      "official_practice": "Limited Participation in Practice",
+      "player": "Rhamondre Stevenson"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Questionable",
+      "desk_injury": "Hamstring",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "Questionable",
+      "official_injury": "Hamstring",
+      "official_practice": "Full Participation in Practice",
+      "player": "Greg Van Roten"
+    },
+    {
+      "club": "NE",
+      "desk_game": "Questionable",
+      "desk_injury": "Hamstring",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "Questionable",
+      "official_injury": "Hamstring",
+      "official_practice": "Full Participation in Practice",
+      "player": "Charles Woods"
+    },
+    {
+      "club": "DET",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Brian Branch"
+    },
+    {
+      "club": "DET",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Jared Goff"
+    },
+    {
+      "club": "DET",
+      "desk_game": "Out",
+      "desk_injury": "Knee",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [
+        "practice"
+      ],
+      "official_game": "Out",
+      "official_injury": "Knee",
+      "official_practice": "Did Not Participate In Practice",
+      "player": "Kerby Joseph"
+    },
+    {
+      "club": "DET",
+      "desk_game": "Out",
+      "desk_injury": "Ankle",
+      "desk_practice": "Did Not Participate In Practice",
+      "mismatch_fields": [],
+      "official_game": "Out",
+      "official_injury": "Ankle",
+      "official_practice": "Did Not Participate In Practice",
+      "player": "Cade Mays"
+    },
+    {
+      "club": "DET",
+      "desk_game": "Out",
+      "desk_injury": "Hip",
+      "desk_practice": "Did Not Participate In Practice",
+      "mismatch_fields": [],
+      "official_game": "Out",
+      "official_injury": "Hip",
+      "official_practice": "Did Not Participate In Practice",
+      "player": "D.J. Reed"
+    },
+    {
+      "club": "DET",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "Jacob Saylors"
+    },
+    {
+      "club": "DET",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Limited Participation in Practice",
+      "mismatch_fields": [
+        "injury",
+        "game_status"
+      ],
+      "official_game": "Questionable",
+      "official_injury": "Rib",
+      "official_practice": "Limited Participation in Practice",
+      "player": "Amon-Ra St. Brown"
+    },
+    {
+      "club": "DET",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Did Not Participate In Practice",
+      "mismatch_fields": [
+        "injury",
+        "practice",
+        "game_status"
+      ],
+      "official_game": "Questionable",
+      "official_injury": "Ankle",
+      "official_practice": "Limited Participation in Practice",
+      "player": "Sione Vaki"
+    },
+    {
+      "club": "DET",
+      "desk_game": "",
+      "desk_injury": "",
+      "desk_practice": "Full Participation in Practice",
+      "mismatch_fields": [],
+      "official_game": "",
+      "official_injury": "",
+      "official_practice": "Full Participation in Practice",
+      "player": "DJ Wonnum"
+    }
+  ],
+  "rows_compared": 44,
+  "rows_with_mismatch": 3
+}
