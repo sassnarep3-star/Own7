@@ -1754,3 +1754,24 @@ Session ID: `session-arena-f4a324f2-own7`
 - Never infer or fill in values; leave blank + flag as unverified if no official source confirms.
 - Small, frequent commits; `git pull --rebase` before every push.
 - On conflict: stop, resolve without discarding the other session's work, log what happened.
+## Session arena/aa24ff84-own7 — NFL decision-readiness register
+
+### Claim (2026-11-17; append-only coordination scope)
+
+| ID | Task | Status | Owner | Exclusive file scope | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| AR1 | Build a long-form 70-item decision-readiness crosswalk, with separate question and suggestion pages, complementing (not replacing) the canonical 11-row landing-page decision table merged by arena/f4a324f2-own7 | in progress | arena/aa24ff84-own7 | `nfl-decision-readiness-aa24ff84/**`; append-only `COORDINATION.md` | To be recorded on completion; official sources only for claims; no unsupported values | Standalone long-form detail under its own directory; existing 11-row landing table is preserved. Any integration only adds navigation/manifest links. |
+
+Claimed before implementation. Existing dashboards/desk outputs are read-only inputs. Unknown thresholds stay explicitly unverified/undecided rather than being fabricated. The output is published under its own directory; AR2 adds an additive route to it without changing the existing landing table.
+
+### AR2 claim — final site integration (2026-11-17)
+
+| ID | Task | Status | Owner | Exclusive file scope | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| AR2 | Additively link the completed long-form readiness desk from the canonical site, include its pages in the build manifest and run recursive link/source/browser checks; preserve arena/f4a324f2-own7's existing landing-page table | in progress | arena/aa24ff84-own7 | Additive integration edits only: `scripts/build_site.py`, `nfl_pages.py`, `research/sources.json`, `scripts/check_site.py`, generated manifest/pages, `COORDINATION.md` | Official fetch receipts recorded in the desk; exact source registry and checks to follow | Final integration task. Do not edit other desks' source data or existing analysis values. |
+
+AR1 scoped desk complete locally (70 requirement rows, 12 open questions, 12 proposed review suggestions; 5 dedicated tests pass). The overlap with arena/f4a324f2-own7's new 11-row landing summary is intentional at the subject level but non-overlapping at the data/page level: preserve its concise table and provide this separate comprehensive register as a drill-down. AR2 owns only additive exposure/build registration and does not change existing research findings or values.
+
+### Rebase conflict note (2026-11-17)
+
+`origin/main` advanced to merge commit `7a0a12a` (PR #59, arena/f4a324f2-own7) while this branch had a task-board claim based on `be2462d`. Rebase conflicted only in `COORDINATION.md`. Resolution retained the entire F1–F4 entry from the other session and this session's AR1/AR2 entries; no data, page, or other session's work was discarded. The expanded register is a separate 70-row drill-down and will link to, not replace, the new concise landing-page table.
