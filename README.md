@@ -6,15 +6,17 @@
 
 Every earlier session recorded that no NFL result archive existed, so the leaderboard stayed empty
 and luck could not be removed. **That premise was wrong.** NFL.com publishes a final score for
-every past game on its by-week pages, and 136 of them are now captured and reconciled
-(160/160 standings fields) with a build that aborts on any mismatch.
+every past game on its by-week pages, and 149 of them are now captured and reconciled
+(160/160 standings fields per snapshot: weeks 1-9 against the frozen pre-kickoff read,
+weeks 1-10 against the fresh 2026-11-17 read, and fresh = frozen + parsed Week 10 deltas)
+with a build that aborts on any mismatch.
 
 That unlocks the analysis the requirements actually asked for:
 
 | Page | What it answers |
 |---|---|
 | `nfl-results.html` | Overview and the five findings |
-| `nfl-results-games.html` | All 136 official scores and 16 byes, each with its source page |
+| `nfl-results-games.html` | All 149 official scores and 20 bye rows (plus 1 scheduled-not-final fixture), each with its source page |
 | `nfl-results-skill.html` | Skill vs luck: spread board **64.2%** (permutation p=0.0021, BH q=0.022) against a total board at exactly **50.0%** |
 | `nfl-results-correlation.html` | Leg dependence measured from joint outcomes: phi −0.068 (p=0.47), not independent enough to reprice |
 | `nfl-results-leaderboard.html` | 30 variants graded; 1 provisional, 0 qualified, **every reward blank** because no price exists |
@@ -70,7 +72,7 @@ is implemented.
   No sportsbook price was retrieved, so market cells, ROI and CLV are blank by rule.
 - **10 ranked suggestions**, **14 decision questions**, **12 review flags**, **10 validation gates**
   (two pass, one partial, one open on rights) and **8 blocked strategies** with an empty leaderboard.
-- **Zero** qualified strategies, rewards, wagers or recommendations. Since 2026-11-14 a retrieval gap has been closed: 136 official final scores are captured and graded, and the results are on the `nfl-results` pages.
+- **Zero** qualified strategies, rewards, wagers or recommendations. Since 2026-11-14 a retrieval gap has been closed: 149 official final scores (through Week 10, read 2026-11-17) are captured and graded, and the results are on the `nfl-results` pages.
 
 NFL data is attributed to NFL.com. This is not affiliated with or endorsed by the NFL. NFL.com terms
 §1.3 permit individual non-commercial informational use and prohibit systematic retrieval to compile

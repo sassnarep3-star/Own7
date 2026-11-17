@@ -1,0 +1,26 @@
+{
+  "checked_on": "2026-11-17",
+  "frozen_snapshot": "data/nfl-standings-2026.csv",
+  "fresh_snapshot": "data/nfl-standings-2026-11-17.csv",
+  "fresh_snapshot_source": "https://www.nfl.com/standings/",
+  "fresh_snapshot_evidence": "research/nfl/evidence/standings-2026-11-17.retrieved.md",
+  "week10_source": "https://www.nfl.com/schedules/2026/REG10",
+  "week10_evidence": "nfl-results/evidence/week-10.schedule.md",
+  "games_weeks_1_9": 136,
+  "games_weeks_1_10": 149,
+  "scheduled_not_final": [
+    {
+      "week": 10,
+      "away": "LAC",
+      "home": "BAL",
+      "kickoff": "8:15 PM",
+      "tv": "ESPN",
+      "date": "2026-11-16"
+    }
+  ],
+  "checks": {
+    "w1_9_vs_frozen": "160 fields reconciled",
+    "w1_10_vs_fresh": "160 fields reconciled",
+    "fresh_eq_frozen_plus_w10_deltas": "32 clubs x 5 fields hold"
+  }
+}

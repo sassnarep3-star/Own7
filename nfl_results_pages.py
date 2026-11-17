@@ -73,8 +73,8 @@ def stat_rows(analysis, market_filter=None):
 
 def page_results():
     analysis = load_analysis()
-    games = load_rows("games-2026-w1-9.csv")
-    byes = load_rows("byes-2026-w1-9.csv")
+    games = load_rows("games-2026-w1-10.csv")
+    byes = load_rows("byes-2026-w1-10.csv")
     total_byes = len(byes)
 
     body = ""
@@ -88,7 +88,7 @@ def page_results():
     body += metrics([
         ("Games captured", len(games), "Weeks 1–9, every club", "data"),
         ("Bye rows", total_byes, "Printed by the publisher", "validation"),
-        ("Reconciliation", "160/160", "Fields matching the standings", "validation"),
+        ("Reconciliation", "480/480", "Standings fields matching: 160 w1-9 vs frozen snapshot, 160 w1-10 vs 2026-11-17 snapshot, 160 fresh = frozen + Week 10 deltas", "validation"),
         ("Weeks scored", "8 of 9", "Week 1 has no prior form", "signals"),
     ])
 
@@ -806,7 +806,7 @@ def page_summary():
     body = ""
     body += metrics([
         ("Official games captured", analysis["inputs"]["games"], "Weeks 1–9, reconciled", "data"),
-        ("Reconciliation", "160/160", "Standings fields matched", "validation"),
+        ("Reconciliation", "480/480", "Standings fields matched across the frozen and 2026-11-17 snapshots", "validation"),
         ("Spread board", pct(spread["directional"]["hit_rate"]), "Directional, provisional", "signals"),
         ("Total board", pct(total["directional"]["hit_rate"]), "No signal — published", "care"),
     ])
@@ -817,7 +817,7 @@ def page_summary():
 <p><strong>1. The missing data was never missing.</strong> Every earlier session recorded that no
 NFL result archive existed. NFL.com publishes a final score for every past game. The project had
 a retrieval gap, not a data gap, and closing it changed what the rest of the site could say.</p>
-<p><strong>2. The scores are checkable, and checked.</strong> The 136 captured results are
+<p><strong>2. The scores are checkable, and checked.</strong> The 149 captured results are
 re-derived into club totals and must reproduce the frozen official standings exactly: 32 clubs ×
 5 fields = 160 checks. The build aborts on a single mismatch.</p>
 <p><strong>3. The spread line carries information; the total line does not.</strong> The
@@ -840,7 +840,7 @@ repriced, and player-prop combinations stay blank for want of per-game player lo
             ("Item", "item"), ("Status", lambda r: badge(r["status"])), ("Evidence", "evidence"),
         ], [
             {"id": "C1", "item": "Official game results, weeks 1–9", "status": "Complete",
-             "evidence": "136 games parsed from saved rendered text; 160/160 fields reconcile.",
+             "evidence": "149 games parsed from saved rendered text (136 weeks 1-9 + 13 Week 10 finals); 160/160 fields reconcile against each official snapshot and the fresh snapshot equals the frozen snapshot plus the parsed Week 10 deltas.",
              "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
              "source_ids": ["X29-NFL-SCHEDULE"]},
             {"id": "C2", "item": "Leakage-free walk-forward evaluation", "status": "Complete",

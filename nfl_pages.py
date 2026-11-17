@@ -764,7 +764,7 @@ def executive():
     body += section('Executive findings',
         '<div class="grid-2">'
         '<article class="panel body-text"><h3>Official results make retrospective tests possible</h3>'
-        '<p>The results desk records 136 final scores (weeks 1–9 of 2026) and reconciles 160 standings '
+        '<p>The results desk records 149 final scores (weeks 1–10 of 2026; one Week 10 game was not final at the read) and reconciles 320 standings '
         'fields. This is a saved-results pipeline, not a multi-season or prospective test. '
         '<a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">Official NFL schedule/results ↗</a> · '
         '<a href="nfl-results-games.html">Results audit</a></p></article>'
