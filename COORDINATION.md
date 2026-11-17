@@ -1714,3 +1714,40 @@ Scope note: the build's executive-summary description was updated additively wit
 - PR checks passed: research/recursive-site audit and desktop/mobile/accessibility.
 - Main push checks passed (run `43777058970`); GitHub Pages deployment passed (run `43777058066`, build, report and deploy jobs successful). Deployed artifact corresponds to the merge commit.
 - No broken-site merge or source values changed. GitHub Actions emitted informational Node.js 20 deprecation and runner-image migration notices; they did not fail the checks.
+
+---
+
+## Session arena/e7efbde7-own7 — readiness audit: fresh verification + per-requirement readiness crosswalk (2026-11-17)
+
+### Claim (before implementation; committed and pushed first)
+
+Session ID: `session-arena-e7efbde7-own7`. Branch: `arena/e7efbde7-own7` (fixed Arena branch; the
+`session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this
+session and all work stays on it). Baseline at claim: working tree clean at merge commit `be2462d`
+(main, PR #54); `python -m unittest discover -s tests` → 111 pass;
+`python scripts/nfl_extract.py --check` → OK (32 standings rows, 20 injury rows, 14 fixtures);
+`python -m nfl_origination run --check` → reproduces exactly.
+
+Exclusive file scope: `nfl-readiness-e7ef/**` (new directory). Additive lines only in
+`COORDINATION.md`, `README.md`, `scripts/build_site.py`, `scripts/check_site.py`,
+`scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`,
+`research/sources.json`. No existing page, value or test is overwritten.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| E1 | Claim + green baseline replay | in progress | session-arena-e7efbde7-own7 | COORDINATION.md | Baseline battery recorded above. |
+| E2 | Fresh official reads 2026-11-17: standings, REG10 finals (week now complete), REG11 schedule, current injury listing; evidence retained with hashes | in progress | session-arena-e7efbde7-own7 | `nfl-readiness-e7ef/evidence/**` | nfl.com via Arena fetch_page (direct HTTPS to nfl.com returns curl 000 in this sandbox, as every prior session recorded). |
+| E3 | Line-by-line verification against canonical artefacts: 32 standings rows, 14 Week 10 finals, Week 11 fixtures, injury listing; deltas re-derived arithmetically | unclaimed | session-arena-e7efbde7-own7 | `nfl-readiness-e7ef/**` | Read-only over other sessions' data; contradictions flagged, never patched in place. |
+| E4 | Per-requirement readiness crosswalk: one row per requirement line of the brief, with the gate that blocks it and the number that would clear it, and a link to where it is already satisfied | unclaimed | session-arena-e7efbde7-own7 | `nfl-readiness-e7ef/**` | Cross-references existing desks read-only; adds links, not edits, to canonical pages. |
+| E5 | Flagged-irregularity register for anything found this session | unclaimed | session-arena-e7efbde7-own7 | `nfl-readiness-e7ef/**` | Published on the desk's own Flagged page with official links; non-blocking. |
+| E6 | Desk site pages + unit tests + byte-identical `build.py --check` | unclaimed | session-arena-e7efbde7-own7 | `nfl-readiness-e7ef/**` | Every tbody row carries `data-source-ids` naming registered official sources. |
+| E7 | Additive integration: nav group + build step, check lines, serve/browser allowlists, sources register, README section; full battery green | unclaimed | session-arena-e7efbde7-own7 | additive lines in the shared files listed above | No existing page, value or test overwritten. |
+| E8 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-e7efbde7-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
+produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
+registered official source link; `git pull --rebase` before every push; small frequent commits;
+open PRs of other sessions (#17, #27, #48, #50, #51) are not touched.
+
+Rules for other sessions: these files are mine until E8 records done — log cross-scope requests in
+this board instead of editing them concurrently.
