@@ -568,6 +568,13 @@ def page_reliability() -> list[str]:
             subtitle="The league publishes no probability for these words, so the desk measures "
             "what happened, publishes n, and refuses to generalise from one week.",
         ),
+        notice(
+            "These three rows aggregate all thirteen Game Books.",
+            "Because each row pools every fixture, its source link points at the registered "
+            "Game Book source rather than one PDF. The per-fixture PDFs - and the exact player "
+            "each count came from - are listed on the 'What changed' page, one row per report row.",
+            info=True,
+        ),
         section(
             "Reading the numbers honestly",
             "<p>Fourteen players carried an <strong>Out</strong> designation. Ten appear on their "
