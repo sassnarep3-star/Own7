@@ -1819,3 +1819,39 @@ change: `python -m unittest discover -s tests` → **111 pass**; `python scripts
 Rules this session follows: read-only on every other desk; never infer or fill a value an official source
 does not publish; every table row carries a registered official source link; `git pull --rebase` before
 every push; small, frequent commits; additive edits to shared files only.
+
+### D-完成 record — what was built, and what it cost (writer: this session)
+
+Every row below was verified by re-running the builder in check mode, not by reading a report.
+
+| ID | Task | Status | Files | Verified by |
+|---|---|---|---|---|
+| D1 | Fresh official reads, saved verbatim | **done** | `nfl-readiness/evidence/*-2026-11-17.md` | 3 captures hashed in `data/snapshots.json` |
+| D2 | Standalone originator, side → total → moneyline | **done** | `nfl-readiness/analysis.py` → `data/origination.json` | `--check` byte-identical; 3 stages × 120 games |
+| D3 | Pre-registered corpus, every forecast a probability + inputs | **done** | `data/registration.json`, `data/backtest.json` | registration hash `c73e95fe07c0…` recomputed from the file |
+| D4 | Proper-score leaderboard, cluster bound, multiplicity | **done** | `nfl-readiness/leaderboard.py` | `--check`; 21 entries, **0 qualified** |
+| D5 | Removal-of-luck panel | **done** | `nfl-readiness/luck.py` | `--check`; family p 0.348, required-n 2,241 at 55% |
+| D6 | Correlations with n, interval and table | **done** | `nfl-readiness/correlation.py` | `--check`; 8 coefficients; Cramér V = \|phi\| cross-check passes |
+| D7 | Decision-readiness ledger + gates | **done** | `nfl-readiness/requirements.py` | `--check`; **132 rows**, 61 met / 50 partial / 19 blocked / 2 rejected; 26 gates |
+| D8 | Availability, depth groups, ablation | **done** | `availability.py`, `analysis.py` | `--check`; 347 rows, 172 slots, 0 confirmed absences |
+| D9 | Questions, suggestions, flags, strategies | **done** | `questions.py`, `suggestions.py`, `strategies.py` | `--check`; 26 questions, 15 proposals (**0 decided**), 15 flags, 24 strategies |
+| D10 | Desk site | **done** | `nfl-readiness/site/**` (18 pages) | `site.py --check`; full `scripts/check_site.py` passes |
+| D11 | Additive integration | **done** | `scripts/build_site.py` (2 lines + 1 nav group), `scripts/browser_test.mjs` (1 folder), `.github/workflows/check.yml` (13 lines) | `python scripts/check_site.py` → passed, 212 recursive pages, 0 errors |
+| D12 | PR, merge, Pages evidence | **see the PR record appended below** | — | — |
+
+Two scope corrections were made **before** implementation, and the earlier claim text above is retained
+un-edited so the correction is visible:
+
+1. **D2 does not reuse `nfl-results/engine.py`.** The registration forbids inheriting a prior desk's
+   retrospective numbers, so `backtest.py` is a fresh implementation with its own frozen benchmark
+   (home −2.0; total = 2 × prior-week league mean rounded to the half point). This supersedes the D2 row.
+2. **Week 11 is 13 fixtures, not 14.** MIN–SF is the Mexico City game and prints no stadium. Every
+   "14 of 14" in the ledger was rewritten to "13 of 13"; a test now fails the build if "14 of 14" returns.
+
+Defects found and fixed inside this session (kept so they are not reapplied):
+
+- Totals were computed as `off + opponent_def`, double-counting and producing totals ≈ 104. Fixed to the
+  mean of the two estimates of a club's scoring level.
+- `M02` read `home_pts` before assignment; the assignment was hoisted above the branch.
+- `Cramér's V` printed a signed value; a 2×2 V is |phi| and now prints as such, with the cross-check stated.
+- Two-row nesting error in the site generator's status column; replaced by a single `status_cell` helper.

@@ -75,6 +75,19 @@ jobs:
           python nfl-market-desk/build.py --check
           python nfl-market-desk/site_build.py
           python -m unittest discover -s nfl-market-desk/tests -v
+          python nfl-readiness/requirements.py --check
+          python nfl-readiness/availability.py --check
+          python nfl-readiness/fixture_context.py --check
+          python nfl-readiness/backtest.py --check
+          python nfl-readiness/leaderboard.py --check
+          python nfl-readiness/luck.py --check
+          python nfl-readiness/correlation.py --check
+          python nfl-readiness/analysis.py --check
+          python nfl-readiness/questions.py --check
+          python nfl-readiness/suggestions.py --check
+          python nfl-readiness/strategies.py --check
+          python nfl-readiness/site.py --check
+          python -m unittest discover -s nfl-readiness/tests -v
       - name: Committed artifacts must already be current
         run: |
           git status --porcelain
