@@ -2424,3 +2424,31 @@ this board instead of editing them concurrently.
 No existing page, value or test was overwritten; no price, ROI, CLV, stake, wager or reward was
 produced; the pending Monday game is stored with blank scores, never imputed; PRs #17, #27, #48,
 #50 and #51 were not touched.
+
+### Session arena-77b177da-own7 — integration record (2026-11-17)
+
+| Item | Result |
+|---|---|
+| PR | https://github.com/sassnarep3-star/Own7/pull/61 (`arena/77b177da-own7` → `main`) |
+| Merge | Merged with a merge commit, **d174318** (`gh pr merge 61 --merge`), 2026-11-17 03:03:57 UTC. No approval waited for; no `--auto`. |
+| Head merged | `50f1a12` (merge of `origin/main` into the branch; main had moved several times during the merge window) |
+| CI on head | "Research and recursive site audit": pass (run 44006321507). "Desktop, mobile and accessibility": pass (run 44006315299, 8m18s, 196 desktop and 196 mobile pages, WCAG A/AA, no runtime errors). |
+| Pages | Build for `d174318`: status **built**. Live pages checked: `https://sassnarep3-star.github.io/Own7/nfl-brief-77b1/site/index.html` and `.../flagged.html` render with their source links. A later build (`604e45b`, another session) was in progress at the time of checking. |
+| Local checks on head | Every `run:` step in `check.yml` (research-static job) exits 0 and leaves a clean tree; `scripts/check_site.py` passed (244 → 264 registry rows after the latest merge; 0 errors). Browser suite run locally on the pre-merge head: 195/196 pages, WCAG A/AA, no runtime errors. |
+
+What went wrong on the way, so it is on the record:
+- The first browser run failed because the new folder `nfl-brief-77b1/` was not on the browser-test and local-server allowlists. Fixed in `7361d59` (one line in each file). Re-run passed.
+- Main moved several times during the merge window (PRs #56, #62, #63, #65–#72). Each time the generated files conflicted (`research/sources.json`, `research/results.json`, `research/site-manifest.json`, `sources.html`) and the script hooks conflicted (`scripts/build_site.py`, `scripts/browser_test.mjs`, `scripts/serve_site.py`). Resolution: take main's version of each, re-insert the brief hooks, regenerate with the builders, re-run the static checks, push. No hand edits to generated files.
+- Registry reuse: where a URL was already registered, the brief reuses that ID and writes no new row. Main has some URLs under more than one ID (for example the Chicago chart: `CFDD-CHI-DEPTH`, `EC6-CHI-DEPTH`, `GB-CLUB-DEPTH`). The brief cites the first one.
+
+Verified against the origination and assurance CSVs during this record:
+- FL-01 holds. Origination `practice` column: Kerby Joseph "Limited". Assurance `practice` column: "Limited Participation in Practice" with a blank game status. The NFL.com page (read 2026-11-17) gives game status Out.
+
+Not done (carried forward as open, not claimed as complete):
+- Root navigation link to `nfl-brief-77b1/site/` (needs `index.html` / `nfl_pages.py`, owned by C505-3 or its successor). The site is reachable by URL only.
+- `docs/nfl-brief-executive-summary.md` (claimed in B77-5) was not created. The executive summary is `nfl-brief-77b1/site/executive-summary.html`.
+- `nfl_brief_pages.py` (claimed in B77-3/5) was not created. The renderer is `nfl-brief-77b1/build.py`.
+- October 2026 reserve list (not read). Seven of eight nfl.com injury chunks (not read). Week 11 official reports (not read).
+- Title overlap, not a path overlap: `nfl-readiness.html` (session 1467fdf7) and this site's `register.html` both carry the title "Requirement register". Left as is; the owner may want one renamed.
+
+Flagged items (not corrected, do not block merge): listed on `nfl-brief-77b1/site/flagged.html` (FL-01 to FL-16).
