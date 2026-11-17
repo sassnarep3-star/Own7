@@ -1718,6 +1718,7 @@ Scope note: the build's executive-summary description was updated additively wit
 ## Session arena/824cdccf-own7 — integration and publication (2026-11-17)
 
 Branch: `arena/824cdccf-own7`, branched from `main` at `be2462d`; sole active session on this branch, status `active`. No other session's files are touched.
+## Session arena/4381c0ce-own7 — decision-readiness table on the landing page (2026-11-17)
 
 ### Claim (before implementation)
 
@@ -1812,3 +1813,38 @@ No other session has a claim on the files above. Requests for changes to the NFL
 **Source registrations.** `research/sources.json` gained `NFL-INJ-1117`, `NFL-SCHED-1117`, `NFL-TERMS-1117` (219 total). Their hosts were added to `SOURCE_HOSTS` in `scripts/check_site.py`.
 
 **Open items not closed by this session.** Chunks 1–7 of the live injury page; the Chargers–Ravens official game page; the NF28 rights decision (D1, D3); the price-data policy (D2); the 149 vs 156 definition (NF30); the Houston depth chart. None of these blocks the merge. They are published on the Flagged page.
+| D1 | Add the brief-mandated decision-readiness table to the landing page (`index.html`): one row per requirement, the gate that blocks it, and the number that would clear it | in progress | session-arena-4381c0ce-own7 | `nfl_pages.py` (landing builder `nfl_overview`), `research/nfl-requirements.json` (additive per-row gate + clearing-number fields), regenerated `index.html` + `research/site-manifest.json`, `COORDINATION.md` | Requirement ledger NR01–NR16 already in repo with registered official sources; gate contracts NG01–NG10 from `research/nfl-catalog.json`; clearing thresholds from the pre-registered `research/nfl-protocol.json`. No new official-source fetch claimed for the table itself; each row keeps its existing official source links. `python scripts/check_site.py`, unittest and browser suites re-run before any PR. | Landing page only; no other session's desk files touched. Open PRs #48/#50/#51 are not mine and stay untouched. A bounded fresh official-source recheck of headline numbers is claimed as D2 below. |
+| D2 | Bounded fresh official-source recheck (standings, Week 10 schedule/results, league injury report) via the sandbox page reader; record agreement or divergence; do not silently alter published values | in progress | session-arena-4381c0ce-own7 | `COORDINATION.md` only (plus `research/nfl/flags.json` + regenerated pages **only if** an official value is found to have moved) | Direct reads of nfl.com pages (standings, 2026 schedule week, injuries) through the Arena page reader, dated 2026-11-17; results recorded in this board section. | curl to nfl.com is blocked in the sandbox (HTTP 000); the page reader is the only fetch path. Any divergence is published on the Flagged for Review register rather than edited into place. |
+| D3 | PR → merge without approval → confirm GitHub Pages deploy → record PR link + merge result here | not started | session-arena-4381c0ce-own7 | `COORDINATION.md` | Full check battery green before merge; Pages "pages build and deployment" run must succeed against the merge commit. | Flagged items are non-blocking per the brief; a broken site is not merged. |
+
+### Merge-conflict log (2026-11-17, during `git pull --rebase origin main`)
+
+While this session worked, parallel sessions landed on `main`: PR #58 (`arena/824cdccf-own7`, COORDINATION.md only) and PR #60 (`arena/c5050ef2-own7`, landing-page metric fix in `nfl_pages.py` + `docs/nfl-repo-review-2026-11-17.md`). `main` moved `be2462d` → `bf386f9` and the rebase hit two conflicts:
+
+1. `COORDINATION.md`: both sessions appended board sections at the same offset. Resolved as a strict union — the 824cdccf sections kept verbatim, this session's claim appended after them. Nothing edited or removed (the duplicated 824cdccf section present in their commit is retained as-is).
+2. `index.html` + `research/site-manifest.json` (generated artifacts): resolved per established precedent — not hand-merged; regenerated deterministically via `python scripts/build_site.py` from the merged sources. Verified after rebuild that both sessions' changes survive: the `#60` metric fix ("Open review items 17 of 21") and this session's `nfl-decision-readiness` table. Full battery re-run green before continuing.
+
+### D2 done — bounded fresh official-source recheck, 2026-11-17 (session-arena-4381c0ce-own7)
+
+Official pages read through the Arena page reader (curl to nfl.com is blocked in this sandbox, HTTP 000): https://www.nfl.com/standings/ , https://www.nfl.com/schedules/2026/REG10/ , https://www.nfl.com/injuries/league/2026/REG10 — all fetched 2026-11-17.
+
+- Standings: compared the live 32-club W-L-T table against the published 2026-11-12 snapshot (`research/nfl/results.json`). **6 of 32 rows unchanged** (the four Week 10 bye clubs CHI/DEN/PHI/TB plus LAC and BAL, whose Week 10 Monday game had no published final at fetch time); **26 of 32 moved, every one by exactly its Week 10 result** (spot-checked PF/PA deltas agree, e.g. BUF 256/187 → 287/199 = the 31–12 final at the Jets). Week 10 finals on the schedule page (14 finals incl. TNF WAS 24–NYG 21 and SNF CIN 38–PIT 18; LAC@BAL listed without a final; byes CHI/DEN/PHI/TB) reconcile exactly with the standings movement. **No contradiction** with any published value: the site's snapshot pages are dated 2026-11-12/13 and remain correct as dated captures; no site change required.
+- Injury report: the official Week 10 report now lists Kerby Joseph, Cade Mays and D.J. Reed explicitly as **Out** — the blank-designation finding published on the Flagged for Review register (Lions rows) is resolved at source. The site's published rows remain the dated capture; a future re-capture can clear that flag. Recorded as an irregularity note, not edited into place.
+
+### D1 done — decision-readiness table published on the landing page (session-arena-4381c0ce-own7)
+
+| What | Detail |
+|---|---|
+| Change | `nfl_overview()` in `nfl_pages.py` now renders a **Decision readiness** section on `index.html`: one row per requirement NR01–NR16, columns Requirement / State / Blocking gate / Number that would clear it, plus the auto Sources column (official links, unchanged source IDs). Data added additively to `research/nfl-requirements.json` (`gate`, `gate_note`, `clear_number`); all pre-existing fields verified byte-identical after the write. Gate IDs G01–G10 link to `nfl-validation.html`; the table note states explicitly that gate attribution is a project mapping and clearing numbers are pre-registered project design choices (research/nfl-protocol.json), not official standards. |
+| Verification | `python scripts/build_site.py` (46 canonical pages + 20 redirects, deterministic); `python scripts/check_site.py` **passed — 194 recursive pages, 7,936 tbody rows (+16), 216 registered sources, 0 errors**; `python -m unittest discover -s tests` **111 OK**; `npm run check` green; `npm run test:browser` **174 desktop + 174 mobile, WCAG A/AA, no runtime errors**. Rendered table verified: 16 rows, 16 refs cells, 0 blank cells, 8 gate links. |
+| Sources | Official source links per row unchanged from the registered requirement ledger (NFL-TERMS, NFL-STANDINGS, NFL-PASSING, NFL-RUSHING, NFL-RECEIVING, NFL-TEAM-OFF, NFL-TEAM-DEF, NFL-INJURY, NFL-SCHEDULE, NFL-ROSTER, REPO). No new official-source values introduced; thresholds come from the repo's own pre-registered protocol and are labelled as project design choices. |
+
+D3 (PR → merge → Pages → record) runs next.
+
+### Merge record — session-arena-ca37e6e5-own7 with origin/main after PR #62 (2026-11-17)
+
+- PR #63 (`arena/ca37e6e5-own7`) was not mergeable when first attempted: `main` had moved (PR #62, `arena/4381c0ce-own7`, which also changed the landing decision-readiness table). `main` was merged into this branch with `git merge`. Its history is not rewritten.
+- Conflicts: `COORDINATION.md` (both sides kept, nothing removed); `index.html` and `research/site-manifest.json` (generated files, regenerated by `scripts/build_site.py` from the merged sources, not hand-merged). `nfl_pages.py` and `research/nfl-requirements.json` merged without conflict.
+- Landing page at merge: one `decision-readiness` table, 20 rows, generated from `research/nfl-requirements.json` (NR01–NR16 and related rows). The 11-row table from PR #59 / #60 is no longer on the page; PR #62 replaced it at the same anchor. This session did not make that change and does not reverse it. The full 81-row register remains at `nfl-readiness.html` and is linked from the landing page.
+- Earlier push note: the first claim commit was pushed, then rebased onto the newer `main`. The remote kept that superseded commit (`6580264`), and a non-destructive `ours` merge recorded it as an ancestor. The tree is identical to the tested tree (`git diff` empty).
+- Checks after the merge (all green): `python -m unittest discover -s tests` (111 OK); `nba_lab run --check`; `nfl_lab run --check`; `nfl_extract --check`; `nfl_origination run --check`; `nfl-readiness/build.py --check`; `build_site.py` deterministic; `check_site.py` 0 errors. The browser suite was green before the merge and is re-run on the PR head.

@@ -17,6 +17,7 @@ FLAGS = json.loads((ROOT / "research/nfl/flags.json").read_text(encoding="utf-8"
 RECEIPTS = json.loads((ROOT / "research/nfl/receipts.json").read_text(encoding="utf-8"))
 RECHECK = json.loads((ROOT / "research/nfl/verification-2026-11-13.json").read_text(encoding="utf-8"))
 SUB_SUGGESTIONS = json.loads((ROOT / "research/nfl-suggestions.json").read_text(encoding="utf-8"))["suggestions"]
+REQUIREMENTS = json.loads((ROOT / "research/nfl-requirements.json").read_text(encoding="utf-8"))
 SOURCES = {s["id"]: s for s in json.loads((ROOT / "research/sources.json").read_text(encoding="utf-8"))}
 # A-RR17: the origination section's own page count, kept next to the pages it counts.
 ORIGINATION_PAGES = 13
@@ -651,6 +652,38 @@ def nfl_overview():
         f'<span class="card-icon">{_svg_icon(ico)}</span><h3>{title}</h3><p>{description}</p>'
         f'<span class="card-link">{cta} →</span></a>'
         for step, ico, title, description, href, cta in cards) + '</div>'
+
+    # Decision-readiness table (brief requirement): one row per requirement, the gate that
+    # blocks it, and the number that would clear it. Data: research/nfl-requirements.json.
+    gate_names = {g["id"]: g["name"] for g in NFL["gates"]}
+
+    def _gate_cell(row):
+        gid = row.get("gate")
+        if not gid:
+            return esc(row.get("gate_note") or "None")
+        name = gate_names.get(gid, "")
+        label = f"{gid} — {name}" if name else gid
+        return _Markup(f'<a href="nfl-validation.html">{esc(label)}</a>'
+                       f'<span class="row-sub">{esc(row.get("gate_note", ""))}</span>')
+
+    body += section('Decision readiness — one row per requirement', table(
+        'nfl-decision-readiness', 'Requirement, blocking gate, and the number that would clear it',
+        [('Requirement', lambda r: rich(r['requirement'], r['id'])),
+         ('State', lambda r: badge(r['status'], {'Implemented': 'good', 'Blocked': 'warn',
+                                                 'In progress': 'blue'}.get(r['status'], 'warn'))),
+         ('Blocking gate', _gate_cell),
+         ('Number that would clear it', 'clear_number')],
+        REQUIREMENTS['requirements'],
+        filter_options=['Implemented', 'Partial', 'In progress', 'Blocked'],
+        note='One row per NFL requirement. Gate IDs G01–G10 are this project\'s own validation '
+             'contracts, published on the validation gates page; naming one binding gate per '
+             'requirement is a documented project mapping from that requirement\'s recorded evidence '
+             'to the gate whose pass rule it currently fails, not an official fact. The clearing '
+             'numbers are pre-registered project design choices (research/nfl-protocol.json, '
+             'research/nfl-catalog.json), not official standards, and none of them is a promise that '
+             'the requirement becomes awardable. The Sources column carries the official evidence '
+             'behind each requirement\'s current state.'))
+
     body += section('Three NFL workstreams are published here', table(
         'nfl-workstreams', 'Which page answers which question',
         [('Workstream', lambda r: rich(r['lab'], r['id'])), ('Size', 'size'),
@@ -660,7 +693,8 @@ def nfl_overview():
              "size": f"{ORIGINATION_PAGES} pages · {NFL['verified_rows']['total']} verified rows",
              "content": "Originated Week 10 spreads and totals, the decision brief, ranked suggestions, "
                         f"{len(QUESTIONS['questions'])} remaining questions, ten validation gates, the "
-                        "competition format, the review register and a dated re-verification log.",
+                        "competition format, the review register, a decision-readiness table and a dated "
+                        "re-verification log.",
              "when": "You want to decide what to do next, or to originate and challenge a number.",
              "where": _Markup('<a href="nfl-suggestions.html">Suggestions and decision brief</a>'),
              "source_ids": ["REPO"]},
