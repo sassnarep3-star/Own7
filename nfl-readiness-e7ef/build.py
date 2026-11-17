@@ -163,7 +163,8 @@ def page_index(d: dict) -> str:
     counts = {s: sum(1 for r in ready["rows"] if r["status"] == s) for s in ("satisfied", "partial", "open")}
     inj = out["injury_totals"]
     checks_rows = [
-        row([c["id"], esc(c["result"]), esc(c["detail"])], S_STAND) for c in ver["checks"]
+        row([c["id"], esc(c["result"]), esc(c["detail"]), link(REG_URLS[S_STAND], "official reads ↗")], S_STAND)
+        for c in ver["checks"]
     ]
     body = f'''
 <p class="eyebrow">OWN7 · Readiness audit desk</p>
@@ -196,7 +197,7 @@ gate (NG01-NG10) and the concrete number that would clear it, linked to the arti
 already carries the evidence.</li>
 </ol></div>
 <h2>Verification checks (all must pass; a single failure aborts the build)</h2>
-{table("Verification checks run by collect.py", ["Check", "Result", "What was verified"], checks_rows, "Full detail: verification-2026-11-17.html. The checks re-run on every build and in CI.")}
+{table("Verification checks run by collect.py", ["Check", "Result", "What was verified", "Source"], checks_rows, "Full detail: verification-2026-11-17.html. The checks re-run on every build and in CI.")}
 <p class="note">Paper research only. No wager, stake, bankroll, price or monetary reward is
 produced anywhere on this desk. Nothing here is a betting recommendation.</p>
 '''
@@ -215,18 +216,6 @@ def page_verification(d: dict) -> str:
     standings_rows = []
     for r in out["standings"]:
         c = canonical[r["code"]]
-        standings_rows.append(row([
-            esc(r["code"]), esc(r["club"]),
-            esc(c["W"]), esc(c["L"]), esc(c["T"]), esc(c["PF"]), esc(c["PA"]),
-            esc(r["w"]), esc(r["l"]), esc(r["t"]), esc(r["pf"]), esc(r["pa"]), esc(r["net_pts"]),
-            "match" if (int(c["W"]), int(c["L"]), int(c["T"]), int(c["PF"]), int(c["PA"])) !=
-                       (r["w"], r["l"], r["t"], r["pf"], r["pa"]) else "re-derived",
-            badge("0 mismatch", "ok"),
-        ], S_STAND).replace("<td>re-derived</td>", f"<td>re-derived</td>"))
-    # actually compute the match column honestly
-    standings_rows = []
-    for r in out["standings"]:
-        c = canonical[r["code"]]
         same = (int(c["W"]), int(c["L"]), int(c["T"]), int(c["PF"]), int(c["PA"])) == (r["w"], r["l"], r["t"], r["pf"], r["pa"])
         verdict = "unchanged (bye or pending game)" if same else "moved by a Week 10 final"
         standings_rows.append(row([
@@ -234,7 +223,7 @@ def page_verification(d: dict) -> str:
             esc(c["W"] + "-" + c["L"] + (("-" + c["T"]) if c["T"] != "0" else "")),
             esc(f'{r["w"]}-{r["l"]}-{r["t"]}'),
             esc(c["PF"] + "-" + c["PA"]), esc(f'{r["pf"]}-{r["pa"]}'),
-            esc(verdict), blank() if False else "",
+            esc(verdict), link(REG_URLS[S_STAND], "standings ↗"),
         ], S_STAND))
     finals_rows = []
     for g in out["week10_finals"]:
@@ -280,7 +269,7 @@ def page_verification(d: dict) -> str:
         str(inj["questionable"]),
         str(inj["rows"] - inj["with_game_status"]), "28 tables", link(REG_URLS[S_INJ], "report page ↗"),
     ], S_INJ))
-    checks_rows = [row([esc(c["id"]), esc(c["result"]), esc(c["detail"])], S_STAND) for c in d["ver"]["checks"]]
+    checks_rows = [row([esc(c["id"]), esc(c["result"]), esc(c["detail"]), link(REG_URLS[S_STAND], "official reads ↗")], S_STAND) for c in d["ver"]["checks"]]
     lions = f'''
 <h3>Flag R48 closed by the publisher</h3>
 {table("Detroit designations: 2026-11-12 capture vs fresh read (check V5b)",
@@ -297,10 +286,10 @@ def page_verification(d: dict) -> str:
 artefacts. Evidence transcripts with hashes: <a href="sources.html">sources.html</a>. Checks
 re-run on every build; a single mismatch aborts.</p>
 <h2>Checks</h2>
-{table("Checks run by collect.py", ["Check", "Result", "What was verified"], checks_rows)}
+{table("Checks run by collect.py", ["Check", "Result", "What was verified", "Source"], checks_rows)}
 <h2>Standings, side by side</h2>
 {table("All 32 clubs: canonical 2026-11-12 capture vs fresh page after applying the 13 Week 10 finals (BAL/LAC unchanged: Monday game pending)",
-       ["Code", "Club", "W-L-T (11-12)", "W-L-T (11-17)", "PF-PA (11-12)", "PF-PA (11-17)", "What happened", "Note"],
+       ["Code", "Club", "W-L-T (11-12)", "W-L-T (11-17)", "PF-PA (11-12)", "PF-PA (11-17)", "What happened", "Source"],
        standings_rows,
        "W/L/T/PCT/PF/PA/NET-PTS re-derived for all 32 clubs with zero mismatches (check V1); PCT and NET PTS re-computed arithmetically in collect.py.")}
 <h2>Week 10 finals</h2>
@@ -321,7 +310,7 @@ re-run on every build; a single mismatch aborts.</p>
 <h3>Announced-starter cross-references (requirement R42)</h3>
 {table("Official news headlines on the same report page that name Week 10 starters",
        ["Headline (verbatim)", "Bears on the report row", "Source"],
-       [row([link("https://www.nfl.com/news/sam-darnold-ruled-out-for-seahawks-week-10-game-vs-raiders-drew-lock-expected-to-start-again", "Sam Darnold ruled out for Seahawks' Week 10 game vs. Raiders; Drew Lock expected to start again"), "SEA QB Sam Darnold: Out (Ribs, Quadricep); QB Drew Lock listed, no designation", link(REG_URLS[S_NEWS], "news ↗")], S_INJ),
+       [row([link("https://www.nfl.com/news/sam-darnold-ruled-out-for-seahawks-week-10-game-vs-raiders-drew-lock-expected-to-start-again", "Sam Darnold ruled out for Seahawks' Week 10 game vs. Raiders; Drew Lock expected to start again"), "SEA QB Sam Darnold: Out (Ribs, Quadricep); QB Drew Lock listed, no designation", link(REG_URLS[S_NEWS], "news ↗"), link(REG_URLS[S_INJ], "report ↗")], S_INJ + " " + S_NEWS),
         row([link("https://www.nfl.com/news/dolphins-place-qb-malik-willis-groin-on-injured-reserve-kyle-mccord-in-line-for-first-start", "Dolphins place QB Malik Willis (groin) on injured reserve; Kyle McCord in line for first start"), "MIA absent from the report tables (bye club) - reserve status, not health (flag EF03)", link(REG_URLS[S_NEWS], "news ↗")], S_NEWS),
         row([link("https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-saturday-nov-14", "NFL news roundup: Patriots place RB TreVeyon Henderson (illness) on injured reserve"), "NE RB TreVeyon Henderson: Out (Illness) - tension with the IR headline (flag EF02)", link(REG_URLS[S_NEWS], "news ↗")], S_NEWS)],
        "Headlines are transcribed verbatim with their links from the report page's news module; the report rows are transcribed beside them, not reconciled by us.")}
