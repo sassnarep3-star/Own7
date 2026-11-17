@@ -1806,3 +1806,21 @@ Official pages read through the Arena page reader (curl to nfl.com is blocked in
 | Sources | Official source links per row unchanged from the registered requirement ledger (NFL-TERMS, NFL-STANDINGS, NFL-PASSING, NFL-RUSHING, NFL-RECEIVING, NFL-TEAM-OFF, NFL-TEAM-DEF, NFL-INJURY, NFL-SCHEDULE, NFL-ROSTER, REPO). No new official-source values introduced; thresholds come from the repo's own pre-registered protocol and are labelled as project design choices. |
 
 D3 (PR → merge → Pages → record) runs next.
+
+- Claim each task by updating status to `in progress`, commit + push immediately.
+- Never infer or fill in values; leave blank + flag as unverified if no official source confirms.
+- Small, frequent commits; `git pull --rebase` before every push.
+- On conflict: stop, resolve without discarding the other session's work, log what happened.
+
+## Session arena/b5534cd4-own7 — final NFL integration and verification (2026-11-17)
+
+Session ID: `session-arena-b5534cd4-own7`. Fixed Arena branch: `arena/b5534cd4-own7`.
+
+### Claim (integration only; no task-owner scope re-claimed)
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| I1 | Integrate the completed official Game Book and decision-readiness workstreams; audit the combined build, table-row provenance, internal links, tests, and Pages deployment | in progress | session-arena-b5534cd4-own7 | Shared integration outputs only: `COORDINATION.md`, site build/check/serve/browser allowlists, workflow, source registry, generated canonical pages/manifests. New task-owned desks `nfl-gamebook-5213243e/**` (PR #56) and `nfl-readiness/**` (PR #57) are read-only; no task content will be rewritten. | #56 and #57 are open to `main`; both report their owner tasks complete and `MERGEABLE`. Their research checks passed; browser/accessibility checks were still running at claim time. Integration proceeds only after checks finish, then the full combined audit is rerun. |
+
+The two open PRs are distinct task-owner workstreams, not claims by this integration session. Older open PRs were observed but are not part of this claim and will not be merged or closed. This session stays on the fixed Arena branch; it will not create or switch to a session branch.
+
