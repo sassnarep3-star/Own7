@@ -310,6 +310,31 @@ def lifecycle_nav_group():
 NAV.extend(lifecycle_nav_group())
 
 
+READINESS_NAV_PATH = "nfl-readiness-1467fdf7/site/index.html"
+
+
+def readiness_nav_group():
+    """Additive nav group for the decision-readiness desk (session arena/1467fdf7-own7).
+
+    Built from the desk's own manifest. Returns an empty list if the desk has not been built.
+    """
+    manifest = ROOT / "nfl-readiness-1467fdf7" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    import json as _json
+    labels = {
+        "index.html": "Decision readiness", "controls.html": "Controls and luck panel",
+        "strategies.html": "Strategies and gates", "injury-check.html": "Injury spot-check",
+        "flagged.html": "Flagged for review", "sources.html": "Readiness sources",
+    }
+    pages = _json.loads(manifest.read_text())["pages"]
+    return [("NFL decision readiness",
+             [(f"nfl-readiness-1467fdf7/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+
+NAV.extend(readiness_nav_group())
+
+
 
 
 
@@ -833,6 +858,11 @@ def build():
     lifecycle_result=subprocess.run([sys.executable,str(ROOT/'nfl-lifecycle-3f5c'/'build.py')],cwd=ROOT,capture_output=True,text=True)
     if lifecycle_result.returncode: raise SystemExit(f'nfl-lifecycle-3f5c/build.py failed: '+lifecycle_result.stdout+lifecycle_result.stderr)
     lifecycle_pages=load_json('nfl-lifecycle-3f5c/site/manifest.json')['pages']
+    readiness_result=subprocess.run([sys.executable,str(ROOT/'nfl-readiness-1467fdf7'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if readiness_result.returncode: raise SystemExit('nfl-readiness-1467fdf7/build.py failed: '+readiness_result.stdout+readiness_result.stderr)
+    readiness_pages=[n for n in load_json('nfl-readiness-1467fdf7/site/manifest.json')['pages'] if n.endswith('.html')]
+    for name in readiness_pages:
+        generated.append(f'nfl-readiness-1467fdf7/site/{name}')
     for name in lifecycle_pages:
         generated.append(f'nfl-lifecycle-3f5c/site/{name}')
     for slug,entry in pages.items():
@@ -849,7 +879,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 
