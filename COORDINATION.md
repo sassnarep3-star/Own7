@@ -2054,3 +2054,27 @@ Status: **in progress** (next entry records the PR link, merge commit and Pages 
 - Source `NFL-INJ-W10-READ-1117` inserted into main's `research/sources.json` bytes (13 added lines). Host line added to main's `scripts/check_site.py` (one line).
 - Generated outputs regenerated in order: `nba_lab run`, then `build_site.py`, then `check_site.py` OK (47 canonical pages).
 - Final checks on this tree: all `check.yml` research-static commands → pass; `python -m unittest discover -s tests` → 119 OK.
+
+### D8 — done: PR, merge, Pages deploy, record — arena/34a52a38-own7 (2026-11-17)
+
+| Item | Result |
+|---|---|
+| PR | https://github.com/sassnarep3-star/Own7/pull/65 (`arena/34a52a38-own7` → `main`) |
+| Merge | Merge commit `20c6688`, method `--merge`, 2026-11-17T02:07:28Z. Not waited on for approval. |
+| PR CI at head `fad2923` | Research and recursive site audit: pass. Desktop, mobile and accessibility (browser suite): pass. |
+| Post-merge CI on main `20c6688` | Research and dashboard checks: success. Desktop, mobile and accessibility job (browser suite): success, with a `ubuntu-latest` migration notice only. |
+| GitHub Pages | Build for `20c6688`: status `built`. |
+| Live check (`https://sassnarep3-star.github.io/Own7/`) | `nfl-results-leaderboard.html` shows 30 variants as "Backtest only, not ranked", with no hit rates, intervals or q-values. The landing page carries `#luck-panel`, `#lions-delta` and `#brief-ledger`. |
+| Local verification at `fad2923` | Unit tests 119 OK. Every `check.yml` research-static command passes. `check_site.py` OK (47 canonical pages). Browser suite 188 desktop + 188 mobile, WCAG A/AA, no runtime errors. |
+
+**Overlaps left for the owners (not resolved here):**
+- Two readiness tables on the landing page. Main's 20-row project-gate table has anchor `#decision-readiness`. This branch's 60-row brief ledger has anchor `#brief-ledger`. Consolidation needs an owner decision.
+- PR #57 (`arena/383626a6-own7`, still open) describes a readiness desk at `nfl-readiness/`. Main also has `nfl-readiness/` and a register page from session `arena/ca37e6e5-own7`. Those are separate from this branch's `nfl_readiness.py`.
+- Flag IDs: this branch's flags are NF32–NF39. Main's NF22–NF31 cover overlapping topics (see the integration 3 record above).
+- Hit-rate columns on the lifecycle, pricing and market-desk leaderboards (flag NF38) are not changed.
+
+**Correction to earlier text in this section:** the earlier entries call main's table `#readiness`. The correct anchor is `#decision-readiness`.
+
+**Scope not done (readiness ledger rows):** scheduled daily capture (terms §1.3, NF35); public/private split (NF34); full Week 10 recount (NF33); Game Books, snap counts, reserve lists, transactions, venues, weather, probabilities and control baselines (no source captured). The Houston depth chart remains unobtained.
+
+**Post-merge note:** this record commit is on the branch and is not part of main, because merge already happened. It is kept for the coordination log.
