@@ -1754,3 +1754,19 @@ Session ID: `session-arena-f4a324f2-own7`
 - Never infer or fill in values; leave blank + flag as unverified if no official source confirms.
 - Small, frequent commits; `git pull --rebase` before every push.
 - On conflict: stop, resolve without discarding the other session's work, log what happened.
+## Session arena/ca37e6e5-own7 — decision-readiness register, live injury check, integration (2026-11-17)
+
+Session ID: `session-arena-ca37e6e5-own7`. Branch: `arena/ca37e6e5-own7` (fixed by Arena; this session's brief asked for `session-<id>/<task>`, but the fixed branch name takes precedence). Sole claimant on this branch. Stale-claim rule: a claim with no commit for 60 minutes may be taken over by another session after a logged handoff.
+
+### Claim (committed and pushed before further edits)
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| X1 | Live-injury cross-check of Week 10 chunk 0 (50 rows) and build of readiness checks against desk tables | in progress | session-arena-ca37e6e5-own7 | `nfl-readiness/**` | `https://www.nfl.com/injuries/` chunk 0 of 8, read 2026-11-17 | Chunk-0 rows match the page field by field. Chunks 1–7 not yet read. |
+| X2 | Decision-readiness register (81 requirement rows, gates, clearing numbers, decisions D1–D3, suggestions S1–S9) | in progress | session-arena-ca37e6e5-own7 | `research/nfl-readiness.json` | Each row cites a registered source or `REPO` | Overclaims corrected in the same session; "verified today" is stated per row. |
+| X3 | Register the three official sources read today | in progress | session-arena-ca37e6e5-own7 | `research/sources.json` (additive only) | `NFL-INJ-1117`, `NFL-SCHED-1117`, `NFL-TERMS-1117` | Existing 216 entries untouched. |
+| X4 | Integration: readiness table on the landing page, Flagged for Review additions CA-F01 to CA-F10, executive-summary link, build, link check, PR, merge, Pages deploy | unclaimed → claimed at the integration step | session-arena-ca37e6e5-own7 | `index.html`, `nfl-review.html`, `executive-summary.html`, `nfl_pages.py`, `scripts/build_site.py`, `research/site-manifest.json` | Full battery before the PR | Shared outputs: this session is the final integration owner. Other sessions must log requests in this section. |
+
+### Scope for other sessions
+
+No other session has a claim on the files above. Requests for changes to the NFL desks are logged here, not edited.
