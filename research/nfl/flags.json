@@ -247,6 +247,123 @@
       "source_ids": [
         "REPO"
       ]
+    },
+    {
+      "id": "NF22",
+      "item": "Week 10 injury tables disagree across the repository's four desk files",
+      "finding": "availability desk: 326 rows, 28 clubs; assurance desk: 276 rows, 26 clubs, no BAL or LAC; origination desk: 210 rows, no LAR, practice codes DNP/Limited/Full; legacy file: 20 rows, WAS and NYG only, team nicknames. On the 276 players the assurance and availability desks share, the comparison found 19 injury, 19 game-status and 72 practice differences before practice labels were normalised.",
+      "unverified_value": null,
+      "impact": "Any one desk table alone would mislead. The official eight-chunk page is the reference; chunk 0 (50 rows) was matched field by field on 2026-11-17.",
+      "status": "Needs review",
+      "source_ids": [
+        "NFL-INJ-W10",
+        "NFL-INJ-1117",
+        "REPO"
+      ]
+    },
+    {
+      "id": "NF23",
+      "item": "Kerby Joseph practice status conflicts between the availability desk and the live page",
+      "finding": "Availability desk: Full Participation in Practice, Out. Live official page read 2026-11-17 (Detroit at New England, Sunday 15 Nov): Did Not Participate In Practice, Out. The game status agrees.",
+      "unverified_value": null,
+      "impact": "Practice-level evidence for this player is not reliable until the desk is corrected from the official page.",
+      "status": "Needs review",
+      "source_ids": [
+        "NFL-INJ-1117"
+      ]
+    },
+    {
+      "id": "NF24",
+      "item": "Lions game status is blank in the assurance and origination desks",
+      "finding": "Kerby Joseph, Cade Mays and D.J. Reed are listed Out on the live official page (2026-11-17). The assurance and origination desks leave game status blank for all three.",
+      "unverified_value": null,
+      "impact": "Blank cells must not be read as available. The official page is the source for the correction.",
+      "status": "Needs review",
+      "source_ids": [
+        "NFL-INJ-1117",
+        "REPO"
+      ]
+    },
+    {
+      "id": "NF25",
+      "item": "Week 10 final scores are not in the verified results feed",
+      "finding": "nfl-results/data/games-2026-w1-9.csv covers Weeks 1 to 9 (136 rows, retrieved 2026-11-14). Thirteen Week 10 finals printed on nfl.com/schedules on 2026-11-17 are not in the feed.",
+      "unverified_value": null,
+      "impact": "Results-based tests, leaderboard rows and the register's results gate run on Weeks 1 to 9 only.",
+      "status": "Needs review",
+      "source_ids": [
+        "NFL-SCHED-1117",
+        "REPO"
+      ]
+    },
+    {
+      "id": "NF26",
+      "item": "Chargers at Ravens (16 Nov) final score is not confirmed",
+      "finding": "The official schedule read on 2026-11-17 shows the game on Monday 16 Nov at 8:15 PM ET with no score printed. Thirteen of fourteen Week 10 games show Final.",
+      "unverified_value": null,
+      "impact": "The Week 10 result count is 13 of 14 until the official game page is read and linked.",
+      "status": "Needs review",
+      "source_ids": [
+        "NFL-SCHED-1117"
+      ]
+    },
+    {
+      "id": "NF27",
+      "item": "Week 10 venue notes are almost empty",
+      "finding": "Only one of the fourteen rows in nfl/origination/data/games-2026-w10.csv has a venue note. The others are blank, not inferred.",
+      "unverified_value": null,
+      "impact": "Venue-based features cannot be built. Each venue must be transcribed from the official game-centre page.",
+      "status": "Needs review",
+      "source_ids": [
+        "NFL-SCHED-1117",
+        "REPO"
+      ]
+    },
+    {
+      "id": "NF28",
+      "item": "Row-level NFL data is committed while the NFL.com terms restrict systematic retrieval",
+      "finding": "832 injury rows across the four Week 10 desk tables are committed. NFL.com Terms §1.3 (read 2026-11-17, updated 16 May 2024) limits use to personal, non-commercial informational purposes and bars systematic retrieval without written consent. The README release wording was not re-read this session.",
+      "unverified_value": null,
+      "impact": "Public release of row-level data and scheduled capture need a rights decision (register decisions D1 and D3) before they continue.",
+      "status": "Needs review",
+      "source_ids": [
+        "NFL-TERMS-1117",
+        "REPO"
+      ]
+    },
+    {
+      "id": "NF29",
+      "item": "A backtest row is published on the results leaderboard",
+      "finding": "nfl-results-leaderboard.html shows a spread backtest record of 120 bets, 77 wins to 43 losses, although the pre-registration rule forbids backtest numbers on a leaderboard.",
+      "unverified_value": null,
+      "impact": "The row is retained and flagged, not removed or rebuilt in this session. It is excluded from every ranking claim in the register.",
+      "status": "Needs review",
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "NF30",
+      "item": "The brief's multi-player depth count does not reproduce",
+      "finding": "The brief states 149 multi-player slots. Recomputed from the committed files: 134 rank-1 groups with more than one player in the availability desk, 22 in the four bye clubs, 156 combined. Offence and defence only: 155 combined. The definition is not settled.",
+      "unverified_value": null,
+      "impact": "Depth-group counts must not be quoted as 149 until the owner confirms the definition.",
+      "status": "Needs review",
+      "source_ids": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "NF31",
+      "item": "Price-data policy differs between desks",
+      "finding": "The pricing desk holds Pro-Football-Reference closing-price observations. The lifecycle desk keeps market values blank under its rights policy. No single written policy applies to both.",
+      "unverified_value": null,
+      "impact": "No market-relative result, residual or ROI can be published until the owner records one policy (register decision D2).",
+      "status": "Needs review",
+      "source_ids": [
+        "PFR-VEGAS-2026",
+        "REPO"
+      ]
     }
   ]
 }
