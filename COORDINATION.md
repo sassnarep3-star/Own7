@@ -1820,7 +1820,7 @@ Rules this session follows: read-only on every other desk; never infer or fill a
 does not publish; every table row carries a registered official source link; `git pull --rebase` before
 every push; small, frequent commits; additive edits to shared files only.
 
-### D-完成 record — what was built, and what it cost (writer: this session)
+### Delivery record — what was built and how each claim was checked
 
 Every row below was verified by re-running the builder in check mode, not by reading a report.
 

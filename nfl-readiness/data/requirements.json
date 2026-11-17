@@ -399,7 +399,7 @@
       "requirement": "Only 6 of 254 report rows carry a game designation, and no active list or snap share is captured. Without them a backup's replacement of a starter cannot be confirmed, only suspected.",
       "status": "met",
       "gate": "none for the recount, which this desk performs on a fresh read",
-      "clearing_number": "a recount from the publisher that replaces the stale 254/6 figures with the live ones",
+      "clearing_number": "recount published: 171 of 347 rows carry a designation on the 2026-11-17 read; the 6-of-254 figures in this requirement's own text are stale and superseded (flag F03)",
       "evidence": "readiness/site/availability.html (fresh counts published, discrepancy flagged)",
       "source_ids": [
         "REPO"
@@ -784,7 +784,7 @@
       "requirement": "Re-capture and republish the Week 10 injury tables",
       "status": "met",
       "gate": "none",
-      "clearing_number": "a full fresh read of all 8 printed sections with the row count recomputed",
+      "clearing_number": "a full fresh read of all 8 printed sections: 347 rows recomputed, against the 254 in the inherited table",
       "evidence": "readiness/site/availability.html",
       "source_ids": [
         "REPO"
@@ -795,7 +795,7 @@
       "requirement": "Published counts are stale: 254 rows and 4 no-injury sections versus 279 rows and 2 sections live; Seattle and Cincinnati are shown as injury-free while listing 15 and 4 players (VR-04, VR-05, VR-06, VR-07).",
       "status": "met",
       "gate": "none",
-      "clearing_number": "the live row count and per-club counts published beside the stale ones",
+      "clearing_number": "live row count 347 and 28 per-club sections published beside the inherited 254/279 figures; the 4 clubs with no section were on bye, not injury-free",
       "evidence": "readiness/site/availability.html",
       "source_ids": [
         "REPO"
