@@ -1820,9 +1820,10 @@ Session ID: `session-arena-b5534cd4-own7`. Fixed Arena branch: `arena/b5534cd4-o
 
 | ID | Task | Status | Owner | Files touched | Verification / notes |
 |---|---|---|---|---|---|
-| I1 | Integrate the completed official Game Book and decision-readiness workstreams; audit the combined build, table-row provenance, internal links, tests, and Pages deployment | in progress | session-arena-b5534cd4-own7 | Shared integration outputs only: `COORDINATION.md`, site build/check/serve/browser allowlists, workflow, source registry, generated canonical pages/manifests. New task-owned desks `nfl-gamebook-5213243e/**` (PR #56) and `nfl-readiness/**` (PR #57) are read-only; no task content will be rewritten. | #56 and #57 are open to `main`; both report their owner tasks complete and `MERGEABLE`. Their research checks passed; browser/accessibility checks were still running at claim time. Integration proceeds only after checks finish, then the full combined audit is rerun. |
+| I1 | Integrate the completed official Game Book and decision-readiness workstreams; audit the combined build, table-row provenance, internal links, tests, and Pages deployment | in progress | session-arena-b5534cd4-own7 | Shared integration outputs only: `COORDINATION.md`, site build/check/serve/browser allowlists, workflow, source registry, generated canonical pages/manifests. New task-owned desks `nfl-gamebook-5213243e/**` (PR #56) and `nfl-readiness/**` (PR #57) are read-only; no task content will be rewritten. | At claim time #56 and #57 were open and their browser jobs were pending. PR #56 is now integrated into this branch; PR #57 is still open under I2. The combined research/site contract passes; post-merge browser verification remains. |
+| I4 | Assess and integrate additional completed official-source/readiness desks (#61–64) only after owner checks pass; preserve each task-owned scope | in progress | session-arena-b5534cd4-own7 | Shared integration outputs only; read-only task desks `nfl-brief-77b1/**`, `nfl-readiness.html`, `research/nfl-readiness.json`, `nfl-assurance-9580ac3f/**` | At 2026-11-17T01:27Z, PR #61 browser/accessibility failed, while #62–64 browser jobs were pending. None is integrated by this entry; no task-owned files edited. Broken-site and ownership gates remain in force. |
 
-The two open PRs are distinct task-owner workstreams, not claims by this integration session. Older open PRs were observed but are not part of this claim and will not be merged or closed. This session stays on the fixed Arena branch; it will not create or switch to a session branch.
+PR #56's task content is integrated into this branch, not yet published to main; PR #57 remains open under the I2 review request. PR #58 was merged into main by its own PR during this session; its coordination records are retained (including the historical duplicate section carried into the Game Book branch). Other older open PRs remain untouched. This session stays on the fixed Arena branch; it will not create or switch to a session branch.
 
 ### Integration review request I2 — retrospective leaderboard and pre-registration claims
 
@@ -1945,8 +1946,6 @@ overwritten.
 
 No other session holds a live claim in this window; `nfl-gamebook-5213243e/**` was unclaimed before
 this session. Per the brief, this session is therefore also the integration session for its own scope.
-<<<<<<< HEAD
-=======
 
 ### Integration conflict log — incorporating the Game Book branch
 
@@ -1954,9 +1953,14 @@ The current branch was based on `764635c` (PR #60). The fetched PR #56 head was 
 
 ### I3 — Game Book workstream integrated and verified on this branch (not yet published)
 
-- Integrated PR #56 head `df6f5e804b1b45a76e179b58c4e77464ebdeaf69` into `arena/b5534cd4-own7`; merge commit: see Git history. Its base already included `764635c` (PR #60). PR #58's coordination-only publication record was already present in that head and is retained verbatim; PR #58 was not independently merged by this session and remains untouched as a PR.
-- The only merge conflict was `COORDINATION.md`; both this integration session's log and the incoming PR #58 / Game Book session records were retained. No task-owned data/code conflicted.
-- Rebuilt with `python scripts/build_site.py`; `npm run check` passed (111 unit tests, NFL results receipt reproduction, origination/site tests, and recursive audit: **207 HTML pages, 8,193 table rows, 221 registered sources, 0 errors**). `python nfl-gamebook-5213243e/build_site.py --check` reproduced all 13 desk pages byte-for-byte.
+- Integrated PR #56's Game Book changes into `arena/b5534cd4-own7` on top of `764635c` (PR #60); the exact integrated files and generated output are in the Git history. PR #58 was merged into main by its own PR while this session was active; its coordination-only record was already present in the PR #56 head and is retained.
+- The initial integration conflict was in `COORDINATION.md`; a later rebase also conflicted in `research/site-manifest.json` because it is generated by different source/build inputs. The manifest was regenerated after rebase rather than hand-merging hashes. Full conflict details, including the marker-cleanup follow-up, are in the rebase log below. No task-owned Game Book data/code was dropped.
+- After rebase, `python scripts/build_site.py`, `npm run check` (111 unit tests, NFL results receipt reproduction, origination/site tests, and recursive audit: **207 HTML pages, 8,193 table rows, 221 registered sources, 0 errors**) and `python nfl-gamebook-5213243e/build_site.py --check` (13 desk pages, byte-identical) all passed. The rebuilt manifest contains all 13 Game Book pages and 221 unique registered source IDs.
 - Source/row contracts are structurally verified by `scripts/check_site.py`; this is not a fresh live fetch of nfl.com. The Game Book dataset carries 13 official PDFs and explicit flags for missing/ambiguous source content (GB-F01–F05); no missing names or rows were inferred.
-- This is not yet the final integrated site: PR #57 remains under the I2 review request and has not been incorporated. PR #56's latest research audit passed; its browser job was pending at the time of this check. The baseline browser run before the Game Book merge passed 174 desktop + 174 mobile pages; the post-merge browser suite remains to be run on the combined tree.
->>>>>>> ebc72da (integration: record Game Book verification)
+- This is not yet the final integrated site: PR #57 remains under the I2 review request and has not been incorporated. The baseline browser run before the Game Book merge passed 174 desktop + 174 mobile pages. A post-merge browser run remains to be completed on the combined tree.
+
+### Rebase conflict log — PR #58 merged while integrating (2026-11-17)
+
+`git pull --rebase origin main` advanced this branch from `764635c` to `bf386f9` (PR #58). Replaying the already-integrated Game Book commits produced append conflicts in `COORDINATION.md` and generated-content conflicts in `research/site-manifest.json`. All coordination entries from PR #58, PR #56 and this session were kept; the generated manifest conflict was resolved by retaining the current base during replay and rebuilding from the combined source registry and builder, not by hand-merging hashes. A first cleanup helper did not match the empty-side marker and the rebase command committed that marker; it was noticed immediately in the post-rebase readback and removed before any push. No source/data/task-owner file was lost. The current file contains no conflict markers; the combined builder/check are rerun below.
+
+The integration comment on PR #57 is https://github.com/sassnarep3-star/Own7/pull/57#issuecomment-6934866060. The I2 finding remains unresolved in the latest reviewed PR head: the registration is retrospective and its leaderboard still publishes historical rank/score values, while four affected requirement rows remain `met`.
