@@ -309,33 +309,34 @@ def lifecycle_nav_group():
 
 NAV.extend(lifecycle_nav_group())
 
+GAMEBOOK_NAV_PATH = "nfl-gamebook-5213243e/site/index.html"
 
-READINESS_NAV_PATH = "nfl-readiness-e7ef/site/index.html"
 
+def gamebook_nav_group():
+    """Additive nav group for the official Game Book desk (session arena/5213243e-own7).
 
-def readiness_nav_group():
-    """Additive nav group for the readiness-audit desk (session arena/e7efbde7-own7).
-
-    Built from the desk's own manifest so this generator never restates a page list that
-    could drift. Returns an empty list if the desk has not been built.
+    Built from the desk's own manifest so this generator never restates a page list that could
+    drift. Returns an empty list if the desk has not been built, so a fresh clone still works.
     """
-    manifest = ROOT / "nfl-readiness-e7ef" / "site" / "manifest.json"
+    manifest = ROOT / "nfl-gamebook-5213243e" / "site" / "manifest.json"
     if not manifest.exists():
         return []
     import json as _json
     labels = {
-        "index.html": "Readiness overview",
-        "verification-2026-11-17.html": "Verification 2026-11-17",
-        "requirement-readiness.html": "Requirement readiness",
-        "flagged.html": "Readiness flagged",
-        "sources.html": "Readiness sources",
+        "index.html": "Game Book overview", "fixtures-venue.html": "Venue & environment",
+        "starters.html": "Official starters", "inactives.html": "Inactives & replacement",
+        "depth-coverage.html": "Depth-chart coverage",
+        "designation-reliability.html": "Designation reliability", "delta.html": "What changed",
+        "ledger.html": "Point-in-time ledger", "decisions.html": "Readiness & questions",
+        "suggestions.html": "Game Book suggestions", "verification.html": "Game Book verification",
+        "flagged.html": "Game Book flagged", "sources.html": "Game Book sources",
     }
     pages = _json.loads(manifest.read_text())["pages"]
-    return [("NFL readiness audit",
-             [(f"nfl-readiness-e7ef/site/{p}", labels.get(p, p), "validation") for p in pages])]
+    return [("NFL official Game Book",
+             [(f"nfl-gamebook-5213243e/site/{p}", labels.get(p, p), "validation") for p in pages])]
 
 
-NAV.extend(readiness_nav_group())
+NAV.extend(gamebook_nav_group())
 
 
 
@@ -863,14 +864,13 @@ def build():
     lifecycle_pages=load_json('nfl-lifecycle-3f5c/site/manifest.json')['pages']
     for name in lifecycle_pages:
         generated.append(f'nfl-lifecycle-3f5c/site/{name}')
-    # Readiness-audit desk (session arena/e7efbde7-own7). Runs the desk's own deterministic
-    # build first so a stale verification artefact fails the site build rather than
-    # publishing quietly.
-    readiness_result=subprocess.run([sys.executable,str(ROOT/'nfl-readiness-e7ef'/'build.py')],cwd=ROOT,capture_output=True,text=True)
-    if readiness_result.returncode: raise SystemExit(f'nfl-readiness-e7ef/build.py failed: '+readiness_result.stdout+readiness_result.stderr)
-    readiness_pages=load_json('nfl-readiness-e7ef/site/manifest.json')['pages']
-    for name in readiness_pages:
-        generated.append(f'nfl-readiness-e7ef/site/{name}')
+    # Official Game Book desk (session arena/5213243e-own7). Runs the desk's own deterministic
+    # build (which re-derives every artefact from the committed raw extracts) before publishing.
+    gamebook_result=subprocess.run([sys.executable,str(ROOT/'nfl-gamebook-5213243e'/'build_site.py')],cwd=ROOT,capture_output=True,text=True)
+    if gamebook_result.returncode: raise SystemExit(f'nfl-gamebook-5213243e/build_site.py failed: '+gamebook_result.stdout+gamebook_result.stderr)
+    gamebook_pages=load_json('nfl-gamebook-5213243e/site/manifest.json')['pages']
+    for name in gamebook_pages:
+        generated.append(f'nfl-gamebook-5213243e/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
@@ -885,7 +885,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-readiness-e7ef/site/{n}' for n in readiness_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 

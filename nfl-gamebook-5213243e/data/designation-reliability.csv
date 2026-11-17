@@ -1,0 +1,4 @@
+published_designation,n_players_joined,n_on_official_not_active,observed_inactive_rate,wilson_95_low,wilson_95_high,method,injury_source_url,gamebook_source
+Out,14,10,0.7143,0.4535,0.8828,joined to official Game Book Not Active list; Wilson score interval,https://www.nfl.com/injuries/league/2026/REG10,NFL Game Book (official PDF)
+Questionable,11,3,0.2727,0.0975,0.5656,joined to official Game Book Not Active list; Wilson score interval,https://www.nfl.com/injuries/league/2026/REG10,NFL Game Book (official PDF)
+No game designation published,275,52,0.1891,0.1472,0.2395,joined to official Game Book Not Active list; Wilson score interval,https://www.nfl.com/injuries/league/2026/REG10,NFL Game Book (official PDF)
