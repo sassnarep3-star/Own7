@@ -1966,3 +1966,33 @@ this session. Per the brief, this session is therefore also the integration sess
 - Live verification: https://sassnarep3-star.github.io/Own7/index.html re-fetched after deploy — the **Decision readiness** section is live with all 16 requirement rows, G01–G10 gate links to `nfl-validation.html`, clearing numbers, and per-row official source links; PR #60's "Open review items 17 of 21" metric fix is also live (the mid-flight rebase union held). No broken-site merge occurred; the full battery was green before merge.
 - Coordination note: a parallel session `arena/383626a6-own7` is in flight with its own "NFL decision-readiness desk" (pre-registered backtest, luck panel, availability — an 18-page desk on its own branch). Its scope was unknown when D1 was claimed; the two touch different files (that desk builds its own sub-site; D1 touched the landing page builder and the requirement ledger only). No files of that session were touched.
 - Irregularities published non-blocking (see Flagged for Review page and D2 notes above): rights-blocked pricing/ROI blanks; the Lions designation finding resolved at source pending a future re-capture; stale open PRs #48/#50/#51 untouched per precedent.
+## Session arena/34a52a38-own7 — dashboard readiness, luck panel, Lions correction, flags (2026-11-17)
+
+Session ID: `session-arena-34a52a38-own7`. Fixed Arena branch: `arena/34a52a38-own7`, based on `be2462d`
+(merge of PR #55). The brief's `session-<id>/<task>` branch naming is not used because the branch is fixed
+for this session; all work stays on `arena/34a52a38-own7`. Earlier boards are retained verbatim and are not
+inherited as verification. This session is the sole active session on the board (every prior claim is `done`).
+
+### Observed starting state (read, not assumed)
+
+`be2462d` clean. Baseline replayed before any change: `python -m unittest discover -s tests` → 111 pass;
+`python scripts/nfl_extract.py --check` → OK (32 standings, 20 injury, 14 fixtures);
+`python scripts/check_site.py` → OK; `python nfl-lifecycle-3f5c/build.py --check` → byte-identical;
+`python -m unittest discover -s nfl-lifecycle-3f5c/tests` → pass.
+
+### Claim (written and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| D1 | Coordination claim + baseline replay | in progress | session-arena-34a52a38-own7 | `COORDINATION.md` (append-only) | This entry. |
+| D2 | Populate the three Lions game-status cells (Joseph, Mays, Reed) from the official Week 10 injury report, and correct the assurance desk's blank cells | in progress | session-arena-34a52a38-own7 | `nfl-assurance-9580ac3f/data/**`, regenerated `nfl-assurance-9580ac3f/site/**` only | Official page read 2026-11-17 via Arena fetch_page; the availability desk already holds "Out"; the assurance desk holds blanks. |
+| D3 | Decision-readiness table on the landing page: one row per requirement, the gate that blocks it, the number that would clear it | in progress | session-arena-34a52a38-own7 | new `nfl_readiness.py` (root), additive call in `nfl_pages.nfl_overview()` | Every number computed from a committed artefact; blanks where none exists. |
+| D4 | "Removal of luck" panel on the landing page (family-wise luck, permutation p, n) | in progress | session-arena-34a52a38-own7 | `nfl_readiness.py`, additive call in `nfl_pages.nfl_overview()` | Read-only over `nfl-results/analysis.json`. |
+| D5 | Flag register entries for irregularities found this session | in progress | session-arena-34a52a38-own7 | `research/nfl/flags.json` (append only) | Published non-blocking on the Flagged page. |
+| D6 | Tests for D2–D5 | in progress | session-arena-34a52a38-own7 | `tests/test_nfl_readiness.py` (new) | |
+| D7 | Executive summary: dated update section | in progress | session-arena-34a52a38-own7 | `docs/nfl-executive-summary.md` (append only) | Additive. |
+| D8 | Build, checks, browser test, PR, merge, Pages deploy, record | unclaimed | session-arena-34a52a38-own7 | `COORDINATION.md`, generated root pages, `research/site-manifest.json` | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: fixed branch only; a value is populated only from an official page read in this
+session, otherwise left blank and flagged; every row keeps a registered source; `git pull --rebase` before every
+push; small commits; additive edits to shared files only.
