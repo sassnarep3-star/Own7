@@ -1706,13 +1706,24 @@ Rules: work only on the fixed branch; never infer or fill a value an official so
 
 | ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
 |---|---|---|---|---|---|
-| C505-1 | Claim board entry + baseline replay of all checks on this branch | in progress | session-arena-c5050ef2-own7 | COORDINATION.md (append only) | Baseline: 111 root tests, extract OK, origination reproduces, 38+ pages built, site check 0 errors (from prior board). Re-run before changes. |
-| C505-2 | Line-by-line repo review of generators and published pages vs official sources; irregularities flagged | in progress | session-arena-c5050ef2-own7 | docs/nfl-repo-review-2026-11-17.md (new), generated review pages | Every flagged row links to an official source actually checked; blanks stay blank. |
-| C505-3 | Landing page upgrade: decision-readiness table — one row per requirement, the gate that blocks it, the number that clears it | in progress | session-arena-c5050ef2-own7 | index.html, scripts/build_site.py (rendered table data), nfl_pages.py | Additive section on root index.html; no value inferred; gate/cell values blank or sourced. |
-| C505-4 | Suggestions review section + Q/I/A dossier present, linked, reviewable before implementation | in progress | session-arena-c5050ef2-own7 | nfl-suggestions.html, nfl-questions.html, research/nfl/decisions.json, research/nfl/questions.json | Proposals carry evidence/cost/risk/acceptance test; decision record deliberately blank. |
-| C505-5 | Executive summary current across desks | in progress | session-arena-c5050ef2-own7 | docs/nfl-executive-summary.md, executive-summary.html | Distinguishes NFL official evidence from derived research; no edge claimed. |
-| C505-6 | Full build + integrity checks: build_site, check_site, unittest, browser tests | unclaimed | session-arena-c5050ef2-own7 | All generated pages | Green before PR. |
-| C505-7 | PR + merge + GitHub Pages deploy evidence + record in COORDINATION.md | unclaimed | session-arena-c5050ef2-own7 | main branch, GitHub Pages, COORDINATION.md | Do not merge a broken site. Flagged items do not block. |
+| C505-1 | Claim board entry + baseline replay of all checks on this branch | done | session-arena-c5050ef2-own7 | COORDINATION.md (append only) | Baseline replayed on be2462d (111 tests OK, check_site 0 errors); branch rebased onto origin/main 7a0a12a without discarding other sessions' work (nfl_pages.py conflict resolved to main's PR #59 version). |
+| C505-2 | Line-by-line repo review of generators and published pages vs official sources; irregularities flagged | done | session-arena-c5050ef2-own7 | docs/nfl-repo-review-2026-11-17.md | Official sources fetched via page reader (direct HTTPS blocked from sandbox: curl 000; rendered-text evidence class disclosed): nfl.com/standings/, /injuries/, /legal/terms/ (§1.3 verbatim). Dated-snapshot freshness limitation recorded; no value inferred or overwritten. |
+| C505-3 | Landing page upgrade: decision-readiness table — one row per requirement, the gate that blocks it, the number that clears it | done | session-arena-c5050ef2-own7 | nfl_pages.py, index.html | Superseded on main by PR #59 (session arena/f4a324f2-own7), which merged the equivalent decision-readiness landing table first; this branch's nfl_pages.py was resolved to main's output during rebase. 19-row table on index.html: gates G01-G10 and missing-information items M02/M03/M06/M07/M09/M10 plus venue, schedule announcement, Game Books and 32-club roster/IR rows, each with clearing number, current number and official source links. |
+| C505-4 | Suggestions review section + Q/I/A dossier present, linked, reviewable before implementation | done | session-arena-c5050ef2-own7 | nfl-suggestions.html, nfl-questions.html, research/nfl/decisions.json, research/nfl/questions.json | Already published on main: ten ranked suggestions with evidence/cost/risk/acceptance test, 17 questions split into known-with-source vs open, four reward-blocking gaps (M01-M04); decision records deliberately blank. No changes needed. |
+| C505-5 | Executive summary current across desks | done | session-arena-c5050ef2-own7 | docs/nfl-executive-summary.md, executive-summary.html | Existing executive summary links results, pricing, availability and validation desks; distinguishes official evidence from derived research; no edge claimed. |
+| C505-6 | Full build + integrity checks: build_site, check_site, unittest, browser tests | done | session-arena-c5050ef2-own7 | All generated pages | build_site.py regenerates 46 canonical + 20 redirect pages with zero uncommitted artifacts; check_site.py passed (194 pages, 7,940 table rows, 216 sources, 0 errors, unknown_values_blank true); 111 unit tests OK; js/app.js syntax OK. Browser suite runs in CI (no node_modules/playwright browsers in sandbox). |
+| C505-7 | PR + merge + GitHub Pages deploy evidence + record in COORDINATION.md | done | session-arena-c5050ef2-own7 | main branch, GitHub Pages, COORDINATION.md | PR #60 merged --merge into main at 764635cf31ea0e43629f82da7429e9f578f86023 (2026-11-17). CI: checks run 380/381 success on current main tip bf386f9 (includes this merge); Pages build for 764635cf status built (no error); latest Pages build for bf386f9 status built. Flagged items (21 NFL, 17 open) published on nfl-review.html, non-blocking. |
+
+### Publication record — session arena/c5050ef2-own7
+
+| Field | Value |
+|---|---|
+| Pull request | [#60](https://github.com/sassnarep3-star/Own7/pull/60) — “NFL landing decision-readiness table, repo review, and integration record” |
+| Base / head | `main` ← `arena/c5050ef2-own7` |
+| Merge | `--merge`, merge commit `764635cf31ea0e43629f82da7429e9f578f86023` |
+| CI | check.yml “Research and dashboard checks” runs 380 and 381 both success on current main tip `bf386f9` (includes this merge) |
+| Pages | Pages build for `764635cf` status **built**, no error (2026-11-17T01:08:38Z); latest Pages build for `bf386f9` status **built**, no error (2026-11-17T01:17:08Z) |
+| Site | https://sassnarep3-star.github.io/Own7/ (sandbox egress to *.github.io is blocked; liveness evidenced by the official Pages API, per prior-session convention) |
 
 ---\n\n## Session arena/3422b07f-own7 — current NFL executive summary reconciliation (2026-11-15)
 
