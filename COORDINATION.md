@@ -1722,44 +1722,12 @@ Branch: `arena/824cdccf-own7`, branched from `main` at `be2462d`; sole active se
 ### Claim (before implementation)
 
 | ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
-|---|---|---|---|---|---|---|
-| I1 | Claim the integration scope on COORDINATION.md; do not touch any other session's files | done | session-arena-824cdccf-own7 | COORDINATION.md | n/a | Claimed before implementation, committed + pushed immediately |
-| I2 | Re-run full verification battery: unit tests, NFL extraction receipt check, origination run check, site build + recursive site check | done | session-arena-824cdccf-own7 | tests/, scripts/, nfl_origination/, research/ | `python3 -m unittest discover -s tests` → 111/111 OK; `python3 -m nfl_origination run --check` → results reproduce exactly from receipt-checked inputs; `python3 scripts/build_site.py` → 46 canonical pages + 20 compatibility redirects; `python3 scripts/check_site.py` → status `passed`, 0 errors, 194 recursive pages, 7,920 table-body rows, 216 registered sources | All green; `git status`/`git diff --exit-code` clean, committed artifacts already current |
-| I3 | Confirm published deliverables: executive summary, questions & answers, suggestions register, leaderboard, validation gates, originated lines, correlations, injuries & availability | done | session-arena-824cdccf-own7 | executive-summary.html, nfl-questions.html, nfl-suggestions.html, nfl-leaderboard.html, nfl-validation.html, nfl-lines.html, nfl-correlation.html, nfl-injuries.html | Every table row carries a registered official source link or an explicit blank; check_site confirms the source contract; no value inferred or filled in | Source-linked per the verification policy; gaps stay blank + flagged |
-| I4 | Commit + push arena/824cdccf-own7 (`git pull --rebase` first) | done | session-arena-824cdccf-own7 | COORDINATION.md | git | Pushed to origin/arena/824cdccf-own7 |
-| I5 | Create PR arena/824cdccf-own7 → main, merge after CI passes without waiting for approval, confirm GitHub Pages deploys, record PR link + merge result here | in progress | session-arena-824cdccf-own7 | main branch, GitHub Pages | gh | Do not merge a broken site; CI must pass first |
-
-### Verification performed (this session)
-
-- `python3 -m unittest discover -s tests` — 111 tests, OK.
-- `python3 -m nfl_origination run --check` — `research/nfl/results.json` reproduces exactly from receipt-checked inputs.
-- `python3 scripts/build_site.py` — 46 canonical pages + 20 compatibility redirects, single source of truth, deterministic.
-- `python3 scripts/check_site.py` — status `passed`; 194 recursive HTML pages, 7,920 table-body rows, 12,390 external references, 216 registered sources, 0 errors; research reproduction passed.
-- `git status --porcelain` / `git diff --exit-code` — clean before and after build.
-
-### External-source note
-
-This sandbox cannot reach nfl.com (outbound is limited to GitHub and package registries), so no fresh live fetch of NFL publisher pages was performed in this session. All published NFL values remain saved receipts with check dates through 2026-11-14, plus the repository's re-verification logs (2026-11-13 and 2026-11-14). Every table row carries its registered official source URL or is left blank and flagged as unverified; no value was inferred or filled in. Flagged irregularities remain published non-blocking on the Flagged for Review page with source links.
-
-### Publication record
-
-- PR: to be created from `arena/824cdccf-own7` → `main`.
-- Merge: to be confirmed after CI passes; not waited on for approval per the brief.
-- GitHub Pages deploy: to be confirmed against the merge commit; live URL https://sassnarep3-star.github.io/Own7/.
-
-## Session arena/824cdccf-own7 — integration and publication (2026-11-17)
-
-Branch: `arena/824cdccf-own7`, branched from `main` at `be2462d`; sole active session on this branch, status `active`. No other session's files are touched.
-
-### Claim (before implementation)
-
-| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
 |---|------|--------|-------|---------------|------------------------|-------|
 | I1 | Claim the integration scope on COORDINATION.md; do not touch any other session's files | done | session-arena-824cdccf-own7 | COORDINATION.md | n/a | Claimed before implementation, committed + pushed immediately |
 | I2 | Re-run full verification battery: unit tests, NFL extraction receipt check, origination run check, site build + recursive site check | done | session-arena-824cdccf-own7 | tests/, scripts/, nfl_origination/, research/ | `python3 -m unittest discover -s tests` → 111/111 OK; `python3 -m nfl_origination run --check` → results reproduce exactly from receipt-checked inputs; `python3 scripts/build_site.py` → 46 canonical pages + 20 compatibility redirects; `python3 scripts/check_site.py` → status `passed`, 0 errors, 194 recursive pages, 7,920 table-body rows, 216 registered sources | All green; `git status`/`git diff --exit-code` clean, committed artifacts already current |
 | I3 | Confirm published deliverables: executive summary, questions & answers, suggestions register, leaderboard, validation gates, originated lines, correlations, injuries & availability | done | session-arena-824cdccf-own7 | executive-summary.html, nfl-questions.html, nfl-suggestions.html, nfl-leaderboard.html, nfl-validation.html, nfl-lines.html, nfl-correlation.html, nfl-injuries.html | Every table row carries a registered official source link or an explicit blank; check_site confirms the source contract; no value inferred or filled in | Source-linked per the verification policy; gaps stay blank + flagged |
 | I4 | Commit + push arena/824cdccf-own7 (`git pull --rebase` first) | done | session-arena-824cdccf-own7 | COORDINATION.md | git | Pushed to origin/arena/824cdccf-own7 |
-| I5 | Create PR arena/824cdccf-own7 → main, merge after CI passes without waiting for approval, confirm GitHub Pages deploys, record PR link + merge result here | in progress | session-arena-824cdccf-own7 | main branch, GitHub Pages | gh | Do not merge a broken site; CI must pass first |
+| I5 | Create PR arena/824cdccf-own7 → main, merge after CI passes without waiting for approval, confirm GitHub Pages deploys, record PR link + merge result here | done | session-arena-824cdccf-own7 | main branch, GitHub Pages | gh | PR **[#58](https://github.com/sassnarep3-star/Own7/pull/58)** merged into `main` as merge commit `bf386f9` (2026-11-17); CI (research/recursive site audit + desktop/mobile/accessibility) passed before merge; not waited on for approval per the brief; no broken-site merge |
 
 ### Verification performed (this session — arena/824cdccf-own7)
 
@@ -1775,6 +1743,6 @@ This sandbox cannot reach nfl.com (outbound is limited to GitHub and package reg
 
 ### Publication record (arena/824cdccf-own7)
 
-- PR: to be created from `arena/824cdccf-own7` → `main`.
-- Merge: to be confirmed after CI passes; not waited on for approval per the brief.
-- GitHub Pages deploy: to be confirmed against the merge commit; live URL https://sassnarep3-star.github.io/Own7/.
+- PR: **[#58](https://github.com/sassnarep3-star/Own7/pull/58)**, `arena/824cdccf-own7` → `main`.
+- Merge: **merged** as merge commit `bf386f9` (2026-11-17); CI green before merge; not waited on for approval per the brief.
+- GitHub Pages deploy: **built** against `bf386f9`; live at https://sassnarep3-star.github.io/Own7/.
