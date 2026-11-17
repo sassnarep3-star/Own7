@@ -1,0 +1,4 @@
+player,club_note,reserve_status_verified,why_blank,route
+Malik Willis,absent from the Week 10 official injury report,,no official reserve/IR list was retrieved; absence from the injury report is not evidence of availability,retrieve the official reserve/injured list (club transactions or NFL transactions feed) and join on player id
+Lamar Jackson,BAL; published at QB on the club depth chart while on injured reserve per prior session finding,,stale-depth claim from an earlier session; not re-verified against an official reserve list in this session,verify against the official reserve list before publishing any depth conclusion
+Tyler Huntley,BAL; published at QB on the club depth chart while on injured reserve per prior session finding,,stale-depth claim from an earlier session; not re-verified against an official reserve list in this session,verify against the official reserve list before publishing any depth conclusion

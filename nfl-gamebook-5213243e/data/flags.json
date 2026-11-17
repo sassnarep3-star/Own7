@@ -1,0 +1,29 @@
+[
+  {
+    "flag_id": "GB-F01",
+    "item": "Cleveland Browns and Dallas Cowboys defensive starters",
+    "detail": "Both official Game Books publish a defensive lineup, but in these two the PDF column lost its player-name cells during text extraction (Cowboys rows show e.g. 'OLB 40' with no name). 528 of 572 starting slots are captured; the 44 missing slots are Cleveland defense (22) and Dallas defense (22).",
+    "value_published": "",
+    "why_blank": "value not recoverable from the official artefact as retrieved; not inferred",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf",
+    "route": "re-open the Game Book PDF in a viewer and transcribe the defensive column, or pull the same page from the NFL Stats feed"
+  },
+  {
+    "flag_id": "GB-F02",
+    "item": "LAC @ BAL (W10-14) Game Book",
+    "detail": "The fixture had not kicked off at capture time (2026-11-16 8:15 PM ET was still in the future relative to the official source state), so no Game Book exists. Venue and stadium are published on the official Game Centre and are carried; weather, roof/surface, starters and inactives are blank.",
+    "value_published": "",
+    "why_blank": "artefact does not exist yet",
+    "source_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+    "route": "re-capture after the game is final"
+  },
+  {
+    "flag_id": "GB-F03",
+    "item": "KC @ ATL game-day temperature / humidity / wind",
+    "detail": "The official Game Book for this fixture publishes the roof state (Retractable Roof - Closed on Field Turf) but no temperature, humidity or wind values. Left blank rather than substituted from any other source.",
+    "value_published": "Retractable Roof - Closed on Field Turf",
+    "why_blank": "official artefact does not publish the numbers",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "route": "none - the indoor game has no published weather by design"
+  }
+]
