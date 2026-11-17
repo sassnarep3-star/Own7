@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "read": "2026-11-17",
+  "panel": "Removal of luck",
+  "headline": "No entry is distinguishable from luck once the family of trials and the week-clustered uncertainty are both counted. The best record is real; its interpretation as skill is not supported.",
+  "best_entry": {
+    "id": "M04-SIDE",
+    "n": 57,
+    "directional_hits": 37,
+    "directional_rate": 0.649123,
+    "brier_skill": 0.057139,
+    "cluster_lo": 0.015374,
+    "q_value": 0.05985
+  },
+  "chance_null": {
+    "question": "Could a coin flip have produced this record?",
+    "p_single_test": 0.016572,
+    "reading": "37 of 57 against a 50/50 benchmark. Single-test tail 0.0166."
+  },
+  "family_null": {
+    "question": "Could the best of the whole family have produced it?",
+    "family_size": 21,
+    "p_family_wise": 0.348012,
+    "wins_needed_at_this_n": 40,
+    "simulated_family_false_positive_rate": 0.296335,
+    "reading": "21 variants were tried. The best of 21 coin-flip runs reaches 37 or more 0.296 of the time at n=57."
+  },
+  "permutation_null": {
+    "question": "Did the probabilities carry information beyond each week's balance?",
+    "reps": 20000,
+    "cluster": "kickoff week",
+    "p_value_best": 0.0057
+  },
+  "required_n": {
+    "question": "How long before a real edge is even visible?",
+    "rows": [
+      {
+        "true_rate": 0.5238,
+        "required_n": 2727,
+        "basis": "breakeven at -110 is 0.5238; the test is one-sided at 5% with 80% power",
+        "weeks_at_13_games": 210,
+        "seasons_at_272_games": 10.03
+      },
+      {
+        "true_rate": 0.55,
+        "required_n": 2241,
+        "basis": "breakeven at -110 is 0.5238; the test is one-sided at 5% with 80% power",
+        "weeks_at_13_games": 173,
+        "seasons_at_272_games": 8.24
+      },
+      {
+        "true_rate": 0.575,
+        "required_n": 585,
+        "basis": "breakeven at -110 is 0.5238; the test is one-sided at 5% with 80% power",
+        "weeks_at_13_games": 45,
+        "seasons_at_272_games": 2.15
+      },
+      {
+        "true_rate": 0.6,
+        "required_n": 263,
+        "basis": "breakeven at -110 is 0.5238; the test is one-sided at 5% with 80% power",
+        "weeks_at_13_games": 21,
+        "seasons_at_272_games": 0.97
+      }
+    ],
+    "reading": "A 57-game evaluation window cannot separate a 55% model from a 50% one: at 80% power a 55% model betting the breakeven rate needs 2,241 settled selections, which is 173 weeks at this season's 13 games a week, or 8.2 full 272-game seasons. At 57.5% the requirement falls to 585."
+  },
+  "controls": [
+    {
+      "name": "Coin flip",
+      "market": "side",
+      "n": 57,
+      "brier": 0.25,
+      "brier_skill": 0.0,
+      "directional_rate": 0.561404
+    },
+    {
+      "name": "Always home side",
+      "market": "side",
+      "n": 57,
+      "brier": 0.561404,
+      "brier_skill": -1.245614,
+      "directional_rate": 0.438596
+    },
+    {
+      "name": "Never home side",
+      "market": "side",
+      "n": 57,
+      "brier": 0.438596,
+      "brier_skill": -0.754386,
+      "directional_rate": 0.561404
+    },
+    {
+      "name": "Coin flip",
+      "market": "total",
+      "n": 57,
+      "brier": 0.25,
+      "brier_skill": 0.0,
+      "directional_rate": 0.526316
+    },
+    {
+      "name": "Always over",
+      "market": "total",
+      "n": 57,
+      "brier": 0.526316,
+      "brier_skill": -1.105263,
+      "directional_rate": 0.473684
+    },
+    {
+      "name": "Always under",
+      "market": "total",
+      "n": 57,
+      "brier": 0.473684,
+      "brier_skill": -0.894737,
+      "directional_rate": 0.526316
+    },
+    {
+      "name": "Coin flip",
+      "market": "moneyline",
+      "n": 57,
+      "brier": 0.25,
+      "brier_skill": 0.0,
+      "directional_rate": 0.54386
+    },
+    {
+      "name": "Always home side",
+      "market": "moneyline",
+      "n": 57,
+      "brier": 0.54386,
+      "brier_skill": -1.175439,
+      "directional_rate": 0.45614
+    },
+    {
+      "name": "Never home side",
+      "market": "moneyline",
+      "n": 57,
+      "brier": 0.45614,
+      "brier_skill": -0.824561,
+      "directional_rate": 0.54386
+    }
+  ],
+  "luck_band": {
+    "question": "What does luck look like at this n, judged as one test?",
+    "single_test_only": true,
+    "n": 57,
+    "central_90pct_low_wins": 22,
+    "central_90pct_high_wins": 35,
+    "observed_wins": 37,
+    "inside_band": false,
+    "reading": "This band is a single-test statement: 37 wins sits just above an upper bound of 35. The family null above is the one that governs, and it does not clear."
+  },
+  "counts": {
+    "entries": 21,
+    "positive_brier_skill": 13,
+    "positive_cluster_lo": 2,
+    "positive_cluster_lo_and_q_at_5pct": 0
+  },
+  "why_not_removed": [
+    "One season of scored games, so no season-level holdout exists (PG-SEASONS).",
+    "No executable price, so a probability better than chance cannot become a return (PG-PRICE-SOURCE).",
+    "No pre-kickoff forecast has been recorded, so nothing here is prospective (PG-PROSPECTIVE).",
+    "The development and evaluation windows order the entries differently, which is what noise looks like."
+  ],
+  "rejected_alternative": {
+    "proposal": "Rank strategies by season-long return.",
+    "verdict": "rejected",
+    "why": "Return is one draw from a distribution whose spread at n=57 dwarfs any plausible edge. The power table above is the arithmetic: a 55% model needs 2,846 settled selections to be seen at 80% power. Ranking on return would order the table by the noise term. Ranking on a cluster lower bound of a proper score at least orders it by evidence, and still refuses to qualify anything."
+  }
+}

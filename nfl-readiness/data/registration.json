@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "pre-registration",
+  "registered": "2026-11-17",
+  "registered_before": "The 136-game corpus is retrospective (weeks 1-9 were played before this file was written). The registration therefore binds the *procedure*, the *scored set*, the *benchmark*, the *holdout* and *every gate threshold*, and it forbids any post-hoc change to the model family. It is a registration of analysis, and it is labelled that way everywhere it appears. It is NOT a prospective registration and no prospective claim is made from it.",
+  "registration_hash_rule": "The SHA-256 of this file is the registration. Adding a variant means adding a file, which changes the hash, which is a new registration.",
+  "corpus": {
+    "games": "nfl-results/data/games-2026-w1-9.csv",
+    "byes": "nfl-results/data/byes-2026-w1-9.csv",
+    "rows": 136,
+    "scored_rows": 120,
+    "first_scored_week": 2,
+    "why_week_1_is_excluded": "A forecast for week 1 would have no prior week to learn from, so week 1 is excluded rather than forecast from nothing.",
+    "provenance": "Final scores transcribed from NFL.com by-week schedule pages on 2026-11-14 and re-verified by this desk's own reconciliation against the same page text saved in nfl-results/evidence/."
+  },
+  "holdout": {
+    "rule": "The scored weeks are divided by kickoff week, never by row. Weeks 2-5 are the development window; weeks 6-9 are the evaluation window. The split is fixed here, before any model in this desk is scored.",
+    "development_weeks": [2, 3, 4, 5],
+    "evaluation_weeks": [6, 7, 8, 9],
+    "season_level_holdout": "",
+    "season_level_holdout_reason": "This repository holds one season, so a season-level final holdout cannot exist. PG-SEASONS blocks any claim that it does."
+  },
+  "model_family": {
+    "rule": "Seven estimators, each a stated function of prior weeks only. They are fixed in this file and in backtest.py; a build fails if the set or the parameter values change.",
+    "models": [
+      {"id": "M00", "name": "Null: league mean and home field", "inputs": ["prior weeks' league points per team-game", "home-field constant 2.0"]},
+      {"id": "M01", "name": "Shrunk scoring profiles", "inputs": ["prior weeks' points for and against per club", "shrinkage 4 games", "home-field constant 2.0"]},
+      {"id": "M02", "name": "Pythagorean exponent", "inputs": ["prior weeks' points for and against", "exponent 2.37", "home-field constant 2.0"]},
+      {"id": "M03", "name": "Recency-weighted scoring", "inputs": ["prior weeks with exponential decay 0.7", "home-field constant 2.0"]},
+      {"id": "M04", "name": "Rest and bye differential", "inputs": ["days since each club's last game", "bye flag", "1.5 points per rest tier"]},
+      {"id": "M05", "name": "Home-only and road-only rates", "inputs": ["prior weeks' home-only and road-only scoring", "shrinkage 4 games"]},
+      {"id": "M06", "name": "Streak allowance", "inputs": ["consecutive wins and losses", "0.75 points per game of streak"]}
+    ],
+    "forecast_storage": "Every forecast is stored as a probability and as a line, together with the inputs used: the league prior, each club's shrunk scoring rates, the rest days, and the source page of the result. See data/backtest.json."
+  },
+  "markets": ["side", "total", "moneyline"],
+  "benchmark": {
+    "rule": "Skill is measured against the same model with its club information removed, i.e. M00. A raw win rate is never used as a skill measure.",
+    "scores": ["Brier score on the directional probability", "log loss", "mean absolute error of the line"],
+    "cluster": "Standard errors are clustered on the kickoff week, because games in a week share a league state."
+  },
+  "gates": [
+    {"id": "V1", "name": "Probability stored", "rule": "Every scored game carries a probability in [0,1] for side and total. A missing probability fails the gate."},
+    {"id": "V2", "name": "No leakage", "rule": "A week-w forecast may use only weeks < w. The build re-derives every forecast from the prior-week window and fails on any other input."},
+    {"id": "V3", "name": "Benchmark-relative skill", "rule": "Brier skill versus M00 must be positive."},
+    {"id": "V4", "name": "Cluster lower bound", "rule": "The week-clustered 95% lower bound on Brier skill must exceed 0."},
+    {"id": "V5", "name": "Multiplicity", "rule": "The number of variants tried is published and every p-value is BH-adjusted across that family."},
+    {"id": "V6", "name": "Holdout", "rule": "The evaluation window (weeks 6-9) must not be used for any choice in this desk."},
+    {"id": "V7", "name": "Price", "rule": "An entry may not be ranked or rewarded without an executable price. This gate cannot pass today."},
+    {"id": "V8", "name": "Prospective", "rule": "An entry may not be called live without pre-kickoff recorded forecasts. This gate cannot pass today."}
+  ],
+  "what_would_change_our_mind": {
+    "toward_accepting_skill": "A week-clustered lower bound on Brier skill above zero in the evaluation window, surviving BH over the full family, and reproduced on a prospective window with pre-kickoff timestamps.",
+    "toward_rejecting_skill": "A negative Brier skill versus M00 in the evaluation window, or a positive result that disappears when the development window is dropped, or a result that depends on one kickoff week.",
+    "both_directions_published": true
+  },
+  "forbidden": [
+    "Changing a model parameter after seeing a score.",
+    "Publishing a backtest number in a leaderboard column reserved for a prospective record.",
+    "Reporting a win rate as a skill measure.",
+    "Using the evaluation window to select which model to show."
+  ]
+}
