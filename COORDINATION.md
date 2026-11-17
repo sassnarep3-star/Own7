@@ -1746,7 +1746,7 @@ Session ID: `session-arena-f4a324f2-own7`
 | F1 | Add decision-readiness table to landing page | done | session-arena-f4a324f2-own7 | `nfl_pages.py`, generated `index.html` | `research/nfl/results.json` (gates G01–G10), `research/nfl/decisions.json`, official NFL.com sources | 11 rows (R01–R11), each with gate, status, clearing number, official source links; check_site.py passed with 0 errors |
 | F2 | Re-verify official NFL sources (standings, schedule, injuries) | done | session-arena-f4a324f2-own7 | `data/*.csv`, `research/nfl/evidence/` | https://www.nfl.com/standings/, https://www.nfl.com/schedules/, https://www.nfl.com/injuries/ | Week 10 schedule results match official NFL.com exactly (13 games verified). Standings are a dated 2026-11-12 snapshot; live page has since advanced (expected). Injury report rows match official listing. |
 | F3 | Rebuild site, run all tests and checks | done | session-arena-f4a324f2-own7 | All generated pages | `scripts/build_site.py`, `scripts/check_site.py`, `tests/` | Build: 46 canonical + 20 redirects. check_site.py: 0 errors, 194 pages, 7,931 rows, 216 sources. Tests: 111/111 OK. |
-| F4 | PR + merge + GitHub Pages deploy + record result | in progress | session-arena-f4a324f2-own7 | main branch, GitHub Pages | COORDINATION.md | Do not merge a broken site |
+| F4 | PR + merge + GitHub Pages deploy + record result | done | session-arena-f4a324f2-own7 | main branch, GitHub Pages | COORDINATION.md | PR #59 merged into main at merge commit 7a0a12a. Pages build and deployment succeeded (run 43993268685). Live site confirmed serving decision-readiness table at https://sassnarep3-star.github.io/Own7/ |
 
 ### Rules for this session
 
