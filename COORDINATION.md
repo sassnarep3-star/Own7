@@ -1696,7 +1696,25 @@ pages, should the reviewer prefer this desk's formulation.
 |---|---|---|---|
 | L12 | PR, merge, Pages deploy, record | **done** | PR https://github.com/sassnarep3-star/Own7/pull/49 — CI both jobs green (Research and recursive site audit: 194 recursive pages, 7,930 tbody rows, 216 registered sources, 0 errors; browser: 174 desktop + 174 mobile pages, WCAG A/AA, no runtime errors). Merged as merge commit `ce66693` at 2026-11-14T23:04:28Z. GitHub Pages "pages build and deployment" completed with status **built** against `ce66693`. Live verification by re-fetching https://sassnarep3-star.github.io/Own7/nfl-lifecycle-3f5c/site/index.html — desk pages served with all artefacts and source links. No broken-site merge occurred: the two rebase cycles (PR #46 by `arena/ec67293d-own7`, PR #47/#52 by `arena/c909fa0a-own7` landing mid-flight) were resolved as unions with both parallel sessions' work retained verbatim, the full battery re-run green before each merge, and every conflict resolution logged in the handoff section above. Flagged irregularities (LC-F01/02/05/07 open, LC-F03/04/06/08 explained) are published non-blocking on the desk's Flagged page with source links, per the brief. |
 
-## Session arena/3422b07f-own7 — current NFL executive summary reconciliation (2026-11-15)
+## Session arena/c5050ef2-own7 — NFL site integration, decision-readiness landing, and final deploy (2026-11-17)
+
+Session ID: `session-arena-c5050ef2-own7`. Fixed Arena branch: `arena/c5050ef2-own7`, branched from `be2462d` (= origin/main at claim time, merge of PR #55). Sole active session on this branch as of this claim. Earlier boards above are historical and are **not** inherited as verification.
+
+Owner request restated for this session: NFL focus; review the repo line by line against official sources and flag irregularities; strengthen the **Suggestions** review area so a reviewer can compare and choose a path before implementation; publish an explicit list of questions / information held / information missing that must be answered before a decision; originate own NFL lines with validated signals, correlation values, parlays and player-prop combos; track injuries and starter-vs-backup depletion; executive summary; clean landing page + category subpages as a dashboard; live GitHub Pages site; PR + merge without waiting for approval; record PR link and merge result here.
+
+Rules: work only on the fixed branch; never infer or fill a value an official source does not publish — leave it blank with `data-empty` and flag it; every table row keeps a registered official source link; `git pull --rebase --ff-only` before every push; small frequent commits; additive edits to shared files only; do not merge, close or edit PR #27 or PR #17.
+
+| ID | Task | Status | Owner | Exclusive file scope | Verification / notes |
+|---|---|---|---|---|---|
+| C505-1 | Claim board entry + baseline replay of all checks on this branch | in progress | session-arena-c5050ef2-own7 | COORDINATION.md (append only) | Baseline: 111 root tests, extract OK, origination reproduces, 38+ pages built, site check 0 errors (from prior board). Re-run before changes. |
+| C505-2 | Line-by-line repo review of generators and published pages vs official sources; irregularities flagged | in progress | session-arena-c5050ef2-own7 | docs/nfl-repo-review-2026-11-17.md (new), generated review pages | Every flagged row links to an official source actually checked; blanks stay blank. |
+| C505-3 | Landing page upgrade: decision-readiness table — one row per requirement, the gate that blocks it, the number that clears it | in progress | session-arena-c5050ef2-own7 | index.html, scripts/build_site.py (rendered table data), nfl_pages.py | Additive section on root index.html; no value inferred; gate/cell values blank or sourced. |
+| C505-4 | Suggestions review section + Q/I/A dossier present, linked, reviewable before implementation | in progress | session-arena-c5050ef2-own7 | nfl-suggestions.html, nfl-questions.html, research/nfl/decisions.json, research/nfl/questions.json | Proposals carry evidence/cost/risk/acceptance test; decision record deliberately blank. |
+| C505-5 | Executive summary current across desks | in progress | session-arena-c5050ef2-own7 | docs/nfl-executive-summary.md, executive-summary.html | Distinguishes NFL official evidence from derived research; no edge claimed. |
+| C505-6 | Full build + integrity checks: build_site, check_site, unittest, browser tests | unclaimed | session-arena-c5050ef2-own7 | All generated pages | Green before PR. |
+| C505-7 | PR + merge + GitHub Pages deploy evidence + record in COORDINATION.md | unclaimed | session-arena-c5050ef2-own7 | main branch, GitHub Pages, COORDINATION.md | Do not merge a broken site. Flagged items do not block. |
+
+---\n\n## Session arena/3422b07f-own7 — current NFL executive summary reconciliation (2026-11-15)
 
 ### Claim (before implementation)
 
