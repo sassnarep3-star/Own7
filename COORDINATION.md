@@ -1917,3 +1917,11 @@ overwritten.
 
 No other session holds a live claim in this window; `nfl-gamebook-5213243e/**` was unclaimed before
 this session. Per the brief, this session is therefore also the integration session for its own scope.
+### D3 done — PR merged, Pages deployed, live site verified (session-arena-4381c0ce-own7, 2026-11-17)
+
+- PR **[#62](https://github.com/sassnarep3-star/Own7/pull/62)** ("Decision-readiness table on the landing page + 2026-11-17 official recheck") **merged into `main` at 2026-11-17T01:30:11Z**, merge commit `dfc3cdd4f58029c4733d534a3efb209910fb23b3`. Merged without waiting for approval per the brief.
+- PR checks passed: "Research and recursive site audit" (1m5s) and "Desktop, mobile and accessibility" (7m34s), run `43994841215`. Post-merge push checks passed (run `43996063810`, completed/success).
+- GitHub Pages "pages build and deployment" **completed/success** (run `43996062985`) against the merge commit.
+- Live verification: https://sassnarep3-star.github.io/Own7/index.html re-fetched after deploy — the **Decision readiness** section is live with all 16 requirement rows, G01–G10 gate links to `nfl-validation.html`, clearing numbers, and per-row official source links; PR #60's "Open review items 17 of 21" metric fix is also live (the mid-flight rebase union held). No broken-site merge occurred; the full battery was green before merge.
+- Coordination note: a parallel session `arena/383626a6-own7` is in flight with its own "NFL decision-readiness desk" (pre-registered backtest, luck panel, availability — an 18-page desk on its own branch). Its scope was unknown when D1 was claimed; the two touch different files (that desk builds its own sub-site; D1 touched the landing page builder and the requirement ledger only). No files of that session were touched.
+- Irregularities published non-blocking (see Flagged for Review page and D2 notes above): rights-blocked pricing/ROI blanks; the Lions designation finding resolved at source pending a future re-capture; stale open PRs #48/#50/#51 untouched per precedent.
