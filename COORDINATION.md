@@ -1834,3 +1834,46 @@ The two open PRs are distinct task-owner workstreams, not claims by this integra
 ### Integration conflict log — rebase onto 2026-11-17 main
 
 While recording I2, `git pull --rebase origin main` advanced this branch from `be2462d` to `7a0a12a` (PR #59, the landing-page decision-readiness table). It encountered an append/add conflict in `COORDINATION.md` between this session's I1 claim and session `arena/f4a324f2-own7`'s completed F1–F4 board. Resolution retained both sections verbatim, followed by I2; no other session's work was discarded. The I2 commit replayed without a further conflict. No application or data files conflicted.
+
+## Session arena/5213243e-own7 — official Game Book facts, point-in-time ledger, decision readiness (2026-11-17)
+
+Session ID: `session-arena-5213243e-own7`. Fixed Arena branch: `arena/5213243e-own7`, based on `be2462d`
+(merge of PR #55). Earlier boards above are retained verbatim and are **not** inherited as verification.
+
+### Observed starting state (read, not assumed)
+
+`git log -1` = `be2462d`. Baseline replayed green before any change: `python3 -m unittest discover -s tests`
+→ **111 pass**; `python3 scripts/check_site.py` → **passed: 194 recursive pages, 7,920 tbody rows,
+216 registered sources, 0 errors**. All prior NFL desks (`nfl/`, `nfl-results/`, `nfl_origination/`,
+`nfl-market-desk/`, `nfl-pricing/`, `nfl-lifecycle-3f5c/`, `nfl-skill-cfdd/`, `nfl-availability-28ef/`,
+`nfl-assurance-9580ac3f/`, `session-243828fc/`) are read-only inputs to this session.
+
+### Why this session exists (gap analysis against the brief)
+
+The brief names official sources this repo does **not** yet use. The official NFL **Game Book PDF**
+(`static.www.nfl.com/image/upload/.../gamecenter/*.pdf`, linked from the official Game Centre) is
+reachable and publishes, per fixture, in one artefact: the official venue, the **official opening
+lineups (actual starters)**, the **official Not Active list**, the **Did Not Play list**, the official
+**stadium roof/open status and surface**, and the **official game-day weather**. The repo currently
+infers none of these: venues are unpublished, actual starters are absent, inactive lists are absent,
+and roof/surface is not sourced. A live fetch on 2026-11-17 confirmed all of these fields exist.
+
+### Claim (written, committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| G1 | Coordination claim + baseline replay | done | session-arena-5213243e-own7 | `COORDINATION.md` (append-only) | This entry. |
+| G2 | Archive official Week 10 Game Books (14 fixtures) with raw capture + SHA-256 | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Official Game Centre → Game Book PDF. Raw retrieved text saved; hash recorded. |
+| G3 | Parse official starters / inactives / DNP / venue / roof / surface / weather | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Only what the artefact states. Ambiguous rows blank + flagged, never inferred. |
+| G4 | Re-capture the live Week 10 injury report and publish the **delta** vs the published 2026-11-13 capture | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Republishes the stale Week 10 tables. Level and delta both published. |
+| G5 | Availability graph as a first-class dataset: expected starter (official depth chart, read-only) vs actual starter (official Game Book) | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Consumes `nfl-skill-cfdd/data/depth-slots-2026-11-14.csv` read-only; never edits it. Confirms or refutes each replacement. |
+| G6 | Empirical designation reliability: observed inactive rate per official designation with 95% intervals | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Calibrates "Questionable"/"Out" from observation, not legacy percentages. n published with every value. |
+| G7 | Point-in-time snapshot ledger: capture time, SHA-256, source URL, vintage per artefact | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Prevents lookahead leakage; enables replay as known. |
+| G8 | Desk pages: index, fixtures+venue, starters, inactives, availability graph, designation reliability, weather/roof, ledger, questions, suggestions, flagged, sources | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Every table row keeps a registered official source link. |
+| G9 | Additive integration: nav group, build step, manifest, source register, serve/browser/CI allowlists, README | in progress | session-arena-5213243e-own7 | additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md` | No existing page, value or test overwritten. |
+| G10 | PR, merge, Pages deploy evidence, record | unclaimed | session-arena-5213243e-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: fixed branch only; never infer or fill a value an official source does not
+publish — leave it blank and flag it; every table row keeps a registered official source link;
+`git pull --rebase` before every push; small frequent commits; additive edits to shared files only.
+
