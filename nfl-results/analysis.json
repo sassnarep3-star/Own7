@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_for": "2026 NFL season through week 9",
+  "generated_for": "2026 NFL season through week 10 (13 of 14 Week 10 games final at the 2026-11-17 read)",
   "inputs": {
-    "games_file": "nfl-results/data/games-2026-w1-9.csv",
-    "byes_file": "nfl-results/data/byes-2026-w1-9.csv",
-    "games": 136,
+    "games_file": "nfl-results/data/games-2026-w1-10.csv",
+    "byes_file": "nfl-results/data/byes-2026-w1-10.csv",
+    "games": 149,
     "weeks_scored": [
       2,
       3,
@@ -13,12 +13,14 @@
       6,
       7,
       8,
-      9
+      9,
+      10
     ],
-    "rows_scored": 120,
+    "rows_scored": 133,
     "sources": [
       "https://www.nfl.com/schedules/2026/by-week/week-{n} for n = 1..9",
-      "https://www.nfl.com/standings/ (frozen 2026-11-12 snapshot used for reconciliation)"
+      "https://www.nfl.com/schedules/2026/REG10 (read 2026-11-17; 13 finals + 1 scheduled-not-final)",
+      "https://www.nfl.com/standings/ (frozen pre-kickoff read reconciles weeks 1-9; fresh 2026-11-17 read reconciles weeks 1-10 minus the scheduled game)"
     ]
   },
   "parameters": {
@@ -6755,78 +6757,806 @@
         }
       },
       "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-12",
+      "away": "WAS",
+      "home": "NYG",
+      "actual_margin": -3,
+      "actual_total": 45,
+      "board_line": 3.5,
+      "board_total": 45.5,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": 3.666667,
+          "total": 45.642157,
+          "oos_margin": 3.136364,
+          "oos_total": 46.993614
+        },
+        "M02": {
+          "margin": 3.503193,
+          "total": 45.642157,
+          "oos_margin": 2.99548,
+          "oos_total": 46.993614
+        },
+        "M03": {
+          "margin": 3.465794,
+          "total": 42.606304,
+          "oos_margin": 1.318504,
+          "oos_total": 46.657451
+        },
+        "M04": {
+          "margin": 3.666667,
+          "total": 45.642157,
+          "oos_margin": 4.636364,
+          "oos_total": 46.993614
+        },
+        "M05": {
+          "margin": 4.910714,
+          "total": 46.567752,
+          "oos_margin": 4.910714,
+          "oos_total": 46.664699
+        },
+        "M06": {
+          "margin": 5.916667,
+          "total": 45.642157,
+          "oos_margin": 3.136364,
+          "oos_total": 46.993614
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "BUF",
+      "home": "NYJ",
+      "actual_margin": -19,
+      "actual_total": 43,
+      "board_line": -2.5,
+      "board_total": 49.0,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": -2.451923,
+          "total": 48.755279,
+          "oos_margin": -1.113636,
+          "oos_total": 49.802592
+        },
+        "M02": {
+          "margin": -1.757147,
+          "total": 48.755279,
+          "oos_margin": -0.573197,
+          "oos_total": 49.802592
+        },
+        "M03": {
+          "margin": -6.128812,
+          "total": 47.499916,
+          "oos_margin": -3.267313,
+          "oos_total": 51.171576
+        },
+        "M04": {
+          "margin": -2.451923,
+          "total": 48.755279,
+          "oos_margin": -1.113636,
+          "oos_total": 49.802592
+        },
+        "M05": {
+          "margin": -0.125,
+          "total": 49.213235,
+          "oos_margin": 0.839286,
+          "oos_total": 50.932556
+        },
+        "M06": {
+          "margin": -8.451923,
+          "total": 48.755279,
+          "oos_margin": -5.613636,
+          "oos_total": 49.802592
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "CAR",
+      "home": "NO",
+      "actual_margin": -3,
+      "actual_total": 37,
+      "board_line": 1.5,
+      "board_total": 49.5,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": 1.541667,
+          "total": 49.433824,
+          "oos_margin": 1.227273,
+          "oos_total": 49.811796
+        },
+        "M02": {
+          "margin": 1.618296,
+          "total": 49.433824,
+          "oos_margin": 1.361357,
+          "oos_total": 49.811796
+        },
+        "M03": {
+          "margin": 3.420726,
+          "total": 46.497904,
+          "oos_margin": 2.90648,
+          "oos_total": 46.805166
+        },
+        "M04": {
+          "margin": 1.541667,
+          "total": 49.433824,
+          "oos_margin": 2.727273,
+          "oos_total": 49.811796
+        },
+        "M05": {
+          "margin": -2.381944,
+          "total": 44.972222,
+          "oos_margin": -2.75,
+          "oos_total": 45.178719
+        },
+        "M06": {
+          "margin": 4.541667,
+          "total": 49.433824,
+          "oos_margin": 1.977273,
+          "oos_total": 49.811796
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "HOU",
+      "home": "CLE",
+      "actual_margin": 3,
+      "actual_total": 51,
+      "board_line": 0.0,
+      "board_total": 45.0,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": -0.054487,
+          "total": 45.159125,
+          "oos_margin": 0.810606,
+          "oos_total": 44.295016
+        },
+        "M02": {
+          "margin": 0.127299,
+          "total": 45.159125,
+          "oos_margin": 0.894596,
+          "oos_total": 44.295016
+        },
+        "M03": {
+          "margin": -2.682877,
+          "total": 47.118821,
+          "oos_margin": -0.329498,
+          "oos_total": 44.174581
+        },
+        "M04": {
+          "margin": -0.054487,
+          "total": 45.159125,
+          "oos_margin": -0.689394,
+          "oos_total": 44.295016
+        },
+        "M05": {
+          "margin": -0.232143,
+          "total": 44.924895,
+          "oos_margin": 0.928571,
+          "oos_total": 43.70425
+        },
+        "M06": {
+          "margin": -2.304487,
+          "total": 45.159125,
+          "oos_margin": 0.810606,
+          "oos_total": 44.295016
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "JAX",
+      "home": "TEN",
+      "actual_margin": -17,
+      "actual_total": 63,
+      "board_line": -5.0,
+      "board_total": 44.0,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": -4.791667,
+          "total": 44.183824,
+          "oos_margin": -4.155303,
+          "oos_total": 44.313956
+        },
+        "M02": {
+          "margin": -4.319024,
+          "total": 44.183824,
+          "oos_margin": -3.711526,
+          "oos_total": 44.313956
+        },
+        "M03": {
+          "margin": -6.296573,
+          "total": 48.540617,
+          "oos_margin": -5.298174,
+          "oos_total": 49.177922
+        },
+        "M04": {
+          "margin": -3.291667,
+          "total": 44.183824,
+          "oos_margin": -4.155303,
+          "oos_total": 44.313956
+        },
+        "M05": {
+          "margin": -2.1875,
+          "total": 42.630252,
+          "oos_margin": -0.520833,
+          "oos_total": 42.708506
+        },
+        "M06": {
+          "margin": -7.791667,
+          "total": 44.183824,
+          "oos_margin": -6.405303,
+          "oos_total": 44.313956
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "KC",
+      "home": "ATL",
+      "actual_margin": -22,
+      "actual_total": 48,
+      "board_line": -2.0,
+      "board_total": 45.0,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": -1.804487,
+          "total": 44.902715,
+          "oos_margin": -0.386364,
+          "oos_total": 44.613198
+        },
+        "M02": {
+          "margin": -1.486486,
+          "total": 44.902715,
+          "oos_margin": -0.201713,
+          "oos_total": 44.613198
+        },
+        "M03": {
+          "margin": -3.086006,
+          "total": 43.973169,
+          "oos_margin": 1.091541,
+          "oos_total": 42.261262
+        },
+        "M04": {
+          "margin": -1.804487,
+          "total": 44.902715,
+          "oos_margin": -0.386364,
+          "oos_total": 44.613198
+        },
+        "M05": {
+          "margin": -0.75,
+          "total": 45.618056,
+          "oos_margin": -0.0625,
+          "oos_total": 45.491219
+        },
+        "M06": {
+          "margin": -4.054487,
+          "total": 44.902715,
+          "oos_margin": 0.363636,
+          "oos_total": 44.613198
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "LA",
+      "home": "AZ",
+      "actual_margin": -28,
+      "actual_total": 40,
+      "board_line": -2.0,
+      "board_total": 46.0,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": -2.230769,
+          "total": 45.977376,
+          "oos_margin": -1.708333,
+          "oos_total": 47.660813
+        },
+        "M02": {
+          "margin": -1.786201,
+          "total": 45.977376,
+          "oos_margin": -1.201941,
+          "oos_total": 47.660813
+        },
+        "M03": {
+          "margin": -3.590072,
+          "total": 43.178346,
+          "oos_margin": -2.647654,
+          "oos_total": 48.026888
+        },
+        "M04": {
+          "margin": -2.230769,
+          "total": 45.977376,
+          "oos_margin": -1.708333,
+          "oos_total": 47.660813
+        },
+        "M05": {
+          "margin": -3.741071,
+          "total": 47.130252,
+          "oos_margin": -3.428571,
+          "oos_total": 48.20425
+        },
+        "M06": {
+          "margin": -5.230769,
+          "total": 45.977376,
+          "oos_margin": -2.458333,
+          "oos_total": 47.660813
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "MIA",
+      "home": "IND",
+      "actual_margin": 2,
+      "actual_total": 46,
+      "board_line": 2.5,
+      "board_total": 45.0,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": 2.583333,
+          "total": 44.957202,
+          "oos_margin": 2.367424,
+          "oos_total": 45.571531
+        },
+        "M02": {
+          "margin": 2.534176,
+          "total": 44.957202,
+          "oos_margin": 2.331928,
+          "oos_total": 45.571531
+        },
+        "M03": {
+          "margin": 0.455256,
+          "total": 43.626374,
+          "oos_margin": -1.122838,
+          "oos_total": 45.06916
+        },
+        "M04": {
+          "margin": 2.583333,
+          "total": 44.957202,
+          "oos_margin": 2.367424,
+          "oos_total": 45.571531
+        },
+        "M05": {
+          "margin": 2.75,
+          "total": 45.588235,
+          "oos_margin": 2.803571,
+          "oos_total": 45.503985
+        },
+        "M06": {
+          "margin": 0.333333,
+          "total": 44.957202,
+          "oos_margin": 0.117424,
+          "oos_total": 45.571531
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "MIN",
+      "home": "GB",
+      "actual_margin": -20,
+      "actual_total": 40,
+      "board_line": 1.5,
+      "board_total": 41.5,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": 1.711538,
+          "total": 41.290535,
+          "oos_margin": 0.155303,
+          "oos_total": 40.616986
+        },
+        "M02": {
+          "margin": 1.712388,
+          "total": 41.290535,
+          "oos_margin": 0.130489,
+          "oos_total": 40.616986
+        },
+        "M03": {
+          "margin": 6.418772,
+          "total": 42.389683,
+          "oos_margin": 2.636738,
+          "oos_total": 39.637594
+        },
+        "M04": {
+          "margin": 1.711538,
+          "total": 41.290535,
+          "oos_margin": 0.155303,
+          "oos_total": 40.616986
+        },
+        "M05": {
+          "margin": 2.125,
+          "total": 41.088235,
+          "oos_margin": 2.125,
+          "oos_total": 41.178719
+        },
+        "M06": {
+          "margin": 4.711538,
+          "total": 41.290535,
+          "oos_margin": 1.655303,
+          "oos_total": 40.616986
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "NE",
+      "home": "DET",
+      "actual_margin": 25,
+      "actual_total": 45,
+      "board_line": 3.0,
+      "board_total": 48.0,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": 3.221154,
+          "total": 47.921946,
+          "oos_margin": 2.128788,
+          "oos_total": 47.893501
+        },
+        "M02": {
+          "margin": 3.049031,
+          "total": 47.921946,
+          "oos_margin": 2.110706,
+          "oos_total": 47.893501
+        },
+        "M03": {
+          "margin": 5.308996,
+          "total": 46.791269,
+          "oos_margin": 2.343785,
+          "oos_total": 46.165426
+        },
+        "M04": {
+          "margin": 3.221154,
+          "total": 47.921946,
+          "oos_margin": 2.128788,
+          "oos_total": 47.893501
+        },
+        "M05": {
+          "margin": 4.604167,
+          "total": 45.375,
+          "oos_margin": 4.604167,
+          "oos_total": 45.460457
+        },
+        "M06": {
+          "margin": 6.971154,
+          "total": 47.921946,
+          "oos_margin": 3.628788,
+          "oos_total": 47.893501
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "PIT",
+      "home": "CIN",
+      "actual_margin": 20,
+      "actual_total": 56,
+      "board_line": 3.0,
+      "board_total": 46.0,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": 3.208333,
+          "total": 46.10049,
+          "oos_margin": 2.681818,
+          "oos_total": 46.113198
+        },
+        "M02": {
+          "margin": 3.079027,
+          "total": 46.10049,
+          "oos_margin": 2.608707,
+          "oos_total": 46.113198
+        },
+        "M03": {
+          "margin": 2.74534,
+          "total": 46.907272,
+          "oos_margin": 1.727963,
+          "oos_total": 47.782249
+        },
+        "M04": {
+          "margin": 1.708333,
+          "total": 46.10049,
+          "oos_margin": 2.681818,
+          "oos_total": 46.113198
+        },
+        "M05": {
+          "margin": 3.008929,
+          "total": 46.380252,
+          "oos_margin": 3.008929,
+          "oos_total": 46.477199
+        },
+        "M06": {
+          "margin": 3.208333,
+          "total": 46.10049,
+          "oos_margin": 1.931818,
+          "oos_total": 46.113198
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "SEA",
+      "home": "LV",
+      "actual_margin": -8,
+      "actual_total": 34,
+      "board_line": -0.5,
+      "board_total": 47.5,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": -0.692308,
+          "total": 47.59276,
+          "oos_margin": 0.541667,
+          "oos_total": 48.494146
+        },
+        "M02": {
+          "margin": -0.328421,
+          "total": 47.59276,
+          "oos_margin": 0.762024,
+          "oos_total": 48.494146
+        },
+        "M03": {
+          "margin": -2.507159,
+          "total": 47.055141,
+          "oos_margin": 0.991758,
+          "oos_total": 50.122801
+        },
+        "M04": {
+          "margin": -0.692308,
+          "total": 47.59276,
+          "oos_margin": 0.541667,
+          "oos_total": 48.494146
+        },
+        "M05": {
+          "margin": 0.267857,
+          "total": 47.603466,
+          "oos_margin": 0.267857,
+          "oos_total": 47.700413
+        },
+        "M06": {
+          "margin": -2.192308,
+          "total": 47.59276,
+          "oos_margin": 2.041667,
+          "oos_total": 48.494146
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
+    },
+    {
+      "week": 10,
+      "date": "2026-11-15",
+      "away": "SF",
+      "home": "DAL",
+      "actual_margin": -6,
+      "actual_total": 86,
+      "board_line": -1.0,
+      "board_total": 49.5,
+      "league_ppg_prior": 22.963235,
+      "forecasts": {
+        "M00": {
+          "margin": 2.0,
+          "total": 45.926471,
+          "oos_margin": 2.0,
+          "oos_total": 46.107438
+        },
+        "M01": {
+          "margin": -0.907051,
+          "total": 49.550151,
+          "oos_margin": -0.386364,
+          "oos_total": 49.340471
+        },
+        "M02": {
+          "margin": -0.414784,
+          "total": 49.550151,
+          "oos_margin": 0.009162,
+          "oos_total": 49.340471
+        },
+        "M03": {
+          "margin": -0.633365,
+          "total": 50.20581,
+          "oos_margin": 1.534381,
+          "oos_total": 49.762952
+        },
+        "M04": {
+          "margin": -0.907051,
+          "total": 49.550151,
+          "oos_margin": -1.886364,
+          "oos_total": 49.340471
+        },
+        "M05": {
+          "margin": 1.1875,
+          "total": 48.951681,
+          "oos_margin": 1.1875,
+          "oos_total": 49.048628
+        },
+        "M06": {
+          "margin": -0.907051,
+          "total": 49.550151,
+          "oos_margin": -0.386364,
+          "oos_total": 49.340471
+        }
+      },
+      "source_url": "https://www.nfl.com/schedules/2026/REG10"
     }
   ],
   "accuracy": {
     "M00": {
-      "mae_margin": 10.541667,
-      "rmse_margin": 13.259902,
-      "mae_total": 11.651941,
-      "rmse_total": 14.003813,
-      "bias_margin": 2.108333,
-      "bias_total": 0.958491,
+      "mae_margin": 10.909774,
+      "rmse_margin": 13.69073,
+      "mae_total": 11.354582,
+      "rmse_total": 13.945161,
+      "bias_margin": 2.669173,
+      "bias_total": 0.58694,
       "skill_vs_null_margin": 0.0,
       "skill_vs_null_total": 0.0
     },
     "M01": {
-      "mae_margin": 10.114301,
-      "rmse_margin": 12.932984,
-      "mae_total": 11.704274,
-      "rmse_total": 14.12664,
-      "bias_margin": 2.121564,
-      "bias_total": 0.91926,
-      "skill_vs_null_margin": 0.048701,
-      "skill_vs_null_total": -0.017619
+      "mae_margin": 10.34561,
+      "rmse_margin": 13.135498,
+      "mae_total": 11.445663,
+      "rmse_total": 14.033178,
+      "bias_margin": 2.508178,
+      "bias_total": 0.584801,
+      "skill_vs_null_margin": 0.079466,
+      "skill_vs_null_total": -0.012663
     },
     "M02": {
-      "mae_margin": 10.131316,
-      "rmse_margin": 12.944602,
-      "mae_total": 11.704274,
-      "rmse_total": 14.12664,
-      "bias_margin": 2.118088,
-      "bias_total": 0.91926,
-      "skill_vs_null_margin": 0.046992,
-      "skill_vs_null_total": -0.017619
+      "mae_margin": 10.381794,
+      "rmse_margin": 13.171915,
+      "mae_total": 11.445663,
+      "rmse_total": 14.033178,
+      "bias_margin": 2.524074,
+      "bias_total": 0.584801,
+      "skill_vs_null_margin": 0.074355,
+      "skill_vs_null_total": -0.012663
     },
     "M03": {
-      "mae_margin": 10.02403,
-      "rmse_margin": 12.850076,
-      "mae_total": 11.597768,
-      "rmse_total": 14.013031,
-      "bias_margin": 2.053846,
-      "bias_total": 0.859379,
-      "skill_vs_null_margin": 0.060859,
-      "skill_vs_null_total": -0.001317
+      "mae_margin": 10.256543,
+      "rmse_margin": 13.038072,
+      "mae_total": 11.264406,
+      "rmse_total": 13.841026,
+      "bias_margin": 2.401139,
+      "bias_total": 0.492603,
+      "skill_vs_null_margin": 0.09307,
+      "skill_vs_null_total": 0.014879
     },
     "M04": {
-      "mae_margin": 10.027449,
-      "rmse_margin": 12.794168,
-      "mae_total": 11.704274,
-      "rmse_total": 14.12664,
-      "bias_margin": 2.146564,
-      "bias_total": 0.91926,
-      "skill_vs_null_margin": 0.069013,
-      "skill_vs_null_total": -0.017619
+      "mae_margin": 10.289804,
+      "rmse_margin": 13.038674,
+      "mae_total": 11.445663,
+      "rmse_total": 14.033178,
+      "bias_margin": 2.530734,
+      "bias_total": 0.584801,
+      "skill_vs_null_margin": 0.092987,
+      "skill_vs_null_total": -0.012663
     },
     "M05": {
-      "mae_margin": 10.203813,
-      "rmse_margin": 13.032081,
-      "mae_total": 11.729707,
-      "rmse_total": 14.235386,
-      "bias_margin": 2.097649,
-      "bias_total": 0.956328,
-      "skill_vs_null_margin": 0.034067,
-      "skill_vs_null_total": -0.033346
+      "mae_margin": 10.45964,
+      "rmse_margin": 13.259736,
+      "mae_total": 11.43926,
+      "rmse_total": 14.137397,
+      "bias_margin": 2.534995,
+      "bias_total": 0.577465,
+      "skill_vs_null_margin": 0.06197,
+      "skill_vs_null_total": -0.02776
     },
     "M06": {
-      "mae_margin": 10.064295,
-      "rmse_margin": 12.919048,
-      "mae_total": 11.704274,
-      "rmse_total": 14.12664,
-      "bias_margin": 2.015314,
-      "bias_total": 0.91926,
-      "skill_vs_null_margin": 0.05075,
-      "skill_vs_null_total": -0.017619
+      "mae_margin": 10.240968,
+      "rmse_margin": 13.00936,
+      "mae_total": 11.445663,
+      "rmse_total": 14.033178,
+      "bias_margin": 2.350283,
+      "bias_total": 0.584801,
+      "skill_vs_null_margin": 0.097061,
+      "skill_vs_null_total": -0.012663
     }
   },
   "candidates": [
@@ -6840,23 +7570,23 @@
         "model": "BOARD",
         "market": "spread",
         "selective": false,
-        "bets": 120,
-        "wins": 77,
-        "losses": 43,
+        "bets": 133,
+        "wins": 82,
+        "losses": 51,
         "pushes": 0,
-        "hit_rate": 0.641667,
-        "p_value": 0.001223,
-        "z": 3.103761,
-        "luck_band_low": 0.410539,
-        "luck_band_high": 0.589461,
-        "ci_low": 0.558333,
-        "ci_high": 0.725,
-        "required_n": 75,
-        "first_half_hit_rate": 0.583333,
-        "second_half_hit_rate": 0.7
+        "hit_rate": 0.616541,
+        "p_value": 0.004515,
+        "z": 2.688041,
+        "luck_band_low": 0.415023,
+        "luck_band_high": 0.584977,
+        "ci_low": 0.533835,
+        "ci_high": 0.699248,
+        "required_n": 112,
+        "first_half_hit_rate": 0.545455,
+        "second_half_hit_rate": 0.686567
       },
       "reference": "neutral league-mean line",
-      "q_value": 0.022022,
+      "q_value": 0.081274,
       "gates": [
         {
           "id": "RG01",
@@ -6880,37 +7610,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "pass",
-          "detail": "120 graded bets against a floor of 100."
+          "detail": "133 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0487."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0795."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
           "status": "pass",
-          "detail": "Exact binomial p = 0.0012 under pure chance."
+          "detail": "Exact binomial p = 0.0045 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "pass",
-          "detail": "Benjamini-Hochberg q = 0.0220 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.0813 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "pass",
-          "detail": "First half 0.583 vs second half 0.700."
+          "detail": "First half 0.545 vs second half 0.687."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "pass",
-          "detail": "Out-of-sample hit rate 0.642."
+          "detail": "Out-of-sample hit rate 0.617."
         },
         {
           "id": "RG10",
@@ -6931,23 +7661,293 @@
         "model": "BOARD",
         "market": "total",
         "selective": false,
-        "bets": 120,
-        "wins": 60,
-        "losses": 60,
+        "bets": 133,
+        "wins": 65,
+        "losses": 68,
         "pushes": 0,
-        "hit_rate": 0.5,
-        "p_value": 0.536342,
-        "z": 0.0,
-        "luck_band_low": 0.410539,
-        "luck_band_high": 0.589461,
-        "ci_low": 0.408333,
-        "ci_high": 0.591667,
+        "hit_rate": 0.488722,
+        "p_value": 0.635573,
+        "z": -0.260133,
+        "luck_band_low": 0.415023,
+        "luck_band_high": 0.584977,
+        "ci_low": 0.398496,
+        "ci_high": 0.571429,
         "required_n": null,
-        "first_half_hit_rate": 0.483333,
-        "second_half_hit_rate": 0.516667
+        "first_half_hit_rate": 0.484848,
+        "second_half_hit_rate": 0.492537
       },
       "reference": "neutral league-mean line",
-      "q_value": 0.719216,
+      "q_value": 0.863172,
+      "gates": [
+        {
+          "id": "RG01",
+          "name": "Provenance",
+          "status": "pass",
+          "detail": "Every graded game traces to a saved NFL.com by-week page; all 136 results reconcile with the official standings snapshot on W-L-T, PF and PA."
+        },
+        {
+          "id": "RG02",
+          "name": "No leakage",
+          "status": "pass",
+          "detail": "Forecast for week w uses only weeks < w; the board is built inside the loop."
+        },
+        {
+          "id": "RG03",
+          "name": "Executable price",
+          "status": "blocked",
+          "detail": "No sportsbook price was retrieved, so ROI, CLV and edge-as-money cannot be computed. This gate cannot pass and is never counted as one."
+        },
+        {
+          "id": "RG04",
+          "name": "Sample size",
+          "status": "pass",
+          "detail": "133 graded bets against a floor of 100."
+        },
+        {
+          "id": "RG05",
+          "name": "Accuracy beats the null model",
+          "status": "pass",
+          "detail": "Skill score vs the home-field-only null on margin: +0.0795."
+        },
+        {
+          "id": "RG06",
+          "name": "Statistical significance",
+          "status": "fail",
+          "detail": "Exact binomial p = 0.6356 under pure chance."
+        },
+        {
+          "id": "RG07",
+          "name": "Multiplicity control",
+          "status": "fail",
+          "detail": "Benjamini-Hochberg q = 0.8632 at a 10% false-discovery ceiling."
+        },
+        {
+          "id": "RG08",
+          "name": "Stability across halves",
+          "status": "fail",
+          "detail": "First half 0.485 vs second half 0.493."
+        },
+        {
+          "id": "RG09",
+          "name": "Survives out of sample",
+          "status": "fail",
+          "detail": "Out-of-sample hit rate 0.489."
+        },
+        {
+          "id": "RG10",
+          "name": "Rights and release",
+          "status": "blocked",
+          "detail": "NFL.com terms do not permit releasing a compiled dataset or a systematic feed. Nothing is released; the competition can be scored but not commercialised."
+        }
+      ],
+      "qualified": false
+    },
+    {
+      "id": "M00-SA",
+      "model": "M00",
+      "name": "Null (home field only)",
+      "market": "spread",
+      "selective": false,
+      "stat": {
+        "model": "M00",
+        "market": "spread",
+        "selective": false,
+        "bets": 118,
+        "wins": 49,
+        "losses": 69,
+        "pushes": 2,
+        "hit_rate": 0.415254,
+        "p_value": 0.973626,
+        "z": -1.841149,
+        "luck_band_low": 0.409784,
+        "luck_band_high": 0.590216,
+        "ci_low": 0.330508,
+        "ci_high": 0.508475,
+        "required_n": null,
+        "first_half_hit_rate": 0.525424,
+        "second_half_hit_rate": 0.305085
+      },
+      "q_value": 0.973626,
+      "gates": [
+        {
+          "id": "RG01",
+          "name": "Provenance",
+          "status": "pass",
+          "detail": "Every graded game traces to a saved NFL.com by-week page; all 136 results reconcile with the official standings snapshot on W-L-T, PF and PA."
+        },
+        {
+          "id": "RG02",
+          "name": "No leakage",
+          "status": "pass",
+          "detail": "Forecast for week w uses only weeks < w; the board is built inside the loop."
+        },
+        {
+          "id": "RG03",
+          "name": "Executable price",
+          "status": "blocked",
+          "detail": "No sportsbook price was retrieved, so ROI, CLV and edge-as-money cannot be computed. This gate cannot pass and is never counted as one."
+        },
+        {
+          "id": "RG04",
+          "name": "Sample size",
+          "status": "pass",
+          "detail": "118 graded bets against a floor of 100."
+        },
+        {
+          "id": "RG05",
+          "name": "Accuracy beats the null model",
+          "status": "fail",
+          "detail": "Skill score vs the home-field-only null on margin: +0.0000."
+        },
+        {
+          "id": "RG06",
+          "name": "Statistical significance",
+          "status": "fail",
+          "detail": "Exact binomial p = 0.9736 under pure chance."
+        },
+        {
+          "id": "RG07",
+          "name": "Multiplicity control",
+          "status": "fail",
+          "detail": "Benjamini-Hochberg q = 0.9736 at a 10% false-discovery ceiling."
+        },
+        {
+          "id": "RG08",
+          "name": "Stability across halves",
+          "status": "fail",
+          "detail": "First half 0.525 vs second half 0.305."
+        },
+        {
+          "id": "RG09",
+          "name": "Survives out of sample",
+          "status": "fail",
+          "detail": "Out-of-sample hit rate 0.415."
+        },
+        {
+          "id": "RG10",
+          "name": "Rights and release",
+          "status": "blocked",
+          "detail": "NFL.com terms do not permit releasing a compiled dataset or a systematic feed. Nothing is released; the competition can be scored but not commercialised."
+        }
+      ],
+      "qualified": false
+    },
+    {
+      "id": "M00-SS",
+      "model": "M00",
+      "name": "Null (home field only)",
+      "market": "spread",
+      "selective": true,
+      "stat": {
+        "model": "M00",
+        "market": "spread",
+        "selective": true,
+        "bets": 70,
+        "wins": 32,
+        "losses": 38,
+        "pushes": 0,
+        "hit_rate": 0.457143,
+        "p_value": 0.798518,
+        "z": -0.717137,
+        "luck_band_low": 0.382868,
+        "luck_band_high": 0.617132,
+        "ci_low": 0.342857,
+        "ci_high": 0.571429,
+        "required_n": null,
+        "first_half_hit_rate": 0.6,
+        "second_half_hit_rate": 0.314286
+      },
+      "q_value": 0.896053,
+      "gates": [
+        {
+          "id": "RG01",
+          "name": "Provenance",
+          "status": "pass",
+          "detail": "Every graded game traces to a saved NFL.com by-week page; all 136 results reconcile with the official standings snapshot on W-L-T, PF and PA."
+        },
+        {
+          "id": "RG02",
+          "name": "No leakage",
+          "status": "pass",
+          "detail": "Forecast for week w uses only weeks < w; the board is built inside the loop."
+        },
+        {
+          "id": "RG03",
+          "name": "Executable price",
+          "status": "blocked",
+          "detail": "No sportsbook price was retrieved, so ROI, CLV and edge-as-money cannot be computed. This gate cannot pass and is never counted as one."
+        },
+        {
+          "id": "RG04",
+          "name": "Sample size",
+          "status": "fail",
+          "detail": "70 graded bets against a floor of 100."
+        },
+        {
+          "id": "RG05",
+          "name": "Accuracy beats the null model",
+          "status": "fail",
+          "detail": "Skill score vs the home-field-only null on margin: +0.0000."
+        },
+        {
+          "id": "RG06",
+          "name": "Statistical significance",
+          "status": "fail",
+          "detail": "Exact binomial p = 0.7985 under pure chance."
+        },
+        {
+          "id": "RG07",
+          "name": "Multiplicity control",
+          "status": "fail",
+          "detail": "Benjamini-Hochberg q = 0.8961 at a 10% false-discovery ceiling."
+        },
+        {
+          "id": "RG08",
+          "name": "Stability across halves",
+          "status": "fail",
+          "detail": "First half 0.600 vs second half 0.314."
+        },
+        {
+          "id": "RG09",
+          "name": "Survives out of sample",
+          "status": "fail",
+          "detail": "Out-of-sample hit rate 0.457."
+        },
+        {
+          "id": "RG10",
+          "name": "Rights and release",
+          "status": "blocked",
+          "detail": "NFL.com terms do not permit releasing a compiled dataset or a systematic feed. Nothing is released; the competition can be scored but not commercialised."
+        }
+      ],
+      "qualified": false
+    },
+    {
+      "id": "M00-TA",
+      "model": "M00",
+      "name": "Null (home field only)",
+      "market": "total",
+      "selective": false,
+      "stat": {
+        "model": "M00",
+        "market": "total",
+        "selective": false,
+        "bets": 120,
+        "wins": 67,
+        "losses": 53,
+        "pushes": 3,
+        "hit_rate": 0.558333,
+        "p_value": 0.117602,
+        "z": 1.278019,
+        "luck_band_low": 0.410539,
+        "luck_band_high": 0.589461,
+        "ci_low": 0.466667,
+        "ci_high": 0.65,
+        "required_n": 453,
+        "first_half_hit_rate": 0.483333,
+        "second_half_hit_rate": 0.633333
+      },
+      "q_value": 0.264604,
       "gates": [
         {
           "id": "RG01",
@@ -6976,96 +7976,6 @@
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
-          "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0487."
-        },
-        {
-          "id": "RG06",
-          "name": "Statistical significance",
-          "status": "fail",
-          "detail": "Exact binomial p = 0.5363 under pure chance."
-        },
-        {
-          "id": "RG07",
-          "name": "Multiplicity control",
-          "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.7192 at a 10% false-discovery ceiling."
-        },
-        {
-          "id": "RG08",
-          "name": "Stability across halves",
-          "status": "fail",
-          "detail": "First half 0.483 vs second half 0.517."
-        },
-        {
-          "id": "RG09",
-          "name": "Survives out of sample",
-          "status": "fail",
-          "detail": "Out-of-sample hit rate 0.500."
-        },
-        {
-          "id": "RG10",
-          "name": "Rights and release",
-          "status": "blocked",
-          "detail": "NFL.com terms do not permit releasing a compiled dataset or a systematic feed. Nothing is released; the competition can be scored but not commercialised."
-        }
-      ],
-      "qualified": false
-    },
-    {
-      "id": "M00-SA",
-      "model": "M00",
-      "name": "Null (home field only)",
-      "market": "spread",
-      "selective": false,
-      "stat": {
-        "model": "M00",
-        "market": "spread",
-        "selective": false,
-        "bets": 105,
-        "wins": 46,
-        "losses": 59,
-        "pushes": 2,
-        "hit_rate": 0.438095,
-        "p_value": 0.914218,
-        "z": -1.26867,
-        "luck_band_low": 0.404362,
-        "luck_band_high": 0.595638,
-        "ci_low": 0.342857,
-        "ci_high": 0.533333,
-        "required_n": null,
-        "first_half_hit_rate": 0.519231,
-        "second_half_hit_rate": 0.358491
-      },
-      "q_value": 0.914218,
-      "gates": [
-        {
-          "id": "RG01",
-          "name": "Provenance",
-          "status": "pass",
-          "detail": "Every graded game traces to a saved NFL.com by-week page; all 136 results reconcile with the official standings snapshot on W-L-T, PF and PA."
-        },
-        {
-          "id": "RG02",
-          "name": "No leakage",
-          "status": "pass",
-          "detail": "Forecast for week w uses only weeks < w; the board is built inside the loop."
-        },
-        {
-          "id": "RG03",
-          "name": "Executable price",
-          "status": "blocked",
-          "detail": "No sportsbook price was retrieved, so ROI, CLV and edge-as-money cannot be computed. This gate cannot pass and is never counted as one."
-        },
-        {
-          "id": "RG04",
-          "name": "Sample size",
-          "status": "pass",
-          "detail": "105 graded bets against a floor of 100."
-        },
-        {
-          "id": "RG05",
-          "name": "Accuracy beats the null model",
           "status": "fail",
           "detail": "Skill score vs the home-field-only null on margin: +0.0000."
         },
@@ -7073,205 +7983,25 @@
           "id": "RG06",
           "name": "Statistical significance",
           "status": "fail",
-          "detail": "Exact binomial p = 0.9142 under pure chance."
+          "detail": "Exact binomial p = 0.1176 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.9142 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.2646 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "fail",
-          "detail": "First half 0.519 vs second half 0.358."
-        },
-        {
-          "id": "RG09",
-          "name": "Survives out of sample",
-          "status": "fail",
-          "detail": "Out-of-sample hit rate 0.438."
-        },
-        {
-          "id": "RG10",
-          "name": "Rights and release",
-          "status": "blocked",
-          "detail": "NFL.com terms do not permit releasing a compiled dataset or a systematic feed. Nothing is released; the competition can be scored but not commercialised."
-        }
-      ],
-      "qualified": false
-    },
-    {
-      "id": "M00-SS",
-      "model": "M00",
-      "name": "Null (home field only)",
-      "market": "spread",
-      "selective": true,
-      "stat": {
-        "model": "M00",
-        "market": "spread",
-        "selective": true,
-        "bets": 63,
-        "wins": 31,
-        "losses": 32,
-        "pushes": 0,
-        "hit_rate": 0.492063,
-        "p_value": 0.599347,
-        "z": -0.125988,
-        "luck_band_low": 0.376532,
-        "luck_band_high": 0.623468,
-        "ci_low": 0.365079,
-        "ci_high": 0.619048,
-        "required_n": null,
-        "first_half_hit_rate": 0.580645,
-        "second_half_hit_rate": 0.40625
-      },
-      "q_value": 0.719216,
-      "gates": [
-        {
-          "id": "RG01",
-          "name": "Provenance",
-          "status": "pass",
-          "detail": "Every graded game traces to a saved NFL.com by-week page; all 136 results reconcile with the official standings snapshot on W-L-T, PF and PA."
-        },
-        {
-          "id": "RG02",
-          "name": "No leakage",
-          "status": "pass",
-          "detail": "Forecast for week w uses only weeks < w; the board is built inside the loop."
-        },
-        {
-          "id": "RG03",
-          "name": "Executable price",
-          "status": "blocked",
-          "detail": "No sportsbook price was retrieved, so ROI, CLV and edge-as-money cannot be computed. This gate cannot pass and is never counted as one."
-        },
-        {
-          "id": "RG04",
-          "name": "Sample size",
-          "status": "fail",
-          "detail": "63 graded bets against a floor of 100."
-        },
-        {
-          "id": "RG05",
-          "name": "Accuracy beats the null model",
-          "status": "fail",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0000."
-        },
-        {
-          "id": "RG06",
-          "name": "Statistical significance",
-          "status": "fail",
-          "detail": "Exact binomial p = 0.5993 under pure chance."
-        },
-        {
-          "id": "RG07",
-          "name": "Multiplicity control",
-          "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.7192 at a 10% false-discovery ceiling."
-        },
-        {
-          "id": "RG08",
-          "name": "Stability across halves",
-          "status": "fail",
-          "detail": "First half 0.581 vs second half 0.406."
-        },
-        {
-          "id": "RG09",
-          "name": "Survives out of sample",
-          "status": "fail",
-          "detail": "Out-of-sample hit rate 0.492."
-        },
-        {
-          "id": "RG10",
-          "name": "Rights and release",
-          "status": "blocked",
-          "detail": "NFL.com terms do not permit releasing a compiled dataset or a systematic feed. Nothing is released; the competition can be scored but not commercialised."
-        }
-      ],
-      "qualified": false
-    },
-    {
-      "id": "M00-TA",
-      "model": "M00",
-      "name": "Null (home field only)",
-      "market": "total",
-      "selective": false,
-      "stat": {
-        "model": "M00",
-        "market": "total",
-        "selective": false,
-        "bets": 109,
-        "wins": 59,
-        "losses": 50,
-        "pushes": 3,
-        "hit_rate": 0.541284,
-        "p_value": 0.221835,
-        "z": 0.862044,
-        "luck_band_low": 0.406133,
-        "luck_band_high": 0.593867,
-        "ci_low": 0.449541,
-        "ci_high": 0.633028,
-        "required_n": 905,
-        "first_half_hit_rate": 0.5,
-        "second_half_hit_rate": 0.581818
-      },
-      "q_value": 0.44367,
-      "gates": [
-        {
-          "id": "RG01",
-          "name": "Provenance",
-          "status": "pass",
-          "detail": "Every graded game traces to a saved NFL.com by-week page; all 136 results reconcile with the official standings snapshot on W-L-T, PF and PA."
-        },
-        {
-          "id": "RG02",
-          "name": "No leakage",
-          "status": "pass",
-          "detail": "Forecast for week w uses only weeks < w; the board is built inside the loop."
-        },
-        {
-          "id": "RG03",
-          "name": "Executable price",
-          "status": "blocked",
-          "detail": "No sportsbook price was retrieved, so ROI, CLV and edge-as-money cannot be computed. This gate cannot pass and is never counted as one."
-        },
-        {
-          "id": "RG04",
-          "name": "Sample size",
-          "status": "pass",
-          "detail": "109 graded bets against a floor of 100."
-        },
-        {
-          "id": "RG05",
-          "name": "Accuracy beats the null model",
-          "status": "fail",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0000."
-        },
-        {
-          "id": "RG06",
-          "name": "Statistical significance",
-          "status": "fail",
-          "detail": "Exact binomial p = 0.2218 under pure chance."
-        },
-        {
-          "id": "RG07",
-          "name": "Multiplicity control",
-          "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.4437 at a 10% false-discovery ceiling."
-        },
-        {
-          "id": "RG08",
-          "name": "Stability across halves",
-          "status": "fail",
-          "detail": "First half 0.500 vs second half 0.582."
+          "detail": "First half 0.483 vs second half 0.633."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "pass",
-          "detail": "Out-of-sample hit rate 0.541."
+          "detail": "Out-of-sample hit rate 0.558."
         },
         {
           "id": "RG10",
@@ -7292,22 +8022,22 @@
         "model": "M00",
         "market": "total",
         "selective": true,
-        "bets": 55,
-        "wins": 31,
-        "losses": 24,
+        "bets": 61,
+        "wins": 35,
+        "losses": 26,
         "pushes": 0,
-        "hit_rate": 0.563636,
-        "p_value": 0.209377,
-        "z": 0.94388,
-        "luck_band_low": 0.367857,
-        "luck_band_high": 0.632143,
-        "ci_low": 0.436364,
-        "ci_high": 0.690909,
-        "required_n": 380,
-        "first_half_hit_rate": 0.592593,
-        "second_half_hit_rate": 0.535714
+        "hit_rate": 0.57377,
+        "p_value": 0.152839,
+        "z": 1.152332,
+        "luck_band_low": 0.374524,
+        "luck_band_high": 0.625476,
+        "ci_low": 0.442623,
+        "ci_high": 0.704918,
+        "required_n": 282,
+        "first_half_hit_rate": 0.566667,
+        "second_half_hit_rate": 0.580645
       },
-      "q_value": 0.44367,
+      "q_value": 0.305677,
       "gates": [
         {
           "id": "RG01",
@@ -7331,7 +8061,7 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "55 graded bets against a floor of 100."
+          "detail": "61 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
@@ -7343,25 +8073,25 @@
           "id": "RG06",
           "name": "Statistical significance",
           "status": "fail",
-          "detail": "Exact binomial p = 0.2094 under pure chance."
+          "detail": "Exact binomial p = 0.1528 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.4437 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.3057 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "pass",
-          "detail": "First half 0.593 vs second half 0.536."
+          "detail": "First half 0.567 vs second half 0.581."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.564."
+          "detail": "Out-of-sample hit rate 0.574."
         },
         {
           "id": "RG10",
@@ -7427,7 +8157,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0487."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0795."
         },
         {
           "id": "RG06",
@@ -7517,7 +8247,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0487."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0795."
         },
         {
           "id": "RG06",
@@ -7607,7 +8337,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0487."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0795."
         },
         {
           "id": "RG06",
@@ -7697,7 +8427,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0487."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0795."
         },
         {
           "id": "RG06",
@@ -7742,22 +8472,22 @@
         "model": "M02",
         "market": "spread",
         "selective": false,
-        "bets": 45,
+        "bets": 49,
         "wins": 23,
-        "losses": 22,
+        "losses": 26,
         "pushes": 1,
-        "hit_rate": 0.511111,
-        "p_value": 0.5,
-        "z": 0.149071,
-        "luck_band_low": 0.35391,
-        "luck_band_high": 0.64609,
-        "ci_low": 0.377778,
-        "ci_high": 0.666667,
-        "required_n": 12518,
-        "first_half_hit_rate": 0.590909,
-        "second_half_hit_rate": 0.434783
+        "hit_rate": 0.469388,
+        "p_value": 0.715914,
+        "z": -0.428571,
+        "luck_band_low": 0.36,
+        "luck_band_high": 0.64,
+        "ci_low": 0.326531,
+        "ci_high": 0.612245,
+        "required_n": null,
+        "first_half_hit_rate": 0.625,
+        "second_half_hit_rate": 0.32
       },
-      "q_value": 0.719216,
+      "q_value": 0.863172,
       "gates": [
         {
           "id": "RG01",
@@ -7781,37 +8511,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "45 graded bets against a floor of 100."
+          "detail": "49 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0470."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0744."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
           "status": "fail",
-          "detail": "Exact binomial p = 0.5000 under pure chance."
+          "detail": "Exact binomial p = 0.7159 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.7192 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.8632 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "fail",
-          "detail": "First half 0.591 vs second half 0.435."
+          "detail": "First half 0.625 vs second half 0.320."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.511."
+          "detail": "Out-of-sample hit rate 0.469."
         },
         {
           "id": "RG10",
@@ -7877,7 +8607,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0470."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0744."
         },
         {
           "id": "RG06",
@@ -7967,7 +8697,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0470."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0744."
         },
         {
           "id": "RG06",
@@ -8057,7 +8787,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0470."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0744."
         },
         {
           "id": "RG06",
@@ -8102,22 +8832,22 @@
         "model": "M03",
         "market": "spread",
         "selective": false,
-        "bets": 79,
-        "wins": 39,
-        "losses": 40,
+        "bets": 91,
+        "wins": 46,
+        "losses": 45,
         "pushes": 2,
-        "hit_rate": 0.493671,
-        "p_value": 0.588928,
-        "z": -0.112509,
-        "luck_band_low": 0.389741,
-        "luck_band_high": 0.610259,
-        "ci_low": 0.379747,
-        "ci_high": 0.594937,
-        "required_n": null,
-        "first_half_hit_rate": 0.410256,
-        "second_half_hit_rate": 0.575
+        "hit_rate": 0.505495,
+        "p_value": 0.5,
+        "z": 0.104828,
+        "luck_band_low": 0.397268,
+        "luck_band_high": 0.602732,
+        "ci_low": 0.406593,
+        "ci_high": 0.604396,
+        "required_n": 51196,
+        "first_half_hit_rate": 0.422222,
+        "second_half_hit_rate": 0.586957
       },
-      "q_value": 0.719216,
+      "q_value": 0.818182,
       "gates": [
         {
           "id": "RG01",
@@ -8141,37 +8871,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "79 graded bets against a floor of 100."
+          "detail": "91 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0609."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0931."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
           "status": "fail",
-          "detail": "Exact binomial p = 0.5889 under pure chance."
+          "detail": "Exact binomial p = 0.5000 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.7192 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.8182 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "fail",
-          "detail": "First half 0.410 vs second half 0.575."
+          "detail": "First half 0.422 vs second half 0.587."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.494."
+          "detail": "Out-of-sample hit rate 0.505."
         },
         {
           "id": "RG10",
@@ -8192,22 +8922,22 @@
         "model": "M03",
         "market": "spread",
         "selective": true,
-        "bets": 11,
-        "wins": 9,
-        "losses": 2,
+        "bets": 18,
+        "wins": 13,
+        "losses": 5,
         "pushes": 1,
-        "hit_rate": 0.818182,
-        "p_value": 0.032715,
-        "z": 2.110579,
-        "luck_band_low": 0.204519,
-        "luck_band_high": 0.795481,
-        "ci_low": 0.545455,
-        "ci_high": 1.0,
-        "required_n": 13,
-        "first_half_hit_rate": 0.6,
-        "second_half_hit_rate": 1.0
+        "hit_rate": 0.722222,
+        "p_value": 0.048126,
+        "z": 1.885618,
+        "luck_band_low": 0.269012,
+        "luck_band_high": 0.730988,
+        "ci_low": 0.5,
+        "ci_high": 0.888889,
+        "required_n": 30,
+        "first_half_hit_rate": 0.777778,
+        "second_half_hit_rate": 0.666667
       },
-      "q_value": 0.196289,
+      "q_value": 0.182269,
       "gates": [
         {
           "id": "RG01",
@@ -8231,37 +8961,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "11 graded bets against a floor of 100."
+          "detail": "18 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0609."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0931."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
           "status": "pass",
-          "detail": "Exact binomial p = 0.0327 under pure chance."
+          "detail": "Exact binomial p = 0.0481 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.1963 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.1823 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "pass",
-          "detail": "First half 0.600 vs second half 1.000."
+          "detail": "First half 0.778 vs second half 0.667."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.818."
+          "detail": "Out-of-sample hit rate 0.722."
         },
         {
           "id": "RG10",
@@ -8282,22 +9012,22 @@
         "model": "M03",
         "market": "total",
         "selective": false,
-        "bets": 83,
-        "wins": 48,
-        "losses": 35,
+        "bets": 96,
+        "wins": 58,
+        "losses": 38,
         "pushes": 2,
-        "hit_rate": 0.578313,
-        "p_value": 0.09373,
-        "z": 1.426935,
-        "luck_band_low": 0.392431,
-        "luck_band_high": 0.607569,
-        "ci_low": 0.46988,
-        "ci_high": 0.686747,
-        "required_n": 250,
-        "first_half_hit_rate": 0.634146,
-        "second_half_hit_rate": 0.52381
+        "hit_rate": 0.604167,
+        "p_value": 0.025955,
+        "z": 2.041241,
+        "luck_band_low": 0.399979,
+        "luck_band_high": 0.600021,
+        "ci_low": 0.5,
+        "ci_high": 0.697917,
+        "required_n": 141,
+        "first_half_hit_rate": 0.583333,
+        "second_half_hit_rate": 0.625
       },
-      "q_value": 0.28119,
+      "q_value": 0.155732,
       "gates": [
         {
           "id": "RG01",
@@ -8321,37 +9051,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "83 graded bets against a floor of 100."
+          "detail": "96 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0609."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0931."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
-          "status": "fail",
-          "detail": "Exact binomial p = 0.0937 under pure chance."
+          "status": "pass",
+          "detail": "Exact binomial p = 0.0260 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.2812 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.1557 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "pass",
-          "detail": "First half 0.634 vs second half 0.524."
+          "detail": "First half 0.583 vs second half 0.625."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.578."
+          "detail": "Out-of-sample hit rate 0.604."
         },
         {
           "id": "RG10",
@@ -8372,22 +9102,22 @@
         "model": "M03",
         "market": "total",
         "selective": true,
-        "bets": 14,
-        "wins": 10,
+        "bets": 19,
+        "wins": 15,
         "losses": 4,
         "pushes": 1,
-        "hit_rate": 0.714286,
-        "p_value": 0.089783,
-        "z": 1.603567,
-        "luck_band_low": 0.238084,
-        "luck_band_high": 0.761916,
-        "ci_low": 0.428571,
-        "ci_high": 0.928571,
-        "required_n": 32,
-        "first_half_hit_rate": 0.714286,
-        "second_half_hit_rate": 0.714286
+        "hit_rate": 0.789474,
+        "p_value": 0.009605,
+        "z": 2.523573,
+        "luck_band_low": 0.275173,
+        "luck_band_high": 0.724827,
+        "ci_low": 0.578947,
+        "ci_high": 0.947368,
+        "required_n": 17,
+        "first_half_hit_rate": 0.666667,
+        "second_half_hit_rate": 0.9
       },
-      "q_value": 0.28119,
+      "q_value": 0.086449,
       "gates": [
         {
           "id": "RG01",
@@ -8411,37 +9141,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "14 graded bets against a floor of 100."
+          "detail": "19 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0609."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0931."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
-          "status": "fail",
-          "detail": "Exact binomial p = 0.0898 under pure chance."
+          "status": "pass",
+          "detail": "Exact binomial p = 0.0096 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
-          "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.2812 at a 10% false-discovery ceiling."
+          "status": "pass",
+          "detail": "Benjamini-Hochberg q = 0.0864 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "pass",
-          "detail": "First half 0.714 vs second half 0.714."
+          "detail": "First half 0.667 vs second half 0.900."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.714."
+          "detail": "Out-of-sample hit rate 0.789."
         },
         {
           "id": "RG10",
@@ -8462,22 +9192,22 @@
         "model": "M04",
         "market": "spread",
         "selective": false,
-        "bets": 13,
+        "bets": 15,
         "wins": 11,
-        "losses": 2,
+        "losses": 4,
         "pushes": 1,
-        "hit_rate": 0.846154,
-        "p_value": 0.01123,
-        "z": 2.496151,
-        "luck_band_low": 0.228197,
-        "luck_band_high": 0.771803,
-        "ci_low": 0.615385,
-        "ci_high": 1.0,
-        "required_n": 11,
+        "hit_rate": 0.733333,
+        "p_value": 0.059235,
+        "z": 1.807392,
+        "luck_band_low": 0.246965,
+        "luck_band_high": 0.753035,
+        "ci_low": 0.466667,
+        "ci_high": 0.933333,
+        "required_n": 27,
         "first_half_hit_rate": 1.0,
-        "second_half_hit_rate": 0.714286
+        "second_half_hit_rate": 0.5
       },
-      "q_value": 0.101074,
+      "q_value": 0.182269,
       "gates": [
         {
           "id": "RG01",
@@ -8501,37 +9231,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "13 graded bets against a floor of 100."
+          "detail": "15 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0690."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0930."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
-          "status": "pass",
-          "detail": "Exact binomial p = 0.0112 under pure chance."
+          "status": "fail",
+          "detail": "Exact binomial p = 0.0592 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.1011 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.1823 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
-          "status": "pass",
-          "detail": "First half 1.000 vs second half 0.714."
+          "status": "fail",
+          "detail": "First half 1.000 vs second half 0.500."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.846."
+          "detail": "Out-of-sample hit rate 0.733."
         },
         {
           "id": "RG10",
@@ -8597,7 +9327,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0690."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0930."
         },
         {
           "id": "RG06",
@@ -8687,7 +9417,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0690."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0930."
         },
         {
           "id": "RG06",
@@ -8777,7 +9507,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0690."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0930."
         },
         {
           "id": "RG06",
@@ -8822,22 +9552,22 @@
         "model": "M05",
         "market": "spread",
         "selective": false,
-        "bets": 63,
-        "wins": 32,
-        "losses": 31,
+        "bets": 74,
+        "wins": 35,
+        "losses": 39,
         "pushes": 2,
-        "hit_rate": 0.507937,
-        "p_value": 0.5,
-        "z": 0.125988,
-        "luck_band_low": 0.376532,
-        "luck_band_high": 0.623468,
-        "ci_low": 0.380952,
-        "ci_high": 0.634921,
-        "required_n": 24537,
-        "first_half_hit_rate": 0.677419,
-        "second_half_hit_rate": 0.34375
+        "hit_rate": 0.472973,
+        "p_value": 0.71931,
+        "z": -0.464991,
+        "luck_band_low": 0.386077,
+        "luck_band_high": 0.613923,
+        "ci_low": 0.364865,
+        "ci_high": 0.581081,
+        "required_n": null,
+        "first_half_hit_rate": 0.621622,
+        "second_half_hit_rate": 0.324324
       },
-      "q_value": 0.719216,
+      "q_value": 0.863172,
       "gates": [
         {
           "id": "RG01",
@@ -8861,37 +9591,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "63 graded bets against a floor of 100."
+          "detail": "74 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0341."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0620."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
           "status": "fail",
-          "detail": "Exact binomial p = 0.5000 under pure chance."
+          "detail": "Exact binomial p = 0.7193 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.7192 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.8632 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "fail",
-          "detail": "First half 0.677 vs second half 0.344."
+          "detail": "First half 0.622 vs second half 0.324."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.508."
+          "detail": "Out-of-sample hit rate 0.473."
         },
         {
           "id": "RG10",
@@ -8912,22 +9642,22 @@
         "model": "M05",
         "market": "spread",
         "selective": true,
-        "bets": 20,
-        "wins": 9,
-        "losses": 11,
+        "bets": 24,
+        "wins": 10,
+        "losses": 14,
         "pushes": 0,
-        "hit_rate": 0.45,
-        "p_value": 0.748278,
-        "z": -0.447214,
-        "luck_band_low": 0.280865,
-        "luck_band_high": 0.719135,
-        "ci_low": 0.25,
-        "ci_high": 0.65,
+        "hit_rate": 0.416667,
+        "p_value": 0.846272,
+        "z": -0.816497,
+        "luck_band_low": 0.299958,
+        "luck_band_high": 0.700042,
+        "ci_low": 0.208333,
+        "ci_high": 0.625,
         "required_n": null,
-        "first_half_hit_rate": 0.6,
-        "second_half_hit_rate": 0.3
+        "first_half_hit_rate": 0.583333,
+        "second_half_hit_rate": 0.25
       },
-      "q_value": 0.792294,
+      "q_value": 0.896053,
       "gates": [
         {
           "id": "RG01",
@@ -8951,37 +9681,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "20 graded bets against a floor of 100."
+          "detail": "24 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0341."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0620."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
           "status": "fail",
-          "detail": "Exact binomial p = 0.7483 under pure chance."
+          "detail": "Exact binomial p = 0.8463 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.7923 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.8961 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "fail",
-          "detail": "First half 0.600 vs second half 0.300."
+          "detail": "First half 0.583 vs second half 0.250."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.450."
+          "detail": "Out-of-sample hit rate 0.417."
         },
         {
           "id": "RG10",
@@ -9002,22 +9732,22 @@
         "model": "M05",
         "market": "total",
         "selective": false,
-        "bets": 65,
-        "wins": 31,
-        "losses": 34,
+        "bets": 75,
+        "wins": 37,
+        "losses": 38,
         "pushes": 1,
-        "hit_rate": 0.476923,
-        "p_value": 0.689928,
-        "z": -0.372104,
-        "luck_band_low": 0.378446,
-        "luck_band_high": 0.621554,
-        "ci_low": 0.353846,
+        "hit_rate": 0.493333,
+        "p_value": 0.591223,
+        "z": -0.11547,
+        "luck_band_low": 0.386839,
+        "luck_band_high": 0.613161,
+        "ci_low": 0.386667,
         "ci_high": 0.6,
         "required_n": null,
-        "first_half_hit_rate": 0.46875,
-        "second_half_hit_rate": 0.484848
+        "first_half_hit_rate": 0.459459,
+        "second_half_hit_rate": 0.526316
       },
-      "q_value": 0.776169,
+      "q_value": 0.863172,
       "gates": [
         {
           "id": "RG01",
@@ -9041,37 +9771,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "65 graded bets against a floor of 100."
+          "detail": "75 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0341."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0620."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
           "status": "fail",
-          "detail": "Exact binomial p = 0.6899 under pure chance."
+          "detail": "Exact binomial p = 0.5912 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.7762 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.8632 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "fail",
-          "detail": "First half 0.469 vs second half 0.485."
+          "detail": "First half 0.459 vs second half 0.526."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.477."
+          "detail": "Out-of-sample hit rate 0.493."
         },
         {
           "id": "RG10",
@@ -9092,22 +9822,22 @@
         "model": "M05",
         "market": "total",
         "selective": true,
-        "bets": 17,
-        "wins": 11,
+        "bets": 19,
+        "wins": 13,
         "losses": 6,
         "pushes": 1,
-        "hit_rate": 0.647059,
-        "p_value": 0.166153,
-        "z": 1.212678,
-        "luck_band_low": 0.262315,
-        "luck_band_high": 0.737685,
-        "ci_low": 0.411765,
-        "ci_high": 0.882353,
-        "required_n": 70,
-        "first_half_hit_rate": 0.625,
-        "second_half_hit_rate": 0.666667
+        "hit_rate": 0.684211,
+        "p_value": 0.083534,
+        "z": 1.60591,
+        "luck_band_low": 0.275173,
+        "luck_band_high": 0.724827,
+        "ci_low": 0.473684,
+        "ci_high": 0.894737,
+        "required_n": 44,
+        "first_half_hit_rate": 0.666667,
+        "second_half_hit_rate": 0.7
       },
-      "q_value": 0.42725,
+      "q_value": 0.214802,
       "gates": [
         {
           "id": "RG01",
@@ -9131,37 +9861,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "17 graded bets against a floor of 100."
+          "detail": "19 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0341."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0620."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
           "status": "fail",
-          "detail": "Exact binomial p = 0.1662 under pure chance."
+          "detail": "Exact binomial p = 0.0835 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.4273 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.2148 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "pass",
-          "detail": "First half 0.625 vs second half 0.667."
+          "detail": "First half 0.667 vs second half 0.700."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.647."
+          "detail": "Out-of-sample hit rate 0.684."
         },
         {
           "id": "RG10",
@@ -9182,22 +9912,22 @@
         "model": "M06",
         "market": "spread",
         "selective": false,
-        "bets": 96,
-        "wins": 55,
-        "losses": 41,
+        "bets": 107,
+        "wins": 62,
+        "losses": 45,
         "pushes": 2,
-        "hit_rate": 0.572917,
-        "p_value": 0.092143,
-        "z": 1.428869,
-        "luck_band_low": 0.399979,
-        "luck_band_high": 0.600021,
-        "ci_low": 0.46875,
-        "ci_high": 0.666667,
-        "required_n": 289,
-        "first_half_hit_rate": 0.520833,
-        "second_half_hit_rate": 0.625
+        "hit_rate": 0.579439,
+        "p_value": 0.060756,
+        "z": 1.643452,
+        "luck_band_low": 0.40526,
+        "luck_band_high": 0.59474,
+        "ci_low": 0.485981,
+        "ci_high": 0.672897,
+        "required_n": 243,
+        "first_half_hit_rate": 0.528302,
+        "second_half_hit_rate": 0.62963
       },
-      "q_value": 0.28119,
+      "q_value": 0.182269,
       "gates": [
         {
           "id": "RG01",
@@ -9220,38 +9950,38 @@
         {
           "id": "RG04",
           "name": "Sample size",
-          "status": "fail",
-          "detail": "96 graded bets against a floor of 100."
+          "status": "pass",
+          "detail": "107 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0508."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0971."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
           "status": "fail",
-          "detail": "Exact binomial p = 0.0921 under pure chance."
+          "detail": "Exact binomial p = 0.0608 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.2812 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.1823 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "pass",
-          "detail": "First half 0.521 vs second half 0.625."
+          "detail": "First half 0.528 vs second half 0.630."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
-          "status": "fail",
-          "detail": "Out-of-sample hit rate 0.573."
+          "status": "pass",
+          "detail": "Out-of-sample hit rate 0.579."
         },
         {
           "id": "RG10",
@@ -9272,22 +10002,22 @@
         "model": "M06",
         "market": "spread",
         "selective": true,
-        "bets": 50,
-        "wins": 27,
-        "losses": 23,
+        "bets": 60,
+        "wins": 33,
+        "losses": 27,
         "pushes": 0,
-        "hit_rate": 0.54,
-        "p_value": 0.335906,
-        "z": 0.565685,
-        "luck_band_low": 0.361407,
-        "luck_band_high": 0.638593,
-        "ci_low": 0.4,
-        "ci_high": 0.68,
-        "required_n": 964,
-        "first_half_hit_rate": 0.44,
-        "second_half_hit_rate": 0.64
+        "hit_rate": 0.55,
+        "p_value": 0.259479,
+        "z": 0.774597,
+        "luck_band_low": 0.373483,
+        "luck_band_high": 0.626517,
+        "ci_low": 0.416667,
+        "ci_high": 0.666667,
+        "required_n": 617,
+        "first_half_hit_rate": 0.433333,
+        "second_half_hit_rate": 0.666667
       },
-      "q_value": 0.60463,
+      "q_value": 0.467062,
       "gates": [
         {
           "id": "RG01",
@@ -9311,37 +10041,37 @@
           "id": "RG04",
           "name": "Sample size",
           "status": "fail",
-          "detail": "50 graded bets against a floor of 100."
+          "detail": "60 graded bets against a floor of 100."
         },
         {
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0508."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0971."
         },
         {
           "id": "RG06",
           "name": "Statistical significance",
           "status": "fail",
-          "detail": "Exact binomial p = 0.3359 under pure chance."
+          "detail": "Exact binomial p = 0.2595 under pure chance."
         },
         {
           "id": "RG07",
           "name": "Multiplicity control",
           "status": "fail",
-          "detail": "Benjamini-Hochberg q = 0.6046 at a 10% false-discovery ceiling."
+          "detail": "Benjamini-Hochberg q = 0.4671 at a 10% false-discovery ceiling."
         },
         {
           "id": "RG08",
           "name": "Stability across halves",
           "status": "fail",
-          "detail": "First half 0.440 vs second half 0.640."
+          "detail": "First half 0.433 vs second half 0.667."
         },
         {
           "id": "RG09",
           "name": "Survives out of sample",
           "status": "fail",
-          "detail": "Out-of-sample hit rate 0.540."
+          "detail": "Out-of-sample hit rate 0.550."
         },
         {
           "id": "RG10",
@@ -9407,7 +10137,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0508."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0971."
         },
         {
           "id": "RG06",
@@ -9497,7 +10227,7 @@
           "id": "RG05",
           "name": "Accuracy beats the null model",
           "status": "pass",
-          "detail": "Skill score vs the home-field-only null on margin: +0.0508."
+          "detail": "Skill score vs the home-field-only null on margin: +0.0971."
         },
         {
           "id": "RG06",
@@ -9541,14 +10271,14 @@
       "name": "Originated board (directional)",
       "market": "spread",
       "selective": false,
-      "bets": 120,
-      "wins": 77,
-      "losses": 43,
-      "hit_rate": 0.641667,
-      "p_value": 0.001223,
-      "q_value": 0.022022,
-      "ci_low": 0.558333,
-      "ci_high": 0.725,
+      "bets": 133,
+      "wins": 82,
+      "losses": 51,
+      "hit_rate": 0.616541,
+      "p_value": 0.004515,
+      "q_value": 0.081274,
+      "ci_low": 0.533835,
+      "ci_high": 0.699248,
       "merit_points": 0,
       "cash_reward": null,
       "roi": null,
@@ -9565,82 +10295,84 @@
   "leaderboard_empty_because": "No entry reached the qualified tier, which requires an executable price. Provisional entries are published for review and receive no reward.",
   "benchmarks": {
     "spread": {
-      "correlation_board_vs_actual": 0.222736,
-      "correlation_p_value": 0.013069,
+      "correlation_board_vs_actual": 0.295764,
+      "correlation_p_value": 0.000395,
       "directional": {
         "model": "BOARD",
         "market": "spread",
         "selective": false,
-        "bets": 120,
-        "wins": 77,
-        "losses": 43,
+        "bets": 133,
+        "wins": 82,
+        "losses": 51,
         "pushes": 0,
-        "hit_rate": 0.641667,
-        "p_value": 0.001223,
-        "z": 3.103761,
-        "luck_band_low": 0.410539,
-        "luck_band_high": 0.589461,
-        "ci_low": 0.558333,
-        "ci_high": 0.725,
-        "required_n": 75,
-        "first_half_hit_rate": 0.583333,
-        "second_half_hit_rate": 0.7
+        "hit_rate": 0.616541,
+        "p_value": 0.004515,
+        "z": 2.688041,
+        "luck_band_low": 0.415023,
+        "luck_band_high": 0.584977,
+        "ci_low": 0.533835,
+        "ci_high": 0.699248,
+        "required_n": 112,
+        "first_half_hit_rate": 0.545455,
+        "second_half_hit_rate": 0.686567
       },
-      "permutation_p_value": 0.0021,
+      "permutation_p_value": 0.0049,
       "permutation_reps": 20000,
-      "null_median_hit_rate": 0.508333,
-      "null_95th_hit_rate": 0.575,
-      "first_half_hit_rate": 0.55,
-      "second_half_hit_rate": 0.7,
+      "null_median_hit_rate": 0.496241,
+      "null_95th_hit_rate": 0.571429,
+      "first_half_hit_rate": 0.545455,
+      "second_half_hit_rate": 0.686567,
       "drop_one_week_hit_rate": {
-        "drop_week_2": 0.625,
-        "drop_week_3": 0.653846,
-        "drop_week_4": 0.576923,
-        "drop_week_5": 0.638095,
-        "drop_week_6": 0.603774,
-        "drop_week_7": 0.632075,
-        "drop_week_8": 0.584906,
-        "drop_week_9": 0.6
+        "drop_week_2": 0.649573,
+        "drop_week_3": 0.623932,
+        "drop_week_4": 0.606838,
+        "drop_week_5": 0.610169,
+        "drop_week_6": 0.630252,
+        "drop_week_7": 0.630252,
+        "drop_week_8": 0.613445,
+        "drop_week_9": 0.59322,
+        "drop_week_10": 0.641667
       },
-      "home_wins": 57
+      "home_wins": 61
     },
     "total": {
-      "correlation_board_vs_actual": -0.047488,
-      "correlation_p_value": 0.605553,
+      "correlation_board_vs_actual": -0.032605,
+      "correlation_p_value": 0.708863,
       "directional": {
         "model": "BOARD",
         "market": "total",
         "selective": false,
-        "bets": 120,
-        "wins": 60,
-        "losses": 60,
+        "bets": 133,
+        "wins": 65,
+        "losses": 68,
         "pushes": 0,
-        "hit_rate": 0.5,
-        "p_value": 0.536342,
-        "z": 0.0,
-        "luck_band_low": 0.410539,
-        "luck_band_high": 0.589461,
-        "ci_low": 0.408333,
-        "ci_high": 0.591667,
+        "hit_rate": 0.488722,
+        "p_value": 0.635573,
+        "z": -0.260133,
+        "luck_band_low": 0.415023,
+        "luck_band_high": 0.584977,
+        "ci_low": 0.398496,
+        "ci_high": 0.571429,
         "required_n": null,
-        "first_half_hit_rate": 0.483333,
-        "second_half_hit_rate": 0.516667
+        "first_half_hit_rate": 0.484848,
+        "second_half_hit_rate": 0.492537
       },
-      "permutation_p_value": 0.59157,
+      "permutation_p_value": 0.692165,
       "permutation_reps": 20000,
-      "null_median_hit_rate": 0.5,
-      "null_95th_hit_rate": 0.583333,
-      "first_half_hit_rate": 0.483333,
-      "second_half_hit_rate": 0.516667,
+      "null_median_hit_rate": 0.503759,
+      "null_95th_hit_rate": 0.578947,
+      "first_half_hit_rate": 0.484848,
+      "second_half_hit_rate": 0.492537,
       "drop_one_week_hit_rate": {
-        "drop_week_2": 0.5,
-        "drop_week_3": 0.528846,
-        "drop_week_4": 0.490385,
-        "drop_week_5": 0.47619,
-        "drop_week_6": 0.5,
-        "drop_week_7": 0.490566,
-        "drop_week_8": 0.509434,
-        "drop_week_9": 0.495238
+        "drop_week_2": 0.478632,
+        "drop_week_3": 0.512821,
+        "drop_week_4": 0.478632,
+        "drop_week_5": 0.466102,
+        "drop_week_6": 0.487395,
+        "drop_week_7": 0.478992,
+        "drop_week_8": 0.495798,
+        "drop_week_9": 0.483051,
+        "drop_week_10": 0.5
       },
       "home_wins": null
     }
@@ -9648,63 +10380,63 @@
   "luck_analysis": {
     "best_observed": {
       "id": "BOARD-SA",
-      "bets": 120,
-      "wins": 77,
-      "hit_rate": 0.641667
+      "bets": 133,
+      "wins": 82,
+      "hit_rate": 0.616541
     },
-    "p_best_single_test": 0.001223,
+    "p_best_single_test": 0.004515,
     "strategies_tested": 18,
-    "family_wise_false_positive": 0.021794,
+    "family_wise_false_positive": 0.078229,
     "interpretation": "The best record in the family (at least 20 bets, so that a 5-1 start is not mistaken for an edge) is reported against the chance rate for that same number of bets, and against the chance rate for the whole family. If the family-wise figure is not small, the spread of results across strategies is what luck looks like when many strategies are tested, not evidence of skill."
   },
   "correlations": {
     "leg_dependence": {
-      "n_games": 114,
+      "n_games": 127,
       "table": {
-        "home_and_over": 23,
-        "home_and_under": 26,
-        "away_and_over": 35,
-        "away_and_under": 30
+        "home_and_over": 25,
+        "home_and_under": 27,
+        "away_and_over": 39,
+        "away_and_under": 36
       },
-      "phi": -0.068401,
-      "p_value": 0.468094,
-      "p_home_cover": 0.429825,
-      "p_over": 0.508772,
-      "p_home_and_over_observed": 0.201754,
-      "p_home_and_over_independent": 0.218683,
-      "difference": -0.016928,
-      "fair_odds_independent": 4.572836,
-      "fair_odds_observed": 4.956522,
+      "phi": -0.038583,
+      "p_value": 0.665963,
+      "p_home_cover": 0.409449,
+      "p_over": 0.503937,
+      "p_home_and_over_observed": 0.19685,
+      "p_home_and_over_independent": 0.206336,
+      "difference": -0.009486,
+      "fair_odds_independent": 4.846454,
+      "fair_odds_observed": 5.08,
       "note": "Leg dependence is measured on the originated board, not on a sportsbook line. It answers 'how do my own two legs move together', which is what priding a parlay off my own numbers requires. It is not a market edge."
     },
     "market_structure": [
       {
         "pair": "margin~total",
         "label": "Home margin vs game total",
-        "n": 120,
-        "pearson": -0.141737,
-        "p_value": 0.119861
+        "n": 133,
+        "pearson": -0.121809,
+        "p_value": 0.160132
       },
       {
         "pair": "board_line~board_total",
         "label": "Originated line vs originated total",
-        "n": 120,
-        "pearson": 0.03098,
-        "p_value": 0.736353
+        "n": 133,
+        "pearson": 0.02998,
+        "p_value": 0.731383
       },
       {
         "pair": "forecast~actual_margin",
         "label": "Forecast margin vs actual margin",
-        "n": 120,
-        "pearson": 0.040325,
-        "p_value": 0.661099
+        "n": 133,
+        "pearson": 0.11736,
+        "p_value": 0.176185
       },
       {
         "pair": "residual~total",
         "label": "Spread residual vs game total",
-        "n": 120,
-        "pearson": 0.040325,
-        "p_value": 0.661099
+        "n": 133,
+        "pearson": 0.11736,
+        "p_value": 0.176185
       }
     ]
   },

@@ -154,6 +154,22 @@ SOURCE_HOSTS.update({
     "X243-RGA-2014": "sso.agc.gov.sg"
 })
 
+# Competition lab (session arena/064da913-own7, ported by session arena/e15f05e0-own7):
+# every CP-NFL-* id published on the competition desk's pages must resolve to its official host.
+SOURCE_HOSTS.update({
+    "CP-NFL-DEPTH-27": "www.atlantafalcons.com",
+    "CP-NFL-DEPTH-BYE4": "www.chicagobears.com",
+    "CP-NFL-INJ-W10": "www.nfl.com",
+    "CP-NFL-ODDS-ABSENT": "www.nfl.com",
+    "CP-NFL-RESULTS-W1-9": "www.nfl.com",
+    "CP-NFL-STANDINGS": "www.nfl.com",
+    "CP-NFL-TERMS": "support.nfl.com",
+    "CP-NFL-W10-GAME-WASNYG": "www.nfl.com",
+    "CP-NFL-W10-SCHEDULE": "www.nfl.com",
+    "E15-NFL-STANDINGS-1117": "www.nfl.com",
+    "E15-NFL-SCHED-REG10-1117": "www.nfl.com",
+})
+
 
 # Readiness-audit desk (session arena/e7efbde7-own7) — official NFL hosts only; each id is
 # a page actually read on 2026-11-17 (standings, REG10 finals, Week 11 slate, injury report,

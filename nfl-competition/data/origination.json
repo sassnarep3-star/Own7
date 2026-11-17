@@ -1,0 +1,659 @@
+{
+  "requirement": "R3 - originate the side, then the total, then the moneyline",
+  "built_for": "Week 10 2026, the 13 games that had not kicked off on 2026-11-14",
+  "read_on": "2026-11-14",
+  "stages": [
+    {
+      "stage": 1,
+      "market": "Side",
+      "produces": "home_points, away_points, margin_home, spread_home, total_input",
+      "may_use": "official scoring rates, official league mean, measured home margin",
+      "reads_from_previous_stage": "nothing - this is the first stage"
+    },
+    {
+      "stage": 2,
+      "market": "Total",
+      "produces": "total",
+      "may_use": "the stage-1 score pair only",
+      "reads_from_previous_stage": "home_points, away_points"
+    },
+    {
+      "stage": 3,
+      "market": "Moneyline",
+      "produces": "p_home, p_away, fair_price_home, fair_price_away",
+      "may_use": "the stage-1 margin and the measured margin spread only",
+      "reads_from_previous_stage": "margin_home"
+    }
+  ],
+  "games_originated": 13,
+  "games_played_and_excluded": 1,
+  "games_played_and_excluded_detail": "WAS 24 - NYG 21 (Thursday 2026-11-12) is in the results feed, not on this board",
+  "parameters": {
+    "league_points_per_team_game": {
+      "value": 22.959854,
+      "n_team_games": 274,
+      "basis": "sum of all points in the verified results feed divided by team-games",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ]
+    },
+    "home_allowance_points": {
+      "value": -0.021898,
+      "n": 137,
+      "sd": 13.225125,
+      "se": 1.129899,
+      "ci95": [
+        -2.236459,
+        2.192663
+      ],
+      "basis": "mean official home margin over the verified results feed",
+      "caveat": "Confounds any true home effect with schedule asymmetry. The 95% interval contains both zero and the conventional two points, so this season does not separate them.",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ]
+    },
+    "margin_sd_points": {
+      "value": 13.225125,
+      "n": 137,
+      "basis": "sample standard deviation of official home margins",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ]
+    },
+    "tie_rate": {
+      "value": 0.007299,
+      "n": 137,
+      "ties": 1,
+      "basis": "official tied games divided by official games"
+    }
+  },
+  "parameters_replaced": [
+    {
+      "parameter": "home advantage",
+      "published_elsewhere": 2.0,
+      "published_where": "nfl-lines.html and nfl_origination (project assumption, not an NFL figure)",
+      "measured_here": -0.021898,
+      "n_here": 137
+    },
+    {
+      "parameter": "margin standard deviation",
+      "published_elsewhere": 13.86,
+      "published_where": "nfl-lines.html and nfl_origination (project assumption)",
+      "measured_here": 13.225125,
+      "n_here": 137
+    }
+  ],
+  "consistency_checks": {
+    "total_equals_sum_of_stage_1_pair": true,
+    "moneyline_monotonic_in_side": true,
+    "stages_run_in_order": true
+  },
+  "board": [
+    {
+      "game_id": "W10-01",
+      "matchup": "NE @ DET",
+      "away": "NE",
+      "home": "DET",
+      "away_club": "New England Patriots",
+      "home_club": "Detroit Lions",
+      "kickoff": "2026-11-15 9:30 AM ET",
+      "network": "FOX",
+      "note": "Munich Game",
+      "game_url": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 23.444444,
+        "away_def_ppa": 23.0,
+        "home_off_ppg": 27.75,
+        "home_def_ppa": 23.625,
+        "away_games": 9,
+        "home_games": 8
+      },
+      "stage_1_side": {
+        "home_points": 24.548054,
+        "away_points": 23.343099,
+        "margin_home": 1.204954,
+        "spread_home": -1.204954
+      },
+      "stage_2_total": {
+        "total": 47.891153
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.532383,
+        "p_away": 0.460318,
+        "fair_price_home": -114,
+        "fair_price_away": 117
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-02",
+      "matchup": "KC @ ATL",
+      "away": "KC",
+      "home": "ATL",
+      "away_club": "Kansas City Chiefs",
+      "home_club": "Atlanta Falcons",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "network": "CBS",
+      "note": "",
+      "game_url": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 25.25,
+        "away_def_ppa": 17.875,
+        "home_off_ppg": 20.888889,
+        "home_def_ppa": 24.777778,
+        "away_games": 8,
+        "home_games": 9
+      },
+      "stage_1_side": {
+        "home_points": 20.552683,
+        "away_points": 24.329211,
+        "margin_home": -3.776527,
+        "spread_home": 3.776527
+      },
+      "stage_2_total": {
+        "total": 44.881894
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.384779,
+        "p_away": 0.607921,
+        "fair_price_home": 160,
+        "fair_price_away": -155
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-03",
+      "matchup": "HOU @ CLE",
+      "away": "HOU",
+      "home": "CLE",
+      "away_club": "Houston Texans",
+      "home_club": "Cleveland Browns",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "network": "FOX",
+      "note": "",
+      "game_url": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 26.125,
+        "away_def_ppa": 24.0,
+        "home_off_ppg": 17.888889,
+        "home_def_ppa": 21.777778,
+        "away_games": 8,
+        "home_games": 9
+      },
+      "stage_1_side": {
+        "home_points": 21.59435,
+        "away_points": 23.620877,
+        "margin_home": -2.026527,
+        "spread_home": 2.026527
+      },
+      "stage_2_total": {
+        "total": 45.215227
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.435902,
+        "p_away": 0.556799,
+        "fair_price_home": 129,
+        "fair_price_away": -126
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-04",
+      "matchup": "MIN @ GB",
+      "away": "MIN",
+      "home": "GB",
+      "away_club": "Minnesota Vikings",
+      "home_club": "Green Bay Packers",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "network": "FOX",
+      "note": "",
+      "game_url": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 18.25,
+        "away_def_ppa": 14.5,
+        "home_off_ppg": 24.0,
+        "home_def_ppa": 21.222222,
+        "away_games": 8,
+        "home_games": 9
+      },
+      "stage_1_side": {
+        "home_points": 20.46472,
+        "away_points": 20.810692,
+        "margin_home": -0.345972,
+        "spread_home": 0.345972
+      },
+      "stage_2_total": {
+        "total": 41.275412
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.485991,
+        "p_away": 0.506709,
+        "fair_price_home": 106,
+        "fair_price_away": -103
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-05",
+      "matchup": "MIA @ IND",
+      "away": "MIA",
+      "home": "IND",
+      "away_club": "Miami Dolphins",
+      "home_club": "Indianapolis Colts",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "network": "CBS",
+      "note": "",
+      "game_url": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 15.75,
+        "away_def_ppa": 25.0,
+        "home_off_ppg": 20.444444,
+        "home_def_ppa": 27.666667,
+        "away_games": 8,
+        "home_games": 9
+      },
+      "stage_1_side": {
+        "home_points": 22.779535,
+        "away_points": 22.125507,
+        "margin_home": 0.654028,
+        "spread_home": -0.654028
+      },
+      "stage_2_total": {
+        "total": 44.905042
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.515927,
+        "p_away": 0.476773,
+        "fair_price_home": -107,
+        "fair_price_away": 110
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-06",
+      "matchup": "CAR @ NO",
+      "away": "CAR",
+      "home": "NO",
+      "away_club": "Carolina Panthers",
+      "home_club": "New Orleans Saints",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "network": "FOX",
+      "note": "",
+      "game_url": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 24.875,
+        "away_def_ppa": 27.375,
+        "home_off_ppg": 23.125,
+        "home_def_ppa": 27.0,
+        "away_games": 8,
+        "home_games": 8
+      },
+      "stage_1_side": {
+        "home_points": 24.46472,
+        "away_points": 24.944951,
+        "margin_home": -0.480231,
+        "spread_home": 0.480231
+      },
+      "stage_2_total": {
+        "total": 49.409672
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.481973,
+        "p_away": 0.510728,
+        "fair_price_home": 107,
+        "fair_price_away": -104
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-07",
+      "matchup": "BUF @ NYJ",
+      "away": "BUF",
+      "home": "NYJ",
+      "away_club": "Buffalo Bills",
+      "home_club": "New York Jets",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "network": "CBS",
+      "note": "",
+      "game_url": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 32.0,
+        "away_def_ppa": 23.375,
+        "home_off_ppg": 20.222222,
+        "home_def_ppa": 24.777778,
+        "away_games": 8,
+        "home_games": 9
+      },
+      "stage_1_side": {
+        "home_points": 22.163794,
+        "away_points": 26.579211,
+        "margin_home": -4.415416,
+        "spread_home": 4.415416
+      },
+      "stage_2_total": {
+        "total": 48.743005
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.366545,
+        "p_away": 0.626155,
+        "fair_price_home": 173,
+        "fair_price_away": -167
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-08",
+      "matchup": "JAX @ TEN",
+      "away": "JAX",
+      "home": "TEN",
+      "away_club": "Jacksonville Jaguars",
+      "home_club": "Tennessee Titans",
+      "kickoff": "2026-11-15 1:00 PM ET",
+      "network": "FOX",
+      "note": "",
+      "game_url": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 28.625,
+        "away_def_ppa": 15.125,
+        "home_off_ppg": 18.0,
+        "home_def_ppa": 24.875,
+        "away_games": 8,
+        "home_games": 8
+      },
+      "stage_1_side": {
+        "home_points": 18.673054,
+        "away_points": 25.486618,
+        "margin_home": -6.813564,
+        "spread_home": 6.813564
+      },
+      "stage_2_total": {
+        "total": 44.159672
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.300994,
+        "p_away": 0.691707,
+        "fair_price_home": 232,
+        "fair_price_away": -224
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-09",
+      "matchup": "LAR @ AZ",
+      "away": "LAR",
+      "home": "AZ",
+      "away_club": "Los Angeles Rams",
+      "home_club": "Arizona Cardinals",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "network": "CBS",
+      "note": "",
+      "game_url": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 23.777778,
+        "away_def_ppa": 20.111111,
+        "home_off_ppg": 19.777778,
+        "home_def_ppa": 28.333333,
+        "away_games": 9,
+        "home_games": 9
+      },
+      "stage_1_side": {
+        "home_points": 20.927683,
+        "away_points": 25.023655,
+        "margin_home": -4.095972,
+        "spread_home": 4.095972
+      },
+      "stage_2_total": {
+        "total": 45.951338
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.375628,
+        "p_away": 0.617072,
+        "fair_price_home": 166,
+        "fair_price_away": -161
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-10",
+      "matchup": "SEA @ LV",
+      "away": "SEA",
+      "home": "LV",
+      "away_club": "Seattle Seahawks",
+      "home_club": "Las Vegas Raiders",
+      "kickoff": "2026-11-15 4:05 PM ET",
+      "network": "CBS",
+      "note": "",
+      "game_url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 22.444444,
+        "away_def_ppa": 18.0,
+        "home_off_ppg": 26.444444,
+        "home_def_ppa": 29.777778,
+        "away_games": 9,
+        "home_games": 9
+      },
+      "stage_1_side": {
+        "home_points": 22.446202,
+        "away_points": 25.060692,
+        "margin_home": -2.61449,
+        "spread_home": 2.61449
+      },
+      "stage_2_total": {
+        "total": 47.506894
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.418566,
+        "p_away": 0.574135,
+        "fair_price_home": 139,
+        "fair_price_away": -135
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-11",
+      "matchup": "SF @ DAL",
+      "away": "SF",
+      "home": "DAL",
+      "away_club": "San Francisco 49ers",
+      "home_club": "Dallas Cowboys",
+      "kickoff": "2026-11-15 4:25 PM ET",
+      "network": "FOX",
+      "note": "",
+      "game_url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 29.375,
+        "away_def_ppa": 19.5,
+        "home_off_ppg": 27.333333,
+        "home_def_ppa": 26.222222,
+        "away_games": 8,
+        "home_games": 9
+      },
+      "stage_1_side": {
+        "home_points": 23.242498,
+        "away_points": 26.185692,
+        "margin_home": -2.943194,
+        "spread_home": 2.943194
+      },
+      "stage_2_total": {
+        "total": 49.42819
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.408938,
+        "p_away": 0.583763,
+        "fair_price_home": 145,
+        "fair_price_away": -140
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-12",
+      "matchup": "PIT @ CIN",
+      "away": "PIT",
+      "home": "CIN",
+      "away_club": "Pittsburgh Steelers",
+      "home_club": "Cincinnati Bengals",
+      "kickoff": "2026-11-15 8:20 PM ET",
+      "network": "NBC",
+      "note": "Sunday Night Football",
+      "game_url": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 22.5,
+        "away_def_ppa": 18.0,
+        "home_off_ppg": 30.0,
+        "home_def_ppa": 21.875,
+        "away_games": 8,
+        "home_games": 8
+      },
+      "stage_1_side": {
+        "home_points": 23.631387,
+        "away_points": 22.444951,
+        "margin_home": 1.186436,
+        "spread_home": -1.186436
+      },
+      "stage_2_total": {
+        "total": 46.076338
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.531831,
+        "p_away": 0.46087,
+        "fair_price_home": -114,
+        "fair_price_away": 117
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    },
+    {
+      "game_id": "W10-13",
+      "matchup": "LAC @ BAL",
+      "away": "LAC",
+      "home": "BAL",
+      "away_club": "Los Angeles Chargers",
+      "home_club": "Baltimore Ravens",
+      "kickoff": "2026-11-16 8:15 PM ET",
+      "network": "ESPN",
+      "note": "Monday Night Football",
+      "game_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+      "inputs": {
+        "away_off_ppg": 15.125,
+        "away_def_ppa": 27.375,
+        "home_off_ppg": 21.0,
+        "home_def_ppa": 26.222222,
+        "away_games": 8,
+        "home_games": 9
+      },
+      "stage_1_side": {
+        "home_points": 23.756387,
+        "away_points": 21.435692,
+        "margin_home": 2.320695,
+        "spread_home": -2.320695
+      },
+      "stage_2_total": {
+        "total": 45.192079
+      },
+      "stage_3_moneyline": {
+        "p_home": 0.565489,
+        "p_away": 0.427211,
+        "fair_price_home": -130,
+        "fair_price_away": 134
+      },
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-W10-SCHEDULE",
+        "CP-NFL-RESULTS-W1-9",
+        "CP-NFL-W10-GAME-WASNYG"
+      ],
+      "source_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+      "standings_source_url": "https://www.nfl.com/standings/"
+    }
+  ],
+  "notes": [
+    "The side is stage 1, the total is stage 2 and the moneyline is stage 3, in that order, and stage 2 and stage 3 may only read stage 1's output.",
+    "No market line exists for any of these markets, so nothing on this board is a comparison with a price."
+  ]
+}

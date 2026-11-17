@@ -35,11 +35,22 @@ class ReadinessTests(unittest.TestCase):
                 self.assertTrue((ROOT / href.split("#")[0]).exists())
 
     def test_luck_arithmetic_is_consistent(self):
+        # The panel must always match the graded record in analysis.json, whatever the
+        # feed's current size (pins are derived, not hardcoded to one capture date).
+        import json
+        analysis = json.loads((ROOT / "nfl-results" / "analysis.json").read_text(encoding="utf-8"))
+        board = next(c for c in analysis["candidates"] if c["id"] == "BOARD-SA")
         lp = nr.luck_panel()
-        self.assertEqual((lp["wins"], lp["losses"], lp["bets"]), (77, 43, 120))
+        self.assertEqual((lp["wins"], lp["losses"], lp["bets"]),
+                         (board["stat"]["wins"], board["stat"]["losses"], board["stat"]["bets"]))
         self.assertAlmostEqual(lp["fw_stated_recomputed"], lp["fw_stated"], places=4)
         self.assertAlmostEqual(lp["fw_graded"], 1 - (1 - lp["p_single"]) ** 30, places=12)
-        self.assertLess(lp["fw_graded"], 0.05)
+        # The page's verdict must agree with the computed family-wise figures (never a stale claim).
+        page = (ROOT / "index.html").read_text(encoding="utf-8")
+        if lp["fw_stated"] < 0.05 and lp["fw_graded"] < 0.05:
+            self.assertIn("Both are below 5%", page)
+        else:
+            self.assertIn("no longer clears 5%", page)
 
     def test_lions_official_out_confirmed_and_delta_detected(self):
         delta = {d["player"]: d for d in nr.lions_delta()}
@@ -67,8 +78,14 @@ class LeaderboardRuleTests(unittest.TestCase):
         self.assertIn("Backtests are not leaderboard entries", page)
 
     def test_skill_page_still_carries_the_labelled_analysis(self):
+        # The page must carry the CURRENT headline hit rate with its labelled context,
+        # derived from analysis.json so the check follows the feed instead of one capture.
+        import json
+        analysis = json.loads((ROOT / "nfl-results" / "analysis.json").read_text(encoding="utf-8"))
+        board = next(c for c in analysis["candidates"] if c["id"] == "BOARD-SA")
+        headline = f"{board['stat']['hit_rate'] * 100:.1f}%"
         page = (ROOT / "nfl-results-skill.html").read_text(encoding="utf-8")
-        self.assertIn("64.2%", page)
+        self.assertIn(headline, page)
 
 
 class LandingPageTests(unittest.TestCase):
