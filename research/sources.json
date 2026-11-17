@@ -2702,5 +2702,18 @@
    "checked_on": "2026-11-17",
    "access": "Arena fetch_page, chunk 0 of 9; rendered content",
    "status": "Content checked"
+ },
+ {
+     "id": "NFL-INJ-W10-READ-1117",
+     "publisher": "NFL.com (National Football League)",
+     "title": "Official NFL Injury Report for Players — Week 10 of the 2026 Season (read 2026-11-17)",
+     "url": "https://www.nfl.com/injuries/league/2026/REG10",
+     "kind": "injury-report",
+     "authority": "Official league website",
+     "scope": "Detroit (Lions vs Patriots, Sunday 9:30 AM ET) section read in full: nine rows. Kerby Joseph, Cade Mays and D.J. Reed are printed Out with Knee, Ankle and Hip; Amon-Ra St. Brown and Sione Vaki are Questionable. Other chunks of the eight-chunk page were not read in this session, so no whole-report row count is claimed.",
+     "checked_on": "2026-11-17",
+     "access": "Arena fetch_page, rendered text; chunk 1 of 8 contains the Lions section. Direct HTTPS to nfl.com is not available from the build sandbox. The page prints no capture time.",
+     "status": "Partial page checked; not a complete weekly audit",
+     "chunks_read": "1 of 8"
  }
 ]
