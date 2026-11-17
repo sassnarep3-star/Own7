@@ -2526,3 +2526,7 @@ produced; the pending Monday game is stored with blank scores, never imputed; PR
 ### Rebase handoff (2026-11-17)
 
 The rebases advanced `origin/main` from `be2462d` through `764635c` (PR #60), `bf386f9` (PR #58), `dfc3cdd` (PR #62), `2270d2c` (PR #56), `0a3dad4` (PR #68), `0543304` (PR #63), `efe2733` (PR #71), `4a409ac` (PR #70), and `604e45b` (PR #73, plus PR #61 tracker merge) while PR #64 checks were running. COORDINATION conflicts were resolved as unions: upstream C505/824/F4, landing-page D1/D2/D3, Game Book, live readiness, D3 deployment, and later session records were retained, with this independent assurance-ledger record appended. No other session's implementation files were edited. The generated assurance page and manifest remain deterministic on the latest base; tests were rerun before updating the branch.
+
+### Publication record
+
+PR [#64](https://github.com/sassnarep3-star/Own7/pull/64) merged into `main` at `2026-11-17T03:33:06Z`; merge commit `5bbf6f83f5971648277af078a16651c44e1144b0`. PR checks passed (recursive research/site audit and desktop/mobile/accessibility). Post-merge repository check run [44011008807](https://github.com/sassnarep3-star/Own7/actions/runs/44011008807) and GitHub Pages deployment [44011008076](https://github.com/sassnarep3-star/Own7/actions/runs/44011008076) both completed successfully against the merge commit. Live page verified at https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/requirements.html with 20 rows and source links.
