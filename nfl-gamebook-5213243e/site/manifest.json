@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "index.html",
+    "fixtures-venue.html",
+    "starters.html",
+    "inactives.html",
+    "depth-coverage.html",
+    "designation-reliability.html",
+    "delta.html",
+    "ledger.html",
+    "decisions.html",
+    "suggestions.html",
+    "verification.html",
+    "flagged.html",
+    "sources.html"
+  ],
+  "desk": "nfl-gamebook-5213243e",
+  "built_from": [
+    "raw/g01..g13-*.txt",
+    "nfl-skill-cfdd/data/depth-slots-2026-11-14.csv",
+    "nfl-availability-28ef/data/injuries-week10-2026.csv",
+    "nfl-availability-28ef/data/games-week10-2026.csv"
+  ],
+  "captured_games": 13,
+  "starters": 550,
+  "inactives": 146
+}

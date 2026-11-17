@@ -126,14 +126,14 @@ def club_depth_url(code):
 
 
 def existing_registry():
-    """URL -> ID for rows already in research/sources.json (excluding this desk's B77 rows).
+    """URL -> first ID for that URL in research/sources.json (excluding this desk's B77 rows).
 
     Where a URL is already registered, this desk reuses that ID and adds no row. Two IDs for one URL
     would change what other desks' pages resolve to (nfl-pricing maps URLs to IDs)."""
     out = {}
     for r in json.loads(SOURCES_JSON.read_text(encoding="utf-8")):
         if not r["id"].startswith("B77-"):
-            out[r["url"]] = r["id"]
+            out.setdefault(r["url"], r["id"])  # first registered ID for a URL (where several exist)
     return out
 
 

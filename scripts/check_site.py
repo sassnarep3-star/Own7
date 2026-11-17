@@ -173,6 +173,17 @@ SOURCE_HOSTS.update({
     'EC6-REPO': 'github.com',
 })
 
+# NFL official Game Book desk (session arena/5213243e-own7). NFL.com hosts the Game Centre, the
+# injury report, the schedule and the Game Book PDFs; cloubclub hosts the four depth charts carried
+# read-only; this repository hosts the method record.
+SOURCE_HOSTS.update({
+    'GB-NFL-GAMEBOOK-PDF': 'static.www.nfl.com',
+    'GB-NFL-GAMECENTER': 'www.nfl.com',
+    'GB-NFL-INJURY-W10': 'www.nfl.com',
+    'GB-NFL-SCHEDULE-W10': 'www.nfl.com',
+    'GB-CLUB-DEPTH': 'www.chicagobears.com',
+})
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)

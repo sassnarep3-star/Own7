@@ -309,6 +309,35 @@ def lifecycle_nav_group():
 
 NAV.extend(lifecycle_nav_group())
 
+GAMEBOOK_NAV_PATH = "nfl-gamebook-5213243e/site/index.html"
+
+
+def gamebook_nav_group():
+    """Additive nav group for the official Game Book desk (session arena/5213243e-own7).
+
+    Built from the desk's own manifest so this generator never restates a page list that could
+    drift. Returns an empty list if the desk has not been built, so a fresh clone still works.
+    """
+    manifest = ROOT / "nfl-gamebook-5213243e" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    import json as _json
+    labels = {
+        "index.html": "Game Book overview", "fixtures-venue.html": "Venue & environment",
+        "starters.html": "Official starters", "inactives.html": "Inactives & replacement",
+        "depth-coverage.html": "Depth-chart coverage",
+        "designation-reliability.html": "Designation reliability", "delta.html": "What changed",
+        "ledger.html": "Point-in-time ledger", "decisions.html": "Readiness & questions",
+        "suggestions.html": "Game Book suggestions", "verification.html": "Game Book verification",
+        "flagged.html": "Game Book flagged", "sources.html": "Game Book sources",
+    }
+    pages = _json.loads(manifest.read_text())["pages"]
+    return [("NFL official Game Book",
+             [(f"nfl-gamebook-5213243e/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+
+NAV.extend(gamebook_nav_group())
+
 
 
 
@@ -841,6 +870,13 @@ def build():
     brief_pages=load_json('nfl-brief-77b1/site/manifest.json')['pages']
     for name in brief_pages:
         generated.append(f'nfl-brief-77b1/site/{name}')
+    # Official Game Book desk (session arena/5213243e-own7). Runs the desk's own deterministic
+    # build (which re-derives every artefact from the committed raw extracts) before publishing.
+    gamebook_result=subprocess.run([sys.executable,str(ROOT/'nfl-gamebook-5213243e'/'build_site.py')],cwd=ROOT,capture_output=True,text=True)
+    if gamebook_result.returncode: raise SystemExit(f'nfl-gamebook-5213243e/build_site.py failed: '+gamebook_result.stdout+gamebook_result.stderr)
+    gamebook_pages=load_json('nfl-gamebook-5213243e/site/manifest.json')['pages']
+    for name in gamebook_pages:
+        generated.append(f'nfl-gamebook-5213243e/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
@@ -855,7 +891,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-brief-77b1/site/{n}' for n in brief_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-brief-77b1/site/{n}' for n in brief_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 
