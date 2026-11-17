@@ -1,0 +1,16 @@
+{
+  "generated_from": [
+    "nfl-readiness-1467fdf7/requirements.py",
+    "nfl-readiness-1467fdf7/strategies.py",
+    "nfl-readiness-1467fdf7/controls.py",
+    "nfl-readiness-1467fdf7/injury_check.py"
+  ],
+  "pages": [
+    "controls.html",
+    "flagged.html",
+    "index.html",
+    "injury-check.html",
+    "sources.html",
+    "strategies.html"
+  ]
+}
