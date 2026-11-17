@@ -1718,6 +1718,7 @@ Scope note: the build's executive-summary description was updated additively wit
 ## Session arena/824cdccf-own7 — integration and publication (2026-11-17)
 
 Branch: `arena/824cdccf-own7`, branched from `main` at `be2462d`; sole active session on this branch, status `active`. No other session's files are touched.
+## Session arena/4381c0ce-own7 — decision-readiness table on the landing page (2026-11-17)
 
 ### Claim (before implementation)
 
@@ -1778,3 +1779,6 @@ This sandbox cannot reach nfl.com (outbound is limited to GitHub and package reg
 - PR: to be created from `arena/824cdccf-own7` → `main`.
 - Merge: to be confirmed after CI passes; not waited on for approval per the brief.
 - GitHub Pages deploy: to be confirmed against the merge commit; live URL https://sassnarep3-star.github.io/Own7/.
+| D1 | Add the brief-mandated decision-readiness table to the landing page (`index.html`): one row per requirement, the gate that blocks it, and the number that would clear it | in progress | session-arena-4381c0ce-own7 | `nfl_pages.py` (landing builder `nfl_overview`), `research/nfl-requirements.json` (additive per-row gate + clearing-number fields), regenerated `index.html` + `research/site-manifest.json`, `COORDINATION.md` | Requirement ledger NR01–NR16 already in repo with registered official sources; gate contracts NG01–NG10 from `research/nfl-catalog.json`; clearing thresholds from the pre-registered `research/nfl-protocol.json`. No new official-source fetch claimed for the table itself; each row keeps its existing official source links. `python scripts/check_site.py`, unittest and browser suites re-run before any PR. | Landing page only; no other session's desk files touched. Open PRs #48/#50/#51 are not mine and stay untouched. A bounded fresh official-source recheck of headline numbers is claimed as D2 below. |
+| D2 | Bounded fresh official-source recheck (standings, Week 10 schedule/results, league injury report) via the sandbox page reader; record agreement or divergence; do not silently alter published values | in progress | session-arena-4381c0ce-own7 | `COORDINATION.md` only (plus `research/nfl/flags.json` + regenerated pages **only if** an official value is found to have moved) | Direct reads of nfl.com pages (standings, 2026 schedule week, injuries) through the Arena page reader, dated 2026-11-17; results recorded in this board section. | curl to nfl.com is blocked in the sandbox (HTTP 000); the page reader is the only fetch path. Any divergence is published on the Flagged for Review register rather than edited into place. |
+| D3 | PR → merge without approval → confirm GitHub Pages deploy → record PR link + merge result here | not started | session-arena-4381c0ce-own7 | `COORDINATION.md` | Full check battery green before merge; Pages "pages build and deployment" run must succeed against the merge commit. | Flagged items are non-blocking per the brief; a broken site is not merged. |
