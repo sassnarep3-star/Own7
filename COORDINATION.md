@@ -2047,3 +2047,10 @@ Status: **in progress** (next entry records the PR link, merge commit and Pages 
   - `scripts/check_site.py`: main's version kept; only the one host line for `NFL-INJ-W10-READ-1117` added.
 - Re-verified on the final tree: all `check.yml` research-static commands replayed → pass; `check_site.py` → OK.
 - Main's Game Book desk (PR #56) changed the site and sources but touched none of this session's files apart from the shared registry and site scripts above.
+
+### Integration record 3 — arena/34a52a38-own7 (2026-11-17, rebased onto main `0543304`)
+
+- **Flag ID collision resolved.** Main's register (session `arena/ca37e6e5-own7`) took NF22–NF31 while this branch had NF22–NF29. This branch's eight flags are renumbered **NF32–NF39** (NF22→NF32 … NF29→NF39), and its code and docs now cite the new IDs. Main's NF22–NF31 are unchanged. Overlapping topics, for cross-reference: Lions designations (NF22–NF24 on main vs NF32–NF33 here), committed rows vs terms (NF28 on main vs NF34 here), results-leaderboard backtest row (NF29 on main vs NF39 here, corrected here). Owners should merge the duplicates at integration.
+- Source `NFL-INJ-W10-READ-1117` inserted into main's `research/sources.json` bytes (13 added lines). Host line added to main's `scripts/check_site.py` (one line).
+- Generated outputs regenerated in order: `nba_lab run`, then `build_site.py`, then `check_site.py` OK (47 canonical pages).
+- Final checks on this tree: all `check.yml` research-static commands → pass; `python -m unittest discover -s tests` → 119 OK.

@@ -64,10 +64,10 @@ Additive. Earlier sections are unchanged. Everything below is on the landing pag
 
 **Decisions the owner should review first**
 
-1. **Rights conflict (NF24).** 64 NFL-named CSV files are committed and served by the public site, while the repository's own gate (RG10) says nothing is released. Moving them to a private store was not done here, because five desks depend on those files.
-2. **Scheduled capture (NF25).** The brief asks for daily scheduled capture of injury reports and depth pages. NFL.com terms §1.3 prohibit systematic retrieval without written consent. No scheduled job was added.
-3. **Family size for the luck figure (NF27).** The analysis states 18 tests; 30 variants are graded. Pick one definition before the figure is used.
-4. **Unmapped identifiers (NF26).** The brief's VR-, VQ- and SG- IDs appear nowhere in the repository. Items that depend on them are not verified.
+1. **Rights conflict (NF34).** 64 NFL-named CSV files are committed and served by the public site, while the repository's own gate (RG10) says nothing is released. Moving them to a private store was not done here, because five desks depend on those files.
+2. **Scheduled capture (NF35).** The brief asks for daily scheduled capture of injury reports and depth pages. NFL.com terms §1.3 prohibit systematic retrieval without written consent. No scheduled job was added.
+3. **Family size for the luck figure (NF37).** The analysis states 18 tests; 30 variants are graded. Pick one definition before the figure is used.
+4. **Unmapped identifiers (NF36).** The brief's VR-, VQ- and SG- IDs appear nowhere in the repository. Items that depend on them are not verified.
 
 **Still open, with the number that would clear each**
 

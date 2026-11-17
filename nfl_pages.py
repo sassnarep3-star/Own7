@@ -1061,7 +1061,7 @@ def readiness_block():
         note=f"Family-wise figures: 1 − (1 − p)^n with p = {luck['p_single']:.6f}. The analysis states "
              f"n = {luck['n_family_stated']}; all {luck['n_graded']} graded variants give {luck['fw_graded']:.1%}. "
              "Both are below 5%, so chance alone is an unlikely explanation for this record under either "
-             "family size. The family size itself is open for review (NF27).")
+             "family size. The family size itself is open for review (NF37).")
     body = section("Removal of luck", luck_body, eyebrow="DASHBOARD PANEL", sid="luck-panel")
 
     delta_rows = []
@@ -1082,7 +1082,7 @@ def readiness_block():
         "Out. The desk captures are dated 2026-11-13 and are kept unchanged. "
         f"The availability desk differs from the official read on {n_av} of 9 Lions rows; the assurance desk on "
         f"{n_as} of 9. The page carries no clock time, so the cause (a later update or a capture error) cannot be "
-        "settled from the record. Both are flagged (NF22, NF23).",
+        "settled from the record. Both are flagged (NF32, NF33).",
         info=True)
     delta_body += table("lions-delta-table", "Lions, Week 10: official read against two captures", [
         ("Player", "player"), ("Official read 2026-11-17 (injury / practice / game)", "official"),
