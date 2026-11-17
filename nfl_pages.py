@@ -708,8 +708,61 @@ def nfl_overview():
              "state": "Blocked", "kind": "warn", "source_ids": ["NFL-TERMS-LEGAL", "REPO"]},
         ],
         note='Each row is either a re-derived calculation or an explicit statement of a limit.'))
+    body += section('Decision readiness — one row per requirement', table(
+        'nfl-readiness', 'Decision-readiness table',
+        [('Requirement', lambda r: rich(r['req'], r['id'])),
+         ('Gate that blocks it', 'gate'),
+         ('Status', lambda r: badge(r['status'], 'good' if r['status'] == 'Clear' else 'warn')),
+         ('Number that clears it', 'clears')],
+        [
+            {"id": "R01", "req": "Originate side, then total, then moneyline — in that order",
+             "gate": "G03 coverage/power · G06 executable economics", "status": "Blocked",
+             "clears": "All three lines computed per game, plus a recorded market price to compare against",
+             "source_ids": ["NFL-SCHED-W10", "NFL-STANDINGS"]},
+            {"id": "R02", "req": "Fair line, market line and difference as separate columns",
+             "gate": "G06 executable economics", "status": "Blocked",
+             "clears": "Recorded opening and closing market numbers per game; market cells stay blank until then",
+             "source_ids": ["NFL-STANDINGS", "REPO"]},
+            {"id": "R03", "req": "Signal separated from staking in the leaderboard",
+             "gate": "G04 forecast quality", "status": "Blocked",
+             "clears": "Brier skill score vs a stated benchmark on heldout data, staking never in the rank",
+             "source_ids": ["NFL-STANDINGS", "PYTH-NFL", "REPO"]},
+            {"id": "R04", "req": "Depth of the replacement tracked, not just the fact of a replacement",
+             "gate": "G03 coverage/power", "status": "Blocked",
+             "clears": "Published depth chart plus snap counts for all 32 clubs, confirming who replaced which starter",
+             "source_ids": ["NFL-INJ-W10", "NFL-INJURY-POLICY", "REPO"]},
+            {"id": "R05", "req": "Correlations computed only from official numbers, with n published",
+             "gate": "G05 joint dependence", "status": "Blocked",
+             "clears": "Joint hit rates on the actual leg pairs, with n and confidence bounds, not team-level artefacts",
+             "source_ids": ["NFL-STANDINGS", "REPO"]},
+            {"id": "R06", "req": "Demotion gate that sends a live strategy back to paper",
+             "gate": "G09 forward shadow/risk", "status": "Blocked",
+             "clears": "A dated, prospective, stake-capped forward record that meets the gate contract",
+             "source_ids": ["REPO", "NFL-TERMS-LEGAL"]},
+            {"id": "R07", "req": "Injury signal is a surprise, never a level",
+             "gate": "G03 coverage/power", "status": "Blocked",
+             "clears": "Play rate per designation (Out / Doubtful / Questionable) with confidence intervals, joined to official inactives",
+             "source_ids": ["NFL-INJ-W10", "NFL-INJURY-POLICY"]},
+            {"id": "R08", "req": "Leaderboard ranked by proper score + uncertainty, not win rate",
+             "gate": "G04 forecast quality · G08 selection/multiplicity", "status": "Blocked",
+             "clears": "Benchmark-relative Brier skill with game-cluster lower bound and multiplicity adjustment",
+             "source_ids": ["REPO", "NFL-STANDINGS"]},
+            {"id": "R09", "req": "Price-snapshot store: opening and closing numbers for every originated market",
+             "gate": "G06 executable economics", "status": "Blocked",
+             "clears": "Timestamped opening and closing numbers per market, append-only and immutable",
+             "source_ids": ["REPO"]},
+            {"id": "R10", "req": "Every strategy pre-registered; no backtest numbers on the leaderboard",
+             "gate": "G10 reproducibility/rights", "status": "Open",
+             "clears": "Git commit hash freezing the rule text, sample window and gates before the evaluation window",
+             "source_ids": ["REPO"]},
+            {"id": "R11", "req": "Price-data policy decided before any backtest is published",
+             "gate": "G10 reproducibility/rights", "status": "Open",
+             "clears": "Written permission for NFL.com systematic use, or a compliant replacement source",
+             "source_ids": ["NFL-TERMS-LEGAL", "REPO"]},
+        ],
+        note='Each row states the requirement, the gate that blocks it, the current status, and the evidence that would clear it. Blank values are intentional: nothing here is inferred.'))
     body += '<p class="source-line">' + refs({"source_ids": ["NFL-STANDINGS", "NFL-INJ-W10", "NFL-SCHED-W10",
-                                                              "NFL-INJURY-POLICY", "NFL-TERMS-LEGAL", "PYTH-NFL"]}) + '</p>'
+                                                              "NFL-INJURY-POLICY", "NFL-TERMS-LEGAL", "PYTH-NFL", "REPO"]}) + '</p>'
     return body
 
 
@@ -819,13 +872,13 @@ def executive():
         '<a href="https://www.nfl.com/injuries/league/2026/REG10" target="_blank" rel="noopener noreferrer">Official injury report ↗</a></li>'
         '<li><strong>Do injury labels add information?</strong> Missing: multi-season designation-to-play '
         'rates and uncertainty. Clear with chronological, identical-model ablations with and without '
-        'verified availability; use surprise/change features rather than fixed penalties. <a href=\"https://www.nfl.com/injuries/league/2026/REG10\" target=\"_blank\" rel=\"noopener noreferrer\">Official NFL injury report ↗</a></li>'
+        'verified availability; use surprise/change features rather than fixed penalties. <a href="https://www.nfl.com/injuries/league/2026/REG10" target="_blank" rel="noopener noreferrer">Official NFL injury report ↗</a></li>'
         '<li><strong>Can parlays or player-prop combos qualify?</strong> Missing: calibrated joint '
         'probabilities at the relevant thresholds and operator-specific push/void rules. Clear with '
-        'prospective joint calibration; do not multiply marginal probabilities. <a href=\"https://www.nfl.com/schedules/2026/by-week/week-1\" target=\"_blank\" rel=\"noopener noreferrer\">Official NFL outcome source ↗</a></li>'
+        'prospective joint calibration; do not multiply marginal probabilities. <a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">Official NFL outcome source ↗</a></li>'
         '<li><strong>What sends a live strategy back to paper?</strong> Gate rules exist but have no '
         'live operational history. Clear by shadow-testing alerts/rollback, freezing thresholds and '
-        'publishing trigger counts before any candidate is considered live. <a href=\"https://www.nfl.com/legal/terms/\" target=\"_blank\" rel=\"noopener noreferrer\">Official NFL Terms ↗</a></li>'
+        'publishing trigger counts before any candidate is considered live. <a href="https://www.nfl.com/legal/terms/" target="_blank" rel="noopener noreferrer">Official NFL Terms ↗</a></li>'
         '</ol></div>')
     body += section('Suggested sequence — review before implementation',
         '<ol class="body-text">'
