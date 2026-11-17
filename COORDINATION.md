@@ -1806,3 +1806,114 @@ Official pages read through the Arena page reader (curl to nfl.com is blocked in
 | Sources | Official source links per row unchanged from the registered requirement ledger (NFL-TERMS, NFL-STANDINGS, NFL-PASSING, NFL-RUSHING, NFL-RECEIVING, NFL-TEAM-OFF, NFL-TEAM-DEF, NFL-INJURY, NFL-SCHEDULE, NFL-ROSTER, REPO). No new official-source values introduced; thresholds come from the repo's own pre-registered protocol and are labelled as project design choices. |
 
 D3 (PR → merge → Pages → record) runs next.
+
+## Session arena/5213243e-own7 — official Game Book facts, point-in-time ledger, decision readiness (2026-11-17)
+
+Session ID: `session-arena-5213243e-own7`. Fixed Arena branch: `arena/5213243e-own7`, based on `be2462d`
+(merge of PR #55). Earlier boards above are retained verbatim and are **not** inherited as verification.
+
+### Observed starting state (read, not assumed)
+
+`git log -1` = `be2462d`. Baseline replayed green before any change: `python3 -m unittest discover -s tests`
+→ **111 pass**; `python3 scripts/check_site.py` → **passed: 194 recursive pages, 7,920 tbody rows,
+216 registered sources, 0 errors**. All prior NFL desks (`nfl/`, `nfl-results/`, `nfl_origination/`,
+`nfl-market-desk/`, `nfl-pricing/`, `nfl-lifecycle-3f5c/`, `nfl-skill-cfdd/`, `nfl-availability-28ef/`,
+`nfl-assurance-9580ac3f/`, `session-243828fc/`) are read-only inputs to this session.
+
+### Why this session exists (gap analysis against the brief)
+
+The brief names official sources this repo does **not** yet use. The official NFL **Game Book PDF**
+(`static.www.nfl.com/image/upload/.../gamecenter/*.pdf`, linked from the official Game Centre) is
+reachable and publishes, per fixture, in one artefact: the official venue, the **official opening
+lineups (actual starters)**, the **official Not Active list**, the **Did Not Play list**, the official
+**stadium roof/open status and surface**, and the **official game-day weather**. The repo currently
+infers none of these: venues are unpublished, actual starters are absent, inactive lists are absent,
+and roof/surface is not sourced. A live fetch on 2026-11-17 confirmed all of these fields exist.
+
+### Claim (written, committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| G1 | Coordination claim + baseline replay | done | session-arena-5213243e-own7 | `COORDINATION.md` (append-only) | This entry. |
+| G2 | Archive official Week 10 Game Books (14 fixtures) with raw capture + SHA-256 | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Official Game Centre → Game Book PDF. Raw retrieved text saved; hash recorded. |
+| G3 | Parse official starters / inactives / DNP / venue / roof / surface / weather | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Only what the artefact states. Ambiguous rows blank + flagged, never inferred. |
+| G4 | Re-capture the live Week 10 injury report and publish the **delta** vs the published 2026-11-13 capture | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Republishes the stale Week 10 tables. Level and delta both published. |
+| G5 | Availability graph as a first-class dataset: expected starter (official depth chart, read-only) vs actual starter (official Game Book) | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Consumes `nfl-skill-cfdd/data/depth-slots-2026-11-14.csv` read-only; never edits it. Confirms or refutes each replacement. |
+| G6 | Empirical designation reliability: observed inactive rate per official designation with 95% intervals | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Calibrates "Questionable"/"Out" from observation, not legacy percentages. n published with every value. |
+| G7 | Point-in-time snapshot ledger: capture time, SHA-256, source URL, vintage per artefact | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Prevents lookahead leakage; enables replay as known. |
+| G8 | Desk pages: index, fixtures+venue, starters, inactives, availability graph, designation reliability, weather/roof, ledger, questions, suggestions, flagged, sources | in progress | session-arena-5213243e-own7 | `nfl-gamebook-5213243e/**` | Every table row keeps a registered official source link. |
+| G9 | Additive integration: nav group, build step, manifest, source register, serve/browser/CI allowlists, README | in progress | session-arena-5213243e-own7 | additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md` | No existing page, value or test overwritten. |
+| G10 | PR, merge, Pages deploy evidence, record | unclaimed | session-arena-5213243e-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: fixed branch only; never infer or fill a value an official source does not
+publish — leave it blank and flag it; every table row keeps a registered official source link;
+`git pull --rebase` before every push; small frequent commits; additive edits to shared files only.
+
+
+### G1–G9 result (session-arena-5213243e-own7)
+
+**Status: done.** Committed on `arena/5213243e-own7`.
+
+What was built: `nfl-gamebook-5213243e/` — a new desk, exclusively scoped to this session. Thirteen
+of the fourteen Week 10 official NFL Game Books were captured as committed raw extracts with
+SHA-256; the fourteenth fixture (LAC @ BAL) had no Game Book because it had not kicked off.
+
+Sources used (all official, all registered in `research/sources.json` as `GB-*`):
+
+| Source | What it establishes |
+|---|---|
+| Official Game Book PDF (`static.www.nfl.com/.../gamecenter/*.pdf`), linked from each Game Centre | Venue, stadium, roof/open state, field surface, game-day weather, officials, **actual starting lineups**, **official Not Active lists** |
+| Official Game Centre (`nfl.com/games/*`) | Location, stadium, kickoff for the unplayed fixture |
+| Official injury report (`nfl.com/injuries/league/2026/REG10`), 2026-11-13 capture | Practice participation and game designation, joined to inactives |
+| Official Week 10 schedule (`nfl.com/schedules/2026/REG10/`) | The 14-fixture slate and final scores |
+| Official club depth charts (read-only from `nfl-skill-cfdd`) | Coverage audit only — 4 of 32 clubs |
+
+Derived datasets (all in `nfl-gamebook-5213243e/data/`): `fixtures-venue.csv` (14 rows),
+`starters-official.csv` (550 slots), `inactives-official.csv` (146 rows),
+`team-replacement-view.csv` (26 club-fixtures), `designation-reliability.csv` (3 buckets, n=300),
+`availability-delta.csv` (300 rows), `depth-chart-coverage.csv` (26 clubs), `reserve-list-gaps.csv`,
+`snapshot-ledger.json`, `flags.json`, `capture-summary.json`.
+
+**Verification performed**
+
+- `python3 -m unittest discover -s tests` → **111 pass**.
+- `python3 scripts/check_site.py` → **passed**: 46 canonical pages, 20 redirects, 141 auxiliary
+  pages, **207 recursive HTML pages, 8,173 tbody rows, 221 registered sources, 0 errors**,
+  research reproduction passed.
+- `python3 nfl-gamebook-5213243e/build_site.py --check` → byte-identical rebuild of all 13 desk pages.
+- Every table row carries `data-source-ids` naming a registered `GB-*` source plus a link to it.
+- Blank cells exist only where the official artefact publishes nothing or a PDF column was lost;
+  each is titled and listed on the desk's flagged page.
+- Browser/axe harness (`scripts/browser_test.mjs`) could not run: `@sparticuz/chromium` is not
+  installed in the sandbox. Structural checks were substituted (one `h1`, one `main`, `lang=en`,
+  one `<tbody>` per table page, row counts reconciled against the CSVs).
+
+**Irregularities found and flagged (none blocks publication)**
+
+| Flag | Finding |
+|---|---|
+| GB-F01 | CLE and DAL defensive lineups lose their player-name cells in PDF text extraction. 44 of 572 starting slots unavailable; left blank, never guessed. |
+| GB-F02 | W10-14 (LAC @ BAL) had no Game Book at capture. Venue carried from the official Game Centre; weather/roof/starters/inactives blank. |
+| GB-F03 | KC @ ATL publishes roof state but no temperature/humidity/wind. Left blank rather than substituted. |
+| GB-F04 | **Four players published `Out` were not on any official Not Active list**: TreVeyon Henderson (NE), Kerby Joseph (DET), Mo Alie-Cox (IND), Akeem Davis-Gaither (IND). A genuine contradiction inside the official record; the desk reports it and does not guess the cause. |
+| GB-F05 | Official depth charts exist for only CHI, DEN, PHI, TB — none of whom played Week 10 — so the expected-vs-actual starter join returns **0 rows**. The availability-graph requirement is blocked, not satisfied. |
+
+**Measured results worth carrying forward**
+
+- Observed inactive rate: `Out` 10/14 = 0.714 (Wilson 95%: 0.454–0.883); `Questionable` 3/11 =
+  0.273 (0.098–0.566); no designation 52/275 = 0.189 (0.147–0.240). n is published with every value.
+- As-known → actual delta over 300 report rows: 13 designations held, 12 did not (4 `Out` and 8
+  `Questionable` were active), 52 players with no designation were inactive.
+- Depth rule SG-05 respected by refusal: no depth rank, depth penalty or personnel ablation was
+  computed, because the official depth side does not exist for the clubs involved.
+
+**Files touched** — new: `nfl-gamebook-5213243e/**`. Additive edits only: `scripts/build_site.py`
+(nav group + build step + manifest), `scripts/check_site.py` (5 `GB-*` host entries),
+`research/sources.json` (5 registrations), `research/results.json` (regenerated source/run hashes),
+`research/site-manifest.json`, plus the regenerated pages. No existing page, value or test was
+overwritten.
+
+### G10 availability on this board
+
+No other session holds a live claim in this window; `nfl-gamebook-5213243e/**` was unclaimed before
+this session. Per the brief, this session is therefore also the integration session for its own scope.
