@@ -802,6 +802,7 @@ def nfl_overview():
              'Rows marked Blocked or Open are preconditions: nothing ranked, priced or rewarded passes them. '
              'Gate IDs are the project’s own validation gates (G) and missing-information items (M); “—” means '
              'no project gate has been defined for that requirement yet — which is itself a gap.'))
+    body += '<p><a href="nfl-readiness.html">Full requirement register (every requirement row, its gate and its source status) →</a></p>'
     body += '<p class="source-line">' + refs({"source_ids": ["NFL-STANDINGS", "NFL-INJ-W10", "NFL-SCHED-W10",
                                                               "NFL-INJURY-POLICY", "NFL-TERMS-LEGAL", "PYTH-NFL"]}) + '</p>'
     return body
@@ -843,6 +844,44 @@ def nfl_review():
         RECEIPTS["datasets"],
         note='Each dataset is regenerated from the saved page text on every build. If a check fails '
              'the extractor refuses to publish rather than writing a contradiction.'))
+    return body
+
+
+READINESS = json.loads((ROOT / "research/nfl-readiness.json").read_text(encoding="utf-8"))
+
+
+def nfl_readiness():
+    """Full requirement register. Every count is derived from the rows; nothing is typed."""
+    rows = READINESS["rows"]
+    counts = {}
+    for r in rows:
+        counts[r["status"]] = counts.get(r["status"], 0) + 1
+    summary = ", ".join(f"{n} {status.lower()}" for status, n in sorted(counts.items(), key=lambda kv: -kv[1]))
+    body = notice(f"{len(rows)} requirement rows: {summary}.",
+                  "Each row states what the repository holds today, the gate that blocks it, the number "
+                  "that would clear it, and whether this session re-read the official source. "
+                  "Verified-today is 'No' wherever the row was carried from a desk file and not re-read.")
+    body += section("Requirement register", table(
+        "nfl-readiness-register", "Requirement register",
+        [("ID", "id"), ("Group", "group"), ("Requirement", "requirement"), ("Status", lambda r: badge(r["status"])),
+         ("Now", "now"), ("Gate", "gate"), ("Clears when", "clears_when"), ("Where", "where"),
+         ("Re-read today", "verified_today"), ("Next step", "next_step")],
+        [dict(r, source_ids=r["sources"]) for r in rows],
+        note="Source links are registered official sources or REPO (this repository). Counts above are derived from these rows."))
+    decs = READINESS["decisions"]
+    body += section("Owner decisions that gate rows", table(
+        "nfl-readiness-decisions", "Owner decisions",
+        [("ID", "id"), ("Decision needed", "question"), ("Rows closed", lambda r: ", ".join(r["closes"]))],
+        [dict(d, source_ids=d["source_ids"]) for d in decs],
+        note="No decision is recorded here. A decision is made only by the repository owner."))
+    sugg = READINESS["suggestions"]
+    body += section("Suggestions to choose from", table(
+        "nfl-readiness-suggestions", "Suggestions",
+        [("ID", "id"), ("Suggestion", "suggestion"), ("Closes", lambda r: ", ".join(r["closes"])),
+         ("Acceptance test", "acceptance"), ("Owner decision", lambda r: r["owner_decision"] or "blank: awaiting owner")],
+        [dict(s, source_ids=["REPO"]) for s in sugg],
+        note="Owner decision fields are deliberately blank. Nothing here is approved by this page."))
+    body += '<p class="source-line">' + refs({"source_ids": ["NFL-INJ-1117", "NFL-SCHED-1117", "NFL-TERMS-1117", "REPO"]}) + '</p>'
     return body
 
 

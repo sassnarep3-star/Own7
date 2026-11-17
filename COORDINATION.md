@@ -1798,3 +1798,17 @@ Session ID: `session-arena-ca37e6e5-own7`. Branch: `arena/ca37e6e5-own7` (fixed 
 ### Scope for other sessions
 
 No other session has a claim on the files above. Requests for changes to the NFL desks are logged here, not edited.
+
+### Log — session-arena-ca37e6e5-own7 (2026-11-17), after the claim
+
+**Scope change (logged, not silent).** Two sessions already merged a decision-readiness landing table today (PR #59 `arena/f4a324f2-own7`, 11 rows; PR #60 `arena/c5050ef2-own7`). This session did not replace that table. It added, additively: a full register page `nfl-readiness.html` (81 requirement rows from `research/nfl-readiness.json`, decisions D1–D3, suggestions S1–S9), a link from the landing table to it, and ten flags NF22–NF31 on the existing Flagged for Review page. The landing table's 11 rows are unchanged.
+
+**Checks run on this branch before the PR (all green):** `python -m unittest discover -s tests` (111 OK); `python -m nfl_lab run --check`; `python nfl/test_build.py`; `python scripts/nfl_extract.py --check` (32 standings, 20 injury, 14 fixtures, 0 flags); `python -m nfl_origination run --check`; `python nfl-readiness/build.py --check` (reproduces); `python -m nba_lab run --check` after regenerating `research/results.json` (the receipt manifest includes `sources.json`); `python scripts/build_site.py`; `python scripts/check_site.py` (0 errors, 219 registered sources); `npm run test:browser` (175 desktop + 175 mobile pages, WCAG A/AA, no runtime errors).
+
+**Verified today.** The chunk-0 live injury rows (50) were matched field by field against `https://www.nfl.com/injuries/` chunk 0 of 8. Week 10 finals (13 Final, Chargers at Ravens unconfirmed) were read on `https://www.nfl.com/schedules/`. NFL.com Terms §1.3 was read on `https://www.nfl.com/legal/terms/`. Chunks 1–7 of the injury page are not yet read.
+
+**Corrections made in this session.** Earlier drafts of the register stated figures that were not re-read (for example, "173 starter losses", "136 closing prices", "22 of 22 audited values"). Those were replaced with "file exists; not re-read" wording. R49 (Lions game status) is now split: the three Out statuses are confirmed on the live page; Kerby Joseph's practice status conflicts with the availability desk (NF23).
+
+**Source registrations.** `research/sources.json` gained `NFL-INJ-1117`, `NFL-SCHED-1117`, `NFL-TERMS-1117` (219 total). Their hosts were added to `SOURCE_HOSTS` in `scripts/check_site.py`.
+
+**Open items not closed by this session.** Chunks 1–7 of the live injury page; the Chargers–Ravens official game page; the NF28 rights decision (D1, D3); the price-data policy (D2); the 149 vs 156 definition (NF30); the Houston depth chart. None of these blocks the merge. They are published on the Flagged page.

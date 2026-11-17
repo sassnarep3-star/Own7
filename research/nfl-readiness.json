@@ -16,7 +16,7 @@
       "requirement": "Price-snapshot store recording opening and closing numbers for every market we originate",
       "status": "Partial",
       "now": "Price data was not re-read this session. Opening values: none found in any source read today. Counts unverified",
-      "gate": "No opening price is in any source read; market cells blank under the price-data policy (CA-F10 / R20)",
+      "gate": "No opening price is in any source read; market cells blank under the price-data policy (NF31 / R20)",
       "clears_when": "42 of 42 markets carry an opening and a closing value from a source whose terms permit research use",
       "where": "nfl-lifecycle-3f5c/data/price-snapshots.json",
       "sources": [
@@ -31,7 +31,7 @@
       "group": "Pricing and originated lines",
       "requirement": "Verified results feed so backtests and ROI can be computed",
       "status": "Partial",
-      "now": "136 final scores (Weeks 1-9, retrieved 2026-11-14). 13 Week 10 finals read today are not in the feed (CA-F04)",
+      "now": "136 final scores (Weeks 1-9, retrieved 2026-11-14). 13 Week 10 finals read today are not in the feed (NF25)",
       "gate": "Week 10 not ingested. ROI also needs prices (R01), which do not exist",
       "clears_when": "150 games through Week 10 (136 + 14, after the Chargers at Ravens score is confirmed); 272 at season end",
       "where": "nfl-results/data/games-2026-w1-9.csv; nfl-readiness/evidence/week10-finals-official-2026-11-17.csv",
@@ -138,7 +138,7 @@
       "group": "Validation and rights",
       "requirement": "Pre-register every strategy; forbid backtest numbers from ever appearing on the leaderboard",
       "status": "Partial",
-      "now": "The results leaderboard shows a backtest row: 120 bets, record 77-43, hit rate and BH q (CA-F08)",
+      "now": "The results leaderboard shows a backtest row: 120 bets, record 77-43, hit rate and BH q (NF29)",
       "gate": "The 136 games were observed before any rule was registered, and the leaderboard publishes graded backtest rows",
       "clears_when": "0 backtest figures on any leaderboard, and one registration commit per strategy before its window",
       "where": "nfl-results-leaderboard.html",
@@ -216,7 +216,7 @@
       "group": "Pricing and originated lines",
       "requirement": "Add a fixture-context feature set built only from published schedule facts",
       "status": "Partial",
-      "now": "Date, kickoff and network for 14 of 14 games. Venue note for 1 of 14 (CA-F06)",
+      "now": "Date, kickoff and network for 14 of 14 games. Venue note for 1 of 14 (NF27)",
       "gate": "Venues not transcribed from the game centre (R23); no feature table built",
       "clears_when": "14 of 14 venues transcribed and a feature table with a source per row",
       "where": "nfl/origination/data/games-2026-w10.csv",
@@ -276,7 +276,7 @@
       "group": "Pricing and originated lines",
       "requirement": "Price a line ourselves and publish the residual against the market, on a schedule, from day one",
       "status": "Partial",
-      "now": "One-time residual (pricing desk, n = 120). No scheduled job",
+      "now": "One residual analysis file exists (nfl-pricing/data/correlations.json). Sample size not re-read this session. No scheduled job",
       "gate": "No schedule; the market source rights are not evidenced; opening lines missing",
       "clears_when": "Residual published each week for every game with a market line (14 of 14 next week)",
       "where": "nfl-pricing/data/correlations.json",
@@ -308,7 +308,7 @@
       "group": "Validation and rights",
       "requirement": "Decide the price-data policy before any backtest is published",
       "status": "Decision needed",
-      "now": "Two desks take opposite positions: the pricing desk publishes 136 closing prices from Pro-Football-Reference; the lifecycle desk keeps market cells blank",
+      "now": "The pricing desk holds Pro-Football-Reference closing-price observations; the lifecycle desk keeps market values blank (COORDINATION, 3422b07f). Counts not re-read this session",
       "gate": "No single written policy applies to every desk",
       "clears_when": "One signed policy in the repository, applied to every desk",
       "where": "nfl-pricing/data/questions.csv; nfl-lifecycle-3f5c/data/decisions.json",
@@ -355,7 +355,7 @@
       "group": "Pricing and originated lines",
       "requirement": "Transcribe the venue of every fixture from the official game centre and publish it",
       "status": "Partial",
-      "now": "1 of 14 Week 10 venue notes populated (CA-F06)",
+      "now": "1 of 14 Week 10 venue notes populated (NF27)",
       "gate": "Game-centre pages not read this session",
       "clears_when": "14 of 14 Week 10 venues from the game centre (272 at season end)",
       "where": "nfl/origination/data/games-2026-w10.csv",
@@ -462,7 +462,7 @@
       "group": "Availability, injuries and depth",
       "requirement": "Immutable official availability snapshots: raw hashes, timestamps and conflict flags",
       "status": "Partial",
-      "now": "Hashes present (26 receipts; capture summary). Clock times not checked. Conflict flag not found, and the Week 10 desk tables disagree (CA-F01)",
+      "now": "Hashes present (26 receipts; capture summary). Clock times not checked. Conflict flag not found, and the Week 10 desk tables disagree (NF22)",
       "gate": "No clock times and no conflict flags",
       "clears_when": "Every capture has a hash, a clock time and a conflict flag; every disagreement flagged",
       "where": "nfl-assurance-9580ac3f/sources/receipts.json",
@@ -508,7 +508,7 @@
       "group": "Availability, injuries and depth",
       "requirement": "Model depth slots as groups, not a single starter",
       "status": "Partial",
-      "now": "Group membership kept (cell_holds_multiple, 20 rows). Recomputed groups with more than one rank-1 player: 156 (brief states 149; CA-F09)",
+      "now": "Group membership kept (cell_holds_multiple, 20 rows). Recomputed groups with more than one rank-1 player: 156 (brief states 149; NF30)",
       "gate": "No group-level model; the brief's count does not reproduce",
       "clears_when": "Every rank-1 group keeps all members, and the count is reproduced from the source files",
       "where": "nfl-availability-28ef/data/depth-slots-week10-2026.csv",
@@ -629,7 +629,7 @@
       "group": "Site and governance",
       "requirement": "Split the site into a public analysis layer and a private data layer until the terms are read",
       "status": "Decision needed",
-      "now": "832 row-level injury rows committed (326 + 276 + 210 + 20). README release wording not re-read this session (CA-F07)",
+      "now": "832 row-level injury rows committed (326 + 276 + 210 + 20). README release wording not re-read this session (NF28)",
       "gate": "Row-level data is public; no private store exists; terms reading pending (D3)",
       "clears_when": "0 row-level rows public until the rights review is recorded",
       "where": "nfl-availability-28ef/data/injuries-week10-2026.csv",
@@ -751,7 +751,7 @@
       "group": "Availability, injuries and depth",
       "requirement": "Populate the three missing Lions game-status designations",
       "status": "Partial",
-      "now": "Live page (read 2026-11-17): Joseph, Mays and Reed are Out, Did Not Participate. Availability desk shows Out for all three, but Full practice for Joseph (conflicts with live DNP). Assurance and origination desks leave game status blank (CA-F03)",
+      "now": "Live page (read 2026-11-17): Joseph, Mays and Reed are Out, Did Not Participate. Availability desk shows Out for all three, but Full practice for Joseph (conflicts with live DNP). Assurance and origination desks leave game status blank (NF24; Joseph practice conflict NF23)",
       "gate": "Blank in two desks",
       "clears_when": "3 of 3 populated in every desk",
       "where": "nfl-availability-28ef/data/injuries-week10-2026.csv",
@@ -766,7 +766,7 @@
       "group": "Availability, injuries and depth",
       "requirement": "Re-capture and republish the Week 10 injury tables",
       "status": "Not started",
-      "now": "Four desk tables show 326, 276, 210 and 20 rows. The 20-row file is the Commanders and Giants game only (CA-F01)",
+      "now": "Four desk tables show 326, 276, 210 and 20 rows. The 20-row file is the Commanders and Giants game only (NF22)",
       "gate": "No full re-capture; the desks disagree",
       "clears_when": "One table whose row count equals the official page count after a full read of all eight chunks",
       "where": "nfl-availability-28ef/data/injuries-week10-2026.csv",
@@ -966,8 +966,8 @@
       "group": "Site and governance",
       "requirement": "Add a drift alarm to every scraper: pin row counts and fields, and fail the build when a field is missing",
       "status": "Partial",
-      "now": "nfl_extract.py --check passes with 32 standings, 20 injury and 14 fixture rows (this session). Other desks are not pinned to official counts (CA-F01)",
-      "gate": "Other scrapers unpinned; the desks disagree (CA-F01)",
+      "now": "nfl_extract.py --check passes with 32 standings, 20 injury and 14 fixture rows (this session). Other desks are not pinned to official counts (NF22)",
+      "gate": "Other scrapers unpinned; the desks disagree (NF22)",
       "clears_when": "Every scraper pinned to an official count with a failing test",
       "where": "scripts/nfl_extract.py",
       "sources": [
@@ -1238,7 +1238,7 @@
       "group": "Site and governance",
       "requirement": "A clearly labelled Flagged for Review page with irregularities, sources, and no blocking of the merge",
       "status": "Partial",
-      "now": "nfl-review.html exists. CA-F01 to CA-F10 not yet added",
+      "now": "nfl-review.html exists. NF22 to NF31 not yet added",
       "gate": "None",
       "clears_when": "Every flag carries a source link and a status",
       "where": "nfl-review.html",
@@ -1300,7 +1300,7 @@
       "closes": [
         "R50",
         "R63",
-        "CA-F01"
+        "NF22"
       ],
       "acceptance": "One table whose row count equals the page count, and no desk table left unreconciled.",
       "owner_decision": ""
@@ -1310,7 +1310,7 @@
       "suggestion": "Fill the three Lions game-status blanks in the assurance and origination desks from the official page, not from the availability desk.",
       "closes": [
         "R49",
-        "CA-F03"
+        "NF24"
       ],
       "acceptance": "3 of 3 populated in every desk, each row linked to the official page.",
       "owner_decision": ""
@@ -1320,8 +1320,8 @@
       "suggestion": "Confirm the Chargers at Ravens final, then ingest all Week 10 finals into the results feed through the existing receipt-checked extractor.",
       "closes": [
         "R02",
-        "CA-F04",
-        "CA-F05"
+        "NF25",
+        "NF26"
       ],
       "acceptance": "Feed holds 150 rows; the origination and results checks pass.",
       "owner_decision": ""
@@ -1331,7 +1331,7 @@
       "suggestion": "Move the graded backtest rows off the leaderboard onto an in-sample page; keep the leaderboard for registered, out-of-sample entries.",
       "closes": [
         "R09",
-        "CA-F08"
+        "NF29"
       ],
       "acceptance": "No hit rate, record or ROI in any leaderboard table.",
       "owner_decision": ""
@@ -1389,5 +1389,5 @@
       "owner_decision": ""
     }
   ],
-  "counts_note": "Counts on the landing table are derived from the rows above at build time; the build fails if the count and the rows disagree."
+  "counts_note": "Counts on the landing table and the register page are derived from the rows at build time, not typed."
 }
