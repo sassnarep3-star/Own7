@@ -1841,6 +1841,38 @@ This sandbox cannot reach nfl.com (outbound is limited to GitHub and package reg
 - PR: to be created from `arena/824cdccf-own7` → `main`.
 - Merge: to be confirmed after CI passes; not waited on for approval per the brief.
 - GitHub Pages deploy: to be confirmed against the merge commit; live URL https://sassnarep3-star.github.io/Own7/.
+
+## Session arena/1467fdf7-own7 — decision-readiness desk, controls, injury spot-check, two-sided strategy register (2026-11-17)
+
+Fixed Arena branch: `arena/1467fdf7-own7` (platform constraint takes precedence over the `session-<id>/<task>` naming in the brief; all work stays on this branch). Session ID: `session-arena-1467fdf7-own7`. Base: `be2462d` (main). No other active claim on this branch.
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| R1 | Baseline: run existing unit tests and `scripts/check_site.py` before changes | done | session-arena-1467fdf7-own7 | none | `python -m unittest discover -s tests` (111 OK); `python scripts/check_site.py` (0 errors) | Baseline green |
+| R2 | Decision-readiness register: one row per brief requirement, status, blocking gate, number that would clear it, evidence link | done (79 rows; blank evidence is flagged as F20) | session-arena-1467fdf7-own7 | `nfl-readiness-1467fdf7/` (new desk) | Repo artefacts linked per row; official links only where the row cites one | Unverified rows are marked as such |
+| R3 | Pre-registered control baselines (random, home, record-favourite) on the 136 official weeks 1–9 results, with n and intervals; two-sided "what would change our mind" per strategy entry | done (`controls.py --check` identical; nothing qualifies) | session-arena-1467fdf7-own7 | `nfl-readiness-1467fdf7/` | Official final scores from `nfl-results/data/games-2026-w1-9.csv` (source URLs per row) | Rules committed before results are printed |
+| R4 | Official Week 10 injury-report spot check against the availability desk (saved raw text + SHA-256) | partial (WAS, NYG, NE, DET compared; KC not compared; official chunks 1–7 of 8 unread, recorded as such) | session-arena-1467fdf7-own7 | `nfl-readiness-1467fdf7/evidence/`, `nfl-readiness-1467fdf7/injury_check.py` | https://www.nfl.com/injuries/ read 2026-11-17 | Covers only the clubs in the captured text; not a full re-capture |
+| R5 | Removal-of-luck panel and Flagged for Review page | done (pages built; source-link check passes with 0 errors; flags F01–F20) | session-arena-1467fdf7-own7 | `nfl-readiness-1467fdf7/` | nfl-results/analysis.json (deterministic engine) | Blank where not computed |
+| R6 | Publish desk, README + check.yml registration, browser/serve allowlist; PR, merge, Pages deploy, record | in progress | session-arena-1467fdf7-own7 | README.md, .github/workflows/check.yml, scripts/browser_test.mjs, scripts/serve_site.py, COORDINATION.md | CI + Pages | Do not merge a broken site |
+
+### Blocking constraint identified before any capture (for review)
+
+NFL.com Terms and Conditions §1.3 (https://www.nfl.com/legal/terms/, "Updated: May 16, 2024") permit use "solely for your own individual non-commercial and informational purposes" and state: "Systematic retrieval of data or other content from the Services, whether to create or compile … a collection, compilation, database, or directory, is prohibited absent our express prior written consent." The brief's scheduled daily, Wed–Fri and Wed-to-kickoff captures of the injury report and club depth pages, and its immutable archive, are systematic retrieval to compile a database. This session therefore does NOT add any scheduled capture. It is logged as a blocked item needing a rights decision (written consent from the NFL, or a licensed feed) and is published on the Flagged for Review page.
+
+### Update (2026-11-17, before publish)
+
+- **Verification (this session):** `scripts/check_site.py` → 0 errors (was 650 before the fix). Full CI content battery (52 commands from `check.yml`, pre-merge list) → 52/52 exit 0. Post-merge `npm ci`, `node --check js/app.js` and `npm run test:browser` → OK (180 desktop + 180 mobile pages, WCAG A/AA, no runtime errors). Desk tests: 24 OK. `nba_lab run --check` OK.
+- **Regression found and reverted:** an earlier attempt added second registry rows on NFL URLs already in `research/sources.json`. `nfl-pricing/build.py` resolves URL to ID with last-match-wins, so other desks' source attribution changed. Reverted: `research/sources.json`, `research/results.json` and `scripts/check_site.py` are byte-identical to `be2462d`. Week-5 page has no registry row (flag F19); the desk links to the existing `NFL-INJURIES` and `NFL-LEGAL-TERMS` rows.
+- **Root pages:** 46 generated pages differ from `be2462d` only by the readiness navigation entry (checked token by token). No other desk's content changed.
+- **Merge with `origin/main`** (other sessions' merged PRs #58 and #60; `COORDINATION.md`, `research/site-manifest.json` and `index.html` overlapped): both `COORDINATION.md` sections kept (main's section first, then this session's); manifest and `index.html` regenerated by `scripts/build_site.py`, not hand-merged. No file of another session was edited.
+- **Open items, not blocking (see the Flagged for Review page):** F01 NFL.com Terms §1.3 and §11(f) block scheduled capture (rights decision); F02/F03 DET practice and blank-cell mismatches; F05 Cincinnati count (desk 8, brief 4, official table unread); F06 279 vs 326 rows; F09 closing-price source; F18 registry describes §12 as a gambling clause (not on the page read); F19 week-5 registry gap; F20 register rows with no artefact.
+- **Multiplicity:** `nfl-results/analysis.json` reports 0.0218 over 18 tests; its leaderboard counts 30. The same best p-value gives about 0.036 over 30. Stated in the executive summary; no entry is qualified.
+- **Blocked item (unchanged):** scheduled nfl.com capture (NFL Terms §1.3). Manual-only, REVIEWED-gated pattern retained; no scheduled capture added.
+- **PR:** https://github.com/sassnarep3-star/Own7/pull/66 (`arena/1467fdf7-own7` → `main`). Merge and Pages deploy to be recorded here after CI passes.
+- **Parallel overlap logged (not edited):** `arena/ca37e6e5-own7` landed `nfl-readiness/` (81-row readiness register, `nfl-readiness.html`) on main while this PR was open. Its directory and pages are separate from `nfl-readiness-1467fdf7/`; no file of that session was edited here. The two registers overlap in scope and need one owner decision on consolidation (open item).
+
 - Claim each task by updating status to `in progress`, commit + push immediately.
 - Never infer or fill in values; leave blank + flag as unverified if no official source confirms.
 - Small, frequent commits; `git pull --rebase` before every push.

@@ -1,0 +1,228 @@
+[
+  {
+    "close": "Written consent from NFL Enterprises, or a licensed feed with redistribution rights. Then a rights-reviewed capture plan.",
+    "evidence": "nfl-readiness-1467fdf7/requirements.py",
+    "finding": "\u00a71.3 allows use 'solely for your own individual non-commercial and informational purposes' and prohibits 'systematic retrieval of data \u2026 to create or compile \u2026 a collection, compilation, database, or directory \u2026 absent our express prior written consent'. The brief's daily and Wednesday-to-Friday captures, immutable archives, reserve lists and point-in-time ledger are that activity. \u00a711(f) also prohibits using robots or spiders to harvest data 'for any commercial purpose'. No scheduled capture was added. The terms page reads 'Updated: May 16, 2024'.",
+    "id": "F01",
+    "official": [
+      "https://www.nfl.com/legal/terms/"
+    ],
+    "severity": "High",
+    "status": "Open: decision",
+    "title": "Scheduled capture conflicts with NFL.com Terms \u00a71.3"
+  },
+  {
+    "close": "A dated capture of the report showing which version the desk used, or correction of the desk row after review.",
+    "evidence": "nfl-availability-28ef/data/injuries-week10-2026.csv; nfl-readiness-1467fdf7/data/injury-spot-check.json",
+    "finding": "Availability desk: 'Full Participation in Practice'. Official page read 2026-11-17: 'Did Not Participate In Practice', game status Out. Game status matches.",
+    "id": "F02",
+    "official": [
+      "https://www.nfl.com/injuries/"
+    ],
+    "severity": "High",
+    "status": "Open",
+    "title": "Kerby Joseph (DET S): practice status differs"
+  },
+  {
+    "close": "As F02.",
+    "evidence": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+    "finding": "St. Brown: desk injury and game status blank; official 'Rib' and 'Questionable'. Vaki: desk injury blank, practice 'Did Not Participate', game status blank; official 'Ankle', 'Limited Participation in Practice', 'Questionable'.",
+    "id": "F03",
+    "official": [
+      "https://www.nfl.com/injuries/"
+    ],
+    "severity": "High",
+    "status": "Open",
+    "title": "Amon-Ra St. Brown and Sione Vaki (DET): injury and game status blank"
+  },
+  {
+    "close": "Clock-time captures (blocked: F01), or the saved text of the earlier version.",
+    "evidence": "nfl-readiness-1467fdf7/data/injury-spot-check.json",
+    "finding": "The desk stores a checked-on date, not a clock time, and the official page may have changed after the desk capture. The three mismatches therefore cannot be called capture error or later update. This is the case the brief's timestamped series is meant to resolve.",
+    "id": "F04",
+    "official": [
+      "https://www.nfl.com/injuries/"
+    ],
+    "severity": "Medium",
+    "status": "Open",
+    "title": "Cause of the DET disagreements cannot be established"
+  },
+  {
+    "close": "Read the full official Cincinnati table and record each row with its time.",
+    "evidence": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+    "finding": "The brief states Cincinnati lists 4 players. The availability desk has 8 Cincinnati rows. The official Cincinnati table was not read this session (the saved read covers WAS, NYG, NE, DET, and part of KC). Seattle matches the brief (15).",
+    "id": "F05",
+    "official": [
+      "https://www.nfl.com/injuries/"
+    ],
+    "severity": "High",
+    "status": "Open: unverified",
+    "title": "Cincinnati injury rows: brief says 4, desk shows 8"
+  },
+  {
+    "close": "A full read of all eight official pages, counted club by club, with the count saved.",
+    "evidence": "nfl-availability-28ef/data/injuries-week10-2026.csv; data/nfl-injuries-2026-w10.csv",
+    "finding": "The brief cites 279 live rows. The availability desk has 326 injury rows across 28 clubs. The legacy file data/nfl-injuries-2026-w10.csv has 20 rows (WAS and NYG only). The full official report was not read in full, so neither total is confirmed.",
+    "id": "F06",
+    "official": [
+      "https://www.nfl.com/injuries/"
+    ],
+    "severity": "High",
+    "status": "Open",
+    "title": "Row count not reconciled: 279 (brief) vs 326 (desk)"
+  },
+  {
+    "close": "Verify the four bye clubs against the official depth pages, then merge them into one register.",
+    "evidence": "nfl-availability-28ef/data/club-summary-week10-2026.csv; README.md (section: Skill & availability desk)",
+    "finding": "The availability club summary has 28 clubs. CHI, DEN, PHI and TB are absent. The nfl-skill-cfdd README says those four were captured in another desk; that claim was not re-verified here.",
+    "id": "F07",
+    "official": [],
+    "severity": "Medium",
+    "status": "Open",
+    "title": "Availability desk covers 28 clubs, not 32"
+  },
+  {
+    "close": "Move the figure to a labelled backtest panel, or remove it from the leaderboard page.",
+    "evidence": "nfl-results-leaderboard.html; nfl-results/analysis.json",
+    "finding": "nfl-results-leaderboard.html shows a 64.2% backtest hit rate for the provisional entry BOARD-SA. The brief forbids backtest numbers on the leaderboard. Not changed here: that desk belongs to another session.",
+    "id": "F08",
+    "official": [],
+    "severity": "High",
+    "status": "Open",
+    "title": "Backtest figure appears on the results leaderboard"
+  },
+  {
+    "close": "Recompute on official inputs only, or label the figure as non-official and keep it off the leaderboard.",
+    "evidence": "nfl-pricing/site/index.html",
+    "finding": "The pricing desk's closing-price correlation (\u22120.439 with margin, n = 136) uses closing prices sourced from Pro-Football-Reference. The brief requires officially sourced inputs only.",
+    "id": "F09",
+    "official": [],
+    "severity": "Medium",
+    "status": "Open",
+    "title": "Correlation uses non-official closing prices"
+  },
+  {
+    "close": "Retire or regenerate the legacy files from the reconciled register.",
+    "evidence": "nfl/origination/data/injuries-2026-w10.csv; data/nfl-injuries-2026-w10.csv",
+    "finding": "nfl/origination/data/injuries-2026-w10.csv lists DET Kerby Joseph with practice 'Limited' and a blank designation. The official read shows 'Did Not Participate' and Out. data/nfl-injuries-2026-w10.csv covers two clubs only. Neither file was changed here.",
+    "id": "F10",
+    "official": [
+      "https://www.nfl.com/injuries/"
+    ],
+    "severity": "Medium",
+    "status": "Open",
+    "title": "Legacy files disagree with the newer desk"
+  },
+  {
+    "close": "Closed.",
+    "evidence": "nfl-results/data/games-2026-w1-9.csv; nfl-readiness-1467fdf7/data/controls.json",
+    "finding": "The official week-5 schedule page reads 'Giants 27, Commanders 27, FINAL' (Giants 3-1-1). The tie is excluded from straight-up grading (pre-registered rule).",
+    "id": "F11",
+    "official": [
+      "https://www.nfl.com/schedules/2026/by-week/week-5"
+    ],
+    "severity": "Info",
+    "status": "Closed: verified",
+    "title": "Week 5 tie confirmed: Giants 27, Commanders 27"
+  },
+  {
+    "close": "Each row gets an artefact (a file in the repo) when its desk produces one; then its evidence is set and this flag is removed for it.",
+    "evidence": "nfl-readiness-1467fdf7/requirements.py",
+    "finding": "29 of 79 register rows have no repo artefact. Their evidence cell is blank and reads 'No repo artefact yet'; each carries this flag. Their status and gate are stated in the register; no value is measured for them.",
+    "id": "F20",
+    "official": [],
+    "severity": "Info",
+    "status": "Open",
+    "title": "Register rows with no repo artefact yet"
+  },
+  {
+    "close": "Decide with the nfl-pricing desk how week pages are registered, then register the week-5 row once.",
+    "evidence": "nfl-results/data/games-2026-w1-9.csv; research/sources.json",
+    "finding": "The week-5 page is cited in this desk and used for the tie check, but research/sources.json has no row whose URL is that page. Adding one would change the nfl-pricing attribution for week pages (its URL-to-ID lookup is last-wins and its pattern covers weeks 1-9), so it was not added. Rows that cite the page are tagged internal to the repository.",
+    "id": "F19",
+    "official": [
+      "https://www.nfl.com/schedules/2026/by-week/week-5"
+    ],
+    "severity": "Low",
+    "status": "Open",
+    "title": "Week 5 schedule page has no row in the source registry"
+  },
+  {
+    "close": "Register future weeks before kickoff, then grade them.",
+    "evidence": "nfl-results/data/games-2026-w1-9.csv",
+    "finding": "The scores were retrieved on 2026-11-14, after the games were final. The corpus cannot be pre-registered. Only rules registered from now on are prospective.",
+    "id": "F12",
+    "official": [
+      "https://www.nfl.com/schedules/2026/by-week/week-5"
+    ],
+    "severity": "Medium",
+    "status": "Open: disclosed",
+    "title": "The 136-game corpus is retrospective"
+  },
+  {
+    "close": "Document the grammar and reproduce the count from the file.",
+    "evidence": "nfl-availability-28ef/data/depth-slots-week10-2026.csv",
+    "finding": "1586 rows map to 777 unique (club, unit, position, slot) keys. Without a documented row grammar, the brief's 149 multi-rank-1 slots cannot be reproduced.",
+    "id": "F13",
+    "official": [],
+    "severity": "Medium",
+    "status": "Open",
+    "title": "Depth-slot file structure is undocumented"
+  },
+  {
+    "close": "Fetch the two official depth pages and record the parse result for each.",
+    "evidence": "nfl-readiness-1467fdf7/requirements.py (row C07)",
+    "finding": "The brief states the Texans depth chart is an image and the Packers prepend jersey numbers. Neither was verified this session.",
+    "id": "F14",
+    "official": [],
+    "severity": "Medium",
+    "status": "Open: unverified",
+    "title": "Depth-parsing claims in the brief not verified"
+  },
+  {
+    "close": "A written policy, with the source named and its terms read.",
+    "evidence": "nfl-lifecycle-3f5c/data/price-snapshots.json",
+    "finding": "No opening line exists. Closing prices come from a non-official source. No ROI, CLV or residual can be published honestly until a policy names the permitted source.",
+    "id": "F15",
+    "official": [
+      "https://www.nfl.com/legal/terms/"
+    ],
+    "severity": "High",
+    "status": "Open: decision",
+    "title": "Price-data policy is undecided"
+  },
+  {
+    "close": "A recorded decision on which layer each file belongs to.",
+    "evidence": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+    "finding": "Row-level CSVs (for example, 326 injury rows) are published in the repo. The brief asks that raw rows stay private until the terms are read.",
+    "id": "F16",
+    "official": [
+      "https://www.nfl.com/legal/terms/"
+    ],
+    "severity": "High",
+    "status": "Open: decision",
+    "title": "Row-level data is public in the repo"
+  },
+  {
+    "close": "Read every chunk of the terms page and of the support article the entry cites; correct the registry scope to the exact section.",
+    "evidence": "research/sources.json (entry NFL-TERMS); nfl-readiness-1467fdf7/data/flags.json",
+    "finding": "research/sources.json entry NFL-TERMS (another desk) says 'Section 12: prohibited from gambling/wagering on gaming features'. On www.nfl.com/legal/terms/ read 2026-11-17, \u00a712 is 'User Content and Communications', and no wagering clause was found in the two chunks read (chunks 0 and 2 of 9). The gambling wording may come from a different terms page. Not changed here.",
+    "id": "F18",
+    "official": [
+      "https://www.nfl.com/legal/terms/"
+    ],
+    "severity": "Medium",
+    "status": "Open",
+    "title": "Registry describes NFL terms \u00a712 as a gambling clause; the page read does not"
+  },
+  {
+    "close": "Write the reward rule and its gate; decide the amount and eligibility.",
+    "evidence": "nfl-readiness-1467fdf7/strategies.py",
+    "finding": "No strategy is qualified, so no reward is paid. The brief asks for rewards for top strategies, but gate G7 (executable price) blocks any reward, and the reward rule itself is not written.",
+    "id": "F17",
+    "official": [],
+    "severity": "Medium",
+    "status": "Open: decision",
+    "title": "Reward policy is undefined"
+  }
+]
