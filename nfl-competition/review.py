@@ -1,0 +1,314 @@
+"""Repo review: line-by-line verification findings, each with an official source link.
+
+Every flag here was produced by reading something in the repository and checking it
+against the official page it claims to come from. Nothing is inferred. A flag is either
+open - a reader should decide what to do - or explained - the behaviour is correct and
+the reason is recorded - or corrected - it was a defect and is fixed in this desk.
+
+Two of the flags are defects found in this session's own code before publication. They
+are listed with the others rather than quietly fixed, because a review that only reports
+other people's problems is not a review.
+"""
+from __future__ import annotations
+
+import csv
+import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from common import DATA, ROOT, check_artifact, round_value, write_csv  # noqa: E402
+
+OUT = DATA / "review.json"
+STANDINGS_URL = "https://www.nfl.com/standings/"
+GAME_URL = "https://www.nfl.com/games/commanders-at-giants-2026-reg-10"
+SCHEDULE_URL = "https://www.nfl.com/schedules/2026/by-week/week-10"
+INJURY_URL = "https://www.nfl.com/injuries/league/2026/REG10"
+ODDS_URL = "https://www.nfl.com/odds/"
+HOU_URL = "https://www.houstontexans.com/team/depth-chart"
+CHI_URL = "https://www.chicagobears.com/team/depth-chart"
+
+
+def build():
+    origination = json.loads((DATA / "origination.json").read_text(encoding="utf-8"))
+    results = json.loads((DATA / "results-feed.json").read_text(encoding="utf-8"))
+    injuries = json.loads((DATA / "injuries.json").read_text(encoding="utf-8"))
+    backtest = json.loads((DATA / "backtest.json").read_text(encoding="utf-8"))
+    leaderboard = json.loads((DATA / "leaderboard.json").read_text(encoding="utf-8"))
+    prices = json.loads((DATA / "price-store.json").read_text(encoding="utf-8"))
+
+    frozen = list(csv.DictReader(
+        (ROOT / "data" / "nfl-standings-week10-2026.csv").open(encoding="utf-8",
+                                                               newline="")))
+    frozen_was = next(r for r in frozen if r["TeamCode"] == "WAS")
+    frozen_nyg = next(r for r in frozen if r["TeamCode"] == "NYG")
+    prior = json.loads((ROOT / "nfl-results" / "analysis.json").read_text(encoding="utf-8"))
+    prior_dir = prior["benchmarks"]["spread"]["directional"]
+
+    flags = [
+        {
+            "id": "RF-01", "status": "open", "severity": "high",
+            "title": "The published Week 10 board originates a line for a game that has "
+                     "already been played",
+            "finding": "research/nfl/results.json originates 14 Week 10 games, including "
+                       "WAS @ NYG. That game finished on 2026-11-12 with Washington 24, "
+                       "New York Giants 21, and its own official game page prints FINAL.",
+            "checked_against": GAME_URL,
+            "source_ids": ["CP-NFL-W10-GAME-WASNYG", "CP-NFL-W10-SCHEDULE"],
+            "detail": f"The frozen fixture file was captured on 2026-11-12, before the "
+                      f"Thursday game. This desk originates "
+                      f"{origination['games_originated']} games and excludes the one "
+                      f"already played.",
+            "recommended": "Re-read the Week 10 schedule page after Monday 2026-11-16 and "
+                           "regenerate the board, or mark any settled fixture on the board "
+                           "as settled rather than originated.",
+        },
+        {
+            "id": "RF-02", "status": "open", "severity": "high",
+            "title": "Two desks publish different directional records for the same season",
+            "finding": f"This desk records {backtest['sensitivity'][0]['wins']}-"
+                       f"{backtest['sensitivity'][0]['n'] - backtest['sensitivity'][0]['wins']} "
+                       f"({backtest['sensitivity'][0]['hit_rate']:.4f}) for the board's "
+                       f"own side. nfl-results/analysis.json records "
+                       f"{prior_dir['wins']}-{prior_dir['losses']} "
+                       f"({prior_dir['hit_rate']:.4f}).",
+            "checked_against": "nfl-results/analysis.json (benchmarks.spread.directional)",
+            "source_ids": ["CP-NFL-RESULTS-W1-9"],
+            "detail": "A sensitivity run rules out the most likely cause. Forcing this "
+                      "desk's home allowance to the 2.0 points the other desk assumes "
+                      f"gives {backtest['sensitivity'][2]['wins']}-"
+                      f"{backtest['sensitivity'][2]['n'] - backtest['sensitivity'][2]['wins']} "
+                      f"({backtest['sensitivity'][2]['hit_rate']:.4f}), which is further "
+                      "away, not closer. The difference is in the functional form and the "
+                      "shrinkage.",
+            "recommended": "Grade both models on one frozen forecast table and publish the "
+                           "difference. Suggestion SG-04.",
+        },
+        {
+            "id": "RF-03", "status": "explained", "severity": "medium",
+            "title": "The older board's two key parameters are assumptions, not NFL figures",
+            "finding": "nfl_origination uses a home allowance of 2.0 points and a margin "
+                       "standard deviation of 13.86, and discloses both as project "
+                       "assumptions. Measured from 137 official final scores they are "
+                       f"{origination['parameters']['home_allowance_points']['value']:.4f} "
+                       f"(n = {origination['parameters']['home_allowance_points']['n']}) "
+                       f"and {origination['parameters']['margin_sd_points']['value']:.4f} "
+                       f"(n = {origination['parameters']['margin_sd_points']['n']}).",
+            "checked_against": STANDINGS_URL,
+            "source_ids": ["CP-NFL-RESULTS-W1-9", "CP-NFL-W10-GAME-WASNYG"],
+            "detail": "The home allowance carries a 95% interval of "
+                      f"[{origination['parameters']['home_allowance_points']['ci95'][0]:.4f}, "
+                      f"{origination['parameters']['home_allowance_points']['ci95'][1]:.4f}], "
+                      "which contains both zero and the conventional two points. This "
+                      "season does not separate them.",
+            "recommended": "Keep the measured value and publish the interval. Do not "
+                           "silently switch the older board.",
+        },
+        {
+            "id": "RF-04", "status": "explained", "severity": "medium",
+            "title": "Most injury rows carry no game status, so any replacement count is "
+                     "a floor",
+            "finding": f"{injuries['status_coverage']['by_game_status'].get('(none printed)', 0)} "
+                       f"of {injuries['status_coverage']['rows']} Week 10 injury rows print "
+                       f"no game status at all.",
+            "checked_against": INJURY_URL,
+            "source_ids": ["CP-NFL-INJ-W10"],
+            "detail": "A replacement is only implied where the league states an absence. "
+                      "The report states one on 25 rows, so the depth table counts what "
+                      "is published rather than what a reader might assume.",
+            "recommended": "Suggestion SG-03: find the field on another page, or publish "
+                           "the ceiling as the finding.",
+        },
+        {
+            "id": "RF-05", "status": "open", "severity": "medium",
+            "title": "Houston's depth chart cannot be read",
+            "finding": "The Houston club site renders a heading and an image with no "
+                       "table. The failure was reproduced on two independent reads by two "
+                       "different sessions.",
+            "checked_against": HOU_URL,
+            "source_ids": ["CP-NFL-DEPTH-27"],
+            "detail": "Houston therefore has no printed ranks and no replacement depth. "
+                      "The cell is blank, not estimated.",
+            "recommended": "Try the club roster page, or accept the blank and keep it "
+                           "flagged.",
+        },
+        {
+            "id": "RF-06", "status": "open", "severity": "medium",
+            "title": "Captured depth charts are undated or stale",
+            "finding": "Chicago prints a chart date of 10/31/2026, which precedes the "
+                       "injury ledger it is joined to. Denver, Philadelphia and Tampa "
+                       "print no date. Philadelphia's chart is self-labelled unofficial.",
+            "checked_against": CHI_URL,
+            "source_ids": ["CP-NFL-DEPTH-BYE4"],
+            "detail": "A replacement depth is only as current as the chart it comes from. "
+                      "30 of 31 captured charts carry no printed date.",
+            "recommended": "Suggestion SG-06.",
+        },
+        {
+            "id": "RF-07", "status": "explained", "severity": "low",
+            "title": "The Rams are printed two different ways, which silently breaks a "
+                     "join",
+            "finding": "NFL.com prints the Rams as LA. The standings capture in "
+                       "nfl-skill-cfdd uses LAR. Joining the two without normalising "
+                       "reports the club as missing: this session's first reconciliation "
+                       "failed with exactly that symptom.",
+            "checked_against": STANDINGS_URL,
+            "source_ids": ["CP-NFL-STANDINGS", "CP-NFL-RESULTS-W1-9"],
+            "detail": "After normalising LA to LAR the reconciliation is exact: 192 of "
+                      "192 club fields match and 6,291 points are scored each way.",
+            "recommended": "Normalise at load and record the printed code beside the "
+                           "canonical one, which is what this desk now does.",
+        },
+        {
+            "id": "RF-08", "status": "explained", "severity": "low",
+            "title": "Sixteen standings display fields are withheld",
+            "finding": "The rendered standings table prints three unnamed three-part "
+                       "records and two unnamed decimals. The page does not say which is "
+                       "home, road, division or conference.",
+            "checked_against": STANDINGS_URL,
+            "source_ids": ["CP-NFL-STANDINGS"],
+            "detail": "Withheld rather than guessed. Correct handling, retained here.",
+            "recommended": "Suggestion SG-07.",
+        },
+        {
+            "id": "RF-09", "status": "open", "severity": "low",
+            "title": "The README count of official scores is now one short",
+            "finding": f"README.md states 136 official scores. The feed now holds "
+                       f"{results['games']} after the Week 10 Thursday game was added.",
+            "checked_against": GAME_URL,
+            "source_ids": ["CP-NFL-W10-GAME-WASNYG"],
+            "detail": "The count was right when it was written. It is a staleness, not an "
+                      "error.",
+            "recommended": "Update to 137 with the game's source link.",
+        },
+        {
+            "id": "RF-10", "status": "explained", "severity": "low",
+            "title": "The frozen standings snapshot is superseded for two clubs",
+            "finding": f"Washington is frozen at {frozen_was['W']}-{frozen_was['L']}-"
+                       f"{frozen_was['T']} with PF {frozen_was['PF']}, and New York Giants "
+                       f"at {frozen_nyg['W']}-{frozen_nyg['L']}-{frozen_nyg['T']} with PF "
+                       f"{frozen_nyg['PF']}. The standings page read today shows "
+                       f"Washington 3-5-1 with PF 196 and the Giants 5-3-1 with PF 203.",
+            "checked_against": STANDINGS_URL,
+            "source_ids": ["CP-NFL-STANDINGS"],
+            "detail": "Correct for a frozen snapshot, and it is the root cause of RF-01. "
+                      "Nothing was back-filled into the frozen file.",
+            "recommended": "Note the snapshot date prominently wherever a frozen figure is "
+                           "displayed.",
+        },
+        {
+            "id": "RF-11", "status": "explained", "severity": "high",
+            "title": "No price exists anywhere in the project, and this is verified rather "
+                     "than assumed",
+            "finding": "nfl.com returns HTTP 404 at /odds/ with no odds table, no price, "
+                       "no operator and no market list. A repository-wide search for "
+                       "committed market, price, closing, CLV, ROI or stake values returns "
+                       "nothing numeric.",
+            "checked_against": ODDS_URL,
+            "source_ids": ["CP-NFL-ODDS-ABSENT"],
+            "detail": "This is the single largest constraint on the project. It is why the "
+                      "difference column, the staking table and every reward are blank.",
+            "recommended": "Suggestions SG-01 and SG-12.",
+        },
+        {
+            "id": "RF-12", "status": "corrected", "severity": "medium",
+            "title": "Two statistical defects found in this session's own code and fixed "
+                     "before publication",
+            "finding": "The Benjamini-Hochberg step-up was computed from the smallest "
+                       "p-value forwards, which drags every later value down to the "
+                       "smallest one and reported an adjusted p of 0 for a raw p of 1. "
+                       "Separately, the t-test for a Pearson correlation returned values "
+                       "greater than 1.",
+            "checked_against": "nfl-competition/common.py",
+            "source_ids": ["CP-NFL-RESULTS-W1-9"],
+            "detail": "Both were visible in the output rather than in the code: every "
+                      "adjusted p printed as 0.0000, and two p-values printed as 1.94 and "
+                      "1.74. Fixed by running the step-up from the largest rank downwards "
+                      "and by using the identity P(|T| > t) = I_x(df/2, 1/2) with "
+                      "x = df/(df + t^2). Both are now checked against known values: the "
+                      "incomplete beta returns 0.5 at (1, 1, 0.5), the normal CDF returns "
+                      "0.975 at 1.96, and a correlation of exactly zero returns p = 1.",
+            "recommended": "None. Recorded so the fix is not mistaken for a silent edit.",
+        },
+        {
+            "id": "RF-13", "status": "corrected", "severity": "medium",
+            "title": "Three leaderboard defects found in this session's own code and fixed",
+            "finding": "The ranking score divided by the strength of evidence instead of "
+                       "multiplying by it, so a result with p = 0.90 ranked first. Control "
+                       "entries were being promoted to Provisional. Blocked entries showed "
+                       "performance gates as failures when those gates do not apply.",
+            "checked_against": "nfl-competition/leaderboard.py",
+            "source_ids": [],
+            "detail": "The score is now log10(n) x distance from the reference x "
+                      "-log10(p); controls carry a Control tier and are never ranked; and "
+                      "a blocked strategy marks the performance gates not applicable "
+                      "rather than failed.",
+            "recommended": "None. Recorded for the same reason as RF-12.",
+        },
+        {
+            "id": "RF-14", "status": "explained", "severity": "low",
+            "title": "The totals board scores 50.4%, and that is the expected result",
+            "finding": "Grading a forecast against its own number must produce a coin "
+                       "flip. It does: 61 overs and 60 unders on 121 games.",
+            "checked_against": "nfl-competition/data/backtest.json (SB-09)",
+            "source_ids": ["CP-NFL-RESULTS-W1-9"],
+            "detail": "Published as a control so the number is not misread as a result. "
+                      "The totals model's real score is its skill against the league "
+                      f"mean, which is "
+                      f"{backtest['strategies'][9]['signal']['skill_score']:.4f} - worse "
+                      f"than the reference.",
+            "recommended": "Keep the control visible.",
+        },
+        {
+            "id": "RF-15", "status": "open", "severity": "medium",
+            "title": "The player-props division has no graded entries at all",
+            "finding": f"{leaderboard['counts']['Blocked on data']} entries are blocked "
+                       f"because no per-game player log was retrieved from any official "
+                       f"source.",
+            "checked_against": INJURY_URL,
+            "source_ids": ["CP-NFL-INJ-W10"],
+            "detail": "The division exists, its rules are written, and every column in it "
+                      "is blank. Publishing a dependence for a prop without the underlying "
+                      "numbers would be a fabrication.",
+            "recommended": "Suggestion SG-02.",
+        },
+    ]
+
+    write_csv(DATA / "review.csv", [{
+        "id": f["id"], "status": f["status"], "severity": f["severity"],
+        "title": f["title"], "finding": f["finding"], "detail": f["detail"],
+        "checked_against": f["checked_against"],
+        "source_ids": ";".join(f["source_ids"]), "recommended": f["recommended"],
+    } for f in flags])
+
+    counts = {}
+    for flag in flags:
+        counts[flag["status"]] = counts.get(flag["status"], 0) + 1
+
+    payload = {
+        "built_on": "2026-11-14",
+        "method": "Read each claim in the repository and check it against the official "
+                  "page it names. Nothing is inferred; a value that cannot be confirmed "
+                  "from an official source is flagged rather than filled in.",
+        "counts": counts,
+        "total": len(flags),
+        "price_search": {
+            "rows_in_store": prices["rows_stored"],
+            "repository_wide_search_for_committed_prices": "no numeric market, price, "
+                                                           "closing, CLV, ROI or stake "
+                                                           "value found in any JSON or CSV",
+        },
+        "flags": flags,
+    }
+    return round_value(payload, 6)
+
+
+def main():
+    if check_artifact(OUT, build()):
+        payload = build()
+        print(f"  {payload['total']} flags: {payload['counts']}")
+
+
+if __name__ == "__main__":
+    main()

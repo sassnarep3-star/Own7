@@ -26,6 +26,14 @@ class ResultsCapture(unittest.TestCase):
             cls.games = list(csv.DictReader(handle))
         with (ROOT / "nfl-results" / "data" / "byes-2026-w1-9.csv").open(encoding="utf-8") as handle:
             cls.byes = list(csv.DictReader(handle))
+        with (ROOT / "nfl-results" / "data" / "games-2026-w1-10.csv").open(encoding="utf-8") as handle:
+            cls.games10 = list(csv.DictReader(handle))
+        with (ROOT / "nfl-results" / "data" / "byes-2026-w1-10.csv").open(encoding="utf-8") as handle:
+            cls.byes10 = list(csv.DictReader(handle))
+        with (ROOT / "nfl-results" / "data" / "scheduled-2026-w10.csv").open(encoding="utf-8") as handle:
+            cls.scheduled = list(csv.DictReader(handle))
+        with (ROOT / "nfl-results" / "data" / "reconciliation-2026-11-17.json").open(encoding="utf-8") as handle:
+            cls.reconciliation = json.load(handle)
 
     def test_every_game_has_an_official_source_and_date(self):
         for row in self.games:
@@ -38,6 +46,33 @@ class ResultsCapture(unittest.TestCase):
     def test_no_fixture_is_duplicated(self):
         keys = [(r["week"], r["away"], r["home"]) for r in self.games]
         self.assertEqual(len(keys), len(set(keys)))
+        keys10 = [(r["week"], r["away"], r["home"]) for r in self.games10]
+        self.assertEqual(len(keys10), len(set(keys10)))
+
+    def test_week_10_extension_provenance(self):
+        """Week 10 rows must carry the URL actually read and the read date."""
+        w10 = [r for r in self.games10 if r["week"] == "10"]
+        self.assertEqual(len(w10), 13)
+        for r in w10:
+            self.assertEqual(r["source_url"], "https://www.nfl.com/schedules/2026/REG10")
+            self.assertEqual(r["retrieved"], "2026-11-17")
+        self.assertEqual(len(self.games10), len(self.games) + 13)
+
+    def test_scheduled_fixture_is_never_a_result(self):
+        """LAC at BAL printed a kickoff, not a score: it must stay out of the feed."""
+        self.assertEqual(len(self.scheduled), 1)
+        row = self.scheduled[0]
+        self.assertEqual((row["away"], row["home"]), ("LAC", "BAL"))
+        w10_pairs = {(r["away"], r["home"]) for r in self.games10 if r["week"] == "10"}
+        self.assertNotIn(("LAC", "BAL"), w10_pairs)
+        self.assertNotIn(("BAL", "LAC"), w10_pairs)
+
+    def test_snapshot_cross_check_holds(self):
+        """The three published reconciliation checks must all hold."""
+        checks = self.reconciliation["checks"]
+        self.assertEqual(checks["w1_9_vs_frozen"], "160 fields reconciled")
+        self.assertEqual(checks["w1_10_vs_fresh"], "160 fields reconciled")
+        self.assertEqual(checks["fresh_eq_frozen_plus_w10_deltas"], "32 clubs x 5 fields hold")
 
     def test_no_club_plays_twice_in_a_week(self):
         per_week: dict[str, list[str]] = {}
@@ -57,8 +92,23 @@ class ResultsCapture(unittest.TestCase):
             self.assertEqual(count, (32 - bye_week.get(week, 0)) // 2,
                              f"week {week} game count inconsistent with its byes")
 
+    def test_extended_game_counts_match_byes_and_scheduled(self):
+        by_week: dict[str, int] = {}
+        for r in self.games10:
+            by_week[r["week"]] = by_week.get(r["week"], 0) + 1
+        bye_week: dict[str, int] = {}
+        for r in self.byes10:
+            bye_week[r["week"]] = bye_week.get(r["week"], 0) + 1
+        sched_week: dict[str, int] = {}
+        for r in self.scheduled:
+            sched_week[r["week"]] = sched_week.get(r["week"], 0) + 1
+        for week, count in by_week.items():
+            expected = (32 - bye_week.get(week, 0)) // 2 - sched_week.get(week, 0)
+            self.assertEqual(count, expected,
+                             f"week {week} game count inconsistent with its byes and scheduled fixtures")
+
     def test_reconciliation_holds(self):
-        """The 136 parsed games must reproduce the official standings exactly."""
+        """The parsed games must reproduce the official standings exactly (both snapshots)."""
         with (ROOT / "data" / "nfl-standings-2026.csv").open(encoding="utf-8") as handle:
             standings = list(csv.DictReader(handle))
         import subprocess
@@ -79,7 +129,7 @@ class ResultsCapture(unittest.TestCase):
 class NoLeakage(unittest.TestCase):
     def test_prior_state_excludes_the_target_week(self):
         games = engine.load_games()
-        for week in (2, 5, 9):
+        for week in (2, 5, 9, 10):
             state = engine.prior_state(games, week)
             for row in state.values():
                 for r in row["results"]:
@@ -89,7 +139,7 @@ class NoLeakage(unittest.TestCase):
         games = engine.load_games()
         rows = engine.walk_forward(games, engine.load_byes())
         self.assertTrue(all(r["week"] >= 2 for r in rows))
-        self.assertEqual(len(rows), 120)
+        self.assertEqual(len(rows), 133)
 
     def test_leave_one_out_uses_an_earlier_cut(self):
         games = engine.load_games()

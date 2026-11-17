@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "index.html",
+    "executive-summary.html",
+    "prices.html",
+    "results.html",
+    "origination.html",
+    "boards.html",
+    "leaderboard.html",
+    "depth.html",
+    "correlations.html",
+    "demotion.html",
+    "injuries.html",
+    "questions.html",
+    "suggestions.html",
+    "review.html",
+    "sources.html",
+    "method.html"
+  ],
+  "desk": "nfl-competition",
+  "built_on": "2026-11-14"
+}

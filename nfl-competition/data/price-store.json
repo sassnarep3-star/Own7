@@ -1,0 +1,292 @@
+{
+  "requirement": "R1 - price-snapshot store with opening and closing numbers",
+  "built_on": "2026-11-14",
+  "schema_version": 1,
+  "store_path": "nfl-competition/data/price-snapshots.csv",
+  "rows_stored": 0,
+  "markets_registered": 78,
+  "games_registered": 13,
+  "capture_rules": {
+    "opening": "First capture at or after kickoff minus 48 hours.",
+    "closing": "Last capture at or before kickoff minus 90 minutes.",
+    "usable_for_clv": "A market is usable only when it holds one opening row and one closing row for the same operator.",
+    "why_fixed_in_advance": "A capture instant chosen after the result is known lets a favourable number be selected retrospectively. Fixing the instants in advance removes that degree of freedom.",
+    "late_move": "A move after the closing instant is recorded as a third row with capture_point = POST_CLOSE and is never used for a closing-line value."
+  },
+  "schema": [
+    {
+      "field": "snapshot_id",
+      "type": "text",
+      "required": true,
+      "rule": "Unique. Format: market_id + ':' + capture_point."
+    },
+    {
+      "field": "market_id",
+      "type": "text",
+      "required": true,
+      "rule": "Must match a market_id published by boards.py. A price for a market the lab does not originate is rejected."
+    },
+    {
+      "field": "game_id",
+      "type": "text",
+      "required": true,
+      "rule": "Must match a game_id published by originate.py."
+    },
+    {
+      "field": "kickoff_utc",
+      "type": "iso8601",
+      "required": true,
+      "rule": "Kickoff in UTC, from the official schedule page."
+    },
+    {
+      "field": "market_type",
+      "type": "enum",
+      "required": true,
+      "rule": "One of SIDE, TOTAL, MONEYLINE."
+    },
+    {
+      "field": "selection",
+      "type": "text",
+      "required": true,
+      "rule": "The side, over/under, or club the number applies to."
+    },
+    {
+      "field": "capture_point",
+      "type": "enum",
+      "required": true,
+      "rule": "One of OPEN, CLOSE, POST_CLOSE."
+    },
+    {
+      "field": "captured_at_utc",
+      "type": "iso8601",
+      "required": true,
+      "rule": "Must be strictly before kickoff_utc. A capture taken after kickoff is not a price for that market."
+    },
+    {
+      "field": "operator",
+      "type": "text",
+      "required": true,
+      "rule": "The book or exchange the number came from. Anonymous prices are rejected."
+    },
+    {
+      "field": "line",
+      "type": "decimal",
+      "required": false,
+      "rule": "The spread or total. Blank for a moneyline, which has no line."
+    },
+    {
+      "field": "price_american",
+      "type": "integer",
+      "required": false,
+      "rule": "American price. Blank is allowed only when the row records a line with no price."
+    },
+    {
+      "field": "source_url",
+      "type": "url",
+      "required": true,
+      "rule": "Must be on a host registered in sources.py. A row without a reachable source is never published."
+    },
+    {
+      "field": "evidence_file",
+      "type": "path",
+      "required": true,
+      "rule": "Must exist in the repository. The file holds the text actually read."
+    },
+    {
+      "field": "verified",
+      "type": "enum",
+      "required": true,
+      "rule": "One of yes, no, pending. Only 'yes' rows enter a calculation."
+    },
+    {
+      "field": "imputed",
+      "type": "boolean",
+      "required": true,
+      "rule": "Must be false. A filled, interpolated or modelled price is rejected; the store holds observations or nothing."
+    }
+  ],
+  "contract_tests": [
+    {
+      "case": "no source url",
+      "expected": "reject",
+      "observed": "reject",
+      "passes": true,
+      "reasons": [
+        "source_url: required and missing"
+      ]
+    },
+    {
+      "case": "captured after kickoff",
+      "expected": "reject",
+      "observed": "reject",
+      "passes": true,
+      "reasons": [
+        "captured_at_utc: must be before kickoff"
+      ]
+    },
+    {
+      "case": "imputed price",
+      "expected": "reject",
+      "observed": "reject",
+      "passes": true,
+      "reasons": [
+        "imputed: a modelled or interpolated number is not an observation"
+      ]
+    },
+    {
+      "case": "unknown market id",
+      "expected": "reject",
+      "observed": "reject",
+      "passes": true,
+      "reasons": [
+        "market_id: not a market this lab originates"
+      ]
+    },
+    {
+      "case": "missing evidence file",
+      "expected": "reject",
+      "observed": "reject",
+      "passes": true,
+      "reasons": [
+        "evidence_file: no such file in the repository"
+      ]
+    },
+    {
+      "case": "a well formed row",
+      "expected": "accept",
+      "observed": "accept",
+      "passes": true,
+      "reasons": []
+    }
+  ],
+  "contract_all_pass": true,
+  "market_register": [
+    {
+      "game_id": "W10-01",
+      "matchup": "NE @ DET",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-02",
+      "matchup": "KC @ ATL",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-03",
+      "matchup": "HOU @ CLE",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-04",
+      "matchup": "MIN @ GB",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-05",
+      "matchup": "MIA @ IND",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-06",
+      "matchup": "CAR @ NO",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-07",
+      "matchup": "BUF @ NYJ",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-08",
+      "matchup": "JAX @ TEN",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-09",
+      "matchup": "LAR @ AZ",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-10",
+      "matchup": "SEA @ LV",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-11",
+      "matchup": "SF @ DAL",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-12",
+      "matchup": "PIT @ CIN",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    },
+    {
+      "game_id": "W10-13",
+      "matchup": "LAC @ BAL",
+      "markets_originated": 6,
+      "opening_rows": 0,
+      "closing_rows": 0,
+      "store_status": "Awaiting a source that publishes a price",
+      "usable_for_closing_line_value": false
+    }
+  ],
+  "empty_because": [
+    "nfl.com returns HTTP 404 at /odds/; the rendered response contains no odds table, no price, no operator and no market list (CP-NFL-ODDS-ABSENT).",
+    "The official Week 10 game page read on 2026-11-14 prints a score, a by-quarter table, game info and a standings widget, and prints no spread, total or price.",
+    "No operator or sportsbook was consulted. NFL.com terms section 1.3 permit individual non-commercial informational use and prohibit systematic retrieval to compile a collection without written consent; no such consent is evidenced."
+  ],
+  "what_unblocks_it": [
+    "A written licence or terms of use that permits retrieving and retaining opening and closing prices from a named operator, or",
+    "an official league publication that prints opening and closing numbers, which would then be registered in sources.py like any other source."
+  ],
+  "consequence": "With zero rows there is no closing-line value, no return on investment, no staking column and no cash reward anywhere in this lab. Those cells are blank, not estimated."
+}

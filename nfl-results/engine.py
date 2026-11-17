@@ -1,7 +1,9 @@
 """Deterministic, leakage-free evaluation of NFL line-origination strategies.
 
-Everything below is computed from one input: the 136 official game results for
-weeks 1-9 that reconcile exactly with the frozen official standings snapshot.
+Everything below is computed from one input: the 149 official game results for
+weeks 1-10 that reconcile exactly with the official standings snapshots (the frozen
+pre-kickoff Week 10 read for weeks 1-9; the 2026-11-17 read for weeks 1-10 minus
+the one Week 10 game that was not yet final when the page was read).
 
 Enforced in code, not just claimed in prose:
 
@@ -48,7 +50,7 @@ FDR_LEVEL = 0.10
 BOOT_SEED = 20261114
 BOOT_REPS = 4000
 PERM_REPS = 20000
-EVAL_WEEKS = range(2, 10)   # week 1 has no prior information, so it is not scored
+EVAL_WEEKS = range(2, 11)   # week 1 has no prior information, so it is not scored
 
 
 # --- Small numeric helpers (no third-party packages) ---------------------------------
@@ -126,7 +128,7 @@ def benjamini_hochberg(pvals: list[float]) -> list[float]:
 # --- Data ---------------------------------------------------------------------------
 def load_games() -> list[dict]:
     import csv
-    with (DATA / "games-2026-w1-9.csv").open(encoding="utf-8", newline="") as handle:
+    with (DATA / "games-2026-w1-10.csv").open(encoding="utf-8", newline="") as handle:
         games = list(csv.DictReader(handle))
     for g in games:
         g["week"] = int(g["week"])
@@ -140,7 +142,7 @@ def load_games() -> list[dict]:
 def load_byes() -> dict[int, set[str]]:
     import csv
     byes: dict[int, set[str]] = {}
-    with (DATA / "byes-2026-w1-9.csv").open(encoding="utf-8", newline="") as handle:
+    with (DATA / "byes-2026-w1-10.csv").open(encoding="utf-8", newline="") as handle:
         for row in csv.DictReader(handle):
             byes.setdefault(int(row["week"]), set()).add(row["team_code"])
     return byes
@@ -779,16 +781,17 @@ def build() -> dict:
 
     return stabilise({
         "schema_version": 1,
-        "generated_for": "2026 NFL season through week 9",
+        "generated_for": "2026 NFL season through week 10 (13 of 14 Week 10 games final at the 2026-11-17 read)",
         "inputs": {
-            "games_file": "nfl-results/data/games-2026-w1-9.csv",
-            "byes_file": "nfl-results/data/byes-2026-w1-9.csv",
+            "games_file": "nfl-results/data/games-2026-w1-10.csv",
+            "byes_file": "nfl-results/data/byes-2026-w1-10.csv",
             "games": len(games),
             "weeks_scored": sorted(EVAL_WEEKS),
             "rows_scored": len(rows),
             "sources": [
                 "https://www.nfl.com/schedules/2026/by-week/week-{n} for n = 1..9",
-                "https://www.nfl.com/standings/ (frozen 2026-11-12 snapshot used for reconciliation)",
+                "https://www.nfl.com/schedules/2026/REG10 (read 2026-11-17; 13 finals + 1 scheduled-not-final)",
+                "https://www.nfl.com/standings/ (frozen pre-kickoff read reconciles weeks 1-9; fresh 2026-11-17 read reconciles weeks 1-10 minus the scheduled game)",
             ],
         },
         "parameters": {

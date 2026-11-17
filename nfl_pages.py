@@ -18,6 +18,7 @@ RECEIPTS = json.loads((ROOT / "research/nfl/receipts.json").read_text(encoding="
 RECHECK = json.loads((ROOT / "research/nfl/verification-2026-11-13.json").read_text(encoding="utf-8"))
 SUB_SUGGESTIONS = json.loads((ROOT / "research/nfl-suggestions.json").read_text(encoding="utf-8"))["suggestions"]
 REQUIREMENTS = json.loads((ROOT / "research/nfl-requirements.json").read_text(encoding="utf-8"))
+DECISION_READINESS = json.loads((ROOT / "research/nfl-decision-readiness.json").read_text(encoding="utf-8"))
 SOURCES = {s["id"]: s for s in json.loads((ROOT / "research/sources.json").read_text(encoding="utf-8"))}
 # A-RR17: the origination section's own page count, kept next to the pages it counts.
 ORIGINATION_PAGES = 13
@@ -840,6 +841,33 @@ def nfl_overview():
     body += '<p class="source-line">' + refs({"source_ids": ["NFL-STANDINGS", "NFL-INJ-W10", "NFL-SCHED-W10",
                                                               "NFL-INJURY-POLICY", "NFL-TERMS-LEGAL", "PYTH-NFL"]}) + '</p>'
     body += readiness_block()
+
+    # Brief-line decision-readiness ledger (session arena/e15f05e0-own7, 2026-11-17): one row per
+    # requirement line of the project brief, with its gate and the number that would clear it.
+    status_kind = {"Implemented": "good", "Partial": "warn", "Open": "blue",
+                   "Blocked": "warn", "Rejected": "neutral"}
+    counts = {}
+    for row in DECISION_READINESS["requirements"]:
+        counts[row["status"]] = counts.get(row["status"], 0) + 1
+    count_text = " \u00b7 ".join(f"{v} {k}" for k, v in sorted(counts.items()))
+    body += section('Decision readiness \u2014 the brief, line by line',
+                    table('nfl-brief-decision-readiness', 'The brief\u2019s requirement lines, graded ' + DECISION_READINESS["snapshot_date"] + '',
+        [('Requirement', lambda r: rich(r['requirement'], r['category'])),
+         ('Status', lambda r: badge(r['status'], status_kind.get(r['status']))),
+         ('Gate that blocks it', 'gate'),
+         ('The number that clears it', 'clears_when'),
+         ('Artifact and official source', lambda r: _Markup(
+             '<span class="refs">' + f'<a href="{esc(r["artifact"])}">Artifact \u2197</a> ' + str(refs(r)) + '</span>'))],
+        [{"id": row["id"], "requirement": row["requirement"], "category": row["category"],
+          "status": row["status"], "gate": row["gate"], "clears_when": row["clears_when"],
+          "artifact": row["artifact"], "source_ids": row["source_ids"]}
+         for row in DECISION_READINESS["requirements"]],
+        filter_options=["Implemented", "Partial", "Open", "Blocked", "Rejected"],
+        note=f'70 rows, one per requirement line in the project brief, graded as of {DECISION_READINESS["snapshot_date"]}: '
+             f'{count_text}. The gate column names what actually blocks the requirement today; the clearing column names '
+             'the number or condition that would lift it. Statuses are re-graded only against artifacts that exist in '
+             'the tree \u2014 never filled in. This ledger complements the gate-mapping table above and the full '
+             'requirement register at <a href="nfl-readiness.html">nfl-readiness.html</a>.'))
     return body
 
 
@@ -1038,7 +1066,7 @@ def readiness_block():
         info=True)
     luck_body += metrics([
         ("Best observed record", f"{luck['wins']}–{luck['losses']}", f"{luck['hit']:.1%} over {luck['bets']} graded bets", "signals"),
-        ("Luck band at this n", f"{luck['band_low']:.1%}–{luck['band_high']:.1%}", "Chance range for 120 bets (95%)", "validation"),
+        ("Luck band at this n", f"{luck['band_low']:.1%}–{luck['band_high']:.1%}", f"Chance range for {luck['bets']} bets (95%)", "validation"),
         ("Single-test p", f"{luck['p_single']:.4f}", "Exact binomial for one strategy", "correlation"),
         ("Family-wise, 18 stated", f"{luck['fw_stated']:.1%}", "Best of the 18 tests the analysis states", "review"),
         ("Family-wise, 30 graded", f"{luck['fw_graded']:.1%}", "Best of all 30 graded variants (recomputed)", "review"),
@@ -1046,7 +1074,7 @@ def readiness_block():
     ])
     luck_rows = [
         {"id": "L1", "check": "95% interval for the hit rate", "result": f"{luck['ci_low']:.1%} to {luck['ci_high']:.1%}",
-         "reading": "Width of the plausible hit rate for 120 bets.", "source_ids": ["NFL-SCHEDULE", "NFL-STANDINGS"]},
+         "reading": f"Width of the plausible hit rate for {luck['bets']} bets.", "source_ids": ["NFL-SCHEDULE", "NFL-STANDINGS"]},
         {"id": "L2", "check": "Permutation test (spread board)", "result": f"p = {luck['perm_p']:.4f}",
          "reading": "How often a shuffled board does as well by chance.", "source_ids": ["NFL-SCHEDULE", "NFL-STANDINGS"]},
         {"id": "L3", "check": "Multiplicity (Benjamini-Hochberg q)", "result": f"q = {luck['bh_q']:.3f}",
@@ -1060,8 +1088,12 @@ def readiness_block():
         ("Check", "check"), ("Result", "result"), ("What it means", "reading")], luck_rows,
         note=f"Family-wise figures: 1 − (1 − p)^n with p = {luck['p_single']:.6f}. The analysis states "
              f"n = {luck['n_family_stated']}; all {luck['n_graded']} graded variants give {luck['fw_graded']:.1%}. "
-             "Both are below 5%, so chance alone is an unlikely explanation for this record under either "
-             "family size. The family size itself is open for review (NF37).")
+             + ("Both are below 5%, so chance alone is an unlikely explanation for this record under either "
+                "family size. The family size itself is open for review (NF37)."
+                if luck["fw_stated"] < 0.05 and luck["fw_graded"] < 0.05 else
+                f"At the current feed size (n = {luck['bets']}) the family-wise figure no longer clears 5% "
+                "under the larger family, so the verdict is re-read every week as the feed grows; the "
+                "family size itself is open for review (NF37)."))
     body = section("Removal of luck", luck_body, eyebrow="DASHBOARD PANEL", sid="luck-panel")
 
     delta_rows = []
