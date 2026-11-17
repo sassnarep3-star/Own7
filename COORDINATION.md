@@ -1945,3 +1945,18 @@ overwritten.
 
 No other session holds a live claim in this window; `nfl-gamebook-5213243e/**` was unclaimed before
 this session. Per the brief, this session is therefore also the integration session for its own scope.
+<<<<<<< HEAD
+=======
+
+### Integration conflict log — incorporating the Game Book branch
+
+The current branch was based on `764635c` (PR #60). The fetched PR #56 head was already rebased on that same base and also contained PR #58's coordination-only publication record. Merging it produced one content conflict, in `COORDINATION.md`, between this session's I1/I2/log and the appended PR #58 / Game Book session records. Resolution retained both sides in full; no task-owned source, code, evidence, or generated page conflicted. The merged Game Book branch remains attributable to `session-arena-5213243e-own7`; this session owns only combined verification and integration.
+
+### I3 — Game Book workstream integrated and verified on this branch (not yet published)
+
+- Integrated PR #56 head `df6f5e804b1b45a76e179b58c4e77464ebdeaf69` into `arena/b5534cd4-own7`; merge commit: see Git history. Its base already included `764635c` (PR #60). PR #58's coordination-only publication record was already present in that head and is retained verbatim; PR #58 was not independently merged by this session and remains untouched as a PR.
+- The only merge conflict was `COORDINATION.md`; both this integration session's log and the incoming PR #58 / Game Book session records were retained. No task-owned data/code conflicted.
+- Rebuilt with `python scripts/build_site.py`; `npm run check` passed (111 unit tests, NFL results receipt reproduction, origination/site tests, and recursive audit: **207 HTML pages, 8,193 table rows, 221 registered sources, 0 errors**). `python nfl-gamebook-5213243e/build_site.py --check` reproduced all 13 desk pages byte-for-byte.
+- Source/row contracts are structurally verified by `scripts/check_site.py`; this is not a fresh live fetch of nfl.com. The Game Book dataset carries 13 official PDFs and explicit flags for missing/ambiguous source content (GB-F01–F05); no missing names or rows were inferred.
+- This is not yet the final integrated site: PR #57 remains under the I2 review request and has not been incorporated. PR #56's latest research audit passed; its browser job was pending at the time of this check. The baseline browser run before the Game Book merge passed 174 desktop + 174 mobile pages; the post-merge browser suite remains to be run on the combined tree.
+>>>>>>> ebc72da (integration: record Game Book verification)
