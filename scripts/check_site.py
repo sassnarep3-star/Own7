@@ -126,6 +126,20 @@ SOURCE_HOSTS.update({
     "X243-RGA-2014": "sso.agc.gov.sg"
 })
 
+# Competition lab (session arena/064da913-own7, ported by session arena/e15f05e0-own7):
+# every CP-NFL-* id published on the competition desk's pages must resolve to its official host.
+SOURCE_HOSTS.update({
+    "CP-NFL-DEPTH-27": "www.atlantafalcons.com"
+    "CP-NFL-DEPTH-BYE4": "www.chicagobears.com"
+    "CP-NFL-INJ-W10": "www.nfl.com"
+    "CP-NFL-ODDS-ABSENT": "www.nfl.com"
+    "CP-NFL-RESULTS-W1-9": "www.nfl.com"
+    "CP-NFL-STANDINGS": "www.nfl.com"
+    "CP-NFL-TERMS": "support.nfl.com"
+    "CP-NFL-W10-GAME-WASNYG": "www.nfl.com"
+    "CP-NFL-W10-SCHEDULE": "www.nfl.com"
+})
+
 
 # NFL market desk (session arena/ec67293d-own7). One publisher host per id: ESPN for the
 # relayed market feed, NFL.com for the official results, injury and standings pages, member-club

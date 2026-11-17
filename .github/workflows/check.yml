@@ -72,6 +72,8 @@ jobs:
           python nfl-assurance-9580ac3f/build.py --check
           python nfl-assurance-9580ac3f/check.py --report
           python -m unittest discover -s nfl-assurance-9580ac3f/tests -v
+          python nfl-competition/build.py --check
+          python -m unittest discover -s nfl-competition/tests -v
           python nfl-market-desk/build.py --check
           python nfl-market-desk/site_build.py
           python -m unittest discover -s nfl-market-desk/tests -v
