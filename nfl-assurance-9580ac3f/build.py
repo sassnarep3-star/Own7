@@ -150,8 +150,23 @@ def build_pages():
 
     req_rows = []
     for r in decisions['requirements']:
-        req_rows.append(row([cell(r['id']), cell(r['requirement']), cell(r['status']), cell(r['artifact']), cell(r['gap'])], r['source_ids'], reg, f' data-status="{esc(r["status"])}"'))
-    pages['requirements.html'] = layout('requirements.html', 'Requirements ledger', table('requirements-table', 'Full request mapped to artifacts and honest gaps', ['ID', 'Requirement', 'Status', 'Artifact', 'Gap / boundary'], req_rows, filters=[('status', 'Status', sorted({r['status'] for r in decisions['requirements']}))]), 'Complete means the artifact exists and is checked; blocked/partial items keep unknown values blank.')
+        req_rows.append(row([cell(r['id']), cell(r['requirement']), cell(r['status']), cell(r['blocking_gate']), cell(r['clearance_threshold'], empty=r['clearance_threshold'] is None), cell(r['threshold_note']), cell(r['artifact']), cell(r['gap'])], r['source_ids'], reg, f' data-status="{esc(r["status"])}"'))
+    req_table = table(
+        'requirements-table',
+        'Full request mapped to blocking gates, clearance thresholds and evidence boundaries',
+        ['ID', 'Requirement', 'Status', 'Blocking gate', 'Count / threshold to clear',
+         'Why a numeric threshold is blank or bounded', 'Artifact', 'Gap / boundary'],
+        req_rows,
+        filters=[('status', 'Status', sorted({r['status'] for r in decisions['requirements']}))],
+        note=('Numeric floors are copied from the assurance engine policy and/or the requested '
+              '32-club coverage requirement. They are gates, not evidence that a strategy is '
+              'skilled. A blank threshold is deliberate where no numeric rule is registered; '
+              'the adjacent note states what must be decided or verified instead.'),
+    )
+    pages['requirements.html'] = layout(
+        'requirements.html', 'Requirements ledger', req_table,
+        'Complete means the artifact exists and is checked; blocked/partial items keep unknown values blank.',
+    )
 
     inj_rows = []
     for r in data['injuries']:

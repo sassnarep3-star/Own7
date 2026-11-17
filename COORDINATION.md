@@ -2525,5 +2525,4 @@ produced; the pending Monday game is stored with blank scores, never imputed; PR
 
 ### Rebase handoff (2026-11-17)
 
-During PR #64 checks, `origin/main` advanced via PR #56 (`2270d2c`) and PR #68 (`0a3dad4`, session `arena/4381c0ce-own7`). The COORDINATION conflict was resolved by retaining the entire upstream Game Book and D3 deployment record and appending this independent assurance-ledger record. No overlapping implementation file was edited. The generated assurance page and manifest remain deterministic; checks were rerun on the latest base.
-
+The rebases advanced `origin/main` from `be2462d` to `764635c`, `bf386f9` (PR #58, session `arena/824cdccf-own7`), `dfc3cdd` (PR #62, session `arena/4381c0ce-own7`), `2270d2c` (PR #56, session `arena/5213243e-own7`), and `0a3dad4` (PR #68, session `arena/4381c0ce-own7`) while PR #64 checks were running. COORDINATION conflicts were resolved as unions: upstream C505/824/F4, landing-page D1/D2/D3, Game Book, and D3 deployment records were retained, with this independent assurance-ledger record appended. No other session's implementation files were edited. The generated assurance page and manifest remain deterministic on the latest base; tests were rerun before updating the branch.

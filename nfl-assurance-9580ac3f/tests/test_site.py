@@ -25,6 +25,33 @@ class SiteTests(unittest.TestCase):
         build.write_all()
         after={p.name:p.read_bytes() for p in (ROOT/'site').iterdir() if p.is_file()}
         self.assertEqual(before,after)
+    def test_requirement_rows_name_gate_and_numeric_clearance_or_explain_blank(self):
+        decisions=json.loads((ROOT/'decisions.json').read_text())
+        requirements=decisions['requirements']
+        self.assertEqual(len(requirements),20)
+        gate_ids={gate[0] for gate in __import__('engine').GATES}
+        self.assertEqual(len({row['id'] for row in requirements}),len(requirements))
+        for row in requirements:
+            self.assertTrue(row['blocking_gate'],row['id'])
+            self.assertTrue(row['threshold_note'],row['id'])
+            for label in row['blocking_gate'].split('; '):
+                self.assertIn(label.split(' · ',1)[0],gate_ids,row['id'])
+            if row['clearance_threshold'] is None:
+                self.assertTrue(row['threshold_note'].strip(),row['id'])
+                self.assertNotIn('TBD',row['threshold_note'].upper(),row['id'])
+            else:
+                self.assertTrue(row['clearance_threshold'].strip(),row['id'])
+        policy=__import__('engine').POLICY
+        by_id={row['id']:row for row in requirements}
+        for req_id in ('R07','R10','R11'):
+            threshold=by_id[req_id]['clearance_threshold']
+            self.assertIn(str(policy['min_selections']),threshold)
+            self.assertIn(str(policy['min_games']),threshold)
+            self.assertIn(str(policy['min_dates']),threshold)
+        self.assertIn('32/32',by_id['R12']['clearance_threshold'])
+        self.assertIn(str(policy['shadow_days']),by_id['R11']['clearance_threshold'])
+        self.assertIn(str(policy['shadow_games']),by_id['R11']['clearance_threshold'])
+
     def test_real_metrics_remain_null(self):
         strategies=json.loads((ROOT/'strategies.json').read_text())
         for s in strategies['strategies']:
