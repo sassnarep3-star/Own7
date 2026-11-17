@@ -18,7 +18,7 @@ const out=join(root,'.artifacts');
 mkdirSync(out,{recursive:true});
 const report={status:'running',browser:null,desktop_pages:[],mobile_pages:[],accessibility_violations:[],runtime_errors:[],assertions:[]};
 const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript','.svg':'image/svg+xml','.json':'application/json','.csv':'text/csv','.md':'text/plain'};
-const allowedFolders=new Set(['assets','css','data','docs','handoff','js','market-evidence','nfl','nfl-assurance-9580ac3f','nfl-availability-28ef','nfl-lifecycle-3f5c','nfl-market-desk','nfl-pricing','nfl-skill-cfdd','pages','rental','research','session-243828fc','verified']);;
+const allowedFolders=new Set(['assets','css','data','docs','handoff','js','market-evidence','nfl','nfl-assurance-9580ac3f','nfl-availability-28ef','nfl-lifecycle-3f5c','nfl-market-desk','nfl-pricing','nfl-readiness','nfl-skill-cfdd','pages','rental','research','session-243828fc','verified']);;
 const publicRootFiles=new Set([...manifest.canonical_pages,...Object.keys(manifest.legacy_redirects),'README.md','COORDINATION.md']);
 const server=createServer((req,res)=>{
   try{
