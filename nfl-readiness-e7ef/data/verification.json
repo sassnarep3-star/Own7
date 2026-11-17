@@ -1,0 +1,40 @@
+{
+ "read_at": "2026-11-17T00:45:05Z",
+ "checks": [
+  {
+   "id": "V2",
+   "result": "pass",
+   "detail": "13 finals + 1 pending game each join to exactly one canonical fixture id (13 joined, pending W10-14)"
+  },
+  {
+   "id": "V1",
+   "result": "pass",
+   "detail": "32/32 clubs: canonical 2026-11-12 capture + 13 Week 10 finals re-derive every W/L/T/PCT/PF/PA/NET-PTS cell of the fresh standings page (0 mismatches)"
+  },
+  {
+   "id": "V3",
+   "result": "pass",
+   "detail": "136-game weeks-1-9 corpus + 13 Week 10 finals equal each club's standings games played for all 32 clubs (0 mismatches)"
+  },
+  {
+   "id": "V4",
+   "result": "pass",
+   "detail": "13 Week 11 fixtures, 26 clubs playing exactly once, 6 byes; playing + byes = the 32"
+  },
+  {
+   "id": "V5",
+   "result": "pass",
+   "detail": "28 team tables (347 rows) parse; all 20 canonical 2026-11-12 rows match the fresh report cell for cell (0 mismatches)"
+  },
+  {
+   "id": "V5b",
+   "result": "pass",
+   "detail": "Detroit's Kerby Joseph, Cade Mays and D.J. Reed are published with Game Status Out (the three cells the 2026-11-12 capture left blank)"
+  },
+  {
+   "id": "V6",
+   "result": "pass",
+   "detail": "records printed beside clubs on the Week 11 page (26 clubs) and the injury page (28 clubs) equal the standings page (0 mismatches)"
+  }
+ ]
+}

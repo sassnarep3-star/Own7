@@ -365,6 +365,32 @@ def readiness_nav_group():
 NAV.extend(readiness_nav_group())
 
 
+E7EF_NAV_PATH = "nfl-readiness-e7ef/site/index.html"
+
+
+def e7ef_nav_group():
+    """Additive nav group for the readiness-audit desk (session arena/e7efbde7-own7).
+
+    Built from the desk's own manifest so this generator never restates a page list that
+    could drift. Returns an empty list if the desk has not been built.
+    """
+    manifest = ROOT / "nfl-readiness-e7ef" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    pages = list(load_json(str(manifest.relative_to(ROOT)))["pages"])
+    labels = {
+        "index.html": "Readiness overview",
+        "verification-2026-11-17.html": "Verification 2026-11-17",
+        "requirement-readiness.html": "Requirement readiness",
+        "flagged.html": "Readiness flagged",
+        "sources.html": "Readiness sources",
+    }
+    return [("NFL readiness audit",
+             [(f"nfl-readiness-e7ef/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+NAV.extend(e7ef_nav_group())
+
+
 
 
 
@@ -894,6 +920,14 @@ def build():
     readiness_pages=[n for n in load_json('nfl-readiness-1467fdf7/site/manifest.json')['pages'] if n.endswith('.html')]
     for name in readiness_pages:
         generated.append(f'nfl-readiness-1467fdf7/site/{name}')
+    # Readiness-audit desk (session arena/e7efbde7-own7). Runs the desk's own deterministic
+    # build first so a stale verification artefact fails the site build rather than
+    # publishing quietly.
+    e7ef_result=subprocess.run([sys.executable,str(ROOT/'nfl-readiness-e7ef'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if e7ef_result.returncode: raise SystemExit(f'nfl-readiness-e7ef/build.py failed: '+e7ef_result.stdout+e7ef_result.stderr)
+    e7ef_pages=load_json('nfl-readiness-e7ef/site/manifest.json')['pages']
+    for name in e7ef_pages:
+        generated.append(f'nfl-readiness-e7ef/site/{name}')
     for name in lifecycle_pages:
         generated.append(f'nfl-lifecycle-3f5c/site/{name}')
     # Official Game Book desk (session arena/5213243e-own7). Runs the desk's own deterministic
@@ -917,7 +951,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages]+[f'nfl-readiness-e7ef/site/{n}' for n in e7ef_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 
