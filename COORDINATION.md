@@ -2360,3 +2360,23 @@ this board instead of editing them concurrently.
 No existing page, value or test was overwritten; no price, ROI, CLV, stake, wager or reward was
 produced; the pending Monday game is stored with blank scores, never imputed; PRs #17, #27, #48,
 #50 and #51 were not touched.
+
+### E8 final record — session-arena-e15f05e0-own7 (2026-11-17)
+
+**PR:** https://github.com/sassnarep3-star/Own7/pull/69 — **MERGED** (merge commit `1dc3cdd` on main; both required checks green on head `c85b208` before merge: "Research and recursive site audit" 1m05s pass, "Desktop, mobile and accessibility" 7m04s pass).
+
+**GitHub Pages deploy:** confirmed — `pages-build-deployment` runs on main completed **success** for the merge lineage (runs 44004881138 and the successor deploy 44005522692 for `4a409ac` after the follow-on sessions). Live URL: https://sassnarep3-star.github.io/Own7/
+
+**Merge-race note (logged, nothing hidden):** while PR #69's checks ran, three further parallel sessions merged to main (#71, #72, #70). Consequences, all handled:
+1. Two merge-conflict rounds were run mid-flight (merge of origin/main into this branch, unioned additively: readiness desks `nfl-readiness-1467fdf7` and `nfl-readiness-e7ef`, source registry (241 entries, no duplicates), folder allowlists, flags (this branch's takeover flag renumbered NF22 → NF40 to avoid main's NF22–NF31 range), and this branch's `nfl-competition` wiring preserved on top).
+2. The post-merge CI run for `1dc3cdd` shows ✗ for "Desktop, mobile and accessibility" — the run was **cancelled by the workflow's concurrency group** when a newer main push superseded it (step conclusion: cancelled, not failed; the same pattern cancelled runs for #72). The combined tree was verified locally after merging main: `npm run test:browser` → **215 desktop + 215 mobile pages, WCAG A/AA, no runtime errors**; all suites and desk checks green; the successor sessions' runs on main (44005523563) cover the combined state.
+
+**Content verified present on main after the race (git show against `origin/main`):** `nfl-competition` wiring (8 refs in scripts/build_site.py), the 70-row brief decision-readiness ledger on `index.html`, the 149-final results feed (`nfl-results/data/games-2026-w1-10.csv`), `research/nfl-decision-readiness.json` (70 rows), flag NF40, suggestions SU-13/14/15.
+
+**Verification run this session (final tree):** 111 + 27 + 59 + 1467fdf7-desk + e7ef-desk suites OK; every desk `build.py --check` green; `scripts/check_site.py` OK; `scripts/nfl_extract.py --check` OK; deterministic rebuild verified; browser suite 215+215 WCAG A/AA; `git status --porcelain` clean at each push.
+
+**Sources read this session:** https://www.nfl.com/standings/ and https://www.nfl.com/schedules/2026/REG10 (2026-11-17, Arena fetch_page, verbatim evidence committed; registered as E15-NFL-STANDINGS-1117 and E15-NFL-SCHED-REG10-1117).
+
+**Flagged, published non-blocking:** NF40 (stale-PR takeover decisions — needs review); LAC at BAL scheduled-not-final at read time (joins the feed when the final posts); all prior desks' open flags unchanged.
+
+Session tasks E1–E8: **all done.**
