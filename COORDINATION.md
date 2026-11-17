@@ -1807,4 +1807,5 @@ NFL.com Terms and Conditions §1.3 (https://www.nfl.com/legal/terms/, "Updated: 
 - **Open items, not blocking (see the Flagged for Review page):** F01 NFL.com Terms §1.3 and §11(f) block scheduled capture (rights decision); F02/F03 DET practice and blank-cell mismatches; F05 Cincinnati count (desk 8, brief 4, official table unread); F06 279 vs 326 rows; F09 closing-price source; F18 registry describes §12 as a gambling clause (not on the page read); F19 week-5 registry gap; F20 register rows with no artefact.
 - **Multiplicity:** `nfl-results/analysis.json` reports 0.0218 over 18 tests; its leaderboard counts 30. The same best p-value gives about 0.036 over 30. Stated in the executive summary; no entry is qualified.
 - **Blocked item (unchanged):** scheduled nfl.com capture (NFL Terms §1.3). Manual-only, REVIEWED-gated pattern retained; no scheduled capture added.
+- **PR:** https://github.com/sassnarep3-star/Own7/pull/66 (`arena/1467fdf7-own7` → `main`). Merge and Pages deploy to be recorded here after CI passes.
 
