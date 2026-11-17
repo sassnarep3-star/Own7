@@ -145,6 +145,21 @@ SOURCE_HOSTS.update({
     'EC6-REPO': 'github.com',
 })
 
+# NFL decision-readiness desk (session arena/383626a6-own7, 2026-11-17). Official league and
+# member-club hosts only; each id is a page actually read on 2026-11-17 for this desk.
+SOURCE_HOSTS.update({
+    'RD-NFL-INJ-W10': 'www.nfl.com', 'RD-NFL-SCHED-W10': 'www.nfl.com',
+    'RD-NFL-SCHED-W11': 'www.nfl.com', 'RD-NFL-SCHED-REG10': 'www.nfl.com',
+    'RD-NFL-TERMS': 'www.nfl.com', 'RD-NFL-LOCK': 'www.nfl.com',
+    'RD-NFL-ROUNDUP-NOV11': 'www.nfl.com', 'RD-NFL-ROUNDUP-NOV13': 'www.nfl.com',
+    'RD-NFL-PLAYER-STATS': 'www.nfl.com',
+    'RD-DET-CHART': 'www.detroitlions.com', 'RD-GB-CHART': 'www.packers.com',
+    'RD-SEA-CHART': 'www.seahawks.com', 'RD-BAL-CHART': 'www.baltimoreravens.com',
+    'RD-WAS-CHART': 'www.commanders.com', 'RD-IND-CHART': 'www.colts.com',
+    'RD-HOU-CHART': 'www.houstontexans.com',
+})
+
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)

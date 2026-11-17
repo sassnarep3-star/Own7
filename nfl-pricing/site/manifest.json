@@ -14,13 +14,10 @@
   "sources.html"
  ],
  "source_ids": [
-  "A958-BAL-DEPTH",
   "A958-MIA-DEPTH",
   "A958-NE-DEPTH",
   "A958-NYG-DEPTH",
   "A958-PIT-DEPTH",
-  "A958-SEA-DEPTH",
-  "A958-WAS-DEPTH",
   "AZ-DEPTH",
   "CLE-DEPTH",
   "EC6-CHI-DEPTH",
@@ -61,6 +58,9 @@
   "PFR-VEGAS-2026-TB",
   "PFR-VEGAS-2026-TEN",
   "PFR-VEGAS-2026-WAS",
+  "RD-BAL-CHART",
+  "RD-SEA-CHART",
+  "RD-WAS-CHART",
   "X243-DET-CHART",
   "X28-ATL-DEPTH",
   "X28-BUF-DEPTH",
