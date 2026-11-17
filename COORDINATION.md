@@ -1714,3 +1714,22 @@ Scope note: the build's executive-summary description was updated additively wit
 - PR checks passed: research/recursive-site audit and desktop/mobile/accessibility.
 - Main push checks passed (run `43777058970`); GitHub Pages deployment passed (run `43777058066`, build, report and deploy jobs successful). Deployed artifact corresponds to the merge commit.
 - No broken-site merge or source values changed. GitHub Actions emitted informational Node.js 20 deprecation and runner-image migration notices; they did not fail the checks.
+
+## Session arena/1467fdf7-own7 — decision-readiness desk, controls, injury spot-check, two-sided strategy register (2026-11-17)
+
+Fixed Arena branch: `arena/1467fdf7-own7` (platform constraint takes precedence over the `session-<id>/<task>` naming in the brief; all work stays on this branch). Session ID: `session-arena-1467fdf7-own7`. Base: `be2462d` (main). No other active claim on this branch.
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| R1 | Baseline: run existing unit tests and `scripts/check_site.py` before changes | done | session-arena-1467fdf7-own7 | none | `python -m unittest discover -s tests` (111 OK); `python scripts/check_site.py` (0 errors) | Baseline green |
+| R2 | Decision-readiness register: one row per brief requirement, status, blocking gate, number that would clear it, evidence link | in progress | session-arena-1467fdf7-own7 | `nfl-readiness-1467fdf7/` (new desk) | Repo artefacts linked per row; official links only where the row cites one | Unverified rows are marked as such |
+| R3 | Pre-registered control baselines (random, home, record-favourite) on the 136 official weeks 1–9 results, with n and intervals; two-sided "what would change our mind" per strategy entry | in progress | session-arena-1467fdf7-own7 | `nfl-readiness-1467fdf7/` | Official final scores from `nfl-results/data/games-2026-w1-9.csv` (source URLs per row) | Rules committed before results are printed |
+| R4 | Official Week 10 injury-report spot check against the availability desk (saved raw text + SHA-256) | in progress | session-arena-1467fdf7-own7 | `nfl-readiness-1467fdf7/evidence/`, `nfl-readiness-1467fdf7/injury_check.py` | https://www.nfl.com/injuries/ read 2026-11-17 | Covers only the clubs in the captured text; not a full re-capture |
+| R5 | Removal-of-luck panel and Flagged for Review page | in progress | session-arena-1467fdf7-own7 | `nfl-readiness-1467fdf7/` | nfl-results/analysis.json (deterministic engine) | Blank where not computed |
+| R6 | Publish desk, README + check.yml registration, browser/serve allowlist; PR, merge, Pages deploy, record | unclaimed | session-arena-1467fdf7-own7 | README.md, .github/workflows/check.yml, scripts/browser_test.mjs, scripts/serve_site.py, COORDINATION.md | CI + Pages | Do not merge a broken site |
+
+### Blocking constraint identified before any capture (for review)
+
+NFL.com Terms and Conditions §1.3 (https://www.nfl.com/legal/terms/, "Updated: May 16, 2024") permit use "solely for your own individual non-commercial and informational purposes" and state: "Systematic retrieval of data or other content from the Services, whether to create or compile … a collection, compilation, database, or directory, is prohibited absent our express prior written consent." The brief's scheduled daily, Wed–Fri and Wed-to-kickoff captures of the injury report and club depth pages, and its immutable archive, are systematic retrieval to compile a database. This session therefore does NOT add any scheduled capture. It is logged as a blocked item needing a rights decision (written consent from the NFL, or a licensed feed) and is published on the Flagged for Review page.
