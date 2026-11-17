@@ -1,0 +1,392 @@
+{
+  "schema_version": 1,
+  "prior_capture": {
+    "read": "2026-11-12",
+    "file": "data/nfl-injuries-2026-w10.csv",
+    "rows": 20,
+    "scope": "one game (Thursday), two clubs",
+    "source_ids": [
+      "RD-NFL-INJ-W10"
+    ]
+  },
+  "this_capture": {
+    "read": "2026-11-17",
+    "file": "nfl-readiness/evidence/injury-report-2026-reg10-2026-11-17.md",
+    "rows": 347,
+    "scope": "all 28 clubs with a Week 10 game",
+    "source_ids": [
+      "RD-NFL-INJ-W10"
+    ]
+  },
+  "row_delta": 327,
+  "delta_is_not_an_injury_trend": "The two captures cover different scopes, so their row difference measures coverage, not injuries. A trend needs two reads of the same scope (PG-SERIES).",
+  "per_club": [
+    {
+      "id": "ATL",
+      "club": "Falcons",
+      "rows_prior": "",
+      "rows_now": 11,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "AZ",
+      "club": "Cardinals",
+      "rows_prior": "",
+      "rows_now": 15,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "BAL",
+      "club": "Ravens",
+      "rows_prior": "",
+      "rows_now": 10,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-BAL-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "BUF",
+      "club": "Bills",
+      "rows_prior": "",
+      "rows_now": 14,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "CAR",
+      "club": "Panthers",
+      "rows_prior": "",
+      "rows_now": 12,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "CHI",
+      "club": "CHI",
+      "rows_prior": "",
+      "rows_now": 0,
+      "change": "",
+      "note": "On bye in Week 10, so the live report prints no section for this club.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "CIN",
+      "club": "Bengals",
+      "rows_prior": "",
+      "rows_now": 9,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "CLE",
+      "club": "Browns",
+      "rows_prior": "",
+      "rows_now": 12,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "DAL",
+      "club": "Cowboys",
+      "rows_prior": "",
+      "rows_now": 19,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "DEN",
+      "club": "DEN",
+      "rows_prior": "",
+      "rows_now": 0,
+      "change": "",
+      "note": "On bye in Week 10, so the live report prints no section for this club.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "DET",
+      "club": "Lions",
+      "rows_prior": "",
+      "rows_now": 9,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-DET-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "GB",
+      "club": "Packers",
+      "rows_prior": "",
+      "rows_now": 17,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-GB-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "HOU",
+      "club": "Texans",
+      "rows_prior": "",
+      "rows_now": 16,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-HOU-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "IND",
+      "club": "Colts",
+      "rows_prior": "",
+      "rows_now": 14,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-IND-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "JAX",
+      "club": "Jaguars",
+      "rows_prior": "",
+      "rows_now": 11,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "KC",
+      "club": "Chiefs",
+      "rows_prior": "",
+      "rows_now": 13,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "LAC",
+      "club": "Chargers",
+      "rows_prior": "",
+      "rows_now": 19,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "LAR",
+      "club": "Rams",
+      "rows_prior": "",
+      "rows_now": 14,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "LV",
+      "club": "Raiders",
+      "rows_prior": "",
+      "rows_now": 5,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "MIA",
+      "club": "Dolphins",
+      "rows_prior": "",
+      "rows_now": 11,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "MIN",
+      "club": "Vikings",
+      "rows_prior": "",
+      "rows_now": 13,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "NE",
+      "club": "Patriots",
+      "rows_prior": "",
+      "rows_now": 15,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "NO",
+      "club": "Saints",
+      "rows_prior": "",
+      "rows_now": 12,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "NYG",
+      "club": "Giants",
+      "rows_prior": "",
+      "rows_now": 11,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "NYJ",
+      "club": "Jets",
+      "rows_prior": "",
+      "rows_now": 9,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "PHI",
+      "club": "PHI",
+      "rows_prior": "",
+      "rows_now": 0,
+      "change": "",
+      "note": "On bye in Week 10, so the live report prints no section for this club.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "PIT",
+      "club": "Steelers",
+      "rows_prior": "",
+      "rows_now": 8,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA",
+      "club": "Seahawks",
+      "rows_prior": "",
+      "rows_now": 15,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10",
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SF",
+      "club": "49ers",
+      "rows_prior": "",
+      "rows_now": 12,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "TB",
+      "club": "TB",
+      "rows_prior": "",
+      "rows_now": 0,
+      "change": "",
+      "note": "On bye in Week 10, so the live report prints no section for this club.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "TEN",
+      "club": "Titans",
+      "rows_prior": "",
+      "rows_now": 12,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "WAS",
+      "club": "Commanders",
+      "rows_prior": "",
+      "rows_now": 9,
+      "change": "",
+      "note": "The prior capture is a single-game sample and a club-level comparison is not like for like, so the prior value stays blank rather than being assumed equal.",
+      "source_ids": [
+        "RD-NFL-INJ-W10",
+        "RD-WAS-CHART"
+      ]
+    }
+  ],
+  "practice_trend": {
+    "rows": 0,
+    "why": "A practice trend needs the same player read on two dates (DNP then LP then FP). This desk holds one dated read, so the trend column is empty.",
+    "would_need": "the Wednesday, Thursday and Friday reports of the same week"
+  },
+  "source_ids": [
+    "RD-NFL-INJ-W10"
+  ]
+}

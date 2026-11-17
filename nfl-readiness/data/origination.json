@@ -1,0 +1,6518 @@
+{
+  "schema_version": 1,
+  "order": [
+    "side",
+    "total",
+    "moneyline"
+  ],
+  "order_note": "The stages are run in this order because a side price comes from the margin distribution, a total from the same distribution's scoring level, and a moneyline from the margin distribution without a line. Running the total first would let a total assumption leak into the margin.",
+  "model": "M04",
+  "stages": [
+    {
+      "stage": "side",
+      "order": 1,
+      "depends_on": "",
+      "rows": 120,
+      "mean_abs_residual": 0.75,
+      "largest": [
+        {
+          "id": "W06-CAR-PHI",
+          "week": 6,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.414318,
+          "actual": -11,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-LAC-KC",
+          "week": 6,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 16,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-CIN-BAL",
+          "week": 7,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.414318,
+          "actual": -22,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-GB-DET",
+          "week": 7,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 3,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-IND-MIN",
+          "week": 7,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 6,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        }
+      ],
+      "all": [
+        {
+          "id": "W02-DET-BUF",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 10,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-CAR-ATL",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -31,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-CIN-HOU",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -14,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-CLE-TB",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -4,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-GB-NYJ",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-IND-KC",
+          "week": 2,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": 3,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-JAX-DEN",
+          "week": 2,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": 7,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-LV-LAC",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -12,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-MIA-SF",
+          "week": 2,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": 22,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-MIN-CHI",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -6,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-NO-BAL",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -7,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-PHI-TEN",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -4,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-PIT-NE",
+          "week": 2,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": 17,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-SEA-AZ",
+          "week": 2,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -24,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-WAS-DAL",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 17,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-NYG-LA",
+          "week": 2,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": 22,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-ATL-GB",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -21,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-AZ-SF",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 6,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-BAL-DAL",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-CAR-CLE",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 3,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-CIN-PIT",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 3,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-HOU-IND",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 2,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-KC-MIA",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -14,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-LA-DEN",
+          "week": 3,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": 4,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-LAC-BUF",
+          "week": 3,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": 8,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-LV-NO",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -8,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-MIN-TB",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -7,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-NE-JAX",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 29,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-NYJ-DET",
+          "week": 3,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": 7,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-SEA-WAS",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 2,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-TEN-NYG",
+          "week": 3,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": 5,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-PHI-CHI",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 20,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-PIT-CLE",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 3,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-AZ-NYG",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 12,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-DAL-HOU",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -4,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-DEN-SF",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 10,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-DET-CAR",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 6,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-GB-TB",
+          "week": 4,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-IND-WAS",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -17,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-JAX-CIN",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -5,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-KC-LV",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-LA-PHI",
+          "week": 4,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -4,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-LAC-SEA",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 7,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-MIA-MIN",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 5,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-NE-BUF",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-NYJ-CHI",
+          "week": 4,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": 11,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-TEN-BAL",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 6,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-ATL-NO",
+          "week": 4,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -21,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-TB-DAL",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -8,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-BAL-ATL",
+          "week": 5,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -7,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CHI-GB",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 24,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CIN-MIA",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -7,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CLE-NYJ",
+          "week": 5,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": 5,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-DEN-LAC",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -6,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-DET-AZ",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -24,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-HOU-TEN",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -23,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-IND-PIT",
+          "week": 5,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": 12,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-LV-NE",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 28,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-MIN-NO",
+          "week": 5,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -10,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-NYG-WAS",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 0,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-PHI-JAX",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 2,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-SF-SEA",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-BUF-LA",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-SEA-DEN",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 3,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-AZ-LA",
+          "week": 6,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -2,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-BAL-CLE",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 3,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-BUF-LV",
+          "week": 6,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-CAR-PHI",
+          "week": 6,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.414318,
+          "actual": -11,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-CHI-ATL",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -8,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-DAL-GB",
+          "week": 6,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": 10,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-HOU-JAX",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-LAC-KC",
+          "week": 6,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 16,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-NO-NYG",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -7,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-NYJ-NE",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 7,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-PIT-TB",
+          "week": 6,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": -7,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-TEN-IND",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -6,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-WAS-SF",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 6,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-NE-CHI",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 6,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-CIN-BAL",
+          "week": 7,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.414318,
+          "actual": -22,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-CLE-TEN",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-DEN-AZ",
+          "week": 7,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -14,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-GB-DET",
+          "week": 7,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 3,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-IND-MIN",
+          "week": 7,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 6,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-KC-SEA",
+          "week": 7,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": 17,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-LA-LV",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -14,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-MIA-NYJ",
+          "week": 7,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.414318,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-NYG-HOU",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -6,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-PIT-NO",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -6,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-SF-ATL",
+          "week": 7,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": 9,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-TB-CAR",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -30,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-DAL-PHI",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -17,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-CAR-GB",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 8,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-ATL-TB",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 16,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-AZ-DAL",
+          "week": 8,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -3,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-BAL-BUF",
+          "week": 8,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 26,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-CLE-PIT",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 21,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-IND-JAX",
+          "week": 8,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 35,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-KC-DEN",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 4,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-LAC-LA",
+          "week": 8,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.414318,
+          "actual": 15,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-LV-NYJ",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -5,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-MIN-DET",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 4,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-NE-MIA",
+          "week": 8,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -5,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-PHI-WAS",
+          "week": 8,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 17,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-TEN-CIN",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 7,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-CHI-SEA",
+          "week": 8,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -17,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-JAX-BAL",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -23,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-AZ-SEA",
+          "week": 9,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": 14,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-CIN-ATL",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -17,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-CLE-NO",
+          "week": 9,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 1,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-DAL-IND",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -4,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-DEN-CAR",
+          "week": 9,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.543091,
+          "actual": -5,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-DET-MIA",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -10,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-GB-NE",
+          "week": 9,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": -18,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-HOU-LAC",
+          "week": 9,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.414318,
+          "actual": -22,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-LA-WAS",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -7,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-LV-SF",
+          "week": 9,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.585682,
+          "actual": 21,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-NYG-PHI",
+          "week": 9,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.414318,
+          "actual": -8,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-NYJ-KC",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": 23,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-TB-CHI",
+          "week": 9,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.456909,
+          "actual": 3,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-BUF-MIN",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.5,
+          "actual": -17,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        }
+      ],
+      "market_column": "",
+      "market_column_reason": "The market line is blank: no registered publisher of NFL prices is licensed for this use, so the difference column cannot be computed against a market number. The residual shown is against the frozen benchmark, which is a model number, not a market number."
+    },
+    {
+      "stage": "total",
+      "order": 2,
+      "depends_on": "side",
+      "rows": 120,
+      "mean_abs_residual": 0.125157,
+      "largest": [
+        {
+          "id": "W05-BAL-ATL",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 53,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-BUF-LA",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 71,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CHI-GB",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 38,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CIN-MIA",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 55,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CLE-NYJ",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 29,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        }
+      ],
+      "all": [
+        {
+          "id": "W02-DET-BUF",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 72,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-CAR-ATL",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 37,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-CIN-HOU",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 26,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-CLE-TB",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 42,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-GB-NYJ",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 37,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-IND-KC",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 63,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-JAX-DEN",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 33,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-LV-LAC",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 40,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-MIA-SF",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 48,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-MIN-CHI",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 12,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-NO-BAL",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 41,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-PHI-TEN",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 44,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-PIT-NE",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 23,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-SEA-AZ",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 38,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-WAS-DAL",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 57,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-NYG-LA",
+          "week": 2,
+          "fair": 49.4375,
+          "benchmark": 49.5,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 34,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-ATL-GB",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 49,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-AZ-SF",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 66,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-BAL-DAL",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 65,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-CAR-CLE",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 39,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-CIN-PIT",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 57,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-HOU-IND",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 36,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-KC-MIA",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 34,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-LA-DEN",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 56,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-LAC-BUF",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 40,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-LV-NO",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 62,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-MIN-TB",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 39,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-NE-JAX",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 41,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-NYJ-DET",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 55,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-SEA-WAS",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 64,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-TEN-NYG",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 19,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-PHI-CHI",
+          "week": 3,
+          "fair": 44.9375,
+          "benchmark": 45.0,
+          "residual": -0.0625,
+          "probability": 0.498153,
+          "actual": 34,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-PIT-CLE",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 51,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-AZ-NYG",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 60,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-DAL-HOU",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 64,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-DEN-SF",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 38,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-DET-CAR",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 58,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-GB-TB",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 31,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-IND-WAS",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 43,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-JAX-CIN",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 39,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-KC-LV",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 57,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-LA-PHI",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 44,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-LAC-SEA",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 53,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-MIA-MIN",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 25,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-NE-BUF",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 55,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-NYJ-CHI",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 35,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-TEN-BAL",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 42,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-ATL-NO",
+          "week": 4,
+          "fair": 45.708333,
+          "benchmark": 45.5,
+          "residual": 0.208333,
+          "probability": 0.506156,
+          "actual": 69,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-TB-DAL",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 40,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-BAL-ATL",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 53,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CHI-GB",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 38,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CIN-MIA",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 55,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CLE-NYJ",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 29,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-DEN-LAC",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 40,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-DET-AZ",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 66,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-HOU-TEN",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 29,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-IND-PIT",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 56,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-LV-NE",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 62,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-MIN-NO",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 36,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-NYG-WAS",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 54,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-PHI-JAX",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 36,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-SF-SEA",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 61,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-BUF-LA",
+          "week": 5,
+          "fair": 46.21875,
+          "benchmark": 46.0,
+          "residual": 0.21875,
+          "probability": 0.506464,
+          "actual": 71,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-SEA-DEN",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 31,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-AZ-LA",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 34,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-BAL-CLE",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 23,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-BUF-LV",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 63,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-CAR-PHI",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 39,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-CHI-ATL",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 54,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-DAL-GB",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 36,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-HOU-JAX",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 65,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-LAC-KC",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 28,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-NO-NYG",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 61,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-NYJ-NE",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 45,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-PIT-TB",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 45,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-TEN-IND",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 46,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-WAS-SF",
+          "week": 6,
+          "fair": 46.632911,
+          "benchmark": 46.5,
+          "residual": 0.132911,
+          "probability": 0.503928,
+          "actual": 40,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-NE-CHI",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 54,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-CIN-BAL",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 48,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-CLE-TEN",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 51,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-DEN-AZ",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 46,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-GB-DET",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 37,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-IND-MIN",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 26,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-KC-SEA",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 23,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-LA-LV",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 56,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-MIA-NYJ",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 53,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-NYG-HOU",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 48,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-PIT-NO",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 26,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-SF-ATL",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 49,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-TB-CAR",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 56,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-DAL-PHI",
+          "week": 7,
+          "fair": 46.172043,
+          "benchmark": 46.0,
+          "residual": 0.172043,
+          "probability": 0.505084,
+          "actual": 59,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-CAR-GB",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 46,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-ATL-TB",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 16,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-AZ-DAL",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 63,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-BAL-BUF",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 46,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-CLE-PIT",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 33,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-IND-JAX",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 49,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-KC-DEN",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 52,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-LAC-LA",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 33,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-LV-NYJ",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 71,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-MIN-DET",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 34,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-NE-MIA",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 43,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-PHI-WAS",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 37,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-TEN-CIN",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 79,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-CHI-SEA",
+          "week": 8,
+          "fair": 46.037383,
+          "benchmark": 46.0,
+          "residual": 0.037383,
+          "probability": 0.501105,
+          "actual": 51,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-JAX-BAL",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 43,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-AZ-SEA",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 20,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-CIN-ATL",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 51,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-CLE-NO",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 45,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-DAL-IND",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 50,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-DEN-CAR",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 47,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-DET-MIA",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 28,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-GB-NE",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 72,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-HOU-LAC",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 66,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-LA-WAS",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 33,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-LV-SF",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 55,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-NYG-PHI",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 30,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-NYJ-KC",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 47,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-TB-CHI",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 51,
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-BUF-MIN",
+          "week": 9,
+          "fair": 46.107438,
+          "benchmark": 46.0,
+          "residual": 0.107438,
+          "probability": 0.503175,
+          "actual": 29,
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        }
+      ],
+      "market_column": "",
+      "market_column_reason": "The market line is blank: no registered publisher of NFL prices is licensed for this use, so the difference column cannot be computed against a market number. The residual shown is against the frozen benchmark, which is a model number, not a market number."
+    },
+    {
+      "stage": "moneyline",
+      "order": 3,
+      "depends_on": "total",
+      "rows": 120,
+      "mean_abs_residual": 0.75,
+      "largest": [
+        {
+          "id": "W06-CAR-PHI",
+          "week": 6,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.471241,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-LAC-KC",
+          "week": 6,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-CIN-BAL",
+          "week": 7,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.471241,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-GB-DET",
+          "week": 7,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-IND-MIN",
+          "week": 7,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        }
+      ],
+      "all": [
+        {
+          "id": "W02-DET-BUF",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-CAR-ATL",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-CIN-HOU",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-CLE-TB",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-GB-NYJ",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-IND-KC",
+          "week": 2,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-JAX-DEN",
+          "week": 2,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-LV-LAC",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-MIA-SF",
+          "week": 2,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-MIN-CHI",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-NO-BAL",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-PHI-TEN",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-PIT-NE",
+          "week": 2,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-SEA-AZ",
+          "week": 2,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-WAS-DAL",
+          "week": 2,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W02-NYG-LA",
+          "week": 2,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-ATL-GB",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-AZ-SF",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-BAL-DAL",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-CAR-CLE",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-CIN-PIT",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-HOU-IND",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-KC-MIA",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-LA-DEN",
+          "week": 3,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-LAC-BUF",
+          "week": 3,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-LV-NO",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-MIN-TB",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-NE-JAX",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-NYJ-DET",
+          "week": 3,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-SEA-WAS",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-TEN-NYG",
+          "week": 3,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W03-PHI-CHI",
+          "week": 3,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-PIT-CLE",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-AZ-NYG",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-DAL-HOU",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-DEN-SF",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-DET-CAR",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-GB-TB",
+          "week": 4,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-IND-WAS",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-JAX-CIN",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-KC-LV",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-LA-PHI",
+          "week": 4,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-LAC-SEA",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-MIA-MIN",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-NE-BUF",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-NYJ-CHI",
+          "week": 4,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-TEN-BAL",
+          "week": 4,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W04-ATL-NO",
+          "week": 4,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-TB-DAL",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-BAL-ATL",
+          "week": 5,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CHI-GB",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CIN-MIA",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-CLE-NYJ",
+          "week": 5,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-DEN-LAC",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-DET-AZ",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-HOU-TEN",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-IND-PIT",
+          "week": 5,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-LV-NE",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-MIN-NO",
+          "week": 5,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-NYG-WAS",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-PHI-JAX",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-SF-SEA",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W05-BUF-LA",
+          "week": 5,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-SEA-DEN",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-AZ-LA",
+          "week": 6,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-BAL-CLE",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-BUF-LV",
+          "week": 6,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-CAR-PHI",
+          "week": 6,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.471241,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-CHI-ATL",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-DAL-GB",
+          "week": 6,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-HOU-JAX",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-LAC-KC",
+          "week": 6,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-NO-NYG",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-NYJ-NE",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-PIT-TB",
+          "week": 6,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-TEN-IND",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W06-WAS-SF",
+          "week": 6,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-NE-CHI",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-CIN-BAL",
+          "week": 7,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.471241,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-CLE-TEN",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-DEN-AZ",
+          "week": 7,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-GB-DET",
+          "week": 7,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-IND-MIN",
+          "week": 7,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-KC-SEA",
+          "week": 7,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-LA-LV",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-MIA-NYJ",
+          "week": 7,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.471241,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-NYG-HOU",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-PIT-NO",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-SF-ATL",
+          "week": 7,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-TB-CAR",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W07-DAL-PHI",
+          "week": 7,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-CAR-GB",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-ATL-TB",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-AZ-DAL",
+          "week": 8,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-BAL-BUF",
+          "week": 8,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-CLE-PIT",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-IND-JAX",
+          "week": 8,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-KC-DEN",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-LAC-LA",
+          "week": 8,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.471241,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-LV-NYJ",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-MIN-DET",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-NE-MIA",
+          "week": 8,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-PHI-WAS",
+          "week": 8,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-TEN-CIN",
+          "week": 8,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W08-CHI-SEA",
+          "week": 8,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-JAX-BAL",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-AZ-SEA",
+          "week": 9,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-CIN-ATL",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-CLE-NO",
+          "week": 9,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-DAL-IND",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-DEN-CAR",
+          "week": 9,
+          "fair": 3.5,
+          "benchmark": 2.0,
+          "residual": 1.5,
+          "probability": 0.599682,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-DET-MIA",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-GB-NE",
+          "week": 9,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-HOU-LAC",
+          "week": 9,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.471241,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-LA-WAS",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-LV-SF",
+          "week": 9,
+          "fair": 5.0,
+          "benchmark": 2.0,
+          "residual": 3.0,
+          "probability": 0.640857,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-NYG-PHI",
+          "week": 9,
+          "fair": -1.0,
+          "benchmark": 2.0,
+          "residual": -3.0,
+          "probability": 0.471241,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-NYJ-KC",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-TB-CHI",
+          "week": 9,
+          "fair": 0.5,
+          "benchmark": 2.0,
+          "residual": -1.5,
+          "probability": 0.514389,
+          "actual": "",
+          "outcome": true,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        },
+        {
+          "id": "W09-BUF-MIN",
+          "week": 9,
+          "fair": 2.0,
+          "benchmark": 2.0,
+          "residual": 0.0,
+          "probability": 0.557368,
+          "actual": "",
+          "outcome": false,
+          "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "source_ids": [
+            "X29-NFL-SCHEDULE"
+          ]
+        }
+      ],
+      "market_column": "",
+      "market_column_reason": "The market line is blank: no registered publisher of NFL prices is licensed for this use, so the difference column cannot be computed against a market number. The residual shown is against the frozen benchmark, which is a model number, not a market number."
+    }
+  ],
+  "two_total_estimators": {
+    "rule": "Both estimators stay visible with a gap column until a walk-forward comparison picks one. No estimator has been retired.",
+    "rows": [
+      {
+        "id": "W02-DET-BUF",
+        "m01": 52.35,
+        "m03": 51.606383,
+        "gap": -0.743617,
+        "actual": 72,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-CAR-ATL",
+        "m01": 52.45,
+        "m03": 51.680851,
+        "gap": -0.769149,
+        "actual": 37,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-CIN-HOU",
+        "m01": 52.25,
+        "m03": 51.531915,
+        "gap": -0.718085,
+        "actual": 26,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-CLE-TB",
+        "m01": 49.95,
+        "m03": 49.819149,
+        "gap": -0.130851,
+        "actual": 42,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-GB-NYJ",
+        "m01": 48.95,
+        "m03": 49.074468,
+        "gap": 0.124468,
+        "actual": 37,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-IND-KC",
+        "m01": 50.05,
+        "m03": 49.893617,
+        "gap": -0.156383,
+        "actual": 63,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-JAX-DEN",
+        "m01": 48.05,
+        "m03": 48.404255,
+        "gap": 0.354255,
+        "actual": 33,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-LV-LAC",
+        "m01": 47.55,
+        "m03": 48.031915,
+        "gap": 0.481915,
+        "actual": 40,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-MIA-SF",
+        "m01": 46.95,
+        "m03": 47.585106,
+        "gap": 0.635106,
+        "actual": 48,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-MIN-CHI",
+        "m01": 55.25,
+        "m03": 53.765957,
+        "gap": -1.484043,
+        "actual": 12,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-NO-BAL",
+        "m01": 52.05,
+        "m03": 51.382979,
+        "gap": -0.667021,
+        "actual": 41,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-PHI-TEN",
+        "m01": 47.45,
+        "m03": 47.957447,
+        "gap": 0.507447,
+        "actual": 44,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-PIT-NE",
+        "m01": 45.15,
+        "m03": 46.244681,
+        "gap": 1.094681,
+        "actual": 23,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-SEA-AZ",
+        "m01": 45.85,
+        "m03": 46.765957,
+        "gap": 0.915957,
+        "actual": 38,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-WAS-DAL",
+        "m01": 48.95,
+        "m03": 49.074468,
+        "gap": 0.124468,
+        "actual": 57,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W02-NYG-LA",
+        "m01": 47.75,
+        "m03": 48.180851,
+        "gap": 0.430851,
+        "actual": 34,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-ATL-GB",
+        "m01": 43.958333,
+        "m03": 44.061657,
+        "gap": 0.103324,
+        "actual": 49,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-AZ-SF",
+        "m01": 43.291667,
+        "m03": 43.926782,
+        "gap": 0.635115,
+        "actual": 66,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-BAL-DAL",
+        "m01": 47.458333,
+        "m03": 46.529865,
+        "gap": -0.928468,
+        "actual": 65,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-CAR-CLE",
+        "m01": 48.208333,
+        "m03": 46.570328,
+        "gap": -1.638005,
+        "actual": 39,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-CIN-PIT",
+        "m01": 41.791667,
+        "m03": 42.328516,
+        "gap": 0.536849,
+        "actual": 57,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-HOU-IND",
+        "m01": 48.291667,
+        "m03": 46.819846,
+        "gap": -1.471821,
+        "actual": 36,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-KC-MIA",
+        "m01": 45.958333,
+        "m03": 45.94316,
+        "gap": -0.015173,
+        "actual": 34,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-LA-DEN",
+        "m01": 41.791667,
+        "m03": 42.692678,
+        "gap": 0.901011,
+        "actual": 56,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-LAC-BUF",
+        "m01": 48.208333,
+        "m03": 47.237958,
+        "gap": -0.970375,
+        "actual": 40,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-LV-NO",
+        "m01": 45.125,
+        "m03": 44.864162,
+        "gap": -0.260838,
+        "actual": 62,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-MIN-TB",
+        "m01": 44.541667,
+        "m03": 43.987476,
+        "gap": -0.554191,
+        "actual": 39,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-NE-JAX",
+        "m01": 40.208333,
+        "m03": 41.573218,
+        "gap": 1.364885,
+        "actual": 41,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-NYJ-DET",
+        "m01": 46.875,
+        "m03": 46.421965,
+        "gap": -0.453035,
+        "actual": 55,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-SEA-WAS",
+        "m01": 43.625,
+        "m03": 44.297688,
+        "gap": 0.672688,
+        "actual": 64,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-TEN-NYG",
+        "m01": 43.208333,
+        "m03": 43.717726,
+        "gap": 0.509393,
+        "actual": 19,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W03-PHI-CHI",
+        "m01": 46.458333,
+        "m03": 45.11368,
+        "gap": -1.344653,
+        "actual": 34,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-PIT-CLE",
+        "m01": 43.119048,
+        "m03": 44.38168,
+        "gap": 1.262632,
+        "actual": 51,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-AZ-NYG",
+        "m01": 43.619048,
+        "m03": 44.336767,
+        "gap": 0.717719,
+        "actual": 60,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-DAL-HOU",
+        "m01": 47.47619,
+        "m03": 46.672842,
+        "gap": -0.803348,
+        "actual": 64,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-DEN-SF",
+        "m01": 45.97619,
+        "m03": 46.672842,
+        "gap": 0.696652,
+        "actual": 38,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-DET-CAR",
+        "m01": 51.833333,
+        "m03": 48.683144,
+        "gap": -3.150189,
+        "actual": 58,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-GB-TB",
+        "m01": 46.690476,
+        "m03": 45.859359,
+        "gap": -0.831117,
+        "actual": 31,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-IND-WAS",
+        "m01": 49.690476,
+        "m03": 48.092957,
+        "gap": -1.597519,
+        "actual": 43,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-JAX-CIN",
+        "m01": 44.761905,
+        "m03": 45.079402,
+        "gap": 0.317497,
+        "actual": 39,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-KC-LV",
+        "m01": 46.119048,
+        "m03": 46.188294,
+        "gap": 0.069246,
+        "actual": 57,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-LA-PHI",
+        "m01": 43.833333,
+        "m03": 44.670763,
+        "gap": 0.83743,
+        "actual": 44,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-LAC-SEA",
+        "m01": 43.619048,
+        "m03": 45.029429,
+        "gap": 1.410381,
+        "actual": 53,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-MIA-MIN",
+        "m01": 42.833333,
+        "m03": 43.449274,
+        "gap": 0.615941,
+        "actual": 25,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-NE-BUF",
+        "m01": 45.119048,
+        "m03": 45.164167,
+        "gap": 0.045119,
+        "actual": 55,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-NYJ-CHI",
+        "m01": 45.190476,
+        "m03": 44.842189,
+        "gap": -0.348287,
+        "actual": 35,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-TEN-BAL",
+        "m01": 45.119048,
+        "m03": 45.12811,
+        "gap": 0.009062,
+        "actual": 42,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W04-ATL-NO",
+        "m01": 46.333333,
+        "m03": 46.433098,
+        "gap": 0.099765,
+        "actual": 69,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-TB-DAL",
+        "m01": 48.484375,
+        "m03": 47.383364,
+        "gap": -1.101011,
+        "actual": 40,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-BAL-ATL",
+        "m01": 48.109375,
+        "m03": 47.925179,
+        "gap": -0.184196,
+        "actual": 53,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-CHI-GB",
+        "m01": 45.296875,
+        "m03": 44.267612,
+        "gap": -1.029263,
+        "actual": 38,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-CIN-MIA",
+        "m01": 43.671875,
+        "m03": 44.043235,
+        "gap": 0.37136,
+        "actual": 55,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-CLE-NYJ",
+        "m01": 44.109375,
+        "m03": 45.174577,
+        "gap": 1.065202,
+        "actual": 29,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-DEN-LAC",
+        "m01": 44.421875,
+        "m03": 45.467522,
+        "gap": 1.045647,
+        "actual": 40,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-DET-AZ",
+        "m01": 51.234375,
+        "m03": 49.680423,
+        "gap": -1.553952,
+        "actual": 66,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-HOU-TEN",
+        "m01": 43.796875,
+        "m03": 44.942925,
+        "gap": 1.14605,
+        "actual": 29,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-IND-PIT",
+        "m01": 46.234375,
+        "m03": 46.240988,
+        "gap": 0.006613,
+        "actual": 56,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-LV-NE",
+        "m01": 44.421875,
+        "m03": 46.366363,
+        "gap": 1.944488,
+        "actual": 62,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-MIN-NO",
+        "m01": 46.234375,
+        "m03": 46.120039,
+        "gap": -0.114336,
+        "actual": 36,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-NYG-WAS",
+        "m01": 46.296875,
+        "m03": 46.44839,
+        "gap": 0.151515,
+        "actual": 54,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-PHI-JAX",
+        "m01": 43.421875,
+        "m03": 44.397291,
+        "gap": 0.975416,
+        "actual": 36,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-SF-SEA",
+        "m01": 45.859375,
+        "m03": 46.797535,
+        "gap": 0.93816,
+        "actual": 61,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W05-BUF-LA",
+        "m01": 48.234375,
+        "m03": 47.348747,
+        "gap": -0.885628,
+        "actual": 71,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-SEA-DEN",
+        "m01": 45.559072,
+        "m03": 46.902956,
+        "gap": 1.343884,
+        "actual": 31,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-AZ-LA",
+        "m01": 49.003516,
+        "m03": 49.779225,
+        "gap": 0.775709,
+        "actual": 34,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-BAL-CLE",
+        "m01": 46.83685,
+        "m03": 46.269098,
+        "gap": -0.567752,
+        "actual": 23,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-BUF-LV",
+        "m01": 52.170183,
+        "m03": 50.571182,
+        "gap": -1.599001,
+        "actual": 63,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-CAR-PHI",
+        "m01": 47.72943,
+        "m03": 46.323607,
+        "gap": -1.405823,
+        "actual": 39,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-CHI-ATL",
+        "m01": 46.059072,
+        "m03": 46.256732,
+        "gap": 0.19766,
+        "actual": 54,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-DAL-GB",
+        "m01": 47.947961,
+        "m03": 46.641009,
+        "gap": -1.306952,
+        "actual": 36,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-HOU-JAX",
+        "m01": 43.781294,
+        "m03": 44.458075,
+        "gap": 0.676781,
+        "actual": 65,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-LAC-KC",
+        "m01": 46.04193,
+        "m03": 46.441227,
+        "gap": 0.399297,
+        "actual": 28,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-NO-NYG",
+        "m01": 47.614627,
+        "m03": 47.413508,
+        "gap": -0.201119,
+        "actual": 61,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-NYJ-NE",
+        "m01": 42.559072,
+        "m03": 45.244389,
+        "gap": 2.685317,
+        "actual": 45,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-PIT-TB",
+        "m01": 44.725738,
+        "m03": 45.833422,
+        "gap": 1.107684,
+        "actual": 45,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-TEN-IND",
+        "m01": 44.559072,
+        "m03": 45.030843,
+        "gap": 0.471771,
+        "actual": 46,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W06-WAS-SF",
+        "m01": 49.114627,
+        "m03": 48.517328,
+        "gap": -0.597299,
+        "actual": 40,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-NE-CHI",
+        "m01": 44.368817,
+        "m03": 45.919553,
+        "gap": 1.550736,
+        "actual": 54,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-CIN-BAL",
+        "m01": 47.061529,
+        "m03": 45.717993,
+        "gap": -1.343536,
+        "actual": 48,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-CLE-TEN",
+        "m01": 40.518817,
+        "m03": 42.535859,
+        "gap": 2.017042,
+        "actual": 51,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-DEN-AZ",
+        "m01": 45.618817,
+        "m03": 45.486182,
+        "gap": -0.132635,
+        "actual": 46,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-GB-DET",
+        "m01": 49.428196,
+        "m03": 46.947915,
+        "gap": -2.480281,
+        "actual": 37,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-IND-MIN",
+        "m01": 44.505974,
+        "m03": 44.998264,
+        "gap": 0.49229,
+        "actual": 26,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-KC-SEA",
+        "m01": 45.383751,
+        "m03": 45.231649,
+        "gap": -0.152102,
+        "actual": 23,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-LA-LV",
+        "m01": 48.318817,
+        "m03": 48.405832,
+        "gap": 0.087015,
+        "actual": 56,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-MIA-NYJ",
+        "m01": 42.417085,
+        "m03": 44.427798,
+        "gap": 2.010713,
+        "actual": 53,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-NYG-HOU",
+        "m01": 46.618817,
+        "m03": 47.665864,
+        "gap": 1.047047,
+        "actual": 48,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-PIT-NO",
+        "m01": 48.218817,
+        "m03": 47.880926,
+        "gap": -0.337891,
+        "actual": 26,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-SF-ATL",
+        "m01": 47.568817,
+        "m03": 47.659228,
+        "gap": 0.090411,
+        "actual": 49,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-TB-CAR",
+        "m01": 47.289307,
+        "m03": 45.506402,
+        "gap": -1.782905,
+        "actual": 56,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W07-DAL-PHI",
+        "m01": 46.118817,
+        "m03": 45.22039,
+        "gap": -0.898427,
+        "actual": 59,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-CAR-GB",
+        "m01": 46.964274,
+        "m03": 45.370614,
+        "gap": -1.59366,
+        "actual": 46,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-ATL-TB",
+        "m01": 46.604503,
+        "m03": 47.056272,
+        "gap": 0.451769,
+        "actual": 16,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-AZ-DAL",
+        "m01": 49.422685,
+        "m03": 47.43967,
+        "gap": -1.983015,
+        "actual": 63,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-BAL-BUF",
+        "m01": 51.250637,
+        "m03": 47.77175,
+        "gap": -3.478887,
+        "actual": 46,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-CLE-PIT",
+        "m01": 42.649958,
+        "m03": 43.907526,
+        "gap": 1.257568,
+        "actual": 33,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-IND-JAX",
+        "m01": 45.659728,
+        "m03": 45.406359,
+        "gap": -0.253369,
+        "actual": 49,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-KC-DEN",
+        "m01": 42.832455,
+        "m03": 43.123337,
+        "gap": 0.290882,
+        "actual": 52,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-LAC-LA",
+        "m01": 44.582455,
+        "m03": 45.6695,
+        "gap": 1.087045,
+        "actual": 33,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-LV-NYJ",
+        "m01": 47.059048,
+        "m03": 47.674627,
+        "gap": 0.615579,
+        "actual": 71,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-MIN-DET",
+        "m01": 45.814953,
+        "m03": 44.507721,
+        "gap": -1.307232,
+        "actual": 34,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-NE-MIA",
+        "m01": 44.100637,
+        "m03": 46.68047,
+        "gap": 2.579833,
+        "actual": 43,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-PHI-WAS",
+        "m01": 46.505183,
+        "m03": 46.298548,
+        "gap": -0.206635,
+        "actual": 37,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-TEN-CIN",
+        "m01": 43.82791,
+        "m03": 45.587332,
+        "gap": 1.759422,
+        "actual": 79,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W08-CHI-SEA",
+        "m01": 44.740867,
+        "m03": 44.868326,
+        "gap": 0.127459,
+        "actual": 51,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-JAX-BAL",
+        "m01": 45.938956,
+        "m03": 46.11314,
+        "gap": 0.174184,
+        "actual": 43,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-AZ-SEA",
+        "m01": 46.910813,
+        "m03": 46.737453,
+        "gap": -0.17336,
+        "actual": 20,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-CIN-ATL",
+        "m01": 47.613198,
+        "m03": 47.251898,
+        "gap": -0.3613,
+        "actual": 51,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-CLE-NO",
+        "m01": 45.249562,
+        "m03": 44.459522,
+        "gap": -0.79004,
+        "actual": 45,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-DAL-IND",
+        "m01": 49.327479,
+        "m03": 47.290461,
+        "gap": -2.037018,
+        "actual": 50,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-DEN-CAR",
+        "m01": 46.973047,
+        "m03": 46.244633,
+        "gap": -0.728414,
+        "actual": 47,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-DET-MIA",
+        "m01": 47.720887,
+        "m03": 45.769595,
+        "gap": -1.951292,
+        "actual": 28,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-GB-NE",
+        "m01": 43.744146,
+        "m03": 45.360932,
+        "gap": 1.616786,
+        "actual": 72,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-HOU-LAC",
+        "m01": 44.448159,
+        "m03": 45.0194,
+        "gap": 0.571241,
+        "actual": 66,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-LA-WAS",
+        "m01": 46.651077,
+        "m03": 45.474828,
+        "gap": -1.176249,
+        "actual": 33,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-LV-SF",
+        "m01": 50.132137,
+        "m03": 49.211715,
+        "gap": -0.920422,
+        "actual": 55,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-NYG-PHI",
+        "m01": 44.920016,
+        "m03": 46.115114,
+        "gap": 1.195098,
+        "actual": 30,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-NYJ-KC",
+        "m01": 44.529865,
+        "m03": 46.236746,
+        "gap": 1.706881,
+        "actual": 47,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-TB-CHI",
+        "m01": 44.660813,
+        "m03": 44.804124,
+        "gap": 0.143311,
+        "actual": 51,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      },
+      {
+        "id": "W09-BUF-MIN",
+        "m01": 46.175432,
+        "m03": 45.179029,
+        "gap": -0.996403,
+        "actual": 29,
+        "source_ids": [
+          "X29-NFL-SCHEDULE"
+        ]
+      }
+    ],
+    "mae_m01": 11.704274,
+    "mae_m03": 11.566631,
+    "games_m03_closer": 69,
+    "games_m01_closer": 51,
+    "mean_gap": -0.025157,
+    "gap_sd": 1.127561,
+    "actual_total_sd": 13.773617,
+    "verdict": "M03 is 0.1376 points of mean absolute error closer to the truth and wins 69 of 120 games against M01's 51. The two lines differ by a standard deviation of 1.13 points against an actual-total spread of 13.77, so the disagreement is small but not zero. Neither is retired: a win on 120 retrospective games is not a walk-forward result, and the registration forbids collapsing the pair on the evaluation window."
+  },
+  "fixture_level_forecast": {
+    "note": "No Week 11 fixture forecast is published as a numeric line: the only official inputs held for Week 11 are the schedule and the injury report, and the model's inputs are prior results, which do not exist for a future week. Publishing a number here would require the model to be re-specified on incomplete inputs. The gate that blocks it is V8 (no prospective record).",
+    "rows": 0
+  }
+}

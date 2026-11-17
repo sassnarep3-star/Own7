@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "question": "If a selection had been made, what would it have paid?",
+  "answer": "",
+  "why_blank": "A payout needs a price. No price is registered, and inventing a standard -110 would be an assumption about an operator that this repository has not read.",
+  "what_is_published_instead": {
+    "probabilities": "in backtest.json, one per market per game",
+    "outcomes": "the official final score of every game",
+    "what_would_be_needed": "1 registered price per selection, with the operator's void and push rules"
+  },
+  "breakeven_arithmetic": [
+    {
+      "price": "-110",
+      "breakeven_probability": 0.52381,
+      "note": "Printed as arithmetic only. It is not a price this project claims to have been offered."
+    },
+    {
+      "price": "-105",
+      "breakeven_probability": 0.512195,
+      "note": "Same caveat."
+    }
+  ],
+  "source_ids": [
+    "RD-NFL-TERMS"
+  ]
+}

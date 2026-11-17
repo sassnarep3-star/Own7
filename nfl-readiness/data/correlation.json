@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "read": "2026-11-17",
+  "rule": "Every value is computed from official final scores in this repository. Every row carries n, a 95% interval where the measure supports one, and the exact table or series it came from. A value with no official basis is not published.",
+  "n_games": 120,
+  "correlations": [
+    {
+      "id": "COR-SIDE-TOTAL",
+      "pair": "Home side covers x total goes over",
+      "kind": "phi",
+      "n": 120,
+      "value": -0.096135,
+      "interval": {
+        "low": -0.270715,
+        "high": 0.084567
+      },
+      "p_value": 0.292292,
+      "table": {
+        "cover_over": 21,
+        "cover_under": 32,
+        "no_cover_over": 33,
+        "no_cover_under": 34
+      },
+      "p_home_cover": 0.441667,
+      "p_over": 0.45,
+      "p_both_observed": 0.175,
+      "p_both_independent": 0.19875,
+      "reading": "The observed joint rate is compared with the product of the two marginal rates. The difference is what a builder would be wrong about by assuming independence.",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "COR-SIDE-ML",
+      "pair": "Home side covers x home side wins",
+      "kind": "phi",
+      "n": 120,
+      "value": 0.935047,
+      "interval": {
+        "low": 0.907982,
+        "high": 0.954342
+      },
+      "p_value": 0.0,
+      "table": {
+        "cover_win": 53,
+        "cover_no_win": 0,
+        "no_cover_win": 4,
+        "no_cover_no_win": 63
+      },
+      "p_home_cover": 0.441667,
+      "p_home_win": 0.475,
+      "p_both_observed": 0.441667,
+      "p_both_independent": 0.209792,
+      "reading": "A cover without a win is possible only when the home side wins by less than the line.",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "COR-MARGIN-TOTAL",
+      "pair": "Winning margin x total points",
+      "kind": "pearson",
+      "n": 120,
+      "value": -0.141737,
+      "interval": {
+        "low": -0.313029,
+        "high": 0.038485
+      },
+      "t_statistic": -1.555359,
+      "reading": "Both quantities come from the same official final score.",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "COR-MARGIN-TOTAL-SPEAR",
+      "pair": "Winning margin x total points (Spearman)",
+      "kind": "spearman",
+      "n": 120,
+      "value": -0.126304,
+      "interval": {
+        "low": -0.298785,
+        "high": 0.054167
+      },
+      "reading": "A rank check on the same rows, so a single 72-point game cannot carry the Pearson value.",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "COR-RESIDUAL-ACTUAL-TOTAL",
+      "pair": "M01 total residual x actual total",
+      "kind": "pearson",
+      "n": 120,
+      "value": 0.034132,
+      "interval": {
+        "low": -0.146006,
+        "high": 0.212079
+      },
+      "t_statistic": 0.370981,
+      "reading": "Residual = fair total minus benchmark line. A positive correlation means the model's disagreement with the benchmark moves with the truth, which is the minimum a signal needs.",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "COR-RESIDUAL-ACTUAL-SIDE",
+      "pair": "M04 side residual x actual margin",
+      "kind": "pearson",
+      "n": 120,
+      "value": 0.390228,
+      "interval": {
+        "low": 0.22685,
+        "high": 0.532244
+      },
+      "t_statistic": 4.603967,
+      "reading": "M04 is the leading side entry, so its residual is the one worth asking about. The coefficient is the correlation between 'how far M04's fair line sits from the benchmark' and 'what the margin actually was'.",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "COR-CRAMER-SIDE-TOTAL",
+      "pair": "Home cover x over, Cramer's V (2x2 cross-check)",
+      "kind": "cramer_v",
+      "n": 120,
+      "value": 0.096135,
+      "interval": {
+        "low": null,
+        "high": null
+      },
+      "chi2": 1.109035,
+      "dof": 1,
+      "reading": "For a 2x2 table Cramer's V is the absolute value of phi, which is why it prints 0.0961 where the phi prints -0.0961. Published as an implementation cross-check, not as a second finding.",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "COR-WEEK-STABILITY",
+      "pair": "M04 side directional rate across kickoff weeks",
+      "kind": "range",
+      "n": 8,
+      "value": 0.428571,
+      "interval": {
+        "low": 0.5,
+        "high": 0.928571
+      },
+      "weekly": [
+        {
+          "week": 2,
+          "n": 16,
+          "hits": 12,
+          "rate": 0.75
+        },
+        {
+          "week": 3,
+          "n": 16,
+          "hits": 10,
+          "rate": 0.625
+        },
+        {
+          "week": 4,
+          "n": 16,
+          "hits": 8,
+          "rate": 0.5
+        },
+        {
+          "week": 5,
+          "n": 15,
+          "hits": 12,
+          "rate": 0.8
+        },
+        {
+          "week": 6,
+          "n": 14,
+          "hits": 7,
+          "rate": 0.5
+        },
+        {
+          "week": 7,
+          "n": 14,
+          "hits": 13,
+          "rate": 0.928571
+        },
+        {
+          "week": 8,
+          "n": 14,
+          "hits": 7,
+          "rate": 0.5
+        },
+        {
+          "week": 9,
+          "n": 15,
+          "hits": 10,
+          "rate": 0.666667
+        }
+      ],
+      "reading": "The spread of the weekly rate is the size of the noise a reader should expect around any single week's number. n here is the number of weeks, not the number of games.",
+      "source_ids": [
+        "X29-NFL-SCHEDULE"
+      ]
+    }
+  ],
+  "not_published": [
+    {
+      "item": "Player prop leg pairs",
+      "gate": "PG-PROPS",
+      "why": "No player-level prop outcome is captured, so no prop-leg dependence can be measured."
+    },
+    {
+      "item": "Cross-game parlay dependence",
+      "gate": "none",
+      "why": "Two games in the same week are nearly independent by construction, but 'nearly' is not a measurement. A cross-game joint probability is not claimed here; the division stays closed for the price reason instead (V7)."
+    },
+    {
+      "item": "Market price dependence",
+      "gate": "PG-PRICE-SOURCE",
+      "why": "No price is registered, so no price-move correlation can be computed."
+    }
+  ],
+  "parlay_gate": {
+    "id": "JG-1",
+    "rule": "A same-game combination may be ranked only when a directly validated joint probability exists for that exact pair of thresholds AND the operator's void/push rule is registered. Multiplying two marginal probabilities is not a joint probability.",
+    "marginal_products_used": 0,
+    "combos_ranked": 0,
+    "why": "The measured phi above is the right input for the first condition, but it is measured on the originated benchmark rather than on a market line, and no operator rule is registered, so the second condition fails and the gate stays shut."
+  }
+}

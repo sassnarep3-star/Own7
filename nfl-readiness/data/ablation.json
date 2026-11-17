@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "question": "Does adding verified availability information change the model, and by how much?",
+  "design": "Identical model, identical games, identical holdout. Only the personnel feature changes. This is the alternative to subtracting a fixed number of points for a missing starter, which no test in this repository supports.",
+  "arms": {
+    "without_personnel": {
+      "rows": 120,
+      "brier": 0.240621,
+      "cluster_se": 0.003385,
+      "interval": [
+        0.233986,
+        0.247255
+      ]
+    },
+    "with_personnel": {
+      "rows": 0,
+      "brier": "",
+      "cluster_se": "",
+      "interval": [
+        "",
+        ""
+      ],
+      "empty_because": "No absence in the corpus is confirmed. A depth-chart rank is not participation, and no inactive list, Game Book or snap count is captured (gates PG-ACTUAL-STARTER and PG-INACTIVE)."
+    }
+  },
+  "difference": {
+    "value": "",
+    "interval": [
+      "",
+      ""
+    ],
+    "would_be_readable_if": "the paired 95% interval excluded zero; at this n the cluster SE of one arm is 0.0034, so a difference smaller than about 0.0094 Brier would be indistinguishable from noise"
+  },
+  "fixed_point_penalties_in_pipeline": 0,
+  "why_not_a_penalty": [
+    "A fixed penalty encodes a belief about a player's value that has not been measured.",
+    "The measurement needs (a) a confirmed absence and (b) the same model run twice. (a) is missing.",
+    "Publishing the penalty anyway would make the model look informed while resting on an unmeasured assumption."
+  ],
+  "what_would_fill_the_arm": "One season of official inactive lists joined to the corpus, so each game carries the set of confirmed absent starters. That is 136 inactive lists, of which 0 are captured.",
+  "source_ids": [
+    "X29-NFL-SCHEDULE",
+    "RD-NFL-INJ-W10"
+  ]
+}

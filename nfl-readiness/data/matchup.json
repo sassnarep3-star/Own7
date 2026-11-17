@@ -1,0 +1,3333 @@
+{
+  "schema_version": 1,
+  "question": "Which printed starters are replaced, and by whom, at each station?",
+  "rows": [
+    {
+      "id": "BAL-Off-WR-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Zay Flowers",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Devontez Walker",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Off-WR-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Rashod Bateman",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Ja'Kobi Lane",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "BAL-Off-LT-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "LT",
+      "depth": 1,
+      "player": "Ronnie Stanley",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Carson Vinson",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "BAL-Off-LG-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "LG",
+      "depth": 1,
+      "player": "John Simpson",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Ryan Neuzil",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Off-C-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "C",
+      "depth": 1,
+      "player": "Cam Jurgens",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Ryan Neuzil",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Off-RG-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "RG",
+      "depth": 1,
+      "player": "Vega Ioane",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Emery Jones Jr.",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Off-RT-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "RT",
+      "depth": 1,
+      "player": "Roger Rosengarten",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Carson Vinson",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Off-TE-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "TE",
+      "depth": 1,
+      "player": "Mark Andrews",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Josh Cuevas",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Off-TE-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "TE",
+      "depth": 1,
+      "player": "Matt Hibner",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Off-QB-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "QB",
+      "depth": 1,
+      "player": "Jacoby Brissett",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Joe Fagnano",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Off-RB-1",
+      "club": "BAL",
+      "unit": "Offense",
+      "slot": "RB",
+      "depth": 1,
+      "player": "Derrick Henry",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Justice Hill",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Def-DT-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "DT",
+      "depth": 1,
+      "player": "Nnamdi Madubuike",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Broderick Washington Jr.",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Def-NT-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "NT",
+      "depth": 1,
+      "player": "Travis Jones",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "John Jenkins",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Def-DE-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "DE",
+      "depth": 1,
+      "player": "Calais Campbell",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Aeneas Peebles",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "BAL-Def-RUSH-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "RUSH",
+      "depth": 1,
+      "player": "Trey Hendrickson",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Mike Green",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Def-MLB-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "MLB",
+      "depth": 1,
+      "player": "Roquan Smith",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Jay Higgins IV",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Def-WLB-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "WLB",
+      "depth": 1,
+      "player": "Trenton Simpson",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Teddye Buchanan",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Def-SAM-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "SAM",
+      "depth": 1,
+      "player": "Mike Green",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Zion Young",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Def-CB-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "Marlon Humphrey",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Chidobe Awuzie",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Def-DB-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "DB",
+      "depth": 1,
+      "player": "Kyle Hamilton",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Keyon Martin",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "BAL-Def-SS-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "SS",
+      "depth": 1,
+      "player": "Jaylinn Hawkins",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "Keondre Jackson",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "starter out, backup available",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "BAL-Def-FS-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "FS",
+      "depth": 1,
+      "player": "Malaki Starks",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "K'Von Wallace",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Def-CB-1",
+      "club": "BAL",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "Nate Wiggins",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "T.J. Tampa Jr.",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "BAL-Spe-P-1",
+      "club": "BAL",
+      "unit": "Special teams",
+      "slot": "P",
+      "depth": 1,
+      "player": "Ryan Eckley",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Spe-H-1",
+      "club": "BAL",
+      "unit": "Special teams",
+      "slot": "H",
+      "depth": 1,
+      "player": "Ryan Eckley",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Spe-LS-1",
+      "club": "BAL",
+      "unit": "Special teams",
+      "slot": "LS",
+      "depth": 1,
+      "player": "Nick Moore",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Spe-KOR-1",
+      "club": "BAL",
+      "unit": "Special teams",
+      "slot": "KOR",
+      "depth": 1,
+      "player": "LaJohntay Wester",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Rasheen Ali",
+      "backup_on_report": "yes",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "BAL-Spe-PR-1",
+      "club": "BAL",
+      "unit": "Special teams",
+      "slot": "PR",
+      "depth": 1,
+      "player": "LaJohntay Wester",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Elijah Sarratt",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-BAL-CHART"
+      ]
+    },
+    {
+      "id": "DET-Off-WR-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Jameson Williams",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Off-WR-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Amon-Ra St. Brown",
+      "on_report": "yes",
+      "game_status": "Questionable",
+      "printed_backup": "DeAndre Carter",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "starter questionable",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "DET-Off-LT-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "LT",
+      "depth": 1,
+      "player": "Penei Sewell",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Off-LG-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "LG",
+      "depth": 1,
+      "player": "Christian Mahogany",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Miles Frazier",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Off-C-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "C",
+      "depth": 1,
+      "player": "Cade Mays",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "Juice Scruggs",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "starter out, backup available",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "DET-Off-RG-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "RG",
+      "depth": 1,
+      "player": "Tate Ratledge",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Seth McLaughlin",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Off-RT-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "RT",
+      "depth": 1,
+      "player": "Blake Miller",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Larry Borom",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Off-TE-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "TE",
+      "depth": 1,
+      "player": "Sam LaPorta",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Brock Wright",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Off-WR-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Isaac TeSlaa",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Tay Martin",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Off-QB-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "QB",
+      "depth": 1,
+      "player": "Jared Goff",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Joshua Dobbs",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "DET-Off-RB-1",
+      "club": "DET",
+      "unit": "Offense",
+      "slot": "RB",
+      "depth": 1,
+      "player": "Jahmyr Gibbs",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Sione Vaki",
+      "backup_on_report": "yes",
+      "backup_status": "Questionable",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Def-EDGE-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "EDGE",
+      "depth": 1,
+      "player": "Aidan Hutchinson",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Derrick Moore",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Def-DL-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "DL",
+      "depth": 1,
+      "player": "Alim McNeill",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Skyler Gill-Howard",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Def-DL-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "DL",
+      "depth": 1,
+      "player": "Tyleik Williams",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Levi Onwuzurike",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Def-EDGE-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "EDGE",
+      "depth": 1,
+      "player": "DJ Wonnum",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Tyler Lacy",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "DET-Def-LB-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "LB",
+      "depth": 1,
+      "player": "Derrick Barnes",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Joe Bachie",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Def-LB-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "LB",
+      "depth": 1,
+      "player": "Malcolm Rodriguez",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "K.J. Britt",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Def-LB-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "LB",
+      "depth": 1,
+      "player": "Trevor Nowaske",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Amen Ogbongbemiga",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Def-CB-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "D.J. Reed",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "Rock Ya-Sin",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "starter out, backup available",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "DET-Def-CB-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "Roger McCreary",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Ennis Rakestraw Jr.",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Def-S-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "S",
+      "depth": 1,
+      "player": "Chuck Clark",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Def-S-1",
+      "club": "DET",
+      "unit": "Defense",
+      "slot": "S",
+      "depth": 1,
+      "player": "Brian Branch",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Christian Izien",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "DET-Spe-K-1",
+      "club": "DET",
+      "unit": "Special teams",
+      "slot": "K",
+      "depth": 1,
+      "player": "Jake Bates",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Spe-H-1",
+      "club": "DET",
+      "unit": "Special teams",
+      "slot": "H",
+      "depth": 1,
+      "player": "Jack Fox",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Spe-P-1",
+      "club": "DET",
+      "unit": "Special teams",
+      "slot": "P",
+      "depth": 1,
+      "player": "Jack Fox",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Spe-LS-1",
+      "club": "DET",
+      "unit": "Special teams",
+      "slot": "LS",
+      "depth": 1,
+      "player": "Hogan Hatten",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Spe-PR-1",
+      "club": "DET",
+      "unit": "Special teams",
+      "slot": "PR",
+      "depth": 1,
+      "player": "DeAndre Carter",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART"
+      ]
+    },
+    {
+      "id": "DET-Spe-KR-1",
+      "club": "DET",
+      "unit": "Special teams",
+      "slot": "KR",
+      "depth": 1,
+      "player": "Jacob Saylors",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "DeAndre Carter",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-DET-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "GB-Off-WR-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "9 Christian Watson",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "16 Bo Melton",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-WR-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "0 Matthew Golden",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "87 J. Michael Sturdivant",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-LT-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "LT",
+      "depth": 1,
+      "player": "77 Jordan Morgan",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "73 John Williams",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-LG-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "LG",
+      "depth": 1,
+      "player": "65 Aaron Banks",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "79 Travis Glover",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-C-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "C",
+      "depth": 1,
+      "player": "75 Sean Rhyan",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "52 Jager Burton",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-RG-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "RG",
+      "depth": 1,
+      "player": "72 Laken Tomlinson",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "70 Kevin Zeitler",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-RT-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "RT",
+      "depth": 1,
+      "player": "71 Anthony Belton",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "74 Mekhi Becton Sr.",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-TE-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "TE",
+      "depth": 1,
+      "player": "85 Tucker Kraft",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "18 Jonnu Smith",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-WR-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "83 Savion Williams",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-QB-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "QB",
+      "depth": 1,
+      "player": "10 Jordan Love",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "6 Tyrod Taylor",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-RB-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "RB",
+      "depth": 1,
+      "player": "8 Josh Jacobs",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "32 MarShawn Lloyd",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Off-RB (continuation row, no position printed)-1",
+      "club": "GB",
+      "unit": "Offense",
+      "slot": "RB (continuation row, no position printed)",
+      "depth": 1,
+      "player": "26 Kaleb Johnson",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-DT-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "DT",
+      "depth": 1,
+      "player": "94 Karl Brooks",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "97 Jordon Riley",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-DT-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "DT",
+      "depth": 1,
+      "player": "95 Devonte Wyatt",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "55 Chris McClellan",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-EDGE-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "EDGE",
+      "depth": 1,
+      "player": "90 Lukas Van Ness",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "57 Brenton Cox Jr",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-LB-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "LB",
+      "depth": 1,
+      "player": "44 Zaire Franklin",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "59 Ty'Ron Hopper",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-LB-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "LB",
+      "depth": 1,
+      "player": "58 Isaiah McDuffie",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "31 Nick Niemann",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-EDGE-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "EDGE",
+      "depth": 1,
+      "player": "99 Barryn Sorrell",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "51 Dani Dennis-Sutton",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-CB-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "25 Keisean Nixon",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "24 Carrington Valentine",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-CB-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "2 Brandon Cisse",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "21 Benjamin St-Juste",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-S-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "S",
+      "depth": 1,
+      "player": "29 Xavier McKinney",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "27 Kitan Oladapo",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-S-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "S",
+      "depth": 1,
+      "player": "33 Evan Williams",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "27 Kitan Oladapo",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Def-NB-1",
+      "club": "GB",
+      "unit": "Defense",
+      "slot": "NB",
+      "depth": 1,
+      "player": "7 Javon Bullard",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "36 Kamal Hadden",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Spe-K-1",
+      "club": "GB",
+      "unit": "Special teams",
+      "slot": "K",
+      "depth": 1,
+      "player": "28 Trey Smack",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Spe-P-1",
+      "club": "GB",
+      "unit": "Special teams",
+      "slot": "P",
+      "depth": 1,
+      "player": "19 Daniel Whelan",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Spe-H-1",
+      "club": "GB",
+      "unit": "Special teams",
+      "slot": "H",
+      "depth": 1,
+      "player": "19 Daniel Whelan",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Spe-KR-1",
+      "club": "GB",
+      "unit": "Special teams",
+      "slot": "KR",
+      "depth": 1,
+      "player": "16 Bo Melton",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "GB-Spe-LS-1",
+      "club": "GB",
+      "unit": "Special teams",
+      "slot": "LS",
+      "depth": 1,
+      "player": "42 Matt Orzech",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-GB-CHART"
+      ]
+    },
+    {
+      "id": "IND-Off-WR-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Laquon Treadwell",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Nick Westbrook-Ikhine",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Off-LT-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "LT",
+      "depth": 1,
+      "player": "Bernhard Raimann",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Charlie Heck",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Off-LG-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "LG",
+      "depth": 1,
+      "player": "Jalen Farmer",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Dalton Tucker",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Off-C-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "C",
+      "depth": 1,
+      "player": "Tanor Bortolini",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Sedrick Van Pran-Granger",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Off-RG-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "RG",
+      "depth": 1,
+      "player": "Matt Goncalves",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Off-RT-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "RT",
+      "depth": 1,
+      "player": "Jalen Travis",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "Luke Tenuta",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "starter out, backup available",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "IND-Off-TE-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "TE",
+      "depth": 1,
+      "player": "Tyler Warren",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Drew Ogletree",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Off-WR-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Anthony Gould",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Off-WR-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Ashton Dulin",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Deion Burks",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Off-QB-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "QB",
+      "depth": 1,
+      "player": "Daniel Jones",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Anthony Richardson Sr.",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Off-RB-1",
+      "club": "IND",
+      "unit": "Offense",
+      "slot": "RB",
+      "depth": 1,
+      "player": "Jonathan Taylor",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Seth McGowan",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "IND-Def-DE-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "DE",
+      "depth": 1,
+      "player": "Arden Key",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Jaylahn Tuimoloau",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "IND-Def-DT-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "DT",
+      "depth": 1,
+      "player": "Adetomiwa Adebawore",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Kevin Givens",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Def-NT-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "NT",
+      "depth": 1,
+      "player": "Grover Stewart",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Jerry Tillery",
+      "backup_on_report": "yes",
+      "backup_status": "Out",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "IND-Def-DE-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "DE",
+      "depth": 1,
+      "player": "Laiatu Latu",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Caden Curry",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Def-WLB-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "WLB",
+      "depth": 1,
+      "player": "Jaylon Carlies",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "Bryce Boettcher",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "starter out, backup available",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "IND-Def-MLB-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "MLB",
+      "depth": 1,
+      "player": "CJ Allen",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Austin Ajiake",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "IND-Def-CB-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "Charvarius Ward",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Kenneth Harris",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "IND-Def-FS-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "FS",
+      "depth": 1,
+      "player": "Cam Bynum",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Jonathan Owens",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Def-SS-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "SS",
+      "depth": 1,
+      "player": "AJ Haulcy",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Hunter Wohler",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Def-N-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "N",
+      "depth": 1,
+      "player": "Justin Walley",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Kapena Gushiken",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "IND-Def-CB-1",
+      "club": "IND",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "Sauce Gardner",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Johnathan Edwards",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Spe-P-1",
+      "club": "IND",
+      "unit": "Special teams",
+      "slot": "P",
+      "depth": 1,
+      "player": "Rigoberto Sanchez",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Spe-PK-1",
+      "club": "IND",
+      "unit": "Special teams",
+      "slot": "PK",
+      "depth": 1,
+      "player": "Spencer Shrader",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Spe-H-1",
+      "club": "IND",
+      "unit": "Special teams",
+      "slot": "H",
+      "depth": 1,
+      "player": "Rigoberto Sanchez",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Spe-LS-1",
+      "club": "IND",
+      "unit": "Special teams",
+      "slot": "LS",
+      "depth": 1,
+      "player": "Luke Rhodes",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "starter out, no printed backup",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "IND-Spe-KR-1",
+      "club": "IND",
+      "unit": "Special teams",
+      "slot": "KR",
+      "depth": 1,
+      "player": "Ashton Dulin",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Seth McGowan",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "IND-Spe-PR-1",
+      "club": "IND",
+      "unit": "Special teams",
+      "slot": "PR",
+      "depth": 1,
+      "player": "Anthony Gould",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Ashton Dulin",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-IND-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Off-WR-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Cooper Kupp",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Irvin Charles",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Off-WR-2",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Rashid Shaheed",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Irvin Charles",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Off-LT-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "LT",
+      "depth": 1,
+      "player": "Charles Cross",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "Josh Jones",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "starter out, backup available",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Off-LG-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "LG",
+      "depth": 1,
+      "player": "Quenton Nelson",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "Anthony Bradford",
+      "backup_on_report": "yes",
+      "backup_status": "",
+      "exposure": "starter out, backup available",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Off-C-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "C",
+      "depth": 1,
+      "player": "Jalen Sundell",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Olu Oluwatimi",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Off-RG-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "RG",
+      "depth": 1,
+      "player": "Grey Zabel",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Anthony Bradford",
+      "backup_on_report": "yes",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Off-RT-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "RT",
+      "depth": 1,
+      "player": "Abraham Lucas",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Josh Jones",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Off-TE-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "TE",
+      "depth": 1,
+      "player": "AJ Barner",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Eric Saubert",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Off-WR-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Jaxon Smith-Njigba",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Tory Horton",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Off-QB-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "QB",
+      "depth": 1,
+      "player": "Sam Darnold",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "Drew Lock",
+      "backup_on_report": "yes",
+      "backup_status": "",
+      "exposure": "starter out, backup available",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Off-FB-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "FB",
+      "depth": 1,
+      "player": "Brady Russell",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Off-RB-1",
+      "club": "SEA",
+      "unit": "Offense",
+      "slot": "RB",
+      "depth": 1,
+      "player": "Zach Charbonnet",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Jadarian Price",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Def-DT-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "DT",
+      "depth": 1,
+      "player": "Leonard Williams",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "Rylie Mills",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "starter out, backup available",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Def-NT-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "NT",
+      "depth": 1,
+      "player": "Byron Murphy II",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Brandon Pili",
+      "backup_on_report": "yes",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Def-DE-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "DE",
+      "depth": 1,
+      "player": "Jarran Reed",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Mike Morris",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Def-RUSH-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "RUSH",
+      "depth": 1,
+      "player": "DeMarcus Lawrence",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Derick Hall",
+      "backup_on_report": "yes",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Def-MLB-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "MLB",
+      "depth": 1,
+      "player": "Ernest Jones IV",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Patrick O'Connell",
+      "backup_on_report": "yes",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Def-WLB-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "WLB",
+      "depth": 1,
+      "player": "Drake Thomas",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Tyrice Knight",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Def-SLB-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "SLB",
+      "depth": 1,
+      "player": "Uchenna Nwosu",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Dante Fowler Jr.",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Def-CB-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "Devon Witherspoon",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Nehemiah Pritchett",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Def-CB-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "Josh Jobe",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Avery Smith",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Def-S-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "S",
+      "depth": 1,
+      "player": "Ty Okada",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Rodney Thomas II",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Def-S-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "S",
+      "depth": 1,
+      "player": "Julian Love",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Def-S-1",
+      "club": "SEA",
+      "unit": "Defense",
+      "slot": "S",
+      "depth": 1,
+      "player": "Nick Emmanwori",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Spe-K-1",
+      "club": "SEA",
+      "unit": "Special teams",
+      "slot": "K",
+      "depth": 1,
+      "player": "Jason Myers",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Spe-P-1",
+      "club": "SEA",
+      "unit": "Special teams",
+      "slot": "P",
+      "depth": 1,
+      "player": "Michael Dickson",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Spe-H-1",
+      "club": "SEA",
+      "unit": "Special teams",
+      "slot": "H",
+      "depth": 1,
+      "player": "Michael Dickson",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "SEA-Spe-PR-1",
+      "club": "SEA",
+      "unit": "Special teams",
+      "slot": "PR",
+      "depth": 1,
+      "player": "Rashid Shaheed",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Tory Horton",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Spe-KR-1",
+      "club": "SEA",
+      "unit": "Special teams",
+      "slot": "KR",
+      "depth": 1,
+      "player": "Rashid Shaheed",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Velus Jones Jr.",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "SEA-Spe-LS-1",
+      "club": "SEA",
+      "unit": "Special teams",
+      "slot": "LS",
+      "depth": 1,
+      "player": "Chris Stoll",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-SEA-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Off-WR-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Treylon Burks",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Van Jefferson",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "WAS-Off-LT-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "LT",
+      "depth": 1,
+      "player": "Brandon Coleman",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Andrew Wylie",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Off-LG-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "LG",
+      "depth": 1,
+      "player": "Chris Paul",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Nick Allegretti",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Off-C-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "C",
+      "depth": 1,
+      "player": "Lucas Patrick",
+      "on_report": "yes",
+      "game_status": "Out",
+      "printed_backup": "Matt Gulbin",
+      "backup_on_report": "yes",
+      "backup_status": "",
+      "exposure": "starter out, backup available",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "WAS-Off-RG-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "RG",
+      "depth": 1,
+      "player": "Sam Cosmi",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Tanoa Togiai",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Off-RT-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "RT",
+      "depth": 1,
+      "player": "Josh Conerly Jr.",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Andrew Wylie",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Off-TE-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "TE",
+      "depth": 1,
+      "player": "Chig Okonkwo",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Ben Sinnott",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "WAS-Off-TE-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "TE",
+      "depth": 1,
+      "player": "John Bates",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Colson Yankoff",
+      "backup_on_report": "yes",
+      "backup_status": "Out",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "WAS-Off-WR-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Stefon Diggs",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Luke McCaffrey",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Off-WR-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "WR",
+      "depth": 1,
+      "player": "Antonio Williams",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Off-QB-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "QB",
+      "depth": 1,
+      "player": "Jayden Daniels",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Marcus Mariota",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "WAS-Off-RB-1",
+      "club": "WAS",
+      "unit": "Offense",
+      "slot": "RB",
+      "depth": 1,
+      "player": "Rachaad White",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Austin Ekeler",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Def-DL-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "DL",
+      "depth": 1,
+      "player": "Charles Omenihu",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Jer'Zhan Newton",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Def-DL-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "DL",
+      "depth": 1,
+      "player": "Tim Settle",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Shy Tuttle",
+      "backup_on_report": "yes",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Def-DL-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "DL",
+      "depth": 1,
+      "player": "Deatrich Wise Jr.",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Ricky Barber",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Def-OLB-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "OLB",
+      "depth": 1,
+      "player": "Odafe Oweh",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Joshua Josephs",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Def-LB-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "LB",
+      "depth": 1,
+      "player": "Sonny Styles",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Kain Medrano",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Def-LB-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "LB",
+      "depth": 1,
+      "player": "Frankie Luvu",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Jordan Magee",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Def-OLB-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "OLB",
+      "depth": 1,
+      "player": "K'Lavon Chaisson",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Dorance Armstrong",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Def-CB-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "Amik Robertson",
+      "on_report": "yes",
+      "game_status": "",
+      "printed_backup": "Rasul Douglas",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART",
+        "RD-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "WAS-Def-CB-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "CB",
+      "depth": 1,
+      "player": "Trey Amos",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Mike Sainristil",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Def-SS-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "SS",
+      "depth": 1,
+      "player": "Nick Cross",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Tyler Owens",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Def-FS-1",
+      "club": "WAS",
+      "unit": "Defense",
+      "slot": "FS",
+      "depth": 1,
+      "player": "Jeremy Reaves",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Quan Martin",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Spe-P-1",
+      "club": "WAS",
+      "unit": "Special teams",
+      "slot": "P",
+      "depth": 1,
+      "player": "Tress Way",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Spe-K-1",
+      "club": "WAS",
+      "unit": "Special teams",
+      "slot": "K",
+      "depth": 1,
+      "player": "Drew Stevens",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Spe-H-1",
+      "club": "WAS",
+      "unit": "Special teams",
+      "slot": "H",
+      "depth": 1,
+      "player": "Tress Way",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Spe-LS-1",
+      "club": "WAS",
+      "unit": "Special teams",
+      "slot": "LS",
+      "depth": 1,
+      "player": "Tyler Ott",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "",
+      "backup_on_report": "",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Spe-KR-1",
+      "club": "WAS",
+      "unit": "Special teams",
+      "slot": "KR",
+      "depth": 1,
+      "player": "Luke McCaffrey",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Austin Ekeler",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    },
+    {
+      "id": "WAS-Spe-PR-1",
+      "club": "WAS",
+      "unit": "Special teams",
+      "slot": "PR",
+      "depth": 1,
+      "player": "Antonio Williams",
+      "on_report": "no",
+      "game_status": "",
+      "printed_backup": "Luke McCaffrey",
+      "backup_on_report": "no",
+      "backup_status": "",
+      "exposure": "no confirmed absence",
+      "cross_side_matrix": "",
+      "cross_side_reason": "Pairing this slot against an opponent's slot needs the opponent's chart. This desk holds 6 charts and none of the 6 clubs' Week 10 opponents is among them.",
+      "source_ids": [
+        "RD-WAS-CHART"
+      ]
+    }
+  ],
+  "counts": {
+    "rows": 171,
+    "by_exposure": {
+      "no confirmed absence": 159,
+      "starter out, backup available": 10,
+      "starter questionable": 1,
+      "starter out, no printed backup": 1
+    },
+    "by_unit_and_exposure": {
+      "Offense-no confirmed absence": 62,
+      "Defense-no confirmed absence": 64,
+      "Defense-starter out, backup available": 4,
+      "Special teams-no confirmed absence": 33,
+      "Offense-starter questionable": 1,
+      "Offense-starter out, backup available": 6,
+      "Special teams-starter out, no printed backup": 1
+    },
+    "clubs_covered": 6,
+    "clubs_without_chart": 26
+  },
+  "truth_depths": {
+    "rank_1_groups": 171,
+    "multi_player_rank_1": 1,
+    "slots_with_2_plus_printed_ranks": 107
+  },
+  "limits": [
+    "A printed rank is not playing time. The 1st-to-4th string claim in the brief needs snap counts.",
+    "Houston publishes an image, so the Texans have no row here.",
+    "Six of 32 clubs are covered by this desk's own read; the cross-side offence-versus-defence matrix needs both clubs' charts."
+  ],
+  "source_ids": [
+    "RD-DET-CHART",
+    "RD-GB-CHART",
+    "RD-SEA-CHART",
+    "RD-BAL-CHART",
+    "RD-WAS-CHART",
+    "RD-IND-CHART",
+    "RD-NFL-INJ-W10"
+  ]
+}
