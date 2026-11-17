@@ -184,6 +184,9 @@ SOURCE_HOSTS.update({
     'GB-CLUB-DEPTH': 'www.chicagobears.com',
 })
 
+# Session arena/34a52a38-own7 (2026-11-17): official Week 10 injury-report read, Lions section.
+SOURCE_HOSTS.update({'NFL-INJ-W10-READ-1117': 'www.nfl.com'})
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)
