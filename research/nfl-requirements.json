@@ -8,7 +8,10 @@
       "evidence": "Claims and session history recorded; integration and deployment remain.",
       "source_ids": [
         "NFL-TERMS"
-      ]
+      ],
+      "gate": null,
+      "gate_note": "Process requirement; no validation gate applies.",
+      "clear_number": "1 integration PR merged and 1 GitHub Pages deployment confirmed"
     },
     {
       "id": "NR02",
@@ -17,7 +20,10 @@
       "evidence": "Seven bounded snapshots; not live and not full league injury coverage.",
       "source_ids": [
         "NFL-STANDINGS"
-      ]
+      ],
+      "gate": "G01",
+      "gate_note": "Snapshots are checked but not retained as a dated, hashed capture series; league-wide coverage is partial.",
+      "clear_number": "32/32 clubs in scope; report captured at least Wed+Thu+Fri weekly with retained hashes"
     },
     {
       "id": "NR03",
@@ -26,7 +32,10 @@
       "evidence": "Normalized transcriptions and hashes retained; originals are not archived and some headers need review.",
       "source_ids": [
         "NFL-TEAM-OFF"
-      ]
+      ],
+      "gate": "G01",
+      "gate_note": "Row-level re-reads exist for 2026-11-13; originals are not archived, so not every row can be replayed.",
+      "clear_number": "100% of published rows re-read against the publisher with 0 contradictions"
     },
     {
       "id": "NR04",
@@ -35,7 +44,10 @@
       "evidence": "This ledger records implemented, partial and blocked scope.",
       "source_ids": [
         "NFL-TERMS"
-      ]
+      ],
+      "gate": null,
+      "gate_note": "Complete; this ledger is the artifact.",
+      "clear_number": "16/16 requirements dispositioned (met)"
     },
     {
       "id": "NR05",
@@ -44,7 +56,10 @@
       "evidence": "Twelve proposals; static read-only ledger, no approval controls.",
       "source_ids": [
         "NFL-TERMS"
-      ]
+      ],
+      "gate": null,
+      "gate_note": "Complete; static read-only ledger.",
+      "clear_number": "12/12 proposals published for reviewer decision (met)"
     },
     {
       "id": "NR06",
@@ -53,7 +68,10 @@
       "evidence": "Fifteen questions and discovery steps; unsupported answers blank.",
       "source_ids": [
         "NFL-INJURY"
-      ]
+      ],
+      "gate": null,
+      "gate_note": "Complete; answers stay blank until an official source confirms them.",
+      "clear_number": "15/15 questions published with sourced knowns and open gaps (met)"
     },
     {
       "id": "NR07",
@@ -62,7 +80,10 @@
       "evidence": "No executable NFL line or fitted model; permission, data and validation gaps.",
       "source_ids": [
         "NFL-TERMS"
-      ]
+      ],
+      "gate": "G10",
+      "gate_note": "NFL Terms §1.3/§12 restrict gambling use; no separate permission is evidenced. G06 also fails: no executable price exists.",
+      "clear_number": "1 written permission on file (currently 0) plus 1 licensed pregame price feed; then all ten gates"
     },
     {
       "id": "NR08",
@@ -71,7 +92,10 @@
       "evidence": "Eight hypotheses documented; none fitted or proven.",
       "source_ids": [
         "NFL-PASSING"
-      ]
+      ],
+      "gate": "G03",
+      "gate_note": "G01-G02 pass; coverage and power screen is not met.",
+      "clear_number": "500 settled selections across 200 distinct games on 60 dates (pre-registered screen)"
     },
     {
       "id": "NR09",
@@ -80,7 +104,10 @@
       "evidence": "Competition rules specified and empty display; automated ranking, eligibility and rewards are not implemented.",
       "source_ids": [
         "NFL-TERMS"
-      ]
+      ],
+      "gate": "G09",
+      "gate_note": "Rules specified; no prospective record exists and cash execution is disabled.",
+      "clear_number": "At least 60 calendar days and 200 games of frozen, stake-capped forward shadow"
     },
     {
       "id": "NR10",
@@ -89,7 +116,10 @@
       "evidence": "Ten gate contracts and blocked states; no validated edge, luck cannot be removed.",
       "source_ids": [
         "NFL-TERMS"
-      ]
+      ],
+      "gate": "G04",
+      "gate_note": "No forecast evaluation against a stated reference exists yet.",
+      "clear_number": "Beat frozen simple and de-vigged market baselines on proper scores; lower 95% net-return bound above 0 after costs"
     },
     {
       "id": "NR11",
@@ -98,7 +128,10 @@
       "evidence": "Seven descriptive correlations computed; bet-leg and joint-event correlations blank.",
       "source_ids": [
         "NFL-PASSING"
-      ]
+      ],
+      "gate": "G05",
+      "gate_note": "Descriptive cross-sectional estimates only; bet-leg joint dependence not measured.",
+      "clear_number": "Aligned event pairs with n, date and confidence interval published for every value (today 7 computed, 6 not collected)"
     },
     {
       "id": "NR12",
@@ -107,7 +140,10 @@
       "evidence": "45 historical injury rows; no live tracking, verified depth mapping, or deficiency estimates.",
       "source_ids": [
         "NFL-INJURY"
-      ]
+      ],
+      "gate": "G01",
+      "gate_note": "Injury snapshots exist; verified depth mapping and a dated capture series do not.",
+      "clear_number": "32/32 club depth charts verified club-by-club plus dated capture history retained with hashes"
     },
     {
       "id": "NR13",
@@ -116,7 +152,10 @@
       "evidence": "Summary separates verified observations from blocked decisions.",
       "source_ids": [
         "NFL-STANDINGS"
-      ]
+      ],
+      "gate": null,
+      "gate_note": "Complete; reconciled against the merged results, market-price, availability and lifecycle desks.",
+      "clear_number": "1 reconciled summary published and re-verified (met)"
     },
     {
       "id": "NR14",
@@ -125,7 +164,10 @@
       "evidence": "Static NFL dashboard; source links on each data row, no automatic updates.",
       "source_ids": [
         "NFL-STANDINGS"
-      ]
+      ],
+      "gate": null,
+      "gate_note": "Complete; recursive link/source audit runs on every build.",
+      "clear_number": "All pages build with 0 broken links and 0 audit errors (met)"
     },
     {
       "id": "NR15",
@@ -134,7 +176,10 @@
       "evidence": "Review register and blank cells; flags do not imply strategy eligibility.",
       "source_ids": [
         "NFL-INJURY"
-      ]
+      ],
+      "gate": null,
+      "gate_note": "Complete; register publishes every flag with its official source.",
+      "clear_number": "21/21 flags published with sources (met; 17 open, none blocking publication)"
     },
     {
       "id": "NR16",
@@ -143,7 +188,10 @@
       "evidence": "Local static and browser checks; PR and Pages deployment pending.",
       "source_ids": [
         "NFL-TERMS"
-      ]
+      ],
+      "gate": null,
+      "gate_note": "Process requirement; checks are green, merge and deploy remain.",
+      "clear_number": "1 PR merged plus 1 successful Pages build-and-deployment run"
     }
   ]
 }
