@@ -50,3 +50,30 @@ The numerical findings above are outputs of the named repository analyses, **not
 ## Provenance and limits
 
 This summary consolidates existing repository evidence. The latest NFL official-source reads cited by the lifecycle/results desks are dated 2026-11-14; the compiled date above is not a claim of a new source fetch. Source pages are linked so they can be manually reviewed. Saved rendered text/transcriptions are not raw HTTP archives; a hash establishes file integrity, not publisher truth. NFL.com direct retrieval, automation and permitted use are distinct questions. No scheduled NFL-site scraper is enabled here. Prices from non-NFL publishers are separately attributed and not re-labelled as official NFL data. Unknowns stay blank and are listed on [Flagged for Review](../nfl-review.html).
+
+## Update 2026-11-17 (session arena/34a52a38-own7)
+
+Additive. Earlier sections are unchanged. Everything below is on the landing page, which computes each figure from committed artefacts at build time.
+
+**What changed**
+
+- **Full brief ledger** (landing page, `#brief-ledger`; the project-gate table above it is unchanged): 60 rows, one per requirement in the brief. Each row gives its status, the gate that blocks it, the number now, the number that clears it, and registered sources. Status count: 13 done, 18 partial, 12 blocked, 17 not started.
+- **Removal of luck** (`#luck-panel`): the best record in the graded family is 77–43 (64.2%) over 120 bets. Its single-test p is 0.0012, and its family-wise false-positive is 2.2% for the 18 tests the analysis states, or 3.6% if all 30 graded variants form the family. Both are below 5%. This is a statistic against a neutral league-mean line, not a price. ROI, CLV and reward remain blank.
+- **Results leaderboard corrected**: it had printed backtest hit rates, intervals and q-values, and ranked one. The brief forbids backtest numbers on a leaderboard. It now lists each variant as not ranked, with eligibility only. The figures stay on the skill page, labelled as backtest.
+- **Lions, Week 10 (`#lions-delta`)**: the official page, read 2026-11-17, prints Kerby Joseph, Cade Mays and D.J. Reed as Out. The two desk captures are dated 2026-11-13 and are kept as they were, so the official read is published as a delta. The captures disagree with the official read on several fields (availability desk: 3 of 9 rows; assurance desk: 7 of 9).
+
+**Decisions the owner should review first**
+
+1. **Rights conflict (NF34).** 64 NFL-named CSV files are committed and served by the public site, while the repository's own gate (RG10) says nothing is released. Moving them to a private store was not done here, because five desks depend on those files.
+2. **Scheduled capture (NF35).** The brief asks for daily scheduled capture of injury reports and depth pages. NFL.com terms §1.3 prohibit systematic retrieval without written consent. No scheduled job was added.
+3. **Family size for the luck figure (NF37).** The analysis states 18 tests; 30 variants are graded. Pick one definition before the figure is used.
+4. **Unmapped identifiers (NF36).** The brief's VR-, VQ- and SG- IDs appear nowhere in the repository. Items that depend on them are not verified.
+
+**Still open, with the number that would clear each**
+
+- No licensed price exists, so the market line, the residual, CLV and ROI are blank (0 of 84 market cells).
+- No Game Book, inactive list, snap count, reserve list or transaction log is captured (0 of 136 games).
+- Injury reports exist for two weeks (Week 7 and Week 10), with no clock times and no complete recount of the Week 10 report (326, 276 and 20 rows across three desks).
+- Houston's depth chart is an image and was not transcribed (31 of 32 clubs have a printed chart).
+
+**Verification performed:** all 119 unit tests pass (8 new); the site build is deterministic; `scripts/check_site.py` passes; every CI check in `check.yml` passes when replayed locally; the browser suite passes on 174 desktop and 174 mobile pages with WCAG A/AA and no runtime errors. Official sources: `https://www.nfl.com/injuries/league/2026/REG10` (read 2026-11-17, Lions section) and the earlier NFL.com reads already registered in `research/sources.json`.

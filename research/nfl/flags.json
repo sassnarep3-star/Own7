@@ -250,8 +250,216 @@
   },
   {
    "id": "NF22",
+   "item": "Week 10 injury tables disagree across the repository's four desk files",
+   "finding": "availability desk: 326 rows, 28 clubs; assurance desk: 276 rows, 26 clubs, no BAL or LAC; origination desk: 210 rows, no LAR, practice codes DNP/Limited/Full; legacy file: 20 rows, WAS and NYG only, team nicknames. On the 276 players the assurance and availability desks share, the comparison found 19 injury, 19 game-status and 72 practice differences before practice labels were normalised.",
+   "unverified_value": null,
+   "impact": "Any one desk table alone would mislead. The official eight-chunk page is the reference; chunk 0 (50 rows) was matched field by field on 2026-11-17.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-INJ-W10",
+    "NFL-INJ-1117",
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF23",
+   "item": "Kerby Joseph practice status conflicts between the availability desk and the live page",
+   "finding": "Availability desk: Full Participation in Practice, Out. Live official page read 2026-11-17 (Detroit at New England, Sunday 15 Nov): Did Not Participate In Practice, Out. The game status agrees.",
+   "unverified_value": null,
+   "impact": "Practice-level evidence for this player is not reliable until the desk is corrected from the official page.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-INJ-1117"
+   ]
+  },
+  {
+   "id": "NF24",
+   "item": "Lions game status is blank in the assurance and origination desks",
+   "finding": "Kerby Joseph, Cade Mays and D.J. Reed are listed Out on the live official page (2026-11-17). The assurance and origination desks leave game status blank for all three.",
+   "unverified_value": null,
+   "impact": "Blank cells must not be read as available. The official page is the source for the correction.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-INJ-1117",
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF25",
+   "item": "Week 10 final scores are not in the verified results feed",
+   "finding": "nfl-results/data/games-2026-w1-9.csv covers Weeks 1 to 9 (136 rows, retrieved 2026-11-14). Thirteen Week 10 finals printed on nfl.com/schedules on 2026-11-17 are not in the feed.",
+   "unverified_value": null,
+   "impact": "Results-based tests, leaderboard rows and the register's results gate run on Weeks 1 to 9 only.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-SCHED-1117",
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF26",
+   "item": "Chargers at Ravens (16 Nov) final score is not confirmed",
+   "finding": "The official schedule read on 2026-11-17 shows the game on Monday 16 Nov at 8:15 PM ET with no score printed. Thirteen of fourteen Week 10 games show Final.",
+   "unverified_value": null,
+   "impact": "The Week 10 result count is 13 of 14 until the official game page is read and linked.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-SCHED-1117"
+   ]
+  },
+  {
+   "id": "NF27",
+   "item": "Week 10 venue notes are almost empty",
+   "finding": "Only one of the fourteen rows in nfl/origination/data/games-2026-w10.csv has a venue note. The others are blank, not inferred.",
+   "unverified_value": null,
+   "impact": "Venue-based features cannot be built. Each venue must be transcribed from the official game-centre page.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-SCHED-1117",
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF28",
+   "item": "Row-level NFL data is committed while the NFL.com terms restrict systematic retrieval",
+   "finding": "832 injury rows across the four Week 10 desk tables are committed. NFL.com Terms \u00a71.3 (read 2026-11-17, updated 16 May 2024) limits use to personal, non-commercial informational purposes and bars systematic retrieval without written consent. The README release wording was not re-read this session.",
+   "unverified_value": null,
+   "impact": "Public release of row-level data and scheduled capture need a rights decision (register decisions D1 and D3) before they continue.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-TERMS-1117",
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF29",
+   "item": "A backtest row is published on the results leaderboard",
+   "finding": "nfl-results-leaderboard.html shows a spread backtest record of 120 bets, 77 wins to 43 losses, although the pre-registration rule forbids backtest numbers on a leaderboard.",
+   "unverified_value": null,
+   "impact": "The row is retained and flagged, not removed or rebuilt in this session. It is excluded from every ranking claim in the register.",
+   "status": "Needs review",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF30",
+   "item": "The brief's multi-player depth count does not reproduce",
+   "finding": "The brief states 149 multi-player slots. Recomputed from the committed files: 134 rank-1 groups with more than one player in the availability desk, 22 in the four bye clubs, 156 combined. Offence and defence only: 155 combined. The definition is not settled.",
+   "unverified_value": null,
+   "impact": "Depth-group counts must not be quoted as 149 until the owner confirms the definition.",
+   "status": "Needs review",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF31",
+   "item": "Price-data policy differs between desks",
+   "finding": "The pricing desk holds Pro-Football-Reference closing-price observations. The lifecycle desk keeps market values blank under its rights policy. No single written policy applies to both.",
+   "unverified_value": null,
+   "impact": "No market-relative result, residual or ROI can be published until the owner records one policy (register decision D2).",
+   "status": "Needs review",
+   "source_ids": [
+    "PFR-VEGAS-2026",
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF32",
+   "item": "Lions Week 10 designations differ between the desk captures and the official read",
+   "finding": "Official page read 2026-11-17: Kerby Joseph (Knee, DNP, Out), Cade Mays (Ankle, DNP, Out), D.J. Reed (Hip, DNP, Out), Amon-Ra St. Brown (Rib, LP, Questionable), Sione Vaki (Ankle, LP, Questionable). The availability desk capture (2026-11-13) shows Joseph as Full Participation, and St. Brown and Vaki with no injury and no game status; Vaki is DNP. Published as a dated delta on the landing page; no capture was overwritten. The page prints no capture time, so the cause cannot be settled.",
+   "unverified_value": null,
+   "impact": "Three Out designations are confirmed by the official read. Practice and injury fields for the other rows depend on which capture is used.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-INJ-W10-READ-1117",
+    "NFL-INJ-W10-RECHECK-1114"
+   ]
+  },
+  {
+   "id": "NF33",
+   "item": "Three desks hold three different Week 10 injury row counts",
+   "finding": "The availability desk holds 326 rows, the assurance desk 276 rows (its build text says 276), and the research extract 20 rows. These are different scopes or captures of one official report. The brief's figures (254 and 279 rows) are not reproduced in the repository. No complete official recount was made this session; the page has eight chunks and one was read.",
+   "unverified_value": null,
+   "impact": "Row counts cannot be quoted as the league total until one complete official recount matches every row.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-INJ-W10-READ-1117",
+    "NFL-INJ-W10-RECHECK-1114"
+   ]
+  },
+  {
+   "id": "NF34",
+   "item": "Committed NFL row-level data conflicts with the repository's own rights gate",
+   "finding": "64 NFL-named CSV files are committed and served by the public GitHub Pages site, including per-game and per-player rows (for example nfl-results/data/games-2026-w1-9.csv, 136 games). The rights gate RG10 states that nothing is released because NFL.com terms do not permit releasing a compiled dataset, and the README says no dataset is released. Both statements cannot hold.",
+   "unverified_value": null,
+   "impact": "Possible breach of NFL.com terms \u00a71.3 by the public site. Not changed in this session: the brief requires a public/private split, but moving files breaks five desks. Owner decision needed.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-TERMS",
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF35",
+   "item": "Scheduled capture of NFL.com conflicts with terms \u00a71.3 unless written consent is obtained",
+   "finding": "The brief asks for daily scheduled capture of injury reports and depth pages from Wednesday to kickoff, with retained hashes. NFL.com terms \u00a71.3 allow individual non-commercial informational use and prohibit systematic retrieval without express prior written consent. No scheduled job was added. The Week 10 Lions read was a single page read, not a scheduled job.",
+   "unverified_value": null,
+   "impact": "Scheduled capture is blocked until written consent or a licensed feed is in place.",
+   "status": "Needs review",
+   "source_ids": [
+    "NFL-TERMS"
+   ]
+  },
+  {
+   "id": "NF36",
+   "item": "Identifiers cited in the brief are not in the repository",
+   "finding": "The brief cites verification IDs VR-04 to VR-26, VQ-05 to VQ-08, and rejection IDs SG-03 and SG-05. A repository-wide search on 2026-11-17 returned no match for any of them. Claims that rely on those IDs (for example Malik Willis on injured reserve, the Colts receiver trades, and the Lamar Jackson and Tyler Huntley depth rows) therefore cannot be traced here and are not published as verified.",
+   "unverified_value": null,
+   "impact": "Those items remain open. The owner should supply the register that defines the IDs.",
+   "status": "Needs review",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF37",
+   "item": "Removal-of-luck family size: 18 stated, 30 graded",
+   "finding": "The analysis states strategies_tested = 18 and a family-wise false-positive of 2.18% (1 \u2212 (1 \u2212 0.001223)^18). The leaderboard tests 30 graded variants. Recomputed on 30, the family-wise figure is 3.60%. Both are below 5%, but the stated family is not the graded family.",
+   "unverified_value": null,
+   "impact": "The dashboard shows both figures. The owner should fix the family definition before the number is used for a decision.",
+   "status": "Needs review",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF38",
+   "item": "Other desks' leaderboards show hit-rate columns",
+   "finding": "Under the brief's rule that backtest numbers never appear on a leaderboard, the lifecycle leaderboard (2 hit-rate columns), the pricing leaderboard (5) and the market-desk leaderboard (1) still show hit-rate figures. Only the results leaderboard was corrected in this session, because those desks are owned by earlier sessions.",
+   "unverified_value": null,
+   "impact": "Leaderboard pages in those desks breach the stated rule until they are corrected.",
+   "status": "Needs review",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF39",
+   "item": "Results leaderboard showed backtest numbers; withheld from 2026-11-17",
+   "finding": "The results leaderboard ranked the originated spread board as provisional #1 and printed its hit rate (64.2%), interval, and q-value. The brief forbids backtest numbers on a leaderboard. The page now lists each variant as not ranked, with eligibility only; the figures remain on the skill page, labelled as backtest.",
+   "unverified_value": null,
+   "impact": "Corrected. No value in the analysis file was changed.",
+   "status": "Corrected",
+   "source_ids": [
+    "REPO"
+   ]
+  },
+  {
+   "id": "NF40",
    "item": "Five open pull requests from stale parallel sessions were reconciled by takeover (four closed unmerged, one merged)",
-   "finding": "PRs #17, #27, #48, #50 and #51 belonged to sessions whose coordination claims were more than 60 hours old with no commits. The brief makes such tasks takeable. Review of each branch against main found: #51 (NFL competition lab, 16 pages, 59 tests) implements the brief's headline requirements with unique artifacts (deficiency matrix, decision record, 137-game feed) and was merged additively into main via this session's integration PR; #48 and #50 are two further independent implementations of the same eight lifecycle requirements that main already covers (nfl-lifecycle-3f5c, nfl-pricing, nfl-market-desk); #27 is an earlier decision desk superseded by the canonical decision pages and failing its browser checks at closure time; #17 records NBA-era source-health work whose workflow and script already exist on main. Branches remain in Git history and can be reopened as new PRs if the owner disagrees.",
+   "finding": "PRs #17, #27, #48, #50 and #51 belonged to sessions whose coordination claims were more than 60 hours old with no commits. The brief makes such tasks takeable. Review of each branch against main found: #51 (NFL competition lab, 16 pages, 59 tests) implements the brief's headline requirements with unique artifacts (deficiency matrix, decision record, 137-game feed) and was merged additively into main via this session's integration PR; #48 and #50 are two further independent implementations of the same eight lifecycle requirements that main already covers (nfl-lifecycle-3f5c, nfl-pricing, nfl-market-desk); #27 is an earlier decision desk superseded by the canonical decision pages and failing its browser checks at closure time; #17 records NBA-era source-health work whose workflow and script already exist on main. Branches remain in Git history and can be reopened as new PRs if the owner disagrees. (Flag registered as NF22 on the integration branch before main's NF22-NF31 range was seen; renumbered to NF40 on merge.)",
    "unverified_value": null,
    "impact": "Avoids publishing three-to-five overlapping price stores, leaderboards and demotion gates that would contradict each other on one site. The closure rationale is recorded here, on each PR, and in COORDINATION.md; nothing was deleted.",
    "status": "Needs review",

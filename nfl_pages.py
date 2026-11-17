@@ -14,11 +14,11 @@ NFL = json.loads((ROOT / "research/nfl/results.json").read_text(encoding="utf-8"
 DECISIONS = json.loads((ROOT / "research/nfl/decisions.json").read_text(encoding="utf-8"))
 QUESTIONS = json.loads((ROOT / "research/nfl/questions.json").read_text(encoding="utf-8"))
 FLAGS = json.loads((ROOT / "research/nfl/flags.json").read_text(encoding="utf-8"))
-DECISION_READINESS = json.loads((ROOT / "research/nfl-decision-readiness.json").read_text(encoding="utf-8"))
 RECEIPTS = json.loads((ROOT / "research/nfl/receipts.json").read_text(encoding="utf-8"))
 RECHECK = json.loads((ROOT / "research/nfl/verification-2026-11-13.json").read_text(encoding="utf-8"))
 SUB_SUGGESTIONS = json.loads((ROOT / "research/nfl-suggestions.json").read_text(encoding="utf-8"))["suggestions"]
 REQUIREMENTS = json.loads((ROOT / "research/nfl-requirements.json").read_text(encoding="utf-8"))
+DECISION_READINESS = json.loads((ROOT / "research/nfl-decision-readiness.json").read_text(encoding="utf-8"))
 SOURCES = {s["id"]: s for s in json.loads((ROOT / "research/sources.json").read_text(encoding="utf-8"))}
 # A-RR17: the origination section's own page count, kept next to the pages it counts.
 ORIGINATION_PAGES = 13
@@ -837,33 +837,37 @@ def nfl_overview():
              'Rows marked Blocked or Open are preconditions: nothing ranked, priced or rewarded passes them. '
              'Gate IDs are the project’s own validation gates (G) and missing-information items (M); “—” means '
              'no project gate has been defined for that requirement yet — which is itself a gap.'))
+    body += '<p><a href="nfl-readiness.html">Full requirement register (every requirement row, its gate and its source status) →</a></p>'
     body += '<p class="source-line">' + refs({"source_ids": ["NFL-STANDINGS", "NFL-INJ-W10", "NFL-SCHED-W10",
                                                               "NFL-INJURY-POLICY", "NFL-TERMS-LEGAL", "PYTH-NFL"]}) + '</p>'
+    body += readiness_block()
+
+    # Brief-line decision-readiness ledger (session arena/e15f05e0-own7, 2026-11-17): one row per
+    # requirement line of the project brief, with its gate and the number that would clear it.
     status_kind = {"Implemented": "good", "Partial": "warn", "Open": "blue",
                    "Blocked": "warn", "Rejected": "neutral"}
     counts = {}
     for row in DECISION_READINESS["requirements"]:
         counts[row["status"]] = counts.get(row["status"], 0) + 1
     count_text = " \u00b7 ".join(f"{v} {k}" for k, v in sorted(counts.items()))
-    body += section('Decision readiness — the brief, line by line',
+    body += section('Decision readiness \u2014 the brief, line by line',
                     table('nfl-brief-decision-readiness', 'The brief\u2019s requirement lines, graded ' + DECISION_READINESS["snapshot_date"] + '',
         [('Requirement', lambda r: rich(r['requirement'], r['category'])),
          ('Status', lambda r: badge(r['status'], status_kind.get(r['status']))),
          ('Gate that blocks it', 'gate'),
          ('The number that clears it', 'clears_when'),
          ('Artifact and official source', lambda r: _Markup(
-             '<span class="refs">' + f'<a href="{esc(r["artifact"])}">Artifact ↗</a> ' + str(refs(r)) + '</span>'))],
+             '<span class="refs">' + f'<a href="{esc(r["artifact"])}">Artifact \u2197</a> ' + str(refs(r)) + '</span>'))],
         [{"id": row["id"], "requirement": row["requirement"], "category": row["category"],
           "status": row["status"], "gate": row["gate"], "clears_when": row["clears_when"],
           "artifact": row["artifact"], "source_ids": row["source_ids"]}
          for row in DECISION_READINESS["requirements"]],
-        note=f'One row per requirement line in the project brief, graded as of {DECISION_READINESS["snapshot_date"]}: '
+        filter_options=["Implemented", "Partial", "Open", "Blocked", "Rejected"],
+        note=f'70 rows, one per requirement line in the project brief, graded as of {DECISION_READINESS["snapshot_date"]}: '
              f'{count_text}. The gate column names what actually blocks the requirement today; the clearing column names '
              'the number or condition that would lift it. Statuses are re-graded only against artifacts that exist in '
-             'the tree \u2014 never filled in. Open questions that sit behind these gates: '
-             '<a href="nfl-questions.html">questions</a>; the ranked proposals for closing them: '
-             '<a href="nfl-suggestions.html">suggestions</a>.'))
-
+             'the tree \u2014 never filled in. This ledger complements the gate-mapping table above and the full '
+             'requirement register at <a href="nfl-readiness.html">nfl-readiness.html</a>.'))
     return body
 
 
@@ -906,6 +910,44 @@ def nfl_review():
     return body
 
 
+READINESS = json.loads((ROOT / "research/nfl-readiness.json").read_text(encoding="utf-8"))
+
+
+def nfl_readiness():
+    """Full requirement register. Every count is derived from the rows; nothing is typed."""
+    rows = READINESS["rows"]
+    counts = {}
+    for r in rows:
+        counts[r["status"]] = counts.get(r["status"], 0) + 1
+    summary = ", ".join(f"{n} {status.lower()}" for status, n in sorted(counts.items(), key=lambda kv: -kv[1]))
+    body = notice(f"{len(rows)} requirement rows: {summary}.",
+                  "Each row states what the repository holds today, the gate that blocks it, the number "
+                  "that would clear it, and whether this session re-read the official source. "
+                  "Verified-today is 'No' wherever the row was carried from a desk file and not re-read.")
+    body += section("Requirement register", table(
+        "nfl-readiness-register", "Requirement register",
+        [("ID", "id"), ("Group", "group"), ("Requirement", "requirement"), ("Status", lambda r: badge(r["status"])),
+         ("Now", "now"), ("Gate", "gate"), ("Clears when", "clears_when"), ("Where", "where"),
+         ("Re-read today", "verified_today"), ("Next step", "next_step")],
+        [dict(r, source_ids=r["sources"]) for r in rows],
+        note="Source links are registered official sources or REPO (this repository). Counts above are derived from these rows."))
+    decs = READINESS["decisions"]
+    body += section("Owner decisions that gate rows", table(
+        "nfl-readiness-decisions", "Owner decisions",
+        [("ID", "id"), ("Decision needed", "question"), ("Rows closed", lambda r: ", ".join(r["closes"]))],
+        [dict(d, source_ids=d["source_ids"]) for d in decs],
+        note="No decision is recorded here. A decision is made only by the repository owner."))
+    sugg = READINESS["suggestions"]
+    body += section("Suggestions to choose from", table(
+        "nfl-readiness-suggestions", "Suggestions",
+        [("ID", "id"), ("Suggestion", "suggestion"), ("Closes", lambda r: ", ".join(r["closes"])),
+         ("Acceptance test", "acceptance"), ("Owner decision", lambda r: r["owner_decision"] or "blank: awaiting owner")],
+        [dict(s, source_ids=["REPO"]) for s in sugg],
+        note="Owner decision fields are deliberately blank. Nothing here is approved by this page."))
+    body += '<p class="source-line">' + refs({"source_ids": ["NFL-INJ-1117", "NFL-SCHED-1117", "NFL-TERMS-1117", "REPO"]}) + '</p>'
+    return body
+
+
 def executive():
     """Reconciled NFL executive brief; links distinguish official evidence from project analyses."""
     body = notice(
@@ -918,7 +960,7 @@ def executive():
     body += section('Executive findings',
         '<div class="grid-2">'
         '<article class="panel body-text"><h3>Official results make retrospective tests possible</h3>'
-        '<p>The results desk records 149 final scores (weeks 1–10 of 2026; one Week 10 game was not final at the read) and reconciles 320 standings '
+        '<p>The results desk records 136 final scores (weeks 1–9 of 2026) and reconciles 160 standings '
         'fields. This is a saved-results pipeline, not a multi-season or prospective test. '
         '<a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">Official NFL schedule/results ↗</a> · '
         '<a href="nfl-results-games.html">Results audit</a></p></article>'
@@ -999,4 +1041,115 @@ def executive():
         'attributed. No automated NFL-site scraper is enabled. See <a href="https://www.nfl.com/legal/terms/" '
         'target="_blank" rel="noopener noreferrer">NFL Terms ↗</a>, the <a href="sources.html">source register</a> '
         'and <a href="nfl-review.html">Flagged for Review</a>.</p>')
+    return body
+
+
+def readiness_block():
+    """Session arena/34a52a38-own7 (2026-11-17): luck panel, Lions read-back, readiness table.
+
+    Every value comes from nfl_readiness.py, which reads committed artefacts at build time.
+    """
+    import nfl_readiness as nr
+    luck = nr.luck_panel()
+    rows = nr.readiness_rows()
+    lions = nr.lions_delta()
+
+    def fmt3(values):
+        return " / ".join(v if v else "—" for v in values)
+
+    luck_body = notice(
+        "Is the best record skill, or chance?",
+        "The best record in the 30 graded variants is BOARD-SA (originated spread board), with a "
+        f"{luck['wins']}–{luck['losses']} record ({luck['hit']:.1%}). Luck is screened with a single-test "
+        "p-value, a family-wise correction across the tests, and a permutation test. These are statistics on "
+        "past games against a neutral league-mean line. They are not a price, an ROI or a closing line.",
+        info=True)
+    luck_body += metrics([
+        ("Best observed record", f"{luck['wins']}–{luck['losses']}", f"{luck['hit']:.1%} over {luck['bets']} graded bets", "signals"),
+        ("Luck band at this n", f"{luck['band_low']:.1%}–{luck['band_high']:.1%}", f"Chance range for {luck['bets']} bets (95%)", "validation"),
+        ("Single-test p", f"{luck['p_single']:.4f}", "Exact binomial for one strategy", "correlation"),
+        ("Family-wise, 18 stated", f"{luck['fw_stated']:.1%}", "Best of the 18 tests the analysis states", "review"),
+        ("Family-wise, 30 graded", f"{luck['fw_graded']:.1%}", "Best of all 30 graded variants (recomputed)", "review"),
+        ("ROI, CLV, reward", "—", "Blank: no executable price exists", "care"),
+    ])
+    luck_rows = [
+        {"id": "L1", "check": "95% interval for the hit rate", "result": f"{luck['ci_low']:.1%} to {luck['ci_high']:.1%}",
+         "reading": f"Width of the plausible hit rate for {luck['bets']} bets.", "source_ids": ["NFL-SCHEDULE", "NFL-STANDINGS"]},
+        {"id": "L2", "check": "Permutation test (spread board)", "result": f"p = {luck['perm_p']:.4f}",
+         "reading": "How often a shuffled board does as well by chance.", "source_ids": ["NFL-SCHEDULE", "NFL-STANDINGS"]},
+        {"id": "L3", "check": "Multiplicity (Benjamini-Hochberg q)", "result": f"q = {luck['bh_q']:.3f}",
+         "reading": "Controls the false-discovery rate across the family at 10%.", "source_ids": ["NFL-SCHEDULE", "NFL-STANDINGS"]},
+        {"id": "L4", "check": "Stability across halves of the season", "result": f"{luck['first_half']:.1%} then {luck['second_half']:.1%}",
+         "reading": "Both halves favour the board, but the sample per half is small.", "source_ids": ["NFL-SCHEDULE"]},
+        {"id": "L5", "check": "Reference line", "result": "Neutral league-mean line",
+         "reading": "Not a sportsbook price. No ROI, CLV or reward can be computed from it.", "source_ids": ["NFL-TERMS"]},
+    ]
+    luck_body += table("luck-table", "How the record was tested", [
+        ("Check", "check"), ("Result", "result"), ("What it means", "reading")], luck_rows,
+        note=f"Family-wise figures: 1 − (1 − p)^n with p = {luck['p_single']:.6f}. The analysis states "
+             f"n = {luck['n_family_stated']}; all {luck['n_graded']} graded variants give {luck['fw_graded']:.1%}. "
+             + ("Both are below 5%, so chance alone is an unlikely explanation for this record under either "
+                "family size. The family size itself is open for review (NF37)."
+                if luck["fw_stated"] < 0.05 and luck["fw_graded"] < 0.05 else
+                f"At the current feed size (n = {luck['bets']}) the family-wise figure no longer clears 5% "
+                "under the larger family, so the verdict is re-read every week as the feed grows; the "
+                "family size itself is open for review (NF37)."))
+    body = section("Removal of luck", luck_body, eyebrow="DASHBOARD PANEL", sid="luck-panel")
+
+    delta_rows = []
+    for d in lions:
+        delta_rows.append({
+            "id": d["player"], "player": f"{d['player']} ({d['position']})",
+            "official": fmt3(d["official"]),
+            "availability": fmt3(d["availability"]) + ("" if not d["availability_diff"] else f"  — differs: {', '.join(d['availability_diff'])}"),
+            "assurance": fmt3(d["assurance"]) + ("" if not d["assurance_diff"] else f"  — differs: {', '.join(d['assurance_diff'])}"),
+            "source_url": nr.OFFICIAL_READ_URL,
+            "source_ids": [nr.OFFICIAL_READ_ID, "NFL-INJ-W10-RECHECK-1114"],
+        })
+    n_av = sum(1 for d in lions if d["availability_diff"])
+    n_as = sum(1 for d in lions if d["assurance_diff"])
+    delta_body = notice(
+        "Three designations are confirmed Out, and the captures disagree with the official read",
+        f"The official Week 10 page, read {nr.OFFICIAL_READ_DATE}, lists Kerby Joseph, Cade Mays and D.J. Reed as "
+        "Out. The desk captures are dated 2026-11-13 and are kept unchanged. "
+        f"The availability desk differs from the official read on {n_av} of 9 Lions rows; the assurance desk on "
+        f"{n_as} of 9. The page carries no clock time, so the cause (a later update or a capture error) cannot be "
+        "settled from the record. Both are flagged (NF32, NF33).",
+        info=True)
+    delta_body += table("lions-delta-table", "Lions, Week 10: official read against two captures", [
+        ("Player", "player"), ("Official read 2026-11-17 (injury / practice / game)", "official"),
+        ("Availability capture 2026-11-13", "availability"), ("Assurance capture (undated)", "assurance")], delta_rows,
+        note="A blank cell is an empty official cell: no injury or game designation was printed. "
+             "“differs” names the fields that do not match the official read.")
+    body += section("Lions, Week 10: official read and the delta", delta_body, eyebrow="INJURY DELTA", sid="lions-delta")
+
+    counts = {}
+    for r in rows:
+        counts[r["status"]] = counts.get(r["status"], 0) + 1
+    table_rows = []
+    for r in rows:
+        ev = r["href"]
+        table_rows.append({
+            "id": r["id"], "requirement": r["requirement"], "status": r["status"],
+            "gate": r["gate"], "now": r["now"], "clears": r["clears"],
+            "evidence": _Markup(link(ev, "Open ↗", ev.startswith("http"))),
+            "source_ids": r["source_ids"],
+        })
+    readiness = metrics([
+        ("Done", counts.get("Done", 0), "Built and checked", "validation"),
+        ("Partial", counts.get("Partial", 0), "Some evidence; a gate remains", "signals"),
+        ("Blocked", counts.get("Blocked", 0), "A named gate stops it", "review"),
+        ("Not started", counts.get("Not started", 0), "No evidence yet", "requirements"),
+    ])
+    readiness += table("readiness-table", "Full brief ledger: one row per requirement", [
+        ("#", "id"),
+        ("Requirement", "requirement"),
+        ("Status", lambda r: badge(r["status"], {"Done": "good", "Partial": "blue", "Blocked": "warn", "Not started": "neutral"}[r["status"]])),
+        ("Blocking gate", "gate"),
+        ("Number now", "now"),
+        ("Number that clears it", "clears"),
+        ("Evidence", "evidence"),
+    ], table_rows, note="Counts come from committed artefacts at build time. A blank or “0” means the record "
+                        "holds none; it is never estimated. Source links are registered official pages or repository files.")
+    body += section("Full brief ledger: 60 requirements", readiness, eyebrow="BRIEF LEDGER", sid="brief-ledger")
     return body
