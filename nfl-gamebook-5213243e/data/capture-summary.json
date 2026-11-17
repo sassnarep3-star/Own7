@@ -1,0 +1,18 @@
+{
+  "generated_utc": "2026-11-17",
+  "raw_files": 13,
+  "games_with_game_book": 13,
+  "fixtures_in_week10_slate": 14,
+  "official_starters_captured": 550,
+  "expected_starter_slots": 572,
+  "official_inactives_captured": 146,
+  "clubs_with_official_depth_chart": 4,
+  "availability_graph_rows": 0,
+  "designation_buckets": 3,
+  "published_report_rows_joined": 300,
+  "availability_delta_rows": 300,
+  "team_replacement_rows": 26,
+  "clubs_in_week10": 26,
+  "clubs_with_depth_chart_playing_week10": 0,
+  "flags": 3
+}
