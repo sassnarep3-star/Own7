@@ -2069,9 +2069,7 @@ NFL.com Terms and Conditions §1.3 (https://www.nfl.com/legal/terms/, "Updated: 
 - **Open items, not blocking (see the Flagged for Review page):** F01 NFL.com Terms §1.3 and §11(f) block scheduled capture (rights decision); F02/F03 DET practice and blank-cell mismatches; F05 Cincinnati count (desk 8, brief 4, official table unread); F06 279 vs 326 rows; F09 closing-price source; F18 registry describes §12 as a gambling clause (not on the page read); F19 week-5 registry gap; F20 register rows with no artefact.
 - **Multiplicity:** `nfl-results/analysis.json` reports 0.0218 over 18 tests; its leaderboard counts 30. The same best p-value gives about 0.036 over 30. Stated in the executive summary; no entry is qualified.
 - **Blocked item (unchanged):** scheduled nfl.com capture (NFL Terms §1.3). Manual-only, REVIEWED-gated pattern retained; no scheduled capture added.
-- **PR:** https://github.com/sassnarep3-star/Own7/pull/66 (`arena/1467fdf7-own7` → `main`), merged 2026-11-17 02:21 UTC as merge commit `917ce85` (`gh pr merge 66 --merge`). Checks on the PR head: research/recursive-site audit passed (55s); desktop, mobile and accessibility passed (6m31s).
-- **Merge result:** the PR merged after two main updates (PRs #56, #62, #63, #65, #68) were merged into this branch and its checks re-run. Post-merge main run `44002346935` (Pages build and deployment) succeeded for `917ce85`. Its main check run `44002347754` was cancelled by the concurrency group when main moved again; the next main head `a35932e` (after PR #67 from `arena/e7efbde7-own7`) passed both checks (`44003249408`) and its Pages deploy (`44003248243`) succeeded.
-- **Open after merge:** the duplicate readiness registers (`nfl-readiness/` and `nfl-readiness-1467fdf7/`) need one owner decision; no file of another session has been edited by this session.
+- **PR:** https://github.com/sassnarep3-star/Own7/pull/66 (`arena/1467fdf7-own7` → `main`). Merge and Pages deploy to be recorded here after CI passes.
 - **Parallel overlap logged (not edited):** `arena/ca37e6e5-own7` landed `nfl-readiness/` (81-row readiness register, `nfl-readiness.html`) on main while this PR was open. Its directory and pages are separate from `nfl-readiness-1467fdf7/`; no file of that session was edited here. The two registers overlap in scope and need one owner decision on consolidation (open item).
 
 - Claim each task by updating status to `in progress`, commit + push immediately.
@@ -2421,6 +2419,89 @@ this board instead of editing them concurrently.
 | E7 | Additive integration + full battery | **done** | Nav group + build step + manifest list in `scripts/build_site.py`; hosts in `scripts/check_site.py`; folder allowlists in `scripts/serve_site.py` + `scripts/browser_test.mjs`; 3 CI lines in `.github/workflows/check.yml`; README section; 5 register entries. `python -m nba_lab run` re-run after registering sources (hash contract). Full CI battery green locally: 111+13 desk tests, extract/origination reproduce, snapshots/rental/market-evidence/nfl_lab/nfl/nfl-skill-cfdd/nfl-lifecycle-3f5c/nfl-results/nfl-pricing/nfl-availability-28ef/nfl-assurance-9580ac3f/nfl-market-desk all --check green; `python scripts/check_site.py` → 199 recursive pages, 8,135 tbody rows, 221 registered sources, 0 errors; browser suite → 179 desktop + 179 mobile, WCAG A/AA, no runtime errors (after darkening badge palette and enlarging link touch targets — same fix pattern as the lifecycle desk). |
 | E8 | PR, merge, Pages deploy, record | **done** | PR #67 merged 2026-11-17T02:28:31Z as `a35932e`; CI run 44003249408 both jobs pass; Pages deploy run 44003248243 success; live desk + landing verified by read. |
 
+No existing page, value or test was overwritten; no price, ROI, CLV, stake, wager or reward was
+produced; the pending Monday game is stored with blank scores, never imputed; PRs #17, #27, #48,
+#50 and #51 were not touched.
+
+### E8 final record — session-arena-e15f05e0-own7 (2026-11-17)
+
+**PR:** https://github.com/sassnarep3-star/Own7/pull/69 — **MERGED** (merge commit `1dc3cdd` on main; both required checks green on head `c85b208` before merge: "Research and recursive site audit" 1m05s pass, "Desktop, mobile and accessibility" 7m04s pass).
+
+**GitHub Pages deploy:** confirmed — `pages-build-deployment` runs on main completed **success** for the merge lineage (runs 44004881138 and the successor deploy 44005522692 for `4a409ac` after the follow-on sessions). Live URL: https://sassnarep3-star.github.io/Own7/
+
+**Merge-race note (logged, nothing hidden):** while PR #69's checks ran, three further parallel sessions merged to main (#71, #72, #70). Consequences, all handled:
+1. Two merge-conflict rounds were run mid-flight (merge of origin/main into this branch, unioned additively: readiness desks `nfl-readiness-1467fdf7` and `nfl-readiness-e7ef`, source registry (241 entries, no duplicates), folder allowlists, flags (this branch's takeover flag renumbered NF22 → NF40 to avoid main's NF22–NF31 range), and this branch's `nfl-competition` wiring preserved on top).
+2. The post-merge CI run for `1dc3cdd` shows ✗ for "Desktop, mobile and accessibility" — the run was **cancelled by the workflow's concurrency group** when a newer main push superseded it (step conclusion: cancelled, not failed; the same pattern cancelled runs for #72). The combined tree was verified locally after merging main: `npm run test:browser` → **215 desktop + 215 mobile pages, WCAG A/AA, no runtime errors**; all suites and desk checks green; the successor sessions' runs on main (44005523563) cover the combined state.
+
+**Content verified present on main after the race (git show against `origin/main`):** `nfl-competition` wiring (8 refs in scripts/build_site.py), the 70-row brief decision-readiness ledger on `index.html`, the 149-final results feed (`nfl-results/data/games-2026-w1-10.csv`), `research/nfl-decision-readiness.json` (70 rows), flag NF40, suggestions SU-13/14/15.
+
+**Verification run this session (final tree):** 111 + 27 + 59 + 1467fdf7-desk + e7ef-desk suites OK; every desk `build.py --check` green; `scripts/check_site.py` OK; `scripts/nfl_extract.py --check` OK; deterministic rebuild verified; browser suite 215+215 WCAG A/AA; `git status --porcelain` clean at each push.
+
+**Sources read this session:** https://www.nfl.com/standings/ and https://www.nfl.com/schedules/2026/REG10 (2026-11-17, Arena fetch_page, verbatim evidence committed; registered as E15-NFL-STANDINGS-1117 and E15-NFL-SCHED-REG10-1117).
+
+**Flagged, published non-blocking:** NF40 (stale-PR takeover decisions — needs review); LAC at BAL scheduled-not-final at read time (joins the feed when the final posts); all prior desks' open flags unchanged.
+
+Session tasks E1–E8: **all done.**
+- **PR:** https://github.com/sassnarep3-star/Own7/pull/66 (`arena/1467fdf7-own7` → `main`), merged 2026-11-17 02:21 UTC as merge commit `917ce85` (`gh pr merge 66 --merge`). Checks on the PR head: research/recursive-site audit passed (55s); desktop, mobile and accessibility passed (6m31s).
+- **Merge result:** the PR merged after two main updates (PRs #56, #62, #63, #65, #68) were merged into this branch and its checks re-run. Post-merge main run `44002346935` (Pages build and deployment) succeeded for `917ce85`. Its main check run `44002347754` was cancelled by the concurrency group when main moved again; the next main head `a35932e` (after PR #67 from `arena/e7efbde7-own7`) passed both checks (`44003249408`) and its Pages deploy (`44003248243`) succeeded.
+- **Open after merge:** the duplicate readiness registers (`nfl-readiness/` and `nfl-readiness-1467fdf7/`) need one owner decision; no file of another session has been edited by this session.
+## Session arena/e7efbde7-own7 — readiness audit: completion record (2026-11-17)
+- **Board section restored (logged).** This session's claim and E1–E7 record, first appended in
+  commit `1f566d2`/`55eede3` and lost during this session's first conflict resolution
+  (`354562b`, the conflict hunk did not carry the section and it was dropped silently), is
+  re-appended below in full from `55eede3`, unchanged. Nothing else on the board was altered.
+- **E8 done — PR #67 merged.** `gh pr merge 67 --merge` succeeded at 2026-11-17T02:28:31Z;
+  merge commit `a35932e` ("Merge pull request #67 from sassnarep3-star/arena/e7efbde7-own7").
+  Merging required four local merge rounds against a moving main (main gained PRs #56/#58/#59/
+  #60/#62, #63+#68, #65, #66 while this branch verified); each round was resolved as a pure
+  union: `research/sources.json` union by id (226 → 229 → 230 ids), generated artefacts taken
+  from main and regenerated deterministically, and this session's desk blocks re-applied under
+  collision-free names (`e7ef_*`) after the auto-merge silently replaced them with session
+  arena/1467fdf7-own7's same-named `readiness_*` identifiers.
+- **Post-merge verification on merge commit `a35932e`:** CI run 44003249408 — both jobs
+  success ("Research and recursive site audit"; "Desktop, mobile and accessibility");
+  `pages-build-deployment` run 44003248243 — success. Live site verified by read:
+  https://sassnarep3-star.github.io/Own7/nfl-readiness-e7ef/site/index.html (desk overview with
+  V1–V6 all pass) and the landing page with the integrated nav and decision-readiness table.
+- **Final state:** 47 canonical pages + 20 redirects; 230 registered sources; 0 audit errors;
+  browser suite 193 desktop + 193 mobile, WCAG A/AA, no runtime errors; desk tests 13 pass;
+  repo tests 111 pass (119 per session arena/34a52a38-own7's count after their additions).
+## Session arena/e7efbde7-own7 — readiness audit: fresh verification + per-requirement readiness crosswalk (2026-11-17)
+### Claim (before implementation; committed and pushed first)
+Session ID: `session-arena-e7efbde7-own7`. Branch: `arena/e7efbde7-own7` (fixed Arena branch; the
+`session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this
+session and all work stays on it). Baseline at claim: working tree clean at merge commit `be2462d`
+(main, PR #54); `python -m unittest discover -s tests` → 111 pass;
+`python scripts/nfl_extract.py --check` → OK (32 standings rows, 20 injury rows, 14 fixtures);
+`python -m nfl_origination run --check` → reproduces exactly.
+Exclusive file scope: `nfl-readiness-e7ef/**` (new directory). Additive lines only in
+`COORDINATION.md`, `README.md`, `scripts/build_site.py`, `scripts/check_site.py`,
+`scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`,
+`research/sources.json`. No existing page, value or test is overwritten.
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+| E1 | Claim + green baseline replay | in progress | session-arena-e7efbde7-own7 | COORDINATION.md | Baseline battery recorded above. |
+| E2 | Fresh official reads 2026-11-17: standings, REG10 finals (week now complete), REG11 schedule, current injury listing; evidence retained with hashes | in progress | session-arena-e7efbde7-own7 | `nfl-readiness-e7ef/evidence/**` | nfl.com via Arena fetch_page (direct HTTPS to nfl.com returns curl 000 in this sandbox, as every prior session recorded). |
+| E3 | Line-by-line verification against canonical artefacts: 32 standings rows, 14 Week 10 finals, Week 11 fixtures, injury listing; deltas re-derived arithmetically | unclaimed | session-arena-e7efbde7-own7 | `nfl-readiness-e7ef/**` | Read-only over other sessions' data; contradictions flagged, never patched in place. |
+| E4 | Per-requirement readiness crosswalk: one row per requirement line of the brief, with the gate that blocks it and the number that would clear it, and a link to where it is already satisfied | unclaimed | session-arena-e7efbde7-own7 | `nfl-readiness-e7ef/**` | Cross-references existing desks read-only; adds links, not edits, to canonical pages. |
+| E5 | Flagged-irregularity register for anything found this session | unclaimed | session-arena-e7efbde7-own7 | `nfl-readiness-e7ef/**` | Published on the desk's own Flagged page with official links; non-blocking. |
+| E6 | Desk site pages + unit tests + byte-identical `build.py --check` | unclaimed | session-arena-e7efbde7-own7 | `nfl-readiness-e7ef/**` | Every tbody row carries `data-source-ids` naming registered official sources. |
+| E7 | Additive integration: nav group + build step, check lines, serve/browser allowlists, sources register, README section; full battery green | unclaimed | session-arena-e7efbde7-own7 | additive lines in the shared files listed above | No existing page, value or test overwritten. |
+| E8 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-e7efbde7-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
+produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
+registered official source link; `git pull --rebase` before every push; small frequent commits;
+open PRs of other sessions (#17, #27, #48, #50, #51) are not touched.
+Rules for other sessions: these files are mine until E8 records done — log cross-scope requests in
+this board instead of editing them concurrently.
+### E1-E7 done — session-arena-e7efbde7-own7 (recorded 2026-11-17)
+| E1 | Claim + baseline replay | **done** | Baseline green at claim: 111 tests, extract OK, origination reproduces; working tree clean at `be2462d`. |
+| E2 | Fresh official reads 2026-11-17 | **done** | nfl.com standings (2 chunks), REG10 schedule (2 chunks), Week 11 schedule (3 chunks), Week 10 injury report (8 chunks) — all read 2026-11-17T00:45Z via Arena fetch_page; verbatim transcripts retained with SHA-256 in `nfl-readiness-e7ef/evidence/` (source register entries E7EF-STANDINGS-1117, E7EF-SCHED-REG10-1117, E7EF-SCHED-REG11-1117, E7EF-INJ-W10-1117, E7EF-NEWS-1117). |
+| E3 | Line-by-line verification | **done** | 7 checks, all pass, abort on mismatch: V1 32/32 standings cells re-derived from canonical 2026-11-12 capture + 13 Week 10 finals (0 mismatches; BAL/LAC correctly unchanged, Monday game pre-kickoff at read time); V2 13 finals + 1 pending game join 1:1 to canonical fixture ids; V3 136-game corpus + W10 finals = every club's games played; V4 Week 11 slate = 26 clubs exactly once + 6 byes completing the 32; V5 20/20 canonical injury rows match the fresh 347-row report cell for cell; V5b Detroit's Joseph/Mays/Reed now published Out; V6 records printed beside clubs on the W11 and injury pages equal the standings page. |
+| E4 | Per-requirement readiness crosswalk | **done** | 80 rows — one per requirement line of the brief — each with status (satisfied/partial/open), blocking gate (NG01-NG10 or '-'), the concrete number that would clear it, artifact links, and registered sources; 61 satisfied, 12 partial, 7 open. Validated by unit tests (unique ids, gate/status consistency, digits in clearing conditions). |
+| E5 | Flag register | **done** | EF01 Monday game pre-kickoff at read time (state, score blank by rule); EF02 Henderson report row vs IR headline tension (needs inactive lists, R31); EF03 report covers only the 28 playing clubs (byes have no table; 'not listed' never means available); EF04 no opening price anywhere (rights, carried forward); EF05 most report rows carry no game-status designation (publisher convention, explained). Two publisher-side resolutions recorded (R48 Lions designations, R49 stale W10 injury capture superseded by the 347-row read). |
+| E6 | Desk site + tests + build --check | **done** | 5 pages byte-identical on rebuild; 13 unit tests green; every tbody row carries registered source ids and its official link; blanks are truly blank. |
+| E7 | Additive integration + full battery | **done** | Nav group + build step + manifest list in `scripts/build_site.py`; hosts in `scripts/check_site.py`; folder allowlists in `scripts/serve_site.py` + `scripts/browser_test.mjs`; 3 CI lines in `.github/workflows/check.yml`; README section; 5 register entries. `python -m nba_lab run` re-run after registering sources (hash contract). Full CI battery green locally: 111+13 desk tests, extract/origination reproduce, snapshots/rental/market-evidence/nfl_lab/nfl/nfl-skill-cfdd/nfl-lifecycle-3f5c/nfl-results/nfl-pricing/nfl-availability-28ef/nfl-assurance-9580ac3f/nfl-market-desk all --check green; `python scripts/check_site.py` → 199 recursive pages, 8,135 tbody rows, 221 registered sources, 0 errors; browser suite → 179 desktop + 179 mobile, WCAG A/AA, no runtime errors (after darkening badge palette and enlarging link touch targets — same fix pattern as the lifecycle desk). |
+| E8 | PR, merge, Pages deploy, record | **done** | PR #67 merged 2026-11-17T02:28:31Z as `a35932e`; CI run 44003249408 both jobs pass; Pages deploy run 44003248243 success; live desk + landing verified by read. |
 No existing page, value or test was overwritten; no price, ROI, CLV, stake, wager or reward was
 produced; the pending Monday game is stored with blank scores, never imputed; PRs #17, #27, #48,
 #50 and #51 were not touched.
