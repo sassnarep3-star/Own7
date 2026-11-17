@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questions and information gaps · NFL brief tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<p class="eyebrow">NFL brief tracker · Own7 · session arena/77b177da-own7</p>
+<nav aria-label="Brief sections"><ul><li><a href="index.html">Overview</a></li><li><a href="register.html">Requirement register</a></li><li><a href="depth-injuries.html">Depth and injuries</a></li><li><a href="roster-ir.html">Reserve list and 32-club sweep</a></li><li><a href="questions.html" aria-current="page">Questions</a></li><li><a href="suggestions.html">Suggestions</a></li><li><a href="flagged.html">Flagged for Review</a></li><li><a href="executive-summary.html">Executive summary</a></li></ul></nav>
+</header>
+<main id="main">
+<h1>Questions and information gaps</h1>
+<p class="lede">Open questions that block a status from moving. Each has a source where the gap is visible.</p>
+<table><caption>Information gaps</caption><thead><tr>
+<th scope="col">ID</th>
+<th scope="col">Question</th>
+<th scope="col">Register row</th>
+</tr></thead><tbody>
+<tr data-source-ids="B77-NFL-RESERVE">
+<td>Q01</td>
+<td>The October 2026 reserve list has not been read. Is the Baltimore &#x27;placed on IR&#x27; claim in it?</td>
+<td>R20</td>
+<td><a href="https://www.nfl.com/transactions/league/reserve-list/2026/11">NFL.com reserve list</a></td></tr>
+<tr data-source-ids="NFL-INJ-W10">
+<td>Q02</td>
+<td>Seven of eight NFL.com injury-report chunks have not been read. Which Week 11 report should be captured first?</td>
+<td>R14</td>
+<td><a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+<tr data-source-ids="X243-REPO-06">
+<td>Q03</td>
+<td>Which of the three injury CSVs is the canonical Week 10 file, and why do the row counts differ (326, 276, 210, 20, 45)?</td>
+<td>R14</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv">Repo: nfl-availability-28ef/data/injuries-week10-2026.csv</a></td></tr>
+<tr data-source-ids="B77-R11">
+<td>Q04</td>
+<td>Does a commit exist that records the demotion rule before the 2026-11-14 desk code (commit 8332d25)?</td>
+<td>R07</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/demotion-gate.json">Repo: nfl-lifecycle-3f5c/data/demotion-gate.json</a></td></tr>
+<tr data-source-ids="X243-REPO-05">
+<td>Q05</td>
+<td>Which official source gives the 149 depth groups in the brief? The repository gives 134 (availability) and 156 (both desks).</td>
+<td>R13</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a></td></tr>
+<tr data-source-ids="B77-R14">
+<td>Q06</td>
+<td>Is a price feed with redistribution rights available? Without one, R02, R03 and R05 stay blank.</td>
+<td>R05</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/price-snapshots.json">Repo: nfl-lifecycle-3f5c/data/price-snapshots.json</a></td></tr>
+<tr data-source-ids="B77-R12">
+<td>Q07</td>
+<td>Which proper score and which benchmark define the leaderboard ranking?</td>
+<td>R08</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/leaderboard.json">Repo: nfl-lifecycle-3f5c/data/leaderboard.json</a></td></tr>
+<tr data-source-ids="B77-R21">
+<td>Q08</td>
+<td>What is the joint-evidence definition for game parlays, SGPs and prop combos?</td>
+<td>R23</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl_pages.py">Repo: nfl_pages.py</a></td></tr>
+<tr data-source-ids="X243-REPO-06">
+<td>Q09</td>
+<td>What is the written &#x27;injury surprise&#x27; definition (which fields, which baseline)?</td>
+<td>R14</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv">Repo: nfl-availability-28ef/data/injuries-week10-2026.csv</a></td></tr>
+<tr data-source-ids="B77-R10">
+<td>Q10</td>
+<td>Which two totals estimators, and what walk-forward window, decide the gap column?</td>
+<td>R22</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/decisions.json">Repo: nfl-lifecycle-3f5c/data/decisions.json</a></td></tr>
+<tr data-source-ids="B77-R04">
+<td>Q11</td>
+<td>Does NFL.com&#x27;s terms section on systematic retrieval (cited in the repository) permit storing row-level injury data?</td>
+<td>R24</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-assurance-9580ac3f/data/injuries.csv">Repo: nfl-assurance-9580ac3f/data/injuries.csv</a></td></tr>
+<tr data-source-ids="B77-R07">
+<td>Q12</td>
+<td>Which club charts were captured as images only (Houston) or as unofficial copies (Packers), and when are they re-captured?</td>
+<td>R13</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-summary.json">Repo: nfl-availability-28ef/data/depth-summary.json</a></td></tr>
+</tbody></table>
+</main>
+<footer><p>Derived from repository files and official pages read on 2026-11-17. Blank cells are unverified or not applicable and are left blank on purpose. Flagged items are not corrected here.</p></footer>
+</body>
+</html>

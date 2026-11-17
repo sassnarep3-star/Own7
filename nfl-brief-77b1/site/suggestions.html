@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggestions · NFL brief tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<p class="eyebrow">NFL brief tracker · Own7 · session arena/77b177da-own7</p>
+<nav aria-label="Brief sections"><ul><li><a href="index.html">Overview</a></li><li><a href="register.html">Requirement register</a></li><li><a href="depth-injuries.html">Depth and injuries</a></li><li><a href="roster-ir.html">Reserve list and 32-club sweep</a></li><li><a href="questions.html">Questions</a></li><li><a href="suggestions.html" aria-current="page">Suggestions</a></li><li><a href="flagged.html">Flagged for Review</a></li><li><a href="executive-summary.html">Executive summary</a></li></ul></nav>
+</header>
+<main id="main">
+<h1>Suggestions</h1>
+<p class="lede">Options only. No option has been chosen, and no decision is recorded on the owner&#x27;s behalf.</p>
+<table><caption>Suggestions with options. The owner decision column is left blank.</caption><thead><tr>
+<th scope="col">ID</th>
+<th scope="col">Topic</th>
+<th scope="col">Why</th>
+<th scope="col">Options</th>
+<th scope="col">Owner decision</th>
+</tr></thead><tbody>
+<tr data-source-ids="B77-R04 X243-REPO-06">
+<td>S01</td>
+<td>Canonical injury source for Week 10</td>
+<td>Stale or conflicting injury rows (FL-02, FL-06)</td>
+<td><ol><li>Use the availability capture as canonical and mark the others as superseded</li><li>Re-capture all injury files on the same date with hashes</li><li>Keep all files and publish a per-file reconciliation table</li></ol></td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-assurance-9580ac3f/data/injuries.csv">Repo: nfl-assurance-9580ac3f/data/injuries.csv</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv">Repo: nfl-availability-28ef/data/injuries-week10-2026.csv</a></td></tr>
+<tr data-source-ids="X243-REPO-05 X28-LAC-DEPTH">
+<td>S02</td>
+<td>Handling of stale depth rows</td>
+<td>Stale Chargers chart row (FL-04)</td>
+<td><ol><li>Mark STALE rows and exclude them from any depth-based input until re-read</li><li>Re-read the Chargers and Broncos charts first, then the other flagged clubs</li><li>Leave rows unchanged and add a note</li></ol></td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a> · <a href="https://www.chargers.com/team/depth-chart">Chart: LAC</a></td></tr>
+<tr data-source-ids="B77-R12">
+<td>S03</td>
+<td>Leaderboard ranking basis</td>
+<td>Ranking fields include hit rate and p-values (FL-10)</td>
+<td><ol><li>Rank on a proper score against a declared baseline with a bootstrap interval</li><li>Keep current fields but label them descriptive and do not rank on them</li><li>Hide hit rate and p-values from the public leaderboard</li></ol></td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/leaderboard.json">Repo: nfl-lifecycle-3f5c/data/leaderboard.json</a></td></tr>
+<tr data-source-ids="B77-R14">
+<td>S04</td>
+<td>Price-data policy</td>
+<td>No licensed price; market line blank (FL-12)</td>
+<td><ol><li>Keep the store theory-only and publish no ROI</li><li>Obtain a licensed feed with redistribution rights before any ROI</li><li>Use public closing-line proxies after a rights check</li></ol></td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/price-snapshots.json">Repo: nfl-lifecycle-3f5c/data/price-snapshots.json</a></td></tr>
+<tr data-source-ids="B77-R18">
+<td>S05</td>
+<td>Location of row-level data</td>
+<td>Row-level files in the public repository (FL-13)</td>
+<td><ol><li>Keep public with a derived-only note</li><li>Move row-level files to a private store until the terms are read</li><li>Remove row-level files from the repository and keep hashes only</li></ol></td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-results/data/games-2026-w1-9.csv">Repo: nfl-results/data/games-2026-w1-9.csv</a></td></tr>
+<tr data-source-ids="B77-R11">
+<td>S06</td>
+<td>Demotion rule pre-registration</td>
+<td>Rule and code share a commit (FL-09)</td>
+<td><ol><li>Record as unverified and treat the rule as prospective from now</li><li>Register a fresh rule with a new commit dated after this review</li><li>Keep as is and state the limitation on the page</li></ol></td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/demotion-gate.json">Repo: nfl-lifecycle-3f5c/data/demotion-gate.json</a></td></tr>
+<tr data-source-ids="B77-R10">
+<td>S07</td>
+<td>Totals estimators</td>
+<td>Two model totals, gap column required (R22)</td>
+<td><ol><li>Publish both estimators with a gap column until walk-forward picks one</li><li>Pick one now on a declared criterion</li><li>Publish only the primary estimator</li></ol></td>
+<td data-empty="true"></td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/decisions.json">Repo: nfl-lifecycle-3f5c/data/decisions.json</a></td></tr>
+<tr data-source-ids="B77-NFL-RESERVE">
+<td>S08</td>
+<td>Reserve-list coverage</td>
+<td>October list unread (Q01)</td>
+<td><ol><li>Read the October list before any IR claim is published</li><li>Publish IR claims only for November rows</li><li>Defer the IR question to the next capture</li></ol></td>
+<td data-empty="true"></td>
+<td><a href="https://www.nfl.com/transactions/league/reserve-list/2026/11">NFL.com reserve list</a></td></tr>
+</tbody></table>
+</main>
+<footer><p>Derived from repository files and official pages read on 2026-11-17. Blank cells are unverified or not applicable and are left blank on purpose. Flagged items are not corrected here.</p></footer>
+</body>
+</html>

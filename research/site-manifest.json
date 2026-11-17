@@ -216,7 +216,15 @@
     "nfl-readiness-e7ef/site/verification-2026-11-17.html",
     "nfl-readiness-e7ef/site/requirement-readiness.html",
     "nfl-readiness-e7ef/site/flagged.html",
-    "nfl-readiness-e7ef/site/sources.html"
+    "nfl-readiness-e7ef/site/sources.html",
+    "nfl-brief-77b1/site/depth-injuries.html",
+    "nfl-brief-77b1/site/executive-summary.html",
+    "nfl-brief-77b1/site/flagged.html",
+    "nfl-brief-77b1/site/index.html",
+    "nfl-brief-77b1/site/questions.html",
+    "nfl-brief-77b1/site/register.html",
+    "nfl-brief-77b1/site/roster-ir.html",
+    "nfl-brief-77b1/site/suggestions.html"
   ],
   "legacy_redirects": {
     "findings.html": "data.html",
@@ -282,6 +290,14 @@
     "nfl-availability-28ef/site/sources.html": "2c848097a7aa279a60f949f6e21647a49f6091ee838fd2e5e06b42b9f26e3e6f",
     "nfl-availability-28ef/site/suggestions.html": "aa800221b0ce08ddfa5837a234b9984f07c6d3aea7286a4fb7801cf9ca40f58d",
     "nfl-availability-28ef/site/summary.html": "78f08e5b04d1dde9f26aca4db41d77c537df989595682b864b6e985f26f98762",
+    "nfl-brief-77b1/site/depth-injuries.html": "0761176bdf5061f7c4a408fba78ccbb01dc935e690abbe041823fe8173c8e90d",
+    "nfl-brief-77b1/site/executive-summary.html": "b254279eda190426ac2bc34a6e46cc0dd753080d87d6ef25e7e3636770509651",
+    "nfl-brief-77b1/site/flagged.html": "8a58ab8b149ee577591d61e826167186082dc91c53424e6b9c3ff1cfd20714ac",
+    "nfl-brief-77b1/site/index.html": "f8c8db6e71588ea350cbb329a0c7ab8f820fcaf0cd5927e67d7db2f8ac78e9c1",
+    "nfl-brief-77b1/site/questions.html": "9eeecc174d5a79c390ad50607e3652a6898b3e7b5df4682fe366b747ae1d8b12",
+    "nfl-brief-77b1/site/register.html": "63fbc98459833df9bf406995a07ee6fe973896ce1148084dbca59b4e5de5c7ae",
+    "nfl-brief-77b1/site/roster-ir.html": "6bcbb436b172ef51bb18f47dcae63ae305169e5e69dd3da7373c7c9e21a30d0f",
+    "nfl-brief-77b1/site/suggestions.html": "a6e977c9666c81a398e6fe78ce7fa26ba05e0f413ba50446635f40e5f3e88a0d",
     "nfl-competition/site/boards.html": "cfd5ac7bf4ff821c4f99a8e65a39af57a917c8b12eb2026464760726f49aafb5",
     "nfl-competition/site/correlations.html": "894b96e054c730977a7c95e137ec586e4ee1bfa2c3333f9e3736f2d363acb5fb",
     "nfl-competition/site/demotion.html": "2b24604df789b54b31c0943de8130e7bbd66a7f115826dca532cba56d04f8333",
@@ -364,7 +380,7 @@
     "nfl-readiness-e7ef/site/flagged.html": "4bcec0e81b5ad0b80c89b7390f2fd68551ca0f4933a4e5babc3a59fb56cf5658",
     "nfl-readiness-e7ef/site/index.html": "8f5ee26ee7fa094956022a2b2419576b597de2194344c9a6e6fe21b38ed4f128",
     "nfl-readiness-e7ef/site/requirement-readiness.html": "2f4411edfe57587df573ca534325db2c902b15e48de15197643bf1f7b3f010e6",
-    "nfl-readiness-e7ef/site/sources.html": "eb3234d2690a68161ff699e3e4c44fc81708349bc4832b0350210b3649c370e4",
+    "nfl-readiness-e7ef/site/sources.html": "a43d6a2cd56df292138ab498059af4f8f261d1fd5c38144fdf1033ebe2d3131b",
     "nfl-readiness-e7ef/site/verification-2026-11-17.html": "74ecc8b308a28a1b2302adbb60bf37b9d55051ac457b84ee0b178afbdc771480",
     "nfl-readiness.html": "e186de87c97d4ff9e52aafc13d9adf00d913ff83db8a0bd2e3c9f7cc37225123",
     "nfl-results-correlation.html": "91067d832dfea231cf67609f5d8bec73740c035cb17aecf2858f56b81671ba77",
@@ -463,7 +479,7 @@
     "session-243828fc/site/repo-audit.html": "ad13c307541267b0ac42a1825ef95ec3b1cc40667f10c3be3b8563f6d5f1c3aa",
     "settlement.html": "f261e335af465377194e844d4156631addc833b3dd80b87759cb936999b2d8a8",
     "signals.html": "ae031801dd4979bb587445480a33ceba4c29c82ba6a3dbe3136e2d96dda18edd",
-    "sources.html": "53456ebf480f15a0dbfa88569b0fbf203f189cc1f2ea18a1aeaedbca2cf2fbb1",
+    "sources.html": "1b8bbec3a05532cdbae5efa39a2c086ffb672780b8e4fca8b1444b82a9b182f1",
     "validation.html": "2dc3083c43221cce74c8ab220ca6db78f9f152f4785759f8b51b9f04a9988d8c",
     "verified/betting-rules.html": "fd70be817c7da2ef8dd56eeb65f15372dd214882bdf9a07fc06e90b0918ce897",
     "verified/correlation.html": "0bece3d46a2088faebf0b35f3869dc7d1509bbc33cf1e0847fd0926ddaecb1ae",
@@ -477,5 +493,5 @@
     "verified/strategies.html": "a7b30d435deb49af1a5bb41ee34ddde08ba7e3315cc1cbb1d0e4a6fc7efd125b",
     "verified/validation-gates.html": "1e1584f1ff9e10a208e60ee45ecb2d113c9a98eda06db944ec01bdbd8f4702cd"
   },
-  "research_run_hash": "da535fd6f4c5e08348303de57a8131aa436629980eb2e458acd0135921a1b27e"
+  "research_run_hash": "70747dd545ce459060c6eac4757faab7f1f0a232503f7062c6f597116e2811a3"
 }

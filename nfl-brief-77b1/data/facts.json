@@ -1,0 +1,68 @@
+{
+  "txn_count": 12,
+  "stale_count": 1,
+  "printed_new": 4,
+  "not_printed": 7,
+  "no_chart": 0,
+  "price": {
+    "markets": 42,
+    "games": 14,
+    "market_line_filled": 0,
+    "diff_filled": 0,
+    "close_equals_open": 29
+  },
+  "orig_order": [
+    "Side",
+    "Total",
+    "Moneyline"
+  ],
+  "orig_games": 14,
+  "games_rows": 136,
+  "sep_rule": true,
+  "lb_fields": [
+    "id",
+    "name",
+    "market",
+    "selective",
+    "bets",
+    "wins",
+    "losses",
+    "hit_rate",
+    "p_value",
+    "q_value",
+    "ci_low",
+    "ci_high"
+  ],
+  "lb_markets": [
+    "spread",
+    "total"
+  ],
+  "lb_counts": "graded 30, provisional 1, qualified 0, rejected 29",
+  "lb_qualified": 0,
+  "dg_defined_on": "2026-11-14",
+  "dg_armed": true,
+  "dg_demotions": 0,
+  "dg_first_commit": "8332d25",
+  "corr_rows": 22,
+  "corr_coeff": 18,
+  "corr_blank": 4,
+  "corr_failed": 0,
+  "corr_n_rows": 18,
+  "avail_clubs": 27,
+  "skill_clubs": 4,
+  "sweep_covered": 31,
+  "sweep_missing": 1,
+  "sweep_missing_codes": [
+    "HOU"
+  ],
+  "inj_files": 5,
+  "capture_hash_present": true,
+  "wcta_count": 1,
+  "lions_mismatch_desks": 2,
+  "bal_changed": true,
+  "bal_repo_date": "2026-11-12",
+  "onside_hits": 23,
+  "onside_in_code": true,
+  "gap_in_decisions": 1,
+  "joint_hits": 8
+}

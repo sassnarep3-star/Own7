@@ -2607,7 +2607,7 @@
   "access": "Attested from the Arena fetch_page read of the REG10 schedule page; the game page itself was not separately fetched this session.",
   "status": "Verified"
  },
-{
+ {
   "id": "CP-NFL-DEPTH-27",
   "publisher": "Club sites (27 of 32 clubs)",
   "title": "Official club depth charts, captured 2026-11-12 and 2026-11-13",
@@ -2624,7 +2624,7 @@
    "injuries.py"
   ]
  },
-{
+ {
   "id": "CP-NFL-DEPTH-BYE4",
   "publisher": "Club sites (CHI, DEN, PHI, TB)",
   "title": "Official club depth charts for the four Week 10 bye clubs",
@@ -2640,7 +2640,7 @@
    "depth.py"
   ]
  },
-{
+ {
   "id": "CP-NFL-INJ-W10",
   "publisher": "NFL.com",
   "title": "2026 NFL Week 10 injury report (league-wide)",
@@ -2657,7 +2657,7 @@
    "injuries.py"
   ]
  },
-{
+ {
   "id": "CP-NFL-ODDS-ABSENT",
   "publisher": "NFL.com",
   "title": "404 - Flag on the Play. (no odds page at nfl.com/odds/)",
@@ -2675,7 +2675,7 @@
    "leaderboard.py"
   ]
  },
-{
+ {
   "id": "CP-NFL-RESULTS-W1-9",
   "publisher": "NFL.com",
   "title": "2026 by-week schedule pages, weeks 1 to 9",
@@ -2693,7 +2693,7 @@
    "correlations.py"
   ]
  },
-{
+ {
   "id": "CP-NFL-STANDINGS",
   "publisher": "NFL.com",
   "title": "2026 NFL Division Standings",
@@ -2712,7 +2712,7 @@
    "depth.py"
   ]
  },
-{
+ {
   "id": "CP-NFL-TERMS",
   "publisher": "NFL",
   "title": "NFL.com Terms and Conditions",
@@ -2730,7 +2730,7 @@
    "suggestions.py"
   ]
  },
-{
+ {
   "id": "CP-NFL-W10-GAME-WASNYG",
   "publisher": "NFL.com",
   "title": "Washington Commanders at New York Giants 2026 REG 10 - Game Center",
@@ -2746,7 +2746,7 @@
    "results.py"
   ]
  },
-{
+ {
   "id": "CP-NFL-W10-SCHEDULE",
   "publisher": "NFL.com",
   "title": "NFL Week 10 Schedule 2026: Games, Times, Matchups & Tickets",
@@ -2763,7 +2763,7 @@
    "boards.py"
   ]
  },
-{
+ {
   "id": "E15-NFL-STANDINGS-1117",
   "publisher": "NFL.com",
   "title": "2026 NFL Division Standings",
@@ -2774,7 +2774,7 @@
   "access": "Arena fetch_page rendered content, 2 chunks; read after 13 Week 10 finals and before the Week 10 Monday night kickoff. Saved verbatim as research/nfl/evidence/standings-2026-11-17.retrieved.md.",
   "status": "Verified"
  },
-{
+ {
   "id": "E15-NFL-SCHED-REG10-1117",
   "publisher": "NFL.com",
   "title": "2026 NFL Schedule: Week 10 (REG10)",
@@ -2785,7 +2785,7 @@
   "access": "Arena fetch_page rendered content, 2 chunks; 13 dated finals, 1 scheduled-not-final fixture (Chargers at Ravens, Monday, November 16th, 8:15 PM, ESPN), 4 clubs on bye, and the league's 2026 TBD-games flexible-scheduling announcement. Saved as nfl-results/evidence/week-10.schedule.md.",
   "status": "Verified"
  },
-{
+ {
   "id": "GB-NFL-GAMEBOOK-PDF",
   "publisher": "National Football League",
   "title": "Official NFL Game Book (PDF) for 2026 Week 10 fixtures",
@@ -2797,7 +2797,7 @@
   "access": "Arena fetch_page rendered PDF text; not a direct HTTP-status attestation",
   "status": "Content checked"
  },
-{
+ {
   "id": "GB-NFL-GAMECENTER",
   "publisher": "National Football League",
   "title": "NFL Game Centre - Week 10 fixture pages",
@@ -2809,7 +2809,7 @@
   "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
   "status": "Content checked"
  },
-{
+ {
   "id": "GB-NFL-INJURY-W10",
   "publisher": "National Football League",
   "title": "Official NFL Injury Report - Week 10 of the 2026 season",
@@ -2821,7 +2821,7 @@
   "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
   "status": "Content checked"
  },
-{
+ {
   "id": "GB-NFL-SCHEDULE-W10",
   "publisher": "National Football League",
   "title": "NFL 2026 schedule - Week 10",
@@ -2833,7 +2833,7 @@
   "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
   "status": "Content checked"
  },
-{
+ {
   "id": "GB-CLUB-DEPTH",
   "publisher": "Chicago Bears",
   "title": "Official club depth chart (representative of the four captured clubs)",
@@ -2953,5 +2953,281 @@
   "checked_on": "2026-11-17",
   "access": "Headlines transcribed verbatim with their links from the report page's news module; each article page itself was not fetched this session.",
   "status": "Content checked"
+ },
+ {
+  "id": "B77-NFL-RESERVE",
+  "publisher": "NFL.com",
+  "title": "NFL.com reserve list, November 2026",
+  "kind": "Official NFL page",
+  "authority": "Official league reserve list",
+  "scope": "November 2026 list only; October 2026 list not read",
+  "checked_on": "2026-11-17",
+  "access": "Arena fetch_page, rendered text (chunks 0 and 1 of 2)",
+  "status": "Content checked",
+  "url": "https://www.nfl.com/transactions/league/reserve-list/2026/11"
+ },
+ {
+  "id": "B77-NFL-TRADES",
+  "publisher": "NFL.com",
+  "title": "NFL.com league transactions (November 2026 trades)",
+  "kind": "Official NFL page",
+  "authority": "Official league transactions log",
+  "scope": "All November 2026 trade rows read (single chunk)",
+  "checked_on": "2026-11-17",
+  "access": "Arena fetch_page, rendered text; not an HTTP-status attestation",
+  "status": "Content checked",
+  "url": "https://www.nfl.com/transactions/"
+ },
+ {
+  "id": "B77-R01",
+  "publisher": "Own7 repository (this project)",
+  "title": "data/nfl-injuries-2026-w10.csv",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-injuries-2026-w10.csv"
+ },
+ {
+  "id": "B77-R02",
+  "publisher": "Own7 repository (this project)",
+  "title": "data/nfl-injuries-week7-2026.csv",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-injuries-week7-2026.csv"
+ },
+ {
+  "id": "B77-R03",
+  "publisher": "Own7 repository (this project)",
+  "title": "docs/nfl-repo-review-2026-11-17.md",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/docs/nfl-repo-review-2026-11-17.md"
+ },
+ {
+  "id": "B77-R04",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-assurance-9580ac3f/data/injuries.csv",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-assurance-9580ac3f/data/injuries.csv"
+ },
+ {
+  "id": "B77-R05",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-availability-28ef/build.py",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/build.py"
+ },
+ {
+  "id": "B77-R06",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-availability-28ef/data/capture-summary.json",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/capture-summary.json"
+ },
+ {
+  "id": "B77-R07",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-availability-28ef/data/depth-summary.json",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-summary.json"
+ },
+ {
+  "id": "B77-R08",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-availability-28ef/evidence/depth-GB.md",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/evidence/depth-GB.md"
+ },
+ {
+  "id": "B77-R09",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-lifecycle-3f5c/data/correlation-audit.json",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/correlation-audit.json"
+ },
+ {
+  "id": "B77-R10",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-lifecycle-3f5c/data/decisions.json",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/decisions.json"
+ },
+ {
+  "id": "B77-R11",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-lifecycle-3f5c/data/demotion-gate.json",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/demotion-gate.json"
+ },
+ {
+  "id": "B77-R12",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-lifecycle-3f5c/data/leaderboard.json",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/leaderboard.json"
+ },
+ {
+  "id": "B77-R13",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-lifecycle-3f5c/data/origination-order.json",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/origination-order.json"
+ },
+ {
+  "id": "B77-R14",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-lifecycle-3f5c/data/price-snapshots.json",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/data/price-snapshots.json"
+ },
+ {
+  "id": "B77-R15",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-lifecycle-3f5c/demotion.py",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/demotion.py"
+ },
+ {
+  "id": "B77-R16",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-lifecycle-3f5c/snapshots.py",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-lifecycle-3f5c/snapshots.py"
+ },
+ {
+  "id": "B77-R17",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-results-leaderboard.html",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-results-leaderboard.html"
+ },
+ {
+  "id": "B77-R18",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-results/data/games-2026-w1-9.csv",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-results/data/games-2026-w1-9.csv"
+ },
+ {
+  "id": "B77-R19",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-skill-cfdd/data/depth-slots-2026-11-14.csv",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-skill-cfdd/data/depth-slots-2026-11-14.csv"
+ },
+ {
+  "id": "B77-R20",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl/origination/data/injuries-2026-w10.csv",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl/origination/data/injuries-2026-w10.csv"
+ },
+ {
+  "id": "B77-R21",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl_pages.py",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; not an external official source",
+  "scope": "File as present on main at build time; facts computed from it by nfl-brief-77b1/build.py",
+  "checked_on": "2026-11-17",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl_pages.py"
  }
 ]

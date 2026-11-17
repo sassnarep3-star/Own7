@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Depth and injuries · NFL brief tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<p class="eyebrow">NFL brief tracker · Own7 · session arena/77b177da-own7</p>
+<nav aria-label="Brief sections"><ul><li><a href="index.html">Overview</a></li><li><a href="register.html">Requirement register</a></li><li><a href="depth-injuries.html" aria-current="page">Depth and injuries</a></li><li><a href="roster-ir.html">Reserve list and 32-club sweep</a></li><li><a href="questions.html">Questions</a></li><li><a href="suggestions.html">Suggestions</a></li><li><a href="flagged.html">Flagged for Review</a></li><li><a href="executive-summary.html">Executive summary</a></li></ul></nav>
+</header>
+<main id="main">
+<h1>Depth and injuries</h1>
+<p class="lede">Stale depth flags, the Baltimore QB comparison, injury-file agreement and rank-1 group counts. Classes are defined in nfl-brief-77b1/checks.py.</p>
+<h2>Stale depth (trades)</h2><table><caption>November 2026 trades checked against printed depth charts (12 rows)</caption><thead><tr>
+<th scope="col">Date</th>
+<th scope="col">Player</th>
+<th scope="col">From → to</th>
+<th scope="col">Transaction</th>
+<th scope="col">Class</th>
+<th scope="col">Detail</th>
+</tr></thead><tbody>
+<tr data-source-ids="B77-NFL-TRADES X28-ATL-DEPTH X28-JAX-DEPTH">
+<td>2026-11-10</td>
+<td>Jessie Bates</td>
+<td>Falcons → Jaguars</td>
+<td>Traded</td>
+<td>NOT PRINTED</td>
+<td>JAX chart checked 2026-11-13 (on/after the trade) does not print the player</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.atlantafalcons.com/team/depth-chart">Chart: ATL</a> · <a href="https://www.jaguars.com/team/depth-chart">Chart: JAX</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES CFDD-PHI-DEPTH X28-JAX-DEPTH">
+<td>2026-11-10</td>
+<td>Jordan Davis</td>
+<td>Eagles → Jaguars</td>
+<td>Traded</td>
+<td>PRINTED NEW</td>
+<td>printed on JAX chart (Defense NT rank 1), chart checked 2026-11-13</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.philadelphiaeagles.com/team/depth-chart">Chart: PHI</a> · <a href="https://www.jaguars.com/team/depth-chart">Chart: JAX</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X28-TEN-DEPTH X28-BUF-DEPTH">
+<td>2026-11-10</td>
+<td>Amani Hooker</td>
+<td>Titans → Bills</td>
+<td>Traded</td>
+<td>NOT PRINTED</td>
+<td>BUF chart checked 2026-11-13 (on/after the trade) does not print the player</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.tennesseetitans.com/team/depth-chart">Chart: TEN</a> · <a href="https://www.buffalobills.com/team/depth-chart">Chart: BUF</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X28-IND-DEPTH SF-DEPTH">
+<td>2026-11-10</td>
+<td>Keenan Allen</td>
+<td>Colts → 49ers</td>
+<td>Traded</td>
+<td>NOT PRINTED</td>
+<td>SF chart checked 2026-11-13 (on/after the trade) does not print the player</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.colts.com/team/depth-chart">Chart: IND</a> · <a href="https://www.49ers.com/team/depth-chart">Chart: SF</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X28-LV-DEPTH X28-MIN-DEPTH">
+<td>2026-11-10</td>
+<td>Kirk Cousins</td>
+<td>Raiders → Vikings</td>
+<td>Traded</td>
+<td>NOT PRINTED</td>
+<td>MIN chart checked 2026-11-13 (on/after the trade) does not print the player</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.raiders.com/team/depth-chart">Chart: LV</a> · <a href="https://www.vikings.com/team/depth-chart">Chart: MIN</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X28-LAC-DEPTH CFDD-DEN-DEPTH">
+<td>2026-11-10</td>
+<td>Daiyan Henley</td>
+<td>Chargers → Broncos</td>
+<td>Traded</td>
+<td>STALE</td>
+<td>still printed on LAC chart (Defense LB rank 1), chart checked 2026-11-13</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.chargers.com/team/depth-chart">Chart: LAC</a> · <a href="https://www.denverbroncos.com/team/depth-chart/">Chart: DEN</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X28-IND-DEPTH X28-KC-DEPTH">
+<td>2026-11-10</td>
+<td>Josh Downs</td>
+<td>Colts → Chiefs</td>
+<td>Traded</td>
+<td>PRINTED NEW</td>
+<td>printed on KC chart (Offense WR rank 3), chart checked 2026-11-13</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.colts.com/team/depth-chart">Chart: IND</a> · <a href="https://www.chiefs.com/team/depth-chart">Chart: KC</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X28-ATL-DEPTH A958-BAL-DEPTH">
+<td>2026-11-10</td>
+<td>Ryan Neuzil</td>
+<td>Falcons → Ravens</td>
+<td>Traded</td>
+<td>NOT PRINTED</td>
+<td>BAL chart checked 2026-11-12 (on/after the trade) does not print the player</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.atlantafalcons.com/team/depth-chart">Chart: ATL</a> · <a href="https://www.baltimoreravens.com/team/depth-chart">Chart: BAL</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES A958-BAL-DEPTH X28-ATL-DEPTH">
+<td>2026-11-10</td>
+<td>Andrew Vorhees</td>
+<td>Ravens → Falcons</td>
+<td>Traded</td>
+<td>PRINTED NEW</td>
+<td>printed on ATL chart (Offense RG rank 2), chart checked 2026-11-13</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.baltimoreravens.com/team/depth-chart">Chart: BAL</a> · <a href="https://www.atlantafalcons.com/team/depth-chart">Chart: ATL</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X28-NYJ-DEPTH A958-DET-DEPTH">
+<td>2026-11-09</td>
+<td>Andre Cisco</td>
+<td>Jets → Lions</td>
+<td>Traded</td>
+<td>NOT PRINTED</td>
+<td>DET chart checked 2026-11-12 (on/after the trade) does not print the player</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.newyorkjets.com/team/depth-chart">Chart: NYJ</a> · <a href="https://www.detroitlions.com/team/depth-chart">Chart: DET</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES X28-NO-DEPTH X28-JAX-DEPTH">
+<td>2026-11-09</td>
+<td>Davon Godchaux</td>
+<td>Saints → Jaguars</td>
+<td>Traded</td>
+<td>PRINTED NEW</td>
+<td>printed on JAX chart (Defense NT rank 2), chart checked 2026-11-13</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.neworleanssaints.com/team/depth-chart">Chart: NO</a> · <a href="https://www.jaguars.com/team/depth-chart">Chart: JAX</a></td></tr>
+<tr data-source-ids="B77-NFL-TRADES A958-AZ-DEPTH A958-BAL-DEPTH">
+<td>2026-11-06</td>
+<td>Jacoby Brissett</td>
+<td>Cardinals → Ravens</td>
+<td>Traded</td>
+<td>NOT PRINTED</td>
+<td>BAL chart checked 2026-11-12 (on/after the trade) does not print the player</td>
+<td><a href="https://www.nfl.com/transactions/">NFL.com transactions</a> · <a href="https://www.azcardinals.com/team/depth-chart">Chart: ARI</a> · <a href="https://www.baltimoreravens.com/team/depth-chart">Chart: BAL</a></td></tr>
+</tbody></table><h2>Baltimore QB</h2><table><caption>Baltimore depth: repository chart against the club page</caption><thead><tr>
+<th scope="col">Capture</th>
+<th scope="col">Names printed</th>
+</tr></thead><tbody>
+<tr data-source-ids="X243-REPO-05">
+<td>Repository chart, checked 2026-11-12</td>
+<td>Lamar Jackson · Tyler Huntley · Joe Fagnano</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a></td></tr>
+<tr data-source-ids="A958-BAL-DEPTH">
+<td>Club Offense table, read 2026-11-17</td>
+<td>Jacoby Brissett · Joe Fagnano · Kedon Slovis</td>
+<td><a href="https://www.baltimoreravens.com/team/depth-chart">Ravens depth chart</a></td></tr>
+<tr data-source-ids="X243-REPO-05">
+<td>Offense names on the repository chart only (2026-11-12)</td>
+<td>Lamar Jackson · Nick Vannett · Tyler Huntley</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a></td></tr>
+<tr data-source-ids="A958-BAL-DEPTH">
+<td>Offense names on the club page only (2026-11-17)</td>
+<td>Jacoby Brissett · Kedon Slovis · Ryan Neuzil</td>
+<td><a href="https://www.baltimoreravens.com/team/depth-chart">Ravens depth chart</a></td></tr>
+</tbody></table><h2>Injury files</h2><table><caption>Injury files: row counts and blank-status checks (published values are levels; no delta column in any file)</caption><thead><tr>
+<th scope="col">File</th>
+<th scope="col">Rows</th>
+<th scope="col">Club codes</th>
+<th scope="col">Status column</th>
+<th scope="col">Rows with status</th>
+<th scope="col">Surprise / delta</th>
+</tr></thead><tbody>
+<tr data-source-ids="X243-REPO-06 NFL-INJ-W10">
+<td>nfl-availability-28ef (Week 10, 14 games)</td>
+<td>326</td>
+<td>28</td>
+<td>game_status</td>
+<td>25</td>
+<td>none (level only)</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv">Repo: nfl-availability-28ef/data/injuries-week10-2026.csv</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+<tr data-source-ids="B77-R04 NFL-INJ-W10">
+<td>nfl-assurance-9580ac3f (Week 10)</td>
+<td>276</td>
+<td>26</td>
+<td>game_status</td>
+<td>6</td>
+<td>none (level only)</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-assurance-9580ac3f/data/injuries.csv">Repo: nfl-assurance-9580ac3f/data/injuries.csv</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+<tr data-source-ids="B77-R20 NFL-INJ-W10">
+<td>nfl/origination (Week 10)</td>
+<td>210</td>
+<td>28</td>
+<td>designation</td>
+<td>10</td>
+<td>none (level only)</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl/origination/data/injuries-2026-w10.csv">Repo: nfl/origination/data/injuries-2026-w10.csv</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+<tr data-source-ids="B77-R01 NFL-INJ-W10">
+<td>data/ Week 10 (Thursday listing only)</td>
+<td>20</td>
+<td>2</td>
+<td>GameStatus</td>
+<td>3</td>
+<td>none (level only)</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-injuries-2026-w10.csv">Repo: data/nfl-injuries-2026-w10.csv</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+<tr data-source-ids="B77-R02 NFL-INJ-W10">
+<td>data/ Week 7</td>
+<td>45</td>
+<td>4</td>
+<td>GameStatus</td>
+<td>20</td>
+<td>none (level only)</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-injuries-week7-2026.csv">Repo: data/nfl-injuries-week7-2026.csv</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+</tbody></table><h2>Lions cross-check</h2><table><caption>Detroit Lions Week 10 status against the official report (Joseph, Mays, Reed all Out on NFL.com)</caption><thead><tr>
+<th scope="col">Desk file</th>
+<th scope="col">Kerby Joseph</th>
+<th scope="col">Cade Mays</th>
+<th scope="col">D.J. Reed</th>
+<th scope="col">Result</th>
+</tr></thead><tbody>
+<tr data-source-ids="X243-REPO-06 NFL-INJ-W10">
+<td>nfl-availability-28ef (Week 10, 14 games)</td>
+<td>Out</td>
+<td>Out</td>
+<td>Out</td>
+<td>Matches official page</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv">Repo: nfl-availability-28ef/data/injuries-week10-2026.csv</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+<tr data-source-ids="B77-R04 NFL-INJ-W10">
+<td>nfl-assurance-9580ac3f (Week 10)</td>
+<td data-empty="true"></td>
+<td data-empty="true"></td>
+<td data-empty="true"></td>
+<td>Does not match</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-assurance-9580ac3f/data/injuries.csv">Repo: nfl-assurance-9580ac3f/data/injuries.csv</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+<tr data-source-ids="B77-R20 NFL-INJ-W10">
+<td>nfl/origination (Week 10)</td>
+<td data-empty="true"></td>
+<td data-empty="true"></td>
+<td data-empty="true"></td>
+<td>Does not match</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl/origination/data/injuries-2026-w10.csv">Repo: nfl/origination/data/injuries-2026-w10.csv</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+<tr data-source-ids="B77-R01 NFL-INJ-W10">
+<td>data/ Week 10 (Thursday listing only)</td>
+<td>absent</td>
+<td>absent</td>
+<td>absent</td>
+<td>Out of scope (no Detroit Week 10 rows)</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-injuries-2026-w10.csv">Repo: data/nfl-injuries-2026-w10.csv</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+<tr data-source-ids="B77-R02 NFL-INJ-W10">
+<td>data/ Week 7</td>
+<td>absent</td>
+<td>absent</td>
+<td>absent</td>
+<td>Out of scope (no Detroit Week 10 rows)</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-injuries-week7-2026.csv">Repo: data/nfl-injuries-week7-2026.csv</a> · <a href="https://www.nfl.com/injuries/">NFL.com injuries</a></td></tr>
+</tbody></table><h2>Rank-1 groups</h2><table><caption>Rank-1 depth groups that print more than one name (brief says 149; not reproduced)</caption><thead><tr>
+<th scope="col">Source</th>
+<th scope="col">Groups</th>
+<th scope="col">Groups with more than one rank-1 name</th>
+</tr></thead><tbody>
+<tr data-source-ids="X243-REPO-05">
+<td>Availability desk (27 clubs)</td>
+<td>607</td>
+<td>134</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a></td></tr>
+<tr data-source-ids="B77-R19">
+<td>Skill desk (4 clubs)</td>
+<td>90</td>
+<td>22</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-skill-cfdd/data/depth-slots-2026-11-14.csv">Repo: nfl-skill-cfdd/data/depth-slots-2026-11-14.csv</a></td></tr>
+<tr data-source-ids="X243-REPO-05 B77-R19">
+<td>Both desks combined</td>
+<td>697</td>
+<td>156</td>
+<td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/depth-slots-week10-2026.csv">Repo: nfl-availability-28ef/data/depth-slots-week10-2026.csv</a> · <a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-skill-cfdd/data/depth-slots-2026-11-14.csv">Repo: nfl-skill-cfdd/data/depth-slots-2026-11-14.csv</a></td></tr>
+</tbody></table>
+</main>
+<footer><p>Derived from repository files and official pages read on 2026-11-17. Blank cells are unverified or not applicable and are left blank on purpose. Flagged items are not corrected here.</p></footer>
+</body>
+</html>
