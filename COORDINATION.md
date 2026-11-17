@@ -1778,3 +1778,44 @@ This sandbox cannot reach nfl.com (outbound is limited to GitHub and package reg
 - PR: to be created from `arena/824cdccf-own7` → `main`.
 - Merge: to be confirmed after CI passes; not waited on for approval per the brief.
 - GitHub Pages deploy: to be confirmed against the merge commit; live URL https://sassnarep3-star.github.io/Own7/.
+- Claim each task by updating status to `in progress`, commit + push immediately.
+- Never infer or fill in values; leave blank + flag as unverified if no official source confirms.
+- Small, frequent commits; `git pull --rebase` before every push.
+- On conflict: stop, resolve without discarding the other session's work, log what happened.
+---
+
+## Session arena/383626a6-own7 — decision-readiness, luck panel, ablations, challenge MVP (2026-11-17)
+
+Session ID: `session-arena-383626a6-own7`. Fixed Arena branch: `arena/383626a6-own7`, based on `be2462d`
+(merge of PR #55, the head of `main` at claim time). Earlier boards above are retained verbatim and are
+**not** inherited as verification. No other session is active in this sandbox; this claim is therefore
+exclusive on the scopes named below and touches no other session's directory.
+
+### Observed starting state (read, not assumed)
+
+`git rev-parse HEAD` = `git rev-parse origin/main` = `be2462d`. Baseline replayed green **before** any
+change: `python -m unittest discover -s tests` → **111 pass**; `python scripts/check_site.py` → **passed**,
+194 recursive pages, 7,920 table rows, 216 registered sources, 0 errors. Existing desks read, not edited:
+`nfl-results/`, `nfl-pricing/`, `nfl-lifecycle-3f5c/`, `nfl-market-desk/`, `nfl-skill-cfdd/`,
+`nfl-availability-28ef/`, `nfl-assurance-9580ac3f/`, `nfl/`, `nfl_lab/`, `nfl_origination/`.
+
+### Claim (written, committed and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| D1 | Fresh official-source reads with saved verbatim evidence | in progress | session-arena-383626a6-own7 | `nfl-readiness/evidence/**` | NFL.com injury report W10, by-week schedules, club depth pages, NFL Terms. Saved rendered text + hashes. |
+| D2 | Fair-line originator rebuilt standalone: side → total → moneyline | in progress | session-arena-383626a6-own7 | `nfl-readiness/originate.py` | Reuses the frozen parameters of `nfl-results/engine.py`; reconciles exactly or the build aborts. |
+| D3 | Pre-registered 136-game backtest corpus + every forecast stored as a probability with its inputs | in progress | session-arena-383626a6-own7 | `nfl-readiness/backtest.py` | Leakage-free walk-forward; no tuned parameter. |
+| D4 | Proper-score leaderboard: benchmark-relative Brier skill, cluster lower bound, multiplicity | in progress | session-arena-383626a6-own7 | `nfl-readiness/leaderboard.py` | Signal rank only; zero staking columns. |
+| D5 | Removal-of-luck panel | in progress | session-arena-383626a6-own7 | `nfl-readiness/luck.py` | Exact binomial, permutation null, BH, required-n, control baselines. |
+| D6 | Correlations from official numbers only, n beside every value | in progress | session-arena-383626a6-own7 | `nfl-readiness/correlation.py` | Phi/Cramér V on official final scores. |
+| D7 | Decision-readiness table: one row per requirement, blocking gate, clearing number | in progress | session-arena-383626a6-own7 | `nfl-readiness/readiness.py`, `nfl-readiness/requirements.json` | 69 brief lines keyed R01…R69. |
+| D8 | Availability desks: depth groups, replacement depth, injury surprise, ablation | in progress | session-arena-383626a6-own7 | `nfl-readiness/availability.py` | Printed depth only; unverifiable cells blank + flagged. |
+| D9 | Questions, suggestions, executive summary | in progress | session-arena-383626a6-own7 | `nfl-readiness/questions.py`, `nfl-readiness/suggestions.py`, `docs/nfl-readiness-executive-summary.md` | Suggestion section with an explicit review/choose workflow. |
+| D10 | Site pages for this desk | in progress | session-arena-383626a6-own7 | `nfl-readiness/site/**` | Own generator, same visual system as the canonical site. |
+| D11 | Additive integration into the canonical site + check contracts | in progress | session-arena-383626a6-own7 | additive lines only in `scripts/build_site.py`, `scripts/check_site.py`, `research/sources.json`, `.github/workflows/check.yml`, `README.md` | No existing page, value or test overwritten. |
+| D12 | PR, merge, Pages deploy evidence, record | in progress | session-arena-383626a6-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: read-only on every other desk; never infer or fill a value an official source
+does not publish; every table row carries a registered official source link; `git pull --rebase` before
+every push; small, frequent commits; additive edits to shared files only.
