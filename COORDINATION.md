@@ -1916,8 +1916,15 @@ gates they cannot compute.
 **Sources read this session (2026-11-17):** `https://www.nfl.com/standings/` · `https://www.nfl.com/schedules/2026/REG10` (both via Arena fetch_page rendered text, 2 chunks each, saved verbatim). No scheduled scraping was added; the terms §1.3 constraint stands.
 ## Session arena/824cdccf-own7 — integration and publication (2026-11-17)
 
+
 Branch: `arena/824cdccf-own7`, branched from `main` at `be2462d`; sole active session on this branch, status `active`. No other session's files are touched.
 ## Session arena/4381c0ce-own7 — decision-readiness table on the landing page (2026-11-17)
+
+
+## Session arena/f4a324f2-own7 — prior board label retained (2026-11-17)
+
+The previous branch version included this label adjacent to the arena/824cdccf-own7 integration record. The integration record is retained under its own session heading below; this note prevents the label from being silently lost or misattributed.
+
 
 ### Claim (before implementation)
 
@@ -2106,6 +2113,7 @@ No other session has a claim on the files above. Requests for changes to the NFL
 **Source registrations.** `research/sources.json` gained `NFL-INJ-1117`, `NFL-SCHED-1117`, `NFL-TERMS-1117` (219 total). Their hosts were added to `SOURCE_HOSTS` in `scripts/check_site.py`.
 
 **Open items not closed by this session.** Chunks 1–7 of the live injury page; the Chargers–Ravens official game page; the NF28 rights decision (D1, D3); the price-data policy (D2); the 149 vs 156 definition (NF30); the Houston depth chart. None of these blocks the merge. They are published on the Flagged page.
+
 | D1 | Add the brief-mandated decision-readiness table to the landing page (`index.html`): one row per requirement, the gate that blocks it, and the number that would clear it | in progress | session-arena-4381c0ce-own7 | `nfl_pages.py` (landing builder `nfl_overview`), `research/nfl-requirements.json` (additive per-row gate + clearing-number fields), regenerated `index.html` + `research/site-manifest.json`, `COORDINATION.md` | Requirement ledger NR01–NR16 already in repo with registered official sources; gate contracts NG01–NG10 from `research/nfl-catalog.json`; clearing thresholds from the pre-registered `research/nfl-protocol.json`. No new official-source fetch claimed for the table itself; each row keeps its existing official source links. `python scripts/check_site.py`, unittest and browser suites re-run before any PR. | Landing page only; no other session's desk files touched. Open PRs #48/#50/#51 are not mine and stay untouched. A bounded fresh official-source recheck of headline numbers is claimed as D2 below. |
 | D2 | Bounded fresh official-source recheck (standings, Week 10 schedule/results, league injury report) via the sandbox page reader; record agreement or divergence; do not silently alter published values | in progress | session-arena-4381c0ce-own7 | `COORDINATION.md` only (plus `research/nfl/flags.json` + regenerated pages **only if** an official value is found to have moved) | Direct reads of nfl.com pages (standings, 2026 schedule week, injuries) through the Arena page reader, dated 2026-11-17; results recorded in this board section. | curl to nfl.com is blocked in the sandbox (HTTP 000); the page reader is the only fetch path. Any divergence is published on the Flagged for Review register rather than edited into place. |
 | D3 | PR → merge without approval → confirm GitHub Pages deploy → record PR link + merge result here | not started | session-arena-4381c0ce-own7 | `COORDINATION.md` | Full check battery green before merge; Pages "pages build and deployment" run must succeed against the merge commit. | Flagged items are non-blocking per the brief; a broken site is not merged. |
@@ -2141,6 +2149,7 @@ D3 (PR → merge → Pages → record) runs next.
 - Landing page at merge (corrected after a check): **two** readiness tables now render on the landing page, both inside `nfl_overview()` in `nfl_pages.py`. (a) `nfl-decision-readiness`, generated from `research/nfl-requirements.json` by PR #62 (NR01–NR16 rows). (b) `decision-readiness`, the hand-typed G/M-gate list already on `main` before PR #62. PR #62 did not remove (b); an earlier draft of this log said it did, which was wrong. Neither table was deleted here, because both are merged work from other sessions. **Open integration item for the owner:** consolidate the two tables into one. The full 81-row register remains at `nfl-readiness.html`, linked from the landing page.
 - Earlier push note: the first claim commit was pushed, then rebased onto the newer `main`. The remote kept that superseded commit (`6580264`), and a non-destructive `ours` merge recorded it as an ancestor. The tree is identical to the tested tree (`git diff` empty).
 - Checks after the merge (all green): `python -m unittest discover -s tests` (111 OK); `nba_lab run --check`; `nfl_lab run --check`; `nfl_extract --check`; `nfl_origination run --check`; `nfl-readiness/build.py --check`; `build_site.py` deterministic; `check_site.py` 0 errors. The browser suite was green before the merge and is re-run on the PR head.
+
 ## Session arena/5213243e-own7 — official Game Book facts, point-in-time ledger, decision readiness (2026-11-17)
 
 Session ID: `session-arena-5213243e-own7`. Fixed Arena branch: `arena/5213243e-own7`, based on `be2462d`
@@ -2251,6 +2260,7 @@ overwritten.
 
 No other session holds a live claim in this window; `nfl-gamebook-5213243e/**` was unclaimed before
 this session. Per the brief, this session is therefore also the integration session for its own scope.
+
 ### D3 done — PR merged, Pages deployed, live site verified (session-arena-4381c0ce-own7, 2026-11-17)
 
 - PR **[#62](https://github.com/sassnarep3-star/Own7/pull/62)** ("Decision-readiness table on the landing page + 2026-11-17 official recheck") **merged into `main` at 2026-11-17T01:30:11Z**, merge commit `dfc3cdd4f58029c4733d534a3efb209910fb23b3`. Merged without waiting for approval per the brief.
@@ -2505,3 +2515,14 @@ this board instead of editing them concurrently.
 No existing page, value or test was overwritten; no price, ROI, CLV, stake, wager or reward was
 produced; the pending Monday game is stored with blank scores, never imputed; PRs #17, #27, #48,
 #50 and #51 were not touched.
+## Session arena/017cb246-own7 — decision-readiness requirement thresholds (2026-11-17)
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| D1 | Extend the NFL assurance requirement ledger so each requirement has an explicit blocking gate and a clearance threshold (or an honestly blank threshold when no pre-registered number exists); verify the generated table and tests | done | arena/017cb246-own7 | `nfl-assurance-9580ac3f/decisions.json`, `nfl-assurance-9580ac3f/build.py`, `nfl-assurance-9580ac3f/tests/test_site.py`, generated `nfl-assurance-9580ac3f/site/requirements.html`, `COORDINATION.md` | 20/20 requirement rows now name gate(s) and either a numeric threshold or an explicit reason no numeric rule is registered. Numeric sample floors checked against `nfl-assurance-9580ac3f/engine.py` G04/G09/POLICY; 32/32 club coverage is labeled as the requested sweep criterion, not observed coverage. `python -m unittest discover -s nfl-assurance-9580ac3f/tests -v`: 50 pass; `python nfl-assurance-9580ac3f/check.py`: 19 pages, 872 table rows, 26 registered sources, 0 errors. Existing official links retained; no new NFL fact asserted or permission inferred. |
+
+### Rebase handoff (2026-11-17)
+
+The rebases advanced `origin/main` from `be2462d` through `764635c` (PR #60), `bf386f9` (PR #58), `dfc3cdd` (PR #62), `2270d2c` (PR #56), `0a3dad4` (PR #68), `0543304` (PR #63), `efe2733` (PR #71), `4a409ac` (PR #70), and `604e45b` (PR #73, plus PR #61 tracker merge) while PR #64 checks were running. COORDINATION conflicts were resolved as unions: upstream C505/824/F4, landing-page D1/D2/D3, Game Book, live readiness, D3 deployment, and later session records were retained, with this independent assurance-ledger record appended. No other session's implementation files were edited. The generated assurance page and manifest remain deterministic on the latest base; tests were rerun before updating the branch.

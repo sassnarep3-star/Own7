@@ -400,7 +400,10 @@
       "source_ids": [
         "A958-NFL-INJURIES",
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G02 · Schema & coverage",
+      "clearance_threshold": null,
+      "threshold_note": "No fixed row count is registered. Define the licensed historical scope and required fields before collection."
     },
     {
       "id": "R02",
@@ -410,7 +413,10 @@
       "gap": "Full hash/syntax coverage is not external factual verification of every old assertion.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G11 · Reproducibility",
+      "clearance_threshold": null,
+      "threshold_note": "No numeric cutoff is registered for line-by-line factual verification; the repository audit is not source-truth proof."
     },
     {
       "id": "R03",
@@ -420,7 +426,10 @@
       "gap": "Concurrent broad claims discovered; isolated handoff and conditional integration used.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G12 · Reviewed decision",
+      "clearance_threshold": null,
+      "threshold_note": "Requires explicit, non-overlapping ownership and a recorded handoff; no numeric threshold is registered."
     },
     {
       "id": "R04",
@@ -430,7 +439,10 @@
       "gap": "Local shortlist is not shared approval; proposals remain proposed.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G12 · Reviewed decision",
+      "clearance_threshold": null,
+      "threshold_note": "Requires a versioned reviewer decision before implementation; this is a governance event, not a count."
     },
     {
       "id": "R05",
@@ -441,7 +453,10 @@
       "source_ids": [
         "A958-NFL-TERMS",
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G02 · Schema & coverage",
+      "clearance_threshold": null,
+      "threshold_note": "No fixed question count is registered; every decision-relevant unknown must have an owner, discovery path and source."
     },
     {
       "id": "R06",
@@ -452,7 +467,10 @@
       "source_ids": [
         "A958-NFL-TERMS",
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G01 · Rights & provenance; G05 · Forecast quality",
+      "clearance_threshold": null,
+      "threshold_note": "Permission is a written scope decision, not a numeric threshold. G05 has no registered minimum improvement margin."
     },
     {
       "id": "R07",
@@ -463,7 +481,10 @@
       "source_ids": [
         "A958-SK-TIME",
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G12 · Reviewed decision; G04 · Sample & power",
+      "clearance_threshold": "≥500 settled selections; ≥200 distinct games; ≥60 dates",
+      "threshold_note": "These are G04 validation floors, not evidence that a proposed signal is profitable or qualified."
     },
     {
       "id": "R08",
@@ -475,7 +496,10 @@
         "A958-SK-CAL",
         "A958-SM-HOLM",
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G08 · Selection & multiplicity",
+      "clearance_threshold": null,
+      "threshold_note": "No fixed strategy count: register every attempted variant, include failures in the correction family and seal a confirmation test."
     },
     {
       "id": "R09",
@@ -486,7 +510,10 @@
       "source_ids": [
         "A958-PY-STATS",
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G06 · Dependence & settlement",
+      "clearance_threshold": null,
+      "threshold_note": "No minimum n or precision target is pre-registered for each outcome pair; leave coefficients blank until aligned verified outcomes and an interval policy exist."
     },
     {
       "id": "R10",
@@ -498,7 +525,10 @@
         "A958-SK-TIME",
         "A958-SM-HOLM",
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G04 · Sample & power; G05 · Forecast quality; G08 · Selection & multiplicity",
+      "clearance_threshold": "≥500 settled selections; ≥200 distinct games; ≥60 dates; α=0.05",
+      "threshold_note": "G04/G08 floors and alpha come from the assurance engine policy; G05 improvement margin is not numerically specified."
     },
     {
       "id": "R11",
@@ -508,7 +538,10 @@
       "gap": "Executable ranking and non-monetary merit design; no eligible entries or cash program.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G04 · Sample & power; G07 · Executable economics; G09 · Prospective shadow",
+      "clearance_threshold": "≥500 settled selections; ≥200 distinct games; ≥60 dates; plus ≥60 prospective days and ≥200 shadow games",
+      "threshold_note": "G04/G09 sample floors are policy; G07 also requires positive net return and CLV after costs, for which no numeric margin is registered."
     },
     {
       "id": "R12",
@@ -520,7 +553,10 @@
         "A958-NFL-INJURIES",
         "A958-NE-DEPTH",
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G02 · Schema & coverage; G03 · Information chronology",
+      "clearance_threshold": "32/32 clubs with dated official expected-starter, inactive/participation and snap evidence before model use",
+      "threshold_note": "The 32-club coverage floor restates the requested league sweep. Missing thresholds for starter confirmation and replacement-impact precision remain unresolved."
     },
     {
       "id": "R13",
@@ -530,7 +566,10 @@
       "gap": "Important limits and next decisions included.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G11 · Reproducibility",
+      "clearance_threshold": null,
+      "threshold_note": "No numeric document-length or metric cutoff is registered; keep summary bounded to dated, sourced findings and limits."
     },
     {
       "id": "R14",
@@ -540,7 +579,10 @@
       "gap": "No user data entry needed; external rights/data grants cannot be fabricated.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G01 · Rights & provenance",
+      "clearance_threshold": null,
+      "threshold_note": "No amount of automation can supply missing permissions; user input is not required for repository work, but external grants cannot be fabricated."
     },
     {
       "id": "R15",
@@ -551,7 +593,10 @@
       "source_ids": [
         "A958-NFL-INJURIES",
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G02 · Schema & coverage; G11 · Reproducibility",
+      "clearance_threshold": null,
+      "threshold_note": "Every published factual row must retain a checked source; no fixed total because scope changes. Current rendered-source checks do not establish publisher truth."
     },
     {
       "id": "R16",
@@ -561,7 +606,10 @@
       "gap": "Static dashboard with search/sort/filter/export and mobile navigation.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G11 · Reproducibility",
+      "clearance_threshold": null,
+      "threshold_note": "No numeric design threshold is registered; site build, link, accessibility and responsive checks are the acceptance tests."
     },
     {
       "id": "R17",
@@ -571,7 +619,10 @@
       "gap": "Project policy rows link to the official project repository and are not external facts.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G02 · Schema & coverage",
+      "clearance_threshold": null,
+      "threshold_note": "Every factual table row, not a fixed number of rows, must have a registered source URL; unknown values remain blank."
     },
     {
       "id": "R18",
@@ -581,7 +632,10 @@
       "gap": "Flags block unsupported prices/skill/rewards, not transparent limitation disclosure.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G12 · Reviewed decision",
+      "clearance_threshold": null,
+      "threshold_note": "Every unresolved unsupported claim must be visibly flagged; no numeric cap is set, and flags do not waive evidence gates."
     },
     {
       "id": "R19",
@@ -591,7 +645,10 @@
       "gap": "PR #28 merged; Pages built and live pages fetched.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G11 · Reproducibility",
+      "clearance_threshold": null,
+      "threshold_note": "Requires passing build/check/deploy evidence for the release; no numeric threshold beyond successful completion is registered."
     },
     {
       "id": "R20",
@@ -601,7 +658,10 @@
       "gap": "Other owners' canonical NFL work is not overwritten; final additive reconciliation pending.",
       "source_ids": [
         "A958-REPO"
-      ]
+      ],
+      "blocking_gate": "G12 · Reviewed decision",
+      "clearance_threshold": null,
+      "threshold_note": "Requires scoped ownership and a logged handoff for each shared-file request; no numeric threshold is registered."
     }
   ]
 }
