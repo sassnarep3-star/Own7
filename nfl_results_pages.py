@@ -393,21 +393,27 @@ def page_correlation():
 
 
 def page_leaderboard():
+    """Session arena/34a52a38-own7 (2026-11-17): no backtest numbers on the leaderboard.
+
+    Brief rule: backtest numbers must never appear on the leaderboard. Hit rates, intervals, p-values
+    and q-values are shown only on the skill page, labelled as backtest. This page shows eligibility.
+    """
     analysis = load_analysis()
     lb = analysis["leaderboard"]
     counts = analysis["leaderboard_counts"]
 
     body = ""
     body += notice(
-        "A leaderboard that pays nothing, on purpose",
-        f"{counts['tested']} variants were tested. {counts['provisional']} reached the provisional "
-        f"tier and {counts['qualified']} reached the qualified tier. A reward requires a price to "
-        f"settle against, and none was retrieved, so every reward cell is blank.",
+        "Backtests are not leaderboard entries",
+        f"{counts['tested']} variants were graded in backtest. Under the no-backtest rule their numbers are "
+        "withheld from this page and shown only on the skill page, labelled as backtest. Nothing is ranked "
+        "here: an entry needs an executable price and release rights, and neither exists, so every reward "
+        "cell is blank.",
         info=True)
 
     body += metrics([
-        ("Tested", counts["tested"], "Every model and variant", "signals"),
-        ("Provisional", counts["provisional"], "All testable gates pass", "validation"),
+        ("Tested", counts["tested"], "Backtest variants, not ranked", "signals"),
+        ("Ranked here", 0, "Backtest results are never ranked", "validation"),
         ("Qualified", counts["qualified"], "Needs an executable price", "leaderboard"),
         ("Merit points awarded", "0", "Nothing cleared every gate", "care"),
     ])
@@ -415,32 +421,26 @@ def page_leaderboard():
     rows = []
     for entry in lb:
         rows.append({
-            "id": entry["id"], "rank": entry["rank"], "tier": entry["tier"].title(),
-            "strategy": entry["name"], "market": entry["market"],
-            "bets": entry["bets"], "record": f"{entry['wins']}–{entry['losses']}",
-            "hit": pct(entry["hit_rate"]),
-            "ci": f"{pct(entry['ci_low'])} – {pct(entry['ci_high'])}",
-            "q": f"{entry['q_value']:.3f}",
-            "merit": entry["merit_points"],
+            "id": entry["id"],
+            "strategy": entry["name"],
+            "market": entry["market"],
+            "eligibility": "Backtest only, not ranked: no executable price (RG03), no release rights (RG10)",
             "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
             "source_ids": ["X29-NFL-SCHEDULE"],
         })
     if not rows:
-        rows = [{"id": "EMPTY", "rank": None, "tier": "—", "strategy": "No entry reached the provisional tier",
-                 "market": None, "bets": None, "record": None, "hit": None, "ci": None, "q": None,
-                 "merit": 0, "source_url": "https://www.nfl.com/standings/",
+        rows = [{"id": "EMPTY", "strategy": "No entry is listed", "market": None,
+                 "eligibility": "No backtest entry exists", "source_url": "https://www.nfl.com/standings/",
                  "source_ids": ["NFL-STANDINGS"]}]
 
     body += section(
         "Standings",
-        table("lb-table", "Ranked strategies", [
-            ("Rank", "rank"), ("Tier", lambda r: badge(r["tier"])), ("Strategy", "strategy"),
-            ("Market", "market"), ("Bets", "bets"), ("Record", "record"),
-            ("Hit rate", "hit"), ("95% interval", "ci"), ("BH q", "q"),
-            ("Merit points", "merit"),
+        table("lb-table", "Entries and eligibility", [
+            ("Strategy", "strategy"), ("Market", "market"), ("Status on this leaderboard", "eligibility"),
         ], rows,
-            note="Provisional entries are published so the work can be reviewed, not to claim an "
-                 "edge. Merit points are integers with no cash value, and none has been awarded."),
+            note="Hit rates, intervals and q-values for these variants are on the skill page, labelled as "
+                 "backtest. They do not appear here. Merit points are integers with no cash value, and none "
+                 "has been awarded."),
         eyebrow="COMPETITION")
 
     body += section(
@@ -459,6 +459,7 @@ by omission.</p>
 </div>""",
         eyebrow="REWARDS")
     return body
+
 
 
 def page_questions():
@@ -825,8 +826,8 @@ originated spread beat the result 64.2% of the time (permutation p=0.0021, survi
 q=0.022), holding in both halves of the season and in every leave-one-week-out test. The
 originated total landed at exactly 50.0%. The same model, the same data, two different answers.</p>
 <p><strong>4. No strategy qualified, and zero rewards were paid.</strong> A <em>qualified</em>
-entry needs an executable price. None exists in this project, so the leaderboard lists one
-provisional entry with no merit points and no cash value. The reward mechanism is built and
+entry needs an executable price. None exists in this project, so the leaderboard ranks no entry. Its one backtest
+is listed as not ranked, with no merit points and no cash value. The reward mechanism is built and
 deliberately empty.</p>
 <p><strong>5. Correlation is now measured, not asserted.</strong> Same-game leg dependence is
 -0.068 (p=0.47, n=114): small, negative, and indistinguishable from independence. No parlay is
