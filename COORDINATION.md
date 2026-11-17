@@ -1998,3 +1998,91 @@ this session. Per the brief, this session is therefore also the integration sess
 - Live verification: https://sassnarep3-star.github.io/Own7/index.html re-fetched after deploy — the **Decision readiness** section is live with all 16 requirement rows, G01–G10 gate links to `nfl-validation.html`, clearing numbers, and per-row official source links; PR #60's "Open review items 17 of 21" metric fix is also live (the mid-flight rebase union held). No broken-site merge occurred; the full battery was green before merge.
 - Coordination note: a parallel session `arena/383626a6-own7` is in flight with its own "NFL decision-readiness desk" (pre-registered backtest, luck panel, availability — an 18-page desk on its own branch). Its scope was unknown when D1 was claimed; the two touch different files (that desk builds its own sub-site; D1 touched the landing page builder and the requirement ledger only). No files of that session were touched.
 - Irregularities published non-blocking (see Flagged for Review page and D2 notes above): rights-blocked pricing/ROI blanks; the Lions designation finding resolved at source pending a future re-capture; stale open PRs #48/#50/#51 untouched per precedent.
+## Session arena/34a52a38-own7 — dashboard readiness, luck panel, Lions correction, flags (2026-11-17)
+
+Session ID: `session-arena-34a52a38-own7`. Fixed Arena branch: `arena/34a52a38-own7`, based on `be2462d`
+(merge of PR #55). The brief's `session-<id>/<task>` branch naming is not used because the branch is fixed
+for this session; all work stays on `arena/34a52a38-own7`. Earlier boards are retained verbatim and are not
+inherited as verification. This session is the sole active session on the board (every prior claim is `done`).
+
+### Observed starting state (read, not assumed)
+
+`be2462d` clean. Baseline replayed before any change: `python -m unittest discover -s tests` → 111 pass;
+`python scripts/nfl_extract.py --check` → OK (32 standings, 20 injury, 14 fixtures);
+`python scripts/check_site.py` → OK; `python nfl-lifecycle-3f5c/build.py --check` → byte-identical;
+`python -m unittest discover -s nfl-lifecycle-3f5c/tests` → pass.
+
+### Claim (written and pushed before implementation)
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| D1 | Coordination claim + baseline replay | in progress | session-arena-34a52a38-own7 | `COORDINATION.md` (append-only) | This entry. |
+| D2 | Populate the three Lions game-status cells (Joseph, Mays, Reed) from the official Week 10 injury report, and correct the assurance desk's blank cells | in progress | session-arena-34a52a38-own7 | `nfl-assurance-9580ac3f/data/**`, regenerated `nfl-assurance-9580ac3f/site/**` only | Official page read 2026-11-17 via Arena fetch_page; the availability desk already holds "Out"; the assurance desk holds blanks. |
+| D3 | Decision-readiness table on the landing page: one row per requirement, the gate that blocks it, the number that would clear it | in progress | session-arena-34a52a38-own7 | new `nfl_readiness.py` (root), additive call in `nfl_pages.nfl_overview()` | Every number computed from a committed artefact; blanks where none exists. |
+| D4 | "Removal of luck" panel on the landing page (family-wise luck, permutation p, n) | in progress | session-arena-34a52a38-own7 | `nfl_readiness.py`, additive call in `nfl_pages.nfl_overview()` | Read-only over `nfl-results/analysis.json`. |
+| D5 | Flag register entries for irregularities found this session | in progress | session-arena-34a52a38-own7 | `research/nfl/flags.json` (append only) | Published non-blocking on the Flagged page. |
+| D6 | Tests for D2–D5 | in progress | session-arena-34a52a38-own7 | `tests/test_nfl_readiness.py` (new) | |
+| D7 | Executive summary: dated update section | in progress | session-arena-34a52a38-own7 | `docs/nfl-executive-summary.md` (append only) | Additive. |
+| D8 | Build, checks, browser test, PR, merge, Pages deploy, record | unclaimed | session-arena-34a52a38-own7 | `COORDINATION.md`, generated root pages, `research/site-manifest.json` | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: fixed branch only; a value is populated only from an official page read in this
+session, otherwise left blank and flagged; every row keeps a registered source; `git pull --rebase` before every
+push; small commits; additive edits to shared files only.
+
+### D1–D7 done — session-arena-34a52a38-own7 (recorded 2026-11-17)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| D1 | Claim + baseline replay | **done** | Baseline green before change: 111 tests; extract, origination, lifecycle, site check all passing. |
+| D2 | Lions Week 10 designations | **done as a dated delta (not an overwrite)** | Official read 2026-11-17 (`https://www.nfl.com/injuries/league/2026/REG10`, Lions section): Joseph, Mays and Reed printed **Out** with Knee, Ankle and Hip. Availability capture (2026-11-13) differs on 3 of 9 Lions rows; assurance capture differs on 7 of 9, including blanks, practice status and Joseph's injury. Captures are immutable, so they are not overwritten; the delta is on the landing page (`#lions-delta`). Flags NF22, NF23. |
+| D3 | Decision-readiness table | **done** | `nfl_readiness.py` (60 rows: 13 done, 18 partial, 12 blocked, 17 not started). Each row: requirement, status, blocking gate, number now, number that clears it, evidence link, registered sources. Numbers computed at build time from committed artefacts. |
+| D4 | Removal-of-luck panel | **done** | Landing page `#luck-panel`, read from `nfl-results/analysis.json`. Best record 77–43 (64.2%), single-test p 0.0012, family-wise 2.2% (18 stated) and 3.6% (30 graded, recomputed). Flag NF27. |
+| D5 | Flag register entries | **done** | `research/nfl/flags.json` NF22–NF29 appended (NF29 "Corrected"). Non-blocking; published on the Flagged for Review page. |
+| D6 | Tests | **done** | `tests/test_nfl_readiness.py`: 8 tests (row contract, evidence links exist, luck arithmetic, Lions Out confirmed and delta detected, price store null, results leaderboard has no backtest figures, skill page keeps labelled figures, landing anchors present). 119 tests pass. |
+| D7 | Executive summary update | **done** | `docs/nfl-executive-summary.md`, dated section appended; earlier sections unchanged. |
+
+**Rule change this session (recorded, not silent).** The results leaderboard (`nfl-results-leaderboard.html`, `nfl_results_pages.page_leaderboard`) printed hit rates, intervals, q-values and a provisional rank #1 for a backtest. The brief forbids backtest numbers on a leaderboard, so the page now lists the variants as not ranked, with eligibility only. The analysis file is unchanged. Flag NF29 (Corrected). Other desks' leaderboards still show hit-rate columns (lifecycle 2, pricing 5, market desk 1); flagged NF28, not edited because those desks belong to earlier sessions.
+
+**Edits to shared files (additive only).** `nfl_pages.py` (new `readiness_block()` appended; `nfl_overview()` calls it), `nfl_results_pages.py` (leaderboard function replaced; one sentence in the summary), `research/sources.json` (+1 entry, `NFL-INJ-W10-READ-1117`), `research/nfl/flags.json` (+8 flags, `as_of` 2026-11-17), `scripts/check_site.py` (+1 host line for the new source), `research/*` and generated pages (regenerated by `scripts/build_site.py` and `python -m nba_lab run`, the hash contract).
+
+**Sources read this session (2026-11-17):** `https://www.nfl.com/injuries/league/2026/REG10` (Arena fetch_page, rendered text, chunk 1 of 8). Direct HTTPS to nfl.com is not available from the build sandbox. The page prints no capture time.
+
+**Verification run (this tree):** `python -m unittest discover -s tests` → 119 pass; every command in the `research-static` job of `.github/workflows/check.yml` replayed locally → all pass; `python scripts/check_site.py` → OK (recursive site, fragments, 217 registered sources, blank rules, deterministic builds); `npm run test:browser` → 174 desktop + 174 mobile pages, WCAG A/AA, no runtime errors.
+
+**Scope not done, and why (also on the readiness table):**
+- **Scheduled daily capture (brief items on injury-report and depth-page snapshots):** not built. NFL.com terms §1.3 prohibit systematic retrieval without written consent (NF25).
+- **Public/private split:** not done. 64 NFL-named CSV files are public; moving them breaks five desks and needs an owner decision on the rights conflict (NF24).
+- **Full Week 10 recount, Game Books, snap counts, reserve lists, transaction logs, venues, weather, ablations, probabilities, control baselines:** not captured. Each is a row in the readiness table with its clearing number.
+- **Items citing VR-, VQ- and SG- identifiers** (Malik Willis, Colts trades, Lamar Jackson/Tyler Huntley, Texans image register, SG-03/SG-05 rejections): the identifiers appear nowhere in the repository, so those claims are not verified (NF26).
+- **Texans depth image:** no authorised structured source is in the repository; not transcribed (RQ29).
+
+### D8 — PR, merge, Pages deploy, record
+
+Status: **in progress** (next entry records the PR link, merge commit and Pages result).
+
+### Integration record — arena/34a52a38-own7 (2026-11-17, after rebase onto main `bf386f9`)
+
+- **Rebase conflicts (logged, resolved without dropping others' work):**
+  - `COORDINATION.md`: both sides appended a section at the end of the file. Both kept, in order: main's sections first, this session's second.
+  - `index.html` and `research/site-manifest.json`: generated files. Taken from main, then regenerated by `scripts/build_site.py` and `python -m nba_lab run`.
+  - `nfl_pages.py`: auto-merged. Main's `nfl_overview()` project-gate readiness table (20 rows, session `arena/c5050ef2-own7`, PRs #58 and #60) is kept unchanged. This session's 60-row brief ledger is kept as a separate section, retitled "Full brief ledger: 60 requirements" (anchor `#brief-ledger`), so the two tables do not share a heading. The earlier wording "Decision readiness" referred to the same concept, so it was renamed rather than deleted.
+- **Overlap with other open work (not touched):** PR #57 (`arena/383626a6-own7`, open) also describes a readiness desk and luck panel at `nfl-readiness/`. Its files are not in this branch, so there is no file conflict. The owners should reconcile the two readiness views at integration.
+- **Final verification on the rebased tree:** `python -m unittest discover -s tests` → 119 OK. Every `check.yml` research-static command replayed → all pass, clean tree. `scripts/check_site.py` → OK. `npm run test:browser` → 174 desktop + 174 mobile, WCAG A/AA, no runtime errors.
+- **Open-PR list checked at integration:** #57, #56, #51, #50, #48, #27, #17 remain open. None were modified by this session.
+
+### Integration record 2 — arena/34a52a38-own7 (2026-11-17, rebased again onto main `2270d2c`)
+
+- Main advanced twice while this PR was in CI (PR #62, then PR #56 Game Book desk and its follow-up merges). Each advance re-conflicted the same shared files. Resolved without dropping others' work:
+  - `COORDINATION.md`: appended sections kept, in main's order first.
+  - About 60 generated HTML pages, `research/results.json`, `index.html`, `research/site-manifest.json`: taken from main, then regenerated with `python -m nba_lab run` and `scripts/build_site.py`, in that order (the manifest hashes results, so it must follow).
+  - `research/sources.json`: main's bytes kept; only this session's entry `NFL-INJ-W10-READ-1117` inserted (13 added lines, no other change).
+  - `scripts/check_site.py`: main's version kept; only the one host line for `NFL-INJ-W10-READ-1117` added.
+- Re-verified on the final tree: all `check.yml` research-static commands replayed → pass; `check_site.py` → OK.
+- Main's Game Book desk (PR #56) changed the site and sources but touched none of this session's files apart from the shared registry and site scripts above.
+
+### Integration record 3 — arena/34a52a38-own7 (2026-11-17, rebased onto main `0543304`)
+
+- **Flag ID collision resolved.** Main's register (session `arena/ca37e6e5-own7`) took NF22–NF31 while this branch had NF22–NF29. This branch's eight flags are renumbered **NF32–NF39** (NF22→NF32 … NF29→NF39), and its code and docs now cite the new IDs. Main's NF22–NF31 are unchanged. Overlapping topics, for cross-reference: Lions designations (NF22–NF24 on main vs NF32–NF33 here), committed rows vs terms (NF28 on main vs NF34 here), results-leaderboard backtest row (NF29 on main vs NF39 here, corrected here). Owners should merge the duplicates at integration.
+- Source `NFL-INJ-W10-READ-1117` inserted into main's `research/sources.json` bytes (13 added lines). Host line added to main's `scripts/check_site.py` (one line).
+- Generated outputs regenerated in order: `nba_lab run`, then `build_site.py`, then `check_site.py` OK (47 canonical pages).
+- Final checks on this tree: all `check.yml` research-static commands → pass; `python -m unittest discover -s tests` → 119 OK.

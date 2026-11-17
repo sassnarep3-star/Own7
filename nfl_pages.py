@@ -839,6 +839,7 @@ def nfl_overview():
     body += '<p><a href="nfl-readiness.html">Full requirement register (every requirement row, its gate and its source status) →</a></p>'
     body += '<p class="source-line">' + refs({"source_ids": ["NFL-STANDINGS", "NFL-INJ-W10", "NFL-SCHED-W10",
                                                               "NFL-INJURY-POLICY", "NFL-TERMS-LEGAL", "PYTH-NFL"]}) + '</p>'
+    body += readiness_block()
     return body
 
 
@@ -1012,4 +1013,111 @@ def executive():
         'attributed. No automated NFL-site scraper is enabled. See <a href="https://www.nfl.com/legal/terms/" '
         'target="_blank" rel="noopener noreferrer">NFL Terms ↗</a>, the <a href="sources.html">source register</a> '
         'and <a href="nfl-review.html">Flagged for Review</a>.</p>')
+    return body
+
+
+def readiness_block():
+    """Session arena/34a52a38-own7 (2026-11-17): luck panel, Lions read-back, readiness table.
+
+    Every value comes from nfl_readiness.py, which reads committed artefacts at build time.
+    """
+    import nfl_readiness as nr
+    luck = nr.luck_panel()
+    rows = nr.readiness_rows()
+    lions = nr.lions_delta()
+
+    def fmt3(values):
+        return " / ".join(v if v else "—" for v in values)
+
+    luck_body = notice(
+        "Is the best record skill, or chance?",
+        "The best record in the 30 graded variants is BOARD-SA (originated spread board), with a "
+        f"{luck['wins']}–{luck['losses']} record ({luck['hit']:.1%}). Luck is screened with a single-test "
+        "p-value, a family-wise correction across the tests, and a permutation test. These are statistics on "
+        "past games against a neutral league-mean line. They are not a price, an ROI or a closing line.",
+        info=True)
+    luck_body += metrics([
+        ("Best observed record", f"{luck['wins']}–{luck['losses']}", f"{luck['hit']:.1%} over {luck['bets']} graded bets", "signals"),
+        ("Luck band at this n", f"{luck['band_low']:.1%}–{luck['band_high']:.1%}", "Chance range for 120 bets (95%)", "validation"),
+        ("Single-test p", f"{luck['p_single']:.4f}", "Exact binomial for one strategy", "correlation"),
+        ("Family-wise, 18 stated", f"{luck['fw_stated']:.1%}", "Best of the 18 tests the analysis states", "review"),
+        ("Family-wise, 30 graded", f"{luck['fw_graded']:.1%}", "Best of all 30 graded variants (recomputed)", "review"),
+        ("ROI, CLV, reward", "—", "Blank: no executable price exists", "care"),
+    ])
+    luck_rows = [
+        {"id": "L1", "check": "95% interval for the hit rate", "result": f"{luck['ci_low']:.1%} to {luck['ci_high']:.1%}",
+         "reading": "Width of the plausible hit rate for 120 bets.", "source_ids": ["NFL-SCHEDULE", "NFL-STANDINGS"]},
+        {"id": "L2", "check": "Permutation test (spread board)", "result": f"p = {luck['perm_p']:.4f}",
+         "reading": "How often a shuffled board does as well by chance.", "source_ids": ["NFL-SCHEDULE", "NFL-STANDINGS"]},
+        {"id": "L3", "check": "Multiplicity (Benjamini-Hochberg q)", "result": f"q = {luck['bh_q']:.3f}",
+         "reading": "Controls the false-discovery rate across the family at 10%.", "source_ids": ["NFL-SCHEDULE", "NFL-STANDINGS"]},
+        {"id": "L4", "check": "Stability across halves of the season", "result": f"{luck['first_half']:.1%} then {luck['second_half']:.1%}",
+         "reading": "Both halves favour the board, but the sample per half is small.", "source_ids": ["NFL-SCHEDULE"]},
+        {"id": "L5", "check": "Reference line", "result": "Neutral league-mean line",
+         "reading": "Not a sportsbook price. No ROI, CLV or reward can be computed from it.", "source_ids": ["NFL-TERMS"]},
+    ]
+    luck_body += table("luck-table", "How the record was tested", [
+        ("Check", "check"), ("Result", "result"), ("What it means", "reading")], luck_rows,
+        note=f"Family-wise figures: 1 − (1 − p)^n with p = {luck['p_single']:.6f}. The analysis states "
+             f"n = {luck['n_family_stated']}; all {luck['n_graded']} graded variants give {luck['fw_graded']:.1%}. "
+             "Both are below 5%, so chance alone is an unlikely explanation for this record under either "
+             "family size. The family size itself is open for review (NF37).")
+    body = section("Removal of luck", luck_body, eyebrow="DASHBOARD PANEL", sid="luck-panel")
+
+    delta_rows = []
+    for d in lions:
+        delta_rows.append({
+            "id": d["player"], "player": f"{d['player']} ({d['position']})",
+            "official": fmt3(d["official"]),
+            "availability": fmt3(d["availability"]) + ("" if not d["availability_diff"] else f"  — differs: {', '.join(d['availability_diff'])}"),
+            "assurance": fmt3(d["assurance"]) + ("" if not d["assurance_diff"] else f"  — differs: {', '.join(d['assurance_diff'])}"),
+            "source_url": nr.OFFICIAL_READ_URL,
+            "source_ids": [nr.OFFICIAL_READ_ID, "NFL-INJ-W10-RECHECK-1114"],
+        })
+    n_av = sum(1 for d in lions if d["availability_diff"])
+    n_as = sum(1 for d in lions if d["assurance_diff"])
+    delta_body = notice(
+        "Three designations are confirmed Out, and the captures disagree with the official read",
+        f"The official Week 10 page, read {nr.OFFICIAL_READ_DATE}, lists Kerby Joseph, Cade Mays and D.J. Reed as "
+        "Out. The desk captures are dated 2026-11-13 and are kept unchanged. "
+        f"The availability desk differs from the official read on {n_av} of 9 Lions rows; the assurance desk on "
+        f"{n_as} of 9. The page carries no clock time, so the cause (a later update or a capture error) cannot be "
+        "settled from the record. Both are flagged (NF32, NF33).",
+        info=True)
+    delta_body += table("lions-delta-table", "Lions, Week 10: official read against two captures", [
+        ("Player", "player"), ("Official read 2026-11-17 (injury / practice / game)", "official"),
+        ("Availability capture 2026-11-13", "availability"), ("Assurance capture (undated)", "assurance")], delta_rows,
+        note="A blank cell is an empty official cell: no injury or game designation was printed. "
+             "“differs” names the fields that do not match the official read.")
+    body += section("Lions, Week 10: official read and the delta", delta_body, eyebrow="INJURY DELTA", sid="lions-delta")
+
+    counts = {}
+    for r in rows:
+        counts[r["status"]] = counts.get(r["status"], 0) + 1
+    table_rows = []
+    for r in rows:
+        ev = r["href"]
+        table_rows.append({
+            "id": r["id"], "requirement": r["requirement"], "status": r["status"],
+            "gate": r["gate"], "now": r["now"], "clears": r["clears"],
+            "evidence": _Markup(link(ev, "Open ↗", ev.startswith("http"))),
+            "source_ids": r["source_ids"],
+        })
+    readiness = metrics([
+        ("Done", counts.get("Done", 0), "Built and checked", "validation"),
+        ("Partial", counts.get("Partial", 0), "Some evidence; a gate remains", "signals"),
+        ("Blocked", counts.get("Blocked", 0), "A named gate stops it", "review"),
+        ("Not started", counts.get("Not started", 0), "No evidence yet", "requirements"),
+    ])
+    readiness += table("readiness-table", "Full brief ledger: one row per requirement", [
+        ("#", "id"),
+        ("Requirement", "requirement"),
+        ("Status", lambda r: badge(r["status"], {"Done": "good", "Partial": "blue", "Blocked": "warn", "Not started": "neutral"}[r["status"]])),
+        ("Blocking gate", "gate"),
+        ("Number now", "now"),
+        ("Number that clears it", "clears"),
+        ("Evidence", "evidence"),
+    ], table_rows, note="Counts come from committed artefacts at build time. A blank or “0” means the record "
+                        "holds none; it is never estimated. Source links are registered official pages or repository files.")
+    body += section("Full brief ledger: 60 requirements", readiness, eyebrow="BRIEF LEDGER", sid="brief-ledger")
     return body
