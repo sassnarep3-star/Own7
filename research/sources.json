@@ -2666,5 +2666,41 @@
   "checked_on": "2026-11-14",
   "access": "Prior session capture carried read-only; not re-fetched this session",
   "status": "Content checked"
+ },
+ {
+   "id": "NFL-INJ-1117",
+   "publisher": "NFL.com",
+   "title": "Official Latest NFL Injury Report for Players - Week 10 of the 2026 Season",
+   "url": "https://www.nfl.com/injuries/",
+   "kind": "injury",
+   "authority": "Official league website",
+   "scope": "Week 10 2026 injury report, chunk 0 of 8 only (Thu 12 Nov WAS @ NYG; Sun 15 Nov NE @ DET; KC table begins). 50 rows matched field by field. Chunks 1-7 not yet read.",
+   "checked_on": "2026-11-17",
+   "access": "Arena fetch_page, chunk 0 of 8; rendered content, not an HTTP-status attestation",
+   "status": "Partly checked"
+ },
+ {
+   "id": "NFL-SCHED-1117",
+   "publisher": "NFL.com",
+   "title": "NFL schedules (Week 10 2026 finals)",
+   "url": "https://www.nfl.com/schedules/",
+   "kind": "schedule",
+   "authority": "Official league website",
+   "scope": "Week 10 finals: 13 of 14 games printed Final (Steelers 18-Bengals 38; Cowboys 40 vs 49ers; and 11 others in the chunk 0 read). Chargers at Ravens (Mon 16 Nov, 8:15 PM ET) shows no score. Byes CHI, DEN, PHI, TB. The /schedules/2026/REG11/ request returned this generic page, not Week 11.",
+   "checked_on": "2026-11-17",
+   "access": "Arena fetch_page, chunks 0 and 1; rendered content, not an HTTP-status attestation",
+   "status": "Partly checked"
+ },
+ {
+   "id": "NFL-TERMS-1117",
+   "publisher": "NFL.com",
+   "title": "NFL Terms of Use (legal/terms)",
+   "url": "https://www.nfl.com/legal/terms/",
+   "kind": "terms",
+   "authority": "Official league website",
+   "scope": "Updated May 16, 2024. Section 1.3 limits use to personal, non-commercial informational purposes and prohibits systematic retrieval without written consent. Read today (chunk 0 of 9) to govern capture and archive decisions D1 and D3.",
+   "checked_on": "2026-11-17",
+   "access": "Arena fetch_page, chunk 0 of 9; rendered content",
+   "status": "Content checked"
  }
 ]
