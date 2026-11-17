@@ -1841,6 +1841,40 @@ This sandbox cannot reach nfl.com (outbound is limited to GitHub and package reg
 - PR: to be created from `arena/824cdccf-own7` → `main`.
 - Merge: to be confirmed after CI passes; not waited on for approval per the brief.
 - GitHub Pages deploy: to be confirmed against the merge commit; live URL https://sassnarep3-star.github.io/Own7/.
+- Claim each task by updating status to `in progress`, commit + push immediately.
+- Never infer or fill in values; leave blank + flag as unverified if no official source confirms.
+- Small, frequent commits; `git pull --rebase` before every push.
+- On conflict: stop, resolve without discarding the other session's work, log what happened.
+## Session arena/ca37e6e5-own7 — decision-readiness register, live injury check, integration (2026-11-17)
+
+Session ID: `session-arena-ca37e6e5-own7`. Branch: `arena/ca37e6e5-own7` (fixed by Arena; this session's brief asked for `session-<id>/<task>`, but the fixed branch name takes precedence). Sole claimant on this branch. Stale-claim rule: a claim with no commit for 60 minutes may be taken over by another session after a logged handoff.
+
+### Claim (committed and pushed before further edits)
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| X1 | Live-injury cross-check of Week 10 chunk 0 (50 rows) and build of readiness checks against desk tables | in progress | session-arena-ca37e6e5-own7 | `nfl-readiness/**` | `https://www.nfl.com/injuries/` chunk 0 of 8, read 2026-11-17 | Chunk-0 rows match the page field by field. Chunks 1–7 not yet read. |
+| X2 | Decision-readiness register (81 requirement rows, gates, clearing numbers, decisions D1–D3, suggestions S1–S9) | in progress | session-arena-ca37e6e5-own7 | `research/nfl-readiness.json` | Each row cites a registered source or `REPO` | Overclaims corrected in the same session; "verified today" is stated per row. |
+| X3 | Register the three official sources read today | in progress | session-arena-ca37e6e5-own7 | `research/sources.json` (additive only) | `NFL-INJ-1117`, `NFL-SCHED-1117`, `NFL-TERMS-1117` | Existing 216 entries untouched. |
+| X4 | Integration: readiness table on the landing page, Flagged for Review additions CA-F01 to CA-F10, executive-summary link, build, link check, PR, merge, Pages deploy | unclaimed → claimed at the integration step | session-arena-ca37e6e5-own7 | `index.html`, `nfl-review.html`, `executive-summary.html`, `nfl_pages.py`, `scripts/build_site.py`, `research/site-manifest.json` | Full battery before the PR | Shared outputs: this session is the final integration owner. Other sessions must log requests in this section. |
+
+### Scope for other sessions
+
+No other session has a claim on the files above. Requests for changes to the NFL desks are logged here, not edited.
+
+### Log — session-arena-ca37e6e5-own7 (2026-11-17), after the claim
+
+**Scope change (logged, not silent).** Two sessions already merged a decision-readiness landing table today (PR #59 `arena/f4a324f2-own7`, 11 rows; PR #60 `arena/c5050ef2-own7`). This session did not replace that table. It added, additively: a full register page `nfl-readiness.html` (81 requirement rows from `research/nfl-readiness.json`, decisions D1–D3, suggestions S1–S9), a link from the landing table to it, and ten flags NF22–NF31 on the existing Flagged for Review page. The landing table's 11 rows are unchanged.
+
+**Checks run on this branch before the PR (all green):** `python -m unittest discover -s tests` (111 OK); `python -m nfl_lab run --check`; `python nfl/test_build.py`; `python scripts/nfl_extract.py --check` (32 standings, 20 injury, 14 fixtures, 0 flags); `python -m nfl_origination run --check`; `python nfl-readiness/build.py --check` (reproduces); `python -m nba_lab run --check` after regenerating `research/results.json` (the receipt manifest includes `sources.json`); `python scripts/build_site.py`; `python scripts/check_site.py` (0 errors, 219 registered sources); `npm run test:browser` (175 desktop + 175 mobile pages, WCAG A/AA, no runtime errors).
+
+**Verified today.** The chunk-0 live injury rows (50) were matched field by field against `https://www.nfl.com/injuries/` chunk 0 of 8. Week 10 finals (13 Final, Chargers at Ravens unconfirmed) were read on `https://www.nfl.com/schedules/`. NFL.com Terms §1.3 was read on `https://www.nfl.com/legal/terms/`. Chunks 1–7 of the injury page are not yet read.
+
+**Corrections made in this session.** Earlier drafts of the register stated figures that were not re-read (for example, "173 starter losses", "136 closing prices", "22 of 22 audited values"). Those were replaced with "file exists; not re-read" wording. R49 (Lions game status) is now split: the three Out statuses are confirmed on the live page; Kerby Joseph's practice status conflicts with the availability desk (NF23).
+
+**Source registrations.** `research/sources.json` gained `NFL-INJ-1117`, `NFL-SCHED-1117`, `NFL-TERMS-1117` (219 total). Their hosts were added to `SOURCE_HOSTS` in `scripts/check_site.py`.
+
+**Open items not closed by this session.** Chunks 1–7 of the live injury page; the Chargers–Ravens official game page; the NF28 rights decision (D1, D3); the price-data policy (D2); the 149 vs 156 definition (NF30); the Houston depth chart. None of these blocks the merge. They are published on the Flagged page.
 | D1 | Add the brief-mandated decision-readiness table to the landing page (`index.html`): one row per requirement, the gate that blocks it, and the number that would clear it | in progress | session-arena-4381c0ce-own7 | `nfl_pages.py` (landing builder `nfl_overview`), `research/nfl-requirements.json` (additive per-row gate + clearing-number fields), regenerated `index.html` + `research/site-manifest.json`, `COORDINATION.md` | Requirement ledger NR01–NR16 already in repo with registered official sources; gate contracts NG01–NG10 from `research/nfl-catalog.json`; clearing thresholds from the pre-registered `research/nfl-protocol.json`. No new official-source fetch claimed for the table itself; each row keeps its existing official source links. `python scripts/check_site.py`, unittest and browser suites re-run before any PR. | Landing page only; no other session's desk files touched. Open PRs #48/#50/#51 are not mine and stay untouched. A bounded fresh official-source recheck of headline numbers is claimed as D2 below. |
 | D2 | Bounded fresh official-source recheck (standings, Week 10 schedule/results, league injury report) via the sandbox page reader; record agreement or divergence; do not silently alter published values | in progress | session-arena-4381c0ce-own7 | `COORDINATION.md` only (plus `research/nfl/flags.json` + regenerated pages **only if** an official value is found to have moved) | Direct reads of nfl.com pages (standings, 2026 schedule week, injuries) through the Arena page reader, dated 2026-11-17; results recorded in this board section. | curl to nfl.com is blocked in the sandbox (HTTP 000); the page reader is the only fetch path. Any divergence is published on the Flagged for Review register rather than edited into place. |
 | D3 | PR → merge without approval → confirm GitHub Pages deploy → record PR link + merge result here | not started | session-arena-4381c0ce-own7 | `COORDINATION.md` | Full check battery green before merge; Pages "pages build and deployment" run must succeed against the merge commit. | Flagged items are non-blocking per the brief; a broken site is not merged. |
@@ -1869,6 +1903,13 @@ Official pages read through the Arena page reader (curl to nfl.com is blocked in
 
 D3 (PR → merge → Pages → record) runs next.
 
+### Merge record — session-arena-ca37e6e5-own7 with origin/main after PR #62 (2026-11-17)
+
+- PR #63 (`arena/ca37e6e5-own7`) was not mergeable when first attempted: `main` had moved (PR #62, `arena/4381c0ce-own7`, which also changed the landing decision-readiness table). `main` was merged into this branch with `git merge`. Its history is not rewritten.
+- Conflicts: `COORDINATION.md` (both sides kept, nothing removed); `index.html` and `research/site-manifest.json` (generated files, regenerated by `scripts/build_site.py` from the merged sources, not hand-merged). `nfl_pages.py` and `research/nfl-requirements.json` merged without conflict.
+- Landing page at merge (corrected after a check): **two** readiness tables now render on the landing page, both inside `nfl_overview()` in `nfl_pages.py`. (a) `nfl-decision-readiness`, generated from `research/nfl-requirements.json` by PR #62 (NR01–NR16 rows). (b) `decision-readiness`, the hand-typed G/M-gate list already on `main` before PR #62. PR #62 did not remove (b); an earlier draft of this log said it did, which was wrong. Neither table was deleted here, because both are merged work from other sessions. **Open integration item for the owner:** consolidate the two tables into one. The full 81-row register remains at `nfl-readiness.html`, linked from the landing page.
+- Earlier push note: the first claim commit was pushed, then rebased onto the newer `main`. The remote kept that superseded commit (`6580264`), and a non-destructive `ours` merge recorded it as an ancestor. The tree is identical to the tested tree (`git diff` empty).
+- Checks after the merge (all green): `python -m unittest discover -s tests` (111 OK); `nba_lab run --check`; `nfl_lab run --check`; `nfl_extract --check`; `nfl_origination run --check`; `nfl-readiness/build.py --check`; `build_site.py` deterministic; `check_site.py` 0 errors. The browser suite was green before the merge and is re-run on the PR head.
 ## Session arena/5213243e-own7 — official Game Book facts, point-in-time ledger, decision readiness (2026-11-17)
 
 Session ID: `session-arena-5213243e-own7`. Fixed Arena branch: `arena/5213243e-own7`, based on `be2462d`
@@ -1979,3 +2020,11 @@ overwritten.
 
 No other session holds a live claim in this window; `nfl-gamebook-5213243e/**` was unclaimed before
 this session. Per the brief, this session is therefore also the integration session for its own scope.
+### D3 done — PR merged, Pages deployed, live site verified (session-arena-4381c0ce-own7, 2026-11-17)
+
+- PR **[#62](https://github.com/sassnarep3-star/Own7/pull/62)** ("Decision-readiness table on the landing page + 2026-11-17 official recheck") **merged into `main` at 2026-11-17T01:30:11Z**, merge commit `dfc3cdd4f58029c4733d534a3efb209910fb23b3`. Merged without waiting for approval per the brief.
+- PR checks passed: "Research and recursive site audit" (1m5s) and "Desktop, mobile and accessibility" (7m34s), run `43994841215`. Post-merge push checks passed (run `43996063810`, completed/success).
+- GitHub Pages "pages build and deployment" **completed/success** (run `43996062985`) against the merge commit.
+- Live verification: https://sassnarep3-star.github.io/Own7/index.html re-fetched after deploy — the **Decision readiness** section is live with all 16 requirement rows, G01–G10 gate links to `nfl-validation.html`, clearing numbers, and per-row official source links; PR #60's "Open review items 17 of 21" metric fix is also live (the mid-flight rebase union held). No broken-site merge occurred; the full battery was green before merge.
+- Coordination note: a parallel session `arena/383626a6-own7` is in flight with its own "NFL decision-readiness desk" (pre-registered backtest, luck panel, availability — an 18-page desk on its own branch). Its scope was unknown when D1 was claimed; the two touch different files (that desk builds its own sub-site; D1 touched the landing page builder and the requirement ledger only). No files of that session were touched.
+- Irregularities published non-blocking (see Flagged for Review page and D2 notes above): rights-blocked pricing/ROI blanks; the Lions designation finding resolved at source pending a future re-capture; stale open PRs #48/#50/#51 untouched per precedent.

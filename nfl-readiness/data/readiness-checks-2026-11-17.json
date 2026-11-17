@@ -1,0 +1,1076 @@
+{
+  "as_of": "2026-11-17",
+  "clearing": {
+    "games_feed_w1_9": 136,
+    "games_w10": 14,
+    "games_w10_official_final_read": 13,
+    "method": "One-sample binomial test of H0 p=0.5, one-sided alpha 0.05, power 0.80 (normal approximation). Reproduces the 617 / 153 / 2,682 values published on the NFL results and skill pages.",
+    "n_for_p524": 2682,
+    "n_for_p55": 617,
+    "n_for_p60": 153,
+    "regular_season_games_2026": 272
+  },
+  "depth_groups": {
+    "availability-28ef": {
+      "clubs": 27,
+      "offense_defense_groups_with_more_than_one_player": 134,
+      "offense_defense_rank1_groups": 444,
+      "rank1_groups": 607,
+      "rank1_groups_with_more_than_one_player": 134,
+      "rows": 1586
+    },
+    "combined": {
+      "offense_defense_groups_with_more_than_one_player": 155,
+      "rank1_groups": 697,
+      "rank1_groups_with_more_than_one_player": 156
+    },
+    "skill-cfdd-bye-clubs": {
+      "clubs": 4,
+      "offense_defense_groups_with_more_than_one_player": 21,
+      "offense_defense_rank1_groups": 63,
+      "rank1_groups": 90,
+      "rank1_groups_with_more_than_one_player": 22,
+      "rows": 231
+    }
+  },
+  "desks": {
+    "assurance-9580ac3f": {
+      "checked_on_recorded": "not recorded in file",
+      "clubs_present": [
+        "ATL",
+        "AZ",
+        "BUF",
+        "CAR",
+        "CIN",
+        "CLE",
+        "DAL",
+        "DET",
+        "GB",
+        "HOU",
+        "IND",
+        "JAX",
+        "KC",
+        "LAR",
+        "LV",
+        "MIA",
+        "MIN",
+        "NE",
+        "NO",
+        "NYG",
+        "NYJ",
+        "PIT",
+        "SEA",
+        "SF",
+        "TEN",
+        "WAS"
+      ],
+      "clubs_with_rows": 26,
+      "file": "nfl-assurance-9580ac3f/data/injuries.csv",
+      "playing_clubs_with_zero_rows": [
+        "BAL",
+        "LAC"
+      ],
+      "rows": 276,
+      "rows_with_game_status": 6,
+      "rows_with_injury_text": 6
+    },
+    "availability-28ef": {
+      "checked_on_recorded": "2026-11-13",
+      "clubs_present": [
+        "ATL",
+        "AZ",
+        "BAL",
+        "BUF",
+        "CAR",
+        "CIN",
+        "CLE",
+        "DAL",
+        "DET",
+        "GB",
+        "HOU",
+        "IND",
+        "JAX",
+        "KC",
+        "LAC",
+        "LAR",
+        "LV",
+        "MIA",
+        "MIN",
+        "NE",
+        "NO",
+        "NYG",
+        "NYJ",
+        "PIT",
+        "SEA",
+        "SF",
+        "TEN",
+        "WAS"
+      ],
+      "clubs_with_rows": 28,
+      "file": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+      "playing_clubs_with_zero_rows": [],
+      "rows": 326,
+      "rows_with_game_status": 25,
+      "rows_with_injury_text": 25
+    },
+    "canonical-legacy": {
+      "checked_on_recorded": "2026-11-12",
+      "clubs_present": [
+        "NYG",
+        "WAS"
+      ],
+      "clubs_with_rows": 2,
+      "file": "data/nfl-injuries-2026-w10.csv",
+      "playing_clubs_with_zero_rows": [
+        "ATL",
+        "AZ",
+        "BAL",
+        "BUF",
+        "CAR",
+        "CIN",
+        "CLE",
+        "DAL",
+        "DET",
+        "GB",
+        "HOU",
+        "IND",
+        "JAX",
+        "KC",
+        "LAC",
+        "LAR",
+        "LV",
+        "MIA",
+        "MIN",
+        "NE",
+        "NO",
+        "NYJ",
+        "PIT",
+        "SEA",
+        "SF",
+        "TEN"
+      ],
+      "rows": 20,
+      "rows_with_game_status": 3,
+      "rows_with_injury_text": 3
+    },
+    "origination-lab": {
+      "checked_on_recorded": "not recorded in file",
+      "clubs_present": [
+        "ATL",
+        "AZ",
+        "BAL",
+        "BUF",
+        "CAR",
+        "CIN",
+        "CLE",
+        "DAL",
+        "DET",
+        "GB",
+        "HOU",
+        "IND",
+        "JAX",
+        "KC",
+        "LAC",
+        "LAR",
+        "LV",
+        "MIA",
+        "MIN",
+        "NE",
+        "NO",
+        "NYG",
+        "NYJ",
+        "PIT",
+        "SEA",
+        "SF",
+        "TEN",
+        "WAS"
+      ],
+      "clubs_with_rows": 28,
+      "file": "nfl/origination/data/injuries-2026-w10.csv",
+      "playing_clubs_with_zero_rows": [],
+      "rows": 210,
+      "rows_with_game_status": 10,
+      "rows_with_injury_text": 187
+    }
+  },
+  "lions_game_status_by_desk": {
+    "assurance-9580ac3f": {
+      "Cade Mays": "(blank)",
+      "D.J. Reed": "(blank)",
+      "Kerby Joseph": "(blank)"
+    },
+    "availability-28ef": {
+      "Cade Mays": "Out",
+      "D.J. Reed": "Out",
+      "Kerby Joseph": "Out"
+    },
+    "origination-lab": {
+      "Cade Mays": "(blank)",
+      "D.J. Reed": "(blank)",
+      "Kerby Joseph": "(blank)"
+    }
+  },
+  "live_chunk": {
+    "clubs": [
+      "DET",
+      "KC",
+      "NE",
+      "NYG",
+      "WAS"
+    ],
+    "complete_clubs": [
+      "DET",
+      "NE",
+      "NYG",
+      "WAS"
+    ],
+    "partial_clubs": [
+      "KC"
+    ],
+    "rows": 50
+  },
+  "live_source": "https://www.nfl.com/injuries/",
+  "live_vs_desk": {
+    "assurance-9580ac3f": {
+      "field_mismatches": {
+        "game": 15,
+        "injury": 15,
+        "practice": 12
+      },
+      "live_rows_compared": 50,
+      "matched": 50,
+      "mismatch_rows": [
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Ankle, Knee",
+          "player": "A.J. Brown"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "A.J. Brown"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Chest",
+          "player": "Kevin Byard"
+        },
+        {
+          "club": "NE",
+          "desk": "Limited Participation in Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Kevin Byard"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Kevin Byard"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Knee",
+          "player": "Reggie Gilliam"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Reggie Gilliam"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Back",
+          "player": "Cameron Latu"
+        },
+        {
+          "club": "NE",
+          "desk": "Did Not Participate In Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Cameron Latu"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Cameron Latu"
+        },
+        {
+          "club": "NE",
+          "desk": "Limited Participation in Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Morgan Moses"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Concussion",
+          "player": "Walter Rouse"
+        },
+        {
+          "club": "NE",
+          "desk": "Did Not Participate In Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Walter Rouse"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Walter Rouse"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Hamstring",
+          "player": "Brenden Schooler"
+        },
+        {
+          "club": "NE",
+          "desk": "Did Not Participate In Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Brenden Schooler"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Brenden Schooler"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Knee",
+          "player": "Rhamondre Stevenson"
+        },
+        {
+          "club": "NE",
+          "desk": "Did Not Participate In Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Rhamondre Stevenson"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Rhamondre Stevenson"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Hamstring",
+          "player": "Greg Van Roten"
+        },
+        {
+          "club": "NE",
+          "desk": "Limited Participation in Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Greg Van Roten"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Greg Van Roten"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Hamstring",
+          "player": "Charles Woods"
+        },
+        {
+          "club": "NE",
+          "desk": "Limited Participation in Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Charles Woods"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Charles Woods"
+        },
+        {
+          "club": "DET",
+          "desk": "Limited Participation in Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Brian Branch"
+        },
+        {
+          "club": "DET",
+          "desk": "Limited Participation in Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Jared Goff"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Knee",
+          "player": "Kerby Joseph"
+        },
+        {
+          "club": "DET",
+          "desk": "Limited Participation in Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Did Not Participate In Practice",
+          "player": "Kerby Joseph"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Out",
+          "player": "Kerby Joseph"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Ankle",
+          "player": "Cade Mays"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Out",
+          "player": "Cade Mays"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Hip",
+          "player": "D.J. Reed"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Out",
+          "player": "D.J. Reed"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Rib",
+          "player": "Amon-Ra St. Brown"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Amon-Ra St. Brown"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Ankle",
+          "player": "Sione Vaki"
+        },
+        {
+          "club": "DET",
+          "desk": "Did Not Participate In Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Sione Vaki"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Sione Vaki"
+        },
+        {
+          "club": "KC",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "no",
+          "live": "Shoulder",
+          "player": "Mansoor Delane"
+        },
+        {
+          "club": "KC",
+          "desk": "",
+          "field": "game",
+          "list_complete": "no",
+          "live": "Questionable",
+          "player": "Mansoor Delane"
+        }
+      ],
+      "unmatched": [],
+      "unmatched_with_live_injury_text": 0
+    },
+    "availability-28ef": {
+      "field_mismatches": {
+        "game": 3,
+        "injury": 3,
+        "practice": 2
+      },
+      "live_rows_compared": 50,
+      "matched": 50,
+      "mismatch_rows": [
+        {
+          "club": "DET",
+          "desk": "Full Participation in Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Did Not Participate In Practice",
+          "player": "Kerby Joseph"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Rib",
+          "player": "Amon-Ra St. Brown"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Amon-Ra St. Brown"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Ankle",
+          "player": "Sione Vaki"
+        },
+        {
+          "club": "DET",
+          "desk": "Did Not Participate In Practice",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Sione Vaki"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Sione Vaki"
+        },
+        {
+          "club": "KC",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "no",
+          "live": "Shoulder",
+          "player": "Mansoor Delane"
+        },
+        {
+          "club": "KC",
+          "desk": "",
+          "field": "game",
+          "list_complete": "no",
+          "live": "Questionable",
+          "player": "Mansoor Delane"
+        }
+      ],
+      "unmatched": [],
+      "unmatched_with_live_injury_text": 0
+    },
+    "origination-lab": {
+      "field_mismatches": {
+        "game": 16,
+        "injury": 10,
+        "practice": 18
+      },
+      "live_rows_compared": 50,
+      "matched": 29,
+      "mismatch_rows": [
+        {
+          "club": "WAS",
+          "desk": "",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Did Not Participate In Practice",
+          "player": "Lucas Patrick"
+        },
+        {
+          "club": "WAS",
+          "desk": "",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Did Not Participate In Practice",
+          "player": "Colson Yankoff"
+        },
+        {
+          "club": "NYG",
+          "desk": "hip",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "",
+          "player": "J.J. McCarthy"
+        },
+        {
+          "club": "NYG",
+          "desk": "No designation",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "",
+          "player": "J.J. McCarthy"
+        },
+        {
+          "club": "NYG",
+          "desk": "hamstring",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "",
+          "player": "Cam Skattebo"
+        },
+        {
+          "club": "NYG",
+          "desk": "",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Cam Skattebo"
+        },
+        {
+          "club": "NYG",
+          "desk": "No designation",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "",
+          "player": "Cam Skattebo"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Did Not Participate In Practice",
+          "player": "Ben Brown"
+        },
+        {
+          "club": "NE",
+          "desk": "ankle/knee",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Ankle, Knee",
+          "player": "A.J. Brown"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "A.J. Brown"
+        },
+        {
+          "club": "NE",
+          "desk": "Limited",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Kevin Byard"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Kevin Byard"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Did Not Participate In Practice",
+          "player": "Carlton Davis III"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Knee",
+          "player": "Reggie Gilliam"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Reggie Gilliam"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Did Not Participate In Practice",
+          "player": "TreVeyon Henderson"
+        },
+        {
+          "club": "NE",
+          "desk": "foot",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "",
+          "player": "Hunter Henry"
+        },
+        {
+          "club": "NE",
+          "desk": "DNP",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Cameron Latu"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Cameron Latu"
+        },
+        {
+          "club": "NE",
+          "desk": "foot",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "",
+          "player": "Morgan Moses"
+        },
+        {
+          "club": "NE",
+          "desk": "Limited",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Morgan Moses"
+        },
+        {
+          "club": "NE",
+          "desk": "concussion protocol",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "Concussion",
+          "player": "Walter Rouse"
+        },
+        {
+          "club": "NE",
+          "desk": "DNP",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Walter Rouse"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Walter Rouse"
+        },
+        {
+          "club": "NE",
+          "desk": "DNP",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Brenden Schooler"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Brenden Schooler"
+        },
+        {
+          "club": "NE",
+          "desk": "DNP",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Rhamondre Stevenson"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Rhamondre Stevenson"
+        },
+        {
+          "club": "NE",
+          "desk": "Limited",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Greg Van Roten"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Greg Van Roten"
+        },
+        {
+          "club": "NE",
+          "desk": "Limited",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Charles Woods"
+        },
+        {
+          "club": "NE",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Charles Woods"
+        },
+        {
+          "club": "DET",
+          "desk": "hip",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "",
+          "player": "Brian Branch"
+        },
+        {
+          "club": "DET",
+          "desk": "Limited",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Brian Branch"
+        },
+        {
+          "club": "DET",
+          "desk": "chest",
+          "field": "injury",
+          "list_complete": "yes",
+          "live": "",
+          "player": "Jared Goff"
+        },
+        {
+          "club": "DET",
+          "desk": "Limited",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Full Participation in Practice",
+          "player": "Jared Goff"
+        },
+        {
+          "club": "DET",
+          "desk": "Limited",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Did Not Participate In Practice",
+          "player": "Kerby Joseph"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Out",
+          "player": "Kerby Joseph"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Out",
+          "player": "Cade Mays"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Out",
+          "player": "D.J. Reed"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Amon-Ra St. Brown"
+        },
+        {
+          "club": "DET",
+          "desk": "DNP",
+          "field": "practice",
+          "list_complete": "yes",
+          "live": "Limited Participation in Practice",
+          "player": "Sione Vaki"
+        },
+        {
+          "club": "DET",
+          "desk": "",
+          "field": "game",
+          "list_complete": "yes",
+          "live": "Questionable",
+          "player": "Sione Vaki"
+        },
+        {
+          "club": "KC",
+          "desk": "knee/right elbow",
+          "field": "injury",
+          "list_complete": "no",
+          "live": "",
+          "player": "Patrick Mahomes"
+        }
+      ],
+      "unmatched": [
+        "WAS John Bates",
+        "WAS Jayden Daniels",
+        "WAS Matt Gulbin",
+        "WAS Chig Okonkwo",
+        "WAS Shy Tuttle",
+        "NYG Abdul Carter",
+        "NYG Jermaine Eluemunor",
+        "NYG Colton Hood",
+        "NYG Theo Johnson",
+        "NYG Charlie Jones",
+        "NYG Darnell Mooney",
+        "NYG Malik Nabers",
+        "NYG Andrew Thomas",
+        "NE Drake Maye",
+        "DET Jacob Saylors",
+        "DET DJ Wonnum",
+        "KC Jeffrey Bassa",
+        "KC Mansoor Delane",
+        "KC Justin Fields",
+        "KC Jaden Hicks",
+        "KC Travis Kelce"
+      ],
+      "unmatched_with_live_injury_text": 1
+    }
+  },
+  "row_level_injury_rows_in_repo": 832,
+  "schedule_source": "https://www.nfl.com/schedules/",
+  "week10": {
+    "final_pairs_matching_repo_w10_pairs": 13,
+    "not_shown_final": [
+      "chargers-at-ravens-2026-reg-10"
+    ],
+    "official_final_read_2026_11_17": 13,
+    "origination_w10_pairs_matching_schedule_read": 14,
+    "origination_w10_rows": 14,
+    "origination_w10_venue_notes_populated": 1,
+    "results_feed_retrieved": [
+      "2026-11-14"
+    ],
+    "results_feed_rows": 136,
+    "results_feed_weeks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "schedule_games_w10": 14
+  }
+}
