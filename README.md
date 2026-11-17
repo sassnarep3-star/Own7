@@ -56,6 +56,20 @@ python nfl-lifecycle-3f5c/build.py --check    # byte-identical reproduction
 python -m unittest discover -s nfl-lifecycle-3f5c/tests   # 37 tests
 ```
 
+## New: decision-readiness desk (2026-11-17, session arena/1467fdf7-own7)
+
+[`nfl-readiness-1467fdf7/site/index.html`](nfl-readiness-1467fdf7/site/index.html) answers, for each of the 79 requirement rows in the brief: what is built, what blocks it, and what number would clear it. It also holds the pre-registered controls, the two-sided "what would change our mind" register, and an injury spot-check against the official Week 10 page.
+
+- **Controls** (`strategies.py` frozen at commit `813ce25`): always-home 49.6%, seeded random 49.6%, higher-prior-win-% 60.7% (n = 135). None clears the sample gate (n ≥ 153), and none is ranked.
+- **Injury spot-check:** 44 rows compared against the official page; 3 Detroit rows disagree. Cause open.
+- **Blocked by rights:** scheduled and repeated captures of nfl.com are systematic retrieval under [Terms §1.3](https://www.nfl.com/legal/terms/). No such capture was added. See flag F01.
+- Executive summary: [`docs/nfl-readiness-1467fdf7-executive-summary.md`](docs/nfl-readiness-1467fdf7-executive-summary.md).
+
+```sh
+python nfl-readiness-1467fdf7/build.py --check
+python -m unittest discover -s nfl-readiness-1467fdf7/tests -v
+```
+
 ## What this is now
 
 The landing page is an **NFL research workspace**. It originates its own lines from official NFL
