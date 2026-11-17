@@ -1958,3 +1958,22 @@ overwritten.
 
 No other session holds a live claim in this window; `nfl-gamebook-5213243e/**` was unclaimed before
 this session. Per the brief, this session is therefore also the integration session for its own scope.
+
+### PR and merge record — session-arena-ca37e6e5-own7 (2026-11-17)
+
+| ID | Task | Status | Notes |
+|---|---|---|---|
+| X1 | Live-injury cross-check, chunk 0 of 8 | partly done | 50 chunk-0 rows match `https://www.nfl.com/injuries/` field by field. Chunks 1–7 still to read. |
+| X2 | Decision-readiness register (81 rows) and register page | done | `research/nfl-readiness.json`; page `nfl-readiness.html`; counts derived from rows (38 partial, 19 not started, 12 blocked, 10 built, 2 decision needed). |
+| X3 | Official sources read today registered | done | `NFL-INJ-1117`, `NFL-SCHED-1117`, `NFL-TERMS-1117` (224 entries on `main` after the merge). |
+| X4 | Integration: flags NF22–NF31, landing link, build, check, PR, merge, Pages deploy | done | PR **[#63](https://github.com/sassnarep3-star/Own7/pull/63)** merged into `main` as **`0543304`** at 2026-11-17T01:54:35Z (merge commit, not squash). |
+
+**Post-merge checks (on `0543304`):** "Research and dashboard checks" run `43999086159`: success. "pages build and deployment" run `43999085063`: success on the same commit. Live page `https://sassnarep3-star.github.io/Own7/nfl-readiness.html` renders the 81-row register.
+
+**PR checks (head `be8fd7e`):** Research and recursive site audit passed (36s); Desktop, mobile and accessibility passed (7m48s).
+
+**Merge conflicts during the PR (logged, nothing discarded):** `main` moved three times while PR #63 was open. Each time `main` was merged into the branch, not rebased. `COORDINATION.md` kept both sides. Generated pages and `research/results.json` came from our side and were regenerated from the merged sources with `scripts/build_site.py` and `python -m nba_lab run`. `research/sources.json` was merged textually: `main`'s bytes plus our three entries (a re-serialised union would have rewritten about 2,700 lines).
+
+**Known open items, not blocking (published on the Flagged for Review page, NF22–NF31):** the landing page now carries two readiness tables (see the merge record above; consolidation is an owner item); injury chunks 1–7 unread; Chargers at Ravens unconfirmed; the register's backtick text renders as escaped characters (cosmetic, `nfl-readiness.html`); the register does not yet include the depth-count definition (NF30); decisions D1–D3 and the price-data policy await the owner.
+
+**Where this record lives:** this section is committed on `arena/ca37e6e5-own7` after the merge. It reaches `main` with the next merge from this branch, not before.
