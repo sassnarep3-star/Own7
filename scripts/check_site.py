@@ -155,6 +155,17 @@ SOURCE_HOSTS.update({
 })
 
 
+# Readiness-audit desk (session arena/e7efbde7-own7) — official NFL hosts only; each id is
+# a page actually read on 2026-11-17 (standings, REG10 finals, Week 11 slate, injury report,
+# news module).
+SOURCE_HOSTS.update({
+    'E7EF-STANDINGS-1117': 'www.nfl.com',
+    'E7EF-SCHED-REG10-1117': 'www.nfl.com',
+    'E7EF-SCHED-REG11-1117': 'www.nfl.com',
+    'E7EF-INJ-W10-1117': 'www.nfl.com',
+    'E7EF-NEWS-1117': 'www.nfl.com',
+})
+
 # NFL market desk (session arena/ec67293d-own7). One publisher host per id: ESPN for the
 # relayed market feed, NFL.com for the official results, injury and standings pages, member-club
 # hosts for the four depth charts actually read, and this repository for the method record.

@@ -1,0 +1,3660 @@
+{
+ "read_at": "2026-11-17T00:45:05Z",
+ "evidence": {
+  "standings": {
+   "file": "evidence/standings-2026-11-17.md",
+   "url": "https://www.nfl.com/standings/",
+   "sha256": "ab7a888c7f1a622b214c8ae1907117f713622f513570eefaef68bbf1a380f8c6"
+  },
+  "week10": {
+   "file": "evidence/week10-2026-11-17.md",
+   "url": "https://www.nfl.com/schedules/2026/REG10/",
+   "sha256": "154caddab43e3621374ee106d51e2bd5f65488192e156e3907175cb880e49ab9"
+  },
+  "week11": {
+   "file": "evidence/week11-2026-11-17.md",
+   "url": "https://www.nfl.com/schedules/2026/by-week/week-11",
+   "sha256": "413cac8633a174fcea91b8a0845b8306c78a76fb0b718e1d7b16ffbd1430333a"
+  },
+  "injuries": {
+   "file": "evidence/injuries-w10-2026-11-17.md",
+   "url": "https://www.nfl.com/injuries/",
+   "sha256": "b763f35572a75bf670f534a4163756c67d8a5cef9b9f51bdc5738dcc6b7b8899"
+  }
+ },
+ "standings": [
+  {
+   "conference": "AFC",
+   "club": "Buffalo Bills",
+   "nickname": "Bills",
+   "team_url": "https://www.nfl.com/teams/buffalo-bills/",
+   "code": "BUF",
+   "w": 8,
+   "l": 1,
+   "t": 0,
+   "pct": "0.889",
+   "pf": 287,
+   "pa": 199,
+   "net_pts": 88,
+   "home": "3 - 1 - 0",
+   "road": "5 - 0 - 0",
+   "streak": "3 - 0 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "New England Patriots",
+   "nickname": "Patriots",
+   "team_url": "https://www.nfl.com/teams/new-england-patriots/",
+   "code": "NE",
+   "w": 5,
+   "l": 5,
+   "t": 0,
+   "pct": "0.500",
+   "pf": 221,
+   "pa": 242,
+   "net_pts": -21,
+   "home": "3 - 1 - 0",
+   "road": "2 - 4 - 0",
+   "streak": "0 - 4 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "New York Jets",
+   "nickname": "Jets",
+   "team_url": "https://www.nfl.com/teams/new-york-jets/",
+   "code": "NYJ",
+   "w": 2,
+   "l": 8,
+   "t": 0,
+   "pct": "0.200",
+   "pf": 194,
+   "pa": 254,
+   "net_pts": -60,
+   "home": "1 - 4 - 0",
+   "road": "1 - 4 - 0",
+   "streak": "0 - 3 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Miami Dolphins",
+   "nickname": "Dolphins",
+   "team_url": "https://www.nfl.com/teams/miami-dolphins/",
+   "code": "MIA",
+   "w": 1,
+   "l": 8,
+   "t": 0,
+   "pct": "0.111",
+   "pf": 148,
+   "pa": 224,
+   "net_pts": -76,
+   "home": "0 - 4 - 0",
+   "road": "1 - 4 - 0",
+   "streak": "0 - 3 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Cincinnati Bengals",
+   "nickname": "Bengals",
+   "team_url": "https://www.nfl.com/teams/cincinnati-bengals/",
+   "code": "CIN",
+   "w": 7,
+   "l": 2,
+   "t": 0,
+   "pct": "0.778",
+   "pf": 278,
+   "pa": 193,
+   "net_pts": 85,
+   "home": "3 - 1 - 0",
+   "road": "4 - 1 - 0",
+   "streak": "2 - 0 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Pittsburgh Steelers",
+   "nickname": "Steelers",
+   "team_url": "https://www.nfl.com/teams/pittsburgh-steelers/",
+   "code": "PIT",
+   "w": 6,
+   "l": 3,
+   "t": 0,
+   "pct": "0.667",
+   "pf": 198,
+   "pa": 182,
+   "net_pts": 16,
+   "home": "4 - 0 - 0",
+   "road": "2 - 3 - 0",
+   "streak": "3 - 0 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Cleveland Browns",
+   "nickname": "Browns",
+   "team_url": "https://www.nfl.com/teams/cleveland-browns/",
+   "code": "CLE",
+   "w": 6,
+   "l": 4,
+   "t": 0,
+   "pct": "0.600",
+   "pf": 188,
+   "pa": 220,
+   "net_pts": -32,
+   "home": "4 - 0 - 0",
+   "road": "2 - 4 - 0",
+   "streak": "2 - 1 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Baltimore Ravens",
+   "nickname": "Ravens",
+   "team_url": "https://www.nfl.com/teams/baltimore-ravens/",
+   "code": "BAL",
+   "w": 4,
+   "l": 5,
+   "t": 0,
+   "pct": "0.444",
+   "pf": 189,
+   "pa": 236,
+   "net_pts": -47,
+   "home": "1 - 3 - 0",
+   "road": "3 - 2 - 0",
+   "streak": "2 - 1 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Jacksonville Jaguars",
+   "nickname": "Jaguars",
+   "team_url": "https://www.nfl.com/teams/jacksonville-jaguars/",
+   "code": "JAX",
+   "w": 7,
+   "l": 2,
+   "t": 0,
+   "pct": "0.778",
+   "pf": 269,
+   "pa": 144,
+   "net_pts": 125,
+   "home": "4 - 1 - 0",
+   "road": "3 - 1 - 0",
+   "streak": "1 - 0 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Houston Texans",
+   "nickname": "Texans",
+   "team_url": "https://www.nfl.com/teams/houston-texans/",
+   "code": "HOU",
+   "w": 3,
+   "l": 6,
+   "t": 0,
+   "pct": "0.333",
+   "pf": 233,
+   "pa": 219,
+   "net_pts": 14,
+   "home": "0 - 4 - 0",
+   "road": "3 - 2 - 0",
+   "streak": "0 - 2 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Indianapolis Colts",
+   "nickname": "Colts",
+   "team_url": "https://www.nfl.com/teams/indianapolis-colts/",
+   "code": "IND",
+   "w": 3,
+   "l": 7,
+   "t": 0,
+   "pct": "0.300",
+   "pf": 208,
+   "pa": 271,
+   "net_pts": -63,
+   "home": "2 - 3 - 0",
+   "road": "1 - 4 - 0",
+   "streak": "1 - 2 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Tennessee Titans",
+   "nickname": "Titans",
+   "team_url": "https://www.nfl.com/teams/tennessee-titans/",
+   "code": "TEN",
+   "w": 1,
+   "l": 8,
+   "t": 0,
+   "pct": "0.111",
+   "pf": 167,
+   "pa": 239,
+   "net_pts": -72,
+   "home": "0 - 5 - 0",
+   "road": "1 - 3 - 0",
+   "streak": "0 - 2 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Kansas City Chiefs",
+   "nickname": "Chiefs",
+   "team_url": "https://www.nfl.com/teams/kansas-city-chiefs/",
+   "code": "KC",
+   "w": 7,
+   "l": 2,
+   "t": 0,
+   "pct": "0.778",
+   "pf": 237,
+   "pa": 156,
+   "net_pts": 81,
+   "home": "4 - 0 - 0",
+   "road": "3 - 2 - 0",
+   "streak": "1 - 1 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Denver Broncos",
+   "nickname": "Broncos",
+   "team_url": "https://www.nfl.com/teams/denver-broncos/",
+   "code": "DEN",
+   "w": 7,
+   "l": 2,
+   "t": 0,
+   "pct": "0.778",
+   "pf": 198,
+   "pa": 186,
+   "net_pts": 12,
+   "home": "4 - 0 - 0",
+   "road": "3 - 2 - 0",
+   "streak": "4 - 1 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Las Vegas Raiders",
+   "nickname": "Raiders",
+   "team_url": "https://www.nfl.com/teams/las-vegas-raiders/",
+   "code": "LV",
+   "w": 4,
+   "l": 6,
+   "t": 0,
+   "pct": "0.400",
+   "pf": 251,
+   "pa": 289,
+   "net_pts": -38,
+   "home": "1 - 4 - 0",
+   "road": "3 - 2 - 0",
+   "streak": "1 - 3 - 0"
+  },
+  {
+   "conference": "AFC",
+   "club": "Los Angeles Chargers",
+   "nickname": "Chargers",
+   "team_url": "https://www.nfl.com/teams/los-angeles-chargers/",
+   "code": "LAC",
+   "w": 0,
+   "l": 8,
+   "t": 0,
+   "pct": "0.000",
+   "pf": 121,
+   "pa": 219,
+   "net_pts": -98,
+   "home": "0 - 4 - 0",
+   "road": "0 - 4 - 0",
+   "streak": "0 - 3 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "New York Giants",
+   "nickname": "Giants",
+   "team_url": "https://www.nfl.com/teams/new-york-giants/",
+   "code": "NYG",
+   "w": 5,
+   "l": 3,
+   "t": 1,
+   "pct": "0.611",
+   "pf": 203,
+   "pa": 196,
+   "net_pts": 7,
+   "home": "3 - 2 - 0",
+   "road": "2 - 1 - 1",
+   "streak": "2 - 0 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Dallas Cowboys",
+   "nickname": "Cowboys",
+   "team_url": "https://www.nfl.com/teams/dallas-cowboys/",
+   "code": "DAL",
+   "w": 4,
+   "l": 6,
+   "t": 0,
+   "pct": "0.400",
+   "pf": 286,
+   "pa": 282,
+   "net_pts": 4,
+   "home": "1 - 4 - 0",
+   "road": "3 - 2 - 0",
+   "streak": "2 - 1 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Washington Commanders",
+   "nickname": "Commanders",
+   "team_url": "https://www.nfl.com/teams/washington-commanders/",
+   "code": "WAS",
+   "w": 3,
+   "l": 5,
+   "t": 1,
+   "pct": "0.389",
+   "pf": 196,
+   "pa": 223,
+   "net_pts": -27,
+   "home": "2 - 2 - 1",
+   "road": "1 - 3 - 0",
+   "streak": "0 - 1 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Philadelphia Eagles",
+   "nickname": "Eagles",
+   "team_url": "https://www.nfl.com/teams/philadelphia-eagles/",
+   "code": "PHI",
+   "w": 2,
+   "l": 7,
+   "t": 0,
+   "pct": "0.222",
+   "pf": 148,
+   "pa": 221,
+   "net_pts": -73,
+   "home": "1 - 4 - 0",
+   "road": "1 - 3 - 0",
+   "streak": "1 - 1 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Detroit Lions",
+   "nickname": "Lions",
+   "team_url": "https://www.nfl.com/teams/detroit-lions/",
+   "code": "DET",
+   "w": 7,
+   "l": 2,
+   "t": 0,
+   "pct": "0.778",
+   "pf": 257,
+   "pa": 199,
+   "net_pts": 58,
+   "home": "5 - 0 - 0",
+   "road": "2 - 2 - 0",
+   "streak": "3 - 1 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Minnesota Vikings",
+   "nickname": "Vikings",
+   "team_url": "https://www.nfl.com/teams/minnesota-vikings/",
+   "code": "MIN",
+   "w": 7,
+   "l": 2,
+   "t": 0,
+   "pct": "0.778",
+   "pf": 176,
+   "pa": 126,
+   "net_pts": 50,
+   "home": "3 - 1 - 0",
+   "road": "4 - 1 - 0",
+   "streak": "2 - 1 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Chicago Bears",
+   "nickname": "Bears",
+   "team_url": "https://www.nfl.com/teams/chicago-bears/",
+   "code": "CHI",
+   "w": 7,
+   "l": 2,
+   "t": 0,
+   "pct": "0.778",
+   "pf": 241,
+   "pa": 184,
+   "net_pts": 57,
+   "home": "4 - 1 - 0",
+   "road": "3 - 1 - 0",
+   "streak": "2 - 0 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Green Bay Packers",
+   "nickname": "Packers",
+   "team_url": "https://www.nfl.com/teams/green-bay-packers/",
+   "code": "GB",
+   "w": 6,
+   "l": 4,
+   "t": 0,
+   "pct": "0.600",
+   "pf": 226,
+   "pa": 221,
+   "net_pts": 5,
+   "home": "3 - 2 - 0",
+   "road": "3 - 2 - 0",
+   "streak": "2 - 0 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Carolina Panthers",
+   "nickname": "Panthers",
+   "team_url": "https://www.nfl.com/teams/carolina-panthers/",
+   "code": "CAR",
+   "w": 4,
+   "l": 5,
+   "t": 0,
+   "pct": "0.444",
+   "pf": 219,
+   "pa": 236,
+   "net_pts": -17,
+   "home": "1 - 3 - 0",
+   "road": "3 - 2 - 0",
+   "streak": "0 - 2 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Tampa Bay Buccaneers",
+   "nickname": "Buccaneers",
+   "team_url": "https://www.nfl.com/teams/tampa-bay-buccaneers/",
+   "code": "TB",
+   "w": 3,
+   "l": 6,
+   "t": 0,
+   "pct": "0.333",
+   "pf": 202,
+   "pa": 178,
+   "net_pts": 24,
+   "home": "1 - 4 - 0",
+   "road": "2 - 2 - 0",
+   "streak": "0 - 3 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "New Orleans Saints",
+   "nickname": "Saints",
+   "team_url": "https://www.nfl.com/teams/new-orleans-saints/",
+   "code": "NO",
+   "w": 3,
+   "l": 6,
+   "t": 0,
+   "pct": "0.333",
+   "pf": 202,
+   "pa": 236,
+   "net_pts": -34,
+   "home": "1 - 5 - 0",
+   "road": "2 - 1 - 0",
+   "streak": "2 - 2 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Atlanta Falcons",
+   "nickname": "Falcons",
+   "team_url": "https://www.nfl.com/teams/atlanta-falcons/",
+   "code": "ATL",
+   "w": 3,
+   "l": 7,
+   "t": 0,
+   "pct": "0.300",
+   "pf": 201,
+   "pa": 258,
+   "net_pts": -57,
+   "home": "1 - 5 - 0",
+   "road": "2 - 2 - 0",
+   "streak": "0 - 4 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "San Francisco 49ers",
+   "nickname": "49ers",
+   "team_url": "https://www.nfl.com/teams/san-francisco-49ers/",
+   "code": "SF",
+   "w": 8,
+   "l": 1,
+   "t": 0,
+   "pct": "0.889",
+   "pf": 281,
+   "pa": 196,
+   "net_pts": 85,
+   "home": "5 - 0 - 0",
+   "road": "3 - 1 - 0",
+   "streak": "3 - 0 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Seattle Seahawks",
+   "nickname": "Seahawks",
+   "team_url": "https://www.nfl.com/teams/seattle-seahawks/",
+   "code": "SEA",
+   "w": 6,
+   "l": 4,
+   "t": 0,
+   "pct": "0.600",
+   "pf": 223,
+   "pa": 175,
+   "net_pts": 48,
+   "home": "4 - 2 - 0",
+   "road": "2 - 2 - 0",
+   "streak": "4 - 1 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Los Angeles Rams",
+   "nickname": "Rams",
+   "team_url": "https://www.nfl.com/teams/los-angeles-rams/",
+   "code": "LA",
+   "w": 6,
+   "l": 4,
+   "t": 0,
+   "pct": "0.600",
+   "pf": 248,
+   "pa": 187,
+   "net_pts": 61,
+   "home": "2 - 3 - 0",
+   "road": "4 - 1 - 0",
+   "streak": "2 - 2 - 0"
+  },
+  {
+   "conference": "NFC",
+   "club": "Arizona Cardinals",
+   "nickname": "Cardinals",
+   "team_url": "https://www.nfl.com/teams/arizona-cardinals/",
+   "code": "AZ",
+   "w": 3,
+   "l": 7,
+   "t": 0,
+   "pct": "0.300",
+   "pf": 184,
+   "pa": 289,
+   "net_pts": -105,
+   "home": "0 - 4 - 0",
+   "road": "3 - 3 - 0",
+   "streak": "1 - 1 - 0"
+  }
+ ],
+ "week10_finals": [
+  {
+   "fixture_id": "W10-01",
+   "away": "Commanders",
+   "away_score": 24,
+   "home": "Giants",
+   "home_score": 21,
+   "url": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+   "away_code": "WAS",
+   "home_code": "NYG"
+  },
+  {
+   "fixture_id": "W10-02",
+   "away": "Patriots",
+   "away_score": 10,
+   "home": "Lions",
+   "home_score": 35,
+   "url": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+   "away_code": "NE",
+   "home_code": "DET"
+  },
+  {
+   "fixture_id": "W10-03",
+   "away": "Chiefs",
+   "away_score": 35,
+   "home": "Falcons",
+   "home_score": 13,
+   "url": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+   "away_code": "KC",
+   "home_code": "ATL"
+  },
+  {
+   "fixture_id": "W10-04",
+   "away": "Texans",
+   "away_score": 24,
+   "home": "Browns",
+   "home_score": 27,
+   "url": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+   "away_code": "HOU",
+   "home_code": "CLE"
+  },
+  {
+   "fixture_id": "W10-05",
+   "away": "Vikings",
+   "away_score": 30,
+   "home": "Packers",
+   "home_score": 10,
+   "url": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+   "away_code": "MIN",
+   "home_code": "GB"
+  },
+  {
+   "fixture_id": "W10-06",
+   "away": "Dolphins",
+   "away_score": 22,
+   "home": "Colts",
+   "home_score": 24,
+   "url": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+   "away_code": "MIA",
+   "home_code": "IND"
+  },
+  {
+   "fixture_id": "W10-07",
+   "away": "Panthers",
+   "away_score": 20,
+   "home": "Saints",
+   "home_score": 17,
+   "url": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+   "away_code": "CAR",
+   "home_code": "NO"
+  },
+  {
+   "fixture_id": "W10-08",
+   "away": "Bills",
+   "away_score": 31,
+   "home": "Jets",
+   "home_score": 12,
+   "url": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+   "away_code": "BUF",
+   "home_code": "NYJ"
+  },
+  {
+   "fixture_id": "W10-09",
+   "away": "Jaguars",
+   "away_score": 40,
+   "home": "Titans",
+   "home_score": 23,
+   "url": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+   "away_code": "JAX",
+   "home_code": "TEN"
+  },
+  {
+   "fixture_id": "W10-10",
+   "away": "Rams",
+   "away_score": 34,
+   "home": "Cardinals",
+   "home_score": 6,
+   "url": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+   "away_code": "LA",
+   "home_code": "AZ"
+  },
+  {
+   "fixture_id": "W10-11",
+   "away": "Seahawks",
+   "away_score": 21,
+   "home": "Raiders",
+   "home_score": 13,
+   "url": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+   "away_code": "SEA",
+   "home_code": "LV"
+  },
+  {
+   "fixture_id": "W10-12",
+   "away": "49ers",
+   "away_score": 46,
+   "home": "Cowboys",
+   "home_score": 40,
+   "url": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+   "away_code": "SF",
+   "home_code": "DAL"
+  },
+  {
+   "fixture_id": "W10-13",
+   "away": "Steelers",
+   "away_score": 18,
+   "home": "Bengals",
+   "home_score": 38,
+   "url": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+   "away_code": "PIT",
+   "home_code": "CIN"
+  }
+ ],
+ "week10_pending": [
+  {
+   "fixture_id": "W10-14",
+   "away": "Chargers",
+   "home": "Ravens",
+   "detail": "Monday, November 16th, 8:15 PM, ESPN",
+   "url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+   "away_code": "LAC",
+   "home_code": "BAL",
+   "score": null
+  }
+ ],
+ "week11": {
+  "games": [
+   {
+    "away": "Colts",
+    "home": "Texans",
+    "detail": "Thursday, November 19th, 8:15 PM, PRIME",
+    "url": "https://www.nfl.com/games/colts-at-texans-2026-reg-11"
+   },
+   {
+    "away": "Dolphins",
+    "home": "Bills",
+    "detail": "Sunday, November 22nd, 1:00 PM, CBS",
+    "url": "https://www.nfl.com/games/dolphins-at-bills-2026-reg-11"
+   },
+   {
+    "away": "Ravens",
+    "home": "Panthers",
+    "detail": "Sunday, November 22nd, 1:00 PM, FOX",
+    "url": "https://www.nfl.com/games/ravens-at-panthers-2026-reg-11"
+   },
+   {
+    "away": "Saints",
+    "home": "Bears",
+    "detail": "Sunday, November 22nd, 1:00 PM, FOX",
+    "url": "https://www.nfl.com/games/saints-at-bears-2026-reg-11"
+   },
+   {
+    "away": "Titans",
+    "home": "Cowboys",
+    "detail": "Sunday, November 22nd, 1:00 PM, FOX",
+    "url": "https://www.nfl.com/games/titans-at-cowboys-2026-reg-11"
+   },
+   {
+    "away": "Buccaneers",
+    "home": "Lions",
+    "detail": "Sunday, November 22nd, 1:00 PM, FOX",
+    "url": "https://www.nfl.com/games/buccaneers-at-lions-2026-reg-11"
+   },
+   {
+    "away": "Cardinals",
+    "home": "Chiefs",
+    "detail": "Sunday, November 22nd, 1:00 PM, CBS",
+    "url": "https://www.nfl.com/games/cardinals-at-chiefs-2026-reg-11"
+   },
+   {
+    "away": "Steelers",
+    "home": "Eagles",
+    "detail": "Sunday, November 22nd, 1:00 PM, CBS",
+    "url": "https://www.nfl.com/games/steelers-at-eagles-2026-reg-11"
+   },
+   {
+    "away": "Jets",
+    "home": "Chargers",
+    "detail": "Sunday, November 22nd, 4:05 PM, FOX",
+    "url": "https://www.nfl.com/games/jets-at-chargers-2026-reg-11"
+   },
+   {
+    "away": "Jaguars",
+    "home": "Giants",
+    "detail": "Sunday, November 22nd, 4:25 PM, CBS",
+    "url": "https://www.nfl.com/games/jaguars-at-giants-2026-reg-11"
+   },
+   {
+    "away": "Raiders",
+    "home": "Broncos",
+    "detail": "Sunday, November 22nd, 4:25 PM, CBS",
+    "url": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11"
+   },
+   {
+    "away": "Vikings",
+    "home": "49ers",
+    "detail": "Sunday, November 22nd, 8:20 PM, NBC",
+    "url": "https://www.nfl.com/games/vikings-at-49ers-2026-reg-11"
+   },
+   {
+    "away": "Bengals",
+    "home": "Commanders",
+    "detail": "Monday, November 23rd, 8:15 PM, ESPN",
+    "url": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11"
+   }
+  ],
+  "byes": [
+   {
+    "code": "ATL",
+    "club": "Atlanta Falcons",
+    "record": "3-7"
+   },
+   {
+    "code": "CLE",
+    "club": "Cleveland Browns",
+    "record": "6-4"
+   },
+   {
+    "code": "GB",
+    "club": "Green Bay Packers",
+    "record": "6-4"
+   },
+   {
+    "code": "LA",
+    "club": "Los Angeles Rams",
+    "record": "6-4"
+   },
+   {
+    "code": "NE",
+    "club": "New England Patriots",
+    "record": "5-5"
+   },
+   {
+    "code": "SEA",
+    "club": "Seattle Seahawks",
+    "record": "6-4"
+   }
+  ]
+ },
+ "injury_tables": [
+  {
+   "team": "Commanders",
+   "rows": [
+    {
+     "player": "John Bates",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Treylon Burks",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jayden Daniels",
+     "position": "QB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Matt Gulbin",
+     "position": "C",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Chig Okonkwo",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Lucas Patrick",
+     "position": "C",
+     "injury": "Concussion",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Amik Robertson",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Shy Tuttle",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Colson Yankoff",
+     "position": "TE",
+     "injury": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    }
+   ],
+   "section": {
+    "day_time_tv": "THURSDAY, NOVEMBER 12TH",
+    "away_code": "WAS",
+    "away_club": "Commanders",
+    "away_record": "3-5-1",
+    "home_code": "NYG",
+    "home_club": "Giants",
+    "home_record": "5-3-1"
+   }
+  },
+  {
+   "team": "Giants",
+   "rows": [
+    {
+     "player": "Abdul Carter",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jermaine Eluemunor",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Malik Harrison",
+     "position": "LB",
+     "injury": "Groin",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Colton Hood",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Theo Johnson",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Charlie Jones",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "J.J. McCarthy",
+     "position": "QB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Darnell Mooney",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Malik Nabers",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Cam Skattebo",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Andrew Thomas",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "THURSDAY, NOVEMBER 12TH",
+    "away_code": "WAS",
+    "away_club": "Commanders",
+    "away_record": "3-5-1",
+    "home_code": "NYG",
+    "home_club": "Giants",
+    "home_record": "5-3-1"
+   }
+  },
+  {
+   "team": "Patriots",
+   "rows": [
+    {
+     "player": "Ben Brown",
+     "position": "C",
+     "injury": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "A.J. Brown",
+     "position": "WR",
+     "injury": "Ankle, Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Kevin Byard",
+     "position": "S",
+     "injury": "Chest",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Carlton Davis III",
+     "position": "CB",
+     "injury": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Reggie Gilliam",
+     "position": "FB",
+     "injury": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "TreVeyon Henderson",
+     "position": "RB",
+     "injury": "Illness",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Hunter Henry",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Cameron Latu",
+     "position": "TE",
+     "injury": "Back",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Drake Maye",
+     "position": "QB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Morgan Moses",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Walter Rouse",
+     "position": "T",
+     "injury": "Concussion",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Brenden Schooler",
+     "position": "S",
+     "injury": "Hamstring",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Rhamondre Stevenson",
+     "position": "RB",
+     "injury": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Greg Van Roten",
+     "position": "G",
+     "injury": "Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Charles Woods",
+     "position": "CB",
+     "injury": "Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "NE",
+    "away_club": "Patriots",
+    "away_record": "5-5",
+    "home_code": "DET",
+    "home_club": "Lions",
+    "home_record": "7-2"
+   }
+  },
+  {
+   "team": "Lions",
+   "rows": [
+    {
+     "player": "Brian Branch",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jared Goff",
+     "position": "QB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Kerby Joseph",
+     "position": "S",
+     "injury": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Cade Mays",
+     "position": "C",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "D.J. Reed",
+     "position": "CB",
+     "injury": "Hip",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jacob Saylors",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Amon-Ra St. Brown",
+     "position": "WR",
+     "injury": "Rib",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Sione Vaki",
+     "position": "RB",
+     "injury": "Ankle",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "DJ Wonnum",
+     "position": "DE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "NE",
+    "away_club": "Patriots",
+    "away_record": "5-5",
+    "home_code": "DET",
+    "home_club": "Lions",
+    "home_record": "7-2"
+   }
+  },
+  {
+   "team": "Chiefs",
+   "rows": [
+    {
+     "player": "Jeffrey Bassa",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Mansoor Delane",
+     "position": "CB",
+     "injury": "Shoulder",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Justin Fields",
+     "position": "QB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jaden Hicks",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Travis Kelce",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Patrick Mahomes",
+     "position": "QB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jaylon Moore",
+     "position": "T",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Omarr Norman-Lott",
+     "position": "DT",
+     "injury": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jaydn Ott",
+     "position": "RB",
+     "injury": "Hamstring",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Rashee Rice",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Kenneth Walker III",
+     "position": "RB",
+     "injury": "Groin",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Peter Woods",
+     "position": "DT",
+     "injury": "Neck",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Xavier Worthy",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "KC",
+    "away_club": "Chiefs",
+    "away_record": "7-2",
+    "home_code": "ATL",
+    "home_club": "Falcons",
+    "home_record": "3-7"
+   }
+  },
+  {
+   "team": "Falcons",
+   "rows": [
+    {
+     "player": "Zachariah Branch",
+     "position": "WR",
+     "injury": "Hamstring",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Kendal Daniels",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Divine Deablo",
+     "position": "LB",
+     "injury": "Forearm",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "Gervon Dexter Sr.",
+     "position": "DT",
+     "injury": "Illness",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Jake Matthews",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Liam McCullough",
+     "position": "LS",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "James Pearce Jr.",
+     "position": "DE",
+     "injury": "Back",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Za'Darius Smith",
+     "position": "DE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jawaan Taylor",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Cameron Thomas",
+     "position": "DE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Josh Woods",
+     "position": "LB",
+     "injury": "Ankle",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "KC",
+    "away_club": "Chiefs",
+    "away_record": "7-2",
+    "home_code": "ATL",
+    "home_club": "Falcons",
+    "home_record": "3-7"
+   }
+  },
+  {
+   "team": "Vikings",
+   "rows": [
+    {
+     "player": "Jordan Addison",
+     "position": "WR",
+     "injury": "Thumb",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Blake Cashman",
+     "position": "LB",
+     "injury": "Concussion",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Christian Darrisaw",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "T.J. Hockenson",
+     "position": "TE",
+     "injury": "Wrist, Chest",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Tyrion Ingram-Dawkins",
+     "position": "DT",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Theo Jackson",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jauan Jennings",
+     "position": "WR",
+     "injury": "Calf",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Josh Metellus",
+     "position": "S",
+     "injury": "Shoulder",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Kyler Murray",
+     "position": "QB",
+     "injury": "Hamstring",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Harrison Smith",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Kyle Van Noy",
+     "position": "LB",
+     "injury": "Calf",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Jay Ward",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Carson Wentz",
+     "position": "QB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "MIN",
+    "away_club": "Vikings",
+    "away_record": "7-2",
+    "home_code": "GB",
+    "home_club": "Packers",
+    "home_record": "6-4"
+   }
+  },
+  {
+   "team": "Packers",
+   "rows": [
+    {
+     "player": "Aaron Banks",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Chris Brooks",
+     "position": "RB",
+     "injury": "Ankle",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Javon Bullard",
+     "position": "S",
+     "injury": "Ankle, Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Zaire Franklin",
+     "position": "LB",
+     "injury": "Shin",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "Travis Glover",
+     "position": "G",
+     "injury": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Ty'Ron Hopper",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Josh Jacobs",
+     "position": "RB",
+     "injury": "Finger",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Xavier McKinney",
+     "position": "S",
+     "injury": "Foot",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Bo Melton",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Skyy Moore",
+     "position": "WR",
+     "injury": "Ankle",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Micah Parsons",
+     "position": "LB",
+     "injury": "Knee, Illness",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Sean Rhyan",
+     "position": "C",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Trey Smack",
+     "position": "K",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Lukas Van Ness",
+     "position": "LB",
+     "injury": "Back",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Josh Whyle",
+     "position": "TE",
+     "injury": "Concussion",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Savion Williams",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Kevin Zeitler",
+     "position": "G",
+     "injury": "Ankle, Triceps",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Questionable"
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "MIN",
+    "away_club": "Vikings",
+    "away_record": "7-2",
+    "home_code": "GB",
+    "home_club": "Packers",
+    "home_record": "6-4"
+   }
+  },
+  {
+   "team": "Jaguars",
+   "rows": [
+    {
+     "player": "Jessie Bates",
+     "position": "S",
+     "injury": "Not injury related - resting player",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Ezra Cleveland",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Branson Combs",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jordan Davis",
+     "position": "DT",
+     "injury": "Not injury related - resting player",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "BJ Green II",
+     "position": "DE",
+     "injury": "Forearm",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Robert Hainsey",
+     "position": "C",
+     "injury": "Concussion",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Antonio Johnson",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jakobi Meyers",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Chris Rodriguez Jr.",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Bhayshul Tuten",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Travon Walker",
+     "position": "DE",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "JAX",
+    "away_club": "Jaguars",
+    "away_record": "7-2",
+    "home_code": "TEN",
+    "home_club": "Titans",
+    "home_record": "1-8"
+   }
+  },
+  {
+   "team": "Titans",
+   "rows": [
+    {
+     "player": "Cody Barton",
+     "position": "LB",
+     "injury": "Concussion",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "John Franklin-Myers",
+     "position": "DE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Marcus Harris",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Anthony Hill Jr.",
+     "position": "LB",
+     "injury": "Neck",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jaylon Jones",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "JC Latham",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Tony Pollard",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Peter Skoronski",
+     "position": "G",
+     "injury": "Hamstring",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Tyjae Spears",
+     "position": "RB",
+     "injury": "Knee",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Carnell Tate",
+     "position": "WR",
+     "injury": "Shoulder",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Tommy Townsend",
+     "position": "P",
+     "injury": "Knee, Achilles",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Kevin Winston Jr.",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "JAX",
+    "away_club": "Jaguars",
+    "away_record": "7-2",
+    "home_code": "TEN",
+    "home_club": "Titans",
+    "home_record": "1-8"
+   }
+  },
+  {
+   "team": "Bills",
+   "rows": [
+    {
+     "player": "Alec Anderson",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Christian Benford",
+     "position": "CB",
+     "injury": "Wrist",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Terrel Bernard",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Spencer Brown",
+     "position": "T",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "Dion Dawkins",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Sam Franklin Jr.",
+     "position": "S",
+     "injury": "Shoulder",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Greg Gaines",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jordan Hancock",
+     "position": "CB",
+     "injury": "Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Dalton Kincaid",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Connor McGovern",
+     "position": "C",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Ed Oliver",
+     "position": "DE",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Ar'maj Reed-Adams",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "T.J. Sanders",
+     "position": "DE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Tyrell Shavers",
+     "position": "WR",
+     "injury": "Knee",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "BUF",
+    "away_club": "Bills",
+    "away_record": "8-1",
+    "home_code": "NYJ",
+    "home_club": "Jets",
+    "home_record": "2-8"
+   }
+  },
+  {
+   "team": "Jets",
+   "rows": [
+    {
+     "player": "Jarvis Brownlee Jr.",
+     "position": "CB",
+     "injury": "Illness",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Omar Cooper Jr.",
+     "position": "WR",
+     "injury": "Ankle",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Adonai Mitchell",
+     "position": "WR",
+     "injury": "Knee",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Joseph Ossai",
+     "position": "DE",
+     "injury": "Ankle",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "VJ Payne",
+     "position": "S",
+     "injury": "Knee",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Harrison Phillips",
+     "position": "DT",
+     "injury": "Ankle",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Trevin Wallace",
+     "position": "LB",
+     "injury": "Groin",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Garrett Wilson",
+     "position": "WR",
+     "injury": "Concussion",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Nahshon Wright",
+     "position": "CB",
+     "injury": "Back",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "BUF",
+    "away_club": "Bills",
+    "away_record": "8-1",
+    "home_code": "NYJ",
+    "home_club": "Jets",
+    "home_record": "2-8"
+   }
+  },
+  {
+   "team": "Dolphins",
+   "rows": [
+    {
+     "player": "Tucker Addington",
+     "position": "LS",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Kaytron Allen",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Darrell Baker Jr.",
+     "position": "CB",
+     "injury": "Knee",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Chris Bell",
+     "position": "WR",
+     "injury": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "Aaron Brewer",
+     "position": "C",
+     "injury": "Concussion",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Malik Herring",
+     "position": "DE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Will Kacmarek",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Michael Taaffe",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Dante Trader Jr.",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jared Wayne",
+     "position": "WR",
+     "injury": "Quadricep",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jaylen Wright",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "MIA",
+    "away_club": "Dolphins",
+    "away_record": "1-8",
+    "home_code": "IND",
+    "home_club": "Colts",
+    "home_record": "3-7"
+   }
+  },
+  {
+   "team": "Colts",
+   "rows": [
+    {
+     "player": "Mo Alie-Cox",
+     "position": "TE",
+     "injury": "Groin",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "CJ Allen",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jaylon Carlies",
+     "position": "LB",
+     "injury": "Neck",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Akeem Davis-Gaither",
+     "position": "LB",
+     "injury": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "A.J. Haulcy",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Arden Key",
+     "position": "DE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Will Mallory",
+     "position": "TE",
+     "injury": "Hamstring",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Luke Rhodes",
+     "position": "LS",
+     "injury": "Hamstring",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Grover Stewart",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jonathan Taylor",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jerry Tillery",
+     "position": "DT",
+     "injury": "Calf",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jalen Travis",
+     "position": "T",
+     "injury": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Justin Walley",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Charvarius Ward",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "MIA",
+    "away_club": "Dolphins",
+    "away_record": "1-8",
+    "home_code": "IND",
+    "home_club": "Colts",
+    "home_record": "3-7"
+   }
+  },
+  {
+   "team": "Panthers",
+   "rows": [
+    {
+     "player": "Jonathon Brooks",
+     "position": "RB",
+     "injury": "Groin",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "Brady Christensen",
+     "position": "G",
+     "injury": "Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Trevor Etienne",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Chuba Hubbard",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Lee Hunter",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Mike Jackson",
+     "position": "CB",
+     "injury": "Groin",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "Will Lee III",
+     "position": "CB",
+     "injury": "Hamstring",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Xavier Legette",
+     "position": "WR",
+     "injury": "Knee",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Damien Lewis",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Bobby Okereke",
+     "position": "LB",
+     "injury": "Foot",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jaelan Phillips",
+     "position": "LB",
+     "injury": "Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Torricelli Simpkins III",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "CAR",
+    "away_club": "Panthers",
+    "away_record": "4-5",
+    "home_code": "NO",
+    "home_club": "Saints",
+    "home_record": "3-6"
+   }
+  },
+  {
+   "team": "Saints",
+   "rows": [
+    {
+     "player": "Kelvin Banks Jr.",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "CJ Donaldson",
+     "position": "RB",
+     "injury": "Shoulder",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "David Edwards",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Martin Emerson",
+     "position": "CB",
+     "injury": "Shin",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Travis Etienne",
+     "position": "RB",
+     "injury": "Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Noah Fant",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Taliese Fuaga",
+     "position": "T",
+     "injury": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Alvin Kamara",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Erik McCoy",
+     "position": "C",
+     "injury": "Biceps",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Christen Miller",
+     "position": "DT",
+     "injury": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Asim Richards",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Quincy Riley",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "CAR",
+    "away_club": "Panthers",
+    "away_record": "4-5",
+    "home_code": "NO",
+    "home_club": "Saints",
+    "home_record": "3-6"
+   }
+  },
+  {
+   "team": "Texans",
+   "rows": [
+    {
+     "player": "Azeez Al-Shaair",
+     "position": "LB",
+     "injury": "Groin, Not injury related - personal matter",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Will Anderson Jr.",
+     "position": "DE",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Reed Blankenship",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Trent Brown",
+     "position": "T",
+     "injury": "Wrist, Illness",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Tank Dell",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Blake Fisher",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Marvin Harrison Jr.",
+     "position": "WR",
+     "injury": "Hamstring",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jacob Hummel",
+     "position": "LB",
+     "injury": "Groin",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Danielle Hunter",
+     "position": "DE",
+     "injury": "Hamstring",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Brevin Jordan",
+     "position": "TE",
+     "injury": "Finger, Foot",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Woody Marks",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "David Montgomery",
+     "position": "RB",
+     "injury": "Groin",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Keylan Rutledge",
+     "position": "G",
+     "injury": "Neck, Shoulder",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jaylin Smith",
+     "position": "CB",
+     "injury": "Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Wyatt Teller",
+     "position": "G",
+     "injury": "Illness, Back",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Tommy Togiai",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "HOU",
+    "away_club": "Texans",
+    "away_record": "3-6",
+    "home_code": "CLE",
+    "home_club": "Browns",
+    "home_record": "6-4"
+   }
+  },
+  {
+   "team": "Browns",
+   "rows": [
+    {
+     "player": "Austin Barber",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Denzel Boston",
+     "position": "WR",
+     "injury": "Toe",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Michael Burton",
+     "position": "FB",
+     "injury": "Calf",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Maliek Collins",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Harold Fannin Jr.",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Ronnie Hickman Jr.",
+     "position": "S",
+     "injury": "Concussion",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Tytus Howard",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Elgton Jenkins",
+     "position": "C",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Donovan McMillon",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Carson Schwesinger",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Denzel Ward",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Quincy Williams",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "HOU",
+    "away_club": "Texans",
+    "away_record": "3-6",
+    "home_code": "CLE",
+    "home_club": "Browns",
+    "home_record": "6-4"
+   }
+  },
+  {
+   "team": "Rams",
+   "rows": [
+    {
+     "player": "Davis Allen",
+     "position": "TE",
+     "injury": "Oblique",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Steve Avila",
+     "position": "G",
+     "injury": "Hamstring",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Joe Cardona",
+     "position": "LS",
+     "injury": "Ankle",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Kam Curl",
+     "position": "S",
+     "injury": "Toe",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Aaron Donald",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Terrance Ferguson",
+     "position": "TE",
+     "injury": "Ankle, Hamstring",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Braden Fiske",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Myles Garrett",
+     "position": "LB",
+     "injury": "Knee, Not injury related - resting player",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Tyler Higbee",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Trent McDuffie",
+     "position": "CB",
+     "injury": "Back",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Puka Nacua",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Colby Parkinson",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Matthew Stafford",
+     "position": "QB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Byron Young",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "LAR",
+    "away_club": "Rams",
+    "away_record": "6-4",
+    "home_code": "AZ",
+    "home_club": "Cardinals",
+    "home_record": "3-7"
+   }
+  },
+  {
+   "team": "Cardinals",
+   "rows": [
+    {
+     "player": "Budda Baker",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Zachary Carter",
+     "position": "DT",
+     "injury": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Hjalte Froholdt",
+     "position": "C",
+     "injury": "Concussion",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jon Gaines II",
+     "position": "G",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Bam Knight",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Hunter Long",
+     "position": "TE",
+     "injury": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Roy Lopez",
+     "position": "DT",
+     "injury": "Toe, Ankle",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Max Melton",
+     "position": "CB",
+     "injury": "Knee, Hand",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Darius Robinson",
+     "position": "DT",
+     "injury": "Wrist",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Isaac Seumalo",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Dante Stills",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Josh Sweat",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jayden Williams",
+     "position": "T",
+     "injury": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Mack Wilson",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Andrew Wingard",
+     "position": "S",
+     "injury": "Groin",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Questionable"
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "LAR",
+    "away_club": "Rams",
+    "away_record": "6-4",
+    "home_code": "AZ",
+    "home_club": "Cardinals",
+    "home_record": "3-7"
+   }
+  },
+  {
+   "team": "Seahawks",
+   "rows": [
+    {
+     "player": "AJ Barner",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Anthony Bradford",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Charles Cross",
+     "position": "T",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Sam Darnold",
+     "position": "QB",
+     "injury": "Ribs, Quadricep",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Derick Hall",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Drew Lock",
+     "position": "QB",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Quenton Nelson",
+     "position": "G",
+     "injury": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Uchenna Nwosu",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Patrick O'Connell",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Connor O'Toole",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Brandon Pili",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jarran Reed",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Rashid Shaheed",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jaxon Smith-Njigba",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Leonard Williams",
+     "position": "DT",
+     "injury": "Stinger",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "SEA",
+    "away_club": "Seahawks",
+    "away_record": "6-4",
+    "home_code": "LV",
+    "home_club": "Raiders",
+    "home_record": "4-6"
+   }
+  },
+  {
+   "team": "Raiders",
+   "rows": [
+    {
+     "player": "Thomas Booker",
+     "position": "DT",
+     "injury": "Ankle",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Foley Fatukasi",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Ian Thomas",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Dont'e Thornton Jr.",
+     "position": "WR",
+     "injury": "Back",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Trey Zuhn III",
+     "position": "C",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "SEA",
+    "away_club": "Seahawks",
+    "away_record": "6-4",
+    "home_code": "LV",
+    "home_club": "Raiders",
+    "home_record": "4-6"
+   }
+  },
+  {
+   "team": "49ers",
+   "rows": [
+    {
+     "player": "Mike Evans",
+     "position": "WR",
+     "injury": "Achilles",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Renardo Green",
+     "position": "CB",
+     "injury": "Back",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Dre Greenlaw",
+     "position": "LB",
+     "injury": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Nate Hobbs",
+     "position": "CB",
+     "injury": "Groin",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Deommodore Lenoir",
+     "position": "CB",
+     "injury": "Foot",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Christian McCaffrey",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Siran Neal",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Demarcus Robinson",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Deebo Samuel Sr.",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Upton Stout",
+     "position": "CB",
+     "injury": "Shoulder, Neck",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "C.J. West",
+     "position": "DT",
+     "injury": "Knee",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Trent Williams",
+     "position": "T",
+     "injury": "Shoulder",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Questionable"
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "SF",
+    "away_club": "49ers",
+    "away_record": "8-1",
+    "home_code": "DAL",
+    "home_club": "Cowboys",
+    "home_record": "4-6"
+   }
+  },
+  {
+   "team": "Cowboys",
+   "rows": [
+    {
+     "player": "DaRon Bland",
+     "position": "CB",
+     "injury": "Ankle",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Jonathan Bullard",
+     "position": "DT",
+     "injury": "Calf",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Alijah Clark",
+     "position": "S",
+     "injury": "Illness",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Donovan Ezeiruaku",
+     "position": "LB",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jake Ferguson",
+     "position": "TE",
+     "injury": "Knee, Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Tyler Goodson",
+     "position": "RB",
+     "injury": "Ankle, Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Malik Hooker",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Marist Liufau",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "P.J. Locke",
+     "position": "S",
+     "injury": "Concussion",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Von Miller",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jonathan Mingo",
+     "position": "WR",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Devin Moore",
+     "position": "CB",
+     "injury": "Hip",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "DeMarvion Overshown",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "George Pickens",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Joey Porter Jr.",
+     "position": "CB",
+     "injury": "Ankle, Foot",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Luke Schoonmaker",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Brevyn Spann-Ford",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Juanyeh Thomas",
+     "position": "S",
+     "injury": "Hamstring",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "KaVontae Turpin",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "SF",
+    "away_club": "49ers",
+    "away_record": "8-1",
+    "home_code": "DAL",
+    "home_club": "Cowboys",
+    "home_record": "4-6"
+   }
+  },
+  {
+   "team": "Steelers",
+   "rows": [
+    {
+     "player": "Brandin Echols",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "DeShon Elliott",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Derrick Harmon",
+     "position": "DT",
+     "injury": "Foot",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Cameron Heyward",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Ben Skowronek",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Doneiko Slaughter",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Darnell Washington",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "T.J. Watt",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "PIT",
+    "away_club": "Steelers",
+    "away_record": "6-3",
+    "home_code": "CIN",
+    "home_club": "Bengals",
+    "home_record": "7-2"
+   }
+  },
+  {
+   "team": "Bengals",
+   "rows": [
+    {
+     "player": "Jonathan Allen",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jalen Davis",
+     "position": "CB",
+     "injury": "Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "Kyle Dugger",
+     "position": "S",
+     "injury": "Quadricep",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Dylan Fairchild",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "B.J. Hill",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Andrei Iosivas",
+     "position": "WR",
+     "injury": "Thumb",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "Dexter Lawrence",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Brian Parker II",
+     "position": "G",
+     "injury": "Knee",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "DJ Turner II",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "SUNDAY, NOVEMBER 15TH",
+    "away_code": "PIT",
+    "away_club": "Steelers",
+    "away_record": "6-3",
+    "home_code": "CIN",
+    "home_club": "Bengals",
+    "home_record": "7-2"
+   }
+  },
+  {
+   "team": "Chargers",
+   "rows": [
+    {
+     "player": "Kayode Awosika",
+     "position": "G",
+     "injury": "Fibula",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Bud Dupree",
+     "position": "DE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Justin Eboigbe",
+     "position": "DE",
+     "injury": "Ankle",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Alex Harkey",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Tre Harris",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Cam Hart",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Daiyan Henley",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Deane Leonard",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Khalil Mack",
+     "position": "LB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Ladd McConkey",
+     "position": "WR",
+     "injury": "Back",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Keaton Mitchell",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "David Njoku",
+     "position": "TE",
+     "injury": "Fibula",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Denzel Perryman",
+     "position": "LB",
+     "injury": "Pectoral",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Trey Pipkins",
+     "position": "T",
+     "injury": "Not injury related - personal matter, Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Rodney Shelley",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Branson Taylor",
+     "position": "G",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Brenen Thompson",
+     "position": "WR",
+     "injury": "Hamstring",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Doubtful"
+    },
+    {
+     "player": "Isas Waxter",
+     "position": "CB",
+     "injury": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Kendall Williamson",
+     "position": "S",
+     "injury": "Calf",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    }
+   ],
+   "section": {
+    "day_time_tv": "MONDAY, NOVEMBER 16TH",
+    "away_code": "LAC",
+    "away_club": "Chargers",
+    "away_record": "0-8",
+    "home_code": "BAL",
+    "home_club": "Ravens",
+    "home_record": "4-5"
+   }
+  },
+  {
+   "team": "Ravens",
+   "rows": [
+    {
+     "player": "Rasheen Ali",
+     "position": "RB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Rashod Bateman",
+     "position": "WR",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Calais Campbell",
+     "position": "DT",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Kyle Hamilton",
+     "position": "S",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jaylinn Hawkins",
+     "position": "S",
+     "injury": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Matthew Hibner",
+     "position": "TE",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Olaivavega Ioane",
+     "position": "G",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Adam Randall",
+     "position": "RB",
+     "injury": "Neck, Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Ronnie Stanley",
+     "position": "T",
+     "injury": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Nate Wiggins",
+     "position": "CB",
+     "injury": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "section": {
+    "day_time_tv": "MONDAY, NOVEMBER 16TH",
+    "away_code": "LAC",
+    "away_club": "Chargers",
+    "away_record": "0-8",
+    "home_code": "BAL",
+    "home_club": "Ravens",
+    "home_record": "4-5"
+   }
+  }
+ ],
+ "injury_totals": {
+  "tables": 28,
+  "rows": 347,
+  "with_game_status": 171,
+  "out": 70,
+  "doubtful": 11,
+  "questionable": 90
+ }
+}

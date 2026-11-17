@@ -2717,6 +2717,66 @@
   "chunks_read": "1 of 8"
  },
  {
+  "id": "E7EF-STANDINGS-1117",
+  "publisher": "NFL.com (National Football League)",
+  "title": "NFL standings — all 32 clubs after Week 10 Sunday",
+  "url": "https://www.nfl.com/standings/",
+  "kind": "standings",
+  "authority": "Official league website",
+  "scope": "32 club rows read 2026-11-17T00:45Z (19:45 ET Nov 16): W/L/T/PCT/PF/PA/NET PTS/home/road/streak for every club; BAL 4-5 and LAC 0-8 are pre-MNF records.",
+  "checked_on": "2026-11-17",
+  "access": "Arena fetch_page rendered text (2 chunks); direct HTTPS to nfl.com returns curl 000 in this sandbox. Transcript retained with SHA-256 at nfl-readiness-e7ef/evidence/standings-2026-11-17.md.",
+  "status": "Verified"
+ },
+ {
+  "id": "E7EF-SCHED-REG10-1117",
+  "publisher": "NFL.com (National Football League)",
+  "title": "NFL 2026 REG10 schedule page — 13 finals plus pre-kickoff Monday game",
+  "url": "https://www.nfl.com/schedules/2026/REG10/",
+  "kind": "schedule",
+  "authority": "Official league website",
+  "scope": "Week 10 slate read 2026-11-17T00:45Z: 13 games FINAL with verbatim score lines, LAC@BAL listed pre-kickoff with no score, four byes CHI/DEN/PHI/TB.",
+  "checked_on": "2026-11-17",
+  "access": "Arena fetch_page rendered text (2 chunks); transcript retained with SHA-256 at nfl-readiness-e7ef/evidence/week10-2026-11-17.md.",
+  "status": "Verified"
+ },
+ {
+  "id": "E7EF-SCHED-REG11-1117",
+  "publisher": "NFL.com (National Football League)",
+  "title": "NFL 2026 Week 11 schedule page — 13 fixtures and 6 byes",
+  "url": "https://www.nfl.com/schedules/2026/by-week/week-11",
+  "kind": "schedule",
+  "authority": "Official league website",
+  "scope": "Week 11 slate read 2026-11-17T00:45Z: 13 pre-kickoff fixtures with date/kickoff/TV, Mexico City flag on MIN@SF, byes ATL/CLE/GB/LAR/NE/SEA, plus the league's flexible-scheduling notice for Weeks 16-18.",
+  "checked_on": "2026-11-17",
+  "access": "Arena fetch_page rendered text (3 chunks); transcript retained with SHA-256 at nfl-readiness-e7ef/evidence/week11-2026-11-17.md.",
+  "status": "Verified"
+ },
+ {
+  "id": "E7EF-INJ-W10-1117",
+  "publisher": "NFL.com (National Football League)",
+  "title": "Official NFL injury report, Week 10 — 28 team tables, 347 rows",
+  "url": "https://www.nfl.com/injuries/",
+  "kind": "injury report",
+  "authority": "Official league website",
+  "scope": "Week 10 report read 2026-11-17T00:45Z: every reported player with position, injury text, practice status and game status as printed; covers the 28 clubs that played (four byes absent); Lions Joseph/Mays/Reed now Out.",
+  "checked_on": "2026-11-17",
+  "access": "Arena fetch_page rendered text (8 chunks); transcript retained with SHA-256 at nfl-readiness-e7ef/evidence/injuries-w10-2026-11-17.md.",
+  "status": "Verified"
+ },
+ {
+  "id": "E7EF-NEWS-1117",
+  "publisher": "NFL.com (National Football League)",
+  "title": "NFL.com news module headlines carried on the Week 10 injury-report page",
+  "url": "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-saturday-nov-14",
+  "kind": "news",
+  "authority": "Official league website",
+  "scope": "Headlines read on the report page 2026-11-17T00:45Z and used only as announced-starter/reserve evidence: Henderson IR placement, Willis IR placement, Darnold ruled out / Lock to start, Lamar Jackson 6-10 weeks.",
+  "checked_on": "2026-11-17",
+  "access": "Headlines transcribed verbatim with their links from the report page's news module; each article page itself was not fetched this session.",
+  "status": "Content checked"
+ },
+ {
   "id": "B77-NFL-RESERVE",
   "publisher": "NFL.com",
   "title": "NFL.com reserve list, November 2026",
