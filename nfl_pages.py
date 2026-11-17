@@ -20,6 +20,8 @@ SUB_SUGGESTIONS = json.loads((ROOT / "research/nfl-suggestions.json").read_text(
 SOURCES = {s["id"]: s for s in json.loads((ROOT / "research/sources.json").read_text(encoding="utf-8"))}
 # A-RR17: the origination section's own page count, kept next to the pages it counts.
 ORIGINATION_PAGES = 13
+# A-RR18: the badge on the landing page counts open items, not total items.
+NFL_OPEN_FLAGS = sum(1 for f in FLAGS["flags"] if f["status"] == "Needs review")
 
 
 def esc(value):
@@ -616,7 +618,7 @@ def nfl_overview():
         ('Verified rows here', NFL['verified_rows']['total'], 'Plus 216 and 210 in the two labs', 'data'),
         ('Originated games', len(NFL['games']), 'Week 10, model only', 'lab'),
         ('Qualified strategies', 0, 'All eight blocked', 'validation'),
-        ('Open review items', len(FLAGS['flags']), 'All published', 'review'),
+        ('Open review items', f'{NFL_OPEN_FLAGS} of {len(FLAGS["flags"])}', 'All published for review', 'review'),
     ])
     body += ('<section class="hero-panel"><div><div class="eyebrow">ORIGINATE, THEN VERIFY</div>'
              '<h2>Own the number.<br>Show your work.</h2>'
@@ -708,6 +710,98 @@ def nfl_overview():
              "state": "Blocked", "kind": "warn", "source_ids": ["NFL-TERMS-LEGAL", "REPO"]},
         ],
         note='Each row is either a re-derived calculation or an explicit statement of a limit.'))
+    readiness = [
+        {'req': 'Official provenance and receipts for every number', 'gate': 'G01',
+         'clears': 'Every row carries an NFL.com URL and a check date',
+         'current': '66 verified rows: 32 standings, 20 injury rows, 14 fixtures',
+         'state': 'Clear', 'source_ids': ['NFL-STANDINGS', 'NFL-INJ-W10', 'NFL-SCHED-W10', 'REPO']},
+        {'req': 'Pre-kickoff information only, no lookahead', 'gate': 'G02',
+         'clears': 'Features frozen before kickoff for every line',
+         'current': 'Originated lines pass; probability calibration FAILs (scores against the same snapshot)',
+         'state': 'Blocked', 'source_ids': ['REPO', 'NFL-SCHED-W10']},
+        {'req': 'Coverage and statistical power', 'gate': 'G03',
+         'clears': '500 settled selections, 200 distinct games, 60 dates',
+         'current': '0 settled selections; 136 captured results (retrospective); 14 originated games',
+         'state': 'Blocked', 'source_ids': ['REPO', 'NFL-STANDINGS']},
+        {'req': 'Forecast quality versus a frozen benchmark', 'gate': 'G04',
+         'clears': 'Sequential, multi-season out-of-sample evaluation',
+         'current': 'PARTIAL: Brier vs a flat 0.500 reference exists for the 32-club record only',
+         'state': 'Partial', 'source_ids': ['REPO', 'NFL-STANDINGS', 'PYTH-NFL']},
+        {'req': 'Joint leg dependence for parlays and prop combos', 'gate': 'G05',
+         'clears': 'Aligned threshold-hit observations at the offered line, with n',
+         'current': '0 joint estimates; 10 team-level cross-sectional pairs only (a different quantity)',
+         'state': 'Blocked', 'source_ids': ['REPO', 'NFL-STANDINGS']},
+        {'req': 'Executable economics: quote, hold, settlement rules', 'gate': 'G06',
+         'clears': 'A captured, actually available operator quote with published void/push rules',
+         'current': '0 prices retrieved; no NFL market quote exists in the record',
+         'state': 'Blocked', 'source_ids': ['REPO', 'NFL-TERMS-LEGAL']},
+        {'req': 'Uncertainty intervals and robustness sweeps', 'gate': 'G07',
+         'clears': 'Intervals on every assumed constant and a published sensitivity sweep',
+         'current': 'No interval published; the 2.0-point home adjustment is an assumption, not a sourced value',
+         'state': 'Blocked', 'source_ids': ['REPO']},
+        {'req': 'Pre-registered trials and multiple-testing control', 'gate': 'G08',
+         'clears': 'A frozen trial family declared before results are seen',
+         'current': '0 pre-registered families; 10 correlations are Holm-adjusted but labelled exploratory',
+         'state': 'Blocked', 'source_ids': ['REPO', 'NFL-STANDINGS']},
+        {'req': 'Forward shadow ledger before any live use', 'gate': 'G09',
+         'clears': 'A shadow record in a frozen common future window',
+         'current': '0 live entries; shadow ledger is specified but empty',
+         'state': 'Blocked', 'source_ids': ['REPO']},
+        {'req': 'Reproducibility and source-use rights', 'gate': 'G10',
+         'clears': 'A rights decision confirming non-commercial, in-scope publication',
+         'current': 'Reproducibility PASS (byte-identical rebuilds); rights OPEN — NFL.com §1.3 restricts systematic retrieval',
+         'state': 'Open', 'source_ids': ['REPO', 'NFL-TERMS-LEGAL']},
+        {'req': 'Starters identified and replacements named, offence and defence', 'gate': 'M02',
+         'clears': 'Official depth chart joined to inactives/Game Books, dated and hashed',
+         'current': '0 starters identified; the NFL.com depth path returned a 404',
+         'state': 'Blocked', 'source_ids': ['REPO', 'NFL-INJ-W10']},
+        {'req': 'Playing time: snaps, targets and carries per player', 'gate': 'M03',
+         'clears': 'Official snap-count evidence per player',
+         'current': 'Not retrieved; every cell is blank and flagged',
+         'state': 'Blocked', 'source_ids': ['REPO']},
+        {'req': 'Blank game status does not mean available', 'gate': 'M09',
+         'clears': 'Designation-to-play rates with confidence intervals',
+         'current': 'Undocumented on the retrieved page; blank everywhere it appears',
+         'state': 'Blocked', 'source_ids': ['REPO', 'NFL-INJURY-POLICY', 'NFL-INJ-W10']},
+        {'req': 'Home-field value sourced, not assumed', 'gate': 'M10',
+         'clears': 'An official or multi-season sourced home-field range',
+         'current': '2.0 points assumed for all 14 games; flagged, not hidden',
+         'state': 'Blocked', 'source_ids': ['REPO']},
+        {'req': 'Settlement rules: pushes, voids and overtime', 'gate': 'M06',
+         'clears': 'Operator rule documented per bet type before scoring',
+         'current': 'Documented for other sports; nothing confirmed for NFL',
+         'state': 'Blocked', 'source_ids': ['REPO']},
+        {'req': 'Publication rights for compiled NFL.com data', 'gate': 'M07',
+         'clears': 'A rights determination covering this snapshot and its reuse',
+         'current': 'Restricted · open; no dataset or redistribution release',
+         'state': 'Open', 'source_ids': ['REPO', 'NFL-TERMS-LEGAL']},
+        {'req': 'Venue of every fixture transcribed from the game centre', 'gate': '—',
+         'clears': 'A venue column sourced to the official game centre page',
+         'current': 'Not retrieved; blank and flagged',
+         'state': 'Blocked', 'source_ids': ['REPO', 'NFL-SCHED-W10']},
+        {'req': "League's dated schedule announcement beside the live schedule", 'gate': '—',
+         'clears': 'The dated announcement published adjacent to the live page',
+         'current': 'Not published; blank and flagged',
+         'state': 'Blocked', 'source_ids': ['REPO', 'NFL-SCHED-W10']},
+        {'req': 'Official Game Books for starters and game-day status', 'gate': '—',
+         'clears': 'Game Book evidence used; depth rank never inferred',
+         'current': 'Not used; no starter or snap value is inferred anywhere',
+         'state': 'Blocked', 'source_ids': ['REPO', 'NFL-INJ-W10']},
+        {'req': 'Roster/IR sweep across all 32 clubs before trusting a model', 'gate': '—',
+         'clears': 'A completed 32-club roster and injured-reserve sweep',
+         'current': 'Not run; treated as a blocking precondition, not evidence',
+         'state': 'Blocked', 'source_ids': ['REPO']},
+    ]
+    body += section('Decision readiness: one row per requirement', table(
+        'decision-readiness', 'Decision-readiness table',
+        [('Requirement', 'req'), ('Gate', 'gate'), ('Clears when', 'clears'),
+         ('Now', 'current'), ('State', lambda r: badge(r['state'],
+             'good' if r['state'] == 'Clear' else ('neutral' if r['state'] == 'Open' else 'warn')))],
+        readiness,
+        note='“Now” figures come from this repository’s own registers and saved snapshots, not from estimates. '
+             'Rows marked Blocked or Open are preconditions: nothing ranked, priced or rewarded passes them. '
+             'Gate IDs are the project’s own validation gates (G) and missing-information items (M); “—” means '
+             'no project gate has been defined for that requirement yet — which is itself a gap.'))
     body += '<p class="source-line">' + refs({"source_ids": ["NFL-STANDINGS", "NFL-INJ-W10", "NFL-SCHED-W10",
                                                               "NFL-INJURY-POLICY", "NFL-TERMS-LEGAL", "PYTH-NFL"]}) + '</p>'
     return body
