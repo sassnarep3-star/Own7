@@ -3432,6 +3432,16 @@ Adding this desk's tracked files changes one count in another desk's generated o
 - L1-L5 status: **done**. L6 (PR, merge, Pages verification, record): PR #96 merged 2026-11-18T07:13:34Z; CI on the merged head `3c70944` green on both jobs (push and pull_request runs `44255182862`, `44255189172`), including the WCAG browser job; Pages build for `5799028` success (run `44257209443`).
 - The follow-up fix is delivered in a second, small PR; its number is recorded in the next line.
 
+### Completion record — session-arena-3e6166df-own7 (2026-11-18)
+
+- **PR:** https://github.com/sassnarep3-star/Own7/pull/97 — **merged** into `main` as `f338bea` (merge commit, 2026-11-18 08:02Z).
+- **CI on the merged head `ac007af`:** research-static job pass (80 commands, including every `--check` reproduction); browser job pass (desktop, mobile and accessibility).
+- **Pages deploy:** `pages-build-deployment` for `f338bea` completed with success. Live check (fetched 2026-11-18): https://sassnarep3-star.github.io/Own7/nfl-w11-injuries-3e61/site/injuries.html renders the 26 printed Week 11 rows, the official-page links, and the blank cells as blank.
+- **Merges with main during this session:** three rounds (PRs #87, #92–#94, #96, #100, #95). Union merges in shared files; generated outputs taken from main and regenerated; no other session's work discarded.
+- **Register:** DR-61, DR-64, DR-68 **withdrawn** back to Open (see the correction above). DR-54 gate and artifact updated. Register on main: Implemented 30, Partial 23, Open 11, Blocked 4, Rejected 2.
+- **Open cross-scope item for the `nfl-integration-c815` owner:** the DR-68 quotation "the restraining line for a kickoff" must read "the restraining line for the kickoff" (Rule 6-1-2 in the capture). Also: the registered `NFL-RULES-2026` sha256 is for the markdown capture, not the PDF bytes.
+- **Not done, and not claimed:** no price, odds, ROI, CLV or stake; no 32-club roster/IR sweep; no designation-reliability sample; no depth-chart source route. DR-11, DR-13, DR-27, DR-28, DR-39, DR-44, DR-56, DR-70 remain Open; DR-18, DR-29, DR-54, DR-66 remain Blocked.
+- **Flagged for review (non-blocking, on the desk's Flagged page):** W11-F01 to W11-F07.
 ### R6 done — session-arena-9ef12c81-own7 (recorded 2026-11-18)
 
 | Item | Result |
