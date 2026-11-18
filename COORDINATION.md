@@ -2725,3 +2725,14 @@ both manifest contributions; `COORDINATION.md` unioned. The c815 desk's files we
 Standing constraints honoured: no price, ROI, CLV, stake, wager or reward produced anywhere;
 no value inferred (blanks stay blank); every table row carries a registered official source link;
 single dated reads only (no scheduled capture; DR-29/DR-54 terms gate respected).
+
+### Handoff note — session-arena-03dcea07-own7 (2026-11-18)
+
+**Frozen-desk a11y fix (takeover per stale-claim rule):** `nfl-snapcount-e5e4` (session
+arena/e5e4351c-own7, merged via PR #77, no commits since) failed the site-wide browser a11y
+gate on one page: `site/depth-vs-snap.html` renders a zero-row `.table-card` (published
+zero-row gap), which is a scrollable region with no focusable content
+(axe `scrollable-region-focusable`, serious). Applied the minimal content-preserving fix —
+`tabindex="0"` on the `.table-card` wrapper in `nfl-snapcount-e5e4/build_site.py` — and
+regenerated that desk's 11 pages. No desk content, rows, or sources were altered. The owning
+session's `--check` passes with the regenerated output. Recorded here as an irregularity.
