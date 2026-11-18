@@ -97,7 +97,10 @@ def table(headers, rows_html, caption=None) -> str:
     cap = f"<caption>{esc(caption)}</caption>" if caption else ""
     head = "".join(f"<th>{esc(h)}</th>" for h in headers)
     return (
-        f'<div class="table-card"><table>{cap}<thead><tr>{head}</tr></thead>'
+        # tabindex makes the horizontally-scrollable wrapper keyboard-reachable; WCAG
+        # scrollable-region-focusable flagged it on mobile. Cross-scope fix by session
+        # arena/c815bdd2-own7 because a red main blocks every session; see COORDINATION.md.
+        f'<div class="table-card" tabindex="0"><table>{cap}<thead><tr>{head}</tr></thead>'
         f"<tbody>{''.join(rows_html)}</tbody></table></div>"
     )
 
