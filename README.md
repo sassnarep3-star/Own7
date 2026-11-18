@@ -2,6 +2,27 @@
 
 [Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
+## New: fresh-reads desk — Week 10 completion + Week 11 readiness (2026-11-18, session arena/6c72a9fa-own7)
+
+Official reads taken the morning after the Week 10 Monday game (`nfl-week11-6c72a9fa/`, 7 pages,
+10 tests, deterministic `build.py --check`):
+
+| Result | Where |
+|---|---|
+| **Chargers 23, Ravens 20 — final** verified from the official game centre and the overnight-published **Game Book #14** (official starters 22+22, Not Active 12, M&T Bank Stadium, Clear 49°F NW 2 mph, attendance 69,679) | [`nfl-week11-6c72a9fa/site/verification-2026-11-18.html`](nfl-week11-6c72a9fa/site/verification-2026-11-18.html) |
+| **32/32 standings cells re-verified**: fresh page = 2026-11-17 pre-MNF capture + the LAC@BAL final exactly (BAL +1L +20PF +23PA; LAC +1W +23PF +20PA; 30 clubs cell-identical), and frozen 2026-11-12 + all 14 Week 10 finals re-derives every club | same page |
+| **Week 10 venue coverage now 14/14** (closes the 13-of-14 gap, DR-23/DR-25) | same page |
+| **League reserve-list sweep** (Nov + Oct windows, +8/-8 rows vs the 2026-11-17 capture) with the rolling-window limitation flagged (FG01); November trades page dates the Brissett (AZ→BAL, 11/06), Allen (IND→SF) and Downs (IND→KC) moves (RG02) | [`nfl-week11-6c72a9fa/site/reserve-sweep.html`](nfl-week11-6c72a9fa/site/reserve-sweep.html) |
+| **First what-changed ledger (DR-61)**: standings movement, availability-event churn, injury-report stability (50 re-read rows, 0 diffs) and schedule stability (13/13 unchanged vs 2026-11-17) | [`nfl-week11-6c72a9fa/site/what-changed.html`](nfl-week11-6c72a9fa/site/what-changed.html) |
+| **Week 11 readiness**: 13 fixtures + 6 byes, venues complete incl. **Estadio Banorte, Mexico City** from the official game centre; injuries hub still served Week 10 at read time (first Week 11 read pending Wednesday publication) | [`nfl-week11-6c72a9fa/site/week11-schedule.html`](nfl-week11-6c72a9fa/site/week11-schedule.html) |
+| **Flags FG01–FG07** incl. the rolling-window data-loss property and the LAC@BAL absence from the canonical 149-final corpus (cross-scope request logged, not patched) | [`nfl-week11-6c72a9fa/site/flagged.html`](nfl-week11-6c72a9fa/site/flagged.html) |
+
+```sh
+python nfl-week11-6c72a9fa/collect.py      # parse verbatim evidence; aborts on any contradiction
+python nfl-week11-6c72a9fa/build.py --check   # byte-identical reproduction
+python -m unittest discover -s nfl-week11-6c72a9fa/tests   # 10 tests
+```
+
 ## New: integration audit — Week 10 completed, DR-68 closed (2026-11-18, session arena/c815bdd2-own7)
 
 A desk that re-derives what the other desks publish, from the official pages, and publishes

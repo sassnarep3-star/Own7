@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview · OWN7 · Fresh-reads desk</title>
+<meta name="description" content="Fresh official NFL reads of 2026-11-18: the Week 10 Monday final verified, Game Book #14 captured, league reserve-list sweep and the first what-changed ledger.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="brand"><strong>OWN7 · Fresh-reads desk</strong><span>official reads 2026-11-18 · Week 10 completion · Week 11 readiness</span></div><nav aria-label="Desk pages"><a href="index.html" aria-current="page">Overview</a><a href="verification-2026-11-18.html">Verification 2026-11-18</a><a href="week11-schedule.html">Week 11 schedule</a><a href="reserve-sweep.html">Reserve-list sweep</a><a href="what-changed.html">What changed</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="../../index.html">← NFL workspace</a></nav></header>
+<main id="main">
+<p class="eyebrow">OWN7 · Fresh-reads desk</p>
+<h1>Week 10 completion and Week 11 readiness — official reads of 2026-11-18</h1>
+<p class="lead">This desk took fresh official reads the morning after the Week 10 Monday game,
+closed the last open gap in the Week 10 evidence (the 14th Game Book and the LAC@BAL final),
+swept the league reserve lists, and published the workspace's first what-changed ledger between
+dated captures. Every value traces to a verbatim transcript of the official page it was read
+from, retained with a SHA-256 hash.</p>
+<div class="kpis">
+<div class="kpi"><span class="kpi-value">32/32</span><span class="kpi-label">standings cells re-verified</span><span class="sub">2026-11-17 pre-MNF + LAC@BAL final = fresh page</span></div>
+<div class="kpi"><span class="kpi-value">23-20</span><span class="kpi-label">LAC at BAL, final</span><span class="sub">the pending Week 10 game is now closed</span></div>
+<div class="kpi"><span class="kpi-value">14/14</span><span class="kpi-label">Week 10 venues from Game Books</span><span class="sub">Game Book #14 published overnight</span></div>
+<div class="kpi"><span class="kpi-value">+8/-8</span><span class="kpi-label">reserve-list rows since 2026-11-17</span><span class="sub">25-row rolling window per month page</span></div>
+<div class="kpi"><span class="kpi-value">50</span><span class="kpi-label">injury rows re-read, 0 diffs</span><span class="sub">Week 10 report stable between the two reads</span></div>
+<div class="kpi"><span class="kpi-value">13+6</span><span class="kpi-label">Week 11 fixtures + byes</span><span class="sub">venues complete incl. Estadio Banorte</span></div>
+</div>
+<h2>What this desk adds</h2>
+<div class="panel body-text"><ol>
+<li><strong>The Week 10 corpus gap is resolved and evidenced.</strong> The official game centre
+and the overnight-published Game Book give Chargers 23, Ravens 20 (final, Nov 16, M&T Bank
+Stadium). The fresh standings page moves exactly by that result — Baltimore +1L +20PF +23PA, Los
+Angeles +1W +23PF +20PA — and every other club is cell-identical to the 2026-11-17 pre-MNF read.
+The frozen capture plus all 14 finals re-derives all 32 clubs.</li>
+<li><strong>Game Book #14.</strong> Official starters (22 offense + 22 defense rows), Not Active
+lists (12 rows), officials, roof/surface ("Open Stadium on Natural Grass"), weather (Clear, 49°F,
+wind NW 2 mph) and paid attendance (69,679) for the last unverified fixture.</li>
+<li><strong>A league-wide reserve-list sweep.</strong> The November and October reserve-list
+windows are captured with their dated rows, diffed against the 2026-11-17 capture (+8 new 11/17
+rows, -8 scrolled off), and joined to the November trades page — which dates the Brissett,
+Allen and Downs moves the brief named.</li>
+<li><strong>The first what-changed ledger (DR-61).</strong> Standings diff, reserve-list series
+delta, injury-report stability and schedule stability between dated captures, rendered instead
+of another static snapshot.</li>
+</ol></div>
+<h2>Verification checks (all must pass; a single failure aborts the build)</h2>
+<div class="table-wrap"><table><caption>Checks run by collect.py on every build</caption><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was verified</th></tr></thead><tbody><tr data-source-ids="C672-STANDINGS-1118"><td>V0</td><td>pass</td><td>Every parsed club maps to a canonical code and division block</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">standings ↗</a></td></tr><tr data-source-ids="C672-REPO-PREV-STANDINGS"><td>V1</td><td>pass</td><td>32/32 fresh standings cells = 2026-11-17 pre-MNF CSV + the verified LAC@BAL final (BAL/LAC moved; 30 clubs cell-identical)</td><td><a href="https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-standings-2026-11-17.csv" rel="noopener noreferrer" target="_blank">2026-11-17 CSV ↗</a></td></tr><tr data-source-ids="C672-REPO-FROZEN-STANDINGS"><td>V1b</td><td>pass</td><td>32/32 clubs re-derived from the frozen 2026-11-12 capture + all 14 Week 10 finals (W, L, PF, PA)</td><td><a href="https://github.com/sassnarep3-star/Own7/blob/main/data/nfl-standings-week10-2026.csv" rel="noopener noreferrer" target="_blank">frozen CSV ↗</a></td></tr><tr data-source-ids="C672-GC-W10-LACBAL-1118"><td>V2</td><td>pass</td><td>LAC@BAL final (23-20) agrees across game centre, Game Book and the standings deltas; the game is absent from the results corpus (cross-scope request logged)</td><td><a href="https://www.nfl.com/games/chargers-at-ravens-2026-reg-10" rel="noopener noreferrer" target="_blank">game centre ↗</a></td></tr><tr data-source-ids="C672-REPO-RESULTS-CORPUS"><td>V3</td><td>pass</td><td>W+L+T per club equals games in the 149-final corpus (+1 for LAC/BAL)</td><td><a href="https://github.com/sassnarep3-star/Own7/blob/main/nfl-results/data/games-2026-w1-10.csv" rel="noopener noreferrer" target="_blank">results corpus ↗</a></td></tr><tr data-source-ids="C672-SCHED-W11-1118"><td>V4</td><td>pass</td><td>Week 11 slate: 13 fixtures, 26 clubs once each, 6 byes complete the 32; every venue non-blank</td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-11" rel="noopener noreferrer" target="_blank">week 11 page ↗</a></td></tr><tr data-source-ids="C672-GAMEBOOK-W10-LACBAL-1118"><td>V5</td><td>pass</td><td>Week 10 venue coverage is now 14/14 (Game Book #14: M&T Bank Stadium matches the game centre)</td><td><a href="https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf" rel="noopener noreferrer" target="_blank">Game Book PDF ↗</a></td></tr><tr data-source-ids="C672-RESERVE-NOV-1118"><td>V6</td><td>pass</td><td>Reserve sweep: Nov window 25 rows + Oct window 25 rows; +8/-8 vs the 2026-11-17 capture; Malik Willis present; Jackson/Huntley absent from both visible windows</td><td><a href="https://www.nfl.com/transactions/league/reserve-list/2026/11" rel="noopener noreferrer" target="_blank">reserve list ↗</a></td></tr><tr data-source-ids="C672-GAMEBOOK-W10-LACBAL-1118"><td>V7</td><td>pass</td><td>Game Book #14: 22 offense + 22 defense starters, 12 Not Active, attendance 69,679, QBs Herbert/Brissett</td><td><a href="https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf" rel="noopener noreferrer" target="_blank">Game Book PDF ↗</a></td></tr><tr data-source-ids="C672-INJ-STATE-1118"><td>V8</td><td>pass</td><td>Injuries hub still serves Week 10; 50 re-read rows are cell-identical to the 2026-11-17 capture (0 diffs)</td><td><a href="https://www.nfl.com/injuries/" rel="noopener noreferrer" target="_blank">injuries hub ↗</a></td></tr></tbody></table></div><p class="note">Full detail with per-club rows: verification-2026-11-18.html. The checks re-run in CI.</p>
+<p class="note">Paper research only. No wager, stake, bankroll, price or monetary reward is
+produced anywhere on this desk. Nothing here is a betting recommendation.</p>
+</main>
+<footer>Evidence attributed to NFL.com and retained with hashes; canonical artefacts belong to their
+producing sessions. Not affiliated with or endorsed by the NFL. Generated deterministically by
+nfl-week11-6c72a9fa/build.py from committed artefacts on 2026-11-18.</footer>
+</body>
+</html>
