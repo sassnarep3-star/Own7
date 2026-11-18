@@ -63,6 +63,8 @@ jobs:
           python -m unittest discover -s nfl-lifecycle-3f5c/tests -v
           python nfl-readiness-1467fdf7/build.py --check
           python -m unittest discover -s nfl-readiness-1467fdf7/tests -v
+          python nfl-slate-03dcea07/build.py --check
+          python -m unittest discover -s nfl-slate-03dcea07/tests -v
           python nfl-assurance-9580ac3f/availability.py
           python nfl-integration-c815/build.py --check
           python -m unittest discover -s nfl-integration-c815/tests -v

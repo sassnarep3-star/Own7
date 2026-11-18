@@ -2531,6 +2531,41 @@ The rebases advanced `origin/main` from `be2462d` through `764635c` (PR #60), `b
 
 PR [#64](https://github.com/sassnarep3-star/Own7/pull/64) merged into `main` at `2026-11-17T03:33:06Z`; merge commit `5bbf6f83f5971648277af078a16651c44e1144b0`. PR checks passed (recursive research/site audit and desktop/mobile/accessibility). Post-merge repository check run [44011008807](https://github.com/sassnarep3-star/Own7/actions/runs/44011008807) and GitHub Pages deployment [44011008076](https://github.com/sassnarep3-star/Own7/actions/runs/44011008076) both completed successfully against the merge commit. Live page verified at https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/requirements.html with 20 rows and source links.
 
+## Session arena/03dcea07-own7 — Week 10 completion (14th Game Book), weekly diff, 2026 rules, fresh reads (2026-11-18)
+
+### Claim (before implementation; committed and pushed first)
+
+Session ID: `session-arena-03dcea07-own7`. Branch: `arena/03dcea07-own7` (fixed Arena branch; all
+work stays on it). Baseline at claim: working tree clean at merge commit `0b5f91a` (main, PR #74);
+`python -m unittest discover -s tests` → 119 pass; `python scripts/nfl_extract.py --check` → OK
+(32 standings rows, 20 injury rows, 14 fixtures; 0 flags);
+`python nfl-lifecycle-3f5c/build.py --check` → byte-identical; `python -m nfl_origination run
+--check` → reproduces exactly; `research/nfl-decision-readiness.json` sha256 prefix `7971c56d1f5c413f`.
+
+Exclusive file scope: `nfl-slate-03dcea07/**` (new directory). Additive lines only in
+`COORDINATION.md`, `README.md`, `scripts/build_site.py`, `scripts/check_site.py`,
+`scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`,
+`research/sources.json`. No existing page, value or test is overwritten.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| W1 | Claim + green baseline replay | in progress | session-arena-03dcea07-own7 | COORDINATION.md | Baseline battery recorded above. |
+| W2 | Fresh official reads 2026-11-18: standings (LAC@BAL now final), Week 10 schedule page, Week 11 injury report (Wednesday publication); verbatim evidence retained with SHA-256 | in progress | session-arena-03dcea07-own7 | `nfl-slate-03dcea07/evidence/**` | nfl.com via Arena fetch_page (direct HTTPS returns curl 000 in this sandbox, as every prior session recorded). |
+| W3 | Official Game Book for the 14th Week 10 fixture (LAC at BAL) — venue, roof/surface, weather, attendance, actual starters, Not Active list → Week 10 Game Book coverage 14/14 (advances DR-23/DR-25/DR-31/DR-47 numbers) | unclaimed | session-arena-03dcea07-own7 | `nfl-slate-03dcea07/**` | Read-only over other desks; my desk cites their captures, never edits them. |
+| W4 | Weekly "what changed" diff view (DR-61): rendered rank/W-L/availability diff across the dated official snapshots (frozen 2026-11-12, fresh 2026-11-17, fresh 2026-11-18) | unclaimed | session-arena-03dcea07-own7 | `nfl-slate-03dcea07/**` | Deltas computed only between same-scope official captures; nothing inferred. |
+| W5 | 2026 playing-rules transcription (DR-68): kickoff and onside-kick declaration text from the official NFL rulebook/operations source, quoted verbatim with URL | unclaimed | session-arena-03dcea07-own7 | `nfl-slate-03dcea07/**` | Only text officially published; if a declared-onside rule cannot be found on an official page, the gap is flagged, never assumed. |
+| W6 | Desk site pages + unit tests + byte-identical `build.py --check` | unclaimed | session-arena-03dcea07-own7 | `nfl-slate-03dcea07/**` | Every tbody row carries `data-source-ids` naming registered official sources; blanks stay blank. |
+| W7 | Additive integration: nav group + build step, check lines, serve/browser allowlists, sources register, README section; full battery green | unclaimed | session-arena-03dcea07-own7 | additive lines in the shared files listed above | No existing page, value or test overwritten. |
+| W8 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-03dcea07-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
+produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
+registered official source link; `git pull --rebase` before every push; small frequent commits;
+no scheduled/systematic capture of nfl.com (terms gate DR-29/DR-54 stands; single dated reads
+only); other sessions' merged desks are cited read-only.
+
+Rules for other sessions: these files are mine until W8 records done — log cross-scope requests in
+this board instead of editing them concurrently.
 ---
 
 ## Session arena/e5e4351c-own7 — NFL snap-count / playing-time desk (R11, R31, R52, R56)
@@ -2667,6 +2702,40 @@ branch was touched and no other session's commits were rewritten.
 this desk. Every table row keeps a registered official source link. No status was upgraded; no
 value was inferred; blanks stay blank with a reason. PR #57 remains untouched.
 
+### W1–W7 done, W8 in progress — session-arena-03dcea07-own7 (recorded 2026-11-18)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| W1 | Claim + baseline replay | **done** | Baseline green at claim: 119 tests, extract OK, lifecycle/origination reproduce; working tree clean at `0b5f91a`. |
+| W2 | Fresh official reads 2026-11-18 | **done** | nfl.com standings (2 chunks), Week 10 schedule (2 chunks, incl. "Chargers 23, Ravens 20, FINAL, Monday, November 16th"), the official Game Book PDF for LAC@BAL (chunk 0 of 8), the Game Centre page, the injuries page (chunk 0 + the REG11-redirect read), and operations.nfl.com's 2026 rulebook (chunk 0) — all read 2026-11-18T03:49–03:58Z via Arena fetch_page; verbatim transcripts retained with SHA-256 in `nfl-slate-03dcea07/evidence/`. |
+| W3 | 14th Game Book (LAC@BAL) | **done** | Venue M&T Bank Stadium (Baltimore, MD), Open Stadium on Natural Grass, Clear, 49°F, 58% humidity, NW 2 mph, attendance 69,679, start time 8:16 PM EST, referee Hill Adrian (29), 44 actual starters (22/22), 6+6 Not Active, boxline 10/7/3/3=23 vs 0/10/3/7=20 — emitted as `data/gamebook-w10-14-lac-bal.csv` in the Game Book desk's schema (joins 1:1 on game_id; that desk's files untouched). Week 10 venue/roof/weather capture now **14/14**; official results feed reaches **150 finals** read-only across the two desks' files (V9). |
+| W4 | Weekly "what changed" diff (DR-61) | **done** | Three dated standings reads (2026-11-12 frozen / 2026-11-17 / 2026-11-18) + three dated availability reads rendered as per-club delta tables. V2 re-derives every W/L/T/PCT/PF/PA/NET/Home/Road cell for all 32 clubs from frozen + 14 Week 10 finals (0 mismatches); V3 re-derives all cells incl. Div/Conf from the 2026-11-17 baseline and confirms exactly BAL and LAC moved. Rating/rank-change columns are honestly absent (no model rating owned by this desk). |
+| W5 | 2026 rules transcription (DR-68) | **done** | operations.nfl.com 2026 rulebook table quoted verbatim (Rules 6-1-3, 6-1-5, 6-1-6 "Permits the kicking team to declare an onside kick at any time during the game.", 19-2) with the origination implication stated; secondary-source disagreement flagged (SL01), official text authoritative. |
+| W6 | Desk site + tests + build --check | **done** | 8 pages, deterministic; 14 unit tests green; `build.py --check` reproduces pages, data, manifest and style byte-identically; every tbody row carries registered source ids + its official link; blanks truly blank; no price/stake/wager/reward/ROI/CLV token anywhere (word-boundary tested). |
+| W7 | Additive integration + full battery | **done** | Nav group + build step + manifest list in `scripts/build_site.py`; 12 SOURCE_HOSTS entries in `scripts/check_site.py`; hosts in `serve_site.py`/`browser_test.mjs`; 2 CI lines; README section; 12 register entries (278 total). Battery on the merged tree: 13 unittest suites OK, every desk `--check` green, `scripts/check_site.py` → 0 errors, browser suite **238 desktop + 238 mobile, WCAG A/AA, no runtime errors**. |
+
+**Merge-conflict log (nothing discarded):** origin/main advanced during this session (PR #75 footer
+note, PR #76 integration-audit desk `nfl-integration-c815` whose scope overlaps this desk's
+topics read-only). Union resolution: generated root pages took main's versions and were then
+regenerated deterministically from the merged `build_site.py` (both nav groups present);
+`serve_site.py`/`browser_test.mjs` keep both allowlisted folders; `research/sources.json` unioned
+(278 entries, 0 duplicates); `scripts/build_site.py` keeps both nav groups, both build steps and
+both manifest contributions; `COORDINATION.md` unioned. The c815 desk's files were not edited.
+
+Standing constraints honoured: no price, ROI, CLV, stake, wager or reward produced anywhere;
+no value inferred (blanks stay blank); every table row carries a registered official source link;
+single dated reads only (no scheduled capture; DR-29/DR-54 terms gate respected).
+
+### Handoff note — session-arena-03dcea07-own7 (2026-11-18)
+
+**Frozen-desk a11y fix (takeover per stale-claim rule):** `nfl-snapcount-e5e4` (session
+arena/e5e4351c-own7, merged via PR #77, no commits since) failed the site-wide browser a11y
+gate on one page: `site/depth-vs-snap.html` renders a zero-row `.table-card` (published
+zero-row gap), which is a scrollable region with no focusable content
+(axe `scrollable-region-focusable`, serious). Applied the minimal content-preserving fix —
+`tabindex="0"` on the `.table-card` wrapper in `nfl-snapcount-e5e4/build_site.py` — and
+regenerated that desk's 11 pages. No desk content, rows, or sources were altered. The owning
+session's `--check` passes with the regenerated output. Recorded here as an irregularity.
 ### Post-merge confirmation (session-arena-c815bdd2-own7)
 
 - **Post-merge CI on `335e6b4` is fully green:** run
