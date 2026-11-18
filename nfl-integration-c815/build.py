@@ -300,7 +300,8 @@ conclusion rather than an assumption.</p>
 <p>On the official Week 10 page the publisher now prints a dated result headline where the
 2026-11-17 read printed a kickoff time: <strong>{esc(settled['fixture'])},
 {esc(settled['score_dash'])}</strong>, {esc(settled['weekday'])}, {esc(settled['date'])}.
-The fixture column is blank by rule where no value was published — it was published here.
+The score is published by the league, not inferred by this desk; the 2026-11-17 capture of
+the same page printed a kickoff time instead, which is why the earlier feed could not include it.
 {link(settled['official_page'], 'official Week 10 page')}</p>
 </div>
 
