@@ -2695,3 +2695,40 @@ Other sessions were pushing to `main` concurrently during this one (PR #75 merge
    This session hit exactly that in `nfl/test_build.py` (`OFFICIAL_HOSTS`) after adding
    `NFL-RULES-2026` on `media.nfl.com`. `scripts/check_site.py` (`SOURCE_HOSTS`) is the other one.
    Grep for the host set after adding any source.
+## Session arena/6c72a9fa-own7 — fresh-reads desk: Week 10 completion + Week 11 readiness (2026-11-18)
+
+Session ID: `session-arena-6c72a9fa-own7`. Fixed Arena branch: `arena/6c72a9fa-own7` (the brief's
+`session-<id>/<task>` branch naming is not used because Arena fixes the branch name; all work stays
+on it). Baseline at claim: working tree clean at merge commit `0b5f91a` (main, PR #74);
+`python -m unittest discover -s tests` → 119 pass; `python scripts/nfl_extract.py --check` → OK
+(32 standings rows, 20 injury rows, 14 fixtures); `python scripts/check_site.py` → OK.
+
+Prior-board review done before claiming: session arena/c75612d4-own7 holds the final-integration
+audit (`nfl-final-audit-c75612d4/**`); PR #57 (arena/383626a6-own7) is open and untouched. This
+session claims a distinct data task, not integration.
+
+Exclusive file scope: `nfl-week11-6c72a9fa/**` (new directory). Additive lines only in
+`COORDINATION.md` (append only), `README.md`, `scripts/build_site.py`, `scripts/check_site.py`,
+`scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`,
+`research/sources.json`. No existing page, value or test is overwritten. Canonical data files of
+other desks (e.g. `nfl-results/data/*`) are read-only for this session.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| F1 | Claim + green baseline replay | in progress | session-arena-6c72a9fa-own7 | COORDINATION.md | Baseline battery recorded above. |
+| F2 | Fresh official reads 2026-11-18: standings, REG10 finals (LAC@BAL now final?), REG11 schedule + venues, current injuries page, league reserve list (Nov + Oct 2026), Week 10 Game Book #14 if published | in progress | session-arena-6c72a9fa-own7 | `nfl-week11-6c72a9fa/evidence/**` | nfl.com via Arena fetch_page (direct HTTPS to nfl.com is blocked in this sandbox, as every prior session recorded). Verbatim transcripts + SHA-256 retained. |
+| F3 | Line-by-line verification: 32 standings cells incl. BAL/LAC after the Monday final; 150-finals arithmetic (W+L+T = GP per club); Week 11 slate = 26 clubs once + 6 byes; W10 venue coverage 14/14 or flagged; reserve-list sweep vs named IR claims (Lamar Jackson / Tyler Huntley in October list; Malik Willis November) | unclaimed | session-arena-6c72a9fa-own7 | `nfl-week11-6c72a9fa/**` | Read-only over other desks' data; contradictions flagged, never patched in place. |
+| F4 | Weekly 'what changed' diff (open item DR-61): standings diff 2026-11-12 canonical capture vs 2026-11-18 read; injury-capture diff between dated captures (W7 CSV vs W10 CSV) for common clubs | unclaimed | session-arena-6c72a9fa-own7 | `nfl-week11-6c72a9fa/**` | Diff only; no levels re-interpreted. |
+| F5 | Flagged-irregularity register for anything found this session | unclaimed | session-arena-6c72a9fa-own7 | `nfl-week11-6c72a9fa/**` | Published on the desk's own Flagged page with official links; non-blocking. |
+| F6 | Desk site pages + unit tests + byte-identical `build.py --check` | unclaimed | session-arena-6c72a9fa-own7 | `nfl-week11-6c72a9fa/**` | Every tbody row carries `data-source-ids` naming registered official sources; blanks stay blank. |
+| F7 | Additive integration: nav group + build step + allowlists + CI lines + sources register + README; full battery green | unclaimed | session-arena-6c72a9fa-own7 | additive lines in the shared files listed above | No existing page, value or test overwritten. |
+| F8 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-6c72a9fa-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
+produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
+registered official source link; `git pull --rebase` before every push; small frequent commits;
+open PRs of other sessions (#57) and the claimed scope of session arena/c75612d4-own7 are not
+touched.
+
+Rules for other sessions: these files are mine until F8 records done — log cross-scope requests in
+this board instead of editing them concurrently.
