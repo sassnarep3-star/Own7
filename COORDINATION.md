@@ -2530,3 +2530,20 @@ The rebases advanced `origin/main` from `be2462d` through `764635c` (PR #60), `b
 ### Publication record
 
 PR [#64](https://github.com/sassnarep3-star/Own7/pull/64) merged into `main` at `2026-11-17T03:33:06Z`; merge commit `5bbf6f83f5971648277af078a16651c44e1144b0`. PR checks passed (recursive research/site audit and desktop/mobile/accessibility). Post-merge repository check run [44011008807](https://github.com/sassnarep3-star/Own7/actions/runs/44011008807) and GitHub Pages deployment [44011008076](https://github.com/sassnarep3-star/Own7/actions/runs/44011008076) both completed successfully against the merge commit. Live page verified at https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/requirements.html with 20 rows and source links.
+
+## Session arena/c75612d4-own7 — final NFL brief audit and site integration (2026-11-18)
+
+Session ID: `session-arena-c75612d4-own7`. Fixed Arena branch: `arena/c75612d4-own7` (the session remains on this branch; the requested `session-<id>/<task>` branch pattern is not used because Arena fixes the branch name).
+
+### Claim (before implementation)
+
+The preceding sections of this board were read before claiming. All prior NFL task records in this checkout are completed; this session claims the final integration/audit task, not another session's component work.
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| C1 | Claim + baseline repository/site replay | in progress | session-arena-c75612d4-own7 | `COORDINATION.md` (append only) | Claim is committed and pushed before implementation. |
+| C2 | Crosswalk the full user brief to the current repository, independently audit citations, blank/unverified handling, and flag contradictions without changing another desk's data | in progress | session-arena-c75612d4-own7 | New `nfl-final-audit-c75612d4/**`; read-only over existing desks | Final integration task; preserve official-source evidence and existing scoped artefacts. |
+| C3 | Publish a concise audit/executive view with findings, open questions, suggested next steps, source links, and non-blocking flags | in progress | session-arena-c75612d4-own7 | `nfl-final-audit-c75612d4/**`; additive integration in the site build, checks, navigation, and README | Shared site integration occurs only after confirming prior components are complete. |
+| C4 | Full build, integrity, test, accessibility and live-deploy verification; record PR/merge/deploy outcome | unclaimed | session-arena-c75612d4-own7 | Generated site outputs, `COORDINATION.md`, PR metadata | Do not merge a broken site; do not claim source verification without checking the official source. |
+
+Standing constraints: no value is inferred; prices, model probabilities, correlations, ROI, CLV, or strategy rewards remain blank unless licensed/official evidence supports them; any defect belonging to an earlier desk is logged here and on the Flagged for Review page rather than silently overwritten; `git pull --rebase` precedes every push; all work stays on the fixed branch above.
