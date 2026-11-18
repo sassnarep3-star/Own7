@@ -211,6 +211,15 @@ SOURCE_HOSTS.update({
     'GB-CLUB-DEPTH': 'www.chicagobears.com',
 })
 
+# NFL snap-count / playing-time desk (session arena/e5e4351c-own7): official NFL Game Book
+# Playtime Percentage tables, the official Game Centre fixture pages, and the committed club
+# depth-chart transcription carried read-only from the skill desk.
+SOURCE_HOSTS.update({
+    'SN-NFL-GAMEBOOK-PDF': 'static.www.nfl.com',
+    'SN-NFL-GAMECENTER': 'www.nfl.com',
+    'SN-CLUB-DEPTH': 'www.chicagobears.com',
+})
+
 # Session arena/34a52a38-own7 (2026-11-17): official Week 10 injury-report read, Lions section.
 SOURCE_HOSTS.update({'NFL-INJ-W10-READ-1117': 'www.nfl.com'})
 
