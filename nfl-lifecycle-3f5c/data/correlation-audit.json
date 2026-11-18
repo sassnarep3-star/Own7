@@ -208,8 +208,8 @@
         {
           "id": "RES-LEG-PHI",
           "pair": "leg dependence: home-cover x over (phi)",
-          "coefficient": -0.038583,
-          "n": 127,
+          "coefficient": -0.031814,
+          "n": 128,
           "source_ids": [
             "NFL-SCHEDULE",
             "REPO"
@@ -221,8 +221,8 @@
         {
           "id": "RES-MS-MARGIN-TOTAL",
           "pair": "Home margin vs game total",
-          "coefficient": -0.121809,
-          "n": 133,
+          "coefficient": -0.121513,
+          "n": 134,
           "source_ids": [
             "NFL-SCHEDULE",
             "REPO"
@@ -234,8 +234,8 @@
         {
           "id": "RES-MS-BOARD_LINE-BOARD_TOTAL",
           "pair": "Originated line vs originated total",
-          "coefficient": 0.02998,
-          "n": 133,
+          "coefficient": 0.02579,
+          "n": 134,
           "source_ids": [
             "NFL-SCHEDULE",
             "REPO"
@@ -247,8 +247,8 @@
         {
           "id": "RES-MS-FORECAST-ACTUAL_MARGIN",
           "pair": "Forecast margin vs actual margin",
-          "coefficient": 0.11736,
-          "n": 133,
+          "coefficient": 0.114115,
+          "n": 134,
           "source_ids": [
             "NFL-SCHEDULE",
             "REPO"
@@ -260,8 +260,8 @@
         {
           "id": "RES-MS-RESIDUAL-TOTAL",
           "pair": "Spread residual vs game total",
-          "coefficient": 0.11736,
-          "n": 133,
+          "coefficient": 0.114115,
+          "n": 134,
           "source_ids": [
             "NFL-SCHEDULE",
             "REPO"

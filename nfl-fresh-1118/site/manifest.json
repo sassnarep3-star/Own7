@@ -1,0 +1,26 @@
+{
+ "desk": "nfl-fresh-1118",
+ "session": "arena/92cad499-own7",
+ "read_on": "2026-11-18",
+ "pages": [
+  "index.html",
+  "results-feed.html",
+  "schedule.html",
+  "flagged.html"
+ ],
+ "evidence_sha256": {
+  "standings-1118": "cda0041c2ca36faff8f7308bcc4edf1dee99608e914bc29038642300d9930375",
+  "week10-complete": "faddbfe9740eb27a418fc74d5f7a14fb282cf6bd2c5b98d4228a8c068a30c155",
+  "week11": "cbd3bd6efa1889bc236f8c9f019a9e25e3126539c48a469f9449a458bcee5306",
+  "week12": "346fb6f3acdf5b395a27fa0ff3bf567aba20f666f46b5d8e400dd42f50d72e2e",
+  "injury-hub-partial": "a3718808a04e3852ac9929663e9deadf53fa6ea1bebc42f5d1a8d7bf18f0c4d2"
+ },
+ "source_ids": [
+  "FRESH-NFL-INJHUB-1118",
+  "FRESH-NFL-INJHUB-W11-404",
+  "FRESH-NFL-STANDINGS-1118",
+  "FRESH-NFL-W10-COMPLETE-1118",
+  "FRESH-NFL-W11-SCHED-1118",
+  "FRESH-NFL-W12-SCHED-1118"
+ ]
+}

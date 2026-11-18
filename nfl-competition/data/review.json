@@ -31,7 +31,7 @@
       "status": "open",
       "severity": "high",
       "title": "Two desks publish different directional records for the same season",
-      "finding": "This desk records 70-50 (0.5833) for the board's own side. nfl-results/analysis.json records 82-51 (0.6165).",
+      "finding": "This desk records 70-50 (0.5833) for the board's own side. nfl-results/analysis.json records 82-52 (0.6119).",
       "checked_against": "nfl-results/analysis.json (benchmarks.spread.directional)",
       "source_ids": [
         "CP-NFL-RESULTS-W1-9"

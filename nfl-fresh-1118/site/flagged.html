@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for review · OWN7 · Fresh-read desk</title>
+<meta name="description" content="Fresh official NFL reads 2026-11-18: the completed weeks 1-10 results feed (150 finals), the Weeks 11-12 scheduled slates, and flagged irregularities, each row source-linked.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="brand"><strong>OWN7 · Fresh-read desk</strong><span>official reads 2026-11-18 · 150-final results feed · Weeks 11-12 slates</span></div><nav aria-label="Desk pages"><a href="index.html">Overview</a><a href="results-feed.html">Results feed</a><a href="schedule.html">Weeks 11-12 slate</a><a href="flagged.html" aria-current="page">Flagged for review</a><a href="../../index.html">← NFL workspace</a></nav></header>
+<main id="main">
+<p class="eyebrow">OWN7 · Fresh-read desk</p>
+<h1>Flagged for review</h1>
+<p class="lead">Irregularities and publisher-side behaviours found during the 2026-11-18
+reads. Flags never block publication — they are published so irregular information stays
+visible instead of silently disappearing. None of them hides a value: wherever a number
+cannot be confirmed from an official source, the cell is blank.</p>
+<div class="table-wrap"><table><caption>Flags raised by this desk</caption><thead><tr><th scope="col">ID</th><th scope="col">Flag</th><th scope="col">Detail</th><th scope="col">Severity</th><th scope="col">Status</th><th scope="col">Source</th></tr></thead><tbody><tr data-source-ids="FRESH-NFL-INJHUB-1118"><td><strong>FF01</strong></td><td>The 2026-11-18 injury-hub capture is partial, and no Week 11 report was fetchable</td><td>The hub at https://www.nfl.com/injuries/ rendered the WEEK 10 report at 2026-11-18T04:06:10Z. Its week picker shows WEEK 11, but the view is client-side: https://www.nfl.com/injuries/week-11 returns the site&#x27;s 404 page and https://www.nfl.com/injuries/?week=11 re-renders WEEK 10. Chunks 0-3 of 8 were retrieved; chunks 4-7 were not, so no row count and no 2026-11-17 vs 2026-11-18 delta is published from this read. The complete 2026-11-17 read (28 team tables, 347 rows, source E7EF-INJ-W10-1117) remains the newest complete capture. Follow-up task F1 recorded on the coordination board.</td><td><span class="badge badge-warn">medium</span></td><td><span class="badge badge-warn">open</span></td><td><a href="https://www.nfl.com/injuries/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-W10-COMPLETE-1118"><td><strong>FF02</strong></td><td>The REG10 schedule URL now redirects away from Week 10</td><td>The frozen 2026-11-17 read of Week 10 used https://www.nfl.com/schedules/2026/REG10 (per session arena/e15f05e0-own7). On 2026-11-18 that URL no longer renders Week 10: it redirects to https://www.nfl.com/schedules, which shows the current week. The completion re-read therefore used the by-week URL https://www.nfl.com/schedules/2026/by-week/week-10, which renders Week 10 in full. Publisher-side URL behaviour changed between reads; the frozen evidence file is unchanged and its recorded source URL stays as it was captured.</td><td><span class="badge badge-warn">low</span></td><td><span class="badge badge-warn">open</span></td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td><strong>FF03</strong></td><td>Skill-board numbers moved when the feed was completed, by design</td><td>The pages published before 2026-11-18 quoted the frozen 149-final corpus: spread board 64.2% (permutation p=0.0021, q=0.022), total board 50.0%, leg dependence phi -0.068 (p=0.47, n=114), 120 scored rows. Completing the feed with the Monday final moves the corpus to 150 finals (134 scored rows) and every statistic is recomputed by the same frozen engine: spread board 61.2% (permutation p=0.0065, q=0.086), total board 49.3%, leg dependence phi -0.032 (p=0.72, n=128). No historical value was edited; all numbers come from one engine run on the committed corpus, and no strategy qualified either way.</td><td><span class="badge badge-warn">low</span></td><td><span class="badge badge-warn">explained</span></td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td><strong>FF04</strong></td><td>The Week 12 schedule contains a Wednesday game and a Friday game</td><td>The official Week 12 by-week page prints Green Bay at Los Angeles Rams on Wednesday, November 25th (8:00 PM, NETFLIX) and Denver at Pittsburgh on Friday, November 27th (3:00 PM, PRIME) alongside the usual Thursday/Sunday/Monday slate. Both are transcribed exactly as printed; they are noted here because week-shape assumptions (16 games, Sun-Thu-Mon only) would silently drop them.</td><td><span class="badge badge-warn">low</span></td><td><span class="badge badge-warn">explained</span></td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr></tbody></table></div>
+<p class="note">Carried-forward flags from earlier desks (rights-gated price data, inactive
+lists, depth-chart provenance) remain published on their own desks' Flagged pages and are
+not repeated here.</p>
+</main>
+<footer>Evidence attributed to NFL.com and retained with hashes; canonical artefacts belong to their
+producing sessions. Not affiliated with or endorsed by the NFL. Generated deterministically by
+nfl-fresh-1118/build.py from committed artefacts on 2026-11-18.</footer>
+</body>
+</html>

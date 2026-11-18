@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview · OWN7 · Fresh-read desk</title>
+<meta name="description" content="Fresh official NFL reads 2026-11-18: the completed weeks 1-10 results feed (150 finals), the Weeks 11-12 scheduled slates, and flagged irregularities, each row source-linked.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="brand"><strong>OWN7 · Fresh-read desk</strong><span>official reads 2026-11-18 · 150-final results feed · Weeks 11-12 slates</span></div><nav aria-label="Desk pages"><a href="index.html" aria-current="page">Overview</a><a href="results-feed.html">Results feed</a><a href="schedule.html">Weeks 11-12 slate</a><a href="flagged.html">Flagged for review</a><a href="../../index.html">← NFL workspace</a></nav></header>
+<main id="main">
+<p class="eyebrow">OWN7 · Fresh-read desk</p>
+<h1>Overview</h1>
+<p class="lead">Fresh official reads taken 2026-11-18 (Arena fetch_page; direct HTTPS to
+nfl.com is blocked in this sandbox). They complete the verified results feed at
+<strong>150 finals for weeks 1-10</strong> — the Week 10 Monday final, Chargers 23
+Ravens 20, is now captured — and capture the Week 11 and Week 12 slates as scheduled
+fixtures. Every claim on this desk is re-derived from the parser output at build time
+and aborted on any mismatch; frozen artefacts from earlier reads are untouched.</p>
+<div class="kpis"><div class="kpi"><span class="kpi-value">150</span><span class="kpi-label">official finals, weeks 1-10 complete</span><span class="sub">Monday final added by the 2026-11-18 re-read</span></div><div class="kpi"><span class="kpi-value">3</span><span class="kpi-label">standings snapshots reconciled</span><span class="sub">frozen pre-kickoff · 2026-11-17 · 2026-11-18</span></div><div class="kpi"><span class="kpi-value">134</span><span class="kpi-label">games scored walk-forward</span><span class="sub">30 variants · 0 qualified · 1 provisional</span></div><div class="kpi"><span class="kpi-value">29</span><span class="kpi-label">scheduled fixtures captured</span><span class="sub">13 Week 11 + 16 Week 12, kickoff times only</span></div><div class="kpi"><span class="kpi-value">4</span><span class="kpi-label">desk pages, source-linked</span><span class="sub">every row carries its registered official source</span></div></div>
+<h2>Verification checks (all must pass; a single failure aborts the build)</h2>
+<div class="table-wrap"><table><caption>Checks run by build.py on every build</caption><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was verified</th><th scope="col">Source</th></tr></thead><tbody><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>FV1</td><td><span class="badge badge-ok">pass</span></td><td>The completed weeks 1-10 feed (150 finals) re-derives every W, L, T, PF and PA cell of the 2026-11-18 official standings snapshot for all 32 clubs (160 fields, 0 mismatches).</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>FV2</td><td><span class="badge badge-ok">pass</span></td><td>Chain identity: the 2026-11-18 snapshot equals the 2026-11-17 snapshot plus exactly the parsed Week 10 completion deltas (Chargers 23, Ravens 20) for all 32 clubs × 5 fields.</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-W10-COMPLETE-1118"><td>FV3</td><td><span class="badge badge-ok">pass</span></td><td>The completion re-read agrees with the frozen 2026-11-17 read: all 13 frozen finals identical (teams, scores, dates), only the previously-scheduled fixture added, byes identical.</td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-W11-SCHED-1118"><td>FV4</td><td><span class="badge badge-ok">pass</span></td><td>Week 11 is scheduled-only capture: 13 fixtures + 6 byes (ATL, CLE, GB, LA, NE, SEA) cover all 32 clubs exactly once; zero finals exist for the week.</td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-11" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-W12-SCHED-1118"><td>FV5</td><td><span class="badge badge-ok">pass</span></td><td>Week 12 is scheduled-only capture: 16 fixtures, no bye section printed, covering all 32 clubs; zero finals exist for the week.</td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-12" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>FV6</td><td><span class="badge badge-ok">pass</span></td><td>The skill engine runs on the completed corpus: 150 finals in, 134 walk-forward rows (weeks 2-10), 30 variants graded, 0 qualified, 1 provisional, 29 rejected.</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>FV7</td><td><span class="badge badge-ok">pass</span></td><td>Frozen 2026-11-14/11-17 artefacts are untouched: 136 weeks-1-9 finals, 149 frozen weeks-1-10 finals, 13 frozen Week 10 finals with their original provenance, 1 frozen scheduled fixture.</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr></tbody></table></div>
+<h2>Read receipts</h2>
+<p class="note">Each read is retained as verbatim rendered-page text with its URL and
+SHA-256; full hashes are in site/manifest.json. The standings rows and schedule lines
+are transcribed unmodified; navigation chrome is truncated, and the method note in each
+evidence file says exactly what that means.</p>
+<div class="table-wrap"><table><caption>What was read, and where it is kept</caption><thead><tr><th scope="col">Read</th><th scope="col">Chunks</th><th scope="col">Content</th><th scope="col">SHA-256 (first 16)</th><th scope="col">Source</th></tr></thead><tbody><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Standings page (2026-11-18)</td><td>2 chunks</td><td>32 rows, 16 cells each</td><td><code>cda0041c2ca36faf…</code></td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-W10-COMPLETE-1118"><td>Week 10 by-week page, completion re-read</td><td>2 chunks</td><td>14 FINAL headlines + 4 byes</td><td><code>faddbfe9740eb27a…</code></td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-W11-SCHED-1118"><td>Week 11 by-week page</td><td>3 chunks</td><td>13 scheduled fixtures + 6 byes, no finals</td><td><code>cbd3bd6efa1889bc…</code></td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-11" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-W12-SCHED-1118"><td>Week 12 by-week page</td><td>3 chunks</td><td>16 scheduled fixtures, no bye section</td><td><code>346fb6f3acdf5b39…</code></td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-12" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-INJHUB-1118"><td>Injury hub (flagged partial)</td><td>3 of 8 chunks</td><td>no counts published from a partial read</td><td><code>a3718808a04e3852…</code></td><td><a href="https://www.nfl.com/injuries/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr></tbody></table></div>
+<h2>What changed in the analysis</h2>
+<div class="panel body-text"><ol>
+<li><strong>The feed is complete through Week 10.</strong> The frozen 2026-11-17 read held
+13 of 14 Week 10 finals (the Monday game was pre-kickoff). The 2026-11-18 re-read adds
+Chargers 23, Ravens 20, FINAL, Monday, November 16th, cross-checked against the frozen
+read line by line before anything is published.</li>
+<li><strong>Three snapshots now reconcile.</strong> The feed re-derives the frozen
+pre-kickoff snapshot (weeks 1-9), the 2026-11-17 snapshot (frozen weeks 1-10) and the
+2026-11-18 snapshot (completed weeks 1-10): 160 fields each, plus both chain identities
+between snapshots.</li>
+<li><strong>The skill engine re-graded on the completed corpus.</strong> Spread board
+61.2% directional (permutation p=0.0065, BH q=
+0.086); total board 49.3%. Still zero qualified
+strategies and zero rewards — the market column stays blank for want of a rights-cleared
+price source.</li>
+<li><strong>Week 11 and Week 12 slates are captured, not predicted.</strong> Scheduled
+fixtures carry kickoff times and networks exactly as printed; no score, no line, no
+model output is attached to them.</li>
+</ol></div>
+<p class="note">Paper research only. No pricing, wagering or reward of any kind is
+produced anywhere on this desk. Nothing here is a betting recommendation.</p>
+</main>
+<footer>Evidence attributed to NFL.com and retained with hashes; canonical artefacts belong to their
+producing sessions. Not affiliated with or endorsed by the NFL. Generated deterministically by
+nfl-fresh-1118/build.py from committed artefacts on 2026-11-18.</footer>
+</body>
+</html>

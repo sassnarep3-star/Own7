@@ -1,0 +1,273 @@
+{
+  "checked_on": "2026-11-18",
+  "frozen_snapshot": "data/nfl-standings-2026.csv",
+  "fresh_snapshot": "data/nfl-standings-2026-11-17.csv",
+  "complete_snapshot": "data/nfl-standings-2026-11-18.csv",
+  "complete_snapshot_source": "https://www.nfl.com/standings/",
+  "complete_snapshot_evidence": "research/nfl/evidence/standings-2026-11-18.retrieved.md",
+  "week10_completion_source": "https://www.nfl.com/schedules/2026/by-week/week-10",
+  "week10_completion_evidence": "nfl-results/evidence/week-10.complete.md",
+  "week11_source": "https://www.nfl.com/schedules/2026/by-week/week-11",
+  "week11_evidence": "nfl-results/evidence/week-11.schedule.md",
+  "week12_source": "https://www.nfl.com/schedules/2026/by-week/week-12",
+  "week12_evidence": "nfl-results/evidence/week-12.schedule.md",
+  "games_weeks_1_9": 136,
+  "games_weeks_1_10_frozen": 149,
+  "games_weeks_1_10_complete": 150,
+  "completion_added_finals": [
+    {
+      "week": 10,
+      "date": "2026-11-16",
+      "weekday": "Monday",
+      "away": "LAC",
+      "home": "BAL",
+      "away_score": 23,
+      "home_score": 20,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "retrieved": "2026-11-18",
+      "evidence": "nfl-results/evidence/week-10.complete.md"
+    }
+  ],
+  "scheduled_not_final_at_publication": [
+    {
+      "week": 11,
+      "away": "IND",
+      "home": "HOU",
+      "kickoff": "8:15 PM",
+      "tv": "PRIME",
+      "date": "2026-11-19"
+    },
+    {
+      "week": 11,
+      "away": "MIA",
+      "home": "BUF",
+      "kickoff": "1:00 PM",
+      "tv": "CBS",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "BAL",
+      "home": "CAR",
+      "kickoff": "1:00 PM",
+      "tv": "FOX",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "NO",
+      "home": "CHI",
+      "kickoff": "1:00 PM",
+      "tv": "FOX",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "TEN",
+      "home": "DAL",
+      "kickoff": "1:00 PM",
+      "tv": "FOX",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "TB",
+      "home": "DET",
+      "kickoff": "1:00 PM",
+      "tv": "FOX",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "AZ",
+      "home": "KC",
+      "kickoff": "1:00 PM",
+      "tv": "CBS",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "PIT",
+      "home": "PHI",
+      "kickoff": "1:00 PM",
+      "tv": "CBS",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "NYJ",
+      "home": "LAC",
+      "kickoff": "4:05 PM",
+      "tv": "FOX",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "JAX",
+      "home": "NYG",
+      "kickoff": "4:25 PM",
+      "tv": "CBS",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "LV",
+      "home": "DEN",
+      "kickoff": "4:25 PM",
+      "tv": "CBS",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "MIN",
+      "home": "SF",
+      "kickoff": "8:20 PM",
+      "tv": "NBC",
+      "date": "2026-11-22"
+    },
+    {
+      "week": 11,
+      "away": "CIN",
+      "home": "WAS",
+      "kickoff": "8:15 PM",
+      "tv": "ESPN",
+      "date": "2026-11-23"
+    },
+    {
+      "week": 12,
+      "away": "GB",
+      "home": "LA",
+      "kickoff": "8:00 PM",
+      "tv": "NETFLIX",
+      "date": "2026-11-25"
+    },
+    {
+      "week": 12,
+      "away": "CHI",
+      "home": "DET",
+      "kickoff": "1:00 PM",
+      "tv": "CBS",
+      "date": "2026-11-26"
+    },
+    {
+      "week": 12,
+      "away": "PHI",
+      "home": "DAL",
+      "kickoff": "4:30 PM",
+      "tv": "FOX",
+      "date": "2026-11-26"
+    },
+    {
+      "week": 12,
+      "away": "KC",
+      "home": "BUF",
+      "kickoff": "8:20 PM",
+      "tv": "NBC",
+      "date": "2026-11-26"
+    },
+    {
+      "week": 12,
+      "away": "DEN",
+      "home": "PIT",
+      "kickoff": "3:00 PM",
+      "tv": "PRIME",
+      "date": "2026-11-27"
+    },
+    {
+      "week": 12,
+      "away": "NO",
+      "home": "CIN",
+      "kickoff": "1:00 PM",
+      "tv": "CBS",
+      "date": "2026-11-29"
+    },
+    {
+      "week": 12,
+      "away": "BAL",
+      "home": "HOU",
+      "kickoff": "1:00 PM",
+      "tv": "CBS",
+      "date": "2026-11-29"
+    },
+    {
+      "week": 12,
+      "away": "NYG",
+      "home": "IND",
+      "kickoff": "1:00 PM",
+      "tv": "FOX",
+      "date": "2026-11-29"
+    },
+    {
+      "week": 12,
+      "away": "NYJ",
+      "home": "MIA",
+      "kickoff": "1:00 PM",
+      "tv": "CBS",
+      "date": "2026-11-29"
+    },
+    {
+      "week": 12,
+      "away": "ATL",
+      "home": "MIN",
+      "kickoff": "1:00 PM",
+      "tv": "FOX",
+      "date": "2026-11-29"
+    },
+    {
+      "week": 12,
+      "away": "TEN",
+      "home": "JAX",
+      "kickoff": "1:00 PM",
+      "tv": "FOX",
+      "date": "2026-11-29"
+    },
+    {
+      "week": 12,
+      "away": "NE",
+      "home": "LAC",
+      "kickoff": "4:05 PM",
+      "tv": "CBS",
+      "date": "2026-11-29"
+    },
+    {
+      "week": 12,
+      "away": "WAS",
+      "home": "AZ",
+      "kickoff": "4:25 PM",
+      "tv": "FOX",
+      "date": "2026-11-29"
+    },
+    {
+      "week": 12,
+      "away": "SEA",
+      "home": "SF",
+      "kickoff": "4:25 PM",
+      "tv": "FOX",
+      "date": "2026-11-29"
+    },
+    {
+      "week": 12,
+      "away": "LV",
+      "home": "CLE",
+      "kickoff": "8:20 PM",
+      "tv": "NBC",
+      "date": "2026-11-29"
+    },
+    {
+      "week": 12,
+      "away": "CAR",
+      "home": "TB",
+      "kickoff": "8:15 PM",
+      "tv": "ESPN",
+      "date": "2026-11-30"
+    }
+  ],
+  "checks": {
+    "w1_9_vs_frozen": "160 fields reconciled",
+    "w1_10_frozen_vs_fresh_1117": "160 fields reconciled",
+    "fresh1117_eq_frozen_plus_w10_deltas": "32 clubs x 5 fields hold",
+    "w1_10_complete_vs_fresh_1118": "160 fields reconciled",
+    "fresh1118_eq_fresh1117_plus_completion_deltas": "32 clubs x 5 fields hold",
+    "completion_reread_agrees_with_frozen_w10": "13 frozen finals identical + only the scheduled fixture added + byes identical"
+  }
+}

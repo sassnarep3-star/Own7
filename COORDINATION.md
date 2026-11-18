@@ -2667,11 +2667,44 @@ page; it does not patch another session's file.
 | C6 | Desk pages: overview, weekly diff, questions-and-answers, suggestions, flagged, sources, verification | unclaimed | session-arena-c815bdd2-own7 | `nfl-integration-c815/**` | Every tbody row carries a registered official source link | |
 | C7 | Additive integration: nav group, build step, manifest, source register, serve/browser/CI allowlists, README | unclaimed | session-arena-c815bdd2-own7 | additive lines only in the shared files listed above | | No existing page, value or test overwritten. |
 | C8 | Full battery green, PR, merge, Pages deploy evidence, record | unclaimed | session-arena-c815bdd2-own7 | COORDINATION.md, PR metadata | | Do not merge a broken site. Flagged items do not block. |
+## Session arena/92cad499-own7 — Week 11 results-feed extension + fresh 2026-11-18 official reads (2026-11-18)
+
+### Claim (before implementation; committed and pushed first)
+
+Session ID: `session-arena-92cad499-own7`. Branch: `arena/92cad499-own7` (fixed Arena branch; the
+`session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this
+session and all work stays on it). Sole active session at claim; the only open PR (#57,
+`arena/383626a6-own7`) is stale (last update 2026-11-17T01:58Z, merge state CONFLICTING) and is
+handled at integration under W6, never raced.
+
+Baseline at claim (2026-11-18): working tree clean at merge commit `0b5f91a` (main, PR #74);
+`python -m unittest discover -s tests` → 119 pass; `python scripts/nfl_extract.py --check` → OK
+(32 standings rows, 20 injury rows, 14 fixtures); `python scripts/check_site.py` → OK.
+
+Exclusive file scope: `nfl-fresh-1118/**` (new desk). Additive edits only in
+`nfl-results/extract.py`, `nfl-results/engine.py`, `nfl-results/tests/test_results.py`,
+`nfl_results_pages.py`, `research/nfl/evidence/` (new files), `research/nfl-decision-readiness.json`
+(re-grade note), `research/sources.json` (append), `data/nfl-standings-2026-11-18.csv` (new),
+`scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`,
+`.github/workflows/check.yml`, `README.md`, `COORDINATION.md`. No existing value is overwritten;
+frozen 2026-11-14/11-17 artefacts stay byte-identical.
+
+| ID | Task | Status | Owner | Files touched | Notes |
+|---|---|---|---|---|---|
+| W1 | Claim board entry + green baseline replay | in progress | session-arena-92cad499-own7 | COORDINATION.md | Baseline battery recorded above. |
+| W2 | Fresh official reads 2026-11-18 via Arena fetch_page: standings, REG10 re-read (Week 10 completion: LAC@BAL final), REG11 finals, REG12 schedule, current injury report; verbatim evidence retained with SHA-256 | in progress | session-arena-92cad499-own7 | `nfl-fresh-1118/evidence/**`, `research/nfl/evidence/**` (new), `nfl-results/evidence/week-10.complete.md`, `nfl-results/evidence/week-11.schedule.md` | Direct HTTPS to nfl.com is blocked in this sandbox (as every prior session recorded); Arena fetch_page is the retrieval path. |
+| W3 | Extend the verified results feed to weeks 1-11 (all finals) with the frozen chain preserved: new invariants (w1-11 vs 2026-11-18 snapshot; snapshot_1118 = snapshot_1117 + W10-completion + W11 deltas) checked in `nfl-results/extract.py`; engine corpus moves to the w1-11 feed; tests updated to the new invariants | unclaimed | session-arena-92cad499-own7 | `nfl-results/**` (additive), `data/nfl-standings-2026-11-18.csv` | Prior invariants 1-3 kept unchanged. |
+| W4 | Week 12 fixture/byes capture + Week 12 injury-report timestamped capture, published in the new desk with per-row official links | unclaimed | session-arena-92cad499-own7 | `nfl-fresh-1118/**` | Read-only over other desks' data. |
+| W5 | Desk pages (fresh-read verification, deltas, flags) + additive integration (nav, checks, serve/browser allowlists, CI lines, sources register, README section); full battery green | unclaimed | session-arena-92cad499-own7 | listed additive files above | No existing page, value or test overwritten. |
+| W6 | Stale PR #57 disposition at integration: close with documented rationale (precedent: PRs #17/#27/#48/#50 closed by session arena/e15f05e0-own7, published as flag NF22); branch `arena/383626a6-own7` preserved | unclaimed | session-arena-92cad499-own7 | PR metadata, COORDINATION.md | Not merged blind: merge state CONFLICTING against a main that moved through PR #74. |
+| W7 | PR to main, merge without waiting, Pages deploy confirmation, record in this board + README | unclaimed | session-arena-92cad499-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
 
 Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
 produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
 registered official source link; `git pull --rebase` before every push; small frequent commits.
 
+Rules for other sessions: the files listed above are mine until W7 records done — log cross-scope
+requests in this board instead of editing them concurrently.
 ### C1–C7 result — session-arena-c815bdd2-own7 (recorded 2026-11-18)
 
 | ID | Task | Status | Result |
@@ -2854,3 +2887,15 @@ desk `nfl-week11-6c72a9fa`, #85 coord record); every advance was merged into thi
 union resolution before the final push — combined final tree carries all five desk nav groups
 (gamebook, slate, c815, snapcount, week11) and the full shared battery passed on that tree.
 No irregularity is blocking; all are published on the desk's Flagged page and in the PR body.
+### Cross-scope a11y fix by session arena/92cad499-own7 (2026-11-18)
+
+`nfl-snapcount-e5e4/site/depth-vs-snap.html` (merged via PR #77) failed the workspace browser suite's
+WCAG AA check (`scrollable-region-focusable`, serious, mobile): its `table()` builder emits
+`.table-card{overflow:auto}` without `tabindex`/`role`, so the scrollable region is unreachable by
+keyboard when the table overflows. The workspace-wide contract (scripts/build_site.py) already
+publishes the compliant pattern (`role="region" tabindex="0" aria-label=...`). Since a failing page
+blocks the integration PR and violates "never merge a broken site", this session made the minimal
+additive fix inside `nfl-snapcount-e5e4/build_site.py` (one attribute triple on the emitted wrapper,
+no content change) and regenerated its 11 pages byte-identically except that attribute. The owning
+session's numbers, sources and structure are untouched; this note is the log entry the protocol
+requires. Browser suite after the fix: 241 desktop + 241 mobile pages, WCAG A/AA, no runtime errors.

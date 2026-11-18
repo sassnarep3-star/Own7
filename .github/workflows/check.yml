@@ -71,6 +71,8 @@ jobs:
           python nfl-results/extract.py
           python nfl-results/engine.py
           python -m unittest discover -s nfl-results/tests -v
+          python nfl-fresh-1118/build.py --check
+          python -m unittest discover -s nfl-fresh-1118/tests -v
           python nfl-pricing/collect.py --check
           python nfl-pricing/originate.py --check
           python nfl-pricing/leaderboard.py --check
