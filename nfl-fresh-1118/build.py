@@ -27,6 +27,9 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from injury_w11 import build as build_injury_w11  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 HERE = Path(__file__).resolve().parent
 SITE = HERE / "site"
@@ -39,6 +42,7 @@ PAGES = [
     ("index.html", "Overview"),
     ("results-feed.html", "Results feed"),
     ("schedule.html", "Weeks 11-12 slate"),
+    ("injury-w11.html", "Week 11 injury report"),
     ("flagged.html", "Flagged for review"),
 ]
 
@@ -49,6 +53,11 @@ S_W11 = "FRESH-NFL-W11-SCHED-1118"
 S_W12 = "FRESH-NFL-W12-SCHED-1118"
 S_INJ = "FRESH-NFL-INJHUB-1118"
 S_INJ404 = "FRESH-NFL-INJHUB-W11-404"
+S_INJ_W11 = "FRESH-NFL-INJHUB-W11-1118"
+S_NEWS_J1 = "FRESH-NFL-HUB-NEWS-JACKSON-1118"
+S_NEWS_J2 = "FRESH-NFL-HUB-NEWS-JACKSON-69-1118"
+S_NEWS_MAYE = "FRESH-NFL-HUB-NEWS-MAYE-1118"
+S_TERMS = "NFL-LEGAL-TERMS"
 
 REG_URLS = {
     S_STAND: "https://www.nfl.com/standings/",
@@ -57,6 +66,19 @@ REG_URLS = {
     S_W12: "https://www.nfl.com/schedules/2026/by-week/week-12",
     S_INJ: "https://www.nfl.com/injuries/",
     S_INJ404: "https://www.nfl.com/injuries/week-11",
+    S_INJ_W11: "https://www.nfl.com/injuries/",
+    S_NEWS_J1: "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-friday-nov-13",
+    S_NEWS_J2: "https://www.nfl.com/news/ravens-lamar-jackson-right-thumb-out-6-9-weeks-expects-to-return-this-season",
+    S_NEWS_MAYE: "https://www.nfl.com/news/nfl-network-patriots-qb-drake-maye-could-miss-rest-of-2026-season",
+    S_TERMS: "https://www.nfl.com/legal/terms/",
+}
+
+# Which registered sources each flag cites (default: the Week 10 standings source).
+FLAG_SOURCES = {
+    "FF01": [S_INJ], "FF02": [S_W10C],
+    "FI01": [S_INJ_W11], "FI02": [S_INJ_W11, S_NEWS_J1, S_NEWS_J2], "FI03": [S_INJ_W11],
+    "FI04": [S_INJ_W11], "FI05": [S_INJ_W11], "FI06": [S_INJ404, S_INJ_W11],
+    "FI07": [S_INJ_W11, S_W11], "FI08": [S_NEWS_MAYE, S_W11], "FI09": [S_TERMS, S_INJ_W11],
 }
 
 
@@ -70,7 +92,7 @@ FLAGS = [
      "delta is published from this read. The complete 2026-11-17 read (28 team tables, "
      "347 rows, source E7EF-INJ-W10-1117) remains the newest complete capture. "
      "Follow-up task F1 recorded on the coordination board.",
-     "medium", "open"),
+     "medium", "superseded"),
     ("FF02", "The REG10 schedule URL now redirects away from Week 10",
      "The frozen 2026-11-17 read of Week 10 used https://www.nfl.com/schedules/2026/REG10 "
      "(per session arena/e15f05e0-own7). On 2026-11-18 that URL no longer renders Week 10: "
@@ -97,6 +119,58 @@ FLAGS = [
      "transcribed exactly as printed; they are noted here because week-shape assumptions "
      "(16 games, Sun-Thu-Mon only) would silently drop them.",
      "low", "explained"),
+    ("FI01", "First Week 11 read: no delta is published, because there is no earlier Week 11 read",
+     "The hub served the WEEK 11 view when read, with all three chunks retrieved before "
+     "2026-11-18T06:24:07Z. FF01 recorded the Week 10 view at 04:06:10Z. This is the first Week 11 "
+     "entry in the series, so there is nothing to compare it with. The delta series starts with the "
+     "next Week 11 read (Thursday 19 November). Nothing is inferred from the gap.",
+     "low", "open"),
+    ("FI02", "'No Injuries Reported' for the Ravens while the hub's own news links carry a Lamar Jackson absence",
+     "The Ravens line on the Sunday 22 November 1:00 PM ET game (BAL vs CAR) reads 'No Injuries Reported'. "
+     "Two headlines in the same hub page say Lamar Jackson is expected to miss 6-10 weeks and is out 6-9 weeks "
+     "with a right-thumb injury. The page does not reconcile the two. This desk reads 'No Injuries Reported' as "
+     "'no listed player', not as 'healthy', and does not resolve the difference. Reserve-list status is "
+     "handled on the Week 11 desk and its own flags.",
+     "medium", "open"),
+    ("FI03", "One profile link's slug differs from the printed player name (a Texans LB row)",
+     "On one Texans LB row (Limited Participation in Practice) the printed profile link slug does not match the "
+     "printed name. The transcript keeps the printed name and the printed link. No identity is inferred from the "
+     "slug, and the profile page itself was not opened in this desk.",
+     "low", "open"),
+    ("FI04", "Game Status is blank on all 26 printed rows at the Wednesday read",
+     "No Thursday or Sunday game designation is printed in this capture. A blank Game Status means no "
+     "designation is printed yet. It is not 'available' and it is not filled in. The Thursday and Friday "
+     "reads will show whether designations appear and when.",
+     "medium", "open"),
+    ("FI05", "The capture is rendered page text, and the clock time is an upper bound",
+     "The retrieval tool returns the hub as rendered markdown. It returns no HTTP bytes and no per-chunk "
+     "timestamps. The SHA-256 published here therefore hashes the transcript file, not the server response. "
+     "All three chunks were retrieved before 2026-11-18T06:24:07Z, and their exact times are not known. The "
+     "hub's NEWS block and site chrome are not transcribed, apart from the three headlines cited.",
+     "medium", "open"),
+    ("FI06", "The Week 11 URL still returns the site 404 page; the Week 11 view is served at the hub URL",
+     "https://www.nfl.com/injuries/week-11 returned the site's 404 page ('404 - Flag on the Play.') on a re-check "
+     "after 2026-11-18T06:24:07Z. The Week 11 report is served at https://www.nfl.com/injuries/, which is the "
+     "URL every row in this desk links to. The earlier negative record remains correct for the /week-11 path.",
+     "low", "explained"),
+    ("FI07", "Printed time and network text is kept as printed; only the CSV normalises the time",
+     "The hub prints kickoff times as '8:15 PMEST' (no space). The CSV writes '8:15 PM', and the match against "
+     "the official schedule capture ignores spaces. The hub prints 'NBC, UNIVERSO' for Minnesota at San Francisco, "
+     "while the schedule capture stores 'NBC'. The page shows the hub's text.",
+     "low", "explained"),
+    ("FI08", "Hub headline on a club with no Week 11 game (Patriots, Drake Maye)",
+     "The hub's NEWS block carries 'Patriots QB Drake Maye could miss rest of 2026 season'. The official Week 11 "
+     "schedule capture has no New England game, so the club has no Week 11 injury-report row. The headline is "
+     "recorded as evidence only, and no row was created for it.",
+     "low", "explained"),
+    ("FI09", "Player-level rows are held out of the public page; the transcript is still in the repository",
+     "The NFL.com terms limit use to individual, non-commercial, informational purposes and prohibit systematic "
+     "retrieval or compilation without written consent. Repository gate RG10 says nothing NFL-named is released, "
+     "and flag NF34 already records that other desks publish NFL-named CSVs. This page therefore shows counts and "
+     "links only, with no player names. The 26 printed rows are validated in memory and stay in the verbatim "
+     "transcript, which the repository publishes like every other committed file. Moving raw row-level evidence "
+     "to a private store is an owner decision, not made here.",
+     "high", "open"),
 ]
 
 
@@ -236,6 +310,8 @@ def load() -> dict:
         "injury-hub-partial": HERE / "evidence/injury-hub-read-2026-11-18.partial.md",
     }
     hashes = {key: sha256_file(path) for key, path in evidence.items()}
+    inj = build_injury_w11()
+    hashes["injury-w11"] = inj["evidence_sha256"]
 
     if errors:
         raise SystemExit("FAIL: fresh-read desk verification:\n  - " + "\n  - ".join(errors))
@@ -244,7 +320,7 @@ def load() -> dict:
         "sched_w11": sched_w11, "sched_w12": sched_w12, "sched_w10": sched_w10,
         "byes": byes, "standings": standings, "added": added,
         "w11_byes": w11_byes, "w12_byes": w12_byes,
-        "standings_names": club_names, "analysis": analysis, "hashes": hashes,
+        "standings_names": club_names, "analysis": analysis, "hashes": hashes, "inj": inj,
         "checks": {"fv1": fv1_mismatch == 0, "fv2": fv2_mismatch == 0, "fv3": fv3,
                    "fv4": fv4, "fv5": fv5, "fv6": fv6, "frozen": frozen_ok},
     }
@@ -295,7 +371,7 @@ def page_index(d: dict) -> str:
             (3, "standings snapshots reconciled", "frozen pre-kickoff · 2026-11-17 · 2026-11-18"),
             (134, "games scored walk-forward", "30 variants · 0 qualified · 1 provisional"),
             (29, "scheduled fixtures captured", "13 Week 11 + 16 Week 12, kickoff times only"),
-            (4, "desk pages, source-linked", "every row carries its registered official source"),
+            (len(PAGES), "desk pages, source-linked", "every row carries its registered official source"),
         ))
     check_rows = [
         row(["FV1", badge("pass" if checks["fv1"] else "fail"),
@@ -339,6 +415,8 @@ def page_index(d: dict) -> str:
              f'<code>{d["hashes"]["week12"][:16]}…</code>', link(S_W12)], S_W12),
         row(["Injury hub (flagged partial)", "3 of 8 chunks", "no counts published from a partial read",
              f'<code>{d["hashes"]["injury-hub-partial"][:16]}…</code>', link(S_INJ)], S_INJ),
+        row(["Week 11 injury report, first read", "3 of 3 chunks", "13 games, 26 club entries (24 'No Injuries Reported'), 26 player rows",
+             f'<code>{d["hashes"]["injury-w11"][:16]}…</code>', link(S_INJ_W11)], S_INJ_W11),
     ]
     return f'''
 <p class="eyebrow">OWN7 · Fresh-read desk</p>
@@ -484,13 +562,113 @@ corpus, no rating and no leaderboard until the publisher prints a FINAL headline
 '''
 
 
+def page_injury_w11(d: dict) -> str:
+    inj = d["inj"]
+    games, players = inj["games"], inj["players"]
+    DNP, LP, FP = ("Did Not Participate In Practice", "Limited Participation in Practice",
+                   "Full Participation in Practice")
+    practice = {}
+    for p in players:
+        practice[p["practice_status"]] = practice.get(p["practice_status"], 0) + 1
+    gs_filled = sum(1 for p in players if p["game_status"])
+    inj_filled = sum(1 for p in players if p["injuries"])
+    club_entries = 2 * len(games)
+    kpis = "".join(
+        f'<div class="kpi"><span class="kpi-value">{esc(v)}</span>'
+        f'<span class="kpi-label">{esc(label)}</span><span class="sub">{esc(sub)}</span></div>'
+        for v, label, sub in (
+            (len(games), "games on the Week 11 report",
+             "Thu 19 Nov to Mon 23 Nov; pairings, kickoffs and dates match the official schedule capture"),
+            (inj["nir_clubs"], "club entries: 'No Injuries Reported'", f"of {club_entries} club entries"),
+            (len(players), "player rows, validated (names not shown: FI09)",
+             "two clubs carry tables, both in the Thursday game"),
+            (f"{practice.get(DNP, 0)} · {practice.get(LP, 0)} · {practice.get(FP, 0)}",
+             "practice: DNP · LP · FP", "as printed on the Wednesday report; not a game designation"),
+            (f"{gs_filled} of {len(players)}", "Game Status cells filled",
+             "blank means no designation printed yet, not 'available'"),
+            (f"{inj_filled} of {len(players)}", "Injuries cells filled",
+             "the Injuries column is blank on every printed row at this read"),
+        ))
+    game_rows = []
+    for g in games:
+        game_rows.append(row([
+            esc(g["game_no"]),
+            esc(f"{g['weekday']} {g['date']}"),
+            esc(f"{g['kickoff_et']} ET"),
+            esc(g["network_as_printed"]),
+            esc(f"{g['away_abbr']} {g['away_nickname']} ({g['away_record']})"),
+            esc(f"{g['home_abbr']} {g['home_nickname']} ({g['home_record']})"),
+            esc(g["away_status"]),
+            esc(g["home_status"]),
+            f"{link(S_INJ_W11, 'injury hub ↗')} · {link(S_W11, 'schedule ↗')}",
+        ], f"{S_INJ_W11} {S_W11}"))
+    by_club: dict[str, list] = {}
+    for p in players:
+        by_club.setdefault(p["club_nickname"], []).append(p)
+    club_rows = []
+    for g in games:
+        for side in ("away", "home"):
+            abbr, nick, rec = g[f"{side}_abbr"], g[f"{side}_nickname"], g[f"{side}_record"]
+            status = g[f"{side}_status"]
+            rows_ = by_club.get(nick, [])
+            printed = "No Injuries Reported" if status == "No Injuries Reported" else f"Table printed: {len(rows_)} players"
+            club_rows.append(row([
+                esc(f"{abbr} {nick} ({rec})"),
+                esc(f"Game {g['game_no']} · {g['weekday']} {g['date']} · {g['kickoff_et']} ET"),
+                esc(printed),
+                esc(len(rows_)),
+                esc(sum(1 for r in rows_ if r["practice_status"] == DNP)),
+                esc(sum(1 for r in rows_ if r["practice_status"] == LP)),
+                esc(sum(1 for r in rows_ if r["practice_status"] == FP)),
+                esc(sum(1 for r in rows_ if r["game_status"])),
+                link(S_INJ_W11),
+            ], S_INJ_W11))
+    return f'''
+<p class="eyebrow">OWN7 · Fresh-read desk</p>
+<h1>Week 11 injury report: first read</h1>
+<p class="lead">The Wednesday, 18 November 2026 read of the official NFL.com injury report for Week 11.
+This is the first Week 11 entry in the injury-report time series. No delta is published, because
+there is no earlier Week 11 read to compare it with. The next Thursday and Friday reads will carry
+the deltas.</p>
+<div class="kpis">{kpis}</div>
+<h2>How to read this page</h2>
+<ul>
+<li><strong>'No Injuries Reported'</strong> means no player of that club is listed on this report. It does
+not mean the club is healthy, and it does not by itself show who is unavailable. See flag FI02.</li>
+<li><strong>A blank Game Status</strong> means no designation is printed in this capture. It is not
+'available' and it is not filled in.</li>
+<li><strong>Practice status</strong> is the Wednesday line as printed. It is not a game designation.</li>
+<li><strong>Publication split.</strong> This page shows derived counts and links only. Player names and
+per-player rows are raw row-level data and are not published here (flag FI09).</li>
+</ul>
+<h2>Games on the Week 11 report</h2>
+{table("w11-games", "Week 11 injury report, one row per game (13)",
+       ["#", "Day", "Kickoff", "TV (as printed)", "Away (printed first)", "Home", "Away club status", "Home club status", "Source"],
+       game_rows,
+       note="Pairings, kickoffs and dates were checked against the official Week 11 schedule capture. Records were checked against the 2026-11-18 standings capture.")}
+<h2>Club view (26 club entries)</h2>
+{table("w11-clubs", "Derived club counts from the Week 11 report",
+       ["Club (record)", "Game", "Printed status", "Players listed", "DNP", "LP", "FP", "Game status filled", "Source"],
+       club_rows,
+       note="Counts are derived from the printed rows. 'No Injuries Reported' clubs have zero listed players. The Injuries column is blank on every printed row, so it is not tabulated.")}
+<h2>Verification</h2>
+<ul>
+<li>Transcript: <code>nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md</code>, SHA-256 <code>{esc(d["hashes"]["injury-w11"])}</code>.</li>
+<li>Drift alarm: the parser pins 13 games, 26 club entries, 26 player rows, 11 and 15 rows for the two tables, and 24 'No Injuries Reported' entries. Any change fails the build.</li>
+<li>Cross-checks: pairings and kickoffs against <code>nfl-results/data/scheduled-2026-w11.csv</code>; records against <code>data/nfl-standings-2026-11-18.csv</code>; 26 clubs on the report plus 6 clubs with no row (ATL, CLE, GB, LA, NE, SEA).</li>
+<li>Capture form: rendered page text, three chunks, clock time as an upper bound. See flag FI05.</li>
+</ul>
+'''
+
+
 def page_flagged(d: dict) -> str:
     rows = []
     for fid, title, detail, severity, status in FLAGS:
+        sids = FLAG_SOURCES.get(fid, [S_STAND])
         rows.append(row([f"<strong>{esc(fid)}</strong>", esc(title), esc(detail),
                          badge(severity), badge(status),
-                         link(S_INJ if fid == "FF01" else S_W10C if fid == "FF02" else S_STAND)],
-                        S_INJ if fid == "FF01" else S_W10C if fid == "FF02" else S_STAND))
+                         " · ".join(link(sid) for sid in sids)],
+                        " ".join(sids)))
     return f'''
 <p class="eyebrow">OWN7 · Fresh-read desk</p>
 <h1>Flagged for review</h1>
@@ -543,6 +721,7 @@ def main() -> int:
         "index.html": page_index(d),
         "results-feed.html": page_results(d),
         "schedule.html": page_schedule(d),
+        "injury-w11.html": page_injury_w11(d),
         "flagged.html": page_flagged(d),
     }
     outputs = {name: render(name, body) for name, body in bodies.items()}

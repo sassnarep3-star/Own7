@@ -476,6 +476,7 @@ def fresh_nav_group():
         "index.html": "Fresh-read overview",
         "results-feed.html": "Results feed completion",
         "schedule.html": "Weeks 11-12 slate",
+        "injury-w11.html": "Week 11 injury report",
         "flagged.html": "Fresh-read flagged",
     }
     return [("NFL fresh reads",

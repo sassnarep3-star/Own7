@@ -3425,6 +3425,54 @@
   "url": "https://www.nfl.com/injuries/week-11"
  },
  {
+  "id": "FRESH-NFL-INJHUB-W11-1118",
+  "publisher": "NFL.com",
+  "title": "NFL injury report hub, WEEK 11 view (first Week 11 read, 2026-11-18)",
+  "kind": "Official league injury report page",
+  "authority": "nfl.com (league primary source)",
+  "scope": "Week 11 report (Thu 19 Nov to Mon 23 Nov; 13 games; 26 club entries: 2 clubs with player tables, 24 'No Injuries Reported') read via Arena fetch_page, chunks 0-2 of 3. All three chunks were retrieved before the sandbox clock read 2026-11-18T06:24:07Z (upper bound; the tool returns no per-chunk time). Transcript retained with SHA-256 at nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md. Rendered page text, not HTTP bytes. Game Status is blank on all 26 printed rows at this read.",
+  "checked_on": "2026-11-18",
+  "access": "Rendered page text via Arena fetch_page; 3 chunks; no HTTP bytes or per-chunk timestamps",
+  "status": "Official first Week 11 read; not redistributed",
+  "url": "https://www.nfl.com/injuries/"
+ },
+ {
+  "id": "FRESH-NFL-HUB-NEWS-JACKSON-1118",
+  "publisher": "NFL.com",
+  "title": "NFL news roundup, Friday Nov. 13: 'Ravens confirm Lamar Jackson expected to miss 6-10 weeks; Kenneth Walker questionable'",
+  "kind": "Official league news headline (linked from the injury hub)",
+  "authority": "nfl.com (league primary source)",
+  "scope": "Headline text and link as printed in the hub's NEWS block at the 2026-11-18 read. Headline only; the article body was not read. Not an injury-report designation.",
+  "checked_on": "2026-11-18",
+  "access": "Headline text via Arena fetch_page (hub NEWS block)",
+  "status": "Headline evidence for flag FI02 only; not used as data",
+  "url": "https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-friday-nov-13"
+ },
+ {
+  "id": "FRESH-NFL-HUB-NEWS-JACKSON-69-1118",
+  "publisher": "NFL.com",
+  "title": "NFL Network: 'Ravens' Lamar Jackson (right thumb) out 6-9 weeks, expects to return this season'",
+  "kind": "Official league news headline (linked from the injury hub)",
+  "authority": "nfl.com (league primary source)",
+  "scope": "Headline text and link as printed in the hub's NEWS block at the 2026-11-18 read. Headline only; the article body was not read. Not an injury-report designation.",
+  "checked_on": "2026-11-18",
+  "access": "Headline text via Arena fetch_page (hub NEWS block)",
+  "status": "Headline evidence for flag FI02 only; not used as data",
+  "url": "https://www.nfl.com/news/ravens-lamar-jackson-right-thumb-out-6-9-weeks-expects-to-return-this-season"
+ },
+ {
+  "id": "FRESH-NFL-HUB-NEWS-MAYE-1118",
+  "publisher": "NFL.com",
+  "title": "NFL Network: 'Patriots QB Drake Maye could miss rest of 2026 season'",
+  "kind": "Official league news headline (linked from the injury hub)",
+  "authority": "nfl.com (league primary source)",
+  "scope": "Headline text and link as printed in the hub's NEWS block at the 2026-11-18 read. Headline only; the article body was not read. The Patriots have no Week 11 game in the official schedule capture, so the club has no Week 11 report row.",
+  "checked_on": "2026-11-18",
+  "access": "Headline text via Arena fetch_page (hub NEWS block)",
+  "status": "Headline evidence for flag FI08 only; not used as data",
+  "url": "https://www.nfl.com/news/nfl-network-patriots-qb-drake-maye-could-miss-rest-of-2026-season"
+ },
+ {
   "id": "B77-NFL-TRADES",
   "publisher": "NFL.com",
   "title": "NFL.com league transactions (November 2026 trades)",
