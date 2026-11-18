@@ -79,6 +79,7 @@ FLAG_SOURCES = {
     "FI01": [S_INJ_W11], "FI02": [S_INJ_W11, S_NEWS_J1, S_NEWS_J2], "FI03": [S_INJ_W11],
     "FI04": [S_INJ_W11], "FI05": [S_INJ_W11], "FI06": [S_INJ404, S_INJ_W11],
     "FI07": [S_INJ_W11, S_W11], "FI08": [S_NEWS_MAYE, S_W11], "FI09": [S_TERMS, S_INJ_W11],
+    "FI10": [S_INJ_W11],
 }
 
 
@@ -171,6 +172,12 @@ FLAGS = [
      "transcript, which the repository publishes like every other committed file. Moving raw row-level evidence "
      "to a private store is an owner decision, not made here.",
      "high", "open"),
+    ("FI10", "No scheduled Wednesday, Thursday and Friday capture exists yet; this is one manual read",
+     "The brief asks for the injury report to be captured on each of Wednesday, Thursday and Friday and kept as a dated "
+     "series. This desk holds one manual read. The repository's existing official-source capture workflow is started "
+     "by hand, requires a typed authorization, and keeps its artefacts for 7 days, so it cannot provide the retained "
+     "history by itself. A durable store and a schedule are an owner decision, not made here.",
+     "medium", "open"),
 ]
 
 
@@ -653,7 +660,7 @@ per-player rows are raw row-level data and are not published here (flag FI09).</
        note="Counts are derived from the printed rows. 'No Injuries Reported' clubs have zero listed players. The Injuries column is blank on every printed row, so it is not tabulated.")}
 <h2>Verification</h2>
 <ul>
-<li>Transcript: <code>nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md</code>, SHA-256 <code>{esc(d["hashes"]["injury-w11"])}</code>.</li>
+<li>Transcript: <code>nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md</code>, SHA-256 <code style="overflow-wrap:anywhere">{esc(d["hashes"]["injury-w11"])}</code>.</li>
 <li>Drift alarm: the parser pins 13 games, 26 club entries, 26 player rows, 11 and 15 rows for the two tables, and 24 'No Injuries Reported' entries. Any change fails the build.</li>
 <li>Cross-checks: pairings and kickoffs against <code>nfl-results/data/scheduled-2026-w11.csv</code>; records against <code>data/nfl-standings-2026-11-18.csv</code>; 26 clubs on the report plus 6 clubs with no row (ATL, CLE, GB, LA, NE, SEA).</li>
 <li>Capture form: rendered page text, three chunks, clock time as an upper bound. See flag FI05.</li>
