@@ -1196,6 +1196,12 @@ def build():
     week11_pages=load_json('nfl-week11-4c7d/site/manifest.json')['pages']
     for name in week11_pages:
         generated.append(f'nfl-week11-4c7d/site/{name}')
+    # Patriots-Lions injury-block reconciliation desk (session arena/8b538c74-own7). Own deterministic build.
+    recon_result=subprocess.run([sys.executable,str(ROOT/'nfl-injury-recon-8b53'/'build.py'),'--check'],cwd=ROOT,capture_output=True,text=True)
+    if recon_result.returncode: raise SystemExit('nfl-injury-recon-8b53/build.py --check failed: '+recon_result.stdout+recon_result.stderr)
+    recon_pages=load_json('nfl-injury-recon-8b53/site/manifest.json')['pages']
+    for name in recon_pages:
+        generated.append(f'nfl-injury-recon-8b53/site/{name}')
     # Week-10-completion & weekly-diff desk (session arena/03dcea07-own7). Own deterministic
     # build; pages live under nfl-slate-03dcea07/site/.
     slate_result=subprocess.run([sys.executable,str(ROOT/'nfl-slate-03dcea07'/'build.py')],cwd=ROOT,capture_output=True,text=True)
