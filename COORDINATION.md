@@ -3563,10 +3563,10 @@ untouched; shared-site link requests, if any, are logged for the final integrati
 
 | ID | Task | Status | Owner | Files touched | Sources / verification |
 |---|---|---|---|---|---|
-| A1 | Claim + baseline replay | in progress | session-arena-0c516a05-own7 | COORDINATION.md | Commands and measured results above. |
-| A2 | Independent repo acceptance review: separate mechanical checks from external factual verification; inventory existing summary/questions/suggestions/flags and name remaining decision gates | unclaimed | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md` | Existing official source register and immutable evidence links; no new live-source claims. |
-| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | unclaimed | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | `npm run check`, `npm run test:browser`, result and origination `--check` commands; official URLs linked for manual review. |
-| A4 | PR, checks, merge, deployment record | unclaimed | session-arena-0c516a05-own7 | PR metadata, COORDINATION.md | Only after the review is complete and branch checks pass; no claim of new site publication unless verified. |
+| A1 | Claim + baseline replay | done | session-arena-0c516a05-own7 | COORDINATION.md | Baseline checks recorded above; claim commit `ec2d7b1` pushed to the fixed branch. Rebase conflict with PR #93 was resolved as a union and logged below. |
+| A2 | Independent repo acceptance review: separate mechanical checks from external factual verification; inventory existing summary/questions/suggestions/flags and name remaining decision gates | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md` | Six repo consistency items (AR-01–AR-06) and the decision-ready question/gate list are documented; official manual-review URLs link to registered NFL/NWS sources. No new NFL live-fetch claim. |
+| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | `npm run check` pass (119 + 6 tests; site audit 280 pages, 15,332 rows, 302 sources, 0 errors); `npm run test:browser` pass (256 desktop + 256 mobile, WCAG A/AA); extraction/origination checks pass; 14 review-table rows + 15 local links checked, 0 report-link errors. |
+| A4 | PR, checks, merge, deployment record | in progress | session-arena-0c516a05-own7 | PR metadata, COORDINATION.md | Report-only change; continue only after PR checks pass. Existing published Pages status is recorded in the report; any newly published content must be confirmed after merge. |
 
 Standing constraints: this report will not invent values, reinterpret saved evidence as a fresh live
 read, or mark unlicensed price / ROI / reward / wager gates as cleared. `check_site.py` validates
@@ -3578,3 +3578,36 @@ Before the claim was pushed, `git pull --rebase origin main` advanced the base f
 `d6803bb` (PR #93, the W7 publication record). Both this claim and the new W7 record appended to
 the end of `COORDINATION.md`, so Git reported an add-at-end conflict. Resolved as a union: retained
 the full W7 publication record from `origin/main` and this complete claim; no work was discarded.
+
+### Acceptance findings and cross-scope requests (2026-11-18)
+
+- The report records AR-01–AR-06: stale readiness text for DR-22/23/25/61/68; an executive-summary
+  top section that predates the completed results corpus; results-overview copy that still says
+  n=114 while the current analysis reports n=128; duplicated question/suggestion/readiness surfaces;
+  the limits of the local source/link audit and the narrow scope of the NFL `/odds/` 404; and the
+  Week 11 injury URL serving a Week 10 view at the retained read time.
+- Internal comparison: `research/nfl-decision-readiness.json` contains 70 requirement rows, but
+  DR-22's clearing text says 65; `nfl-slate-03dcea07/site/verification.html` records the final
+  Week 10 completion and its 14/14 venue/actual-starter Game Book capture; `weekly-diff.html` and
+  `rules-2026.html` exist, while the readiness ledger still describes those artefacts as absent.
+  No status was changed here because the full DR-23/25/61/68 acceptance conditions are broader than
+  the existence of those pages.
+- Current engine reproduction: 150 results / 134 scored; 30 variants tested; 0 qualified, 1
+  provisional, 29 rejected; 82–52 spread (61.2%), 66–68 total (49.3%); current leg-dependence
+  estimate n=128, phi −0.0318, p=0.7209. These are repository-derived backtest outputs, not
+  official NFL statistics or a profit claim.
+- Report-focused validation: 14 Markdown table rows each include an official source-domain link;
+  15 local report links resolve; 0 errors. `npm run check`, extraction/origination checks, and the
+  256+256 desktop/mobile browser suite passed on the reviewed code (the rebase added only this
+  coordination record, not HTML or data).
+- Official source links for manual review: [NFL Terms](https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions),
+  [NFL Week 10 results](https://www.nfl.com/schedules/2026/by-week/week-10),
+  [NFL standings](https://www.nfl.com/standings/),
+  [NFL Week 10 injury report](https://www.nfl.com/injuries/league/2026/REG10),
+  [2026 Official Playing Rules](https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf),
+  and the [LAC–BAL Game Book](https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf).
+- Cross-scope request to the final integration owner: re-grade the named readiness rows from the
+  retained official captures; refresh or clearly version the top-level summary and result-overview
+  captions; add a generated-copy freshness test; consider publishing this review in the existing
+  review/suggestions hierarchy and condensing the main navigation. This session did not edit shared
+  index/navigation, requirements, source registers, or strategy data.
