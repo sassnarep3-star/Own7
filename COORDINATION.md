@@ -2530,3 +2530,47 @@ The rebases advanced `origin/main` from `be2462d` through `764635c` (PR #60), `b
 ### Publication record
 
 PR [#64](https://github.com/sassnarep3-star/Own7/pull/64) merged into `main` at `2026-11-17T03:33:06Z`; merge commit `5bbf6f83f5971648277af078a16651c44e1144b0`. PR checks passed (recursive research/site audit and desktop/mobile/accessibility). Post-merge repository check run [44011008807](https://github.com/sassnarep3-star/Own7/actions/runs/44011008807) and GitHub Pages deployment [44011008076](https://github.com/sassnarep3-star/Own7/actions/runs/44011008076) both completed successfully against the merge commit. Live page verified at https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/requirements.html with 20 rows and source links.
+
+---
+
+## Session arena/e5e4351c-own7 — NFL snap-count / playing-time desk (R11, R31, R52, R56)
+
+### Claim (before implementation)
+
+Session ID: `session-arena-e5e4351c-own7`. Branch: `arena/e5e4351c-own7` (fixed Arena branch; all work
+stays on it). Baseline at claim: working tree clean at merge commit `0b5f91a` (main, PR #74).
+
+**Scope.** The brief's requirements R11 ("Do not model depth from jersey order; model it from playing
+time"), R31 ("Capture official inactive lists and snap counts"), R52 ("Resolve the depth-order source
+... derive depth from snap counts if an official snap-count source exists") and R56 ("Use snap counts
+as the starter proxy when the depth chart is unavailable") are still **open** in the readiness
+crosswalk. The official NFL Game Book publishes a per-player **Playtime Percentage** table (snap
+counts + snap share on Offense/Defense/Special Teams). This desk captures that official data, derives
+the measurable starter/backup split from playing time, and resolves the "cannot be confirmed, only
+suspected" backup-replacement problem the brief flags. No value is inferred; blanks stay blank with a
+reason.
+
+Exclusive file scope: `nfl-snapcount-e5e4/**` (new directory). Additive lines only in
+`COORDINATION.md`, `README.md`, `scripts/build_site.py`, `scripts/check_site.py`,
+`scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`,
+`research/sources.json`. No existing page, value or test is overwritten. Open PR #57
+(`arena/383626a6-own7`, `nfl-readiness/`) and every merged desk are not touched.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|----|------|--------|-------|---------------|----------------------|
+| S1 | Claim + green baseline replay | in progress | session-arena-e5e4351c-own7 | COORDINATION.md | Baseline battery recorded below. |
+| S2 | Capture official snap counts (Playtime Percentage) from all 13 Week 10 NFL Game Books; retain verbatim raw with hashes | unclaimed | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/raw/**`, `evidence/**` | Official Game Book PDFs linked from the NFL Game Centre; fetched via Arena `fetch_page` (direct HTTPS to nfl.com returns curl 000 in this sandbox, as every prior session recorded). |
+| S3 | Build desk: per-game snap records, per-team position-group snap shares, playing-time starter/backup split, replacement-depth view, depth-vs-snap cross-reference | unclaimed | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | Read-only over other sessions' data; contradictions flagged, never patched in place. |
+| S4 | Flagged-irregularity register for anything found this session | unclaimed | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | Published on the desk's own Flagged page with official links; non-blocking. |
+| S5 | Desk site pages + unit tests + byte-identical `build.py --check` | unclaimed | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | Every tbody row carries `data-source-ids` naming registered official sources. |
+| S6 | Additive integration: nav group + build step, check lines, serve/browser allowlists, sources register, README section; full battery green | unclaimed | session-arena-e5e4351c-own7 | additive lines in the shared files listed above | No existing page, value or test overwritten. |
+| S7 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-e5e4351c-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints: no price, ROI, CLV, stake, wager or monetary reward is produced anywhere; every
+table row keeps a registered official source link; `git pull --rebase` before every push; small
+frequent commits; open PR #57 is not touched.
+
+### S1 baseline replay (recorded at claim)
+
+- `python -m unittest discover -s tests` → to be replayed and recorded.
+- `python scripts/check_site.py` → to be replayed and recorded.
