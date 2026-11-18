@@ -290,6 +290,29 @@ SOURCE_HOSTS.update({
     'W4C7D-NFL-INACTIVES': 'www.nfl.com',
 })
 
+SOURCE_HOSTS.update({
+    'K637-NFL-TERMS-1118': 'www.nfl.com',
+    'K637-NFL-ODDS-1118': 'www.nfl.com',
+    'K637-REPO-DRLEDGER': 'github.com',
+    'K637-REPO-REQ-16': 'github.com',
+    'K637-REPO-REQ-44': 'github.com',
+    'K637-REPO-READY-81': 'github.com',
+    'K637-REPO-AVAIL-CSV': 'github.com',
+    'K637-REPO-AVAIL-RAW': 'github.com',
+    'K637-REPO-E7EF-1117': 'github.com',
+    'K637-REPO-BYES': 'github.com',
+    'K637-REPO-REVIEW': 'github.com',
+    'K637-REPO-TERMS-EVID': 'github.com',
+    'K637-REPO-SNAP-SEARCH': 'github.com',
+    'K637-REPO-GAMES-CANON': 'github.com',
+    'K637-REPO-GAMES-COMPLETE': 'github.com',
+    'K637-REPO-RULES-PAGE': 'github.com',
+    'K637-REPO-RESERVE-PAGE': 'github.com',
+    'K637-REPO-COMP-LB': 'github.com',
+    'K637-REPO-PRICING-LB': 'github.com',
+})
+
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)

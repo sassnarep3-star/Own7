@@ -1,0 +1,17 @@
+{
+ "schema": "637442e9.rechecked.v1",
+ "read_on": "2026-11-18",
+ "rows": {
+  "DR-02": "Results feed: nfl-results/data/games-2026-w1-10-complete.csv has 150 rows, the canonical file has 149 (the only difference is LAC@BAL). Status kept; see flag F-CORPUS.",
+  "DR-29": "Blocker re-read: NFL.com Terms §1.3 verbatim (evidence/nfl-terms-read-2026-11-18.md). Status kept Blocked.",
+  "DR-54": "Blocker re-read: NFL.com Terms §1.3 verbatim. Status kept Blocked.",
+  "DR-21": "Clock-time series needs repeated retrieval; §1.3 gate re-read. Status kept Partial.",
+  "DR-66": "Past-season archive: no archive located this session; the terms gate (§1.3) applies to any construction. Status kept Blocked.",
+  "DR-18": "nfl.com/odds renders a 404 page on 2026-11-18 (evidence/nfl-odds-page-2026-11-18.md). Status kept Blocked.",
+  "DR-11": "Official snap-count search 2026-11-18: no official source located; third-party sites only (evidence/snap-count-search-2026-11-18.md). Status kept Open.",
+  "DR-52": "Same search as DR-11; route (b) still unverified. Status kept Partial.",
+  "DR-56": "Same search as DR-11. Status kept Open.",
+  "DR-70": "Corpus holds one season (2026, Weeks 1-12 scheduled). Status kept Open.",
+  "DR-48": "Spot-check: in the availability desk CSV (repository capture of the official REG10 injury report), the game-status field reads 'Out' for Kerby Joseph, Cade Mays and D.J. Reed (DET). Not re-read against the live page this session. Status kept."
+ }
+}
