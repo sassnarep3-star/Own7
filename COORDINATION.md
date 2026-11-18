@@ -2530,3 +2530,34 @@ The rebases advanced `origin/main` from `be2462d` through `764635c` (PR #60), `b
 ### Publication record
 
 PR [#64](https://github.com/sassnarep3-star/Own7/pull/64) merged into `main` at `2026-11-17T03:33:06Z`; merge commit `5bbf6f83f5971648277af078a16651c44e1144b0`. PR checks passed (recursive research/site audit and desktop/mobile/accessibility). Post-merge repository check run [44011008807](https://github.com/sassnarep3-star/Own7/actions/runs/44011008807) and GitHub Pages deployment [44011008076](https://github.com/sassnarep3-star/Own7/actions/runs/44011008076) both completed successfully against the merge commit. Live page verified at https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/requirements.html with 20 rows and source links.
+
+## Session arena/a10fed14-own7 — Week 11/12 official capture, open-gate resolution, decisions & suggestions (2026-11-18)
+
+Session ID: `session-arena-a10fed14-own7`. Branch: `arena/a10fed14-own7` (fixed Arena branch; all work
+stays on it). Baseline at claim (verified by running, not assumed): working tree clean at merge commit
+`0b5f91a` (main, PR #74); `python -m unittest discover -s tests` → 119 pass;
+`python scripts/check_site.py` → passed (47 canonical pages, 20 legacy redirects, 176 auxiliary,
+243 recursive pages, 9,740 tbody rows, 264 registered sources, 0 errors).
+
+Exclusive file scope: new directory `nfl-week11-4c7d/**`. Additive lines only in `COORDINATION.md`,
+`README.md`, `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`,
+`scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`.
+No existing page, value, test or other session's implementation file is overwritten. Open PR #57
+(branch arena/383626a6-own7) is not touched.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| G1 | Claim + green baseline replay | in progress | session-arena-a10fed14-own7 | COORDINATION.md | Baseline battery above |
+| G2 | Fresh official reads 2026-11-18: standings, Week 11 finals, Week 12 schedule, current injury report; verbatim transcripts retained with SHA-256 | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/evidence/**` | nfl.com via Arena fetch_page |
+| G3 | Week 11 official Game Books: venue, roof/surface, weather, official starters, official Not Active lists | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/raw/**`, `nfl-week11-4c7d/data/**` | official NFL Game Book PDF |
+| G4 | Designation reliability over two weeks: join published designations to official Not Active lists, Wilson 95% intervals, n published | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/data/**` | R44/R53 advance |
+| G5 | Snap-count and inactive-list source resolution: probe official candidates, publish verdict per candidate with URL and what rendered | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/data/**` | R11/R31/R56 |
+| G6 | Decisions: questions (known/missing/closes-gap) + suggestions with adopt/defer/reject paths | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/site/questions.html`, `site/suggestions.html` | Every row source-linked; blanks stay blank |
+| G7 | Executive summary + per-requirement delta for the open/partial gates | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/site/executive-summary.html`, `site/requirements.html` | Official links per row |
+| G8 | Desk site pages + unit tests + byte-identical rebuild | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/**` | Every tbody row carries registered source ids |
+| G9 | Additive integration: nav group, build step, check lines, serve/browser allowlists, source register; full battery green | unclaimed | session-arena-a10fed14-own7 | additive lines in the shared files listed above | No existing page/test overwritten |
+| G10 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-a10fed14-own7 | COORDINATION.md, PR metadata | Do not merge a broken site |
+
+Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
+produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
+registered official source link; `git pull --rebase` before every push; small frequent commits.
