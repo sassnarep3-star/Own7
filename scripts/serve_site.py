@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 ROOT=Path(__file__).resolve().parent.parent
-FOLDERS={'assets','css','data','docs','handoff','js','market-evidence','nfl','nfl-assurance-9580ac3f','nfl-availability-28ef','nfl-brief-77b1','nfl-competition','nfl-fresh-1118','nfl-gamebook-5213243e','nfl-integration-c815','nfl-ledger-637442e9','nfl-lifecycle-3f5c','nfl-market-desk','nfl-pricing','nfl-readiness-1467fdf7','nfl-readiness-e7ef','nfl-skill-cfdd','nfl-slate-03dcea07','nfl-snapcount-e5e4','nfl-week11-4c7d','nfl-week11-6c72a9fa','nfl_lab','nfl_origination','pages','rental','research','verified'}
+FOLDERS= {'assets', 'css', 'data', 'docs', 'handoff', 'js', 'market-evidence', 'nfl', 'nfl-assurance-9580ac3f', 'nfl-availability-28ef', 'nfl-brief-77b1', 'nfl-competition', 'nfl-fresh-1118', 'nfl-gamebook-5213243e', 'nfl-integration-c815','nfl-ledger-637442e9', 'nfl-ledger-aedccbe5', 'nfl-lifecycle-3f5c', 'nfl-market-desk', 'nfl-pricing', 'nfl-readiness-1467fdf7', 'nfl-readiness-e7ef', 'nfl-skill-cfdd', 'nfl-slate-03dcea07', 'nfl-snapcount-e5e4', 'nfl-week11-4c7d', 'nfl-week11-6c72a9fa', 'nfl_lab', 'nfl_origination', 'pages', 'rental', 'research', 'verified'}
 EXTENSIONS={'.html','.css','.js','.svg','.json','.csv','.md','.py'}
 ROOT_FILES={'README.md','COORDINATION.md'}
 
