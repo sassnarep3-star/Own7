@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "index.html",
+    "snap-records.html",
+    "position-group-shares.html",
+    "playtime-depth.html",
+    "replacement-depth.html",
+    "depth-vs-snap.html",
+    "decisions.html",
+    "suggestions.html",
+    "verification.html",
+    "flagged.html",
+    "sources.html"
+  ],
+  "desk": "nfl-snapcount-e5e4",
+  "built_from": [
+    "raw/g01..g13-*.txt",
+    "build.py",
+    "data/*.csv"
+  ],
+  "captured_games": 13,
+  "snap_records": 1217,
+  "playtime_depth_rows": 1848,
+  "replacement_depth_rows": 1386
+}

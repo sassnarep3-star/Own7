@@ -83,6 +83,9 @@ jobs:
           python nfl-market-desk/build.py --check
           python nfl-market-desk/site_build.py
           python -m unittest discover -s nfl-market-desk/tests -v
+          python nfl-snapcount-e5e4/build.py --check
+          python nfl-snapcount-e5e4/build_site.py --check
+          python -m unittest discover -s nfl-snapcount-e5e4/tests -v
       - name: Committed artifacts must already be current
         run: |
           git status --porcelain
