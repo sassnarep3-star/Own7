@@ -2899,3 +2899,26 @@ additive fix inside `nfl-snapcount-e5e4/build_site.py` (one attribute triple on 
 no content change) and regenerated its 11 pages byte-identically except that attribute. The owning
 session's numbers, sources and structure are untouched; this note is the log entry the protocol
 requires. Browser suite after the fix: 241 desktop + 241 mobile pages, WCAG A/AA, no runtime errors.
+
+## Session arena/3e6166df-own7 — Week 11 first Wednesday injury read, register re-grade, integration (2026-11-18)
+
+### Claim (committed and pushed before implementation)
+
+Session ID: `session-arena-3e6166df-own7`. Branch: `arena/3e6166df-own7` (fixed by Arena; the
+`session-<id>/<task>` branch naming in the brief is not used, because this session works on one branch only).
+Sole active session at claim. Baseline at claim (2026-11-18): tree clean at `ad6f0d6`; `python -m unittest discover -s tests` → 119 pass; `python scripts/check_site.py` → OK.
+
+Exclusive file scope: `nfl-w11-injuries-3e61/**` (new desk). Additive edits only in
+`research/sources.json` (append), `research/nfl-decision-readiness.json` (re-grade of DR-61, DR-64, DR-68 and the DR-29/DR-54 terms note only; no other row changes), `scripts/build_site.py` (nav/build step), `scripts/check_site.py` (host allowlist if needed), `scripts/serve_site.py`, `scripts/browser_test.mjs` (folder allowlists), `.github/workflows/check.yml` (desk lines), `README.md` (section), `COORDINATION.md`.
+
+| ID | Task | Status | Owner | Files touched | Notes |
+|---|---|---|---|---|---|
+| S1 | Claim + baseline | **done** | session-arena-3e6166df-own7 | COORDINATION.md | Baseline green at claim. |
+| S2 | Official read of NFL.com terms §1.3 (chunk 0 of 9) | **done** | session-arena-3e6166df-own7 | `research/sources.json` | Verbatim: "Systematic retrieval of data or other content from the Services, whether to create or compile, directly or indirectly, a collection, compilation, database, or directory, is prohibited absent our express prior written consent." Confirms gates DR-29 / DR-54 stay Blocked. |
+| S3 | First Wednesday read of the official injury report: the page serves **Week 11** (Thu 19 Nov IND–HOU first) | in progress | session-arena-3e6166df-own7 | `nfl-w11-injuries-3e61/evidence/**` | Single read of every chunk for verbatim capture; no scheduled retrieval (DR-29 gate). |
+| S4 | Parse Week 11 rows into the desk dataset; per-row official link; blank game-status cells left blank | unclaimed | session-arena-3e6166df-own7 | `nfl-w11-injuries-3e61/data/**` | Row counts per club pinned to the printed sections. |
+| S5 | Desk pages + tests + `--check`; additive integration | unclaimed | session-arena-3e6166df-own7 | `nfl-w11-injuries-3e61/site/**`, listed additive files | |
+| S6 | Register re-grades DR-61, DR-64, DR-68 (Open → Partial, cited to existing artifacts) | unclaimed | session-arena-3e6166df-own7 | `research/nfl-decision-readiness.json` | Stale 'Open' rows whose artifacts exist in the tree. |
+| S7 | PR to main, CI green, merge, Pages deploy confirmation, record here | unclaimed | session-arena-3e6166df-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Constraints this session honours: no price, odds, ROI, CLV, stake or wager figure is produced; no value is inferred (blank + flagged when not printed); every row carries a registered official source link; one read per official page, no scheduled capture.
