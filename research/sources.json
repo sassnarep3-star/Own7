@@ -2955,6 +2955,32 @@
   "status": "Content checked"
  },
  {
+  "id": "NFL-W10-SCHED",
+  "publisher": "NFL",
+  "title": "Week 10 by-week schedule, 2026 season",
+  "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+  "authority": "Official league schedule/results page",
+  "checked_on": "2026-11-18",
+  "status": "Content checked",
+  "scope": "14 dated Week 10 final headlines as printed, including Chargers 23, Ravens 20, FINAL, Monday, November 16th; the four bye clubs; the league's flexible-scheduling note. Read to settle the fixture the 2026-11-17 capture recorded as scheduled-not-final.",
+  "access": "Arena fetch_page; rendered text retained verbatim at nfl-integration-c815/evidence/week10-final-2026-11-18.retrieved.md",
+  "chunks_read": "1-2 of 2",
+  "sha256": "bc3f54fb944469a71b3cf022f3690b70d78ec6c5d583b2a02ccb2bb610ff40aa"
+ },
+ {
+  "id": "NFL-RULES-2026",
+  "publisher": "NFL",
+  "title": "2026 Official Playing Rules of the National Football League",
+  "url": "https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf",
+  "authority": "Official league rulebook (PDF, media.nfl.com)",
+  "checked_on": "2026-11-18",
+  "status": "Content checked",
+  "scope": "Rule 6-1-1, 6-1-2 (restraining lines, setup zone, landing zone), 6-1-5 (touchback spots, the 50-yard clause) and 6-1-6 (onside kick, declaration at any time), plus the 2026 rules-change list (6-1-3, 6-1-5, 6-1-6, 19-2). Closes requirement DR-68's rule-text gate. Every value published from it is extracted by pattern from the retained capture.",
+  "access": "Arena fetch_page (PDF parsed); retained verbatim at nfl-integration-c815/evidence/rules-2026-kickoff-onside.retrieved.md",
+  "chunks_read": "1-16 of 17",
+  "sha256": "7fda95eda32e176eae35b2a2b5142fc73f56bbef59670f71f3dde4c7a1dfb3be"
+ },
+ {
   "id": "B77-NFL-RESERVE",
   "publisher": "NFL.com",
   "title": "NFL.com reserve list, November 2026",

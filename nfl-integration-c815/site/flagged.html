@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for review · OWN7 NFL integration audit</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="brand"><strong>OWN7 · NFL integration audit</strong><span>session arena/c815bdd2-own7 · 2026-11-18</span></div>
+  <nav aria-label="Desk pages"><a href="index.html">Overview</a><a href="week10-completion.html">Week 10</a><a href="requirements.html">Requirements</a><a href="rules-2026.html">2026 rules</a><a href="suggestions.html">Suggestions</a><a href="flagged.html" aria-current="page">Flagged</a><a href="sources.html">Sources</a></nav>
+</header>
+<main id="main">
+<p class="eyebrow">OWN7 · NFL · non-blocking</p>
+<h1>Flagged for review</h1>
+
+<p class="lead">Every irregularity this session found, published rather than patched.
+Flagged items do not block the merge; they are here so they can be reviewed after the site
+is live and a fix requested.</p>
+<div class="table-wrap"><table><caption>Flagged irregularities</caption><thead><tr><th scope="col">ID</th><th scope="col">Severity</th><th scope="col">Finding</th><th scope="col">Detail</th><th scope="col">Evidence</th><th scope="col">Official source</th><th scope="col">State</th></tr></thead><tbody>
+<tr data-source-ids="NFL-W10-SCHED"><td>C8-F01</td><td><span class="badge badge-bad">high</span></td><td>The canonical results feed is one game behind official play</td><td>the feed holds 149 finals; official standings imply 150; the LAC 23, BAL 20 Week 10 game is final</td><td>Residue is exactly one game on two clubs, proven three ways on the Week 10 page</td><td class="src"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">NFL-W10-SCHED</a></td><td>Open — needs the owning session to add the row</td></tr><tr data-source-ids="NFL-W10-SCHED"><td>C8-F02</td><td><span class="badge badge-warn">medium</span></td><td>One Week 10 fixture was recorded as scheduled-not-final after it had been played</td><td>scheduled-2026-w10.csv still lists LAC at BAL for 2026-11-16</td><td>The game was played on the date printed; the publisher now prints a final score</td><td class="src"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">NFL-W10-SCHED</a></td><td>Open — same owner, same fix as C8-F01</td></tr><tr data-source-ids="NFL-STANDINGS"><td>C8-F03</td><td><span class="badge badge-ok">info</span></td><td>The 149-game figure is repeated in user-facing copy</td><td>README and several pages state 149 verified results</td><td>The number was correct on 2026-11-17 and is not correct today</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">NFL-STANDINGS</a></td><td>Open — copy follows the data fix</td></tr><tr data-source-ids="NFL-RULES-2026"><td>C8-F04</td><td><span class="badge badge-ok">info</span></td><td>DR-68's published gate is now stale</td><td>The register says the rule text is not transcribed; it is</td><td>Every value extracted verbatim from the official 2026 rulebook</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">NFL-RULES-2026</a></td><td>Resolution available — one register edit by its owner</td></tr>
+</tbody></table></div><p class="note">A flag is a statement that two official-derived numbers disagree, not a guess about why.</p>
+<div class="panel">
+<h3>What was checked and found clean</h3>
+<ul>
+<li>All 32 standings rows pass PCT, NET and HOME+ROAD, and the league identities close.</li>
+<li>Every one of the 70 requirement artefacts resolves in the tree.</li>
+<li>Every 2026 kickoff/onside value in <a href="rules-2026.html">2026 rules</a> is present
+verbatim in the official rulebook capture.</li>
+</ul>
+</div>
+
+</main>
+<footer>
+  <p>NFL data is attributed to NFL.com. Not affiliated with or endorsed by the NFL. This desk
+  publishes no price, odds, return, stake, wager, reward or recommendation. Where an official
+  source states no value, the cell is empty and flagged — never estimated.</p>
+</footer>
+</body></html>
