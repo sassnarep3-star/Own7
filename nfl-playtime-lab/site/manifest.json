@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "index.html",
+    "playtime.html",
+    "depth.html",
+    "starters.html",
+    "reliability.html",
+    "coverage.html",
+    "verification.html",
+    "flagged.html",
+    "sources.html"
+  ],
+  "desk": "nfl-playtime-lab",
+  "built_from": [
+    "raw/g01..g11-*.txt",
+    "nfl-playtime-lab/build.py"
+  ],
+  "captures": 13,
+  "clubs": 26,
+  "playtime_rows": 1847,
+  "verified_rows": 1825
+}

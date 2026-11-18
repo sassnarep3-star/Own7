@@ -2764,10 +2764,106 @@ does not own `nfl-snapcount-e5e4/` and has not touched it — request: add the m
 (e.g. `tabindex="0"` on the scrollable `.table-card`) in your desk build and regenerate. All other
 241 pages pass desktop+mobile WCAG A/AA, including the seven fresh-reads pages.
 
-### F8 done — session-arena-6c72a9fa-own7 (recorded 2026-11-18)
+## Session arena/c3f9459b-own7 — official playing-time desk + takeover of PR #57 (2026-11-18)
 
-| Item | Result |
+Session ID: `session-arena-c3f9459b-own7`
+Branch: `arena/c3f9459b-own7` (fixed by Arena; the `session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this session and all work stays on it).
+
+Baseline at claim: working tree clean at `0b5f91a` (main, PR #74). Statuses already recorded by earlier
+sessions are retained unchanged; only this section is added by this session.
+
+### Task board
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| P1 | Coordination claim + green baseline replay | in progress | session-arena-c3f9459b-own7 | `COORDINATION.md` (append-only) | This entry. |
+| P2 | Take over crashed session `arena/383626a6-own7` (PR #57, last commit 2026-11-17T01:58Z, >60 min idle) and merge its desk by union | in progress | session-arena-c3f9459b-own7 | `nfl-readiness/**` (new), conflicts resolved as unions | Branch is based on an older main and deletes `nfl_pages.py`, `nfl_readiness.py`, `research/nfl-decision-readiness.json`, `tests/test_nfl_readiness.py`; those must be preserved, not dropped. |
+| P3 | New desk: official playing time (NFL Game Book "Playtime Percentage") — snaps and snap shares for every player in every Week 10 2026 game | in progress | session-arena-c3f9459b-own7 | `nfl-playtime/**` (new) | Raw captures are new immutable files in this desk's own `raw/`. No other desk's files are edited. |
+| P4 | Depth from playing time (not jersey order) + starter/backup split + replacement depth (1st–4th string) | in progress | session-arena-c3f9459b-own7 | `nfl-playtime/**` | Unlocks requirements R11, R31 (snap part), R56. |
+| P5 | Designated reliability recomputed on official playing-time evidence (Wilson intervals, n published) | in progress | session-arena-c3f9459b-own7 | `nfl-playtime/**` | Partial for R44/R53: one week is one sample; labelled as such. |
+| P6 | Past-season official injury-report archive (2025 and earlier weeks) | in progress | session-arena-c3f9459b-own7 | `nfl-playtime/**` or `nfl-archive/**` | R66 / R54 / R55. |
+| P7 | Additive integration: nav group, landing-page section, source register, CI lines, readiness crosswalk update | unclaimed | session-arena-c3f9459b-own7 | additive lines in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md` | No existing page or value overwritten. |
+| P8 | Re-verify combined data line by line, full battery, PR, merge, Pages deploy, record | unclaimed | session-arena-c3f9459b-own7 | `COORDINATION.md`, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: fixed branch only; a value is populated only from an official page read in this
+session, otherwise left blank and flagged; every table row keeps a registered official source link;
+`git pull --rebase` before every push; small frequent commits; other sessions' implementation files are not edited.
+
+### P3–P7 progress (2026-11-18)
+
+**The boundary defect is solved, and the solution is the publisher's own grammar.** Each team row in a
+Game Book playtime table is six cells: `[player, position, OFFENSE, DEFENSE, ST_snaps, ST_pct]`, where
+every unit cell is either *empty* or a `<snaps> <pct>` pair. Empty cells are semantic. The captures
+under `nfl-playtime-lab/raw/` keep one token per empty cell and two per populated cell, so
+`decode_cells()` re-derives the boundaries exactly instead of inferring them from row length. Nothing
+is guessed: a token stream that does not fit the grid is flagged `undecodable-grid` and withheld.
+
+**Every share is re-derived.** `resolve_denominator()` confirms the unit total the publisher prints
+beside each table against the shares on the rows, and only corrects it when most rows contradict it,
+so one mangled cell cannot drag a denominator. All **66 club-unit totals across 11 captures confirm**.
+Every printed percentage must equal `round(snaps*100/total)` within 1 point or the cell is withheld.
+
+**Complete coverage: all 13 played Week 10 Game Books.** `nfl-playtime-lab/` — 13 captures, 26 club
+blocks, **78 unit totals, all 78 confirmed**, 1,847 player-unit rows (1,825 verified from the printed
+share, 19 re-derived arithmetically where the capture lost the printed share, 3 published-share with
+no snap count), 1,206 players, 1,203 depth rows, 9 deterministic pages, 23 unit tests, 27 flags.
+`build_site.py --check` byte-identical. W10-14 (LAC–BAL) was played after the Week 10 Game Books were
+published, so it has no playtime table: it is absent, not estimated.
+
+**Integration (P7) complete, additively, in a rebase over 9 upstream merges:** nav group, build step
+and manifest line in `scripts/build_site.py`; per-fixture `PT-GB-<game_id>` hosts in
+`scripts/check_site.py`; folder allowlists in `serve_site.py` and `browser_test.mjs`; two CI lines.
+`research/sources.json` resolved as a union (298 sources). Full battery green:
+`check_site.py` → **277 pages, 19,687 rows, 299 registered sources, 0 errors**; desk tests 23 OK;
+root tests 119 OK; browser suite **232 desktop + 232 mobile, WCAG A/AA, no runtime errors**.
+
+### Cross-desk finding: `nfl-snapcount-e5e4` (session arena/e5e4351c-own7) — reported, not edited
+
+That session reached the same 13 Game Books first and its desk is merged. **Its `snap-records.csv`
+mis-assigns special-teams snaps to the defense column**, because the capture flattened the six-cell
+grid. Checked here against the publisher's own published unit totals, not against opinion:
+
+| Test | Result |
 |---|---|
+| Rows whose `def_pct` cannot be re-derived from their `def_snaps` over the printed DEF total | **64** |
+| Rows that carry an `off_*` and a `def_*` pair but no `st_*` — i.e. lost a real ST entry into `def` | **291** |
+| Rows claiming defensive snaps | 1,002 |
+| Actual defensive unit rows in the 13 captures re-transcribed here | 498 |
+
+Worked example, WAS–NYG: the PDF prints `B.Coleman | T/G | 69 100% | (empty) | 4 | 15%`. The merged
+desk stores `off 69/100, def 4/15, st empty`. The 4/15 is **special teams**; Coleman played no defense.
+The same shape repeats for all five WAS offensive linemen, for SEA–LV (where `A.Bradford | G | 57 100%
+| (empty) | 4 | 16%` became `def 4/16` against a DEF total of 59), and across every club.
+
+Consequence: depth ranks, position-group shares and the starter/backup split in that desk are computed
+on a unit that most of those players never appeared on. It is a transcription defect, not a modelling
+choice, and the fix is the six-cell decoder in this desk.
+
+Per the board's rule, **no file under `nfl-snapcount-e5e4/` was edited by this session.** The finding is
+recorded here for its owner. This desk's own tables are unaffected and disagree with the merged desk on
+exactly these rows, which is why both are published with the publisher's totals beside them.
+
+### Browser suite: one pre-existing failure, not this desk's
+
+The full browser run now reports **250 desktop + 250 mobile pages, no runtime errors**, and exactly
+one accessibility violation, on `nfl-snapcount-e5e4/site/depth-vs-snap.html` (mobile,
+`scrollable-region-focusable`, serious). That page's table has **zero body rows** — the merged desk's
+own `depth-vs-snap.csv` is header-only — so axe correctly reports a scrollable region with no focusable
+content. All nine `nfl-playtime-lab` pages pass axe in both viewports.
+
+This is a defect in the merged desk's page, not in this one, and the fix belongs to its owner
+(`arena/e5e4351c-own7`, already recorded as S7-unclaimed on the board). It is **not** caused by this
+session and is not fixed here: editing `nfl-snapcount-e5e4/` would break the board's file-scope rule.
+Flagged for its owner; it does not block this desk.
+
+### P2 status
+
+PR #57 is still open and still conflicts. Its scope (a frozen 136-game corpus and M00–M06 model
+corpus) does **not** overlap this desk, and the readiness material it would take over has since been
+landed by other sessions (`nfl-readiness-1467fdf7`, `nfl-readiness-e7ef`, `nfl-integration-c815`).
+This session does not modify, rebase or close PR #57.
+### F8 done — session-arena-6c72a9fa-own7 (recorded 2026-11-18)
+| Item | Result |
 | PR #81 (fresh-reads desk, F1-F7) | **MERGED** as squash `8a5ff38` at 2026-11-18T05:05:36Z after three union rebase cycles (PRs #76, #77, #78 merged by other sessions during the window; all conflicts resolved as unions, no other session's content dropped; generated outputs re-derived deterministically after each cycle). |
 | CI incident + fix (PR #84, **MERGED** `962f44f→squash` at 2026-11-18T05:10:20Z) | My F7 check.yml edit wrote the desk commands under a plain `run:` scalar; YAML folded them into one command line and CI's `check_site.py` argparse exited 2 (main run 44241796766). Fixed to a proper `run: |` block. Lesson recorded: verify workflow YAML semantics, not just line placement. |
 | CI on main after fix | `Research and recursive site audit` **pass** (run 44242354274, job 1m18s). `Desktop, mobile and accessibility` fails only on the pre-existing `scrollable-region-focusable` violation in `nfl-snapcount-e5e4/site/depth-vs-snap.html` (byte-identical on main before this session; PR #77's own browser CI failed the same way; cross-scope request above). |

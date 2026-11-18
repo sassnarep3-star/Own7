@@ -1,0 +1,451 @@
+[
+  {
+    "club": "CIN",
+    "detail": "publisher printed a percentage without a snap count",
+    "game_id": "g02-PIT-CIN",
+    "player": "O.Burks",
+    "position": "LB",
+    "reason": "share-without-snaps",
+    "source": "https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "-",
+      "70"
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "CIN",
+    "detail": "printed 67%, denominator implies 70%; both official figures recorded, cell withheld",
+    "game_id": "g02-PIT-CIN",
+    "player": "J.Giles-Harris",
+    "position": "LB",
+    "reason": "pct-mismatch",
+    "source": "https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "19",
+      "67"
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "CIN",
+    "detail": "printed 59%, denominator implies 67%; both official figures recorded, cell withheld",
+    "game_id": "g02-PIT-CIN",
+    "player": "P.Jules",
+    "position": "S",
+    "reason": "pct-mismatch",
+    "source": "https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "18",
+      "59"
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "C.Levin",
+    "position": "C/G",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "72",
+      "100",
+      "",
+      "3",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "C.Lindstrom",
+    "position": "G",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "72",
+      "100",
+      "",
+      "3",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "J.Matthews",
+    "position": "T",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "72",
+      "100",
+      "",
+      "3",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "M.Bergeron",
+    "position": "OL",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "72",
+      "100",
+      "",
+      "1",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "C.Woerner",
+    "position": "TE",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "32",
+      "44",
+      "",
+      "16",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "B.Collins",
+    "position": "WR",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "25",
+      "35",
+      "",
+      "6",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "K.Herbert",
+    "position": "RB",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "21",
+      "29",
+      "",
+      "11",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "C.Blair",
+    "position": "WR",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "15",
+      "21",
+      "",
+      "17",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "A.Hooper",
+    "position": "TE",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "11",
+      "15",
+      "",
+      "1",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "N.Muse",
+    "position": "TE",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "10",
+      "14",
+      "",
+      "26",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "X.Watts",
+    "position": "S",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "65",
+      "100",
+      "3",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "K.Daniels",
+    "position": "LB",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "65",
+      "100",
+      "2",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "M.Smith",
+    "position": "DL",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "32",
+      "49",
+      "6",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "B.Bowman",
+    "position": "CB",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "27",
+      "42",
+      "10",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "M.Ford",
+    "position": "CB",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "24",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "J.Robinson",
+    "position": "S",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "24",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "L.McCullough",
+    "position": "LS",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "10",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "J.Bailey",
+    "position": "P",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "10",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "ATL",
+    "detail": "percentage absent from capture; re-derived from the denominator",
+    "game_id": "g04-KC-ATL",
+    "player": "J.Moody",
+    "position": "K",
+    "reason": "derived-pct",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "7",
+      ""
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "CLV",
+    "detail": "printed 93%, denominator implies 91%; both official figures recorded, cell withheld",
+    "game_id": "g05-HOU-CLE",
+    "player": "Q.Williams",
+    "position": "LB",
+    "reason": "pct-mismatch",
+    "source": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "62",
+      "93",
+      "",
+      ""
+    ],
+    "unit": "DEF"
+  },
+  {
+    "club": "NO",
+    "detail": "publisher printed a percentage without a snap count",
+    "game_id": "g08-CAR-NO",
+    "player": "L.Styles",
+    "position": "DB",
+    "reason": "share-without-snaps",
+    "source": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "-",
+      "88"
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "NYJ",
+    "detail": "publisher printed a percentage without a snap count",
+    "game_id": "g09-BUF-NYJ",
+    "player": "J.Keller",
+    "position": "LB",
+    "reason": "share-without-snaps",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "-",
+      "85"
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "NYJ",
+    "detail": "printed 67%, denominator implies 85%; both official figures recorded, cell withheld",
+    "game_id": "g09-BUF-NYJ",
+    "player": "I.Davis",
+    "position": "RB",
+    "reason": "pct-mismatch",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "23",
+      "67"
+    ],
+    "unit": "ST"
+  },
+  {
+    "club": "NYJ",
+    "detail": "capture row has no player name",
+    "game_id": "g09-BUF-NYJ",
+    "player": "",
+    "position": "",
+    "reason": "unreadable-row",
+    "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf",
+    "tokens": [
+      "",
+      "",
+      "",
+      "",
+      "6",
+      "22"
+    ],
+    "unit": ""
+  }
+]

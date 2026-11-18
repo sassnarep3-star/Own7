@@ -1,0 +1,161 @@
+{
+  "captures": 13,
+  "clubs": 26,
+  "depth_rows": 1203,
+  "derived_rows": 19,
+  "flags": 27,
+  "games": [
+    {
+      "clubs": [
+        "NYG",
+        "WAS"
+      ],
+      "file": "g01-WAS-NYG.txt",
+      "game_id": "g01-WAS-NYG",
+      "gamecenter": "https://www.nfl.com/games/commanders-at-giants-2026-reg-10",
+      "header": "### Washington Commanders vs New York Giants 11/12/2026 at MetLife Stadium",
+      "source": "https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "CIN",
+        "PIT"
+      ],
+      "file": "g02-PIT-CIN.txt",
+      "game_id": "g02-PIT-CIN",
+      "gamecenter": "https://www.nfl.com/games/steelers-at-bengals-2026-reg-10",
+      "header": "### Pittsburgh Steelers vs Cincinnati Bengals 11/15/2026 at Paycor Stadium",
+      "source": "https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "DET",
+        "NE"
+      ],
+      "file": "g03-NE-DET.txt",
+      "game_id": "g03-NE-DET",
+      "gamecenter": "https://www.nfl.com/games/patriots-at-lions-2026-reg-10",
+      "header": "",
+      "source": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "ATL",
+        "KC"
+      ],
+      "file": "g04-KC-ATL.txt",
+      "game_id": "g04-KC-ATL",
+      "gamecenter": "https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10",
+      "header": "### Kansas City Chiefs vs Atlanta Falcons 11/15/2026 at Mercedes-Benz Stadium",
+      "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "CLV",
+        "HST"
+      ],
+      "file": "g05-HOU-CLE.txt",
+      "game_id": "g05-HOU-CLE",
+      "gamecenter": "https://www.nfl.com/games/texans-at-browns-2026-reg-10",
+      "header": "### Houston Texans vs Cleveland Browns 11/15/2026 at Huntington Bank Field",
+      "source": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "GB",
+        "MIN"
+      ],
+      "file": "g06-MIN-GB.txt",
+      "game_id": "g06-MIN-GB",
+      "gamecenter": "https://www.nfl.com/games/vikings-at-packers-2026-reg-10",
+      "header": "",
+      "source": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "IND",
+        "MIA"
+      ],
+      "file": "g07-MIA-IND.txt",
+      "game_id": "g07-MIA-IND",
+      "gamecenter": "https://www.nfl.com/games/dolphins-at-colts-2026-reg-10",
+      "header": "### Miami Dolphins vs Indianapolis Colts 11/15/2026 at Lucas Oil Stadium",
+      "source": "https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "CAR",
+        "NO"
+      ],
+      "file": "g08-CAR-NO.txt",
+      "game_id": "g08-CAR-NO",
+      "gamecenter": "https://www.nfl.com/games/panthers-at-saints-2026-reg-10",
+      "header": "",
+      "source": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "BUF",
+        "NYJ"
+      ],
+      "file": "g09-BUF-NYJ.txt",
+      "game_id": "g09-BUF-NYJ",
+      "gamecenter": "https://www.nfl.com/games/bills-at-jets-2026-reg-10",
+      "header": "### Buffalo Bills vs New York Jets 11/15/2026 at MetLife Stadium",
+      "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "JAX",
+        "TEN"
+      ],
+      "file": "g10-JAX-TEN.txt",
+      "game_id": "g10-JAX-TEN",
+      "gamecenter": "https://www.nfl.com/games/jaguars-at-titans-2026-reg-10",
+      "header": "",
+      "source": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "LV",
+        "SEA"
+      ],
+      "file": "g11-SEA-LV.txt",
+      "game_id": "W10-11",
+      "gamecenter": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
+      "header": "### Seattle Seahawks vs Las Vegas Raiders 11/15/2026 at Allegiant Stadium",
+      "source": "https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "DAL",
+        "SF"
+      ],
+      "file": "g12-SF-DAL.txt",
+      "game_id": "W10-12",
+      "gamecenter": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "header": "### San Francisco 49ers vs Dallas Cowboys 11/15/2026 at AT&T Stadium",
+      "source": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "AZ",
+        "LAR"
+      ],
+      "file": "g13-LAR-AZ.txt",
+      "game_id": "W10-13",
+      "gamecenter": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+      "header": "### Los Angeles Rams vs Arizona Cardinals 11/15/2026 at State Farm Stadium",
+      "source": "https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf"
+    }
+  ],
+  "generated_for": "2026 Week 10",
+  "mismatch_rows": 0,
+  "players": 1206,
+  "playtime_rows": 1847,
+  "problems": [],
+  "reliability_rows": 1206,
+  "starter_rows": 1203,
+  "verified_rows": 1825,
+  "withheld": 4
+}
