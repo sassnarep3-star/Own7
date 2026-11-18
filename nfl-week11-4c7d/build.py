@@ -36,6 +36,9 @@ EVIDENCE = ROOT / "evidence"
 RAW = ROOT / "raw"
 
 OTHER_GAMEBOOK = REPO / "nfl-gamebook-5213243e"
+# Published as a repository-relative path: an absolute path would differ between checkouts
+# and make the deterministic-rebuild check fail anywhere but the machine that produced it.
+OTHER_GAMEBOOK_REL = "nfl-gamebook-5213243e"
 OTHER_STANDINGS = REPO / "data" / "nfl-standings-2026-11-17.csv"
 
 STANDINGS_URL = "https://www.nfl.com/standings/"
@@ -529,7 +532,7 @@ def build_inactive_coverage(mnf_rows: list[dict]) -> list[dict]:
                                   "the same thing as 'available': injured reserve, a practice-squad "
                                   "call-up or a club decision all produce an inactive who is listed "
                                   "nowhere on the weekly report",
-                "source_url": GAMEBOOK_URL if game_id == "W10-14" else OTHER_GAMEBOOK.as_posix(),
+                "source_url": GAMEBOOK_URL if game_id == "W10-14" else OTHER_GAMEBOOK_REL,
                 "injury_report_url": INJURY_URL,
             }
         )
@@ -593,7 +596,7 @@ def build_probes() -> list[dict]:
         {
             "probe_id": "SP-04",
             "question": "Do any retained Game Book extracts mention snaps at all?",
-            "url": (OTHER_GAMEBOOK / "raw").as_posix() + "/g01..g13 (read-only)",
+            "url": OTHER_GAMEBOOK_REL + "/raw/g01..g13 (read-only)",
             "what_rendered": "Case-insensitive search for 'snap' over the 13 retained official Game "
                              "Book extracts returns 0 hits.",
             "verdict": "none of 13 retained Game Books contain snap counts",
