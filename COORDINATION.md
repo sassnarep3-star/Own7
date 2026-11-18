@@ -3431,3 +3431,68 @@ Adding this desk's tracked files changes one count in another desk's generated o
 - A table check on the live page found one defect: the overview status table had a fourth cell per row without a header. Fixed by labelling the column "Source" (`nfl-ledger-aedccbe5/build.py`). No value changed. Same check on the other four desk tables: 0 mismatches.
 - L1-L5 status: **done**. L6 (PR, merge, Pages verification, record): PR #96 merged 2026-11-18T07:13:34Z; CI on the merged head `3c70944` green on both jobs (push and pull_request runs `44255182862`, `44255189172`), including the WCAG browser job; Pages build for `5799028` success (run `44257209443`).
 - The follow-up fix is delivered in a second, small PR; its number is recorded in the next line.
+## Session arena/8b538c74-own7 — Patriots–Lions injury-block reconciliation against the official report (2026-11-18)
+
+Branch: `arena/8b538c74-own7` (fixed by Arena; branched from `main` `ad6f0d6`). This session is the only
+writer on this branch. Other sessions' open PRs (#82, #83, #87, #88, #91) are not touched.
+
+### Observed starting state (read, not assumed)
+- The official NFL injury page `https://www.nfl.com/injuries/league/2026/REG10` (read 2026-11-18 via fetch_page)
+  lists the Patriots–Lions block (Sunday, November 15) with Kerby Joseph, Cade Mays and D.J. Reed all
+  `Out` in the Game Status column. Practice status for Joseph is `Did Not Participate In Practice`.
+- `nfl-assurance-9580ac3f/data/injuries.csv`: the three Lions game-status cells are blank; Joseph's practice
+  status reads `Limited Participation in Practice`; 9 Patriots rows have a blank game status where the
+  official page lists `Questionable`.
+- `nfl-availability-28ef/data/injuries-week10-2026.csv` (checked_on 2026-11-13): game status matches the
+  official page for the 3 Lions rows, but Joseph's practice status reads `Full Participation in Practice`.
+- Neither CSV stores a per-read clock time, so a practice-status difference may be a different capture,
+  not an error. This is recorded as a limitation, not resolved by guessing.
+
+### Claim
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| R1 | Verbatim evidence excerpt of the Patriots–Lions block with SHA-256 | in progress | session-arena-8b538c74-own7 | `nfl-injury-recon-8b53/evidence/**` | nfl.com REG10 | Copied from the read; no edits |
+| R2 | 24-row, 4-field reconciliation against the two desk CSVs; deltas and capture-time caveats | unclaimed | session-arena-8b538c74-own7 | `nfl-injury-recon-8b53/**` | nfl.com REG10 | Read-only over other desks' data |
+| R3 | Desk page (every row carries the official link), flags, tests, `build.py --check` | unclaimed | session-arena-8b538c74-own7 | `nfl-injury-recon-8b53/**` | nfl.com REG10 | Blanks stay blank |
+| R4 | Cross-scope requests to the assurance and availability desks (logged, not patched) | unclaimed | session-arena-8b538c74-own7 | COORDINATION.md | | |
+| R5 | PR to main, merge without waiting, Pages check, record | unclaimed | session-arena-8b538c74-own7 | COORDINATION.md, PR metadata | | Do not merge a broken site. Flags do not block. |
+
+### R1–R4 done — session-arena-8b538c74-own7 (recorded 2026-11-18)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| R1 | Verbatim evidence excerpt | **done** | `nfl-injury-recon-8b53/evidence/official-REG10-SUN-NE-at-DET-2026-11-18.md` — 24 table rows (15 Patriots, 9 Lions) copied from the 2026-11-18 read of https://www.nfl.com/injuries/league/2026/REG10 (chunk 0 of 8). SHA-256 `7bf456ec7d085451de6f865cb5e111e275a9691bf37af43179b1e6d889f31dce` in `evidence/SHA256SUMS.txt`. |
+| R2 | 24-row, 4-field reconciliation | **done** | Field-by-field exact-string comparison with desk A (`nfl-availability-28ef/data/injuries-week10-2026.csv`, checked_on 2026-11-13) and desk B (`nfl-assurance-9580ac3f/data/injuries.csv`, no clock time). Desk A: 21 agree / 3 differ. Desk B: 7 agree / 17 differ. Desk B leaves the game status blank for Joseph, Mays and Reed (official: Out) and 11 other rows with a Questionable/Out-type status; it leaves the injury blank for 14 rows with an official injury. Joseph's practice status: official "Did Not Participate In Practice"; desk A "Full Participation"; desk B "Limited". |
+| R3 | Desk page, flags, tests, deterministic build | **done** | `nfl-injury-recon-8b53/site/index.html` (24 rows, each linking the official page; blanks shown as blank). 8 unit tests pass (`python -m unittest discover -s nfl-injury-recon-8b53/tests`). `build.py --check` byte-identical. No row-level CSV written (rights gate). |
+| R4 | Cross-scope requests (logged, not patched) | **done** | See below. |
+
+**Live URL once Pages deploys:** https://sassnarep3-star.github.io/Own7/nfl-injury-recon-8b53/site/index.html
+
+**Shared-file edits made by this session (additive only):**
+- `scripts/build_site.py` — one desk-build block and one `auxiliary_pages` term for `nfl-injury-recon-8b53/site/`.
+- `research/site-manifest.json` — regenerated by `build_site.py` (adds the desk's page hash; no other page changed).
+- `scripts/browser_test.mjs`, `scripts/serve_site.py` — one folder added to each allowlist.
+
+**Attempted and reverted (recorded so it is not repeated):** registering a new `R8B-NFL-INJ-REG10` entry in `research/sources.json` made the nfl-pricing depth generator attach that ID to other desks' depth rows (it matches registry entries by URL). Reverted. This desk instead cites the existing registered source `X28-NFL-INJ-W10` (same official URL) for its rows.
+
+**Cross-scope requests (logged for the owning desks; nothing edited in their data):**
+1. Owner of `nfl-assurance-9580ac3f/data/injuries.csv`: the three Lions game-status cells (Joseph, Mays, Reed) are blank; the official page lists all three "Out". Joseph's practice status there reads "Limited", official "Did Not Participate In Practice". 11 further Patriots/Lions rows are blank or differ (see the desk page). Fix at source, then regenerate.
+2. Owner of `nfl-availability-28ef/data/injuries-week10-2026.csv`: Kerby Joseph's practice status reads "Full Participation in Practice" (checked_on 2026-11-13); official reads "Did Not Participate In Practice". Also Amon-Ra St. Brown and Sione Vaki: game status blank (official: Questionable). Needs a dated re-read to say which capture is right.
+3. Integration owner (root navigation): add a nav link to `nfl-injury-recon-8b53/site/index.html`. Not added here to avoid colliding with open PRs that edit the same navigation.
+
+**Flags (non-blocking; published on the desk page):** R-F1 Joseph practice disagreement; R-F2 desk B blank game/injury cells; R-F3 desk A blanks for St. Brown and Vaki; R-F4 the official page title says "Week 11" while its heading says "Injuries - WEEK 10"; R-F5 practice-status differences cannot be called errors without per-read clock times.
+
+**Limits stated honestly:** covers one official block (24 rows) of the Week 10 report. It does not cover other games, the other 13 Week 10 games, or any snap count, depth chart or Game Book. No value was inferred; differences are reported only where an exact string differs.
+
+### R5 — session-arena-8b538c74-own7 (recorded 2026-11-18, before PR)
+
+| Check (on the rebased tree, after `git pull --rebase origin main`) | Result |
+|---|---|
+| `python nfl-injury-recon-8b53/build.py --check` | byte-identical |
+| `python -m unittest discover -s nfl-injury-recon-8b53/tests` | 8 tests OK |
+| `python -m unittest discover -s tests` (root suite) | 119 tests OK |
+| `python -m unittest discover -s nfl-brief-77b1/tests` | OK |
+| `python scripts/build_site.py` then `python scripts/check_site.py` | OK, errors `[]`, research reproduction passed |
+| `npm run test:browser` (`scripts/browser_test.mjs`, WCAG A/AA, desktop + mobile) | 257 desktop + 257 mobile pages, 0 violations, 0 runtime errors (first run found 2 colour-contrast violations on this desk's own page; fixed by darkening grey text to #4f5868; re-run green) |
+
+Rebase conflict (this session): `COORDINATION.md` add/add with main's new entries; resolved as a union, nothing dropped.
