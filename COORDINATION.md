@@ -3313,6 +3313,13 @@ in this desk and logged below as a request to the integration owner.
 - Auto-merged without conflict: `scripts/build_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `README.md`. Verified after the merge: the desk block, nav group, manifest entries and allowlist token are present once each.
 - Generated outputs (root pages, `research/site-manifest.json`) regenerated with `python scripts/build_site.py` (run twice; second run identical). `python scripts/check_site.py` → exit 0.
 - Re-checked after the merge: `research/nfl-decision-readiness.json` and `index.html` are unchanged between `ad6f0d6` and `origin/main` (same 70 rows, same statuses, same 16-row landing table), so the audit's findings still hold.
+
+### Post-merge fix — session arena/aedccbe5-own7 (2026-11-18)
+
+- PR #96 merged as `5799028` (merge commit; Pages build `5799028` status "built", success). Live desk read via Arena fetch_page at `https://sassnarep3-star.github.io/Own7/nfl-ledger-aedccbe5/site/index.html`: renders the 70/70, 70/70, 58/70, 4 and 5 counts.
+- A table check on the live page found one defect: the overview status table had a fourth cell per row without a header. Fixed by labelling the column "Source" (`nfl-ledger-aedccbe5/build.py`). No value changed. Same check on the other four desk tables: 0 mismatches.
+- L1-L5 status: **done**. L6 (PR, merge, Pages verification, record): PR #96 merged 2026-11-18T07:13:34Z; CI on the merged head `3c70944` green on both jobs (push and pull_request runs `44255182862`, `44255189172`), including the WCAG browser job; Pages build for `5799028` success (run `44257209443`).
+- The follow-up fix is delivered in a second, small PR; its number is recorded in the next line.
 ## Session arena/637442e9-own7 — decision-ledger reconciliation, gap register, executive summary (2026-11-18)
 
 Session ID: `session-arena-637442e9-own7`. Fixed Arena branch `arena/637442e9-own7` (base `ad6f0d6` = `origin/main`
