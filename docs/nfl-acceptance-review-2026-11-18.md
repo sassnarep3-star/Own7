@@ -22,9 +22,9 @@ The main blockers are still substantive:
 
 The checks below are reproducibility and presentation checks. They do **not** independently prove that every publisher value is true, that the publisher grants redistribution rights, or that any model is profitable.
 
-- `npm run check` passed after rebasing onto `1d973d3`: 119 repository unit tests, 6 NFL sub-site tests, NFL research reproduction, and the recursive site contract audit.
-- `python scripts/check_site.py` passed: **293** recursive HTML pages, **15,576** table-body rows, **311** registered sources, **0** audit errors. Its own scope excludes external factual truth, source rights, and profitability.
-- `npm run test:browser` passed: **269 desktop + 269 mobile** page runs, WCAG A/AA, 10 interaction groups, no runtime errors.
+- `npm run check` passed after rebasing onto `3d98fff`: 119 repository unit tests, 6 NFL sub-site tests, NFL research reproduction, and the recursive site contract audit.
+- `python scripts/check_site.py` passed: **298** recursive HTML pages, **15,666** table-body rows, **311** registered sources, **0** audit errors. Its own scope excludes external factual truth, source rights, and profitability.
+- `npm run test:browser` passed: **274 desktop + 274 mobile** page runs, WCAG A/AA, 10 interaction groups, no runtime errors.
 - `python -m nfl_origination run --check` and `python scripts/nfl_extract.py --check` passed.
 - `python nfl-results/engine.py` reproduced the current 134-game / 30-variant result summary. The backtest outputs are on analysis pages; the results leaderboard is status-only.
 - GitHub's Pages API reports the site public at [https://sassnarep3-star.github.io/Own7/](https://sassnarep3-star.github.io/Own7/) with status `built`. The latest successful Pages deployment visible during this review is [run 44259159602](https://github.com/sassnarep3-star/Own7/actions/runs/44259159602) for `3d98fff` (after PR #100 merged); the sandbox cannot fetch `*.github.io` directly. This confirms the Pages workflow built the current `main` snapshot, not the rendered content of every public URL.

@@ -3565,9 +3565,9 @@ requests, if any, are logged for the final integration owner.
 
 | ID | Task | Status | Owner | Files touched | Sources / verification |
 |---|---|---|---|---|---|
-| A1 | Claim + baseline replay | done | session-arena-0c516a05-own7 | COORDINATION.md | Baseline checks recorded above; original claim commit `ec2d7b1` was pushed before the main rebases. Its current rebased copy is `1a9033d` and is pending branch publication. Both add-at-end rebase conflicts were resolved as unions and logged below. |
+| A1 | Claim + baseline replay | done | session-arena-0c516a05-own7 | COORDINATION.md | Baseline checks recorded above; original claim commit `ec2d7b1` was pushed before the main rebases. Its current rebased copy is `172c77a` and is pending branch publication. All add-at-end rebase conflicts were resolved as unions and logged below. |
 | A2 | Independent repo acceptance review: separate mechanical checks from external factual verification; inventory existing summary/questions/suggestions/flags and name remaining decision gates | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md` | Six repo consistency items (AR-01–AR-06) and the decision-ready question/gate list are documented; official manual-review URLs link to registered NFL/NWS sources. No new NFL live-fetch claim. |
-| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | Post-rebase on `1d973d3`: `npm run check` passed (119 + 6 tests; site audit 293 pages, 15,576 rows, 311 sources, 0 errors); `npm run test:browser` passed (269 desktop + 269 mobile, WCAG A/AA); NFL extraction/origination checks passed; report validation found 14 table rows + 16 local links, 0 errors. |
+| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | Post-rebase on `3d98fff`: `npm run check` passed (119 + 6 tests; site audit 298 pages, 15,666 rows, 311 sources, 0 errors); `npm run test:browser` passed (274 desktop + 274 mobile, WCAG A/AA); NFL extraction/origination checks passed; report validation found 14 table rows + 16 local links, 0 errors. |
 | A4 | PR, checks, merge, deployment record | in progress | session-arena-0c516a05-own7 | PR metadata, COORDINATION.md | Report-only change; continue only after PR checks pass. Existing published Pages status is recorded in the report; any newly published content must be confirmed after merge. |
 
 Standing constraints: this report will not invent values, reinterpret saved evidence as a fresh live
@@ -3604,6 +3604,21 @@ and #96 remained open with overlapping proposed readiness re-grades; PR #97 rema
 DR-61/64/68 edits and Week 11 evidence; PR #98 remained open and held for a rights decision. These
 branches are not modified by this session. PRs #94 and #87 are merged into the new base.
 
+### Latest rebase and overlap check after PR #100 (2026-11-18)
+
+`git fetch origin` advanced `origin/main` from `5799028` to `3d98fff` through PR #100, the follow-up
+labeling the fourth column of the merged ledger-audit desk. Rebase again conflicted only in
+`COORDINATION.md` at the appended-record boundary. Resolved as a union: retained the complete PR #100
+record and this session's full record; no changes were discarded. The branch is now based on
+`3d98fff`.
+
+Pages run [44259159602](https://github.com/sassnarep3-star/Own7/actions/runs/44259159602) completed
+successfully for `3d98fff`; the Pages API reports `built`. PR #96's audit desk and PR #100's header
+fix are merged; the four re-grades on the audit desk remain proposals, not edits to the shared
+readiness register. At the latest overlap query, PRs #95 and #97 remained open with readiness
+proposals; PR #98 was open, checks green, but held for its rights decision; and PR #99 was open with
+a Week 10 injury-block reconciliation. Those scopes remain untouched here.
+
 ### Acceptance findings and cross-scope requests (2026-11-18)
 
 - The report records AR-01–AR-06: stale readiness text for DR-22/23/25/61/68; an older executive
@@ -3623,9 +3638,9 @@ branches are not modified by this session. PRs #94 and #87 are merged into the n
   estimate n=128, phi −0.0318, p=0.7209. These are repository-derived backtest outputs, not
   official NFL statistics or a profit claim.
 - Report-focused validation: 14 Markdown table rows each include an official source-domain link;
-  16 local report links resolve; 0 errors. After the rebase onto `1d973d3`, `npm run check` passed
-  (119 + 6 tests; 293 pages, 15,576 rows, 311 sources), extraction/origination checks passed, and
-  the browser suite passed 269 desktop + 269 mobile runs with WCAG A/AA and no runtime errors.
+  16 local report links resolve; 0 errors. After the rebase onto `3d98fff`, `npm run check` passed
+  (119 + 6 tests; 298 pages, 15,666 rows, 311 sources), extraction/origination checks passed, and
+  the browser suite passed 274 desktop + 274 mobile runs with WCAG A/AA and no runtime errors.
 - Official source links for manual review: [NFL Terms](https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions),
   [NFL Week 10 results](https://www.nfl.com/schedules/2026/by-week/week-10),
   [NFL standings](https://www.nfl.com/standings/),
