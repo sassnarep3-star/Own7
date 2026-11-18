@@ -2573,3 +2573,33 @@ page; it does not patch another session's file.
 Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
 produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
 registered official source link; `git pull --rebase` before every push; small frequent commits.
+
+### C1–C7 result — session-arena-c815bdd2-own7 (recorded 2026-11-18)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| C1 | Claim + baseline replay | **done** | Baseline at claim measured green: 119 tests, extract OK (32/20/14, 0 flags), origination reproduces; working tree clean at `0b5f91a`. Claim committed as `926e6ec` and pushed before any implementation. |
+| C2 | Fresh official reads 2026-11-18 with retained verbatim evidence + SHA-256 | **done** | Four official reads via Arena `fetch_page`: standings (2 chunks), Week 10 by-week schedule (2 chunks), the 2026 Official Playing Rules PDF (16 of 17 chunks, `media.nfl.com`), and the Week 10 injury report (state check only). Three verbatim captures retained under `nfl-integration-c815/evidence/` with SHA-256 published on the Sources page. |
+| C3 | Cross-desk contradiction sweep | **done** | **One real finding:** the canonical results feed holds 149 finals while official standings arithmetic implies 150. The missing game is the Week 10 Monday fixture, now final (`Chargers 23, Ravens 20`). Proved three independent ways: league identities (sum W = sum L = 149, sum PF = sum PA = 6923, 300 club-games ⇒ 150), the cell-by-cell delta between the 2026-11-17 and 2026-11-18 official captures (exactly two clubs, exactly the numbers the headline implies), and re-tallying the feed (6 residue cells on 2 clubs = one game). Published as flags C8-F01..C8-F04; **not** patched, because `nfl-results/` is another session's file. |
+| C4 | Line-by-line verification | **done** | All 32 standings rows pass PCT, NET and HOME+ROAD arithmetically; the four league identities close; all 70 requirement artefacts resolve; every 2026 rule value is pattern-extracted from the official capture. Anything unverifiable was left blank and flagged. |
+| C5 | Advance the requirement gaps this session can verify | **done** | **DR-68 closed at the rule-text level** from the official 2026 rulebook (Rule 6-1-1/2/5/6): declared onside kick legal at any time, mandatory Referee notification (no surprise kick), own-35 restraining line (own-20 on a safety kick), 50-yard touchback spot = 20, setup-zone alignment change. The **frequency** of declared/recovered kicks stays blank — no official play-by-play capture is held and none is estimated. DR-20 (price policy) and DR-29/54/66 (systematic-retrieval rights) remain open by design: both need a human decision. |
+| C6 | Desk pages | **done** | 7 pages + style + manifest in `nfl-integration-c815/site/`. Every `<tbody>` row carries `data-source-ids` and links the registered URL of a source it actually declares (0 violations, machine-checked). Blank cells are truly empty. |
+| C7 | Additive integration | **done** | Nav group + build step + manifest list in `scripts/build_site.py`; host allowlist entries in `scripts/check_site.py`; folder allowlists in `scripts/serve_site.py` and `scripts/browser_test.mjs`; 2 CI lines in `.github/workflows/check.yml`; 2 register entries appended to `research/sources.json` (266 total); README section; executive-summary update. `python -m nba_lab run` re-run after registering sources (hash contract). |
+
+**Full battery green locally on the pushed tree:** 119 repo tests, 11 brief-desk tests, 19 new desk
+tests, extract `--check`, origination `--check`, every desk `--check` (results, lifecycle,
+assurance, competition, market, readiness ×2, gamebook, pricing, availability, skill, brief,
+integration), `scripts/build_site.py` + `scripts/check_site.py` (recursive site, fragments,
+registered row sources, blank rules, receipts, deterministic rebuilds), and the browser suite
+**230 desktop + 230 mobile pages, WCAG A/AA, 10 interaction groups, no runtime errors**.
+
+**Rebase record.** `git pull --rebase origin main` advanced onto `51740c8` (PR #75, another
+session's footer note) mid-session. One conflict, in the generated `research/site-manifest.json`
+only. Resolved by regenerating the artefact from the merged tree rather than hand-editing, so
+neither session's content was discarded. The rebased branch was published with
+`--force-with-lease` (required because rebase rewrites this branch's own commits); no other
+branch was touched and no other session's commits were rewritten.
+
+**Constraint audit.** No price, ROI, CLV, stake, wager or monetary reward is published anywhere on
+this desk. Every table row keeps a registered official source link. No status was upgraded; no
+value was inferred; blanks stay blank with a reason. PR #57 remains untouched.
