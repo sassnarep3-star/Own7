@@ -2998,3 +2998,12 @@ The brief asks for far more than one session can verify line by line: the 32-clu
 register, the injury-designation reliability study, the decision and matchup matrices, and the repository-wide private
 store. These remain on their owning desks or open as recorded flags. Nothing here is presented as finished that the
 evidence does not support.
+
+### Publication record, session arena/20226569-own7 (2026-11-18)
+
+- PR [#98](https://github.com/sassnarep3-star/Own7/pull/98) from `arena/20226569-own7` to `main`: Week 11 injury-hub first read, desk, flags FI01–FI10, root rebuild, this record.
+- CI on the PR (head at the time of the check): *Research and recursive site audit* **pass**; *Desktop, mobile and accessibility* **pass** (run 44253717641).
+- **Merge: HELD, not merged.** Pages is a legacy build from `main` at `/`, so merging publishes every committed file. The verbatim transcript `nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md` carries player rows. The open rights decision (NFL Terms §1.3 vs RG10/NF34) blocks that publication. The desk page itself shows counts and links only. Owner decision needed on the transcript. Until then the PR stays open.
+- Pages: not deployed by this session, because nothing has been merged to `main`.
+- Other open PRs (#79, #82, #83, #87, #88, #91, #92) were not edited.
+- Handoff: F1 (full injury-hub capture) is partly done (chunks 0–2 of 3 read; per-team tables confirmed only for IND and HOU). Remaining: the owner's rights decision, a scheduled Wed–Fri capture (FI10), and the chunk-count reconciliation (8 vs 3) noted in the session log.
