@@ -276,6 +276,19 @@ SOURCE_HOSTS.update({
 
 # Week 11 injury desk (session arena/3e6166df-own7): official NFL.com hosts only.
 SOURCE_HOSTS.update({'W11-NFL-INJ-1118': 'www.nfl.com', 'W11-NFL-TERMS-1118': 'www.nfl.com'})
+# Week-11 decision desk (session arena/a10fed14-own7). Official NFL hosts only; the ninth entry
+# reuses REPO, which is already registered.
+SOURCE_HOSTS.update({
+    'W4C7D-NFL-STANDINGS': 'www.nfl.com',
+    'W4C7D-NFL-SCHED-W11': 'www.nfl.com',
+    'W4C7D-NFL-INJ-W10': 'www.nfl.com',
+    'W4C7D-NFL-INJ-W11': 'www.nfl.com',
+    'W4C7D-NFL-GAMECENTER-MNF': 'www.nfl.com',
+    'W4C7D-NFL-GAMEBOOK-MNF': 'static.www.nfl.com',
+    'W4C7D-NFL-STATS-PLAYER': 'www.nfl.com',
+    'W4C7D-NFL-STATS-SNAPCOUNTS': 'www.nfl.com',
+    'W4C7D-NFL-INACTIVES': 'www.nfl.com',
+})
 
 class Page(HTMLParser):
     def __init__(self, path):

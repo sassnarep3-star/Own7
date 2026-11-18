@@ -1,0 +1,15 @@
+game_id,away,home,date,kickoff,stadium,city,roof_and_surface,weather,temp_f,humidity_pct,wind,attendance,gamebook_url,captured_by,captured_utc
+W10-01,WAS,NYG,2026-11-12,8:15 PM EST,MetLife Stadium,"East Rutherford, NJ",Open Stadium on Field Turf,Light Rain Fog/Mist,48,89,NE 9,"80,450",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-02,PIT,CIN,2026-11-15,8:22 PM EST,Paycor Stadium,"Cincinnati, OH",Open Stadium on Field Turf,Partly Cloudy,42,78,NE 2,"66,860",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-03,NE,DET,2026-11-15,3:33 PM CET,Allianz Arena,"Munich, Germany",Open Stadium on Natural Grass,Cloudy,52,51,SE 3,"70,225",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-04,KC,ATL,2026-11-15,1:02 PM EST,Mercedes-Benz Stadium,"Atlanta, GA",Retractable Roof - Closed on Field Turf,,, , ,"72,045",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-05,HOU,CLE,2026-11-15,1:02 PM EST,Huntington Bank Field,"Cleveland, OH",Open Stadium on Natural Grass,Cloudy,46,75,NW 15,"58,342",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-06,MIN,GB,2026-11-15,12:02 PM CST,Lambeau Field,"Green Bay, WI",Open Stadium on Natural Grass,Sunny,45,51,NW 5,"78,332",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-07,MIA,IND,2026-11-15,1:03 PM EST,Lucas Oil Stadium,"Indianapolis, IN",Retractable Roof - Closed on Field Turf,Cloudy,48,61,N 6,"64,235",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-08,CAR,NO,2026-11-15,12:02 PM CST,Caesars Superdome,"New Orleans, LA",Closed Stadium on Field Turf,,,,,"70,019",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-09,BUF,NYJ,2026-11-15,1:03 PM EST,MetLife Stadium,"East Rutherford, NJ",Open Stadium on Field Turf,"Sunny, Cool, with Crisp Autumn Wind",49,54,NW 11,"82,953",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-10,JAX,TEN,2026-11-15,12:02 PM CST,Nissan Stadium,"Nashville, TN",Open Stadium on Field Turf,Sunny,50,39,NE 4,"61,239",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-11,SEA,LV,2026-11-15,1:05 PM PST,Allegiant Stadium,"Paradise, NV",Closed Stadium on Natural Grass,Cloudy,65,40,NE 6,"62,624",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-12,SF,DAL,2026-11-15,3:25 PM CST,AT&T Stadium,"Arlington, TX",Retractable Roof - Closed on Field Turf,Rainy,49,86,NE 3,"90,763",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-13,LAR,AZ,2026-11-15,2:05 PM MST,State Farm Stadium,"Glendale, AZ",Retractable Roof - Open on Natural Grass,Sunny,75,44,E 3,"60,926",,nfl-gamebook-5213243e (read-only),2026-11-17
+W10-14,LAC,BAL,2026-11-16,8:16 PM EST,M&T Bank Stadium,"Baltimore, MD",Open Stadium on Natural Grass,Clear,49,58,NW 2 mph,"69,679",https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,"nfl-week11-4c7d (this desk, 2026-11-18)",2026-11-18

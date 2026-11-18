@@ -13,7 +13,7 @@ team records against the official standings read.
 - **Blank as printed**: all 26 Game Status cells and all 26 Injuries (body part) cells are empty on this read. They stay blank and are flagged (W11-F01, W11-F02).
 - **Absent is not available**: the report does not list injured-reserve players. The page's own headline reports QB Malik Willis on injured reserve (W11-F03).
 - **Terms gate verified**: NFL.com section 1.3, read verbatim, prohibits systematic retrieval to compile a collection without written consent. So this is one read, not a scheduled series. DR-54 stays Blocked.
-- **Register re-grades**: DR-61, DR-64 and DR-68 move from Open to Partial, each cited to an artifact that exists in the tree. DR-54's gate text now cites the terms read.
+- **Register**: DR-54's gate text now cites the terms read and this desk's read. The proposed re-grades of DR-61, DR-64 and DR-68 (Open to Partial) are withdrawn: their artifacts are not yet verified line by line, and one DR-68 quotation does not match the rulebook capture (logged on COORDINATION.md, flagged for review).
 
 | Page | What it answers |
 |---|---|
@@ -121,6 +121,47 @@ python nfl-results/engine.py        # re-grade on the completed 150-final corpus
 python nfl-fresh-1118/build.py --check          # desk reproduces byte-identically
 python -m unittest discover -s nfl-fresh-1118/tests   # 8 tests
 ```
+
+---
+
+## New: Week 11 decision desk — Week 10 closure, availability joins and the snap-count verdict (2026-11-18, session arena/a10fed14-own7)
+
+Live desk: [Week 11 decision desk](https://sassnarep3-star.github.io/Own7/nfl-week11-4c7d/site/index.html) ·
+[Executive summary](https://sassnarep3-star.github.io/Own7/nfl-week11-4c7d/site/executive-summary.html) ·
+[Questions](https://sassnarep3-star.github.io/Own7/nfl-week11-4c7d/site/questions.html) ·
+[Suggestions](https://sassnarep3-star.github.io/Own7/nfl-week11-4c7d/site/suggestions.html) ·
+[Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-week11-4c7d/site/flagged.html)
+
+- **Week 10 is closed.** The Monday-night game that was still pending for every earlier capture is
+  now final — **Los Angeles Chargers 23, Baltimore Ravens 20** — and its official Game Book is
+  captured. All 14 games and 28 clubs now hold official starters, substitutions, Did Not Play and
+  Not Active lists, plus venue, roof and surface, weather, temperature, humidity, wind and
+  attendance.
+- **The closure is proven, not asserted.** The standings read on 2026-11-18 reproduce exactly from
+  the retained 2026-11-17 snapshot plus that one result: **32 clubs, seven fields each
+  (W, L, T, PCT, PF, PA, net points), zero mismatches.**
+- **The availability join is complete for the week: 329 rows**, matched on club, surname and first
+  initial so that two players with the same surname on one club (New England's A.J. Brown and Ben
+  Brown) are not confused, and generational suffixes are stripped (the report prints Carlton Davis
+  III where the Game Book prints C.Davis).
+- **The reserve-list gap is measured: 86 of 158 official inactives (0.5443) appear nowhere on the
+  weekly injury report.** "Not listed" can never be read as "available".
+- **No official snap-count source exists.** Four probes read on 2026-11-18 — nfl.com team stats,
+  nfl.com player stats, the official Game Book, and 13 retained Game Book extracts — and none of
+  them publishes snap counts. Requirements R11, R31 and R56 therefore stay open, and the Game Book
+  starter list remains the only official playing-participation evidence.
+- **A new lookahead-leak surface was found.** The NFL injury report re-renders club records after
+  kickoff: identical Monday rows printed LAC (0-8) and BAL (4-5) on 2026-11-17 and print LAC (1-8)
+  and BAL (4-6) on 2026-11-18. Captures must be taken before kickoff, always.
+- **The Week 11 injury report was not published at read time** (the Week 11 URL served Week 10), so
+  no Week 11 personnel row is transcribed. Nothing was inferred in its place.
+- Decision content: **10 questions** (held / missing / what closes it), **8 ranked suggestions**
+  (adopt, defer and reject paths) and a **10-row requirement delta** naming the gate that blocks
+  each item and the number that would clear it.
+- No price, odds, ROI, closing-line value, stake, wager or reward is produced anywhere on this desk.
+- Batteries green: 35 desk unit tests, byte-identical rebuild, `check.py` clean (13 pages, 235
+  table rows, 10 registered sources), recursive site audit (256 pages, 9,984 rows, 273 registered
+  sources, 0 errors) and 236 desktop + 236 mobile browser pages at WCAG A/AA.
 
 ## New: integration, Week 10 extension, decision-readiness landing (2026-11-17, session arena/e15f05e0-own7)
 

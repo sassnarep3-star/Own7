@@ -1,0 +1,79 @@
+# Official NFL Game Book - Los Angeles Chargers at Baltimore Ravens - 2026 REG 10
+SOURCE|https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf
+GAMECENTER|https://www.nfl.com/games/chargers-at-ravens-2026-reg-10
+CAPTURED_UTC|2026-11-18
+GAME|W10-14|LAC|BAL|2026-11-16|8:16 PM EST|M&T Bank Stadium|Baltimore, MD|Open Stadium on Natural Grass|Clear|49|58|NW 2 mph|69,679
+SCORE|LAC|10|7|3|3|0|23
+SCORE|BAL|0|10|3|7|0|20
+OFFICIALS|Referee: Hill, Adrian (29)|Umpire: Ellison, Roy (81)|Down Judge: Holt, Patrick (106)|Line Judge: Eaton, Thomas (87)|Field Judge: Dimpfel VI, Frederick (43)|Side Judge: Parham, Keith (41)|Back Judge: Monroe, Jonah (120)|Replay Official: Anderson, Gavin (0)
+TIME_OF_GAME|3:07
+OFF|LAC|WR|1|Q.Johnston
+OFF|LAC|WR|9|T.Harris
+OFF|LAC|TE|88|C.Kolar
+OFF|LAC|LT|76|J.Alt
+OFF|LAC|LG|65|L.Taylor
+OFF|LAC|C|66|J.Slaughter
+OFF|LAC|RG|69|C.Strange
+OFF|LAC|RT|77|T.Burke
+OFF|LAC|QB|10|J.Herbert
+OFF|LAC|FB|44|S.Matlock
+OFF|LAC|RB|8|O.Hampton
+DEF|LAC|OLB|45|T.Tupilotu
+DEF|LAC|DL|93|T.Tart
+DEF|LAC|DL|94|D.Tomlinson
+DEF|LAC|OLB|52|K.Mack
+DEF|LAC|LB|53|D.Phillips
+DEF|LAC|LB|0|D.Henley
+DEF|LAC|DB|2|E.Molden
+DEF|LAC|CB|26|D.Jackson
+DEF|LAC|CB|4|T.Still
+DEF|LAC|CB|20|C.Hart
+DEF|LAC|S|23|T.Jefferson
+OFF|BAL|WR|4|Z.Flowers
+OFF|BAL|TE|85|J.Cuevas
+OFF|BAL|LT|79|R.Stanley
+OFF|BAL|LG|74|J.Simpson
+OFF|BAL|C|64|C.Jurgens
+OFF|BAL|RG|71|O.Ioane
+OFF|BAL|RT|70|R.Rosengarten
+OFF|BAL|WR|6|J.Lane
+OFF|BAL|WR|7|R.Bateman
+OFF|BAL|QB|11|J.Brissett
+OFF|BAL|RB|22|D.Henry
+DEF|BAL|OLB|91|T.Hendrickson
+DEF|BAL|DL|96|B.Washington
+DEF|BAL|DL|98|T.Jones
+DEF|BAL|DL|92|N.Madubuike
+DEF|BAL|OLB|15|M.Green
+DEF|BAL|ILB|32|T.Simpson
+DEF|BAL|ILB|0|R.Smith
+DEF|BAL|CB|2|N.Wiggins
+DEF|BAL|CB|44|M.Humphrey
+DEF|BAL|S|24|M.Starks
+DEF|BAL|S|14|K.Hamilton
+INA|LAC|WR|15|L.McConkey
+INA|LAC|S|32|K.Williamson
+INA|LAC|CB|37|I.Waxter
+INA|LAC|OLB|48|B.Dupree
+INA|LAC|WR|89|B.Thompson
+INA|LAC|DL|92|J.Eboigbe
+INA|BAL|WR|13|E.Sarratt
+INA|BAL|3QB|18|K.Slovis
+INA|BAL|S|21|J.Hawkins
+INA|BAL|CB|29|C.Rivers
+INA|BAL|G/T|51|E.Jones
+INA|BAL|DL|90|A.Peebles
+DNP|LAC|QB|7|D.Uiagalelei
+DNP|LAC|C|60|J.Spomer
+DNP|LAC|G|73|A.Harkey
+DNP|BAL|QB|12|J.Fagnano
+DNP|BAL|OL|58|R.Neuzil
+SUB|LAC|LB 6 D.Perryman, K 11 C.Dicker, WR 12 D.Davis, P 16 J.Scott, S 22 G.Smith, CB 24 R.Shelley, S 27 R.Mickens, RB 28 K.Vidal, DB 33 D.Leonard, RB 34 K.Mitchell, LB 43 T.Dye, LS 47 J.Harris, OLB 50 C.Murphy, LB 58 M.Wax, G 74 K.Awosika, WR 82 T.Wease, TE 83 D.Njoku, WR 84 K.Lambert-Smith, TE 86 O.Gadsden, OLB 90 A.Mesidor, DL 91 N.Barrett, DL 96 M.Adams, DL 99 J.Caldwell
+NOTE|The Baltimore substitutions list is TRUNCATED in the rendered chunk that was read: it begins
+NOTE|"CB 3 C.Awuzie, OLB 9 Z.Young, WR 10 L.Wester, WR 17 C.Moore, S 25 K.Wallace, RB 26 R.Ali,
+NOTE|CB 27 T.Tampa, P 30 R.Eckley, K 35 R.Patterson, CB [cut] ILB 49 J.Higgins, T 62 C.Edoga,
+NOTE|T 76 C.Vinson, WR 81 D.Walker, TE 87 N.Vannett, TE 88 M.Hibner, TE 89 M.Andrews,
+NOTE|DL 93 C.Campbell, NT 94 [cut]". One entry is cut mid-row by the chunk boundary and the list
+NOTE|continues past "NT 94". The Baltimore substitution list is therefore recorded as PARTIAL and
+NOTE|is not used in any count on the site. Starters, Did Not Play and Not Active lists for both
+NOTE|clubs were read in full and are complete.

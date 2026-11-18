@@ -13,12 +13,12 @@
   "session": "arena/c815bdd2-own7",
   "sha256": {
     "flagged.html": "7fa00600586429b51a89a056af3aa334bbf1a0345202c571429615171aa7a037",
-    "index.html": "d89b99a271feed0e5032565866acae82479743d5fe1d34b77b3c961b74573844",
-    "requirements.html": "989380857f0a7e3f50fbc7cba8863caa7bd10669bacbf1cdf52bd24254b8ff17",
+    "index.html": "5014e8db9bfdead893a49c74f7ffe96b85ade185af8cba10a745b1929b39e517",
+    "requirements.html": "47fb5bbdaef42dfe1fce12ee3f8ed792d129b4ec7a1f5528aa22d8f3b9f149cf",
     "rules-2026.html": "f85d7ff39675bfb25ffe115c5dac720a0d180697a13325429267344d1c66ea87",
     "sources.html": "c2d8facc0c7b61f572d4eb7d46e9a613f5630f970833e2fa36a51a2bbcdcd1d6",
     "style.css": "9e965bd0ae8e27829b64f904bc0fcb99356448ee281c43f8394dd79dbd26eb2f",
-    "suggestions.html": "de024cf59c3748f1381c73884d538911e29ec296bbe66eeb8c8f0c8b1abf88cc",
+    "suggestions.html": "7b2b5889949bc98c1585bc9ec719924274feb2670e76387c322598cfd9666eef",
     "week10-completion.html": "aecccceddbbf548ffe26e2357ac8f0a151e407a68885326990b02504f1452e5e"
   }
 }
