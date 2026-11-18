@@ -1,0 +1,130 @@
+{
+  "requirement": "DR-68",
+  "closeable_from_official_source": true,
+  "official_source": "https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf",
+  "capture": "nfl-integration-c815/evidence/rules-2026-kickoff-onside.retrieved.md",
+  "values": {
+    "declaration_clause": "At any time during the game, the kicking team may declare an onside kick",
+    "declaration": "the kicking team must declare the onside kick to the Referee; no surprise onside kick",
+    "declaration_clock_seconds": 25,
+    "legal_at_any_time": true,
+    "onside_restraining_line": 35,
+    "onside_safety_kick_line": 20,
+    "setup_zone_yards": 5,
+    "setup_zone_receiving_lines": [
+      35,
+      30
+    ],
+    "touchback_from_50_dead_ball": 20,
+    "kickoff_restraining_line": 35,
+    "is_a_2026_change": true,
+    "rule_reference": "6-1-6"
+  },
+  "regime_rows": [
+    {
+      "element": "May an onside kick be attempted at any time?",
+      "value": "yes",
+      "verbatim": "At any time during the game, the kicking team may declare an onside kick",
+      "rule": "6-1-6",
+      "status": "2026 change"
+    },
+    {
+      "element": "Must it be declared to the Referee?",
+      "value": "yes",
+      "verbatim": "may declare an onside kick by notifying the Referee prior to the start of the play clock",
+      "rule": "6-1-6",
+      "status": "2026 change"
+    },
+    {
+      "element": "Can it ever be a surprise onside kick?",
+      "value": "no",
+      "verbatim": "The Referee will then notify the receiving team before starting the play clock",
+      "rule": "6-1-6",
+      "status": "structural"
+    },
+    {
+      "element": "Declaration deadline (play clock)",
+      "value": "25-second play clock",
+      "verbatim": "(25-second play clock after the game official hands the kicker the ball)",
+      "rule": "6-1-6",
+      "status": "structural"
+    },
+    {
+      "element": "Kicking team restraining line (kickoff)",
+      "value": "own 35",
+      "verbatim": "the restraining line for a kickoff",
+      "rule": "6-1-2",
+      "status": "unchanged"
+    },
+    {
+      "element": "Kicking team restraining line (onside kick)",
+      "value": "own 35",
+      "verbatim": "The restraining line for the kicking team on an onside kick is the kicking team's 35-yard line",
+      "rule": "6-1-6(b)",
+      "status": "structural"
+    },
+    {
+      "element": "Kicking team restraining line (safety-kick onside)",
+      "value": "own 20",
+      "verbatim": "or the kicking team's 20-yard line for a safety kick",
+      "rule": "6-1-6(b)",
+      "status": "structural"
+    },
+    {
+      "element": "Receiving team setup zone (width)",
+      "value": "5 yards",
+      "verbatim": "the \"setup zone\" for the receiving team is the 5-yard area",
+      "rule": "6-1-2(d)",
+      "status": "2026 alignment change"
+    },
+    {
+      "element": "Receiving team setup zone (location)",
+      "value": "receiving team's 35 to 30",
+      "verbatim": "between the receiving team's 35-yard line and its 30-yard line",
+      "rule": "6-1-2(d)",
+      "status": "2026 alignment change"
+    },
+    {
+      "element": "Touchback after a kickoff from the 50",
+      "value": "dead ball at the 20",
+      "verbatim": "if the kickoff is from the 50-yard line and the play results in a touchback, then the dead ball spot is the 20-yard line",
+      "rule": "6-1-5",
+      "status": "2026 change"
+    }
+  ],
+  "model_notes": [
+    {
+      "id": "RG-01",
+      "affects": "4th-quarter comeback win-probability curves",
+      "pre_2026_assumption": "an onside kick is only available to a trailing team late in the game",
+      "2026_rule": "any team, at any time, by declaration",
+      "bias_if_ignored": "the model understates a leading team's option value and mis-states the available state space for the trailing team's comeback path",
+      "priced_here": "not priced \u2014 the availability change is stated, the frequency is not held"
+    },
+    {
+      "id": "RG-02",
+      "affects": "game totals and 4th-quarter win probability",
+      "pre_2026_assumption": "an onside kick can be a surprise play",
+      "2026_rule": "declaration to the Referee is mandatory; the receiving team is notified",
+      "bias_if_ignored": "a surprise-recovery rate from any earlier season is not transferable, because the defence is told to expect the kick",
+      "priced_here": "not priced \u2014 no official play-by-play capture is held"
+    },
+    {
+      "id": "RG-03",
+      "affects": "drive-start distributions after a kickoff penalty",
+      "pre_2026_assumption": "a kickoff from the 50 is an ordinary kickoff",
+      "2026_rule": "a touchback from the 50 puts the ball at the 20",
+      "bias_if_ignored": "field-position priors after a 15-yard kickoff penalty are wrong in one direction",
+      "priced_here": "not priced \u2014 field-position priors are not modelled"
+    },
+    {
+      "id": "RG-04",
+      "affects": "receiving-team return expectation",
+      "pre_2026_assumption": "the setup zone is a single 5-yard band with a fixed 9-player rule",
+      "2026_rule": "alignment requirements in the setup zone changed for 2026 (6-1-3)",
+      "bias_if_ignored": "return-yardage priors trained on 2024-2025 alignments do not transfer",
+      "priced_here": "not priced \u2014 no return-yardage capture is held"
+    }
+  ],
+  "what_is_still_open": "How often clubs declared an onside kick in 2026, and how often a declared onside kick was recovered, are empirical frequencies. This project holds no official play-by-play capture, so both stay blank and are published as blank rather than estimated."
+}

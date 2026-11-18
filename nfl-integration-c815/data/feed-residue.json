@@ -1,0 +1,80 @@
+{
+  "feed_games": 149,
+  "feed_weeks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "residue_cells": 6,
+  "clubs_affected": [
+    "Baltimore Ravens",
+    "Los Angeles Chargers"
+  ],
+  "residue": [
+    {
+      "club": "Baltimore Ravens",
+      "field": "L",
+      "feed": 5,
+      "official": 6,
+      "residue": 1
+    },
+    {
+      "club": "Baltimore Ravens",
+      "field": "PF",
+      "feed": 189,
+      "official": 209,
+      "residue": 20
+    },
+    {
+      "club": "Baltimore Ravens",
+      "field": "PA",
+      "feed": 236,
+      "official": 259,
+      "residue": 23
+    },
+    {
+      "club": "Los Angeles Chargers",
+      "field": "W",
+      "feed": 0,
+      "official": 1,
+      "residue": 1
+    },
+    {
+      "club": "Los Angeles Chargers",
+      "field": "PF",
+      "feed": 121,
+      "official": 144,
+      "residue": 23
+    },
+    {
+      "club": "Los Angeles Chargers",
+      "field": "PA",
+      "feed": 219,
+      "official": 239,
+      "residue": 20
+    }
+  ],
+  "pending_rows_in_canonical_store": [
+    {
+      "week": "10",
+      "date": "2026-11-16",
+      "weekday": "Monday",
+      "away": "LAC",
+      "home": "BAL",
+      "kickoff": "8:15 PM",
+      "tv": "ESPN",
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "retrieved": "2026-11-17",
+      "evidence": "nfl-results/evidence/week-10.schedule.md"
+    }
+  ],
+  "official_games_played": 150,
+  "target_reference": "LAC 23, BAL 20"
+}
