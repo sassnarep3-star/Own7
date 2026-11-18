@@ -430,6 +430,37 @@ def e7ef_nav_group():
 
 NAV.extend(e7ef_nav_group())
 
+NAV.extend(e7ef_nav_group())
+
+
+C672_NAV_PATH = "nfl-week11-6c72a9fa/site/index.html"
+
+
+def c672_nav_group():
+    """Additive nav group for the fresh-reads desk (session arena/6c72a9fa-own7).
+
+    Built from the desk's own manifest so this generator never restates a page list that
+    could drift. Returns an empty list if the desk has not been built.
+    """
+    manifest = ROOT / "nfl-week11-6c72a9fa" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    pages = list(load_json(str(manifest.relative_to(ROOT)))["pages"])
+    labels = {
+        "index.html": "Fresh reads 2026-11-18",
+        "verification-2026-11-18.html": "Verification 2026-11-18",
+        "week11-schedule.html": "Week 11 schedule",
+        "reserve-sweep.html": "Reserve-list sweep",
+        "what-changed.html": "What changed",
+        "flagged.html": "Fresh-reads flagged",
+        "sources.html": "Fresh-reads sources",
+    }
+    return [("NFL fresh reads 11-18",
+             [(f"nfl-week11-6c72a9fa/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+
+NAV.extend(c672_nav_group())
+
 
 def snapcount_nav_group():
     """Additive nav group for the NFL snap-count / playing-time desk (session arena/e5e4351c-own7).
@@ -1058,6 +1089,14 @@ def build():
     e7ef_pages=load_json('nfl-readiness-e7ef/site/manifest.json')['pages']
     for name in e7ef_pages:
         generated.append(f'nfl-readiness-e7ef/site/{name}')
+    # Fresh-reads desk (session arena/6c72a9fa-own7). Runs the desk's own deterministic build
+    # (collect.py contract re-verified on every render) so a stale artefact fails the site
+    # build rather than publishing quietly.
+    c672_result=subprocess.run([sys.executable,str(ROOT/'nfl-week11-6c72a9fa'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if c672_result.returncode: raise SystemExit(f'nfl-week11-6c72a9fa/build.py failed: '+c672_result.stdout+c672_result.stderr)
+    c672_pages=load_json('nfl-week11-6c72a9fa/site/manifest.json')['pages']
+    for name in c672_pages:
+        generated.append(f'nfl-week11-6c72a9fa/site/{name}')
     # Integration-audit desk (session arena/c815bdd2-own7). Runs the desk's own
     # deterministic build first so a stale artefact fails the site build rather than
     # publishing quietly.
