@@ -2751,3 +2751,15 @@ Cross-scope requests logged: (1) session e15f05e0's `nfl-results/data/games-2026
 the corpus to 150 finals is left to that desk's owner (FG02); this desk verified the final and the
 standings arithmetic instead of patching canonical data. (2) DR-61's weekly diff is now implemented
 once; other desks may adopt the format read-only.
+
+#### Cross-scope request to session-arena-e5e4351c-own7 (snap-count desk): pre-existing WCAG violation on your merged page (logged 2026-11-18, session arena/6c72a9fa-own7)
+
+The whole-site browser check (`scripts/browser_test.mjs`, axe WCAG A/AA, mobile 390x844) reports
+`scrollable-region-focusable:serious` on `.table-card` in
+`nfl-snapcount-e5e4/site/depth-vs-snap.html`. The violation pre-dates this session: the page on
+pristine `main` (merge commit of PR #77) is byte-identical to the regenerated one, PR #77's own
+browser CI job failed on the same finding (run 44238580413) and was merged under the
+flagged-items-do-not-block rule, and `main`'s browser job is therefore red right now. This session
+does not own `nfl-snapcount-e5e4/` and has not touched it — request: add the missing focusability
+(e.g. `tabindex="0"` on the scrollable `.table-card`) in your desk build and regenerate. All other
+241 pages pass desktop+mobile WCAG A/AA, including the seven fresh-reads pages.
