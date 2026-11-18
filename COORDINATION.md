@@ -2530,3 +2530,63 @@ The rebases advanced `origin/main` from `be2462d` through `764635c` (PR #60), `b
 ### Publication record
 
 PR [#64](https://github.com/sassnarep3-star/Own7/pull/64) merged into `main` at `2026-11-17T03:33:06Z`; merge commit `5bbf6f83f5971648277af078a16651c44e1144b0`. PR checks passed (recursive research/site audit and desktop/mobile/accessibility). Post-merge repository check run [44011008807](https://github.com/sassnarep3-star/Own7/actions/runs/44011008807) and GitHub Pages deployment [44011008076](https://github.com/sassnarep3-star/Own7/actions/runs/44011008076) both completed successfully against the merge commit. Live page verified at https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/requirements.html with 20 rows and source links.
+
+---
+
+## Session arena/3f9563bf-own7 — forward desk: fresh verification, decision questions with missing-information routes, and a scored suggestion register (2026-11-18)
+
+### Claim (before implementation; committed and pushed first)
+
+Session ID: `session-arena-3f9563bf-own7`. Branch: `arena/3f9563bf-own7` (fixed Arena branch; the
+`session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this
+session and all work stays on it).
+
+Baseline at claim (replayed, not inherited): working tree clean at merge commit `0b5f91a`
+(main, PR #74). `python -m unittest discover -s tests` → **119 pass**;
+`python nfl-competition/build.py --check` → 16 pages / 8 requirements ok;
+`python nfl-assurance-9580ac3f/build.py --check` → 19 pages, 0 changed;
+`python -m unittest discover -s nfl-competition/tests` → **59 pass**.
+`git fetch origin` → no divergence (`origin/main` at `0b5f91a`). Open PRs of other sessions: #57 only.
+
+**Why this desk exists (gap analysis, read-only over the existing tree).** 47 canonical pages and
+176 auxiliary pages already satisfy most lines of the brief. Three lines are genuinely not covered
+by any existing artefact, and one is covered only in a weaker form:
+
+| Brief line | Existing state | Gap this desk closes |
+|---|---|---|
+| "create a section dedicated for suggestions so someone can review suggestions and choose the best path before implementing any changes" | `research/nfl-suggestions.json` holds 15 proposals with `missing_info` and `decision_needed`, but **no ordering logic** — nothing lets a reader choose between them | A **reproducible scoring rubric** with every input published, so the ordering can be audited and overridden, plus the explicit "do not build yet" list |
+| "a clear list of questions, informations and answers that need to be addressed before any decision ... Suggestions need to be made to discover missing information" | `research/nfl/questions.json` holds 17 questions; `research/nfl-decision-readiness.json` holds 70 requirement rows. The two are **not joined**, and no row names *which official page* would answer it | A joined **question → missing information → answering source → unblocked requirements** register, with the exact official URL per row and whether that URL is readable today |
+| "verify everything from official verified trusted sources ... Flag any irregularities" | Latest official capture is 2026-11-17 (`nfl-readiness-e7ef`, `nfl-brief-77b1`). **No capture exists for 2026-11-18** | A **fresh 2026-11-18 read** of the standings, the Week 11 slate and the injury listing, retained verbatim with SHA-256, followed by a **cell-by-cell drift check** against committed canonical data |
+
+**Exclusive file scope:** new directory `nfl-forward-desk/**` only.
+**Additive lines only** in `COORDINATION.md`, `README.md`, `scripts/build_site.py`,
+`scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`,
+`.github/workflows/check.yml`, `research/sources.json`.
+No existing page, value, test or data row is overwritten. Contradictions found elsewhere are
+**flagged, never patched in place** — patching another session's data would destroy the audit trail.
+
+### Task board
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| F1 | Claim + green baseline replay | in progress | session-arena-3f9563bf-own7 | `COORDINATION.md` | Baseline battery recorded above. |
+| F2 | Fresh official reads 2026-11-18: league standings, Week 11 schedule, current injury report; verbatim transcripts + SHA-256 | unclaimed | session-arena-3f9563bf-own7 | `nfl-forward-desk/evidence/**` | nfl.com via Arena `fetch_page` (direct HTTPS to nfl.com is blocked in this sandbox, as every prior session recorded). |
+| F3 | Cell-by-cell drift check of committed canonical data against the fresh reads; abort on contradiction, never reconcile silently | unclaimed | session-arena-3f9563bf-own7 | `nfl-forward-desk/**` | Read-only over other sessions' data. |
+| F4 | Joined decision register: question → missing information → answering official source → blocked requirement ids, with readability state of each source | unclaimed | session-arena-3f9563bf-own7 | `nfl-forward-desk/**` | Built from `research/nfl/questions.json` + `research/nfl-decision-readiness.json`, both read-only. |
+| F5 | Scored suggestion register with a published, reproducible rubric and a "choose a path" review workflow | unclaimed | session-arena-3f9563bf-own7 | `nfl-forward-desk/**` | Every score decomposed into its published inputs so a reader can disagree with the weights, not the arithmetic. |
+| F6 | Flag register for irregularities found this session | unclaimed | session-arena-3f9563bf-own7 | `nfl-forward-desk/**` | Published on the desk's own Flagged page with official links; non-blocking. |
+| F7 | Desk site pages + unit tests + byte-identical `build.py --check` | unclaimed | session-arena-3f9563bf-own7 | `nfl-forward-desk/**` | Every tbody row carries `data-source-ids` naming registered official sources. |
+| F8 | Additive integration: nav group + build step, check lines, serve/browser allowlists, sources register, README section; full battery green | unclaimed | session-arena-3f9563bf-own7 | additive lines in the shared files listed above | No existing page, value or test overwritten. |
+| F9 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-3f9563bf-own7 | `COORDINATION.md`, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints this session honours, inherited from the boards above and not relaxed:
+no price, ROI, CLV, stake, wager or monetary reward is produced anywhere — the brief asks for
+"rewards for top performing strategies", and the honest answer recorded here is that no reward can
+be computed or paid from data this repository is permitted to hold, so the leaderboard ranks on
+proper scores instead and the reward question is registered as an **open decision**, not faked;
+no value is inferred — blanks stay blank with a reason; every table row keeps a registered official
+source link; `git pull --rebase` before every push; small frequent commits; open PRs of other
+sessions are not touched.
+
+Rules for other sessions: these files are mine until F9 records done — log cross-scope requests in
+this board instead of editing them concurrently.
