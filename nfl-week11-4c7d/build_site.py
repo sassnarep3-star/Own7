@@ -338,10 +338,9 @@ def build_executive_summary(summary) -> str:
         "on one club cannot be confused.</p>"
         "<p><strong>Two facts constrain every model downstream.</strong> "
         f"{esc(h['reserve_gap'])} - injured reserve, a third quarterback, a practice-squad call-up or "
-        "a club decision all produce an inactive who appears nowhere on the weekly report. And no "
-        f"official snap-count source exists: {esc(h['snap_counts'])}, so depth cannot be modelled from "
-        "playing time and the Game Book starter list is the only official playing-participation "
-        "evidence available.</p>"
+        "a club decision all produce an inactive who appears nowhere on the weekly report. And "
+        f"{esc(h['snap_counts'])}, so depth cannot be modelled from playing time and the Game Book "
+        "starter list is the only official playing-participation evidence available.</p>"
         f"<p><strong>{esc(h['week11_report'])}</strong> - on Wednesday 2026-11-18 the Week 11 URL "
         "serves the Week 10 report. This desk records that state rather than passing last week's "
         "report off as this week's baseline.</p>"
@@ -871,7 +870,12 @@ def build_flagged() -> str:
     body += section(
         "The register",
         table(["Flag", "Severity", "Title", "Detail", "Recommended action", "Source"], body_rows,
-              "Seven flags; one high, three medium, three low."),
+              f"{len(rows)} flags: "
+              + ", ".join(
+                  f"{n} {sev}" for sev, n in
+                  sorted({(f['severity'], sum(1 for r in rows if r['severity'] == f['severity']))
+                          for f in rows}.__iter__())
+              ) + "."),
         eyebrow="REGISTER",
     )
     return page("Flagged for review", "Irregularities found on 2026-11-18, published with the official source for each.",

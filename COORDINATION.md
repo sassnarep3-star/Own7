@@ -2561,3 +2561,73 @@ No existing page, value, test or other session's implementation file is overwrit
 Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
 produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
 registered official source link; `git pull --rebase` before every push; small frequent commits.
+
+### G1-G9 done — session-arena-a10fed14-own7 (recorded 2026-11-18)
+
+| ID | Task | Status | Verification / notes |
+|---|---|---|---|
+| G1 | Claim + baseline replay | **done** | Baseline at claim, run not assumed: working tree clean at `0b5f91a` (main, PR #74); `python -m unittest discover -s tests` → 119 pass; `python scripts/check_site.py` → passed (47 canonical, 20 redirects, 176 auxiliary, 243 recursive pages, 9,740 rows, 264 sources, 0 errors). |
+| G2 | Fresh official reads 2026-11-18 | **done** | nfl.com standings (2 chunks), Week 11 by-week schedule (3 chunks), Week 10 injury report Monday section (chunks 5-6 of 8), Week 11 injury URL probe, game centre LAC@BAL, official Game Book PDF for LAC@BAL, nfl.com player stats, nfl.com team snapcounts path, nfl.com/inactives. Verbatim transcripts retained under `nfl-week11-4c7d/evidence/` with SHA-256 in `evidence/SHA256SUMS.txt` (6 files). |
+| G3 | Week 11 / Week 10 Game Book capture | **done** (scoped to what exists) | Week 11 had not kicked off at read time, so no Week 11 Game Book exists. Instead the one gap in Week 10 was closed: the Monday-night game (LAC 23 - BAL 20) is captured raw (`raw/g14-LAC-BAL.txt`: 44 starters, 12 Not Active, 5 Did Not Play, venue, roof/surface, weather, officials, attendance). Week 10 is now 14/14 games, 28/28 clubs. |
+| G4 | Designation reliability over two weeks | **done** | 329 rows joined (300 retained by nfl-gamebook-5213243f… desk, read-only, plus 29 captured today) across 14 games and 28 clubs; Wilson 95% intervals published with n. Out 18 → 13 (0.4913-0.8750); Doubtful 1 → 1 (0.2065-1.0000); Questionable 18 → 5 (0.1250-0.5087); no designation 292 → 53 (0.1415-0.2298). |
+| G5 | Snap-count / inactive-list source resolution | **done (verdict: none exists)** | SP-01 nfl.com team snapcounts path renders the passing table; SP-02 nfl.com player stats menu has no snap-count category; SP-03 the official Game Book has no snap-count field; SP-04 zero "snap" hits across 13 retained Game Book extracts; SP-05 the Week 11 injury URL serves Week 10; SP-06 nfl.com/inactives is empty mid-season. R11/R31/R56 stay open with evidence. |
+| G6 | Questions + suggestions with decision paths | **done** | `questions.csv` 10 rows (held / missing / what closes it / decision it blocks / verified); `suggestions.csv` 8 rows ranked 1-8, each with adopt, defer and reject paths. |
+| G7 | Executive summary + requirement delta | **done** | `site/executive-summary.html`; `requirements-delta.csv` 10 rows, each naming the blocking gate, the gate's meaning and the concrete number that would clear it. |
+| G8 | Desk site + tests + byte-identical rebuild | **done** | 13 pages, 235 tbody rows, every row carrying registered source ids and its official link; `python nfl-week11-4c7d/check.py --check` clean; 35 unit tests pass. |
+| G9 | Additive integration + full battery | **done** | Nav group + build step + manifest entries in `scripts/build_site.py`; 9 hosts pinned in `scripts/check_site.py`; folder allowlists in `scripts/serve_site.py` and `scripts/browser_test.mjs`; 4 CI lines in `.github/workflows/check.yml`; README section. Full battery green: repo tests 119, desk tests 35, `check_site.py` passed (256 recursive pages, 9,984 rows, 273 registered sources, 0 errors), browser suite 236 desktop + 236 mobile, WCAG A/AA, 0 accessibility violations, 0 runtime errors. |
+| G10 | PR, merge, Pages deploy, record | recorded below | |
+
+#### Sources used (all read 2026-11-18, all registered in `research/sources.json`)
+- `W4C7D-NFL-STANDINGS` https://www.nfl.com/standings/
+- `W4C7D-NFL-SCHED-W11` https://www.nfl.com/schedules/2026/by-week/week-11
+- `W4C7D-NFL-INJ-W10` https://www.nfl.com/injuries/league/2026/reg10
+- `W4C7D-NFL-INJ-W11` https://www.nfl.com/injuries/league/2026/REG11 (probe; served Week 10)
+- `W4C7D-NFL-GAMECENTER-MNF` https://www.nfl.com/games/chargers-at-ravens-2026-reg-10
+- `W4C7D-NFL-GAMEBOOK-MNF` https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf
+- `W4C7D-NFL-STATS-PLAYER` https://www.nfl.com/stats/player-stats/
+- `W4C7D-NFL-STATS-SNAPCOUNTS` https://www.nfl.com/stats/team-stats/offense/snapcounts/2026/reg/all
+- `W4C7D-NFL-INACTIVES` https://www.nfl.com/inactives/
+- `REPO` (already registered) for repository-record rows
+
+#### Verification performed
+- 32/32 standings rows re-derived arithmetically: snapshot 2026-11-17 + the Monday-night result
+  (LAC +1 W/+23 PF/+20 PA, BAL +1 L/+20 PF/+23 PA) = the 2026-11-18 read on W, L, T, PCT,
+  PF, PA and net points. 0 mismatches; the check aborts the build on any mismatch.
+- 13 fixtures + 6 byes cover all 32 clubs exactly once.
+- 14/14 Week 10 Game Books, 28 distinct clubs, no duplicate club.
+- 12 of 14 Game Books print weather; 2 (Mercedes-Benz Stadium, Caesars Superdome) print none and
+  are left blank, never zero-filled.
+- Join integrity: with club + surname + first initial, 65 deactivated report rows match 65
+  inactives with 0 contradictions and 0 key collisions; a surname-only join produced 2 false
+  matches (A.J. Brown vs Ben Brown; Wyatt Teller vs M.Teller) and is therefore not used.
+- 158 official inactives, 72 matched to a report row, 86 (0.5443) absent from the report.
+
+#### Irregularities found (published on the desk's Flagged page, non-blocking)
+- W4C7D-01 (high): the NFL injury report re-renders club records after kickoff (0-8 → 1-8 on
+  identical player rows). Any capture taken after kickoff carries the result.
+- W4C7D-02 (medium): a player published Out (Branson Taylor) appears as the starting LG in the
+  Game Book and not on the Not Active list; matched by surname only, so flagged not resolved.
+- W4C7D-03 (medium): the Baltimore substitution list is truncated mid-list at "NT 94" by the
+  rendered chunk boundary; not used in any count.
+- W4C7D-04 (medium): no Week 11 injury baseline exists at read time; nothing transcribed.
+- W4C7D-05 (low): the Vikings at 49ers venue is not printed on the Week 11 schedule page; left
+  blank rather than inferred from the adjacent "Mexico City 2026" event logo.
+- W4C7D-06 (low): nfl.com/inactives is empty mid-season.
+- W4C7D-07 (low): Game Book copyright notice restricts reuse; raw captures stay off the site.
+- W4C7D-08 (low): 2 of 14 Game Books print no weather for indoor games, while 2 other indoor
+  games do; the source is inconsistent, so the blanks stay blank.
+
+#### Cross-session notes
+- Read-only over `nfl-gamebook-5213243e/**` (13 Game Book extracts, availability delta,
+  inactives) and `data/nfl-standings-2026-11-17.csv`. None of those files was modified.
+- One derived statement in another desk's page changed as a consequence of registering new
+  sources: `nfl-readiness-e7ef/site/sources.html` now reads 273 sources instead of 264. It is
+  regenerated by that desk's own deterministic build; no value of theirs was edited.
+- Rebasing onto `main` (PR #75, session arena/7a07b2d4-own7) was clean; no other session's
+  content was discarded. The branch required `--force-with-lease` on the first push after the
+  rebase because the remote still held this session's own two pre-rebase commits
+  (`8f5699c`, `9876fa9`); the rebased history contains the same content. No other session had
+  pushed to this branch.
+- Open PR #57 (branch arena/383626a6-own7) was not touched.
+- This desk publishes no price, odds, ROI, closing-line value, stake, wager or monetary reward;
+  a desk-level check fails the build if a pricing or wagering value ever appears.
