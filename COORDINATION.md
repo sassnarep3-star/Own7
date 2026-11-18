@@ -3558,14 +3558,16 @@ Baseline measured on this branch:
 **Exclusive file scope:** new `docs/nfl-acceptance-review-2026-11-18.md`; append-only changes to
 `COORDINATION.md`. This is a static acceptance review of the delivered NFL workspace, not a new
 source-data or model implementation. It does not edit any page, shared index/navigation, data,
-source registry, or other session's desk. Open PRs #83, #87 and #88 are observed only and left
-untouched; shared-site link requests, if any, are logged for the final integration owner.
+source registry, or other session's desk. At claim time, PRs #83, #87, #88 and #94 were open and
+observed only; no changes were made to their scopes. PRs #95–#98 subsequently appeared and are also
+left untouched; current merge/check states and overlap are recorded below. Shared-site link
+requests, if any, are logged for the final integration owner.
 
 | ID | Task | Status | Owner | Files touched | Sources / verification |
 |---|---|---|---|---|---|
-| A1 | Claim + baseline replay | done | session-arena-0c516a05-own7 | COORDINATION.md | Baseline checks recorded above; claim commit `ec2d7b1` pushed to the fixed branch. Rebase conflict with PR #93 was resolved as a union and logged below. |
+| A1 | Claim + baseline replay | done | session-arena-0c516a05-own7 | COORDINATION.md | Baseline checks recorded above; original claim commit `ec2d7b1` was pushed before the main rebase. Its rebased copy is `bdf48bd`; the current rebased branch still needs publication. Rebase conflict with PR #93 was resolved as a union and logged below. |
 | A2 | Independent repo acceptance review: separate mechanical checks from external factual verification; inventory existing summary/questions/suggestions/flags and name remaining decision gates | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md` | Six repo consistency items (AR-01–AR-06) and the decision-ready question/gate list are documented; official manual-review URLs link to registered NFL/NWS sources. No new NFL live-fetch claim. |
-| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | `npm run check` pass (119 + 6 tests; site audit 280 pages, 15,332 rows, 302 sources, 0 errors); `npm run test:browser` pass (256 desktop + 256 mobile, WCAG A/AA); extraction/origination checks pass; 14 review-table rows + 15 local links checked, 0 report-link errors. |
+| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | Before the latest main advance, `npm run check` passed (119 + 6 tests; site audit 280 pages, 15,332 rows, 302 sources, 0 errors); `npm run test:browser` passed (256 desktop + 256 mobile, WCAG A/AA); extraction/origination checks passed; 14 review-table rows + 16 local links checked, 0 report-link errors. Post-rebase counts are pending final refresh. |
 | A4 | PR, checks, merge, deployment record | in progress | session-arena-0c516a05-own7 | PR metadata, COORDINATION.md | Report-only change; continue only after PR checks pass. Existing published Pages status is recorded in the report; any newly published content must be confirmed after merge. |
 
 Standing constraints: this report will not invent values, reinterpret saved evidence as a fresh live
@@ -3579,13 +3581,23 @@ Before the claim was pushed, `git pull --rebase origin main` advanced the base f
 the end of `COORDINATION.md`, so Git reported an add-at-end conflict. Resolved as a union: retained
 the full W7 publication record from `origin/main` and this complete claim; no work was discarded.
 
+### Subsequent rebase (2026-11-18)
+
+Before publishing the review commit, `git pull --rebase origin main` advanced the base from
+`d6803bb` to `f776790` (PR #92). It added a dated executive summary and updated the README link; no
+conflict occurred. The report was revised to recognize that new document while flagging that the
+public site navigation still points to the older generated `executive-summary.html`. Open PRs #95
+and #96 independently audit the readiness ledger; this session will not edit that ledger or their
+scopes.
+
 ### Acceptance findings and cross-scope requests (2026-11-18)
 
-- The report records AR-01–AR-06: stale readiness text for DR-22/23/25/61/68; an executive-summary
-  top section that predates the completed results corpus; results-overview copy that still says
-  n=114 while the current analysis reports n=128; duplicated question/suggestion/readiness surfaces;
-  the limits of the local source/link audit and the narrow scope of the NFL `/odds/` 404; and the
-  Week 11 injury URL serving a Week 10 view at the retained read time.
+- The report records AR-01–AR-06: stale readiness text for DR-22/23/25/61/68; an older executive
+  summary and a live generated summary page that still displays 77–43 / 64.2% / n=114 despite a
+  dated 2026-11-18 Markdown summary now existing; results-overview copy that still says n=114 while
+  the current analysis reports n=128; duplicated question/suggestion/readiness surfaces; the limits
+  of the local source/link audit and the narrow scope of the NFL `/odds/` 404; and the Week 11 injury
+  URL serving a Week 10 view at the retained read time.
 - Internal comparison: `research/nfl-decision-readiness.json` contains 70 requirement rows, but
   DR-22's clearing text says 65; `nfl-slate-03dcea07/site/verification.html` records the final
   Week 10 completion and its 14/14 venue/actual-starter Game Book capture; `weekly-diff.html` and
@@ -3606,8 +3618,9 @@ the full W7 publication record from `origin/main` and this complete claim; no wo
   [NFL Week 10 injury report](https://www.nfl.com/injuries/league/2026/REG10),
   [2026 Official Playing Rules](https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf),
   and the [LAC–BAL Game Book](https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf).
-- Cross-scope request to the final integration owner: re-grade the named readiness rows from the
-  retained official captures; refresh or clearly version the top-level summary and result-overview
-  captions; add a generated-copy freshness test; consider publishing this review in the existing
-  review/suggestions hierarchy and condensing the main navigation. This session did not edit shared
-  index/navigation, requirements, source registers, or strategy data.
+- Cross-scope request to the final integration owner: coordinate with the active readiness re-grade
+  work (PRs #95/#96) rather than editing its ledger; link the dated 2026-11-18 summary into the
+  public site; refresh result-overview metrics/captions and add generated-copy freshness tests; and
+  consider publishing this review in the existing review/suggestions hierarchy while condensing the
+  main navigation. This session did not edit shared index/navigation, requirements, source registers,
+  or strategy data.
