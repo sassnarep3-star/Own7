@@ -349,7 +349,7 @@ def render(model: dict) -> dict[str, str]:
 </section>
 <section class="section">
   <h2>Register status now versus after the proposed re-grades</h2>
-  {table(["Status", "Register (as published)", "Audit (after proposals)"],
+  {table(["Status", "Register (as published)", "Audit (after proposals)", "Source"],
          [f"<tr{src_attr(['REPO'])}><th scope='row'>{esc(s)}</th><td>{c['ledger_status'].get(s, 0)}</td><td>{c['audit_status'].get(s, 0)}</td>"
           f"<td>{rel_link(reg['REPO']['url'], 'REPO · repository register')}</td></tr>"
           for s in ["Implemented", "Partial", "Open", "Blocked", "Rejected"]], "Status counts")}
