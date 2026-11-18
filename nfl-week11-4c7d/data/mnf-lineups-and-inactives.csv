@@ -1,0 +1,62 @@
+row_id,game_id,club,position,jersey,player,status,source_url,source_label,captured_utc
+P0001,W10-14,LAC,WR,1,Q.Johnston,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0002,W10-14,LAC,WR,9,T.Harris,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0003,W10-14,LAC,TE,88,C.Kolar,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0004,W10-14,LAC,LT,76,J.Alt,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0005,W10-14,LAC,LG,65,L.Taylor,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0006,W10-14,LAC,C,66,J.Slaughter,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0007,W10-14,LAC,RG,69,C.Strange,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0008,W10-14,LAC,RT,77,T.Burke,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0009,W10-14,LAC,QB,10,J.Herbert,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0010,W10-14,LAC,FB,44,S.Matlock,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0011,W10-14,LAC,RB,8,O.Hampton,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0012,W10-14,LAC,OLB,45,T.Tupilotu,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0013,W10-14,LAC,DL,93,T.Tart,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0014,W10-14,LAC,DL,94,D.Tomlinson,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0015,W10-14,LAC,OLB,52,K.Mack,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0016,W10-14,LAC,LB,53,D.Phillips,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0017,W10-14,LAC,LB,0,D.Henley,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0018,W10-14,LAC,DB,2,E.Molden,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0019,W10-14,LAC,CB,26,D.Jackson,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0020,W10-14,LAC,CB,4,T.Still,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0021,W10-14,LAC,CB,20,C.Hart,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0022,W10-14,LAC,S,23,T.Jefferson,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0023,W10-14,BAL,WR,4,Z.Flowers,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0024,W10-14,BAL,TE,85,J.Cuevas,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0025,W10-14,BAL,LT,79,R.Stanley,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0026,W10-14,BAL,LG,74,J.Simpson,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0027,W10-14,BAL,C,64,C.Jurgens,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0028,W10-14,BAL,RG,71,O.Ioane,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0029,W10-14,BAL,RT,70,R.Rosengarten,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0030,W10-14,BAL,WR,6,J.Lane,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0031,W10-14,BAL,WR,7,R.Bateman,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0032,W10-14,BAL,QB,11,J.Brissett,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0033,W10-14,BAL,RB,22,D.Henry,Official starter (offence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0034,W10-14,BAL,OLB,91,T.Hendrickson,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0035,W10-14,BAL,DL,96,B.Washington,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0036,W10-14,BAL,DL,98,T.Jones,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0037,W10-14,BAL,DL,92,N.Madubuike,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0038,W10-14,BAL,OLB,15,M.Green,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0039,W10-14,BAL,ILB,32,T.Simpson,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0040,W10-14,BAL,ILB,0,R.Smith,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0041,W10-14,BAL,CB,2,N.Wiggins,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0042,W10-14,BAL,CB,44,M.Humphrey,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0043,W10-14,BAL,S,24,M.Starks,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0044,W10-14,BAL,S,14,K.Hamilton,Official starter (defence),https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0045,W10-14,LAC,WR,15,L.McConkey,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0046,W10-14,LAC,S,32,K.Williamson,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0047,W10-14,LAC,CB,37,I.Waxter,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0048,W10-14,LAC,OLB,48,B.Dupree,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0049,W10-14,LAC,WR,89,B.Thompson,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0050,W10-14,LAC,DL,92,J.Eboigbe,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0051,W10-14,BAL,WR,13,E.Sarratt,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0052,W10-14,BAL,3QB,18,K.Slovis,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0053,W10-14,BAL,S,21,J.Hawkins,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0054,W10-14,BAL,CB,29,C.Rivers,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0055,W10-14,BAL,G/T,51,E.Jones,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0056,W10-14,BAL,DL,90,A.Peebles,Official Not Active,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0057,W10-14,LAC,QB,7,D.Uiagalelei,Dressed but Did Not Play,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0058,W10-14,LAC,C,60,J.Spomer,Dressed but Did Not Play,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0059,W10-14,LAC,G,73,A.Harkey,Dressed but Did Not Play,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0060,W10-14,BAL,QB,12,J.Fagnano,Dressed but Did Not Play,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
+P0061,W10-14,BAL,OL,58,R.Neuzil,Dressed but Did Not Play,https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf,NFL Game Book (official PDF),2026-11-18
