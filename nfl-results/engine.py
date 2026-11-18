@@ -1,9 +1,12 @@
 """Deterministic, leakage-free evaluation of NFL line-origination strategies.
 
-Everything below is computed from one input: the 149 official game results for
-weeks 1-10 that reconcile exactly with the official standings snapshots (the frozen
-pre-kickoff Week 10 read for weeks 1-9; the 2026-11-17 read for weeks 1-10 minus
-the one Week 10 game that was not yet final when the page was read).
+Everything below is computed from one input: the 150 official game results for
+weeks 1-10 (complete) that reconcile exactly with the official standings snapshots
+(the frozen pre-kickoff Week 10 read for weeks 1-9; the 2026-11-17 read for the
+frozen weeks 1-10 feed; the 2026-11-18 read for the completed weeks 1-10 feed,
+whose Monday final — Chargers 23, Ravens 20 — is captured by the 2026-11-18
+completion re-read of the official by-week page). Week 11 is published as
+scheduled fixtures only and contributes no results yet.
 
 Enforced in code, not just claimed in prose:
 
@@ -128,7 +131,7 @@ def benjamini_hochberg(pvals: list[float]) -> list[float]:
 # --- Data ---------------------------------------------------------------------------
 def load_games() -> list[dict]:
     import csv
-    with (DATA / "games-2026-w1-10.csv").open(encoding="utf-8", newline="") as handle:
+    with (DATA / "games-2026-w1-10-complete.csv").open(encoding="utf-8", newline="") as handle:
         games = list(csv.DictReader(handle))
     for g in games:
         g["week"] = int(g["week"])
@@ -142,7 +145,7 @@ def load_games() -> list[dict]:
 def load_byes() -> dict[int, set[str]]:
     import csv
     byes: dict[int, set[str]] = {}
-    with (DATA / "byes-2026-w1-10.csv").open(encoding="utf-8", newline="") as handle:
+    with (DATA / "byes-2026-w1-10-complete.csv").open(encoding="utf-8", newline="") as handle:
         for row in csv.DictReader(handle):
             byes.setdefault(int(row["week"]), set()).add(row["team_code"])
     return byes
@@ -781,18 +784,19 @@ def build() -> dict:
 
     return stabilise({
         "schema_version": 1,
-        "generated_for": "2026 NFL season through week 10 (13 of 14 Week 10 games final at the 2026-11-17 read)",
-        "inputs": {
-            "games_file": "nfl-results/data/games-2026-w1-10.csv",
-            "byes_file": "nfl-results/data/byes-2026-w1-10.csv",
-            "games": len(games),
-            "weeks_scored": sorted(EVAL_WEEKS),
-            "rows_scored": len(rows),
-            "sources": [
-                "https://www.nfl.com/schedules/2026/by-week/week-{n} for n = 1..9",
-                "https://www.nfl.com/schedules/2026/REG10 (read 2026-11-17; 13 finals + 1 scheduled-not-final)",
-                "https://www.nfl.com/standings/ (frozen pre-kickoff read reconciles weeks 1-9; fresh 2026-11-17 read reconciles weeks 1-10 minus the scheduled game)",
-            ],
+            "generated_for": "2026 NFL season, weeks 1-10 complete (150 finals; the Week 10 Monday final captured by the 2026-11-18 completion re-read; Week 11 published as scheduled fixtures only)",
+            "inputs": {
+                "games_file": "nfl-results/data/games-2026-w1-10-complete.csv",
+                "byes_file": "nfl-results/data/byes-2026-w1-10-complete.csv",
+                "games": len(games),
+                "weeks_scored": sorted(EVAL_WEEKS),
+                "rows_scored": len(rows),
+                "sources": [
+                    "https://www.nfl.com/schedules/2026/by-week/week-{n} for n = 1..9",
+                    "https://www.nfl.com/schedules/2026/REG10 (read 2026-11-17; frozen feed: 13 finals + 1 scheduled-not-final)",
+                    "https://www.nfl.com/schedules/2026/by-week/week-10 (re-read 2026-11-18; completes the feed with the Monday final)",
+                    "https://www.nfl.com/standings/ (frozen pre-kickoff read reconciles weeks 1-9; 2026-11-17 read reconciles the frozen weeks 1-10 feed; 2026-11-18 read reconciles the completed weeks 1-10 feed)",
+                ],
         },
         "parameters": {
             "pythagorean_exponent": PYTH_EXPONENT,

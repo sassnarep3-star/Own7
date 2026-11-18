@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results feed · OWN7 · Fresh-read desk</title>
+<meta name="description" content="Fresh official NFL reads 2026-11-18: the completed weeks 1-10 results feed (150 finals), the Weeks 11-12 scheduled slates, and flagged irregularities, each row source-linked.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="brand"><strong>OWN7 · Fresh-read desk</strong><span>official reads 2026-11-18 · 150-final results feed · Weeks 11-12 slates</span></div><nav aria-label="Desk pages"><a href="index.html">Overview</a><a href="results-feed.html" aria-current="page">Results feed</a><a href="schedule.html">Weeks 11-12 slate</a><a href="flagged.html">Flagged for review</a><a href="../../index.html">← NFL workspace</a></nav></header>
+<main id="main">
+<p class="eyebrow">OWN7 · Fresh-read desk</p>
+<h1>Results feed</h1>
+<p class="lead">The verified results feed is the corpus every backtest on this site runs
+on. This page documents the 2026-11-18 extension: the Week 10 completion, the new
+snapshot it reconciles against, and the provenance of every added row.</p>
+<h2>Week 10 completion</h2>
+<div class="table-wrap"><table><caption>The Monday final, as captured</caption><thead><tr><th scope="col">Step</th><th scope="col">State</th><th scope="col">What the publisher printed</th><th scope="col">Source</th></tr></thead><tbody><tr data-source-ids="FRESH-NFL-W10-COMPLETE-1118"><td>Before the re-read (frozen 2026-11-17)</td><td>13 finals + 1 scheduled</td><td>Chargers at Ravens printed as “8:15 PM, ESPN” with no score; LAC 0-8 and BAL 4-5 on the standings page</td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-W10-COMPLETE-1118"><td>Re-read 2026-11-18 (by-week URL)</td><td>14 finals</td><td>LAC 23, BAL 20, FINAL, Monday, November 16th</td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Snapshot evidence</td><td>2026-11-18 standings page</td><td>LAC 1-8 and BAL 4-6 — the first snapshot that includes the Monday final; the chain identity holds for all 32 clubs × 5 fields</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr></tbody></table></div><p class="note">The re-read&#x27;s 13 frozen finals are identical to the frozen read (teams, scores, dates); the extractor refuses to publish otherwise. The added row carries the re-read&#x27;s own provenance (by-week URL, retrieved 2026-11-18).</p>
+<h2>Corpus shape</h2>
+<div class="table-wrap"><table><caption>Finals per week in the completed feed (150 total)</caption><thead><tr><th scope="col">Week</th><th scope="col">Finals</th><th scope="col">Slate</th><th scope="col">Source</th></tr></thead><tbody><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Week 1</td><td>16</td><td>16 (full slate)</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Week 2</td><td>16</td><td>16 (full slate)</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Week 3</td><td>16</td><td>16 (full slate)</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Week 4</td><td>16</td><td>16 (full slate)</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Week 5</td><td>15</td><td>15 fixtures per the bye list</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Week 6</td><td>14</td><td>14 fixtures per the bye list</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Week 7</td><td>14</td><td>14 fixtures per the bye list</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Week 8</td><td>14</td><td>14 fixtures per the bye list</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-STANDINGS-1118"><td>Week 9</td><td>15</td><td>15 fixtures per the bye list</td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr><tr data-source-ids="FRESH-NFL-W10-COMPLETE-1118"><td>Week 10</td><td>14</td><td>14 fixtures per the bye list</td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener noreferrer" target="_blank">official page ↗</a></td></tr></tbody></table></div>
+<h2>Reconciliation identities (all enforced in code)</h2>
+<div class="panel body-text"><ol>
+<li>Weeks 1-9 re-derive the frozen pre-kickoff standings snapshot (160 fields).</li>
+<li>The frozen weeks 1-10 feed (149 finals) re-derives the 2026-11-17 snapshot (160 fields).</li>
+<li>The completed weeks 1-10 feed (150 finals) re-derives the 2026-11-18 snapshot (160 fields).</li>
+<li>2026-11-17 snapshot = frozen snapshot + parsed frozen Week 10 deltas (160 fields).</li>
+<li>2026-11-18 snapshot = 2026-11-17 snapshot + parsed completion deltas (160 fields).</li>
+</ol>
+<p class="note">800 reconciled fields across three snapshots, plus structural checks per week
+(fixture cover = clubs − byes, no club twice, byes disjoint). A single mismatch aborts the
+build; nothing is ever published on top of a contradiction.</p></div>
+<h2>Scores are not results until the publisher prints FINAL</h2>
+<p class="note">Week 11 (kickoffs November 19-23) and Week 12 (November 25-30) are captured
+on the <a href="schedule.html">Weeks 11-12 slate page</a> with kickoff times only. No score,
+line or probability is attached to a fixture that has not been played, and no backtest row
+references a game beyond the last FINAL headline.</p>
+</main>
+<footer>Evidence attributed to NFL.com and retained with hashes; canonical artefacts belong to their
+producing sessions. Not affiliated with or endorsed by the NFL. Generated deterministically by
+nfl-fresh-1118/build.py from committed artefacts on 2026-11-18.</footer>
+</body>
+</html>

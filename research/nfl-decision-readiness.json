@@ -1,7 +1,7 @@
 {
  "schema_version": 1,
- "snapshot_date": "2026-11-17",
- "note": "Decision-readiness ledger: one row per requirement line from the project brief. Status, the gate that blocks it, and the number or condition that would clear the gate. Nothing is inferred: every row links the artifact that carries it and a registered official source. This file is maintained by session arena/e15f05e0-own7; rows are re-graded only against artifacts that exist in the tree. Re-graded 2026-11-17 against the official Game Book desk (nfl-gamebook-5213243e, session arena/5213243e-own7, merged via PR #56): DR-10/13/14/21/23/25/31/47/53/58/64 now cite its artifacts, with 13 of 14 Week 10 Game Books captured (the 14th, LAC at BAL, had not kicked off).",
+ "snapshot_date": "2026-11-18",
+ "note": "Decision-readiness ledger: one row per requirement line from the project brief. Status, the gate that blocks it, and the number or condition that would clear the gate. Nothing is inferred: every row links the artifact that carries it and a registered official source. This file is maintained by session arena/e15f05e0-own7; rows are re-graded only against artifacts that exist in the tree. Re-graded 2026-11-17 against the official Game Book desk (nfl-gamebook-5213243e, session arena/5213243e-own7, merged via PR #56): DR-10/13/14/21/23/25/31/47/53/58/64 now cite its artifacts, with 13 of 14 Week 10 Game Books captured (the 14th, LAC at BAL, had not kicked off). Re-graded 2026-11-18 by session arena/92cad499-own7 against the completed weeks 1-10 results feed (150 finals; the Week 10 Monday final captured by the 2026-11-18 completion re-read; desk nfl-fresh-1118): DR-02, DR-16, DR-19 and DR-26 numbers updated. DR-33's 149 (depth slots) is an availability-desk count, unrelated to the feed, and is unchanged.",
  "status_values": {
   "Implemented": "The requirement has a published, source-linked artifact that satisfies it as written.",
   "Partial": "An artifact exists but covers part of the requirement; the gap is named in the gate column.",
@@ -28,12 +28,14 @@
    "requirement": "Add a verified results feed so backtests and ROI can be computed at all",
    "category": "Results & backtesting",
    "status": "Implemented",
-   "gate": "The feed extends only as fast as official by-week finals publish; one Week 10 game (LAC at BAL) was not final at the 2026-11-17 read.",
-   "clears_when": "149 official finals are captured and reconciled (160/160 fields per snapshot); the feed reaches 150 when the Monday night final posts.",
+   "gate": "The feed extends only as fast as official finals publish. The Week 10 Monday final (LAC 23, BAL 20) was captured by the 2026-11-18 completion re-read of https://www.nfl.com/schedules/2026/by-week/week-10; Week 11 is published as scheduled fixtures only and contributes no results yet.",
+   "clears_when": "Published: 150 official finals captured and reconciled - 160/160 fields against each of the frozen pre-kickoff, 2026-11-17 and 2026-11-18 standings snapshots, plus both snapshot chain identities (fresh17 = frozen + frozen W10 deltas; fresh18 = fresh17 + completion deltas).",
    "artifact": "nfl-results-games.html",
    "source_ids": [
     "CP-NFL-W10-SCHEDULE",
-    "E15-NFL-STANDINGS-1117"
+    "E15-NFL-STANDINGS-1117",
+    "FRESH-NFL-STANDINGS-1118",
+    "FRESH-NFL-W10-COMPLETE-1118"
    ]
   },
   {
@@ -200,7 +202,7 @@
    "requirement": "Compute and publish the 'removal of luck' panel on the site dashboard",
    "category": "Results & backtesting",
    "status": "Implemented",
-   "gate": "Luck analysis needs a settled sample; currently 133 scored rows (weeks 2-10).",
+   "gate": "Luck analysis needs a settled sample; currently 134 scored rows (weeks 2-10, 150-final completed corpus).",
    "clears_when": "Published: exact binomial null, luck band at observed n, required sample size, permutation p and BH q per candidate.",
    "artifact": "nfl-results-skill.html",
    "source_ids": [
@@ -238,7 +240,7 @@
    "category": "Results & backtesting",
    "status": "Implemented",
    "gate": "The corpus is one season of official finals; walk-forward scoring starts at week 2 (week 1 has no prior).",
-   "clears_when": "133 rows scored leakage-free across weeks 2-10 with frozen parameters (extended feed, 2026-11-17).",
+   "clears_when": "134 rows scored leakage-free across weeks 2-10 with frozen parameters (completed 150-final feed, 2026-11-18).",
    "artifact": "nfl-competition/site/method.html",
    "source_ids": [
     "CP-NFL-W10-SCHEDULE"
@@ -323,7 +325,7 @@
    "category": "Origination & model",
    "status": "Implemented",
    "gate": "Ratings refresh weekly as finals publish; they are opponent-aware within the captured season only.",
-   "clears_when": "Walk-forward ratings built from 149 game-level results (weeks 1-10), prior state strictly before the target week.",
+   "clears_when": "Walk-forward ratings built from 150 game-level results (weeks 1-10 complete, 2026-11-18), prior state strictly before the target week.",
    "artifact": "nfl-results-skill.html",
    "source_ids": [
     "CP-NFL-RESULTS-W1-9"
@@ -490,7 +492,7 @@
    "requirement": "Split the site into a public analysis layer and a private data layer (raw row-level data held back until terms are read)",
    "category": "Governance & publication",
    "status": "Partial",
-   "gate": "The public site publishes derived analysis with per-row sources; there is no separate private store \u2014 raw rows live in the repository pending the terms decision.",
+   "gate": "The public site publishes derived analysis with per-row sources; there is no separate private store — raw rows live in the repository pending the terms decision.",
    "clears_when": "Raw row-level data moves behind the private layer once the terms answer (DR-20) is recorded.",
    "artifact": "sources.html",
    "source_ids": [
@@ -611,7 +613,7 @@
    "requirement": "Reject: deriving depth order from jersey number, experience or salary",
    "category": "Rejected alternatives",
    "status": "Rejected",
-   "gate": "None \u2014 recorded as rejected so it is not re-proposed.",
+   "gate": "None — recorded as rejected so it is not re-proposed.",
    "clears_when": "n/a (rejected).",
    "artifact": "nfl-suggestions.html",
    "source_ids": [
@@ -791,7 +793,7 @@
    "requirement": "Reject: ranking strategies by season-long ROI",
    "category": "Rejected alternatives",
    "status": "Rejected",
-   "gate": "None \u2014 recorded as rejected.",
+   "gate": "None — recorded as rejected.",
    "clears_when": "n/a (rejected).",
    "artifact": "nfl-suggestions.html",
    "source_ids": [

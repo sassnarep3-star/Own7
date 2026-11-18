@@ -487,6 +487,30 @@ def c672_nav_group():
 
 NAV.extend(c672_nav_group())
 
+FRESH_NAV_PATH = "nfl-fresh-1118/site/index.html"
+
+
+def fresh_nav_group():
+    """Additive nav group for the fresh-read desk (session arena/92cad499-own7).
+
+    Built from the desk's own manifest so this generator never restates a page list that
+    could drift. Returns an empty list if the desk has not been built.
+    """
+    manifest = ROOT / "nfl-fresh-1118" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    pages = list(load_json(str(manifest.relative_to(ROOT)))["pages"])
+    labels = {
+        "index.html": "Fresh-read overview",
+        "results-feed.html": "Results feed completion",
+        "schedule.html": "Weeks 11-12 slate",
+        "flagged.html": "Fresh-read flagged",
+    }
+    return [("NFL fresh reads",
+             [(f"nfl-fresh-1118/site/{p}", labels.get(p, p), "data") for p in pages])]
+
+NAV.extend(fresh_nav_group())
+
 
 SLATE_NAV_PATH = "nfl-slate-03dcea07/site/index.html"
 
@@ -987,7 +1011,7 @@ def build():
         'nfl-review.html':('Flagged for review',f'{NFL_FLAG_TOTAL} NFL items published with their sources; {NFL_OPEN} are open. None blocks publication; all block unsupported claims.',nfl_pages.nfl_review(),'NFL / TRANSPARENCY'),
         'nfl-verification-2026-11-13.html':('Re-verification, 13 Nov','Every published NFL value re-read from the publisher. Thirty of 32 standings rows, 20 of 20 injury rows and 14 of 14 fixtures agree; two rows moved because a game was played.',nfl_pages.nfl_verification(),'NFL / TRANSPARENCY'),
         'executive-summary.html':('NFL executive summary','Reconciled results, market-price, availability and validation evidence; decision questions and remaining gates.',nfl_pages.executive(),'NFL / EXECUTIVE'),
-        'nfl-results.html':('Results & skill lab','149 verified NFL results (through Week 10, 2026-11-17) turned into a leakage-free test of whether any strategy is skill or luck.',nfl_results_pages.page_summary()),
+        'nfl-results.html':('Results & skill lab','150 verified NFL results (weeks 1-10 complete, 2026-11-18) turned into a leakage-free test of whether any strategy is skill or luck.',nfl_results_pages.page_summary()),
         'nfl-results-games.html':('Official game results','Every captured score, week by week, with the official page each one came from.',nfl_results_pages.page_results(),'NFL / VERIFIED DATA'),
         'nfl-results-skill.html':('Skill vs luck','Which strategies beat an exact chance null, survive multiplicity control and hold up out of sample.',nfl_results_pages.page_skill(),'NFL / VALIDATION'),
         'nfl-results-correlation.html':('Leg correlation','Same-game dependence measured from real joint outcomes instead of asserted.',nfl_results_pages.page_correlation(),'NFL / CORRELATION'),
@@ -1177,6 +1201,14 @@ def build():
     c815_pages=load_json('nfl-integration-c815/site/manifest.json')['pages']
     for name in c815_pages:
         generated.append(f'nfl-integration-c815/site/{name}')
+    # Fresh-read desk (session arena/92cad499-own7). Runs the desk's own deterministic
+    # build first: it re-derives every number from the completed feed CSVs and aborts
+    # on any mismatch, so a contradiction fails the site build instead of publishing.
+    fresh_result=subprocess.run([sys.executable,str(ROOT/'nfl-fresh-1118'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if fresh_result.returncode: raise SystemExit(f'nfl-fresh-1118/build.py failed: '+fresh_result.stdout+fresh_result.stderr)
+    fresh_pages=load_json('nfl-fresh-1118/site/manifest.json')['pages']
+    for name in fresh_pages:
+        generated.append(f'nfl-fresh-1118/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None

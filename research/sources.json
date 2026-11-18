@@ -3353,6 +3353,78 @@
   "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-readiness-e7ef/evidence/week11-2026-11-17.md"
  },
  {
+  "id": "FRESH-NFL-STANDINGS-1118",
+  "publisher": "NFL.com",
+  "title": "NFL standings (division view), rendered page",
+  "kind": "Official league standings page",
+  "authority": "nfl.com (league primary source)",
+  "scope": "All 32 club rows, 16 value cells each, read 2026-11-18 after every Week 10 game reached FINAL. Retained verbatim with SHA-256 at research/nfl/evidence/standings-2026-11-18.retrieved.md. No value inferred.",
+  "checked_on": "2026-11-18",
+  "access": "Rendered page text via Arena fetch_page (direct HTTPS to nfl.com blocked in this sandbox); two chunks; navigation chrome truncated and documented in the evidence header",
+  "status": "Verified read; not redistributed",
+  "url": "https://www.nfl.com/standings/"
+ },
+ {
+  "id": "FRESH-NFL-W10-COMPLETE-1118",
+  "publisher": "NFL.com",
+  "title": "NFL 2026 by-week schedule page, week 10 (completion re-read)",
+  "kind": "Official league schedule page",
+  "authority": "nfl.com (league primary source)",
+  "scope": "14 dated FINAL headlines (including Chargers 23, Ravens 20, FINAL, Monday, November 16th) and the 4 bye clubs, read 2026-11-18. Retained verbatim with SHA-256 at nfl-results/evidence/week-10.complete.md. Cross-checked line by line against the frozen 2026-11-17 read before publication.",
+  "checked_on": "2026-11-18",
+  "access": "Rendered page text via Arena fetch_page; two chunks; headline lines transcribed unmodified",
+  "status": "Verified read; not redistributed",
+  "url": "https://www.nfl.com/schedules/2026/by-week/week-10"
+ },
+ {
+  "id": "FRESH-NFL-W11-SCHED-1118",
+  "publisher": "NFL.com",
+  "title": "NFL 2026 by-week schedule page, week 11",
+  "kind": "Official league schedule page",
+  "authority": "nfl.com (league primary source)",
+  "scope": "13 scheduled fixtures with kickoff times and networks plus 6 bye clubs (ATL, CLE, GB, LA, NE, SEA), read 2026-11-18 before the week's Thursday kickoff; no finals exist for this week. Retained verbatim with SHA-256 at nfl-results/evidence/week-11.schedule.md.",
+  "checked_on": "2026-11-18",
+  "access": "Rendered page text via Arena fetch_page; three chunks; fixture lines transcribed unmodified",
+  "status": "Verified read; not redistributed",
+  "url": "https://www.nfl.com/schedules/2026/by-week/week-11"
+ },
+ {
+  "id": "FRESH-NFL-W12-SCHED-1118",
+  "publisher": "NFL.com",
+  "title": "NFL 2026 by-week schedule page, week 12",
+  "kind": "Official league schedule page",
+  "authority": "nfl.com (league primary source)",
+  "scope": "16 scheduled fixtures with kickoff times and networks (including a Wednesday and a Friday game) and no bye section, read 2026-11-18; no finals exist for this week. Retained verbatim with SHA-256 at nfl-results/evidence/week-12.schedule.md.",
+  "checked_on": "2026-11-18",
+  "access": "Rendered page text via Arena fetch_page; three chunks; fixture lines transcribed unmodified",
+  "status": "Verified read; not redistributed",
+  "url": "https://www.nfl.com/schedules/2026/by-week/week-12"
+ },
+ {
+  "id": "FRESH-NFL-INJHUB-1118",
+  "publisher": "NFL.com",
+  "title": "NFL injury report hub (rendered WEEK 10 view on 2026-11-18)",
+  "kind": "Official league injury report page",
+  "authority": "nfl.com (league primary source)",
+  "scope": "PARTIAL capture flagged: chunks 0-3 of 8 retrieved at 2026-11-18T04:06:10Z; chunks 4-7 not retrieved, so no row count or delta is published from this read. Retained verbatim with SHA-256 at nfl-fresh-1118/evidence/injury-hub-read-2026-11-18.partial.md. The newest complete capture remains the 2026-11-17 read (E7EF-INJ-W10-1117).",
+  "checked_on": "2026-11-18",
+  "access": "Rendered page text via Arena fetch_page; partial capture documented in the evidence header",
+  "status": "Partial read, flagged; not redistributed",
+  "url": "https://www.nfl.com/injuries/"
+ },
+ {
+  "id": "FRESH-NFL-INJHUB-W11-404",
+  "publisher": "NFL.com",
+  "title": "NFL injury hub week-11 URL (returns the site 404 page)",
+  "kind": "Official league page (negative evidence)",
+  "authority": "nfl.com (league primary source)",
+  "scope": "https://www.nfl.com/injuries/week-11 returned the site's 404 page ('404 - Flag on the Play.') when read 2026-11-18, and the query form ?week=11 re-rendered the WEEK 10 view: the publisher's Week 11 injury view is client-side only and was not fetchable at read time. Recorded as negative evidence for the injury-hub timestamped series.",
+  "checked_on": "2026-11-18",
+  "access": "Rendered page text via Arena fetch_page; single chunk (404 page)",
+  "status": "Negative evidence, flagged; not redistributed",
+  "url": "https://www.nfl.com/injuries/week-11"
+ },
+ {
   "id": "W4C7D-NFL-STANDINGS",
   "publisher": "NFL.com",
   "title": "2026 NFL Division Standings",

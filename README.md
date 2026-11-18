@@ -59,6 +59,45 @@ python nfl-integration-c815/build.py --check    # byte-identical reproduction
 python -m unittest discover -s nfl-integration-c815/tests   # 19 tests
 ```
 
+## New: weeks 1-10 results feed completed, fresh 2026-11-18 reads (session arena/92cad499-own7)
+
+The verified results feed is **complete through Week 10: 150 official finals**. The frozen
+2026-11-17 read held 13 of 14 Week 10 finals; the 2026-11-18 completion re-read of the
+official by-week page adds **Chargers 23, Ravens 20, FINAL, Monday, November 16th**, is
+cross-checked line by line against the frozen read before publication, and reconciles against
+a fresh 2026-11-18 standings snapshot. Week 11 (13 fixtures + 6 byes) and Week 12 (16 fixtures,
+including a Wednesday and a Friday game) are captured as scheduled fixtures only — a fixture
+with a kickoff time is never a result.
+
+| Page | What it answers |
+|---|---|
+| `nfl-fresh-1118/site/index.html` | Overview: read receipts with SHA-256, FV1-FV7 checks, what changed |
+| `nfl-fresh-1118/site/results-feed.html` | The Week 10 completion, corpus shape, the five reconciliation identities |
+| `nfl-fresh-1118/site/schedule.html` | Weeks 11-12 slates exactly as printed, beside the league's dated schedule announcement |
+| `nfl-fresh-1118/site/flagged.html` | 4 flags, including the flagged-partial injury-hub read and the REG10 URL redirect |
+
+- **Five reconciliation identities now hold** (160 fields each, 800 total): weeks 1-9 vs the
+  frozen pre-kickoff snapshot, the frozen weeks 1-10 feed vs the 2026-11-17 snapshot, the
+  completed weeks 1-10 feed vs the 2026-11-18 snapshot, and both chain identities between
+  snapshots. Every frozen 2026-11-14/11-17 artefact stays byte-identical.
+- **The skill engine re-graded on the completed corpus** (134 scored rows): spread board
+  **61.2%** (permutation p=0.0065, BH q=0.086), total board 49.3%, leg dependence phi −0.032
+  (p=0.72, n=128). Still zero qualified strategies and zero rewards.
+- **Decision-readiness ledger re-graded** (DR-02/16/19/26) — DR-02's published clearing
+  condition ("the feed reaches 150 when the Monday night final posts") is now met.
+- **Injury hub read flagged partial** (chunks 0-3 of 8; the Week 11 view was client-side and
+  not fetchable, returning the site's 404): recorded with its clock time, no delta published
+  from an incomplete capture; follow-up task F1 is on the coordination board.
+
+```sh
+python nfl-results/extract.py       # five reconciliation identities; refuses contradictions
+python nfl-results/engine.py        # re-grade on the completed 150-final corpus
+python nfl-fresh-1118/build.py --check          # desk reproduces byte-identically
+python -m unittest discover -s nfl-fresh-1118/tests   # 8 tests
+```
+
+---
+
 ## New: Week 11 decision desk — Week 10 closure, availability joins and the snap-count verdict (2026-11-18, session arena/a10fed14-own7)
 
 Live desk: [Week 11 decision desk](https://sassnarep3-star.github.io/Own7/nfl-week11-4c7d/site/index.html) ·

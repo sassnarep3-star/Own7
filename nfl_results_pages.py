@@ -73,23 +73,24 @@ def stat_rows(analysis, market_filter=None):
 
 def page_results():
     analysis = load_analysis()
-    games = load_rows("games-2026-w1-10.csv")
-    byes = load_rows("byes-2026-w1-10.csv")
+    games = load_rows("games-2026-w1-10-complete.csv")
+    byes = load_rows("byes-2026-w1-10-complete.csv")
     total_byes = len(byes)
 
     body = ""
     body += notice(
         "Where the numbers come from",
-        f"{len(games)} official final scores, weeks 1–9, read from NFL.com. The parser refuses to "
-        f"publish unless the scores reproduce the frozen official standings exactly — all 32 clubs, "
-        f"on wins, losses, ties, points for and points against (160 checks).",
+        f"{len(games)} official final scores, weeks 1–10 complete, read from NFL.com. The parser "
+        f"refuses to publish unless the scores reproduce the official standings exactly — all 32 "
+        f"clubs, on wins, losses, ties, points for and points against (160 checks per snapshot, "
+        f"across the frozen pre-kickoff, 2026-11-17 and 2026-11-18 reads).",
         info=True)
 
     body += metrics([
-        ("Games captured", len(games), "Weeks 1–9, every club", "data"),
+        ("Games captured", len(games), "Weeks 1–10 complete, every club", "data"),
         ("Bye rows", total_byes, "Printed by the publisher", "validation"),
-        ("Reconciliation", "480/480", "Standings fields matching: 160 w1-9 vs frozen snapshot, 160 w1-10 vs 2026-11-17 snapshot, 160 fresh = frozen + Week 10 deltas", "validation"),
-        ("Weeks scored", "8 of 9", "Week 1 has no prior form", "signals"),
+        ("Reconciliation", "800/800", "Standings fields matching: 160 w1-9 vs frozen snapshot, 160 frozen w1-10 vs 2026-11-17 snapshot, 160 completed w1-10 vs 2026-11-18 snapshot, 160 fresh17 = frozen + Week 10 deltas, 160 fresh18 = fresh17 + completion deltas", "validation"),
+        ("Weeks scored", "9 of 10", "Week 1 has no prior form", "signals"),
     ])
 
     game_rows = []
@@ -108,7 +109,7 @@ def page_results():
 
     body += section(
         "Every captured game",
-        table("results-games", "Official final scores, weeks 1–9", [
+        table("results-games", "Official final scores, weeks 1–10 complete", [
             ("Week", "week"), ("Date", "date"), ("Fixture (away @ home)", "fixture"),
             ("Score (away–home)", "score"), ("Away margin", "margin"), ("Total points", "total"),
         ], game_rows,
@@ -510,8 +511,8 @@ def page_questions():
         },
         {
             "id": "Q05",
-            "question": "Do injuries in weeks 1–9 change the lines those weeks produced?",
-            "known": "The week-10 injury report is captured and publishes 326 player rows. Weeks 1–9 "
+            "question": "Do injuries in the scored weeks change the lines those weeks produced?",
+            "known": "The week-10 injury report is captured (326 player rows on the 2026-11-13 availability read; 347 rows on the 2026-11-17 re-read; the 2026-11-18 re-read is archived on the fresh-read desk). Weeks 1–10 "
                      "have no saved pre-kickoff injury snapshot.",
             "missing": "A pre-kickoff injury archive for the scored weeks.",
             "blocks": "Any injury-adjusted line for the scored period. It would require inventing history.",
@@ -520,7 +521,7 @@ def page_questions():
         {
             "id": "Q06",
             "question": "Is one season enough to call any of this persistent?",
-            "known": "Eight scored weeks, 120 games. The split-half check holds in both halves.",
+            "known": "Nine scored weeks, 134 games. The split-half check holds in both halves.",
             "missing": "Prior seasons, and a forward test on games that have not been played.",
             "blocks": "Any claim of durable skill. The strongest available statement is provisional.",
             "source_url": "https://www.nfl.com/standings/",
@@ -591,8 +592,8 @@ def page_suggestions():
         {
             "id": "SG03", "title": "Add pace and red-zone inputs to fix the total model",
             "unlocks": "A total model that is not a coin flip.",
-            "evidence": "The total board scored exactly 50.0% directional; the spread board scored "
-                        "64.2%. The difference is what the model can and cannot see.",
+            "evidence": "The total board scored 49.3% directional; the spread board scored "
+                        "61.2%. The difference is what the model can and cannot see.",
             "cost": "Two more official team-stat tables, already on the same publisher.",
             "risk": "More inputs mean more ways to overfit; gate RG07 must stay in place.",
             "test": "Totals skill score must go positive and the family-wise luck figure must fall.",
@@ -807,7 +808,7 @@ def page_summary():
     body = ""
     body += metrics([
         ("Official games captured", analysis["inputs"]["games"], "Weeks 1–9, reconciled", "data"),
-        ("Reconciliation", "480/480", "Standings fields matched across the frozen and 2026-11-17 snapshots", "validation"),
+        ("Reconciliation", "800/800", "Standings fields matched: frozen w1-9 and frozen w1-10 snapshots, the completed w1-10 feed against the 2026-11-18 snapshot, and both snapshot chain identities", "validation"),
         ("Spread board", pct(spread["directional"]["hit_rate"]), "Directional, provisional", "signals"),
         ("Total board", pct(total["directional"]["hit_rate"]), "No signal — published", "care"),
     ])
@@ -818,19 +819,21 @@ def page_summary():
 <p><strong>1. The missing data was never missing.</strong> Every earlier session recorded that no
 NFL result archive existed. NFL.com publishes a final score for every past game. The project had
 a retrieval gap, not a data gap, and closing it changed what the rest of the site could say.</p>
-<p><strong>2. The scores are checkable, and checked.</strong> The 149 captured results are
-re-derived into club totals and must reproduce the frozen official standings exactly: 32 clubs ×
-5 fields = 160 checks. The build aborts on a single mismatch.</p>
+<p><strong>2. The scores are checkable, and checked.</strong> The 150 captured results are
+re-derived into club totals and must reproduce the official standings exactly: 32 clubs ×
+5 fields = 160 checks per snapshot, across the frozen pre-kickoff, 2026-11-17 and 2026-11-18
+reads, plus the chain identities between snapshots. The build aborts on a single mismatch.</p>
 <p><strong>3. The spread line carries information; the total line does not.</strong> The
-originated spread beat the result 64.2% of the time (permutation p=0.0021, surviving FDR at
-q=0.022), holding in both halves of the season and in every leave-one-week-out test. The
-originated total landed at exactly 50.0%. The same model, the same data, two different answers.</p>
+originated spread beat the result 61.2% of the time (permutation p=0.0065 over 20,000
+re-shuffles, surviving FDR at q=0.086), holding in both halves of the season (55.2% then
+67.2%) and in every leave-one-week-out test. The
+originated total landed at 49.3%. The same model, the same data, two different answers.</p>
 <p><strong>4. No strategy qualified, and zero rewards were paid.</strong> A <em>qualified</em>
 entry needs an executable price. None exists in this project, so the leaderboard ranks no entry. Its one backtest
 is listed as not ranked, with no merit points and no cash value. The reward mechanism is built and
 deliberately empty.</p>
 <p><strong>5. Correlation is now measured, not asserted.</strong> Same-game leg dependence is
--0.068 (p=0.47, n=114): small, negative, and indistinguishable from independence. No parlay is
+-0.032 (p=0.72, n=128): small, negative, and indistinguishable from independence. No parlay is
 repriced, and player-prop combinations stay blank for want of per-game player logs.</p>
 </div>""",
         eyebrow="FINDINGS")
@@ -840,12 +843,12 @@ repriced, and player-prop combinations stay blank for want of per-game player lo
         table("summ-changes", "Delivered and verified", [
             ("Item", "item"), ("Status", lambda r: badge(r["status"])), ("Evidence", "evidence"),
         ], [
-            {"id": "C1", "item": "Official game results, weeks 1–9", "status": "Complete",
-             "evidence": "149 games parsed from saved rendered text (136 weeks 1-9 + 13 Week 10 finals); 160/160 fields reconcile against each official snapshot and the fresh snapshot equals the frozen snapshot plus the parsed Week 10 deltas.",
+            {"id": "C1", "item": "Official game results, weeks 1–10 complete", "status": "Complete",
+             "evidence": "150 games parsed from saved rendered text (136 weeks 1-9 + 14 Week 10 finals, including the 2026-11-18 completion re-read that captured the Monday final); 160/160 fields reconcile against each official snapshot and both snapshot chain identities hold.",
              "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
              "source_ids": ["X29-NFL-SCHEDULE"]},
             {"id": "C2", "item": "Leakage-free walk-forward evaluation", "status": "Complete",
-             "evidence": "Week-w forecasts use only weeks < w; 120 games scored, week 1 excluded.",
+             "evidence": "Week-w forecasts use only weeks < w; 134 games scored, week 1 excluded.",
              "source_url": "https://www.nfl.com/standings/", "source_ids": ["NFL-STANDINGS"]},
             {"id": "C3", "item": "Luck removal: permutation, FDR, split-half", "status": "Complete",
              "evidence": f"20,000 shuffles; BH across {counts['tested']} variants; leave-one-week-out.",

@@ -34,6 +34,18 @@ class ResultsCapture(unittest.TestCase):
             cls.scheduled = list(csv.DictReader(handle))
         with (ROOT / "nfl-results" / "data" / "reconciliation-2026-11-17.json").open(encoding="utf-8") as handle:
             cls.reconciliation = json.load(handle)
+        with (ROOT / "nfl-results" / "data" / "games-2026-w1-10-complete.csv").open(encoding="utf-8") as handle:
+            cls.games_complete = list(csv.DictReader(handle))
+        with (ROOT / "nfl-results" / "data" / "byes-2026-w1-10-complete.csv").open(encoding="utf-8") as handle:
+            cls.byes_complete = list(csv.DictReader(handle))
+        with (ROOT / "nfl-results" / "data" / "byes-2026-w1-12.csv").open(encoding="utf-8") as handle:
+            cls.byes_w12 = list(csv.DictReader(handle))
+        with (ROOT / "nfl-results" / "data" / "scheduled-2026-w11.csv").open(encoding="utf-8") as handle:
+            cls.scheduled_w11 = list(csv.DictReader(handle))
+        with (ROOT / "nfl-results" / "data" / "scheduled-2026-w12.csv").open(encoding="utf-8") as handle:
+            cls.scheduled_w12 = list(csv.DictReader(handle))
+        with (ROOT / "nfl-results" / "data" / "reconciliation-2026-11-18.json").open(encoding="utf-8") as handle:
+            cls.reconciliation_1118 = json.load(handle)
 
     def test_every_game_has_an_official_source_and_date(self):
         for row in self.games:
@@ -73,6 +85,75 @@ class ResultsCapture(unittest.TestCase):
         self.assertEqual(checks["w1_9_vs_frozen"], "160 fields reconciled")
         self.assertEqual(checks["w1_10_vs_fresh"], "160 fields reconciled")
         self.assertEqual(checks["fresh_eq_frozen_plus_w10_deltas"], "32 clubs x 5 fields hold")
+
+    def test_completion_re_read_agrees_with_the_frozen_read(self):
+        """The 2026-11-18 re-read may only add the frozen scheduled fixture as a final."""
+        checks = self.reconciliation_1118["checks"]
+        self.assertEqual(checks["w1_9_vs_frozen"], "160 fields reconciled")
+        self.assertEqual(checks["w1_10_frozen_vs_fresh_1117"], "160 fields reconciled")
+        self.assertEqual(checks["w1_10_complete_vs_fresh_1118"], "160 fields reconciled")
+        self.assertEqual(checks["fresh1117_eq_frozen_plus_w10_deltas"], "32 clubs x 5 fields hold")
+        self.assertEqual(checks["fresh1118_eq_fresh1117_plus_completion_deltas"],
+                         "32 clubs x 5 fields hold")
+        added = self.reconciliation_1118["completion_added_finals"]
+        self.assertEqual(len(added), 1)
+        row = added[0]
+        self.assertEqual((row["away"], row["home"]), ("LAC", "BAL"))
+        self.assertEqual((row["away_score"], row["home_score"]), (23, 20))
+        self.assertEqual(row["date"], "2026-11-16")
+        self.assertEqual(row["source_url"],
+                         "https://www.nfl.com/schedules/2026/by-week/week-10")
+        self.assertEqual(row["retrieved"], "2026-11-18")
+
+    def test_completed_feed_provenance(self):
+        """13 frozen finals keep the frozen provenance; the Monday final carries the re-read's."""
+        self.assertEqual(len(self.games_complete), len(self.games) + 14)
+        w10 = [r for r in self.games_complete if r["week"] == "10"]
+        self.assertEqual(len(w10), 14)
+        frozen = [r for r in w10 if r["source_url"] == "https://www.nfl.com/schedules/2026/REG10"]
+        completion = [r for r in w10 if r["source_url"] ==
+                      "https://www.nfl.com/schedules/2026/by-week/week-10"]
+        self.assertEqual(len(frozen), 13)
+        self.assertEqual(len(completion), 1)
+        self.assertEqual((completion[0]["away"], completion[0]["home"]), ("LAC", "BAL"))
+        self.assertEqual(completion[0]["retrieved"], "2026-11-18")
+        for r in frozen:
+            self.assertEqual(r["retrieved"], "2026-11-17")
+
+    def test_completed_feed_counts_match_byes(self):
+        by_week: dict[str, int] = {}
+        for r in self.games_complete:
+            by_week[r["week"]] = by_week.get(r["week"], 0) + 1
+        bye_week: dict[str, int] = {}
+        for r in self.byes_complete:
+            bye_week[r["week"]] = bye_week.get(r["week"], 0) + 1
+        for week, count in by_week.items():
+            self.assertEqual(count, (32 - bye_week.get(week, 0)) // 2,
+                             f"week {week} game count inconsistent with its byes")
+
+    def test_week_11_and_12_are_scheduled_only_capture(self):
+        """Week 11 has not been played and Week 12 is future: no finals may exist."""
+        for rows, source, expected in ((self.scheduled_w11,
+                                        "https://www.nfl.com/schedules/2026/by-week/week-11", 13),
+                                       (self.scheduled_w12,
+                                        "https://www.nfl.com/schedules/2026/by-week/week-12", 16)):
+            self.assertEqual(len(rows), expected)
+            for r in rows:
+                self.assertEqual(r["source_url"], source)
+                self.assertEqual(r["retrieved"], "2026-11-18")
+        complete_weeks = {r["week"] for r in self.games_complete}
+        self.assertNotIn("11", complete_weeks)
+        self.assertNotIn("12", complete_weeks)
+        # Week 11 byes as printed: 6 clubs; Week 12 prints no bye section.
+        w11_byes = [r["team_code"] for r in self.byes_w12 if r["week"] == "11"]
+        self.assertEqual(sorted(w11_byes), ["ATL", "CLE", "GB", "LA", "NE", "SEA"])
+        w12_byes = [r["team_code"] for r in self.byes_w12 if r["week"] == "12"]
+        self.assertEqual(w12_byes, [])
+        # Scheduled fixtures + byes must cover all 32 clubs each week.
+        for rows, byes in ((self.scheduled_w11, w11_byes), (self.scheduled_w12, w12_byes)):
+            clubs = [r["away"] for r in rows] + [r["home"] for r in rows]
+            self.assertEqual(len(clubs), len(set(clubs)))
+            self.assertEqual(len(set(clubs)) + len(byes), 32)
 
     def test_no_club_plays_twice_in_a_week(self):
         per_week: dict[str, list[str]] = {}
@@ -139,7 +220,7 @@ class NoLeakage(unittest.TestCase):
         games = engine.load_games()
         rows = engine.walk_forward(games, engine.load_byes())
         self.assertTrue(all(r["week"] >= 2 for r in rows))
-        self.assertEqual(len(rows), 133)
+        self.assertEqual(len(rows), 134)
 
     def test_leave_one_out_uses_an_earlier_cut(self):
         games = engine.load_games()

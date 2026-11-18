@@ -96,8 +96,9 @@ def refs_cell(source_ids, extra_url=None) -> str:
 def table(headers, rows_html, caption=None) -> str:
     cap = f"<caption>{esc(caption)}</caption>" if caption else ""
     head = "".join(f"<th>{esc(h)}</th>" for h in headers)
+    label = esc(caption) if caption else "data table"
     return (
-        f'<div class="table-card" tabindex="0"><table>{cap}<thead><tr>{head}</tr></thead>'
+        f'<div class="table-card" role="region" tabindex="0" aria-label="{label}, scroll horizontally for more columns"><table>{cap}<thead><tr>{head}</tr></thead>'
         f"<tbody>{''.join(rows_html)}</tbody></table></div>"
     )
 
