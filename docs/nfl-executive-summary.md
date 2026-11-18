@@ -77,3 +77,67 @@ Additive. Earlier sections are unchanged. Everything below is on the landing pag
 - Houston's depth chart is an image and was not transcribed (31 of 32 clubs have a printed chart).
 
 **Verification performed:** all 119 unit tests pass (8 new); the site build is deterministic; `scripts/check_site.py` passes; every CI check in `check.yml` passes when replayed locally; the browser suite passes on 174 desktop and 174 mobile pages with WCAG A/AA and no runtime errors. Official sources: `https://www.nfl.com/injuries/league/2026/REG10` (read 2026-11-17, Lions section) and the earlier NFL.com reads already registered in `research/sources.json`.
+
+---
+
+## Update 2026-11-18 — integration audit (session arena/c815bdd2-own7)
+
+This section is additive. It records one verified correction and one requirement closed, both
+from fresh official reads on 2026-11-18. Nothing earlier in this document is edited.
+
+### The headline
+
+The Week 10 slate is **complete**. The fixture this repository recorded as
+`scheduled-not-final` was played: **Chargers 23, Ravens 20**, Monday, 16 November 2026
+([official Week 10 page](https://www.nfl.com/schedules/2026/by-week/week-10)). The canonical
+results feed still holds **149** finals because it was built before that game ended. The
+official standings, read today, imply **150** games have been played
+([official standings](https://www.nfl.com/standings/)).
+
+That is not a guess. It is proved three independent ways and reproduced on every build:
+
+| Check | Result |
+|---|---|
+| League arithmetic on the 2026-11-18 standings | sum(W) = sum(L) = 149; sum(PF) = sum(PA) = 6923; 300 club-games ⇒ **150** games |
+| Delta between the 2026-11-17 and 2026-11-18 official captures | exactly two clubs moved, by exactly the numbers `LAC 23, BAL 20` implies |
+| Re-tallying the 149-game feed against today's standings | 6 residue cells on 2 clubs — one missing game and nothing else |
+
+Full working: [`../nfl-integration-c815/site/week10-completion.html`](../nfl-integration-c815/site/week10-completion.html).
+
+### Requirement DR-68 closed, from the official rulebook
+
+DR-68 ("2026 Kickoff & Declared Onside-Kick Regime Priors Filter") was **Open** because the
+rule text had not been transcribed. It is now transcribed from the
+[2026 Official Playing Rules of the National Football League](https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf):
+
+- **6-1-6** — the kicking team may declare an onside kick **at any time during the game**,
+  by notifying the Referee before the play clock starts; the Referee then notifies the
+  receiving team, so there is **no surprise onside kick**.
+- The onside-kick restraining line is the kicking team's own **35** (own **20** on a safety kick).
+- **6-1-5** — a kickoff from the 50 that results in a touchback puts the ball at the **20**.
+- **6-1-3** — receiving-team alignment in the setup zone changed for 2026.
+
+Each value is extracted by pattern from the retained capture, so a wording change fails the
+build rather than carrying a stale number. What stays open, and is published as open: **how
+often** clubs declared one and **how often** one was recovered. Those are frequencies, this
+project holds no official play-by-play capture, and no frequency is estimated.
+
+Working: [`../nfl-integration-c815/site/rules-2026.html`](../nfl-integration-c815/site/rules-2026.html).
+
+### What did not change
+
+- **No price, ROI, CLV, stake, wager, reward or recommendation is published.** DR-20 (the
+  price-data policy) is still undecided; that is a human decision, not an agent one.
+- **No status was upgraded.** The requirement register's 70 rows are carried through
+  unchanged on the audit page, with this desk's independent check of whether each named
+  artefact resolves (all 70 do).
+- **No other session's file was edited.** The stale feed is flagged
+  ([`flagged.html`](../nfl-integration-c815/site/flagged.html)) rather than patched.
+
+### Verification performed this session
+
+`python -m unittest discover -s tests` → 119 pass; `nfl-integration-c815` suite → 19 pass;
+`scripts/nfl_extract.py --check` → OK; `python -m nfl_origination run --check` → OK;
+every desk `--check` → OK; `scripts/build_site.py` + `scripts/check_site.py` → OK
+(recursive site, fragments, registered row sources, blank rules, receipts, deterministic
+builds); `nfl-integration-c815/build.py --check` → 9 files reproduce byte-identically.
