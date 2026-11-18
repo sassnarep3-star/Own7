@@ -3539,6 +3539,173 @@ Rebase conflict (this session): `COORDINATION.md` add/add with main's new entrie
 **What this session did NOT do (honest scope):** this session delivered one verified, bounded piece: the Sunday NE/DET block of the Week 10 injury report. The full brief in the repository owner's request (price-snapshot store, results feed, leaderboards, ablations, depth-group model, roster-turnover model, 32-club sweep, and the rest) is not implemented here. Most of those themes already have desks on `main` (see `nfl-integration-c815`, `nfl-results`, `nfl-competition`, `nfl-pricing`, `nfl-availability-28ef`, `nfl-snapcount-e5e4`); their gaps are open items on their own desks and in the Flagged pages. Open items this session did not close: the Lions game-status cells in the assurance desk (R4.1), Joseph's practice status in the availability desk (R4.2), and the root navigation link (R4.3).
 
 **Next steps for the next integration owner:** (a) apply the cross-scope fixes R4.1 and R4.2 in their owning desks, after a dated re-read of the official page; (b) add a navigation link to this desk from the root site; (c) capture per-read clock times for injury reads so practice-status differences can be tested as a time series.
+## Session arena/0c516a05-own7 — independent acceptance review (2026-11-18)
+
+Session ID: `session-arena-0c516a05-own7`. Fixed Arena branch: `arena/0c516a05-own7`, based on
+`ad6f0d6f13571fceabcbc5404a397ee9c2618cd5` (PR #80). This session stays on the fixed branch.
+
+### Claim (before implementation)
+
+Baseline measured on this branch:
+
+- `npm run check` — pass: 119 repository tests, 6 NFL build tests, receipt-checked research
+  reproduction, recursive site integrity; 280 recursive HTML pages, 15,332 table rows, 302
+  registered sources, 0 audit errors.
+- `npm run test:browser` — pass: 256 desktop + 256 mobile pages, WCAG A/AA, 10 interaction
+  groups, no runtime errors.
+- `python -m nfl_origination run --check` and `python scripts/nfl_extract.py --check` — pass.
+
+**Exclusive file scope:** new `docs/nfl-acceptance-review-2026-11-18.md`; append-only changes to
+`COORDINATION.md`. This is a static acceptance review of the delivered NFL workspace, not a new
+source-data or model implementation. It does not edit any page, shared index/navigation, data,
+source registry, or other session's desk. At claim time, PRs #83, #87, #88 and #94 were open and
+observed only; no changes were made to their scopes. PRs #95–#98 subsequently appeared and are also
+left untouched; current merge/check states and overlap are recorded below. Shared-site link
+requests, if any, are logged for the final integration owner.
+
+| ID | Task | Status | Owner | Files touched | Sources / verification |
+|---|---|---|---|---|---|
+| A1 | Claim + baseline replay | done | session-arena-0c516a05-own7 | COORDINATION.md | Baseline checks recorded above; original claim commit `ec2d7b1` was pushed before the main rebases. Its current rebased copy is `960e52f` and is pending publication with PR #105. All add-at-end rebase conflicts were resolved as unions and logged below. |
+| A2 | Independent repo acceptance review: separate mechanical checks from external factual verification; inventory existing summary/questions/suggestions/flags and name remaining decision gates | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md` | Six repo consistency items (AR-01–AR-06) and the decision-ready question/gate list are documented; official manual-review URLs link to registered NFL/NWS sources. No new NFL live-fetch claim. |
+| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | Post-rebase on `65745ed`: `npm run check` passed (119 + 6 tests; site audit 307 pages, 15,882 rows, 313 sources, 0 errors); `npm run test:browser` passed (275 desktop + 275 mobile, WCAG A/AA); NFL extraction/origination checks passed; report validation found 14 table rows + 17 local links, 0 errors. |
+| A4 | PR, checks, merge, deployment record | in progress | session-arena-0c516a05-own7 | PR #105, COORDINATION.md | PR [#105](https://github.com/sassnarep3-star/Own7/pull/105) is open from the fixed branch. Local checks passed after rebase onto `7e3d0c0`; CI is in progress. Complete A4 only after checks pass, merge, and a Pages deployment is verified and recorded here. |
+
+Standing constraints: this report will not invent values, reinterpret saved evidence as a fresh live
+read, or mark unlicensed price / ROI / reward / wager gates as cleared. `check_site.py` validates
+local contracts and routing; it does not prove publisher truth, data rights or profitability.
+
+### Rebase conflict note
+
+Before the claim was pushed, `git pull --rebase origin main` advanced the base from `ad6f0d6` to
+`d6803bb` (PR #93, the W7 publication record). Both this claim and the new W7 record appended to
+the end of `COORDINATION.md`, so Git reported an add-at-end conflict. Resolved as a union: retained
+the full W7 publication record from `origin/main` and this complete claim; no work was discarded.
+
+### Subsequent rebase (2026-11-18)
+
+Before publishing the review commit, `git pull --rebase origin main` advanced the base from
+`d6803bb` to `f776790` (PR #92). It added a dated executive summary and updated the README link; no
+conflict occurred. The report was revised to recognize that new document while flagging that the
+public site navigation still points to the older generated `executive-summary.html`. Open PRs #95
+and #96 independently audit the readiness ledger; this session will not edit that ledger or their
+scopes.
+
+### Rebase and overlap snapshot before PR #96 merged (2026-11-18)
+
+Before publication, `git fetch origin` advanced `origin/main` from `f776790` to `1d973d3`
+through merged PR #94 (`e8f8e18`) and PR #87 (`1d973d3`). Rebasing the session onto that base
+conflicted only at the end of `COORDINATION.md`, where the upstream PR #87 record and this session's
+claim were both appended. Resolved as a union: retained the full upstream records and the full
+acceptance-review claim; nothing was discarded. The branch is now based on `1d973d3`.
+
+GitHub Pages run [44255074621](https://github.com/sassnarep3-star/Own7/actions/runs/44255074621)
+completed successfully for `1d973d3`; the Pages API reports `built`. At the overlap check, PRs #95
+and #96 remained open with overlapping proposed readiness re-grades; PR #97 remained open with
+DR-61/64/68 edits and Week 11 evidence; PR #98 remained open and held for a rights decision. These
+branches are not modified by this session. PRs #94 and #87 are merged into the new base.
+
+### Rebase and overlap snapshot after PR #100, before PR #95 merged (2026-11-18)
+
+`git fetch origin` advanced `origin/main` from `5799028` to `3d98fff` through PR #100, the follow-up
+labeling the fourth column of the merged ledger-audit desk. Rebase again conflicted only in
+`COORDINATION.md` at the appended-record boundary. Resolved as a union: retained the complete PR #100
+record and this session's full record; no changes were discarded. The branch is now based on
+`3d98fff`.
+
+Pages run [44259159602](https://github.com/sassnarep3-star/Own7/actions/runs/44259159602) completed
+successfully for `3d98fff`; the Pages API reports `built`. PR #96's audit desk and PR #100's header
+fix are merged; the four re-grades on the audit desk remain proposals, not edits to the shared
+readiness register. At the latest overlap query, PRs #95 and #97 remained open with readiness
+proposals; PR #98 was open, checks green, but held for its rights decision; and PR #99 was open with
+a Week 10 injury-block reconciliation. Those scopes remain untouched here.
+
+### Rebase and overlap snapshot after PR #95, before PR #97 merged (2026-11-18)
+
+`git fetch origin` advanced `origin/main` from `3d98fff` to `e538d21` when PR #95 merged. The
+session rebased onto `e538d21` without conflict. PR #95's own record explicitly leaves the shared
+70-row register unchanged; its three status changes remain proposals. The merged PR #96 audit also
+leaves that register unchanged. Latest successful Pages deployment is
+[run 44261545275](https://github.com/sassnarep3-star/Own7/actions/runs/44261545275) for `e538d21`;
+the Pages API reports `built`.
+
+At the latest overlap query, PR #97 remained open with direct DR-61/64/68 changes; PR #98 remained
+open and rights-held (its checks passed, but the branch was dirty after main advanced); PR #99
+remained open with a Week 10 injury-block reconciliation; and PR #101 remained open with six ledger
+status proposals but no shared-ledger edit. These scopes were not modified by this session.
+
+### Latest rebase and overlap check after PR #97 merged (2026-11-18)
+
+`git fetch origin` advanced `origin/main` from `e538d21` to `f338bea` when PR #97 merged. The
+session rebased onto `f338bea` without conflict. PR #97 merged a first-Wednesday Week 11 capture and
+updated DR-54's gate/artifact. It explicitly withdrew the proposed DR-61/64/68 status changes pending
+line-by-line verification, so the shared ledger's older DR-61/68 gate text remains. This review
+records the merged capture as dated repository evidence, not a fresh read by this session.
+
+Pages run [44263571449](https://github.com/sassnarep3-star/Own7/actions/runs/44263571449) completed
+successfully for `f338bea`; the Pages API reports `built`. At the latest overlap query, PR #98
+remained open and rights-held; PR #99 remained open with its Week 10 injury-block reconciliation;
+and PR #101 remained open with six ledger proposals but no shared-ledger edit. These scopes remain
+untouched here.
+
+### Latest rebase and overlap check after PR #102 merged (2026-11-18)
+
+`git fetch origin` advanced `origin/main` from `f338bea` to `7e3d0c0` through PR #99 (Week 10
+injury-block reconciliation), PR #104 (its completion record), and PR #102 (PR #95 completion record).
+Rebasing the session conflicted at the appended-record boundary in `COORDINATION.md`; resolved as
+a union, retaining the new main records and this session's full record. Nothing was discarded. The
+branch is based on `7e3d0c0`.
+
+Pages run [44265268144](https://github.com/sassnarep3-star/Own7/actions/runs/44265268144) succeeded
+for `7e3d0c0`; the Pages API reports `built`. PR #99 is merged (Week 10 injury-block scope); PR #98
+remains held for a rights decision; PR #101 remains open with six readiness proposals and no shared
+register edit. These other-session scopes are not modified here.
+
+### Latest rebase and overlap check after PR #103 merged (2026-11-18)
+
+`git fetch origin` advanced `origin/main` from `7e3d0c0` to `65745ed` when PR #103 appended its
+completion/deployment record for PR #97. The acceptance branch rebased cleanly onto `65745ed`; no
+conflict or content loss occurred. The latest successful Pages run is
+[44268522477](https://github.com/sassnarep3-star/Own7/actions/runs/44268522477) for `65745ed`; the
+Pages API reports `built`. Open PR #105 is this report; PR #98 remains rights-held, and PR #101
+remains open with its ledger proposals. No other session's files were changed.
+
+### Acceptance findings and cross-scope requests (2026-11-18)
+
+- The report records AR-01–AR-06: stale readiness text for DR-22/23/25/61/68; an older executive
+  summary and a live generated summary page that still displays 77–43 / 64.2% / n=114 despite a
+  dated 2026-11-18 Markdown summary now existing; results-overview copy that still says n=114 while
+  the current analysis reports n=128; duplicated question/suggestion/readiness surfaces; the limits
+  of the local source/link audit and the narrow scope of the NFL `/odds/` 404; and the Week 11 injury
+  URL serving a Week 10 view at the original spot-check time, followed by merged PR #97's one-time
+  Week 11 read with Game Status and body-part fields left blank.
+- Internal comparison: `research/nfl-decision-readiness.json` has 70 rows, while the root landing
+  page exposes 16-, 20-, 60-, and 70-row decision/readiness tables and `nfl-readiness.html` has an
+  81-row full register. DR-22's clearing text says 65; `nfl-slate-03dcea07/site/verification.html`
+  records the final Week 10 completion and its 14/14 venue/actual-starter Game Book capture;
+  `weekly-diff.html` and `rules-2026.html` exist while the 70-row ledger still describes those
+  artefacts as absent. No status was changed because the full DR-23/25/61/68 conditions are broader
+  than the existence of those pages; overlapping external proposals remain logged above.
+- Current engine reproduction: 150 results / 134 scored; 30 variants tested; 0 qualified, 1
+  provisional, 29 rejected; 82–52 spread (61.2%), 66–68 total (49.3%); current leg-dependence
+  estimate n=128, phi −0.0318, p=0.7209. These are repository-derived backtest outputs, not
+  official NFL statistics or a profit claim.
+- Report-focused validation: 14 Markdown table rows each include an official source-domain link;
+  17 local report links resolve; 0 errors. After the rebase onto `65745ed`, `npm run check` passed
+  (119 + 6 tests; 307 pages, 15,882 rows, 313 sources), extraction/origination checks passed, and
+  the browser suite passed 275 desktop + 275 mobile runs with WCAG A/AA and no runtime errors.
+- Official source links for manual review: [NFL Terms](https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions),
+  [NFL Week 10 results](https://www.nfl.com/schedules/2026/by-week/week-10),
+  [NFL standings](https://www.nfl.com/standings/),
+  [NFL Week 10 injury report](https://www.nfl.com/injuries/league/2026/REG10),
+  [2026 Official Playing Rules](https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf),
+  and the [LAC–BAL Game Book](https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf).
+- Cross-scope request to the final integration owner: treat merged PRs #95/#96/#97 as evidence;
+  note that #97 withdrew its DR-61/64/68 status proposals and changed DR-54's gate only. Reconcile
+  the open PR #101 proposals before editing the shared register. Review PR #97's one-time Week 11
+  read and keep PR #98 held pending rights review; link the dated 2026-11-18 summary into the public
+  site; refresh result-overview metrics/captions and add generated-copy freshness tests; and link this
+  review in the existing hierarchy while condensing the main navigation. This session did not edit
+  shared index/navigation, requirements, source registers, or strategy data.
 ## Session arena/637442e9-own7 — decision-ledger reconciliation, gap register, executive summary (2026-11-18)
 
 Session ID: `session-arena-637442e9-own7`. Fixed Arena branch `arena/637442e9-own7` (base `ad6f0d6` = `origin/main`
