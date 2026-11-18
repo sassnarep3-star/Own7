@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "session": "arena/9ef12c81-own7",
+  "read_on": "2026-11-18",
+  "scope": "Re-grades only the decision-readiness rows that the 2026-11-18 tree bears on. Every other row is carried forward unchanged from research/nfl-decision-readiness.json and labelled as such. Nothing here edits the shared register; changes are proposed to the integration owner.",
+  "allowed_statuses": [
+    "Implemented",
+    "Partial",
+    "Open",
+    "Blocked",
+    "Rejected"
+  ],
+  "adjudications": [
+    {
+      "id": "DR-29",
+      "register_status": "Blocked",
+      "proposed_status": "Blocked",
+      "outcome": "Confirmed (rights re-read)",
+      "reason": "NFL.com Terms section 1.3 (updated May 16, 2024) was re-read on 2026-11-18. It prohibits systematic retrieval of Services content to create or compile a collection, database or directory absent express prior written consent. No such consent is held in this repository. Remains Blocked until the owner records a decision (questions page, Q1).",
+      "evidence": [
+        "nfl-reconcile-9ef12c81/evidence/nfl-terms-1-3-2026-11-18.md"
+      ],
+      "source_ids_extra": [
+        "NFL-LEGAL-TERMS"
+      ]
+    },
+    {
+      "id": "DR-54",
+      "register_status": "Blocked",
+      "proposed_status": "Blocked",
+      "outcome": "Confirmed (rights re-read)",
+      "reason": "Same terms clause as DR-29 (section 1.3, re-read 2026-11-18). A Wednesday-to-Friday dated injury history needs repeated retrieval of the injury report, which is the activity section 1.3 addresses. Remains Blocked pending the owner decision (questions page, Q1).",
+      "evidence": [
+        "nfl-reconcile-9ef12c81/evidence/nfl-terms-1-3-2026-11-18.md"
+      ],
+      "source_ids_extra": [
+        "NFL-LEGAL-TERMS"
+      ]
+    },
+    {
+      "id": "DR-66",
+      "register_status": "Blocked",
+      "proposed_status": "Blocked",
+      "outcome": "Confirmed (rights re-read)",
+      "reason": "A past-season injury-report archive is a compilation of Services content, so section 1.3 applies as for DR-29. This desk does not decide whether a one-off, owner-approved archive would fall within the clause; that is an owner and legal question (questions page, Q1).",
+      "evidence": [
+        "nfl-reconcile-9ef12c81/evidence/nfl-terms-1-3-2026-11-18.md"
+      ],
+      "source_ids_extra": [
+        "NFL-LEGAL-TERMS"
+      ]
+    },
+    {
+      "id": "DR-31",
+      "register_status": "Partial",
+      "proposed_status": "Partial",
+      "outcome": "Status kept; gate text is stale and proposed for correction",
+      "reason": "The register gate says snap counts 'are still not captured from any official source'. The committed snap-count desk contradicts this: 1,217 player rows for 13 Week 10 games (26 of the 28 clubs that played; LAC and BAL are absent) transcribed from the official NFL Game Book PDFs, of which 846 rows carry the printed 'Official' label and 371 rows (four games) carry the printed '(Unofficial)' label. Still open: the LAC@BAL Playtime table (desk flag SN-F03), the 'Unofficial' label question (SN-F01), a zero-row depth-vs-snap join (SN-F02), and a second slate.",
+      "evidence": [
+        "nfl-snapcount-e5e4/data/capture-summary.json",
+        "nfl-snapcount-e5e4/data/snap-records.csv",
+        "nfl-snapcount-e5e4/data/flags.json"
+      ],
+      "source_ids_extra": [
+        "SN-NFL-GAMEBOOK-PDF"
+      ]
+    },
+    {
+      "id": "DR-11",
+      "register_status": "Open",
+      "proposed_status": "Open",
+      "outcome": "Confirmed Open",
+      "reason": "The 32-club, club-by-club verification that clears this gate is not met. Snap counts exist for one week and 26 playing clubs (DR-31). Depth slots exist for 31 of 32 clubs when the two committed depth files are unioned (HOU absent). The snap-count desk records zero joinable depth-vs-snap rows. Week 10 had 14 fixtures (28 clubs). The four bye clubs (CHI, DEN, PHI, TB) had no game, and LAC and BAL played the Monday game whose Game Book was not in the capture. So the capture covers 26 of 28 playing clubs.",
+      "evidence": [
+        "nfl-snapcount-e5e4/data/capture-summary.json",
+        "nfl-availability-28ef/data/depth-slots-week10-2026.csv",
+        "nfl-skill-cfdd/data/depth-slots-2026-11-14.csv"
+      ],
+      "source_ids_extra": []
+    },
+    {
+      "id": "DR-56",
+      "register_status": "Open",
+      "proposed_status": "Open",
+      "outcome": "Confirmed Open",
+      "reason": "Snap counts are not yet a verified starter proxy for the clubs without printed charts. Same evidence and same gap as DR-11: one week, 26 clubs, no joinable depth rows, HOU without a committed chart.",
+      "evidence": [
+        "nfl-snapcount-e5e4/data/flags.json",
+        "nfl-availability-28ef/data/depth-slots-week10-2026.csv"
+      ],
+      "source_ids_extra": []
+    },
+    {
+      "id": "DR-44",
+      "register_status": "Open",
+      "proposed_status": "Open",
+      "outcome": "Confirmed Open",
+      "reason": "Only two 2026 injury-report captures are committed (Week 7 and Week 10). Without a multi-season history of designations joined to official inactive lists, no play rate per designation can be computed, so 'Questionable' cannot yet be calibrated.",
+      "evidence": [
+        "data/nfl-injuries-week7-2026.csv",
+        "data/nfl-injuries-2026-w10.csv"
+      ],
+      "source_ids_extra": []
+    },
+    {
+      "id": "DR-52",
+      "register_status": "Partial",
+      "proposed_status": "Partial",
+      "outcome": "Status kept; coverage restated",
+      "reason": "Route (a), official club depth charts, covers 31 of 32 clubs only when the two committed files are unioned: 27 clubs in nfl-availability-28ef and CHI, DEN, PHI, TB in nfl-skill-cfdd. HOU is absent from both. The union crosses two desks and is not one versioned register, so it must be confirmed at integration (DR-34). Route (b), snap counts, is now captured for 26 clubs for one week but is not verified as a depth source.",
+      "evidence": [
+        "nfl-availability-28ef/data/depth-slots-week10-2026.csv",
+        "nfl-skill-cfdd/data/depth-slots-2026-11-14.csv",
+        "nfl-snapcount-e5e4/data/capture-summary.json"
+      ],
+      "source_ids_extra": []
+    },
+    {
+      "id": "DR-34",
+      "register_status": "Partial",
+      "proposed_status": "Partial",
+      "outcome": "Status kept; gate confirmed",
+      "reason": "Transactions for November 2026 were captured in one read (about 12 rows, C672-TRADES-NOV-1118). The depth files carry checked_on and source_url columns but no roster-event version column (verified from the file headers), so depth rows are not yet versioned against the last official roster event.",
+      "evidence": [
+        "nfl-week11-6c72a9fa/evidence/trades-nov-2026-11-18.md",
+        "nfl-availability-28ef/data/depth-slots-week10-2026.csv",
+        "nfl-skill-cfdd/data/depth-slots-2026-11-14.csv"
+      ],
+      "source_ids_extra": [
+        "C672-TRADES-NOV-1118"
+      ]
+    },
+    {
+      "id": "DR-61",
+      "register_status": "Open",
+      "proposed_status": "Partial",
+      "outcome": "Proposed change: Open to Partial",
+      "reason": "A rendered what-changed ledger now exists (nfl-week11-6c72a9fa, session 6c72a9fa, F4): standings 2026-11-17 to 2026-11-18 (only BAL and LAC changed), a reserve-series delta, injury-report stability and schedule stability. The register gate says no diff is rendered, which is now contradicted. It is not Implemented because the clears_when condition needs at least two consecutive weekly pairs and a rating-change column; the ledger holds one pair and has no rating key.",
+      "evidence": [
+        "nfl-week11-6c72a9fa/data/whatchanged.json",
+        "nfl-week11-6c72a9fa/site/what-changed.html"
+      ],
+      "source_ids_extra": [
+        "C672-RESERVE-NOV-1118",
+        "C672-INJ-STATE-1118"
+      ]
+    },
+    {
+      "id": "DR-64",
+      "register_status": "Open",
+      "proposed_status": "Partial",
+      "outcome": "Proposed change: Open to Partial",
+      "reason": "Reserve/injured lists are now captured for November 2026 and October 2026 from nfl.com transactions. Each capture shows a 25-row rolling window. The November window contains Malik Willis (Dolphins, Reserve/Injured, dated 11/10), which is the named case. The capture is not complete for all 32 clubs, and the window rolls, so 'not listed' still cannot be read as 'available' from one capture.",
+      "evidence": [
+        "nfl-week11-6c72a9fa/evidence/reserve-list-nov-2026-11-18.md",
+        "nfl-week11-6c72a9fa/evidence/reserve-list-oct-2026-11-18.md"
+      ],
+      "source_ids_extra": [
+        "C672-RESERVE-NOV-1118",
+        "C672-RESERVE-OCT-1118"
+      ]
+    },
+    {
+      "id": "DR-68",
+      "register_status": "Open",
+      "proposed_status": "Partial",
+      "outcome": "Proposed change: Open to Partial",
+      "reason": "The 2026 Official Playing Rules text on kickoffs and declared onside kicks was transcribed from media.nfl.com (nfl-integration-c815, rule 6-1-6): an onside kick may be declared at any time, it must be declared to the Referee (no surprise onside kick), the restraining line is the own 35 (own 20 on a safety kick), and the touchback spot from the 50 is the 20. Not yet done: the frequency of declared kicks (no official play-by-play is captured) and the priors filter itself.",
+      "evidence": [
+        "nfl-integration-c815/data/rules-2026.json",
+        "nfl-integration-c815/evidence/rules-2026-kickoff-onside.retrieved.md"
+      ],
+      "source_ids_extra": [
+        "NFL-RULES-2026"
+      ]
+    }
+  ],
+  "irregularities": [
+    {
+      "id": "RC-01",
+      "about": "DR-31",
+      "severity": "medium",
+      "item": "Register gate contradicts a committed desk",
+      "detail": "research/nfl-decision-readiness.json DR-31 says snap counts are not captured from any official source. The snap-count desk holds 1,217 rows from official Game Book PDFs for 13 Week 10 games. The register should be corrected at integration.",
+      "route": "Integration owner re-grades DR-31 from this desk's proposal.",
+      "evidence": [
+        "nfl-snapcount-e5e4/data/capture-summary.json"
+      ],
+      "source_ids_extra": [
+        "SN-NFL-GAMEBOOK-PDF"
+      ]
+    },
+    {
+      "id": "RC-02",
+      "about": "DR-61",
+      "severity": "medium",
+      "item": "Register gate says no diff is rendered; one is",
+      "detail": "The what-changed ledger (nfl-week11-6c72a9fa) renders a standings, reserve and schedule diff between dated captures. The register gate is one day stale.",
+      "route": "Integration owner re-grades DR-61 (proposed Partial).",
+      "evidence": [
+        "nfl-week11-6c72a9fa/site/what-changed.html"
+      ],
+      "source_ids_extra": [
+        "FRESH-NFL-STANDINGS-1118",
+        "C672-RESERVE-NOV-1118"
+      ]
+    },
+    {
+      "id": "RC-03",
+      "about": "DR-64",
+      "severity": "medium",
+      "item": "Register gate says the reserve list is not retrieved; it is, in part",
+      "detail": "November and October 2026 reserve windows were captured on 2026-11-18. The November window shows Malik Willis as Reserve/Injured dated 11/10. Coverage is a 25-row rolling window, not all 32 clubs.",
+      "route": "Integration owner re-grades DR-64 (proposed Partial).",
+      "evidence": [
+        "nfl-week11-6c72a9fa/evidence/reserve-list-nov-2026-11-18.md"
+      ],
+      "source_ids_extra": [
+        "C672-RESERVE-NOV-1118"
+      ]
+    },
+    {
+      "id": "RC-04",
+      "about": "DR-68",
+      "severity": "low",
+      "item": "Register gate says rules are not transcribed; they are",
+      "detail": "The 2026 kickoff and onside-kick rule text is transcribed from the official rulebook PDF (nfl-integration-c815). The priors filter is still not built.",
+      "route": "Integration owner re-grades DR-68 (proposed Partial).",
+      "evidence": [
+        "nfl-integration-c815/data/rules-2026.json"
+      ],
+      "source_ids_extra": [
+        "NFL-RULES-2026"
+      ]
+    },
+    {
+      "id": "RC-05",
+      "about": "DR-31",
+      "severity": "medium",
+      "item": "Four Game Book Playtime tables are printed '(Unofficial)'",
+      "detail": "Four of the thirteen Week 10 Game Books print the Playtime Percentage table with an '(Unofficial)' label: HOU@CLE, BUF@NYJ, SEA@LV and LAR@AZ, which is 371 of 1,217 rows. The desk keeps the printed label and does not treat these rows as a different source class. Whether such rows may be used as a starter proxy is an owner decision (questions page, Q3).",
+      "route": "Owner decision Q3; no value is changed.",
+      "evidence": [
+        "nfl-snapcount-e5e4/data/flags.json",
+        "nfl-snapcount-e5e4/data/snap-records.csv"
+      ],
+      "source_ids_extra": [
+        "SN-NFL-GAMEBOOK-PDF"
+      ]
+    },
+    {
+      "id": "RC-06",
+      "about": "DR-34 / DR-52",
+      "severity": "medium",
+      "item": "Two depth files are not one register; HOU is missing from both",
+      "detail": "The Week 10 depth slots (27 clubs) and the 2026-11-14 depth slots (CHI, DEN, PHI, TB) together cover 31 of 32 clubs. Neither file carries a roster-event version. HOU has no committed chart. The file headers differ.",
+      "route": "Versioned depth register (DR-34) and a verified HOU source (DR-32).",
+      "evidence": [
+        "nfl-availability-28ef/data/depth-slots-week10-2026.csv",
+        "nfl-skill-cfdd/data/depth-slots-2026-11-14.csv"
+      ],
+      "source_ids_extra": [
+        "CP-NFL-DEPTH-27"
+      ]
+    },
+    {
+      "id": "RC-07",
+      "about": "DR-29 / DR-54 / DR-66",
+      "severity": "high",
+      "item": "Rights clause read on one chunk only",
+      "detail": "Section 1.3 was read verbatim (chunk 0 of 9 of the official page). Whether a given Game Book PDF or table capture falls within 'systematic retrieval' is not answered by the page. This is the reason the three rows stay Blocked rather than being re-graded in either direction.",
+      "route": "Owner decision Q1, with legal review if the owner wants one.",
+      "evidence": [
+        "nfl-reconcile-9ef12c81/evidence/nfl-terms-1-3-2026-11-18.md"
+      ],
+      "source_ids_extra": [
+        "NFL-LEGAL-TERMS"
+      ]
+    },
+    {
+      "id": "RC-08",
+      "about": "DR-31 / DR-11",
+      "severity": "low",
+      "item": "Snap-count desk summary counts 26 'playing clubs' for a 28-club week",
+      "detail": "nfl-snapcount-e5e4/data/capture-summary.json reports playing_clubs_in_week10 = 26. Week 10 had 14 fixtures, so 28 clubs played. The 26 are the clubs in the 13 captured Game Books; LAC and BAL (the Monday game) are missing because that Game Book was not in the capture. The label is inaccurate and is flagged, not corrected, here.",
+      "route": "Snap-count desk owner to relabel the summary field; LAC@BAL Game Book capture (SN-F03).",
+      "evidence": [
+        "nfl-snapcount-e5e4/data/capture-summary.json",
+        "nfl-results/data/games-2026-w1-10-complete.csv"
+      ],
+      "source_ids_extra": [
+        "SN-NFL-GAMEBOOK-PDF"
+      ]
+    }
+  ]
+}
