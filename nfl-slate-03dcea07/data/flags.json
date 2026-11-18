@@ -1,0 +1,54 @@
+{
+  "flags": [
+    {
+      "id": "SL01",
+      "title": "Secondary sources disagree about the 2026 onside-kick rule's scope",
+      "detail": "The official operations.nfl.com 2026 rulebook table says Rule 6-1-6 'Permits the kicking team to declare an onside kick at any time during the game.' Two secondary articles found by web search claim the 2026 rule retains a trailing-team restriction, while others say any team may declare. This desk publishes only the official text and flags the conflict.",
+      "source_ids": [
+        "SL-1118-OPS-RULEBOOK"
+      ]
+    },
+    {
+      "id": "SL02",
+      "title": "Week 11 injury report not yet published at the 2026-11-18 read time",
+      "detail": "https://www.nfl.com/injuries/league/2026/REG11 served the Week 10 report (canonical URL /reg10) at 2026-11-18 03:56 UTC. The availability-delta series advances with zero in-scope deltas; the first Week 11 deltas can only exist after Wednesday's publication.",
+      "source_ids": [
+        "SL-1118-INJ-REG11",
+        "SL-1118-INJ-PAGE"
+      ]
+    },
+    {
+      "id": "SL03",
+      "title": "2026-11-18 injuries read is a spot check, not a full re-diff",
+      "detail": "Only chunk 0 of 8 was re-read today (first 3 team tables, 20 rows, all cells equal to the 2026-11-17 capture). The full 347-row evidence retained by session arena/e7efbde7-own7 governs; a full re-diff was not performed.",
+      "source_ids": [
+        "SL-1118-INJ-PAGE"
+      ]
+    },
+    {
+      "id": "SL04",
+      "title": "Game Book copyright notice limits use without written NFL permission",
+      "detail": "The Game Book states the summary is for assisting media coverage; other use is prohibited without written permission. This desk publishes the minimal venue/lineup/inactive facts with attribution and a link to the official PDF, mirroring the scope the Game Book desk already established; no play-by-play is republished.",
+      "source_ids": [
+        "SL-1118-GAMEBOOK-PDF"
+      ]
+    },
+    {
+      "id": "SL05",
+      "title": "One unlabelled record cell in the rendered standings rows is not published",
+      "detail": "Each standings row renders an extra record cell between the conference-percentage and streak cells (e.g. BAL '2 - 1 - 0'); the text layer prints no label for it, so this desk neither publishes nor interprets that cell.",
+      "source_ids": [
+        "SL-1118-STANDINGS"
+      ]
+    },
+    {
+      "id": "SL06",
+      "title": "The frozen 149-final results corpus is not edited by this desk",
+      "detail": "The corpus in nfl-results/data/games-2026-w1-10.csv (owned by another session) holds 149 finals with LAC@BAL scheduled-not-final. This desk records the 150th final read-only; the feed reaches 150 only across the two desks' files.",
+      "source_ids": [
+        "SL-REPO-RESULTS-CORPUS",
+        "SL-1118-SCHED-W10"
+      ]
+    }
+  ]
+}

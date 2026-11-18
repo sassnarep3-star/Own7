@@ -1,0 +1,60 @@
+{
+  "session": "arena/03dcea07-own7",
+  "read_at": "2026-11-18T03:49:17Z..2026-11-18T03:58:00Z",
+  "checks": [
+    {
+      "id": "V1",
+      "result": "pass",
+      "detail": "fresh standings parse: 32 clubs, canonical club set, PCT/NET/home-road arithmetic re-derived",
+      "source": "SL-1118-STANDINGS"
+    },
+    {
+      "id": "V2",
+      "result": "pass",
+      "detail": "frozen 2026-11-12 standings + 13 corpus Week 10 finals + LAC@BAL 23-20 re-derive every W/L/T/PCT/PF/PA/NET/Home/Road cell of the fresh page for all 32 clubs",
+      "source": "SL-1118-STANDINGS"
+    },
+    {
+      "id": "V3",
+      "result": "pass",
+      "detail": "2026-11-17 read + LAC@BAL boxline = fresh 2026-11-18 page; exactly BAL and LAC changed",
+      "source": "SL-1118-STANDINGS"
+    },
+    {
+      "id": "V4",
+      "result": "pass",
+      "detail": "Game Book boxline 23-20 (quarters [10, 7, 3, 3]/[0, 10, 3, 7]) equals the schedule-page final Chargers 23, Ravens 20",
+      "source": "SL-1118-SCHED-W10"
+    },
+    {
+      "id": "V5",
+      "result": "pass",
+      "detail": "Game Book parse: 44 starters (22/22), 6+6 Not Active, venue/stadium names consistent",
+      "source": "SL-1118-GAMEBOOK-PDF"
+    },
+    {
+      "id": "V6",
+      "result": "pass",
+      "detail": "schedule read: 14 FINAL games + 4 byes = 32 clubs exactly once",
+      "source": "SL-1118-SCHED-W10"
+    },
+    {
+      "id": "V7",
+      "result": "pass",
+      "detail": "official 2026 rule changes table: 4 rows quoted verbatim incl. Rule 6-1-6",
+      "source": "SL-1118-OPS-RULEBOOK"
+    },
+    {
+      "id": "V8",
+      "result": "pass",
+      "detail": "venue/roof/weather capture now covers W10-01..W10-14 (13 committed by the Game Book desk + this desk's W10-14) = 14/14",
+      "source": "SL-REPO-GB-FIXTURES"
+    },
+    {
+      "id": "V9",
+      "result": "pass",
+      "detail": "official results feed: 149 committed finals + the now-final LAC@BAL read = 150; the corpus's scheduled-not-final row (nfl-results/data/scheduled-2026-w10.csv) is exactly the game this desk completes (read-only; the frozen corpus is not edited)",
+      "source": "SL-REPO-RESULTS-CORPUS"
+    }
+  ]
+}
