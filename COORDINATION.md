@@ -2559,11 +2559,11 @@ Exclusive file scope: `nfl-snapcount-e5e4/**` (new directory). Additive lines on
 | ID | Task | Status | Owner | Files touched | Verification / notes |
 |----|------|--------|-------|---------------|----------------------|
 | S1 | Claim + green baseline replay | in progress | session-arena-e5e4351c-own7 | COORDINATION.md | Baseline battery recorded below. |
-| S2 | Capture official snap counts (Playtime Percentage) from all 13 Week 10 NFL Game Books; retain verbatim raw with hashes | unclaimed | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/raw/**`, `evidence/**` | Official Game Book PDFs linked from the NFL Game Centre; fetched via Arena `fetch_page` (direct HTTPS to nfl.com returns curl 000 in this sandbox, as every prior session recorded). |
-| S3 | Build desk: per-game snap records, per-team position-group snap shares, playing-time starter/backup split, replacement-depth view, depth-vs-snap cross-reference | unclaimed | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | Read-only over other sessions' data; contradictions flagged, never patched in place. |
-| S4 | Flagged-irregularity register for anything found this session | unclaimed | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | Published on the desk's own Flagged page with official links; non-blocking. |
-| S5 | Desk site pages + unit tests + byte-identical `build.py --check` | unclaimed | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | Every tbody row carries `data-source-ids` naming registered official sources. |
-| S6 | Additive integration: nav group + build step, check lines, serve/browser allowlists, sources register, README section; full battery green | unclaimed | session-arena-e5e4351c-own7 | additive lines in the shared files listed above | No existing page, value or test overwritten. |
+| S2 | Capture official snap counts (Playtime Percentage) from all 13 Week 10 NFL Game Books; retain verbatim raw with hashes | **done** | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/raw/**`, `evidence/**` | 13 Game Book Playtime Percentage tables captured verbatim; raw/g01..g13-*.txt committed with SHA-256. 1,217 snap records. |
+| S3 | Build desk: per-game snap records, per-team position-group snap shares, playing-time starter/backup split, replacement-depth view, depth-vs-snap cross-reference | **done** | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | `build.py` emits snap-records.csv (1,217), position-group-shares.csv (462), playtime-depth.csv (1,848), replacement-depth.csv (1,386), depth-vs-snap.csv (0-row gap). Depth ranked by snap count only. |
+| S4 | Flagged-irregularity register for anything found this session | **done** | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | 5 flags: SN-F01 (4 Unofficial labels), SN-F02 (0-row depth-vs-snap gap), SN-F03 (W10-14 missing), SN-DUP-04/05 (2 dedup rows). Published on flagged.html. |
+| S5 | Desk site pages + unit tests + byte-identical `build.py --check` | **done** | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | 11 site pages; 25 unit tests OK; `build.py --check` + `build_site.py --check` byte-identical. |
+| S6 | Additive integration: nav group + build step, check lines, serve/browser allowlists, sources register, README section; full battery green | **done** | session-arena-e5e4351c-own7 | additive lines in the shared files listed above | nav group + build step + manifest auxiliary_pages (11) + serve/browser allowlists + SOURCE_HOSTS (SN-*) + CI test lines + README section. `check_site.py` OK (267 sources, 0 errors); root 119 tests OK. |
 | S7 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-e5e4351c-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
 
 Standing constraints: no price, ROI, CLV, stake, wager or monetary reward is produced anywhere; every
@@ -2577,3 +2577,21 @@ frequent commits; open PR #57 is not touched.
   rules, receipts and deterministic builds; 264 registered sources, 0 errors.
 - `git pull --rebase origin arena/e5e4351c-own7` → remote branch did not yet exist (first push);
   push created `arena/e5e4351c-own7`. No other session's work touched.
+
+### Completion record (S2–S6, 2026-11-18)
+
+- **S2** — all 13 played Week 10 Game Book Playtime Percentage tables captured verbatim into
+  `nfl-snapcount-e5e4/raw/g01..g13-*.txt` with SHA-256 hashes. 1,217 player-phase snap records.
+- **S3** — `build.py` emits `snap-records.csv` (1,217), `position-group-shares.csv` (462),
+  `playtime-depth.csv` (1,848), `replacement-depth.csv` (1,386), `depth-vs-snap.csv` (header-only,
+  0-row gap). Depth is ranked by snap count only — never jersey number, experience or salary.
+- **S4** — 5 flags: SN-F01 (4 tables labelled "(Unofficial)" in their PDFs), SN-F02 (0-row
+  depth-vs-snap gap), SN-F03 (W10-14 LAC@BAL has no Game Book), SN-DUP-04/05 (2 rows repeated by
+  PDF pagination, deduped). Non-blocking; published on `flagged.html`.
+- **S5** — 11 site pages; 25 unit tests OK; `build.py --check` and `build_site.py --check` both
+  byte-identical.
+- **S6** — additive integration: nav group + build step + 11 manifest auxiliary_pages +
+  serve/browser allowlists + SOURCE_HOSTS (SN-NFL-GAMEBOOK-PDF, SN-NFL-GAMECENTER, SN-CLUB-DEPTH) +
+  CI test lines + README section. `python scripts/check_site.py` → **OK** (267 registered sources,
+  0 errors); root `python -m unittest discover -s tests` → **119 tests OK**.
+- No price, ROI, CLV, stake, wager or monetary reward produced anywhere. Open PR #57 untouched.
