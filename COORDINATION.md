@@ -2699,6 +2699,35 @@ frozen 2026-11-14/11-17 artefacts stay byte-identical.
 | W6 | Stale PR #57 disposition at integration: close with documented rationale (precedent: PRs #17/#27/#48/#50 closed by session arena/e15f05e0-own7, published as flag NF22); branch `arena/383626a6-own7` preserved | unclaimed | session-arena-92cad499-own7 | PR metadata, COORDINATION.md | Not merged blind: merge state CONFLICTING against a main that moved through PR #74. |
 | W7 | PR to main, merge without waiting, Pages deploy confirmation, record in this board + README | unclaimed | session-arena-92cad499-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
 
+---
+
+## Session arena/a10fed14-own7 — Week 11/12 official capture, open-gate resolution, decisions & suggestions (2026-11-18)
+
+Session ID: `session-arena-a10fed14-own7`. Branch: `arena/a10fed14-own7` (fixed Arena branch; all work
+stays on it). Baseline at claim (verified by running, not assumed): working tree clean at merge commit
+`0b5f91a` (main, PR #74); `python -m unittest discover -s tests` → 119 pass;
+`python scripts/check_site.py` → passed (47 canonical pages, 20 legacy redirects, 176 auxiliary,
+243 recursive pages, 9,740 tbody rows, 264 registered sources, 0 errors).
+
+Exclusive file scope: new directory `nfl-week11-4c7d/**`. Additive lines only in `COORDINATION.md`,
+`README.md`, `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`,
+`scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`.
+No existing page, value, test or other session's implementation file is overwritten. Open PR #57
+(branch arena/383626a6-own7) is not touched.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| G1 | Claim + green baseline replay | in progress | session-arena-a10fed14-own7 | COORDINATION.md | Baseline battery above |
+| G2 | Fresh official reads 2026-11-18: standings, Week 11 finals, Week 12 schedule, current injury report; verbatim transcripts retained with SHA-256 | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/evidence/**` | nfl.com via Arena fetch_page |
+| G3 | Week 11 official Game Books: venue, roof/surface, weather, official starters, official Not Active lists | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/raw/**`, `nfl-week11-4c7d/data/**` | official NFL Game Book PDF |
+| G4 | Designation reliability over two weeks: join published designations to official Not Active lists, Wilson 95% intervals, n published | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/data/**` | R44/R53 advance |
+| G5 | Snap-count and inactive-list source resolution: probe official candidates, publish verdict per candidate with URL and what rendered | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/data/**` | R11/R31/R56 |
+| G6 | Decisions: questions (known/missing/closes-gap) + suggestions with adopt/defer/reject paths | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/site/questions.html`, `site/suggestions.html` | Every row source-linked; blanks stay blank |
+| G7 | Executive summary + per-requirement delta for the open/partial gates | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/site/executive-summary.html`, `site/requirements.html` | Official links per row |
+| G8 | Desk site pages + unit tests + byte-identical rebuild | unclaimed | session-arena-a10fed14-own7 | `nfl-week11-4c7d/**` | Every tbody row carries registered source ids |
+| G9 | Additive integration: nav group, build step, check lines, serve/browser allowlists, source register; full battery green | unclaimed | session-arena-a10fed14-own7 | additive lines in the shared files listed above | No existing page/test overwritten |
+| G10 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-a10fed14-own7 | COORDINATION.md, PR metadata | Do not merge a broken site |
+
 Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
 produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
 registered official source link; `git pull --rebase` before every push; small frequent commits.
@@ -2939,6 +2968,281 @@ Merge-series notes for the record (all resolved as unions; nothing discarded):
 All seven board tasks (W1-W7) are done. Follow-up F1 (complete 8-chunk injury-hub capture for
 the 2026-11-18 delta) remains open for the next session; FF02/FF03/FF04 are explained and
 non-blocking.
+
+## Session arena/600119f6-own7 — NFL request audit and readiness review (2026-11-18)
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| R1 | Re-run integrated NFL/site verification, audit published readiness and suggestions, record gaps without changing other desks' data | done | session-arena-600119f6-own7 | `docs/nfl-request-audit-2026-11-18.md`, this coordination record | Official reads checked 2026-11-18 06:35 UTC: NFL standings, NFL Week 11 injury report, NFL.com terms §1.3; links are in the report. `npm run check` passed (119 unit tests + recursive audit, 280 pages, 15,332 table rows, 302 registered sources, 0 errors); `npm ci` had 0 reported vulnerabilities; browser suite passed 256 desktop + 256 mobile pages, WCAG A/AA, 10 interaction groups, no runtime errors. | No source values or other desks' data changed. Flag: official live injury report now renders Week 11, superseding old statements that the current page was Week 10; historical Week 10 captures remain dated evidence. Frozen 136/149/150 results files and the 137-row results-feed are distinct vintages/subcorpora, not interchangeable. Rights/price/availability gaps remain open. |
+
+### R1 completion record
+
+- **Official sources checked:** [NFL standings](https://www.nfl.com/standings/), [NFL Week 11 injury report](https://www.nfl.com/injuries/league/2026/reg11), [NFL.com Terms](https://www.nfl.com/legal/terms/) (§1.3), [Week 10 schedule](https://www.nfl.com/schedules/2026/by-week/week-10). Read time 2026-11-18 06:35 UTC via Arena page reader.
+- **Audit:** `docs/nfl-request-audit-2026-11-18.md` separates implemented artifacts from actual decision readiness, records the old-vs-new report state, lists unresolved questions and prioritized suggestions, and does not claim legal clearance, profitability, or complete historical verification.
+- **Verification:** `npm run check` passed; `npm ci` completed with no vulnerabilities reported; `npm run test:browser` passed 256 desktop + 256 mobile pages with WCAG A/AA and no runtime errors. The recursive checker explicitly does not establish external factual truth, usage rights, or profitability.
+- **Irregularities:** current NFL live report is Week 11; previously documented Week 10 state is historical. Results inputs contain distinct dated sizes (136, 149, 150; separate 137-row competition feed) and must not be blended without an explicitly registered corpus. No scheduled snapshotting was added because NFL terms §1.3 requires express prior written consent for systematic retrieval. No official/rights-cleared opening/closing odds feed was identified; ROI/CLV/rewards remain unavailable.
+
+---
+
+---
+
+
+---
+
+---
+
+
+---
+
+---
+
+### G1-G9 done — session-arena-a10fed14-own7 (recorded 2026-11-18)
+
+| ID | Task | Status | Verification / notes |
+|---|---|---|---|
+| G1 | Claim + baseline replay | **done** | Baseline at claim, run not assumed: working tree clean at `0b5f91a` (main, PR #74); `python -m unittest discover -s tests` → 119 pass; `python scripts/check_site.py` → passed (47 canonical, 20 redirects, 176 auxiliary, 243 recursive pages, 9,740 rows, 264 sources, 0 errors). |
+| G2 | Fresh official reads 2026-11-18 | **done** | nfl.com standings (2 chunks), Week 11 by-week schedule (3 chunks), Week 10 injury report Monday section (chunks 5-6 of 8), Week 11 injury URL probe, game centre LAC@BAL, official Game Book PDF for LAC@BAL, nfl.com player stats, nfl.com team snapcounts path, nfl.com/inactives. Verbatim transcripts retained under `nfl-week11-4c7d/evidence/` with SHA-256 in `evidence/SHA256SUMS.txt` (6 files). |
+| G3 | Week 11 / Week 10 Game Book capture | **done** (scoped to what exists) | Week 11 had not kicked off at read time, so no Week 11 Game Book exists. Instead the one gap in Week 10 was closed: the Monday-night game (LAC 23 - BAL 20) is captured raw (`raw/g14-LAC-BAL.txt`: 44 starters, 12 Not Active, 5 Did Not Play, venue, roof/surface, weather, officials, attendance). Week 10 is now 14/14 games, 28/28 clubs. |
+| G4 | Designation reliability over two weeks | **done** | 329 rows joined (300 retained by nfl-gamebook-5213243f… desk, read-only, plus 29 captured today) across 14 games and 28 clubs; Wilson 95% intervals published with n. Out 18 → 13 (0.4913-0.8750); Doubtful 1 → 1 (0.2065-1.0000); Questionable 18 → 5 (0.1250-0.5087); no designation 292 → 53 (0.1415-0.2298). |
+| G5 | Snap-count / inactive-list source resolution | **done (verdict: none exists)** | SP-01 nfl.com team snapcounts path renders the passing table; SP-02 nfl.com player stats menu has no snap-count category; SP-03 the official Game Book has no snap-count field; SP-04 zero "snap" hits across 13 retained Game Book extracts; SP-05 the Week 11 injury URL serves Week 10; SP-06 nfl.com/inactives is empty mid-season. R11/R31/R56 stay open with evidence. |
+| G6 | Questions + suggestions with decision paths | **done** | `questions.csv` 10 rows (held / missing / what closes it / decision it blocks / verified); `suggestions.csv` 8 rows ranked 1-8, each with adopt, defer and reject paths. |
+| G7 | Executive summary + requirement delta | **done** | `site/executive-summary.html`; `requirements-delta.csv` 10 rows, each naming the blocking gate, the gate's meaning and the concrete number that would clear it. |
+| G8 | Desk site + tests + byte-identical rebuild | **done** | 13 pages, 235 tbody rows, every row carrying registered source ids and its official link; `python nfl-week11-4c7d/check.py --check` clean; 35 unit tests pass. |
+| G9 | Additive integration + full battery | **done** | Nav group + build step + manifest entries in `scripts/build_site.py`; 9 hosts pinned in `scripts/check_site.py`; folder allowlists in `scripts/serve_site.py` and `scripts/browser_test.mjs`; 4 CI lines in `.github/workflows/check.yml`; README section. Full battery green: repo tests 119, desk tests 35, `check_site.py` passed (256 recursive pages, 9,984 rows, 273 registered sources, 0 errors), browser suite 236 desktop + 236 mobile, WCAG A/AA, 0 accessibility violations, 0 runtime errors. |
+| G10 | PR, merge, Pages deploy, record | recorded below | |
+
+#### Sources used (all read 2026-11-18, all registered in `research/sources.json`)
+- `W4C7D-NFL-STANDINGS` https://www.nfl.com/standings/
+- `W4C7D-NFL-SCHED-W11` https://www.nfl.com/schedules/2026/by-week/week-11
+- `W4C7D-NFL-INJ-W10` https://www.nfl.com/injuries/league/2026/reg10
+- `W4C7D-NFL-INJ-W11` https://www.nfl.com/injuries/league/2026/REG11 (probe; served Week 10)
+- `W4C7D-NFL-GAMECENTER-MNF` https://www.nfl.com/games/chargers-at-ravens-2026-reg-10
+- `W4C7D-NFL-GAMEBOOK-MNF` https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf
+- `W4C7D-NFL-STATS-PLAYER` https://www.nfl.com/stats/player-stats/
+- `W4C7D-NFL-STATS-SNAPCOUNTS` https://www.nfl.com/stats/team-stats/offense/snapcounts/2026/reg/all
+- `W4C7D-NFL-INACTIVES` https://www.nfl.com/inactives/
+- `REPO` (already registered) for repository-record rows
+
+#### Verification performed
+- 32/32 standings rows re-derived arithmetically: snapshot 2026-11-17 + the Monday-night result
+  (LAC +1 W/+23 PF/+20 PA, BAL +1 L/+20 PF/+23 PA) = the 2026-11-18 read on W, L, T, PCT,
+  PF, PA and net points. 0 mismatches; the check aborts the build on any mismatch.
+- 13 fixtures + 6 byes cover all 32 clubs exactly once.
+- 14/14 Week 10 Game Books, 28 distinct clubs, no duplicate club.
+- 12 of 14 Game Books print weather; 2 (Mercedes-Benz Stadium, Caesars Superdome) print none and
+  are left blank, never zero-filled.
+- Join integrity: with club + surname + first initial, 65 deactivated report rows match 65
+  inactives with 0 contradictions and 0 key collisions; a surname-only join produced 2 false
+  matches (A.J. Brown vs Ben Brown; Wyatt Teller vs M.Teller) and is therefore not used.
+- 158 official inactives, 72 matched to a report row, 86 (0.5443) absent from the report.
+
+#### Irregularities found (published on the desk's Flagged page, non-blocking)
+- W4C7D-01 (high): the NFL injury report re-renders club records after kickoff (0-8 → 1-8 on
+  identical player rows). Any capture taken after kickoff carries the result.
+- W4C7D-02 (medium): a player published Out (Branson Taylor) appears as the starting LG in the
+  Game Book and not on the Not Active list; matched by surname only, so flagged not resolved.
+- W4C7D-03 (medium): the Baltimore substitution list is truncated mid-list at "NT 94" by the
+  rendered chunk boundary; not used in any count.
+- W4C7D-04 (medium): no Week 11 injury baseline exists at read time; nothing transcribed.
+- W4C7D-05 (low): the Vikings at 49ers venue is not printed on the Week 11 schedule page; left
+  blank rather than inferred from the adjacent "Mexico City 2026" event logo.
+- W4C7D-06 (low): nfl.com/inactives is empty mid-season.
+- W4C7D-07 (low): Game Book copyright notice restricts reuse; raw captures stay off the site.
+- W4C7D-08 (low): 2 of 14 Game Books print no weather for indoor games, while 2 other indoor
+  games do; the source is inconsistent, so the blanks stay blank.
+
+#### Cross-session notes
+- Read-only over `nfl-gamebook-5213243e/**` (13 Game Book extracts, availability delta,
+  inactives) and `data/nfl-standings-2026-11-17.csv`. None of those files was modified.
+- One derived statement in another desk's page changed as a consequence of registering new
+  sources: `nfl-readiness-e7ef/site/sources.html` now reads 273 sources instead of 264. It is
+  regenerated by that desk's own deterministic build; no value of theirs was edited.
+- Rebasing onto `main` (PR #75, session arena/7a07b2d4-own7) was clean; no other session's
+  content was discarded. The branch required `--force-with-lease` on the first push after the
+  rebase because the remote still held this session's own two pre-rebase commits
+  (`8f5699c`, `9876fa9`); the rebased history contains the same content. No other session had
+  pushed to this branch.
+- Open PR #57 (branch arena/383626a6-own7) was not touched.
+- This desk publishes no price, odds, ROI, closing-line value, stake, wager or monetary reward;
+  a desk-level check fails the build if a pricing or wagering value ever appears.
+
+### Merge-conflict record — session-arena-a10fed14-own7 × session-arena-c815bdd2-own7 (2026-11-18)
+
+`git pull --rebase origin main` was attempted first and produced a conflict in COORDINATION.md; the
+rebase was aborted (nothing discarded) and the same integration was done as an explicit merge of
+`origin/main` (PR #76, session arena/c815bdd2-own7) so that both histories stay visible.
+
+Conflicts resolved **as a union — no other session's content was discarded**:
+
+| File | Resolution |
+|---|---|
+| `scripts/serve_site.py` | Folder set union: `nfl-integration-c815` (theirs) + `nfl-week11-4c7d` (ours). |
+| `scripts/browser_test.mjs` | Allow-list union: both desk folders kept. |
+| `scripts/build_site.py` | Both desk build steps kept (c815 then week11), and both desk page lists kept in the manifest. |
+| `scripts/check_site.py` | Auto-merged cleanly: our 9 `W4C7D-*` host pins and their `media.nfl.com` host both present. |
+| `research/sources.json` | Took theirs (266), re-appended our 9 `W4C7D-*` ids → **275** entries. |
+| `README.md` | Both "New:" sections kept, theirs first (it landed on main first). |
+| `COORDINATION.md` | Both session records kept, in both conflict hunks. |
+| 50 generated root `*.html`, `nfl-readiness-e7ef/site/sources.html`, `research/site-manifest.json`, `research/results.json` | Regenerated from the merged tree by `python scripts/build_site.py`, never hand-edited. |
+
+Two mechanical follow-ups after the merge: the conflict resolution removed the newlines that
+separated two statements on one line in `scripts/build_site.py` (manifest dict followed by its
+write) and in `scripts/serve_site.py` (`FOLDERS=…` followed by `EXTENSIONS=…`), which Python
+parsed as a call. Both newlines were restored; this is recorded because it would otherwise look
+like an authored change to another session's build code.
+
+Post-merge battery on the merged tree: repo tests 119 pass; every desk suite pass (skill 66,
+lifecycle 37, readiness 24, results 27, pricing 32, availability 28, assurance 50, competition 59,
+market 55, brief 11, week11 35, integration-c815 19); extract/origination/lab/nfl/week11 `--check`
+all OK; `scripts/check_site.py` passed (47 canonical, 20 redirects, **196 auxiliary, 263 recursive
+pages, 10,109 tbody rows, 275 registered sources, 0 errors**); browser suite **243 desktop + 243
+mobile pages, WCAG A/AA, 10 interaction groups, no runtime errors**.
+
+### Second merge-conflict record — session-arena-a10fed14-own7 × session-arena-c815bdd2-own7 snap-count desk (PR #78, 2026-11-18)
+
+A second `main` advance (PR #78, the `nfl-snapcount-e5e4` desk) was merged the same way. Resolved
+as a union again, discarding nothing:
+
+| File | Resolution |
+|---|---|
+| `.github/workflows/check.yml` | Both CI blocks kept: `nfl-snapcount-e5e4` (theirs) and `nfl-week11-4c7d` (ours). |
+| `scripts/serve_site.py` | Folder-set union, 28 entries (adds `nfl-snapcount-e5e4`). |
+| `scripts/browser_test.mjs` | Allow-list union, 27 entries. |
+| `scripts/build_site.py` | Their `snapcount_pages` entry merged into our manifest line alongside `week11_pages` and `c815_pages`; their nav group and build step were auto-merged. |
+| `COORDINATION.md`, `README.md` | Both sessions' records kept. |
+| 50 generated root `*.html`, `nfl-readiness-e7ef/site/sources.html`, `research/site-manifest.json`, `research/results.json` | Regenerated from the merged tree. |
+
+**One cross-desk fix was required to keep the site green, and it is recorded here because it
+touches another session's desk file.** After the merge the browser suite failed:
+
+```
+nfl-snapcount-e5e4/site/depth-vs-snap.html (mobile)
+  scrollable-region-focusable (serious) → .table-card
+```
+
+The cause is that page's single table card, which is a horizontally scrolling region holding an
+**empty `tbody`** (zero rows, by design — the four captured depth-chart clubs did not play in Week
+10) and therefore no focusable content. The fix is one attribute in that desk's own generator,
+`nfl-snapcount-e5e4/build_site.py::table()`: the wrapper now renders
+`<div class="table-card" tabindex="0" aria-label="…">`, so the scroll region is keyboard-reachable.
+No desk value, row, source link or caption was altered; the desk's own `--check` (11 pages) and its
+25 unit tests still pass, and the page output is otherwise byte-identical.
+
+Post-merge battery on the merged tree: repo tests 119 pass; desk suites pass (skill 66, lifecycle
+37, readiness 24, results 27, pricing 32, availability 28, assurance 50, competition 59, market 55,
+brief 11, snapcount 25, integration-c815 19, week11 35); every desk `--check` OK;
+`scripts/check_site.py` passed (47 canonical, 20 redirects, **207 auxiliary, 274 recursive pages,
+15,060 tbody rows, 278 registered sources, 0 errors**); browser suite **254 desktop + 254 mobile
+pages, WCAG A/AA, 10 interaction groups, no runtime errors**.
+
+### Third merge-conflict record — session-arena-a10fed14-own7 × session-arena-6c72a9fa-own7 (PR #85, 2026-11-18)
+
+A third `main` advance (PR #85, the `nfl-week11-6c72a9fa` fresh-reads desk) merged as a union again.
+
+| File | Resolution |
+|---|---|
+| `research/sources.json` | Took `main` (284), re-appended our 9 `W4C7D-*` ids → **293** entries, 0 duplicates. |
+| `scripts/serve_site.py` | Folder-set union, 29 entries. |
+| `scripts/browser_test.mjs` | Allow-list union, 28 entries. |
+| `scripts/check_site.py` | Rebuilt from `main`'s copy plus our `SOURCE_HOSTS.update({...})` block for the 9 `W4C7D-*` ids. (Note for future sessions: the generic union put a `---` separator inside a Python dict literal and broke the file; set-shaped unions and code-shaped unions need different handling.) |
+| `scripts/build_site.py` | Their nav group, build step and CI lines kept alongside ours. |
+| `COORDINATION.md`, `README.md` | Both sessions' records kept. |
+| 50 generated root `*.html`, `nfl-readiness-e7ef/site/sources.html`, `research/site-manifest.json`, `research/results.json` | Regenerated from the merged tree. |
+
+**One completeness fix, made under the final-integration-session rule for shared outputs.** The
+`nfl-week11-6c72a9fa` desk appends its 7 pages to `generated` but `main`'s manifest line never added
+them to `auxiliary_pages`, so they were absent from `research/site-manifest.json` and were therefore
+never visited by the browser suite or hash-checked. `[f'nfl-week11-6c72a9fa/site/{n}' for n in
+c672_pages]` was added to the manifest list. All 7 pages pass the browser suite.
+
+Post-merge battery: repo tests 119 pass; all desk suites pass (6c72a9fa, snapcount 25, c815 19,
+week11 35, plus skill 66, lifecycle 37, readiness 24, results 27, pricing 32, availability 28,
+assurance 50, competition 59, market 55, brief 11); every desk `--check` OK;
+`scripts/check_site.py` passed (47 canonical, 20 redirects, **214 auxiliary, 281 recursive pages,
+15,300 tbody rows, 293 registered sources, 0 errors**); browser suite **261 desktop + 261 mobile
+pages, WCAG A/AA, 10 interaction groups, no runtime errors**.
+
+### CI incident — absolute paths in the Week 11 desk (PR #87, fixed)
+
+The first CI run of PR #87 failed at step 8 ("Reproduce research, sources, blanks, all links and
+generated pages") with:
+
+```
+ - nfl-week11-4c7d/site/snap-counts.html: stale; deterministic rebuild changed file
+```
+
+**Cause (found by reproducing it, not guessed):** `nfl-week11-4c7d/build.py` published **absolute
+filesystem paths** into two data artefacts and one page — `…/inactive-coverage.csv` (`source_url`
+column), `…/source-probes.csv` (SP-04 `url`) and `site/snap-counts.html` (the SP-04 row printed
+`/home/user/Own7/nfl-gamebook-5213243e/raw/g01..g13`). That is machine-dependent output: it happens
+to match on the machine that generated it, so the desk's own `--check` passed locally, but GitHub's
+runner checks the repository out at `/home/runner/work/…` and the committed artefacts no longer
+reproduce. Confirmed by cloning the branch to a second path and rebuilding there.
+
+**Fix:** a repository-relative constant, `OTHER_GAMEBOOK_REL = "nfl-gamebook-5213243e"`, is now
+what gets published; the absolute `OTHER_GAMEBOOK` is used only to *read* another desk's files.
+Verified by cloning the branch to a fresh path, rebuilding the desk and the whole site, and running
+`scripts/check_site.py` there: passed, working tree clean.
+
+**Lesson for any future desk:** never commit a value that contains the checkout path, a hostname,
+an environment-specific temp directory or a wall-clock timestamp. The CI step
+"Committed artifacts must already be current" (`git diff --exit-code`) is the guard that catches it,
+and it only catches it on the runner — so verify a desk by cloning it somewhere else at least once.
+
+### Fourth merge-conflict record — session-arena-a10fed14-own7 × session-arena-03dcea07-own7 (PR #89/#90, 2026-11-18)
+
+`main` advanced again while PR #87 was open. Merged as a union for the fourth time; nothing of
+another session's was discarded.
+
+| File | Resolution |
+|---|---|
+| `research/sources.json` | `main` (296) + our 9 `W4C7D-*` ids → **305** entries, 0 duplicates. |
+| `scripts/serve_site.py` | Rebuilt from `main` plus every folder the branch had → 30 entries. |
+| `scripts/browser_test.mjs` | Same → 29 entries. |
+| `scripts/check_site.py` | Rebuilt from `main` plus our `SOURCE_HOSTS.update({…})` block. |
+| `scripts/build_site.py` | Both sides of each hunk kept; the manifest line is then normalised so that **every** desk whose pages are loaded in the file is listed in `auxiliary_pages` (this caught `nfl-slate-03dcea07/site/{n}` for `slate_pages`). |
+| `nfl-snapcount-e5e4/**` | **Theirs.** That session applied the same `tabindex="0"` fix to its own `table()` helper, so both sides were fixing the same WCAG failure; their version is kept and mine is dropped rather than duplicated. |
+| `nfl-week11-6c72a9fa/**` | Theirs (their desk). |
+| `COORDINATION.md`, `README.md` | Both sessions' records kept. |
+| 49 generated root `*.html`, `nfl-readiness-e7ef/site/sources.html`, `research/site-manifest.json`, `research/results.json` | Regenerated from the merged tree. |
+
+**Warning for future sessions:** an earlier attempt at this resolution rewrote the `FOLDERS=` /
+`allowedFolders=` lines while leaving the `<<<<<<<` / `=======` / `>>>>>>>` marker lines in place
+(both conflict sides start with the same marker text). It produced a file that was still a valid
+Python *syntax* error yet let `scripts/check_site.py` pass, because that script never imports
+`serve_site.py`. Always re-run `python -m unittest discover -s tests` (which imports it) after
+resolving, and grep for leftover markers in every resolved file — not just the ones the site check
+touches.
+
+Merge-state after resolution: `scripts/check_site.py` passed (47 canonical, 20 redirects,
+**222 auxiliary, 289 recursive pages, 15,511 tbody rows, 305 registered sources, 0 errors**).
+
+### Fifth merge-conflict record — session-arena-a10fed14-own7 × session-arena-92cad499-own7 (PR #93)
+
+A fifth `main` advance. Same union discipline; nothing of another session's was discarded.
+`research/sources.json` → **311** entries, 0 duplicates (main's + our 9 `W4C7D-*` ids).
+`scripts/serve_site.py` 31 folders, `scripts/browser_test.mjs` 30 folders, both rebuilt from `main`
+plus every folder the branch had. Generated pages regenerated from the merged tree.
+
+Merge-state battery: 119 repo tests, all 18 desk suites, `scripts/check_site.py` passed
+(47 canonical, 20 redirects, 222 auxiliary, **293 recursive pages, 15,576 tbody rows, 311
+registered sources**, 0 errors), browser suite **269 desktop + 269 mobile pages, WCAG A/AA, 0
+violations, 0 runtime errors**.
+
+### Sixth merge-conflict record — session-arena-a10fed14-own7 × PRs #92/#94 (2026-11-18)
+
+A sixth `main` advance (NFL readiness audit refresh and executive-summary refresh). One conflict
+only, in `COORDINATION.md`, resolved as a union in the usual way; the site, sources and allowlists
+merged cleanly. Merge-state battery re-run green: 119 repo tests, `scripts/check_site.py` passed
+(293 recursive pages, 15,576 tbody rows, 311 registered sources, 0 errors).
+
+**Note on the merge race.** `main` advanced six times while PR #87 was open. Each advance made the
+PR `DIRTY`/`CONFLICTING` again, so the PR could not be merged until the branch was re-synced, and
+re-syncing re-triggered the ~13-minute check suite. A session that must land a PR on a busy
+repository should budget for this: merge `main` in, push, and merge the PR in the same step, rather
+than waiting for checks on a commit that is about to be superseded.
 ---
 
 ## Session arena/aedccbe5-own7 — decision-ledger re-grade audit and blocked-item register (2026-11-18)

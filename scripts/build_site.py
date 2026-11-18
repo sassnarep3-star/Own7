@@ -430,6 +430,34 @@ def e7ef_nav_group():
 
 NAV.extend(e7ef_nav_group())
 
+def week11_nav_group():
+    """Additive nav group for the Week-11 decision desk (session arena/a10fed14-own7).
+
+    Built from the desk's own manifest so this generator never restates a page list that
+    could drift. Returns an empty list if the desk has not been built, so a fresh clone
+    still works.
+    """
+    manifest = ROOT / "nfl-week11-4c7d" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    import json as _json
+    labels = {
+        "index.html": "Week 11 overview", "executive-summary.html": "Executive summary",
+        "standings.html": "Standings reconciliation", "gamebooks.html": "Game Book closure",
+        "availability.html": "Availability join", "reliability.html": "Designation reliability",
+        "snap-counts.html": "Snap-count probes", "fixtures.html": "Week 11 fixtures",
+        "requirements.html": "Requirement delta", "questions.html": "Questions",
+        "suggestions.html": "Suggestions", "flagged.html": "Week 11 flagged",
+        "sources.html": "Week 11 sources",
+    }
+    pages = _json.loads(manifest.read_text())["pages"]
+    return [("NFL Week 11 decision desk",
+             [(f"nfl-week11-4c7d/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+
+NAV.extend(week11_nav_group())
+NAV.extend(e7ef_nav_group())
+
 
 def ledger_nav_group():
     """Additive nav group for the ledger re-grade audit (session arena/aedccbe5-own7)."""
@@ -1159,6 +1187,15 @@ def build():
     e7ef_pages=load_json('nfl-readiness-e7ef/site/manifest.json')['pages']
     for name in e7ef_pages:
         generated.append(f'nfl-readiness-e7ef/site/{name}')
+    # Week-11 decision desk (session arena/a10fed14-own7): Week 10 closure, standings
+    # reconciliation, availability joins, designation reliability, snap-count probes and the
+    # decision content. The desk regenerates its own artefacts first, so a stale capture or a
+    # failed reconciliation fails this build instead of publishing quietly.
+    week11_result=subprocess.run([sys.executable,str(ROOT/'nfl-week11-4c7d'/'build_site.py')],cwd=ROOT,capture_output=True,text=True)
+    if week11_result.returncode: raise SystemExit(f'nfl-week11-4c7d/build_site.py failed: '+week11_result.stdout+week11_result.stderr)
+    week11_pages=load_json('nfl-week11-4c7d/site/manifest.json')['pages']
+    for name in week11_pages:
+        generated.append(f'nfl-week11-4c7d/site/{name}')
     # Week-10-completion & weekly-diff desk (session arena/03dcea07-own7). Own deterministic
     # build; pages live under nfl-slate-03dcea07/site/.
     slate_result=subprocess.run([sys.executable,str(ROOT/'nfl-slate-03dcea07'/'build.py')],cwd=ROOT,capture_output=True,text=True)
@@ -1213,7 +1250,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-competition/site/{n}' for n in competition_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-snapcount-e5e4/site/{n}' for n in snapcount_pages]+[f'nfl-integration-c815/site/{n}' for n in c815_pages]+[f'nfl-slate-03dcea07/site/{n}' for n in slate_pages]+[f'nfl-week11-6c72a9fa/site/{n}' for n in c672_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages]+[f'nfl-readiness-e7ef/site/{n}' for n in e7ef_pages]+[f'nfl-brief-77b1/site/{n}' for n in brief_pages]+[f'nfl-ledger-aedccbe5/site/{n}' for n in ledger_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-competition/site/{n}' for n in competition_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-snapcount-e5e4/site/{n}' for n in snapcount_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages]+[f'nfl-readiness-e7ef/site/{n}' for n in e7ef_pages]+[f'nfl-week11-4c7d/site/{n}' for n in week11_pages]+[f'nfl-integration-c815/site/{n}' for n in c815_pages]+[f'nfl-week11-6c72a9fa/site/{n}' for n in c672_pages]+[f'nfl-slate-03dcea07/site/{n}' for n in slate_pages]+[f'nfl-brief-77b1/site/{n}' for n in brief_pages]+[f'nfl-ledger-aedccbe5/site/{n}' for n in ledger_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 
