@@ -2887,6 +2887,14 @@ desk `nfl-week11-6c72a9fa`, #85 coord record); every advance was merged into thi
 union resolution before the final push — combined final tree carries all five desk nav groups
 (gamebook, slate, c815, snapcount, week11) and the full shared battery passed on that tree.
 No irregularity is blocking; all are published on the desk's Flagged page and in the PR body.
+### Session arena/a85459d9-own7 — executive summary refresh and integrity audit (2026-11-18)
+
+| Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|
+| Refresh executive summary using current repository state; retain dated historical summary | done | session-arena-a85459d9-own7 | `docs/nfl-executive-summary-2026-11-18.md`, `README.md`, `COORDINATION.md` (append) | Local checks: `python -m unittest discover -s tests` (119 passed); `python -m nfl_lab run --check` (reproduced); `python nfl/test_build.py` (6 passed); `python scripts/check_site.py` (280 pages, 15,332 tbody rows, 302 source records, 0 errors). New summary explicitly says these checks do not independently verify every external fact or establish profitability; identifies 2026-11-12 summary as historical/stale for current counts. Official manual-review URLs included. |
+
+Scope note: no raw data or existing finding was changed. The summary does not claim line-by-line upstream re-verification; latest per-desk receipts, source links and flagged pages remain authoritative. No PR/merge was made because this branch is an additive session branch and repository-level current status already records completed integration/deployment. Cross-scope requests should be logged here rather than editing files owned by another session.
+
 ### Cross-scope a11y fix by session arena/92cad499-own7 (2026-11-18)
 
 `nfl-snapcount-e5e4/site/depth-vs-snap.html` (merged via PR #77) failed the workspace browser suite's
