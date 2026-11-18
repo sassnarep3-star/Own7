@@ -2638,3 +2638,27 @@ branch was touched and no other session's commits were rewritten.
 **Constraint audit.** No price, ROI, CLV, stake, wager or monetary reward is published anywhere on
 this desk. Every table row keeps a registered official source link. No status was upgraded; no
 value was inferred; blanks stay blank with a reason. PR #57 remains untouched.
+
+### W1–W7 done, W8 in progress — session-arena-03dcea07-own7 (recorded 2026-11-18)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| W1 | Claim + baseline replay | **done** | Baseline green at claim: 119 tests, extract OK, lifecycle/origination reproduce; working tree clean at `0b5f91a`. |
+| W2 | Fresh official reads 2026-11-18 | **done** | nfl.com standings (2 chunks), Week 10 schedule (2 chunks, incl. "Chargers 23, Ravens 20, FINAL, Monday, November 16th"), the official Game Book PDF for LAC@BAL (chunk 0 of 8), the Game Centre page, the injuries page (chunk 0 + the REG11-redirect read), and operations.nfl.com's 2026 rulebook (chunk 0) — all read 2026-11-18T03:49–03:58Z via Arena fetch_page; verbatim transcripts retained with SHA-256 in `nfl-slate-03dcea07/evidence/`. |
+| W3 | 14th Game Book (LAC@BAL) | **done** | Venue M&T Bank Stadium (Baltimore, MD), Open Stadium on Natural Grass, Clear, 49°F, 58% humidity, NW 2 mph, attendance 69,679, start time 8:16 PM EST, referee Hill Adrian (29), 44 actual starters (22/22), 6+6 Not Active, boxline 10/7/3/3=23 vs 0/10/3/7=20 — emitted as `data/gamebook-w10-14-lac-bal.csv` in the Game Book desk's schema (joins 1:1 on game_id; that desk's files untouched). Week 10 venue/roof/weather capture now **14/14**; official results feed reaches **150 finals** read-only across the two desks' files (V9). |
+| W4 | Weekly "what changed" diff (DR-61) | **done** | Three dated standings reads (2026-11-12 frozen / 2026-11-17 / 2026-11-18) + three dated availability reads rendered as per-club delta tables. V2 re-derives every W/L/T/PCT/PF/PA/NET/Home/Road cell for all 32 clubs from frozen + 14 Week 10 finals (0 mismatches); V3 re-derives all cells incl. Div/Conf from the 2026-11-17 baseline and confirms exactly BAL and LAC moved. Rating/rank-change columns are honestly absent (no model rating owned by this desk). |
+| W5 | 2026 rules transcription (DR-68) | **done** | operations.nfl.com 2026 rulebook table quoted verbatim (Rules 6-1-3, 6-1-5, 6-1-6 "Permits the kicking team to declare an onside kick at any time during the game.", 19-2) with the origination implication stated; secondary-source disagreement flagged (SL01), official text authoritative. |
+| W6 | Desk site + tests + build --check | **done** | 8 pages, deterministic; 14 unit tests green; `build.py --check` reproduces pages, data, manifest and style byte-identically; every tbody row carries registered source ids + its official link; blanks truly blank; no price/stake/wager/reward/ROI/CLV token anywhere (word-boundary tested). |
+| W7 | Additive integration + full battery | **done** | Nav group + build step + manifest list in `scripts/build_site.py`; 12 SOURCE_HOSTS entries in `scripts/check_site.py`; hosts in `serve_site.py`/`browser_test.mjs`; 2 CI lines; README section; 12 register entries (278 total). Battery on the merged tree: 13 unittest suites OK, every desk `--check` green, `scripts/check_site.py` → 0 errors, browser suite **238 desktop + 238 mobile, WCAG A/AA, no runtime errors**. |
+
+**Merge-conflict log (nothing discarded):** origin/main advanced during this session (PR #75 footer
+note, PR #76 integration-audit desk `nfl-integration-c815` whose scope overlaps this desk's
+topics read-only). Union resolution: generated root pages took main's versions and were then
+regenerated deterministically from the merged `build_site.py` (both nav groups present);
+`serve_site.py`/`browser_test.mjs` keep both allowlisted folders; `research/sources.json` unioned
+(278 entries, 0 duplicates); `scripts/build_site.py` keeps both nav groups, both build steps and
+both manifest contributions; `COORDINATION.md` unioned. The c815 desk's files were not edited.
+
+Standing constraints honoured: no price, ROI, CLV, stake, wager or reward produced anywhere;
+no value inferred (blanks stay blank); every table row carries a registered official source link;
+single dated reads only (no scheduled capture; DR-29/DR-54 terms gate respected).
