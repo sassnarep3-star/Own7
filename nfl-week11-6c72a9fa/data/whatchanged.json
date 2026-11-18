@@ -1,0 +1,547 @@
+{
+ "read_on": "2026-11-18",
+ "requirement": "DR-61 first implementation: publish a what-changed ledger between dated captures instead of a static snapshot",
+ "standings_2026_11_17_to_2026_11_18": [
+  {
+   "club": "Buffalo Bills",
+   "code": "BUF",
+   "W_was": 8,
+   "W_now": 8,
+   "dW": 0,
+   "L_was": 1,
+   "L_now": 1,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "New England Patriots",
+   "code": "NE",
+   "W_was": 5,
+   "W_now": 5,
+   "dW": 0,
+   "L_was": 5,
+   "L_now": 5,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "New York Jets",
+   "code": "NYJ",
+   "W_was": 2,
+   "W_now": 2,
+   "dW": 0,
+   "L_was": 8,
+   "L_now": 8,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Miami Dolphins",
+   "code": "MIA",
+   "W_was": 1,
+   "W_now": 1,
+   "dW": 0,
+   "L_was": 8,
+   "L_now": 8,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Cincinnati Bengals",
+   "code": "CIN",
+   "W_was": 7,
+   "W_now": 7,
+   "dW": 0,
+   "L_was": 2,
+   "L_now": 2,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Pittsburgh Steelers",
+   "code": "PIT",
+   "W_was": 6,
+   "W_now": 6,
+   "dW": 0,
+   "L_was": 3,
+   "L_now": 3,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Cleveland Browns",
+   "code": "CLE",
+   "W_was": 6,
+   "W_now": 6,
+   "dW": 0,
+   "L_was": 4,
+   "L_now": 4,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Baltimore Ravens",
+   "code": "BAL",
+   "W_was": 4,
+   "W_now": 4,
+   "dW": 0,
+   "L_was": 5,
+   "L_now": 6,
+   "dL": 1,
+   "dPF": 20,
+   "dPA": 23,
+   "changed": true
+  },
+  {
+   "club": "Jacksonville Jaguars",
+   "code": "JAX",
+   "W_was": 7,
+   "W_now": 7,
+   "dW": 0,
+   "L_was": 2,
+   "L_now": 2,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Houston Texans",
+   "code": "HOU",
+   "W_was": 3,
+   "W_now": 3,
+   "dW": 0,
+   "L_was": 6,
+   "L_now": 6,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Indianapolis Colts",
+   "code": "IND",
+   "W_was": 3,
+   "W_now": 3,
+   "dW": 0,
+   "L_was": 7,
+   "L_now": 7,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Tennessee Titans",
+   "code": "TEN",
+   "W_was": 1,
+   "W_now": 1,
+   "dW": 0,
+   "L_was": 8,
+   "L_now": 8,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Kansas City Chiefs",
+   "code": "KC",
+   "W_was": 7,
+   "W_now": 7,
+   "dW": 0,
+   "L_was": 2,
+   "L_now": 2,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Denver Broncos",
+   "code": "DEN",
+   "W_was": 7,
+   "W_now": 7,
+   "dW": 0,
+   "L_was": 2,
+   "L_now": 2,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Las Vegas Raiders",
+   "code": "LV",
+   "W_was": 4,
+   "W_now": 4,
+   "dW": 0,
+   "L_was": 6,
+   "L_now": 6,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Los Angeles Chargers",
+   "code": "LAC",
+   "W_was": 0,
+   "W_now": 1,
+   "dW": 1,
+   "L_was": 8,
+   "L_now": 8,
+   "dL": 0,
+   "dPF": 23,
+   "dPA": 20,
+   "changed": true
+  },
+  {
+   "club": "New York Giants",
+   "code": "NYG",
+   "W_was": 5,
+   "W_now": 5,
+   "dW": 0,
+   "L_was": 3,
+   "L_now": 3,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Dallas Cowboys",
+   "code": "DAL",
+   "W_was": 4,
+   "W_now": 4,
+   "dW": 0,
+   "L_was": 6,
+   "L_now": 6,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Washington Commanders",
+   "code": "WAS",
+   "W_was": 3,
+   "W_now": 3,
+   "dW": 0,
+   "L_was": 5,
+   "L_now": 5,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Philadelphia Eagles",
+   "code": "PHI",
+   "W_was": 2,
+   "W_now": 2,
+   "dW": 0,
+   "L_was": 7,
+   "L_now": 7,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Detroit Lions",
+   "code": "DET",
+   "W_was": 7,
+   "W_now": 7,
+   "dW": 0,
+   "L_was": 2,
+   "L_now": 2,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Minnesota Vikings",
+   "code": "MIN",
+   "W_was": 7,
+   "W_now": 7,
+   "dW": 0,
+   "L_was": 2,
+   "L_now": 2,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Chicago Bears",
+   "code": "CHI",
+   "W_was": 7,
+   "W_now": 7,
+   "dW": 0,
+   "L_was": 2,
+   "L_now": 2,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Green Bay Packers",
+   "code": "GB",
+   "W_was": 6,
+   "W_now": 6,
+   "dW": 0,
+   "L_was": 4,
+   "L_now": 4,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Carolina Panthers",
+   "code": "CAR",
+   "W_was": 4,
+   "W_now": 4,
+   "dW": 0,
+   "L_was": 5,
+   "L_now": 5,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Tampa Bay Buccaneers",
+   "code": "TB",
+   "W_was": 3,
+   "W_now": 3,
+   "dW": 0,
+   "L_was": 6,
+   "L_now": 6,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "New Orleans Saints",
+   "code": "NO",
+   "W_was": 3,
+   "W_now": 3,
+   "dW": 0,
+   "L_was": 6,
+   "L_now": 6,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Atlanta Falcons",
+   "code": "ATL",
+   "W_was": 3,
+   "W_now": 3,
+   "dW": 0,
+   "L_was": 7,
+   "L_now": 7,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "San Francisco 49ers",
+   "code": "SF",
+   "W_was": 8,
+   "W_now": 8,
+   "dW": 0,
+   "L_was": 1,
+   "L_now": 1,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Seattle Seahawks",
+   "code": "SEA",
+   "W_was": 6,
+   "W_now": 6,
+   "dW": 0,
+   "L_was": 4,
+   "L_now": 4,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Los Angeles Rams",
+   "code": "LA",
+   "W_was": 6,
+   "W_now": 6,
+   "dW": 0,
+   "L_was": 4,
+   "L_now": 4,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  },
+  {
+   "club": "Arizona Cardinals",
+   "code": "AZ",
+   "W_was": 3,
+   "W_now": 3,
+   "dW": 0,
+   "L_was": 7,
+   "L_now": 7,
+   "dL": 0,
+   "dPF": 0,
+   "dPA": 0,
+   "changed": false
+  }
+ ],
+ "reserve_series": {
+  "window_size_2026_11_17": 25,
+  "window_size_2026_11_18": 25,
+  "added": [
+   [
+    "AZ",
+    "11/17",
+    "Andrew Wingard"
+   ],
+   [
+    "BUF",
+    "11/17",
+    "Ar'maj Reed-Adams"
+   ],
+   [
+    "HOU",
+    "11/17",
+    "Azeez Al-Shaair"
+   ],
+   [
+    "IND",
+    "11/17",
+    "Jaylon Carlies"
+   ],
+   [
+    "AZ",
+    "11/17",
+    "Jordan Burch"
+   ],
+   [
+    "MIA",
+    "11/17",
+    "Jordan Phillips"
+   ],
+   [
+    "TEN",
+    "11/17",
+    "Wan'Dale Robinson"
+   ],
+   [
+    "MIA",
+    "11/17",
+    "Zeek Biggers"
+   ]
+  ],
+  "scrolled_off": [
+   [
+    "ATL",
+    "11/07",
+    "Brian Robinson"
+   ],
+   [
+    "DEN",
+    "11/07",
+    "Eyioma Uwazurike"
+   ],
+   [
+    "DET",
+    "11/07",
+    "Jack Campbell"
+   ],
+   [
+    "LA",
+    "11/07",
+    "Jaylen Watson"
+   ],
+   [
+    "MIN",
+    "11/09",
+    "Demond Claiborne"
+   ],
+   [
+    "TEN",
+    "11/09",
+    "James Williams"
+   ],
+   [
+    "BUF",
+    "11/09",
+    "Josh Palmer"
+   ],
+   [
+    "AZ",
+    "11/10",
+    "Michael Wilson"
+   ]
+  ],
+  "note": "the league reserve-list page keeps a rolling window of 25 rows; rows that scroll off remain true (they were printed on 2026-11-17) and live only in dated captures"
+ },
+ "injury_report_2026_11_17_to_2026_11_18": [
+  {
+   "section": "Commanders",
+   "rows_compared": 9,
+   "rows_in_2026_11_17_capture": 9,
+   "diffs": []
+  },
+  {
+   "section": "Giants",
+   "rows_compared": 11,
+   "rows_in_2026_11_17_capture": 11,
+   "diffs": []
+  },
+  {
+   "section": "Patriots",
+   "rows_compared": 15,
+   "rows_in_2026_11_17_capture": 15,
+   "diffs": []
+  },
+  {
+   "section": "Lions",
+   "rows_compared": 9,
+   "rows_in_2026_11_17_capture": 9,
+   "diffs": []
+  },
+  {
+   "section": "Chiefs",
+   "rows_compared": 6,
+   "rows_in_2026_11_17_capture": 13,
+   "diffs": []
+  }
+ ],
+ "week11_schedule_2026_11_17_to_2026_11_18": {
+  "stable": true,
+  "fixtures_compared": 13
+ }
+}

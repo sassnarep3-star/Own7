@@ -1,0 +1,153 @@
+{
+ "read_on": "2026-11-18",
+ "V0_club_map": {
+  "clubs": 32,
+  "division_blocks_match_canonical": true
+ },
+ "V1_standings": {
+  "rows": 32,
+  "failed": 0,
+  "method": "fresh 2026-11-18 read == 2026-11-17 pre-MNF CSV + the verified LAC@BAL final (LAC 23 - BAL 20); Home/Road/Conf bumped, Div unchanged (inter-conference game)"
+ },
+ "V1b_frozen_plus_14_finals": {
+  "clubs": 32,
+  "failed": 0
+ },
+ "V2_final_join": {
+  "fixture": "LAC@BAL W10",
+  "gamecentre_final": "23-20",
+  "gamebook_final": "23-20",
+  "standings_delta": "BAL +1L +20PF +23PA; LAC +1W +23PF +20PA",
+  "corpus_status": "game absent from nfl-results corpus (149 finals); cross-scope request logged in COORDINATION.md, canonical data untouched"
+ },
+ "V3_games_played": {
+  "clubs": 32,
+  "all_match": true,
+  "method": "W+L+T per club == games in the 149-final corpus (+1 for LAC/BAL)"
+ },
+ "V4_week11_slate": {
+  "fixtures": 13,
+  "clubs_featured": 26,
+  "byes": 6,
+  "byes_match_slate": true,
+  "venues_complete": true
+ },
+ "V5_venue_completion": {
+  "week10_venues": 14,
+  "of": 14,
+  "new": {
+   "fixture": "W10-14 LAC@BAL",
+   "stadium": "M&T Bank Stadium",
+   "source": "official Game Book PDF + game centre"
+  }
+ },
+ "V6_reserve_sweep": {
+  "november_rows_visible": 25,
+  "october_rows_visible": 25,
+  "added_since_2026_11_17": [
+   [
+    "AZ",
+    "11/17",
+    "Andrew Wingard"
+   ],
+   [
+    "BUF",
+    "11/17",
+    "Ar'maj Reed-Adams"
+   ],
+   [
+    "HOU",
+    "11/17",
+    "Azeez Al-Shaair"
+   ],
+   [
+    "IND",
+    "11/17",
+    "Jaylon Carlies"
+   ],
+   [
+    "AZ",
+    "11/17",
+    "Jordan Burch"
+   ],
+   [
+    "MIA",
+    "11/17",
+    "Jordan Phillips"
+   ],
+   [
+    "TEN",
+    "11/17",
+    "Wan'Dale Robinson"
+   ],
+   [
+    "MIA",
+    "11/17",
+    "Zeek Biggers"
+   ]
+  ],
+  "scrolled_off_since_2026_11_17": [
+   [
+    "ATL",
+    "11/07",
+    "Brian Robinson"
+   ],
+   [
+    "DEN",
+    "11/07",
+    "Eyioma Uwazurike"
+   ],
+   [
+    "DET",
+    "11/07",
+    "Jack Campbell"
+   ],
+   [
+    "LA",
+    "11/07",
+    "Jaylen Watson"
+   ],
+   [
+    "MIN",
+    "11/09",
+    "Demond Claiborne"
+   ],
+   [
+    "TEN",
+    "11/09",
+    "James Williams"
+   ],
+   [
+    "BUF",
+    "11/09",
+    "Josh Palmer"
+   ],
+   [
+    "AZ",
+    "11/10",
+    "Michael Wilson"
+   ]
+  ],
+  "malik_willis_present_november": true,
+  "lamar_jackson_tyler_huntley_in_visible_windows": false,
+  "ravens_10_24_row": "Tavius Robinson Reserve/Injured (10/24) is the oldest visible BAL row"
+ },
+ "V7_gamebook_14": {
+  "off_rows": 22,
+  "def_rows": 22,
+  "ina_rows": 12,
+  "attendance": "69,679",
+  "strings_checked": 11,
+  "qbs": [
+   "J.Brissett",
+   "J.Herbert"
+  ]
+ },
+ "V8_injuries_state": {
+  "title": "Official Latest NFL Injury Report for Players - Week 10 of the 2026 Season | NFL.com",
+  "header": "Injuries - WEEK 10",
+  "tables_re_read": 5,
+  "rows_compared": 50,
+  "diffs": 0
+ }
+}

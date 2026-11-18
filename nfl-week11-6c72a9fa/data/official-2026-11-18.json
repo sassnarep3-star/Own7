@@ -1,0 +1,2268 @@
+{
+ "read_on": "2026-11-18",
+ "session": "session-arena-6c72a9fa-own7",
+ "standings": [
+  {
+   "conference": "AFC",
+   "division": "AFC East",
+   "club": "Buffalo Bills",
+   "club_short": "Bills",
+   "url": "https://www.nfl.com/teams/buffalo-bills/",
+   "W": 8,
+   "L": 1,
+   "T": 0,
+   "PCT": "0.889",
+   "PF": 287,
+   "PA": 199,
+   "NetPts": 88,
+   "Home": "3-1-0",
+   "Road": "5-0-0",
+   "Div": "1-1-0",
+   "group11_unlabeled": "0.500",
+   "Conf": "5-1-0",
+   "group13_unlabeled": "0.833",
+   "group14_unlabeled": "3-0-0",
+   "Strk": "5W",
+   "Last5": "5-0-0",
+   "code": "BUF",
+   "team_name": "Buffalo Bills"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC East",
+   "club": "New England Patriots",
+   "club_short": "Patriots",
+   "url": "https://www.nfl.com/teams/new-england-patriots/",
+   "W": 5,
+   "L": 5,
+   "T": 0,
+   "PCT": "0.500",
+   "PF": 221,
+   "PA": 242,
+   "NetPts": -21,
+   "Home": "3-1-0",
+   "Road": "2-4-0",
+   "Div": "3-0-0",
+   "group11_unlabeled": "1.000",
+   "Conf": "5-1-0",
+   "group13_unlabeled": "0.833",
+   "group14_unlabeled": "0-4-0",
+   "Strk": "2L",
+   "Last5": "2-3-0",
+   "code": "NE",
+   "team_name": "New England Patriots"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC East",
+   "club": "New York Jets",
+   "club_short": "Jets",
+   "url": "https://www.nfl.com/teams/new-york-jets/",
+   "W": 2,
+   "L": 8,
+   "T": 0,
+   "PCT": "0.200",
+   "PF": 194,
+   "PA": 254,
+   "NetPts": -60,
+   "Home": "1-4-0",
+   "Road": "1-4-0",
+   "Div": "0-3-0",
+   "group11_unlabeled": "0.000",
+   "Conf": "2-5-0",
+   "group13_unlabeled": "0.286",
+   "group14_unlabeled": "0-3-0",
+   "Strk": "5L",
+   "Last5": "0-5-0",
+   "code": "NYJ",
+   "team_name": "New York Jets"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC East",
+   "club": "Miami Dolphins",
+   "club_short": "Dolphins",
+   "url": "https://www.nfl.com/teams/miami-dolphins/",
+   "W": 1,
+   "L": 8,
+   "T": 0,
+   "PCT": "0.111",
+   "PF": 148,
+   "PA": 224,
+   "NetPts": -76,
+   "Home": "0-4-0",
+   "Road": "1-4-0",
+   "Div": "1-1-0",
+   "group11_unlabeled": "0.500",
+   "Conf": "1-5-0",
+   "group13_unlabeled": "0.167",
+   "group14_unlabeled": "0-3-0",
+   "Strk": "3L",
+   "Last5": "1-4-0",
+   "code": "MIA",
+   "team_name": "Miami Dolphins"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC North",
+   "club": "Cincinnati Bengals",
+   "club_short": "Bengals",
+   "url": "https://www.nfl.com/teams/cincinnati-bengals/",
+   "W": 7,
+   "L": 2,
+   "T": 0,
+   "PCT": "0.778",
+   "PF": 278,
+   "PA": 193,
+   "NetPts": 85,
+   "Home": "3-1-0",
+   "Road": "4-1-0",
+   "Div": "2-1-0",
+   "group11_unlabeled": "0.667",
+   "Conf": "5-2-0",
+   "group13_unlabeled": "0.714",
+   "group14_unlabeled": "2-0-0",
+   "Strk": "5W",
+   "Last5": "5-0-0",
+   "code": "CIN",
+   "team_name": "Cincinnati Bengals"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC North",
+   "club": "Pittsburgh Steelers",
+   "club_short": "Steelers",
+   "url": "https://www.nfl.com/teams/pittsburgh-steelers/",
+   "W": 6,
+   "L": 3,
+   "T": 0,
+   "PCT": "0.667",
+   "PF": 198,
+   "PA": 182,
+   "NetPts": 16,
+   "Home": "4-0-0",
+   "Road": "2-3-0",
+   "Div": "2-2-0",
+   "group11_unlabeled": "0.500",
+   "Conf": "3-3-0",
+   "group13_unlabeled": "0.500",
+   "group14_unlabeled": "3-0-0",
+   "Strk": "1L",
+   "Last5": "4-1-0",
+   "code": "PIT",
+   "team_name": "Pittsburgh Steelers"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC North",
+   "club": "Cleveland Browns",
+   "club_short": "Browns",
+   "url": "https://www.nfl.com/teams/cleveland-browns/",
+   "W": 6,
+   "L": 4,
+   "T": 0,
+   "PCT": "0.600",
+   "PF": 188,
+   "PA": 220,
+   "NetPts": -32,
+   "Home": "4-0-0",
+   "Road": "2-4-0",
+   "Div": "2-1-0",
+   "group11_unlabeled": "0.667",
+   "Conf": "4-3-0",
+   "group13_unlabeled": "0.571",
+   "group14_unlabeled": "2-1-0",
+   "Strk": "1W",
+   "Last5": "3-2-0",
+   "code": "CLE",
+   "team_name": "Cleveland Browns"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC North",
+   "club": "Baltimore Ravens",
+   "club_short": "Ravens",
+   "url": "https://www.nfl.com/teams/baltimore-ravens/",
+   "W": 4,
+   "L": 6,
+   "T": 0,
+   "PCT": "0.400",
+   "PF": 209,
+   "PA": 259,
+   "NetPts": -50,
+   "Home": "1-4-0",
+   "Road": "3-2-0",
+   "Div": "0-2-0",
+   "group11_unlabeled": "0.000",
+   "Conf": "2-5-0",
+   "group13_unlabeled": "0.286",
+   "group14_unlabeled": "2-1-0",
+   "Strk": "5L",
+   "Last5": "0-5-0",
+   "code": "BAL",
+   "team_name": "Baltimore Ravens"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC South",
+   "club": "Jacksonville Jaguars",
+   "club_short": "Jaguars",
+   "url": "https://www.nfl.com/teams/jacksonville-jaguars/",
+   "W": 7,
+   "L": 2,
+   "T": 0,
+   "PCT": "0.778",
+   "PF": 269,
+   "PA": 144,
+   "NetPts": 125,
+   "Home": "4-1-0",
+   "Road": "3-1-0",
+   "Div": "2-1-0",
+   "group11_unlabeled": "0.667",
+   "Conf": "6-2-0",
+   "group13_unlabeled": "0.750",
+   "group14_unlabeled": "1-0-0",
+   "Strk": "3W",
+   "Last5": "4-1-0",
+   "code": "JAX",
+   "team_name": "Jacksonville Jaguars"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC South",
+   "club": "Houston Texans",
+   "club_short": "Texans",
+   "url": "https://www.nfl.com/teams/houston-texans/",
+   "W": 3,
+   "L": 6,
+   "T": 0,
+   "PCT": "0.333",
+   "PF": 233,
+   "PA": 219,
+   "NetPts": 14,
+   "Home": "0-4-0",
+   "Road": "3-2-0",
+   "Div": "2-1-0",
+   "group11_unlabeled": "0.667",
+   "Conf": "3-4-0",
+   "group13_unlabeled": "0.429",
+   "group14_unlabeled": "0-2-0",
+   "Strk": "1L",
+   "Last5": "3-2-0",
+   "code": "HOU",
+   "team_name": "Houston Texans"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC South",
+   "club": "Indianapolis Colts",
+   "club_short": "Colts",
+   "url": "https://www.nfl.com/teams/indianapolis-colts/",
+   "W": 3,
+   "L": 7,
+   "T": 0,
+   "PCT": "0.300",
+   "PF": 208,
+   "PA": 271,
+   "NetPts": -63,
+   "Home": "2-3-0",
+   "Road": "1-4-0",
+   "Div": "1-2-0",
+   "group11_unlabeled": "0.333",
+   "Conf": "2-5-0",
+   "group13_unlabeled": "0.286",
+   "group14_unlabeled": "1-2-0",
+   "Strk": "1W",
+   "Last5": "1-4-0",
+   "code": "IND",
+   "team_name": "Indianapolis Colts"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC South",
+   "club": "Tennessee Titans",
+   "club_short": "Titans",
+   "url": "https://www.nfl.com/teams/tennessee-titans/",
+   "W": 1,
+   "L": 8,
+   "T": 0,
+   "PCT": "0.111",
+   "PF": 167,
+   "PA": 239,
+   "NetPts": -72,
+   "Home": "0-5-0",
+   "Road": "1-3-0",
+   "Div": "1-2-0",
+   "group11_unlabeled": "0.333",
+   "Conf": "1-6-0",
+   "group13_unlabeled": "0.143",
+   "group14_unlabeled": "0-2-0",
+   "Strk": "3L",
+   "Last5": "1-4-0",
+   "code": "TEN",
+   "team_name": "Tennessee Titans"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC West",
+   "club": "Kansas City Chiefs",
+   "club_short": "Chiefs",
+   "url": "https://www.nfl.com/teams/kansas-city-chiefs/",
+   "W": 7,
+   "L": 2,
+   "T": 0,
+   "PCT": "0.778",
+   "PF": 237,
+   "PA": 156,
+   "NetPts": 81,
+   "Home": "4-0-0",
+   "Road": "3-2-0",
+   "Div": "3-1-0",
+   "group11_unlabeled": "0.750",
+   "Conf": "6-1-0",
+   "group13_unlabeled": "0.857",
+   "group14_unlabeled": "1-1-0",
+   "Strk": "2W",
+   "Last5": "3-2-0",
+   "code": "KC",
+   "team_name": "Kansas City Chiefs"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC West",
+   "club": "Denver Broncos",
+   "club_short": "Broncos",
+   "url": "https://www.nfl.com/teams/denver-broncos/",
+   "W": 7,
+   "L": 2,
+   "T": 0,
+   "PCT": "0.778",
+   "PF": 198,
+   "PA": 186,
+   "NetPts": 12,
+   "Home": "4-0-0",
+   "Road": "3-2-0",
+   "Div": "2-1-0",
+   "group11_unlabeled": "0.667",
+   "Conf": "3-1-0",
+   "group13_unlabeled": "0.750",
+   "group14_unlabeled": "4-1-0",
+   "Strk": "5W",
+   "Last5": "5-0-0",
+   "code": "DEN",
+   "team_name": "Denver Broncos"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC West",
+   "club": "Las Vegas Raiders",
+   "club_short": "Raiders",
+   "url": "https://www.nfl.com/teams/las-vegas-raiders/",
+   "W": 4,
+   "L": 6,
+   "T": 0,
+   "PCT": "0.400",
+   "PF": 251,
+   "PA": 289,
+   "NetPts": -38,
+   "Home": "1-4-0",
+   "Road": "3-2-0",
+   "Div": "1-1-0",
+   "group11_unlabeled": "0.500",
+   "Conf": "3-3-0",
+   "group13_unlabeled": "0.500",
+   "group14_unlabeled": "1-3-0",
+   "Strk": "2L",
+   "Last5": "1-4-0",
+   "code": "LV",
+   "team_name": "Las Vegas Raiders"
+  },
+  {
+   "conference": "AFC",
+   "division": "AFC West",
+   "club": "Los Angeles Chargers",
+   "club_short": "Chargers",
+   "url": "https://www.nfl.com/teams/los-angeles-chargers/",
+   "W": 1,
+   "L": 8,
+   "T": 0,
+   "PCT": "0.111",
+   "PF": 144,
+   "PA": 239,
+   "NetPts": -95,
+   "Home": "0-4-0",
+   "Road": "1-4-0",
+   "Div": "0-3-0",
+   "group11_unlabeled": "0.000",
+   "Conf": "1-5-0",
+   "group13_unlabeled": "0.167",
+   "group14_unlabeled": "0-3-0",
+   "Strk": "1W",
+   "Last5": "1-4-0",
+   "code": "LAC",
+   "team_name": "Los Angeles Chargers"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC East",
+   "club": "New York Giants",
+   "club_short": "Giants",
+   "url": "https://www.nfl.com/teams/new-york-giants/",
+   "W": 5,
+   "L": 3,
+   "T": 1,
+   "PCT": "0.611",
+   "PF": 203,
+   "PA": 196,
+   "NetPts": 7,
+   "Home": "3-2-0",
+   "Road": "2-1-1",
+   "Div": "2-1-1",
+   "group11_unlabeled": "0.625",
+   "Conf": "3-3-1",
+   "group13_unlabeled": "0.500",
+   "group14_unlabeled": "2-0-0",
+   "Strk": "1L",
+   "Last5": "2-2-1",
+   "code": "NYG",
+   "team_name": "New York Giants"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC East",
+   "club": "Dallas Cowboys",
+   "club_short": "Cowboys",
+   "url": "https://www.nfl.com/teams/dallas-cowboys/",
+   "W": 4,
+   "L": 6,
+   "T": 0,
+   "PCT": "0.400",
+   "PF": 286,
+   "PA": 282,
+   "NetPts": 4,
+   "Home": "1-4-0",
+   "Road": "3-2-0",
+   "Div": "2-1-0",
+   "group11_unlabeled": "0.667",
+   "Conf": "2-5-0",
+   "group13_unlabeled": "0.286",
+   "group14_unlabeled": "2-1-0",
+   "Strk": "1L",
+   "Last5": "2-3-0",
+   "code": "DAL",
+   "team_name": "Dallas Cowboys"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC East",
+   "club": "Washington Commanders",
+   "club_short": "Commanders",
+   "url": "https://www.nfl.com/teams/washington-commanders/",
+   "W": 3,
+   "L": 5,
+   "T": 1,
+   "PCT": "0.389",
+   "PF": 196,
+   "PA": 223,
+   "NetPts": -27,
+   "Home": "2-2-1",
+   "Road": "1-3-0",
+   "Div": "2-2-1",
+   "group11_unlabeled": "0.500",
+   "Conf": "3-4-1",
+   "group13_unlabeled": "0.438",
+   "group14_unlabeled": "0-1-0",
+   "Strk": "1W",
+   "Last5": "2-2-1",
+   "code": "WAS",
+   "team_name": "Washington Commanders"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC East",
+   "club": "Philadelphia Eagles",
+   "club_short": "Eagles",
+   "url": "https://www.nfl.com/teams/philadelphia-eagles/",
+   "W": 2,
+   "L": 7,
+   "T": 0,
+   "PCT": "0.222",
+   "PF": 148,
+   "PA": 221,
+   "NetPts": -73,
+   "Home": "1-4-0",
+   "Road": "1-3-0",
+   "Div": "1-3-0",
+   "group11_unlabeled": "0.250",
+   "Conf": "1-6-0",
+   "group13_unlabeled": "0.143",
+   "group14_unlabeled": "1-1-0",
+   "Strk": "7L",
+   "Last5": "0-5-0",
+   "code": "PHI",
+   "team_name": "Philadelphia Eagles"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC North",
+   "club": "Detroit Lions",
+   "club_short": "Lions",
+   "url": "https://www.nfl.com/teams/detroit-lions/",
+   "W": 7,
+   "L": 2,
+   "T": 0,
+   "PCT": "0.778",
+   "PF": 257,
+   "PA": 199,
+   "NetPts": 58,
+   "Home": "5-0-0",
+   "Road": "2-2-0",
+   "Div": "2-0-0",
+   "group11_unlabeled": "1.000",
+   "Conf": "4-1-0",
+   "group13_unlabeled": "0.800",
+   "group14_unlabeled": "3-1-0",
+   "Strk": "5W",
+   "Last5": "5-0-0",
+   "code": "DET",
+   "team_name": "Detroit Lions"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC North",
+   "club": "Minnesota Vikings",
+   "club_short": "Vikings",
+   "url": "https://www.nfl.com/teams/minnesota-vikings/",
+   "W": 7,
+   "L": 2,
+   "T": 0,
+   "PCT": "0.778",
+   "PF": 176,
+   "PA": 126,
+   "NetPts": 50,
+   "Home": "3-1-0",
+   "Road": "4-1-0",
+   "Div": "3-1-0",
+   "group11_unlabeled": "0.750",
+   "Conf": "5-1-0",
+   "group13_unlabeled": "0.833",
+   "group14_unlabeled": "2-1-0",
+   "Strk": "1W",
+   "Last5": "3-2-0",
+   "code": "MIN",
+   "team_name": "Minnesota Vikings"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC North",
+   "club": "Chicago Bears",
+   "club_short": "Bears",
+   "url": "https://www.nfl.com/teams/chicago-bears/",
+   "W": 7,
+   "L": 2,
+   "T": 0,
+   "PCT": "0.778",
+   "PF": 241,
+   "PA": 184,
+   "NetPts": 57,
+   "Home": "4-1-0",
+   "Road": "3-1-0",
+   "Div": "0-2-0",
+   "group11_unlabeled": "0.000",
+   "Conf": "5-2-0",
+   "group13_unlabeled": "0.714",
+   "group14_unlabeled": "2-0-0",
+   "Strk": "4W",
+   "Last5": "4-1-0",
+   "code": "CHI",
+   "team_name": "Chicago Bears"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC North",
+   "club": "Green Bay Packers",
+   "club_short": "Packers",
+   "url": "https://www.nfl.com/teams/green-bay-packers/",
+   "W": 6,
+   "L": 4,
+   "T": 0,
+   "PCT": "0.600",
+   "PF": 226,
+   "PA": 221,
+   "NetPts": 5,
+   "Home": "3-2-0",
+   "Road": "3-2-0",
+   "Div": "1-3-0",
+   "group11_unlabeled": "0.250",
+   "Conf": "4-4-0",
+   "group13_unlabeled": "0.500",
+   "group14_unlabeled": "2-0-0",
+   "Strk": "1L",
+   "Last5": "3-2-0",
+   "code": "GB",
+   "team_name": "Green Bay Packers"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC South",
+   "club": "Carolina Panthers",
+   "club_short": "Panthers",
+   "url": "https://www.nfl.com/teams/carolina-panthers/",
+   "W": 4,
+   "L": 5,
+   "T": 0,
+   "PCT": "0.444",
+   "PF": 219,
+   "PA": 236,
+   "NetPts": -17,
+   "Home": "1-3-0",
+   "Road": "3-2-0",
+   "Div": "2-1-0",
+   "group11_unlabeled": "0.667",
+   "Conf": "4-3-0",
+   "group13_unlabeled": "0.571",
+   "group14_unlabeled": "0-2-0",
+   "Strk": "1W",
+   "Last5": "2-3-0",
+   "code": "CAR",
+   "team_name": "Carolina Panthers"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC South",
+   "club": "Tampa Bay Buccaneers",
+   "club_short": "Buccaneers",
+   "url": "https://www.nfl.com/teams/tampa-bay-buccaneers/",
+   "W": 3,
+   "L": 6,
+   "T": 0,
+   "PCT": "0.333",
+   "PF": 202,
+   "PA": 178,
+   "NetPts": 24,
+   "Home": "1-4-0",
+   "Road": "2-2-0",
+   "Div": "2-0-0",
+   "group11_unlabeled": "1.000",
+   "Conf": "3-3-0",
+   "group13_unlabeled": "0.500",
+   "group14_unlabeled": "0-3-0",
+   "Strk": "1L",
+   "Last5": "3-2-0",
+   "code": "TB",
+   "team_name": "Tampa Bay Buccaneers"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC South",
+   "club": "New Orleans Saints",
+   "club_short": "Saints",
+   "url": "https://www.nfl.com/teams/new-orleans-saints/",
+   "W": 3,
+   "L": 6,
+   "T": 0,
+   "PCT": "0.333",
+   "PF": 202,
+   "PA": 236,
+   "NetPts": -34,
+   "Home": "1-5-0",
+   "Road": "2-1-0",
+   "Div": "0-2-0",
+   "group11_unlabeled": "0.000",
+   "Conf": "1-4-0",
+   "group13_unlabeled": "0.200",
+   "group14_unlabeled": "2-2-0",
+   "Strk": "1L",
+   "Last5": "2-3-0",
+   "code": "NO",
+   "team_name": "New Orleans Saints"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC South",
+   "club": "Atlanta Falcons",
+   "club_short": "Falcons",
+   "url": "https://www.nfl.com/teams/atlanta-falcons/",
+   "W": 3,
+   "L": 7,
+   "T": 0,
+   "PCT": "0.300",
+   "PF": 201,
+   "PA": 258,
+   "NetPts": -57,
+   "Home": "1-5-0",
+   "Road": "2-2-0",
+   "Div": "1-2-0",
+   "group11_unlabeled": "0.333",
+   "Conf": "3-3-0",
+   "group13_unlabeled": "0.500",
+   "group14_unlabeled": "0-4-0",
+   "Strk": "3L",
+   "Last5": "1-4-0",
+   "code": "ATL",
+   "team_name": "Atlanta Falcons"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC West",
+   "club": "San Francisco 49ers",
+   "club_short": "49ers",
+   "url": "https://www.nfl.com/teams/san-francisco-49ers/",
+   "W": 8,
+   "L": 1,
+   "T": 0,
+   "PCT": "0.889",
+   "PF": 281,
+   "PA": 196,
+   "NetPts": 85,
+   "Home": "5-0-0",
+   "Road": "3-1-0",
+   "Div": "3-0-0",
+   "group11_unlabeled": "1.000",
+   "Conf": "5-1-0",
+   "group13_unlabeled": "0.833",
+   "group14_unlabeled": "3-0-0",
+   "Strk": "2W",
+   "Last5": "4-1-0",
+   "code": "SF",
+   "team_name": "San Francisco 49ers"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC West",
+   "club": "Seattle Seahawks",
+   "club_short": "Seahawks",
+   "url": "https://www.nfl.com/teams/seattle-seahawks/",
+   "W": 6,
+   "L": 4,
+   "T": 0,
+   "PCT": "0.600",
+   "PF": 223,
+   "PA": 175,
+   "NetPts": 48,
+   "Home": "4-2-0",
+   "Road": "2-2-0",
+   "Div": "2-1-0",
+   "group11_unlabeled": "0.667",
+   "Conf": "2-3-0",
+   "group13_unlabeled": "0.400",
+   "group14_unlabeled": "4-1-0",
+   "Strk": "2W",
+   "Last5": "3-2-0",
+   "code": "SEA",
+   "team_name": "Seattle Seahawks"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC West",
+   "club": "Los Angeles Rams",
+   "club_short": "Rams",
+   "url": "https://www.nfl.com/teams/los-angeles-rams/",
+   "W": 6,
+   "L": 4,
+   "T": 0,
+   "PCT": "0.600",
+   "PF": 248,
+   "PA": 187,
+   "NetPts": 61,
+   "Home": "2-3-0",
+   "Road": "4-1-0",
+   "Div": "1-2-0",
+   "group11_unlabeled": "0.333",
+   "Conf": "4-2-0",
+   "group13_unlabeled": "0.667",
+   "group14_unlabeled": "2-2-0",
+   "Strk": "4W",
+   "Last5": "4-1-0",
+   "code": "LA",
+   "team_name": "Los Angeles Rams"
+  },
+  {
+   "conference": "NFC",
+   "division": "NFC West",
+   "club": "Arizona Cardinals",
+   "club_short": "Cardinals",
+   "url": "https://www.nfl.com/teams/arizona-cardinals/",
+   "W": 3,
+   "L": 7,
+   "T": 0,
+   "PCT": "0.300",
+   "PF": 184,
+   "PA": 289,
+   "NetPts": -105,
+   "Home": "0-4-0",
+   "Road": "3-3-0",
+   "Div": "1-4-0",
+   "group11_unlabeled": "0.200",
+   "Conf": "2-6-0",
+   "group13_unlabeled": "0.250",
+   "group14_unlabeled": "1-1-0",
+   "Strk": "2L",
+   "Last5": "2-3-0",
+   "code": "AZ",
+   "team_name": "Arizona Cardinals"
+  }
+ ],
+ "week10_pending_final": {
+  "week": 10,
+  "away": "LAC",
+  "home": "BAL",
+  "away_score": 23,
+  "home_score": 20,
+  "state": "Final",
+  "date": "2026-11-16",
+  "stadium": "M&T BANK STADIUM",
+  "location": "BALTIMORE, MD",
+  "gamecenter_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+  "gamebook_url": "https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf"
+ },
+ "week11_fixtures": [
+  {
+   "slot": 1,
+   "away": "Colts",
+   "home": "Texans",
+   "day": "Thursday",
+   "date": "November 19, 2026",
+   "kickoff_et": "8:15 PM",
+   "network": "PRIME",
+   "gamecenter_url": "https://www.nfl.com/games/colts-at-texans-2026-reg-11",
+   "venue": "NRG Stadium",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "IND",
+   "home_code": "HOU"
+  },
+  {
+   "slot": 2,
+   "away": "Dolphins",
+   "home": "Bills",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "1:00 PM",
+   "network": "CBS",
+   "gamecenter_url": "https://www.nfl.com/games/dolphins-at-bills-2026-reg-11",
+   "venue": "Highmark Stadium",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "MIA",
+   "home_code": "BUF"
+  },
+  {
+   "slot": 3,
+   "away": "Ravens",
+   "home": "Panthers",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "1:00 PM",
+   "network": "FOX",
+   "gamecenter_url": "https://www.nfl.com/games/ravens-at-panthers-2026-reg-11",
+   "venue": "Bank of America Stadium",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "BAL",
+   "home_code": "CAR"
+  },
+  {
+   "slot": 4,
+   "away": "Saints",
+   "home": "Bears",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "1:00 PM",
+   "network": "FOX",
+   "gamecenter_url": "https://www.nfl.com/games/saints-at-bears-2026-reg-11",
+   "venue": "Soldier Field",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "NO",
+   "home_code": "CHI"
+  },
+  {
+   "slot": 5,
+   "away": "Titans",
+   "home": "Cowboys",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "1:00 PM",
+   "network": "FOX",
+   "gamecenter_url": "https://www.nfl.com/games/titans-at-cowboys-2026-reg-11",
+   "venue": "AT&T Stadium",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "TEN",
+   "home_code": "DAL"
+  },
+  {
+   "slot": 6,
+   "away": "Buccaneers",
+   "home": "Lions",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "1:00 PM",
+   "network": "FOX",
+   "gamecenter_url": "https://www.nfl.com/games/buccaneers-at-lions-2026-reg-11",
+   "venue": "Ford Field",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "TB",
+   "home_code": "DET"
+  },
+  {
+   "slot": 7,
+   "away": "Cardinals",
+   "home": "Chiefs",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "1:00 PM",
+   "network": "CBS",
+   "gamecenter_url": "https://www.nfl.com/games/cardinals-at-chiefs-2026-reg-11",
+   "venue": "GEHA Field at Arrowhead Stadium",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "AZ",
+   "home_code": "KC"
+  },
+  {
+   "slot": 8,
+   "away": "Steelers",
+   "home": "Eagles",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "1:00 PM",
+   "network": "CBS",
+   "gamecenter_url": "https://www.nfl.com/games/steelers-at-eagles-2026-reg-11",
+   "venue": "Lincoln Financial Field",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "PIT",
+   "home_code": "PHI"
+  },
+  {
+   "slot": 9,
+   "away": "Jets",
+   "home": "Chargers",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "4:05 PM",
+   "network": "FOX",
+   "gamecenter_url": "https://www.nfl.com/games/jets-at-chargers-2026-reg-11",
+   "venue": "SoFi Stadium",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "NYJ",
+   "home_code": "LAC"
+  },
+  {
+   "slot": 10,
+   "away": "Jaguars",
+   "home": "Giants",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "4:25 PM",
+   "network": "CBS",
+   "gamecenter_url": "https://www.nfl.com/games/jaguars-at-giants-2026-reg-11",
+   "venue": "MetLife Stadium",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "JAX",
+   "home_code": "NYG"
+  },
+  {
+   "slot": 11,
+   "away": "Raiders",
+   "home": "Broncos",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "4:25 PM",
+   "network": "CBS",
+   "gamecenter_url": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11",
+   "venue": "Empower Field at Mile High",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "LV",
+   "home_code": "DEN"
+  },
+  {
+   "slot": 12,
+   "away": "Vikings",
+   "home": "49ers",
+   "day": "Sunday",
+   "date": "November 22, 2026",
+   "kickoff_et": "8:20 PM",
+   "network": "NBC",
+   "gamecenter_url": "https://www.nfl.com/games/vikings-at-49ers-2026-reg-11",
+   "venue": "ESTADIO BANORTE",
+   "venue_source": "C672-GC-W11-MINSF-1118",
+   "away_code": "MIN",
+   "home_code": "SF"
+  },
+  {
+   "slot": 13,
+   "away": "Bengals",
+   "home": "Commanders",
+   "day": "Monday",
+   "date": "November 23, 2026",
+   "kickoff_et": "8:15 PM",
+   "network": "ESPN",
+   "gamecenter_url": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11",
+   "venue": "FedEx Field",
+   "venue_source": "C672-SCHED-W11-1118",
+   "away_code": "CIN",
+   "home_code": "WAS"
+  }
+ ],
+ "week11_byes": [
+  {
+   "code": "ATL",
+   "club": "Atlanta Falcons",
+   "record": "3-7"
+  },
+  {
+   "code": "CLE",
+   "club": "Cleveland Browns",
+   "record": "6-4"
+  },
+  {
+   "code": "GB",
+   "club": "Green Bay Packers",
+   "record": "6-4"
+  },
+  {
+   "code": "LA",
+   "club": "Los Angeles Rams",
+   "record": "6-4"
+  },
+  {
+   "code": "NE",
+   "club": "New England Patriots",
+   "record": "5-5"
+  },
+  {
+   "code": "SEA",
+   "club": "Seattle Seahawks",
+   "record": "6-4"
+  }
+ ],
+ "late_week_tbd_note": true,
+ "gamebook_14": {
+  "source": "https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf",
+  "gamecenter": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+  "captured_utc": "2026-11-18",
+  "game": {
+   "id": "W10-14",
+   "away": "LAC",
+   "home": "BAL",
+   "date": "2026-11-16",
+   "kickoff_et": "8:16 PM EST",
+   "stadium": "M&T Bank Stadium",
+   "location": "Baltimore, MD",
+   "roof_surface": "Open Stadium on Natural Grass",
+   "weather": "Clear",
+   "temp_f": "49",
+   "wind": "NW 2",
+   "attendance": "69,679"
+  },
+  "off": [
+   {
+    "team": "LAC",
+    "pos": "WR",
+    "jersey": "1",
+    "player": "Q.Johnston"
+   },
+   {
+    "team": "LAC",
+    "pos": "WR",
+    "jersey": "9",
+    "player": "T.Harris"
+   },
+   {
+    "team": "LAC",
+    "pos": "TE",
+    "jersey": "88",
+    "player": "C.Kolar"
+   },
+   {
+    "team": "LAC",
+    "pos": "LT",
+    "jersey": "76",
+    "player": "J.Alt"
+   },
+   {
+    "team": "LAC",
+    "pos": "LG",
+    "jersey": "65",
+    "player": "L.Taylor"
+   },
+   {
+    "team": "LAC",
+    "pos": "C",
+    "jersey": "66",
+    "player": "J.Slaughter"
+   },
+   {
+    "team": "LAC",
+    "pos": "RG",
+    "jersey": "69",
+    "player": "C.Strange"
+   },
+   {
+    "team": "LAC",
+    "pos": "RT",
+    "jersey": "77",
+    "player": "T.Burke"
+   },
+   {
+    "team": "LAC",
+    "pos": "QB",
+    "jersey": "10",
+    "player": "J.Herbert"
+   },
+   {
+    "team": "LAC",
+    "pos": "FB",
+    "jersey": "44",
+    "player": "S.Matlock"
+   },
+   {
+    "team": "LAC",
+    "pos": "RB",
+    "jersey": "8",
+    "player": "O.Hampton"
+   },
+   {
+    "team": "BAL",
+    "pos": "WR",
+    "jersey": "4",
+    "player": "Z.Flowers"
+   },
+   {
+    "team": "BAL",
+    "pos": "TE",
+    "jersey": "85",
+    "player": "J.Cuevas"
+   },
+   {
+    "team": "BAL",
+    "pos": "LT",
+    "jersey": "79",
+    "player": "R.Stanley"
+   },
+   {
+    "team": "BAL",
+    "pos": "LG",
+    "jersey": "74",
+    "player": "J.Simpson"
+   },
+   {
+    "team": "BAL",
+    "pos": "C",
+    "jersey": "64",
+    "player": "C.Jurgens"
+   },
+   {
+    "team": "BAL",
+    "pos": "RG",
+    "jersey": "71",
+    "player": "O.Ioane"
+   },
+   {
+    "team": "BAL",
+    "pos": "RT",
+    "jersey": "70",
+    "player": "R.Rosengarten"
+   },
+   {
+    "team": "BAL",
+    "pos": "WR",
+    "jersey": "6",
+    "player": "J.Lane"
+   },
+   {
+    "team": "BAL",
+    "pos": "WR",
+    "jersey": "7",
+    "player": "R.Bateman"
+   },
+   {
+    "team": "BAL",
+    "pos": "QB",
+    "jersey": "11",
+    "player": "J.Brissett"
+   },
+   {
+    "team": "BAL",
+    "pos": "RB",
+    "jersey": "22",
+    "player": "D.Henry"
+   }
+  ],
+  "def": [
+   {
+    "team": "LAC",
+    "pos": "OLB",
+    "jersey": "45",
+    "player": "T.Tupilotu"
+   },
+   {
+    "team": "LAC",
+    "pos": "DL",
+    "jersey": "93",
+    "player": "T.Tart"
+   },
+   {
+    "team": "LAC",
+    "pos": "DL",
+    "jersey": "94",
+    "player": "D.Tomlinson"
+   },
+   {
+    "team": "LAC",
+    "pos": "OLB",
+    "jersey": "52",
+    "player": "K.Mack"
+   },
+   {
+    "team": "LAC",
+    "pos": "LB",
+    "jersey": "53",
+    "player": "D.Phillips"
+   },
+   {
+    "team": "LAC",
+    "pos": "LB",
+    "jersey": "0",
+    "player": "D.Henley"
+   },
+   {
+    "team": "LAC",
+    "pos": "DB",
+    "jersey": "2",
+    "player": "E.Molden"
+   },
+   {
+    "team": "LAC",
+    "pos": "CB",
+    "jersey": "26",
+    "player": "D.Jackson"
+   },
+   {
+    "team": "LAC",
+    "pos": "CB",
+    "jersey": "4",
+    "player": "T.Still"
+   },
+   {
+    "team": "LAC",
+    "pos": "CB",
+    "jersey": "20",
+    "player": "C.Hart"
+   },
+   {
+    "team": "LAC",
+    "pos": "S",
+    "jersey": "23",
+    "player": "T.Jefferson"
+   },
+   {
+    "team": "BAL",
+    "pos": "OLB",
+    "jersey": "91",
+    "player": "T.Hendrickson"
+   },
+   {
+    "team": "BAL",
+    "pos": "DL",
+    "jersey": "96",
+    "player": "B.Washington"
+   },
+   {
+    "team": "BAL",
+    "pos": "DL",
+    "jersey": "98",
+    "player": "T.Jones"
+   },
+   {
+    "team": "BAL",
+    "pos": "DL",
+    "jersey": "92",
+    "player": "N.Madubuike"
+   },
+   {
+    "team": "BAL",
+    "pos": "OLB",
+    "jersey": "15",
+    "player": "M.Green"
+   },
+   {
+    "team": "BAL",
+    "pos": "ILB",
+    "jersey": "32",
+    "player": "T.Simpson"
+   },
+   {
+    "team": "BAL",
+    "pos": "ILB",
+    "jersey": "0",
+    "player": "R.Smith"
+   },
+   {
+    "team": "BAL",
+    "pos": "CB",
+    "jersey": "2",
+    "player": "N.Wiggins"
+   },
+   {
+    "team": "BAL",
+    "pos": "CB",
+    "jersey": "44",
+    "player": "M.Humphrey"
+   },
+   {
+    "team": "BAL",
+    "pos": "S",
+    "jersey": "24",
+    "player": "M.Starks"
+   },
+   {
+    "team": "BAL",
+    "pos": "S",
+    "jersey": "14",
+    "player": "K.Hamilton"
+   }
+  ],
+  "ina": [
+   {
+    "team": "LAC",
+    "pos": "WR",
+    "jersey": "15",
+    "player": "L.McConkey"
+   },
+   {
+    "team": "LAC",
+    "pos": "S",
+    "jersey": "32",
+    "player": "K.Williamson"
+   },
+   {
+    "team": "LAC",
+    "pos": "CB",
+    "jersey": "37",
+    "player": "I.Waxter"
+   },
+   {
+    "team": "LAC",
+    "pos": "OLB",
+    "jersey": "48",
+    "player": "B.Dupree"
+   },
+   {
+    "team": "LAC",
+    "pos": "WR",
+    "jersey": "89",
+    "player": "B.Thompson"
+   },
+   {
+    "team": "LAC",
+    "pos": "DL",
+    "jersey": "92",
+    "player": "J.Eboigbe"
+   },
+   {
+    "team": "BAL",
+    "pos": "WR",
+    "jersey": "13",
+    "player": "E.Sarratt"
+   },
+   {
+    "team": "BAL",
+    "pos": "3QB",
+    "jersey": "18",
+    "player": "K.Slovis"
+   },
+   {
+    "team": "BAL",
+    "pos": "S",
+    "jersey": "21",
+    "player": "J.Hawkins"
+   },
+   {
+    "team": "BAL",
+    "pos": "CB",
+    "jersey": "29",
+    "player": "C.Rivers"
+   },
+   {
+    "team": "BAL",
+    "pos": "G/T",
+    "jersey": "51",
+    "player": "E.Jones"
+   },
+   {
+    "team": "BAL",
+    "pos": "DL",
+    "jersey": "90",
+    "player": "A.Peebles"
+   }
+  ]
+ },
+ "gamebook_14_strings_checked": {
+  "required_strings_present": 11
+ },
+ "reserve_november": [
+  {
+   "from": "Texans",
+   "to": "Texans",
+   "date": "11/17",
+   "name": "Azeez Al-Shaair",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Dolphins",
+   "to": "Dolphins",
+   "date": "11/17",
+   "name": "Zeek Biggers",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Dolphins",
+   "to": "Dolphins",
+   "date": "11/17",
+   "name": "Jordan Phillips",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Cardinals",
+   "to": "Cardinals",
+   "date": "11/17",
+   "name": "Andrew Wingard",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Cardinals",
+   "to": "Cardinals",
+   "date": "11/17",
+   "name": "Jordan Burch",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Bills",
+   "to": "Bills",
+   "date": "11/17",
+   "name": "Ar'maj Reed-Adams",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Colts",
+   "to": "Colts",
+   "date": "11/17",
+   "name": "Jaylon Carlies",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Titans",
+   "to": "Titans",
+   "date": "11/17",
+   "name": "Wan'Dale Robinson",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Rams",
+   "to": "Rams",
+   "date": "11/16",
+   "name": "Dylan McMahon",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Chargers",
+   "to": "Chargers",
+   "date": "11/16",
+   "name": "Branson Taylor",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Saints",
+   "to": "Saints",
+   "date": "11/14",
+   "name": "Christen Miller",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Patriots",
+   "to": "Patriots",
+   "date": "11/14",
+   "name": "TreVeyon Henderson",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Browns",
+   "to": "Browns",
+   "date": "11/14",
+   "name": "Michael Burton",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Colts",
+   "to": "Colts",
+   "date": "11/14",
+   "name": "Mo Alie-Cox",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Colts",
+   "to": "Colts",
+   "date": "11/14",
+   "name": "Akeem Davis-Gaither",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Titans",
+   "to": "Titans",
+   "date": "11/14",
+   "name": "Peter Skoronski",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Titans",
+   "to": "Titans",
+   "date": "11/14",
+   "name": "Tommy Townsend",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Cowboys",
+   "to": "Cowboys",
+   "date": "11/14",
+   "name": "Tyler Goodson",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Packers",
+   "to": "Packers",
+   "date": "11/14",
+   "name": "Josh Whyle",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Rams",
+   "to": "Rams",
+   "date": "11/12",
+   "name": "Puka Nacua",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Rams",
+   "to": "Rams",
+   "date": "11/10",
+   "name": "Jordan Whittington",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Dolphins",
+   "to": "Dolphins",
+   "date": "11/10",
+   "name": "Zach Sieler",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Dolphins",
+   "to": "Dolphins",
+   "date": "11/10",
+   "name": "Malik Willis",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "49ers",
+   "to": "49ers",
+   "date": "11/10",
+   "name": "Gracen Halton",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Cardinals",
+   "to": "Cardinals",
+   "date": "11/10",
+   "name": "Gardner Minshew",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  }
+ ],
+ "reserve_october": [
+  {
+   "from": "Chiefs",
+   "to": "Chiefs",
+   "date": "10/31",
+   "name": "L'Jarius Sneed",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Jets",
+   "to": "Jets",
+   "date": "10/31",
+   "name": "T'Vondre Sweat",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Raiders",
+   "to": "Raiders",
+   "date": "10/31",
+   "name": "Patrick Johnson",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Broncos",
+   "to": "Broncos",
+   "date": "10/31",
+   "name": "RJ Harvey",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Chargers",
+   "to": "Chargers",
+   "date": "10/31",
+   "name": "Derwin James",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Panthers",
+   "to": "Panthers",
+   "date": "10/29",
+   "name": "Akayleb Evans",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Commanders",
+   "to": "Commanders",
+   "date": "10/28",
+   "name": "Terry McLaurin",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Texans",
+   "to": "Texans",
+   "date": "10/28",
+   "name": "Jaylin Noel",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Eagles",
+   "to": "Eagles",
+   "date": "10/28",
+   "name": "Dameon Pierce",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Panthers",
+   "to": "Panthers",
+   "date": "10/27",
+   "name": "Taylor Moton",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Bengals",
+   "to": "Bengals",
+   "date": "10/27",
+   "name": "Erick All",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Giants",
+   "to": "Giants",
+   "date": "10/27",
+   "name": "Tyrone Tracy Jr.",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Colts",
+   "to": "Colts",
+   "date": "10/27",
+   "name": "Cam Taylor-Britt",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Cardinals",
+   "to": "Cardinals",
+   "date": "10/27",
+   "name": "Jalen Brooks",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Bills",
+   "to": "Bills",
+   "date": "10/26",
+   "name": "C.J. Gardner-Johnson",
+   "position": "",
+   "transaction": "Reserve/Suspended By Commissioner-Less than One Year"
+  },
+  {
+   "from": "Packers",
+   "to": "Packers",
+   "date": "10/26",
+   "name": "Jacob Monk",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Falcons",
+   "to": "Falcons",
+   "date": "10/24",
+   "name": "Michael Jerrell",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Panthers",
+   "to": "Panthers",
+   "date": "10/24",
+   "name": "Thomas Incoom",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Browns",
+   "to": "Browns",
+   "date": "10/24",
+   "name": "Teven Jenkins",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Chiefs",
+   "to": "Chiefs",
+   "date": "10/24",
+   "name": "Brashard Smith",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Giants",
+   "to": "Giants",
+   "date": "10/24",
+   "name": "Tremaine Edmunds",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Jets",
+   "to": "Jets",
+   "date": "10/24",
+   "name": "Francisco Mauigoa",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Broncos",
+   "to": "Broncos",
+   "date": "10/24",
+   "name": "Tyler Badie",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Broncos",
+   "to": "Broncos",
+   "date": "10/24",
+   "name": "Jonah Elliss",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  },
+  {
+   "from": "Ravens",
+   "to": "Ravens",
+   "date": "10/24",
+   "name": "Tavius Robinson",
+   "position": "",
+   "transaction": "Reserve/Injured"
+  }
+ ],
+ "trades_november": [
+  {
+   "from": "Falcons",
+   "to": "Jaguars",
+   "date": "11/10",
+   "name": "Jessie Bates",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Eagles",
+   "to": "Jaguars",
+   "date": "11/10",
+   "name": "Jordan Davis",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Titans",
+   "to": "Bills",
+   "date": "11/10",
+   "name": "Amani Hooker",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Colts",
+   "to": "49ers",
+   "date": "11/10",
+   "name": "Keenan Allen",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Raiders",
+   "to": "Vikings",
+   "date": "11/10",
+   "name": "Kirk Cousins",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Chargers",
+   "to": "Broncos",
+   "date": "11/10",
+   "name": "Daiyan Henley",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Colts",
+   "to": "Chiefs",
+   "date": "11/10",
+   "name": "Josh Downs",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Falcons",
+   "to": "Ravens",
+   "date": "11/10",
+   "name": "Ryan Neuzil",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Ravens",
+   "to": "Falcons",
+   "date": "11/10",
+   "name": "Andrew Vorhees",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Jets",
+   "to": "Lions",
+   "date": "11/09",
+   "name": "Andre Cisco",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Saints",
+   "to": "Jaguars",
+   "date": "11/09",
+   "name": "Davon Godchaux",
+   "position": "",
+   "transaction": "Traded"
+  },
+  {
+   "from": "Cardinals",
+   "to": "Ravens",
+   "date": "11/06",
+   "name": "Jacoby Brissett",
+   "position": "",
+   "transaction": "Traded"
+  }
+ ],
+ "injuries_state": {
+  "title": "Official Latest NFL Injury Report for Players - Week 10 of the 2026 Season | NFL.com",
+  "header": "Injuries - WEEK 10",
+  "tables": {
+   "Commanders": [
+    {
+     "player": "John Bates",
+     "position": "TE",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Treylon Burks",
+     "position": "WR",
+     "injuries": "",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jayden Daniels",
+     "position": "QB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Matt Gulbin",
+     "position": "C",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Chig Okonkwo",
+     "position": "TE",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Lucas Patrick",
+     "position": "C",
+     "injuries": "Concussion",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Amik Robertson",
+     "position": "CB",
+     "injuries": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Shy Tuttle",
+     "position": "DT",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Colson Yankoff",
+     "position": "TE",
+     "injuries": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    }
+   ],
+   "Giants": [
+    {
+     "player": "Abdul Carter",
+     "position": "LB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jermaine Eluemunor",
+     "position": "T",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Malik Harrison",
+     "position": "LB",
+     "injuries": "Groin",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Colton Hood",
+     "position": "CB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Theo Johnson",
+     "position": "TE",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Charlie Jones",
+     "position": "WR",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "J.J. McCarthy",
+     "position": "QB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Darnell Mooney",
+     "position": "WR",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Malik Nabers",
+     "position": "WR",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Cam Skattebo",
+     "position": "RB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Andrew Thomas",
+     "position": "T",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "Patriots": [
+    {
+     "player": "Ben Brown",
+     "position": "C",
+     "injuries": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "A.J. Brown",
+     "position": "WR",
+     "injuries": "Ankle, Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Kevin Byard",
+     "position": "S",
+     "injuries": "Chest",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Carlton Davis III",
+     "position": "CB",
+     "injuries": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Reggie Gilliam",
+     "position": "FB",
+     "injuries": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "TreVeyon Henderson",
+     "position": "RB",
+     "injuries": "Illness",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Hunter Henry",
+     "position": "TE",
+     "injuries": "",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Cameron Latu",
+     "position": "TE",
+     "injuries": "Back",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Drake Maye",
+     "position": "QB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Morgan Moses",
+     "position": "T",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Walter Rouse",
+     "position": "T",
+     "injuries": "Concussion",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Brenden Schooler",
+     "position": "S",
+     "injuries": "Hamstring",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Rhamondre Stevenson",
+     "position": "RB",
+     "injuries": "Knee",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Greg Van Roten",
+     "position": "G",
+     "injuries": "Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Charles Woods",
+     "position": "CB",
+     "injuries": "Hamstring",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    }
+   ],
+   "Lions": [
+    {
+     "player": "Brian Branch",
+     "position": "S",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jared Goff",
+     "position": "QB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Kerby Joseph",
+     "position": "S",
+     "injuries": "Knee",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Cade Mays",
+     "position": "C",
+     "injuries": "Ankle",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "D.J. Reed",
+     "position": "CB",
+     "injuries": "Hip",
+     "practice_status": "Did Not Participate In Practice",
+     "game_status": "Out"
+    },
+    {
+     "player": "Jacob Saylors",
+     "position": "RB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Amon-Ra St. Brown",
+     "position": "WR",
+     "injuries": "Rib",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Sione Vaki",
+     "position": "RB",
+     "injuries": "Ankle",
+     "practice_status": "Limited Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "DJ Wonnum",
+     "position": "DE",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ],
+   "Chiefs (partial \u2014 chunk boundary mid-table)": [
+    {
+     "player": "Jeffrey Bassa",
+     "position": "LB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Mansoor Delane",
+     "position": "CB",
+     "injuries": "Shoulder",
+     "practice_status": "Full Participation in Practice",
+     "game_status": "Questionable"
+    },
+    {
+     "player": "Justin Fields",
+     "position": "QB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Jaden Hicks",
+     "position": "S",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Travis Kelce",
+     "position": "TE",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    },
+    {
+     "player": "Patrick Mahomes",
+     "position": "QB",
+     "injuries": "",
+     "practice_status": "Full Participation in Practice",
+     "game_status": ""
+    }
+   ]
+  }
+ }
+}
