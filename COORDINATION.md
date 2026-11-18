@@ -3565,9 +3565,9 @@ requests, if any, are logged for the final integration owner.
 
 | ID | Task | Status | Owner | Files touched | Sources / verification |
 |---|---|---|---|---|---|
-| A1 | Claim + baseline replay | done | session-arena-0c516a05-own7 | COORDINATION.md | Baseline checks recorded above; original claim commit `ec2d7b1` was pushed before the main rebase. Its rebased copy is `bdf48bd`; the current rebased branch still needs publication. Rebase conflict with PR #93 was resolved as a union and logged below. |
+| A1 | Claim + baseline replay | done | session-arena-0c516a05-own7 | COORDINATION.md | Baseline checks recorded above; original claim commit `ec2d7b1` was pushed before the main rebases. Its current rebased copy is `1a9033d` and is pending branch publication. Both add-at-end rebase conflicts were resolved as unions and logged below. |
 | A2 | Independent repo acceptance review: separate mechanical checks from external factual verification; inventory existing summary/questions/suggestions/flags and name remaining decision gates | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md` | Six repo consistency items (AR-01–AR-06) and the decision-ready question/gate list are documented; official manual-review URLs link to registered NFL/NWS sources. No new NFL live-fetch claim. |
-| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | Before the latest main advance, `npm run check` passed (119 + 6 tests; site audit 280 pages, 15,332 rows, 302 sources, 0 errors); `npm run test:browser` passed (256 desktop + 256 mobile, WCAG A/AA); extraction/origination checks passed; 14 review-table rows + 16 local links checked, 0 report-link errors. Post-rebase counts are pending final refresh. |
+| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | Post-rebase on `1d973d3`: `npm run check` passed (119 + 6 tests; site audit 293 pages, 15,576 rows, 311 sources, 0 errors); `npm run test:browser` passed (269 desktop + 269 mobile, WCAG A/AA); NFL extraction/origination checks passed; report validation found 14 table rows + 16 local links, 0 errors. |
 | A4 | PR, checks, merge, deployment record | in progress | session-arena-0c516a05-own7 | PR metadata, COORDINATION.md | Report-only change; continue only after PR checks pass. Existing published Pages status is recorded in the report; any newly published content must be confirmed after merge. |
 
 Standing constraints: this report will not invent values, reinterpret saved evidence as a fresh live
@@ -3590,6 +3590,20 @@ public site navigation still points to the older generated `executive-summary.ht
 and #96 independently audit the readiness ledger; this session will not edit that ledger or their
 scopes.
 
+### Rebase and overlap snapshot before PR #96 merged (2026-11-18)
+
+Before publication, `git fetch origin` advanced `origin/main` from `f776790` to `1d973d3`
+through merged PR #94 (`e8f8e18`) and PR #87 (`1d973d3`). Rebasing the session onto that base
+conflicted only at the end of `COORDINATION.md`, where the upstream PR #87 record and this session's
+claim were both appended. Resolved as a union: retained the full upstream records and the full
+acceptance-review claim; nothing was discarded. The branch is now based on `1d973d3`.
+
+GitHub Pages run [44255074621](https://github.com/sassnarep3-star/Own7/actions/runs/44255074621)
+completed successfully for `1d973d3`; the Pages API reports `built`. At the overlap check, PRs #95
+and #96 remained open with overlapping proposed readiness re-grades; PR #97 remained open with
+DR-61/64/68 edits and Week 11 evidence; PR #98 remained open and held for a rights decision. These
+branches are not modified by this session. PRs #94 and #87 are merged into the new base.
+
 ### Acceptance findings and cross-scope requests (2026-11-18)
 
 - The report records AR-01–AR-06: stale readiness text for DR-22/23/25/61/68; an older executive
@@ -3609,18 +3623,19 @@ scopes.
   estimate n=128, phi −0.0318, p=0.7209. These are repository-derived backtest outputs, not
   official NFL statistics or a profit claim.
 - Report-focused validation: 14 Markdown table rows each include an official source-domain link;
-  15 local report links resolve; 0 errors. `npm run check`, extraction/origination checks, and the
-  256+256 desktop/mobile browser suite passed on the reviewed code (the rebase added only this
-  coordination record, not HTML or data).
+  16 local report links resolve; 0 errors. After the rebase onto `1d973d3`, `npm run check` passed
+  (119 + 6 tests; 293 pages, 15,576 rows, 311 sources), extraction/origination checks passed, and
+  the browser suite passed 269 desktop + 269 mobile runs with WCAG A/AA and no runtime errors.
 - Official source links for manual review: [NFL Terms](https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions),
   [NFL Week 10 results](https://www.nfl.com/schedules/2026/by-week/week-10),
   [NFL standings](https://www.nfl.com/standings/),
   [NFL Week 10 injury report](https://www.nfl.com/injuries/league/2026/REG10),
   [2026 Official Playing Rules](https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf),
   and the [LAC–BAL Game Book](https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf).
-- Cross-scope request to the final integration owner: coordinate with the active readiness re-grade
-  work (PRs #95/#96) rather than editing its ledger; link the dated 2026-11-18 summary into the
-  public site; refresh result-overview metrics/captions and add generated-copy freshness tests; and
-  consider publishing this review in the existing review/suggestions hierarchy while condensing the
-  main navigation. This session did not edit shared index/navigation, requirements, source registers,
-  or strategy data.
+- Cross-scope request to the final integration owner: treat merged PR #96 as audit evidence, and
+  coordinate with the remaining readiness proposals in #95/#97 rather than editing their
+  ledger/evidence; review the newer Week 11 reads in #97/#98 alongside the rights hold; link the dated
+  2026-11-18 summary into the public site; refresh result-overview metrics/captions and add
+  generated-copy freshness tests; and link this review in the existing review hierarchy while
+  condensing the main navigation. This session did not edit shared index/navigation, requirements,
+  source registers, or strategy data.
