@@ -1,0 +1,86 @@
+{
+  "desk": "nfl-reconcile-9ef12c81",
+  "evidence_sha256": {
+    "data/nfl-injuries-2026-w10.csv": "bf0d182d1fc3656e0bd05e93bb529f91d40870c8fd6978c2fd944682fb70c122",
+    "data/nfl-injuries-week7-2026.csv": "16451ad8da0b283f18c48f2d6b5d1780bd433e787182f20b240d1e6a8396ac05",
+    "nfl-availability-28ef/data/depth-slots-week10-2026.csv": "dead3c574e951e740d520672f6616e7f45d32bcb056236cd56cc599d18941ae0",
+    "nfl-integration-c815/data/rules-2026.json": "0b1377d51408da15ce67d19b91a37b01c0aa35afbb6b2eb0b1a16311fd519b83",
+    "nfl-integration-c815/evidence/rules-2026-kickoff-onside.retrieved.md": "7fda95eda32e176eae35b2a2b5142fc73f56bbef59670f71f3dde4c7a1dfb3be",
+    "nfl-reconcile-9ef12c81/adjudications.json": "9b4e37153eb424424612a4b87a121ac971da557edefad22f9139e10d96672b5e",
+    "nfl-reconcile-9ef12c81/evidence/nfl-terms-1-3-2026-11-18.md": "525963798d90af87af4cbe58d318425cd2b90874bad6da424cd5dd4ecadf478a",
+    "nfl-results/data/games-2026-w1-10-complete.csv": "78367d475f9218a2cbf9d28da90bc26e61cfc2f0b5f1986235d23dbacc1b9183",
+    "nfl-skill-cfdd/data/depth-slots-2026-11-14.csv": "c94988cc1d8490076873717ddd1ca8a469e09d35348487d17e4fbe6eda3d688e",
+    "nfl-snapcount-e5e4/data/capture-summary.json": "4e4d350629a6ad242ee9233ab16b4db6d1c7d54476b83a011c69c28366c909d6",
+    "nfl-snapcount-e5e4/data/flags.json": "a10e6139c3292fc5b993ff894e17047df939ad2bba37f95080b9b929983bd67a",
+    "nfl-snapcount-e5e4/data/snap-records.csv": "1e0204010924c9a355f5d0b1a5f2cfa22e39911fda12f729e0ca5eaf220a4ce1",
+    "nfl-week11-6c72a9fa/data/whatchanged.json": "e2889052768995b60b7728ba065fe71331fc4f1b077a66a25ff035495dfb3a16",
+    "nfl-week11-6c72a9fa/evidence/reserve-list-nov-2026-11-18.md": "39ee63d203aa0ff25c62b3cce032a9b985bce7267d43ca2b63e0296ac6810889",
+    "nfl-week11-6c72a9fa/evidence/reserve-list-oct-2026-11-18.md": "fd28845fc04786675d076574dac1c89955d9083dad47196866fd2908b2b3db9d",
+    "nfl-week11-6c72a9fa/evidence/trades-nov-2026-11-18.md": "07c94212ac30cb818ff41a77de9a8a89eae6c2903954b7e38f59f65bac00b09f",
+    "nfl-week11-6c72a9fa/site/what-changed.html": "c0de2e1c75e38bf862cc7f930fd680ea89c1b5251774b125545b8c09b342faf7"
+  },
+  "pages": [
+    "index.html",
+    "questions.html",
+    "flagged.html"
+  ],
+  "proposed_changes": {
+    "DR-61": [
+      "Open",
+      "Partial"
+    ],
+    "DR-64": [
+      "Open",
+      "Partial"
+    ],
+    "DR-68": [
+      "Open",
+      "Partial"
+    ]
+  },
+  "re_read_rows": [
+    "DR-29",
+    "DR-54",
+    "DR-66",
+    "DR-31",
+    "DR-11",
+    "DR-56",
+    "DR-44",
+    "DR-52",
+    "DR-34",
+    "DR-61",
+    "DR-64",
+    "DR-68"
+  ],
+  "read_on": "2026-11-18",
+  "register_counts": {
+    "Blocked": 4,
+    "Implemented": 30,
+    "Open": 11,
+    "Partial": 23,
+    "Rejected": 2
+  },
+  "session": "arena/9ef12c81-own7",
+  "source_ids": [
+    "C672-INJ-STATE-1118",
+    "C672-RESERVE-NOV-1118",
+    "C672-RESERVE-OCT-1118",
+    "C672-TRADES-NOV-1118",
+    "CP-NFL-DEPTH-27",
+    "CP-NFL-DEPTH-BYE4",
+    "CP-NFL-INJ-W10",
+    "CP-NFL-ODDS-ABSENT",
+    "CP-NFL-RESULTS-W1-9",
+    "CP-NFL-STANDINGS",
+    "CP-NFL-W10-SCHEDULE",
+    "E15-NFL-SCHED-REG10-1117",
+    "E15-NFL-STANDINGS-1117",
+    "FRESH-NFL-STANDINGS-1118",
+    "FRESH-NFL-W10-COMPLETE-1118",
+    "NFL-LEGAL-TERMS",
+    "NFL-RULES-2026",
+    "NFL-TERMS",
+    "REPO",
+    "SN-NFL-GAMEBOOK-PDF"
+  ]
+}
