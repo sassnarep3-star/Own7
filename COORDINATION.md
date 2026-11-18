@@ -2989,6 +2989,8 @@ pages, `README.md`, this file). It rebases on `origin/main` before any push and 
 7. **Lions game-status cells (Joseph, Mays, Reed).** The retained 2026-11-17 transcript prints *Out* for all three (`nfl-brief-77b1/evidence/nfl-injuries-2026-11-17.md`, lines 14–16). The published Lions table on the desk pages was not re-checked in this session.
 8. **Week 11 URL** `nfl.com/injuries/week-11` is a 404 at this read; the Week 11 view is at `/injuries/` (flag FI06).
 9. **Hub kickoff and network text** is printed without a space ('8:15 PMEST') and once as 'NBC, UNIVERSO' where the schedule capture has 'NBC' (flag FI07). Kept as printed on the page.
+10. **No scheduled Wednesday–Friday capture.** The brief asks for the injury report on each of those days, kept as a dated series. This session holds one manual read. The existing capture workflow (`.github/workflows/nfl-assurance-9580ac3f.yml`) is manual, needs a typed authorization, and keeps artefacts for 7 days, so it cannot supply the retained history. Recorded as FI10 on the Flagged page. Not auto-scheduled: an owner decision.
+11. **Browser suite not completed here.** `scripts/browser_test.mjs` crashed in this sandbox (single-process Chromium closed mid-run). A focused run on the new desk pages (axe WCAG 2.x A/AA, no runtime errors, no outer overflow at 1440 and 390 px) passes. The full suite is left to the PR's CI.
 
 ### What is not done in this session (stated plainly)
 
