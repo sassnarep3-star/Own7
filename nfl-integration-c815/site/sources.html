@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources · OWN7 NFL integration audit</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="brand"><strong>OWN7 · NFL integration audit</strong><span>session arena/c815bdd2-own7 · 2026-11-18</span></div>
+  <nav aria-label="Desk pages"><a href="index.html">Overview</a><a href="week10-completion.html">Week 10</a><a href="requirements.html">Requirements</a><a href="rules-2026.html">2026 rules</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="sources.html" aria-current="page">Sources</a></nav>
+</header>
+<main id="main">
+<p class="eyebrow">OWN7 · NFL · provenance</p>
+<h1>Sources</h1>
+
+<p class="lead">Every official page this desk read, when it read it, and the SHA-256 of the
+capture retained in the repository. A source with no retained capture is visible as a
+blank rather than quietly listed as though it were archived.</p>
+<div class="table-wrap"><table><caption>Sources read by this desk</caption><thead><tr><th scope="col">ID</th><th scope="col">Source</th><th scope="col">Read on</th><th scope="col">Capture SHA-256</th><th scope="col">Retained at</th><th scope="col">What it was used for</th></tr></thead><tbody>
+<tr data-source-ids="NFL-STANDINGS"><td>NFL-STANDINGS</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">Official NFL standings</a></td><td>2026-11-18</td><td>4c7ca4fb08294878f4136b700d389626f56528803aac210f40b4453f040f0cbf</td><td>nfl-integration-c815/evidence/standings-2026-11-18.retrieved.md</td><td>32 club rows; every one passes PCT, NET and HOME+ROAD</td></tr><tr data-source-ids="NFL-W10-SCHED"><td>NFL-W10-SCHED</td><td class="src"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">Official Week 10 by-week schedule</a></td><td>2026-11-18</td><td>bc3f54fb944469a71b3cf022f3690b70d78ec6c5d583b2a02ccb2bb610ff40aa</td><td>nfl-integration-c815/evidence/week10-final-2026-11-18.retrieved.md</td><td>14 dated final headlines including the settled Monday game</td></tr><tr data-source-ids="NFL-RULES-2026"><td>NFL-RULES-2026</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">2026 Official Playing Rules (NFL)</a></td><td>2026-11-18</td><td>7fda95eda32e176eae35b2a2b5142fc73f56bbef59670f71f3dde4c7a1dfb3be</td><td>nfl-integration-c815/evidence/rules-2026-kickoff-onside.retrieved.md</td><td>Rule 6-1-1, 6-1-2, 6-1-5, 6-1-6 and the 2026 change list</td></tr><tr data-source-ids="NFL-INJURIES"><td>NFL-INJURIES</td><td class="src"><a href="https://www.nfl.com/injuries/" rel="noopener">Official NFL injury report (Week 10)</a></td><td>2026-11-18</td><td><td class="blank" title="no retained capture for this read"></td></td><td><td class="blank" title="no retained capture"></td></td><td>read this session to confirm the Week 10 slate state; not used as a value on this desk</td></tr>
+</tbody></table></div><p class="note">Direct HTTPS from the build sandbox to nfl.com returns curl 000, as every prior session recorded; reads go through Arena fetch_page and the rendered text is retained verbatim.</p>
+<div class="panel">
+<h3>Source policy</h3>
+<p>Every table row on every page of this desk names a registered official source and links
+to it. Where an official page states no value, the cell is empty. No third-party summary,
+odds screen, aggregator or media report is used as a source of fact.</p>
+</div>
+
+</main>
+<footer>
+  <p>NFL data is attributed to NFL.com. Not affiliated with or endorsed by the NFL. This desk
+  publishes no price, odds, return, stake, wager, reward or recommendation. Where an official
+  source states no value, the cell is empty and flagged — never estimated.</p>
+</footer>
+</body></html>

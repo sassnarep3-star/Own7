@@ -2,6 +2,42 @@
 
 [Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
+## New: integration audit — Week 10 completed, DR-68 closed (2026-11-18, session arena/c815bdd2-own7)
+
+A desk that re-derives what the other desks publish, from the official pages, and publishes
+the disagreements instead of smoothing them over. Two verifiable results:
+
+- **The Week 10 slate is complete and the feed is one game behind.** Chargers 23, Ravens 20 was
+  final on the [official Week 10 page](https://www.nfl.com/schedules/2026/by-week/week-10). The
+  canonical feed still holds **149** finals; the [official standings](https://www.nfl.com/standings/)
+  read 2026-11-18 imply **150** (sum(W) = sum(L) = 149, sum(PF) = sum(PA) = 6923, 300 club-games).
+  The delta between the two official captures is exactly the settled headline, and re-tallying
+  the feed leaves exactly that one game. Proved three ways; the build aborts otherwise.
+  The stale feed is **flagged, not patched** — it belongs to another session.
+- **Requirement DR-68 is closed from the official rulebook.** Rule **6-1-6** of the
+  [2026 Official Playing Rules](https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf)
+  permits a declared onside kick **at any time during the game**, with mandatory notification to
+  the Referee (so no surprise kick); 6-1-5 sets the 50-yard touchback spot; 6-1-3 changed the
+  setup-zone alignment. Every value is pattern-extracted from the retained capture, so a wording
+  change fails the build. The *frequency* of declared kicks stays blank: no official
+  play-by-play capture is held, and none is estimated.
+
+| Page | What it answers |
+|---|---|
+| [`nfl-integration-c815/site/index.html`](nfl-integration-c815/site/index.html) | Overview and how to read the desk |
+| [`week10-completion.html`](nfl-integration-c815/site/week10-completion.html) | The three-way proof that the feed is one game behind |
+| [`requirements.html`](nfl-integration-c815/site/requirements.html) | All 70 requirement rows: published claim beside an independent artefact check |
+| [`rules-2026.html`](nfl-integration-c815/site/rules-2026.html) | The 2026 kickoff/onside regime, verbatim, plus the bias register |
+| [`suggestions.html`](nfl-integration-c815/site/suggestions.html) | 5 ranked changes, each with an acceptance test |
+| [`flagged.html`](nfl-integration-c815/site/flagged.html) | 4 irregularities, non-blocking |
+| [`sources.html`](nfl-integration-c815/site/sources.html) | Every official URL read, with the capture SHA-256 |
+
+```sh
+python nfl-integration-c815/build.py            # regenerate the desk
+python nfl-integration-c815/build.py --check    # byte-identical reproduction
+python -m unittest discover -s nfl-integration-c815/tests   # 19 tests
+```
+
 ## New: Week 11 decision desk — Week 10 closure, availability joins and the snap-count verdict (2026-11-18, session arena/a10fed14-own7)
 
 Live desk: [Week 11 decision desk](https://sassnarep3-star.github.io/Own7/nfl-week11-4c7d/site/index.html) ·
