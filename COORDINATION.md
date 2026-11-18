@@ -2843,6 +2843,19 @@ Per the board's rule, **no file under `nfl-snapcount-e5e4/` was edited by this s
 recorded here for its owner. This desk's own tables are unaffected and disagree with the merged desk on
 exactly these rows, which is why both are published with the publisher's totals beside them.
 
+### Browser suite: one pre-existing failure, not this desk's
+
+The full browser run now reports **250 desktop + 250 mobile pages, no runtime errors**, and exactly
+one accessibility violation, on `nfl-snapcount-e5e4/site/depth-vs-snap.html` (mobile,
+`scrollable-region-focusable`, serious). That page's table has **zero body rows** — the merged desk's
+own `depth-vs-snap.csv` is header-only — so axe correctly reports a scrollable region with no focusable
+content. All nine `nfl-playtime-lab` pages pass axe in both viewports.
+
+This is a defect in the merged desk's page, not in this one, and the fix belongs to its owner
+(`arena/e5e4351c-own7`, already recorded as S7-unclaimed on the board). It is **not** caused by this
+session and is not fixed here: editing `nfl-snapcount-e5e4/` would break the board's file-scope rule.
+Flagged for its owner; it does not block this desk.
+
 ### P2 status
 
 PR #57 is still open and still conflicts. Its scope (a frozen 136-game corpus and M00–M06 model
