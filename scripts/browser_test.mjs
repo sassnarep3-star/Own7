@@ -18,7 +18,7 @@ const out=join(root,'.artifacts');
 mkdirSync(out,{recursive:true});
 const report={status:'running',browser:null,desktop_pages:[],mobile_pages:[],accessibility_violations:[],runtime_errors:[],assertions:[]};
 const mime={'.html':'text/html','.css':'text/css','.js':'application/javascript','.svg':'image/svg+xml','.json':'application/json','.csv':'text/csv','.md':'text/plain'};
-const allowedFolders=new Set(['assets', 'css', 'data', 'docs', 'handoff', 'js', 'market-evidence', 'nfl', 'nfl-assurance-9580ac3f', 'nfl-availability-28ef', 'nfl-brief-77b1', 'nfl-competition', 'nfl-fresh-1118', 'nfl-reconcile-9ef12c81', 'nfl-gamebook-5213243e', 'nfl-integration-c815', 'nfl-ledger-aedccbe5', 'nfl-lifecycle-3f5c', 'nfl-market-desk', 'nfl-pricing', 'nfl-readiness-1467fdf7', 'nfl-readiness-e7ef', 'nfl-skill-cfdd', 'nfl-slate-03dcea07', 'nfl-snapcount-e5e4', 'nfl-week11-4c7d', 'nfl-week11-6c72a9fa', 'pages', 'rental', 'research', 'session-243828fc', 'verified']);
+const allowedFolders=new Set(['assets', 'css', 'data', 'docs', 'handoff', 'js', 'market-evidence', 'nfl', 'nfl-assurance-9580ac3f', 'nfl-availability-28ef', 'nfl-brief-77b1', 'nfl-competition', 'nfl-fresh-1118', 'nfl-gamebook-5213243e', 'nfl-integration-c815', 'nfl-ledger-aedccbe5', 'nfl-lifecycle-3f5c', 'nfl-market-desk', 'nfl-pricing', 'nfl-readiness-1467fdf7', 'nfl-readiness-e7ef', 'nfl-reconcile-9ef12c81', 'nfl-skill-cfdd', 'nfl-slate-03dcea07', 'nfl-snapcount-e5e4', 'nfl-w11-injuries-3e61', 'nfl-week11-4c7d', 'nfl-week11-6c72a9fa', 'pages', 'rental', 'research', 'session-243828fc', 'verified']);
 const publicRootFiles=new Set([...manifest.canonical_pages,...Object.keys(manifest.legacy_redirects),'README.md','COORDINATION.md']);
 const server=createServer((req,res)=>{
   try{

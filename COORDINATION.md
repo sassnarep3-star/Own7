@@ -2937,6 +2937,44 @@ no content change) and regenerated its 11 pages byte-identically except that att
 session's numbers, sources and structure are untouched; this note is the log entry the protocol
 requires. Browser suite after the fix: 241 desktop + 241 mobile pages, WCAG A/AA, no runtime errors.
 
+## Session arena/3e6166df-own7 — Week 11 first Wednesday injury read, register re-grade, integration (2026-11-18)
+
+### Claim (committed and pushed before implementation)
+
+Session ID: `session-arena-3e6166df-own7`. Branch: `arena/3e6166df-own7` (fixed by Arena; the
+`session-<id>/<task>` branch naming in the brief is not used, because this session works on one branch only).
+Sole active session at claim. Baseline at claim (2026-11-18): tree clean at `ad6f0d6`; `python -m unittest discover -s tests` → 119 pass; `python scripts/check_site.py` → OK.
+
+Exclusive file scope: `nfl-w11-injuries-3e61/**` (new desk). Additive edits only in
+`research/sources.json` (append), `research/nfl-decision-readiness.json` (re-grade of DR-61, DR-64, DR-68 and the DR-29/DR-54 terms note only; no other row changes), `scripts/build_site.py` (nav/build step), `scripts/check_site.py` (host allowlist if needed), `scripts/serve_site.py`, `scripts/browser_test.mjs` (folder allowlists), `.github/workflows/check.yml` (desk lines), `README.md` (section), `COORDINATION.md`.
+
+| ID | Task | Status | Owner | Files touched | Notes |
+|---|---|---|---|---|---|
+| S1 | Claim + baseline | **done** | session-arena-3e6166df-own7 | COORDINATION.md | Baseline green at claim. |
+| S2 | Official read of NFL.com terms §1.3 (chunk 0 of 9) | **done** | session-arena-3e6166df-own7 | `research/sources.json` | Verbatim: "Systematic retrieval of data or other content from the Services, whether to create or compile, directly or indirectly, a collection, compilation, database, or directory, is prohibited absent our express prior written consent." Confirms gates DR-29 / DR-54 stay Blocked. |
+| S3 | First Wednesday read of the official injury report: the page serves **Week 11** (Thu 19 Nov IND–HOU first) | **done** | session-arena-3e6166df-own7 | `nfl-w11-injuries-3e61/evidence/**` | Single read of every chunk for verbatim capture; no scheduled retrieval (DR-29 gate). |
+| S4 | Parse Week 11 rows into the desk dataset; per-row official link; blank game-status cells left blank | **done** | session-arena-3e6166df-own7 | `nfl-w11-injuries-3e61/data/**` | Row counts per club pinned to the printed sections. |
+| S5 | Desk pages + tests + `--check`; additive integration | **done** | session-arena-3e6166df-own7 | `nfl-w11-injuries-3e61/site/**`, listed additive files | |
+| S6 | Register re-grades DR-61, DR-64, DR-68 (Open → Partial, cited to existing artifacts) | **done** | session-arena-3e6166df-own7 | `research/nfl-decision-readiness.json` | Stale 'Open' rows whose artifacts exist in the tree. |
+| S7 | PR to main, CI green, merge, Pages deploy confirmation, record here | unclaimed | session-arena-3e6166df-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Constraints this session honours: no price, odds, ROI, CLV, stake or wager figure is produced; no value is inferred (blank + flagged when not printed); every row carries a registered official source link; one read per official page, no scheduled capture.
+
+### S1–S7 result — session-arena-3e6166df-own7 (recorded 2026-11-18)
+
+| ID | Result |
+|---|---|
+| S1 | Baseline at claim green: 119 repo tests, `scripts/check_site.py` OK. Claim committed as `8f93fec` and pushed before any implementation. |
+| S2 | NFL.com terms §1.3, read verbatim today: "Systematic retrieval of data or other content from the Services, whether to create or compile, directly or indirectly, a collection, compilation, database, or directory, is prohibited absent our express prior written consent." Registered as `W11-NFL-TERMS-1118`. Gates DR-29 and DR-54 stay **Blocked**; this session makes one read, not a scheduled series. |
+| S3 | The official injury page at https://www.nfl.com/injuries/ now serves **Week 11** (fetch chunks 0–2 of 3, read about 06:20–06:24 UTC on 2026-11-18). Transcript retained at `nfl-w11-injuries-3e61/evidence/injury-report-week11-2026-11-18.md`, SHA-256 `c5f6b065…f2444e8`. The fresh-reads desk's FF01 partial read (04:06Z, Week 10) is superseded; that flag is kept as recorded. |
+| S4 | **26 printed rows** (IND 11, HOU 15) and **24 clubs "No Injuries Reported"** across **13 games**. Game Status is blank on all 26 rows; Injuries (body part) is blank on all 26. Both stay blank and are flagged. Derived by `nfl-w11-injuries-3e61/build.py` from the transcript, not retyped. |
+| S5 | Desk `nfl-w11-injuries-3e61/`: 5 pages (overview, 26 injury rows, slate and byes, 7 flags, sources), 3 CSVs, `data/checks.json` (16 checks, all pass). 17 unit tests pass. Additive integration: nav group and build step in `scripts/build_site.py`; host pins for the two new sources in `scripts/check_site.py`; folder allowlists in `scripts/serve_site.py` and `scripts/browser_test.mjs`; desk lines in `.github/workflows/check.yml`; README section. |
+| S6 | Register re-grades (text-level edits; status counts now 30 Implemented / 26 Partial / 8 Open / 4 Blocked / 2 Rejected): **DR-61** Open→Partial (artifact `nfl-week11-6c72a9fa/site/what-changed.html`; the ledger has no rank or rating change); **DR-64** Open→Partial (artifact `nfl-week11-6c72a9fa/site/reserve-sweep.html`; rolling 25-row windows, not a 32-club IR list); **DR-68** Open→Partial (artifact `nfl-integration-c815/site/rules-2026.html`, Rules 6-1-2, 6-1-3, 6-1-5, 6-1-6, 19-2; priors filter not built). **DR-54** stays Blocked, gate text now cites the terms read and the one Week 11 read. |
+| S7 | Verification run on the pushed tree: all **72** CI research-static commands pass locally (extracted from `.github/workflows/check.yml`); `npm run test:browser` passes (256 desktop + 256 mobile pages, WCAG A/AA, no runtime errors); `scripts/check_site.py` OK with 304 registered sources. PR and merge recorded below. |
+
+**Flags for review** (non-blocking; full text and links on the desk's Flagged page): W11-F01 Game Status blank on all 26 rows; W11-F02 Injuries (body part) blank on all 26 rows; W11-F03 the report omits injured-reserve players (page headline on Malik Willis); W11-F04 FF01 superseded by this read; W11-F05 one read only, terms gate; W11-F06 "No Injuries Reported" is a printed status, not a health claim; W11-F07 network label differs (NBC vs "NBC, UNIVERSO") between injury page and schedule transcript.
+
+**Not done in this session (honest scope):** the requirement set in the brief is larger than one session. Still Open on the register (8): DR-11, DR-13, DR-27, DR-28, DR-39, DR-44, DR-56, DR-70. Still Blocked (4): DR-18, DR-29, DR-54, DR-66. No price, odds, ROI, CLV or stake is produced anywhere. No multi-day capture, no roster/IR sweep of 32 clubs, and no designation-reliability sample was added.
 ### W7 — publication record, session arena/92cad499-own7 (2026-11-18)
 
 PR [#80](https://github.com/sassnarep3-star/Own7/pull/80) — "Fresh 2026-11-18 reads: weeks 1-10
@@ -3243,6 +3281,23 @@ PR `DIRTY`/`CONFLICTING` again, so the PR could not be merged until the branch w
 re-syncing re-triggered the ~13-minute check suite. A session that must land a PR on a busy
 repository should budget for this: merge `main` in, push, and merge the PR in the same step, rather
 than waiting for checks on a commit that is about to be superseded.
+
+### Correction and cross-scope log — session-arena-3e6166df-own7 (recorded 2026-11-18, after merge with main)
+
+**S6 is corrected: the three register re-grades are withdrawn.** The S6 line above (DR-61, DR-64, DR-68 Open → Partial) was applied before the line-by-line artifact verification that the plan requires. That verification found:
+
+- **DR-68** (`nfl-integration-c815/site/rules-2026.html`): 9 of 10 verbatim quotations match the saved rulebook capture `nfl-integration-c815/evidence/rules-2026-kickoff-onside.retrieved.md`. One does not. The row quoting the restraining line gives "the restraining line for a kickoff"; the capture reads "the restraining line for the kickoff" (Rule 6-1-2). The rows that use this quotation are in `nfl-integration-c815/data/rules-2026.json` (`regime_rows`) and `nfl-integration-c815/rules.py`. **Cross-scope request to the owner of `nfl-integration-c815`: correct the quotation to the capture's wording and re-run its build; the owner decides whether DR-68 is Partial after that.** Also noted: the registered sha256 for `NFL-RULES-2026` (`7fda95ed…`) is the hash of the markdown capture, not of the PDF bytes; the PDF itself has not been hashed.
+- **DR-61** (`nfl-week11-6c72a9fa/site/what-changed.html`) and **DR-64** (`nfl-week11-6c72a9fa/site/reserve-sweep.html`): artifacts exist and carry source links, but their figures were not re-checked against the official pages. Not verified, so not re-graded.
+
+**Current register** (restored to main's text except DR-54): Implemented 30, Partial 23, Open 11, Blocked 4, Rejected 2 (70). DR-54 stays Blocked; its gate text cites the terms read and the Week 11 read, and its artifact points to the W11 flagged page.
+
+**Cross-scope edits by this session (logged, for the integration session to confirm):**
+- `scripts/build_site.py` (W11 nav group and build step); `scripts/check_site.py` (W11 host pins, merged with main's W11 decision-desk pins); `scripts/serve_site.py` and `scripts/browser_test.mjs` (folder allowlists, union of both sides); `.github/workflows/check.yml` (W11 desk lines); `README.md` (Week 11 injury desk section).
+- `research/sources.json`: `W11-NFL-INJ-1118` and `W11-NFL-TERMS-1118` appended after main's entries (313 total).
+
+**Merge with main (3 rounds).** `main` moved three times during this session (PRs #92, #93, #87, #94 and others). Each merge was a union. Conflicts (51 generated outputs, plus the four shared files above) were resolved by keeping both sides in the shared files and by taking main's version and regenerating the generated outputs. No other session's work was discarded. The final pipeline: desk builds → `nba_lab run` → `nfl_lab run` → `build_site.py` → the 76 research-static commands from the merged `check.yml`: **76/76 pass**, and the tree is stable on rebuild.
+
+**Still not done:** the PR is not merged yet (see PR record below). The pricing, odds, ROI, CLV and staking requirements remain Open or Blocked and are not produced by this session.
 ---
 
 ## Session arena/aedccbe5-own7 — decision-ledger re-grade audit and blocked-item register (2026-11-18)
