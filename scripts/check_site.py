@@ -83,6 +83,13 @@ SOURCE_HOSTS.update({'NFL-INJ-1117': 'www.nfl.com', 'NFL-SCHED-1117': 'www.nfl.c
 # NFL results & skill lab (session arena/196424c5-own7) — the official by-week schedule
 # pages read on 2026-11-14 to capture final scores. One host, one publisher.
 SOURCE_HOSTS.update({'X29-NFL-SCHEDULE': 'www.nfl.com'})
+# Playing-time desk (session arena/c3f9459b-own7): one registered artefact per fixture.
+SOURCE_HOSTS.update({'PT-NFL-GAMEBOOK-PDF': 'static.www.nfl.com',
+                     'PT-NFL-GAMECENTER': 'www.nfl.com'})
+SOURCE_HOSTS.update({f'PT-GB-{g}': 'static.www.nfl.com' for g in (
+    'g01-WAS-NYG','g02-PIT-CIN','g03-NE-DET','g04-KC-ATL','g05-HOU-CLE','g06-MIN-GB',
+    'g07-MIA-IND','g08-CAR-NO','g09-BUF-NYJ','g10-JAX-TEN','W10-11')})
+
 # NFL skill-separation desk (session arena/cfdd5580-own7). League and member-club hosts only;
 # each host is a page actually read for this desk, 2026-11-13/14.
 SOURCE_HOSTS.update({'CFDD-NFL-STANDINGS': 'www.nfl.com', 'CFDD-NFL-TERMS': 'www.nfl.com',

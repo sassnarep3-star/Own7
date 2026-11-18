@@ -203,7 +203,13 @@ def game_url(game_id: str) -> str:
 
 
 def source_ids_for(game_id: str) -> str:
-    return SID_GAMEBOOK
+    """Each fixture cites its own registered Game Book artefact.
+
+    The site checker requires a row's link to be the registered URL for the ID
+    the row names, so a single representative PDF is not enough: every fixture
+    is registered separately as PT-GB-<game_id>.
+    """
+    return f"PT-GB-{game_id}"
 
 
 # --------------------------------------------------------------------- pages
@@ -236,20 +242,29 @@ def page_index() -> list[str]:
         "and inactive lists.</p></div>"
         '<div class="table-card"><table><caption>Desk contents</caption>'
         '<thead><tr><th scope="col">Page</th><th scope="col">Question it answers</th>'
-        '<th scope="col">Measured from</th></tr></thead><tbody>'
-        "<tr><td><a href=\"playtime.html\">Playtime percentage</a></td>"
-        "<td>How many snaps did each player take, and what share of his unit was that?</td>"
-        "<td>Game Book Playtime Percentage, per unit</td></tr>"
-        "<tr><td><a href=\"depth.html\">Depth from snaps</a></td>"
-        "<td>Who is actually first, second, third and fourth string at each position group?</td>"
-        "<td>Snap counts, ranked inside each group</td></tr>"
-        "<tr><td><a href=\"starters.html\">Starter &amp; backup split</a></td>"
-        "<td>Which players held a starting job, and who replaced them?</td>"
-        "<td>Depth rank against the places the group fields</td></tr>"
-        "<tr><td><a href=\"reliability.html\">Appearance reliability</a></td>"
-        "<td>How reliably does a player appear at all, and how often does he lead his group?</td>"
-        "<td>Appearances per club game, with a Wilson interval</td></tr>"
-        "</tbody></table></div></div>",
+        '<th scope="col">Measured from</th><th scope="col">Official source</th>'
+        '</tr></thead><tbody>'
+        + "".join(
+            f'<tr data-source-ids="{esc(SID_GAMEBOOK)}">'
+            f'<td><a href="{esc(slug)}">{esc(label)}</a></td><td>{esc(question)}</td>'
+            f'<td>{esc(measured)}</td>'
+            f'<td class="refs"><a href="{esc(REGISTRY.get(SID_GAMEBOOK, ""))}" '
+            f'rel="noopener">Game Book</a></td></tr>'
+            for slug, label, question, measured in [
+                ("playtime.html", "Playtime percentage",
+                 "How many snaps did each player take, and what share of his unit was that?",
+                 "Game Book Playtime Percentage, per unit"),
+                ("depth.html", "Depth from snaps",
+                 "Who is actually first, second, third and fourth string at each position group?",
+                 "Snap counts, ranked inside each group"),
+                ("starters.html", "Starter & backup split",
+                 "Which players held a starting job, and who replaced them?",
+                 "Depth rank against the places the group fields"),
+                ("reliability.html", "Appearance reliability",
+                 "How reliably does a player appear at all, and how often does he lead his group?",
+                 "Appearances per club game, with a Wilson interval"),
+            ])
+        + "</tbody></table></div></div>",
         notice(
             "One week is one sample.",
             "Reliability here is computed over the Game Books captured so far. Intervals are wide "
@@ -283,16 +298,14 @@ def page_playtime() -> list[str]:
             unit_rows = sorted([r for r in mine if r["club"] == club],
                                key=lambda r: (("OFF", "DEF", "ST").index(r["unit"]),
                                               -int(r["snaps"] or 0), r["player"]))
-            header = (f'<tr class="club-head"><th scope="row" colspan="7">'
-                      f'{esc(club)} — {len(unit_rows)} player-unit rows</th></tr>')
-            body.append(header)
             for r in unit_rows:
                 status = r["pct_status"]
                 kind = {"verified": "good", "derived": "warn",
                         "published-share": "warn"}.get(status, "bad")
                 body.append(row(
                     source_ids_for(gid), game_url(gid),
-                    [f"<td>{esc(r['player'])}</td>", f"<td>{esc(r['position'])}</td>",
+                    [f"<td>{esc(club)}</td>",
+                     f"<td>{esc(r['player'])}</td>", f"<td>{esc(r['position'])}</td>",
                      f"<td>{esc({'OFF': 'Offense', 'DEF': 'Defense', 'ST': 'Special teams'}[r['unit']])}</td>",
                      cell(r["snaps"], num=True,
                           empty_reason="publisher printed a share without a snap count"),
@@ -300,7 +313,8 @@ def page_playtime() -> list[str]:
                      f"<td>{badge(status, kind)}</td>"]))
         parts.append(table(
             f"{game['header'].lstrip('# ')}",
-            ["Player", "Pos", "Unit", "Snaps", "Share %", "Unit total", "Share status"],
+            ["Club", "Player", "Pos", "Unit", "Snaps", "Share %", "Unit total",
+             "Share status"],
             body,
             note=f"{len(mine)} rows, source {gid}",
         ))
@@ -332,15 +346,15 @@ def page_depth() -> list[str]:
             continue
         body = []
         for club in sorted({r["club"] for r in mine}):
-            body.append(f'<tr class="club-head"><th scope="row" colspan="6">{esc(club)}</th></tr>')
             for r in sorted([x for x in mine if x["club"] == club],
                             key=lambda x: (x["group"], int(x["rank"]))):
                 body.append(row(source_ids_for(gid), game_url(gid), [
-                    f"<td>{esc(r['group'])}</td>", cell(r["rank"], num=True),
+                    f"<td>{esc(club)}</td>", f"<td>{esc(r['group'])}</td>", cell(r["rank"], num=True),
                     f"<td>{esc(r['slot'])}</td>", f"<td>{esc(r['player'])}</td>",
                     f"<td>{esc(r['position'])}</td>", cell(r["snaps"], num=True)]))
         parts.append(table(f"{game['header'].lstrip('# ')}",
-                           ["Group", "Rank", "Slot", "Player", "Pos", "Total snaps"],
+                           ["Club", "Group", "Rank", "Slot", "Player", "Pos",
+                            "Total snaps"],
                            body, note=f"{len(mine)} ranked players"))
     parts.append("</div>")
     parts.append(notice(
@@ -366,17 +380,17 @@ def page_starters() -> list[str]:
             continue
         body = []
         for club in sorted({r["club"] for r in mine}):
-            body.append(f'<tr class="club-head"><th scope="row" colspan="5">{esc(club)}</th></tr>')
             for r in sorted([x for x in mine if x["club"] == club],
                             key=lambda x: (("starter", "backup", "replacement").index(x["role"]),
                                            x["group"], int(x["rank"]))):
                 kind = {"starter": "good", "backup": "", "replacement": "warn"}[r["role"]]
                 body.append(row(source_ids_for(gid), game_url(gid), [
-                    f"<td>{badge(r['role'], kind)}</td>", f"<td>{esc(r['group'])}</td>",
+                    f"<td>{esc(club)}</td>", f"<td>{badge(r['role'], kind)}</td>",
+                    f"<td>{esc(r['group'])}</td>",
                     f"<td>{esc(r['player'])}</td>", f"<td>{esc(r['position'])}</td>",
                     cell(r["snaps"], num=True)]))
         parts.append(table(f"{game['header'].lstrip('# ')}",
-                           ["Role", "Group", "Player", "Pos", "Total snaps"], body,
+                           ["Club", "Role", "Group", "Player", "Pos", "Total snaps"], body,
                            note=f"{len(mine)} starter/backup/replacement rows"))
     parts.append("</div>")
     parts.append(notice(
@@ -475,17 +489,23 @@ def page_verification() -> list[str]:
         ("The build is deterministic and byte-identical on re-run", "pass"),
     ]
     body = []
+    url = REGISTRY.get(SID_GAMEBOOK, "")
     for label, state in checks:
         kind = {"pass": "good", "review": "warn"}.get(state, "bad")
-        body.append(f'<tr><td>{esc(label)}</td><td>{badge(state, kind)}</td>'
-                    f'<td class="num">{esc(sum(1 for f in FLAGS if f["reason"] in label))}</td></tr>')
+        checked = sum(1 for f in FLAGS if f["reason"] in label)
+        body.append(
+            f'<tr data-source-ids="{esc(SID_GAMEBOOK)}">'
+            f'<td>{esc(label)}</td><td>{badge(state, kind)}</td>'
+            f'<td class="num">{checked}</td>'
+            f'<td class="refs"><a href="{esc(url)}" rel="noopener">Game Book</a></td></tr>')
     parts = [
         '<div class="section"><div class="section-head"><h2>Mechanical checks</h2>'
         "<p>Re-run on every build. A check that cannot pass does not get quietly dropped: it "
         "names the rows that failed and those rows are withheld from the published tables.</p></div>",
         '<div class="table-card"><table><caption>Checks re-derived from the capture, not asserted '
         'in prose</caption><thead><tr><th scope="col">Check</th><th scope="col">State</th>'
-        '<th scope="col">Flagged rows</th></tr></thead><tbody>' + "".join(body)
+        '<th scope="col">Flagged rows</th><th scope="col">Official source</th>'
+        '</tr></thead><tbody>' + "".join(body)
         + "</tbody></table></div></div>",
         notice("Determinism is a checked property, not a claim.",
                f"{s.get('captures', 0)} captures produce "
@@ -499,7 +519,7 @@ def page_verification() -> list[str]:
 def page_flagged() -> list[str]:
     body = []
     for f in FLAGS:
-        body.append(f'<tr data-source-ids="{esc(SID_GAMEBOOK)}">'
+        body.append(f'<tr data-source-ids="{esc(source_ids_for(f.get("game_id", "")))}">'
                     f'<td>{esc(f.get("game_id", ""))}</td>'
                     f'<td>{esc(f.get("club", ""))}</td>'
                     f'<td>{esc(f.get("player", "") or "—")}</td>'
@@ -524,7 +544,7 @@ def page_flagged() -> list[str]:
 def page_sources() -> list[str]:
     body = []
     for game in GAMES:
-        body.append(f'<tr data-source-ids="{esc(SID_GAMEBOOK)}">'
+        body.append(f'<tr data-source-ids="{esc(source_ids_for(game["game_id"]))}">'
                     f'<td>{esc(game["game_id"])}</td>'
                     f'<td>{esc(game["file"])}</td>'
                     f'<td>{esc(game["header"].lstrip("# "))}</td>'
