@@ -175,9 +175,7 @@ CIN,K.Davis,DB,CB,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,22,22.0,0,8,14,https://s
 CIN,T.Slaton,DL,DT,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,21,21.0,0,21,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
 CIN,D.Jenkins,DL,DT,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,20,20.0,0,18,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
 CIN,T.Brooks,RB,HB,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,20,20.0,3,0,17,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
-CIN,J.Giles-Harris,LB,LB,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,19,19.0,0,0,19,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
 CIN,S.Stewart,DL,DE,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,19,19.0,0,19,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
-CIN,P.Jules,DB,S,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,18,18.0,0,0,18,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
 CIN,J.Kiser,LB,LB,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,16,16.0,0,0,16,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
 CIN,T.Davis,LB,LB,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,15,15.0,0,2,13,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
 CIN,C.Grandy,TE,TE,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,14,14.0,3,0,11,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
@@ -200,7 +198,6 @@ CLV,D.Watson,QB,QB,1,1,1,1.0,0.2065,1.0,1,1.0,0.2065,1.0,68,68.0,68,0,0,https://
 CLV,E.Jenkins,OL,C/G,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,68,68.0,68,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
 CLV,J.Pitre,DB,S,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,68,68.0,0,68,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
 CLV,D.Boston,WR,WR,1,1,1,1.0,0.2065,1.0,1,1.0,0.2065,1.0,65,65.0,58,0,7,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
-CLV,Q.Williams,LB,LB,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,62,62.0,0,62,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
 CLV,H.Fannin,TE,TE,1,1,1,1.0,0.2065,1.0,1,1.0,0.2065,1.0,59,59.0,59,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
 CLV,M.Harden,DB,CB,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,59,59.0,0,53,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
 CLV,K.Concepcion,WR,WR,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,54,54.0,54,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
@@ -821,7 +818,6 @@ NYJ,M.Moore,DB,DB,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,30,30.0,0,30,0,https://s
 NYJ,K.Sadiq,TE,TE,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,29,29.0,29,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
 NYJ,D.Parham,OL,OL,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,24,24.0,13,0,11,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
 NYJ,O.Cooper,WR,WR,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,24,24.0,1,0,23,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
-NYJ,I.Davis,RB,RB,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,23,23.0,0,0,23,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
 NYJ,M.McClain,WR,WR,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,19,19.0,1,0,18,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
 NYJ,T.Reeder,LB,LB,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,18,18.0,0,0,18,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
 NYJ,V.Payne,DB,S,1,1,1,1.0,0.2065,1.0,0,0.0,0.0,0.7935,18,18.0,0,0,18,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf

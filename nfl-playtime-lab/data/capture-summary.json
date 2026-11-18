@@ -1,7 +1,7 @@
 {
   "captures": 11,
   "clubs": 22,
-  "depth_rows": 1019,
+  "depth_rows": 1015,
   "derived_rows": 19,
   "flags": 27,
   "games": [
@@ -128,12 +128,12 @@
     }
   ],
   "generated_for": "2026 Week 10",
-  "mismatch_rows": 4,
-  "players": 1022,
-  "playtime_rows": 1556,
+  "mismatch_rows": 0,
+  "players": 1018,
+  "playtime_rows": 1552,
   "problems": [],
-  "reliability_rows": 1022,
-  "starter_rows": 1019,
+  "reliability_rows": 1018,
+  "starter_rows": 1015,
   "verified_rows": 1530,
   "withheld": 4
 }

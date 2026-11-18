@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verification · OWN7 NFL official playing-time desk</title>
+<meta name="description" content="The mechanical checks re-run on every build, and what happens to a row that fails one.">
+<link rel="stylesheet" href="style.css"></head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+<header class="page-head"><div class="eyebrow">OWN7 · NFL official playing-time desk (session c3f9459b)</div>
+<h1>Verification</h1>
+<p class="lede">The mechanical checks re-run on every build, and what happens to a row that fails one.</p>
+<nav class="pages" aria-label="Desk pages"><a href="index.html">Overview</a><a href="playtime.html">Playtime percentage</a><a href="depth.html">Depth from snaps</a><a href="starters.html">Starter &amp; backup split</a><a href="reliability.html">Appearance reliability</a><a href="coverage.html">Capture coverage</a><a href="verification.html" aria-current="page">Verification</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a></nav>
+</header>
+<div class="section"><div class="section-head"><h2>Mechanical checks</h2><p>Re-run on every build. A check that cannot pass does not get quietly dropped: it names the rows that failed and those rows are withheld from the published tables.</p></div><div class="table-card"><table><caption>Checks re-derived from the capture, not asserted in prose</caption><thead><tr><th scope="col">Check</th><th scope="col">State</th><th scope="col">Flagged rows</th></tr></thead><tbody><tr><td>Every playtime row decodes into the publisher&#x27;s six-cell grid</td><td><span class="badge good">pass</span></td><td class="num">0</td></tr><tr><td>Every populated unit cell names a unit volume that fits its denominator</td><td><span class="badge good">pass</span></td><td class="num">0</td></tr><tr><td>Every printed percentage re-derives from the published unit total</td><td><span class="badge warn">review</span></td><td class="num">0</td></tr><tr><td>No percentage outside 0–100 is published</td><td><span class="badge good">pass</span></td><td class="num">0</td></tr><tr><td>Every row carries a registered official source link</td><td><span class="badge good">pass</span></td><td class="num">0</td></tr><tr><td>No value is imputed, interpolated or back-solved</td><td><span class="badge good">pass</span></td><td class="num">0</td></tr><tr><td>The build is deterministic and byte-identical on re-run</td><td><span class="badge good">pass</span></td><td class="num">0</td></tr></tbody></table></div></div><div class="notice info"><div><strong>Determinism is a checked property, not a claim.</strong><p>11 captures produce 1556 playtime rows, 1019 depth rows and 27 flags on every run; build_site.py --check rebuilds the site and demands byte-identical output.</p></div></div>
+<footer>Every snap count and every share on this desk is transcribed from the official NFL Game Book
+PDF for that fixture, whose "Playtime Percentage" table the league itself labels
+<em>Percent of playtime per player on offense, defense and special teams (Unofficial)</em>.
+Where the official artefact does not publish a value the cell is blank and the row appears on the
+flagged page — nothing is inferred, imputed or back-solved. Not affiliated with or endorsed by the
+NFL; not a betting service. Built deterministically by nfl-playtime-lab/build_site.py.</footer>
+</main></body></html>

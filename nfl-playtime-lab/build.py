@@ -124,6 +124,10 @@ def decode_cells(tokens):
             nxt = dict(taken)
             nxt[unit] = None
             walk(i + 1, rest, nxt)
+            # Some captures pad a special-teams-only row with one spare empty
+            # token; try swallowing it so the same grid still decodes.
+            if i + 1 < len(toks) and toks[i + 1] == "":
+                walk(i + 2, rest, nxt)
             return
         if i >= len(toks):
             return
@@ -165,7 +169,11 @@ def decode_cells(tokens):
             walk(i + 1, rest, nxt)
 
     walk(0, list(UNITS), {})
-    return found
+    unique = []
+    for option in found:
+        if option not in unique:
+            unique.append(option)
+    return unique
 
 
 def pct_of(snaps, denominator):
@@ -347,12 +355,17 @@ def read_all():
                 elif derived is not None and abs(derived - printed) <= PCT_TOLERANCE:
                     status = "verified"
                 else:
-                    status = "mismatch"
+                    # The publisher's own two numbers disagree.  Both are
+                    # official, so neither is "wrong" and neither can be
+                    # published as a verified share: the cell is withheld and
+                    # both figures are recorded on the flag.
                     flags.append({**base, "unit": unit,
                                   "reason": "pct-mismatch",
-                                  "detail": f"printed {printed}%, "
-                                            f"denominator implies {derived}%",
+                                  "detail": f"printed {printed}%, denominator "
+                                            f"implies {derived}%; both official "
+                                            "figures recorded, cell withheld",
                                   "tokens": reading["tokens"]})
+                    continue
                 rows.append({**base, "unit": unit, "snaps": snaps,
                              "pct": printed if printed is not None else derived,
                              "pct_status": status,

@@ -17,7 +17,7 @@
   },
   {
     "club": "CIN",
-    "detail": "printed 67%, denominator implies 70%",
+    "detail": "printed 67%, denominator implies 70%; both official figures recorded, cell withheld",
     "game_id": "g02-PIT-CIN",
     "player": "J.Giles-Harris",
     "position": "LB",
@@ -33,7 +33,7 @@
   },
   {
     "club": "CIN",
-    "detail": "printed 59%, denominator implies 67%",
+    "detail": "printed 59%, denominator implies 67%; both official figures recorded, cell withheld",
     "game_id": "g02-PIT-CIN",
     "player": "P.Jules",
     "position": "S",
@@ -367,7 +367,7 @@
   },
   {
     "club": "CLV",
-    "detail": "printed 93%, denominator implies 91%",
+    "detail": "printed 93%, denominator implies 91%; both official figures recorded, cell withheld",
     "game_id": "g05-HOU-CLE",
     "player": "Q.Williams",
     "position": "LB",
@@ -416,7 +416,7 @@
   },
   {
     "club": "NYJ",
-    "detail": "printed 67%, denominator implies 85%",
+    "detail": "printed 67%, denominator implies 85%; both official figures recorded, cell withheld",
     "game_id": "g09-BUF-NYJ",
     "player": "I.Davis",
     "position": "RB",
