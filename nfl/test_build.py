@@ -8,7 +8,10 @@ from pathlib import Path
 import build
 
 ROOT = Path(__file__).resolve().parent
-OFFICIAL_HOSTS = {"www.nfl.com", "support.nfl.com"}
+# NFL-owned hosts only. media.nfl.com is the League's own distribution host and is where the
+# 2026 Official Playing Rules PDF is published (source NFL-RULES-2026, registered by the
+# integration-audit desk, session arena/c815bdd2-own7).
+OFFICIAL_HOSTS = {"www.nfl.com", "support.nfl.com", "media.nfl.com"}
 
 
 class RowParser(HTMLParser):
