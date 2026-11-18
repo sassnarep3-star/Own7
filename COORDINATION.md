@@ -2975,3 +2975,30 @@ assurance 50, competition 59, market 55, brief 11); every desk `--check` OK;
 `scripts/check_site.py` passed (47 canonical, 20 redirects, **214 auxiliary, 281 recursive pages,
 15,300 tbody rows, 293 registered sources, 0 errors**); browser suite **261 desktop + 261 mobile
 pages, WCAG A/AA, 10 interaction groups, no runtime errors**.
+
+### CI incident — absolute paths in the Week 11 desk (PR #87, fixed)
+
+The first CI run of PR #87 failed at step 8 ("Reproduce research, sources, blanks, all links and
+generated pages") with:
+
+```
+ - nfl-week11-4c7d/site/snap-counts.html: stale; deterministic rebuild changed file
+```
+
+**Cause (found by reproducing it, not guessed):** `nfl-week11-4c7d/build.py` published **absolute
+filesystem paths** into two data artefacts and one page — `…/inactive-coverage.csv` (`source_url`
+column), `…/source-probes.csv` (SP-04 `url`) and `site/snap-counts.html` (the SP-04 row printed
+`/home/user/Own7/nfl-gamebook-5213243e/raw/g01..g13`). That is machine-dependent output: it happens
+to match on the machine that generated it, so the desk's own `--check` passed locally, but GitHub's
+runner checks the repository out at `/home/runner/work/…` and the committed artefacts no longer
+reproduce. Confirmed by cloning the branch to a second path and rebuilding there.
+
+**Fix:** a repository-relative constant, `OTHER_GAMEBOOK_REL = "nfl-gamebook-5213243e"`, is now
+what gets published; the absolute `OTHER_GAMEBOOK` is used only to *read* another desk's files.
+Verified by cloning the branch to a fresh path, rebuilding the desk and the whole site, and running
+`scripts/check_site.py` there: passed, working tree clean.
+
+**Lesson for any future desk:** never commit a value that contains the checkout path, a hostname,
+an environment-specific temp directory or a wall-clock timestamp. The CI step
+"Committed artifacts must already be current" (`git diff --exit-code`) is the guard that catches it,
+and it only catches it on the runner — so verify a desk by cloning it somewhere else at least once.
