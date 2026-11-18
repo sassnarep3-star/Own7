@@ -2356,6 +2356,30 @@
   "checked_on": "2026-11-18"
  },
  {
+  "id": "PT-GB-W10-12",
+  "publisher": "National Football League",
+  "title": "Official NFL Game Book (PDF) - San Francisco 49ers vs Dallas Cowboys 11/15/2026 at AT&T Stadium",
+  "url": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf",
+  "kind": "gamebook",
+  "authority": "Official league game record published by NFL.com",
+  "scope": "The 'Playtime Percentage' section of this fixture's Game Book: per player, the snaps and percentage of playtime on offense, on defense and on special teams, plus the unit total the league prints beside the table. Every row on the playing-time desk citing this artefact links this exact PDF.",
+  "status": "Content checked",
+  "access": "Arena fetch_page rendered PDF text; not a direct HTTP-status attestation",
+  "checked_on": "2026-11-18"
+ },
+ {
+  "id": "PT-GB-W10-13",
+  "publisher": "National Football League",
+  "title": "Official NFL Game Book (PDF) - Los Angeles Rams vs Arizona Cardinals 11/15/2026 at State Farm Stadium",
+  "url": "https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf",
+  "kind": "gamebook",
+  "authority": "Official league game record published by NFL.com",
+  "scope": "The 'Playtime Percentage' section of this fixture's Game Book: per player, the snaps and percentage of playtime on offense, on defense and on special teams, plus the unit total the league prints beside the table. Every row on the playing-time desk citing this artefact links this exact PDF.",
+  "status": "Content checked",
+  "access": "Arena fetch_page rendered PDF text; not a direct HTTP-status attestation",
+  "checked_on": "2026-11-18"
+ },
+ {
   "id": "PT-GB-g01-WAS-NYG",
   "publisher": "National Football League",
   "title": "Official NFL Game Book (PDF) - Washington Commanders vs New York Giants 11/12/2026 at MetLife Stadium",

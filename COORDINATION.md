@@ -2803,16 +2803,19 @@ beside each table against the shares on the rows, and only corrects it when most
 so one mangled cell cannot drag a denominator. All **66 club-unit totals across 11 captures confirm**.
 Every printed percentage must equal `round(snaps*100/total)` within 1 point or the cell is withheld.
 
-**Published artefacts:** `nfl-playtime-lab/` — 11 captures (10 clubs of the 13 played fixtures plus
-SEA–LV), 1,552 player-unit rows (1,530 verified, 19 re-derived, 3 published-share), 1,022 players,
-1,015 depth rows, 9 deterministic pages, 23 unit tests, 27 flags. `build_site.py --check` byte-identical.
+**Complete coverage: all 13 played Week 10 Game Books.** `nfl-playtime-lab/` — 13 captures, 26 club
+blocks, **78 unit totals, all 78 confirmed**, 1,847 player-unit rows (1,825 verified from the printed
+share, 19 re-derived arithmetically where the capture lost the printed share, 3 published-share with
+no snap count), 1,206 players, 1,203 depth rows, 9 deterministic pages, 23 unit tests, 27 flags.
+`build_site.py --check` byte-identical. W10-14 (LAC–BAL) was played after the Week 10 Game Books were
+published, so it has no playtime table: it is absent, not estimated.
 
 **Integration (P7) complete, additively, in a rebase over 9 upstream merges:** nav group, build step
 and manifest line in `scripts/build_site.py`; per-fixture `PT-GB-<game_id>` hosts in
 `scripts/check_site.py`; folder allowlists in `serve_site.py` and `browser_test.mjs`; two CI lines.
 `research/sources.json` resolved as a union (298 sources). Full battery green:
-`check_site.py` → **277 pages, 18,964 rows, 0 errors**; desk tests 23 OK; root tests 119 OK;
-browser suite **232 desktop + 232 mobile, WCAG A/AA, no runtime errors**.
+`check_site.py` → **277 pages, 19,687 rows, 299 registered sources, 0 errors**; desk tests 23 OK;
+root tests 119 OK; browser suite **232 desktop + 232 mobile, WCAG A/AA, no runtime errors**.
 
 ### Cross-desk finding: `nfl-snapcount-e5e4` (session arena/e5e4351c-own7) — reported, not edited
 
@@ -2825,7 +2828,7 @@ grid. Checked here against the publisher's own published unit totals, not agains
 | Rows whose `def_pct` cannot be re-derived from their `def_snaps` over the printed DEF total | **64** |
 | Rows that carry an `off_*` and a `def_*` pair but no `st_*` — i.e. lost a real ST entry into `def` | **291** |
 | Rows claiming defensive snaps | 1,002 |
-| Actual defensive unit rows in the 11 captures re-transcribed here | 416 |
+| Actual defensive unit rows in the 13 captures re-transcribed here | 517 |
 
 Worked example, WAS–NYG: the PDF prints `B.Coleman | T/G | 69 100% | (empty) | 4 | 15%`. The merged
 desk stores `off 69/100, def 4/15, st empty`. The 4/15 is **special teams**; Coleman played no defense.

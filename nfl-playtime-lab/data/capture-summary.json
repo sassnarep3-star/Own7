@@ -1,7 +1,7 @@
 {
-  "captures": 11,
-  "clubs": 22,
-  "depth_rows": 1015,
+  "captures": 13,
+  "clubs": 26,
+  "depth_rows": 1203,
   "derived_rows": 19,
   "flags": 27,
   "games": [
@@ -125,15 +125,37 @@
       "gamecenter": "https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10",
       "header": "### Seattle Seahawks vs Las Vegas Raiders 11/15/2026 at Allegiant Stadium",
       "source": "https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "DAL",
+        "SF"
+      ],
+      "file": "g12-SF-DAL.txt",
+      "game_id": "W10-12",
+      "gamecenter": "https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10",
+      "header": "### San Francisco 49ers vs Dallas Cowboys 11/15/2026 at AT&T Stadium",
+      "source": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf"
+    },
+    {
+      "clubs": [
+        "AZ",
+        "LAR"
+      ],
+      "file": "g13-LAR-AZ.txt",
+      "game_id": "W10-13",
+      "gamecenter": "https://www.nfl.com/games/rams-at-cardinals-2026-reg-10",
+      "header": "### Los Angeles Rams vs Arizona Cardinals 11/15/2026 at State Farm Stadium",
+      "source": "https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf"
     }
   ],
   "generated_for": "2026 Week 10",
   "mismatch_rows": 0,
-  "players": 1018,
-  "playtime_rows": 1552,
+  "players": 1206,
+  "playtime_rows": 1847,
   "problems": [],
-  "reliability_rows": 1018,
-  "starter_rows": 1015,
-  "verified_rows": 1530,
+  "reliability_rows": 1206,
+  "starter_rows": 1203,
+  "verified_rows": 1825,
   "withheld": 4
 }
