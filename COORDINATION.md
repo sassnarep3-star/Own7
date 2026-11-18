@@ -2939,3 +2939,18 @@ Merge-series notes for the record (all resolved as unions; nothing discarded):
 All seven board tasks (W1-W7) are done. Follow-up F1 (complete 8-chunk injury-hub capture for
 the 2026-11-18 delta) remains open for the next session; FF02/FF03/FF04 are explained and
 non-blocking.
+
+## Session arena/600119f6-own7 — NFL request audit and readiness review (2026-11-18)
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| R1 | Re-run integrated NFL/site verification, audit published readiness and suggestions, record gaps without changing other desks' data | done | session-arena-600119f6-own7 | `docs/nfl-request-audit-2026-11-18.md`, this coordination record | Official reads checked 2026-11-18 06:35 UTC: NFL standings, NFL Week 11 injury report, NFL.com terms §1.3; links are in the report. `npm run check` passed (119 unit tests + recursive audit, 280 pages, 15,332 table rows, 302 registered sources, 0 errors); `npm ci` had 0 reported vulnerabilities; browser suite passed 256 desktop + 256 mobile pages, WCAG A/AA, 10 interaction groups, no runtime errors. | No source values or other desks' data changed. Flag: official live injury report now renders Week 11, superseding old statements that the current page was Week 10; historical Week 10 captures remain dated evidence. Frozen 136/149/150 results files and the 137-row results-feed are distinct vintages/subcorpora, not interchangeable. Rights/price/availability gaps remain open. |
+
+### R1 completion record
+
+- **Official sources checked:** [NFL standings](https://www.nfl.com/standings/), [NFL Week 11 injury report](https://www.nfl.com/injuries/league/2026/reg11), [NFL.com Terms](https://www.nfl.com/legal/terms/) (§1.3), [Week 10 schedule](https://www.nfl.com/schedules/2026/by-week/week-10). Read time 2026-11-18 06:35 UTC via Arena page reader.
+- **Audit:** `docs/nfl-request-audit-2026-11-18.md` separates implemented artifacts from actual decision readiness, records the old-vs-new report state, lists unresolved questions and prioritized suggestions, and does not claim legal clearance, profitability, or complete historical verification.
+- **Verification:** `npm run check` passed; `npm ci` completed with no vulnerabilities reported; `npm run test:browser` passed 256 desktop + 256 mobile pages with WCAG A/AA and no runtime errors. The recursive checker explicitly does not establish external factual truth, usage rights, or profitability.
+- **Irregularities:** current NFL live report is Week 11; previously documented Week 10 state is historical. Results inputs contain distinct dated sizes (136, 149, 150; separate 137-row competition feed) and must not be blended without an explicitly registered corpus. No scheduled snapshotting was added because NFL terms §1.3 requires express prior written consent for systematic retrieval. No official/rights-cleared opening/closing odds feed was identified; ROI/CLV/rewards remain unavailable.
