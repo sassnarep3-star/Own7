@@ -274,6 +274,8 @@ SOURCE_HOSTS.update({
     'C672-REPO-E7EF-W11': 'github.com',
 })
 
+# Week 11 injury desk (session arena/3e6166df-own7): official NFL.com hosts only.
+SOURCE_HOSTS.update({'W11-NFL-INJ-1118': 'www.nfl.com', 'W11-NFL-TERMS-1118': 'www.nfl.com'})
 # Week-11 decision desk (session arena/a10fed14-own7). Official NFL hosts only; the ninth entry
 # reuses REPO, which is already registered.
 SOURCE_HOSTS.update({

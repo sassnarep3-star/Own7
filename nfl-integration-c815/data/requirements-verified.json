@@ -884,13 +884,14 @@
       "requirement": "Snapshot the nfl.com injury report every Wed, Thu and Fri and keep a dated history",
       "category": "Availability & injuries",
       "published_status": "Blocked",
-      "gate": "Same terms gate as DR-29 (systematic retrieval); day-level history exists only for captured weeks.",
+      "gate": "Same terms gate as DR-29: NFL.com section 1.3 (read verbatim on 2026-11-18) prohibits systematic retrieval to compile a collection without express prior written consent. One first-Wednesday read exists (Week 11, 2026-11-18, nfl-w11-injuries-3e61); no Wednesday, Thursday or Friday series is run.",
       "clears_when": "Permitted capture schedule agreed in writing; history then accrues Wed/Thu/Fri with retained hashes.",
-      "artifact": "nfl-availability-28ef/site/flagged.html",
+      "artifact": "nfl-w11-injuries-3e61/site/flagged.html",
       "artifact_resolves": true,
       "artifacts_missing": [],
       "source_ids": [
-        "NFL-TERMS"
+        "NFL-TERMS",
+        "W11-NFL-TERMS-1118"
       ],
       "overlap": [],
       "reviewer_action": "open the artefact and confirm the claim"
