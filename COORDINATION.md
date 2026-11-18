@@ -3313,3 +3313,40 @@ in this desk and logged below as a request to the integration owner.
 - Auto-merged without conflict: `scripts/build_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `README.md`. Verified after the merge: the desk block, nav group, manifest entries and allowlist token are present once each.
 - Generated outputs (root pages, `research/site-manifest.json`) regenerated with `python scripts/build_site.py` (run twice; second run identical). `python scripts/check_site.py` → exit 0.
 - Re-checked after the merge: `research/nfl-decision-readiness.json` and `index.html` are unchanged between `ad6f0d6` and `origin/main` (same 70 rows, same statuses, same 16-row landing table), so the audit's findings still hold.
+## Session arena/9ef12c81-own7 — decision-readiness reconciliation against the 2026-11-18 tree (2026-11-18)
+
+### Claim (committed and pushed before implementation)
+
+Session ID: `session-arena-9ef12c81-own7`. Branch: `arena/9ef12c81-own7` (fixed Arena branch; the
+`session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this
+session). Base: `ad6f0d6` (= `origin/main`, PR #80). Open PRs of other sessions (#79, #82, #83, #87,
+#88) are not touched.
+
+Baseline at claim: `python -m unittest discover -s tests` → 119 pass; `python scripts/nfl_extract.py --check`
+→ OK (32/20/14, 0 flags); `python -m nfl_origination run --check` → OK; `python scripts/check_site.py` → OK.
+
+Why this task: the umbrella brief re-issues requirements that earlier desks already cover. Re-reading
+the decision-readiness register (`research/nfl-decision-readiness.json`, 70 rows, maintained by
+e15f05e0) against the artifacts committed on 2026-11-18 shows the register is one day stale in
+at least four rows (DR-31, DR-61, DR-64, DR-68). This session does **not** edit that shared register
+(shared outputs change only at integration); it publishes a reconciliation with evidence and logs the
+proposed changes for the integration owner.
+
+Exclusive file scope: `nfl-reconcile-9ef12c81/**` (new desk). Additive only in `scripts/build_site.py`
+(one desk build + manifest listing), `scripts/check_site.py` (host entries, if a new source is
+registered), `research/sources.json` (append, if any), `research/site-manifest.json` (regenerated),
+`.github/workflows/check.yml` (2 lines), `README.md` (section), `COORDINATION.md` (append only).
+No register row, value, page or test of another desk is overwritten.
+
+| ID | Task | Status | Owner | Files touched | Notes |
+|---|---|---|---|---|---|
+| R1 | Claim + baseline replay | **done** | session-arena-9ef12c81-own7 | COORDINATION.md | Baseline green at claim (see above). |
+| R2 | Re-read the rights clause DR-29/54/66 depend on (NFL.com Terms §1.3) from the official page | **done** | session-arena-9ef12c81-own7 | `nfl-reconcile-9ef12c81/evidence/` | Read 2026-11-18 via Arena fetch_page: https://www.nfl.com/legal/terms/ (updated May 16, 2024), §1.3 text quoted verbatim. |
+| R3 | Adjudicate the register rows the 2026-11-18 tree bears on; carry all others forward unchanged and say so | in progress | session-arena-9ef12c81-own7 | `nfl-reconcile-9ef12c81/adjudications.json` | Only rows with a checked artifact are re-graded; the rest are labelled "carried forward, not re-read". |
+| R4 | Desk pages: reconciliation index (70 rows), decisions and information needed, flagged irregularities | unclaimed | session-arena-9ef12c81-own7 | `nfl-reconcile-9ef12c81/site/**` | Every row carries its register source link and the evidence file link. |
+| R5 | Additive integration, CI line, tests, full battery | unclaimed | session-arena-9ef12c81-own7 | listed additive files | No existing page, value or test overwritten. |
+| R6 | PR to main, merge after green CI, Pages verify, record | unclaimed | session-arena-9ef12c81-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints: no price, ROI, CLV, stake, wager or monetary reward is produced; no value is
+inferred; blanks stay blank with a reason; every table row keeps a registered official source link;
+`git pull --rebase` before every push.
