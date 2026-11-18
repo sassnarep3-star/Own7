@@ -1,0 +1,1679 @@
+{
+  "blocked_checks": [
+    {
+      "evidence": "nfl-ledger-aedccbe5/evidence/nfl-terms-s1-3-2026-11-18.md",
+      "evidence_sha256": "50dcdfe3dcd470ab2d9ea36df65e2c5961327d317da15a8453bd72024ef0f0ce",
+      "id": "DR-29",
+      "quote": "…ny commercial purposes, is strictly prohibited without our express prior written consent. Systematic retrieval of data or other content from the Services, whether to create or compile, directly or indirectly, a collection, compilation, database, or directory, is prohibited absent our express…"
+    },
+    {
+      "evidence": "nfl-ledger-aedccbe5/evidence/nfl-terms-s1-3-2026-11-18.md",
+      "evidence_sha256": "50dcdfe3dcd470ab2d9ea36df65e2c5961327d317da15a8453bd72024ef0f0ce",
+      "id": "DR-54",
+      "quote": "…ny commercial purposes, is strictly prohibited without our express prior written consent. Systematic retrieval of data or other content from the Services, whether to create or compile, directly or indirectly, a collection, compilation, database, or directory, is prohibited absent our express…"
+    },
+    {
+      "evidence": "nfl-ledger-aedccbe5/evidence/nfl-terms-s1-3-2026-11-18.md",
+      "evidence_sha256": "50dcdfe3dcd470ab2d9ea36df65e2c5961327d317da15a8453bd72024ef0f0ce",
+      "id": "DR-66",
+      "quote": "…ny commercial purposes, is strictly prohibited without our express prior written consent. Systematic retrieval of data or other content from the Services, whether to create or compile, directly or indirectly, a collection, compilation, database, or directory, is prohibited absent our express…"
+    },
+    {
+      "evidence": "nfl-ledger-aedccbe5/evidence/nfl-odds-404-2026-11-18.md",
+      "evidence_sha256": "549645d1b85772df641b326cfd6abb017651e3bf3e88793917c08a1c8e4cb0c1",
+      "id": "DR-01",
+      "quote": "…rena fetch_page, chunk 0 of 1, status \"success\", read 2026-11-18. Verbatim page heading: \"404 - Flag on the Play.\" Verbatim body: \"The browser you are using is no longer supported on this site...\" (site boilerplate; no odds table, no market line). Use i…"
+    },
+    {
+      "evidence": "nfl-ledger-aedccbe5/evidence/nfl-odds-404-2026-11-18.md",
+      "evidence_sha256": "549645d1b85772df641b326cfd6abb017651e3bf3e88793917c08a1c8e4cb0c1",
+      "id": "DR-18",
+      "quote": "…rena fetch_page, chunk 0 of 1, status \"success\", read 2026-11-18. Verbatim page heading: \"404 - Flag on the Play.\" Verbatim body: \"The browser you are using is no longer supported on this site...\" (site boilerplate; no odds table, no market line). Use i…"
+    }
+  ],
+  "counts": {
+    "artifact_exists": 70,
+    "audit_status": {
+      "Blocked": 4,
+      "Implemented": 29,
+      "Open": 8,
+      "Partial": 27,
+      "Rejected": 2
+    },
+    "blocked_confirmed": 5,
+    "ledger_status": {
+      "Blocked": 4,
+      "Implemented": 30,
+      "Open": 11,
+      "Partial": 23,
+      "Rejected": 2
+    },
+    "official_link": 58,
+    "regrades": 4,
+    "repo_only": 12,
+    "rows": 70,
+    "sources_resolved": 70
+  },
+  "flags": [
+    {
+      "action": "Integration owner to regenerate the landing table from the register and re-grade DR-22 (see regrades.html).",
+      "evidence": "index.html",
+      "finding": "index.html contains the 'Decision readiness' table with 16 body rows whose identifiers are NR01 to NR16, not the DR-01 to DR-70 rows of research/nfl-decision-readiness.json. DR-22 is marked Implemented in the register, which asks for one row per requirement on the landing page.",
+      "id": "AF01",
+      "severity": "High",
+      "source_ids": [
+        "REPO"
+      ],
+      "title": "Landing-page decision table is not the 70-row register"
+    },
+    {
+      "action": "Results desk owner to retire or regenerate the 149-row file so one canonical file remains.",
+      "evidence": "nfl-results/data/games-2026-w1-10.csv; nfl-results/data/games-2026-w1-10-complete.csv; nfl-results-games.html",
+      "finding": "nfl-results/data/games-2026-w1-10.csv holds 149 rows; nfl-results/data/games-2026-w1-10-complete.csv holds 150 rows including LAC at BAL (2026-11-16, 23-20). nfl-results-games.html displays the LAC @ BAL 23–20 row, so the page is current; the 149-row file is not. Already logged as FG02 on the Week 10 desk.",
+      "id": "AF02",
+      "severity": "Medium",
+      "source_ids": [
+        "FRESH-NFL-W10-COMPLETE-1118"
+      ],
+      "title": "Two canonical results files disagree on the Week 10 final"
+    },
+    {
+      "action": "One dated read after publication, or a permitted schedule agreed in writing.",
+      "evidence": "evidence/nfl-terms-s1-3-2026-11-18.md",
+      "finding": "2026-11-18 is a Wednesday. The read on this desk was taken before the Wednesday injury-report publication. No Week 11 designation is used here. Recurring capture of the report is blocked by NFL.com Terms §1.3 (DR-29, DR-54).",
+      "id": "AF03",
+      "severity": "Medium",
+      "source_ids": [
+        "NFL-TERMS"
+      ],
+      "title": "Week 11 injury report not yet published at read time"
+    },
+    {
+      "action": "Consolidate to one registered entry in the integration pass; no row changed here.",
+      "evidence": "research/sources.json",
+      "finding": "NFL-TERMS, NFL-LEGAL-TERMS, NFL-TERMS-LEGAL, X243-NFL-TERMS, CP-NFL-TERMS, NFL-TERMS-1117 and CFDD-NFL-TERMS all describe NFL.com Terms and Conditions with different checked dates and URLs (support.nfl.com article or www.nfl.com/legal/terms). No contradiction in the quoted §1.3 text was found; the duplicates make a single citation harder to audit.",
+      "id": "AF04",
+      "severity": "Low",
+      "source_ids": [
+        "NFL-TERMS"
+      ],
+      "title": "Seven registry entries cite the same NFL terms page"
+    },
+    {
+      "action": "Owning desks to re-read their rows when they next publish.",
+      "evidence": "ledger.html",
+      "finding": "This desk confirms that each Implemented row's artifact exists and its sources resolve. It does not re-read the content of those artifacts against each clause; that review remains with the owning desks.",
+      "id": "AF05",
+      "severity": "Low",
+      "source_ids": [
+        "REPO"
+      ],
+      "title": "Thirty 'Implemented' rows were not re-graded here"
+    },
+    {
+      "action": "None required; shown as flagged on each row.",
+      "evidence": "ledger.html",
+      "finding": "12 rows (DR-08, DR-09, DR-17, DR-37, DR-39, DR-47, DR-50, DR-57, DR-63, DR-65, DR-67, DR-69) cite only REPO (github.com). They are process or design rows. No NFL source backs them, so their official link is shown as absent rather than inferred.",
+      "id": "AF06",
+      "severity": "Low",
+      "source_ids": [
+        "REPO"
+      ],
+      "title": "Repository-only sources on 12 rows"
+    }
+  ],
+  "landing_table_ids": [
+    "NR01",
+    "NR02",
+    "NR03",
+    "NR04",
+    "NR05",
+    "NR06",
+    "NR07",
+    "NR08",
+    "NR09",
+    "NR10",
+    "NR11",
+    "NR12",
+    "NR13",
+    "NR14",
+    "NR15",
+    "NR16"
+  ],
+  "landing_table_rows": 16,
+  "read_on": "2026-11-18",
+  "register": "research/nfl-decision-readiness.json",
+  "register_sha256": "3d7f7eb650d7078b842648dda39533dd2382bf610db4acadca618817e6c7663e",
+  "regrades": [
+    {
+      "evidence": "nfl-slate-03dcea07/site/weekly-diff.html",
+      "evidence_sha256": "21440e8c0e6f85e76c0e32440685386c3c9e71b87040721bcad361be11a50f63",
+      "gate": "Rating change is not rendered: the desk publishes no versioned model rating.",
+      "id": "DR-61",
+      "ledger_status": "Open",
+      "proposed": "Partial",
+      "quote": "…names rank and rating change. No model rating for these clubs is published by this desk (rating change needs a model whose inputs are versioned — the origination desks own that), so those two columns are honestly absent here rather than filled. Every table…",
+      "reason": "The page renders a diff between dated same-scope captures (standings and availability), so part of the clearing text is met. The brief's diff also names rank and rating change; the rating column is absent by the page's own statement.",
+      "requirement": "Publish a weekly 'what changed' diff instead of a static snapshot"
+    },
+    {
+      "evidence": "nfl-integration-c815/site/rules-2026.html",
+      "evidence_sha256": "f85d7ff39675bfb25ffe115c5dac720a0d180697a13325429267344d1c66ea87",
+      "gate": "The priors filter is documented as text; no model output is shown to apply it.",
+      "id": "DR-68",
+      "ledger_status": "Open",
+      "proposed": "Partial",
+      "quote": "…e setup zone; 6-1-5 the dead-ball spot after a touchback when the kickoff is from the 50; 6-1-6 permits the kicking team to declare an onside kick at any time during the game ; 19-2 official consultation on disqualifications. The 2026 regime, one rule element per row Element Value Verbatim from the rulebook Rule…",
+      "reason": "Declared-onside rule 6-1-6 is transcribed from the official 2026 Playing Rules and quoted. The ledger also requires the priors filter to be added; the page documents it, but no model run in the tree is shown to apply it.",
+      "requirement": "2026 kickoff and declared onside-kick regime priors filter"
+    },
+    {
+      "evidence": "nfl-week11-6c72a9fa/site/reserve-sweep.html",
+      "evidence_sha256": "530d3f8e7730cb7d9d0d97ab3cd44ca50f4875c53cc84b2926c556683a715e31",
+      "gate": "Reserve list is read only as visible windows of about 25 rows per month; it is not joined to the injury report for all 32 clubs.",
+      "id": "DR-64",
+      "ledger_status": "Open",
+      "proposed": "Partial",
+      "quote": "…visible November window (Dolphins, 11/10, Reserve/Injured), as in the 2026-11-17 capture. Lamar Jackson and Tyler Huntley are in neither the November nor the October visible window. The October window starts 10/24, so this cannot confirm or refute their earlier IR dates — the prior sessions' dated evidence remains the…",
+      "reason": "A league-level reserve sweep exists and shows Malik Willis on the 11/10 reserve list. Clearing needs a capture joined to the report for all 32 clubs, which the sweep does not give.",
+      "requirement": "Capture the reserve list so 'not listed' never means 'available' (Malik Willis case)"
+    },
+    {
+      "evidence": "index.html",
+      "evidence_sha256": "08d01e7e98f9cadff1f99a5f578fb12ade18fada4821455a520b16a285cd0fbe",
+      "gate": "The landing table counts 16 rows with NR identifiers; the register has 70 DR rows.",
+      "id": "DR-22",
+      "ledger_status": "Implemented",
+      "proposed": "Partial",
+      "quote": "Landing table: 16 body rows; identifiers found: NR01, NR02, NR03, NR04, NR05, NR06, NR07, NR08, NR09, NR10, NR11, NR12, NR13, NR14, NR15, NR16; register rows: 70.",
+      "reason": "The brief asks for one row per requirement on the landing page. The table published there is not the DR register, so the row count does not match the register.",
+      "requirement": "Put a decision-readiness table on the landing page: one row per requirement, with the gate that blocks it and the number that would clear it"
+    }
+  ],
+  "rows": [
+    {
+      "artifact": "nfl-lifecycle-3f5c/site/price-snapshots.html",
+      "artifact_exists": true,
+      "artifact_sha256": "db70c972e87966bb7c81e4e8fe7b14f2bec5876585c97912e8470ad09e744088",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Market & pricing",
+      "clears_when": "At least 1 originated market carries an operator OPEN and CLOSE row with a pre-kickoff capture timestamp and a registered source URL.",
+      "gate": "No official or rights-cleared operator price exists, so market cells stay blank; the store holds model open/close snapshots only.",
+      "id": "DR-01",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-ODDS-ABSENT",
+      "official_url": "https://www.nfl.com/odds/",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Add a price-snapshot store recording opening and closing numbers for every originated market",
+      "source_ids": [
+        "CP-NFL-ODDS-ABSENT",
+        "NFL-TERMS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-results-games.html",
+      "artifact_exists": true,
+      "artifact_sha256": "94a94fe901000a5ee1f48d74df37002990074ca4750188c824a9f84a2d45be37",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Results & backtesting",
+      "clears_when": "Published: 150 official finals captured and reconciled - 160/160 fields against each of the frozen pre-kickoff, 2026-11-17 and 2026-11-18 standings snapshots, plus both snapshot chain identities (fresh17 = frozen + frozen W10 deltas; fresh18 = fresh17 + completion deltas).",
+      "gate": "The feed extends only as fast as official finals publish. The Week 10 Monday final (LAC 23, BAL 20) was captured by the 2026-11-18 completion re-read of https://www.nfl.com/schedules/2026/by-week/week-10; Week 11 is published as scheduled fixtures only and contributes no results yet.",
+      "id": "DR-02",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-W10-SCHEDULE",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Add a verified results feed so backtests and ROI can be computed at all",
+      "source_ids": [
+        "CP-NFL-W10-SCHEDULE",
+        "E15-NFL-STANDINGS-1117",
+        "FRESH-NFL-STANDINGS-1118",
+        "FRESH-NFL-W10-COMPLETE-1118"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/origination.html",
+      "artifact_exists": true,
+      "artifact_sha256": "323b02f661dd82eaf4fe92a6c3f66222783a8ef179dae960ccd6c1dcf8cb07d0",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Origination & model",
+      "clears_when": "0 of 0 mismatches per build: 14/14 games reconciled in the lifecycle desk and 13 Week 10 games in the competition lab.",
+      "gate": "Stage reconciliation must hold on every build (side/total/ML stages must reproduce the single-shot numbers exactly).",
+      "id": "DR-03",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-STANDINGS",
+      "official_url": "https://www.nfl.com/standings/",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Originate the side first, then the total, then the moneyline",
+      "source_ids": [
+        "CP-NFL-STANDINGS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-lifecycle-3f5c/site/fair-market-diff.html",
+      "artifact_exists": true,
+      "artifact_sha256": "503dddb48587fe20ed7e5dfe29cbb6c057ec86b3c6cf92cba53e46eb3627f614",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Market & pricing",
+      "clears_when": "1 market row with a market_line value on a rights-cleared host; difference fills on the next rebuild.",
+      "gate": "Market line and difference are blank for all rows by rule: no operator publishes a price on any official page this project read; difference computes only when both inputs exist.",
+      "id": "DR-04",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-ODDS-ABSENT",
+      "official_url": "https://www.nfl.com/odds/",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Publish the model's fair line, the market line, and the difference as separate columns",
+      "source_ids": [
+        "CP-NFL-ODDS-ABSENT",
+        "NFL-TERMS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/leaderboard.html",
+      "artifact_exists": true,
+      "artifact_sha256": "9d3e54e476dc20ccfee3408f7de42e4a2f23b05ea2136119a5ae3d1d9a713ed0",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Leaderboard & competition",
+      "clears_when": "Staking table has at least 1 price-verified row; signal ranking is provably independent of staking fields.",
+      "gate": "The staking half stays empty until an executable price exists; ranking reads signal fields only (test-enforced).",
+      "id": "DR-05",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-ODDS-ABSENT",
+      "official_url": "https://www.nfl.com/odds/",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Separate 'signal' from 'staking' in the leaderboard so a lucky staking run cannot mask a bad signal",
+      "source_ids": [
+        "CP-NFL-ODDS-ABSENT"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-lifecycle-3f5c/site/replacement-depth.html",
+      "artifact_exists": true,
+      "artifact_sha256": "c9a410cffb5f71ef845d17fc1cad8756bb621234b917474d0e0ee8b4f76ade24",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Availability & injuries",
+      "clears_when": "326 injury rows joined to printed charts; 173 starter losses, 158 named replacements, depth-of-replacement per row (31/32 clubs).",
+      "gate": "Depth rank is only as good as the printed chart: HOU publishes an image, so 1 of 32 clubs has no chart evidence.",
+      "id": "DR-06",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-DEPTH-27",
+      "official_url": "https://www.atlantafalcons.com/team/depth-chart",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Track the depth of the replacement, not just the fact of a replacement",
+      "source_ids": [
+        "CP-NFL-DEPTH-27",
+        "CP-NFL-DEPTH-BYE4"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-lifecycle-3f5c/site/correlation-audit.html",
+      "artifact_exists": true,
+      "artifact_sha256": "29c33c6824c188012c51c86c374ac487e6641885f7ccee0c4729d8b4833c2b30",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Results & backtesting",
+      "clears_when": "22 audit rows pass with n >= 3 and sources; blanks carry stated reasons (0 failures, build aborts otherwise).",
+      "gate": "Every published coefficient must carry n and registered sources; 2 of 24 candidate values are left blank rather than estimated.",
+      "id": "DR-07",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-STANDINGS",
+      "official_url": "https://www.nfl.com/standings/",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Compute correlations only from officially sourced numbers and publish n with each value",
+      "source_ids": [
+        "CP-NFL-STANDINGS",
+        "CP-NFL-RESULTS-W1-9"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/demotion.html",
+      "artifact_exists": true,
+      "artifact_sha256": "2b24604df789b54b31c0943de8130e7bbd66a7f115826dca532cba56d04f8333",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Leaderboard & competition",
+      "clears_when": "10 published triggers with today's reading; a strategy reaching live tier activates monitoring (D1-D5 / DG-1).",
+      "gate": "Nothing is live, so the gate is armed and idle; triggers are pre-registered with fixed thresholds.",
+      "id": "DR-08",
+      "ledger_status": "Implemented",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Define a demotion gate that sends a live strategy back to paper",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "validation.html",
+      "artifact_exists": true,
+      "artifact_sha256": "d6805567d1c99547b4f51f84a11a67c2d4f9e0db05a28e10cb0d5a0c98065190",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Leaderboard & competition",
+      "clears_when": "Leaderboard shows only forward-graded rows; backtest artifacts live on separate pages (0 qualified strategies today).",
+      "gate": "Requires the freeze-before-results workflow to be followed for every new strategy (commit hash is the registration).",
+      "id": "DR-09",
+      "ledger_status": "Implemented",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Pre-register every strategy; forbid backtest numbers from ever appearing on the leaderboard",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/starters.html",
+      "artifact_exists": true,
+      "artifact_sha256": "edcdd1e78fa618414d0de5d3cdf2264f8369df446e7b95b7b27022f124cc45ea",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "Expected starters (official printed charts) joined to actual starters (official Game Book lineups) for a full slate; multi-week history after that.",
+      "gate": "Actual starters now exist for 13 Week 10 games from official Game Books (550 rows); the expected-starter join is not computable because per-game club depth charts were captured for 0 of the 26 playing clubs by the Game Book desk.",
+      "id": "DR-10",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Build the availability graph as a first-class dataset (who was expected to start, who actually did)",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-availability-28ef/site/depth.html",
+      "artifact_exists": true,
+      "artifact_sha256": "823a4bfa2147f05bfd0096d048540c2f157d7131660adfd7b1d27cbbf3d2856b",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Open",
+      "category": "Availability & injuries",
+      "clears_when": "An official snap-count publication verified club-by-club (32/32) and joined to the depth ledger.",
+      "gate": "No official snap-count source has been verified for all 32 clubs; jersey order is explicitly rejected as a depth source.",
+      "id": "DR-11",
+      "ledger_status": "Open",
+      "official_source_id": "CP-NFL-DEPTH-27",
+      "official_url": "https://www.atlantafalcons.com/team/depth-chart",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Do not model depth from jersey order; model it from playing time",
+      "source_ids": [
+        "CP-NFL-DEPTH-27"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/injuries.html",
+      "artifact_exists": true,
+      "artifact_sha256": "79d457f5d9c073f4729686d397eeb675a39360e6400049ac750b59ce2a057f95",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Availability & injuries",
+      "clears_when": "Every published availability feature is a change from the prior snapshot (surprise), with the level kept only as context.",
+      "gate": "Holds as a design rule: no point value is attached to an injury or replacement; deltas are published, levels are not used as features.",
+      "id": "DR-12",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Make the injury signal a surprise, never a level",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/flagged.html",
+      "artifact_exists": true,
+      "artifact_sha256": "97e1fe7673be9fd4b360cb2d2cd1881be4383a4d1f64ec8e411b1432c4c975c0",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Open",
+      "category": "Availability & injuries",
+      "clears_when": "32/32 clubs' roster + IR + transactions captured same-day and reconciled against the injury report.",
+      "gate": "Roster and reserve/IR lists are still not captured; the Game Book desk documents the named gaps (Malik Willis absent from the report; the Baltimore stale-depth claim not re-verifiable without an official reserve list).",
+      "id": "DR-13",
+      "ledger_status": "Open",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Run the 32-team roster/IR sweep before any team-level model is trusted",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/fixtures-venue.html",
+      "artifact_exists": true,
+      "artifact_sha256": "007972aeaeb53cbbab74df7a670070841872628accef963f35114c219485748e",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Origination & model",
+      "clears_when": "NWS hourly grids joined to the official roof/surface designations for one full slate without inference.",
+      "gate": "Roof, surface and game-day weather are now captured per Game Book for 13 Week 10 games; NWS hourly forecast grids are not joined and no other week is captured.",
+      "id": "DR-14",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-W10-SCHEDULE",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Add a fixture-context feature set built only from published schedule facts",
+      "source_ids": [
+        "CP-NFL-W10-SCHEDULE"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/boards.html",
+      "artifact_exists": true,
+      "artifact_sha256": "cfd5ac7bf4ff821c4f99a8e65a39af57a917c8b12eb2026464760726f49aafb5",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Origination & model",
+      "clears_when": "Every board row exposes its fair probability and input parameters (78 market rows in the competition lab).",
+      "gate": "Applies to originated markets; stored artifacts carry the model inputs (ratings, HFA, shrinkage) with each output.",
+      "id": "DR-15",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-STANDINGS",
+      "official_url": "https://www.nfl.com/standings/",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Store every model output as a probability plus its inputs, not just a pick",
+      "source_ids": [
+        "CP-NFL-STANDINGS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-results-skill.html",
+      "artifact_exists": true,
+      "artifact_sha256": "5ec8098a5b4ea229c3ff6348c8347bb7dd9deadda21fb23df6ee8560218ab4d3",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Results & backtesting",
+      "clears_when": "Published: exact binomial null, luck band at observed n, required sample size, permutation p and BH q per candidate.",
+      "gate": "Luck analysis needs a settled sample; currently 134 scored rows (weeks 2-10, 150-final completed corpus).",
+      "id": "DR-16",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-RESULTS-W1-9",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Compute and publish the 'removal of luck' panel on the site dashboard",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/suggestions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "57c6c07cf2dedd1deb9f52c377050f314345067d24deaa095d239a7837b48543",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Governance & publication",
+      "clears_when": "Every strategy row exposes falsifier AND reverser fields; at least the 12 ranked proposals carry them.",
+      "gate": "The decision-record ballot exists with two-sided fields, but 0 decisions are recorded (a person owns the ballot); not every legacy strategy row carries both fields yet.",
+      "id": "DR-17",
+      "ledger_status": "Partial",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Add a two-sided 'what would change our mind' field to every strategy entry",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-lifecycle-3f5c/site/flagged.html",
+      "artifact_exists": true,
+      "artifact_sha256": "a6c0d721fd6c4ab48e615d278209c79a33909429d9f65dec0e11f2380c91d6cb",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Blocked",
+      "category": "Market & pricing",
+      "clears_when": "A rights-cleared price source agreed in writing, then residuals publish on a fixed schedule from the next slate.",
+      "gate": "No official source publishes a price (nfl.com/odds returns 404); operator prices are third-party and rights-restricted (XS09/CF10).",
+      "id": "DR-18",
+      "ledger_status": "Blocked",
+      "official_source_id": "CP-NFL-ODDS-ABSENT",
+      "official_url": "https://www.nfl.com/odds/",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Price a line ourselves and publish the residual against the market, on a schedule, from day one",
+      "source_ids": [
+        "CP-NFL-ODDS-ABSENT",
+        "NFL-TERMS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/method.html",
+      "artifact_exists": true,
+      "artifact_sha256": "35caafb4bc765022a6b72e3530cc8d4271fc032e4fcbf93c151dccc0e8d84760",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Results & backtesting",
+      "clears_when": "134 rows scored leakage-free across weeks 2-10 with frozen parameters (completed 150-final feed, 2026-11-18).",
+      "gate": "The corpus is one season of official finals; walk-forward scoring starts at week 2 (week 1 has no prior).",
+      "id": "DR-19",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-W10-SCHEDULE",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Turn the game log into the pre-registered backtest corpus",
+      "source_ids": [
+        "CP-NFL-W10-SCHEDULE"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-suggestions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "56ab5033c75fa5872e3acda06ed31daf3a18da592220de931d26d57c4b5db74f",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Governance & publication",
+      "clears_when": "A written answer on record: consent obtained, a different source used, or the price work formally declined (SG-12).",
+      "gate": "Policy flags exist (XS09 source rights, CF10 third-party attribution) but a written owner decision is not recorded.",
+      "id": "DR-20",
+      "ledger_status": "Partial",
+      "official_source_id": "NFL-TERMS",
+      "official_url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Decide the price-data policy before any backtest is published",
+      "source_ids": [
+        "NFL-TERMS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/delta.html",
+      "artifact_exists": true,
+      "artifact_sha256": "ccc899731345478439afa5c51992f0f457205722715456764a81127b95a440ba",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "Each capture stores a fetch timestamp and the computed delta vs the prior capture (needs multi-capture storage).",
+      "gate": "Reads are dated and the Game Book desk publishes a delta vs the prior capture (300 rows); a clock-timestamped multi-day series still does not exist (terms gate on scheduled capture).",
+      "id": "DR-21",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Store every injury-hub read with its clock time and publish the delta, never the level",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "index.html",
+      "artifact_exists": true,
+      "artifact_sha256": "08d01e7e98f9cadff1f99a5f578fb12ade18fada4821455a520b16a285cd0fbe",
+      "audit_note": "The brief asks for one row per requirement on the landing page. The table published there is not the DR register, so the row count does not match the register.",
+      "audit_status": "Partial",
+      "category": "Governance & publication",
+      "clears_when": "This table (65 rows) renders on the landing page with per-row gate and clearing condition (2026-11-17).",
+      "gate": "Rows are re-graded only when their artifact changes; the table must stay in sync with the desks.",
+      "id": "DR-22",
+      "ledger_status": "Implemented",
+      "official_source_id": "E15-NFL-STANDINGS-1117",
+      "official_url": "https://www.nfl.com/standings/",
+      "quote": "Landing table: 16 body rows; identifiers found: NR01, NR02, NR03, NR04, NR05, NR06, NR07, NR08, NR09, NR10, NR11, NR12, NR13, NR14, NR15, NR16; register rows: 70.",
+      "repo_only": false,
+      "requirement": "Put a decision-readiness table on the landing page: one row per requirement, with the gate that blocks it and the number that would clear it",
+      "source_ids": [
+        "E15-NFL-STANDINGS-1117",
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/fixtures-venue.html",
+      "artifact_exists": true,
+      "artifact_sha256": "007972aeaeb53cbbab74df7a670070841872628accef963f35114c219485748e",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Governance & publication",
+      "clears_when": "Venue transcribed for every fixture of the week (14/14) and repeated for a second week.",
+      "gate": "13 of the 14 Week 10 fixtures have their venue, stadium, roof/surface, weather and attendance transcribed from the official Game Book PDF (raw capture + SHA-256 retained); the 14th (LAC at BAL) had no Game Book at the read.",
+      "id": "DR-23",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-W10-SCHEDULE",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Transcribe the venue of every fixture from the official game centre",
+      "source_ids": [
+        "CP-NFL-W10-SCHEDULE"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-results-games.html",
+      "artifact_exists": true,
+      "artifact_sha256": "94a94fe901000a5ee1f48d74df37002990074ca4750188c824a9f84a2d45be37",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Governance & publication",
+      "clears_when": "2026 TBD-games announcement (Weeks 16-18 windows, flexible-scheduling procedures link) recorded beside the Week 10 schedule evidence (2026-11-17).",
+      "gate": "The announcement text is fixed by the league; the page must be re-read when flexible-scheduling decisions post.",
+      "id": "DR-24",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-W10-SCHEDULE",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Publish the league's dated schedule announcement beside the live schedule page",
+      "source_ids": [
+        "CP-NFL-W10-SCHEDULE"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/starters.html",
+      "artifact_exists": true,
+      "artifact_sha256": "edcdd1e78fa618414d0de5d3cdf2264f8369df446e7b95b7b27022f124cc45ea",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "Game Book capture repeated for subsequent weeks (13-14 per week) and joined to the availability ledger.",
+      "gate": "Official Game Books are now the source for actual starters, Not Active lists, venue, roof/surface and weather for 13 of 14 Week 10 games; one week is captured and one fixture is pending.",
+      "id": "DR-25",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Use official NFL Game Books for actual starters and game-day status; do not infer depth rank or snaps",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-results-skill.html",
+      "artifact_exists": true,
+      "artifact_sha256": "5ec8098a5b4ea229c3ff6348c8347bb7dd9deadda21fb23df6ee8560218ab4d3",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Origination & model",
+      "clears_when": "Walk-forward ratings built from 150 game-level results (weeks 1-10 complete, 2026-11-18), prior state strictly before the target week.",
+      "gate": "Ratings refresh weekly as finals publish; they are opponent-aware within the captured season only.",
+      "id": "DR-26",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-RESULTS-W1-9",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Ingest game-level results to make the ratings opponent-aware",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/questions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "c30cfdfc527ab65fbfff8ed2bc66e5cc8d692bf479aa999f8e84cd941da5e5dd",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Open",
+      "category": "Availability & injuries",
+      "clears_when": "Same model run with and without personnel features on chronological holdouts; difference reported with uncertainty.",
+      "gate": "Requires verified availability features over multiple weeks; today's capture is one week deep.",
+      "id": "DR-27",
+      "ledger_status": "Open",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Add injury and personnel ablations instead of fixed penalties (with and without personnel features, uncertainty reported)",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/questions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "c30cfdfc527ab65fbfff8ed2bc66e5cc8d692bf479aa999f8e84cd941da5e5dd",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Open",
+      "category": "Availability & injuries",
+      "clears_when": "Identical models with and without verified availability features compared on holdout weeks.",
+      "gate": "Same gate as DR-27; the fixed-penalty approach is explicitly not used.",
+      "id": "DR-28",
+      "ledger_status": "Open",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Add injury/depth ablations, not fixed penalties, using chronological holdouts",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-availability-28ef/site/flagged.html",
+      "artifact_exists": true,
+      "artifact_sha256": "28b9a35c4de9ad7bb26b3e27ac32815c9bebf3adaa684ac1b6419b36f329931b",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Blocked",
+      "category": "Availability & injuries",
+      "clears_when": "Written consent obtained, or a permitted low-frequency capture design agreed; captures then land daily with hashes.",
+      "gate": "NFL.com terms section 1.3 prohibits systematic retrieval to compile a collection without written consent; scheduled scraping is off by policy.",
+      "id": "DR-29",
+      "ledger_status": "Blocked",
+      "official_source_id": "NFL-TERMS",
+      "official_url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Automate immutable multi-day availability snapshots (daily capture with retained hashes)",
+      "source_ids": [
+        "NFL-TERMS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-availability-28ef/site/sources.html",
+      "artifact_exists": true,
+      "artifact_sha256": "2c848097a7aa279a60f949f6e21647a49f6091ee838fd2e5e06b42b9f26e3e6f",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "Multiple dated captures per week retained with hashes (after DR-29's gate) or per-game inactive evidence joined.",
+      "gate": "Single dated captures with saved verbatim evidence exist; hashes and conflict flags exist per capture, not per day.",
+      "id": "DR-30",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Build immutable official availability snapshots (reports, depth pages, inactive evidence with hashes and conflict flags)",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/inactives.html",
+      "artifact_exists": true,
+      "artifact_sha256": "a1c6c1e4f070b7571dea2b00f5921ac6bebc8feef3711de1a9f8677f04935c60",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "Inactive evidence held for a second slate plus an official snap-count source verified club-by-club.",
+      "gate": "Official Not Active lists are now captured for 13 Week 10 games (146 rows with designation and jersey); snap counts and snap shares are still not captured from any official source.",
+      "id": "DR-31",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Capture official inactive lists and snap counts (only 6 of 254 report rows carried a game designation)",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-lifecycle-3f5c/site/flagged.html",
+      "artifact_exists": true,
+      "artifact_sha256": "a6c0d721fd6c4ab48e615d278209c79a33909429d9f65dec0e11f2380c91d6cb",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "31/32 clubs parse (current state); HOU clears only via an authorized structured source, never transcription by eye.",
+      "gate": "Packers rows recover via number stripping + raw-string retention; the Texans chart is an image with no authorized structured equivalent.",
+      "id": "DR-32",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-DEPTH-27",
+      "official_url": "https://www.atlantafalcons.com/team/depth-chart",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Fix the two depth-parsing failures before widening coverage (Texans image chart; Packers jersey-number prefix)",
+      "source_ids": [
+        "CP-NFL-DEPTH-27"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-availability-28ef/site/depth.html",
+      "artifact_exists": true,
+      "artifact_sha256": "823a4bfa2147f05bfd0096d048540c2f157d7131660adfd7b1d27cbbf3d2856b",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Availability & injuries",
+      "clears_when": "149 club/unit/position slots published as printed groups (shared and empty slots preserved).",
+      "gate": "Holds for the captured week; a new week's chart re-derives the groups.",
+      "id": "DR-33",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-DEPTH-BYE4",
+      "official_url": "https://www.chicagobears.com/team/depth-chart",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Model depth slots as groups, not a single starter (149 slots list more than one rank-1 player)",
+      "source_ids": [
+        "CP-NFL-DEPTH-BYE4"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-review.html",
+      "artifact_exists": true,
+      "artifact_sha256": "5060630dfe39a5545975a36861aa30c34032528b1c3fb69cac4c4fd274dfe33a",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "A dated transactions register exists and depth rows carry the roster-event version they were valid at.",
+      "gate": "Transactions are read and flagged (Baltimore stale rows; Colts same-article trades) but not captured as a versioned register.",
+      "id": "DR-34",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Treat roster turnover as a first-class data event (depth/availability evidence versioned against the last official roster event)",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-results-leaderboard.html",
+      "artifact_exists": true,
+      "artifact_sha256": "9a620483677ec0e32b5936e98aad1e717270271040d1e0386c6e4f8b8452abe0",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Leaderboard & competition",
+      "clears_when": "Team-strength model frozen, versions recorded, forecasts recorded pre-kickoff (board rows qualify; 0 live today).",
+      "gate": "The shadow baseline is graded prospectively from the originated board; nothing is promoted while the price gate blocks staking.",
+      "id": "DR-35",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-STANDINGS",
+      "official_url": "https://www.nfl.com/standings/",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Start with a singles-only shadow baseline",
+      "source_ids": [
+        "CP-NFL-STANDINGS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-results-correlation.html",
+      "artifact_exists": true,
+      "artifact_sha256": "088d03b1fd9d3d0b48f1bcb13d5bfd63c69d8245e72da708c80ee5853aa05ddc",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Leaderboard & competition",
+      "clears_when": "Measured leg dependence (phi -0.0386, p=0.666, n=127) is published; no combo is ranked until a joint probability exists.",
+      "gate": "Multiplying marginals is invalid under dependence; combos rank only with a directly validated joint probability and operator void/push rules.",
+      "id": "DR-36",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-RESULTS-W1-9",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Keep parlays and prop combos behind a joint-evidence gate",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/leaderboard.html",
+      "artifact_exists": true,
+      "artifact_sha256": "9d3e54e476dc20ccfee3408f7de42e4a2f23b05ea2136119a5ae3d1d9a713ed0",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Leaderboard & competition",
+      "clears_when": "All four divisions published with benchmark-relative skill and uncertainty; empty divisions state why.",
+      "gate": "Divisions exist for singles and game-level markets; SGP and prop-combo divisions have no eligible rows (joint gate unmet).",
+      "id": "DR-37",
+      "ledger_status": "Partial",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Use proper-score leaderboard divisions (singles, game parlays, same-game parlays, prop combos)",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-results-leaderboard.html",
+      "artifact_exists": true,
+      "artifact_sha256": "9a620483677ec0e32b5936e98aad1e717270271040d1e0386c6e4f8b8452abe0",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Leaderboard & competition",
+      "clears_when": "30 variants graded; 0 qualified, 1 provisional; BH q-values and permutation p-values published per candidate.",
+      "gate": "Applies to graded candidates; qualification requires every gate to pass including multiplicity control.",
+      "id": "DR-38",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-RESULTS-W1-9",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Rank with proper scores and uncertainty, not win rate (Brier skill, game-cluster lower bound, multiplicity adjustment)",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-verification-2026-11-13.html",
+      "artifact_exists": true,
+      "artifact_sha256": "06aa082afe92f7663b0017eed47f2b299f50884682d5cda7654fa9db5c426476",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Open",
+      "category": "Governance & publication",
+      "clears_when": "An out-of-repo immutable store with a freshness monitor and a source/schema-change alert wired to the capture job.",
+      "gate": "No storage outside the static site exists in this project yet; CI freshness checks cover the committed snapshots only.",
+      "id": "DR-39",
+      "ledger_status": "Open",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Add durable snapshot storage and alerts (immutable captures outside the static site, freshness monitoring, source-change alerts)",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "sources.html",
+      "artifact_exists": true,
+      "artifact_sha256": "8e760108c3771b90b6a8a103e5039c8c28b6cd7e6364e8cb34e8e535b2851aa3",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Governance & publication",
+      "clears_when": "Raw row-level data moves behind the private layer once the terms answer (DR-20) is recorded.",
+      "gate": "The public site publishes derived analysis with per-row sources; there is no separate private store — raw rows live in the repository pending the terms decision.",
+      "id": "DR-40",
+      "ledger_status": "Partial",
+      "official_source_id": "NFL-TERMS",
+      "official_url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Split the site into a public analysis layer and a private data layer (raw row-level data held back until terms are read)",
+      "source_ids": [
+        "NFL-TERMS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-availability-28ef/site/clubs.html",
+      "artifact_exists": true,
+      "artifact_sha256": "ada449f1973de3d7fe41449fe58e6cfc5a83f821ae5c0c0c31400ccd19bd6505",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Availability & injuries",
+      "clears_when": "Club-level summary published per club (starters out, named replacements, depletion counts).",
+      "gate": "View covers the captured Week 10 window; extends as new weeks are captured.",
+      "id": "DR-41",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Add a per-team view: starters out, replacements named, net injury count",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/injuries.html",
+      "artifact_exists": true,
+      "artifact_sha256": "79d457f5d9c073f4729686d397eeb675a39360e6400049ac750b59ce2a057f95",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "Every replacement row distinguishes club-announced starters from chart-inferred ones (blank when unannounced).",
+      "gate": "League-published dated starter changes are captured where the report prints them; announced-change evidence is not yet a per-row field everywhere.",
+      "id": "DR-42",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Add an announced-starter evidence field (not an inferred replacement)",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-availability-28ef/site/depth.html",
+      "artifact_exists": true,
+      "artifact_sha256": "823a4bfa2147f05bfd0096d048540c2f157d7131660adfd7b1d27cbbf3d2856b",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Availability & injuries",
+      "clears_when": "1,815 printed depth-chart slots across 31 clubs, each row with club, date and registered source.",
+      "gate": "Register covers 31 of 32 clubs (HOU image gate, DR-32).",
+      "id": "DR-43",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-DEPTH-27",
+      "official_url": "https://www.atlantafalcons.com/team/depth-chart",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Add an official depth-chart register with date and source per row",
+      "source_ids": [
+        "CP-NFL-DEPTH-27",
+        "CP-NFL-DEPTH-BYE4"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/questions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "c30cfdfc527ab65fbfff8ed2bc66e5cc8d692bf479aa999f8e84cd941da5e5dd",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Open",
+      "category": "Availability & injuries",
+      "clears_when": "Play rate per designation with confidence intervals computed over joined seasons; only then may it become a feature.",
+      "gate": "Requires multiple seasons of designations joined to official inactive lists; one season is captured.",
+      "id": "DR-44",
+      "ledger_status": "Open",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Calibrate what 'Questionable' means empirically instead of using old percentages",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/injuries.html",
+      "artifact_exists": true,
+      "artifact_sha256": "79d457f5d9c073f4729686d397eeb675a39360e6400049ac750b59ce2a057f95",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Availability & injuries",
+      "clears_when": "Trench and coverage mismatches published from 1,815 printed slots (e.g., WR1 vs promoted 2nd/3rd-string CB).",
+      "gate": "Matrix depth is bounded by printed chart depth (4 ranks) and by the HOU gap; it is a static published table with site filtering.",
+      "id": "DR-45",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-DEPTH-27",
+      "official_url": "https://www.atlantafalcons.com/team/depth-chart",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Interactive Offense vs. Defense Matchup Deficiency Matrix (1st-4th string)",
+      "source_ids": [
+        "CP-NFL-DEPTH-27"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-review.html",
+      "artifact_exists": true,
+      "artifact_sha256": "5060630dfe39a5545975a36861aa30c34032528b1c3fb69cac4c4fd274dfe33a",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Availability & injuries",
+      "clears_when": "Stale rows flagged with transaction evidence (VR-17, VR-26; VQ-07) and published non-blocking.",
+      "gate": "Flags are as of the captured week; they must be re-checked against new transactions every week.",
+      "id": "DR-46",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Flag stale depth rows against the official transactions log (Baltimore case)",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/ledger.html",
+      "artifact_exists": true,
+      "artifact_sha256": "8446e9507b08dfc03dd272e1150de01125447ccc717528523b0fe1c3e0a2010f",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "Every backtest input resolves to a hash-ledgered capture whose timestamp precedes the event being forecast.",
+      "gate": "A point-in-time ledger now exists for the Week 10 Game Book artifacts (capture time, SHA-256, source URL, vintage); the other desks' captures predate it and are dated but not hash-ledgered.",
+      "id": "DR-47",
+      "ledger_status": "Partial",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Point-in-Time Snapshot Ledger for injuries, depth charts and inactives (prevents lookahead leakage)",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-availability-28ef/site/flagged.html",
+      "artifact_exists": true,
+      "artifact_sha256": "28b9a35c4de9ad7bb26b3e27ac32815c9bebf3adaa684ac1b6419b36f329931b",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Availability & injuries",
+      "clears_when": "Kerby Joseph, Cade Mays and D.J. Reed published as Out with the official article linked.",
+      "gate": "Corrected against the official article (VR-08, VR-12); correction must be re-verified whenever the report is re-read.",
+      "id": "DR-48",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Populate the three missing Lions game-status designations",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-availability-28ef/site/availability.html",
+      "artifact_exists": true,
+      "artifact_sha256": "c903c000c6becaf55cbe2705de664e6b333988759cf8d2fb6f5d3809e8f5ad7a",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Availability & injuries",
+      "clears_when": "279-row capture with Seattle (15) and Cincinnati (4) listed correctly, published with sources (VR-04..VR-07).",
+      "gate": "Stale counts (254 rows) were replaced by the live capture (279 rows, 2 no-injury sections).",
+      "id": "DR-49",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Re-capture and republish the Week 10 injury tables",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-suggestions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "56ab5033c75fa5872e3acda06ed31daf3a18da592220de931d26d57c4b5db74f",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Rejected",
+      "category": "Rejected alternatives",
+      "clears_when": "n/a (rejected).",
+      "gate": "None — recorded as rejected so it is not re-proposed.",
+      "id": "DR-50",
+      "ledger_status": "Rejected",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Reject: deriving depth order from jersey number, experience or salary",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-availability-28ef/site/depth.html",
+      "artifact_exists": true,
+      "artifact_sha256": "823a4bfa2147f05bfd0096d048540c2f157d7131660adfd7b1d27cbbf3d2856b",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Availability & injuries",
+      "clears_when": "Shared and empty slots preserved as printed (VR-21, VR-23; VQ-08), not rendered as a ranked list.",
+      "gate": "Holds for the captured week; every new week re-derives.",
+      "id": "DR-51",
+      "ledger_status": "Implemented",
+      "official_source_id": "CP-NFL-DEPTH-BYE4",
+      "official_url": "https://www.chicagobears.com/team/depth-chart",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Represent shared and empty depth slots faithfully (Seattle two-in-one-slot; Washington empty slot)",
+      "source_ids": [
+        "CP-NFL-DEPTH-BYE4"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-lifecycle-3f5c/site/replacement-depth.html",
+      "artifact_exists": true,
+      "artifact_sha256": "c9a410cffb5f71ef845d17fc1cad8756bb621234b917474d0e0ee8b4f76ade24",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "One route verified for all 32 clubs; only then is the deficiency feature built league-wide.",
+      "gate": "Route (a) verified for 31/32 clubs; route (b) (snap counts) unverified; HOU blocks completion.",
+      "id": "DR-52",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-DEPTH-27",
+      "official_url": "https://www.atlantafalcons.com/team/depth-chart",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Resolve the depth-order source before building the backup-deficiency feature (club charts first, then snap counts)",
+      "source_ids": [
+        "CP-NFL-DEPTH-27"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/designation-reliability.html",
+      "artifact_exists": true,
+      "artifact_sha256": "1d71b0216dad7e8a7f5b0f2771c7c57a400440746f823499559092a522408bd6",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "Reliability table computed over multiple seasons of designations joined to inactive lists; the feature decision is recorded after that.",
+      "gate": "A first empirical table exists (Out 10/14 inactive, Questionable 3/11, Wilson 95% intervals, n published) from one week joined to official Not Active lists; several seasons of designations are still required before the label becomes a feature.",
+      "id": "DR-53",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Score injury-designation reliability before using it as a feature",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-w11-injuries-3e61/site/flagged.html",
+      "artifact_exists": true,
+      "artifact_sha256": "651d832f4658c74820bc3ae4a900720ad55bd2dd1a6827589964b93b5cf8618f",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Blocked",
+      "category": "Availability & injuries",
+      "clears_when": "Permitted capture schedule agreed in writing; history then accrues Wed/Thu/Fri with retained hashes.",
+      "gate": "Same terms gate as DR-29: NFL.com section 1.3 (read verbatim on 2026-11-18) prohibits systematic retrieval to compile a collection without express prior written consent. One first-Wednesday read exists (Week 11, 2026-11-18, nfl-w11-injuries-3e61); no Wednesday, Thursday or Friday series is run.",
+      "id": "DR-54",
+      "ledger_status": "Blocked",
+      "official_source_id": "NFL-TERMS",
+      "official_url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Snapshot the nfl.com injury report every Wed, Thu and Fri and keep a dated history",
+      "source_ids": [
+        "NFL-TERMS",
+        "W11-NFL-TERMS-1118"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-availability-28ef/site/availability.html",
+      "artifact_exists": true,
+      "artifact_sha256": "c903c000c6becaf55cbe2705de664e6b333988759cf8d2fb6f5d3809e8f5ad7a",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "Designation evolution (Questionable to Out; DNP to FP) measurable across at least one full report week.",
+      "gate": "Captures are dated but the Wed-to-kickoff daily series does not exist (DR-54 gate).",
+      "id": "DR-55",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Treat the injury report as a timestamped series, not a weekly snapshot",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/questions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "c30cfdfc527ab65fbfff8ed2bc66e5cc8d692bf479aa999f8e84cd941da5e5dd",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Open",
+      "category": "Availability & injuries",
+      "clears_when": "A verified official snap-count source produces a starter/backup split for the clubs without printed charts.",
+      "gate": "No official snap-count source verified (DR-11 gate); HOU remains the motivating case.",
+      "id": "DR-56",
+      "ledger_status": "Open",
+      "official_source_id": "CP-NFL-DEPTH-27",
+      "official_url": "https://www.atlantafalcons.com/team/depth-chart",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Use snap counts as the starter proxy when the depth chart is unavailable",
+      "source_ids": [
+        "CP-NFL-DEPTH-27"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/boards.html",
+      "artifact_exists": true,
+      "artifact_sha256": "cfd5ac7bf4ff821c4f99a8e65a39af57a917c8b12eb2026464760726f49aafb5",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Leaderboard & competition",
+      "clears_when": "Every leaderboard run includes both controls alongside the strategy family.",
+      "gate": "Controls run with the same grading; one control's null rejection (34.0% vs coin) is reported as a property of the test, not an edge.",
+      "id": "DR-57",
+      "ledger_status": "Implemented",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Add a control baseline (random picks; favorites only) to every leaderboard run",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/fixtures-venue.html",
+      "artifact_exists": true,
+      "artifact_sha256": "007972aeaeb53cbbab74df7a670070841872628accef963f35114c219485748e",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Origination & model",
+      "clears_when": "NWS hourly grids joined to the official 90-minute roof designations for one full slate, each value source-linked.",
+      "gate": "Official roof/surface designations and game-day weather are captured per Game Book for 13 Week 10 games; the NWS hourly wind/precipitation grids are still not joined, so totals/weather mispricing cannot be tested yet.",
+      "id": "DR-58",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-W10-SCHEDULE",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Stadium roof/surface and NWS hourly wind/precipitation overlay with official 90-minute roof designations",
+      "source_ids": [
+        "CP-NFL-W10-SCHEDULE"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/leaderboard.html",
+      "artifact_exists": true,
+      "artifact_sha256": "9d3e54e476dc20ccfee3408f7de42e4a2f23b05ea2136119a5ae3d1d9a713ed0",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Leaderboard & competition",
+      "clears_when": "At least one qualified strategy reaches the prospective stage with an executable price to escrow.",
+      "gate": "Stage 1 (Brier qualification + BH control) runs; stage 2 escrow holds 0 rows because no price exists (DR-01 gate).",
+      "id": "DR-59",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-ODDS-ABSENT",
+      "official_url": "https://www.nfl.com/odds/",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Two-stage skill leaderboard: proper-score qualification then prospective CLV/ROI escrow",
+      "source_ids": [
+        "CP-NFL-ODDS-ABSENT"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-pricing/site/prices.html",
+      "artifact_exists": true,
+      "artifact_sha256": "a0ff2890ffbcd1de7e57592329ac111ccfcd13cc564d78db09d22dd57186773b",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Market & pricing",
+      "clears_when": "Rights answer recorded and a consensus price set validated; decomposition then published with residuals.",
+      "gate": "The pricing desk holds 136 attributed closing-price observations from Pro-Football-Reference (third party); no official consensus exists and vig-free decomposition needs the price policy decision (DR-20).",
+      "id": "DR-60",
+      "ledger_status": "Partial",
+      "official_source_id": "NFL-TERMS",
+      "official_url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Vig-free market consensus vs originated fair-line decomposition view",
+      "source_ids": [
+        "NFL-TERMS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-results-decisions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "b10f5f8cfd9b9867fd26e2f96e68319f61498bceeaaed66bec51525aea54bb9d",
+      "audit_note": "The page renders a diff between dated same-scope captures (standings and availability), so part of the clearing text is met. The brief's diff also names rank and rating change; the rating column is absent by the page's own statement.",
+      "audit_status": "Partial",
+      "category": "Governance & publication",
+      "clears_when": "At least 2 weekly snapshots stored and a rendered diff (rank change, rating change, availability change) published.",
+      "gate": "Weekly snapshots exist as dated evidence files; no diff view is rendered between consecutive weeks.",
+      "id": "DR-61",
+      "ledger_status": "Open",
+      "official_source_id": "E15-NFL-SCHED-REG10-1117",
+      "official_url": "https://www.nfl.com/schedules/2026/REG10",
+      "quote": "…names rank and rating change. No model rating for these clubs is published by this desk (rating change needs a model whose inputs are versioned — the origination desks own that), so those two columns are honestly absent here rather than filled. Every table…",
+      "repo_only": false,
+      "requirement": "Publish a weekly 'what changed' diff instead of a static snapshot",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/origination.html",
+      "artifact_exists": true,
+      "artifact_sha256": "323b02f661dd82eaf4fe92a6c3f66222783a8ef179dae960ccd6c1dcf8cb07d0",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Origination & model",
+      "clears_when": "Both estimators visible with the gap column; walk-forward comparison decides the collapse (or the desks stay separate).",
+      "gate": "The canonical engine publishes one total per game; the market desk and the competition lab publish their own estimators, but the three have not been collapsed by a walk-forward comparison.",
+      "id": "DR-62",
+      "ledger_status": "Partial",
+      "official_source_id": "CP-NFL-STANDINGS",
+      "official_url": "https://www.nfl.com/standings/",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Publish every model total twice until one wins (two estimators with a gap column, collapsed only after walk-forward)",
+      "source_ids": [
+        "CP-NFL-STANDINGS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-verification-2026-11-13.html",
+      "artifact_exists": true,
+      "artifact_sha256": "06aa082afe92f7663b0017eed47f2b299f50884682d5cda7654fa9db5c426476",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Partial",
+      "category": "Governance & publication",
+      "clears_when": "Every extraction path aborts the build on missing fields or row-count drift, with the failure surfaced on a flagged page.",
+      "gate": "Canonical parsers abort on contradiction and CI pins expected counts; desk scrapers have per-desk guards but there is no unified alarm surface.",
+      "id": "DR-63",
+      "ledger_status": "Partial",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Add a drift alarm to every scraper (pin parsers to row counts and required fields; fail the build loudly)",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-gamebook-5213243e/site/flagged.html",
+      "artifact_exists": true,
+      "artifact_sha256": "97e1fe7673be9fd4b360cb2d2cd1881be4383a4d1f64ec8e411b1432c4c975c0",
+      "audit_note": "A league-level reserve sweep exists and shows Malik Willis on the 11/10 reserve list. Clearing needs a capture joined to the report for all 32 clubs, which the sweep does not give.",
+      "audit_status": "Partial",
+      "category": "Availability & injuries",
+      "clears_when": "IR/reserve capture joins the report capture for all 32 clubs, so absent-but-reserved players are labeled.",
+      "gate": "The reserve/IR list is still not retrieved; the Game Book desk documents the named consequences (Malik Willis absent from the report; the Baltimore stale-depth claim unverifiable without the list).",
+      "id": "DR-64",
+      "ledger_status": "Open",
+      "official_source_id": "CP-NFL-INJ-W10",
+      "official_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "quote": "…visible November window (Dolphins, 11/10, Reserve/Injured), as in the 2026-11-17 capture. Lamar Jackson and Tyler Huntley are in neither the November nor the October visible window. The October window starts 10/24, so this cannot confirm or refute their earlier IR dates — the prior sessions' dated evidence remains the…",
+      "repo_only": false,
+      "requirement": "Capture the reserve list so 'not listed' never means 'available' (Malik Willis case)",
+      "source_ids": [
+        "CP-NFL-INJ-W10"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-suggestions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "56ab5033c75fa5872e3acda06ed31daf3a18da592220de931d26d57c4b5db74f",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Rejected",
+      "category": "Rejected alternatives",
+      "clears_when": "n/a (rejected).",
+      "gate": "None — recorded as rejected.",
+      "id": "DR-65",
+      "ledger_status": "Rejected",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Reject: ranking strategies by season-long ROI",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/questions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "c30cfdfc527ab65fbfff8ed2bc66e5cc8d692bf479aa999f8e84cd941da5e5dd",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Blocked",
+      "category": "Availability & injuries",
+      "clears_when": "An official archive located, or seasons accrue forward one week at a time under a permitted schedule.",
+      "gate": "The league does not publish a past-season injury-report archive this project can read; constructing one would require systematic retrieval (DR-29 gate).",
+      "id": "DR-66",
+      "ledger_status": "Blocked",
+      "official_source_id": "NFL-TERMS",
+      "official_url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Archive weekly injury reports for past seasons (for Q06)",
+      "source_ids": [
+        "NFL-TERMS"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/method.html",
+      "artifact_exists": true,
+      "artifact_sha256": "35caafb4bc765022a6b72e3530cc8d4271fc032e4fcbf93c151dccc0e8d84760",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Leaderboard & competition",
+      "clears_when": "Frozen rule text, sample window and gates committed before evaluation (DG-1 and board parameters are registered).",
+      "gate": "Registration is the commit hash; every new strategy must follow it before its evaluation window opens.",
+      "id": "DR-67",
+      "ledger_status": "Implemented",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Pre-register each strategy (definition frozen before results are seen)",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-competition/site/questions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "c30cfdfc527ab65fbfff8ed2bc66e5cc8d692bf479aa999f8e84cd941da5e5dd",
+      "audit_note": "Declared-onside rule 6-1-6 is transcribed from the official 2026 Playing Rules and quoted. The ledger also requires the priors filter to be added; the page documents it, but no model run in the tree is shown to apply it.",
+      "audit_status": "Partial",
+      "category": "Origination & model",
+      "clears_when": "Declared rules transcribed from the official 2026 playing rules and the priors filter added with its source.",
+      "gate": "The 2026 playing-rules changes (kickoff/onside declarations) are not yet transcribed from the official rulebook into the model context.",
+      "id": "DR-68",
+      "ledger_status": "Open",
+      "official_source_id": "CP-NFL-W10-SCHEDULE",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "quote": "…e setup zone; 6-1-5 the dead-ball spot after a touchback when the kickoff is from the 50; 6-1-6 permits the kicking team to declare an onside kick at any time during the game ; 19-2 official consultation on disqualifications. The 2026 regime, one rule element per row Element Value Verbatim from the rulebook Rule…",
+      "repo_only": false,
+      "requirement": "2026 kickoff and declared onside-kick regime priors filter",
+      "source_ids": [
+        "CP-NFL-W10-SCHEDULE"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-suggestions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "56ab5033c75fa5872e3acda06ed31daf3a18da592220de931d26d57c4b5db74f",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Implemented",
+      "category": "Governance & publication",
+      "clears_when": "Rule text, sample window and gates committed before the window opens (enforced by review workflow).",
+      "gate": "Holds for every evaluation window; violations are a governance flag.",
+      "id": "DR-69",
+      "ledger_status": "Implemented",
+      "official_source_id": null,
+      "official_url": null,
+      "quote": null,
+      "repo_only": true,
+      "requirement": "Freeze a rule before it sees data (commit hash is the registration)",
+      "source_ids": [
+        "REPO"
+      ],
+      "unresolved_source_ids": []
+    },
+    {
+      "artifact": "nfl-results-decisions.html",
+      "artifact_exists": true,
+      "artifact_sha256": "b10f5f8cfd9b9867fd26e2f96e68319f61498bceeaaed66bec51525aea54bb9d",
+      "audit_note": "Artifact and sources verified; content not re-graded here.",
+      "audit_status": "Open",
+      "category": "Results & backtesting",
+      "clears_when": "At least 3 seasons of official results archived, then the split is frozen before the holdout is scored.",
+      "gate": "Only one season is captured; a final holdout season cannot exist yet.",
+      "id": "DR-70",
+      "ledger_status": "Open",
+      "official_source_id": "CP-NFL-RESULTS-W1-9",
+      "official_url": "https://www.nfl.com/schedules/2026/by-week/week-1",
+      "quote": null,
+      "repo_only": false,
+      "requirement": "Split data into train, validation and final holdout seasons",
+      "source_ids": [
+        "CP-NFL-RESULTS-W1-9"
+      ],
+      "unresolved_source_ids": []
+    }
+  ],
+  "schema": "ledger-audit/1",
+  "session": "arena/aedccbe5-own7",
+  "sources_sha256": "488b91ce266159506896dcd9c44eefede8755a62f9c4fac83baddb1508cac3c2"
+}
