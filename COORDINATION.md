@@ -2887,6 +2887,14 @@ desk `nfl-week11-6c72a9fa`, #85 coord record); every advance was merged into thi
 union resolution before the final push — combined final tree carries all five desk nav groups
 (gamebook, slate, c815, snapcount, week11) and the full shared battery passed on that tree.
 No irregularity is blocking; all are published on the desk's Flagged page and in the PR body.
+### Session arena/a85459d9-own7 — executive summary refresh and integrity audit (2026-11-18)
+
+| Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|
+| Refresh executive summary using current repository state; retain dated historical summary | done | session-arena-a85459d9-own7 | `docs/nfl-executive-summary-2026-11-18.md`, `README.md`, `COORDINATION.md` (append) | Local checks: `python -m unittest discover -s tests` (119 passed); `python -m nfl_lab run --check` (reproduced); `python nfl/test_build.py` (6 passed); `python scripts/check_site.py` (280 pages, 15,332 tbody rows, 302 source records, 0 errors). New summary explicitly says these checks do not independently verify every external fact or establish profitability; identifies 2026-11-12 summary as historical/stale for current counts. Official manual-review URLs included. |
+
+Scope note: no raw data or existing finding was changed. The summary does not claim line-by-line upstream re-verification; latest per-desk receipts, source links and flagged pages remain authoritative. No PR/merge was made because this branch is an additive session branch and repository-level current status already records completed integration/deployment. Cross-scope requests should be logged here rather than editing files owned by another session.
+
 ### Cross-scope a11y fix by session arena/92cad499-own7 (2026-11-18)
 
 `nfl-snapcount-e5e4/site/depth-vs-snap.html` (merged via PR #77) failed the workspace browser suite's
@@ -2900,6 +2908,37 @@ no content change) and regenerated its 11 pages byte-identically except that att
 session's numbers, sources and structure are untouched; this note is the log entry the protocol
 requires. Browser suite after the fix: 241 desktop + 241 mobile pages, WCAG A/AA, no runtime errors.
 
+### W7 — publication record, session arena/92cad499-own7 (2026-11-18)
+
+PR [#80](https://github.com/sassnarep3-star/Own7/pull/80) — "Fresh 2026-11-18 reads: weeks 1-10
+feed completed at 150 finals + nfl-fresh-1118 desk" — **merged into `main`** (merge commit
+`ad6f0d6`). PR checks passed before merge: Research and recursive site audit (run
+[44247668406](https://github.com/sassnarep3-star/Own7/actions/runs/44247668406)) and Desktop,
+mobile and accessibility (run [44247660532](https://github.com/sassnarep3-star/Own7/actions/runs/44247660532),
+241 desktop + 241 mobile pages, WCAG A/AA, no runtime errors). Post-merge run
+[44249534220](https://github.com/sassnarep3-star/Own7/actions/runs/44249534220) on `ad6f0d6`
+passed; Pages deployment [44249533585](https://github.com/sassnarep3-star/Own7/actions/runs/44249533585)
+completed successfully against the merge commit. Live pages verified by fetch:
+`/nfl-fresh-1118/site/index.html` (7/7 FV checks pass, read receipts with SHA-256) and
+`/nfl-fresh-1118/site/flagged.html` (FF01-FF04 published).
+
+Merge-series notes for the record (all resolved as unions; nothing discarded):
+- PR #57 was closed unmerged by the owner (60-minute handoff rule) — recorded as W6; this
+  session made no change to that PR or its branch.
+- Three consecutive main advances (PRs #76/#77/#78, #81/#84/#85, #89/#90) were rebased onto.
+  Shared-file conflicts (source register, desk build/nav blocks, serve/browser allowlists,
+  README, board) were resolved by union; `research/site-manifest.json` and other generated
+  artefacts were always regenerated from the merged tree, never hand-merged.
+- Cross-scope fix logged above: `nfl-snapcount-e5e4/build_site.py` table wrapper made
+  keyboard-focusable (PR #89 fixed the same defect with `tabindex` only; the merged tree keeps
+  the full `role="region" tabindex="0" aria-label` pattern and the site suite passes).
+- The parallel desk `nfl-week11-6c72a9fa` (PR #81) independently corroborates the same Week 10
+  completion from gamecenter/gamebook reads; both desks' rows coexist in the 291-row register
+  and no contradiction was found between them.
+
+All seven board tasks (W1-W7) are done. Follow-up F1 (complete 8-chunk injury-hub capture for
+the 2026-11-18 delta) remains open for the next session; FF02/FF03/FF04 are explained and
+non-blocking.
 ---
 
 ## Session arena/aedccbe5-own7 — decision-ledger re-grade audit and blocked-item register (2026-11-18)
@@ -2962,3 +3001,11 @@ in this desk and logged below as a request to the integration owner.
 **Verification limits, stated:** (a) the browser/WCAG job could not be run in this sandbox (the bundled Chromium lacks `libnspr4`), so the accessibility gate is decided by CI on the PR; (b) nfl.com is reachable only through Arena `fetch_page` here, so nothing was captured by script from nfl.com; (c) no scheduled capture was added (terms §1.3).
 
 **Request to the integration owner (log, not edited here):** apply the four re-grades in `research/nfl-decision-readiness.json`; regenerate the landing decision table from the register; re-run `python scripts/build_site.py` after any merge that touches `index.html` (the desk's `data/ledger-audit.json` records the landing and root-page hashes it read).
+
+### Merge log — session arena/aedccbe5-own7 (2026-11-18)
+
+- PR #96 (`arena/aedccbe5-own7` → `main`) was CONFLICTING after main advanced from `ad6f0d6` to `f776790` (PRs #92, #93 and others). Resolved by merging `origin/main` into the branch (a merge commit, not a rebase, so the conflict was resolved once rather than per commit).
+- Conflict: `COORDINATION.md` only (both sides were appended sections). Resolved as a union: main's sections kept in order, then this session's. No other session's entry was dropped.
+- Auto-merged without conflict: `scripts/build_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `README.md`. Verified after the merge: the desk block, nav group, manifest entries and allowlist token are present once each.
+- Generated outputs (root pages, `research/site-manifest.json`) regenerated with `python scripts/build_site.py` (run twice; second run identical). `python scripts/check_site.py` → exit 0.
+- Re-checked after the merge: `research/nfl-decision-readiness.json` and `index.html` are unchanged between `ad6f0d6` and `origin/main` (same 70 rows, same statuses, same 16-row landing table), so the audit's findings still hold.
