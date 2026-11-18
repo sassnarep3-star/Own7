@@ -2530,3 +2530,41 @@ The rebases advanced `origin/main` from `be2462d` through `764635c` (PR #60), `b
 ### Publication record
 
 PR [#64](https://github.com/sassnarep3-star/Own7/pull/64) merged into `main` at `2026-11-17T03:33:06Z`; merge commit `5bbf6f83f5971648277af078a16651c44e1144b0`. PR checks passed (recursive research/site audit and desktop/mobile/accessibility). Post-merge repository check run [44011008807](https://github.com/sassnarep3-star/Own7/actions/runs/44011008807) and GitHub Pages deployment [44011008076](https://github.com/sassnarep3-star/Own7/actions/runs/44011008076) both completed successfully against the merge commit. Live page verified at https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/requirements.html with 20 rows and source links.
+
+## Session arena/9388352a-own7 — Week 11 live decision desk (2026-11-18)
+
+Session ID: `session-arena-9388352a-own7`. Fixed Arena branch: `arena/9388352a-own7`, based on `0b5f91a`
+(merge of PR #74). The brief's `session-<id>/<task>` naming is not used because the branch is fixed for
+this session; all work stays on it. Earlier boards are retained verbatim and are not inherited as
+verification.
+
+Baseline replayed at claim (before any change): `python -m unittest discover -s tests` → 119 pass;
+`python scripts/nfl_extract.py --check` → OK (32 standings rows, 20 injury rows, 14 fixtures);
+`python -m nfl_origination run --check` → reproduces exactly; working tree clean at `0b5f91a`.
+
+Exclusive file scope: `nfl-week11-9388/**` (new directory). Additive lines only in `COORDINATION.md`,
+`README.md`, `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`,
+`scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`. No existing page,
+value or test is overwritten; other sessions' desk directories (including `nfl-readiness/**`, owned by
+the still-open PR #57) are never edited.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| W1 | Claim + green baseline replay | in progress | session-arena-9388352a-own7 | COORDINATION.md | Recorded above. |
+| W2 | Fresh official reads 2026-11-18 with clock time + SHA-256: league standings, Week 11 schedule, Week 11 league injury report, 14 game-centre pages | unclaimed | session-arena-9388352a-own7 | `nfl-week11-9388/evidence/**`, `nfl-week11-9388/data/official-2026-11-18.json` | nfl.com via Arena fetch_page (direct HTTPS to nfl.com is blocked in this sandbox, as every prior session recorded). Every capture stores the fetch clock time the publisher prints or, where the page prints none, the sandbox UTC instant, and the raw hash. |
+| W3 | Venue register for every Week 11 fixture, transcribed from the official game centre (R23) | unclaimed | session-arena-9388352a-own7 | `nfl-week11-9388/**` | One row per fixture: location, stadium, network, kickoff, source URL, hash. Blank where the page prints none. |
+| W4 | Fixture-context feature set built only from published schedule facts (R14) | unclaimed | session-arena-9388352a-own7 | `nfl-week11-9388/**` | Rest days, short-week and bye-return flags derived arithmetically from official kickoff dates; nothing inferred. |
+| W5 | Timestamped availability ledger: capture series with deltas, never levels (R21/R29/R30/R47/R54/R55) | unclaimed | session-arena-9388352a-own7 | `nfl-week11-9388/**` | Append-only capture store; delta published against the prior retained capture. |
+| W6 | Per-club Week 11 availability view: listed, Out, Questionable, practice-status counts, coverage note | unclaimed | session-arena-9388352a-own7 | `nfl-week11-9388/**` | Counts only; replacement names blank unless an official page names them. |
+| W7 | Decision questions + suggestions register: what we know, what is missing, how to discover it | unclaimed | session-arena-9388352a-own7 | `nfl-week11-9388/**` | Every row names a requirement id, the missing quantity, and the concrete source or experiment that would supply it. |
+| W8 | Line-by-line verification (standings 32/32, slate vs records, games-played arithmetic, points reconciliation, venue cross-check) | unclaimed | session-arena-9388352a-own7 | `nfl-week11-9388/**` | Abort on mismatch; no value patched in place. |
+| W9 | Desk site pages + unit tests + byte-identical `build.py --check` | unclaimed | session-arena-9388352a-own7 | `nfl-week11-9388/site/**`, `nfl-week11-9388/tests/**` | Every tbody row carries `data-source-ids` naming registered official sources. |
+| W10 | Additive integration: nav group, build step, check lines, serve/browser allowlists, sources register, README; full battery green | unclaimed | session-arena-9388352a-own7 | additive lines in the shared files listed above | No existing page, value or test overwritten. |
+| W11 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-9388352a-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints this session honours: no price, odds, ROI, CLV, stake, wager or monetary reward is
+produced; no value is inferred — blanks stay blank with a reason; every table row keeps a registered
+official source link; `git pull --rebase` before every push; small frequent commits; the open PR #57 and
+its `nfl-readiness/**` files are not touched.
+Rules for other sessions: `nfl-week11-9388/**` is mine until W11 records done — log cross-scope requests
+in this board instead of editing it concurrently.
