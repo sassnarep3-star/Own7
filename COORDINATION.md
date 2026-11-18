@@ -2899,3 +2899,37 @@ additive fix inside `nfl-snapcount-e5e4/build_site.py` (one attribute triple on 
 no content change) and regenerated its 11 pages byte-identically except that attribute. The owning
 session's numbers, sources and structure are untouched; this note is the log entry the protocol
 requires. Browser suite after the fix: 241 desktop + 241 mobile pages, WCAG A/AA, no runtime errors.
+
+---
+
+## Session arena/aedccbe5-own7 — decision-ledger re-grade audit and blocked-item register (2026-11-18)
+
+Session ID: `session-arena-aedccbe5-own7`. Fixed Arena branch: `arena/aedccbe5-own7` (branched from
+`main` at `ad6f0d6`). The brief's `session-<id>/<task>` branch naming is not used because Arena fixes
+the branch name; all work stays on it.
+
+Baseline at claim (2026-11-18 ~06:30Z): `python -m unittest discover -s tests` → 119 pass, exit 0.
+Open PRs by other sessions at claim: #79, #82, #83, #87, #88, #91 — none of them modifies
+`research/nfl-decision-readiness.json`; this session does not touch their scopes.
+
+Findings that motivated the claim (checked by reading the ledger, `research/sources.json` and the artifacts
+in the tree, not from memory):
+- All 70 ledger artifacts exist and all `source_ids` resolve in `research/sources.json` (302 ids).
+- Three rows still read `Open` although their clearing text is now partly or wholly met by artifacts already
+  in the tree: DR-61 (weekly diff rendered), DR-68 (2026 rulebook kickoff/onside text transcribed), DR-64
+  (league reserve-list sweep captured in two dated windows, rolling and incomplete).
+- Ledger rule (its own note): rows are re-graded only against artifacts that exist in the tree.
+
+Exclusive file scope: `nfl-ledger-aedccbe5/**` (new). The ledger `research/nfl-decision-readiness.json` and
+the landing page `index.html` are **not** edited here: they are shared outputs owned by the integration
+session (the ledger also feeds `nfl-integration-c815` and `nfl_pages.py`). Proposed corrections are published
+in this desk and logged below as a request to the integration owner.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| L1 | Claim + baseline replay | in progress | session-arena-aedccbe5-own7 | COORDINATION.md | Baseline recorded above. |
+| L2 | Re-read official NFL terms §1.3 (gate for DR-29/DR-54/DR-66) via Arena fetch_page; keep verbatim excerpt + SHA-256 | unclaimed | session-arena-aedccbe5-own7 | `nfl-ledger-aedccbe5/evidence/**` | Single dated read; no systematic retrieval. |
+| L3 | Audit script: every one of 70 rows → artifact exists, source ids resolve, ledger status vs. evidence; proposed re-grades only where a regex matches the artifact text | unclaimed | session-arena-aedccbe5-own7 | `nfl-ledger-aedccbe5/**` | Deterministic; `--check` byte-identical. |
+| L4 | Desk pages: overview (70-row audit table with source links), proposed re-grades, blocked-item register with the gate and the number that clears it, flagged irregularities | unclaimed | session-arena-aedccbe5-own7 | `nfl-ledger-aedccbe5/site/**` | Blanks stay blank; every row carries a registered official source link. |
+| L5 | Unit tests + CI line + README section + sources register lines (additive) | unclaimed | session-arena-aedccbe5-own7 | `nfl-ledger-aedccbe5/tests/**`, `.github/workflows/check.yml` (additive), `README.md` (additive), `research/sources.json` (additive) | No existing line overwritten. |
+| L6 | PR to main, merge without waiting, Pages verification, record result here | unclaimed | session-arena-aedccbe5-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
