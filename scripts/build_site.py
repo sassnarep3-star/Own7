@@ -459,6 +459,25 @@ NAV.extend(week11_nav_group())
 NAV.extend(e7ef_nav_group())
 
 
+def ledger_nav_group():
+    """Additive nav group for the ledger re-grade audit (session arena/aedccbe5-own7)."""
+    manifest = ROOT / "nfl-ledger-aedccbe5" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    import json as _json
+    labels = {
+        "index.html": "Ledger audit", "ledger.html": "All 70 register rows",
+        "regrades.html": "Proposed re-grades", "blocked.html": "Gates re-checked",
+        "flagged.html": "Flagged for review",
+    }
+    pages = _json.loads(manifest.read_text())["pages"]
+    return [("NFL ledger audit",
+             [(f"nfl-ledger-aedccbe5/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+
+NAV.extend(ledger_nav_group())
+
+
 C672_NAV_PATH = "nfl-week11-6c72a9fa/site/index.html"
 
 
@@ -1214,6 +1233,14 @@ def build():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
         (ROOT/slug).write_text(page(slug,title,subtitle,body,eyebrow),encoding='utf-8');generated.append(slug)
+    # Runs after the root pages are written so its evidence hashes (e.g. of index.html) are final.
+    # Decision-ledger re-grade audit (session arena/aedccbe5-own7). Runs the desk's own
+    # deterministic build; it refuses any proposed re-grade whose quoted text is not found in the cited file.
+    ledger_result=subprocess.run([sys.executable,str(ROOT/'nfl-ledger-aedccbe5'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if ledger_result.returncode: raise SystemExit('nfl-ledger-aedccbe5/build.py failed: '+ledger_result.stdout+ledger_result.stderr)
+    ledger_pages=load_json('nfl-ledger-aedccbe5/site/manifest.json')['pages']
+    for name in ledger_pages:
+        generated.append(f'nfl-ledger-aedccbe5/site/{name}')
     for old,target in ALIASES.items():
         href=('../' if '/' in old else '')+target
         text=f'<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url={esc(href)}"><title>Page moved · OWN7</title></head><body><main><h1>This research page has moved.</h1><p>The parallel legacy sites have been reconciled. <a href="{esc(href)}">Continue to the current source-linked dashboard</a>.</p><p>Old claims are not republished as verified. See the current audit and review register.</p></main></body></html>\n'
@@ -1224,7 +1251,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-competition/site/{n}' for n in competition_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-snapcount-e5e4/site/{n}' for n in snapcount_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages]+[f'nfl-readiness-e7ef/site/{n}' for n in e7ef_pages]+[f'nfl-week11-4c7d/site/{n}' for n in week11_pages]+[f'nfl-integration-c815/site/{n}' for n in c815_pages]+[f'nfl-week11-6c72a9fa/site/{n}' for n in c672_pages]+[f'nfl-slate-03dcea07/site/{n}' for n in slate_pages]+[f'nfl-brief-77b1/site/{n}' for n in brief_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-competition/site/{n}' for n in competition_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-snapcount-e5e4/site/{n}' for n in snapcount_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages]+[f'nfl-readiness-e7ef/site/{n}' for n in e7ef_pages]+[f'nfl-week11-4c7d/site/{n}' for n in week11_pages]+[f'nfl-integration-c815/site/{n}' for n in c815_pages]+[f'nfl-week11-6c72a9fa/site/{n}' for n in c672_pages]+[f'nfl-slate-03dcea07/site/{n}' for n in slate_pages]+[f'nfl-brief-77b1/site/{n}' for n in brief_pages]+[f'nfl-ledger-aedccbe5/site/{n}' for n in ledger_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 

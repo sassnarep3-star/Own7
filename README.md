@@ -24,6 +24,25 @@ Verification: `python nfl-fresh-1118/injury_w11.py --check`, `python nfl-fresh-1
 [`nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md`](nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md).
 Flags: [`nfl-fresh-1118/site/flagged.html`](nfl-fresh-1118/site/flagged.html) (FI01–FI09).
 
+## New: decision-ledger re-grade audit (2026-11-18, session arena/aedccbe5-own7)
+
+Checks every row of the decision-readiness register against the files in the tree and the registered sources,
+and proposes re-grades only where the cited artifact contains the quoted text.
+
+| Result | Where |
+|---|---|
+| 70 of 70 rows: artifact present, every source id registered; 58 rows show an official NFL/club link, 12 are repo-only and say so | [`nfl-ledger-aedccbe5/site/ledger.html`](nfl-ledger-aedccbe5/site/ledger.html) |
+| Four proposed re-grades, each with the matched text extracted from its artifact: DR-61, DR-64, DR-68 (Open → Partial) and DR-22 (landing table is 16 NR rows, not the 70-row register) | [`nfl-ledger-aedccbe5/site/regrades.html`](nfl-ledger-aedccbe5/site/regrades.html) |
+| Five gates re-read against official pages on 2026-11-18: NFL.com Terms §1.3 (retrieval prohibition) and the 404 at nfl.com/odds | [`nfl-ledger-aedccbe5/site/blocked.html`](nfl-ledger-aedccbe5/site/blocked.html) |
+| Six non-blocking flags, including the landing-table mismatch and two canonical results files (149 and 150 rows) | [`nfl-ledger-aedccbe5/site/flagged.html`](nfl-ledger-aedccbe5/site/flagged.html) |
+
+The register is not edited by this desk; the integration owner applies the proposals.
+
+```sh
+python nfl-ledger-aedccbe5/build.py --check   # byte-identical reproduction
+python -m unittest discover -s nfl-ledger-aedccbe5/tests -v   # 13 tests
+```
+
 ## New: fresh-reads desk — Week 10 completion + Week 11 readiness (2026-11-18, session arena/6c72a9fa-own7)
 
 Official reads taken the morning after the Week 10 Monday game (`nfl-week11-6c72a9fa/`, 7 pages,
