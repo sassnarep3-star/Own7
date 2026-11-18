@@ -1,0 +1,66 @@
+{
+  "official_rows": 24,
+  "official_rows_by_club": {
+    "NE": 15,
+    "DET": 9
+  },
+  "official_source_url": "https://www.nfl.com/injuries/league/2026/REG10",
+  "official_evidence_sha256": "7bf456ec7d085451de6f865cb5e111e275a9691bf37af43179b1e6d889f31dce",
+  "desk_a": {
+    "file": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+    "rows_agree": 21,
+    "rows_differ": 3,
+    "rows_missing": 0,
+    "injury_blank_where_official_lists_one": [
+      "Amon-Ra St. Brown",
+      "Sione Vaki"
+    ],
+    "game_blank_where_official_lists_one": [
+      "Amon-Ra St. Brown",
+      "Sione Vaki"
+    ]
+  },
+  "desk_b": {
+    "file": "nfl-assurance-9580ac3f/data/injuries.csv",
+    "rows_agree": 7,
+    "rows_differ": 17,
+    "rows_missing": 0,
+    "injury_blank_where_official_lists_one": [
+      "A.J. Brown",
+      "Kevin Byard",
+      "Reggie Gilliam",
+      "Cameron Latu",
+      "Walter Rouse",
+      "Brenden Schooler",
+      "Rhamondre Stevenson",
+      "Greg Van Roten",
+      "Charles Woods",
+      "Kerby Joseph",
+      "Cade Mays",
+      "D.J. Reed",
+      "Amon-Ra St. Brown",
+      "Sione Vaki"
+    ],
+    "game_blank_where_official_lists_one": [
+      "A.J. Brown",
+      "Kevin Byard",
+      "Reggie Gilliam",
+      "Cameron Latu",
+      "Walter Rouse",
+      "Brenden Schooler",
+      "Rhamondre Stevenson",
+      "Greg Van Roten",
+      "Charles Woods",
+      "Kerby Joseph",
+      "Cade Mays",
+      "D.J. Reed",
+      "Amon-Ra St. Brown",
+      "Sione Vaki"
+    ]
+  },
+  "desk_b_out_blank_on_official": [
+    "Kerby Joseph",
+    "Cade Mays",
+    "D.J. Reed"
+  ]
+}
