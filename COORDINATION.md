@@ -2572,5 +2572,8 @@ frequent commits; open PR #57 is not touched.
 
 ### S1 baseline replay (recorded at claim)
 
-- `python -m unittest discover -s tests` → to be replayed and recorded.
-- `python scripts/check_site.py` → to be replayed and recorded.
+- `python -m unittest discover -s tests` → **119 tests, OK** (2.560s).
+- `python scripts/check_site.py` → **OK**: recursive site, fragments, registered row sources, blank
+  rules, receipts and deterministic builds; 264 registered sources, 0 errors.
+- `git pull --rebase origin arena/e5e4351c-own7` → remote branch did not yet exist (first push);
+  push created `arena/e5e4351c-own7`. No other session's work touched.
