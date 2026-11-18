@@ -3539,3 +3539,42 @@ Rebase conflict (this session): `COORDINATION.md` add/add with main's new entrie
 **What this session did NOT do (honest scope):** this session delivered one verified, bounded piece: the Sunday NE/DET block of the Week 10 injury report. The full brief in the repository owner's request (price-snapshot store, results feed, leaderboards, ablations, depth-group model, roster-turnover model, 32-club sweep, and the rest) is not implemented here. Most of those themes already have desks on `main` (see `nfl-integration-c815`, `nfl-results`, `nfl-competition`, `nfl-pricing`, `nfl-availability-28ef`, `nfl-snapcount-e5e4`); their gaps are open items on their own desks and in the Flagged pages. Open items this session did not close: the Lions game-status cells in the assurance desk (R4.1), Joseph's practice status in the availability desk (R4.2), and the root navigation link (R4.3).
 
 **Next steps for the next integration owner:** (a) apply the cross-scope fixes R4.1 and R4.2 in their owning desks, after a dated re-read of the official page; (b) add a navigation link to this desk from the root site; (c) capture per-read clock times for injury reads so practice-status differences can be tested as a time series.
+## Session arena/0c516a05-own7 — independent acceptance review (2026-11-18)
+
+Session ID: `session-arena-0c516a05-own7`. Fixed Arena branch: `arena/0c516a05-own7`, based on
+`ad6f0d6f13571fceabcbc5404a397ee9c2618cd5` (PR #80). This session stays on the fixed branch.
+
+### Claim (before implementation)
+
+Baseline measured on this branch:
+
+- `npm run check` — pass: 119 repository tests, 6 NFL build tests, receipt-checked research
+  reproduction, recursive site integrity; 280 recursive HTML pages, 15,332 table rows, 302
+  registered sources, 0 audit errors.
+- `npm run test:browser` — pass: 256 desktop + 256 mobile pages, WCAG A/AA, 10 interaction
+  groups, no runtime errors.
+- `python -m nfl_origination run --check` and `python scripts/nfl_extract.py --check` — pass.
+
+**Exclusive file scope:** new `docs/nfl-acceptance-review-2026-11-18.md`; append-only changes to
+`COORDINATION.md`. This is a static acceptance review of the delivered NFL workspace, not a new
+source-data or model implementation. It does not edit any page, shared index/navigation, data,
+source registry, or other session's desk. Open PRs #83, #87 and #88 are observed only and left
+untouched; shared-site link requests, if any, are logged for the final integration owner.
+
+| ID | Task | Status | Owner | Files touched | Sources / verification |
+|---|---|---|---|---|---|
+| A1 | Claim + baseline replay | in progress | session-arena-0c516a05-own7 | COORDINATION.md | Commands and measured results above. |
+| A2 | Independent repo acceptance review: separate mechanical checks from external factual verification; inventory existing summary/questions/suggestions/flags and name remaining decision gates | unclaimed | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md` | Existing official source register and immutable evidence links; no new live-source claims. |
+| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | unclaimed | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | `npm run check`, `npm run test:browser`, result and origination `--check` commands; official URLs linked for manual review. |
+| A4 | PR, checks, merge, deployment record | unclaimed | session-arena-0c516a05-own7 | PR metadata, COORDINATION.md | Only after the review is complete and branch checks pass; no claim of new site publication unless verified. |
+
+Standing constraints: this report will not invent values, reinterpret saved evidence as a fresh live
+read, or mark unlicensed price / ROI / reward / wager gates as cleared. `check_site.py` validates
+local contracts and routing; it does not prove publisher truth, data rights or profitability.
+
+### Rebase conflict note
+
+Before the claim was pushed, `git pull --rebase origin main` advanced the base from `ad6f0d6` to
+`d6803bb` (PR #93, the W7 publication record). Both this claim and the new W7 record appended to
+the end of `COORDINATION.md`, so Git reported an add-at-end conflict. Resolved as a union: retained
+the full W7 publication record from `origin/main` and this complete claim; no work was discarded.
