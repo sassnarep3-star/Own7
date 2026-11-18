@@ -2969,6 +2969,77 @@ All seven board tasks (W1-W7) are done. Follow-up F1 (complete 8-chunk injury-hu
 the 2026-11-18 delta) remains open for the next session; FF02/FF03/FF04 are explained and
 non-blocking.
 
+## Session arena/20226569-own7 — Week 11 injury first read, takeover of stale W4/F1, public/private split (2026-11-18)
+
+Session: `session-arena-20226569-own7`. Branch: `arena/20226569-own7` (fixed by Arena; all work stays on it).
+Naming note: the brief's `session-<id>/<task>` branch scheme is not used because this session's branch is
+fixed. Work is one branch, one PR.
+
+Parallel-session check at claim: `gh pr list --state open` showed seven open PRs from other session branches
+opened 04:41–06:24 UTC on 2026-11-18 (PRs #79, #82, #83, #87, #88, #91, #92). Two of them (#91, #92) were
+opened in the last ten minutes before this session's first read, so they may still be active. This session
+edits shared files (`research/sources.json`, `scripts/check_site.py`, `scripts/build_site.py`, root generated
+pages, `README.md`, this file). It rebases on `origin/main` before any push and records every conflict below. Main advanced once during the session (PR #93, board-only, COORDINATION.md only); it is merged in before the push.
+
+### Claim and takeover
+
+| ID | Task | Status | Owner | Files touched | Notes |
+|---|---|---|---|---|---|
+| X1 | Take over F1 (full injury-hub capture) from `session-arena-92cad499-own7` | done | session-arena-20226569-own7 | `nfl-fresh-1118/**` | That session's board-only record (PR #93, merged 2026-11-18T06:25:23Z) marks W1–W7 done and leaves F1 open 'for the next session'. This session takes F1 only. No other task of that session is touched. Recorded as a handoff. |
+| X2 | Week 11 injury report, first read (transcript, hash, read-time bound) | done | session-arena-20226569-own7 | `nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md` | Chunks 0–2 of 3 read on 2026-11-18; all retrieved before 06:24:07Z (upper bound). Rendered text, not HTTP bytes. |
+| X3 | Parser, drift alarm, game-level CSV, tests | done | session-arena-20226569-own7 | `nfl-fresh-1118/injury_w11.py`, `nfl-fresh-1118/data/injury-w11-2026-11-18-games.csv`, `nfl-fresh-1118/tests/test_injury_w11.py` | 19 desk tests green (including 6 drift-alarm tests that tamper with the transcript). |
+| X4 | Desk page `injury-w11.html` + flags FI01–FI09; FF01 marked superseded | done | session-arena-20226569-own7 | `nfl-fresh-1118/build.py`, `nfl-fresh-1118/site/*` | FF01 text kept unchanged (its tests pin the 04:06Z state). |
+| X5 | Registry entries (4 new), host pins, nav label, root rebuild, `nba_lab` re-run for the source-hash contract | done | session-arena-20226569-own7 | `research/sources.json`, `scripts/check_site.py`, `scripts/build_site.py`, root generated pages, `research/results.json` | `check_site.py` 0 errors after rebuild. |
+| X6 | Public / private split for row-level NFL data | done for this page; repo-wide private store **not built** | session-arena-20226569-own7 | `nfl-fresh-1118/build.py`, `injury_w11.py` | The new page shows counts and links only. The 26 player rows are validated in memory and not written to a CSV. The verbatim transcript (which has the rows) stays in the repository, because Pages serves the whole tree. See FI09. |
+| X7 | Repo review: full CI battery before and after the change | done | session-arena-20226569-own7 | none | Baseline: 70 of 70 Python CI steps passed on `ad6f0d6` with a clean tree. Post-change battery: see the record below. |
+| X8 | README section | done | session-arena-20226569-own7 | `README.md` | |
+| X9 | PR, merge, Pages verify, record | pending | session-arena-20226569-own7 | COORDINATION.md, PR metadata | Recorded below after the merge. |
+
+### Sources and verification (every row links its source)
+
+| Item | Official source (link) | How verified |
+|---|---|---|
+| Week 11 injury report, 13 games, 26 club entries | [nfl.com/injuries](https://www.nfl.com/injuries/) | fetch_page chunks 0–2 of 3; transcript + SHA-256 in the desk |
+| Week 11 URL returns 404 | [nfl.com/injuries/week-11](https://www.nfl.com/injuries/week-11) | fetch_page re-check after 06:24:07Z: the site's 404 page |
+| Pairings, kickoffs and dates | [Week 11 by-week schedule](https://www.nfl.com/schedules/2026/by-week/week-11) (already captured in `nfl-results/data/scheduled-2026-w11.csv`) | matched 13/13 by pairing, date and kickoff |
+| Records | [nfl.com/standings](https://www.nfl.com/standings/) (2026-11-18 capture, `data/nfl-standings-2026-11-18.csv`) | matched 26/26 |
+| Six clubs with no Week 11 row | same schedule capture | ATL, CLE, GB, LA, NE, SEA; NE headline in the hub NEWS block is flag FI08 |
+| Ravens 'No Injuries Reported' vs news | [Ravens confirm Lamar Jackson expected to miss 6-10 weeks (Fri Nov 13 roundup)](https://www.nfl.com/news/nfl-news-roundup-latest-league-updates-from-friday-nov-13); [Lamar Jackson out 6-9 weeks](https://www.nfl.com/news/ravens-lamar-jackson-right-thumb-out-6-9-weeks-expects-to-return-this-season) | headlines only; flag FI02, not resolved |
+| Terms on use of NFL.com material | [NFL.com Terms](https://www.nfl.com/legal/terms/) | registered (NFL-LEGAL-TERMS); cited by flag FI09 |
+
+### Irregularities (published on the desk's Flagged page; none blocks the merge)
+
+1. **FI02** Ravens 'No Injuries Reported' on the Week 11 report while the hub's own news links carry Lamar Jackson absence headlines. Not reconciled.
+2. **FI09** Rights: the NFL terms limit use to informational purposes and prohibit systematic retrieval or compilation without written consent. Repository gate RG10 says nothing NFL-named is released, and NF34 already records 64 public NFL-named CSVs. This session adds no new public CSV of player rows. The verbatim transcript containing the rows stays in the repository, so the conflict is narrowed but not closed. Owner decision needed.
+3. **FI05** The retrieval tool returns rendered text, not HTTP bytes. The SHA-256 hashes the transcript, not the server response. Per-chunk times are unknown.
+4. **Brief figures for Week 10 do not match the retained file.** The brief states 254 rows and 4 'no injury' sections against 279 rows and 2 sections live. The repository's retained 2026-11-17 Week 10 read (`nfl-readiness-e7ef/evidence/injuries-w10-2026-11-17.md`) has 28 table headers and 347 data rows, which this session recounted (403 `|` lines minus 56 header and separator lines). The live hub now serves Week 11, so the brief's figures are **unverified** here and left unresolved.
+5. **Open follow-ups on the 92cad499 board.** At claim time its W-table still read *unclaimed* for W3–W7; PR #93 later marked W1–W7 done. Only F1 (full injury-hub capture) was left open and is taken over here (X1). W3 (extend the results feed to Weeks 1–11) and W6 (PR #57, merge state CONFLICTING at that time) are not part of this session and remain for their owners.
+6. **Duplicated headings in this file.** Three session headings appear twice (`arena/824cdccf-own7`; `arena/e7efbde7-own7` ×2). Content is not duplicated beyond the headings; left as they are, not edited.
+7. **Lions game-status cells (Joseph, Mays, Reed).** The retained 2026-11-17 transcript prints *Out* for all three (`nfl-brief-77b1/evidence/nfl-injuries-2026-11-17.md`, lines 14–16). The published Lions table on the desk pages was not re-checked in this session.
+8. **Week 11 URL** `nfl.com/injuries/week-11` is a 404 at this read; the Week 11 view is at `/injuries/` (flag FI06).
+9. **Hub kickoff and network text** is printed without a space ('8:15 PMEST') and once as 'NBC, UNIVERSO' where the schedule capture has 'NBC' (flag FI07). Kept as printed on the page.
+10. **No scheduled Wednesday–Friday capture.** The brief asks for the injury report on each of those days, kept as a dated series. This session holds one manual read. The existing capture workflow (`.github/workflows/nfl-assurance-9580ac3f.yml`) is manual, needs a typed authorization, and keeps artefacts for 7 days, so it cannot supply the retained history. Recorded as FI10 on the Flagged page. Not auto-scheduled: an owner decision.
+11. **Browser suite not completed here.** `scripts/browser_test.mjs` crashed in this sandbox (single-process Chromium closed mid-run). A focused run on the new desk pages (axe WCAG 2.x A/AA, no runtime errors, no outer overflow at 1440 and 390 px) passes. The full suite is left to the PR's CI.
+12. **Accidental push during a rebase (corrected).** A `git pull --rebase ... | tail` followed by `&& git push` pushed the branch while the rebase had stopped on a conflict (the pipe hid the rebase exit code). The pushed commit `fbd5e8b` is a complete, conflict-free commit on this branch; nothing was lost and no history was rewritten or force-pushed. The rebase was aborted, and `origin/main` (1d973d3) was merged in instead, not rebased, because the same generated-file conflicts would have recurred on each of four commits. Resolved as a merge in `38943c3`: COORDINATION.md kept both sections; `research/sources.json` kept all 311 main entries plus the four new ones (315); two other sessions' generated `sources.html` pages were regenerated by their own builders (a one-line count change each), not hand-edited. Every check passes after the merge.
+13. **Main advanced again during the session (PR #96 merged as 5799028).** The push was correctly refused by the ancestor check, so nothing unmerged went out. Main was merged in again (not rebased), with the same handling: README kept both sections (this session's Week 11 section and PR #96's ledger section); `research/sources.json` auto-merged cleanly to 315 entries with no duplicates; generated pages (root site, the two desks' sources pages, `research/site-manifest.json`) regenerated by their own builders. Gates after this merge: `check_site` 0 errors; `nba_lab run --check` OK; desk `--check` and tests OK; readiness, week11-6c72a9fa and ledger-aedccbe5 desks reproduce; no file removed relative to main.
+
+### What is not done in this session (stated plainly)
+
+The brief asks for far more than one session can verify line by line: the 32-club roster and IR sweep, the depth-chart
+register, the injury-designation reliability study, the decision and matchup matrices, and the repository-wide private
+store. These remain on their owning desks or open as recorded flags. Nothing here is presented as finished that the
+evidence does not support.
+
+### Publication record, session arena/20226569-own7 (2026-11-18)
+
+- PR [#98](https://github.com/sassnarep3-star/Own7/pull/98) from `arena/20226569-own7` to `main`: Week 11 injury-hub first read, desk, flags FI01–FI10, root rebuild, this record.
+- CI on the PR (head at the time of the check): *Research and recursive site audit* **pass**; *Desktop, mobile and accessibility* **pass** (run 44253717641).
+- Final CI on head `30e1781` (run 44255480151): *Research and recursive site audit* **pass**; *Desktop, mobile and accessibility* **pass**.
+- **Merge: HELD, not merged.** Pages is a legacy build from `main` at `/`, so merging publishes every committed file. The verbatim transcript `nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md` carries player rows. The open rights decision (NFL Terms §1.3 vs RG10/NF34) blocks that publication. The desk page itself shows counts and links only. Owner decision needed on the transcript. Until then the PR stays open.
+- Pages: not deployed by this session, because nothing has been merged to `main`.
+- Other open PRs (#79, #82, #83, #87, #88, #91, #92) were not edited.
+- Handoff: F1 (full injury-hub capture) is partly done (chunks 0–2 of 3 read; per-team tables confirmed only for IND and HOU). Remaining: the owner's rights decision, a scheduled Wed–Fri capture (FI10), and the chunk-count reconciliation (8 vs 3) noted in the session log.
+
 ## Session arena/600119f6-own7 — NFL request audit and readiness review (2026-11-18)
 
 ### Claim (before implementation)

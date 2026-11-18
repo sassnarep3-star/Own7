@@ -1,0 +1,14 @@
+game_no,date,weekday,kickoff_et,network_as_printed,away_abbr,away_nickname,away_record,home_abbr,home_nickname,home_record,away_status,home_status,source_id,source_url,read_upper_bound_utc
+1,2026-11-19,Thursday,8:15 PM,Prime Video,IND,Colts,3-7,HOU,Texans,3-6,11 players listed,15 players listed,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+2,2026-11-22,Sunday,1:00 PM,CBS,PIT,Steelers,6-3,PHI,Eagles,2-7,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+3,2026-11-22,Sunday,1:00 PM,CBS,AZ,Cardinals,3-7,KC,Chiefs,7-2,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+4,2026-11-22,Sunday,1:00 PM,FOX,BAL,Ravens,4-6,CAR,Panthers,4-5,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+5,2026-11-22,Sunday,1:00 PM,FOX,TB,Buccaneers,3-6,DET,Lions,7-2,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+6,2026-11-22,Sunday,1:00 PM,CBS,MIA,Dolphins,1-8,BUF,Bills,8-1,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+7,2026-11-22,Sunday,1:00 PM,FOX,TEN,Titans,1-8,DAL,Cowboys,4-6,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+8,2026-11-22,Sunday,1:00 PM,FOX,NO,Saints,3-6,CHI,Bears,7-2,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+9,2026-11-22,Sunday,4:05 PM,FOX,NYJ,Jets,2-8,LAC,Chargers,1-8,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+10,2026-11-22,Sunday,4:25 PM,CBS,JAX,Jaguars,7-2,NYG,Giants,5-3-1,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+11,2026-11-22,Sunday,4:25 PM,CBS,LV,Raiders,4-6,DEN,Broncos,7-2,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+12,2026-11-22,Sunday,8:20 PM,"NBC, UNIVERSO",MIN,Vikings,7-2,SF,49ers,8-1,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z
+13,2026-11-23,Monday,8:15 PM,"ESPN, ABC, ESPN2, ESPN DEPORTES",CIN,Bengals,7-2,WAS,Commanders,3-5-1,No Injuries Reported,No Injuries Reported,FRESH-NFL-INJHUB-W11-1118,https://www.nfl.com/injuries/,2026-11-18T06:24:07Z

@@ -2,6 +2,28 @@
 
 [Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-executive-summary-2026-11-18.md) · [Historical 2026-11-12 summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
+## New: Week 11 injury report, first read (2026-11-18, session arena/20226569-own7)
+
+The official NFL.com injury report for **Week 11** was published on the Wednesday of Week 11. It is the first
+Week 11 entry in the injury-report series. Three chunks were read and transcribed verbatim; the clock time is an
+upper bound (the retrieval tool returns no per-chunk time). The desk parses the transcript under a drift alarm
+(13 games, 26 club entries, 26 player rows, 24 "No Injuries Reported") and cross-checks pairings, kickoffs and
+records against the existing official schedule and standings captures.
+
+| Result | Where |
+|---|---|
+| **13 games**, 26 club entries: 2 clubs carry tables (Colts 11, Texans 15, Thursday); 24 read "No Injuries Reported" | [`nfl-fresh-1118/site/injury-w11.html`](nfl-fresh-1118/site/injury-w11.html) |
+| **Game Status is blank on all 26 printed rows**. Blank means no designation printed yet, not available | same page, FI04 |
+| **No delta is published**: this is the first Week 11 read, so the delta series starts Thursday | same page, FI01 |
+| **Ravens: "No Injuries Reported" while the hub's own news links say Lamar Jackson is out 6-9 weeks** | same page, FI02 |
+| **Week 11 URL** `/injuries/week-11` still returns the site 404; the Week 11 view is served at `/injuries/` | same page, FI06 |
+| **Rights split**: player names are not published on the page; counts and links only (NFL terms, gate RG10) | same page, FI09 |
+
+Verification: `python nfl-fresh-1118/injury_w11.py --check`, `python nfl-fresh-1118/build.py --check` and
+`python -m unittest discover -s nfl-fresh-1118/tests`. Transcript:
+[`nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md`](nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md).
+Flags: [`nfl-fresh-1118/site/flagged.html`](nfl-fresh-1118/site/flagged.html) (FI01–FI09).
+
 ## New: decision-ledger re-grade audit (2026-11-18, session arena/aedccbe5-own7)
 
 Checks every row of the decision-readiness register against the files in the tree and the registered sources,
