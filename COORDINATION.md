@@ -2788,3 +2788,61 @@ sessions are retained unchanged; only this section is added by this session.
 Rules this session follows: fixed branch only; a value is populated only from an official page read in this
 session, otherwise left blank and flagged; every table row keeps a registered official source link;
 `git pull --rebase` before every push; small frequent commits; other sessions' implementation files are not edited.
+
+### P3–P7 progress (2026-11-18)
+
+**The boundary defect is solved, and the solution is the publisher's own grammar.** Each team row in a
+Game Book playtime table is six cells: `[player, position, OFFENSE, DEFENSE, ST_snaps, ST_pct]`, where
+every unit cell is either *empty* or a `<snaps> <pct>` pair. Empty cells are semantic. The captures
+under `nfl-playtime-lab/raw/` keep one token per empty cell and two per populated cell, so
+`decode_cells()` re-derives the boundaries exactly instead of inferring them from row length. Nothing
+is guessed: a token stream that does not fit the grid is flagged `undecodable-grid` and withheld.
+
+**Every share is re-derived.** `resolve_denominator()` confirms the unit total the publisher prints
+beside each table against the shares on the rows, and only corrects it when most rows contradict it,
+so one mangled cell cannot drag a denominator. All **66 club-unit totals across 11 captures confirm**.
+Every printed percentage must equal `round(snaps*100/total)` within 1 point or the cell is withheld.
+
+**Published artefacts:** `nfl-playtime-lab/` — 11 captures (10 clubs of the 13 played fixtures plus
+SEA–LV), 1,552 player-unit rows (1,530 verified, 19 re-derived, 3 published-share), 1,022 players,
+1,015 depth rows, 9 deterministic pages, 23 unit tests, 27 flags. `build_site.py --check` byte-identical.
+
+**Integration (P7) complete, additively, in a rebase over 9 upstream merges:** nav group, build step
+and manifest line in `scripts/build_site.py`; per-fixture `PT-GB-<game_id>` hosts in
+`scripts/check_site.py`; folder allowlists in `serve_site.py` and `browser_test.mjs`; two CI lines.
+`research/sources.json` resolved as a union (298 sources). Full battery green:
+`check_site.py` → **277 pages, 18,964 rows, 0 errors**; desk tests 23 OK; root tests 119 OK;
+browser suite **232 desktop + 232 mobile, WCAG A/AA, no runtime errors**.
+
+### Cross-desk finding: `nfl-snapcount-e5e4` (session arena/e5e4351c-own7) — reported, not edited
+
+That session reached the same 13 Game Books first and its desk is merged. **Its `snap-records.csv`
+mis-assigns special-teams snaps to the defense column**, because the capture flattened the six-cell
+grid. Checked here against the publisher's own published unit totals, not against opinion:
+
+| Test | Result |
+|---|---|
+| Rows whose `def_pct` cannot be re-derived from their `def_snaps` over the printed DEF total | **64** |
+| Rows that carry an `off_*` and a `def_*` pair but no `st_*` — i.e. lost a real ST entry into `def` | **291** |
+| Rows claiming defensive snaps | 1,002 |
+| Actual defensive unit rows in the 11 captures re-transcribed here | 416 |
+
+Worked example, WAS–NYG: the PDF prints `B.Coleman | T/G | 69 100% | (empty) | 4 | 15%`. The merged
+desk stores `off 69/100, def 4/15, st empty`. The 4/15 is **special teams**; Coleman played no defense.
+The same shape repeats for all five WAS offensive linemen, for SEA–LV (where `A.Bradford | G | 57 100%
+| (empty) | 4 | 16%` became `def 4/16` against a DEF total of 59), and across every club.
+
+Consequence: depth ranks, position-group shares and the starter/backup split in that desk are computed
+on a unit that most of those players never appeared on. It is a transcription defect, not a modelling
+choice, and the fix is the six-cell decoder in this desk.
+
+Per the board's rule, **no file under `nfl-snapcount-e5e4/` was edited by this session.** The finding is
+recorded here for its owner. This desk's own tables are unaffected and disagree with the merged desk on
+exactly these rows, which is why both are published with the publisher's totals beside them.
+
+### P2 status
+
+PR #57 is still open and still conflicts. Its scope (a frozen 136-game corpus and M00–M06 model
+corpus) does **not** overlap this desk, and the readiness material it would take over has since been
+landed by other sessions (`nfl-readiness-1467fdf7`, `nfl-readiness-e7ef`, `nfl-integration-c815`).
+This session does not modify, rebase or close PR #57.
