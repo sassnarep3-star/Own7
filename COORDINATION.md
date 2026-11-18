@@ -3313,6 +3313,62 @@ in this desk and logged below as a request to the integration owner.
 - Auto-merged without conflict: `scripts/build_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `README.md`. Verified after the merge: the desk block, nav group, manifest entries and allowlist token are present once each.
 - Generated outputs (root pages, `research/site-manifest.json`) regenerated with `python scripts/build_site.py` (run twice; second run identical). `python scripts/check_site.py` → exit 0.
 - Re-checked after the merge: `research/nfl-decision-readiness.json` and `index.html` are unchanged between `ad6f0d6` and `origin/main` (same 70 rows, same statuses, same 16-row landing table), so the audit's findings still hold.
+## Session arena/9ef12c81-own7 — decision-readiness reconciliation against the 2026-11-18 tree (2026-11-18)
+
+### Claim (committed and pushed before implementation)
+
+Session ID: `session-arena-9ef12c81-own7`. Branch: `arena/9ef12c81-own7` (fixed Arena branch; the
+`session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this
+session). Base: `ad6f0d6` (= `origin/main`, PR #80). Open PRs of other sessions (#79, #82, #83, #87,
+#88) are not touched.
+
+Baseline at claim: `python -m unittest discover -s tests` → 119 pass; `python scripts/nfl_extract.py --check`
+→ OK (32/20/14, 0 flags); `python -m nfl_origination run --check` → OK; `python scripts/check_site.py` → OK.
+
+Why this task: the umbrella brief re-issues requirements that earlier desks already cover. Re-reading
+the decision-readiness register (`research/nfl-decision-readiness.json`, 70 rows, maintained by
+e15f05e0) against the artifacts committed on 2026-11-18 shows the register is one day stale in
+at least four rows (DR-31, DR-61, DR-64, DR-68). This session does **not** edit that shared register
+(shared outputs change only at integration); it publishes a reconciliation with evidence and logs the
+proposed changes for the integration owner.
+
+Exclusive file scope: `nfl-reconcile-9ef12c81/**` (new desk). Additive only in `scripts/build_site.py`
+(one desk build + manifest listing), `scripts/check_site.py` (host entries, if a new source is
+registered), `research/sources.json` (append, if any), `research/site-manifest.json` (regenerated),
+`.github/workflows/check.yml` (2 lines), `README.md` (section), `COORDINATION.md` (append only).
+No register row, value, page or test of another desk is overwritten.
+
+| ID | Task | Status | Owner | Files touched | Notes |
+|---|---|---|---|---|---|
+| R1 | Claim + baseline replay | **done** | session-arena-9ef12c81-own7 | COORDINATION.md | Baseline green at claim (see above). |
+| R2 | Re-read the rights clause DR-29/54/66 depend on (NFL.com Terms §1.3) from the official page | **done** | session-arena-9ef12c81-own7 | `nfl-reconcile-9ef12c81/evidence/` | Read 2026-11-18 via Arena fetch_page: https://www.nfl.com/legal/terms/ (updated May 16, 2024), §1.3 text quoted verbatim. |
+| R3 | Adjudicate the register rows the 2026-11-18 tree bears on; carry all others forward unchanged and say so | **done** | session-arena-9ef12c81-own7 | `nfl-reconcile-9ef12c81/adjudications.json` | Only rows with a checked artifact are re-graded; the rest are labelled "carried forward, not re-read". |
+| R4 | Desk pages: reconciliation index (70 rows), decisions and information needed, flagged irregularities | **done** | session-arena-9ef12c81-own7 | `nfl-reconcile-9ef12c81/site/**` | Every row carries its register source link and the evidence file link. |
+| R5 | Additive integration, CI line, tests, full battery | **done** (local battery green; CI on PR is the final gate) | session-arena-9ef12c81-own7 | listed additive files | No existing page, value or test overwritten. |
+| R6 | PR to main, merge after green CI, Pages verify, record | unclaimed | session-arena-9ef12c81-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints: no price, ROI, CLV, stake, wager or monetary reward is produced; no value is
+inferred; blanks stay blank with a reason; every table row keeps a registered official source link;
+`git pull --rebase` before every push.
+
+### R1–R5 result — session-arena-9ef12c81-own7 (recorded 2026-11-18)
+
+| ID | Result |
+|---|---|
+| R2 | NFL.com Terms §1.3 re-read from https://www.nfl.com/legal/terms/ (updated May 16, 2024; chunk 0 of 9); verbatim text retained at `nfl-reconcile-9ef12c81/evidence/nfl-terms-1-3-2026-11-18.md`. |
+| R3 | 12 register rows re-graded with evidence files: DR-29, DR-54, DR-66 (Blocked, confirmed); DR-11, DR-56, DR-44 (Open, confirmed); DR-31, DR-52, DR-34 (Partial, status kept; DR-31 gate text stale); DR-61, DR-64, DR-68 (**proposed Open to Partial**). 58 rows carried forward unchanged and labelled as not re-read. |
+| R4 | `nfl-reconcile-9ef12c81/site/`: index (70 rows), questions (6 owner decisions + information needed for 38 non-Implemented rows), flagged (8 flags RC-01..RC-08). Every row links a registered official source and the evidence file. |
+| R5 | Additive: `scripts/build_site.py` (desk build + generated listing; manifest regenerated), `scripts/browser_test.mjs` and `scripts/serve_site.py` (folder allowlist), `.github/workflows/check.yml` (2 lines), `README.md` (section). No existing page, value, register row or test changed. Local: desk tests 14 OK; desk `--check` OK; `scripts/check_site.py` OK (47 canonical pages, 302 sources, 0 errors); `tests/` OK. |
+
+**Irregularities (published on the desk's Flagged page; non-blocking).** RC-01 DR-31 gate contradicts the snap-count desk.
+RC-02 DR-61 gate says no diff is rendered; one is. RC-03 DR-64 gate says the reserve list is not retrieved; a 25-row window is. RC-04 DR-68 gate says rules are not transcribed; they are.
+RC-05 four Game Book Playtime tables are printed "(Unofficial)" (371 of 1,217 rows). RC-06 two depth files are not one register and HOU is absent from both. RC-07 §1.3 read on one chunk only. RC-08 the snap-count capture summary says "26 playing clubs" for a 28-club week (LAC and BAL absent).
+
+**Not done in this session, and why.** (a) No scheduled or daily capture of the injury report, snap counts or depth pages (DR-29/54): the terms gate applies, so this needs the owner's decision (Q1). (b) No price data (DR-18/20). (c) No backtest, ablation, correlation or leaderboard number was produced; those gates are unchanged. (d) The 30 Implemented rows were not re-read this session. (e) The shared register was not edited; the three status changes and one gate correction are proposals for the integration owner.
+
+#### Cross-desk note by session arena/9ef12c81-own7 (2026-11-18): mechanical regeneration in nfl-brief-77b1
+
+Adding this desk's tracked files changes one count in another desk's generated output. `nfl-brief-77b1/build.py` counts the tracked files that contain the word "onside" (`git grep -il onside`), so `onside_hits` moved from 91 to 97 and `nfl-brief-77b1/data/facts.json`, `data/register.json` and `site/register.html` were regenerated by the integration step `scripts/build_site.py`. The change is the count only (2 lines per file); no brief-desk content, value or test was edited, and no brief test pins the old number (`python -m unittest discover -s nfl-brief-77b1/tests` OK; `nfl-brief-77b1/build.py --check` OK). The regenerated files are committed with this PR so the "committed artifacts must be current" CI gate holds. Owner of `nfl-brief-77b1` may wish to narrow that count to content files; this is logged, not changed.
 
 ### Post-merge fix — session arena/aedccbe5-own7 (2026-11-18)
 

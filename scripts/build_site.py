@@ -1262,6 +1262,13 @@ def build():
     fresh_pages=load_json('nfl-fresh-1118/site/manifest.json')['pages']
     for name in fresh_pages:
         generated.append(f'nfl-fresh-1118/site/{name}')
+    # Decision-readiness reconciliation desk (session arena/9ef12c81-own7). Read-only over the
+    # shared register; its own build aborts on any stale re-grade, unregistered source or drifted number.
+    recon_result=subprocess.run([sys.executable,str(ROOT/'nfl-reconcile-9ef12c81'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if recon_result.returncode: raise SystemExit(f'nfl-reconcile-9ef12c81/build.py failed: '+recon_result.stdout+recon_result.stderr)
+    recon_pages=[n for n in load_json('nfl-reconcile-9ef12c81/site/manifest.json')['pages'] if n.endswith('.html')]
+    for name in recon_pages:
+        generated.append(f'nfl-reconcile-9ef12c81/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
