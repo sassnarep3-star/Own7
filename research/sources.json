@@ -3229,5 +3229,113 @@
   "access": "Repository file read by the build; no network",
   "status": "Repository artifact",
   "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl_pages.py"
+ },
+ {
+  "id": "W4C7D-NFL-STANDINGS",
+  "publisher": "NFL.com",
+  "title": "2026 NFL Division Standings",
+  "url": "https://www.nfl.com/standings/",
+  "kind": "standings",
+  "authority": "Official league publication",
+  "scope": "All 32 clubs: W, L, T, PCT, PF, PA, net points, home, road, division, conference, streak and last five, as printed on 2026-11-18 after Week 10 was complete.",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page rendered content (2 chunks); not a direct HTTP-status attestation",
+  "status": "Content checked"
+ },
+ {
+  "id": "W4C7D-NFL-SCHED-W11",
+  "publisher": "NFL.com",
+  "title": "NFL Week 11 Schedule 2026: Games, Times, Matchups & Tickets",
+  "url": "https://www.nfl.com/schedules/2026/by-week/week-11",
+  "kind": "schedule",
+  "authority": "Official league publication",
+  "scope": "13 Week 11 fixtures with date, kickoff as printed, network, both clubs, the records printed beside each club, the six clubs on bye, and the league's own 2026 TBD Games note for Weeks 16-18.",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page rendered content (3 chunks); not a direct HTTP-status attestation",
+  "status": "Content checked"
+ },
+ {
+  "id": "W4C7D-NFL-INJ-W10",
+  "publisher": "NFL.com",
+  "title": "Official NFL Injury Report for Players - Week 10 of the 2026 Season",
+  "url": "https://www.nfl.com/injuries/league/2026/reg10",
+  "kind": "injury report",
+  "authority": "Official league publication",
+  "scope": "Player, position, injury, practice status and game status for the Monday 16 November section (Los Angeles Chargers and Baltimore Ravens), read on 2026-11-18.",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page rendered content (chunks 5 and 6 of 8); not a direct HTTP-status attestation",
+  "status": "Content checked"
+ },
+ {
+  "id": "W4C7D-NFL-INJ-W11",
+  "publisher": "NFL.com",
+  "title": "Official NFL Injury Report - Week 11 path (redirects to Week 10 at read time)",
+  "url": "https://www.nfl.com/injuries/league/2026/REG11",
+  "kind": "injury report",
+  "authority": "Official league publication",
+  "scope": "Probe only. On 2026-11-18 this URL served the Week 10 report; no Week 11 row is transcribed anywhere in this desk.",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
+  "status": "Probed; Week 11 not published at read time"
+ },
+ {
+  "id": "W4C7D-NFL-GAMECENTER-MNF",
+  "publisher": "NFL.com",
+  "title": "Los Angeles Chargers at Baltimore Ravens 2026 REG 10 - Game Center",
+  "url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+  "kind": "game centre",
+  "authority": "Official league publication",
+  "scope": "Final score 23-20, quarter-by-quarter scores, location and stadium as printed in the Game Info block, and the Download Game Book (PDF) link.",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
+  "status": "Content checked"
+ },
+ {
+  "id": "W4C7D-NFL-GAMEBOOK-MNF",
+  "publisher": "NFL (static.www.nfl.com Game Book PDF)",
+  "title": "Official NFL Game Book - Los Angeles Chargers at Baltimore Ravens, 2026 REG 10",
+  "url": "https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf",
+  "kind": "official game book",
+  "authority": "Official league game summary",
+  "scope": "Official lineups, substitutions, Did Not Play and Not Active lists, stadium, city, roof and surface, game weather, temperature, humidity, wind, officials, paid attendance and the official copyright and reuse notice.",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page PDF text extraction; not a direct HTTP-status attestation",
+  "status": "Content checked"
+ },
+ {
+  "id": "W4C7D-NFL-STATS-PLAYER",
+  "publisher": "NFL.com",
+  "title": "NFL 2026 Player Stats",
+  "url": "https://www.nfl.com/stats/player-stats/",
+  "kind": "statistics",
+  "authority": "Official league publication",
+  "scope": "Probe only: the rendered category menu, which lists Passing, Rushing, Receiving, Fumbles, Tackles, Interceptions, Field Goals, Kickoffs, Kickoff Returns, Punting and Punt Returns, and contains no snap-count category.",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
+  "status": "Probed; no snap-count category"
+ },
+ {
+  "id": "W4C7D-NFL-STATS-SNAPCOUNTS",
+  "publisher": "NFL.com",
+  "title": "2026 NFL offense snapcounts stats by Team (path)",
+  "url": "https://www.nfl.com/stats/team-stats/offense/snapcounts/2026/reg/all",
+  "kind": "statistics",
+  "authority": "Official league publication",
+  "scope": "Probe only: the page renders the passing table and offers no snap-count category, so no official team snap-count table exists at this path.",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
+  "status": "Probed; no snap-count table"
+ },
+ {
+  "id": "W4C7D-NFL-INACTIVES",
+  "publisher": "NFL.com",
+  "title": "NFL Inactives | Inactive Players",
+  "url": "https://www.nfl.com/inactives/",
+  "kind": "inactive list",
+  "authority": "Official league publication",
+  "scope": "Probe only: on 2026-11-18 the body reads 'Please check back soon for NFL Inactive Reports for this Season', so no weekly inactive list is published there.",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation",
+  "status": "Probed; no inactive list published"
  }
 ]

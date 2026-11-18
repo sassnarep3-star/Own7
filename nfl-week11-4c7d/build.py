@@ -1098,6 +1098,20 @@ def build_flags(reserve_gap: str) -> list[dict]:
             "source_url": "https://www.nfl.com/inactives/",
         },
         {
+            "flag_id": "W4C7D-08",
+            "severity": "low",
+            "title": "The Game Book prints no weather for 2 of 14 Week 10 games",
+            "detail": "Mercedes-Benz Stadium (KC at ATL, retractable roof closed) and Caesars "
+                      "Superdome (CAR at NO, closed stadium) carry blank weather, temperature, "
+                      "humidity and wind fields, while two other indoor games (Lucas Oil Stadium and "
+                      "AT&T Stadium, both retractable roof closed) do print weather. The source is "
+                      "therefore not consistent about indoor games, and the blank cells are left "
+                      "blank rather than filled with 'indoor'.",
+            "action": "Treat a blank weather row as 'the source printed none', never as 0 or as "
+                      "'indoors'; confirm per venue before any weather feature uses the field.",
+            "source_url": GAMEBOOK_URL,
+        },
+        {
             "flag_id": "W4C7D-07",
             "severity": "low",
             "title": "Game Book copyright notice restricts reuse",
@@ -1176,6 +1190,8 @@ def main(argv: list[str] | None = None) -> int:
             "joined_rows_total": sum(r["n_rows_joined"] for r in reliability),
             "week10_inactives": coverage[-1]["official_not_active_count"],
             "week10_inactives_absent_from_report": totals_absent,
+            "games_with_weather_printed": sum(1 for r in closure if r["weather"].strip()),
+            "games_without_weather_printed": sum(1 for r in closure if not r["weather"].strip()),
             "probes": len(probes),
             "requirements_in_delta": len(req_delta),
             "questions": len(questions),

@@ -1,5 +1,8 @@
 # Probes for an official snap-count source — read 2026-11-18
 
+READ_UTC_DATE|2026-11-18
+READ_METHOD|Arena fetch_page rendered content; not a direct HTTP-status attestation
+
 QUESTION|Does an official NFL source publish per-player or per-team snap counts, so that depth order can
 QUESTION|be modelled from playing time rather than from jersey order or club depth charts?
 
