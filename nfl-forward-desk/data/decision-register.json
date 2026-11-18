@@ -1,0 +1,778 @@
+{
+  "register": "F4 joined decision register \u2014 session arena/3f9563bf-own7",
+  "as_of": "2026-11-18",
+  "join_rule": "DQ -> DR via DQ_TO_DR; DQ -> answering source via DQ_ANSWERING_SOURCE; SU -> DQ via SU_TO_DQ. All mappings are explicit and asserted in build_register.py.",
+  "count": 17,
+  "rows": [
+    {
+      "id": "DQ01",
+      "group": "Scope and rights",
+      "question": "May this research be published at all, in this form?",
+      "known": "NFL.com terms 1.3 allow individual non-commercial informational use and prohibit systematic retrieval to build a collection without written consent.",
+      "missing": "Whether a frozen, attributed, non-commercial research note is acceptable, and what consent would be needed for anything larger.",
+      "blocks_summary": "Scale, not reading",
+      "answering_source": {
+        "id": "NFL-TERMS-LEGAL",
+        "url": "https://www.nfl.com/legal/terms",
+        "note": "Terms page; a rights decision, not a data value."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-20",
+          "requirement": "Decide the price-data policy before any backtest is published",
+          "status": "Partial",
+          "gate": "Policy flags exist (XS09 source rights, CF10 third-party attribution) but a written owner decision is not recorded.",
+          "clears_when": "A written answer on record: consent obtained, a different source used, or the price work formally declined (SG-12)."
+        },
+        {
+          "id": "DR-40",
+          "requirement": "Split the site into a public analysis layer and a private data layer (raw row-level data held back until terms are read)",
+          "status": "Partial",
+          "gate": "The public site publishes derived analysis with per-row sources; there is no separate private store \u2014 raw rows live in the repository pending the terms decision.",
+          "clears_when": "Raw row-level data moves behind the private layer once the terms answer (DR-20) is recorded."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-11",
+          "title": "Add coaching / scheme data",
+          "missing_info": "Official coaching source + encoding.",
+          "decision_needed": "Approve encoding."
+        }
+      ]
+    },
+    {
+      "id": "DQ02",
+      "group": "Line origination",
+      "question": "Are the originated Week 10 numbers internally consistent and reproducible?",
+      "known": "Yes in the narrow sense: one score pair per game drives both the spread and the total, and the build is byte-identical from hashed inputs.",
+      "missing": "Any external check. A coherent number can still be a wrong number.",
+      "blocks_summary": "Nothing on the site; blocks every accuracy claim",
+      "answering_source": {
+        "id": "FD-NFL-STANDINGS-1118",
+        "url": "https://www.nfl.com/standings/",
+        "note": "Fresh 2026-11-18 standings read; confirms the score basis, not the model's accuracy."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-02",
+          "requirement": "Add a verified results feed so backtests and ROI can be computed at all",
+          "status": "Implemented",
+          "gate": "The feed extends only as fast as official by-week finals publish; one Week 10 game (LAC at BAL) was not final at the 2026-11-17 read.",
+          "clears_when": "149 official finals are captured and reconciled (160/160 fields per snapshot); the feed reaches 150 when the Monday night final posts."
+        },
+        {
+          "id": "DR-19",
+          "requirement": "Turn the game log into the pre-registered backtest corpus",
+          "status": "Implemented",
+          "gate": "The corpus is one season of official finals; walk-forward scoring starts at week 2 (week 1 has no prior).",
+          "clears_when": "133 rows scored leakage-free across weeks 2-10 with frozen parameters (extended feed, 2026-11-17)."
+        },
+        {
+          "id": "DR-70",
+          "requirement": "Split data into train, validation and final holdout seasons",
+          "status": "Open",
+          "gate": "Only one season is captured; a final holdout season cannot exist yet.",
+          "clears_when": "At least 3 seasons of official results archived, then the split is frozen before the holdout is scored."
+        }
+      ],
+      "suggestions_to_discover": []
+    },
+    {
+      "id": "DQ03",
+      "group": "Line origination",
+      "question": "Is a 2.0-point home adjustment defensible for all 14 games?",
+      "known": "It is disclosed as a project assumption. No official NFL home-field value was retrieved.",
+      "missing": "A sourced home-field estimate, and separate handling for the Munich international fixture.",
+      "blocks_summary": "Spread precision",
+      "answering_source": {
+        "id": "FD-NFL-SCHED-W11-1118",
+        "url": "https://www.nfl.com/schedules/2026/REG11/",
+        "note": "Schedule facts (venue, time, network) bound the fixture context; no home-field value is published."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-03",
+          "requirement": "Originate the side first, then the total, then the moneyline",
+          "status": "Implemented",
+          "gate": "Stage reconciliation must hold on every build (side/total/ML stages must reproduce the single-shot numbers exactly).",
+          "clears_when": "0 of 0 mismatches per build: 14/14 games reconciled in the lifecycle desk and 13 Week 10 games in the competition lab."
+        },
+        {
+          "id": "DR-04",
+          "requirement": "Publish the model's fair line, the market line, and the difference as separate columns",
+          "status": "Implemented",
+          "gate": "Market line and difference are blank for all rows by rule: no operator publishes a price on any official page this project read; difference computes only when both inputs exist.",
+          "clears_when": "1 market row with a market_line value on a rights-cleared host; difference fills on the next rebuild."
+        },
+        {
+          "id": "DR-18",
+          "requirement": "Price a line ourselves and publish the residual against the market, on a schedule, from day one",
+          "status": "Blocked",
+          "gate": "No official source publishes a price (nfl.com/odds returns 404); operator prices are third-party and rights-restricted (XS09/CF10).",
+          "clears_when": "A rights-cleared price source agreed in writing, then residuals publish on a fixed schedule from the next slate."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-03",
+          "title": "Transcribe rosters / depth charts",
+          "missing_info": "Bounded roster transcription + depth ordering definition.",
+          "decision_needed": "Approve teams and depth definition."
+        }
+      ]
+    },
+    {
+      "id": "DQ04",
+      "group": "Injuries and backups",
+      "question": "Do we know which clubs are starting second- or third-string players?",
+      "known": "Two Commanders players are listed Out with a stated reason, and one Giant is Questionable with a reason. Practice participation is published for all 20 listed players.",
+      "missing": "Whether any of them is a starter, who replaces them, and how much the replacement plays.",
+      "blocks_summary": "The owner's central availability requirement",
+      "answering_source": {
+        "id": "FD-NFL-INJ-W10-1118",
+        "url": "https://www.nfl.com/injuries/league/2026/REG10",
+        "note": "Fresh 2026-11-18 injury report; designations only \u2014 does not name replacements or starters."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-06",
+          "requirement": "Track the depth of the replacement, not just the fact of a replacement",
+          "status": "Implemented",
+          "gate": "Depth rank is only as good as the printed chart: HOU publishes an image, so 1 of 32 clubs has no chart evidence.",
+          "clears_when": "326 injury rows joined to printed charts; 173 starter losses, 158 named replacements, depth-of-replacement per row (31/32 clubs)."
+        },
+        {
+          "id": "DR-10",
+          "requirement": "Build the availability graph as a first-class dataset (who was expected to start, who actually did)",
+          "status": "Partial",
+          "gate": "Actual starters now exist for 13 Week 10 games from official Game Books (550 rows); the expected-starter join is not computable because per-game club depth charts were captured for 0 of the 26 playing clubs by the Game Book desk.",
+          "clears_when": "Expected starters (official printed charts) joined to actual starters (official Game Book lineups) for a full slate; multi-week history after that."
+        },
+        {
+          "id": "DR-11",
+          "requirement": "Do not model depth from jersey order; model it from playing time",
+          "status": "Open",
+          "gate": "No official snap-count source has been verified for all 32 clubs; jersey order is explicitly rejected as a depth source.",
+          "clears_when": "An official snap-count publication verified club-by-club (32/32) and joined to the depth ledger."
+        },
+        {
+          "id": "DR-41",
+          "requirement": "Add a per-team view: starters out, replacements named, net injury count",
+          "status": "Implemented",
+          "gate": "View covers the captured Week 10 window; extends as new weeks are captured.",
+          "clears_when": "Club-level summary published per club (starters out, named replacements, depletion counts)."
+        },
+        {
+          "id": "DR-42",
+          "requirement": "Add an announced-starter evidence field (not an inferred replacement)",
+          "status": "Partial",
+          "gate": "League-published dated starter changes are captured where the report prints them; announced-change evidence is not yet a per-row field everywhere.",
+          "clears_when": "Every replacement row distinguishes club-announced starters from chart-inferred ones (blank when unannounced)."
+        },
+        {
+          "id": "DR-52",
+          "requirement": "Resolve the depth-order source before building the backup-deficiency feature (club charts first, then snap counts)",
+          "status": "Partial",
+          "gate": "Route (a) verified for 31/32 clubs; route (b) (snap counts) unverified; HOU blocks completion.",
+          "clears_when": "One route verified for all 32 clubs; only then is the deficiency feature built league-wide."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-04",
+          "title": "Add rushing/scoring team stats",
+          "missing_info": "Official rushing/scoring URLs.",
+          "decision_needed": "Approve tables to transcribe."
+        },
+        {
+          "id": "SU-10",
+          "title": "Add injury-history panel",
+          "missing_info": "Multi-week bounded transcription.",
+          "decision_needed": "Approve weeks."
+        }
+      ]
+    },
+    {
+      "id": "DQ05",
+      "group": "Injuries and backups",
+      "question": "What does a blank game status mean?",
+      "known": "It is blank on the official page for 17 of the 20 listed players. The policy says a player certain to play is not listed on the game status report.",
+      "missing": "The page does not state, per row, that blank equals available.",
+      "blocks_summary": "Any playing-time inference",
+      "answering_source": {
+        "id": "FD-NFL-INJ-W10-1118",
+        "url": "https://www.nfl.com/injuries/league/2026/REG10",
+        "note": "The page leaves game status blank for 176 of 347 rows; the page does not state what blank means."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-21",
+          "requirement": "Store every injury-hub read with its clock time and publish the delta, never the level",
+          "status": "Partial",
+          "gate": "Reads are dated and the Game Book desk publishes a delta vs the prior capture (300 rows); a clock-timestamped multi-day series still does not exist (terms gate on scheduled capture).",
+          "clears_when": "Each capture stores a fetch timestamp and the computed delta vs the prior capture (needs multi-capture storage)."
+        },
+        {
+          "id": "DR-44",
+          "requirement": "Calibrate what 'Questionable' means empirically instead of using old percentages",
+          "status": "Open",
+          "gate": "Requires multiple seasons of designations joined to official inactive lists; one season is captured.",
+          "clears_when": "Play rate per designation with confidence intervals computed over joined seasons; only then may it become a feature."
+        },
+        {
+          "id": "DR-55",
+          "requirement": "Treat the injury report as a timestamped series, not a weekly snapshot",
+          "status": "Partial",
+          "gate": "Captures are dated but the Wed-to-kickoff daily series does not exist (DR-54 gate).",
+          "clears_when": "Designation evolution (Questionable to Out; DNP to FP) measurable across at least one full report week."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-05",
+          "title": "Add weather data",
+          "missing_info": "Official weather source + game-site mapping.",
+          "decision_needed": "Approve source and scope."
+        }
+      ]
+    },
+    {
+      "id": "DQ06",
+      "group": "Correlation and parlays",
+      "question": "How much do two legs of the same game move together?",
+      "known": "Nothing measured. Team-level correlations exist but are a different quantity and five of ten are arithmetic artefacts.",
+      "missing": "Joint hit rates on the actual leg pairs.",
+      "blocks_summary": "Every parlay and combo",
+      "answering_source": {
+        "id": "FD-NFL-STANDINGS-1118",
+        "url": "https://www.nfl.com/standings/",
+        "note": "No joint leg-pair data is published on the standings page; would need game-level results."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-07",
+          "requirement": "Compute correlations only from officially sourced numbers and publish n with each value",
+          "status": "Implemented",
+          "gate": "Every published coefficient must carry n and registered sources; 2 of 24 candidate values are left blank rather than estimated.",
+          "clears_when": "22 audit rows pass with n >= 3 and sources; blanks carry stated reasons (0 failures, build aborts otherwise)."
+        },
+        {
+          "id": "DR-36",
+          "requirement": "Keep parlays and prop combos behind a joint-evidence gate",
+          "status": "Implemented",
+          "gate": "Multiplying marginals is invalid under dependence; combos rank only with a directly validated joint probability and operator void/push rules.",
+          "clears_when": "Measured leg dependence (phi -0.0386, p=0.666, n=127) is published; no combo is ranked until a joint probability exists."
+        },
+        {
+          "id": "DR-37",
+          "requirement": "Use proper-score leaderboard divisions (singles, game parlays, same-game parlays, prop combos)",
+          "status": "Partial",
+          "gate": "Divisions exist for singles and game-level markets; SGP and prop-combo divisions have no eligible rows (joint gate unmet).",
+          "clears_when": "All four divisions published with benchmark-relative skill and uncertainty; empty divisions state why."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-01",
+          "title": "Add play-by-play game logs",
+          "missing_info": "Official game-log URLs + bounded window + rights check.",
+          "decision_needed": "Approve bounded window and player."
+        },
+        {
+          "id": "SU-06",
+          "title": "Add licensed odds feed",
+          "missing_info": "License + rights review (currently blocked by NFL Terms).",
+          "decision_needed": "Rights review before any feed."
+        }
+      ]
+    },
+    {
+      "id": "DQ07",
+      "group": "Correlation and parlays",
+      "question": "Can three or more legs be priced from pairwise numbers?",
+      "known": "No. Pairwise dependence does not identify a joint distribution of three or more variables.",
+      "missing": "A joint model, or a simulation with an explicit and tested dependence structure.",
+      "blocks_summary": "Three-leg-and-longer products",
+      "answering_source": {
+        "id": "FD-NFL-STANDINGS-1118",
+        "url": "https://www.nfl.com/standings/",
+        "note": "Pairwise numbers cannot identify a joint distribution; no official joint source exists."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-36",
+          "requirement": "Keep parlays and prop combos behind a joint-evidence gate",
+          "status": "Implemented",
+          "gate": "Multiplying marginals is invalid under dependence; combos rank only with a directly validated joint probability and operator void/push rules.",
+          "clears_when": "Measured leg dependence (phi -0.0386, p=0.666, n=127) is published; no combo is ranked until a joint probability exists."
+        },
+        {
+          "id": "DR-37",
+          "requirement": "Use proper-score leaderboard divisions (singles, game parlays, same-game parlays, prop combos)",
+          "status": "Partial",
+          "gate": "Divisions exist for singles and game-level markets; SGP and prop-combo divisions have no eligible rows (joint gate unmet).",
+          "clears_when": "All four divisions published with benchmark-relative skill and uncertainty; empty divisions state why."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-01",
+          "title": "Add play-by-play game logs",
+          "missing_info": "Official game-log URLs + bounded window + rights check.",
+          "decision_needed": "Approve bounded window and player."
+        },
+        {
+          "id": "SU-06",
+          "title": "Add licensed odds feed",
+          "missing_info": "License + rights review (currently blocked by NFL Terms).",
+          "decision_needed": "Rights review before any feed."
+        }
+      ]
+    },
+    {
+      "id": "DQ08",
+      "group": "Skill versus luck",
+      "question": "Is anything here skill-based rather than luck?",
+      "known": "Points-based expectation scored Brier 0.1575 against 0.25 for a flat guess on 32 clubs, so the scoring profile carried information about the displayed record.",
+      "missing": "Out-of-sample evidence. The comparison is inside one snapshot and cannot separate skill from a correlated season.",
+      "blocks_summary": "Any 'skill-based' label",
+      "answering_source": {
+        "id": "FD-NFL-STANDINGS-1118",
+        "url": "https://www.nfl.com/standings/",
+        "note": "Standings support in-sample scoring only; out-of-sample skill needs the results feed."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-05",
+          "requirement": "Separate 'signal' from 'staking' in the leaderboard so a lucky staking run cannot mask a bad signal",
+          "status": "Implemented",
+          "gate": "The staking half stays empty until an executable price exists; ranking reads signal fields only (test-enforced).",
+          "clears_when": "Staking table has at least 1 price-verified row; signal ranking is provably independent of staking fields."
+        },
+        {
+          "id": "DR-38",
+          "requirement": "Rank with proper scores and uncertainty, not win rate (Brier skill, game-cluster lower bound, multiplicity adjustment)",
+          "status": "Implemented",
+          "gate": "Applies to graded candidates; qualification requires every gate to pass including multiplicity control.",
+          "clears_when": "30 variants graded; 0 qualified, 1 provisional; BH q-values and permutation p-values published per candidate."
+        },
+        {
+          "id": "DR-57",
+          "requirement": "Add a control baseline (random picks; favorites only) to every leaderboard run",
+          "status": "Implemented",
+          "gate": "Controls run with the same grading; one control's null rejection (34.0% vs coin) is reported as a property of the test, not an edge.",
+          "clears_when": "Every leaderboard run includes both controls alongside the strategy family."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-01",
+          "title": "Add play-by-play game logs",
+          "missing_info": "Official game-log URLs + bounded window + rights check.",
+          "decision_needed": "Approve bounded window and player."
+        },
+        {
+          "id": "SU-07",
+          "title": "Add snap counts / targets",
+          "missing_info": "Official snap/target source.",
+          "decision_needed": "Approve source."
+        },
+        {
+          "id": "SU-15",
+          "title": "Publish a weekly 'what changed' diff beside the snapshot",
+          "missing_info": "The choice of diff columns to publish.",
+          "decision_needed": "Pick the diff columns and where the diff view lives."
+        }
+      ]
+    },
+    {
+      "id": "DQ09",
+      "group": "Skill versus luck",
+      "question": "How much of each club's record is luck?",
+      "known": "Every club is within about 2.2 wins of its points-based expectation; Denver and Tampa Bay are the largest gaps at about 2.17 wins.",
+      "missing": "Schedule strength, opponent adjustment, and any measure of how much of the gap persists.",
+      "blocks_summary": "The regression strategy NS04",
+      "answering_source": {
+        "id": "FD-NFL-STANDINGS-1118",
+        "url": "https://www.nfl.com/standings/",
+        "note": "PF/PA support a points-based expectation; schedule strength is not published here."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-16",
+          "requirement": "Compute and publish the 'removal of luck' panel on the site dashboard",
+          "status": "Implemented",
+          "gate": "Luck analysis needs a settled sample; currently 133 scored rows (weeks 2-10).",
+          "clears_when": "Published: exact binomial null, luck band at observed n, required sample size, permutation p and BH q per candidate."
+        },
+        {
+          "id": "DR-38",
+          "requirement": "Rank with proper scores and uncertainty, not win rate (Brier skill, game-cluster lower bound, multiplicity adjustment)",
+          "status": "Implemented",
+          "gate": "Applies to graded candidates; qualification requires every gate to pass including multiplicity control.",
+          "clears_when": "30 variants graded; 0 qualified, 1 provisional; BH q-values and permutation p-values published per candidate."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-07",
+          "title": "Add snap counts / targets",
+          "missing_info": "Official snap/target source.",
+          "decision_needed": "Approve source."
+        },
+        {
+          "id": "SU-14",
+          "title": "Transcribe the venue of every fixture from the official game centre (bounded pilot)",
+          "missing_info": "Whether every 2026 game centre prints the venue consistently.",
+          "decision_needed": "Approve the bounded week and the transcription template."
+        }
+      ]
+    },
+    {
+      "id": "DQ10",
+      "group": "Market and economics",
+      "question": "Is any strategy profitable?",
+      "known": "No. Zero strategies are qualified, no price was retrieved, and ROI and CLV are blank by rule.",
+      "missing": "Every price, limit, hold and settlement rule.",
+      "blocks_summary": "The leaderboard and all rewards",
+      "answering_source": {
+        "id": "FD-NFL-STANDINGS-1118",
+        "url": "https://www.nfl.com/standings/",
+        "note": "No operator price is published on NFL.com; profit cannot be computed from official data alone."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-01",
+          "requirement": "Add a price-snapshot store recording opening and closing numbers for every originated market",
+          "status": "Implemented",
+          "gate": "No official or rights-cleared operator price exists, so market cells stay blank; the store holds model open/close snapshots only.",
+          "clears_when": "At least 1 originated market carries an operator OPEN and CLOSE row with a pre-kickoff capture timestamp and a registered source URL."
+        },
+        {
+          "id": "DR-05",
+          "requirement": "Separate 'signal' from 'staking' in the leaderboard so a lucky staking run cannot mask a bad signal",
+          "status": "Implemented",
+          "gate": "The staking half stays empty until an executable price exists; ranking reads signal fields only (test-enforced).",
+          "clears_when": "Staking table has at least 1 price-verified row; signal ranking is provably independent of staking fields."
+        },
+        {
+          "id": "DR-18",
+          "requirement": "Price a line ourselves and publish the residual against the market, on a schedule, from day one",
+          "status": "Blocked",
+          "gate": "No official source publishes a price (nfl.com/odds returns 404); operator prices are third-party and rights-restricted (XS09/CF10).",
+          "clears_when": "A rights-cleared price source agreed in writing, then residuals publish on a fixed schedule from the next slate."
+        },
+        {
+          "id": "DR-59",
+          "requirement": "Two-stage skill leaderboard: proper-score qualification then prospective CLV/ROI escrow",
+          "status": "Partial",
+          "gate": "Stage 1 (Brier qualification + BH control) runs; stage 2 escrow holds 0 rows because no price exists (DR-01 gate).",
+          "clears_when": "At least one qualified strategy reaches the prospective stage with an executable price to escrow."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-02",
+          "title": "Transcribe full schedule (rest/travel)",
+          "missing_info": "Bounded schedule transcription.",
+          "decision_needed": "Approve weeks to transcribe."
+        },
+        {
+          "id": "SU-08",
+          "title": "Add betting-market settlement rules",
+          "missing_info": "Operator pages + jurisdiction scope.",
+          "decision_needed": "Approve operators to document."
+        }
+      ]
+    },
+    {
+      "id": "DQ11",
+      "group": "Market and economics",
+      "question": "What would make a reward decision reasonable?",
+      "known": "The blocked list is published: a dated price, depth and snap data, and a dependence estimate.",
+      "missing": "A forward, stake-capped record scored after settlement.",
+      "blocks_summary": "Rewards",
+      "answering_source": {
+        "id": "FD-NFL-STANDINGS-1118",
+        "url": "https://www.nfl.com/standings/",
+        "note": "A forward stake-capped record needs a price source that does not exist on NFL.com."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-08",
+          "requirement": "Define a demotion gate that sends a live strategy back to paper",
+          "status": "Implemented",
+          "gate": "Nothing is live, so the gate is armed and idle; triggers are pre-registered with fixed thresholds.",
+          "clears_when": "10 published triggers with today's reading; a strategy reaching live tier activates monitoring (D1-D5 / DG-1)."
+        },
+        {
+          "id": "DR-59",
+          "requirement": "Two-stage skill leaderboard: proper-score qualification then prospective CLV/ROI escrow",
+          "status": "Partial",
+          "gate": "Stage 1 (Brier qualification + BH control) runs; stage 2 escrow holds 0 rows because no price exists (DR-01 gate).",
+          "clears_when": "At least one qualified strategy reaches the prospective stage with an executable price to escrow."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-02",
+          "title": "Transcribe full schedule (rest/travel)",
+          "missing_info": "Bounded schedule transcription.",
+          "decision_needed": "Approve weeks to transcribe."
+        },
+        {
+          "id": "SU-08",
+          "title": "Add betting-market settlement rules",
+          "missing_info": "Operator pages + jurisdiction scope.",
+          "decision_needed": "Approve operators to document."
+        }
+      ]
+    },
+    {
+      "id": "DQ12",
+      "group": "Verification",
+      "question": "How much confidence does a single official page support?",
+      "known": "Each value is parsed from saved page text and arithmetic is re-derived; the extractor refuses to publish contradictions.",
+      "missing": "A second independent source for any value used in a decision.",
+      "blocks_summary": "Trust level, not publication",
+      "answering_source": {
+        "id": "FD-NFL-INJ-W10-1118",
+        "url": "https://www.nfl.com/injuries/league/2026/REG10",
+        "note": "Single official page; a second independent source is still missing for every value."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-21",
+          "requirement": "Store every injury-hub read with its clock time and publish the delta, never the level",
+          "status": "Partial",
+          "gate": "Reads are dated and the Game Book desk publishes a delta vs the prior capture (300 rows); a clock-timestamped multi-day series still does not exist (terms gate on scheduled capture).",
+          "clears_when": "Each capture stores a fetch timestamp and the computed delta vs the prior capture (needs multi-capture storage)."
+        },
+        {
+          "id": "DR-63",
+          "requirement": "Add a drift alarm to every scraper (pin parsers to row counts and required fields; fail the build loudly)",
+          "status": "Partial",
+          "gate": "Canonical parsers abort on contradiction and CI pins expected counts; desk scrapers have per-desk guards but there is no unified alarm surface.",
+          "clears_when": "Every extraction path aborts the build on missing fields or row-count drift, with the failure surfaced on a flagged page."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-09",
+          "title": "Add preseason priors",
+          "missing_info": "Prior-season official tables.",
+          "decision_needed": "Approve seasons."
+        }
+      ]
+    },
+    {
+      "id": "DQ13",
+      "group": "Verification",
+      "question": "What did we choose not to transcribe, and why?",
+      "known": "Division and conference records, last-ten and several middle standings columns: the rendered table had no header row and its field order contradicts the page legend.",
+      "missing": "A reliable column identification for those fields.",
+      "blocks_summary": "Division standings detail",
+      "answering_source": {
+        "id": "FD-NFL-SCHED-W11-1118",
+        "url": "https://www.nfl.com/schedules/2026/REG11/",
+        "note": "Schedule page publishes venue and time; division/conference columns were withheld for header reasons."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-23",
+          "requirement": "Transcribe the venue of every fixture from the official game centre",
+          "status": "Partial",
+          "gate": "13 of the 14 Week 10 fixtures have their venue, stadium, roof/surface, weather and attendance transcribed from the official Game Book PDF (raw capture + SHA-256 retained); the 14th (LAC at BAL) had no Game Book at the read.",
+          "clears_when": "Venue transcribed for every fixture of the week (14/14) and repeated for a second week."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-12",
+          "title": "Improve site decision aids",
+          "missing_info": "None \u2014 design only.",
+          "decision_needed": "Approve layout."
+        }
+      ]
+    },
+    {
+      "id": "DQ14",
+      "group": "Scope and rights",
+      "question": "Should the NBA material stay on the site?",
+      "known": "It is a completed, separately scoped audit and its own source terms still apply.",
+      "missing": "A decision on whether the owner wants one sport or a multi-sport workspace.",
+      "blocks_summary": "Nothing technical",
+      "answering_source": {
+        "id": "REPO",
+        "url": "https://github.com/sassnarep3-star/Own7",
+        "note": "Scope decision, not an official NFL data question."
+      },
+      "blocked_requirements": [],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-11",
+          "title": "Add coaching / scheme data",
+          "missing_info": "Official coaching source + encoding.",
+          "decision_needed": "Approve encoding."
+        }
+      ]
+    },
+    {
+      "id": "DQ15",
+      "group": "Skill versus luck",
+      "question": "Can luck be removed from the equation at all?",
+      "known": "It cannot be removed from a single result, and no method here claims to. What can be done is to state the chance a run of results is indistinguishable from randomness, and to report an interval rather than a point estimate. The repository already carries a permutation p-value, Holm adjustment, Brier scores and bootstrap intervals for the closed NBA study, so the method exists; the NFL sample does not.",
+      "missing": "Enough NFL outcomes to separate signal from noise, and a pre-registered test-deciding rule. One week of games cannot distinguish skill from luck for any strategy.",
+      "blocks_summary": "Any skill claim and any reward",
+      "answering_source": {
+        "id": "FD-NFL-STANDINGS-1118",
+        "url": "https://www.nfl.com/standings/",
+        "note": "Luck cannot be removed from a single result; needs enough outcomes for a pre-registered test."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-16",
+          "requirement": "Compute and publish the 'removal of luck' panel on the site dashboard",
+          "status": "Implemented",
+          "gate": "Luck analysis needs a settled sample; currently 133 scored rows (weeks 2-10).",
+          "clears_when": "Published: exact binomial null, luck band at observed n, required sample size, permutation p and BH q per candidate."
+        },
+        {
+          "id": "DR-38",
+          "requirement": "Rank with proper scores and uncertainty, not win rate (Brier skill, game-cluster lower bound, multiplicity adjustment)",
+          "status": "Implemented",
+          "gate": "Applies to graded candidates; qualification requires every gate to pass including multiplicity control.",
+          "clears_when": "30 variants graded; 0 qualified, 1 provisional; BH q-values and permutation p-values published per candidate."
+        },
+        {
+          "id": "DR-67",
+          "requirement": "Pre-register each strategy (definition frozen before results are seen)",
+          "status": "Implemented",
+          "gate": "Registration is the commit hash; every new strategy must follow it before its evaluation window opens.",
+          "clears_when": "Frozen rule text, sample window and gates committed before evaluation (DG-1 and board parameters are registered)."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-01",
+          "title": "Add play-by-play game logs",
+          "missing_info": "Official game-log URLs + bounded window + rights check.",
+          "decision_needed": "Approve bounded window and player."
+        },
+        {
+          "id": "SU-07",
+          "title": "Add snap counts / targets",
+          "missing_info": "Official snap/target source.",
+          "decision_needed": "Approve source."
+        },
+        {
+          "id": "SU-15",
+          "title": "Publish a weekly 'what changed' diff beside the snapshot",
+          "missing_info": "The choice of diff columns to publish.",
+          "decision_needed": "Pick the diff columns and where the diff view lives."
+        }
+      ]
+    },
+    {
+      "id": "DQ16",
+      "group": "Verification",
+      "question": "Does the site's own check suite prove the published values are true?",
+      "known": "No. scripts/check_site.py proves internal integrity: every row has a registered source link, links resolve, blanks are blank, builds are deterministic. It does not re-fetch a publisher and cannot detect a stale or mis-copied value.",
+      "missing": "An external re-check step, and a statement on each page of when its values were last read from the publisher.",
+      "blocks_summary": "Nothing today; blocks any claim of continuous accuracy",
+      "answering_source": {
+        "id": "FD-NFL-STANDINGS-1118",
+        "url": "https://www.nfl.com/standings/",
+        "note": "The check suite proves internal integrity, not external truth; a re-check step is still missing."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-22",
+          "requirement": "Put a decision-readiness table on the landing page: one row per requirement, with the gate that blocks it and the number that would clear it",
+          "status": "Implemented",
+          "gate": "Rows are re-graded only when their artifact changes; the table must stay in sync with the desks.",
+          "clears_when": "This table (65 rows) renders on the landing page with per-row gate and clearing condition (2026-11-17)."
+        },
+        {
+          "id": "DR-63",
+          "requirement": "Add a drift alarm to every scraper (pin parsers to row counts and required fields; fail the build loudly)",
+          "status": "Partial",
+          "gate": "Canonical parsers abort on contradiction and CI pins expected counts; desk scrapers have per-desk guards but there is no unified alarm surface.",
+          "clears_when": "Every extraction path aborts the build on missing fields or row-count drift, with the failure surfaced on a flagged page."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-09",
+          "title": "Add preseason priors",
+          "missing_info": "Prior-season official tables.",
+          "decision_needed": "Approve seasons."
+        },
+        {
+          "id": "SU-13",
+          "title": "Extend the verified results feed every week on a fixed cadence",
+          "missing_info": "The next week's official finals and the Monday-night result for Week 10.",
+          "decision_needed": "Confirm the weekly cadence and who reviews the reconciliation output."
+        }
+      ]
+    },
+    {
+      "id": "DQ17",
+      "group": "Injuries and backups",
+      "question": "Which official source can name the player who replaced an injured starter?",
+      "known": "Neither the injury report nor the league depth-chart path supplies it. The injury report lists 20 players for one game with statuses and no starter flag; nfl.com/teams/depth-chart serves no chart and a club depth-chart path returned a 404 on 2026-11-13.",
+      "missing": "A per-game participation source (snap counts) or a published lineup, plus a depth ordering for the club.",
+      "blocks_summary": "Every starter-versus-backup statement",
+      "answering_source": {
+        "id": "FD-NFL-INJ-W10-1118",
+        "url": "https://www.nfl.com/injuries/league/2026/REG10",
+        "note": "Injury report names who is out, not who replaced them; needs snap counts or game books."
+      },
+      "blocked_requirements": [
+        {
+          "id": "DR-25",
+          "requirement": "Use official NFL Game Books for actual starters and game-day status; do not infer depth rank or snaps",
+          "status": "Partial",
+          "gate": "Official Game Books are now the source for actual starters, Not Active lists, venue, roof/surface and weather for 13 of 14 Week 10 games; one week is captured and one fixture is pending.",
+          "clears_when": "Game Book capture repeated for subsequent weeks (13-14 per week) and joined to the availability ledger."
+        },
+        {
+          "id": "DR-31",
+          "requirement": "Capture official inactive lists and snap counts (only 6 of 254 report rows carried a game designation)",
+          "status": "Partial",
+          "gate": "Official Not Active lists are now captured for 13 Week 10 games (146 rows with designation and jersey); snap counts and snap shares are still not captured from any official source.",
+          "clears_when": "Inactive evidence held for a second slate plus an official snap-count source verified club-by-club."
+        },
+        {
+          "id": "DR-42",
+          "requirement": "Add an announced-starter evidence field (not an inferred replacement)",
+          "status": "Partial",
+          "gate": "League-published dated starter changes are captured where the report prints them; announced-change evidence is not yet a per-row field everywhere.",
+          "clears_when": "Every replacement row distinguishes club-announced starters from chart-inferred ones (blank when unannounced)."
+        },
+        {
+          "id": "DR-56",
+          "requirement": "Use snap counts as the starter proxy when the depth chart is unavailable",
+          "status": "Open",
+          "gate": "No official snap-count source verified (DR-11 gate); HOU remains the motivating case.",
+          "clears_when": "A verified official snap-count source produces a starter/backup split for the clubs without printed charts."
+        }
+      ],
+      "suggestions_to_discover": [
+        {
+          "id": "SU-04",
+          "title": "Add rushing/scoring team stats",
+          "missing_info": "Official rushing/scoring URLs.",
+          "decision_needed": "Approve tables to transcribe."
+        },
+        {
+          "id": "SU-10",
+          "title": "Add injury-history panel",
+          "missing_info": "Multi-week bounded transcription.",
+          "decision_needed": "Approve weeks."
+        }
+      ]
+    }
+  ]
+}

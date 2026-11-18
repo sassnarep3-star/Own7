@@ -1,0 +1,77 @@
+{
+  "source_register": "nfl-forward-desk session arena/3f9563bf-own7 — fresh official reads taken 2026-11-18",
+  "read_on": "2026-11-18",
+  "count": 5,
+  "sources": [
+    {
+      "id": "FD-NFL-STANDINGS-1118",
+      "publisher": "NFL.com",
+      "title": "2026 NFL Division Standings — 2026-11-18 fresh read",
+      "url": "https://www.nfl.com/standings/",
+      "authority": "Official league publication",
+      "checked_on": "2026-11-18",
+      "status": "Verified",
+      "scope": "All 32 clubs: W, L, T, PCT, PF, PA, NET PTS, HOME, ROAD, DIV, CONF, STRK, LAST5. Read 2026-11-18T03:46:15Z, after the Week 10 Monday game. No playoff clinch markers appear on any row in this read.",
+      "access": "Arena fetch_page; chunks 0 and 1 of 2",
+      "retrieval_class": "rendered text via the Arena page reader; direct HTTPS to nfl.com returns curl code 000 from the build sandbox",
+      "evidence": "nfl-forward-desk/evidence/standings-2026-11-18.md",
+      "used_by": ["build.py:standings"]
+    },
+    {
+      "id": "FD-NFL-SCHED-W11-1118",
+      "publisher": "NFL.com",
+      "title": "2026 Week 11 schedule — 2026-11-18 fresh read",
+      "url": "https://www.nfl.com/schedules/2026/REG11/",
+      "authority": "Official league publication",
+      "checked_on": "2026-11-18",
+      "status": "Verified",
+      "scope": "Week 11 slate: 13 games, 26 clubs playing, 6 byes (ATL, CLE, GB, LAR, NE, SEA). All kickoff times, networks, venue names and the MNF weather line captured verbatim.",
+      "access": "Arena fetch_page; chunks 0, 1 and 2 of 3",
+      "retrieval_class": "rendered text via the Arena page reader; direct HTTPS to nfl.com returns curl code 000 from the build sandbox",
+      "evidence": "nfl-forward-desk/evidence/schedule-week11-2026-11-18.md",
+      "used_by": ["build.py:schedule"]
+    },
+    {
+      "id": "FD-NFL-INJ-W10-1118",
+      "publisher": "NFL.com",
+      "title": "Official NFL Injury Report — Week 10 of the 2026 Season — 2026-11-18 fresh read",
+      "url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "authority": "Official league publication",
+      "checked_on": "2026-11-18",
+      "status": "Verified",
+      "scope": "Week 10 injury report, all 14 games / 28 listed clubs, 347 total rows, 171 rows carrying a game-status designation. Captured 2026-11-18T03:46:15Z. Cross-checked against the /injuries/ variant.",
+      "access": "Arena fetch_page; chunks 0–7 of 8, both URL variants",
+      "retrieval_class": "rendered text via the Arena page reader; direct HTTPS to nfl.com returns curl code 000 from the build sandbox",
+      "evidence": "nfl-forward-desk/evidence/injuries-week10-2026-11-18.md",
+      "used_by": ["build.py:injuries"]
+    },
+    {
+      "id": "FD-NFL-INJ-W11-STATUS-1118",
+      "publisher": "NFL.com",
+      "title": "Week 11 injury report availability status — 2026-11-18",
+      "url": "https://www.nfl.com/injuries/league/2026/REG11",
+      "authority": "Official league publication",
+      "checked_on": "2026-11-18",
+      "status": "Verified",
+      "scope": "The Week 11 injury report is NOT yet published as of 2026-11-18T03:46:15Z. The REG11 URL redirects server-side to REG10 (Week 10); the /injuries/2026/reg11/ path returns 404 'Flag on the Play'. The hub's WEEK 1–11 selector lists Week 11 but the page still renders Week 10. Recorded as a timing fact, not a data value.",
+      "access": "Arena fetch_page; both URL variants attempted",
+      "retrieval_class": "rendered text via the Arena page reader; direct HTTPS to nfl.com returns curl code 000 from the build sandbox",
+      "evidence": "nfl-forward-desk/evidence/injuries-week10-2026-11-18.md (transcription notes)",
+      "used_by": ["build.py:injuries"]
+    },
+    {
+      "id": "FD-CANONICAL-INJ-W10-1113",
+      "publisher": "NFL.com (via committed repo artifact)",
+      "title": "Committed canonical Week 10 injury snapshot — 2026-11-13",
+      "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv",
+      "authority": "Official league publication, transcribed by a prior session",
+      "checked_on": "2026-11-13",
+      "status": "Verified (as a prior capture)",
+      "scope": "The committed canonical injury CSV (326 rows, 25 designated) captured 2026-11-13. Used here ONLY as the drift-check baseline, never as a fresh source. The 2026-11-18 read supersedes it for current values.",
+      "access": "Read from the working tree",
+      "retrieval_class": "committed artifact",
+      "evidence": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+      "used_by": ["drift_check.py"]
+    }
+  ]
+}

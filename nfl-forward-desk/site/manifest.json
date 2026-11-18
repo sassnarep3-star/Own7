@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "index.html",
+    "standings.html",
+    "schedule.html",
+    "injuries.html",
+    "drift.html",
+    "decisions.html",
+    "suggestions.html",
+    "flags.html",
+    "sources.html",
+    "method.html"
+  ],
+  "desk": "nfl-forward-desk",
+  "built_on": "2026-11-18"
+}

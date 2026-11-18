@@ -1,0 +1,3 @@
+ee7e2fbe9648de93f55fea2c194893dac5768b86df99837a989d328b5167c8a3  nfl-forward-desk/evidence/injuries-week10-2026-11-18.md
+a11128e15b67f297d4e5ff7fc5c2846ff13376b8784ca314a80b09a3005a0322  nfl-forward-desk/evidence/schedule-week11-2026-11-18.md
+a71a1e02a453a368d8e8c3477d15dcd472388756a0294597ed0aae8dfd9df6c3  nfl-forward-desk/evidence/standings-2026-11-18.md

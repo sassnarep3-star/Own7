@@ -1,0 +1,81 @@
+{
+  "register": "F6 flags — session arena/3f9563bf-own7, 2026-11-18 fresh reads",
+  "as_of": "2026-11-18",
+  "policy": "Every flag is a fact observed on an official 2026-11-18 read or a drift against a committed artifact. Flags are published on the Flagged for Review page with their source link; they never block the build and are never patched into canonical data.",
+  "count": 6,
+  "flags": [
+    {
+      "id": "FD-01",
+      "kind": "drift",
+      "severity": "medium",
+      "item": "Arden Key (IND, DE) game-status designation changed between the 2026-11-13 canonical capture and the 2026-11-18 fresh read",
+      "finding": "The committed canonical row (nfl-availability-28ef/data/injuries-week10-2026.csv) carries Arden Key = Hamstring / Full Participation in Practice / Questionable. The 2026-11-18 fresh read of https://www.nfl.com/injuries/league/2026/REG10 shows Arden Key with blank Injuries and blank Game Status (Full Participation in Practice only). This is a material designation change on a single row.",
+      "source_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "canonical_artifact": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+      "action": "Flagged, not patched. The canonical file is a 2026-11-13 snapshot and is left as-is; the fresh value is published on the injuries page.",
+      "blocks": "DR-21 (injury-hub read with clock time / delta)",
+      "source_id": "FD-NFL-INJ-W10-1118"
+    },
+    {
+      "id": "FD-02",
+      "kind": "timing",
+      "severity": "low",
+      "item": "Week 11 injury report is not yet published as of the 2026-11-18 capture",
+      "finding": "https://www.nfl.com/injuries/league/2026/REG11 redirects server-side to REG10 (Week 10). https://www.nfl.com/injuries/2026/reg11/ returns 404 'Flag on the Play'. The /injuries/ hub's WEEK 1–11 selector lists Week 11, but the page still renders Week 10. Captured 2026-11-18T03:46:15Z (Wednesday night ET, ahead of the Week 11 Thursday game).",
+      "source_url": "https://www.nfl.com/injuries/league/2026/REG11",
+      "action": "Recorded as a timing fact. The Week 11 report should be re-read after the NFL publishes it (typically Wednesday of the game week).",
+      "blocks": "DR-54, DR-55 (injury report snapshot series)",
+      "source_id": "FD-NFL-INJ-W11-STATUS-1118"
+    },
+    {
+      "id": "FD-03",
+      "kind": "resolution",
+      "severity": "info",
+      "item": "Prior VR-17/VR-26 flag (Ravens stale QB depth) does not reproduce on the 2026-11-18 live injury page",
+      "finding": "The brief's flag said Baltimore still published Lamar Jackson and Tyler Huntley at QB after both went on injured reserve. The 2026-11-18 Ravens table on https://www.nfl.com/injuries/league/2026/REG10 lists 10 players and neither Lamar Jackson nor Tyler Huntley appears. This is recorded as a change against the earlier flag, not as a resolution of the underlying transactions question (which needs the official transactions log, not the injury page).",
+      "source_url": "https://www.nfl.com/injuries/league/2026/REG10",
+      "action": "Flagged as a change vs the earlier flag. The transactions-log verification that VR-17/VR-26 actually asked for is still outstanding and is not closed by this observation.",
+      "blocks": "DR-46 (stale depth vs transactions log)",
+      "source_id": "FD-NFL-INJ-W10-1118"
+    },
+    {
+      "id": "FD-04",
+      "kind": "drift",
+      "severity": "info",
+      "item": "Standings snapshot drift vs the 2026-11-17 canonical file is fully explained by the Week 10 Monday game",
+      "finding": "The fresh 2026-11-18 standings read differs from data/nfl-standings-2026-11-17.csv in 8 cells, all on Baltimore Ravens and Los Angeles Chargers. The 11-17 file is annotated 'pre Week 10 MNF'; the 8-cell drift is exactly the LAC@BAL Monday Night Football result (Nov 16): BAL 4-5→4-6, LAC 0-8→1-8, with matching PF/PA/STRK changes. No contradiction; the older snapshot is simply one game behind.",
+      "source_url": "https://www.nfl.com/standings/",
+      "canonical_artifact": "data/nfl-standings-2026-11-17.csv",
+      "action": "Recorded as explained drift. The stale file is left untouched; the fresh read is the current value.",
+      "blocks": "DR-02 (verified results feed)",
+      "source_id": "FD-NFL-STANDINGS-1118"
+    },
+    {
+      "id": "FD-05",
+      "kind": "scope",
+      "severity": "info",
+      "item": "Week 11 has 6 byes, so any 32-club reconciliation must expect 26 active clubs",
+      "finding": "The 2026-11-18 Week 11 schedule read lists 13 games and 6 bye clubs (ATL, CLE, GB, LAR, NE, SEA), i.e. 26 clubs playing. Any per-club availability or depth reconciliation for Week 11 must expect 26 active clubs, not 32.",
+      "source_url": "https://www.nfl.com/schedules/2026/REG11/",
+      "action": "Recorded as a scope fact for the 32-team sweep requirement.",
+      "blocks": "DR-13 (32-team roster/IR sweep)",
+      "source_id": "FD-NFL-SCHED-W11-1118"
+    },
+    {
+      "id": "FD-06",
+      "kind": "irregularity",
+      "severity": "medium",
+      "item": "Two canonical standings snapshots coexist with different recency; the older one is still referenced by the site pipeline",
+      "finding": "data/nfl-standings-2026.csv holds a pre-Week-10-MNF snapshot (BUF 7-1) while data/nfl-standings-2026-11-17.csv holds the post-Week-10-Sunday snapshot (BUF 8-1). scripts/nfl_extract.py writes data/nfl-standings-week10-2026.csv and research/nfl/review.py reads it, so more than one standings artifact is in play. The fresh 2026-11-18 read matches the 11-17 file on all non-MNF rows. This is an irregularity in artifact recency, not a data contradiction.",
+      "source_url": "https://www.nfl.com/standings/",
+      "canonical_artifacts": [
+        "data/nfl-standings-2026.csv",
+        "data/nfl-standings-2026-11-17.csv",
+        "data/nfl-standings-week10-2026.csv"
+      ],
+      "action": "Flagged for review. Not patched; the desk publishes the fresh 2026-11-18 read as the current value and leaves the canonical files as historical snapshots.",
+      "blocks": "DR-22 (decision-readiness table)",
+      "source_id": "FD-NFL-STANDINGS-1118"
+    }
+  ]
+}

@@ -2955,6 +2955,86 @@
   "status": "Content checked"
  },
  {
+  "id": "FD-NFL-STANDINGS-1118",
+  "publisher": "NFL.com",
+  "title": "2026 NFL standings (all 32 clubs), captured 2026-11-18",
+  "url": "https://www.nfl.com/standings/",
+  "authority": "Official league publication",
+  "checked_on": "2026-11-18",
+  "status": "Fresh read",
+  "scope": "32-club standings with W/L/PCT/PF/PA/Home/Road/Div/Conf/Strk/Last5. Read by the forward desk session (arena/3f9563bf-own7) on 2026-11-18; retained under nfl-forward-desk/evidence/standings-2026-11-18.md.",
+  "access": "Arena fetch_page by the capturing session; direct HTTPS to nfl.com returns curl code 000 from the build sandbox",
+  "retrieval_class": "rendered text via the Arena page reader",
+  "evidence": "nfl-forward-desk/evidence/standings-2026-11-18.md",
+  "used_by": [
+   "build.py"
+  ]
+ },
+ {
+  "id": "FD-NFL-SCHED-W11-1118",
+  "publisher": "NFL.com",
+  "title": "2026 NFL Week 11 regular-season schedule, captured 2026-11-18",
+  "url": "https://www.nfl.com/schedules/2026/REG11/",
+  "authority": "Official league publication",
+  "checked_on": "2026-11-18",
+  "status": "Fresh read",
+  "scope": "13 Week 11 games (TNF Nov 19, 11 Sun, SNF MIN@SF Mexico City, MNF Nov 23 CIN@WAS) plus 6 byes (ATL/CLE/GB/LAR/NE/SEA). Read by the forward desk session; retained under nfl-forward-desk/evidence/schedule-week11-2026-11-18.md.",
+  "access": "Arena fetch_page by the capturing session; direct HTTPS to nfl.com returns curl code 000 from the build sandbox",
+  "retrieval_class": "rendered text via the Arena page reader",
+  "evidence": "nfl-forward-desk/evidence/schedule-week11-2026-11-18.md",
+  "used_by": [
+   "build.py"
+  ]
+ },
+ {
+  "id": "FD-NFL-INJ-W10-1118",
+  "publisher": "NFL.com",
+  "title": "2026 NFL Week 10 injury report (league-wide), re-read 2026-11-18",
+  "url": "https://www.nfl.com/injuries/league/2026/REG10",
+  "authority": "Official league publication",
+  "checked_on": "2026-11-18",
+  "status": "Fresh read",
+  "scope": "28 clubs, 347 rows, 171 game-status designations (Out 70, Doubtful 11, Questionable 90). Re-read 2026-11-18; the report was populated over the week from 25 designated rows. Retained under nfl-forward-desk/evidence/injuries-week10-2026-11-18.md.",
+  "access": "Arena fetch_page by the capturing session; direct HTTPS to nfl.com returns curl code 000 from the build sandbox",
+  "retrieval_class": "rendered text via the Arena page reader",
+  "evidence": "nfl-forward-desk/evidence/injuries-week10-2026-11-18.md",
+  "used_by": [
+   "build.py"
+  ]
+ },
+ {
+  "id": "FD-NFL-INJ-W11-STATUS-1118",
+  "publisher": "NFL.com",
+  "title": "2026 NFL Week 11 injury report — status check, 2026-11-18",
+  "url": "https://www.nfl.com/injuries/league/2026/REG11",
+  "authority": "Official league publication",
+  "checked_on": "2026-11-18",
+  "status": "Not yet published",
+  "scope": "Status probe of the Week 11 injury-report URL. As of 2026-11-18T03:46Z the REG11 URL soft-redirects to REG10; no Week 11 report exists yet. Expected Wednesday publication; not treated as proof of a Week 11 report.",
+  "access": "Arena fetch_page by the capturing session; direct HTTPS to nfl.com returns curl code 000 from the build sandbox",
+  "retrieval_class": "rendered text via the Arena page reader",
+  "evidence": "nfl-forward-desk/evidence/injuries-week10-2026-11-18.md",
+  "used_by": [
+   "build.py"
+  ]
+ },
+ {
+  "id": "FD-CANONICAL-INJ-W10-1113",
+  "publisher": "OWN7 maintainers",
+  "title": "Canonical Week 10 injury capture (2026-11-13) — committed artifact",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-availability-28ef/data/injuries-week10-2026.csv",
+  "authority": "Official project repository, not an NFL authority",
+  "checked_on": "2026-11-13",
+  "status": "Canonical artifact",
+  "scope": "326 injury rows, 25 game-status designations. The committed canonical snapshot the 2026-11-18 fresh read is drift-checked against. Retained in-repo; left unpatched.",
+  "access": "Local git and authenticated GitHub API",
+  "evidence": "nfl-availability-28ef/data/injuries-week10-2026.csv",
+  "used_by": [
+   "drift_check.py",
+   "build.py"
+  ]
+ },
+ {
   "id": "B77-NFL-RESERVE",
   "publisher": "NFL.com",
   "title": "NFL.com reserve list, November 2026",

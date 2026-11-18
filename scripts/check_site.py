@@ -170,6 +170,16 @@ SOURCE_HOSTS.update({
     "E15-NFL-SCHED-REG10-1117": "www.nfl.com",
 })
 
+# NFL forward desk (session arena/3f9563bf-own7): every FD-* id published on the
+# forward desk's pages must resolve to its official host.
+SOURCE_HOSTS.update({
+    "FD-NFL-STANDINGS-1118": "www.nfl.com",
+    "FD-NFL-SCHED-W11-1118": "www.nfl.com",
+    "FD-NFL-INJ-W10-1118": "www.nfl.com",
+    "FD-NFL-INJ-W11-STATUS-1118": "www.nfl.com",
+    "FD-CANONICAL-INJ-W10-1113": "github.com",
+})
+
 
 # Readiness-audit desk (session arena/e7efbde7-own7) — official NFL hosts only; each id is
 # a page actually read on 2026-11-17 (standings, REG10 finals, Week 11 slate, injury report,
