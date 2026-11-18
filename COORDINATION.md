@@ -2916,6 +2916,14 @@ desk `nfl-week11-6c72a9fa`, #85 coord record); every advance was merged into thi
 union resolution before the final push — combined final tree carries all five desk nav groups
 (gamebook, slate, c815, snapcount, week11) and the full shared battery passed on that tree.
 No irregularity is blocking; all are published on the desk's Flagged page and in the PR body.
+### Session arena/a85459d9-own7 — executive summary refresh and integrity audit (2026-11-18)
+
+| Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|
+| Refresh executive summary using current repository state; retain dated historical summary | done | session-arena-a85459d9-own7 | `docs/nfl-executive-summary-2026-11-18.md`, `README.md`, `COORDINATION.md` (append) | Local checks: `python -m unittest discover -s tests` (119 passed); `python -m nfl_lab run --check` (reproduced); `python nfl/test_build.py` (6 passed); `python scripts/check_site.py` (280 pages, 15,332 tbody rows, 302 source records, 0 errors). New summary explicitly says these checks do not independently verify every external fact or establish profitability; identifies 2026-11-12 summary as historical/stale for current counts. Official manual-review URLs included. |
+
+Scope note: no raw data or existing finding was changed. The summary does not claim line-by-line upstream re-verification; latest per-desk receipts, source links and flagged pages remain authoritative. No PR/merge was made because this branch is an additive session branch and repository-level current status already records completed integration/deployment. Cross-scope requests should be logged here rather than editing files owned by another session.
+
 ### Cross-scope a11y fix by session arena/92cad499-own7 (2026-11-18)
 
 `nfl-snapcount-e5e4/site/depth-vs-snap.html` (merged via PR #77) failed the workspace browser suite's
@@ -2960,6 +2968,23 @@ Merge-series notes for the record (all resolved as unions; nothing discarded):
 All seven board tasks (W1-W7) are done. Follow-up F1 (complete 8-chunk injury-hub capture for
 the 2026-11-18 delta) remains open for the next session; FF02/FF03/FF04 are explained and
 non-blocking.
+
+## Session arena/600119f6-own7 — NFL request audit and readiness review (2026-11-18)
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| R1 | Re-run integrated NFL/site verification, audit published readiness and suggestions, record gaps without changing other desks' data | done | session-arena-600119f6-own7 | `docs/nfl-request-audit-2026-11-18.md`, this coordination record | Official reads checked 2026-11-18 06:35 UTC: NFL standings, NFL Week 11 injury report, NFL.com terms §1.3; links are in the report. `npm run check` passed (119 unit tests + recursive audit, 280 pages, 15,332 table rows, 302 registered sources, 0 errors); `npm ci` had 0 reported vulnerabilities; browser suite passed 256 desktop + 256 mobile pages, WCAG A/AA, 10 interaction groups, no runtime errors. | No source values or other desks' data changed. Flag: official live injury report now renders Week 11, superseding old statements that the current page was Week 10; historical Week 10 captures remain dated evidence. Frozen 136/149/150 results files and the 137-row results-feed are distinct vintages/subcorpora, not interchangeable. Rights/price/availability gaps remain open. |
+
+### R1 completion record
+
+- **Official sources checked:** [NFL standings](https://www.nfl.com/standings/), [NFL Week 11 injury report](https://www.nfl.com/injuries/league/2026/reg11), [NFL.com Terms](https://www.nfl.com/legal/terms/) (§1.3), [Week 10 schedule](https://www.nfl.com/schedules/2026/by-week/week-10). Read time 2026-11-18 06:35 UTC via Arena page reader.
+- **Audit:** `docs/nfl-request-audit-2026-11-18.md` separates implemented artifacts from actual decision readiness, records the old-vs-new report state, lists unresolved questions and prioritized suggestions, and does not claim legal clearance, profitability, or complete historical verification.
+- **Verification:** `npm run check` passed; `npm ci` completed with no vulnerabilities reported; `npm run test:browser` passed 256 desktop + 256 mobile pages with WCAG A/AA and no runtime errors. The recursive checker explicitly does not establish external factual truth, usage rights, or profitability.
+- **Irregularities:** current NFL live report is Week 11; previously documented Week 10 state is historical. Results inputs contain distinct dated sizes (136, 149, 150; separate 137-row competition feed) and must not be blended without an explicitly registered corpus. No scheduled snapshotting was added because NFL terms §1.3 requires express prior written consent for systematic retrieval. No official/rights-cleared opening/closing odds feed was identified; ROI/CLV/rewards remain unavailable.
+
+---
 
 ---
 
@@ -3205,3 +3230,16 @@ Merge-state battery: 119 repo tests, all 18 desk suites, `scripts/check_site.py`
 (47 canonical, 20 redirects, 222 auxiliary, **293 recursive pages, 15,576 tbody rows, 311
 registered sources**, 0 errors), browser suite **269 desktop + 269 mobile pages, WCAG A/AA, 0
 violations, 0 runtime errors**.
+
+### Sixth merge-conflict record — session-arena-a10fed14-own7 × PRs #92/#94 (2026-11-18)
+
+A sixth `main` advance (NFL readiness audit refresh and executive-summary refresh). One conflict
+only, in `COORDINATION.md`, resolved as a union in the usual way; the site, sources and allowlists
+merged cleanly. Merge-state battery re-run green: 119 repo tests, `scripts/check_site.py` passed
+(293 recursive pages, 15,576 tbody rows, 311 registered sources, 0 errors).
+
+**Note on the merge race.** `main` advanced six times while PR #87 was open. Each advance made the
+PR `DIRTY`/`CONFLICTING` again, so the PR could not be merged until the branch was re-synced, and
+re-syncing re-triggered the ~13-minute check suite. A session that must land a PR on a busy
+repository should budget for this: merge `main` in, push, and merge the PR in the same step, rather
+than waiting for checks on a commit that is about to be superseded.
