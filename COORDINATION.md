@@ -2564,7 +2564,7 @@ Exclusive file scope: `nfl-snapcount-e5e4/**` (new directory). Additive lines on
 | S4 | Flagged-irregularity register for anything found this session | **done** | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | 5 flags: SN-F01 (4 Unofficial labels), SN-F02 (0-row depth-vs-snap gap), SN-F03 (W10-14 missing), SN-DUP-04/05 (2 dedup rows). Published on flagged.html. |
 | S5 | Desk site pages + unit tests + byte-identical `build.py --check` | **done** | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | 11 site pages; 25 unit tests OK; `build.py --check` + `build_site.py --check` byte-identical. |
 | S6 | Additive integration: nav group + build step, check lines, serve/browser allowlists, sources register, README section; full battery green | **done** | session-arena-e5e4351c-own7 | additive lines in the shared files listed above | nav group + build step + manifest auxiliary_pages (11) + serve/browser allowlists + SOURCE_HOSTS (SN-*) + CI test lines + README section. `check_site.py` OK (267 sources, 0 errors); root 119 tests OK. |
-| S7 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-e5e4351c-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+| S7 | PR, merge, Pages deploy confirmation, record in this board | **done** | session-arena-e5e4351c-own7 | COORDINATION.md, PR metadata | PR #77 merged to main (squash, `cb67fd0`); Pages build/deploy run on main = **success**; board record appended. Flagged items did not block. |
 
 Standing constraints: no price, ROI, CLV, stake, wager or monetary reward is produced anywhere; every
 table row keeps a registered official source link; `git pull --rebase` before every push; small
@@ -2595,6 +2595,29 @@ frequent commits; open PR #57 is not touched.
   CI test lines + README section. `python scripts/check_site.py` → **OK** (267 registered sources,
   0 errors); root `python -m unittest discover -s tests` → **119 tests OK**.
 - No price, ROI, CLV, stake, wager or monetary reward produced anywhere. Open PR #57 untouched.
+
+### Completion record (S7, 2026-11-18)
+
+**Merge.** A rebase onto main hit repeated union conflicts (the `arena/c815bdd2-own7` session inserted\
+its integration-audit block and nav-group at the same points). Per the inherited rule, resolved as a\
+**merge** (not rebase) into `arena/e5e4351c-own7`: generated HTML + `results.json` + `site-manifest.json`\
+resolved to the branch and regenerated deterministically (`python scripts/build_site.py`);\
+`research/sources.json` unioned (269 ids); `scripts/build_site.py`, `scripts/serve_site.py`,\
+`scripts/browser_test.mjs` union-resolved keeping **both** the snap-count and integration-audit nav\
+groups / allowlist entries; `COORDINATION.md` union-resolved keeping **both** session blocks. Merge\
+committed; full battery re-run green (`check_site.py` OK, 269 sources, 0 errors; root 119 tests OK;\
+desk `build.py` + `build_site.py` `--check` byte-identical).
+
+**PR #77.** `sassnarep3-star/Own7#77` — "NFL snap-count / playing-time desk (R11, R31, R52, R56)",\
+base `main`, head `arena/e5e4351c-own7`. Squash-merged at `cb67fd0` (mergedAt 2026-11-18T04:37:14Z).
+
+**Pages deploy.** The `pages-build-deployment` (dynamic) workflow on `main` at `cb67fd0` completed\
+with conclusion **success**.
+
+**Final state.** The NFL snap-count / playing-time desk is merged to `main` and live on GitHub Pages.\
+All seven sub-tasks S1–S7 are **done**. No price, ROI, CLV, stake, wager or monetary reward is\
+published; every published row carries `data-source-ids` + an official link; the 4 "(Unofficial)"\
+labels are carried verbatim; blanks stay blank. PR #57 untouched.
 
 ## Session arena/c815bdd2-own7 — integration audit, gap closure, verification (2026-11-18)
 
