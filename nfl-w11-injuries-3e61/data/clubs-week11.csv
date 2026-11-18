@@ -1,0 +1,27 @@
+club_code,club_name,game,record_printed,record_standings_2026_11_18,record_check,status_printed,rows_printed
+IND,Colts,IND at HOU,3-7,3-7,match,,11
+HOU,Texans,IND at HOU,3-6,3-6,match,,15
+PIT,Steelers,PIT at PHI,6-3,6-3,match,No Injuries Reported,0
+PHI,Eagles,PIT at PHI,2-7,2-7,match,No Injuries Reported,0
+AZ,Cardinals,AZ at KC,3-7,3-7,match,No Injuries Reported,0
+KC,Chiefs,AZ at KC,7-2,7-2,match,No Injuries Reported,0
+BAL,Ravens,BAL at CAR,4-6,4-6,match,No Injuries Reported,0
+CAR,Panthers,BAL at CAR,4-5,4-5,match,No Injuries Reported,0
+TB,Buccaneers,TB at DET,3-6,3-6,match,No Injuries Reported,0
+DET,Lions,TB at DET,7-2,7-2,match,No Injuries Reported,0
+MIA,Dolphins,MIA at BUF,1-8,1-8,match,No Injuries Reported,0
+BUF,Bills,MIA at BUF,8-1,8-1,match,No Injuries Reported,0
+TEN,Titans,TEN at DAL,1-8,1-8,match,No Injuries Reported,0
+DAL,Cowboys,TEN at DAL,4-6,4-6,match,No Injuries Reported,0
+NO,Saints,NO at CHI,3-6,3-6,match,No Injuries Reported,0
+CHI,Bears,NO at CHI,7-2,7-2,match,No Injuries Reported,0
+NYJ,Jets,NYJ at LAC,2-8,2-8,match,No Injuries Reported,0
+LAC,Chargers,NYJ at LAC,1-8,1-8,match,No Injuries Reported,0
+JAX,Jaguars,JAX at NYG,7-2,7-2,match,No Injuries Reported,0
+NYG,Giants,JAX at NYG,5-3-1,5-3-1,match,No Injuries Reported,0
+LV,Raiders,LV at DEN,4-6,4-6,match,No Injuries Reported,0
+DEN,Broncos,LV at DEN,7-2,7-2,match,No Injuries Reported,0
+MIN,Vikings,MIN at SF,7-2,7-2,match,No Injuries Reported,0
+SF,49ers,MIN at SF,8-1,8-1,match,No Injuries Reported,0
+CIN,Bengals,CIN at WAS,7-2,7-2,match,No Injuries Reported,0
+WAS,Commanders,CIN at WAS,3-5-1,3-5-1,match,No Injuries Reported,0
