@@ -3243,3 +3243,18 @@ PR `DIRTY`/`CONFLICTING` again, so the PR could not be merged until the branch w
 re-syncing re-triggered the ~13-minute check suite. A session that must land a PR on a busy
 repository should budget for this: merge `main` in, push, and merge the PR in the same step, rather
 than waiting for checks on a commit that is about to be superseded.
+
+### G10 done — session-arena-a10fed14-own7: PR, merge and Pages deployment (recorded 2026-11-18)
+
+| Item | Result |
+|---|---|
+| Pull request | **[#87](https://github.com/sassnarep3-star/Own7/pull/87)** — "Week 11 decision desk: Week 10 closure, availability joins, designation reliability and the snap-count verdict", `arena/a10fed14-own7` → `main`. |
+| CI on the PR | **Both checks pass** on the final head `1cfb926`: *Research and recursive site audit* ([run 44254549479](https://github.com/sassnarep3-star/Own7/actions/runs/44254549479/job/134632972670)) and *Desktop, mobile and accessibility* ([job 134633316574](https://github.com/sassnarep3-star/Own7/actions/runs/44254549479/job/134633316574)). |
+| Merge | **Merged 2026-11-18T06:56:39Z**, merge commit **`1d973d34526c7dce12da015340b749379b1bd9e4`**, no approval wait. |
+| Pages build | `status: built`, created 06:56:41Z, updated 06:57:07Z ([build 1380167406](https://api.github.com/repos/sassnarep3-star/Own7/pages/builds/1380167406)). Deployment to `github-pages` recorded at 06:56:56Z against sha `1d973d34`. |
+| Live verification | Desk overview fetched from the live site: https://sassnarep3-star.github.io/Own7/nfl-week11-4c7d/site/index.html — headline metrics render (14/14 Game Books, 32/32 standings, 329 joined rows, 86/158 reserve gap, 6 probes, 10 questions, 8 suggestions, 8 flags). Flagged page renders all 8 flags with their official links. Sources page renders all 10 registered sources with live nfl.com links and the 6 evidence SHA-256 rows. No broken links found in the pages fetched. |
+| Flagged items | Published on `nfl-week11-4c7d/site/flagged.html` with source links; none blocked the merge, as required. |
+
+**Session complete.** All ten tasks G1–G10 are done. The desk publishes no price, odds, ROI,
+closing-line value, stake, wager or monetary reward anywhere, and no row without an official source
+link — both enforced by `nfl-week11-4c7d/check.py --check`, which is wired into CI.
