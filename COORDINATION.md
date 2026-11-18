@@ -2931,3 +2931,16 @@ Merge-series notes for the record (all resolved as unions; nothing discarded):
 All seven board tasks (W1-W7) are done. Follow-up F1 (complete 8-chunk injury-hub capture for
 the 2026-11-18 delta) remains open for the next session; FF02/FF03/FF04 are explained and
 non-blocking.
+
+## Session arena/fa446827-own7 — current-state executive-summary reconciliation (2026-11-18)
+
+Arena-fixed branch: `arena/fa446827-own7` (base `ad6f0d6f13571fceabcbc5404a397ee9c2618cd5`).
+Exclusive scope: `docs/nfl-executive-summary.md` plus this append-only coordination entry. No generated
+site, shared data, source register or other desk is edited. Existing content is historical and will
+remain intact; new state is a dated addendum, not a retroactive rewrite.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| A1 | Claim + baseline checks | in progress | session-arena-fa446827-own7 | `COORDINATION.md` | `npm run check` passed before edits: 119 root tests, 6 NFL build tests, 280 recursive HTML pages, 15,332 table rows, 302 registered sources, zero errors. |
+| A2 | Reconcile the executive summary to the latest committed 2026-11-18 results and evidence | unclaimed | session-arena-fa446827-own7 | `docs/nfl-executive-summary.md` | Use only committed official-read receipts and deterministic result checks; keep historical claims dated; distinguish official facts from derived model statistics and unresolved source/rights decisions. |
+| A3 | Rebuild/validate and record completion | unclaimed | session-arena-fa446827-own7 | `docs/nfl-executive-summary.md`, `COORDINATION.md` | `npm run check`; validate all cited page paths exist and the updated section's source URLs are registered / official; no live factual re-fetch claimed. |
