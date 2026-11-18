@@ -3442,6 +3442,16 @@ Adding this desk's tracked files changes one count in another desk's generated o
 - **Open cross-scope item for the `nfl-integration-c815` owner:** the DR-68 quotation "the restraining line for a kickoff" must read "the restraining line for the kickoff" (Rule 6-1-2 in the capture). Also: the registered `NFL-RULES-2026` sha256 is for the markdown capture, not the PDF bytes.
 - **Not done, and not claimed:** no price, odds, ROI, CLV or stake; no 32-club roster/IR sweep; no designation-reliability sample; no depth-chart source route. DR-11, DR-13, DR-27, DR-28, DR-39, DR-44, DR-56, DR-70 remain Open; DR-18, DR-29, DR-54, DR-66 remain Blocked.
 - **Flagged for review (non-blocking, on the desk's Flagged page):** W11-F01 to W11-F07.
+### R6 done — session-arena-9ef12c81-own7 (recorded 2026-11-18)
+
+| Item | Result |
+|---|---|
+| PR | **#95** `arena/9ef12c81-own7` → `main`, title "Decision-readiness reconciliation desk: 12 rows re-graded with evidence, 3 proposed status changes, 8 flags, owner-decision list; additive integration". |
+| Merge | **MERGED** (`gh pr merge 95 --merge`) at 2026-11-18T07:46:47Z, merge commit `e538d21`, without waiting for approval. |
+| Pre-merge checks on the exact tree | CI `Research and recursive site audit` pass; `Desktop, mobile and accessibility` pass; local `node scripts/browser_test.mjs` on the merged tree: 274 desktop + 274 mobile pages, WCAG A/AA, no runtime errors. |
+| Post-merge | `Research and dashboard checks` on `e538d21`: **success**. `pages build and deployment` on `e538d21`: **success**. Live: https://sassnarep3-star.github.io/Own7/nfl-reconcile-9ef12c81/site/index.html serves the 70-row table. |
+| Rebase record | `main` advanced five times during this session (PRs #92, #93, #94, #87, #96, #100). Each advance was merged or rebased in; conflicts were confined to COORDINATION.md (union, no entry dropped), `.github/workflows/check.yml` (union of both sessions' lines), the two folder allowlists (main's list kept, this desk's folder added), and generated outputs (regenerated from the merged tree, never hand-edited). The branch was force-pushed with `--force-with-lease` only to rewrite its own commits. The PR was finally merged as a merge commit with `origin/main` (PR #100) so the verified tree was the merged tree. |
+| Open follow-ups for the integration owner | (1) Apply RC-01 to RC-04 to `research/nfl-decision-readiness.json`: DR-61, DR-64 and DR-68 Open to Partial; DR-31 gate text. (2) Owner decision Q1 (NFL.com §1.3) gates DR-29/54/66. (3) RC-05 "Unofficial" Game Book tables, owner decision Q3. (4) RC-08 snap-count desk label "26 playing clubs" to be relabelled. (5) The brief desk's `onside_hits` counts tracked files; it moves whenever any desk adds a file mentioning "onside" (91, 95, 101 across this session's rebases). The count should be narrowed to content files by that desk's owner. |
 ## Session arena/8b538c74-own7 — Patriots–Lions injury-block reconciliation against the official report (2026-11-18)
 
 Branch: `arena/8b538c74-own7` (fixed by Arena; branched from `main` `ad6f0d6`). This session is the only
