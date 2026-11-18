@@ -3372,3 +3372,16 @@ writer on this branch. Other sessions' open PRs (#82, #83, #87, #88, #91) are no
 **Flags (non-blocking; published on the desk page):** R-F1 Joseph practice disagreement; R-F2 desk B blank game/injury cells; R-F3 desk A blanks for St. Brown and Vaki; R-F4 the official page title says "Week 11" while its heading says "Injuries - WEEK 10"; R-F5 practice-status differences cannot be called errors without per-read clock times.
 
 **Limits stated honestly:** covers one official block (24 rows) of the Week 10 report. It does not cover other games, the other 13 Week 10 games, or any snap count, depth chart or Game Book. No value was inferred; differences are reported only where an exact string differs.
+
+### R5 — session-arena-8b538c74-own7 (recorded 2026-11-18, before PR)
+
+| Check (on the rebased tree, after `git pull --rebase origin main`) | Result |
+|---|---|
+| `python nfl-injury-recon-8b53/build.py --check` | byte-identical |
+| `python -m unittest discover -s nfl-injury-recon-8b53/tests` | 8 tests OK |
+| `python -m unittest discover -s tests` (root suite) | 119 tests OK |
+| `python -m unittest discover -s nfl-brief-77b1/tests` | OK |
+| `python scripts/build_site.py` then `python scripts/check_site.py` | OK, errors `[]`, research reproduction passed |
+| `npm run test:browser` (`scripts/browser_test.mjs`, WCAG A/AA, desktop + mobile) | 257 desktop + 257 mobile pages, 0 violations, 0 runtime errors (first run found 2 colour-contrast violations on this desk's own page; fixed by darkening grey text to #4f5868; re-run green) |
+
+Rebase conflict (this session): `COORDINATION.md` add/add with main's new entries; resolved as a union, nothing dropped.
