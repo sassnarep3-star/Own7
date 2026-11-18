@@ -274,6 +274,9 @@ SOURCE_HOSTS.update({
     'C672-REPO-E7EF-W11': 'github.com',
 })
 
+# Week 11 injury desk (session arena/3e6166df-own7): official NFL.com hosts only.
+SOURCE_HOSTS.update({'W11-NFL-INJ-1118': 'www.nfl.com', 'W11-NFL-TERMS-1118': 'www.nfl.com'})
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)

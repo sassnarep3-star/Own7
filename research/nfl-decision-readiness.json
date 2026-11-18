@@ -661,11 +661,12 @@
    "requirement": "Snapshot the nfl.com injury report every Wed, Thu and Fri and keep a dated history",
    "category": "Availability & injuries",
    "status": "Blocked",
-   "gate": "Same terms gate as DR-29 (systematic retrieval); day-level history exists only for captured weeks.",
+   "gate": "Same terms gate as DR-29: NFL.com section 1.3 (read verbatim on 2026-11-18) prohibits systematic retrieval to compile a collection without express prior written consent. One first-Wednesday read exists (Week 11, 2026-11-18, nfl-w11-injuries-3e61); no Wednesday, Thursday or Friday series is run.",
    "clears_when": "Permitted capture schedule agreed in writing; history then accrues Wed/Thu/Fri with retained hashes.",
-   "artifact": "nfl-availability-28ef/site/flagged.html",
+   "artifact": "nfl-w11-injuries-3e61/site/flagged.html",
    "source_ids": [
-    "NFL-TERMS"
+    "NFL-TERMS",
+    "W11-NFL-TERMS-1118"
    ]
   },
   {
@@ -744,10 +745,10 @@
    "id": "DR-61",
    "requirement": "Publish a weekly 'what changed' diff instead of a static snapshot",
    "category": "Governance & publication",
-   "status": "Open",
-   "gate": "Weekly snapshots exist as dated evidence files; no diff view is rendered between consecutive weeks.",
+   "status": "Partial",
+   "gate": "Partial: the what-changed ledger (nfl-week11-6c72a9fa) renders standings movement, reserve-list series, injury-report stability by section and schedule stability between the 2026-11-17 and 2026-11-18 captures. Not yet rendered: rank change and rating change between weekly snapshots, and per-club availability change between two comparable injury reports.",
    "clears_when": "At least 2 weekly snapshots stored and a rendered diff (rank change, rating change, availability change) published.",
-   "artifact": "nfl-results-decisions.html",
+   "artifact": "nfl-week11-6c72a9fa/site/what-changed.html",
    "source_ids": [
     "E15-NFL-SCHED-REG10-1117"
    ]
@@ -780,12 +781,13 @@
    "id": "DR-64",
    "requirement": "Capture the reserve list so 'not listed' never means 'available' (Malik Willis case)",
    "category": "Availability & injuries",
-   "status": "Open",
-   "gate": "The reserve/IR list is still not retrieved; the Game Book desk documents the named consequences (Malik Willis absent from the report; the Baltimore stale-depth claim unverifiable without the list).",
+   "status": "Partial",
+   "gate": "Partial: reserve-list reads cover the November and October windows (25 rows each, rolling; scrolled-off rows survive only in dated captures), not a 32-club IR list. The Week 11 injury report (2026-11-18) does not list reserve players; its own news headline reports QB Malik Willis on injured reserve (flag W11-F03). Absence from the report is not availability.",
    "clears_when": "IR/reserve capture joins the report capture for all 32 clubs, so absent-but-reserved players are labeled.",
-   "artifact": "nfl-gamebook-5213243e/site/flagged.html",
+   "artifact": "nfl-week11-6c72a9fa/site/reserve-sweep.html",
    "source_ids": [
-    "CP-NFL-INJ-W10"
+    "W11-NFL-INJ-1118",
+    "C672-RESERVE-NOV-1118"
    ]
   },
   {
@@ -828,12 +830,12 @@
    "id": "DR-68",
    "requirement": "2026 kickoff and declared onside-kick regime priors filter",
    "category": "Origination & model",
-   "status": "Open",
-   "gate": "The 2026 playing-rules changes (kickoff/onside declarations) are not yet transcribed from the official rulebook into the model context.",
-   "clears_when": "Declared rules transcribed from the official 2026 playing rules and the priors filter added with its source.",
-   "artifact": "nfl-competition/site/questions.html",
+   "status": "Partial",
+   "gate": "Partial: the 2026 rules text for kickoff and declared onside kicks is transcribed from the official rulebook (Rules 6-1-2, 6-1-3, 6-1-5, 6-1-6 and 19-2). The priors filter is not built: no official frequency of declared onside kicks is held, and none is estimated.",
+   "clears_when": "A frequency source for declared onside kicks is captured from official play-by-play, and the priors filter is added with its source.",
+   "artifact": "nfl-integration-c815/site/rules-2026.html",
    "source_ids": [
-    "CP-NFL-W10-SCHEDULE"
+    "NFL-RULES-2026"
    ]
   },
   {

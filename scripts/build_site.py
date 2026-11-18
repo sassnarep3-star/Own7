@@ -483,6 +483,31 @@ def fresh_nav_group():
 
 NAV.extend(fresh_nav_group())
 
+W11_NAV_PATH = "nfl-w11-injuries-3e61/site/index.html"
+
+
+def w11_nav_group():
+    """Additive nav group for the Week 11 injury desk (session arena/3e6166df-own7).
+
+    Built from the desk's own manifest. Returns an empty list if the desk has not been built.
+    """
+    manifest = ROOT / "nfl-w11-injuries-3e61" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    pages = [n for n in load_json("nfl-w11-injuries-3e61/site/manifest.json")["pages"] if n.endswith(".html")]
+    labels = {
+        "index.html": "Week 11 overview",
+        "injuries.html": "Week 11 injury rows",
+        "slate.html": "Week 11 slate and byes",
+        "flagged.html": "Week 11 flagged",
+        "sources.html": "Week 11 sources",
+    }
+    return [("NFL Week 11 injury desk",
+             [(f"nfl-w11-injuries-3e61/site/{p}", labels.get(p, p), "data") for p in pages])]
+
+
+NAV.extend(w11_nav_group())
+
 
 SLATE_NAV_PATH = "nfl-slate-03dcea07/site/index.html"
 
@@ -1172,6 +1197,14 @@ def build():
     fresh_pages=load_json('nfl-fresh-1118/site/manifest.json')['pages']
     for name in fresh_pages:
         generated.append(f'nfl-fresh-1118/site/{name}')
+    # Week 11 injury desk (session arena/3e6166df-own7). Runs the desk's deterministic build first:
+    # it re-derives every number from the verbatim transcript and the two cross-check artefacts,
+    # and aborts on any contradiction, so a stale or truncated transcript fails the site build.
+    w11_result=subprocess.run([sys.executable,str(ROOT/'nfl-w11-injuries-3e61'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if w11_result.returncode: raise SystemExit(f'nfl-w11-injuries-3e61/build.py failed: '+w11_result.stdout+w11_result.stderr)
+    w11_pages=[n for n in load_json('nfl-w11-injuries-3e61/site/manifest.json')['pages'] if n.endswith('.html')]
+    for name in w11_pages:
+        generated.append(f'nfl-w11-injuries-3e61/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None

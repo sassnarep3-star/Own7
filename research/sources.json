@@ -3425,6 +3425,30 @@
   "url": "https://www.nfl.com/injuries/week-11"
  },
  {
+  "id": "W11-NFL-INJ-1118",
+  "publisher": "National Football League",
+  "title": "Official NFL injury report, Week 11 of the 2026 season (first Wednesday read)",
+  "url": "https://www.nfl.com/injuries/",
+  "kind": "injury-report",
+  "authority": "Official league participation reporting",
+  "scope": "Week 11 sections as printed: 13 fixtures, 26 clubs; 26 printed injury rows (IND 11, HOU 15); 24 clubs printed 'No Injuries Reported'. Injuries and Game Status cells blank as printed. One read only; no Thursday or Friday read. The report does not list players on injured reserve.",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page, chunks 0 to 2 of 3, rendered text; not an HTTP-status attestation and not a licensed feed",
+  "status": "Content checked"
+ },
+ {
+  "id": "W11-NFL-TERMS-1118",
+  "publisher": "NFL Enterprises, LLC",
+  "title": "NFL.com Terms and Conditions (updated May 16, 2024)",
+  "url": "https://www.nfl.com/legal/terms/",
+  "kind": "terms",
+  "authority": "Published website terms",
+  "scope": "Section 1.3 read verbatim: individual non-commercial informational use; systematic retrieval to create or compile a collection, compilation, database or directory is prohibited absent express prior written consent. Governs the capture cadence (DR-29, DR-54).",
+  "checked_on": "2026-11-18",
+  "access": "Arena fetch_page, chunk 0 of 9, rendered text; not an HTTP-status attestation",
+  "status": "Content checked"
+ },
+ {
   "id": "B77-NFL-TRADES",
   "publisher": "NFL.com",
   "title": "NFL.com league transactions (November 2026 trades)",

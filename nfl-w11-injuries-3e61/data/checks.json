@@ -1,0 +1,314 @@
+{
+ "desk": "nfl-w11-injuries-3e61",
+ "read_on": "2026-11-18",
+ "report_url": "https://www.nfl.com/injuries/",
+ "evidence_file": "evidence/injury-report-week11-2026-11-18.md",
+ "evidence_sha256": "c5f6b0657e95f984a518e21b187bf5054f4a692889286340a4f22d462f2444e8",
+ "schedule_evidence_sha256": "cbd3bd6efa1889bc236f8c9f019a9e25e3126539c48a469f9449a458bcee5306",
+ "checks": [
+  {
+   "id": "W1",
+   "check": "Week 11 games printed",
+   "expected": 13,
+   "observed": 13,
+   "result": "pass"
+  },
+  {
+   "id": "W2",
+   "check": "clubs printed (26 = 13 games x 2)",
+   "expected": 26,
+   "observed": 26,
+   "result": "pass"
+  },
+  {
+   "id": "W3",
+   "check": "clubs are unique",
+   "expected": 26,
+   "observed": 26,
+   "result": "pass"
+  },
+  {
+   "id": "W4",
+   "check": "every game lists exactly two clubs",
+   "expected": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "observed": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "result": "pass"
+  },
+  {
+   "id": "W5",
+   "check": "printed injury rows per club (only IND and HOU carry rows)",
+   "expected": {
+    "IND": 11,
+    "HOU": 15
+   },
+   "observed": {
+    "IND": 11,
+    "HOU": 15
+   },
+   "result": "pass"
+  },
+  {
+   "id": "W6",
+   "check": "total printed injury rows",
+   "expected": 26,
+   "observed": 26,
+   "result": "pass"
+  },
+  {
+   "id": "W7",
+   "check": "clubs printed 'No Injuries Reported'",
+   "expected": 24,
+   "observed": 24,
+   "result": "pass"
+  },
+  {
+   "id": "W8",
+   "check": "every club has either rows or the no-injury line, never both or neither",
+   "expected": 26,
+   "observed": 26,
+   "result": "pass"
+  },
+  {
+   "id": "W9",
+   "check": "Game Status cells printed blank (rows)",
+   "expected": 26,
+   "observed": 26,
+   "result": "pass"
+  },
+  {
+   "id": "W10",
+   "check": "Injuries (body part) cells printed blank (rows)",
+   "expected": 26,
+   "observed": 26,
+   "result": "pass"
+  },
+  {
+   "id": "W11",
+   "check": "byes in the official schedule transcript",
+   "expected": 6,
+   "observed": 6,
+   "result": "pass"
+  },
+  {
+   "id": "W12",
+   "check": "official standings cover 32 clubs",
+   "expected": 32,
+   "observed": 32,
+   "result": "pass"
+  },
+  {
+   "id": "W13",
+   "check": "playing clubs + byes partition the 32 clubs",
+   "expected": true,
+   "observed": true,
+   "result": "pass"
+  },
+  {
+   "id": "W14",
+   "check": "fixtures match the official schedule transcript (matchup, day, kickoff)",
+   "expected": [
+    [
+     "Bengals",
+     "Commanders",
+     "Monday",
+     "8:15 PM"
+    ],
+    [
+     "Buccaneers",
+     "Lions",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Cardinals",
+     "Chiefs",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Colts",
+     "Texans",
+     "Thursday",
+     "8:15 PM"
+    ],
+    [
+     "Dolphins",
+     "Bills",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Jaguars",
+     "Giants",
+     "Sunday",
+     "4:25 PM"
+    ],
+    [
+     "Jets",
+     "Chargers",
+     "Sunday",
+     "4:05 PM"
+    ],
+    [
+     "Raiders",
+     "Broncos",
+     "Sunday",
+     "4:25 PM"
+    ],
+    [
+     "Ravens",
+     "Panthers",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Saints",
+     "Bears",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Steelers",
+     "Eagles",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Titans",
+     "Cowboys",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Vikings",
+     "49ers",
+     "Sunday",
+     "8:20 PM"
+    ]
+   ],
+   "observed": [
+    [
+     "Bengals",
+     "Commanders",
+     "Monday",
+     "8:15 PM"
+    ],
+    [
+     "Buccaneers",
+     "Lions",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Cardinals",
+     "Chiefs",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Colts",
+     "Texans",
+     "Thursday",
+     "8:15 PM"
+    ],
+    [
+     "Dolphins",
+     "Bills",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Jaguars",
+     "Giants",
+     "Sunday",
+     "4:25 PM"
+    ],
+    [
+     "Jets",
+     "Chargers",
+     "Sunday",
+     "4:05 PM"
+    ],
+    [
+     "Raiders",
+     "Broncos",
+     "Sunday",
+     "4:25 PM"
+    ],
+    [
+     "Ravens",
+     "Panthers",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Saints",
+     "Bears",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Steelers",
+     "Eagles",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Titans",
+     "Cowboys",
+     "Sunday",
+     "1:00 PM"
+    ],
+    [
+     "Vikings",
+     "49ers",
+     "Sunday",
+     "8:20 PM"
+    ]
+   ],
+   "result": "pass"
+  },
+  {
+   "id": "W15",
+   "check": "printed team records equal the official standings read (26 clubs)",
+   "expected": [],
+   "observed": [],
+   "result": "pass"
+  },
+  {
+   "id": "W16",
+   "check": "printed club short names equal the official standings short names",
+   "expected": true,
+   "observed": true,
+   "result": "pass"
+  }
+ ]
+}

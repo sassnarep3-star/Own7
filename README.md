@@ -2,6 +2,32 @@
 
 [Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
+## New: Week 11 injury desk — first Wednesday read, register re-grade (2026-11-18, session arena/3e6166df-own7)
+
+The official NFL injury report now serves **Week 11** (Thursday 19 Nov, Colts at Texans first).
+This desk takes one verbatim read of every section on 2026-11-18, derives every row from that
+transcript, and cross-checks the fixtures against the official Week 11 schedule transcript and the
+team records against the official standings read.
+
+- **26 printed rows**: Colts 11, Texans 15. **24 clubs** print "No Injuries Reported". 13 games, 6 byes.
+- **Blank as printed**: all 26 Game Status cells and all 26 Injuries (body part) cells are empty on this read. They stay blank and are flagged (W11-F01, W11-F02).
+- **Absent is not available**: the report does not list injured-reserve players. The page's own headline reports QB Malik Willis on injured reserve (W11-F03).
+- **Terms gate verified**: NFL.com section 1.3, read verbatim, prohibits systematic retrieval to compile a collection without written consent. So this is one read, not a scheduled series. DR-54 stays Blocked.
+- **Register re-grades**: DR-61, DR-64 and DR-68 move from Open to Partial, each cited to an artifact that exists in the tree. DR-54's gate text now cites the terms read.
+
+| Page | What it answers |
+|---|---|
+| `nfl-w11-injuries-3e61/site/index.html` | Overview, what is verified, what is blank and why |
+| `nfl-w11-injuries-3e61/site/injuries.html` | The 26 printed rows, each linked to the official report |
+| `nfl-w11-injuries-3e61/site/slate.html` | 13 games with the printed status of each club, and the 6 byes |
+| `nfl-w11-injuries-3e61/site/flagged.html` | Flags W11-F01 to W11-F07, non-blocking |
+| `nfl-w11-injuries-3e61/site/sources.html` | Registered sources, read dates, SHA-256 of the transcript |
+
+```sh
+python nfl-w11-injuries-3e61/build.py --check          # desk reproduces byte-identically
+python -m unittest discover -s nfl-w11-injuries-3e61/tests   # 17 tests
+```
+
 ## New: fresh-reads desk — Week 10 completion + Week 11 readiness (2026-11-18, session arena/6c72a9fa-own7)
 
 Official reads taken the morning after the Week 10 Monday game (`nfl-week11-6c72a9fa/`, 7 pages,
