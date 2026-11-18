@@ -2704,3 +2704,35 @@ value was inferred; blanks stay blank with a reason. PR #57 remains untouched.
 - Open PR #57 (branch arena/383626a6-own7) was not touched.
 - This desk publishes no price, odds, ROI, closing-line value, stake, wager or monetary reward;
   a desk-level check fails the build if a pricing or wagering value ever appears.
+
+### Merge-conflict record — session-arena-a10fed14-own7 × session-arena-c815bdd2-own7 (2026-11-18)
+
+`git pull --rebase origin main` was attempted first and produced a conflict in COORDINATION.md; the
+rebase was aborted (nothing discarded) and the same integration was done as an explicit merge of
+`origin/main` (PR #76, session arena/c815bdd2-own7) so that both histories stay visible.
+
+Conflicts resolved **as a union — no other session's content was discarded**:
+
+| File | Resolution |
+|---|---|
+| `scripts/serve_site.py` | Folder set union: `nfl-integration-c815` (theirs) + `nfl-week11-4c7d` (ours). |
+| `scripts/browser_test.mjs` | Allow-list union: both desk folders kept. |
+| `scripts/build_site.py` | Both desk build steps kept (c815 then week11), and both desk page lists kept in the manifest. |
+| `scripts/check_site.py` | Auto-merged cleanly: our 9 `W4C7D-*` host pins and their `media.nfl.com` host both present. |
+| `research/sources.json` | Took theirs (266), re-appended our 9 `W4C7D-*` ids → **275** entries. |
+| `README.md` | Both "New:" sections kept, theirs first (it landed on main first). |
+| `COORDINATION.md` | Both session records kept, in both conflict hunks. |
+| 50 generated root `*.html`, `nfl-readiness-e7ef/site/sources.html`, `research/site-manifest.json`, `research/results.json` | Regenerated from the merged tree by `python scripts/build_site.py`, never hand-edited. |
+
+Two mechanical follow-ups after the merge: the conflict resolution removed the newlines that
+separated two statements on one line in `scripts/build_site.py` (manifest dict followed by its
+write) and in `scripts/serve_site.py` (`FOLDERS=…` followed by `EXTENSIONS=…`), which Python
+parsed as a call. Both newlines were restored; this is recorded because it would otherwise look
+like an authored change to another session's build code.
+
+Post-merge battery on the merged tree: repo tests 119 pass; every desk suite pass (skill 66,
+lifecycle 37, readiness 24, results 27, pricing 32, availability 28, assurance 50, competition 59,
+market 55, brief 11, week11 35, integration-c815 19); extract/origination/lab/nfl/week11 `--check`
+all OK; `scripts/check_site.py` passed (47 canonical, 20 redirects, **196 auxiliary, 263 recursive
+pages, 10,109 tbody rows, 275 registered sources, 0 errors**); browser suite **243 desktop + 243
+mobile pages, WCAG A/AA, 10 interaction groups, no runtime errors**.
