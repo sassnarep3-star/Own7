@@ -995,7 +995,7 @@ this desk publishes.</p>
     for f in sorted(EVID.glob("*.md")):
         sids = next((v for k, v in ev_sources.items() if f.name.startswith(k)), ["SL-1118-STANDINGS"])
         ev_rows.append(row([esc(f.name), esc(sha256_of(f)[:16] + "…"), esc(sha256_of(f)),
-                            link("evidence/" + f.name, "committed transcript ↗") + " "
+                            link("../evidence/" + f.name, "committed transcript ↗") + " "
                             + " ".join(src_link(s) for s in sids)],
                            sids))
     body = f'''
@@ -1073,13 +1073,15 @@ def main() -> None:
         if c["result"] != "pass":
             die(f"check {c['id']} failed: {c['detail']}")
 
+    before_data = {p.name: p.read_bytes() for p in DATA.glob("*") if p.is_file()} if check_only else {}
     build_data(fresh, diffs, gb, rules, checks)
     pages = build_site(fresh, diffs, gb, rules, checks, byes, finals14)
 
-    manifest_pages = [name for name, _ in pages] + ["style.css"]
-    (SITE / "manifest.json").write_text(json.dumps({
+    manifest_pages = [name for name, _ in pages]
+    manifest_text = json.dumps({
         "desk": "nfl-slate-03dcea07", "session": "arena/03dcea07-own7",
-        "pages": manifest_pages}, indent=2) + "\n", encoding="utf-8")
+        "pages": manifest_pages}, indent=2) + "\n"
+    (SITE / "manifest.json").write_text(manifest_text, encoding="utf-8")
 
     stale = []
     for name, html_text in pages:
@@ -1093,9 +1095,13 @@ def main() -> None:
     if check_only:
         if not css.exists() or css.read_text(encoding="utf-8") != STYLE:
             stale.append("style.css")
+        if (SITE / "manifest.json").read_text(encoding="utf-8") != manifest_text:
+            stale.append("manifest.json")
+        if before_data != {p.name: p.read_bytes() for p in DATA.glob("*") if p.is_file()}:
+            stale.append("data/* (stale artefacts)")
         if stale:
-            die(f"site does not reproduce byte-identically: {', '.join(stale)}")
-        print("OK: nfl-slate-03dcea07 reproduces byte-identically (8 pages, manifest, style).")
+            die(f"desk does not reproduce byte-identically: {', '.join(stale)}")
+        print("OK: nfl-slate-03dcea07 reproduces byte-identically (8 pages, data, manifest, style).")
     else:
         css.write_text(STYLE, encoding="utf-8")
         print(f"OK: built {len(pages)} pages + style + manifest; 9 checks passed; desk nfl-slate-03dcea07.")

@@ -431,6 +431,35 @@ def e7ef_nav_group():
 NAV.extend(e7ef_nav_group())
 
 
+SLATE_NAV_PATH = "nfl-slate-03dcea07/site/index.html"
+
+
+def slate_nav_group():
+    """Additive nav group for the Week-10-completion desk (session arena/03dcea07-own7).
+
+    Built from the desk's own manifest. Returns an empty list if the desk has not been built.
+    """
+    manifest = ROOT / "nfl-slate-03dcea07" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    pages = [n for n in load_json("nfl-slate-03dcea07/site/manifest.json")["pages"] if n.endswith(".html")]
+    labels = {
+        "index.html": "Slate overview",
+        "week10-complete.html": "150th final",
+        "gamebook-lac-bal.html": "14th Game Book",
+        "weekly-diff.html": "Weekly diff",
+        "rules-2026.html": "2026 rules",
+        "verification.html": "Slate verification",
+        "flagged.html": "Slate flagged",
+        "sources.html": "Slate sources",
+    }
+    return [("NFL slate & weekly diff",
+             [(f"nfl-slate-03dcea07/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+
+NAV.extend(slate_nav_group())
+
+
 
 
 
@@ -997,6 +1026,14 @@ def build():
     e7ef_pages=load_json('nfl-readiness-e7ef/site/manifest.json')['pages']
     for name in e7ef_pages:
         generated.append(f'nfl-readiness-e7ef/site/{name}')
+    # Week-10-completion & weekly-diff desk (session arena/03dcea07-own7). Own deterministic
+    # build; pages live under nfl-slate-03dcea07/site/.
+    slate_result=subprocess.run([sys.executable,str(ROOT/'nfl-slate-03dcea07'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if slate_result.returncode: raise SystemExit('nfl-slate-03dcea07/build.py failed: '+slate_result.stdout+slate_result.stderr)
+    slate_pages=load_json('nfl-slate-03dcea07/site/manifest.json')['pages']
+    for name in slate_pages:
+        if name.endswith('.html'):
+            generated.append(f'nfl-slate-03dcea07/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
