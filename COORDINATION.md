@@ -2828,7 +2828,7 @@ grid. Checked here against the publisher's own published unit totals, not agains
 | Rows whose `def_pct` cannot be re-derived from their `def_snaps` over the printed DEF total | **64** |
 | Rows that carry an `off_*` and a `def_*` pair but no `st_*` — i.e. lost a real ST entry into `def` | **291** |
 | Rows claiming defensive snaps | 1,002 |
-| Actual defensive unit rows in the 13 captures re-transcribed here | 517 |
+| Actual defensive unit rows in the 13 captures re-transcribed here | 498 |
 
 Worked example, WAS–NYG: the PDF prints `B.Coleman | T/G | 69 100% | (empty) | 4 | 15%`. The merged
 desk stores `off 69/100, def 4/15, st empty`. The 4/15 is **special teams**; Coleman played no defense.
