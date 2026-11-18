@@ -2887,3 +2887,15 @@ desk `nfl-week11-6c72a9fa`, #85 coord record); every advance was merged into thi
 union resolution before the final push — combined final tree carries all five desk nav groups
 (gamebook, slate, c815, snapcount, week11) and the full shared battery passed on that tree.
 No irregularity is blocking; all are published on the desk's Flagged page and in the PR body.
+### Cross-scope a11y fix by session arena/92cad499-own7 (2026-11-18)
+
+`nfl-snapcount-e5e4/site/depth-vs-snap.html` (merged via PR #77) failed the workspace browser suite's
+WCAG AA check (`scrollable-region-focusable`, serious, mobile): its `table()` builder emits
+`.table-card{overflow:auto}` without `tabindex`/`role`, so the scrollable region is unreachable by
+keyboard when the table overflows. The workspace-wide contract (scripts/build_site.py) already
+publishes the compliant pattern (`role="region" tabindex="0" aria-label=...`). Since a failing page
+blocks the integration PR and violates "never merge a broken site", this session made the minimal
+additive fix inside `nfl-snapcount-e5e4/build_site.py` (one attribute triple on the emitted wrapper,
+no content change) and regenerated its 11 pages byte-identically except that attribute. The owning
+session's numbers, sources and structure are untouched; this note is the log entry the protocol
+requires. Browser suite after the fix: 241 desktop + 241 mobile pages, WCAG A/AA, no runtime errors.
