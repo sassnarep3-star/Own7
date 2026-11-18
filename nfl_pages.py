@@ -642,7 +642,7 @@ def nfl_overview():
          'Ranked suggestions, the questions they close, and the four gaps blocking any reward decision.',
          'nfl-suggestions.html', 'Review the suggestions'),
         ('02 / ORIGINATE', 'Lab', 'A line you can reproduce',
-         'One score pair per game drives the spread and the total. Market cells stay blank because no price exists.',
+         'One score pair per game drives the spread and the total. Market cells stay blank: this board has no recorded, authorized executable price input.',
          'nfl-lines.html', 'See the originated board'),
         ('03 / QUALIFY', 'Validation', 'Evidence earns the rank',
          'Ten gates, eight blocked strategies and an empty leaderboard. A missing input never counts as a pass.',
@@ -654,8 +654,8 @@ def nfl_overview():
         f'<span class="card-link">{cta} →</span></a>'
         for step, ico, title, description, href, cta in cards) + '</div>'
 
-    # Decision-readiness table (brief requirement): one row per requirement, the gate that
-    # blocks it, and the number that would clear it. Data: research/nfl-requirements.json.
+    # Project-scoped origination register (16 rows), not the full-brief crosswalk: each row has
+    # its mapped blocking gate and clearance condition. Data: research/nfl-requirements.json.
     gate_names = {g["id"]: g["name"] for g in NFL["gates"]}
 
     def _gate_cell(row):
@@ -667,8 +667,8 @@ def nfl_overview():
         return _Markup(f'<a href="nfl-validation.html">{esc(label)}</a>'
                        f'<span class="row-sub">{esc(row.get("gate_note", ""))}</span>')
 
-    body += section('Decision readiness — one row per requirement', table(
-        'nfl-decision-readiness', 'Requirement, blocking gate, and the number that would clear it',
+    body += section('Origination requirements — scoped register', table(
+        'nfl-decision-readiness', 'Project-scope requirements, blocking gate, and clearance condition',
         [('Requirement', lambda r: rich(r['requirement'], r['id'])),
          ('State', lambda r: badge(r['status'], {'Implemented': 'good', 'Blocked': 'warn',
                                                  'In progress': 'blue'}.get(r['status'], 'warn'))),
@@ -676,14 +676,39 @@ def nfl_overview():
          ('Number that would clear it', 'clear_number')],
         REQUIREMENTS['requirements'],
         filter_options=['Implemented', 'Partial', 'In progress', 'Blocked'],
-        note='One row per NFL requirement. Gate IDs G01–G10 are this project\'s own validation '
-             'contracts, published on the validation gates page; naming one binding gate per '
-             'requirement is a documented project mapping from that requirement\'s recorded evidence '
-             'to the gate whose pass rule it currently fails, not an official fact. The clearing '
-             'numbers are pre-registered project design choices (research/nfl-protocol.json, '
-             'research/nfl-catalog.json), not official standards, and none of them is a promise that '
-             'the requirement becomes awardable. The Sources column carries the official evidence '
-             'behind each requirement\'s current state.'))
+        note='One row per requirement in this 16-row project-scoped origination register; it is not the '
+             'full brief ledger. The separate 70-row brief ledger appears on this page and is not yet '
+             'crosswalked one-to-one against the other full readiness registers. Gate IDs G01–G10 are '
+             'this project\'s own validation contracts, published on the validation gates page; naming '
+             'one binding gate per requirement is a documented project mapping from that requirement\'s '
+             'recorded evidence to the gate whose pass rule it currently fails, not an official fact. '
+             'The clearing numbers are pre-registered project design choices (research/nfl-protocol.json, '
+             'research/nfl-catalog.json), not official standards, and none of them is a promise that the '
+             'requirement becomes awardable. The Sources column carries the registered evidence behind '
+             'each requirement\'s current state.'),
+        sid='origination-requirements')
+
+    # Distinct readiness ledgers are deliberately shown rather than silently collapsed into one count.
+    readiness_81 = len(json.loads((ROOT / "research/nfl-readiness.json").read_text(encoding="utf-8"))["rows"])
+    readiness_79 = len(json.loads((ROOT / "nfl-readiness-1467fdf7/data/requirements.json").read_text(encoding="utf-8"))["rows"])
+    readiness_80 = len(json.loads((ROOT / "nfl-readiness-e7ef/data/readiness.json").read_text(encoding="utf-8"))["rows"])
+    origination_scope = len(json.loads((ROOT / "research/nfl-requirements.json").read_text(encoding="utf-8"))["requirements"])
+    assurance_subset = len(json.loads((ROOT / "nfl-assurance-9580ac3f/decisions.json").read_text(encoding="utf-8"))["requirements"])
+    body += section(
+        'Requirement counts are not reconciled',
+        notice(
+            'Do not read the landing ledger as an exhaustive one-to-one crosswalk.',
+            f'The public brief ledger on this page has {len(DECISION_READINESS["requirements"])} rows. A separate project-scoped '
+            f'origination register has {origination_scope} rows and is not a full-brief crosswalk. Separate full registers have '
+            f'{readiness_81}, {readiness_79}, and {readiness_80} rows. The {assurance_subset}-row assurance register is a subset, '
+            'not another full-brief total. The row counts are not reconciled: no one-to-one crosswalk establishes whether '
+            'the differences arise from scope, line-splitting, or other edits. The unmerged PR #57 proposal is excluded. '
+            'No canonical count is asserted.',
+            info=True, action=False),
+        eyebrow='TRACEABILITY / SCOPE LIMIT',
+        subtitle='Use the final integration audit for the ledger inventory, decision questions, source-policy gaps, and reviewable next steps.',
+        sid='requirement-count-disclosure')
+    body += '<p class="source-line">' + refs({"source_ids": ["REPO"]}) + ' &nbsp;·&nbsp; <a class="button" href="nfl-final-audit.html">Open the final NFL audit →</a></p>'
 
     body += section('Three NFL workstreams are published here', table(
         'nfl-workstreams', 'Which page answers which question',
@@ -740,8 +765,8 @@ def nfl_overview():
              "reading": "Twenty players are listed with official statuses. Converting that into lost "
                         "on-field value needs data that was not retrieved.",
              "state": "Unverified", "kind": "warn", "source_ids": ["NFL-INJ-W10", "NFL-INJURY-POLICY"]},
-            {"id": "H5", "finding": "No priced market, so no performance claim",
-             "reading": "ROI, closing-line value and break-even tests are blank by rule rather than zero.",
+            {"id": "H5", "finding": "No executable price input for economic performance claims",
+             "reading": "ROI, closing-line value and break-even tests are blank by rule rather than zero; retrospective score metrics do not provide a price.",
              "state": "Blocked", "kind": "warn", "source_ids": ["NFL-TERMS-LEGAL", "REPO"]},
         ],
         note='Each row is either a re-derived calculation or an explicit statement of a limit.'))
@@ -863,11 +888,12 @@ def nfl_overview():
           "artifact": row["artifact"], "source_ids": row["source_ids"]}
          for row in DECISION_READINESS["requirements"]],
         filter_options=["Implemented", "Partial", "Open", "Blocked", "Rejected"],
-        note=f'70 rows, one per requirement line in the project brief, graded as of {DECISION_READINESS["snapshot_date"]}: '
+        note=f'{len(DECISION_READINESS["requirements"])} rows, one per requirement line in the project brief, graded as of {DECISION_READINESS["snapshot_date"]}: '
              f'{count_text}. The gate column names what actually blocks the requirement today; the clearing column names '
              'the number or condition that would lift it. Statuses are re-graded only against artifacts that exist in '
              'the tree \u2014 never filled in. This ledger complements the gate-mapping table above and the full '
-             'requirement register at <a href="nfl-readiness.html">nfl-readiness.html</a>.'))
+             'requirement register at <a href="nfl-readiness.html">nfl-readiness.html</a>.'),
+                    sid='brief-requirements')
     return body
 
 
@@ -957,6 +983,7 @@ def executive():
         'spread finding is promising but retrospective; totals are null. No strategy is qualified for '
         'live deployment or reward. Compiled 2026-11-15 from source reads dated through 2026-11-14; '
         'this reconciliation did not perform a new live fetch.')
+    body += '<p class="source-line"><a class="button" href="nfl-final-audit.html">Read the 2026-11-18 final integration audit →</a> This page remains the dated 15 Nov synthesis; the linked audit distinguishes its current spot checks from the older evidence.</p>'
     body += section('Executive findings',
         '<div class="grid-2">'
         '<article class="panel body-text"><h3>Official results make retrospective tests possible</h3>'

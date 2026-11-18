@@ -214,6 +214,14 @@ SOURCE_HOSTS.update({
 # Session arena/34a52a38-own7 (2026-11-17): official Week 10 injury-report read, Lions section.
 SOURCE_HOSTS.update({'NFL-INJ-W10-READ-1117': 'www.nfl.com'})
 
+# Final integration audit (session arena/c75612d4-own7, 2026-11-18); rendered official-source spot checks and PR record.
+SOURCE_HOSTS.update({
+    'C756-NFL-TERMS-1118': 'www.nfl.com',
+    'C756-NFL-INJ-W10-1118': 'www.nfl.com',
+    'C756-NFL-SCHED-W10-1118': 'www.nfl.com',
+    'C756-PR57': 'github.com',
+})
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)

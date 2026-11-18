@@ -2561,3 +2561,14 @@ A fresh `gh pr view 57` confirmed PR #57 is still OPEN at head `04caf1dc5881c3f4
 ### C4 claim — final verification (2026-11-18)
 
 C4 is now **in progress**. Exclusive scope remains the generated site outputs, `COORDINATION.md`, PR metadata, and test records. The final build, data/source contracts, recursive links, deterministic rebuild, browser/accessibility checks, and Pages/PR outcome will be recorded after they complete. This additive claim supersedes the `unclaimed` status shown in the original task table; that historical row is retained to preserve the append-only board.
+
+### PR #57 handoff outcome (2026-11-18)
+
+After the corrected file-list review, the PR author/owner was notified on [review comment #6968839460](https://github.com/sassnarep3-star/Own7/pull/57#issuecomment-6968839460). PR #57 is now **closed unmerged**. The disposition is based on the proposed retrospective leaderboard and unreconciled 132-row register, not on any claim that it deletes existing desks (that earlier claim was withdrawn). No files from the closed PR branch were copied into this integration.
+
+### C1–C3 + local C4 verification (2026-11-18)
+
+- **C1–C3 done locally.** The final audit inventories all 10 published NFL `*leaderboard*.html` routes and explicitly excludes the NBA root and legacy redirect. Four published specialist leaderboards show retrospective metrics; status-only, empty and zero-evidence pages are classified separately. Count inventory remains 70 / 81 / 79 / 80 full-ledger rows, 16 scoped origination rows and 20 assurance-subset rows, with no canonical count or one-to-one crosswalk asserted. NF38 and NF42 are published as review flags; the separate data desks were not edited. The audit page includes source-linked questions, limited official-source checks, suggestions and the ledger inventory.
+- **PR #57 disposition complete.** Closed unmerged after review comment #6968839460; no code copied.
+- **Local checks passed on the final rendered output:** `python scripts/build_site.py` built 48 canonical pages + 20 compatibility redirects; `npm run check` passed 124 repo tests, 6 NFL build tests, receipt-checked NFL result reproduction and recursive site integrity (244 HTML pages, 9,782 table rows, 13,217 internal references, 15,822 external references, 268 sources, 0 errors). `npm run test:browser` passed 224 desktop + 224 mobile pages, WCAG A/AA, 10 interaction groups and no runtime errors. `git diff --check` passed. The local preview returned HTTP 200 for `/`, `/nfl-final-audit.html` and `/index.html`.
+- **C4 publication checks pending.** The current branch still needs its commit, PR CI and final GitHub Pages deployment verification before production publication is claimed.

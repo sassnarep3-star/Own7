@@ -1,6 +1,18 @@
 # OWN7 · NFL Origination Lab
 
-[Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
+[Live site](https://sassnarep3-star.github.io/Own7/) · [Final NFL audit](https://sassnarep3-star.github.io/Own7/nfl-final-audit.html) · [NFL executive summary](docs/nfl-executive-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
+
+## Final NFL integration audit (2026-11-18, session arena/c75612d4-own7)
+
+The new [final audit dashboard](nfl-final-audit.html) is an integration review of the committed NFL workstreams, not a fresh verification of every historical row. It separates executive decisions from the full route-by-route leaderboard audit, official-source spot checks, requirement-ledger inventory, open questions, and reviewable proposals.
+
+- **No strategy is qualified for live use or reward.** No one price policy joins the separate desks; market lines, residuals, CLV, ROI and rewards remain blank unless an authorized executable source and frozen settlement policy exist.
+- **Four published specialist NFL leaderboards still expose retrospective performance metrics** (competition, lifecycle, market desk, and pricing). The results leaderboard is status-only; blank/empty templates and the skill page's zero-evidence counts are not counted as current violations. The four specialist pages are listed in the audit and Flagged for Review (NF38); their desk-owned data is preserved rather than overwritten here.
+- **Requirement counts are not reconciled:** the landing ledger has 70 rows; a separate project-scoped origination register has 16; distinct full registers have 81, 79 and 80; the 20-row assurance register is a subset. These are not interchangeable until a verbatim row-ID crosswalk is complete.
+- **Rights and availability remain gated.** NFL.com terms §1.3 (read 2026-11-18) restrict systematic retrieval absent prior written consent. The 2026 Week 10 injury report was only spot-checked for the Lions section on 2026-11-18; this is not a full-league recount. No dataset was refreshed or overwritten.
+- **PR #57 review:** its unmerged branch proposes a retrospective leaderboard and an unreconciled 132-row register. It was not copied into this site; the full diff disposition is recorded on the coordination board and under NF41.
+
+The existing executive summary remains a dated synthesis of earlier evidence. The audit page carries the current scope and limits; flags are published review items and do not block an honest research page.
 
 ## New: integration, Week 10 extension, decision-readiness landing (2026-11-17, session arena/e15f05e0-own7)
 
@@ -36,7 +48,7 @@ That unlocks the analysis the requirements actually asked for:
 | `nfl-results-games.html` | All 149 official scores and 20 bye rows (plus 1 scheduled-not-final fixture), each with its source page |
 | `nfl-results-skill.html` | Skill vs luck: spread board **64.2%** (permutation p=0.0021, BH q=0.022) against a total board at exactly **50.0%** |
 | `nfl-results-correlation.html` | Leg dependence measured from joint outcomes: phi −0.068 (p=0.47), not independent enough to reprice |
-| `nfl-results-leaderboard.html` | 30 variants graded; 1 provisional, 0 qualified, **every reward blank** because no price exists |
+| `nfl-results-leaderboard.html` | 30 variants graded; 1 provisional, 0 qualified, **every reward blank** because no authorized executable price is recorded for reward calculations |
 | `nfl-results-decisions.html` | 8 questions split into known-with-source and still-missing |
 | `nfl-results-suggestions.html` | 6 ranked suggestions with evidence, cost, risk and an acceptance test |
 | `nfl-results-flagged.html` | 10 irregularities, including two bugs found and fixed before publication |

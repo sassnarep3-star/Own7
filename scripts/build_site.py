@@ -31,8 +31,10 @@ NFL_OPEN = sum(1 for x in NFL_FLAGS if x["status"] == "Needs review")
 NFL_BADGE = f'{NFL_OPEN} open of {NFL_FLAG_TOTAL}'
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "nfl-results"))
+sys.path.insert(0, str(ROOT / "nfl-final-audit-c75612d4"))
 import nfl_pages
 import nfl_results_pages
+import nfl_final_audit
 
 
 class Markup(str):
@@ -171,7 +173,8 @@ NAV = [
                       ("nfl-leaderboard.html", "Leaderboard", "leaderboard"),
                       ("nfl-verification-2026-11-13.html", "Re-verification 13 Nov", "validation"),
                       ("nfl-review.html", "Flagged for review", "review"),
-                      ("nfl-readiness.html", "Requirement register", "requirements")]),
+                      ("nfl-readiness.html", "Requirement register", "requirements"),
+                      ("nfl-final-audit.html", "Final NFL audit", "audit")]),
     ("NFL results & skill lab", [("nfl-results.html", "Results overview", "overview"),
                       ("nfl-results-games.html", "Official game results", "data"),
                       ("nfl-results-skill.html", "Skill vs luck", "validation"),
@@ -461,7 +464,7 @@ def page(slug, title, subtitle, body, eyebrow=None, description=None):
 <body><a class="skip-link" href="#main-content">Skip to content</a><aside class="sidebar" id="sidebar" aria-label="Research workspace"><a class="brand" href="index.html" aria-label="OWN7 Research Lab home"><span class="brand-mark" aria-hidden="true">7</span><span class="brand-name">OWN7<small>NFL ORIGINATION LAB</small></span></a><nav aria-label="Main navigation">{navigation}</nav><div class="sidebar-bottom">{link(SOURCES['REPO']['url'], icon('external')+' View repository', True)}<div class="mode"><span class="dot"></span>NON-COMMERCIAL RESEARCH</div><p>No live lines. No wagers placed.</p></div></aside><button class="nav-backdrop" aria-label="Close navigation" tabindex="-1" hidden></button>
 <div class="layout"><header class="topbar"><button type="button" class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">{icon('menu')}</button><div class="breadcrumb"><span class="crumb-parent">{esc(parent)}</span><span class="divider">/</span><strong>{esc(title)}</strong></div><div class="top-right"><label class="search-field">{icon('search')}<span class="sr-only">Search tables on this page</span><input type="search" id="page-search" placeholder="Search this page…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label><div class="snapshot">SNAPSHOT CHECKED<span>12 Nov 2026</span></div></div></header>
 <main class="content" id="main-content"><div class="page-heading"><div><div class="eyebrow">{esc(eyebrow)}</div><h1>{esc(title)}</h1><p>{subtitle}</p></div><div class="heading-actions">{link('research/results.json', icon('download')+' Research JSON', css='button')}{badge('Research only', 'neutral')}</div></div>{body}
-<footer class="footer"><div><strong>OWN7</strong> / INDEPENDENT RESEARCH<br>NFL data attributed to NFL.com; NBA data to NBA.com. Not affiliated with or endorsed by either league.</div><div>Frozen snapshots · not a live feed<br>{link('review.html','Limitations')} &nbsp;·&nbsp; {link('sources.html','Sources')} &nbsp;·&nbsp; {link('responsible-gambling.html','Responsible use')}</div><div class="foot-note">Official sources re-checked this session (2026-11-18): <a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">NFL standings</a> (32 clubs, live), <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL injury report</a> (Week 10; Lions Joseph / Mays / Reed = Out confirmed), <a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">Week 10 schedule</a> (live finals), <a href="https://www.nfl.com/odds/" target="_blank" rel="noopener noreferrer">nfl.com/odds/</a> (404 — no official market price exists).</div></footer></main></div></body></html>\n'''
+<footer class="footer"><div><strong>OWN7</strong> / INDEPENDENT RESEARCH<br>NFL data attributed to NFL.com; NBA data to NBA.com. Not affiliated with or endorsed by either league.</div><div>Frozen snapshots · not a live feed<br>{link('review.html','Limitations')} &nbsp;·&nbsp; {link('sources.html','Sources')} &nbsp;·&nbsp; {link('responsible-gambling.html','Responsible use')}</div><div class="foot-note">Official sources re-checked this session (2026-11-18): <a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">NFL standings</a> (32 clubs, live), <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL injury report</a> (Week 10; Lions Joseph / Mays / Reed = Out confirmed), <a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">Week 10 schedule</a> (live finals), <a href="https://www.nfl.com/odds/" target="_blank" rel="noopener noreferrer">nfl.com/odds/</a> (404 — this URL has no odds page; it does not establish that no official prices exist elsewhere).</div></footer></main></div></body></html>\n'''
 
 
 def overview():
@@ -838,7 +841,7 @@ def build():
         'nfl-suggestions.html':('Suggestions','Proposals for review, ranked by the decision they unlock. Choose a path before changing anything.',nfl_pages.suggestions(),'NFL / DECISION LAB'),
         'nfl-decisions.html':('Decision brief','What we know, what we do not know, and what must be answered before any decision is reasonable.',nfl_pages.decisions(),'NFL / DECISION LAB'),
         'nfl-questions.html':('Questions',f'{len(NFL_QUESTIONS)} questions, each split into the sourced part of the answer and the part still open.',nfl_pages.nfl_questions(),'NFL / DECISION LAB'),
-        'nfl-lines.html':('Line origination','Originated spreads and totals from official scoring data. No market price exists in the record.',nfl_pages.nfl_lines(),'NFL / ORIGINATION LAB'),
+        'nfl-lines.html':('Line origination','Originated spreads and totals from official scoring data. No authorized, executable market-price input is recorded in this board.',nfl_pages.nfl_lines(),'NFL / ORIGINATION LAB'),
         'nfl-correlation.html':('Correlation','Team-level dependence, labelled honestly, and the leg-level dependence that is deliberately not estimated.',nfl_pages.nfl_correlation(),'NFL / ORIGINATION LAB'),
         'nfl-injuries.html':('Injuries & availability','Official participation and game status. Starter and backup impact is blank because the data needed for it was not retrieved.',nfl_pages.nfl_injuries(),'NFL / AVAILABILITY'),
         'nfl-standings.html':('Standings snapshot','All 32 clubs, re-derived before publication. Six of sixteen displayed fields are withheld because no header row exists.',nfl_pages.nfl_stands(),'NFL / VERIFIED DATA'),
@@ -846,6 +849,7 @@ def build():
         'nfl-leaderboard.html':('Leaderboard','A frozen competition format with no entries, because nothing has earned a place.',nfl_pages.nfl_leaderboard(),'NFL / COMPETITION'),
         'nfl-readiness.html':('Requirement register','Every requirement row with its status, gate, clearing number and whether its official source was re-read today. Counts are derived from the rows.',nfl_pages.nfl_readiness(),'NFL / TRANSPARENCY'),
         'nfl-review.html':('Flagged for review',f'{NFL_FLAG_TOTAL} NFL items published with their sources; {NFL_OPEN} are open. None blocks publication; all block unsupported claims.',nfl_pages.nfl_review(),'NFL / TRANSPARENCY'),
+        'nfl-final-audit.html':('Final NFL audit','Decision dashboard with the full leaderboard audit, source and rights boundaries, unreconciled requirement ledgers, open decision questions, and scoped next steps.',nfl_final_audit.render(),'NFL / FINAL INTEGRATION'),
         'nfl-verification-2026-11-13.html':('Re-verification, 13 Nov','Every published NFL value re-read from the publisher. Thirty of 32 standings rows, 20 of 20 injury rows and 14 of 14 fixtures agree; two rows moved because a game was played.',nfl_pages.nfl_verification(),'NFL / TRANSPARENCY'),
         'executive-summary.html':('NFL executive summary','Reconciled results, market-price, availability and validation evidence; decision questions and remaining gates.',nfl_pages.executive(),'NFL / EXECUTIVE'),
         'nfl-results.html':('Results & skill lab','149 verified NFL results (through Week 10, 2026-11-17) turned into a leakage-free test of whether any strategy is skill or luck.',nfl_results_pages.page_summary()),

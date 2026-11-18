@@ -2,6 +2,16 @@
 
 **Compiled:** 2026-11-15 · **Underlying official-source reads:** through 2026-11-14, as recorded in the linked evidence registers. This reconciliation did not perform a new live fetch. It is a research dashboard, not a betting service, recommendation or legal opinion.
 
+## Final integration update · 2026-11-18
+
+The separate [final NFL audit dashboard](../nfl-final-audit.html) adds the current integration findings without rewriting the dated results below. It is **not** a new full-data verification or a legal opinion.
+
+- The published results file contains 149 game rows, but this review did not refresh that corpus. Only the first rendered chunk of the official Week 10 schedule (1 of 2) and injury report (1 of 8; Detroit section) was read on 2026-11-18. The visible injury table shows Kerby Joseph, Cade Mays and D.J. Reed as Out; no full-league injury recount is claimed.
+- NFL.com’s official Terms and Conditions, Section 1.3, was re-read in the first chunk of the nine-chunk page on 2026-11-18. It says use is limited to individual non-commercial informational purposes and bars systematic retrieval absent express prior written consent. The exact registered page is [NFL.com Terms](https://www.nfl.com/legal/terms/). This text check does not determine legal applicability or grant permission.
+- A recursive inventory found four **published NFL specialist leaderboards** with retrospective performance values. The results board is now status-only; empty pages and zero-evidence counts are separately classified. See the route-by-route [leaderboard audit](../nfl-final-audit.html#leaderboard-publication-audit) and flag NF38. No desk-owned metrics were changed.
+- Full requirement-ledger row counts are 70, 81, 79 and 80 across separate registers; a separate 16-row register is scoped to origination, and the 20-row assurance register is a subset. The counts are not reconciled one-to-one. The audit page links each ledger and explicitly excludes the unmerged PR #57 proposal.
+- No strategy is qualified for live deployment or reward. Keep market lines, residuals, CLV, ROI and rewards blank until an authorized executable price source, rights policy, and frozen settlement rules exist. Parlays and player-prop combinations remain blocked pending directly validated joint probabilities.
+
 ## Executive decision
 
 **Do not treat any result here as a validated, live wagering edge or pay out rewards.** The repository now contains several useful but deliberately separate research desks: an official-results backtest, market-price studies, and availability/depth analyses. Their samples and source policies are not yet one governed, prospective evaluation. One historical spread result is promising, but it is a one-season retrospective finding; the total result is null, and there is no prospective qualification. No strategy is currently qualified for live deployment or reward.

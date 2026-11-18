@@ -2,6 +2,8 @@
 
 Snapshot 2026-11-12 · session `session-arena-a129b881-own7` · live site: https://sassnarep3-star.github.io/Own7/
 
+> Historical, desk-scoped summary of the 2026-11-12 origination snapshot. It is not the current combined-repository executive view. See the [current NFL executive summary](nfl-executive-summary.md) and [final integration audit](../nfl-final-audit.html) for later workstreams, unreconciled counts, current review flags and the 2026-11-18 source-check scope.
+
 ## One paragraph
 
 The NFL section is built, sourced and reproducible, and it overturns nothing. Sixty-six rows were
