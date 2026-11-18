@@ -2931,3 +2931,11 @@ Merge-series notes for the record (all resolved as unions; nothing discarded):
 All seven board tasks (W1-W7) are done. Follow-up F1 (complete 8-chunk injury-hub capture for
 the 2026-11-18 delta) remains open for the next session; FF02/FF03/FF04 are explained and
 non-blocking.
+
+## Session arena/600119f6-own7 — NFL request audit and readiness review (2026-11-18)
+
+### Claim (before implementation)
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| R1 | Re-run integrated NFL/site verification, audit published readiness and suggestions, record gaps without changing other desks' data | in progress | session-arena-600119f6-own7 | `docs/nfl-request-audit-2026-11-18.md`, this coordination record | Existing source register and cited official sources will be checked; no new factual values inferred | Current branch is fixed by Arena; work remains on this branch. Shared navigation/data are not in scope. |
