@@ -2568,3 +2568,42 @@ official source link; `git pull --rebase` before every push; small frequent comm
 its `nfl-readiness/**` files are not touched.
 Rules for other sessions: `nfl-week11-9388/**` is mine until W11 records done — log cross-scope requests
 in this board instead of editing it concurrently.
+
+### Completion record (2026-11-18)
+
+Everything below was produced by this session alone, inside the claimed scope. No other session's
+desk directory was edited; no existing page, value, test or source record was overwritten or
+removed (`research/sources.json` grew by 17 appended records, 264 → 281; the only other change to
+another desk's output is the shared "281 sources" count line on `nfl-readiness-e7ef/site/sources.html`).
+
+| ID | Task | Status | Files touched | Verification / notes |
+|---|---|---|---|---|
+| W1 | Claim + green baseline replay | **done** | COORDINATION.md | 119 root tests, `scripts/nfl_extract.py --check` (32/20/14), `python -m nfl_origination run --check` all green on a clean tree at `0b5f91a`. |
+| W2 | Fresh official reads 2026-11-18, hashed, with clock times | **done** | `nfl-week11-9388/evidence/*.md` (5 transcripts), `data/official-2026-11-18.json`, `data/captures.json` | Standings (32 rows, 2 chunks), Week 11 by-week slate (13 fixtures + 6 byes, 3 chunks), Week 10 by-week tail, 13 game-centre pages, and **four** reads of the Week 11 injury URL (03:47:13Z, 03:51:41Z ×2, 04:18:50Z). Every transcript is SHA-256 hashed in `captures.json`. Capture window 2026-11-18T03:47:13Z – 04:18:50Z. nfl.com reachable only via Arena `fetch_page` (direct HTTPS is blocked, as every prior session recorded). |
+| W3 | Venue register for all 13 Week 11 fixtures from the game centre | **done** | `nfl-week11-9388/data/venues.json`, `site/venues.html` | 13 location + stadium + network triples, cross-checked against the schedule page. Three disagree (Houston, Kansas City, Washington) and are published side by side, never reconciled — flags W11-F01/F02/F03. The Mexico City neutral-site game has no hotel-link stadium to cross-check (W11-F10). |
+| W4 | Fixture context from published schedule facts only | **done** | `nfl-week11-9388/data/fixture-context.json`, `site/slate.html` | Rest days = arithmetic difference between each club's previous official kickoff date and its Week 11 kickoff date. Differential (away − home): 0, 0, −1, −7, 0, +7, 0, −7, +1, −3, −7, 0, −3. No travel, timezone or weather modelled. |
+| W5 | Timestamped availability ledger (capture series, deltas not levels) | **blocked by the publisher — recorded, not built** | `data/official-2026-11-18.json`, `site/availability.html`, `site/captures.html` | **There is no Week 11 league injury report.** Four reads of `/injuries/league/2026/REG11` all returned the Week 10 document (canonical URL `.../reg10`, title "Week 10 of the 2026 Season"). The daily Wed–Fri series therefore cannot start and nothing is imputed. 12 of 13 game-centre pages print "have no active injuries at this time", recorded as an empty module rather than health (flag W11-F06, high). The only Week 11 rows that exist are 8 on the Thursday page (IND 4, HOU 4), each joined to the Week 10 capture by player URL, not name or position: 4 unchanged, 4 new listings. |
+| W6 | Per-club Week 11 availability view | **blocked by the publisher — recorded, not built** | `site/availability.html` | Cannot be produced: 0 Week 11 designation rows exist for 26 of the 26 playing clubs. Published as a blocked finding with its source, not as an empty table of zeros. |
+| W7 | Decision questions + suggestions register | **done** | `data/decisions.json`, `site/questions.html`, `site/suggestions.html` | 10 questions (W11-Q01…Q10) and 10 ranked suggestions (W11-S01…S10). Every row carries registered source ids, an evidence line, cost, risk and a measurable acceptance test. Decisions are blank by design — the desk records, the user decides. |
+| W8 | Line-by-line verification | **done** | `data/verification.json`, `site/verification.html` | V1 standings reconcile 32/32 against the frozen 2026-11-17 snapshot plus one game (BAL 4-5→4-6, LAC 0-8→1-8, PF/PA +20/+23 and +23/+20 — exactly Chargers 23, Ravens 20); V2 ΣW=ΣL=149, ΣPF=ΣPA=6,923; V3 6,880 corpus points over 149 games + 43 = 6,923; V4 26 clubs once each + 6 byes = 32; V5 no club on bye in both weeks; V6 13/13 venues; V7 no Week 11 report and 12/13 empty modules; V8 44 Week 10 rows re-read, 41 identical, 3 changed, 0 absent. Every check aborts the build on a mismatch. |
+| W9 | Desk site pages + tests + `--check` | **done** | `nfl-week11-9388/build.py`, `site/` (10 pages + style), `tests/test_desk.py` | 10 pages byte-identical on rebuild; 30 unit tests green; every `<tbody>` row carries `data-source-ids` naming registered sources and links that source's URL; `data-empty="true"` cells contain no text; no price, odds, stake or monetary figure appears on any page. |
+| W10 | Additive integration + full battery | **done** | additive lines in `scripts/build_site.py` (nav group + collect/build step + manifest list), `scripts/check_site.py` (17 hosts), `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml` (3 lines), `research/sources.json` (17 records), `README.md` | `python -m nba_lab run` re-run after registering sources (hash contract). `python scripts/check_site.py` → OK, 281 registered sources, 0 errors. `python -m unittest discover -s tests` → 119 pass. Browser suite → **233 desktop + 233 mobile pages, WCAG A/AA, 10 interaction groups, no runtime errors** (after wrapping every table cell in a `<td>`: cells had been emitted directly inside `<tr>`, which browsers hoist out of the table and axe flagged as `link-in-text-block`). |
+
+**Flags published (11, two high severity)** — `nfl-week11-9388/site/flagged.html`:
+W11-F01 Reliant Stadium vs NRG Stadium (Houston); W11-F02 Arrowhead vs GEHA Field (Kansas City);
+W11-F03 Northwest Stadium vs FedEx Field (Washington) — the game centre is *newer* here and *older*
+in F01, so neither surface is treated as authoritative; W11-F04 the standings heading renders
+unsubstituted `$year$`/`$displayname$` placeholders; W11-F05 a third practice-status word,
+"Did participate"; **W11-F06 "have no active injuries" is an empty module, not health (high)**;
+W11-F07 position labels disagree between the two official surfaces (S/DB, T/OL), so joins use the
+player URL; W11-F08 the Monday result was pending in every earlier capture and is final only now;
+W11-F09 no official page prints a capture or update time, so the ledger records windows, not
+instants; W11-F10 the Mexico City fixture has no second stadium surface to cross-check;
+**W11-F11 the Week 10 injury report mutates after its games are played (high)** — 3 Detroit cells
+differ between the frozen 2026-11-13 capture and today's read; the delta is published and the
+earlier capture is not patched.
+
+**Standing constraints honoured.** No price, odds, ROI, CLV, stake, wager or reward was produced.
+Nothing was inferred: Week 11 scores stay blank, "no active injuries" is never read as "available",
+and no venue name was corrected. Every table row keeps a registered official source link. Commits
+are small and the branch is rebased before each push.

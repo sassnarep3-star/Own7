@@ -2,6 +2,38 @@
 
 [Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
+## New: Week 11 live decision desk (2026-11-18, session arena/9388352a-own7)
+
+A fresh session read the official pages on 2026-11-18 — before any Week 11 practice report existed —
+and published what is actually on them, with a decision-readiness table on the landing page:
+
+| Page | What it answers |
+|---|---|
+| [`nfl-week11-9388/site/index.html`](nfl-week11-9388/site/index.html) | Desk overview and **decision readiness for Week 11**: 12 requirements, each with what we hold, the blocking gate and the number that clears it (4 clear, 8 blocked) |
+| [`nfl-week11-9388/site/verification.html`](nfl-week11-9388/site/verification.html) | The 8 checks, and all 32 standings rows side by side against the frozen 2026-11-17 snapshot |
+| [`nfl-week11-9388/site/venues.html`](nfl-week11-9388/site/venues.html) | 13 Week 11 venues transcribed from the game centre, with the schedule page's name beside each |
+| [`nfl-week11-9388/site/slate.html`](nfl-week11-9388/site/slate.html) | The 13-fixture slate, 6 byes, and rest days computed from official kickoff dates only |
+| [`nfl-week11-9388/site/availability.html`](nfl-week11-9388/site/availability.html) | Four reads of the Week 11 injury URL (all served Week 10), the 8 player rows that exist, and the 3 Week 10 cells that moved |
+| [`nfl-week11-9388/site/captures.html`](nfl-week11-9388/site/captures.html) | The capture ledger: window, transcript hashes and the publisher-clock limitation |
+| [`nfl-week11-9388/site/questions.html`](nfl-week11-9388/site/questions.html) | 10 questions, split into what we hold and what is missing, each with a discovery route |
+| [`nfl-week11-9388/site/suggestions.html`](nfl-week11-9388/site/suggestions.html) | 10 ranked suggestions, each with evidence, cost, risk and an acceptance test |
+| [`nfl-week11-9388/site/flagged.html`](nfl-week11-9388/site/flagged.html) | 11 desk flags with official source links (2 high severity) |
+| [`nfl-week11-9388/site/sources.html`](nfl-week11-9388/site/sources.html) | The five hashed evidence transcripts and the 17 registered sources |
+
+Findings: Week 10 is complete — **Chargers 23, Ravens 20**, the game every earlier capture held as
+pending; the frozen standings snapshot moves by exactly that result and nothing else. **The Week 11
+league injury report is not published**: four reads of the Week 11 URL all served the Week 10
+document, and 12 of 13 game-centre pages print "have no active injuries at this time", which this
+desk records as an empty module rather than health. Three Detroit cells on the *Week 10* report
+differ from the 2026-11-13 capture, so the report is a version, not a fact (flag W11-F11). No price,
+no odds and no stake figure appears anywhere on the desk.
+
+```sh
+python nfl-week11-9388/collect.py --check   # re-parse evidence, refuse contradictions, 8 checks
+python nfl-week11-9388/build.py --check     # byte-identical desk pages
+python -m unittest discover -s nfl-week11-9388/tests -t .   # 29 tests
+```
+
 ## New: integration, Week 10 extension, decision-readiness landing (2026-11-17, session arena/e15f05e0-own7)
 
 - **The verified results feed now reaches Week 10.** Official reads on 2026-11-17 (standings +

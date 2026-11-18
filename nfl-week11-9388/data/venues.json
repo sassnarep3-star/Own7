@@ -1,0 +1,305 @@
+{
+  "cross_check": [
+    {
+      "fixture": "Colts at Texans",
+      "game_centre": "RELIANT STADIUM",
+      "schedule_page": "NRG Stadium"
+    },
+    {
+      "fixture": "Dolphins at Bills",
+      "game_centre": "HIGHMARK STADIUM",
+      "schedule_page": "Highmark Stadium"
+    },
+    {
+      "fixture": "Ravens at Panthers",
+      "game_centre": "BANK OF AMERICA STADIUM",
+      "schedule_page": "Bank of America Stadium"
+    },
+    {
+      "fixture": "Saints at Bears",
+      "game_centre": "SOLDIER FIELD",
+      "schedule_page": "Soldier Field"
+    },
+    {
+      "fixture": "Titans at Cowboys",
+      "game_centre": "AT&T STADIUM",
+      "schedule_page": "AT&T Stadium"
+    },
+    {
+      "fixture": "Buccaneers at Lions",
+      "game_centre": "FORD FIELD",
+      "schedule_page": "Ford Field"
+    },
+    {
+      "fixture": "Cardinals at Chiefs",
+      "game_centre": "ARROWHEAD STADIUM",
+      "schedule_page": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+      "fixture": "Steelers at Eagles",
+      "game_centre": "LINCOLN FINANCIAL FIELD",
+      "schedule_page": "Lincoln Financial Field"
+    },
+    {
+      "fixture": "Jets at Chargers",
+      "game_centre": "SOFI STADIUM",
+      "schedule_page": "SoFi Stadium"
+    },
+    {
+      "fixture": "Jaguars at Giants",
+      "game_centre": "METLIFE STADIUM",
+      "schedule_page": "MetLife Stadium"
+    },
+    {
+      "fixture": "Raiders at Broncos",
+      "game_centre": "EMPOWER FIELD AT MILE HIGH",
+      "schedule_page": "Empower Field at Mile High"
+    },
+    {
+      "fixture": "Vikings at 49ers",
+      "game_centre": "ESTADIO BANORTE",
+      "schedule_page": "(no hotel link printed on the game page)"
+    },
+    {
+      "fixture": "Bengals at Commanders",
+      "game_centre": "NORTHWEST STADIUM",
+      "schedule_page": "FedEx Field"
+    }
+  ],
+  "read_date": "2026-11-18",
+  "schema_version": 1,
+  "venues": [
+    {
+      "away": "IND",
+      "away_name": "Colts",
+      "empty_clubs": [],
+      "header_date": "Nov 19",
+      "header_time": "8:15PM",
+      "home": "HOU",
+      "home_name": "Texans",
+      "index": 1,
+      "injury_module_state": "rows",
+      "location": "HOUSTON, TX`",
+      "network": "PRIME",
+      "stadium": "RELIANT STADIUM`",
+      "url": "https://www.nfl.com/games/colts-at-texans-2026-reg-11"
+    },
+    {
+      "away": "MIA",
+      "away_name": "Dolphins",
+      "empty_clubs": [
+        "Dolphins",
+        "Bills"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "1:00PM",
+      "home": "BUF",
+      "home_name": "Bills",
+      "index": 2,
+      "injury_module_state": "empty",
+      "location": "ORCHARD PARK, NY`",
+      "network": "CBS",
+      "stadium": "HIGHMARK STADIUM`",
+      "url": "https://www.nfl.com/games/dolphins-at-bills-2026-reg-11"
+    },
+    {
+      "away": "BAL",
+      "away_name": "Ravens",
+      "empty_clubs": [
+        "Ravens",
+        "Panthers"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "1:00PM",
+      "home": "CAR",
+      "home_name": "Panthers",
+      "index": 3,
+      "injury_module_state": "empty",
+      "location": "CHARLOTTE, NC`",
+      "network": "FOX",
+      "stadium": "BANK OF AMERICA STADIUM`",
+      "url": "https://www.nfl.com/games/ravens-at-panthers-2026-reg-11"
+    },
+    {
+      "away": "NO",
+      "away_name": "Saints",
+      "empty_clubs": [
+        "Saints",
+        "Bears"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "1:00PM",
+      "home": "CHI",
+      "home_name": "Bears",
+      "index": 4,
+      "injury_module_state": "empty",
+      "location": "CHICAGO, IL`",
+      "network": "FOX",
+      "stadium": "SOLDIER FIELD`",
+      "url": "https://www.nfl.com/games/saints-at-bears-2026-reg-11"
+    },
+    {
+      "away": "TEN",
+      "away_name": "Titans",
+      "empty_clubs": [
+        "Titans",
+        "Cowboys"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "1:00PM",
+      "home": "DAL",
+      "home_name": "Cowboys",
+      "index": 5,
+      "injury_module_state": "empty",
+      "location": "ARLINGTON, TX`",
+      "network": "FOX",
+      "stadium": "AT&T STADIUM`",
+      "url": "https://www.nfl.com/games/titans-at-cowboys-2026-reg-11"
+    },
+    {
+      "away": "TB",
+      "away_name": "Buccaneers",
+      "empty_clubs": [
+        "Buccaneers",
+        "Lions"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "1:00PM",
+      "home": "DET",
+      "home_name": "Lions",
+      "index": 6,
+      "injury_module_state": "empty",
+      "location": "DETROIT, MI`",
+      "network": "FOX",
+      "stadium": "FORD FIELD`",
+      "url": "https://www.nfl.com/games/buccaneers-at-lions-2026-reg-11"
+    },
+    {
+      "away": "AZ",
+      "away_name": "Cardinals",
+      "empty_clubs": [
+        "Cardinals",
+        "Chiefs"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "1:00PM",
+      "home": "KC",
+      "home_name": "Chiefs",
+      "index": 7,
+      "injury_module_state": "empty",
+      "location": "KANSAS CITY, MO`",
+      "network": "CBS",
+      "stadium": "ARROWHEAD STADIUM`",
+      "url": "https://www.nfl.com/games/cardinals-at-chiefs-2026-reg-11"
+    },
+    {
+      "away": "PIT",
+      "away_name": "Steelers",
+      "empty_clubs": [
+        "Steelers",
+        "Eagles"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "1:00PM",
+      "home": "PHI",
+      "home_name": "Eagles",
+      "index": 8,
+      "injury_module_state": "empty",
+      "location": "PHILADELPHIA, PA`",
+      "network": "CBS",
+      "stadium": "LINCOLN FINANCIAL FIELD`",
+      "url": "https://www.nfl.com/games/steelers-at-eagles-2026-reg-11"
+    },
+    {
+      "away": "NYJ",
+      "away_name": "Jets",
+      "empty_clubs": [
+        "Jets",
+        "Chargers"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "4:05PM",
+      "home": "LAC",
+      "home_name": "Chargers",
+      "index": 9,
+      "injury_module_state": "empty",
+      "location": "INGLEWOOD, CA`",
+      "network": "FOX",
+      "stadium": "SOFI STADIUM`",
+      "url": "https://www.nfl.com/games/jets-at-chargers-2026-reg-11"
+    },
+    {
+      "away": "JAX",
+      "away_name": "Jaguars",
+      "empty_clubs": [
+        "Jaguars",
+        "Giants"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "4:25PM",
+      "home": "NYG",
+      "home_name": "Giants",
+      "index": 10,
+      "injury_module_state": "empty",
+      "location": "EAST RUTHERFORD, NJ`",
+      "network": "CBS",
+      "stadium": "METLIFE STADIUM`",
+      "url": "https://www.nfl.com/games/jaguars-at-giants-2026-reg-11"
+    },
+    {
+      "away": "LV",
+      "away_name": "Raiders",
+      "empty_clubs": [
+        "Raiders",
+        "Broncos"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "4:25PM",
+      "home": "DEN",
+      "home_name": "Broncos",
+      "index": 11,
+      "injury_module_state": "empty",
+      "location": "DENVER, CO`",
+      "network": "CBS",
+      "stadium": "EMPOWER FIELD AT MILE HIGH`",
+      "url": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11"
+    },
+    {
+      "away": "MIN",
+      "away_name": "Vikings",
+      "empty_clubs": [
+        "Vikings",
+        "49ers"
+      ],
+      "header_date": "Nov 22",
+      "header_time": "8:20PM",
+      "home": "SF",
+      "home_name": "49ers",
+      "index": 12,
+      "injury_module_state": "empty",
+      "location": "MEXICO CITY`",
+      "network": "NBC",
+      "stadium": "ESTADIO BANORTE`",
+      "url": "https://www.nfl.com/games/vikings-at-49ers-2026-reg-11"
+    },
+    {
+      "away": "CIN",
+      "away_name": "Bengals",
+      "empty_clubs": [
+        "Bengals",
+        "Commanders",
+        "<Club>"
+      ],
+      "header_date": "Nov 23",
+      "header_time": "8:15PM",
+      "home": "WAS",
+      "home_name": "Commanders",
+      "index": 13,
+      "injury_module_state": "empty",
+      "location": "LANDOVER, MD`",
+      "network": "ESPN and ABC",
+      "stadium": "NORTHWEST STADIUM`",
+      "url": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11"
+    }
+  ]
+}

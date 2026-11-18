@@ -1,0 +1,24 @@
+{
+ "desk": "nfl-week11-9388",
+ "session": "arena/9388352a-own7",
+ "read_on": "2026-11-18",
+ "pages": [
+  "index.html",
+  "verification.html",
+  "venues.html",
+  "slate.html",
+  "availability.html",
+  "captures.html",
+  "questions.html",
+  "suggestions.html",
+  "flagged.html",
+  "sources.html"
+ ],
+ "evidence_sha256": {
+  "game-centre-week11-2026-11-18.md": "7a5c4cdbb78473dca90d9fc66f36d82d869f36c29ee8e90f7b2a1085838d6357",
+  "injury-report-week11-2026-11-18.md": "bc2f33c8bdb178a5820b3e9aede0ddd7878386760dbd9e3e5961b92c668294ef",
+  "schedule-week10-2026-11-18.md": "d6a97ae71904fb127ff6190797188fa349aa229c984ec8d566a45e6ab83935bf",
+  "schedule-week11-2026-11-18.md": "41a2de24b09a107ad4352fd46f2f17345a3ce10c78c8773d64d849f490d4684e",
+  "standings-league-2026-11-18.md": "0f7a10494c27b2e9ff981df5fa38b4f8821a813d4519f70a09f22b25e4d3a618"
+ }
+}

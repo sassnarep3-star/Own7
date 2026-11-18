@@ -214,6 +214,14 @@ SOURCE_HOSTS.update({
 # Session arena/34a52a38-own7 (2026-11-17): official Week 10 injury-report read, Lions section.
 SOURCE_HOSTS.update({'NFL-INJ-W10-READ-1117': 'www.nfl.com'})
 
+# Week 11 live decision desk (session arena/9388352a-own7) — official league host only; 13
+# game-centre pages plus the four aggregate pages, all read 2026-11-18.
+SOURCE_HOSTS.update({'W9388-NFL-STANDINGS-1118': 'www.nfl.com',
+                     'W9388-NFL-SCHED-W11-1118': 'www.nfl.com',
+                     'W9388-NFL-SCHED-W10-1118': 'www.nfl.com',
+                     'W9388-NFL-INJ-W11-1118': 'www.nfl.com',
+                     **{f'W9388-GC-W11-{i:02d}': 'www.nfl.com' for i in range(1, 14)}})
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)

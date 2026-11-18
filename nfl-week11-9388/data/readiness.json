@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "read_on": "2026-11-18",
+  "note": "One row per requirement that has to be true before a Week 11 decision can be made on this desk's evidence. 'Have' and 'the number that clears it' are counts of official rows or files, never opinions. A requirement is clear only when what we hold meets the number.",
+  "rows": [
+    {
+      "id": "W11-R01",
+      "requirement": "Standings reconciled to a frozen snapshot plus every completed game",
+      "have": "32 of 32 rows reconcile",
+      "blocking_gate": "Verification V1",
+      "number_that_clears_it": "32 of 32 rows and 0 unexplained movements",
+      "state": "clear",
+      "source_ids": [
+        "W9388-NFL-STANDINGS-1118",
+        "W9388-NFL-SCHED-W10-1118"
+      ]
+    },
+    {
+      "id": "W11-R02",
+      "requirement": "League arithmetic closes: wins equal losses, points for equal points against",
+      "have": "sum W 149 = sum L 149; sum PF 6923 = sum PA 6923",
+      "blocking_gate": "Verification V2 and V3",
+      "number_that_clears_it": "0 residual points between the standings and the results corpus",
+      "state": "clear",
+      "source_ids": [
+        "W9388-NFL-STANDINGS-1118",
+        "W9388-NFL-SCHED-W10-1118"
+      ]
+    },
+    {
+      "id": "W11-R03",
+      "requirement": "Every Week 11 fixture has a venue transcribed from its own game-centre page",
+      "have": "13 of 13 transcribed",
+      "blocking_gate": "Verification V6",
+      "number_that_clears_it": "13 of 13, with 0 fixtures whose location or stadium cell is blank",
+      "state": "clear",
+      "source_ids": [
+        "W9388-NFL-SCHED-W11-1118",
+        "W9388-GC-W11-01"
+      ]
+    },
+    {
+      "id": "W11-R04",
+      "requirement": "Each venue resolves to one identity across both official surfaces",
+      "have": "3 of 13 fixtures are named differently by the schedule page",
+      "blocking_gate": "Venue key gate (flags W11-F01, W11-F02, W11-F03)",
+      "number_that_clears_it": "0 of 13 fixtures with an unresolved alternate name",
+      "state": "blocked",
+      "source_ids": [
+        "W9388-GC-W11-01",
+        "W9388-NFL-SCHED-W11-1118"
+      ]
+    },
+    {
+      "id": "W11-R05",
+      "requirement": "A Week 11 league injury report exists to rank availability from",
+      "have": "0 reports published; 4 reads of the Week 11 URL all served Week 10",
+      "blocking_gate": "Availability gate (flag W11-F06)",
+      "number_that_clears_it": "1 published Week 11 report with at least 1 row for each of the 26 clubs playing",
+      "state": "blocked",
+      "source_ids": [
+        "W9388-NFL-INJ-W11-1118"
+      ]
+    },
+    {
+      "id": "W11-R06",
+      "requirement": "Every Week 11 game-centre injury module prints rows rather than an empty module",
+      "have": "1 of 13 game pages prints rows (8 player rows, the Thursday game only)",
+      "blocking_gate": "Availability gate (flag W11-F06)",
+      "number_that_clears_it": "13 of 13 pages printing rows, or a dated statement that the module is not the report of record",
+      "state": "blocked",
+      "source_ids": [
+        "W9388-GC-W11-01",
+        "W9388-GC-W11-02"
+      ]
+    },
+    {
+      "id": "W11-R07",
+      "requirement": "A Week 11 forecast is frozen and hashed before the first kickoff",
+      "have": "0 of 13 fixtures have a pre-kickoff probability stored",
+      "blocking_gate": "Pre-registration gate (question W11-Q08)",
+      "number_that_clears_it": "13 of 13 fixtures, frozen before Thursday 2026-11-19 8:15 PM EST, each with a SHA-256 hash",
+      "state": "blocked",
+      "source_ids": [
+        "W9388-NFL-SCHED-W11-1118",
+        "W9388-GC-W11-01"
+      ]
+    },
+    {
+      "id": "W11-R08",
+      "requirement": "A price-data policy is recorded before any backtest is published",
+      "have": "0 lines of policy recorded in COORDINATION.md",
+      "blocking_gate": "Price-data policy gate (question W11-Q01)",
+      "number_that_clears_it": "1 dated decision naming the source, the licence position and the snapshot schedule",
+      "state": "blocked",
+      "source_ids": [
+        "W9388-NFL-SCHED-W11-1118"
+      ]
+    },
+    {
+      "id": "W11-R09",
+      "requirement": "The results corpus rule is settled: the Week 10 Monday game is in or out",
+      "have": "149 games in the corpus, 0 of them that fixture; 1 official final exists for it",
+      "blocking_gate": "Corpus rule gate (question W11-Q06)",
+      "number_that_clears_it": "1 line stating the rule, cited by every desk that reads the corpus",
+      "state": "blocked",
+      "source_ids": [
+        "W9388-NFL-SCHED-W10-1118"
+      ]
+    },
+    {
+      "id": "W11-R10",
+      "requirement": "Week 11 kickoff times carry a timezone printed by an official page",
+      "have": "0 of 13 fixtures print a timezone on the Week 11 schedule page",
+      "blocking_gate": "Fixture-context gate (flag W11-F09)",
+      "number_that_clears_it": "13 of 13 timezones printed on the official page, or 1 authoritative statement from the publisher",
+      "state": "blocked",
+      "source_ids": [
+        "W9388-NFL-SCHED-W11-1118",
+        "W9388-GC-W11-01"
+      ]
+    },
+    {
+      "id": "W11-R11",
+      "requirement": "Depth is parsed from an official depth chart rather than inferred",
+      "have": "0 of 32 clubs have a parsed depth chart (the Week 10 desk recorded image-only and jersey-prefix failures)",
+      "blocking_gate": "Depth-order gate (question W11-Q05)",
+      "number_that_clears_it": "32 of 32 clubs with a dated depth chart and a source link, or 32 recorded as blocked with the authorisation step named",
+      "state": "blocked",
+      "source_ids": [
+        "W9388-NFL-SCHED-W11-1118"
+      ]
+    },
+    {
+      "id": "W11-R12",
+      "requirement": "Every table row on this desk carries a registered official source link",
+      "have": "0 rows fail the audit: each row names a source id and links that source's URL",
+      "blocking_gate": "Site audit (scripts/check_site.py)",
+      "number_that_clears_it": "0 rows without a registered source id and its link",
+      "state": "clear",
+      "source_ids": [
+        "W9388-NFL-STANDINGS-1118",
+        "W9388-GC-W11-01"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "desk": "nfl-week11-9388",
+  "read_date": "2026-11-18",
+  "note": "Authored decision register. Every 'we hold' statement names the artefact that holds it and the registered official source it was read from. Every 'missing' statement names the quantity that is absent, not a guess at its value. 'how_to_discover' names a concrete source or experiment, with the number that closes the question.",
+  "questions": [
+    {
+      "id": "W11-Q01",
+      "question": "Can any market be priced, and therefore can ROI or closing-line value be computed at all?",
+      "requirement_ids": [
+        "R01",
+        "R02",
+        "R60",
+        "R71"
+      ],
+      "we_hold": "Zero opening prices and zero rights-approved closing prices. The price store holds 42 model snapshots and published closes only; no executable price exists anywhere in the workspace.",
+      "evidence": [
+        "../../nfl-lifecycle-3f5c/site/price-snapshots.html",
+        "../../nfl-pricing/site/prices.html"
+      ],
+      "what_is_missing": "One rights-approved source publishing an opening number and a closing number per originated market, plus a written stake policy.",
+      "how_to_discover": "Register a licensed feed or obtain the publisher's written consent, then capture one full week: the test passes when 13 Week 11 markets each carry an opening number, a closing number and a source id.",
+      "blocking_gate": "NG06",
+      "priority": "blocking",
+      "status": "open",
+      "source_ids": [
+        "NFL-TERMS",
+        "PFR-VEGAS-2026"
+      ]
+    },
+    {
+      "id": "W11-Q02",
+      "question": "Is the official injury report a stable document we can snapshot, or does it move under us?",
+      "requirement_ids": [
+        "R21",
+        "R29",
+        "R30",
+        "R47",
+        "R54",
+        "R55"
+      ],
+      "we_hold": "It moves. Three Lions cells in the Week 10 report differ between the frozen 2026-11-13 capture and the same page read on 2026-11-18, after those games were played: Kerby Joseph's practice status, Amon-Ra St. Brown's game status, and both of Sione Vaki's cells. The other 41 comparable rows are identical.",
+      "evidence": [
+        "availability.html",
+        "captures.html"
+      ],
+      "what_is_missing": "A dated capture series that runs Wednesday to Friday with clock times, and a statement of which version of the document any downstream join used.",
+      "how_to_discover": "Capture the same URL three times in one week with a retained hash and the sandbox clock each time, then render the delta. The test passes when a single week yields three captures whose hashes differ only where the report actually changed, and when every desk that joins a designation to an outcome records the capture date it used.",
+      "blocking_gate": "NG02",
+      "priority": "high",
+      "status": "open",
+      "source_ids": [
+        "W9388-NFL-INJ-W11-1118",
+        "X28-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "W11-Q03",
+      "question": "Does 'have no active injuries at this time' on a game page mean the club is healthy?",
+      "requirement_ids": [
+        "R64",
+        "R31",
+        "R10"
+      ],
+      "we_hold": "No. Twelve of the thirteen Week 11 game pages print that sentence while no Week 11 league report exists and no club has filed a Week 11 practice report. The one page that does print rows is the Thursday game, whose clubs have already begun practising. The sentence is an empty module, not a clean bill of health.",
+      "evidence": [
+        "availability.html"
+      ],
+      "what_is_missing": "The official game-day inactive list, which is the only document that states who did not play.",
+      "how_to_discover": "Capture the inactive list for all 26 clubs on game day. The test passes when one week yields 26 club lists, each with a retained hash, joined to the report rows for the same club.",
+      "blocking_gate": "NG02",
+      "priority": "blocking",
+      "status": "open",
+      "source_ids": [
+        "W9388-GC-W11-01",
+        "W9388-NFL-INJ-W11-1118"
+      ]
+    },
+    {
+      "id": "W11-Q04",
+      "question": "Which string identifies a stadium, when two official pages name it differently?",
+      "requirement_ids": [
+        "R23",
+        "R58"
+      ],
+      "we_hold": "Three of the thirteen Week 11 venues are named differently by the game-centre page and by the schedule page's own hotel link, and the direction is not consistent: the game centre prints the older name for Houston, the newer name for Washington, and the unsponsored name for Kansas City.",
+      "evidence": [
+        "venues.html"
+      ],
+      "what_is_missing": "One stable venue key per stadium, with the alternate spellings held as attributes rather than as the key.",
+      "how_to_discover": "Key on the game-centre value and publish the alternate beside it, which this desk does. The test passes when all 13 venues resolve to one key and each alternate is recorded with its source.",
+      "blocking_gate": "-",
+      "priority": "medium",
+      "status": "open",
+      "source_ids": [
+        "W9388-GC-W11-01",
+        "W9388-NFL-SCHED-W11-1118"
+      ]
+    },
+    {
+      "id": "W11-Q05",
+      "question": "Can we yet tell whether a backup actually replaced a starter, on offence or defence?",
+      "requirement_ids": [
+        "R11",
+        "R31",
+        "R45",
+        "R52",
+        "R56",
+        "R72"
+      ],
+      "we_hold": "Not from what is captured. The injury report gives designations, the depth pages give printed ranks, and neither states who took the field. Snap counts and inactive lists are the two documents that would, and neither is captured for all 32 clubs.",
+      "evidence": [
+        "availability.html",
+        "../../nfl-availability-28ef/site/depth.html"
+      ],
+      "what_is_missing": "Snap-count data and official inactive lists for all 32 clubs, plus a structured depth source for the clubs that publish depth as an image.",
+      "how_to_discover": "Take the official game books for one week: they publish actual starters and participation. The test passes when one week yields 32 club-game starter sets and one snap table per club, each with a source link.",
+      "blocking_gate": "NG02",
+      "priority": "high",
+      "status": "open",
+      "source_ids": [
+        "W9388-GC-W11-01",
+        "X28-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "W11-Q06",
+      "question": "Is the 149-game results corpus now complete, and should it be extended?",
+      "requirement_ids": [
+        "R02",
+        "R17"
+      ],
+      "we_hold": "It is complete for everything that was final when it was read and incomplete for the season to date: the Week 10 Monday fixture, Chargers 23 Ravens 20, is final now and is not in it. This desk reconciles the standings delta and the corpus to that missing game and does not edit the corpus.",
+      "evidence": [
+        "verification.html"
+      ],
+      "what_is_missing": "An owner decision on whether the corpus stays frozen as a pre-kickoff input or becomes a versioned season ledger.",
+      "how_to_discover": "Record the decision in COORDINATION.md. The test passes when one line states the rule the corpus follows and the results desk either appends the Monday game or documents why it must not.",
+      "blocking_gate": "-",
+      "priority": "high",
+      "status": "open",
+      "source_ids": [
+        "W9388-NFL-SCHED-W10-1118",
+        "X29-NFL-SCHEDULE",
+        "REPO"
+      ]
+    },
+    {
+      "id": "W11-Q07",
+      "question": "Can a parlay or prop combination be ranked at all?",
+      "requirement_ids": [
+        "R71",
+        "R73"
+      ],
+      "we_hold": "No. Multiplying marginal probabilities is invalid under dependence, and the one leg-dependence measured in this workspace from joint outcomes is small but not zero, with a confidence interval that does not exclude the dependence that matters for pricing.",
+      "evidence": [
+        "../../nfl-results-correlation.html",
+        "../../nfl-results-leaderboard.html"
+      ],
+      "what_is_missing": "A directly validated joint probability for the specific legs, and the operator's void and push rules, both for the same market.",
+      "how_to_discover": "Estimate the joint from joint outcomes with a stated n and interval, and store the operator rules as text with a source. The test passes when one combination carries both, and until then the combination is unranked rather than ranked with an independence assumption.",
+      "blocking_gate": "NG06",
+      "priority": "blocking",
+      "status": "open",
+      "source_ids": [
+        "NFL-TERMS",
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "W11-Q08",
+      "question": "What would it take to remove luck from a Week 11 result?",
+      "requirement_ids": [
+        "R19",
+        "R71",
+        "R77"
+      ],
+      "we_hold": "A forecast recorded before kickoff, a price to grade it against, and enough games that the interval separates skill from variance. None of the three is in place for Week 11: there is no price, and no pre-kickoff forecast log for this week exists yet.",
+      "evidence": [
+        "../../nfl-results-skill.html"
+      ],
+      "what_is_missing": "Thirteen pre-registered forecasts logged before the Thursday kickoff, and the price to grade them.",
+      "how_to_discover": "Freeze a singles-only forecast for all 13 fixtures before 2026-11-19 8:15 PM, hash it, and grade it after the games. The test passes when 13 forecasts carry a pre-kickoff timestamp and a hash, and the grading reports a proper score with its interval rather than a win rate.",
+      "blocking_gate": "NG08",
+      "priority": "high",
+      "status": "open",
+      "source_ids": [
+        "W9388-NFL-SCHED-W11-1118",
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "W11-Q09",
+      "question": "What timezone do the Week 11 kickoff times use?",
+      "requirement_ids": [
+        "R16",
+        "R23"
+      ],
+      "we_hold": "The Week 11 by-week page prints times with no timezone label. The Week 10 league injury page prints EST beside its kickoff times. This desk stores the times exactly as printed and leaves the timezone blank rather than assuming one.",
+      "evidence": [
+        "slate.html"
+      ],
+      "what_is_missing": "A timezone field printed on the Week 11 schedule page itself.",
+      "how_to_discover": "Read the league's dated schedule announcement, or a page that prints the timezone for a Week 11 kickoff. The test passes when one official page prints a Week 11 kickoff with its zone.",
+      "blocking_gate": "-",
+      "priority": "low",
+      "status": "open",
+      "source_ids": [
+        "W9388-NFL-SCHED-W11-1118",
+        "W9388-NFL-INJ-W11-1118"
+      ]
+    },
+    {
+      "id": "W11-Q10",
+      "question": "Is the Week 11 slate itself fixed, or can it move?",
+      "requirement_ids": [
+        "R16",
+        "R15"
+      ],
+      "we_hold": "Week 11 is fixed as read: 13 fixtures, all with a date, a time and a network, and 6 byes. The same page states that Weeks 16, 17 and 18 contain matchups whose dates and networks are not yet determined.",
+      "evidence": [
+        "slate.html"
+      ],
+      "what_is_missing": "Nothing for Week 11. The question matters from Week 16 onward, when flexible scheduling can move a game after a forecast is frozen.",
+      "how_to_discover": "Re-read the by-week page before each forecast is frozen. The test passes when the frozen fixture set for a week still matches the page on the day its games are played.",
+      "blocking_gate": "-",
+      "priority": "low",
+      "status": "answered for Week 11",
+      "source_ids": [
+        "W9388-NFL-SCHED-W11-1118"
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "W11-S01",
+      "title": "Take official injury-report captures three times a week with retained hashes and clock times",
+      "requirement_ids": [
+        "R21",
+        "R29",
+        "R30",
+        "R54",
+        "R55"
+      ],
+      "evidence": "Three reads of the Week 11 URL on 2026-11-18 all served the Week 10 document, and the Week 10 document itself changed after its games were played. A single capture per week cannot show either fact.",
+      "cost": "One page read per day, Wednesday to Friday, plus a hash and a clock line each time",
+      "risk": "The publisher's terms prohibit systematic retrieval without written consent; until that is settled the capture has to stay a small number of targeted reads, not a crawler",
+      "acceptance_test": "One week yields three captures of the same URL, each with a fetch instant, a SHA-256 of the retained transcript and a rendered delta column against the previous capture",
+      "priority": 1,
+      "decision": "",
+      "source_ids": [
+        "W9388-NFL-INJ-W11-1118",
+        "NFL-TERMS"
+      ]
+    },
+    {
+      "id": "W11-S02",
+      "title": "Capture the official game-day inactive list for every club",
+      "requirement_ids": [
+        "R31",
+        "R64",
+        "R10"
+      ],
+      "evidence": "Twelve of thirteen Week 11 game pages print an empty injury module, so absence from the report currently means nothing. The inactive list is the only official document that states who did not play.",
+      "cost": "26 club reads on game day, one week",
+      "risk": "The document may only exist on game day, so a missed day cannot be recovered later",
+      "acceptance_test": "One week yields 26 club inactive lists, each with a retained hash, joined to that club's report rows for the same week",
+      "priority": 2,
+      "decision": "",
+      "source_ids": [
+        "W9388-GC-W11-01"
+      ]
+    },
+    {
+      "id": "W11-S03",
+      "title": "Take snap counts from the official game books as the starter proxy",
+      "requirement_ids": [
+        "R11",
+        "R31",
+        "R52",
+        "R56"
+      ],
+      "evidence": "Depth from jersey order is forbidden by the brief and depth from printed ranks cannot tell who actually played. Snap counts are the measurable starter and backup split the brief asks for.",
+      "cost": "One game-book read per club per week",
+      "risk": "Coverage has to be verified club by club before any feature uses it; a partial capture would silently bias the feature",
+      "acceptance_test": "One week yields 32 club-game snap tables and 32 starter sets, each with a source link, and the coverage count is published beside every number computed from them",
+      "priority": 3,
+      "decision": "",
+      "source_ids": [
+        "W9388-GC-W11-01"
+      ]
+    },
+    {
+      "id": "W11-S04",
+      "title": "Settle the price-data policy before any further leaderboard work",
+      "requirement_ids": [
+        "R01",
+        "R02",
+        "R60",
+        "R71"
+      ],
+      "evidence": "Every leaderboard in the workspace has blank reward columns for the same reason: no executable price. Further grading work cannot change that.",
+      "cost": "One decision, then one week of capture",
+      "risk": "A secondary aggregator is not a licensed feed; using one as if it were would put an unlicensed number into a published table",
+      "acceptance_test": "One week of 13 markets each carries an opening number, a closing number and a registered source id, or the decision record states that no price will be used and ROI stays blank by rule",
+      "priority": 4,
+      "decision": "",
+      "source_ids": [
+        "NFL-TERMS",
+        "PFR-VEGAS-2026"
+      ]
+    },
+    {
+      "id": "W11-S05",
+      "title": "Record the results-corpus rule: frozen pre-kickoff input, or versioned season ledger",
+      "requirement_ids": [
+        "R02",
+        "R17"
+      ],
+      "evidence": "The corpus holds 149 games and the Week 10 Monday game is now final, so the two possible rules now disagree about the same week.",
+      "cost": "One line in COORDINATION.md plus a version note in the corpus directory",
+      "risk": "Appending results to a corpus that other desks use as a pre-kickoff input would inject lookahead into their backtests",
+      "acceptance_test": "One line in COORDINATION.md states which rule the corpus follows, and every desk that reads the corpus cites that line; the 149-game file and the Week 10 Monday result are then either joined or kept apart accordingly",
+      "priority": 5,
+      "decision": "",
+      "source_ids": [
+        "W9388-NFL-SCHED-W10-1118",
+        "X29-NFL-SCHEDULE",
+        "REPO"
+      ]
+    },
+    {
+      "id": "W11-S06",
+      "title": "Key venues on one identifier and hold alternate names as attributes",
+      "requirement_ids": [
+        "R23",
+        "R58"
+      ],
+      "evidence": "Three of thirteen Week 11 venues are spelled differently by two official pages, in both directions, so name equality cannot join them.",
+      "cost": "Done here for Week 11; needs extending as the season's venues are captured",
+      "risk": "Silently normalising names would turn a publisher disagreement into a false match",
+      "acceptance_test": "All 13 Week 11 venues resolve to one key each; every alternate name carries the source id and capture date that printed it; and a join of the venue register to the slate on that key returns 13 of 13 rows",
+      "priority": 6,
+      "decision": "",
+      "source_ids": [
+        "W9388-GC-W11-01",
+        "W9388-NFL-SCHED-W11-1118"
+      ]
+    },
+    {
+      "id": "W11-S07",
+      "title": "Freeze a singles-only Week 11 forecast before the Thursday kickoff and hash it",
+      "requirement_ids": [
+        "R18",
+        "R19",
+        "R71",
+        "R77"
+      ],
+      "evidence": "Removing luck needs a forecast that existed before the result. The Thursday game kicks off 2026-11-19 and no pre-kickoff forecast for it is stored anywhere in the workspace.",
+      "cost": "One model run and one hash, before kickoff",
+      "risk": "A forecast written after kickoff is not evidence of skill, and must not be graded as if it were",
+      "acceptance_test": "13 forecasts carry a timestamp earlier than their kickoff and a retained hash, and the grading reports a proper score with an interval rather than a win rate",
+      "priority": 7,
+      "decision": "",
+      "source_ids": [
+        "W9388-NFL-SCHED-W11-1118",
+        "X29-NFL-SCHEDULE"
+      ]
+    },
+    {
+      "id": "W11-S08",
+      "title": "Make every designation join name the document version it used",
+      "requirement_ids": [
+        "R21",
+        "R53",
+        "R47"
+      ],
+      "evidence": "The Week 10 report changed after its games were played, so a designation joined to an outcome is only meaningful next to the date it was captured.",
+      "cost": "One column per join, plus a line in each desk's notes",
+      "risk": "Without it, two desks can disagree about the same player and neither can be shown to be wrong",
+      "acceptance_test": "Every table that pairs a game-status designation with an outcome carries a capture-date column; the desk's 44 re-read rows and the 8 Thursday rows each carry 2026-11-18, and no designation table exists anywhere in the repo without one",
+      "priority": 8,
+      "decision": "",
+      "source_ids": [
+        "W9388-NFL-INJ-W11-1118",
+        "X28-NFL-INJ-W10"
+      ]
+    },
+    {
+      "id": "W11-S09",
+      "title": "Pin each parser to an expected shape and fail the build when it drifts",
+      "requirement_ids": [
+        "R63"
+      ],
+      "evidence": "The league standings page currently renders unsubstituted template placeholders in its heading, and the injury page cuts a table at a chunk boundary. Both are the kind of drift that produces a silently empty column.",
+      "cost": "A row-count and required-field assertion in each collector",
+      "risk": "A pinned count that is too tight fails on a legitimate bye-week change; pin the shape, not the number of byes",
+      "acceptance_test": "Deleting any one required field from a transcript makes collect.py fail with a named reason and write zero artefacts; restoring it makes all 8 checks pass again, and the 10 pages rebuild byte-identically",
+      "priority": 9,
+      "decision": "",
+      "source_ids": [
+        "W9388-NFL-STANDINGS-1118",
+        "W9388-NFL-INJ-W11-1118"
+      ]
+    },
+    {
+      "id": "W11-S10",
+      "title": "Resolve the two known depth-parsing failures before widening coverage",
+      "requirement_ids": [
+        "R32",
+        "R45"
+      ],
+      "evidence": "One club publishes depth as an image and another prepends jersey numbers to its entries. Number stripping recovers the second; the first needs an authorised structured source, not transcription by eye.",
+      "cost": "One source decision for the image case, one parser line for the number case",
+      "risk": "Transcribing an image by eye produces a value no source can be cited for, which this project forbids",
+      "acceptance_test": "All 32 clubs produce at least one depth row with a source link, or the club is recorded as blocked in the flagged register with the authorisation step named; today 0 of 32 clubs have a parsed depth chart",
+      "priority": 10,
+      "decision": "",
+      "source_ids": [
+        "X28-NFL-INJ-W10",
+        "X28-GB-DEPTH",
+        "X28-HOU-DEPTH"
+      ]
+    }
+  ]
+}

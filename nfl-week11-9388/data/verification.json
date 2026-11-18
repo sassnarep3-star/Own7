@@ -1,0 +1,670 @@
+{
+  "checks": [
+    {
+      "compared": 32,
+      "detail": [
+        "32/32 rows matched; the only movement is BAL 4-5 -> 4-6 and LAC 0-8 -> 1-8, exactly the Chargers 23, Ravens 20 result."
+      ],
+      "id": "V1",
+      "mismatches": 0,
+      "sources": [
+        "W9388-NFL-STANDINGS-1118",
+        "W9388-NFL-SCHED-W10-1118",
+        "X29-NFL-SCHEDULE"
+      ],
+      "status": "pass",
+      "title": "All 32 standings rows reconcile with the frozen 2026-11-17 snapshot plus the single Week 10 Monday result"
+    },
+    {
+      "compared": 32,
+      "detail": [
+        "sum W=149, sum L=149",
+        "sum PF=6923, sum PA=6923",
+        "games played checked for 32 clubs"
+      ],
+      "id": "V2",
+      "mismatches": 0,
+      "sources": [
+        "W9388-NFL-STANDINGS-1118",
+        "X29-NFL-SCHEDULE",
+        "W9388-NFL-SCHED-W10-1118"
+      ],
+      "status": "pass",
+      "title": "League arithmetic closes: wins equal losses, points for equal points against, and every club's W+L+T equals its games played"
+    },
+    {
+      "compared": 32,
+      "detail": [
+        "sum PF today = 6923",
+        "corpus points = 6880 over 149 games",
+        "+ Monday result 23+20 = 6923",
+        "match"
+      ],
+      "id": "V3",
+      "mismatches": 0,
+      "sources": [
+        "W9388-NFL-STANDINGS-1118",
+        "X29-NFL-SCHEDULE",
+        "W9388-NFL-SCHED-W10-1118"
+      ],
+      "status": "pass",
+      "title": "Total points for across the 32 clubs equals every point scored in the 149-game official corpus plus the Monday result"
+    },
+    {
+      "compared": 32,
+      "detail": [
+        "13 fixtures, 26 distinct clubs, 6 byes",
+        "duplicates: none",
+        "club on bye and playing: none",
+        "uncovered clubs: none"
+      ],
+      "id": "V4",
+      "mismatches": 0,
+      "sources": [
+        "W9388-NFL-SCHED-W11-1118",
+        "W9388-NFL-STANDINGS-1118"
+      ],
+      "status": "pass",
+      "title": "The Week 11 slate covers 26 clubs exactly once and the 6 bye clubs complete the 32"
+    },
+    {
+      "compared": 6,
+      "detail": [
+        "Week 10 byes: CHI, DEN, PHI, TB",
+        "Week 11 byes: ATL, CLE, GB, LA, NE, SEA",
+        "repeated: none"
+      ],
+      "id": "V5",
+      "mismatches": 0,
+      "sources": [
+        "W9388-NFL-SCHED-W10-1118",
+        "W9388-NFL-SCHED-W11-1118"
+      ],
+      "status": "pass",
+      "title": "No club is on bye in both Week 10 and Week 11"
+    },
+    {
+      "compared": 13,
+      "detail": [
+        "13 venues transcribed, 0 blank",
+        "4 of 13 disagree with the schedule page's own hotel-link stadium name (Colts at Texans, Cardinals at Chiefs, Vikings at 49ers, Bengals at Commanders)"
+      ],
+      "id": "V6",
+      "mismatches": 0,
+      "sources": [
+        "W9388-GC-W11-01",
+        "W9388-NFL-SCHED-W11-1118"
+      ],
+      "status": "pass",
+      "title": "Every Week 11 fixture has a location and a stadium transcribed from its official game-centre page"
+    },
+    {
+      "compared": 13,
+      "detail": [
+        "4 reads of https://www.nfl.com/injuries/league/2026/REG11 all served the Week 10 document",
+        "12 of 13 game pages print the empty-module sentence",
+        "1 of 13 print player rows (Colts at Texans)",
+        "8 player rows captured in total"
+      ],
+      "id": "V7",
+      "mismatches": 0,
+      "sources": [
+        "W9388-NFL-INJ-W11-1118",
+        "W9388-GC-W11-01"
+      ],
+      "status": "pass",
+      "title": "The Week 11 league injury report is not published, and 12 of 13 game-centre injury modules are empty"
+    },
+    {
+      "changed_cells": 3,
+      "compared": 44,
+      "detail": [
+        "44 rows compared (WAS 9, NYG 11, NE 15, DET 9); the Chiefs table is excluded because the chunk cut it mid-table",
+        "41 identical, 3 changed, 0 absent",
+        "the source page mutates after the games are played - see flag W11-F11"
+      ],
+      "id": "V8",
+      "mismatches": 0,
+      "sources": [
+        "W9388-NFL-INJ-W11-1118",
+        "X28-NFL-INJ-W10"
+      ],
+      "status": "pass",
+      "title": "Every Week 10 row re-read today belongs to a player present in the 2026-11-13 capture; the cells that moved are published as a delta, not patched"
+    }
+  ],
+  "flags": [
+    {
+      "detail": "The Week 11 game-centre page for Colts at Texans prints Stadium = RELIANT STADIUM, while the Week 11 schedule page's own hotel link for the same fixture names NRG Stadium. Both are nfl.com pages read the same day. The game-centre value is transcribed as published; no name is corrected.",
+      "id": "W11-F01",
+      "severity": "low",
+      "sources": [
+        "W9388-GC-W11-01",
+        "W9388-NFL-SCHED-W11-1118"
+      ],
+      "status": "open",
+      "title": "The game centre names the Texans' stadium 'RELIANT STADIUM'",
+      "where": "venues.html"
+    },
+    {
+      "detail": "Cardinals at Chiefs prints Stadium = ARROWHEAD STADIUM, while the schedule page's hotel link names GEHA Field at Arrowhead Stadium. The game centre appears to publish the unsponsored name; the schedule page publishes the sponsored one. Venue matching across the two pages cannot be done by string equality.",
+      "id": "W11-F02",
+      "severity": "low",
+      "sources": [
+        "W9388-GC-W11-01",
+        "W9388-NFL-SCHED-W11-1118"
+      ],
+      "status": "open",
+      "title": "The game centre drops the Chiefs' sponsored stadium name",
+      "where": "venues.html"
+    },
+    {
+      "detail": "Bengals at Commanders prints Stadium = NORTHWEST STADIUM, while the schedule page's hotel link names FedEx Field. Here the game centre carries the newer name and the schedule page the older one - the opposite direction to the Texans case. Any venue key built from a name string will break.",
+      "id": "W11-F03",
+      "severity": "low",
+      "sources": [
+        "W9388-GC-W11-01",
+        "W9388-NFL-SCHED-W11-1118"
+      ],
+      "status": "open",
+      "title": "The Commanders' venue is named two ways on nfl.com",
+      "where": "venues.html"
+    },
+    {
+      "detail": "The page heading reads '# $year$ NFL $displayname$ Standings'. The data table is unaffected, but it shows the publisher's template is rendering incorrectly, so a scraper that keys on the heading would fail. The desk keys on the table.",
+      "id": "W11-F04",
+      "severity": "low",
+      "sources": [
+        "W9388-NFL-STANDINGS-1118"
+      ],
+      "status": "open",
+      "title": "The league standings page renders unsubstituted template placeholders",
+      "where": "flagged.html"
+    },
+    {
+      "detail": "Twelve Colts/Texans rows on the Thursday game use 'Did not participate' or 'Full participation', but Anthony Gould's row reads 'Did participate'. Three different strings for two states in one module. The desk stores the string as printed and does not normalise it, because normalisation would be an inference.",
+      "id": "W11-F05",
+      "severity": "medium",
+      "sources": [
+        "W9388-GC-W11-01"
+      ],
+      "status": "open",
+      "title": "The game-centre injury module uses a third practice-status word",
+      "where": "availability.html"
+    },
+    {
+      "detail": "12 of 13 Week 11 game pages print e.g. 'Bills have no active injuries at this time.' No Week 11 practice report has been filed, and the league report for Week 11 does not exist yet, so the sentence cannot mean the club is healthy. Treating it as healthy would be the exact 'not listed means available' error the brief warns about. All 24 club-game entries are stored as missing data.",
+      "id": "W11-F06",
+      "severity": "high",
+      "sources": [
+        "W9388-GC-W11-01",
+        "W9388-NFL-INJ-W11-1118"
+      ],
+      "status": "open",
+      "title": "'Have no active injuries' is an empty module, not a clean bill of health",
+      "where": "availability.html"
+    },
+    {
+      "detail": "Reed Blankenship is 'S' on the Week 10 league report and 'DB' on the Week 11 game page; Blake Fisher is 'T' on the report and 'OL' on the game page. Joining the two surfaces on position would silently drop rows; this desk joins on the player link instead.",
+      "id": "W11-F07",
+      "severity": "medium",
+      "sources": [
+        "W9388-GC-W11-01",
+        "X28-NFL-INJ-W10"
+      ],
+      "status": "open",
+      "title": "Position labels differ between the two official injury surfaces",
+      "where": "availability.html"
+    },
+    {
+      "detail": "The 149-game corpus was read before the Chargers at Ravens game kicked off, so the repository held it as scheduled-not-final. It is now final (Chargers 23, Ravens 20). This desk records the result and reconciles it two ways, but does not edit the corpus - the corpus belongs to the results desk and is a frozen pre-kickoff input for its own purposes.",
+      "id": "W11-F08",
+      "severity": "medium",
+      "sources": [
+        "W9388-NFL-SCHED-W10-1118",
+        "W9388-NFL-STANDINGS-1118"
+      ],
+      "status": "open",
+      "title": "The Monday night result was pending in every previous capture",
+      "where": "flagged.html"
+    },
+    {
+      "detail": "The standings, schedule, game-centre and injury pages all omit any timestamp. The only clock available is the sandbox's, recorded as a window (2026-11-18T03:47:13Z to 2026-11-18T03:51:41Z). Per-read instants inside the window are not recoverable, so the capture ledger records windows, not instants, for those reads. The requirement to store every injury read with its clock time is met at window resolution only.",
+      "id": "W11-F09",
+      "severity": "medium",
+      "sources": [
+        "W9388-NFL-INJ-W11-1118",
+        "W9388-GC-W11-01",
+        "W9388-NFL-STANDINGS-1118",
+        "W9388-NFL-SCHED-W11-1118"
+      ],
+      "status": "open",
+      "title": "No page read this session prints a capture or update time",
+      "where": "captures.html"
+    },
+    {
+      "detail": "Three Lions cells in the Week 10 report differ between the frozen 2026-11-13 capture held in nfl-availability-28ef/data/injuries-week10-2026.csv and the same page read on 2026-11-18: Kerby Joseph's practice status moved from Full Participation in Practice to Did Not Participate In Practice; Amon-Ra St. Brown's game status moved from blank to Questionable; Sione Vaki's practice status moved from Did Not Participate In Practice to Limited Participation in Practice and his game status from blank to Questionable. The other 41 comparable rows are identical. The publisher therefore rewrites the week's document after kickoff, so a capture taken on the Friday of that week is not the end-of-week truth. Any backtest that joins a designation to an outcome must record which version of the document it used; the delta is published on the availability page rather than patched into the earlier capture.",
+      "id": "W11-F11",
+      "severity": "high",
+      "sources": [
+        "W9388-NFL-INJ-W11-1118",
+        "X28-NFL-INJ-W10"
+      ],
+      "status": "open",
+      "title": "The official injury report mutates after the games are played",
+      "where": "availability.html"
+    },
+    {
+      "detail": "Vikings at 49ers is played in Mexico City (Estadio Banorte). The schedule page shows the Mexico City event branding and the game page prints no ticket or hotel link, so the second venue string that exists for the other twelve fixtures does not exist here. The venue rests on one source only.",
+      "id": "W11-F10",
+      "severity": "low",
+      "sources": [
+        "W9388-GC-W11-01",
+        "W9388-NFL-SCHED-W11-1118"
+      ],
+      "status": "open",
+      "title": "The Week 11 international fixture has no hotel-link stadium to cross-check",
+      "where": "venues.html"
+    }
+  ],
+  "read_date": "2026-11-18",
+  "schema_version": 1,
+  "v8_rows": [
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "WAS",
+      "match": "same",
+      "player": "John Bates",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Did Not Participate In Practice",
+      "club": "WAS",
+      "match": "same",
+      "player": "Treylon Burks",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Did Not Participate In Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "WAS",
+      "match": "same",
+      "player": "Jayden Daniels",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "WAS",
+      "match": "same",
+      "player": "Matt Gulbin",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "WAS",
+      "match": "same",
+      "player": "Chig Okonkwo",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Out",
+      "capture_2026_11_13_practice": "Did Not Participate In Practice",
+      "club": "WAS",
+      "match": "same",
+      "player": "Lucas Patrick",
+      "read_2026_11_18_game": "Out",
+      "read_2026_11_18_practice": "Did Not Participate In Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Limited Participation in Practice",
+      "club": "WAS",
+      "match": "same",
+      "player": "Amik Robertson",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "WAS",
+      "match": "same",
+      "player": "Shy Tuttle",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Out",
+      "capture_2026_11_13_practice": "Did Not Participate In Practice",
+      "club": "WAS",
+      "match": "same",
+      "player": "Colson Yankoff",
+      "read_2026_11_18_game": "Out",
+      "read_2026_11_18_practice": "Did Not Participate In Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "Abdul Carter",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "Jermaine Eluemunor",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Questionable",
+      "capture_2026_11_13_practice": "Limited Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "Malik Harrison",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "Colton Hood",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "Theo Johnson",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "Charlie Jones",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "J.J. McCarthy",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "Darnell Mooney",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "Malik Nabers",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "Cam Skattebo",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NYG",
+      "match": "same",
+      "player": "Andrew Thomas",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Out",
+      "capture_2026_11_13_practice": "Did Not Participate In Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Ben Brown",
+      "read_2026_11_18_game": "Out",
+      "read_2026_11_18_practice": "Did Not Participate In Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Questionable",
+      "capture_2026_11_13_practice": "Limited Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "A.J. Brown",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Questionable",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Kevin Byard",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Out",
+      "capture_2026_11_13_practice": "Did Not Participate In Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Carlton Davis III",
+      "read_2026_11_18_game": "Out",
+      "read_2026_11_18_practice": "Did Not Participate In Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Questionable",
+      "capture_2026_11_13_practice": "Limited Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Reggie Gilliam",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Out",
+      "capture_2026_11_13_practice": "Did Not Participate In Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "TreVeyon Henderson",
+      "read_2026_11_18_game": "Out",
+      "read_2026_11_18_practice": "Did Not Participate In Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Limited Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Hunter Henry",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Questionable",
+      "capture_2026_11_13_practice": "Limited Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Cameron Latu",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Drake Maye",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Morgan Moses",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Questionable",
+      "capture_2026_11_13_practice": "Limited Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Walter Rouse",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Questionable",
+      "capture_2026_11_13_practice": "Limited Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Brenden Schooler",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Questionable",
+      "capture_2026_11_13_practice": "Limited Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Rhamondre Stevenson",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Questionable",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Greg Van Roten",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Questionable",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "NE",
+      "match": "same",
+      "player": "Charles Woods",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "DET",
+      "match": "same",
+      "player": "Brian Branch",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "DET",
+      "match": "same",
+      "player": "Jared Goff",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Out",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "DET",
+      "match": "CHANGED",
+      "player": "Kerby Joseph",
+      "read_2026_11_18_game": "Out",
+      "read_2026_11_18_practice": "Did Not Participate In Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Out",
+      "capture_2026_11_13_practice": "Did Not Participate In Practice",
+      "club": "DET",
+      "match": "same",
+      "player": "Cade Mays",
+      "read_2026_11_18_game": "Out",
+      "read_2026_11_18_practice": "Did Not Participate In Practice"
+    },
+    {
+      "capture_2026_11_13_game": "Out",
+      "capture_2026_11_13_practice": "Did Not Participate In Practice",
+      "club": "DET",
+      "match": "same",
+      "player": "D.J. Reed",
+      "read_2026_11_18_game": "Out",
+      "read_2026_11_18_practice": "Did Not Participate In Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "DET",
+      "match": "same",
+      "player": "Jacob Saylors",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Limited Participation in Practice",
+      "club": "DET",
+      "match": "CHANGED",
+      "player": "Amon-Ra St. Brown",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Did Not Participate In Practice",
+      "club": "DET",
+      "match": "CHANGED",
+      "player": "Sione Vaki",
+      "read_2026_11_18_game": "Questionable",
+      "read_2026_11_18_practice": "Limited Participation in Practice"
+    },
+    {
+      "capture_2026_11_13_game": "",
+      "capture_2026_11_13_practice": "Full Participation in Practice",
+      "club": "DET",
+      "match": "same",
+      "player": "DJ Wonnum",
+      "read_2026_11_18_game": "",
+      "read_2026_11_18_practice": "Full Participation in Practice"
+    }
+  ]
+}

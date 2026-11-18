@@ -1,0 +1,137 @@
+{
+  "note": "Rest days are the difference between two official kickoff dates: the club's previous game in the official results corpus and its Week 11 kickoff. Nothing else is modelled.",
+  "read_date": "2026-11-18",
+  "rows": [
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 4,
+      "fixture": "Colts at Texans",
+      "home_previous_game": "2026-11-15",
+      "home_rest_days": 4,
+      "kickoff_date": "2026-11-19",
+      "rest_days_differential": 0,
+      "url": "https://www.nfl.com/games/colts-at-texans-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 7,
+      "fixture": "Dolphins at Bills",
+      "home_previous_game": "2026-11-15",
+      "home_rest_days": 7,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": 0,
+      "url": "https://www.nfl.com/games/dolphins-at-bills-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-16",
+      "away_rest_days": 6,
+      "fixture": "Ravens at Panthers",
+      "home_previous_game": "2026-11-15",
+      "home_rest_days": 7,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": -1,
+      "url": "https://www.nfl.com/games/ravens-at-panthers-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 7,
+      "fixture": "Saints at Bears",
+      "home_previous_game": "2026-11-08",
+      "home_rest_days": 14,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": -7,
+      "url": "https://www.nfl.com/games/saints-at-bears-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 7,
+      "fixture": "Titans at Cowboys",
+      "home_previous_game": "2026-11-15",
+      "home_rest_days": 7,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": 0,
+      "url": "https://www.nfl.com/games/titans-at-cowboys-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-08",
+      "away_rest_days": 14,
+      "fixture": "Buccaneers at Lions",
+      "home_previous_game": "2026-11-15",
+      "home_rest_days": 7,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": 7,
+      "url": "https://www.nfl.com/games/buccaneers-at-lions-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 7,
+      "fixture": "Cardinals at Chiefs",
+      "home_previous_game": "2026-11-15",
+      "home_rest_days": 7,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": 0,
+      "url": "https://www.nfl.com/games/cardinals-at-chiefs-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 7,
+      "fixture": "Steelers at Eagles",
+      "home_previous_game": "2026-11-08",
+      "home_rest_days": 14,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": -7,
+      "url": "https://www.nfl.com/games/steelers-at-eagles-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 7,
+      "fixture": "Jets at Chargers",
+      "home_previous_game": "2026-11-16",
+      "home_rest_days": 6,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": 1,
+      "url": "https://www.nfl.com/games/jets-at-chargers-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 7,
+      "fixture": "Jaguars at Giants",
+      "home_previous_game": "2026-11-12",
+      "home_rest_days": 10,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": -3,
+      "url": "https://www.nfl.com/games/jaguars-at-giants-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 7,
+      "fixture": "Raiders at Broncos",
+      "home_previous_game": "2026-11-08",
+      "home_rest_days": 14,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": -7,
+      "url": "https://www.nfl.com/games/raiders-at-broncos-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 7,
+      "fixture": "Vikings at 49ers",
+      "home_previous_game": "2026-11-15",
+      "home_rest_days": 7,
+      "kickoff_date": "2026-11-22",
+      "rest_days_differential": 0,
+      "url": "https://www.nfl.com/games/vikings-at-49ers-2026-reg-11"
+    },
+    {
+      "away_previous_game": "2026-11-15",
+      "away_rest_days": 8,
+      "fixture": "Bengals at Commanders",
+      "home_previous_game": "2026-11-12",
+      "home_rest_days": 11,
+      "kickoff_date": "2026-11-23",
+      "rest_days_differential": -3,
+      "url": "https://www.nfl.com/games/bengals-at-commanders-2026-reg-11"
+    }
+  ],
+  "schema_version": 1
+}
