@@ -2899,3 +2899,32 @@ additive fix inside `nfl-snapcount-e5e4/build_site.py` (one attribute triple on 
 no content change) and regenerated its 11 pages byte-identically except that attribute. The owning
 session's numbers, sources and structure are untouched; this note is the log entry the protocol
 requires. Browser suite after the fix: 241 desktop + 241 mobile pages, WCAG A/AA, no runtime errors.
+
+## Session arena/637442e9-own7 — decision-ledger reconciliation, gap register, executive summary (2026-11-18)
+
+Session ID: `session-arena-637442e9-own7`. Fixed Arena branch `arena/637442e9-own7` (base `ad6f0d6` = `origin/main`
+at claim; the `session-<id>/<task>` naming is not used because the branch name is fixed for this session).
+Baseline at claim: working tree clean; `python -m unittest discover -s tests` → 119 OK; `python scripts/check_site.py` → OK.
+
+Scope of this session (honest scope statement): the brief lists about 70 requirement lines. Four separate
+requirement registers already exist in the repo (16, 44, 81 and 70 rows) with **contradicting statuses**. The
+70-row ledger `research/nfl-decision-readiness.json` is the one the landing page renders. This session
+re-checks each non-Implemented row against artifacts that now exist, verifies the blocking terms text
+directly, and publishes a reconciled ledger, gap questions, a suggestions choice panel and an executive
+summary. It does **not** start any blocked capture: the NFL.com terms §1.3 (checked this session) prohibit
+systematic retrieval to compile a collection without written consent, so no scheduled nfl.com capture is built.
+
+Exclusive file scope: `nfl-ledger-637442e9/**` (new). Additive lines only in: `COORDINATION.md` (append),
+`README.md`, `scripts/build_site.py` (nav group), `scripts/serve_site.py`, `scripts/browser_test.mjs`,
+`.github/workflows/check.yml`, `research/sources.json` (new registrations only). `research/nfl-decision-readiness.json`
+is NOT edited: reconciled statuses live in the new desk and the change log says so.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| K1 | Claim + baseline replay | done | session-arena-637442e9-own7 | COORDINATION.md | Baseline recorded above. |
+| K2 | Verify NFL.com terms §1.3 verbatim (blocker for DR-29/54/21/66) | done | session-arena-637442e9-own7 | `nfl-ledger-637442e9/evidence/` | fetch_page https://www.nfl.com/legal/terms/ chunk 0 of 9, read 2026-11-18; §1.3 text verbatim; saved with SHA-256. |
+| K3 | Re-check each non-Implemented ledger row against artifacts that now exist | in progress | session-arena-637442e9-own7 | `nfl-ledger-637442e9/data/**` | Changes only with a named artifact; every unchanged row keeps its prior status. |
+| K4 | Search for an official NFL snap-count source (DR-11/52/56 route b) | done | session-arena-637442e9-own7 | evidence | Search returned third-party sites only (lineups.com, statsbench, kofsports, heatradar); none is an official NFL source, so no route-(b) status change. |
+| K5 | Desk pages: dashboard, ledger table, gaps, suggestions, executive summary, flagged, sources | in progress | session-arena-637442e9-own7 | `nfl-ledger-637442e9/site/**` | Every row links an internal artifact and a registered official source; blanks stay blank. |
+| K6 | Unit tests + byte-identical `build.py --check` + additive integration + full battery | unclaimed | session-arena-637442e9-own7 | shared files listed above | |
+| K7 | PR, merge, Pages verification, completion record | unclaimed | session-arena-637442e9-own7 | COORDINATION.md, PR | Do not merge a broken site. Flagged items do not block. |
