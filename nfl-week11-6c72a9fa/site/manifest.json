@@ -1,0 +1,25 @@
+{
+ "desk": "nfl-week11-6c72a9fa",
+ "session": "arena/6c72a9fa-own7",
+ "read_on": "2026-11-18",
+ "pages": [
+  "index.html",
+  "verification-2026-11-18.html",
+  "week11-schedule.html",
+  "reserve-sweep.html",
+  "what-changed.html",
+  "flagged.html",
+  "sources.html"
+ ],
+ "evidence_sha256": {
+  "standings-2026-11-18.md": "30323ff8c966345f5e8c61dc8c02738d12602c92b12625271f60977af97ba54f",
+  "gamecenter-w10-lac-bal-2026-11-18.md": "0cc65f2b5223586110bd4fdca43fb877392962f97edef3dfe1a0bb8710297fb2",
+  "gamebook-w10-lac-bal-2026-11-18.md": "4d326397856fe8e65e7fbc29651e924a4da9288dfa7b587a73919b6d0503634d",
+  "schedule-week11-2026-11-18.md": "c74eb6e02eb4cad81725efa43a9f3a2ac27c2c48db89228b8077df63ccd7a2e4",
+  "gamecenter-w11-min-sf-2026-11-18.md": "0e0e767b5562f7cbd554beae77f2aef07f7851e18a3d5e644fbae92fd13ad944",
+  "reserve-list-nov-2026-11-18.md": "39ee63d203aa0ff25c62b3cce032a9b985bce7267d43ca2b63e0296ac6810889",
+  "reserve-list-oct-2026-11-18.md": "fd28845fc04786675d076574dac1c89955d9083dad47196866fd2908b2b3db9d",
+  "trades-nov-2026-11-18.md": "07c94212ac30cb818ff41a77de9a8a89eae6c2903954b7e38f59f65bac00b09f",
+  "injuries-state-2026-11-18.md": "6b3ff835801152930161cc78bdaedbdec9c3c8a03fb2aa9085883eac2a67e4d3"
+ }
+}
