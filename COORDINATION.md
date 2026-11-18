@@ -2830,3 +2830,40 @@ market 55, brief 11, week11 35, integration-c815 19); extract/origination/lab/nf
 all OK; `scripts/check_site.py` passed (47 canonical, 20 redirects, **196 auxiliary, 263 recursive
 pages, 10,109 tbody rows, 275 registered sources, 0 errors**); browser suite **243 desktop + 243
 mobile pages, WCAG A/AA, 10 interaction groups, no runtime errors**.
+
+### Second merge-conflict record — session-arena-a10fed14-own7 × session-arena-c815bdd2-own7 snap-count desk (PR #78, 2026-11-18)
+
+A second `main` advance (PR #78, the `nfl-snapcount-e5e4` desk) was merged the same way. Resolved
+as a union again, discarding nothing:
+
+| File | Resolution |
+|---|---|
+| `.github/workflows/check.yml` | Both CI blocks kept: `nfl-snapcount-e5e4` (theirs) and `nfl-week11-4c7d` (ours). |
+| `scripts/serve_site.py` | Folder-set union, 28 entries (adds `nfl-snapcount-e5e4`). |
+| `scripts/browser_test.mjs` | Allow-list union, 27 entries. |
+| `scripts/build_site.py` | Their `snapcount_pages` entry merged into our manifest line alongside `week11_pages` and `c815_pages`; their nav group and build step were auto-merged. |
+| `COORDINATION.md`, `README.md` | Both sessions' records kept. |
+| 50 generated root `*.html`, `nfl-readiness-e7ef/site/sources.html`, `research/site-manifest.json`, `research/results.json` | Regenerated from the merged tree. |
+
+**One cross-desk fix was required to keep the site green, and it is recorded here because it
+touches another session's desk file.** After the merge the browser suite failed:
+
+```
+nfl-snapcount-e5e4/site/depth-vs-snap.html (mobile)
+  scrollable-region-focusable (serious) → .table-card
+```
+
+The cause is that page's single table card, which is a horizontally scrolling region holding an
+**empty `tbody`** (zero rows, by design — the four captured depth-chart clubs did not play in Week
+10) and therefore no focusable content. The fix is one attribute in that desk's own generator,
+`nfl-snapcount-e5e4/build_site.py::table()`: the wrapper now renders
+`<div class="table-card" tabindex="0" aria-label="…">`, so the scroll region is keyboard-reachable.
+No desk value, row, source link or caption was altered; the desk's own `--check` (11 pages) and its
+25 unit tests still pass, and the page output is otherwise byte-identical.
+
+Post-merge battery on the merged tree: repo tests 119 pass; desk suites pass (skill 66, lifecycle
+37, readiness 24, results 27, pricing 32, availability 28, assurance 50, competition 59, market 55,
+brief 11, snapcount 25, integration-c815 19, week11 35); every desk `--check` OK;
+`scripts/check_site.py` passed (47 canonical, 20 redirects, **207 auxiliary, 274 recursive pages,
+15,060 tbody rows, 278 registered sources, 0 errors**); browser suite **254 desktop + 254 mobile
+pages, WCAG A/AA, 10 interaction groups, no runtime errors**.
