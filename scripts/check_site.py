@@ -232,6 +232,23 @@ SOURCE_HOSTS.update({
 # Session arena/34a52a38-own7 (2026-11-17): official Week 10 injury-report read, Lions section.
 SOURCE_HOSTS.update({'NFL-INJ-W10-READ-1117': 'www.nfl.com'})
 
+# Session arena/03dcea07-own7 (2026-11-18): Week 10 completion & weekly-diff desk. Official
+# league hosts plus repository artifacts cited read-only (each maps to its exact blob URL).
+SOURCE_HOSTS.update({
+    'SL-1118-STANDINGS': 'www.nfl.com',
+    'SL-1118-SCHED-W10': 'www.nfl.com',
+    'SL-1118-GAMEBOOK-PDF': 'static.www.nfl.com',
+    'SL-1118-GAMECENTER': 'www.nfl.com',
+    'SL-1118-INJ-PAGE': 'www.nfl.com',
+    'SL-1118-INJ-REG11': 'www.nfl.com',
+    'SL-1118-OPS-RULEBOOK': 'operations.nfl.com',
+    'SL-REPO-FROZEN-STANDINGS': 'github.com',
+    'SL-REPO-NOV17-STANDINGS': 'github.com',
+    'SL-REPO-GB-FIXTURES': 'github.com',
+    'SL-REPO-RESULTS-CORPUS': 'github.com',
+    'SL-REPO-DIVISIONS': 'github.com',
+})
+
 # Fresh-reads desk (session arena/6c72a9fa-own7) — official NFL hosts only; each id is a page
 # actually read on 2026-11-18 (standings, game centres, Game Book PDF, Week 11 schedule, reserve
 # lists, trades, injuries page state) plus repository artifacts this desk reads read-only.

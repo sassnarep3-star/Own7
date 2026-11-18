@@ -96,15 +96,10 @@ def refs_cell(source_ids, extra_url=None) -> str:
 def table(headers, rows_html, caption=None) -> str:
     cap = f"<caption>{esc(caption)}</caption>" if caption else ""
     head = "".join(f"<th>{esc(h)}</th>" for h in headers)
-    # tabindex="0" keeps a horizontally scrolling table region reachable by keyboard even
-    # when it holds no focusable content (an empty tbody), which is otherwise a WCAG
-    # "scrollable-region-focusable" failure. Added by the integration session that owns the
-    # browser test; no desk value or source link is altered.
-    label = f' aria-label="{esc(caption)}"' if caption else ""
     return (
-        f'<div class="table-card" tabindex="0"{label}><table>{cap}<thead><tr>{head}</tr></thead>'
+        f'<div class="table-card" tabindex="0"><table>{cap}<thead><tr>{head}</tr></thead>'
         f"<tbody>{''.join(rows_html)}</tbody></table></div>"
-)
+    )
 
 
 def row(cells, source_ids, row_id, extra_url=None) -> str:

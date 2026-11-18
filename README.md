@@ -185,6 +185,30 @@ python nfl-readiness-1467fdf7/build.py --check
 python -m unittest discover -s nfl-readiness-1467fdf7/tests -v
 ```
 
+## New: Week 10 completion, weekly diff, 2026 rules (2026-11-18, session arena/03dcea07-own7)
+
+[`nfl-slate-03dcea07/site/index.html`](nfl-slate-03dcea07/site/index.html) closes the last open
+Week 10 item and turns the dated official reads into a rendered "what changed" view:
+
+- **The 14th Game Book (LAC at BAL).** The official Game Book PDF now publishes the Monday game
+  (Chargers 23, Ravens 20 — the season's 150th final). Week 10's venue, roof/surface, weather,
+  attendance, actual-starters (44 rows) and Not-Active capture is complete at **14/14**
+  (13 committed by the Game Book desk + this desk's W10-14, emitted in the same CSV schema).
+- **Weekly diff (DR-61).** Three dated official standings reads (2026-11-12 frozen,
+  2026-11-17, 2026-11-18) produce rendered per-club deltas; every nonzero delta is re-derived
+  from the finals between the reads (checks V2/V3 re-derive all 32 clubs' W/L/T/PCT/PF/PA/NET/
+  Home/Road — and Div/Conf from the 2026-11-17 baseline — with zero mismatches).
+- **2026 rules (DR-68).** The official 2026 rulebook table is quoted verbatim, including
+  Rule 6-1-6 "Permits the kicking team to declare an onside kick at any time during the game."
+- Flags SL01–SL06 (secondary-source disagreement on the onside rule; Week 11 report not yet
+  published at read time; spot-check scope; Game Book copyright notice; one unlabelled rendered
+  cell; frozen-corpus cross-scope note) are published on the desk's Flagged page.
+
+```sh
+python nfl-slate-03dcea07/build.py --check
+python -m unittest discover -s nfl-slate-03dcea07/tests -v
+```
+
 ## What this is now
 
 The landing page is an **NFL research workspace**. It originates its own lines from official NFL
