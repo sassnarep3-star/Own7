@@ -1,0 +1,1020 @@
+game_id,club,group,rank,slot,player,position,snaps,offense,defense,special_teams,source
+W10-11,LV,QB,1,1st string,F.Mendoza,QB,59,59,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,RB,1,1st string,A.Jeanty,RB,42,42,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,RB,2,2nd string,C.Heyward,FB,34,16,0,18,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,RB,3,3rd string,D.Laube,RB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,RB,4,4th string,M.Washington,RB,17,17,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,WR,1,1st string,T.Tucker,WR,52,52,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,WR,2,2nd string,J.Nailor,WR,51,51,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,WR,3,3rd string,J.Bech,WR,33,33,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,WR,4,4th string,D.Young,WR,19,1,0,18,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,WR,5,reserve,C.White,WR,7,4,0,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,TE,1,1st string,M.Mayer,TE,53,49,0,4,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,TE,2,2nd string,I.Thomas,TE,21,17,0,4,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,TE,3,3rd string,C.Runyon,TE,20,2,0,18,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,TE,4,4th string,B.Bowers,TE,11,11,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,OL,1,1st string,D.Glaze,T,62,59,0,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,OL,2,2nd string,K.Miller,T,62,59,0,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,OL,3,3rd string,S.Burford,G,62,59,0,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,OL,4,4th string,T.Zuhn,G,62,59,0,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,OL,5,reserve,T.Linderbaum,C,59,59,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,OL,6,reserve,C.Grant,T,3,0,0,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,OL,7,reserve,C.Rogers,G,3,0,0,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,OL,8,reserve,J.Powers-Johnson,G/C,3,0,0,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DL,1,1st string,M.Crosby,DE,57,0,53,4,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DL,2,2nd string,T.Hemingway,DT,42,0,35,7,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DL,3,3rd string,K.Paye,DE,39,0,39,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DL,4,4th string,A.Butler,DT,32,0,32,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DL,5,reserve,F.Fatukasi,DT,31,0,31,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DL,6,reserve,M.Koonce,DE,26,0,26,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DL,7,reserve,T.Keenan,DT,21,0,17,4,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DL,8,reserve,J.Pegues,DT,16,0,12,4,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,LB,1,1st string,N.Dean,LB,57,0,57,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,LB,2,2nd string,T.Eichenberg,LB,27,0,5,22,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,LB,3,3rd string,C.Lindenberg,LB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,LB,4,4th string,S.Olubi,LB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DB,1,1st string,T.Stukes,S,65,0,57,8,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DB,2,2nd string,E.Stokes,CB,52,0,52,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DB,3,3rd string,T.Johnson,CB,35,0,35,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DB,4,4th string,D.Porter,CB,30,0,30,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DB,5,reserve,H.Masses,CB,23,0,23,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DB,6,reserve,D.Luter,CB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DB,7,reserve,I.Pola-Mao,S,22,0,0,22,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,DB,8,reserve,J.McCoy,CB,12,0,9,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,ST,1,1st string,A.Cole,P,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,ST,2,2nd string,A.Ward,LS,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,LV,ST,3,3rd string,M.Gay,K,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,QB,1,1st string,D.Lock,QB,57,57,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,RB,1,1st string,Z.Charbonnet,RB,41,41,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,RB,2,2nd string,B.Russell,FB,34,12,0,22,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,RB,3,3rd string,J.Price,RB,17,16,0,1,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,RB,4,4th string,G.Holani,RB,1,0,0,1,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,WR,1,1st string,J.Smith-Nijgba,WR,43,43,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,WR,2,2nd string,C.Kupp,WR,35,35,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,WR,3,3rd string,R.Shaheed,WR,35,25,0,10,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,WR,4,4th string,I.Charles,WR,23,3,0,20,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,WR,5,reserve,T.Horton,WR,13,10,0,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,TE,1,1st string,A.Barner,TE,48,48,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,TE,2,2nd string,E.Saubert,TE,37,26,0,11,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,TE,3,3rd string,N.Kallerup,TE,36,26,0,10,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,OL,1,1st string,A.Bradford,G,61,57,0,4,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,OL,2,2nd string,G.Zabel,G,61,57,0,4,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,OL,3,3rd string,J.Sundell,C,61,57,0,4,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,OL,4,4th string,J.Jones,G/T,60,57,0,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,OL,5,reserve,B.Hart,T,44,44,0,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,OL,6,reserve,A.Lucas,T,14,13,0,1,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,OL,7,reserve,B.Stephens,G,4,0,0,4,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DL,1,1st string,B.Murphy,NT,45,0,42,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DL,2,2nd string,R.Mills,DT,30,0,24,6,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DL,3,3rd string,J.Reed,DE,29,0,26,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DL,4,4th string,M.Morris,DE,28,0,14,14,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DL,5,reserve,B.Pili,NT,12,0,12,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,LB,1,1st string,E.Jones,LB,62,0,59,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,LB,2,2nd string,D.Thomas,LB,39,0,39,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,LB,3,3rd string,D.Lawrence,LB,38,0,36,2,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,LB,4,4th string,D.Hall,LB,34,0,31,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,LB,5,reserve,U.Nwosu,LB,27,0,27,0,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,LB,6,reserve,D.Fowler,LB,21,0,20,1,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,LB,7,reserve,C.O'Toole,LB,20,0,5,15,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,LB,8,reserve,P.O'Connell,LB,19,0,1,18,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,LB,9,reserve,C.Surratt,LB,18,0,0,18,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,LB,10,reserve,T.Knight,LB,18,0,0,18,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DB,1,1st string,J.Love,S,62,0,59,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DB,2,2nd string,N.Emmanwori,S,60,0,57,3,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DB,3,3rd string,D.Witherspoon,CB,59,0,58,1,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DB,4,4th string,N.Pritchett,CB,28,0,12,16,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DB,5,reserve,R.Thomas,S,18,0,0,18,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,DB,6,reserve,T.Diggs,CB,17,0,9,8,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,ST,1,1st string,J.Myers,K,8,0,0,8,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,ST,2,2nd string,C.Stoll,LS,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+W10-11,SEA,ST,3,3rd string,M.Dickson,P,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,QB,1,1st string,J.McCarthy,QB,62,62,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,QB,2,2nd string,J.Winston,QB,3,3,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,RB,1,1st string,C.Skattebo,RB,58,58,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,RB,2,2nd string,P.Ricard,FB,13,13,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,RB,3,3rd string,D.Singletary,RB,10,5,0,5,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,RB,4,4th string,G.Desrosiers,RB,10,0,0,10,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,WR,1,1st string,M.Fields,WR,58,58,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,WR,2,2nd string,M.Nabers,WR,52,52,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,WR,3,3rd string,D.Mooney,WR,46,46,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,WR,4,4th string,C.Jones,WR,4,0,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,WR,5,reserve,J.Hyatt,WR,3,3,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,TE,1,1st string,I.Likely,TE,57,57,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,TE,2,2nd string,T.Johnson,TE,36,18,0,18,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,TE,3,3rd string,C.Manhertz,TE,23,14,0,9,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,OL,1,1st string,B.Hudson,C,69,65,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,OL,2,2nd string,F.Mauigoa,OL,69,65,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,OL,3,3rd string,J.Runyan,G,69,65,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,OL,4,4th string,J.Eluemunor,OL,68,64,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,OL,5,reserve,A.Thomas,T,65,65,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,OL,6,reserve,A.Stinnie,OL,5,1,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,OL,7,reserve,M.Mbow,OL,5,1,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DL,1,1st string,S.Harris,DL,49,0,45,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DL,2,2nd string,D.Reader,DL,47,0,47,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DL,3,3rd string,D.Alexander,DL,31,0,27,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DL,4,4th string,B.Jamison-Travis,DL,27,0,23,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,LB,1,1st string,A.Reese,LB,73,0,69,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,LB,2,2nd string,M.McFadden,LB,70,0,69,1,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,LB,3,3rd string,A.Carter,LB,62,0,62,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,LB,4,4th string,K.Thibodeaux,LB,56,0,52,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,LB,5,reserve,T.Ford,LB,32,0,10,22,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,LB,6,reserve,D.Smoot,LB,23,0,23,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,LB,7,reserve,C.Martin,LB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,LB,8,reserve,J.Kelly,LB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,LB,9,reserve,Z.Barnes,LB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DB,1,1st string,G.Newsome,CB,73,0,69,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DB,2,2nd string,J.Holland,S,70,0,69,1,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DB,3,3rd string,A.Washington,S,58,0,54,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DB,4,4th string,A.Phillips,CB,55,0,55,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DB,5,reserve,E.Campbell,DB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DB,6,reserve,N.Jones,CB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DB,7,reserve,T.Nubin,S,19,0,1,18,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DB,8,reserve,J.Pinnock,S,17,0,15,2,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,DB,9,reserve,C.Hood,CB,8,0,0,8,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,ST,1,1st string,B.Mann,LS,9,0,0,9,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,ST,2,2nd string,J.Stout,P,9,0,0,9,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,NYG,ST,3,3rd string,D.Zvada,K,8,0,0,8,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,QB,1,1st string,J.Daniels,QB,69,69,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,RB,1,1st string,R.White,RB,40,36,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,RB,2,2nd string,A.Ekeler,RB,30,30,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,RB,3,3rd string,R.Henry,RB,3,3,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,WR,1,1st string,A.Williams,WR,62,59,0,3,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,WR,2,2nd string,S.Diggs,WR,44,44,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,WR,3,3rd string,T.Burks,WR,42,42,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,WR,4,4th string,V.Jefferson,WR,31,24,0,7,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,WR,5,reserve,L.McCaffrey,WR,25,14,0,11,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,TE,1,1st string,C.Okonkwo,TE,41,41,0,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,TE,2,2nd string,J.Bates,TE,40,28,0,12,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,TE,3,3rd string,B.Sinnott,TE,36,24,0,12,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,OL,1,1st string,B.Coleman,T/G,73,69,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,OL,2,2nd string,C.Paul,G,73,69,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,OL,3,3rd string,J.Conerly,T,73,69,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,OL,4,4th string,N.Allegretti,C/G,73,69,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,OL,5,reserve,S.Cosmi,G,73,69,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,OL,6,reserve,A.Wylie,T/G,4,0,0,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DL,1,1st string,S.Tuttle,DT,40,0,34,6,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DL,2,2nd string,C.Omenihu,DE,38,0,38,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DL,3,3rd string,T.Settle,DT,33,0,27,6,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DL,4,4th string,J.Newton,DT,25,0,21,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DL,5,reserve,D.Wise,DE,21,0,21,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,LB,1,1st string,F.Luvu,LB,69,0,65,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,LB,2,2nd string,S.Styles,LB,69,0,65,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,LB,3,3rd string,K.Chaisson,LB,48,0,48,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,LB,4,4th string,O.Oweh,LB,48,0,48,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,LB,5,reserve,D.Armstrong,LB,29,0,25,4,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,LB,6,reserve,J.Josephs,LB,24,0,10,14,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,LB,7,reserve,J.Magee,LB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,LB,8,reserve,K.Medrano,LB,18,0,0,18,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,LB,9,reserve,A.Kaho,LB,16,0,0,16,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DB,1,1st string,N.Cross,S,65,0,65,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DB,2,2nd string,A.Robertson,CB,64,0,64,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DB,3,3rd string,J.Reaves,S,63,0,54,9,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DB,4,4th string,T.Amos,CB,62,0,62,0,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DB,5,reserve,Q.Martin,S,52,0,34,18,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DB,6,reserve,P.Butler,S,34,0,16,18,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DB,7,reserve,T.Owens,S,21,0,0,21,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DB,8,reserve,R.Douglas,CB,20,0,18,2,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DB,9,reserve,M.Sainristil,CB,14,0,0,14,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,DB,10,reserve,F.Moreau,CB,8,0,0,8,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,ST,1,1st string,D.Stevens,K,9,0,0,9,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,ST,2,2nd string,T.Ott,LS,8,0,0,8,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g01-WAS-NYG,WAS,ST,3,3rd string,T.Way,P,8,0,0,8,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,QB,1,1st string,J.Burrow,QB,63,63,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,QB,2,2nd string,J.Flacco,QB,3,3,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,RB,1,1st string,C.Brown,HB,48,48,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,RB,2,2nd string,S.Perine,HB,33,20,0,13,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,RB,3,3rd string,T.Brooks,HB,20,3,0,17,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,WR,1,1st string,J.Chase,WR,59,59,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,WR,2,2nd string,T.Higgins,WR,53,51,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,WR,3,3rd string,D.Meyers,WR,37,28,0,9,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,WR,4,4th string,C.Young,WR,31,29,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,WR,5,reserve,M.Tinsley,WR,8,6,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,TE,1,1st string,D.Sample,TE,55,42,0,13,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,TE,2,2nd string,M.Gesicki,TE,29,27,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,TE,3,3rd string,J.Endries,TE,25,13,0,12,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,TE,4,4th string,C.Grandy,TE,14,3,0,11,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,OL,1,1st string,O.Brown,T,73,66,0,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,OL,2,2nd string,T.Karras,C,73,66,0,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,OL,3,3rd string,A.Mims,T,70,63,0,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,OL,4,4th string,D.Fairchild,G,70,63,0,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,OL,5,reserve,J.Rivers,G,41,34,0,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,OL,6,reserve,D.Risner,G,32,32,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,OL,7,reserve,J.Bayer,G,11,4,0,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,OL,8,reserve,J.Foster,T,3,3,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DL,1,1st string,M.Murphy,DE,46,0,44,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DL,2,2nd string,B.Mafe,DE,42,0,42,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DL,3,3rd string,C.Johnson,DE,38,0,20,18,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DL,4,4th string,D.Lawrence,DT,36,0,34,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DL,5,reserve,B.Hill,DT,33,0,31,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DL,6,reserve,J.Allen,DT,25,0,25,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DL,7,reserve,T.Slaton,DT,21,0,21,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DL,8,reserve,D.Jenkins,DT,20,0,18,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DL,9,reserve,S.Stewart,DE,19,0,19,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,LB,1,1st string,B.Carter,LB,63,0,61,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,LB,2,2nd string,D.Knight,LB,51,0,51,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,LB,3,3rd string,J.Giles-Harris,LB,19,0,0,19,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,LB,4,4th string,J.Kiser,LB,16,0,0,16,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,LB,5,reserve,T.Davis,LB,15,0,2,13,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DB,1,1st string,J.Battle,S,65,0,61,4,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DB,2,2nd string,B.Cook,S,61,0,61,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DB,3,3rd string,D.Turner,CB,53,0,53,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DB,4,4th string,D.Hill,CB,52,0,50,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DB,5,reserve,J.Newton,CB,52,0,52,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DB,6,reserve,D.Ivey,CB,32,0,18,14,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DB,7,reserve,K.Davis,CB,22,0,8,14,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DB,8,reserve,P.Jules,S,18,0,0,18,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,DB,9,reserve,R.Yeast,S,12,0,0,12,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,ST,1,1st string,E.McPherson,K,14,0,0,14,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,ST,2,2nd string,R.Rehkow,P,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,CIN,ST,3,3rd string,W.Wagner,LS,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,QB,1,1st string,A.Rodgers,QB,50,50,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,QB,2,2nd string,M.Rudolph,QB,11,11,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,RB,1,1st string,R.Dowdle,RB,30,30,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,RB,2,2nd string,J.Warren,RB,23,23,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,RB,3,3rd string,L.Nichols,RB,22,9,0,13,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,RB,4,4th string,R.Nowakowski,FB,21,3,0,18,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,RB,5,reserve,T.Homer,RB,20,2,0,18,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,WR,1,1st string,G.Bernard,WR,58,58,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,WR,2,2nd string,D.Metcalf,WR,50,50,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,WR,3,3rd string,B.Smith,WR,49,47,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,WR,4,4th string,B.Skowronek,WR,26,10,0,16,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,WR,5,reserve,K.Wetjen,WR,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,TE,1,1st string,P.Freiermuth,TE,40,33,0,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,TE,2,2nd string,D.Washington,TE,32,30,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,TE,3,3rd string,R.Tonyan,TE,16,9,0,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,OL,1,1st string,B.Hoffman,G,63,61,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,OL,2,2nd string,M.Iheanachor,T,63,61,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,OL,3,3rd string,T.Fautanu,T,63,61,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,OL,4,4th string,Z.Frazier,C,61,61,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,OL,5,reserve,S.Anderson,OL,43,41,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,OL,6,reserve,M.McCormick,G,21,21,0,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,OL,7,reserve,D.Cook,T,2,0,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,OL,8,reserve,R.McCollum,C,2,0,0,2,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DL,1,1st string,C.Heyward,DT,45,0,40,5,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DL,2,2nd string,K.Benton,DT,40,0,36,4,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DL,3,3rd string,Y.Black,DL,39,0,30,9,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DL,4,4th string,D.Harmon,DT,32,0,27,5,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DL,5,reserve,K.Jobity,DL,13,0,0,13,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DL,6,reserve,G.Rubio,DE,9,0,4,5,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,LB,1,1st string,P.Queen,LB,66,0,66,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,LB,2,2nd string,P.Wilson,LB,66,0,61,5,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,LB,3,3rd string,J.Sawyer,LB,52,0,27,25,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,LB,4,4th string,A.Highsmith,LB,44,0,44,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,LB,5,reserve,N.Herbig,LB,40,0,28,12,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,LB,6,reserve,T.Watt,LB,40,0,40,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,LB,7,reserve,C.Bruener,LB,25,0,0,25,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,LB,8,reserve,C.Holcomb,LB,19,0,1,18,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DB,1,1st string,J.Brisker,S,66,0,66,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DB,2,2nd string,J.Ramsey,CB,66,0,66,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DB,3,3rd string,J.Dean,CB,65,0,65,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DB,4,4th string,R.Spears-Jennings,S,64,0,51,13,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DB,5,reserve,A.Samuel,CB,46,0,46,0,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DB,6,reserve,D.Everette,CB,35,0,28,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DB,7,reserve,B.Echols,CB,18,0,0,18,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,DB,8,reserve,D.Slaughter,DB,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,ST,1,1st string,C.Johnston,P,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,ST,2,2nd string,C.Kuntz,LS,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g02-PIT-CIN,PIT,ST,3,3rd string,C.Boswell,K,6,0,0,6,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,QB,1,1st string,J.Goff,QB,61,61,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,QB,2,2nd string,J.Dobbs,QB,10,10,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,RB,1,1st string,J.Gibbs,RB,49,49,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,RB,2,2nd string,S.Vaki,RB,38,18,0,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,RB,3,3rd string,J.Saylors,RB,26,6,0,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,WR,1,1st string,J.Williams,WR,56,56,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,WR,2,2nd string,A.St. Brown,WR,47,47,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,WR,3,3rd string,I.TeSlaa,WR,46,46,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,WR,4,4th string,T.Martin,WR,31,11,0,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,WR,5,reserve,D.Carter,WR,16,5,0,11,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,TE,1,1st string,S.LaPorta,TE,56,56,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,TE,2,2nd string,B.Wright,TE,48,39,0,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,TE,3,3rd string,T.Conklin,TE,22,22,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,OL,1,1st string,B.Miller,T,76,71,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,OL,2,2nd string,C.Mahogany,OL,76,71,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,OL,3,3rd string,J.Scruggs,OL,66,61,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,OL,4,4th string,T.Ratedge,OL,66,61,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,OL,5,reserve,P.Sewell,T,61,61,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,OL,6,reserve,L.Borom,OL,15,10,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,OL,7,reserve,M.Frazier,OL,15,10,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,OL,8,reserve,S.McLaughlin,C,10,10,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DL,1,1st string,D.Wonnum,DE,47,0,44,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DL,2,2nd string,A.McNeill,DL,44,0,42,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DL,3,3rd string,D.Moore,DE,43,0,40,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DL,4,4th string,S.Gill-Howard,DL,34,0,31,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DL,5,reserve,T.Lacy,DL,27,0,22,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DL,6,reserve,T.Williams,DL,21,0,19,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DL,7,reserve,E.O'Neill,DE,18,0,7,11,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DL,8,reserve,L.Onwuzurike,DL,18,0,17,1,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DL,9,reserve,A.Hutchinson,DE,9,0,9,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,LB,1,1st string,D.Barnes,LB,60,0,59,1,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,LB,2,2nd string,T.Nowaske,LB,55,0,33,22,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,LB,3,3rd string,K.Britt,LB,39,0,22,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,LB,4,4th string,M.Rodriguez,LB,36,0,34,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,LB,5,reserve,J.Bachie,LB,21,0,1,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,LB,6,reserve,O.Pappoe,LB,20,0,0,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DB,1,1st string,R.McCreary,CB,62,0,59,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DB,2,2nd string,B.Branch,DB,60,0,59,1,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DB,3,3rd string,C.Clark,S,60,0,57,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DB,4,4th string,R.Ya-Sin,CB,56,0,55,1,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DB,5,reserve,K.Dorsey,CB,39,0,21,18,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DB,6,reserve,C.Izien,DB,17,0,1,16,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DB,7,reserve,E.Rakestraw,CB,12,0,5,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DB,8,reserve,A.Cisco,S,10,0,5,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,DB,9,reserve,N.Whiteside,CB,10,0,7,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,ST,1,1st string,J.Bates,K,11,0,0,11,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,ST,2,2nd string,H.Hatten,LS,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,DET,ST,3,3rd string,J.Fox,P,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,QB,1,1st string,T.DeVito,QB,49,49,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,QB,2,2nd string,D.Maye,QB,10,10,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,RB,1,1st string,C.Kiner,RB,31,25,0,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,RB,2,2nd string,R.Gilliam,FB,30,13,0,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,RB,3,3rd string,L.Larison,RB,29,8,0,21,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,RB,4,4th string,R.Stevenson,RB,26,26,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,WR,1,1st string,M.Hollins,WR,54,54,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,WR,2,2nd string,D.Douglas,WR,38,38,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,WR,3,3rd string,A.Brown,WR,28,28,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,WR,4,4th string,K.Williams,WR,23,23,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,WR,5,reserve,E.Chism,WR,8,8,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,TE,1,1st string,E.Raridon,TE,37,37,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,TE,2,2nd string,H.Henry,TE,33,33,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,TE,3,3rd string,C.Latu,TE,24,1,0,23,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,OL,1,1st string,G.Van Roten,OL,61,59,0,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,OL,2,2nd string,M.Pryor,OL,61,59,0,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,OL,3,3rd string,J.Wilson,OL,55,53,0,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,OL,4,4th string,W.Campbell,T,53,53,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,OL,5,reserve,M.Moses,T,45,45,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,OL,6,reserve,C.Lomu,T,17,15,0,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,OL,7,reserve,A.Rupcich,G,8,6,0,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,OL,8,reserve,M.Bryant,T,8,6,0,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DL,1,1st string,M.Williams,DT,51,0,46,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DL,2,2nd string,C.Durden,DT,37,0,32,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DL,3,3rd string,Da.Jones,DT,35,0,30,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DL,4,4th string,J.Farmer,DT,32,0,27,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DL,5,reserve,L.Taylor,DL,26,0,24,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DL,6,reserve,C.Barmore,DT,22,0,22,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,LB,1,1st string,C.Elliss,LB,62,0,62,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,LB,2,2nd string,E.Ponder,LB,58,0,45,13,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,LB,3,3rd string,D.Muasau,LB,49,0,23,26,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,LB,4,4th string,R.Spillane,LB,48,0,48,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,LB,5,reserve,G.Jacas,LB,44,0,44,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,LB,6,reserve,Dr.Jones,LB,36,0,36,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,LB,7,reserve,N.Obiazor,LB,35,0,9,26,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,LB,8,reserve,E.Hunter,LB,29,0,7,22,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DB,1,1st string,M.Jones,CB,68,0,64,4,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DB,2,2nd string,C.Gonzalez,CB,64,0,64,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DB,3,3rd string,K.Byard,S,62,0,62,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DB,4,4th string,C.Woodson,S,59,0,57,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DB,5,reserve,C.Woods,CB,43,0,34,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DB,6,reserve,J.Reed,S,38,0,20,18,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DB,7,reserve,M.Brown,S,35,0,9,26,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,DB,8,reserve,K.Prunty,CB,27,0,9,18,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,ST,1,1st string,J.Ashby,LS,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,ST,2,2nd string,M.Wishnowsky,P,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g03-NE-DET,NE,ST,3,3rd string,A.Borregales,K,5,0,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,QB,1,1st string,M.Penix,QB,72,72,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,RB,1,1st string,B.Robinson,RB,51,51,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,RB,2,2nd string,K.Herbert,RB,32,21,0,11,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,WR,1,1st string,D.London,WR,59,59,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,WR,2,2nd string,J.Dotson,WR,52,52,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,WR,3,3rd string,O.Zaccheaus,WR,43,29,0,14,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,WR,4,4th string,C.Blair,WR,32,15,0,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,WR,5,reserve,B.Collins,WR,31,25,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,TE,1,1st string,K.Pitts,TE,55,55,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,TE,2,2nd string,C.Woerner,TE,48,32,0,16,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,TE,3,3rd string,N.Muse,TE,36,10,0,26,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,TE,4,4th string,A.Hooper,TE,12,11,0,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,OL,1,1st string,C.Levin,C/G,75,72,0,3,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,OL,2,2nd string,C.Lindstrom,G,75,72,0,3,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,OL,3,3rd string,J.Matthews,T,75,72,0,3,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,OL,4,4th string,M.Bergeron,OL,73,72,0,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,OL,5,reserve,J.Taylor,T,72,72,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,OL,6,reserve,E.Onianwa,T,3,0,0,3,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,OL,7,reserve,K.Hinton,OL,3,0,0,3,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,OL,8,reserve,A.Vorhees,G,2,0,0,2,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DL,1,1st string,C.Thomas,DE,45,0,45,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DL,2,2nd string,G.Dexter,DT,42,0,42,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DL,3,3rd string,B.Dorlus,DL,40,0,40,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DL,4,4th string,M.Smith,DL,38,0,32,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DL,5,reserve,L.London,DL,34,0,34,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DL,6,reserve,Z.Harrison,DL,25,0,25,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DL,7,reserve,C.Snowden,DE,21,0,21,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DL,8,reserve,Z.Smith,DE,17,0,17,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DL,9,reserve,J.Pearce,DE,16,0,16,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,LB,1,1st string,K.Daniels,LB,67,0,65,2,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,LB,2,2nd string,H.Perkins,LB,38,0,38,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,LB,3,3rd string,J.Woods,LB,15,0,15,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,LB,4,4th string,C.Harris,LB,7,0,7,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,LB,5,reserve,T.Quinn,LB,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,LB,6,reserve,Y.Abdullah,LB,5,0,5,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DB,1,1st string,D.Hellams,S,75,0,62,13,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DB,2,2nd string,X.Watts,S,68,0,65,3,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DB,3,3rd string,A.Terrell,CB,65,0,65,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DB,4,4th string,C.Henderson,CB,65,0,65,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DB,5,reserve,B.Bowman,CB,37,0,27,10,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DB,6,reserve,S.Brown,DB,26,0,26,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DB,7,reserve,J.Robinson,S,24,0,0,24,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DB,8,reserve,M.Ford,CB,24,0,0,24,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,DB,9,reserve,M.Hughes,CB,3,0,3,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,ST,1,1st string,J.Bailey,P,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,ST,2,2nd string,L.McCullough,LS,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,ATL,ST,3,3rd string,J.Moody,K,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,QB,1,1st string,P.Mahomes,QB,62,62,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,QB,2,2nd string,J.Fields,QB,4,4,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,RB,1,1st string,E.Johnson,RB,57,57,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,RB,2,2nd string,N.Carter,RB,14,8,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,WR,1,1st string,X.Worthy,WR,58,57,0,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,WR,2,2nd string,A.Armstrong,WR,38,17,0,21,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,WR,3,3rd string,J.Royals,WR,36,19,0,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,WR,4,4th string,R.Rice,WR,30,30,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,WR,5,reserve,C.Allen,WR,24,23,0,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,WR,6,reserve,J.Downs,WR,19,11,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,WR,7,reserve,J.De Jesus,WR,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,TE,1,1st string,N.Gray,TE,72,55,0,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,TE,2,2nd string,J.Briningstool,TE,40,17,0,23,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,TE,3,3rd string,T.Kelce,TE,20,20,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,TE,4,4th string,J.Wiley,TE,2,2,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,OL,1,1st string,K.Benson,T,71,65,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,OL,2,2nd string,K.Suamata,OL,71,65,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,OL,3,3rd string,C.Humphrey,C,69,64,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,OL,4,4th string,J.Ezeudu,OL,66,60,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,OL,5,reserve,M.Caliendo,OL,57,51,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,OL,6,reserve,H.Nourzad,OL,16,10,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,OL,7,reserve,Tr.Smith,G,15,14,0,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,OL,8,reserve,D.Pounds,T,10,5,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DL,1,1st string,G.Karlaftis,DE,63,0,59,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DL,2,2nd string,A.Gillotte,DE,58,0,54,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DL,3,3rd string,C.Jones,DT,55,0,55,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DL,4,4th string,R.Thomas,DE,55,0,48,7,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DL,5,reserve,F.Anudike-Uzomah,DE,35,0,35,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DL,6,reserve,K.Tonga,NT,20,0,16,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DL,7,reserve,B.Eason,DT,15,0,11,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DL,8,reserve,M.Harris,DT,12,0,12,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,LB,1,1st string,N.Bolton,LB,71,0,67,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,LB,2,2nd string,D.Tranquill,LB,57,0,53,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,LB,3,3rd string,J.Cochrane,LB,37,0,10,27,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,LB,4,4th string,C.McDonald,LB,26,0,1,25,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,LB,5,reserve,J.Bassa,LB,24,0,1,23,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DB,1,1st string,N.Williams,DB,77,0,72,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DB,2,2nd string,C.Conner,DB,68,0,67,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DB,3,3rd string,A.Gilman,S,64,0,63,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DB,4,4th string,C.Roland-Wallace,CB,57,0,57,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DB,5,reserve,J.Canady,DB,44,0,26,18,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DB,6,reserve,M.Delane,CB,41,0,40,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DB,7,reserve,K.Fulton,CB,37,0,31,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DB,8,reserve,X.Nwankpa,S,31,0,5,26,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,DB,9,reserve,J.Hicks,DB,26,0,9,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,ST,1,1st string,J.Winchester,LS,13,0,0,13,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,ST,2,2nd string,M.Araiza,P,13,0,0,13,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g04-KC-ATL,KC,ST,3,3rd string,H.Butker,K,12,0,0,12,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,QB,1,1st string,D.Watson,QB,68,68,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,RB,1,1st string,D.Sampson,RB,35,35,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,RB,2,2nd string,Q.Judkins,RB,32,32,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,RB,3,3rd string,C.McLaughlin,RB,1,0,1,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,WR,1,1st string,D.Boston,WR,65,58,0,7,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,WR,2,2nd string,K.Concepcion,WR,54,54,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,WR,3,3rd string,J.Jeudy,WR,37,37,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,WR,4,4th string,M.Corley,WR,37,21,0,16,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,WR,5,reserve,T.Wallace,WR,31,13,0,18,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,WR,6,reserve,I.Bond,WR,6,1,0,5,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,TE,1,1st string,H.Fannin,TE,59,59,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,TE,2,2nd string,B.Whiteheart,TE,48,26,0,22,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,TE,3,3rd string,Z.Mitchell-Paden,TE,21,2,0,19,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,TE,4,4th string,C.Ryan,TE,18,1,0,17,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,OL,1,1st string,A.Barber,T,74,68,0,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,OL,2,2nd string,S.Fano,T,74,68,0,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,OL,3,3rd string,T.Howard,T,74,68,0,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,OL,4,4th string,Z.Johnson,G,74,68,0,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,OL,5,reserve,E.Jenkins,C/G,68,68,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,OL,6,reserve,D.Jones,T,6,0,0,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,OL,7,reserve,L.Wypler,C,6,0,0,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,OL,8,reserve,Z.Zinter,G,6,0,0,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DL,1,1st string,M.Graham,DT,48,0,48,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DL,2,2nd string,I.McGuire,DE,47,0,46,1,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DL,3,3rd string,J.Verse,DE,46,0,42,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DL,4,4th string,M.Collins,DT,41,0,41,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DL,5,reserve,S.Williams,DE,37,0,19,18,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DL,6,reserve,S.Kamara,DT,29,0,25,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DL,7,reserve,D.Barnett,DE,23,0,20,3,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DL,8,reserve,A.Huntington,DT,21,0,12,9,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DL,9,reserve,M.Hall,DT,14,0,14,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,LB,1,1st string,C.Schwesinger,LB,71,0,67,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,LB,2,2nd string,Q.Williams,LB,62,0,62,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,LB,3,3rd string,E.Mascarenas-Arnold,LB,31,0,8,23,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,LB,4,4th string,W.Reid,LB,27,0,0,27,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DB,1,1st string,G.Delpit,S,71,0,67,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DB,2,2nd string,J.Pitre,S,68,0,68,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DB,3,3rd string,M.Harden,CB,59,0,53,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DB,4,4th string,D.Thomas,S,34,0,11,23,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DB,5,reserve,D.McMillon,S,28,0,1,27,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DB,6,reserve,T.Pride,CB,13,0,0,13,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,DB,7,reserve,M.Blackmon,CB,10,0,3,7,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,ST,1,1st string,A.Szmyt,K,11,0,0,11,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,CLV,ST,2,2nd string,C.Bojorquez,P,11,0,0,11,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,QB,1,1st string,C.Stroud,QB,67,67,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,RB,1,1st string,W.Marks,RB,30,30,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,RB,2,2nd string,D.Ogunbowale,RB,29,15,0,14,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,RB,3,3rd string,E.Demercado,RB,22,22,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,WR,1,1st string,N.Collins,WR,57,57,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,WR,2,2nd string,X.Hutchinson,WR,51,51,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,WR,3,3rd string,K.Boutte,WR,47,47,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,WR,4,4th string,T.Dell,WR,33,33,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,WR,5,reserve,N.Remigio,WR,11,0,0,11,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,TE,1,1st string,D.Schultz,TE,44,44,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,TE,2,2nd string,F.Moreau,TE,36,22,0,14,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,TE,3,3rd string,C.Stover,TE,19,0,0,19,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,TE,4,4th string,M.Klein,TE,17,8,0,9,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,OL,1,1st string,A.Ersery,T,71,67,0,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,OL,2,2nd string,E.Ingram,G,71,67,0,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,OL,3,3rd string,F.Nwaiwu,G,71,67,0,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,OL,4,4th string,T.Brown,T,71,67,0,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,OL,5,reserve,E.Brown,C/G,67,67,0,0,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,OL,6,reserve,B.Fisher,T,10,6,0,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,OL,7,reserve,J.Andrews,C,4,0,0,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,OL,8,reserve,N.Thomas,T,4,0,0,4,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DL,1,1st string,W.Anderson,DE,62,0,54,8,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DL,2,2nd string,J.Clowney,DE,54,0,52,2,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DL,3,3rd string,S.Rankins,DT,47,0,45,2,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DL,4,4th string,T.Togiai,DT,46,0,44,2,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DL,5,reserve,D.Robinson,DE,44,0,22,22,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DL,6,reserve,L.Hall,DT,34,0,28,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DL,7,reserve,N.Jones,DT,21,0,15,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DL,8,reserve,K.McDonald,DT,20,0,14,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,LB,1,1st string,J.Hansen,LB,75,0,66,9,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,LB,2,2nd string,H.To'oTo'o,LB,74,0,68,6,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,LB,3,3rd string,W.Woodaz,LB,29,0,0,29,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,LB,4,4th string,J.Hummel,LB,21,0,0,21,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,LB,5,reserve,C.Muma,LB,20,0,0,20,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DB,1,1st string,M.Stewart,S,73,0,65,8,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DB,2,2nd string,D.Stingley,CB,71,0,68,3,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DB,3,3rd string,K.Lassiter,CB,71,0,68,3,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DB,4,4th string,T.Smith,CB,29,0,0,29,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DB,5,reserve,J.Ingram,S,24,0,1,23,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DB,6,reserve,K.Ramsey,S,20,0,0,20,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,DB,7,reserve,R.Blankenship,S,14,0,2,12,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,ST,1,1st string,A.Brinkman,LS,11,0,0,11,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,ST,2,2nd string,K.Kroeger,P,11,0,0,11,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g05-HOU-CLE,HST,ST,3,3rd string,K.Fairbairn,K,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,QB,1,1st string,J.Love,QB,52,52,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,QB,2,2nd string,T.Taylor,QB,3,3,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,RB,1,1st string,C.Brooks,RB,39,26,0,13,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,RB,2,2nd string,K.Johnson,RB,14,14,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,RB,3,3rd string,M.Lloyd,RB,14,14,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,WR,1,1st string,M.Golden,WR,48,46,0,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,WR,2,2nd string,C.Watson,WR,47,47,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,WR,3,3rd string,J.Sturdivant,WR,25,9,0,16,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,WR,4,4th string,S.Williams,WR,24,20,0,4,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,WR,5,reserve,B.Melton,WR,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,WR,6,reserve,S.Moore,WR,3,0,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,TE,1,1st string,T.Kraft,TE,52,52,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,TE,2,2nd string,M.Redman,TE,30,21,0,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,TE,3,3rd string,J.Smith,TE,27,20,0,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,TE,4,4th string,D.Dabney,TE,11,3,0,8,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,OL,1,1st string,A.Belton,G/T,58,55,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,OL,2,2nd string,J.Morgan,T/G,58,55,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,OL,3,3rd string,J.Williams,G,58,55,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,OL,4,4th string,L.Tomlinson,G,58,55,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,OL,5,reserve,T.Glover,G/T,55,55,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,OL,6,reserve,M.Becton,G,6,3,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,OL,7,reserve,A.Banks,G,3,0,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DL,1,1st string,B.Sorrell,DE,53,0,34,19,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DL,2,2nd string,D.Dennis-Sutton,DE,46,0,34,12,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DL,3,3rd string,K.Brooks,DT,45,0,42,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DL,4,4th string,D.Wyatt,DT,42,0,42,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DL,5,reserve,B.Cox,DE,41,0,35,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DL,6,reserve,L.Van Ness,DE,41,0,37,4,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DL,7,reserve,C.McClellan,DT,39,0,32,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DL,8,reserve,A.Campbell,DT,32,0,25,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DL,9,reserve,J.Riley,DT,28,0,28,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,LB,1,1st string,T.Hopper,LB,77,0,67,10,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,LB,2,2nd string,I.McDuffie,LB,71,0,68,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,LB,3,3rd string,N.Niemann,LB,24,0,1,23,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,LB,4,4th string,K.Welch,LB,20,0,0,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DB,1,1st string,E.Williams,S,78,0,69,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DB,2,2nd string,X.McKinney,S,75,0,69,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DB,3,3rd string,K.Nixon,CB,69,0,69,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DB,4,4th string,C.Valentine,CB,58,0,55,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DB,5,reserve,J.Bullard,S,36,0,36,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DB,6,reserve,K.Hadden,CB,17,0,2,15,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DB,7,reserve,K.Oladapo,S,17,0,0,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DB,8,reserve,B.Cisse,CB,14,0,14,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,DB,9,reserve,B.St-Juste,CB,12,0,0,12,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,ST,1,1st string,D.Whelan,P,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,ST,2,2nd string,M.Orzech,LS,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,GB,ST,3,3rd string,T.Smack,K,6,0,0,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,QB,1,1st string,K.Cousins,QB,69,69,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,RB,1,1st string,J.Mason,RB,37,37,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,RB,2,2nd string,A.Jones,RB,30,30,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,RB,3,3rd string,M.Bredeson,FB,22,19,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,RB,4,4th string,D.Dallas,RB,19,2,0,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,WR,1,1st string,J.Jefferson,WR,63,63,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,WR,2,2nd string,T.Felton,WR,59,59,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,WR,3,3rd string,M.Price,WR,40,33,0,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,WR,4,4th string,J.Jones,WR,17,6,0,11,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,TE,1,1st string,B.Yurosek,TE,53,40,0,13,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,TE,2,2nd string,G.Bartholomew,TE,53,53,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,TE,3,3rd string,D.Culp,TE,13,0,0,13,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,OL,1,1st string,B.Brandel,C,75,69,0,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,OL,2,2nd string,J.Huber,G,75,69,0,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,OL,3,3rd string,W.Fries,G,75,69,0,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,OL,4,4th string,B.O'Neill,T,69,69,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,OL,5,reserve,C.Darrisaw,T,69,69,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,OL,6,reserve,C.Tiernan,T,9,3,0,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,OL,7,reserve,M.Jurgens,C,6,0,0,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,OL,8,reserve,R.Van Denmark,T,6,0,0,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DL,1,1st string,J.Redmond,DL,51,0,48,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DL,2,2nd string,L.Rodriguez,DL,40,0,37,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DL,3,3rd string,E.Williams,DL,29,0,21,8,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DL,4,4th string,C.Banks,DL,20,0,17,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DL,5,reserve,D.Orange,DL,10,0,7,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,LB,1,1st string,I.Pace,LB,57,0,42,15,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,LB,2,2nd string,E.Wilson,LB,55,0,55,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,LB,3,3rd string,D.Turner,LB,47,0,47,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,LB,4,4th string,J.Golday,LB,38,0,18,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,LB,5,reserve,A.Van Ginkel,LB,36,0,36,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,LB,6,reserve,K.Van Noy,LB,32,0,32,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,LB,7,reserve,C.Chambliss,LB,20,0,0,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,LB,8,reserve,B.Richter,LB,2,0,0,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,1,1st string,J.Metellus,S,55,0,55,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,2,2nd string,B.Murphy,CB,51,0,51,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,3,3rd string,I.Rodgers,CB,47,0,44,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,4,4th string,T.Jackson,S,44,0,41,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,5,reserve,J.Pierre,CB,34,0,27,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,6,reserve,H.Smith,S,27,0,27,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,7,reserve,J.Ward,S,17,0,0,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,8,reserve,J.ac.Thomas,S,17,0,0,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,9,reserve,J.ack.Thomas,S,17,0,0,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,10,reserve,Z.Vaughn,CB,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,DB,11,reserve,C.Demmings,CB,5,0,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,ST,1,1st string,W.Reichardt,K,13,0,0,13,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,ST,2,2nd string,A.DePaola,LS,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g06-MIN-GB,MIN,ST,3,3rd string,B.Thorson,P,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,QB,1,1st string,D.Jones,QB,59,59,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,RB,1,1st string,J.Taylor,RB,40,40,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,RB,2,2nd string,S.McGowan,RB,29,17,0,12,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,RB,3,3rd string,D.Giddens,RB,2,2,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,WR,1,1st string,L.Treadwell,WR,52,52,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,WR,2,2nd string,D.Burks,WR,38,34,0,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,WR,3,3rd string,A.Gould,WR,35,32,0,3,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,WR,4,4th string,A.Dulin,WR,27,13,0,14,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,WR,5,reserve,N.Westbrook-Ikhine,WR,23,11,0,12,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,TE,1,1st string,T.Warren,TE,51,51,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,TE,2,2nd string,A.Ogletree,TE,50,30,0,20,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,TE,3,3rd string,P.Brown,TE,28,13,0,15,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,OL,1,1st string,D.Tucker,G,63,59,0,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,OL,2,2nd string,J.Farmer,G,63,59,0,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,OL,3,3rd string,M.Goncalves,G,63,59,0,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,OL,4,4th string,T.Bortolini,C,59,59,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,OL,5,reserve,L.Tenuta,T,57,53,0,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,OL,6,reserve,B.Raimann,T,6,6,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,OL,7,reserve,S.Van Pran-Granger,C,4,0,0,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DL,1,1st string,A.Adebawore,DT,68,0,62,6,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DL,2,2nd string,L.Latu,DE,59,0,58,1,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DL,3,3rd string,G.Stewart,DT,56,0,46,10,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DL,4,4th string,J.Tuimoloau,DE,48,0,42,6,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DL,5,reserve,A.Key,DE,41,0,36,5,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DL,6,reserve,C.Curry,DE,31,0,13,18,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DL,7,reserve,T.Smith,DT,29,0,24,5,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DL,8,reserve,K.Givens,DT,24,0,24,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DL,9,reserve,G.Gumbs,DE,12,0,0,12,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,LB,1,1st string,C.Allen,LB,69,0,69,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,LB,2,2nd string,B.Boettcher,LB,59,0,53,6,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,LB,3,3rd string,A.Ajlake,LB,40,0,16,24,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,LB,4,4th string,T.Chambers,LB,23,0,0,23,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,LB,5,reserve,S.W.Weeks,LB,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DB,1,1st string,C.Bynum,S,75,0,69,6,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DB,2,2nd string,A.Haulcy,S,60,0,59,1,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DB,3,3rd string,J.Walley,CB,60,0,54,6,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DB,4,4th string,A.Gardner,CB,42,0,41,1,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DB,5,reserve,C.Ward,CB,35,0,35,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DB,6,reserve,K.Gushiken,CB,30,0,20,10,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DB,7,reserve,K.Harris,CB,30,0,28,2,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DB,8,reserve,H.Wohler,S,22,0,10,12,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,DB,9,reserve,J.Owens,S,18,0,0,18,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,ST,1,1st string,J.Bobenmoyer,LS,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,ST,2,2nd string,R.Sanchez,P,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,IND,ST,3,3rd string,S.Shrader,K,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,QB,1,1st string,K.McCord,QB,69,69,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,RB,1,1st string,O.Gordon,RB,49,49,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,RB,2,2nd string,D.Herman,FB,40,36,0,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,RB,3,3rd string,J.Wright,RB,17,12,0,5,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,RB,4,4th string,K.Allen,RB,14,2,0,12,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,WR,1,1st string,M.Washington,WR,65,59,0,6,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,WR,2,2nd string,C.Douglas,WR,58,58,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,WR,3,3rd string,K.Coleman,WR,34,34,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,WR,4,4th string,J.Tolbert,WR,16,11,0,5,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,WR,5,reserve,J.Reagor,WR,9,8,0,1,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,TE,1,1st string,G.Dulcich,TE,50,42,0,8,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,TE,2,2nd string,S.Traore,TE,29,6,0,23,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,TE,3,3rd string,W.Kacmarek,TE,29,20,0,9,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,OL,1,1st string,A.Jackson,T,74,69,0,5,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,OL,2,2nd string,J.Savaiinaea,G,74,69,0,5,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,OL,3,3rd string,K.Proctor,G/T,74,69,0,5,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,OL,4,4th string,P.Paul,T,74,69,0,5,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,OL,5,reserve,A.Meyer,C,67,67,0,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,OL,6,reserve,J.Kingston,G/T,20,10,0,10,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,OL,7,reserve,C.Godrick,T,5,0,0,5,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DL,1,1st string,C.Robinson,DE,50,0,50,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DL,2,2nd string,K.Grant,DL,45,0,41,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DL,3,3rd string,J.Uche,DE,44,0,44,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DL,4,4th string,J.Phillips,DL,36,0,32,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DL,5,reserve,K.Cooper,DL,34,0,30,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DL,6,reserve,M.Herring,DE,22,0,18,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DL,7,reserve,R.McGraw,DE,19,0,9,10,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DL,8,reserve,Z.Biggers,DL,12,0,11,1,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DL,9,reserve,J.Kromah,DE,6,0,0,6,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,LB,1,1st string,J.Rodriguez,LB,63,0,59,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,LB,2,2nd string,J.Brooks,LB,59,0,59,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,LB,3,3rd string,W.Gay,LB,25,0,20,5,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,LB,4,4th string,J.Woodard,LB,23,0,0,23,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,LB,5,reserve,S.Heyward,LB,19,0,0,19,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DB,1,1st string,C.Johnson,CB,69,0,59,10,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DB,2,2nd string,M.Taaffe,S,63,0,59,4,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DB,3,3rd string,D.Trader,S,59,0,59,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DB,4,4th string,K.Louis,S,44,0,25,19,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DB,5,reserve,J.Brents,CB,42,0,42,0,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DB,6,reserve,J.Marshall,CB,41,0,31,10,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DB,7,reserve,Z.Anderson,S,20,0,1,19,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DB,8,reserve,J.Wood,S,19,0,0,19,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,DB,9,reserve,J.Simpson,CB,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,ST,1,1st string,B.Pinion,P,13,0,0,13,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g07-MIA-IND,MIA,ST,2,2nd string,T.Addington,LS,8,0,0,8,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,QB,1,1st string,B.Young,QB,70,70,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,RB,1,1st string,C.Hubbard,RB,59,59,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,RB,2,2nd string,T.Etienne,RB,19,11,0,8,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,RB,3,3rd string,A.Tyus,RB,12,0,0,12,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,WR,1,1st string,J.Coker,WR,56,56,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,WR,2,2nd string,T.McMillan,WR,56,56,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,WR,3,3rd string,B.Tremayne,WR,29,12,0,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,WR,4,4th string,J.Metchie,WR,23,23,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,WR,5,reserve,X.Legette,WR,2,2,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,TE,1,1st string,M.Evans,TE,49,35,0,14,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,TE,2,2nd string,T.Tremble,TE,47,47,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,TE,3,3rd string,D.Waller,TE,43,43,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,TE,4,4th string,F.Franks,TE,19,2,0,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,OL,1,1st string,D.Lewis,G,75,70,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,OL,2,2nd string,M.Freeling,T,75,70,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,OL,3,3rd string,R.Hunt,G,75,70,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,OL,4,4th string,L.Fortner,C,70,70,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,OL,5,reserve,R.Walker,T,69,64,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,OL,6,reserve,S.Forsythe,T,15,10,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,OL,7,reserve,C.Bullock,T,5,0,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,OL,8,reserve,T.Simpkins,G,5,0,0,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DL,1,1st string,T.Wharton,DT,46,0,43,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DL,2,2nd string,D.Brown,DT,45,0,43,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DL,3,3rd string,L.Hunter,DT,16,0,15,1,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DL,4,4th string,B.Brown,DT,13,0,10,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DL,5,reserve,A.Hall,DT,5,0,2,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,LB,1,1st string,T.Dodson,LB,63,0,63,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,LB,2,2nd string,D.Lloyd,LB,59,0,59,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,LB,3,3rd string,J.Phillips,LB,55,0,55,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,LB,4,4th string,P.Jones,LB,51,0,48,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,LB,5,reserve,P.Umanmielen,LB,28,0,28,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,LB,6,reserve,J.Kuwatch,LB,24,0,4,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,LB,7,reserve,B.Martin-Scott,LB,20,0,0,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,LB,8,reserve,N.Hampton,LB,17,0,0,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,LB,9,reserve,T.Gipson,LB,15,0,11,4,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DB,1,1st string,C.Smith-Wade,CB,66,0,63,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DB,2,2nd string,M.Wilson,CB,66,0,63,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DB,3,3rd string,T.Moehrig,S,63,0,63,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DB,4,4th string,Z.Wheatley,S,63,0,63,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DB,5,reserve,C.Thornton,CB,36,0,32,4,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DB,6,reserve,N.Scott,S,32,0,28,4,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DB,7,reserve,I.Simmons,S,20,0,0,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DB,8,reserve,L.Ransom,S,20,0,0,20,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,DB,9,reserve,M.DeWalt,CB,13,0,0,13,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,ST,1,1st string,J.Jansen,LS,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,ST,2,2nd string,S.Martin,P,10,0,0,10,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,CAR,ST,3,3rd string,R.Fitzgerald,K,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,QB,1,1st string,T.Shough,QB,63,63,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,RB,1,1st string,A.Estime,RB,33,27,0,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,RB,2,2nd string,T.Etienne,RB,21,21,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,RB,3,3rd string,A.Kamara,RB,16,16,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,WR,1,1st string,C.Olave,WR,56,56,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,WR,2,2nd string,D.Vele,WR,55,55,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,WR,3,3rd string,J.Tyson,WR,45,45,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,WR,4,4th string,B.Lance,WR,13,9,0,4,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,WR,5,reserve,B.Brown,WR,11,2,0,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,TE,1,1st string,J.Johnson,TE,43,43,0,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,TE,2,2nd string,N.Fant,TE,32,28,0,4,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,TE,3,3rd string,O.Delp,TE,23,7,0,16,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,OL,1,1st string,C.Ruiz,G,66,63,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,OL,2,2nd string,D.Edwards,G,66,63,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,OL,3,3rd string,J.Wright,G,66,63,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,OL,4,4th string,K.Banks,T,66,63,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,OL,5,reserve,A.Richards,OL,52,51,0,1,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,OL,6,reserve,M.Murphy,T,15,12,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,OL,7,reserve,W.Sherman,G,9,6,0,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,OL,8,reserve,E.Kilty,T,2,0,0,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DL,1,1st string,C.Granderson,DE,60,0,54,6,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DL,2,2nd string,C.Young,DE,54,0,54,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DL,3,3rd string,V.Broughton,DL,46,0,42,4,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DL,4,4th string,K.Boyd,DL,44,0,39,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DL,5,reserve,N.Shepherd,DL,41,0,36,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DL,6,reserve,C.Wooden,DL,36,0,33,3,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DL,7,reserve,A.Jennings,DE,34,0,17,17,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DL,8,reserve,J.Ridgeway,DL,19,0,14,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DL,9,reserve,C.Jordan,DE,18,0,18,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DL,10,reserve,T.Wilson,DE,13,0,4,9,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,LB,1,1st string,K.Elliss,LB,70,0,70,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,LB,2,2nd string,D.Stutsman,LB,65,0,43,22,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,LB,3,3rd string,C.Rumph,LB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,LB,4,4th string,I.Stalbird,LB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,LB,5,reserve,P.Werner,LB,22,0,20,2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DB,1,1st string,K.McKinstry,CB,69,0,69,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DB,2,2nd string,J.Reid,S,60,0,55,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DB,3,3rd string,J.Blackmon,S,59,0,59,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DB,4,4th string,J.Howden,DB,51,0,29,22,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DB,5,reserve,J.Sanker,S,50,0,45,5,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DB,6,reserve,M.Emerson,CB,40,0,40,0,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DB,7,reserve,Q.Riley,CB,33,0,29,4,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,DB,8,reserve,D.Richardson,CB,13,0,0,13,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,ST,1,1st string,C.Smyth,K,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,ST,2,2nd string,R.Wright,P,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g08-CAR-NO,NO,ST,3,3rd string,Z.Wood,LS,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,QB,1,1st string,J.Allen,QB,54,54,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,QB,2,2nd string,K.Allen,QB,3,3,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,RB,1,1st string,J.Cook,RB,35,35,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,RB,2,2nd string,R.Davis,RB,22,12,0,10,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,RB,3,3rd string,T.Johnson,RB,13,10,0,3,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,WR,1,1st string,K.Shakir,WR,36,36,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,WR,2,2nd string,D.Moore,WR,33,33,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,WR,3,3rd string,K.Coleman,WR,30,30,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,WR,4,4th string,S.Bell,WR,20,20,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,WR,5,reserve,G.Dortch,WR,12,2,0,10,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,TE,1,1st string,D.Knox,TE,41,41,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,TE,2,2nd string,J.Hawes,TE,34,26,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,TE,3,3rd string,K.Latu,TE,31,13,0,18,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,TE,4,4th string,D.Kincaid,TE,26,26,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,OL,1,1st string,D.Dawkins,T,62,57,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,OL,2,2nd string,O.Torrence,G,62,57,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,OL,3,3rd string,A.Anderson,C/G,59,54,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,OL,4,4th string,C.McGovern,C/G,54,54,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,OL,5,reserve,S.Brown,T,54,54,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,OL,6,reserve,A.Corbett,G/C,9,4,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,OL,7,reserve,L.Cushenberry,C,8,3,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,OL,8,reserve,T.Grable,T/G,8,3,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DL,1,1st string,D.Walker,DL,55,0,47,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DL,2,2nd string,E.Oliver,DL,47,0,47,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DL,3,3rd string,L.Jackson,DL,35,0,26,9,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DL,4,4th string,T.Sanders,DL,28,0,27,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DL,5,reserve,D.Carter,DL,21,0,17,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,LB,1,1st string,T.Bernard,LB,60,0,60,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,LB,2,2nd string,T.Parker,LB,50,0,39,11,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,LB,3,3rd string,G.Rousseau,LB,46,0,42,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,LB,4,4th string,B.Chubb,LB,42,0,42,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,LB,5,reserve,K.Elarms-Orr,LB,40,0,25,15,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,LB,6,reserve,D.Williams,LB,38,0,32,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,LB,7,reserve,J.Solomon,LB,30,0,12,18,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,LB,8,reserve,M.Hoecht,LB,28,0,11,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,LB,9,reserve,J.Andreessen,LB,23,0,1,22,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DB,1,1st string,C.Bishop,S,72,0,68,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DB,2,2nd string,A.Hooker,S,71,0,71,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DB,3,3rd string,D.Igibinosun,CB,67,0,66,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DB,4,4th string,C.Benford,CB,53,0,53,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DB,5,reserve,J.Hancock,DB,52,0,35,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DB,6,reserve,M.Hairston,CB,36,0,23,13,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DB,7,reserve,D.Hamlin,S,34,0,17,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DB,8,reserve,D.Alford,CB,22,0,20,2,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,DB,9,reserve,S.Franklin,DB,22,0,0,22,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,ST,1,1st string,T.Doman,P,14,0,0,14,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,ST,2,2nd string,R.Ferguson,LS,8,0,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,BUF,ST,3,3rd string,T.Bass,K,6,0,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,QB,1,1st string,C.Klubnik,QB,37,37,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,QB,2,2nd string,G.Smith,QB,34,34,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,RB,1,1st string,B.Hall,RB,41,41,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,RB,2,2nd string,B.Allen,RB,34,34,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,RB,3,3rd string,I.Davis,RB,23,0,0,23,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,RB,4,4th string,K.Nwangwu,RB,8,0,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,RB,5,reserve,A.Beck,FB,2,2,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,WR,1,1st string,G.Wilson,WR,67,67,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,WR,2,2nd string,A.Mitchell,WR,62,62,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,WR,3,3rd string,I.Williams,WR,55,50,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,WR,4,4th string,O.Cooper,WR,24,1,0,23,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,WR,5,reserve,M.McClain,WR,19,1,0,18,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,TE,1,1st string,M.Taylor,TE,53,53,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,TE,2,2nd string,K.Sadiq,TE,29,29,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,TE,3,3rd string,J.Ruckert,TE,15,15,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,OL,1,1st string,A.Membou,T,75,71,0,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,OL,2,2nd string,J.Myers,C,75,71,0,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,OL,3,3rd string,J.Tippmann,C,75,71,0,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,OL,4,4th string,O.Fashanu,OL,75,71,0,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,OL,5,reserve,J.Meredith,OL,58,58,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,OL,6,reserve,D.Parham,OL,24,13,0,11,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,OL,7,reserve,C.Okorafor,OL,4,0,0,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DL,1,1st string,D.Bailey,DE,52,0,52,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DL,2,2nd string,D.Jackson,DL,52,0,47,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DL,3,3rd string,J.Heflin,DL,51,0,28,23,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DL,4,4th string,J.Briggs,DL,48,0,39,9,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DL,5,reserve,K.Enagbare,DE,43,0,34,9,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DL,6,reserve,W.McDonald,DE,38,0,33,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DL,7,reserve,J.Ossai,DE,35,0,27,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DL,8,reserve,H.Phillips,DL,34,0,30,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DL,9,reserve,P.Page,DL,4,0,0,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,LB,1,1st string,D.Davis,LB,61,0,56,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,LB,2,2nd string,J.Sherwood,LB,57,0,57,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,LB,3,3rd string,T.Reeder,LB,18,0,0,18,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DB,1,1st string,D.Belton,S,67,0,57,10,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DB,2,2nd string,A.Thomas,CB,62,0,57,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DB,3,3rd string,M.Fitzpatrick,S,57,0,57,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DB,4,4th string,B.Stephens,CB,55,0,55,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DB,5,reserve,M.Moore,DB,30,0,30,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DB,6,reserve,V.Payne,S,18,0,0,18,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DB,7,reserve,D.Ponds,CB,16,0,16,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DB,8,reserve,Q.Stiggers,CB,9,0,2,7,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,DB,9,reserve,N.Wright,DB,7,0,7,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,ST,1,1st string,T.Hennessy,LS,14,0,0,14,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,ST,2,2nd string,A.McNamara,P,8,0,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g09-BUF-NYJ,NYJ,ST,3,3rd string,J.Sanders,K,4,0,0,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,QB,1,1st string,T.Lawrence,QB,73,73,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,RB,1,1st string,B.Tuten,RB,51,51,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,RB,2,2nd string,L.Allen,RB,22,12,0,10,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,RB,3,3rd string,C.Rodriguez,RB,12,10,0,2,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,RB,4,4th string,A.Abdullah,RB,6,0,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,WR,1,1st string,J.Meyers,WR,59,59,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,WR,2,2nd string,P.Washington,WR,58,56,0,2,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,WR,3,3rd string,J.Cameron,WR,41,24,0,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,WR,4,4th string,Bri.Thomas,WR,35,35,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,TE,1,1st string,B.Strange,TE,57,57,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,TE,2,2nd string,N.Boerkircher,TE,42,36,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,TE,3,3rd string,Q.Morris,TE,29,6,0,23,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,TE,4,4th string,T.Koziol,TE,13,7,0,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,OL,1,1st string,E.Cleveland,OL,81,73,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,OL,2,2nd string,E.Pregnon,OL,81,73,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,OL,3,3rd string,W.Little,OL,81,73,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,OL,4,4th string,C.Van Lanen,OL,73,73,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,OL,5,reserve,J.Monheim,OL,41,33,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,OL,6,reserve,R.Hainsey,OL,40,40,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,OL,7,reserve,W.Milum,OL,14,6,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,OL,8,reserve,D.Faalele,OL,8,0,0,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DL,1,1st string,T.Walker,DE,58,0,53,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DL,2,2nd string,J.Hines-Allen,DE,53,0,48,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DL,3,3rd string,A.Armstead,DT,41,0,41,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DL,4,4th string,R.Orhorhoro,DT,34,0,29,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DL,5,reserve,M.Dickerson,DT,28,0,16,12,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DL,6,reserve,Bry.Thomas,DE,21,0,11,10,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DL,7,reserve,D.Godchaux,DT,17,0,17,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DL,8,reserve,D.Striggow,DE,8,0,2,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,LB,1,1st string,F.Oluokun,LB,62,0,57,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,LB,2,2nd string,D.Gardeck,LB,48,0,28,20,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,LB,3,3rd string,V.Miller,LB,44,0,43,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,LB,4,4th string,B.Combs,LB,22,0,1,21,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,LB,5,reserve,J.Mcleod,LB,21,0,0,21,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,LB,6,reserve,J.Tavai,LB,17,0,0,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DB,1,1st string,R.Lane,S,73,0,56,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DB,2,2nd string,A.Johnson,S,61,0,57,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DB,3,3rd string,M.Brown,CB,48,0,43,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DB,4,4th string,Jar.Jones,CB,38,0,35,3,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DB,5,reserve,J.Lewis,CB,24,0,24,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DB,6,reserve,Jay.Jones,CB,11,0,0,11,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DB,7,reserve,K.Merriweather,S,11,0,10,1,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,DB,8,reserve,J.Huskey,S,2,0,0,2,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,ST,1,1st string,T.Hunter,WR/CB,67,6,56,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,ST,2,2nd string,C.Little,K,16,0,0,16,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,ST,3,3rd string,L.Cooke,P,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,JAX,ST,4,4th string,R.Matiscik,LS,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,QB,1,1st string,C.Ward,QB,57,57,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,RB,1,1st string,T.Pollard,RB,41,41,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,RB,2,2nd string,J.Chestnut,RB,25,0,0,25,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,RB,3,3rd string,T.Spears,RB,16,16,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,WR,1,1st string,C.Dike,WR,63,54,0,9,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,WR,2,2nd string,E.Ayomanor,WR,54,54,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,WR,3,3rd string,X.Restrepo,WR,33,19,0,14,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,WR,4,4th string,W.Robinson,WR,20,20,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,WR,5,reserve,C.Ridley,WR,4,4,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,TE,1,1st string,G.Helm,TE,52,47,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,TE,2,2nd string,D.Bellinge,TE,28,28,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,TE,3,3rd string,D.Martin-Robinson,TE,23,1,0,22,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,TE,4,4th string,K.Granson,TE,9,0,0,9,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,OL,1,1st string,A.Mafi,G,62,57,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,OL,2,2nd string,C.Zavala,G,62,57,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,OL,3,3rd string,D.Moore,T,62,57,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,OL,4,4th string,A.Schlottmann,C,57,57,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,OL,5,reserve,J.Latham,T,57,57,0,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,OL,6,reserve,J.Hudson,T,6,1,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,OL,7,reserve,G.Dellinger,G,5,0,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,OL,8,reserve,P.Coogan,C,5,0,0,5,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DL,1,1st string,J.Johnson,DE,57,0,51,6,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DL,2,2nd string,J.Martin,DE,54,0,46,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DL,3,3rd string,T.Horne,DT,47,0,39,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DL,4,4th string,S.Thomas,DT,40,0,40,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DL,5,reserve,J.Franklin-Myers,DL,38,0,38,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DL,6,reserve,N.Stackhouse,DT,30,0,22,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DL,7,reserve,T.Jones,DE,29,0,4,25,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DL,8,reserve,K.Faulk,DE,24,0,24,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DL,9,reserve,O.Oladejo,DE,23,0,9,14,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DL,10,reserve,J.Laulu,DT,22,0,20,2,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,LB,1,1st string,C.Gray,LB,75,0,67,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,LB,2,2nd string,D.Mausi,LB,72,0,64,8,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,LB,3,3rd string,M.Diabate,LB,25,0,9,16,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,LB,4,4th string,D.Hampton,LB,17,0,0,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DB,1,1st string,C.Flott,CB,73,0,73,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DB,2,2nd string,Jo.Williams,CB,73,0,73,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DB,3,3rd string,K.Winston,S,73,0,73,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DB,4,4th string,A.Taylor,CB,61,0,61,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DB,5,reserve,T.Adams,S,55,0,55,0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DB,6,reserve,T.Burgess,S,34,0,9,25,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DB,7,reserve,I.Oliver,S,30,0,26,4,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DB,8,reserve,M.Robinson,CB,25,0,0,25,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,DB,9,reserve,M.Harris,CB,17,0,0,17,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,ST,1,1st string,J.Slyce,K,11,0,0,11,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,ST,2,2nd string,M.Cox,LS,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
+g10-JAX-TEN,TEN,ST,3,3rd string,T.Morstead,P,7,0,0,7,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
