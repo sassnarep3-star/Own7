@@ -2530,3 +2530,46 @@ The rebases advanced `origin/main` from `be2462d` through `764635c` (PR #60), `b
 ### Publication record
 
 PR [#64](https://github.com/sassnarep3-star/Own7/pull/64) merged into `main` at `2026-11-17T03:33:06Z`; merge commit `5bbf6f83f5971648277af078a16651c44e1144b0`. PR checks passed (recursive research/site audit and desktop/mobile/accessibility). Post-merge repository check run [44011008807](https://github.com/sassnarep3-star/Own7/actions/runs/44011008807) and GitHub Pages deployment [44011008076](https://github.com/sassnarep3-star/Own7/actions/runs/44011008076) both completed successfully against the merge commit. Live page verified at https://sassnarep3-star.github.io/Own7/nfl-assurance-9580ac3f/site/requirements.html with 20 rows and source links.
+
+---
+
+## Session arena/c815bdd2-own7 — integration audit, gap closure, verification (2026-11-18)
+
+### Claim (written and pushed before implementation)
+
+Session ID: `session-arena-c815bdd2-own7`. Branch: `arena/c815bdd2-own7` (fixed Arena branch; the
+`session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this
+session and all work must stay on it).
+
+Baseline at claim (measured, not assumed), merge commit `0b5f91a` on main: working tree clean;
+`python -m unittest discover -s tests` → **119 pass**; `python scripts/nfl_extract.py --check` →
+OK (32 standings rows, 20 injury rows, 14 fixtures, 0 flags).
+
+**Open PR observed at claim:** #57 (`arena/383626a6-own7`, head commit 2026-11-17T01:58:03Z,
+`mergeable: CONFLICTING`). Its claim is **more than 60 minutes old with no commits** (last commit
+is >24 h before this claim), so under the brief's takeover rule this session may take over the
+part of its scope that is still unimplemented. This session does **not** modify, push to, rebase or
+close PR #57; it is left untouched for its owner. Nothing from it is treated as landed.
+
+**Exclusive file scope for this session:** `nfl-integration-c815/**` (new directory, all files).
+**Additive lines only** in: `COORDINATION.md`, `README.md`, `scripts/build_site.py`,
+`scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`,
+`.github/workflows/check.yml`, `research/sources.json`, `docs/nfl-executive-summary.md`.
+No existing page, value, data file or test is overwritten or edited in place. Where an existing
+artefact disagrees with an official source, this session **flags** it here and on its own Flagged
+page; it does not patch another session's file.
+
+| ID | Task | Status | Owner | Files touched | Sources / verification | Notes |
+|---|---|---|---|---|---|---|
+| C1 | Claim + baseline replay | done | session-arena-c815bdd2-own7 | COORDINATION.md | Measured above | Committed + pushed before any implementation. |
+| C2 | Fresh official reads 2026-11-18 with retained verbatim evidence + SHA-256 | in progress | session-arena-c815bdd2-own7 | `nfl-integration-c815/evidence/**` | nfl.com via Arena `fetch_page` (direct HTTPS to nfl.com returns curl 000 in this sandbox, as every prior session recorded) | Standings, Week 11 results/schedule, injury report, official rules for open DR-68. |
+| C3 | Cross-desk contradiction sweep: compare the same official fact across every desk that publishes it and report disagreements | unclaimed | session-arena-c815bdd2-own7 | `nfl-integration-c815/**` | Read-only over other desks' committed data | Flags go to this board + this desk's Flagged page. |
+| C4 | Line-by-line verification of every published row against an official source; unverifiable cells left blank and flagged | unclaimed | session-arena-c815bdd2-own7 | `nfl-integration-c815/**` | nfl.com | Never infer. |
+| C5 | Close or advance the requirement gaps this session can actually verify | unclaimed | session-arena-c815bdd2-own7 | `nfl-integration-c815/**` | Official sources only | Anything that needs a rights decision stays open. |
+| C6 | Desk pages: overview, weekly diff, questions-and-answers, suggestions, flagged, sources, verification | unclaimed | session-arena-c815bdd2-own7 | `nfl-integration-c815/**` | Every tbody row carries a registered official source link | |
+| C7 | Additive integration: nav group, build step, manifest, source register, serve/browser/CI allowlists, README | unclaimed | session-arena-c815bdd2-own7 | additive lines only in the shared files listed above | | No existing page, value or test overwritten. |
+| C8 | Full battery green, PR, merge, Pages deploy evidence, record | unclaimed | session-arena-c815bdd2-own7 | COORDINATION.md, PR metadata | | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
+produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
+registered official source link; `git pull --rebase` before every push; small frequent commits.
