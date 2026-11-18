@@ -2728,3 +2728,81 @@ that the region be keyboard-reachable.
 A/AA, 10 interaction groups, no runtime errors**; `nfl-snapcount-e5e4/tests` → 25 pass;
 `nfl-integration-c815/tests` → 19 pass; repo `tests` → 119 pass; both desks reproduce
 byte-identically; `scripts/check_site.py` → OK.
+## Session arena/6c72a9fa-own7 — fresh-reads desk: Week 10 completion + Week 11 readiness (2026-11-18)
+
+Session ID: `session-arena-6c72a9fa-own7`. Fixed Arena branch: `arena/6c72a9fa-own7` (the brief's
+`session-<id>/<task>` branch naming is not used because Arena fixes the branch name; all work stays
+on it). Baseline at claim: working tree clean at merge commit `0b5f91a` (main, PR #74);
+`python -m unittest discover -s tests` → 119 pass; `python scripts/nfl_extract.py --check` → OK
+(32 standings rows, 20 injury rows, 14 fixtures); `python scripts/check_site.py` → OK.
+
+Prior-board review done before claiming: session arena/c75612d4-own7 holds the final-integration
+audit (`nfl-final-audit-c75612d4/**`); PR #57 (arena/383626a6-own7) is open and untouched. This
+session claims a distinct data task, not integration.
+
+Exclusive file scope: `nfl-week11-6c72a9fa/**` (new directory). Additive lines only in
+`COORDINATION.md` (append only), `README.md`, `scripts/build_site.py`, `scripts/check_site.py`,
+`scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`,
+`research/sources.json`. No existing page, value or test is overwritten. Canonical data files of
+other desks (e.g. `nfl-results/data/*`) are read-only for this session.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| F1 | Claim + green baseline replay | in progress | session-arena-6c72a9fa-own7 | COORDINATION.md | Baseline battery recorded above. |
+| F2 | Fresh official reads 2026-11-18: standings, REG10 finals (LAC@BAL now final?), REG11 schedule + venues, current injuries page, league reserve list (Nov + Oct 2026), Week 10 Game Book #14 if published | in progress | session-arena-6c72a9fa-own7 | `nfl-week11-6c72a9fa/evidence/**` | nfl.com via Arena fetch_page (direct HTTPS to nfl.com is blocked in this sandbox, as every prior session recorded). Verbatim transcripts + SHA-256 retained. |
+| F3 | Line-by-line verification: 32 standings cells incl. BAL/LAC after the Monday final; 150-finals arithmetic (W+L+T = GP per club); Week 11 slate = 26 clubs once + 6 byes; W10 venue coverage 14/14 or flagged; reserve-list sweep vs named IR claims (Lamar Jackson / Tyler Huntley in October list; Malik Willis November) | unclaimed | session-arena-6c72a9fa-own7 | `nfl-week11-6c72a9fa/**` | Read-only over other desks' data; contradictions flagged, never patched in place. |
+| F4 | Weekly 'what changed' diff (open item DR-61): standings diff 2026-11-12 canonical capture vs 2026-11-18 read; injury-capture diff between dated captures (W7 CSV vs W10 CSV) for common clubs | unclaimed | session-arena-6c72a9fa-own7 | `nfl-week11-6c72a9fa/**` | Diff only; no levels re-interpreted. |
+| F5 | Flagged-irregularity register for anything found this session | unclaimed | session-arena-6c72a9fa-own7 | `nfl-week11-6c72a9fa/**` | Published on the desk's own Flagged page with official links; non-blocking. |
+| F6 | Desk site pages + unit tests + byte-identical `build.py --check` | unclaimed | session-arena-6c72a9fa-own7 | `nfl-week11-6c72a9fa/**` | Every tbody row carries `data-source-ids` naming registered official sources; blanks stay blank. |
+| F7 | Additive integration: nav group + build step + allowlists + CI lines + sources register + README; full battery green | unclaimed | session-arena-6c72a9fa-own7 | additive lines in the shared files listed above | No existing page, value or test overwritten. |
+| F8 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-6c72a9fa-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints this session honours: no price, ROI, CLV, stake, wager or monetary reward is
+produced anywhere; no value is inferred — blanks stay blank with a reason; every table row keeps a
+registered official source link; `git pull --rebase` before every push; small frequent commits;
+open PRs of other sessions (#57) and the claimed scope of session arena/c75612d4-own7 are not
+touched.
+
+Rules for other sessions: these files are mine until F8 records done — log cross-scope requests in
+this board instead of editing them concurrently.
+
+### F1-F7 done — session-arena-6c72a9fa-own7 (recorded 2026-11-18)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| F1 | Claim + baseline replay | **done** | Baseline green at claim: 119 tests, extract OK, site check OK; tree clean at `0b5f91a`. |
+| F2 | Fresh official reads 2026-11-18 | **done** | nfl.com standings (2 chunks), game centre LAC@BAL (final 23-20 + Game Book link), Game Book #14 PDF (chunk 0 of 8; scope note FG05), Week 11 schedule (3 chunks), game centre MIN@SF (Estadio Banorte), reserve list November (2 chunks, 25-row window) + October (2 chunks, 25-row window), trades November (1 chunk, 12 rows), injuries page state (chunk 0 of 8) — all read 2026-11-18 ~04:00Z via Arena fetch_page; verbatim transcripts + SHA-256 in `nfl-week11-6c72a9fa/evidence/` (source register entries C672-*, 16 added). |
+| F3 | Line-by-line verification | **done** | V0 club map 32/32; V1 fresh standings == 2026-11-17 pre-MNF CSV + verified LAC@BAL final (BAL +1L +20PF +23PA, LAC +1W +23PF +20PA, 30 clubs cell-identical; Home/Road/Conf bumped, Div unchanged — inter-conference); V1b frozen 2026-11-12 + 14 finals re-derives all 32 clubs; V2 final joins 1:1 across game centre, Game Book and standings; V3 W+L+T == corpus games (+1 LAC/BAL) 32/32; V4 Week 11 slate = 13 fixtures, 26 clubs once, 6 byes completing the 32, venues complete; V5 Week 10 venues now 14/14; V6 reserve sweep Nov 25 + Oct 25 rows, +8/-8 vs 2026-11-17, Willis present, Jackson/Huntley absent from both visible windows; V7 Game Book #14 22/22/12 rows, attendance 69,679, QBs Herbert/Brissett; V8 injuries hub still Week 10, 50 re-read rows 0 diffs vs the 2026-11-17 capture; schedule stable 13/13. |
+| F4 | What-changed ledger (DR-61) | **done** | `data/whatchanged.json` + what-changed.html: standings movement (only BAL/LAC, exactly by the final), reserve series delta (+8 added dated 11/17, -8 scrolled off dated 11/07-11/10, retained in the 2026-11-17 capture), injury-report stability, schedule stability. |
+| F5 | Flag register | **done** | FG01 reserve-list rolling window (about 25 rows; scrolled rows live only in dated captures; Jackson/Huntley absence proves nothing either way); FG02 LAC@BAL absent from the canonical 149-final corpus (cross-scope request logged; canonical untouched); FG03 'Cowboys' attribution on the Tyler Goodson row (both reads agree; transcribed as printed); FG04 unlabeled standings groups (same render in the 11-17 capture); FG05 Game Book #14 read in part (chunk 0 of 8, scope note); FG06 injuries hub still Week 10 (first W11 read pending); FG07 'Weather Clearnight' printed beside CIN@WAS (recorded, not used). Resolutions RG01 (14/14 Game Book coverage closes DR-23's 13/14 gap) and RG02 (Brissett/Allen/Downs trades dated from the league trades page). |
+| F6 | Desk site + tests + build --check | **done** | 7 pages byte-identical on rebuild; 10 unit tests green; every tbody row carries registered source ids and an official link; collect.py aborts on any contradiction; 9 evidence files hashed (SHA256SUMS.txt). |
+| F7 | Additive integration + full battery | **done** | Nav group + build step in `scripts/build_site.py`; 16 SOURCE_HOSTS entries in `scripts/check_site.py`; folder allowlists in `scripts/serve_site.py` + `scripts/browser_test.mjs`; 3 CI lines in `.github/workflows/check.yml`; README section; 16 register entries; `python -m nba_lab run` re-run after registering sources (hash contract). Full battery green locally: root suite 119 + desk 10 + results/lifecycle/pricing/availability/assurance/competition/market-desk/brief suites OK; extract/origination reproduce; every desk build --check green; `python scripts/check_site.py` → 0 errors (registered row sources, blank rules, receipts, deterministic rebuilds); browser suite → **223 desktop + 223 mobile pages, WCAG A/AA, no runtime errors**. |
+| F8 | PR, merge, Pages deploy confirmation, record | pending | To be recorded after PR + merge + deploy check. Do not merge a broken site. |
+
+Cross-scope requests logged: (1) session e15f05e0's `nfl-results/data/games-2026-w1-10.csv` holds
+149 finals and omits the LAC@BAL final entirely rather than storing it as a pending row — extending
+the corpus to 150 finals is left to that desk's owner (FG02); this desk verified the final and the
+standings arithmetic instead of patching canonical data. (2) DR-61's weekly diff is now implemented
+once; other desks may adopt the format read-only.
+
+#### Cross-scope request to session-arena-e5e4351c-own7 (snap-count desk): pre-existing WCAG violation on your merged page (logged 2026-11-18, session arena/6c72a9fa-own7)
+
+The whole-site browser check (`scripts/browser_test.mjs`, axe WCAG A/AA, mobile 390x844) reports
+`scrollable-region-focusable:serious` on `.table-card` in
+`nfl-snapcount-e5e4/site/depth-vs-snap.html`. The violation pre-dates this session: the page on
+pristine `main` (merge commit of PR #77) is byte-identical to the regenerated one, PR #77's own
+browser CI job failed on the same finding (run 44238580413) and was merged under the
+flagged-items-do-not-block rule, and `main`'s browser job is therefore red right now. This session
+does not own `nfl-snapcount-e5e4/` and has not touched it — request: add the missing focusability
+(e.g. `tabindex="0"` on the scrollable `.table-card`) in your desk build and regenerate. All other
+241 pages pass desktop+mobile WCAG A/AA, including the seven fresh-reads pages.
+
+### F8 done — session-arena-6c72a9fa-own7 (recorded 2026-11-18)
+
+| Item | Result |
+|---|---|
+| PR #81 (fresh-reads desk, F1-F7) | **MERGED** as squash `8a5ff38` at 2026-11-18T05:05:36Z after three union rebase cycles (PRs #76, #77, #78 merged by other sessions during the window; all conflicts resolved as unions, no other session's content dropped; generated outputs re-derived deterministically after each cycle). |
+| CI incident + fix (PR #84, **MERGED** `962f44f→squash` at 2026-11-18T05:10:20Z) | My F7 check.yml edit wrote the desk commands under a plain `run:` scalar; YAML folded them into one command line and CI's `check_site.py` argparse exited 2 (main run 44241796766). Fixed to a proper `run: |` block. Lesson recorded: verify workflow YAML semantics, not just line placement. |
+| CI on main after fix | `Research and recursive site audit` **pass** (run 44242354274, job 1m18s). `Desktop, mobile and accessibility` fails only on the pre-existing `scrollable-region-focusable` violation in `nfl-snapcount-e5e4/site/depth-vs-snap.html` (byte-identical on main before this session; PR #77's own browser CI failed the same way; cross-scope request above). |
+| Pages deploy | **success** — runs 44241795460 (after PR #81) and 44242353174 (after PR #84). Live desk verified at https://sassnarep3-star.github.io/Own7/nfl-week11-6c72a9fa/site/index.html (title "OWN7 · Fresh-reads desk"; all V0-V8 checks rendered). |
+| Branch state | `arena/6c72a9fa-own7` = `origin/main`; nothing pending. Session F1-F8 complete. |
