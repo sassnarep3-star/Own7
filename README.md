@@ -243,6 +243,36 @@ python nfl-readiness-e7ef/build.py --check     # byte-identical desk pages
 python -m unittest discover -s nfl-readiness-e7ef/tests -t .   # 13 tests
 ```
 
+## New: NFL snap-count / playing-time desk (2026-11-18, session arena/e5e4351c-own7)
+
+A new desk captures the official per-player **Playtime Percentage** table (snap counts and snap
+share on Offense, Defense and Special Teams) from all 13 played Week 10 NFL Game Books, and
+derives the measurable starter/backup split from playing time. This resolves four open brief
+requirements: R11 (model depth from playing time, not jersey order), R31 (capture official snap
+counts), R52 (the snap count is the official depth-order source) and R56 (snap counts as the
+starter proxy where a printed depth chart is unavailable). Depth order here is ranked by snap
+count only - never by jersey number, experience or salary.
+
+| Page | What it answers |
+|---|---|
+| [`nfl-snapcount-e5e4/site/index.html`](nfl-snapcount-e5e4/site/index.html) | Desk overview: 13 Game Books, 1,217 snap records, playing-time depth |
+| [`nfl-snapcount-e5e4/site/snap-records.html`](nfl-snapcount-e5e4/site/snap-records.html) | Per-game snap records: the verbatim snap counts and share for every player |
+| [`nfl-snapcount-e5e4/site/position-group-shares.html`](nfl-snapcount-e5e4/site/position-group-shares.html) | Position-group snap shares: each group's share of a team's snaps per phase |
+| [`nfl-snapcount-e5e4/site/playtime-depth.html`](nfl-snapcount-e5e4/site/playtime-depth.html) | Playing-time depth: every player ranked by snaps; rank 1 = starter |
+| [`nfl-snapcount-e5e4/site/replacement-depth.html`](nfl-snapcount-e5e4/site/replacement-depth.html) | Replacement depth: who is behind each starter, by snaps played |
+| [`nfl-snapcount-e5e4/site/depth-vs-snap.html`](nfl-snapcount-e5e4/site/depth-vs-snap.html) | Why the printed-depth cross-reference is a published zero-row gap |
+| [`nfl-snapcount-e5e4/site/flagged.html`](nfl-snapcount-e5e4/site/flagged.html) | 5 flags: the "(Unofficial)" labels, the zero-row gap, the missing 14th game, 2 dedup notes |
+
+Source: the official NFL Game Book PDFs linked from the [NFL Game Centre](https://www.nfl.com/games/).
+Four of the thirteen Playtime Percentage tables are labelled "(Unofficial)" inside their PDFs;
+the label is carried verbatim on each row. No price, ROI, CLV, stake or wager is produced.
+
+```sh
+python nfl-snapcount-e5e4/build.py --check      # byte-identical data artefacts
+python nfl-snapcount-e5e4/build_site.py --check  # byte-identical desk pages
+python -m unittest discover -s nfl-snapcount-e5e4/tests -v   # 25 tests
+```
+
 ## Skill & availability desk (2026-11-14)
 
 New self-contained desk at `nfl-skill-cfdd/`, published at

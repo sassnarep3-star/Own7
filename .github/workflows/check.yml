@@ -87,6 +87,9 @@ jobs:
           python nfl-week11-4c7d/build_site.py --check
           python nfl-week11-4c7d/check.py --check
           python -m unittest discover -s nfl-week11-4c7d/tests -v
+          python nfl-snapcount-e5e4/build.py --check
+          python nfl-snapcount-e5e4/build_site.py --check
+          python -m unittest discover -s nfl-snapcount-e5e4/tests -v
       - name: Committed artifacts must already be current
         run: |
           git status --porcelain

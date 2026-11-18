@@ -2533,6 +2533,69 @@ PR [#64](https://github.com/sassnarep3-star/Own7/pull/64) merged into `main` at 
 
 ---
 
+## Session arena/e5e4351c-own7 — NFL snap-count / playing-time desk (R11, R31, R52, R56)
+
+### Claim (before implementation)
+
+Session ID: `session-arena-e5e4351c-own7`. Branch: `arena/e5e4351c-own7` (fixed Arena branch; all work
+stays on it). Baseline at claim: working tree clean at merge commit `0b5f91a` (main, PR #74).
+
+**Scope.** The brief's requirements R11 ("Do not model depth from jersey order; model it from playing
+time"), R31 ("Capture official inactive lists and snap counts"), R52 ("Resolve the depth-order source
+... derive depth from snap counts if an official snap-count source exists") and R56 ("Use snap counts
+as the starter proxy when the depth chart is unavailable") are still **open** in the readiness
+crosswalk. The official NFL Game Book publishes a per-player **Playtime Percentage** table (snap
+counts + snap share on Offense/Defense/Special Teams). This desk captures that official data, derives
+the measurable starter/backup split from playing time, and resolves the "cannot be confirmed, only
+suspected" backup-replacement problem the brief flags. No value is inferred; blanks stay blank with a
+reason.
+
+Exclusive file scope: `nfl-snapcount-e5e4/**` (new directory). Additive lines only in
+`COORDINATION.md`, `README.md`, `scripts/build_site.py`, `scripts/check_site.py`,
+`scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`,
+`research/sources.json`. No existing page, value or test is overwritten. Open PR #57
+(`arena/383626a6-own7`, `nfl-readiness/`) and every merged desk are not touched.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|----|------|--------|-------|---------------|----------------------|
+| S1 | Claim + green baseline replay | in progress | session-arena-e5e4351c-own7 | COORDINATION.md | Baseline battery recorded below. |
+| S2 | Capture official snap counts (Playtime Percentage) from all 13 Week 10 NFL Game Books; retain verbatim raw with hashes | **done** | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/raw/**`, `evidence/**` | 13 Game Book Playtime Percentage tables captured verbatim; raw/g01..g13-*.txt committed with SHA-256. 1,217 snap records. |
+| S3 | Build desk: per-game snap records, per-team position-group snap shares, playing-time starter/backup split, replacement-depth view, depth-vs-snap cross-reference | **done** | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | `build.py` emits snap-records.csv (1,217), position-group-shares.csv (462), playtime-depth.csv (1,848), replacement-depth.csv (1,386), depth-vs-snap.csv (0-row gap). Depth ranked by snap count only. |
+| S4 | Flagged-irregularity register for anything found this session | **done** | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | 5 flags: SN-F01 (4 Unofficial labels), SN-F02 (0-row depth-vs-snap gap), SN-F03 (W10-14 missing), SN-DUP-04/05 (2 dedup rows). Published on flagged.html. |
+| S5 | Desk site pages + unit tests + byte-identical `build.py --check` | **done** | session-arena-e5e4351c-own7 | `nfl-snapcount-e5e4/**` | 11 site pages; 25 unit tests OK; `build.py --check` + `build_site.py --check` byte-identical. |
+| S6 | Additive integration: nav group + build step, check lines, serve/browser allowlists, sources register, README section; full battery green | **done** | session-arena-e5e4351c-own7 | additive lines in the shared files listed above | nav group + build step + manifest auxiliary_pages (11) + serve/browser allowlists + SOURCE_HOSTS (SN-*) + CI test lines + README section. `check_site.py` OK (267 sources, 0 errors); root 119 tests OK. |
+| S7 | PR, merge, Pages deploy confirmation, record in this board | unclaimed | session-arena-e5e4351c-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Standing constraints: no price, ROI, CLV, stake, wager or monetary reward is produced anywhere; every
+table row keeps a registered official source link; `git pull --rebase` before every push; small
+frequent commits; open PR #57 is not touched.
+
+### S1 baseline replay (recorded at claim)
+
+- `python -m unittest discover -s tests` → **119 tests, OK** (2.560s).
+- `python scripts/check_site.py` → **OK**: recursive site, fragments, registered row sources, blank
+  rules, receipts and deterministic builds; 264 registered sources, 0 errors.
+- `git pull --rebase origin arena/e5e4351c-own7` → remote branch did not yet exist (first push);
+  push created `arena/e5e4351c-own7`. No other session's work touched.
+
+### Completion record (S2–S6, 2026-11-18)
+
+- **S2** — all 13 played Week 10 Game Book Playtime Percentage tables captured verbatim into
+  `nfl-snapcount-e5e4/raw/g01..g13-*.txt` with SHA-256 hashes. 1,217 player-phase snap records.
+- **S3** — `build.py` emits `snap-records.csv` (1,217), `position-group-shares.csv` (462),
+  `playtime-depth.csv` (1,848), `replacement-depth.csv` (1,386), `depth-vs-snap.csv` (header-only,
+  0-row gap). Depth is ranked by snap count only — never jersey number, experience or salary.
+- **S4** — 5 flags: SN-F01 (4 tables labelled "(Unofficial)" in their PDFs), SN-F02 (0-row
+  depth-vs-snap gap), SN-F03 (W10-14 LAC@BAL has no Game Book), SN-DUP-04/05 (2 rows repeated by
+  PDF pagination, deduped). Non-blocking; published on `flagged.html`.
+- **S5** — 11 site pages; 25 unit tests OK; `build.py --check` and `build_site.py --check` both
+  byte-identical.
+- **S6** — additive integration: nav group + build step + 11 manifest auxiliary_pages +
+  serve/browser allowlists + SOURCE_HOSTS (SN-NFL-GAMEBOOK-PDF, SN-NFL-GAMECENTER, SN-CLUB-DEPTH) +
+  CI test lines + README section. `python scripts/check_site.py` → **OK** (267 registered sources,
+  0 errors); root `python -m unittest discover -s tests` → **119 tests OK**.
+- No price, ROI, CLV, stake, wager or monetary reward produced anywhere. Open PR #57 untouched.
+
 ## Session arena/c815bdd2-own7 — integration audit, gap closure, verification (2026-11-18)
 
 ### Claim (written and pushed before implementation)
@@ -2632,6 +2695,37 @@ branch was touched and no other session's commits were rewritten.
 **Constraint audit.** No price, ROI, CLV, stake, wager or monetary reward is published anywhere on
 this desk. Every table row keeps a registered official source link. No status was upgraded; no
 value was inferred; blanks stay blank with a reason. PR #57 remains untouched.
+
+### Post-merge confirmation (session-arena-c815bdd2-own7)
+
+- **Post-merge CI on `335e6b4` is fully green:** run
+  [44237178733](https://github.com/sassnarep3-star/Own7/actions/runs/44237178733) — both jobs
+  `success` ("Research and recursive site audit", "Desktop, mobile and accessibility").
+- **Pages deployment** [44237177935](https://github.com/sassnarep3-star/Own7/actions/runs/44237177935) — `success`.
+- **Live content verified by read**, not assumed:
+  - https://sassnarep3-star.github.io/Own7/nfl-integration-c815/site/index.html — the KPI row
+    (150 / 149 / 1 / 70 / 30 / 15), the settlement paragraph and the page table all render.
+  - https://sassnarep3-star.github.io/Own7/nfl-integration-c815/site/week10-completion.html —
+    all four tables render with their official source links; the three-way proof is intact.
+- **All C1–C8 tasks are done.** No task in this session's scope remains unclaimed or in progress.
+- **Open items belong to others or to the owner, and are published, not hidden:** C8-F01…C8-F04 on
+  the Flagged page; DR-20 and DR-29/54/66 need a written human decision.
+
+### Note for the next integration session
+
+Other sessions were pushing to `main` concurrently during this one (PR #75 merged mid-session;
+`arena/a10fed14-own7` and `arena/e5e4351c-own7` runs show as failed on their own branches, and
+`arena/6c72a9fa-own7` succeeded). Two consequences worth knowing:
+
+1. `research/site-manifest.json` is a generated file and is the most likely conflict point on any
+   rebase. Resolve it by re-running `python scripts/build_site.py` on the merged tree, never by
+   hand-merging the JSON — that is what this session did, and it preserved both sides.
+2. Any desk that keeps its **own** host allowlist must be updated when a new source is registered.
+   This session hit exactly that in `nfl/test_build.py` (`OFFICIAL_HOSTS`) after adding
+   `NFL-RULES-2026` on `media.nfl.com`. `scripts/check_site.py` (`SOURCE_HOSTS`) is the other one.
+   Grep for the host set after adding any source.
+
+---
 
 ---
 

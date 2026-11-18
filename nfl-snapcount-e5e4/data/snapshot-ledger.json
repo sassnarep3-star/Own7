@@ -1,0 +1,132 @@
+[
+  {
+    "artifact": "Game Book W10-01 WAS@NYG - Playtime Percentage",
+    "vintage": "2026-11-12 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "ab632143b3f307cd4b0ea40ca8df5dca80d64f0abe0225ed44d1828508dae308",
+    "raw_file": "g01-WAS-NYG.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Official",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-02 PIT@CIN - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "0d7d02be5a94750962976d53225b48ba1dc6d5a5bf73f32789fc9f0c42d024cb",
+    "raw_file": "g02-PIT-CIN.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Official",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-03 NE@DET - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "479ced0ef54a43c7cdf8730f9b177288bed90a8475ae4d26fb7789c55875a473",
+    "raw_file": "g03-NE-DET.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Official",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-04 KC@ATL - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "4d0c48f5a597c1e94a2210f48158c663880e812a56153d7ebb5815c3d1e1d6ec",
+    "raw_file": "g04-KC-ATL.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Official",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-05 HOU@CLE - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "c63a4ec5a44da0847e64a14815a3a2cd79acfc4b5d40801211c16fa17afe47b0",
+    "raw_file": "g05-HOU-CLE.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Unofficial",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-06 MIN@GB - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "144fa07365b15511b1f815cc71c119de42d88abfeaefdf885e07ec6886e33c90",
+    "raw_file": "g06-MIN-GB.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Official",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-07 MIA@IND - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "6ffc3b90ed16ef2b782a9f2070805e58f009190fbc157eb511122dd48f6f5e8c",
+    "raw_file": "g07-MIA-IND.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Official",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-08 CAR@NO - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "21329e667ec7e808496f7808e8997ec9791a9d443b534700dc31050c98e41ae9",
+    "raw_file": "g08-CAR-NO.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Official",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-09 BUF@NYJ - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "58d3244ed4becff5dd7959d328df47e4b6f77cdf98702f6ee6d84d7f8e921ece",
+    "raw_file": "g09-BUF-NYJ.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Unofficial",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-10 JAX@TEN - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "9e8954158b2bad217e7303271ea7646346cf087cb1bf405d9273cc3793371438",
+    "raw_file": "g10-JAX-TEN.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Official",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-11 SEA@LV - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "d5c0c554e0a9127a7f2419cc063a1dc65c286ecd7ca6b1fd925e1daf4a207b05",
+    "raw_file": "g11-SEA-LV.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Unofficial",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-12 SF@DAL - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "097a694065607cfea3410b3e8822f99bcf95e1f583ad6242c248b9bedf967061",
+    "raw_file": "g12-SF-DAL.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Official",
+    "immutable": "yes"
+  },
+  {
+    "artifact": "Game Book W10-13 LAR@ARI - Playtime Percentage",
+    "vintage": "2026-11-15 game; captured 2026-11-18",
+    "captured_utc": "2026-11-18",
+    "sha256": "678d37df6424439087868b28e6d8f9e2796ff7c4f01ecd4e70b58ccddb1476fa",
+    "raw_file": "g13-LAR-AZ.txt",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf",
+    "table_label": "Unofficial",
+    "immutable": "yes"
+  }
+]

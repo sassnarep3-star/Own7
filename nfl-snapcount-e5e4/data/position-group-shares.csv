@@ -1,0 +1,463 @@
+game_id,team,position_group,phase,snaps,team_phase_snaps,share,source_url,raw_file
+W10-01,NYG,Cornerback,Defense,310,1290,0.2403,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Cornerback,Special Teams,15,206,0.0728,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Defensive Line,Defense,205,1290,0.1589,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Defensive Line,Special Teams,45,206,0.2184,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Linebacker,Defense,456,1290,0.3535,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Linebacker,Special Teams,119,206,0.5777,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Offensive Line,Defense,24,1290,0.0186,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Offensive Line,Offense,326,715,0.4559,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Quarterback,Offense,65,715,0.0909,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Running Back,Defense,15,1290,0.0116,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Running Back,Offense,76,715,0.1063,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Safety / Defensive Back,Defense,223,1290,0.1729,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Safety / Defensive Back,Special Teams,27,206,0.1311,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Special Teams (K/P/LS),Defense,26,1290,0.0202,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Tight End,Defense,27,1290,0.0209,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Tight End,Offense,89,715,0.1245,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Wide Receiver,Defense,4,1290,0.0031,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,NYG,Wide Receiver,Offense,159,715,0.2224,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Cornerback,Defense,243,1290,0.1884,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Cornerback,Special Teams,8,287,0.0279,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Defensive Line,Defense,216,1290,0.1674,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Defensive Line,Special Teams,61,287,0.2125,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Linebacker,Defense,452,1290,0.3504,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Linebacker,Special Teams,45,287,0.1568,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Offensive Line,Defense,24,1290,0.0186,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Offensive Line,Offense,345,759,0.4545,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Quarterback,Offense,69,759,0.0909,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Running Back,Defense,4,1290,0.0031,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Running Back,Offense,69,759,0.0909,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Safety / Defensive Back,Defense,281,1290,0.2178,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Safety / Defensive Back,Special Teams,173,287,0.6028,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Special Teams (K/P/LS),Defense,25,1290,0.0194,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Tight End,Defense,24,1290,0.0186,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Tight End,Offense,93,759,0.1225,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Wide Receiver,Defense,21,1290,0.0163,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-01,WAS,Wide Receiver,Offense,183,759,0.2411,https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf,g01-WAS-NYG.txt
+W10-02,CIN,Cornerback,Defense,297,1393,0.2132,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Cornerback,Special Teams,111,276,0.4022,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Defensive Line,Defense,417,1393,0.2994,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Defensive Line,Special Teams,95,276,0.3442,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Linebacker,Defense,292,1393,0.2096,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Linebacker,Special Teams,55,276,0.1993,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Offensive Line,Defense,42,1393,0.0302,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Offensive Line,Offense,331,726,0.4559,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Quarterback,Offense,66,726,0.0909,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Running Back,Defense,30,1393,0.0215,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Running Back,Offense,71,726,0.0978,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Safety / Defensive Back,Defense,230,1393,0.1651,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Safety / Defensive Back,Special Teams,15,276,0.0543,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Special Teams (K/P/LS),Defense,32,1393,0.023,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Tight End,Defense,38,1393,0.0273,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Tight End,Offense,85,726,0.1171,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Wide Receiver,Defense,15,1393,0.0108,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,CIN,Wide Receiver,Offense,173,726,0.2383,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Cornerback,Defense,328,1289,0.2545,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Cornerback,Special Teams,26,402,0.0647,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Defensive Line,Defense,221,1289,0.1715,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Defensive Line,Special Teams,105,402,0.2612,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Linebacker,Defense,430,1289,0.3336,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Linebacker,Special Teams,223,402,0.5547,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Offensive Line,Defense,12,1289,0.0093,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Offensive Line,Offense,306,671,0.456,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Quarterback,Offense,61,671,0.0909,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Running Back,Defense,49,1289,0.038,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Running Back,Offense,67,671,0.0999,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Safety / Defensive Back,Defense,186,1289,0.1443,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Safety / Defensive Back,Special Teams,48,402,0.1194,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Special Teams (K/P/LS),Defense,20,1289,0.0155,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Tight End,Defense,16,1289,0.0124,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Tight End,Offense,72,671,0.1073,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Wide Receiver,Defense,27,1289,0.0209,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-02,PIT,Wide Receiver,Offense,165,671,0.2459,https://static.www.nfl.com/image/upload/v1794829727/gamecenter/ab78aa48-4feb-11f1-abca-2c54536568a9.pdf,g02-PIT-CIN.txt
+W10-03,DET,Cornerback,Defense,249,1211,0.2056,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Cornerback,Special Teams,115,709,0.1622,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Defensive Line,Defense,392,1211,0.3237,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Defensive Line,Special Teams,108,709,0.1523,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Linebacker,Defense,253,1211,0.2089,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Linebacker,Special Teams,293,709,0.4133,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Offensive Line,Defense,30,1211,0.0248,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Offensive Line,Offense,355,781,0.4545,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Quarterback,Offense,71,781,0.0909,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Running Back,Defense,40,1211,0.033,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Running Back,Offense,73,781,0.0935,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Safety / Defensive Back,Defense,207,1211,0.1709,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Safety / Defensive Back,Special Teams,90,709,0.1269,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Special Teams (K/P/LS),Special Teams,103,709,0.1453,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Tight End,Defense,9,1211,0.0074,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Tight End,Offense,117,781,0.1498,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Wide Receiver,Defense,31,1211,0.0256,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,DET,Wide Receiver,Offense,165,781,0.2113,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Cornerback,Defense,251,1179,0.2129,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Cornerback,Special Teams,174,818,0.2127,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Defensive Line,Defense,255,1179,0.2163,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Defensive Line,Special Teams,79,818,0.0966,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Linebacker,Defense,386,1179,0.3274,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Linebacker,Special Teams,311,818,0.3802,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Offensive Line,Defense,12,1179,0.0102,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Offensive Line,Offense,296,649,0.4561,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Quarterback,Offense,59,649,0.0909,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Running Back,Defense,44,1179,0.0373,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Running Back,Offense,72,649,0.1109,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Safety / Defensive Back,Defense,208,1179,0.1764,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Safety / Defensive Back,Special Teams,164,818,0.2005,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Special Teams (K/P/LS),Special Teams,90,818,0.11,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Tight End,Defense,23,1179,0.0195,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Tight End,Offense,71,649,0.1094,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-03,NE,Wide Receiver,Offense,151,649,0.2327,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab582c2f-4feb-11f1-abca-2c54536568a9.pdf,g03-NE-DET.txt
+W10-04,ATL,Cornerback,Defense,271,1305,0.2077,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Defensive Line,Defense,418,1305,0.3203,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Linebacker,Defense,221,1305,0.1693,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Offensive Line,Defense,18,1305,0.0138,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Offensive Line,Offense,360,792,0.4545,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Quarterback,Offense,72,792,0.0909,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Running Back,Defense,11,1305,0.0084,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Running Back,Offense,72,792,0.0909,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Safety / Defensive Back,Defense,259,1305,0.1985,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Safety / Defensive Back,Special Teams,39,39,1.0,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Special Teams (K/P/LS),Defense,27,1305,0.0207,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Tight End,Defense,43,1305,0.033,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Tight End,Offense,108,792,0.1364,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Wide Receiver,Defense,37,1305,0.0284,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,ATL,Wide Receiver,Offense,180,792,0.2273,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Cornerback,Defense,178,1282,0.1388,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Cornerback,Special Teams,21,549,0.0383,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Defensive Line,Defense,403,1282,0.3144,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Defensive Line,Special Teams,69,549,0.1257,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Linebacker,Defense,183,1282,0.1427,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Linebacker,Special Teams,252,549,0.459,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Offensive Line,Defense,41,1282,0.032,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Offensive Line,Offense,334,716,0.4665,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Quarterback,Offense,66,716,0.0922,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Running Back,Defense,6,1282,0.0047,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Running Back,Offense,65,716,0.0908,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Safety / Defensive Back,Defense,336,1282,0.2621,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Safety / Defensive Back,Special Teams,207,549,0.377,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Special Teams (K/P/LS),Defense,38,1282,0.0296,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Tight End,Defense,40,1282,0.0312,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Tight End,Offense,94,716,0.1313,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Wide Receiver,Defense,57,1282,0.0445,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-04,KC,Wide Receiver,Offense,157,716,0.2193,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf,g04-KC-ATL.txt
+W10-05,CLE,Cornerback,Defense,292,1308,0.2232,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Cornerback,Special Teams,51,433,0.1178,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Defensive Line,Defense,399,1308,0.305,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Defensive Line,Special Teams,118,433,0.2725,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Linebacker,Defense,232,1308,0.1774,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Linebacker,Special Teams,82,433,0.1894,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Offensive Line,Defense,42,1308,0.0321,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Offensive Line,Offense,340,748,0.4545,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Quarterback,Offense,68,748,0.0909,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Running Back,Offense,68,748,0.0909,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Safety / Defensive Back,Defense,217,1308,0.1659,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Safety / Defensive Back,Special Teams,182,433,0.4203,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Special Teams (K/P/LS),Defense,22,1308,0.0168,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Tight End,Defense,58,1308,0.0443,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Tight End,Offense,88,748,0.1176,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Wide Receiver,Defense,46,1308,0.0352,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,CLE,Wide Receiver,Offense,184,748,0.246,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Cornerback,Defense,229,1344,0.1704,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Cornerback,Special Teams,18,356,0.0506,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Defensive Line,Defense,402,1344,0.2991,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Defensive Line,Special Teams,163,356,0.4579,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Linebacker,Defense,267,1344,0.1987,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Linebacker,Special Teams,45,356,0.1264,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Offensive Line,Defense,28,1344,0.0208,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Offensive Line,Offense,341,737,0.4627,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Quarterback,Offense,67,737,0.0909,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Running Back,Defense,14,1344,0.0104,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Running Back,Offense,67,737,0.0909,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Safety / Defensive Back,Defense,320,1344,0.2381,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Safety / Defensive Back,Special Teams,130,356,0.3652,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Special Teams (K/P/LS),Defense,31,1344,0.0231,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Tight End,Defense,42,1344,0.0312,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Tight End,Offense,74,737,0.1004,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Wide Receiver,Defense,11,1344,0.0082,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-05,HOU,Wide Receiver,Offense,188,737,0.2551,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf,g05-HOU-CLE.txt
+W10-06,GB,Cornerback,Defense,215,1259,0.1708,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Cornerback,Special Teams,70,489,0.1431,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Defensive Line,Defense,448,1259,0.3558,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Defensive Line,Special Teams,223,489,0.456,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Linebacker,Defense,217,1259,0.1724,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Linebacker,Special Teams,138,489,0.2822,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Offensive Line,Defense,18,1259,0.0143,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Offensive Line,Offense,278,605,0.4595,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Quarterback,Offense,55,605,0.0909,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Running Back,Defense,13,1259,0.0103,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Running Back,Offense,54,605,0.0893,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Safety / Defensive Back,Defense,269,1259,0.2137,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Safety / Defensive Back,Special Teams,58,489,0.1186,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Special Teams (K/P/LS),Defense,20,1259,0.0159,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Tight End,Defense,24,1259,0.0191,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Tight End,Offense,96,605,0.1587,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Wide Receiver,Defense,35,1259,0.0278,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,GB,Wide Receiver,Offense,122,605,0.2017,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Cornerback,Defense,236,1317,0.1792,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Cornerback,Special Teams,39,265,0.1472,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Defensive Line,Defense,236,1317,0.1792,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Defensive Line,Special Teams,79,265,0.2981,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Linebacker,Defense,439,1317,0.3333,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Linebacker,Special Teams,135,265,0.5094,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Offensive Line,Defense,36,1317,0.0273,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Offensive Line,Offense,348,759,0.4585,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Quarterback,Offense,69,759,0.0909,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Running Back,Defense,20,1317,0.0152,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Running Back,Offense,88,759,0.1159,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Safety / Defensive Back,Defense,275,1317,0.2088,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Safety / Defensive Back,Special Teams,12,265,0.0453,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Special Teams (K/P/LS),Defense,31,1317,0.0235,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Tight End,Defense,26,1317,0.0197,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Tight End,Offense,93,759,0.1225,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Wide Receiver,Defense,18,1317,0.0137,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-06,MIN,Wide Receiver,Offense,161,759,0.2121,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab788967-4feb-11f1-abca-2c54536568a9.pdf,g06-MIN-GB.txt
+W10-07,IND,Cornerback,Defense,258,1290,0.2,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Cornerback,Special Teams,68,425,0.16,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Defensive Line,Defense,455,1290,0.3527,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Defensive Line,Special Teams,182,425,0.4282,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Linebacker,Defense,230,1290,0.1783,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Linebacker,Special Teams,107,425,0.2518,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Offensive Line,Defense,20,1290,0.0155,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Offensive Line,Offense,295,649,0.4545,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Quarterback,Offense,59,649,0.0909,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Running Back,Defense,12,1290,0.0093,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Running Back,Offense,59,649,0.0909,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Safety / Defensive Back,Defense,218,1290,0.169,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Safety / Defensive Back,Special Teams,68,425,0.16,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Special Teams (K/P/LS),Defense,29,1290,0.0225,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Tight End,Defense,35,1290,0.0271,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Tight End,Offense,94,649,0.1448,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Wide Receiver,Defense,33,1290,0.0256,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,IND,Wide Receiver,Offense,142,649,0.2188,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Cornerback,Defense,233,1306,0.1784,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Cornerback,Special Teams,72,350,0.2057,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Defensive Line,Defense,405,1306,0.3101,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Defensive Line,Special Teams,96,350,0.2743,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Linebacker,Defense,276,1306,0.2113,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Linebacker,Special Teams,32,350,0.0914,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Offensive Line,Defense,35,1306,0.0268,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Offensive Line,Offense,353,759,0.4651,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Quarterback,Offense,69,759,0.0909,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Running Back,Defense,21,1306,0.0161,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Running Back,Offense,99,759,0.1304,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Safety / Defensive Back,Defense,263,1306,0.2014,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Safety / Defensive Back,Special Teams,150,350,0.4286,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Special Teams (K/P/LS),Defense,21,1306,0.0161,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Tight End,Defense,40,1306,0.0306,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Tight End,Offense,68,759,0.0896,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Wide Receiver,Defense,12,1306,0.0092,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-07,MIA,Wide Receiver,Offense,170,759,0.224,https://static.www.nfl.com/image/upload/v1794829723/gamecenter/ab789365-4feb-11f1-abca-2c54536568a9.pdf,g07-MIA-IND.txt
+W10-08,CAR,Cornerback,Defense,264,1320,0.2,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Cornerback,Special Teams,40,212,0.1887,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Defensive Line,Defense,179,1320,0.1356,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Defensive Line,Special Teams,48,212,0.2264,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Linebacker,Defense,461,1320,0.3492,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Linebacker,Special Teams,108,212,0.5094,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Offensive Line,Defense,35,1320,0.0265,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Offensive Line,Offense,354,770,0.4597,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Quarterback,Offense,70,770,0.0909,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Running Back,Defense,20,1320,0.0152,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Running Back,Offense,70,770,0.0909,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Safety / Defensive Back,Defense,284,1320,0.2152,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Safety / Defensive Back,Special Teams,16,212,0.0755,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Special Teams (K/P/LS),Defense,29,1320,0.022,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Tight End,Defense,31,1320,0.0235,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Tight End,Offense,127,770,0.1649,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Wide Receiver,Defense,17,1320,0.0129,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,CAR,Wide Receiver,Offense,149,770,0.1935,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Cornerback,Defense,210,1237,0.1698,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Cornerback,Special Teams,16,456,0.0351,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Defensive Line,Defense,444,1237,0.3589,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Defensive Line,Special Teams,216,456,0.4737,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Linebacker,Defense,234,1237,0.1892,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Linebacker,Special Teams,96,456,0.2105,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Offensive Line,Defense,21,1237,0.017,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Offensive Line,Offense,321,693,0.4632,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Quarterback,Offense,63,693,0.0909,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Running Back,Defense,6,1237,0.0049,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Running Back,Offense,64,693,0.0924,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Safety / Defensive Back,Defense,268,1237,0.2167,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Safety / Defensive Back,Special Teams,128,456,0.2807,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Special Teams (K/P/LS),Defense,21,1237,0.017,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Tight End,Defense,20,1237,0.0162,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Tight End,Offense,78,693,0.1126,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Wide Receiver,Defense,13,1237,0.0105,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-08,NO,Wide Receiver,Offense,167,693,0.241,https://static.www.nfl.com/image/upload/v1794829721/gamecenter/ab789769-4feb-11f1-abca-2c54536568a9.pdf,g08-CAR-NO.txt
+W10-09,BUF,Cornerback,Defense,186,1035,0.1797,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Cornerback,Special Teams,59,597,0.0988,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Defensive Line,Defense,165,1035,0.1594,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Defensive Line,Special Teams,52,597,0.0871,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Linebacker,Defense,286,1035,0.2763,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Linebacker,Special Teams,345,597,0.5779,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Offensive Line,Defense,30,1035,0.029,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Offensive Line,Offense,286,627,0.4561,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Quarterback,Offense,57,627,0.0909,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Running Back,Defense,13,1035,0.0126,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Running Back,Offense,57,627,0.0909,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Safety / Defensive Back,Defense,291,1035,0.2812,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Safety / Defensive Back,Special Teams,141,597,0.2362,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Special Teams (K/P/LS),Defense,28,1035,0.0271,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Tight End,Defense,26,1035,0.0251,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Tight End,Offense,106,627,0.1691,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Wide Receiver,Defense,10,1035,0.0097,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,BUF,Wide Receiver,Offense,121,627,0.193,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Cornerback,Defense,228,1036,0.2201,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Cornerback,Special Teams,45,283,0.159,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Defensive Line,Defense,271,1036,0.2616,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Defensive Line,Special Teams,182,283,0.6431,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Linebacker,Defense,216,1036,0.2085,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Linebacker,Special Teams,19,283,0.0671,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Offensive Line,Defense,31,1036,0.0299,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Offensive Line,Offense,355,781,0.4545,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Quarterback,Offense,71,781,0.0909,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Running Back,Defense,35,1036,0.0338,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Running Back,Offense,77,781,0.0986,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Safety / Defensive Back,Defense,183,1036,0.1766,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Safety / Defensive Back,Special Teams,37,283,0.1307,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Special Teams (K/P/LS),Defense,26,1036,0.0251,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Tight End,Offense,97,781,0.1242,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Wide Receiver,Defense,46,1036,0.0444,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-09,NYJ,Wide Receiver,Offense,181,781,0.2318,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789ac9-4feb-11f1-abca-2c54536568a9.pdf,g09-BUF-NYJ.txt
+W10-10,JAX,Cornerback,Defense,189,1258,0.1502,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Cornerback,Special Teams,27,413,0.0654,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Defensive Line,Defense,381,1258,0.3029,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Defensive Line,Special Teams,144,413,0.3487,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Linebacker,Defense,283,1258,0.225,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Linebacker,Special Teams,87,413,0.2107,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Offensive Line,Defense,48,1258,0.0382,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Offensive Line,Offense,371,803,0.462,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Quarterback,Offense,73,803,0.0909,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Running Back,Defense,18,1258,0.0143,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Running Back,Offense,73,803,0.0909,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Safety / Defensive Back,Defense,218,1258,0.1733,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Safety / Defensive Back,Special Teams,73,413,0.1768,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Special Teams (K/P/LS),Defense,34,1258,0.027,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Tight End,Defense,12,1258,0.0095,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Tight End,Offense,106,803,0.132,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Tight End,Special Teams,77,413,0.1864,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Wide Receiver,Defense,75,1258,0.0596,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Wide Receiver,Offense,180,803,0.2242,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,JAX,Wide Receiver,Special Teams,5,413,0.0121,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Cornerback,Defense,326,1297,0.2513,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Defensive Line,Defense,400,1297,0.3084,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Defensive Line,Special Teams,238,441,0.5397,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Linebacker,Defense,209,1297,0.1611,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Linebacker,Special Teams,107,441,0.2426,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Offensive Line,Defense,30,1297,0.0231,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Offensive Line,Offense,286,627,0.4561,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Quarterback,Offense,57,627,0.0909,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Running Back,Defense,25,1297,0.0193,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Running Back,Offense,57,627,0.0909,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Safety / Defensive Back,Defense,223,1297,0.1719,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Safety / Defensive Back,Special Teams,96,441,0.2177,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Special Teams (K/P/LS),Defense,25,1297,0.0193,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Tight End,Defense,36,1297,0.0278,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Tight End,Offense,76,627,0.1212,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Wide Receiver,Defense,23,1297,0.0177,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-10,TEN,Wide Receiver,Offense,151,627,0.2408,https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf,g10-JAX-TEN.txt
+W10-11,LV,Cornerback,Defense,283,1222,0.2316,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Cornerback,Special Teams,12,176,0.0682,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Defensive Line,Defense,429,1222,0.3511,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Defensive Line,Special Teams,76,176,0.4318,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Linebacker,Defense,253,1222,0.207,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Linebacker,Special Teams,88,176,0.5,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Offensive Line,Defense,21,1222,0.0172,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Offensive Line,Offense,295,649,0.4545,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Quarterback,Offense,59,649,0.0909,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Running Back,Defense,40,1222,0.0327,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Running Back,Offense,75,649,0.1156,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Safety / Defensive Back,Defense,122,1222,0.0998,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Special Teams (K/P/LS),Defense,27,1222,0.0221,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Tight End,Defense,26,1222,0.0213,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Tight End,Offense,79,649,0.1217,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Wide Receiver,Defense,21,1222,0.0172,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,LV,Wide Receiver,Offense,141,649,0.2173,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Cornerback,Defense,233,1374,0.1696,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Cornerback,Special Teams,104,436,0.2385,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Defensive Line,Defense,200,1374,0.1456,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Defensive Line,Special Teams,104,436,0.2385,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Linebacker,Defense,406,1374,0.2955,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Linebacker,Special Teams,168,436,0.3853,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Offensive Line,Defense,20,1374,0.0146,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Offensive Line,Offense,285,627,0.4545,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Quarterback,Offense,57,627,0.0909,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Running Back,Defense,24,1374,0.0175,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Running Back,Offense,69,627,0.11,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Safety / Defensive Back,Defense,415,1374,0.302,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Safety / Defensive Back,Special Teams,60,436,0.1376,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Special Teams (K/P/LS),Defense,22,1374,0.016,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Tight End,Defense,21,1374,0.0153,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Tight End,Offense,100,627,0.1595,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Wide Receiver,Defense,33,1374,0.024,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-11,SEA,Wide Receiver,Offense,116,627,0.185,https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf,g11-SEA-LV.txt
+W10-12,DAL,Cornerback,Defense,212,1257,0.1687,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Cornerback,Special Teams,106,679,0.1561,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Defensive Line,Defense,240,1257,0.1909,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Defensive Line,Special Teams,151,679,0.2224,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Linebacker,Defense,429,1257,0.3413,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Linebacker,Special Teams,261,679,0.3844,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Offensive Line,Defense,35,1257,0.0278,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Offensive Line,Offense,421,913,0.4611,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Quarterback,Offense,83,913,0.0909,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Running Back,Defense,21,1257,0.0167,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Running Back,Offense,88,913,0.0964,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Safety / Defensive Back,Defense,248,1257,0.1973,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Safety / Defensive Back,Special Teams,161,679,0.2371,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Special Teams (K/P/LS),Defense,27,1257,0.0215,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Tight End,Defense,29,1257,0.0231,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Tight End,Offense,88,913,0.0964,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Wide Receiver,Defense,16,1257,0.0127,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,DAL,Wide Receiver,Offense,233,913,0.2552,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Cornerback,Defense,184,1326,0.1388,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Cornerback,Special Teams,45,408,0.1103,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Defensive Line,Defense,404,1326,0.3047,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Defensive Line,Special Teams,111,408,0.2721,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Linebacker,Defense,233,1326,0.1757,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Linebacker,Special Teams,149,408,0.3652,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Offensive Line,Defense,36,1326,0.0271,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Offensive Line,Offense,325,715,0.4545,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Quarterback,Offense,65,715,0.0909,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Running Back,Defense,14,1326,0.0106,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Running Back,Offense,94,715,0.1315,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Safety / Defensive Back,Defense,355,1326,0.2677,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Safety / Defensive Back,Special Teams,103,408,0.2525,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Special Teams (K/P/LS),Defense,34,1326,0.0256,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Tight End,Defense,54,1326,0.0407,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Tight End,Offense,79,715,0.1105,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Wide Receiver,Defense,12,1326,0.009,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-12,SF,Wide Receiver,Offense,152,715,0.2126,https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf,g12-SF-DAL.txt
+W10-13,ARI,Cornerback,Defense,232,1236,0.1877,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Cornerback,Special Teams,105,478,0.2197,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Defensive Line,Defense,270,1236,0.2184,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Defensive Line,Special Teams,91,478,0.1904,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Linebacker,Defense,423,1236,0.3422,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Linebacker,Special Teams,191,478,0.3996,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Offensive Line,Defense,14,1236,0.0113,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Offensive Line,Offense,175,385,0.4545,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Quarterback,Offense,35,385,0.0909,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Running Back,Defense,9,1236,0.0073,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Running Back,Offense,35,385,0.0909,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Safety / Defensive Back,Defense,219,1236,0.1772,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Safety / Defensive Back,Special Teams,91,478,0.1904,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Special Teams (K/P/LS),Defense,15,1236,0.0121,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Tight End,Defense,32,1236,0.0259,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Tight End,Offense,76,385,0.1974,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Wide Receiver,Defense,22,1236,0.0178,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,ARI,Wide Receiver,Offense,64,385,0.1662,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Cornerback,Defense,248,1232,0.2013,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Cornerback,Special Teams,100,500,0.2,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Defensive Line,Defense,255,1232,0.207,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Defensive Line,Special Teams,41,500,0.082,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Linebacker,Defense,351,1232,0.2849,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Linebacker,Special Teams,241,500,0.482,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Offensive Line,Defense,39,1232,0.0317,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Offensive Line,Offense,384,836,0.4593,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Quarterback,Offense,76,836,0.0909,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Running Back,Defense,9,1232,0.0073,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Running Back,Offense,95,836,0.1136,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Safety / Defensive Back,Defense,274,1232,0.2224,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Safety / Defensive Back,Special Teams,118,500,0.236,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Special Teams (K/P/LS),Defense,27,1232,0.0219,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Tight End,Defense,19,1232,0.0154,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Tight End,Offense,160,836,0.1914,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Wide Receiver,Defense,10,1232,0.0081,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
+W10-13,LAR,Wide Receiver,Offense,121,836,0.1447,https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf,g13-LAR-AZ.txt
