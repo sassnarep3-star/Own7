@@ -77,6 +77,8 @@ jobs:
           python -m unittest discover -s nfl-w11-injuries-3e61/tests -v
           python nfl-ledger-aedccbe5/build.py --check
           python -m unittest discover -s nfl-ledger-aedccbe5/tests -v
+          python nfl-reconcile-9ef12c81/build.py --check
+          python -m unittest discover -s nfl-reconcile-9ef12c81/tests -v
           python nfl-pricing/collect.py --check
           python nfl-pricing/originate.py --check
           python nfl-pricing/leaderboard.py --check

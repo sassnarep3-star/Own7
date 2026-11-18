@@ -543,3 +543,26 @@ The canonical **Market evidence** category exposes all 24 B1 operator-specific f
 Six team coefficients and 11 F58 season-level rows are independently recomputed and displayed separately from paired-game dependence. Their Fisher intervals are nominal assumption-based calculations; team dependence, scoring selection and lack of generalizable coverage are flagged. The original scripts/outputs remain attributed under `handoff/f58e9526/`.
 
 Netherlands context, Kansspelwijzer and Gokstop are linked. Current NBA operator/market applicability and US-to-NL memo applicability remain blank. The earlier Dutch support gap was resolved by the official Cruks contact page (Open over Gokken, 0800 24 000 22, 24/7). This does not validate legacy Alberta or media-policy claims.
+
+## Decision-readiness reconciliation desk (session arena/9ef12c81-own7)
+
+`nfl-reconcile-9ef12c81/site/index.html` re-reads the 70-row decision-readiness register against the
+artefacts committed on 2026-11-18. Twelve rows are re-graded with evidence files and registered
+official sources; the other 58 are carried forward and labelled as such. The desk proposes three
+status changes (DR-61, DR-64, DR-68: Open to Partial) and one gate correction (DR-31: snap counts are
+captured from official Game Books for 13 Week 10 games). The shared register is not edited here; the
+integration owner applies the proposals.
+
+| Page | What it shows |
+|---|---|
+| `nfl-reconcile-9ef12c81/site/index.html` | 70-row reconciliation table with status now, proposed status, evidence and official source |
+| `nfl-reconcile-9ef12c81/site/questions.html` | Six owner decisions (including the NFL.com terms position for DR-29/54/66) and the information each open gate still needs |
+| `nfl-reconcile-9ef12c81/site/flagged.html` | Eight flags with evidence and official source; none blocks publication |
+
+The rights basis for the three blocked rows is NFL.com Terms section 1.3, re-read on 2026-11-18 from
+https://www.nfl.com/legal/terms/ and retained verbatim at `nfl-reconcile-9ef12c81/evidence/nfl-terms-1-3-2026-11-18.md`.
+
+```bash
+python nfl-reconcile-9ef12c81/build.py --check   # desk reproduces byte-identically
+python -m unittest discover -s nfl-reconcile-9ef12c81/tests   # 14 tests
+```
