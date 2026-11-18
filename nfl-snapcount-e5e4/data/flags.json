@@ -1,0 +1,47 @@
+[
+  {
+    "flag_id": "SN-F01",
+    "item": "Playtime Percentage tables labelled '(Unofficial)' in the official Game Book",
+    "detail": "Four of the thirteen Week 10 Game Books print the Playtime Percentage table with an '(Unofficial)' label (g05 HOU@CLE, g09 BUF@NYJ, g11 SEA@LV, g13 LAR@AZ). The table is still the one published inside the official NFL Game Book PDF linked from the official Game Centre; the label is recorded verbatim on each row and the desk does not treat these as a different source class. The desk does not claim the label was removed or that these counts are certified official statistics.",
+    "value_published": "the transcribed snap counts (label carried)",
+    "why_blank": "",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf",
+    "route": "none - the label is part of the official artefact and is published as printed"
+  },
+  {
+    "flag_id": "SN-F02",
+    "item": "Depth-vs-snap cross-reference returns zero joinable rows",
+    "detail": "The committed official club depth-chart transcription (nfl-skill-cfdd/data/depth-slots-2026-11-14.csv) covers CHI, DEN, PHI and TB only. None of the four played in Week 10, so there is no game in which to compare a printed depth order against actual snap counts. The cross-reference is therefore a published zero-row gap, not a satisfied join.",
+    "value_published": "0 joinable rows",
+    "why_blank": "no overlap between the four depth-chart clubs and the 26 clubs that played",
+    "source_url": "https://www.chicagobears.com/team/depth-chart",
+    "route": "capture official depth charts for the 26 clubs that played in Week 10"
+  },
+  {
+    "flag_id": "SN-F03",
+    "item": "LAC @ BAL (W10-14) has no Playtime Percentage table",
+    "detail": "The fourteenth Week 10 fixture (LAC @ BAL, Monday 2026-11-16) had not produced a Game Book at capture time, so no Playtime Percentage table exists for it. The desk publishes the 13 played fixtures only; the 14th is carried as a known gap.",
+    "value_published": "",
+    "why_blank": "the official Game Book for W10-14 was not available at capture",
+    "source_url": "https://www.nfl.com/games/chargers-at-ravens-2026-reg-10",
+    "route": "re-capture the W10-14 Game Book after the game is final"
+  },
+  {
+    "flag_id": "SN-DUP-04",
+    "item": "Repeated Playtime Percentage row: B.Aubrey (DAL, K)",
+    "detail": "In g12-SF-DAL.txt (W10-12) the official PDF repeated the row for B.Aubrey at a page break. The more complete of the two occurrences was kept; the repetition is a pagination artefact of the PDF, not a second appearance.",
+    "value_published": "one deduplicated row",
+    "why_blank": "",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf",
+    "route": "none - the dedup rule is deterministic and recorded"
+  },
+  {
+    "flag_id": "SN-DUP-05",
+    "item": "Repeated Playtime Percentage row: K.Eguakun (ARI, OL)",
+    "detail": "In g13-LAR-AZ.txt (W10-13) the official PDF repeated the row for K.Eguakun at a page break. The more complete of the two occurrences was kept; the repetition is a pagination artefact of the PDF, not a second appearance.",
+    "value_published": "one deduplicated row",
+    "why_blank": "",
+    "source_url": "https://static.www.nfl.com/image/upload/v1794854921/gamecenter/ab78a133-4feb-11f1-abca-2c54536568a9.pdf",
+    "route": "none - the dedup rule is deterministic and recorded"
+  }
+]

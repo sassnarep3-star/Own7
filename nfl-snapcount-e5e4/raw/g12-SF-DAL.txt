@@ -3,6 +3,7 @@
 # Columns: PLAYTIME|<team>|<player>|<pos>|<off_snaps>|<off_pct>|<def_snaps>|<def_pct>|<st_snaps>|<st_pct>
 SOURCE|https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab78a748-4feb-11f1-abca-2c54536568a9.pdf
 GAMECENTER|https://www.nfl.com/games/49ers-at-cowboys-2026-reg-10
+TABLE_LABEL|Official
 CAPTURED_UTC|2026-11-18
 GAME|W10-12|SF|DAL|2026-11-15|AT&T Stadium|Arlington, TX
 PLAYTIME|SF|C.Colby|OL|65|100|6|18

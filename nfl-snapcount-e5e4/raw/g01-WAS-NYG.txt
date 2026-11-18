@@ -4,6 +4,7 @@
 # Blank snap/pct cells are emitted blank (the official table leaves them blank).
 SOURCE|https://static.www.nfl.com/image/upload/v1794570519/gamecenter/ab5828d9-4feb-11f1-abca-2c54536568a9.pdf
 GAMECENTER|https://www.nfl.com/games/commanders-at-giants-2026-reg-10
+TABLE_LABEL|Official
 CAPTURED_UTC|2026-11-18
 GAME|W10-01|WAS|NYG|2026-11-12|MetLife Stadium|East Rutherford, NJ
 PLAYTIME|WAS|B.Coleman|T/G|69|100|4|15

@@ -6,6 +6,7 @@
 # Columns: PLAYTIME|<team>|<player>|<pos>|<off_snaps>|<off_pct>|<def_snaps>|<def_pct>|<st_snaps>|<st_pct>
 SOURCE|https://static.www.nfl.com/image/upload/v1794829724/gamecenter/ab583279-4feb-11f1-abca-2c54536568a9.pdf
 GAMECENTER|https://www.nfl.com/games/texans-at-browns-2026-reg-10
+TABLE_LABEL|Unofficial
 CAPTURED_UTC|2026-11-18
 GAME|W10-05|HOU|CLE|2026-11-15|Huntington Bank Field|Cleveland, OH
 PLAYTIME|HOU|A.Ersery|T|67|100|4|12

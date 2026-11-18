@@ -3,6 +3,7 @@
 # Columns: PLAYTIME|<team>|<player>|<pos>|<off_snaps>|<off_pct>|<def_snaps>|<def_pct>|<st_snaps>|<st_pct>
 SOURCE|https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab582f5b-4feb-11f1-abca-2c54536568a9.pdf
 GAMECENTER|https://www.nfl.com/games/chiefs-at-falcons-2026-reg-10
+TABLE_LABEL|Official
 CAPTURED_UTC|2026-11-18
 GAME|W10-04|KC|ATL|2026-11-15|Mercedes-Benz Stadium|Atlanta, GA
 PLAYTIME|KC|K.Benson|T|65|100|6|18
@@ -96,7 +97,7 @@ PLAYTIME|ATL|J.Robinson|S|||24||
 PLAYTIME|ATL|L.McCullough|LS|||10||
 PLAYTIME|ATL|J.Bailey|P|||10||
 PLAYTIME|ATL|J.Moody|K|||7||
-PLAYTIME|ATL|T.Quinn|LB|||21%||
+PLAYTIME|ATL|T.Quinn|LB|||21||
 PLAYTIME|ATL|K.Hinton|OL|||3|9
 PLAYTIME|ATL|E.Onianwa|T|||3|9
 PLAYTIME|ATL|A.Vorhees|G|||2|6

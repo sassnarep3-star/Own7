@@ -5,6 +5,7 @@
 # Columns: PLAYTIME|<team>|<player>|<pos>|<off_snaps>|<off_pct>|<def_snaps>|<def_pct>|<st_snaps>|<st_pct>
 SOURCE|https://static.www.nfl.com/image/upload/v1794829726/gamecenter/ab78a43c-4feb-11f1-abca-2c54536568a9.pdf
 GAMECENTER|https://www.nfl.com/games/seahawks-at-raiders-2026-reg-10
+TABLE_LABEL|Unofficial
 CAPTURED_UTC|2026-11-18
 GAME|W10-11|SEA|LV|2026-11-15|Allegiant Stadium|Las Vegas, NV
 PLAYTIME|SEA|A.Bradford|G|57|100|4|16

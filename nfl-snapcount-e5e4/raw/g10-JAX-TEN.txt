@@ -3,6 +3,7 @@
 # Columns: PLAYTIME|<team>|<player>|<pos>|<off_snaps>|<off_pct>|<def_snaps>|<def_pct>|<st_snaps>|<st_pct>
 SOURCE|https://static.www.nfl.com/image/upload/v1794829722/gamecenter/ab789e15-4feb-11f1-abca-2c54536568a9.pdf
 GAMECENTER|https://www.nfl.com/games/jaguars-at-titans-2026-reg-10
+TABLE_LABEL|Official
 CAPTURED_UTC|2026-11-18
 GAME|W10-10|JAX|TEN|2026-11-15|Nissan Stadium|Nashville, TN
 PLAYTIME|JAX|E.Cleveland|OL|73|100|8|27
