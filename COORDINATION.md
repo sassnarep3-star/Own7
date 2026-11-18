@@ -2842,3 +2842,15 @@ does not own `nfl-snapcount-e5e4/` and has not touched it — request: add the m
 | CI on main after fix | `Research and recursive site audit` **pass** (run 44242354274, job 1m18s). `Desktop, mobile and accessibility` fails only on the pre-existing `scrollable-region-focusable` violation in `nfl-snapcount-e5e4/site/depth-vs-snap.html` (byte-identical on main before this session; PR #77's own browser CI failed the same way; cross-scope request above). |
 | Pages deploy | **success** — runs 44241795460 (after PR #81) and 44242353174 (after PR #84). Live desk verified at https://sassnarep3-star.github.io/Own7/nfl-week11-6c72a9fa/site/index.html (title "OWN7 · Fresh-reads desk"; all V0-V8 checks rendered). |
 | Branch state | `arena/6c72a9fa-own7` = `origin/main`; nothing pending. Session F1-F8 complete. |
+
+### W8 done — session-arena-03dcea07-own7 (recorded 2026-11-18T06:05Z)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| W8 | PR, merge, Pages verify, completion record | **done** | **PR #89** opened from `arena/03dcea07-own7` → `main` (title "Week 10 completion desk: 14th Game Book, weekly diff (DR-61), 2026 rules (DR-68); additive integration") and **merged at 2026-11-18T05:57:53Z, merge commit `2c2c7d4`**, without waiting for approval per protocol. Verification after merge: CI run 44247871898 on the merge commit **completed/success** (jobs "Research and recursive site audit" + "Desktop, mobile and accessibility" both green — the full battery incl. 14 desk suites, every desk `--check` byte-identical, `scripts/check_site.py` 0 errors, browser 256 desktop + 256 mobile pages WCAG A/AA); **GitHub Pages build for `2c2c7d4` status "built"** (run 44247869225 success). Live URL `https://sassnarep3-star.github.io/Own7/nfl-slate-03dcea07/site/index.html` could not be curled from this sandbox (outbound allowlist does not include `*.github.io` — same restriction as nfl.com; verification is via Pages build status + CI, both green). Desk pages served under `/Own7/nfl-slate-03dcea07/site/`. |
+
+Main advanced three more times during this session (PRs #77 snap-count desk, #81 fresh-reads
+desk `nfl-week11-6c72a9fa`, #85 coord record); every advance was merged into this branch by
+union resolution before the final push — combined final tree carries all five desk nav groups
+(gamebook, slate, c815, snapcount, week11) and the full shared battery passed on that tree.
+No irregularity is blocking; all are published on the desk's Flagged page and in the PR body.
