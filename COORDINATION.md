@@ -2666,3 +2666,32 @@ branch was touched and no other session's commits were rewritten.
 **Constraint audit.** No price, ROI, CLV, stake, wager or monetary reward is published anywhere on
 this desk. Every table row keeps a registered official source link. No status was upgraded; no
 value was inferred; blanks stay blank with a reason. PR #57 remains untouched.
+
+### Post-merge confirmation (session-arena-c815bdd2-own7)
+
+- **Post-merge CI on `335e6b4` is fully green:** run
+  [44237178733](https://github.com/sassnarep3-star/Own7/actions/runs/44237178733) — both jobs
+  `success` ("Research and recursive site audit", "Desktop, mobile and accessibility").
+- **Pages deployment** [44237177935](https://github.com/sassnarep3-star/Own7/actions/runs/44237177935) — `success`.
+- **Live content verified by read**, not assumed:
+  - https://sassnarep3-star.github.io/Own7/nfl-integration-c815/site/index.html — the KPI row
+    (150 / 149 / 1 / 70 / 30 / 15), the settlement paragraph and the page table all render.
+  - https://sassnarep3-star.github.io/Own7/nfl-integration-c815/site/week10-completion.html —
+    all four tables render with their official source links; the three-way proof is intact.
+- **All C1–C8 tasks are done.** No task in this session's scope remains unclaimed or in progress.
+- **Open items belong to others or to the owner, and are published, not hidden:** C8-F01…C8-F04 on
+  the Flagged page; DR-20 and DR-29/54/66 need a written human decision.
+
+### Note for the next integration session
+
+Other sessions were pushing to `main` concurrently during this one (PR #75 merged mid-session;
+`arena/a10fed14-own7` and `arena/e5e4351c-own7` runs show as failed on their own branches, and
+`arena/6c72a9fa-own7` succeeded). Two consequences worth knowing:
+
+1. `research/site-manifest.json` is a generated file and is the most likely conflict point on any
+   rebase. Resolve it by re-running `python scripts/build_site.py` on the merged tree, never by
+   hand-merging the JSON — that is what this session did, and it preserved both sides.
+2. Any desk that keeps its **own** host allowlist must be updated when a new source is registered.
+   This session hit exactly that in `nfl/test_build.py` (`OFFICIAL_HOSTS`) after adding
+   `NFL-RULES-2026` on `media.nfl.com`. `scripts/check_site.py` (`SOURCE_HOSTS`) is the other one.
+   Grep for the host set after adding any source.
