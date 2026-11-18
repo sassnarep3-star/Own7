@@ -1,0 +1,97 @@
+{
+  "schema": "637442e9.overrides.v1",
+  "read_on": "2026-11-18",
+  "changes": [
+    {
+      "id": "DR-13",
+      "status": "Partial",
+      "basis": "League reserve-list sweep (November and October visible windows, read 2026-11-18) and the November trades page are captured and dated. Team-level roster and IR for all 32 clubs are not captured, and nothing joins them to the injury report. The 'Partial' status credits the league-level sweep only.",
+      "evidence": [
+        "nfl-week11-6c72a9fa/site/reserve-sweep.html",
+        "nfl-week11-6c72a9fa/evidence/reserve-list-nov-2026-11-18.md",
+        "nfl-week11-6c72a9fa/evidence/reserve-list-oct-2026-11-18.md"
+      ],
+      "sources": [
+        "C672-RESERVE-NOV-1118",
+        "C672-RESERVE-OCT-1118"
+      ],
+      "gate_now": "No per-club roster or IR capture for 32 clubs, and no join to the injury report. The reserve pages keep a rolling window (flag F-RESERVE), so the history before the window is not recoverable from later reads."
+    },
+    {
+      "id": "DR-49",
+      "status": "Partial",
+      "basis": "Four committed Week 10 captures disagree and none reproduces the 254/279 targets in the requirement. The availability desk CSV has 326 rows across 28 clubs (its raw text carries 326 practice-status lines). The assurance desk CSV has 276 rows, Cincinnati at 4, and no rows for Baltimore or the Chargers. The 2026-11-17 capture has 347 rendered rows. The repository's own flag (nfl-review.html; research/nfl/flags.json) already says the 254/279 figures are not reproduced.",
+      "evidence": [
+        "nfl-availability-28ef/data/injuries-week10-2026.csv",
+        "nfl-availability-28ef/evidence/injury-report-week10-2026.joined.md",
+        "nfl-assurance-9580ac3f/data/injuries.csv",
+        "nfl-readiness-e7ef/evidence/injuries-w10-2026-11-17.md",
+        "nfl-review.html"
+      ],
+      "sources": [
+        "X28-NFL-INJ-W10",
+        "NFL-INJ-1117"
+      ],
+      "gate_now": "Counts differ across desks (326, 276, 347, 20 in the research extract). Cincinnati is 8 in one capture and 4 in another. Which read matches the page as published has not been established by a full, timestamped recount."
+    },
+    {
+      "id": "DR-57",
+      "status": "Partial",
+      "basis": "A favourite-side control is published on the competition leaderboard. The random-pick baseline is not: the only 'random' in the leaderboard code is a random-sign permutation test (nfl-pricing/leaderboard.py), which is a null test, not a random-pick strategy run through the leaderboard.",
+      "evidence": [
+        "nfl-competition/site/leaderboard.html",
+        "nfl-pricing/leaderboard.py"
+      ],
+      "sources": [
+        "K637-REPO-COMP-LB",
+        "K637-REPO-PRICING-LB"
+      ],
+      "gate_now": "No random-pick strategy is scored in the same run as the favourite-side control. The random-sign test is not a substitute for it."
+    },
+    {
+      "id": "DR-61",
+      "status": "Partial",
+      "basis": "A what-changed ledger is rendered between two dated captures (2026-11-17 and 2026-11-18): standings, reserve-list series, injury-report stability and schedule. That is one interval, not a weekly series.",
+      "evidence": [
+        "nfl-week11-6c72a9fa/data/whatchanged.json",
+        "nfl-week11-6c72a9fa/site/what-changed.html",
+        "nfl-slate-03dcea07/site/weekly-diff.html"
+      ],
+      "sources": [
+        "C672-STANDINGS-1118",
+        "E15-NFL-SCHED-REG10-1117",
+        "NFL-INJ-1117"
+      ],
+      "gate_now": "One interval rendered. The ledger needs at least one further dated weekly capture before a weekly diff exists."
+    },
+    {
+      "id": "DR-64",
+      "status": "Partial",
+      "basis": "The reserve list is captured at read time for two monthly windows (November and October, 2026-11-18). Eight rows that printed on the 2026-11-17 capture have scrolled off the live page and survive only in the dated capture. Nothing joins the reserve list to the injury report for 32 clubs.",
+      "evidence": [
+        "nfl-week11-6c72a9fa/site/reserve-sweep.html",
+        "nfl-week11-6c72a9fa/evidence/reserve-list-nov-2026-11-18.md",
+        "nfl-week11-6c72a9fa/evidence/reserve-list-oct-2026-11-18.md"
+      ],
+      "sources": [
+        "C672-RESERVE-NOV-1118",
+        "C672-RESERVE-OCT-1118"
+      ],
+      "gate_now": "'Not listed' still cannot be read as 'available' for all 32 clubs, because the join is missing and the rolling window hides older moves."
+    },
+    {
+      "id": "DR-68",
+      "status": "Partial",
+      "basis": "The 2026 rule changes (6-1-3, 6-1-5, 6-1-6, 19-2) are transcribed and checked against the league's own table (operations.nfl.com, read 2026-11-18). The 'where a pre-2026 model would be wrong' column is deliberately empty on every row, so no priors filter is applied to any model.",
+      "evidence": [
+        "nfl-ledger-637442e9/evidence/nfl-2026-rule-changes-2026-11-18.md",
+        "nfl-integration-c815/site/rules-2026.html"
+      ],
+      "sources": [
+        "SL-1118-OPS-RULEBOOK",
+        "NFL-RULES-2026"
+      ],
+      "gate_now": "The priors filter is not applied. The finer element values on rules-2026.html are not re-verified against the rulebook PDF (see the evidence file)."
+    }
+  ]
+}

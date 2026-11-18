@@ -1,0 +1,79 @@
+{
+  "schema": "637442e9.suggestions.v1",
+  "suggestions": [
+    {
+      "id": "S1",
+      "title": "Make one requirement register the source of truth",
+      "options": [
+        "A. Keep research/nfl-decision-readiness.json (70 rows) and retire the other three registers into a crosswalk.",
+        "B. Keep all four and generate a crosswalk page (no status edits).",
+        "C. Defer until the owner decides."
+      ],
+      "desk_recommendation": "A, after the owner confirms which rows are current.",
+      "acceptance": "One register feeds the landing page; a test fails if another register disagrees."
+    },
+    {
+      "id": "S2",
+      "title": "Decide the terms route for any capture",
+      "options": [
+        "A. Send a written consent request to the NFL Legal address named in the terms; no capture until a written answer exists.",
+        "B. Use a licensed data feed from a rights-holder instead of nfl.com.",
+        "C. Stop automated capture; use only the dated captures already held."
+      ],
+      "desk_recommendation": "A and B in parallel; C until one of them answers.",
+      "acceptance": "A recorded written answer, or a signed licence, with date and scope."
+    },
+    {
+      "id": "S3",
+      "title": "Choose the depth-order route for all 32 clubs",
+      "options": [
+        "A. Keep Houston out of the depth model; use club charts for 31 clubs (current state).",
+        "B. Obtain an official snap-count arrangement (Q3) and join it.",
+        "C. Freeze depth features until one route covers 32 clubs."
+      ],
+      "desk_recommendation": "C until Q3 or Q8 is answered.",
+      "acceptance": "One route verified club by club for all 32 clubs."
+    },
+    {
+      "id": "S4",
+      "title": "Recount Week 10 injuries once, with clock times and hashes",
+      "options": [
+        "A. One complete read of the official report, all chunks, timestamped and hashed; reconcile the three captures.",
+        "B. Retire the 254/279 targets from the requirement text.",
+        "C. Quote no Week 10 total until A is done."
+      ],
+      "desk_recommendation": "A, then B.",
+      "acceptance": "A row-level reconciliation table with zero unexplained differences."
+    },
+    {
+      "id": "S5",
+      "title": "Pick the canonical results file",
+      "options": [
+        "A. Adopt the 150-row file after a row-level diff against the official pages.",
+        "B. Keep the 149-row file and add LAC@BAL as a pending row."
+      ],
+      "desk_recommendation": "A.",
+      "acceptance": "One file cited by every desk; the other file removed or marked superseded."
+    },
+    {
+      "id": "S6",
+      "title": "Implement or relabel the random-pick control",
+      "options": [
+        "A. Score a seeded random-pick strategy in the same run as the favourite control.",
+        "B. Relabel the random-sign test as a null test and drop the 'random picks' requirement wording."
+      ],
+      "desk_recommendation": "A, because the requirement asks for it by name.",
+      "acceptance": "A published random-pick row with its n and seed."
+    },
+    {
+      "id": "S7",
+      "title": "Verify the rulebook body before using rule elements",
+      "options": [
+        "A. Read sections 6-1-2 and 6-1-6 of the 2026 rulebook in full; correct rules-2026.html from them.",
+        "B. Keep rules-2026.html limited to the change table."
+      ],
+      "desk_recommendation": "A before any priors filter is applied.",
+      "acceptance": "Each element value cites a rulebook sentence read in full."
+    }
+  ]
+}

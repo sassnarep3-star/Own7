@@ -1,0 +1,77 @@
+{
+  "desk": "nfl-ledger-637442e9",
+  "session": "arena/637442e9-own7",
+  "read_on": "2026-11-18",
+  "pages": [
+    "index.html",
+    "executive-summary.html",
+    "gaps.html",
+    "suggestions.html",
+    "flagged.html",
+    "sources.html",
+    "style.css"
+  ],
+  "lines": 70,
+  "status_now": {
+    "Implemented": 28,
+    "Partial": 29,
+    "Open": 7,
+    "Blocked": 4,
+    "Rejected": 2
+  },
+  "status_prior": {
+    "Implemented": 30,
+    "Partial": 23,
+    "Open": 11,
+    "Blocked": 4,
+    "Rejected": 2
+  },
+  "changed": [
+    "DR-13",
+    "DR-49",
+    "DR-57",
+    "DR-61",
+    "DR-64",
+    "DR-68"
+  ],
+  "week10_counts": {
+    "avail_rows": 326,
+    "avail_clubs": 28,
+    "avail_practice_lines": 326,
+    "avail_cin": 8,
+    "avail_sea": 15,
+    "avail_bye_absent": [
+      "CHI",
+      "DEN",
+      "PHI",
+      "TB"
+    ],
+    "assurance_rows": 276,
+    "assurance_clubs": 26,
+    "assurance_cin": 4,
+    "assurance_sea": 15,
+    "assurance_no_bal_lac": [
+      "BAL",
+      "LAC"
+    ],
+    "e7ef_rows": 347,
+    "e7ef_lines": 347,
+    "canon_games": 149,
+    "complete_games": 150,
+    "games_only_in_complete": [
+      "LAC@BAL"
+    ],
+    "week10_byes": [
+      "CHI",
+      "DEN",
+      "PHI",
+      "TB"
+    ]
+  },
+  "evidence_sha256": {
+    "nfl-2026-rule-changes-2026-11-18.md": "fa6cdde6938f00e8023bc0ceb119663a30377ced6782acc77296c1083e508797",
+    "nfl-odds-page-2026-11-18.md": "03dea450ec0a8d45542644e8abdcc0b5375237a2c4e390a7c6cc9974b7fe4979",
+    "nfl-terms-read-2026-11-18.md": "e91bc2354ee6fde3283a0595efe4c91a5df85e7bca08e843a5832fbd1c69bba7",
+    "snap-count-search-2026-11-18.md": "a2a54fa2d3271291245899fe46f4bd59c05ab23b66045e379a7661d5ca371e15"
+  }
+}

@@ -1,0 +1,170 @@
+{
+ "schema": "637442e9.questions.v1",
+ "questions": [
+  {
+   "id": "Q1",
+   "question": "Will the NFL give written consent for systematic retrieval of the injury report and club depth pages?",
+   "blocks": [
+    "DR-21",
+    "DR-29",
+    "DR-30",
+    "DR-54",
+    "DR-55",
+    "DR-66"
+   ],
+   "known": "Terms §1.3 prohibit systematic retrieval absent express prior written consent (evidence file). The terms name a Legal Department address for written permission requests, in the linking provisions; the terms do not say whether that route covers data retrieval.",
+   "missing": "Any answer from the NFL. No consent has been requested or granted.",
+   "discover": "Send a written request to the address in the terms, describing the capture and its cadence. Record the reply in the repository with its date. No capture starts before a written answer exists.",
+   "owner": "Project owner",
+   "sources": [
+    "K637-NFL-TERMS-1118",
+    "NFL-TERMS"
+   ]
+  },
+  {
+   "id": "Q2",
+   "question": "Does analysis of published NFL facts, for originated betting lines, fall within NFL.com terms §12?",
+   "blocks": [
+    "DR-01",
+    "DR-18",
+    "DR-20",
+    "DR-59",
+    "DR-60"
+   ],
+   "known": "§12 prohibits using the Services to gamble or wager on the result of any NFL game (verbatim in evidence). This desk makes no legal determination.",
+   "missing": "A legal opinion on the project's use of the Services and of its published facts.",
+   "discover": "Take advice from qualified counsel on the verbatim text and on the project's uses. Record the answer with its date before any line is published.",
+   "owner": "Project owner",
+   "sources": [
+    "K637-NFL-TERMS-1118"
+   ]
+  },
+  {
+   "id": "Q3",
+   "question": "Is there an official NFL snap-count source covering all 32 clubs?",
+   "blocks": [
+    "DR-11",
+    "DR-52",
+    "DR-56"
+   ],
+   "known": "The 2026-11-18 search returned third-party snap-count sites only (evidence file). No official source was located.",
+   "missing": "An official source, its licence terms, and its club coverage.",
+   "discover": "Check the league's official statistics pages for a published snap-count table, and ask the league whether snap data is available under a licence. Verify coverage for all 32 clubs before any join.",
+   "owner": "Project owner",
+   "sources": [
+    "NFL-TERMS"
+   ]
+  },
+  {
+   "id": "Q4",
+   "question": "Which Week 10 injury count matches the official report as published?",
+   "blocks": [
+    "DR-30",
+    "DR-31",
+    "DR-49",
+    "DR-55"
+   ],
+   "known": "Committed captures give 326 rows (availability desk, 2026-11-13), 276 rows (assurance desk) and 347 rendered rows (2026-11-17). The brief's 254/279 targets are not reproduced.",
+   "missing": "A complete official recount taken at a recorded clock time, row by row, with a hash of the raw text.",
+   "discover": "Re-read the official injury report page once, in full (all chunks), record the clock time and the SHA-256 of each chunk, and reconcile row by row against the three captures.",
+   "owner": "Project owner",
+   "sources": [
+    "X28-NFL-INJ-W10",
+    "NFL-INJ-1117"
+   ]
+  },
+  {
+   "id": "Q5",
+   "question": "Which Week 1-10 results file is canonical?",
+   "blocks": [
+    "DR-02",
+    "DR-19",
+    "DR-70"
+   ],
+   "known": "The 149-row and 150-row files differ only by the LAC@BAL final.",
+   "missing": "A decision on which file the backtest corpus reads.",
+   "discover": "Owner choice. The LAC@BAL final is confirmed by the fresh-reads desk from the official game centre.",
+   "owner": "Project owner",
+   "sources": [
+    "E15-NFL-SCHED-REG10-1117"
+   ]
+  },
+  {
+   "id": "Q6",
+   "question": "Which requirement register does the landing page render?",
+   "blocks": [
+    "DR-22"
+   ],
+   "known": "Four registers exist with different row counts and statuses (flag F-REG).",
+   "missing": "A single owner-chosen register.",
+   "discover": "Owner choice (suggestion S1).",
+   "owner": "Project owner",
+   "sources": [
+    "K637-REPO-DRLEDGER"
+   ]
+  },
+  {
+   "id": "Q7",
+   "question": "Which past seasons of official results and injury reports can be used for a train/validation/holdout split?",
+   "blocks": [
+    "DR-44",
+    "DR-53",
+    "DR-66",
+    "DR-70"
+   ],
+   "known": "The repository holds one season of results (2026, Weeks 1-10 final). No past-season injury archive has been located.",
+   "missing": "Official results and reports for at least three seasons, and the terms position for retrieving them.",
+   "discover": "Locate the league's season results pages for earlier seasons and record their terms position under §1.3 before retrieval.",
+   "owner": "Project owner",
+   "sources": [
+    "K637-NFL-TERMS-1118"
+   ]
+  },
+  {
+   "id": "Q8",
+   "question": "Does an authorised structured source exist for the Houston depth chart?",
+   "blocks": [
+    "DR-32",
+    "DR-52"
+   ],
+   "known": "The Houston depth page was read on 2026-11-13 and no depth table appeared in the rendered text (X28-HOU-DEPTH). Nothing was substituted. Whether the chart is an image was not established by that read.",
+   "missing": "An authorised structured source.",
+   "discover": "Ask the club or the league for a structured version. Until one exists, Houston stays out of the depth model.",
+   "owner": "Project owner",
+   "sources": [
+    "X28-HOU-DEPTH"
+   ]
+  },
+  {
+   "id": "Q9",
+   "question": "Which pre-2026 assumptions should the priors filter correct, and by how much?",
+   "blocks": [
+    "DR-68"
+   ],
+   "known": "The filter's right-hand column is empty on every row by design.",
+   "missing": "Evidence-backed corrections, one per row.",
+   "discover": "Owner or modeller completes each row with a source and a sized effect, or records that none is needed.",
+   "owner": "Modeller",
+   "sources": [
+    "SL-1118-OPS-RULEBOOK"
+   ]
+  },
+  {
+   "id": "Q10",
+   "question": "Is there a rights-cleared price source for the originated-line comparison?",
+   "blocks": [
+    "DR-01",
+    "DR-18",
+    "DR-59",
+    "DR-60"
+   ],
+   "known": "nfl.com/odds renders a 404 (2026-11-18). No official price was located. Third-party price data is rights-restricted per the register.",
+   "missing": "A price source with written permission to use it.",
+   "discover": "Ask the operator or data licensor for written terms. No price is used until those terms are recorded.",
+   "owner": "Project owner",
+   "sources": [
+    "K637-NFL-ODDS-1118"
+   ]
+  }
+ ]
+}
