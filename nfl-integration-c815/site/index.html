@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integration audit overview · OWN7 NFL integration audit</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="brand"><strong>OWN7 · NFL integration audit</strong><span>session arena/c815bdd2-own7 · 2026-11-18</span></div>
+  <nav aria-label="Desk pages"><a href="index.html" aria-current="page">Overview</a><a href="week10-completion.html">Week 10</a><a href="requirements.html">Requirements</a><a href="rules-2026.html">2026 rules</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a></nav>
+</header>
+<main id="main">
+<p class="eyebrow">OWN7 · NFL</p>
+<h1>Integration audit overview</h1>
+
+<p class="lead">This desk does one job: re-derive what other desks published, from the
+official pages, and publish the disagreements instead of smoothing them over. On
+2026-11-18 it found one concrete, checkable defect and one requirement it could close.</p>
+
+<div class="kpis"><div class="kpi"><span class="kpi-value">150</span><span class="kpi-label">games played per official standings</span><span class="sub">sum(W)+sum(L)+sum(T) over 32 clubs, divided by 2</span></div><div class="kpi"><span class="kpi-value">149</span><span class="kpi-label">games in the canonical results feed</span><span class="sub">nfl-results/data/games-2026-w1-10.csv</span></div><div class="kpi"><span class="kpi-value">1</span><span class="kpi-label">game the feed is missing</span><span class="sub">LAC 23, BAL 20</span></div><div class="kpi"><span class="kpi-value">70</span><span class="kpi-label">requirement rows checked</span><span class="sub">every named artefact resolves</span></div><div class="kpi"><span class="kpi-value">30</span><span class="kpi-label">published as Implemented</span><span class="sub">claim carried through unchanged</span></div><div class="kpi"><span class="kpi-value">15</span><span class="kpi-label">Open or Blocked</span><span class="sub">not upgradeable without evidence</span></div></div>
+
+<div class="panel">
+<h2>The one thing that changed today</h2>
+<p>The Week 10 slate is complete. <strong>Chargers 23, Ravens 20</strong> was final on the
+official Week 10 page, and the official standings now credit both clubs for it. The
+canonical results feed in this repository still holds <strong>149</strong>
+games, because it was built before that game finished. The official standings arithmetic
+implies <strong>150</strong>. The gap is exactly one game, and this desk
+proves it three independent ways — see
+<a href="week10-completion.html" rel="noopener">Week 10 completion</a>.</p>
+<p>Nothing was patched in another session's file. The feed is flagged, the proof is
+published, and the fix is a one-line change to a file this session does not own.</p>
+</div>
+
+<div class="panel">
+<h2>How to read this desk</h2>
+<ul>
+<li><strong>Every number is arithmetic.</strong> Each count on every page is computed from the
+rows above it, or extracted literally from an official capture. A build that cannot
+reconcile aborts instead of publishing.</li>
+<li><strong>Two columns, always.</strong> Where a value comes from another desk, this desk shows
+that desk's published claim next to its own independent check. It never silently
+upgrades a status.</li>
+<li><strong>Blanks are real.</strong> A cell with no official value is empty and carries a
+reason. No frequency, price or prior is estimated anywhere.</li>
+</ul>
+</div>
+
+<h2>The pages</h2>
+<div class="table-wrap"><table><caption>What each page answers</caption>
+<thead><tr><th scope="col">Page</th><th scope="col">Question it answers</th><th scope="col">Official source</th></tr></thead><tbody>
+<tr data-source-ids="NFL-STANDINGS"><td><a href="week10-completion.html" rel="noopener">Week 10 completion</a></td>
+<td>Is the results feed complete, and exactly how far behind is it?</td>
+<td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr>
+<tr data-source-ids="NFL-STANDINGS"><td><a href="requirements.html" rel="noopener">Requirements</a></td>
+<td>For each of the 70 requirement rows: what is claimed, does the artefact exist, and what must a reviewer do?</td>
+<td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">register</a></td></tr>
+<tr data-source-ids="NFL-RULES-2026"><td><a href="rules-2026.html" rel="noopener">2026 rules</a></td>
+<td>What do the 2026 kickoff and declared onside-kick rules actually say, and where would a pre-2026 model be biased?</td>
+<td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr>
+<tr data-source-ids="NFL-RULES-2026"><td><a href="suggestions.html" rel="noopener">Suggestions</a></td>
+<td>What should be changed next, ranked, each with an acceptance test.</td>
+<td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">NFL-RULES-2026</a></td></tr>
+<tr data-source-ids="NFL-STANDINGS"><td><a href="flagged.html" rel="noopener">Flagged</a></td>
+<td>Every irregularity found, with the official link, so it can be reviewed after the site is live.</td>
+<td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">NFL-STANDINGS</a></td></tr>
+<tr data-source-ids="NFL-STANDINGS"><td><a href="sources.html" rel="noopener">Sources</a></td>
+<td>Every official URL this desk read, when, and the SHA-256 of the retained capture.</td>
+<td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr>
+</tbody></table></div>
+
+</main>
+<footer>
+  <p>NFL data is attributed to NFL.com. Not affiliated with or endorsed by the NFL. This desk
+  publishes no price, odds, return, stake, wager, reward or recommendation. Where an official
+  source states no value, the cell is empty and flagged — never estimated.</p>
+</footer>
+</body></html>

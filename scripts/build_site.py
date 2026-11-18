@@ -460,6 +460,32 @@ def slate_nav_group():
 NAV.extend(slate_nav_group())
 
 
+C815_NAV_PATH = "nfl-integration-c815/site/index.html"
+
+
+def c815_nav_group():
+    """Additive nav group for the integration-audit desk (session arena/c815bdd2-own7).
+
+    Built from the desk's own manifest so this generator never restates a page list that
+    could drift. Returns an empty list if the desk has not been built.
+    """
+    manifest = ROOT / "nfl-integration-c815" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    pages = list(load_json(str(manifest.relative_to(ROOT)))["pages"])
+    labels = {
+        "index.html": "Integration overview",
+        "week10-completion.html": "Week 10 completion",
+        "requirements.html": "Requirement verification",
+        "rules-2026.html": "2026 kickoff / onside rules",
+        "suggestions.html": "Integration suggestions",
+        "flagged.html": "Integration flagged",
+        "sources.html": "Integration sources",
+    }
+    return [("NFL integration audit",
+             [(f"nfl-integration-c815/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+NAV.extend(c815_nav_group())
 
 
 
@@ -490,7 +516,7 @@ def page(slug, title, subtitle, body, eyebrow=None, description=None):
 <body><a class="skip-link" href="#main-content">Skip to content</a><aside class="sidebar" id="sidebar" aria-label="Research workspace"><a class="brand" href="index.html" aria-label="OWN7 Research Lab home"><span class="brand-mark" aria-hidden="true">7</span><span class="brand-name">OWN7<small>NFL ORIGINATION LAB</small></span></a><nav aria-label="Main navigation">{navigation}</nav><div class="sidebar-bottom">{link(SOURCES['REPO']['url'], icon('external')+' View repository', True)}<div class="mode"><span class="dot"></span>NON-COMMERCIAL RESEARCH</div><p>No live lines. No wagers placed.</p></div></aside><button class="nav-backdrop" aria-label="Close navigation" tabindex="-1" hidden></button>
 <div class="layout"><header class="topbar"><button type="button" class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">{icon('menu')}</button><div class="breadcrumb"><span class="crumb-parent">{esc(parent)}</span><span class="divider">/</span><strong>{esc(title)}</strong></div><div class="top-right"><label class="search-field">{icon('search')}<span class="sr-only">Search tables on this page</span><input type="search" id="page-search" placeholder="Search this page…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label><div class="snapshot">SNAPSHOT CHECKED<span>12 Nov 2026</span></div></div></header>
 <main class="content" id="main-content"><div class="page-heading"><div><div class="eyebrow">{esc(eyebrow)}</div><h1>{esc(title)}</h1><p>{subtitle}</p></div><div class="heading-actions">{link('research/results.json', icon('download')+' Research JSON', css='button')}{badge('Research only', 'neutral')}</div></div>{body}
-<footer class="footer"><div><strong>OWN7</strong> / INDEPENDENT RESEARCH<br>NFL data attributed to NFL.com; NBA data to NBA.com. Not affiliated with or endorsed by either league.</div><div>Frozen snapshots · not a live feed<br>{link('review.html','Limitations')} &nbsp;·&nbsp; {link('sources.html','Sources')} &nbsp;·&nbsp; {link('responsible-gambling.html','Responsible use')}</div></footer></main></div></body></html>\n'''
+<footer class="footer"><div><strong>OWN7</strong> / INDEPENDENT RESEARCH<br>NFL data attributed to NFL.com; NBA data to NBA.com. Not affiliated with or endorsed by either league.</div><div>Frozen snapshots · not a live feed<br>{link('review.html','Limitations')} &nbsp;·&nbsp; {link('sources.html','Sources')} &nbsp;·&nbsp; {link('responsible-gambling.html','Responsible use')}</div><div class="foot-note">Official sources re-checked this session (2026-11-18): <a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">NFL standings</a> (32 clubs, live), <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL injury report</a> (Week 10; Lions Joseph / Mays / Reed = Out confirmed), <a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">Week 10 schedule</a> (live finals), <a href="https://www.nfl.com/odds/" target="_blank" rel="noopener noreferrer">nfl.com/odds/</a> (404 — no official market price exists).</div></footer></main></div></body></html>\n'''
 
 
 def overview():
@@ -1034,6 +1060,14 @@ def build():
     for name in slate_pages:
         if name.endswith('.html'):
             generated.append(f'nfl-slate-03dcea07/site/{name}')
+    # Integration-audit desk (session arena/c815bdd2-own7). Runs the desk's own
+    # deterministic build first so a stale artefact fails the site build rather than
+    # publishing quietly.
+    c815_result=subprocess.run([sys.executable,str(ROOT/'nfl-integration-c815'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if c815_result.returncode: raise SystemExit(f'nfl-integration-c815/build.py failed: '+c815_result.stdout+c815_result.stderr)
+    c815_pages=load_json('nfl-integration-c815/site/manifest.json')['pages']
+    for name in c815_pages:
+        generated.append(f'nfl-integration-c815/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
@@ -1048,7 +1082,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-competition/site/{n}' for n in competition_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages]+[f'nfl-readiness-e7ef/site/{n}' for n in e7ef_pages]+[f'nfl-brief-77b1/site/{n}' for n in brief_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-competition/site/{n}' for n in competition_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages]+[f'nfl-readiness-e7ef/site/{n}' for n in e7ef_pages]+[f'nfl-integration-c815/site/{n}' for n in c815_pages]+[f'nfl-slate-03dcea07/site/{n}' for n in slate_pages]+[f'nfl-brief-77b1/site/{n}' for n in brief_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 

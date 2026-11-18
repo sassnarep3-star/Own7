@@ -59,6 +59,8 @@ jobs:
           python nfl-slate-03dcea07/build.py --check
           python -m unittest discover -s nfl-slate-03dcea07/tests -v
           python nfl-assurance-9580ac3f/availability.py
+          python nfl-integration-c815/build.py --check
+          python -m unittest discover -s nfl-integration-c815/tests -v
           python nfl-results/extract.py
           python nfl-results/engine.py
           python -m unittest discover -s nfl-results/tests -v

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 kickoff / onside-kick regime · OWN7 NFL integration audit</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="brand"><strong>OWN7 · NFL integration audit</strong><span>session arena/c815bdd2-own7 · 2026-11-18</span></div>
+  <nav aria-label="Desk pages"><a href="index.html">Overview</a><a href="week10-completion.html">Week 10</a><a href="requirements.html">Requirements</a><a href="rules-2026.html" aria-current="page">2026 rules</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a></nav>
+</header>
+<main id="main">
+<p class="eyebrow">OWN7 · NFL · rulebook</p>
+<h1>2026 kickoff / onside-kick regime</h1>
+
+<p class="lead">Requirement DR-68 was Open because the 2026 kickoff and declared onside-kick
+rules had not been transcribed from the official rulebook. They are transcribed here, and
+each value is <strong>extracted by pattern from the capture</strong> — if the wording ever
+changes, the build fails instead of carrying a stale number forward.</p>
+
+<div class="panel">
+<h3>What changed for 2026, in the rulebook's own words</h3>
+<p>6-1-3 alignment in the setup zone; 6-1-5 the dead-ball spot after a touchback when the
+kickoff is from the 50; <strong>6-1-6 permits the kicking team to declare an onside kick at
+any time during the game</strong>; 19-2 official consultation on disqualifications.</p>
+</div>
+
+<div class="table-wrap"><table><caption>The 2026 regime, one rule element per row</caption><thead><tr><th scope="col">Element</th><th scope="col">Value</th><th scope="col">Verbatim from the rulebook</th><th scope="col">Rule</th><th scope="col">Status</th><th scope="col">Source</th></tr></thead><tbody>
+<tr data-source-ids="NFL-RULES-2026"><td>May an onside kick be attempted at any time?</td><td>yes</td><td class="quote">At any time during the game, the kicking team may declare an onside kick</td><td>6-1-6</td><td>2026 change</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>Must it be declared to the Referee?</td><td>yes</td><td class="quote">may declare an onside kick by notifying the Referee prior to the start of the play clock</td><td>6-1-6</td><td>2026 change</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>Can it ever be a surprise onside kick?</td><td>no</td><td class="quote">The Referee will then notify the receiving team before starting the play clock</td><td>6-1-6</td><td>structural</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>Declaration deadline (play clock)</td><td>25-second play clock</td><td class="quote">(25-second play clock after the game official hands the kicker the ball)</td><td>6-1-6</td><td>structural</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>Kicking team restraining line (kickoff)</td><td>own 35</td><td class="quote">the restraining line for a kickoff</td><td>6-1-2</td><td>unchanged</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>Kicking team restraining line (onside kick)</td><td>own 35</td><td class="quote">The restraining line for the kicking team on an onside kick is the kicking team's 35-yard line</td><td>6-1-6(b)</td><td>structural</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>Kicking team restraining line (safety-kick onside)</td><td>own 20</td><td class="quote">or the kicking team's 20-yard line for a safety kick</td><td>6-1-6(b)</td><td>structural</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>Receiving team setup zone (width)</td><td>5 yards</td><td class="quote">the &quot;setup zone&quot; for the receiving team is the 5-yard area</td><td>6-1-2(d)</td><td>2026 alignment change</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>Receiving team setup zone (location)</td><td>receiving team's 35 to 30</td><td class="quote">between the receiving team's 35-yard line and its 30-yard line</td><td>6-1-2(d)</td><td>2026 alignment change</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>Touchback after a kickoff from the 50</td><td>dead ball at the 20</td><td class="quote">if the kickoff is from the 50-yard line and the play results in a touchback, then the dead ball spot is the 20-yard line</td><td>6-1-5</td><td>2026 change</td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr>
+</tbody></table></div><p class="note">Values in the second column are parsed out of the quoted text, not typed. Source: 2026 Official Playing Rules of the National Football League, media.nfl.com.</p>
+
+<h2>Where a pre-2026 model would be wrong</h2>
+<p>This is the priors filter the requirement asked for: the specific structural
+assumptions that are no longer true, and what ignoring each one does to the model. The
+right-hand column is deliberately empty on every row.</p>
+<div class="table-wrap"><table><caption>Bias register — what ignoring the 2026 regime would do</caption><thead><tr><th scope="col">ID</th><th scope="col">Affects</th><th scope="col">Pre-2026 assumption</th><th scope="col">2026 rule</th><th scope="col">Bias if ignored</th><th scope="col">Frequency used</th><th scope="col">Source</th></tr></thead><tbody>
+<tr data-source-ids="NFL-RULES-2026"><td>RG-01</td><td>4th-quarter comeback win-probability curves</td><td>an onside kick is only available to a trailing team late in the game</td><td>any team, at any time, by declaration</td><td>the model understates a leading team's option value and mis-states the available state space for the trailing team's comeback path</td><td class="blank" title="No official play-by-play capture is held, so no frequency is published"></td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>RG-02</td><td>game totals and 4th-quarter win probability</td><td>an onside kick can be a surprise play</td><td>declaration to the Referee is mandatory; the receiving team is notified</td><td>a surprise-recovery rate from any earlier season is not transferable, because the defence is told to expect the kick</td><td class="blank" title="No official play-by-play capture is held, so no frequency is published"></td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>RG-03</td><td>drive-start distributions after a kickoff penalty</td><td>a kickoff from the 50 is an ordinary kickoff</td><td>a touchback from the 50 puts the ball at the 20</td><td>field-position priors after a 15-yard kickoff penalty are wrong in one direction</td><td class="blank" title="No official play-by-play capture is held, so no frequency is published"></td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr><tr data-source-ids="NFL-RULES-2026"><td>RG-04</td><td>receiving-team return expectation</td><td>the setup zone is a single 5-yard band with a fixed 9-player rule</td><td>alignment requirements in the setup zone changed for 2026 (6-1-3)</td><td>return-yardage priors trained on 2024-2025 alignments do not transfer</td><td class="blank" title="No official play-by-play capture is held, so no frequency is published"></td><td class="src"><a href="https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf" rel="noopener">rulebook</a></td></tr>
+</tbody></table></div><p class="note">No onside-kick or comeback frequency is published. This project holds no official play-by-play capture, so both stay blank by rule.</p>
+
+<div class="panel">
+<h3>Honest status of DR-68</h3>
+<p><strong>Rule text: closed.</strong> Every element above is verbatim from the official
+rulebook, captured 2026-11-18. <strong>Prior weight: still open.</strong>
+How often clubs declared an onside kick in 2026, and how often a declared onside kick was recovered, are empirical frequencies. This project holds no official play-by-play capture, so both stay blank and are published as blank rather than estimated.</p>
+</div>
+
+</main>
+<footer>
+  <p>NFL data is attributed to NFL.com. Not affiliated with or endorsed by the NFL. This desk
+  publishes no price, odds, return, stake, wager, reward or recommendation. Where an official
+  source states no value, the cell is empty and flagged — never estimated.</p>
+</footer>
+</body></html>
