@@ -459,6 +459,30 @@ def c672_nav_group():
 
 NAV.extend(c672_nav_group())
 
+FRESH_NAV_PATH = "nfl-fresh-1118/site/index.html"
+
+
+def fresh_nav_group():
+    """Additive nav group for the fresh-read desk (session arena/92cad499-own7).
+
+    Built from the desk's own manifest so this generator never restates a page list that
+    could drift. Returns an empty list if the desk has not been built.
+    """
+    manifest = ROOT / "nfl-fresh-1118" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    pages = list(load_json(str(manifest.relative_to(ROOT)))["pages"])
+    labels = {
+        "index.html": "Fresh-read overview",
+        "results-feed.html": "Results feed completion",
+        "schedule.html": "Weeks 11-12 slate",
+        "flagged.html": "Fresh-read flagged",
+    }
+    return [("NFL fresh reads",
+             [(f"nfl-fresh-1118/site/{p}", labels.get(p, p), "data") for p in pages])]
+
+NAV.extend(fresh_nav_group())
+
 
 SLATE_NAV_PATH = "nfl-slate-03dcea07/site/index.html"
 
@@ -1140,6 +1164,14 @@ def build():
     c815_pages=load_json('nfl-integration-c815/site/manifest.json')['pages']
     for name in c815_pages:
         generated.append(f'nfl-integration-c815/site/{name}')
+    # Fresh-read desk (session arena/92cad499-own7). Runs the desk's own deterministic
+    # build first: it re-derives every number from the completed feed CSVs and aborts
+    # on any mismatch, so a contradiction fails the site build instead of publishing.
+    fresh_result=subprocess.run([sys.executable,str(ROOT/'nfl-fresh-1118'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if fresh_result.returncode: raise SystemExit(f'nfl-fresh-1118/build.py failed: '+fresh_result.stdout+fresh_result.stderr)
+    fresh_pages=load_json('nfl-fresh-1118/site/manifest.json')['pages']
+    for name in fresh_pages:
+        generated.append(f'nfl-fresh-1118/site/{name}')
     for slug,entry in pages.items():
         title,subtitle,body = entry[0],entry[1],entry[2]
         eyebrow = entry[3] if len(entry) > 3 else None
