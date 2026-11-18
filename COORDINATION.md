@@ -2763,3 +2763,28 @@ flagged-items-do-not-block rule, and `main`'s browser job is therefore red right
 does not own `nfl-snapcount-e5e4/` and has not touched it — request: add the missing focusability
 (e.g. `tabindex="0"` on the scrollable `.table-card`) in your desk build and regenerate. All other
 241 pages pass desktop+mobile WCAG A/AA, including the seven fresh-reads pages.
+
+## Session arena/c3f9459b-own7 — official playing-time desk + takeover of PR #57 (2026-11-18)
+
+Session ID: `session-arena-c3f9459b-own7`
+Branch: `arena/c3f9459b-own7` (fixed by Arena; the `session-<id>/<task>` naming in the brief is not used because the branch name is fixed for this session and all work stays on it).
+
+Baseline at claim: working tree clean at `0b5f91a` (main, PR #74). Statuses already recorded by earlier
+sessions are retained unchanged; only this section is added by this session.
+
+### Task board
+
+| ID | Task | Status | Owner | Exclusive file scope | Notes |
+|---|---|---|---|---|---|
+| P1 | Coordination claim + green baseline replay | in progress | session-arena-c3f9459b-own7 | `COORDINATION.md` (append-only) | This entry. |
+| P2 | Take over crashed session `arena/383626a6-own7` (PR #57, last commit 2026-11-17T01:58Z, >60 min idle) and merge its desk by union | in progress | session-arena-c3f9459b-own7 | `nfl-readiness/**` (new), conflicts resolved as unions | Branch is based on an older main and deletes `nfl_pages.py`, `nfl_readiness.py`, `research/nfl-decision-readiness.json`, `tests/test_nfl_readiness.py`; those must be preserved, not dropped. |
+| P3 | New desk: official playing time (NFL Game Book "Playtime Percentage") — snaps and snap shares for every player in every Week 10 2026 game | in progress | session-arena-c3f9459b-own7 | `nfl-playtime/**` (new) | Raw captures are new immutable files in this desk's own `raw/`. No other desk's files are edited. |
+| P4 | Depth from playing time (not jersey order) + starter/backup split + replacement depth (1st–4th string) | in progress | session-arena-c3f9459b-own7 | `nfl-playtime/**` | Unlocks requirements R11, R31 (snap part), R56. |
+| P5 | Designated reliability recomputed on official playing-time evidence (Wilson intervals, n published) | in progress | session-arena-c3f9459b-own7 | `nfl-playtime/**` | Partial for R44/R53: one week is one sample; labelled as such. |
+| P6 | Past-season official injury-report archive (2025 and earlier weeks) | in progress | session-arena-c3f9459b-own7 | `nfl-playtime/**` or `nfl-archive/**` | R66 / R54 / R55. |
+| P7 | Additive integration: nav group, landing-page section, source register, CI lines, readiness crosswalk update | unclaimed | session-arena-c3f9459b-own7 | additive lines in `scripts/build_site.py`, `scripts/check_site.py`, `scripts/serve_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `research/sources.json`, `README.md` | No existing page or value overwritten. |
+| P8 | Re-verify combined data line by line, full battery, PR, merge, Pages deploy, record | unclaimed | session-arena-c3f9459b-own7 | `COORDINATION.md`, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+Rules this session follows: fixed branch only; a value is populated only from an official page read in this
+session, otherwise left blank and flagged; every table row keeps a registered official source link;
+`git pull --rebase` before every push; small frequent commits; other sessions' implementation files are not edited.
