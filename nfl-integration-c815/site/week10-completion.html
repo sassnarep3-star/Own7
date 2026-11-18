@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 10 completion &amp; feed residue · OWN7 NFL integration audit</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="brand"><strong>OWN7 · NFL integration audit</strong><span>session arena/c815bdd2-own7 · 2026-11-18</span></div>
+  <nav aria-label="Desk pages"><a href="index.html">Overview</a><a href="week10-completion.html" aria-current="page">Week 10</a><a href="requirements.html">Requirements</a><a href="rules-2026.html">2026 rules</a><a href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a></nav>
+</header>
+<main id="main">
+<p class="eyebrow">OWN7 · NFL · verified feed</p>
+<h1>Week 10 completion &amp; feed residue</h1>
+
+<p class="lead">The canonical results feed holds 149 finals. The official
+standings, read today, imply 150. This page proves the difference is
+exactly one game — <strong>LAC 23, BAL 20</strong> — and shows why that is a
+conclusion rather than an assumption.</p>
+
+<div class="panel">
+<h2>1. The settled game</h2>
+<p>On the official Week 10 page the publisher now prints a dated result headline where the
+2026-11-17 read printed a kickoff time: <strong>LAC at BAL,
+23-20</strong>, Monday, November 16.
+The fixture column is blank by rule where no value was published — it was published here.
+<a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">official Week 10 page</a></p>
+</div>
+
+<div class="panel">
+<h2>2. The standings arithmetic</h2>
+<p>Every standings read must close on these identities before any value from it is used.
+All four close on the 2026-11-18 capture.</p>
+</div>
+<div class="table-wrap"><table><caption>League arithmetic on the 2026-11-18 official standings</caption><thead><tr><th scope="col">Identity</th><th scope="col">Expression</th><th scope="col">Observed</th><th scope="col">Required</th><th scope="col">Result</th><th scope="col">Source</th></tr></thead><tbody>
+<tr data-source-ids="NFL-STANDINGS"><td>League wins = league losses</td><td>sum(W), sum(L)</td><td>149 / 149</td><td>equal</td><td><span class="badge badge-ok">closes</span></td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>League points for = points against</td><td>sum(PF), sum(PA)</td><td>6923 / 6923</td><td>equal</td><td><span class="badge badge-ok">closes</span></td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Club-games is even</td><td>sum(W)+sum(L)+sum(T)</td><td>300</td><td>even</td><td><span class="badge badge-ok">closes</span></td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Games played</td><td>club-games / 2</td><td>150</td><td>whole number</td><td><span class="badge badge-ok">closes</span></td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr>
+</tbody></table></div><p class="note">Source: https://www.nfl.com/standings/ read 2026-11-18. Formula column is not data: it states the check being applied.</p>
+
+<div class="panel">
+<h2>3. The delta is exactly the settled headline</h2>
+<p>The engine subtracts the 2026-11-17 official capture from today's and requires the
+numeric movement to equal the arithmetic of the headline in section 1. Verdict:
+<em>the 2026-11-18 minus 2026-11-17 delta equals the settled headline exactly</em>. A field that should not have moved is required to be
+absent, so a stray edit cannot pass as this game.</p>
+</div>
+<div class="table-wrap"><table><caption>Cell-by-cell movement between the two official standings captures (numeric fields)</caption><thead><tr><th scope="col">Club</th><th scope="col">Field</th><th scope="col">2026-11-17</th><th scope="col">2026-11-18</th><th scope="col">Movement</th><th scope="col">Source</th></tr></thead><tbody>
+<tr data-source-ids="NFL-STANDINGS"><td>Baltimore Ravens</td><td>L</td><td>5</td><td>6</td><td>1</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Baltimore Ravens</td><td>PF</td><td>189</td><td>209</td><td>20</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Baltimore Ravens</td><td>PA</td><td>236</td><td>259</td><td>23</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Los Angeles Chargers</td><td>W</td><td>0</td><td>1</td><td>1</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Los Angeles Chargers</td><td>PF</td><td>121</td><td>144</td><td>23</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Los Angeles Chargers</td><td>PA</td><td>219</td><td>239</td><td>20</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr>
+</tbody></table></div><p class="note">The numeric table is the one the proof consumes. The same two clubs also moved in 10 recorded-record cells (PCT, HOME, CONF, STRK, LAST5), which the engine re-derives rather than compares: they follow from the two numbers above. Source: https://www.nfl.com/standings/</p>
+
+<div class="panel">
+<h2>4. The residue in the canonical feed</h2>
+<p>Re-tallying <code>nfl-results/data/games-2026-w1-10.csv</code> against today's official
+standings leaves 6 disagreeing cells on
+2 clubs. Their signs and magnitudes are exactly the settled
+game, so the feed is missing one game and nothing else.</p>
+</div>
+<div class="table-wrap"><table><caption>Feed residue against the 2026-11-18 official standings</caption><thead><tr><th scope="col">Club</th><th scope="col">Field</th><th scope="col">Feed value</th><th scope="col">Official value</th><th scope="col">Residue</th><th scope="col">Source</th></tr></thead><tbody>
+<tr data-source-ids="NFL-STANDINGS"><td>Baltimore Ravens</td><td>L</td><td>5</td><td>6</td><td>1</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">week 10</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Baltimore Ravens</td><td>PF</td><td>189</td><td>209</td><td>20</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">week 10</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Baltimore Ravens</td><td>PA</td><td>236</td><td>259</td><td>23</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">week 10</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Los Angeles Chargers</td><td>W</td><td>0</td><td>1</td><td>1</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">week 10</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Los Angeles Chargers</td><td>PF</td><td>121</td><td>144</td><td>23</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">week 10</a></td></tr><tr data-source-ids="NFL-STANDINGS"><td>Los Angeles Chargers</td><td>PA</td><td>219</td><td>239</td><td>20</td><td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">week 10</a></td></tr>
+</tbody></table></div><p class="note">The feed was not edited by this session; it is another session's file. A residue of 1 win and 1 loss with symmetric points is one missing game, not two errors.</p>
+
+<div class="panel">
+<h2>What is still open, and the number that closes it</h2>
+<table><caption>Open gap</caption><thead><tr><th scope="col">Gap</th>
+<th scope="col">Blocked by</th><th scope="col">Number that clears it</th><th scope="col">Source</th></tr></thead><tbody>
+<tr data-source-ids="NFL-STANDINGS"><td>Feed holds 149 games, official play implies 150</td>
+<td>This session does not own <code>nfl-results/</code>; the change belongs to its owner</td>
+<td>Feed holds 150 finals and re-tallies to the 2026-11-18 standings with
+0 residue cells</td>
+<td class="src"><a href="https://www.nfl.com/standings/" rel="noopener">standings</a></td></tr>
+<tr data-source-ids="NFL-W10-SCHED"><td>Week 11 is scheduled, not played</td>
+<td>Nothing — the slate begins 2026-11-19</td>
+<td>A dated final appears for each Week 11 fixture</td>
+<td class="src"><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener">NFL-W10-SCHED</a></td></tr>
+</tbody></table>
+</div>
+
+</main>
+<footer>
+  <p>NFL data is attributed to NFL.com. Not affiliated with or endorsed by the NFL. This desk
+  publishes no price, odds, return, stake, wager, reward or recommendation. Where an official
+  source states no value, the cell is empty and flagged — never estimated.</p>
+</footer>
+</body></html>

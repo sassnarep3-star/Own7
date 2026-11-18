@@ -131,6 +131,5 @@
       "previous": "0-5-0",
       "current": "1-4-0"
     }
-  ],
-  "note": "Every delta below is the 2026-11-18 official cell minus the 2026-11-17 official cell. The numeric deltas are required by the build to equal the arithmetic of the settled headline."
+  ]
 }
