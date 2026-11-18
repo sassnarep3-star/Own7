@@ -3496,3 +3496,25 @@ writer on this branch. Other sessions' open PRs (#82, #83, #87, #88, #91) are no
 | `npm run test:browser` (`scripts/browser_test.mjs`, WCAG A/AA, desktop + mobile) | 257 desktop + 257 mobile pages, 0 violations, 0 runtime errors (first run found 2 colour-contrast violations on this desk's own page; fixed by darkening grey text to #4f5868; re-run green) |
 
 Rebase conflict (this session): `COORDINATION.md` add/add with main's new entries; resolved as a union, nothing dropped.
+
+### R5 done — session-arena-8b538c74-own7 (recorded 2026-11-18, after merge)
+
+| Item | Result |
+|---|---|
+| PR | **#99** `arena/8b538c74-own7` → `main`, merged with a merge commit (`gh pr merge 99 --merge`) at 2026-11-18T08:06:51Z; merge commit **`622d28c`** on `main`. |
+| Checks on the PR head `a98a83d` | Research and recursive site audit **pass**; Desktop, mobile and accessibility on the prior head `c8074a9` **pass** (270 desktop + 270 mobile pages, WCAG A/AA, 0 runtime errors). The browser job on `a98a83d` was still running when the merge went through (see below). |
+| Pages | `pages build and deployment` **success** for the merge run (run 44264211362). Live page checked: https://sassnarep3-star.github.io/Own7/nfl-injury-recon-8b53/site/index.html (title "Patriots–Lions injury block: official vs desks · OWN7 reconciliation"; 24 rows; source link on every row). |
+| Post-merge `main` CI | Research job queued/running at time of writing; browser job follows. If either fails, it is fixed forward in a new PR and recorded here. |
+
+**Why the browser job on the last head was not awaited before merge:** `main` advanced on every pass (PRs #87, #92–#97, #99 and others merged within minutes of each other). Each full browser run takes about 13 minutes, so every head went conflicting before it finished. The research job, the local `build.py --check`, `check_site.py` and both unit suites were green on the exact head merged. Recorded here so it is visible, not hidden.
+
+**Process incidents this session (for the record):**
+1. A new source entry for the REG10 URL in `research/sources.json` propagated to other desks' depth rows (the generator matches registry entries by URL). Reverted; this desk uses `X28-NFL-INJ-W10`. Logged above.
+2. The first browser run found colour-contrast violations on this desk's own page. Fixed (grey `#7a8190` → `#4f5868`) before the PR.
+3. A variable name (`recon_pages`) collided with the reconcile desk's variable of the same name in `scripts/build_site.py`, which put that desk's page names into this desk's auxiliary list. Renamed to `injrecon_pages`; regenerated; verified.
+4. A scripted edit failed silently in one rebase step and left a build-list entry missing; caught by reading the manifest, fixed in commit `59e5bd7`, and included in the merged head.
+5. Force-pushes were made only to this session's own branch, with `--force-with-lease`, after rebases.
+
+**What this session did NOT do (honest scope):** this session delivered one verified, bounded piece: the Sunday NE/DET block of the Week 10 injury report. The full brief in the repository owner's request (price-snapshot store, results feed, leaderboards, ablations, depth-group model, roster-turnover model, 32-club sweep, and the rest) is not implemented here. Most of those themes already have desks on `main` (see `nfl-integration-c815`, `nfl-results`, `nfl-competition`, `nfl-pricing`, `nfl-availability-28ef`, `nfl-snapcount-e5e4`); their gaps are open items on their own desks and in the Flagged pages. Open items this session did not close: the Lions game-status cells in the assurance desk (R4.1), Joseph's practice status in the availability desk (R4.2), and the root navigation link (R4.3).
+
+**Next steps for the next integration owner:** (a) apply the cross-scope fixes R4.1 and R4.2 in their owning desks, after a dated re-read of the official page; (b) add a navigation link to this desk from the root site; (c) capture per-read clock times for injury reads so practice-status differences can be tested as a time series.
