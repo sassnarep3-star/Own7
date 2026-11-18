@@ -120,11 +120,17 @@ def load_json(name: str):
 
 
 def cell(value, *, num=False, empty_reason=None) -> str:
-    """Render a table cell, showing blank as blank and saying why."""
+    """Render a table cell, showing blank as blank and saying why.
+
+    An unpublished value is an empty cell carrying data-empty and a title — the
+    same pattern the other desks use. No aria-label is attached: a bare span has
+    no role, so an accessible name on it is prohibited (axe aria-prohibited-attr).
+    The reason is available through the tooltip and the flagged page.
+    """
     if value is None or value == "":
         reason = empty_reason or "not published"
-        return (f'<td class="blank" data-empty="true" title="{esc(reason)}">'
-                f'<span aria-label="blank: {esc(reason)}"></span></td>')
+        klass = "blank num" if num else "blank"
+        return f'<td class="{klass}" data-empty="true" title="{esc(reason)}"></td>'
     return f'<td class="num">{esc(value)}</td>' if num else f"<td>{esc(value)}</td>"
 
 
