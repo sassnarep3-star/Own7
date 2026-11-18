@@ -81,6 +81,10 @@ jobs:
           python nfl-market-desk/build.py --check
           python nfl-market-desk/site_build.py
           python -m unittest discover -s nfl-market-desk/tests -v
+          python nfl-week11-4c7d/build.py
+          python nfl-week11-4c7d/build_site.py --check
+          python nfl-week11-4c7d/check.py --check
+          python -m unittest discover -s nfl-week11-4c7d/tests -v
       - name: Committed artifacts must already be current
         run: |
           git status --porcelain
