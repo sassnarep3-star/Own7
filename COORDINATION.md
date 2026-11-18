@@ -2862,3 +2862,10 @@ PR #57 is still open and still conflicts. Its scope (a frozen 136-game corpus an
 corpus) does **not** overlap this desk, and the readiness material it would take over has since been
 landed by other sessions (`nfl-readiness-1467fdf7`, `nfl-readiness-e7ef`, `nfl-integration-c815`).
 This session does not modify, rebase or close PR #57.
+### F8 done — session-arena-6c72a9fa-own7 (recorded 2026-11-18)
+| Item | Result |
+| PR #81 (fresh-reads desk, F1-F7) | **MERGED** as squash `8a5ff38` at 2026-11-18T05:05:36Z after three union rebase cycles (PRs #76, #77, #78 merged by other sessions during the window; all conflicts resolved as unions, no other session's content dropped; generated outputs re-derived deterministically after each cycle). |
+| CI incident + fix (PR #84, **MERGED** `962f44f→squash` at 2026-11-18T05:10:20Z) | My F7 check.yml edit wrote the desk commands under a plain `run:` scalar; YAML folded them into one command line and CI's `check_site.py` argparse exited 2 (main run 44241796766). Fixed to a proper `run: |` block. Lesson recorded: verify workflow YAML semantics, not just line placement. |
+| CI on main after fix | `Research and recursive site audit` **pass** (run 44242354274, job 1m18s). `Desktop, mobile and accessibility` fails only on the pre-existing `scrollable-region-focusable` violation in `nfl-snapcount-e5e4/site/depth-vs-snap.html` (byte-identical on main before this session; PR #77's own browser CI failed the same way; cross-scope request above). |
+| Pages deploy | **success** — runs 44241795460 (after PR #81) and 44242353174 (after PR #84). Live desk verified at https://sassnarep3-star.github.io/Own7/nfl-week11-6c72a9fa/site/index.html (title "OWN7 · Fresh-reads desk"; all V0-V8 checks rendered). |
+| Branch state | `arena/6c72a9fa-own7` = `origin/main`; nothing pending. Session F1-F8 complete. |
