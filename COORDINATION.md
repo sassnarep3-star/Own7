@@ -2933,3 +2933,32 @@ in this desk and logged below as a request to the integration owner.
 | L4 | Desk pages: overview (70-row audit table with source links), proposed re-grades, blocked-item register with the gate and the number that clears it, flagged irregularities | unclaimed | session-arena-aedccbe5-own7 | `nfl-ledger-aedccbe5/site/**` | Blanks stay blank; every row carries a registered official source link. |
 | L5 | Unit tests + CI line + README section + sources register lines (additive) | unclaimed | session-arena-aedccbe5-own7 | `nfl-ledger-aedccbe5/tests/**`, `.github/workflows/check.yml` (additive), `README.md` (additive), `research/sources.json` (additive) | No existing line overwritten. |
 | L6 | PR to main, merge without waiting, Pages verification, record result here | unclaimed | session-arena-aedccbe5-own7 | COORDINATION.md, PR metadata | Do not merge a broken site. Flagged items do not block. |
+
+### L1-L5 done — session arena/aedccbe5-own7 (recorded 2026-11-18, before PR)
+
+| ID | Task | Status | Result |
+|---|---|---|---|
+| L1 | Claim + baseline replay | **done** | Baseline 119 root tests green at claim. Claim pushed as commit `2b36d16`. |
+| L2 | Official terms §1.3 re-read | **done** | `https://www.nfl.com/legal/terms/` chunk 0 of 9 read 2026-11-18 (Updated May 16, 2024). §1.3 quoted verbatim: "Systematic retrieval of data or other content from the Services … is prohibited absent our express prior written consent." Evidence + SHA-256 in `nfl-ledger-aedccbe5/evidence/`. |
+| L2b | Official odds page re-check | **done** | `https://www.nfl.com/odds/` read 2026-11-18: heading "404 - Flag on the Play." (confirms the DR-01/DR-18 gate). |
+| L3 | Audit script | **done** | `nfl-ledger-aedccbe5/build.py`: 70/70 artifacts present; 70/70 source ids resolve in `research/sources.json`; 58 rows with an official NFL/club link, 12 repo-only (stated on the row). Each proposed re-grade is accepted only if its regex matches the cited artifact; the quote is extracted by the script. `--check` byte-identical. |
+| L4 | Desk pages | **done** | `nfl-ledger-aedccbe5/site/`: index (overview + counts), ledger (all 70 rows), regrades (4), blocked (gates re-read), flagged (6). Every tbody row carries `data-source-ids` and a registered link (checked by `scripts/check_site.py`). |
+| L5 | Tests + additive integration | **done** | 13 desk tests green. Additive lines only: `scripts/build_site.py` (desk build block run after root pages are written, nav group, manifest entry), `scripts/serve_site.py` and `scripts/browser_test.mjs` (folder allowlist token), `.github/workflows/check.yml` (2 lines), `README.md` (section). `python scripts/check_site.py` → exit 0, `errors: []`. Root `tests` green. 47 root pages changed only by the new nav group (verified by stripping that group: no other diff). |
+
+**Re-grades proposed for the integration owner (not applied to the register here):**
+- DR-61 Open → Partial. Evidence `nfl-slate-03dcea07/site/weekly-diff.html`: the page states "No model rating … is published by this desk (rating change needs a model…)".
+- DR-68 Open → Partial. Evidence `nfl-integration-c815/site/rules-2026.html`: "6-1-6 permits the kicking team to declare an onside kick at any time during the game". Priors filter documented, not shown applied to a model.
+- DR-64 Open → Partial. Evidence `nfl-week11-6c72a9fa/site/reserve-sweep.html`: visible-window capture; Jackson and Huntley in neither window.
+- DR-22 Implemented → Partial. Evidence `index.html`: the landing decision table holds 16 rows with NR01–NR16 identifiers, not the 70 DR rows.
+
+**Irregularities (non-blocking; published on `nfl-ledger-aedccbe5/site/flagged.html`):**
+- AF01 (High): landing-page decision table is the NR register, not the DR register (see DR-22).
+- AF02 (Medium): `nfl-results/data/games-2026-w1-10.csv` has 149 rows; `games-2026-w1-10-complete.csv` has 150 (incl. LAC @ BAL 23–20, 2026-11-16). `nfl-results-games.html` shows the 23–20 row. Already FG02 on the Week 10 desk.
+- AF03 (Medium): the Week 11 injury report had not been published at read time (2026-11-18 is a Wednesday). No Week 11 designation is used. Recurring capture remains blocked by terms §1.3 (DR-29, DR-54).
+- AF04 (Low): seven registry entries cite the same NFL terms page with different dates/URLs. Consolidate in the integration pass.
+- AF05 (Low): the 30 Implemented rows were checked for artifact and sources only; their content is not re-graded here.
+- AF06 (Low): 12 rows are repo-only (process rows).
+
+**Verification limits, stated:** (a) the browser/WCAG job could not be run in this sandbox (the bundled Chromium lacks `libnspr4`), so the accessibility gate is decided by CI on the PR; (b) nfl.com is reachable only through Arena `fetch_page` here, so nothing was captured by script from nfl.com; (c) no scheduled capture was added (terms §1.3).
+
+**Request to the integration owner (log, not edited here):** apply the four re-grades in `research/nfl-decision-readiness.json`; regenerate the landing decision table from the register; re-run `python scripts/build_site.py` after any merge that touches `index.html` (the desk's `data/ledger-audit.json` records the landing and root-page hashes it read).
