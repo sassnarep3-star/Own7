@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit overview · OWN7 ledger audit</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../../index.html">OWN7</a>
+  <nav aria-label="Ledger audit"><a href="index.html" aria-current="page">Audit overview</a><a href="ledger.html">All 70 rows</a><a href="regrades.html">Proposed re-grades</a><a href="blocked.html">Gates re-checked</a><a href="flagged.html">Flagged for review</a></nav>
+</header>
+<main id="main">
+
+<section class="hero">
+  <p class="eyebrow">NFL · decision register audit</p>
+  <h1>Ledger re-grade audit</h1>
+  <p class="lede">Every row of the decision-readiness register is checked against the files that exist in the tree and the
+  registered sources. Where a later artifact changes a status, the change is proposed here with the matched text from that
+  artifact. The register itself is not edited by this desk; the integration owner applies the proposals.</p>
+</section>
+<section class="cards">
+  <div class="card"><span>Register rows</span><strong>70</strong><small>research/nfl-decision-readiness.json</small></div>
+  <div class="card"><span>Artifacts present</span><strong>70 / 70</strong><small>every row names a file that exists</small></div>
+  <div class="card"><span>Sources resolved</span><strong>70 / 70</strong><small>every source id is in research/sources.json</small></div>
+  <div class="card"><span>Official link shown</span><strong>58 / 70</strong><small>12 rows are repo-only and say so</small></div>
+  <div class="card"><span>Proposed re-grades</span><strong>4</strong><small>each matched in the cited artifact</small></div>
+  <div class="card"><span>Gates re-read</span><strong>5</strong><small>against official pages on 2026-11-18</small></div>
+</section>
+<section class="section">
+  <h2>Register status now versus after the proposed re-grades</h2>
+  <div class="table-card" role="region" tabindex="0" aria-label="Status counts"><table><caption class="sr-only">Status counts</caption><thead><tr><th scope="col">Status</th><th scope="col">Register (as published)</th><th scope="col">Audit (after proposals)</th></tr></thead><tbody><tr data-source-ids="REPO"><th scope='row'>Implemented</th><td>30</td><td>29</td><td><a href="https://github.com/sassnarep3-star/Own7" rel="noopener noreferrer">REPO · repository register ↗</a></td></tr><tr data-source-ids="REPO"><th scope='row'>Partial</th><td>23</td><td>27</td><td><a href="https://github.com/sassnarep3-star/Own7" rel="noopener noreferrer">REPO · repository register ↗</a></td></tr><tr data-source-ids="REPO"><th scope='row'>Open</th><td>11</td><td>8</td><td><a href="https://github.com/sassnarep3-star/Own7" rel="noopener noreferrer">REPO · repository register ↗</a></td></tr><tr data-source-ids="REPO"><th scope='row'>Blocked</th><td>4</td><td>4</td><td><a href="https://github.com/sassnarep3-star/Own7" rel="noopener noreferrer">REPO · repository register ↗</a></td></tr><tr data-source-ids="REPO"><th scope='row'>Rejected</th><td>2</td><td>2</td><td><a href="https://github.com/sassnarep3-star/Own7" rel="noopener noreferrer">REPO · repository register ↗</a></td></tr></tbody></table></div>
+</section>
+<section class="section">
+  <h2>What this desk establishes</h2>
+  <ul>
+    <li>All 70 register rows point to a file that exists and to sources that are registered. The check is mechanical; it does not judge the content of the 30 Implemented artifacts (flag AF05).</li>
+    <li>Four rows carry stale status against artifacts already in the tree: DR-22, DR-61, DR-64 and DR-68. Each proposal quotes the matched text (see <a href="regrades.html">Proposed re-grades</a>).</li>
+    <li>The five gates that rest on NFL.com are re-read: the §1.3 retrieval prohibition (DR-29, DR-54, DR-66, Blocked) and the 404 at nfl.com/odds (DR-01, DR-18). Both reads are kept as hashed evidence.</li>
+    <li>The landing-page decision table holds 16 rows, not 70 (flag AF01).</li>
+  </ul>
+</section>
+<section class="section">
+  <h2>What this desk does not do</h2>
+  <ul>
+    <li>It does not change the register, the landing page or any other desk. Changes are proposed for the integration owner (COORDINATION.md, session arena/aedccbe5-own7).</li>
+    <li>It does not schedule any capture of nfl.com. The terms gate (§1.3) stands; this desk performs single dated reads only.</li>
+    <li>It does not publish prices, lines, ROI, CLV, stakes or any monetary figure.</li>
+  </ul>
+</section>
+
+</main>
+<footer><p>Session arena/aedccbe5-own7 · read 2026-11-18 · generated deterministically from research/nfl-decision-readiness.json. No wagering, no prices, no stakes.</p></footer>
+</body>
+</html>
