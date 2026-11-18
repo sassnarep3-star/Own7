@@ -49,11 +49,11 @@ The locally available integrity suite passed on this review: 119 general unit te
 3. Establish result/settlement definitions and reconcile the historical corpus.
 4. Pre-register a simple singles-only baseline and controls; freeze the prospective evaluation window.
 5. Evaluate with proper scores and uncertainty on untouched chronological holdouts; publish failures and ablations.
-6. Only then consider prospective leaderboard escrow. Keep parlays and prop combos ineligible until joint evidence and settlement semantics pass their own gate.
+6. Only then evaluate prospective leaderboard escrow. Keep parlays and prop combos ineligible until joint evidence and settlement semantics pass their own gate.
 
 ## Irregularity and freshness note
 
-The repository's existing `docs/nfl-origination-summary.md` is dated 2026-11-12 and describes a smaller snapshot (including 14 Week 10 fixtures and 20 injury rows). Do **not** read those counts as current status: later dated desks and result reconciliation exist in the repository. This review does not replace or silently edit that historical snapshot. Likewise, a green local checker is not a substitute for opening and verifying each source page; upstream facts, stale captures, coverage discrepancies, source terms, and any unverified values remain review items on the site's [Flagged for Review](https://sassnarep3-star.github.io/Own7/nfl-review.html) page and its dated sub-desk review pages.
+The repository's existing `docs/nfl-origination-summary.md` is dated 2026-11-12 and describes a smaller snapshot (including 14 Week 10 fixtures and 20 injury rows). Do **not** read those counts as current status: later dated desks and results reconciliation exist in the repository. This review does not replace or silently edit that historical snapshot. Likewise, a green local checker is not a substitute for opening and verifying each source page; upstream facts, stale captures, coverage discrepancies, source terms, and any unverified values remain review items on the site's [Flagged for Review](https://sassnarep3-star.github.io/Own7/nfl-review.html) page and its dated sub-desk review pages.
 
 ## Links for manual review
 
