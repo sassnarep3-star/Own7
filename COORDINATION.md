@@ -3565,9 +3565,9 @@ requests, if any, are logged for the final integration owner.
 
 | ID | Task | Status | Owner | Files touched | Sources / verification |
 |---|---|---|---|---|---|
-| A1 | Claim + baseline replay | done | session-arena-0c516a05-own7 | COORDINATION.md | Baseline checks recorded above; original claim commit `ec2d7b1` was pushed before the main rebases. Its current rebased copy is `aba9a30` and is pending branch publication. All add-at-end rebase conflicts were resolved as unions and logged below. |
+| A1 | Claim + baseline replay | done | session-arena-0c516a05-own7 | COORDINATION.md | Baseline checks recorded above; original claim commit `ec2d7b1` was pushed before the main rebases. Its current rebased copy is `b7f34de` and is pending branch publication. All add-at-end rebase conflicts were resolved as unions and logged below. |
 | A2 | Independent repo acceptance review: separate mechanical checks from external factual verification; inventory existing summary/questions/suggestions/flags and name remaining decision gates | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md` | Six repo consistency items (AR-01–AR-06) and the decision-ready question/gate list are documented; official manual-review URLs link to registered NFL/NWS sources. No new NFL live-fetch claim. |
-| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | Post-rebase on `e538d21`: `npm run check` passed (119 + 6 tests; site audit 301 pages, 15,788 rows, 311 sources, 0 errors); `npm run test:browser` passed (274 desktop + 274 mobile, WCAG A/AA); NFL extraction/origination checks passed; report validation found 14 table rows + 16 local links, 0 errors. |
+| A3 | Re-run report-focused source/link and consistency checks; record known limits and cross-scope requests without editing other sessions' files | done | session-arena-0c516a05-own7 | `docs/nfl-acceptance-review-2026-11-18.md`, append-only `COORDINATION.md` | Post-rebase on `f338bea`: `npm run check` passed (119 + 6 tests; site audit 306 pages, 15,858 rows, 313 sources, 0 errors); `npm run test:browser` passed (274 desktop + 274 mobile, WCAG A/AA); NFL extraction/origination checks passed; report validation found 14 table rows + 17 local links, 0 errors. |
 | A4 | PR, checks, merge, deployment record | in progress | session-arena-0c516a05-own7 | PR metadata, COORDINATION.md | Report-only change; continue only after PR checks pass. Existing published Pages status is recorded in the report; any newly published content must be confirmed after merge. |
 
 Standing constraints: this report will not invent values, reinterpret saved evidence as a fresh live
@@ -3619,7 +3619,7 @@ readiness register. At the latest overlap query, PRs #95 and #97 remained open w
 proposals; PR #98 was open, checks green, but held for its rights decision; and PR #99 was open with
 a Week 10 injury-block reconciliation. Those scopes remain untouched here.
 
-### Latest rebase and overlap check after PR #95 merged (2026-11-18)
+### Rebase and overlap snapshot after PR #95, before PR #97 merged (2026-11-18)
 
 `git fetch origin` advanced `origin/main` from `3d98fff` to `e538d21` when PR #95 merged. The
 session rebased onto `e538d21` without conflict. PR #95's own record explicitly leaves the shared
@@ -3633,6 +3633,20 @@ open and rights-held (its checks passed, but the branch was dirty after main adv
 remained open with a Week 10 injury-block reconciliation; and PR #101 remained open with six ledger
 status proposals but no shared-ledger edit. These scopes were not modified by this session.
 
+### Latest rebase and overlap check after PR #97 merged (2026-11-18)
+
+`git fetch origin` advanced `origin/main` from `e538d21` to `f338bea` when PR #97 merged. The
+session rebased onto `f338bea` without conflict. PR #97 merged a first-Wednesday Week 11 capture and
+updated DR-54's gate/artifact. It explicitly withdrew the proposed DR-61/64/68 status changes pending
+line-by-line verification, so the shared ledger's older DR-61/68 gate text remains. This review
+records the merged capture as dated repository evidence, not a fresh read by this session.
+
+Pages run [44263571449](https://github.com/sassnarep3-star/Own7/actions/runs/44263571449) completed
+successfully for `f338bea`; the Pages API reports `built`. At the latest overlap query, PR #98
+remained open and rights-held; PR #99 remained open with its Week 10 injury-block reconciliation;
+and PR #101 remained open with six ledger proposals but no shared-ledger edit. These scopes remain
+untouched here.
+
 ### Acceptance findings and cross-scope requests (2026-11-18)
 
 - The report records AR-01–AR-06: stale readiness text for DR-22/23/25/61/68; an older executive
@@ -3640,7 +3654,8 @@ status proposals but no shared-ledger edit. These scopes were not modified by th
   dated 2026-11-18 Markdown summary now existing; results-overview copy that still says n=114 while
   the current analysis reports n=128; duplicated question/suggestion/readiness surfaces; the limits
   of the local source/link audit and the narrow scope of the NFL `/odds/` 404; and the Week 11 injury
-  URL serving a Week 10 view at the retained read time.
+  URL serving a Week 10 view at the original spot-check time, followed by merged PR #97's one-time
+  Week 11 read with Game Status and body-part fields left blank.
 - Internal comparison: `research/nfl-decision-readiness.json` has 70 rows, while the root landing
   page exposes 16-, 20-, 60-, and 70-row decision/readiness tables and `nfl-readiness.html` has an
   81-row full register. DR-22's clearing text says 65; `nfl-slate-03dcea07/site/verification.html`
@@ -3653,8 +3668,8 @@ status proposals but no shared-ledger edit. These scopes were not modified by th
   estimate n=128, phi −0.0318, p=0.7209. These are repository-derived backtest outputs, not
   official NFL statistics or a profit claim.
 - Report-focused validation: 14 Markdown table rows each include an official source-domain link;
-  16 local report links resolve; 0 errors. After the rebase onto `e538d21`, `npm run check` passed
-  (119 + 6 tests; 301 pages, 15,788 rows, 311 sources), extraction/origination checks passed, and
+  17 local report links resolve; 0 errors. After the rebase onto `f338bea`, `npm run check` passed
+  (119 + 6 tests; 306 pages, 15,858 rows, 313 sources), extraction/origination checks passed, and
   the browser suite passed 274 desktop + 274 mobile runs with WCAG A/AA and no runtime errors.
 - Official source links for manual review: [NFL Terms](https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions),
   [NFL Week 10 results](https://www.nfl.com/schedules/2026/by-week/week-10),
@@ -3662,10 +3677,10 @@ status proposals but no shared-ledger edit. These scopes were not modified by th
   [NFL Week 10 injury report](https://www.nfl.com/injuries/league/2026/REG10),
   [2026 Official Playing Rules](https://media.nfl.com/content/dam/communications/Official%20Playing%20Rules/2026%20Official%20Playing%20Rules.pdf),
   and the [LAC–BAL Game Book](https://static.www.nfl.com/image/upload/v1794916121/gamecenter/ab78ad5a-4feb-11f1-abca-2c54536568a9.pdf).
-- Cross-scope request to the final integration owner: treat merged PRs #95/#96 as audit evidence,
-  and reconcile their proposals with open PR #97's direct ledger changes and PR #101's six proposed
-  changes before editing the shared register. Review the newer Week 11 reads in #97/#98 alongside
-  the rights hold; link the dated 2026-11-18 summary into the public site; refresh result-overview
-  metrics/captions and add generated-copy freshness tests; and link this review in the existing
-  review hierarchy while condensing the main navigation. This session did not edit shared
-  index/navigation, requirements, source registers, or strategy data.
+- Cross-scope request to the final integration owner: treat merged PRs #95/#96/#97 as evidence;
+  note that #97 withdrew its DR-61/64/68 status proposals and changed DR-54's gate only. Reconcile
+  the open PR #101 proposals before editing the shared register. Review PR #97's one-time Week 11
+  read and keep PR #98 held pending rights review; link the dated 2026-11-18 summary into the public
+  site; refresh result-overview metrics/captions and add generated-copy freshness tests; and link this
+  review in the existing hierarchy while condensing the main navigation. This session did not edit
+  shared index/navigation, requirements, source registers, or strategy data.
