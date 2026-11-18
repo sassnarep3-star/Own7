@@ -3033,6 +3033,7 @@ evidence does not support.
 
 - PR [#98](https://github.com/sassnarep3-star/Own7/pull/98) from `arena/20226569-own7` to `main`: Week 11 injury-hub first read, desk, flags FI01–FI10, root rebuild, this record.
 - CI on the PR (head at the time of the check): *Research and recursive site audit* **pass**; *Desktop, mobile and accessibility* **pass** (run 44253717641).
+- Final CI on head `30e1781` (run 44255480151): *Research and recursive site audit* **pass**; *Desktop, mobile and accessibility* **pass**.
 - **Merge: HELD, not merged.** Pages is a legacy build from `main` at `/`, so merging publishes every committed file. The verbatim transcript `nfl-fresh-1118/evidence/injury-hub-w11-2026-11-18.md` carries player rows. The open rights decision (NFL Terms §1.3 vs RG10/NF34) blocks that publication. The desk page itself shows counts and links only. Owner decision needed on the transcript. Until then the PR stays open.
 - Pages: not deployed by this session, because nothing has been merged to `main`.
 - Other open PRs (#79, #82, #83, #87, #88, #91, #92) were not edited.
