@@ -1,0 +1,19 @@
+{
+ "desk": "nfl-w11-injuries-3e61",
+ "session": "arena/3e6166df-own7",
+ "read_on": "2026-11-18",
+ "pages": [
+  "index.html",
+  "injuries.html",
+  "slate.html",
+  "flagged.html",
+  "sources.html",
+  "style.css"
+ ],
+ "evidence_sha256": "c5f6b0657e95f984a518e21b187bf5054f4a692889286340a4f22d462f2444e8",
+ "source_ids": [
+  "C672-SCHED-W11-1118",
+  "W11-NFL-INJ-1118",
+  "W11-NFL-TERMS-1118"
+ ]
+}
