@@ -3870,3 +3870,9 @@ Verification plan: record baseline checks before edits; test generated-page fres
 ### Claim publication / base-advance note
 
 The initial claim was published as `eff356b`. Before the scope clarification push, `origin/main` advanced from `666a3a8` to `ebc05f7` (PR #108). `git pull --rebase origin main` correctly replayed this session's claim and scope update onto the new main; the regular push was then rejected because the remote session branch still named the original claim commit. Inspection of `origin/arena/7c031b12-own7` found only that original claim commit beyond its base—no other session changes. The rebased copy preserves the claim text, and the next update uses an exact `--force-with-lease` against that observed SHA after the required pull/rebase. No conflict occurred and no other work was discarded.
+
+### Scope update / cross-session handoff (2026-11-19)
+
+After this claim, PR #109 (`arena/b2e7c3b7-own7`) opened with the exact overlapping work to reconcile the public executive/results metrics against `nfl-results/analysis.json` and add freshness tests. Its published scope is `nfl_pages.py`, `nfl_results_pages.py`, the generated executive/results pages, regression tests, and append-only coordination. I yield that subtask to PR #109 and will not edit those files or their generated outputs while its work is in progress. PR #108's merged suggestions-review workflow is treated as the current source for suggestion choices; I will not reimplement it.
+
+Remaining non-overlapping scope for this session: compact, accessible grouped navigation in `scripts/build_site.py`/`assets/style.css`; public README links to the dated 2026-11-18 summary and review pages; and integration checks for navigation/link behavior. The canonical site will be regenerated only after the overlapping results refresh is available on `main`, so no stale generated page is published over that work. No table values or external facts are being changed by this scope update.
