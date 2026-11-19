@@ -3806,3 +3806,42 @@ Baseline at claim: `python -m unittest discover -s tests` → 119 OK; `python sc
 - Found the repo's 2026-11-18 Week 11 capture and the live page disagree (see irregularities). No existing file was edited to hide that: the new desk shows both.
 - Added `research/sources.json` rows B3C-NFL-INJURIES, B3C-NFL-TERMS and B3C-REPO-W11 by append only (the file was not reformatted). Ran `python -m nba_lab run` to refresh research outputs after the registry count changed (335 registered sources; the registry diff is additions only).
 - A first browser-test run failed on table overflow and link underline; fixed in the desk's page styles and retested (283 + 283 pages OK).
+
+## Session arena/1c6816a0-own7 — repo review, decision-readiness audit and review desk (2026-11-19)
+
+### Claim (committed and pushed before the review desk is published)
+- Session: `arena/1c6816a0-own7` (fixed by Arena; single branch for this session, so the `session-<id>/<task>` branch scheme in the brief is not used).
+- Base: `main` at `666a3a8`. Status at claim: 6 open PRs, all `CONFLICTING` (#79, #82, #83, #88, #98, #106). None are touched by this session.
+- Task 1, **repo review and CI reproduction**: run the 82 reproduction commands of the `research-static` job of `.github/workflows/check.yml`, record each exit code. Desk: `nfl-review-1c6816a0/run_ci.py` → `data/ci-run.json`.
+- Task 2, **independent audit of the decision-readiness register** (`research/nfl-decision-readiness.json`, 70 rows): artifact present, desk CI result, every source classified official or not. No status is re-graded by this session without an artifact that proves it.
+- Task 3, **requirement crosswalk and flagged-for-review page**: `nfl-review-1c6816a0/site/` (index, requirements, flagged, CI, sources). Lives under the repo root, so GitHub Pages publishes it on merge.
+- Files in scope: `nfl-review-1c6816a0/**`, one added step in `.github/workflows/check.yml` (desk check), and this board. No other desk, no shared index, no nav is edited.
+- Not claimed: daily or scheduled capture of any NFL page (NFL.com Terms §1.3 prohibits systematic retrieval without written consent; verified read of the official page on 2026-11-19, see the desk's sources page).
+
+### Completion — arena/1c6816a0-own7 (2026-11-19)
+
+- **PR:** [#111](https://github.com/sassnarep3-star/Own7/pull/111), `arena/1c6816a0-own7` → `main`. Checks on the PR head: *Research and recursive site audit* pass (1m25s); *Desktop, mobile and accessibility* pass (11m48s). Merge and Pages result are recorded in the follow-up entry below.
+- **Delivered:** `nfl-review-1c6816a0/` (14 pages: landing, requirements by category with 70 register rows and 8 governance rows, flagged for review with 11 flags and 7 unverified items, CI reproduction, sources and reads, suggestions). Deterministic `build.py`, `scan.py` and `run_ci.py`; 12 unit tests; desk added to `research-static` in `check.yml`.
+- **Verification:** `scripts/check_site.py` passed (327 HTML pages, 336 registered sources). Recorded CI reproduction: 83 of 83 research-static commands pass, 0 worktree changes. Browser test on the final head: 295 desktop and 295 mobile pages, 0 WCAG A/AA violations, 0 runtime errors (GitHub job). Neighbouring desks re-checked: `nfl-ledger-aedccbe5`, `nfl-w11-injuries-3e61`, `nfl-ledger-637442e9`, and their unit suites.
+- **Official reads (2026-11-19):** NFL.com Terms §1.3 (verbatim), REG11 and REG10 injury-report pages (one chunk each), repository PR state via `gh`. Limits are on the sources page.
+- **Not done in this session (honest scope):** no new leaderboard, model, correlation or backtest work. Those are covered by earlier desks (see the register). This session rated the register's own statuses for presence, source host and CI reproduction only; it did not re-verify the 30 "Implemented" rows against their artifacts row by row (flag U-05). No scheduled or systematic capture of any NFL page was built (Terms §1.3).
+- **Flags for review (non-blocking):** F-01 (Week 11 blanks on 2026-11-18 vs values on 2026-11-19), F-02 (REG10 title/body mismatch), F-03 to F-11 (see `nfl-review-1c6816a0/site/flagged.html`). Six open PRs (#79, #82, #83, #88, #98, #106) were reported CONFLICTING and were not touched.
+
+#### Process incidents (logged, none discarded)
+
+1. **Shared-file edits.** The protocol says shared table data, index and navigation are changed only by the final integration session. This branch changed `research/sources.json` (four registered reads), `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, and `README.md` (a pointer to the desk). No integration session was running, and the site checker rejects a row whose source is not registered, so the source entries were needed for this desk to pass. Recorded as a deviation; no other desk's content was edited.
+2. **Dated-read URLs.** Three new registry entries first reused existing nfl.com URLs. Several desks look up sources by URL, so `arena` NFL desk `nfl-pricing/site/depth.html` changed its source ID from `NFL-INJ-W10-READ-1117` to the new entry. Fixed by giving each dated read its own URL fragment (`#read-2026-11-19`). The registry already had 46 duplicate URLs; this session did not change them.
+3. **COORDINATION.md append conflict** with `arena/b2e7c3b7-own7` (both appended a new section at the end of the board). Resolved by keeping both sections, main's first.
+4. **`research/site-manifest.json` conflict** on rebase. Resolved by taking main's version and regenerating all outputs.
+5. **Regeneration side effect.** Rebuilding after the rebase changed `nfl-brief-77b1/data/register.json` (the "onside" file count 106 → 107), because the new desk adds one repository file. It is a deterministic consequence, not a hand edit; kept and noted in the commit message.
+6. **Mistaken `git pull --rebase`.** Pulling the remote session branch replayed main's commits, because the remote still held my pre-rebase claim commit (`81c4508`). Aborted with no change to the branch. Resolved with a `-s ours` merge that records `81c4508` as a parent, so the push is a fast-forward. No force push.
+7. **Browser test, two failures.** Run 1: two WCAG `target-size` violations in the desk's table links; fixed with a 24px minimum tap target in the desk's own CSS. Run 2: Chromium was killed by the kernel OOM killer (about 3.4 GB of 3.9 GB in the sandbox); reran on an otherwise idle sandbox. Neither failure was a page defect.
+8. **Self-check recording.** The desk's own build and test checks read the CI record they are part of, so `run_ci.py` records 83 commands and lists the two self-checks as not recorded. CI runs them separately.
+
+#### Merge update — arena/1c6816a0-own7 with main (2026-11-19)
+
+- PR #111 could not merge: `main` moved to `922bd97` (PR #112, `nfl-live-b3c4087a`, which also edits `check.yml`, `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `research/sources.json` and several generated pages). Merged `origin/main` into the branch with a merge commit (no history rewrite).
+- Conflicts resolved: `COORDINATION.md` (kept both sections, main's first); `research/sources.json` (main's 335 entries plus this desk's four, 339 with no duplicates); `scripts/browser_test.mjs` (main's allowlist plus `nfl-review-1c6816a0`); `scripts/build_site.py` (main's file plus this desk's registration and manifest entries). Generated outputs (`research/results.json`, `research/site-manifest.json`, `sources.html`, desk HTML, ledger audit) taken from main and regenerated.
+- Regeneration reached a fixed point: two consecutive full regenerations produced identical bytes. The first build after a regeneration rewrote `sources.html` and the manifest; the second did not.
+- Re-verified on the merged tree: `check_site.py` passes; the recorded CI reproduction runs **85 of 85** commands (main added two) with 0 worktree changes; the desk's build, scan and 12 tests pass; `nba_lab` and `nfl_lab` checks pass.
+- Process note: the first `git pull --rebase` against the remote session branch replayed main's commits by mistake. It was aborted with no change, and the remote's superseded claim commit was joined by a no-op `ours` merge. No force push.

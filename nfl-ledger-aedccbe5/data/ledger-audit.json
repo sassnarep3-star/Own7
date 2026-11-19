@@ -1022,7 +1022,7 @@
     {
       "artifact": "sources.html",
       "artifact_exists": true,
-      "artifact_sha256": "35c67ec133642bc50bef4fdacc92fc70c868d356f82631bfa63aed412dc35b71",
+      "artifact_sha256": "00b6f3484d823840ea5bc0699806fe8de75c509eeaaa3bde00ec007b677b7ab0",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Partial",
       "category": "Governance & publication",
@@ -1675,5 +1675,5 @@
   ],
   "schema": "ledger-audit/1",
   "session": "arena/aedccbe5-own7",
-  "sources_sha256": "5a74077360a3ecb65eeb50afa94f372e72c0b828500c54c47cf86c36c67a4ade"
+  "sources_sha256": "636bbf966f9e18f4e3708e6905c293c59f9700b97f9beafed7537287a2b23760"
 }

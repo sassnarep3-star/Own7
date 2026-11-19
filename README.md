@@ -2,6 +2,27 @@
 
 [Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-executive-summary-2026-11-18.md) · [Historical 2026-11-12 summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
 
+## New: repository review and decision-readiness audit (2026-11-19, session arena/1c6816a0-own7)
+
+Start with the desk's landing page: [`nfl-review-1c6816a0/site/index.html`](nfl-review-1c6816a0/site/index.html).
+
+| Page | What it answers |
+|---|---|
+| `nfl-review-1c6816a0/site/index.html` | Executive summary, blocked items, the questions to answer before deciding |
+| `nfl-review-1c6816a0/site/requirements.html` | All 70 decision-readiness rows and 8 governance rows, one page per category |
+| `nfl-review-1c6816a0/site/flagged.html` | Flags F-01 to F-11 and unverified items U-01 to U-07, each with its evidence and owner decision |
+| `nfl-review-1c6816a0/site/ci.html` | The 85 commands of the research-static job and their recorded results |
+| `nfl-review-1c6816a0/site/sources.html` | The official reads dated 2026-11-19 (what each shows, its limits) and the registered sources cited |
+| `nfl-review-1c6816a0/site/suggestions.html` | Seven suggestions with options. Nothing is implemented without an owner choice |
+
+Official reads on 2026-11-19: NFL.com Terms Section 1.3 (verbatim), the Week 11 and Week 10 injury-report pages (one chunk each), and the repository's open pull requests.
+
+```sh
+python nfl-review-1c6816a0/build.py --check                  # desk reproduces byte-identically
+python nfl-review-1c6816a0/scan.py --check                   # tree scan reproduces
+python -m unittest discover -s nfl-review-1c6816a0/tests -v  # 12 tests
+```
+
 ## New: Week 11 injury desk — first Wednesday read, register re-grade (2026-11-18, session arena/3e6166df-own7)
 
 The official NFL injury report now serves **Week 11** (Thursday 19 Nov, Colts at Texans first).

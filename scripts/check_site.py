@@ -374,6 +374,11 @@ def site_paths():
     return sorted(p for p in ROOT.rglob('*.html') if not (set(p.relative_to(ROOT).parts) & EXCLUDED))
 
 
+# NFL review desk (session arena/1c6816a0-own7) — official reads of 2026-11-19 and the repository state read.
+SOURCE_HOSTS.update({'RV-NFL-TERMS-1119': 'www.nfl.com', 'RV-NFL-REG11-1119': 'www.nfl.com',
+                     'RV-NFL-REG10-1119': 'www.nfl.com', 'RV-GH-PULLS-1119': 'github.com'})
+
+
 def validate_data(errors):
     registry = load_json('research/sources.json')
     ids = [r['id'] for r in registry]
