@@ -3750,3 +3750,42 @@ is NOT edited: reconciled statuses live in the new desk and the change log says 
 - Pages verification and PR number: recorded in the K7 row once the PR is merged.
 - Merge log: `main` moved twice during K637 (to 1d973d3, then 5799028 with PR #96). Both merges were resolved by taking main's generated outputs and regenerating them. The first integration commit reused the names `ledger_nav_group`, `ledger_pages` and `ledger_result`, which main's `nfl-ledger-aedccbe5` desk already defines; this overwrote that desk's nav and page list. Fixed in 749043d by renaming this desk's names to `desk637_*`. Lesson for integration: `git pull --rebase` on this branch replays main's history (it was aborted with no loss), so use `git fetch` plus `git merge origin/main`.
 - K637 completion record: PR #101 merged to `main` at `ea6fb00` (merge commit). It was merged after main had moved several times. Each time, `main` was merged into the branch, the conflicts were resolved, and the outputs were regenerated and re-checked before pushing. Post-merge state: Pages build succeeded. Flagged for Review page lists F-REG, F-INJ-COUNT, F-TERMS-1.3, F-TERMS-12, F-SNAP, F-CORPUS, F-CONTROL, F-RULES. Open for the owner: choose the canonical register (F-REG), the injury recount (F-INJ-COUNT), the terms and gambling questions (F-TERMS-1.3, F-TERMS-12, with legal advice; not a legal opinion), the snap-count route (F-SNAP), the canonical results file (F-CORPUS), the random-pick control (F-CONTROL), and the rulebook sections (F-RULES).
+
+## Session arena/1ed52640-own7 — current NFL decision dashboard integration (2026-11-19)
+
+Session ID: `session-arena-1ed52640-own7`. Fixed branch: `arena/1ed52640-own7`, based on
+`666a3a8` (`origin/main`) at claim. Working tree was clean.
+
+**Claimed scope (integration-only; no other desk's source data):** `COORDINATION.md`, `scripts/build_site.py`,
+`nfl_pages.py`, `assets/style.css`, `js/suggestion-review.js`, `tests/test_nfl_dashboard.py`,
+`docs/nfl-executive-summary-2026-11-19.md`, and deterministic site outputs (`index.html`,
+`executive-summary.html`, `nfl-decisions.html`, `nfl-questions.html`, `nfl-suggestions.html`,
+`research/site-manifest.json`, plus generated pages whose shared navigation changes).
+
+**Task:** reconcile the public landing / executive / question / suggestion surfaces to the latest
+committed, dated evidence already on `main`; render the latest reconciled 70-row readiness ledger
+rather than the stale 16-row/2026-11-12 view; make the existing global navigation compact without
+hiding routes; and add a review-only, browser-local choice/export workflow for the seven latest
+ledger suggestions. No user choice will be invented and no choice will trigger implementation.
+
+**Baseline at claim:** `npm run check` passed (119 repository tests, 6 NFL build tests, receipt-checked
+results and recursive site audit: 313 HTML pages, 16,032 table rows, 33?2 registered sources, 0 errors).
+The audit is mechanical; official values will be taken only from committed dated evidence and
+registered sources. This session has not made a new NFL-source fetch and will not start scheduled
+NFL.com capture while the published terms gate remains unresolved.
+
+**Observed cross-scope PRs at claim:** #79, #82, #83, #88 and #98 all contain changes to shared
+navigation / generated root pages and are older than 60 minutes. #98 is explicitly rights-held and
+will remain untouched. The other desks' new datasets and claims are not being adopted by this task;
+any takeover or integration decision will be logged before touching their files. PR #106 changes
+only the coordination record. Current-session changes stay limited to the scope above; generated
+site files are rebuilt from the canonical generator.
+
+| ID | Task | Status | Owner | Files touched | Sources / verification |
+|---|---|---|---|---|---|
+| I1 | Claim + reproduce current baseline | in progress | session-arena-1ed52640-own7 | `COORDINATION.md` | `npm run check` passed on `666a3a8`; `research/nfl-decision-readiness.json` plus the K637 dated overrides/rechecks and `nfl-results/analysis.json` are the current committed inputs to reconcile. |
+| I2 | Refresh root dashboard and executive summary from dated, reproducible results and the latest 70-row ledger; preserve official-source links and explicit blanks | unclaimed | session-arena-1ed52640-own7 | `nfl_pages.py`, generated root pages, `docs/nfl-executive-summary-2026-11-19.md` | Official manual-review links and committed evidence to be recorded after the build/review. |
+| I3 | Replace stale root Q&A / decision surfaces with current sourced knowns, missing information and discovery gates | unclaimed | session-arena-1ed52640-own7 | `nfl_pages.py`, generated `nfl-decisions.html`, `nfl-questions.html` | Current K637 question register and registered source links; no new source claims. |
+| I4 | Publish review-only choice and export controls on the Suggestions page; no implementation is triggered by a choice | unclaimed | session-arena-1ed52640-own7 | `nfl_pages.py`, `js/suggestion-review.js`, `nfl-suggestions.html`, tests | Current K637 seven-option register; browser tests will verify persistence, export and reset. |
+| I5 | Condense the site-wide navigation with accessible native disclosure groups while preserving every destination | unclaimed | session-arena-1ed52640-own7 | `scripts/build_site.py`, `assets/style.css`, generated site outputs | Build/link audit plus desktop/mobile and WCAG browser checks. |
+| I6 | Full integration checks, PR, merge and Pages verification | unclaimed | session-arena-1ed52640-own7 | All claimed integration files | Must not merge unless build, link/source audit and browser checks pass; record PR and deployment. |
