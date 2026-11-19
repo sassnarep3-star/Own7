@@ -1,0 +1,419 @@
+{
+  "schema": "nfl-review-1c6816a0/review/1",
+  "session": "arena/1c6816a0-own7",
+  "read_on": "2026-11-19",
+  "read_method": "Arena fetch_page (rendered page text) and the GitHub CLI for repository state. Not an HTTP-status attestation; not legal advice; no bulk or scheduled retrieval was run.",
+  "reads": [
+    {
+      "source_id": "RV-NFL-TERMS-1119",
+      "url": "https://www.nfl.com/legal/terms/#read-2026-11-19-section-1-3",
+      "read_on": "2026-11-19",
+      "what_it_shows": "Section 1.3 Permitted Uses, read verbatim: 'You may use the Services solely for your own individual non-commercial and informational purposes only. Any other use, including for any commercial purposes, is strictly prohibited without our express prior written consent. Systematic retrieval of data or other content from the Services, whether to create or compile, directly or indirectly, a collection, compilation, database, or directory, is prohibited absent our express prior written consent.' Page header: 'Updated: May 16, 2024'.",
+      "limits": "Read chunk 0 of 9. Section 1.3 is in chunk 0. Not a legal opinion; the effect of Section 1.3 on any specific capture is for the owner and counsel to decide."
+    },
+    {
+      "source_id": "RV-NFL-REG11-1119",
+      "url": "https://www.nfl.com/injuries/league/2026/REG11#read-2026-11-19",
+      "read_on": "2026-11-19",
+      "what_it_shows": "Heading 'Injuries - WEEK 11'. Thursday, November 19, 8:15 PM EST, Prime Video: IND (3-7) and HOU (3-6). The Colts table prints 11 player rows; the Texans table prints 15 player rows. The Injuries and Game Status cells are populated, for example Texans WR Marvin Harrison Jr., Hamstring, Did Not Participate In Practice, Out; Colts TE Will Mallory, Hamstring, Out.",
+      "limits": "Read chunk 0 of 7 only. The Sunday tables were not compared row by row. The page is a live page; this read is a point in time."
+    },
+    {
+      "source_id": "RV-NFL-REG10-1119",
+      "url": "https://www.nfl.com/injuries/league/2026/REG10#read-2026-11-19",
+      "read_on": "2026-11-19",
+      "what_it_shows": "Chunk 3 of 8 shows a Sunday 1:00 PM FOX game in which HOU (3-6) plays CLE (6-4), and the page title reads 'Official NFL Injury Report for Players - Week 11 of the 2026 Season'. The Texans appear in the Thursday IND-HOU game on the REG11 page, so a second Texans game in the same week cannot be in the Week 11 report; the body therefore appears to be Week 10 content under a Week 11 title. This is an inference from two official pages, not a printed statement.",
+      "limits": "Chunk 3 of 8 only. The title and the body disagree. The registered URL does not guarantee a fixed week, so the owner needs a retained capture to settle the point."
+    },
+    {
+      "source_id": "RV-GH-PULLS-1119",
+      "url": "https://github.com/sassnarep3-star/Own7/pulls",
+      "read_on": "2026-11-19",
+      "what_it_shows": "Via the GitHub CLI (gh pr list, state open): six open pull requests, all reported with mergeable state CONFLICTING: #79, #82, #83, #88, #98, #106. PR #98 title contains 'HELD: rights decision'. Merged PRs also listed: #105, #107 and others, not re-read individually.",
+      "limits": "A point-in-time read of repository state. Pull request titles were not opened or checked for content."
+    }
+  ],
+  "flags": [
+    {
+      "id": "F-01",
+      "title": "Official Week 11 cells: the 2026-11-18 desk recorded blanks; the 2026-11-19 official page shows values",
+      "detail": "The Week 11 desk (nfl-w11-injuries-3e61) reports, from its 2026-11-18 read, that all 26 Game Status cells and all 26 Injuries cells were blank. The official REG11 page read on 2026-11-19 shows 11 Colts rows and 15 Texans rows (the same counts as the desk). Of the 26 rows, 16 have an Injuries value and 16 have a Game Status value (Colts 9 of 11 each; Texans 7 of 15 each). Possible causes: publication after the desk's read, or a read error. Neither can be checked: the repository holds no timestamped capture of the 2026-11-18 page.",
+      "affects": [
+        "DR-21",
+        "DR-55",
+        "DR-30",
+        "DR-47"
+      ],
+      "sources": [
+        "RV-NFL-REG11-1119",
+        "W11-NFL-INJ-1118"
+      ],
+      "owner_action": "Decide how the desk's 2026-11-18 record is kept (as a dated, hashed capture or as superseded). Do not re-grade DR-21 or DR-55 until this is resolved.",
+      "status": "Needs review"
+    },
+    {
+      "id": "F-02",
+      "title": "Registered Week 10 URL: title says Week 11, body appears to be Week 10",
+      "detail": "The registered source for Week 10 (REG10) shows a Week 11 title on the 2026-11-19 read while its body content appears to be Week 10. Every Week 10 row that cites this URL cannot be re-checked at that URL alone.",
+      "affects": [
+        "DR-30",
+        "DR-49",
+        "DR-55"
+      ],
+      "sources": [
+        "RV-NFL-REG10-1119",
+        "RV-NFL-REG11-1119"
+      ],
+      "owner_action": "Retain dated captures of each official report. Until then, cite the page and the read date, not the URL alone.",
+      "status": "Needs review"
+    },
+    {
+      "id": "F-03",
+      "title": "Two 'Implemented' rows point at open-items pages",
+      "detail": "DR-46 (stale depth rows, Baltimore) cites nfl-review.html, and DR-48 (three Lions game-status designations) cites nfl-availability-28ef/site/flagged.html. A flagged page can be the correct place to show a flag, but the register does not say so. DR-48 was not re-read this session.",
+      "affects": [
+        "DR-46",
+        "DR-48"
+      ],
+      "sources": [],
+      "owner_action": "Confirm that each named artifact shows the populated values or the flag, and re-grade if not.",
+      "status": "Needs review"
+    },
+    {
+      "id": "F-04",
+      "title": "Eleven register rows cite a desk that the CI reproduction does not run",
+      "detail": "Rows DR-10, DR-13, DR-14, DR-21, DR-23, DR-25, DR-31, DR-47, DR-53, DR-58 and DR-64 cite artifacts in nfl-gamebook-5213243e. No command in the research-static job reproduces that folder. A second desk, nfl-injury-recon-8b53, also publishes HTML that CI does not reproduce.",
+      "affects": [
+        "DR-10",
+        "DR-13",
+        "DR-14",
+        "DR-21",
+        "DR-23",
+        "DR-25",
+        "DR-31",
+        "DR-47",
+        "DR-53",
+        "DR-58",
+        "DR-64"
+      ],
+      "sources": [],
+      "owner_action": "Add the two desks to check.yml (build --check and unit tests), or record why they are excluded.",
+      "status": "Needs review"
+    },
+    {
+      "id": "F-05",
+      "title": "Scheduled or systematic capture conflicts with NFL.com Terms Section 1.3",
+      "detail": "Section 1.3, read verbatim on 2026-11-19, limits use to individual non-commercial informational purposes and prohibits systematic retrieval to compile a collection or database without express prior written consent. DR-29 (multi-day snapshots), DR-54 (Wed/Thu/Fri snapshots) and DR-66 (archive past seasons) stay Blocked until the owner decides on consent or an authorised feed. This is a rights question, not a legal opinion.",
+      "affects": [
+        "DR-29",
+        "DR-54",
+        "DR-66",
+        "DR-30",
+        "DR-31"
+      ],
+      "sources": [
+        "RV-NFL-TERMS-1119"
+      ],
+      "owner_action": "Choose: (a) obtain written consent from NFL, (b) use an authorised data source, or (c) take counsel's advice on whether any current capture is permitted. Until then no scheduled capture is built.",
+      "status": "Needs review"
+    },
+    {
+      "id": "F-06",
+      "title": "Out-of-scope content in the NFL repository",
+      "detail": "The scan lists 42 paths that belong to other projects: NBA material (nba_lab/, nba-*.html, data/jokic-games-2025-26.csv), San Francisco rental-law material (rent-*.html, rental*.html, rental/, research/rent*) and Netherlands betting-market evidence (market-evidence/, handoff/f58e9526/netherlands-scope.md). Cross-project code is in use: nfl_lab/engine.py imports nba_lab.math, and scripts/build_site.py and scripts/check_site.py import the NBA engine. The NFL desks were not traced one by one.",
+      "affects": [],
+      "sources": [],
+      "owner_action": "Decide whether these projects are archived out of this repository. Until then, the dependency in nfl_lab/engine.py must be kept or removed deliberately. This session did not move, delete or edit any of them.",
+      "status": "Needs review"
+    },
+    {
+      "id": "F-07",
+      "title": "Fragmentation: 27 flagged pages, many executive summaries, 12 parallel desks",
+      "detail": "The scan counts 27 HTML pages with 'flag' in the file name and 24 executive-summary files. Parallel desks cover the same questions (three readiness desks, four Week 11 desks, two ledger desks). A reader cannot tell which page is the one flagged list.",
+      "affects": [
+        "DR-22",
+        "DR-40"
+      ],
+      "sources": [],
+      "owner_action": "Name one canonical Flagged for Review page and one canonical register. Other pages link to them.",
+      "status": "Needs review"
+    },
+    {
+      "id": "F-08",
+      "title": "Two canonical-looking results files for weeks 1-10",
+      "detail": "nfl-results/data/games-2026-w1-10.csv has 149 data rows and games-2026-w1-10-complete.csv has 150. Both are in the tree and both are cited by other desks (for example nfl-fresh-1118 and nfl-ledger-637442e9). Choosing the wrong one changes the game count by one.",
+      "affects": [
+        "DR-02",
+        "DR-19",
+        "DR-26"
+      ],
+      "sources": [],
+      "owner_action": "Name the canonical file and mark the other as superseded in its file header.",
+      "status": "Needs review"
+    },
+    {
+      "id": "F-09",
+      "title": "Six open pull requests, all in conflict with main",
+      "detail": "PRs #79, #82, #83, #88, #98 and #106 are open and report CONFLICTING. PR #98 is titled as held for a rights decision. This session did not open or change them.",
+      "affects": [],
+      "sources": [
+        "RV-GH-PULLS-1119"
+      ],
+      "owner_action": "Close superseded PRs and rebase or close the rest. Decide PR #98 with the rights decision in F-05.",
+      "status": "Needs review"
+    },
+    {
+      "id": "F-10",
+      "title": "COORDINATION.md is 447 KB with stale status claims",
+      "detail": "The file is 3,752 lines. Its header still describes an NBA board and an earlier branch. It has 152 'in progress' mentions and 17 'needs review' mentions, many from sessions whose branches are no longer open. The board cannot be used as a live status source.",
+      "affects": [],
+      "sources": [],
+      "owner_action": "Archive closed sessions to a dated file and keep one current task table at the top.",
+      "status": "Needs review"
+    },
+    {
+      "id": "F-11",
+      "title": "Local clone is shallow",
+      "detail": "git rev-parse --is-shallow-repository returns true in the sandbox clone. The local history of merges cannot be audited here; GitHub pull requests are the record.",
+      "affects": [],
+      "sources": [
+        "RV-GH-PULLS-1119"
+      ],
+      "owner_action": "Fetch full history before any history audit.",
+      "status": "Environment note"
+    }
+  ],
+  "unverified": [
+    {
+      "id": "U-01",
+      "item": "DR-32: Texans depth chart (published as an image) and the Packers jersey-number prefix. Not re-read; the register records the failure, not a fix."
+    },
+    {
+      "id": "U-02",
+      "item": "DR-48: the three Lions game-status cells (Joseph, Mays, Reed). Not re-read on the Week 10 page this session."
+    },
+    {
+      "id": "U-03",
+      "item": "DR-46 and DR-64: the Baltimore depth rows and the Malik Willis reserve/IR case. Not re-read this session."
+    },
+    {
+      "id": "U-04",
+      "item": "DR-34: the Colts trades and the Week 10 release article. Not re-read this session."
+    },
+    {
+      "id": "U-05",
+      "item": "The 'Implemented' status of all 30 rows is self-declared by the desks that built them. Only the artifact existence, source host and CI result were checked here."
+    },
+    {
+      "id": "U-06",
+      "item": "The browser test job (npm run test:browser) in the GitHub workflow was not run in this sandbox."
+    },
+    {
+      "id": "U-07",
+      "item": "Odds: no official sportsbook or odds source is registered (DR-01, DR-18 remain Blocked). Not re-tested this session."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q-01",
+      "question": "May the project capture NFL.com injury reports on a schedule?",
+      "answer_now": "Not as far as the repository can show. Section 1.3 prohibits systematic retrieval without written consent (RV-NFL-TERMS-1119).",
+      "clears_with": "Written consent from NFL, an authorised feed, or counsel's written advice (owner decision)."
+    },
+    {
+      "id": "Q-02",
+      "question": "What did the official Week 11 report show at the 2026-11-18 read?",
+      "answer_now": "Unknown. The desk recorded blanks; the 2026-11-19 page shows values (F-01).",
+      "clears_with": "A retained, hashed capture from the time of the desk's read, or the owner's decision to treat that record as superseded."
+    },
+    {
+      "id": "Q-03",
+      "question": "Which 2026 results file is canonical for weeks 1-10?",
+      "answer_now": "Unknown. Both the 149-row and 150-row files are in the tree (F-08).",
+      "clears_with": "An owner decision and a note in each file header."
+    },
+    {
+      "id": "Q-04",
+      "question": "Is there any work on the six conflicting pull requests that main lacks?",
+      "answer_now": "Unknown. Not opened in this session (F-09).",
+      "clears_with": "A read of each PR's diff by the owner or a session with the owner's instruction."
+    },
+    {
+      "id": "Q-05",
+      "question": "Is there an official source for betting prices?",
+      "answer_now": "Not established in this repository. The register keeps price rows Blocked (DR-01, DR-18, DR-20).",
+      "clears_with": "A written licence or permission from a rights holder, or a registered official price source."
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "S-01",
+      "title": "Settle the capture question before anything is scheduled",
+      "options": [
+        "A: Ask NFL for written consent to capture the injury report (DR-29, DR-54).",
+        "B: Use an authorised data feed for official reports.",
+        "C: Keep manual, one-off reads with recorded hashes and a plain statement that they are not a series."
+      ],
+      "recommended": "Decide A or B before C, because C can still count as systematic retrieval."
+    },
+    {
+      "id": "S-02",
+      "title": "One Flagged for Review page and one register",
+      "options": [
+        "A: Make nfl-review-1c6816a0 the canonical flagged page and link the other 26 pages to it.",
+        "B: Keep the current pages and label each with its scope."
+      ],
+      "recommended": "A (F-07)."
+    },
+    {
+      "id": "S-03",
+      "title": "Put the two unreproduced desks under CI",
+      "options": [
+        "A: Add nfl-gamebook-5213243e and nfl-injury-recon-8b53 to check.yml.",
+        "B: Mark the 11 dependent rows as not reproduced."
+      ],
+      "recommended": "A (F-04)."
+    },
+    {
+      "id": "S-04",
+      "title": "Pick one results file",
+      "options": [
+        "A: Keep games-2026-w1-10-complete.csv (150 rows) and mark the 149-row file superseded.",
+        "B: Keep the 149-row file and document the missing game."
+      ],
+      "recommended": "Decide with the owner after reading both files (F-08)."
+    },
+    {
+      "id": "S-05",
+      "title": "Clear the six conflicting pull requests",
+      "options": [
+        "A: Close the superseded ones and rebase the rest.",
+        "B: Leave them open with a status comment."
+      ],
+      "recommended": "A, after the owner reads each title (F-09)."
+    },
+    {
+      "id": "S-06",
+      "title": "Move non-NFL content out of this repository",
+      "options": [
+        "A: Archive the 42 out-of-scope paths to a separate repository.",
+        "B: Keep them and label them as out of scope on the landing page."
+      ],
+      "recommended": "A, if the owner confirms the other projects are separate (F-06)."
+    },
+    {
+      "id": "S-07",
+      "title": "Record a verification date on every register row",
+      "options": [
+        "A: Add a 'last re-read' column to the register, filled only when a read is recorded.",
+        "B: Keep source-level dates only."
+      ],
+      "recommended": "A. Today only 3 official pages were re-read, so most rows have no row-level date (U-05)."
+    }
+  ],
+  "governance_rows": [
+    {
+      "id": "P-01",
+      "requirement": "Create an executive summary of the important details",
+      "status": "Present",
+      "artifact": "nfl-review-1c6816a0/site/index.html",
+      "gate": "None for the summary itself. Its numbers depend on the register and the scan.",
+      "clears_when": "Not applicable",
+      "sources": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "P-02",
+      "requirement": "Create a section for suggestions so the owner can choose a path before changes",
+      "status": "Present",
+      "artifact": "nfl-review-1c6816a0/site/suggestions.html",
+      "gate": "Owner choice. Nothing in the suggestions is implemented by this desk.",
+      "clears_when": "Owner selects an option (S-01 to S-07).",
+      "sources": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "P-03",
+      "requirement": "A clear list of questions, information and answers needed before decisions",
+      "status": "Present",
+      "artifact": "nfl-review-1c6816a0/site/index.html",
+      "gate": "Answers are recorded where the repository can show them; the rest are open.",
+      "clears_when": "Each question in Q-01 to Q-05 has an answer and a source.",
+      "sources": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "P-04",
+      "requirement": "Review the repository line by line, link official sources and flag irregularities",
+      "status": "Partial",
+      "artifact": "nfl-review-1c6816a0/site/flagged.html",
+      "gate": "Only the reads listed on the sources page were made in this session. The rest is flagged as unverified (U-01 to U-07).",
+      "clears_when": "Each flagged item has an owner decision and each unverified item has an official read.",
+      "sources": [
+        "REPO",
+        "RV-NFL-TERMS-1119"
+      ]
+    },
+    {
+      "id": "P-05",
+      "requirement": "Verify every table row against an official source; leave unverified values blank and flagged",
+      "status": "Partial",
+      "artifact": "scripts/check_site.py",
+      "gate": "The checker enforces the link and blank rules; it does not establish that a registered source says what the row claims.",
+      "clears_when": "A row-level read date exists for every row (S-07).",
+      "sources": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "P-06",
+      "requirement": "Coordinate parallel sessions on one shared task board",
+      "status": "Partial",
+      "artifact": "COORDINATION.md",
+      "gate": "The board is 447 KB with stale claims; six PRs conflict with main (F-09, F-10).",
+      "clears_when": "One current task table; no open conflicting PR without an owner decision.",
+      "sources": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "P-07",
+      "requirement": "Create a GitHub Pages site with a clean landing page and category subpages",
+      "status": "Partial",
+      "artifact": "nfl-review-1c6816a0/site/index.html",
+      "gate": "The desk is live once merged. The root landing page is the older 'NFL research overview'; promoting this desk to the root is an owner decision (F-07).",
+      "clears_when": "Owner decision on the root landing page; a green Pages deployment.",
+      "sources": [
+        "REPO"
+      ]
+    },
+    {
+      "id": "P-08",
+      "requirement": "Open a pull request, merge it, confirm the Pages deployment and record the result",
+      "status": "Pending",
+      "artifact": "COORDINATION.md",
+      "gate": "Green checks on the pull request and a successful Pages build.",
+      "clears_when": "Merge commit recorded on COORDINATION.md and a Pages build with status 'built'.",
+      "sources": [
+        "REPO"
+      ]
+    }
+  ],
+  "github_state": {
+    "read_on": "2026-11-19",
+    "source_id": "RV-GH-PULLS-1119",
+    "open_pull_requests": [
+      79,
+      82,
+      83,
+      88,
+      98,
+      106
+    ],
+    "open_all_conflicting": true,
+    "held_title_pr": 98
+  }
+}

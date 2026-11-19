@@ -109,6 +109,9 @@ jobs:
           python nfl-snapcount-e5e4/build.py --check
           python nfl-snapcount-e5e4/build_site.py --check
           python -m unittest discover -s nfl-snapcount-e5e4/tests -v
+          python nfl-review-1c6816a0/scan.py --check
+          python nfl-review-1c6816a0/build.py --check
+          python -m unittest discover -s nfl-review-1c6816a0/tests -v
       - name: Committed artifacts must already be current
         run: |
           git status --porcelain

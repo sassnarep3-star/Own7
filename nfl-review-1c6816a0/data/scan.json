@@ -1,0 +1,1411 @@
+{
+  "schema": "nfl-review-1c6816a0/scan/1",
+  "note": "Deterministic scan of the committed tree. No network, no timestamps. Findings are counts and paths, not judgements about truth.",
+  "ci_commands_in_check_yml": 83,
+  "ci_commands_missing_script": [],
+  "html_desks_not_in_ci": [
+    "nfl-gamebook-5213243e",
+    "nfl-injury-recon-8b53"
+  ],
+  "gamebook_desk_in_ci": false,
+  "out_of_scope_paths": [
+    "data/jokic-games-2025-26.csv",
+    "handoff/f58e9526/compute_correlations.py",
+    "handoff/f58e9526/correlation-computed-2025-26.json",
+    "handoff/f58e9526/netherlands-scope.md",
+    "market-evidence/README.md",
+    "market-evidence/build.py",
+    "market-evidence/evidence.json",
+    "market-evidence/index.html",
+    "market-evidence/test_build.py",
+    "nba-executive-summary.html",
+    "nba-overview.html",
+    "nba_lab/__init__.py",
+    "nba_lab/__main__.py",
+    "nba_lab/engine.py",
+    "nba_lab/math.py",
+    "nba_lab/models.py",
+    "nba_lab/validation.py",
+    "rent-overview.html",
+    "rent-qa.html",
+    "rent-units.html",
+    "rental-answers.html",
+    "rental-flagged.html",
+    "rental-law.html",
+    "rental-notice.html",
+    "rental-summary.html",
+    "rental-units.html",
+    "rental.html",
+    "rental/README.md",
+    "rental/build.py",
+    "rental/data.json",
+    "rental/executive-summary.html",
+    "rental/flagged.html",
+    "rental/index.html",
+    "rental/law.html",
+    "rental/manifest.json",
+    "rental/practice.html",
+    "rental/process.html",
+    "rental/sources.html",
+    "rental/test_build.py",
+    "rental/units.html",
+    "research/rent.json",
+    "research/rental.json"
+  ],
+  "out_of_scope_count": 42,
+  "executive_summary_files": [
+    "docs/availability-28ef-executive-summary.md",
+    "docs/executive-summary.md",
+    "docs/nfl-executive-summary-2026-11-18.md",
+    "docs/nfl-executive-summary.md",
+    "docs/nfl-lifecycle-3f5c-executive-summary.md",
+    "docs/nfl-readiness-1467fdf7-executive-summary.md",
+    "docs/nfl-results-executive-summary.md",
+    "docs/rent-sf-executive-summary.md",
+    "docs/rental-executive-summary.md",
+    "docs/skill-cfdd-executive-summary.md",
+    "executive-summary.html",
+    "nba-executive-summary.html",
+    "nfl-assurance-9580ac3f/docs/executive-summary.md",
+    "nfl-assurance-9580ac3f/site/executive-summary.html",
+    "nfl-brief-77b1/site/executive-summary.html",
+    "nfl-competition/EXECUTIVE-SUMMARY.md",
+    "nfl-competition/site/executive-summary.html",
+    "nfl-ledger-637442e9/site/executive-summary.html",
+    "nfl-week11-4c7d/site/executive-summary.html",
+    "nfl/executive-summary.html",
+    "nfl/origination/executive-summary.html",
+    "pages/executive-summary.html",
+    "rental/executive-summary.html",
+    "verified/executive-summary.html"
+  ],
+  "flagged_or_review_pages": [
+    "nfl-assurance-9580ac3f/site/flagged.html",
+    "nfl-availability-28ef/site/flagged.html",
+    "nfl-brief-77b1/site/flagged.html",
+    "nfl-fresh-1118/site/flagged.html",
+    "nfl-gamebook-5213243e/site/flagged.html",
+    "nfl-integration-c815/site/flagged.html",
+    "nfl-ledger-637442e9/site/flagged.html",
+    "nfl-ledger-aedccbe5/site/flagged.html",
+    "nfl-lifecycle-3f5c/site/flagged.html",
+    "nfl-market-desk/site/flagged.html",
+    "nfl-pricing/site/flagged.html",
+    "nfl-readiness-1467fdf7/site/flagged.html",
+    "nfl-readiness-e7ef/site/flagged.html",
+    "nfl-reconcile-9ef12c81/site/flagged.html",
+    "nfl-results-flagged.html",
+    "nfl-skill-cfdd/site/flagged.html",
+    "nfl-slate-03dcea07/site/flagged.html",
+    "nfl-snapcount-e5e4/site/flagged.html",
+    "nfl-w11-injuries-3e61/site/flagged.html",
+    "nfl-week11-4c7d/site/flagged.html",
+    "nfl-week11-6c72a9fa/site/flagged.html",
+    "nfl/origination/flagged.html",
+    "pages/flagged.html",
+    "rental-flagged.html",
+    "rental/flagged.html",
+    "session-243828fc/site/flagged.html",
+    "verified/flagged.html"
+  ],
+  "parallel_desks": [
+    "nfl-fresh-1118",
+    "nfl-injury-recon-8b53",
+    "nfl-ledger-637442e9",
+    "nfl-ledger-aedccbe5",
+    "nfl-readiness",
+    "nfl-readiness-1467fdf7",
+    "nfl-readiness-e7ef",
+    "nfl-readiness.html",
+    "nfl-reconcile-9ef12c81",
+    "nfl-w11-injuries-3e61",
+    "nfl-week11-4c7d",
+    "nfl-week11-6c72a9fa"
+  ],
+  "results_csv_row_counts": {
+    "nfl-results/data/byes-2026-w1-10-complete.csv": 20,
+    "nfl-results/data/byes-2026-w1-10.csv": 20,
+    "nfl-results/data/byes-2026-w1-12.csv": 26,
+    "nfl-results/data/byes-2026-w1-9.csv": 16,
+    "nfl-results/data/games-2026-w1-10-complete.csv": 150,
+    "nfl-results/data/games-2026-w1-10.csv": 149,
+    "nfl-results/data/games-2026-w1-9.csv": 136,
+    "nfl-results/data/scheduled-2026-w10.csv": 1,
+    "nfl-results/data/scheduled-2026-w11.csv": 13,
+    "nfl-results/data/scheduled-2026-w12.csv": 16
+  },
+  "register": {
+    "rows": 70,
+    "status_counts": {
+      "Blocked": 4,
+      "Implemented": 30,
+      "Open": 11,
+      "Partial": 23,
+      "Rejected": 2
+    },
+    "ids_listed_on_index": 70,
+    "implemented_rows_with_open_items_artifact": [
+      "DR-46",
+      "DR-48"
+    ],
+    "rows_with_non_official_or_unregistered_source": [],
+    "items": [
+      {
+        "id": "DR-01",
+        "status": "Implemented",
+        "artifact": "nfl-lifecycle-3f5c/site/price-snapshots.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-ODDS-ABSENT",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/odds/"
+          },
+          {
+            "id": "NFL-TERMS",
+            "host": "support.nfl.com",
+            "class": "official: NFL",
+            "url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-02",
+        "status": "Implemented",
+        "artifact": "nfl-results-games.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-W10-SCHEDULE",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-10"
+          },
+          {
+            "id": "E15-NFL-STANDINGS-1117",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/standings/"
+          },
+          {
+            "id": "FRESH-NFL-STANDINGS-1118",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/standings/"
+          },
+          {
+            "id": "FRESH-NFL-W10-COMPLETE-1118",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-10"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-03",
+        "status": "Implemented",
+        "artifact": "nfl-competition/site/origination.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-STANDINGS",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/standings/"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-04",
+        "status": "Implemented",
+        "artifact": "nfl-lifecycle-3f5c/site/fair-market-diff.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-ODDS-ABSENT",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/odds/"
+          },
+          {
+            "id": "NFL-TERMS",
+            "host": "support.nfl.com",
+            "class": "official: NFL",
+            "url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-05",
+        "status": "Implemented",
+        "artifact": "nfl-competition/site/leaderboard.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-ODDS-ABSENT",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/odds/"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-06",
+        "status": "Implemented",
+        "artifact": "nfl-lifecycle-3f5c/site/replacement-depth.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-DEPTH-27",
+            "host": "www.atlantafalcons.com",
+            "class": "official: member club",
+            "url": "https://www.atlantafalcons.com/team/depth-chart"
+          },
+          {
+            "id": "CP-NFL-DEPTH-BYE4",
+            "host": "www.chicagobears.com",
+            "class": "official: member club",
+            "url": "https://www.chicagobears.com/team/depth-chart"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-07",
+        "status": "Implemented",
+        "artifact": "nfl-lifecycle-3f5c/site/correlation-audit.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-STANDINGS",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/standings/"
+          },
+          {
+            "id": "CP-NFL-RESULTS-W1-9",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-1"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-08",
+        "status": "Implemented",
+        "artifact": "nfl-competition/site/demotion.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-09",
+        "status": "Implemented",
+        "artifact": "validation.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-10",
+        "status": "Partial",
+        "artifact": "nfl-gamebook-5213243e/site/starters.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-11",
+        "status": "Open",
+        "artifact": "nfl-availability-28ef/site/depth.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-DEPTH-27",
+            "host": "www.atlantafalcons.com",
+            "class": "official: member club",
+            "url": "https://www.atlantafalcons.com/team/depth-chart"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-12",
+        "status": "Implemented",
+        "artifact": "nfl-competition/site/injuries.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-13",
+        "status": "Open",
+        "artifact": "nfl-gamebook-5213243e/site/flagged.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": true,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-14",
+        "status": "Partial",
+        "artifact": "nfl-gamebook-5213243e/site/fixtures-venue.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-W10-SCHEDULE",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-10"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-15",
+        "status": "Implemented",
+        "artifact": "nfl-competition/site/boards.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-STANDINGS",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/standings/"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-16",
+        "status": "Implemented",
+        "artifact": "nfl-results-skill.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-RESULTS-W1-9",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-1"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-17",
+        "status": "Partial",
+        "artifact": "nfl-competition/site/suggestions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-18",
+        "status": "Blocked",
+        "artifact": "nfl-lifecycle-3f5c/site/flagged.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": true,
+        "sources": [
+          {
+            "id": "CP-NFL-ODDS-ABSENT",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/odds/"
+          },
+          {
+            "id": "NFL-TERMS",
+            "host": "support.nfl.com",
+            "class": "official: NFL",
+            "url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-19",
+        "status": "Implemented",
+        "artifact": "nfl-competition/site/method.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-W10-SCHEDULE",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-20",
+        "status": "Partial",
+        "artifact": "nfl-suggestions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "NFL-TERMS",
+            "host": "support.nfl.com",
+            "class": "official: NFL",
+            "url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-21",
+        "status": "Partial",
+        "artifact": "nfl-gamebook-5213243e/site/delta.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-22",
+        "status": "Implemented",
+        "artifact": "index.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "E15-NFL-STANDINGS-1117",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/standings/"
+          },
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-23",
+        "status": "Partial",
+        "artifact": "nfl-gamebook-5213243e/site/fixtures-venue.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-W10-SCHEDULE",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-10"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-24",
+        "status": "Implemented",
+        "artifact": "nfl-results-games.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-W10-SCHEDULE",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-10"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-25",
+        "status": "Partial",
+        "artifact": "nfl-gamebook-5213243e/site/starters.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-26",
+        "status": "Implemented",
+        "artifact": "nfl-results-skill.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-RESULTS-W1-9",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-1"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-27",
+        "status": "Open",
+        "artifact": "nfl-competition/site/questions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-28",
+        "status": "Open",
+        "artifact": "nfl-competition/site/questions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-29",
+        "status": "Blocked",
+        "artifact": "nfl-availability-28ef/site/flagged.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": true,
+        "sources": [
+          {
+            "id": "NFL-TERMS",
+            "host": "support.nfl.com",
+            "class": "official: NFL",
+            "url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-30",
+        "status": "Partial",
+        "artifact": "nfl-availability-28ef/site/sources.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-31",
+        "status": "Partial",
+        "artifact": "nfl-gamebook-5213243e/site/inactives.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-32",
+        "status": "Partial",
+        "artifact": "nfl-lifecycle-3f5c/site/flagged.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": true,
+        "sources": [
+          {
+            "id": "CP-NFL-DEPTH-27",
+            "host": "www.atlantafalcons.com",
+            "class": "official: member club",
+            "url": "https://www.atlantafalcons.com/team/depth-chart"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-33",
+        "status": "Implemented",
+        "artifact": "nfl-availability-28ef/site/depth.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-DEPTH-BYE4",
+            "host": "www.chicagobears.com",
+            "class": "official: member club",
+            "url": "https://www.chicagobears.com/team/depth-chart"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-34",
+        "status": "Partial",
+        "artifact": "nfl-review.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": true,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-35",
+        "status": "Implemented",
+        "artifact": "nfl-results-leaderboard.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-STANDINGS",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/standings/"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-36",
+        "status": "Implemented",
+        "artifact": "nfl-results-correlation.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-RESULTS-W1-9",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-1"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-37",
+        "status": "Partial",
+        "artifact": "nfl-competition/site/leaderboard.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-38",
+        "status": "Implemented",
+        "artifact": "nfl-results-leaderboard.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-RESULTS-W1-9",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-1"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-39",
+        "status": "Open",
+        "artifact": "nfl-verification-2026-11-13.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-40",
+        "status": "Partial",
+        "artifact": "sources.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "NFL-TERMS",
+            "host": "support.nfl.com",
+            "class": "official: NFL",
+            "url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-41",
+        "status": "Implemented",
+        "artifact": "nfl-availability-28ef/site/clubs.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-42",
+        "status": "Partial",
+        "artifact": "nfl-competition/site/injuries.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-43",
+        "status": "Implemented",
+        "artifact": "nfl-availability-28ef/site/depth.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-DEPTH-27",
+            "host": "www.atlantafalcons.com",
+            "class": "official: member club",
+            "url": "https://www.atlantafalcons.com/team/depth-chart"
+          },
+          {
+            "id": "CP-NFL-DEPTH-BYE4",
+            "host": "www.chicagobears.com",
+            "class": "official: member club",
+            "url": "https://www.chicagobears.com/team/depth-chart"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-44",
+        "status": "Open",
+        "artifact": "nfl-competition/site/questions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-45",
+        "status": "Implemented",
+        "artifact": "nfl-competition/site/injuries.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-DEPTH-27",
+            "host": "www.atlantafalcons.com",
+            "class": "official: member club",
+            "url": "https://www.atlantafalcons.com/team/depth-chart"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-46",
+        "status": "Implemented",
+        "artifact": "nfl-review.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": true,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-47",
+        "status": "Partial",
+        "artifact": "nfl-gamebook-5213243e/site/ledger.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-48",
+        "status": "Implemented",
+        "artifact": "nfl-availability-28ef/site/flagged.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": true,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-49",
+        "status": "Implemented",
+        "artifact": "nfl-availability-28ef/site/availability.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-50",
+        "status": "Rejected",
+        "artifact": "nfl-suggestions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-51",
+        "status": "Implemented",
+        "artifact": "nfl-availability-28ef/site/depth.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-DEPTH-BYE4",
+            "host": "www.chicagobears.com",
+            "class": "official: member club",
+            "url": "https://www.chicagobears.com/team/depth-chart"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-52",
+        "status": "Partial",
+        "artifact": "nfl-lifecycle-3f5c/site/replacement-depth.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-DEPTH-27",
+            "host": "www.atlantafalcons.com",
+            "class": "official: member club",
+            "url": "https://www.atlantafalcons.com/team/depth-chart"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-53",
+        "status": "Partial",
+        "artifact": "nfl-gamebook-5213243e/site/designation-reliability.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-54",
+        "status": "Blocked",
+        "artifact": "nfl-w11-injuries-3e61/site/flagged.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": true,
+        "sources": [
+          {
+            "id": "NFL-TERMS",
+            "host": "support.nfl.com",
+            "class": "official: NFL",
+            "url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions"
+          },
+          {
+            "id": "W11-NFL-TERMS-1118",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/legal/terms/"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-55",
+        "status": "Partial",
+        "artifact": "nfl-availability-28ef/site/availability.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-56",
+        "status": "Open",
+        "artifact": "nfl-competition/site/questions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-DEPTH-27",
+            "host": "www.atlantafalcons.com",
+            "class": "official: member club",
+            "url": "https://www.atlantafalcons.com/team/depth-chart"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-57",
+        "status": "Implemented",
+        "artifact": "nfl-competition/site/boards.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-58",
+        "status": "Partial",
+        "artifact": "nfl-gamebook-5213243e/site/fixtures-venue.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-W10-SCHEDULE",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-10"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-59",
+        "status": "Partial",
+        "artifact": "nfl-competition/site/leaderboard.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-ODDS-ABSENT",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/odds/"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-60",
+        "status": "Partial",
+        "artifact": "nfl-pricing/site/prices.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "NFL-TERMS",
+            "host": "support.nfl.com",
+            "class": "official: NFL",
+            "url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-61",
+        "status": "Open",
+        "artifact": "nfl-results-decisions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "E15-NFL-SCHED-REG10-1117",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/REG10"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-62",
+        "status": "Partial",
+        "artifact": "nfl-competition/site/origination.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-STANDINGS",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/standings/"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-63",
+        "status": "Partial",
+        "artifact": "nfl-verification-2026-11-13.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-64",
+        "status": "Open",
+        "artifact": "nfl-gamebook-5213243e/site/flagged.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": true,
+        "sources": [
+          {
+            "id": "CP-NFL-INJ-W10",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/injuries/league/2026/REG10"
+          }
+        ],
+        "desk_ci": "not referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-65",
+        "status": "Rejected",
+        "artifact": "nfl-suggestions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-66",
+        "status": "Blocked",
+        "artifact": "nfl-competition/site/questions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "NFL-TERMS",
+            "host": "support.nfl.com",
+            "class": "official: NFL",
+            "url": "https://support.nfl.com/hc/en-us/articles/35869743904916-NFL-com-Terms-and-Conditions"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-67",
+        "status": "Implemented",
+        "artifact": "nfl-competition/site/method.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-68",
+        "status": "Open",
+        "artifact": "nfl-competition/site/questions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-W10-SCHEDULE",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-10"
+          }
+        ],
+        "desk_ci": "referenced by check.yml",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-69",
+        "status": "Implemented",
+        "artifact": "nfl-suggestions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "REPO",
+            "host": "github.com",
+            "class": "repository (not an external official source)",
+            "url": "https://github.com/sassnarep3-star/Own7"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      },
+      {
+        "id": "DR-70",
+        "status": "Open",
+        "artifact": "nfl-results-decisions.html",
+        "artifact_exists": true,
+        "artifact_is_open_items_page": false,
+        "sources": [
+          {
+            "id": "CP-NFL-RESULTS-W1-9",
+            "host": "www.nfl.com",
+            "class": "official: NFL",
+            "url": "https://www.nfl.com/schedules/2026/by-week/week-1"
+          }
+        ],
+        "desk_ci": "scripts/check_site.py (root build)",
+        "listed_on_index": true
+      }
+    ]
+  }
+}

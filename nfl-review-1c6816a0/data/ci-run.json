@@ -1,0 +1,679 @@
+{
+  "run_at_utc": "2026-11-19T12:28:38Z",
+  "not_recorded_self_checks": [
+    "python nfl-review-1c6816a0/build.py --check",
+    "python -m unittest discover -s nfl-review-1c6816a0/tests -v"
+  ],
+  "source_workflow": ".github/workflows/check.yml",
+  "source_job": "research-static",
+  "commands_total": 83,
+  "commands_passed": 83,
+  "commands_failed": 0,
+  "worktree_changes_caused_by_run": [],
+  "results": [
+    {
+      "n": 1,
+      "step": "Test statistical math, chronology, rights and eligibility",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "seconds": 3.0,
+      "last_line": "OK"
+    },
+    {
+      "n": 2,
+      "step": "Test NFL brief tracker checks, evidence receipts and source contracts",
+      "command": "python -m unittest discover -s nfl-brief-77b1/tests -v",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "last_line": "OK"
+    },
+    {
+      "n": 3,
+      "step": "Reproduce NFL extraction from saved official text (refuses contradictions)",
+      "command": "python scripts/nfl_extract.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: 32 standings rows, 20 injury rows, 14 fixtures; 0 flag(s); all arithmetic checks passed."
+    },
+    {
+      "n": 4,
+      "step": "Reproduce NFL origination and gates",
+      "command": "python -m nfl_origination run --check",
+      "exit_code": 0,
+      "seconds": 1.3,
+      "last_line": "OK: NFL results reproduce exactly from receipt-checked inputs"
+    },
+    {
+      "n": 5,
+      "step": "Reproduce research, sources, blanks, all links and generated pages",
+      "command": "python scripts/check_site.py",
+      "exit_code": 0,
+      "seconds": 12.6,
+      "last_line": "OK: recursive site, fragments, registered row sources, blank rules, receipts and deterministic builds."
+    },
+    {
+      "n": 6,
+      "step": "Reproduce research, sources, blanks, all links and generated pages",
+      "command": "python nfl-ledger-637442e9/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: 8 files reproduce byte-identically; 70 ledger lines; 4 evidence files hash-checked."
+    },
+    {
+      "n": 7,
+      "step": "Reproduce research, sources, blanks, all links and generated pages",
+      "command": "python -m unittest discover -s nfl-ledger-637442e9/tests -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 8,
+      "step": "Reproduce research, sources, blanks, all links and generated pages",
+      "command": "python nfl-readiness-e7ef/collect.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "  V6: pass — records printed beside clubs on the Week 11 page (26 clubs) and the injury page (28 clubs) equal the standings page (0 mismatches)"
+    },
+    {
+      "n": 9,
+      "step": "Reproduce research, sources, blanks, all links and generated pages",
+      "command": "python nfl-readiness-e7ef/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: nfl-readiness-e7ef/site reproduces byte-identically (5 pages, manifest, style)."
+    },
+    {
+      "n": 10,
+      "step": "Reproduce research, sources, blanks, all links and generated pages",
+      "command": "python -m unittest discover -s nfl-readiness-e7ef/tests -v",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "last_line": "OK"
+    },
+    {
+      "n": 11,
+      "step": "Reproduce research, sources, blanks, all links and generated pages",
+      "command": "python nfl-week11-6c72a9fa/collect.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: collect 2026-11-18 — 32 standings (V1 0 failed), 13 W11 fixtures + 6 byes, Game Book #14 (22/22/12 rows), reserve Nov 25 + Oct 25 (+8/-8 vs 11-17), injuries stable re-read (50 rows, 0 diffs), schedule stable=True"
+    },
+    {
+      "n": 12,
+      "step": "Reproduce research, sources, blanks, all links and generated pages",
+      "command": "python nfl-week11-6c72a9fa/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: nfl-week11-6c72a9fa/site reproduces byte-identically (7 pages, manifest, style)."
+    },
+    {
+      "n": 13,
+      "step": "Reproduce research, sources, blanks, all links and generated pages",
+      "command": "python -m unittest discover -s nfl-week11-6c72a9fa/tests -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 14,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python scripts/verify_official_snapshots.py",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: all mapped numeric cells and explicit normalized identities match historical transcriptions; not a renewed external fact check."
+    },
+    {
+      "n": 15,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python scripts/compute_team_correlations.py",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "REB vs OREB 0.690 0.476"
+    },
+    {
+      "n": 16,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python scripts/test_research.py",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK"
+    },
+    {
+      "n": 17,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python handoff/f58e9526/compute_correlations.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "correlation check OK: 11 computed values match the verified tables"
+    },
+    {
+      "n": 18,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python market-evidence/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: 24 sourced findings and 6 blank/unverified flags; HTML current"
+    },
+    {
+      "n": 19,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python market-evidence/test_build.py -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 20,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python rental/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: 8 rental pages match the deterministic build."
+    },
+    {
+      "n": 21,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python rental/test_build.py -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 22,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m nfl_lab run --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: NFL results reproduce exactly from receipt-checked inputs"
+    },
+    {
+      "n": 23,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: 16 NFL pages reproduce exactly"
+    },
+    {
+      "n": 24,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl/verify_independent.py",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: every published coefficient reproduces from the committed snapshots; column disagreements are reported above and are not reconciliation failures."
+    },
+    {
+      "n": 25,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl/test_build.py -v",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "last_line": "OK"
+    },
+    {
+      "n": 26,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl/origination/originate.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: 14 NFL pages match the deterministic build."
+    },
+    {
+      "n": 27,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl/origination -p \"test_*.py\" -v",
+      "exit_code": 0,
+      "seconds": 0.5,
+      "last_line": "OK"
+    },
+    {
+      "n": 28,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-skill-cfdd/collect.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: 32 standings rows, arithmetic clean, 30/32 identical to the frozen snapshot, 2 club(s) moved"
+    },
+    {
+      "n": 29,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-skill-cfdd/depth.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: 231 printed slots across 4 clubs"
+    },
+    {
+      "n": 30,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-skill-cfdd/index.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: 326 injury rows joined to 32 printed charts; 265 matched; 8 printed starters ruled out"
+    },
+    {
+      "n": 31,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-skill-cfdd/luck.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: overdispersion chi2=19.0254 df=32 p=0.966189 (variance inflation 0.5945)"
+    },
+    {
+      "n": 32,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-skill-cfdd/ledger.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: 10 strategies, 12 gates (6 pass, 5 fail, 1 blocked), 0 qualified, 0 rewards"
+    },
+    {
+      "n": 33,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-skill-cfdd/decisions.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: 15 questions, 10 suggestions, 14 flags"
+    },
+    {
+      "n": 34,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-skill-cfdd/tests -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 35,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-lifecycle-3f5c/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: nfl-lifecycle-3f5c reproduces byte-identically"
+    },
+    {
+      "n": 36,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-lifecycle-3f5c/tests -v",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "last_line": "OK"
+    },
+    {
+      "n": 37,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-readiness-1467fdf7/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "readiness desk reproduces byte-identically (12 files)"
+    },
+    {
+      "n": 38,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-readiness-1467fdf7/tests -v",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "last_line": "OK"
+    },
+    {
+      "n": 39,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-slate-03dcea07/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: nfl-slate-03dcea07 reproduces byte-identically (8 pages, data, manifest, style)."
+    },
+    {
+      "n": 40,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-slate-03dcea07/tests -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 41,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-assurance-9580ac3f/availability.py",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "}"
+    },
+    {
+      "n": 42,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-integration-c815/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: 9 desk files reproduce byte-identically"
+    },
+    {
+      "n": 43,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-integration-c815/tests -v",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "last_line": "OK"
+    },
+    {
+      "n": 44,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-results/extract.py",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "    nfl-results/data/reconciliation-2026-11-18.json (sha256 7387b9e9305d4b7c)"
+    },
+    {
+      "n": 45,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-results/engine.py",
+      "exit_code": 0,
+      "seconds": 6.3,
+      "last_line": "    -> nfl-results/analysis.json"
+    },
+    {
+      "n": 46,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-results/tests -v",
+      "exit_code": 0,
+      "seconds": 39.3,
+      "last_line": "OK"
+    },
+    {
+      "n": 47,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-fresh-1118/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: nfl-fresh-1118/site reproduces byte-identically (4 pages, manifest)."
+    },
+    {
+      "n": 48,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-fresh-1118/tests -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 49,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-w11-injuries-3e61/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: nfl-w11-injuries-3e61 reproduces byte-identically (10 generated files, 5 pages, 26 rows, 16 checks)."
+    },
+    {
+      "n": 50,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-w11-injuries-3e61/tests -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 51,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-ledger-aedccbe5/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: desk reproduces byte-identically"
+    },
+    {
+      "n": 52,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-ledger-aedccbe5/tests -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 53,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-reconcile-9ef12c81/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: reconciliation desk pages reproduce byte-for-byte"
+    },
+    {
+      "n": 54,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-reconcile-9ef12c81/tests -v",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "last_line": "OK"
+    },
+    {
+      "n": 55,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-pricing/collect.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: price snapshots reproduce (136 games, 0 problem(s))"
+    },
+    {
+      "n": 56,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-pricing/originate.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: origination reproduces (136 games)"
+    },
+    {
+      "n": 57,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-pricing/leaderboard.py --check",
+      "exit_code": 0,
+      "seconds": 0.4,
+      "last_line": "OK: leaderboard reproduces (12 variants)"
+    },
+    {
+      "n": 58,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-pricing/correlations.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: correlations reproduce"
+    },
+    {
+      "n": 59,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-pricing/depth.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: depth reproduces (265 rows)"
+    },
+    {
+      "n": 60,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-pricing/questions.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: 12 questions and 8 suggestions reproduce"
+    },
+    {
+      "n": 61,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-pricing/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: 11 desk pages reproduce exactly"
+    },
+    {
+      "n": 62,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-pricing/tests -t . -v",
+      "exit_code": 0,
+      "seconds": 0.7,
+      "last_line": "OK"
+    },
+    {
+      "n": 63,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-availability-28ef/collect.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "}"
+    },
+    {
+      "n": 64,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-availability-28ef/depth.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "}"
+    },
+    {
+      "n": 65,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-availability-28ef/depletion.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "}"
+    },
+    {
+      "n": 66,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-availability-28ef/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "built 13 files (check: byte-identical)"
+    },
+    {
+      "n": 67,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-availability-28ef/tests -v",
+      "exit_code": 0,
+      "seconds": 0.4,
+      "last_line": "OK"
+    },
+    {
+      "n": 68,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-assurance-9580ac3f/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "}"
+    },
+    {
+      "n": 69,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-assurance-9580ac3f/check.py --report",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "last_line": "}"
+    },
+    {
+      "n": 70,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-assurance-9580ac3f/tests -v",
+      "exit_code": 0,
+      "seconds": 0.3,
+      "last_line": "OK"
+    },
+    {
+      "n": 71,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-competition/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "checked 16 pages and 8 requirements: ok"
+    },
+    {
+      "n": 72,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-competition/tests -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 73,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-market-desk/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: 11 artifacts reproduce byte-identically"
+    },
+    {
+      "n": 74,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-market-desk/site_build.py",
+      "exit_code": 0,
+      "seconds": 0.0,
+      "last_line": "OK: wrote 13 pages to nfl-market-desk/site/"
+    },
+    {
+      "n": 75,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-market-desk/tests -v",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "last_line": "OK"
+    },
+    {
+      "n": 76,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-week11-4c7d/build.py",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "}"
+    },
+    {
+      "n": 77,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-week11-4c7d/build_site.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK: deterministic rebuild is byte-identical."
+    },
+    {
+      "n": 78,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-week11-4c7d/check.py --check",
+      "exit_code": 0,
+      "seconds": 0.3,
+      "last_line": "OK: sources, blanks, semantics, links, deterministic rebuild and no pricing terms."
+    },
+    {
+      "n": 79,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-week11-4c7d/tests -v",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "OK"
+    },
+    {
+      "n": 80,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-snapcount-e5e4/build.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "}"
+    },
+    {
+      "n": 81,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-snapcount-e5e4/build_site.py --check",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "last_line": "Checked 11 snap-count desk pages (13 Game Books)."
+    },
+    {
+      "n": 82,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python -m unittest discover -s nfl-snapcount-e5e4/tests -v",
+      "exit_code": 0,
+      "seconds": 0.4,
+      "last_line": "OK"
+    },
+    {
+      "n": 83,
+      "step": "Verify retained snapshots and parallel source contributions",
+      "command": "python nfl-review-1c6816a0/scan.py --check",
+      "exit_code": 0,
+      "seconds": 0.1,
+      "last_line": "scan.json reproduces byte-identically"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "nfl-review-1c6816a0/audit/1",
+  "session": "arena/1c6816a0-own7",
+  "read_on": "2026-11-19",
+  "pages": [
+    "categories/availability-injuries.html",
+    "categories/governance-deliverables.html",
+    "categories/governance-publication.html",
+    "categories/leaderboard-competition.html",
+    "categories/market-pricing.html",
+    "categories/origination-model.html",
+    "categories/rejected-alternatives.html",
+    "categories/results-backtesting.html",
+    "ci.html",
+    "flagged.html",
+    "index.html",
+    "requirements.html",
+    "sources.html",
+    "suggestions.html"
+  ],
+  "note": "Counts computed from committed files. Statuses are the register's own; see flagged.html."
+}

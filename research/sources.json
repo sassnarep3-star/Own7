@@ -3785,6 +3785,54 @@
   "status": "Repository artifact"
  },
  {
+  "id": "RV-NFL-TERMS-1119",
+  "publisher": "NFL Enterprises, LLC",
+  "title": "NFL.com Terms and Conditions (updated May 16, 2024)",
+  "url": "https://www.nfl.com/legal/terms/#read-2026-11-19-section-1-3",
+  "kind": "terms",
+  "authority": "Official league website terms",
+  "scope": "Section 1.3 read verbatim on 2026-11-19: individual non-commercial informational use only; systematic retrieval to create or compile a collection, compilation, database or directory is prohibited absent express prior written consent. Not legal advice.",
+  "checked_on": "2026-11-19",
+  "status": "Content read",
+  "access": "Arena fetch_page rendered content (chunk 0 of 9); not a direct HTTP-status attestation"
+ },
+ {
+  "id": "RV-NFL-REG11-1119",
+  "publisher": "National Football League",
+  "title": "Official NFL Injury Report for Players - Week 11 of the 2026 Season (REG11 URL)",
+  "url": "https://www.nfl.com/injuries/league/2026/REG11#read-2026-11-19",
+  "kind": "official injury report",
+  "authority": "Official league injury report page",
+  "scope": "Point-in-time read on 2026-11-19, chunk 0 of 7: Thursday IND (3-7) and HOU (3-6) tables; Colts 11 rows, Texans 15 rows; Injuries and Game Status cells as printed (16 of 26 populated in each). Sunday tables not compared.",
+  "checked_on": "2026-11-19",
+  "status": "Content read",
+  "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation"
+ },
+ {
+  "id": "RV-NFL-REG10-1119",
+  "publisher": "National Football League",
+  "title": "Official NFL Injury Report for Players - Week 10 of the 2026 Season (REG10 URL)",
+  "url": "https://www.nfl.com/injuries/league/2026/REG10#read-2026-11-19",
+  "kind": "official injury report",
+  "authority": "Official league injury report page",
+  "scope": "Point-in-time read on 2026-11-19, chunk 3 of 8. The page title reads Week 11 while the body shows a Texans game that cannot be in the Week 11 report (inference; see flagged item F-02).",
+  "checked_on": "2026-11-19",
+  "status": "Content read (title and body disagree)",
+  "access": "Arena fetch_page rendered content; not a direct HTTP-status attestation"
+ },
+ {
+  "id": "RV-GH-PULLS-1119",
+  "publisher": "Own7 repository (this project)",
+  "title": "Open and merged pull requests, sassnarep3-star/Own7",
+  "url": "https://github.com/sassnarep3-star/Own7/pulls",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository host state; not an external official source",
+  "scope": "Point-in-time read on 2026-11-19 via the GitHub CLI: six open pull requests (#79, #82, #83, #88, #98, #106), all reporting mergeable state CONFLICTING.",
+  "checked_on": "2026-11-19",
+  "status": "Repository state read",
+  "access": "GitHub CLI (gh pr list) run in the sandbox; not a browser read"
+ },
+ {
   "id": "B77-NFL-TRADES",
   "publisher": "NFL.com",
   "title": "NFL.com league transactions (November 2026 trades)",

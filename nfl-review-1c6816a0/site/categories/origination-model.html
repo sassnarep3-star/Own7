@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Origination &amp; model · NFL review desk</title>
+<style>
+:root{--ink:#16202a;--muted:#5a6672;--line:#d9dee4;--bg:#f6f8fa;--ok:#1a7f37;--warn:#9a6700;--bad:#cf222e;--blue:#0969da}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.top{background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:12px 20px}
+.brand{font-weight:700;color:var(--ink);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:6px}nav a{padding:6px 10px;border-radius:6px;color:var(--ink);text-decoration:none;border:1px solid transparent}
+nav a:hover{border-color:var(--line);background:#fff}nav a[aria-current=page]{background:#fff;border-color:var(--line);font-weight:600}
+h1{font-size:28px;line-height:1.2;margin:18px 0 6px}h2{font-size:19px;margin:28px 0 8px}
+.eyebrow{color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-size:12px;margin:18px 0 0}
+.lead{color:var(--muted);max-width:820px;margin:0 0 14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:14px 0}
+.card{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:#fff}
+.card b{display:block;font-size:24px}.card span{color:var(--muted);font-size:13px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.tiles a{display:block;border:1px solid var(--line);border-radius:10px;padding:14px;color:var(--ink);text-decoration:none;background:#fff}
+.tiles a:hover{border-color:var(--blue)}.tiles a b{display:block;margin-bottom:4px}.tiles a span{color:var(--muted);font-size:13px}
+table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{background:var(--bg);font-weight:600;position:sticky;top:0}
+td code{font-size:12.5px;word-break:break-all}
+.pill{display:inline-block;border-radius:999px;padding:1px 9px;font-size:12.5px;border:1px solid var(--line);white-space:nowrap}
+.p-impl{color:var(--ok);border-color:#aceebb;background:#dafbe1}.p-part{color:var(--warn);border-color:#f1d787;background:#fff8c5}
+.p-open{color:var(--blue);border-color:#b6d4fe;background:#ddf4ff}.p-block{color:var(--bad);border-color:#ffc1c7;background:#ffebe9}
+.p-rej{color:var(--muted);background:var(--bg)}.p-ok{color:var(--ok)}.p-fail{color:var(--bad)}
+.unver{color:var(--bad);font-weight:600}.note{color:var(--muted);font-size:13px}
+details{border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:10px 0;background:#fff}
+summary{cursor:pointer;font-weight:600}
+ul{padding-left:20px}li{margin:3px 0}
+.foot{color:var(--muted);font-size:12.5px;margin:30px 0 40px;border-top:1px solid var(--line);padding-top:10px}
+a{color:var(--blue)}
+/* WCAG 2.2 target size (24px): links inside table cells get a minimum box and spacing. */
+td a,th a{display:inline-block;min-height:24px;min-width:24px;line-height:24px;padding:0 4px;margin:1px 0}
+@media (max-width:700px){h1{font-size:23px}table{font-size:13px}th,td{padding:6px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../../nfl-review-1c6816a0/site/index.html">NFL review desk</a>
+<nav aria-label="Pages"><a href="../index.html">Overview</a><a href="../requirements.html" aria-current="page">Requirements</a><a href="../flagged.html">Flagged for review</a><a href="../ci.html">CI reproduction</a><a href="../sources.html">Sources and reads</a><a href="../suggestions.html">Suggestions</a></nav>
+</div></header>
+<main class="wrap">
+<p class="eyebrow">Requirement category</p>
+<h1>Origination &amp; model</h1>
+<p class="lead">7 register rows. Statuses are as the register declares them; the audit note is this session&#x27;s check.</p>
+<div style="overflow-x:auto"><table aria-label="Origination &amp; model rows"><thead><tr><th scope="col">ID</th><th scope="col">Requirement</th><th scope="col">Status (register)</th><th scope="col">Gate that blocks it</th><th scope="col">Number or condition that clears it</th><th scope="col">Artifact</th><th scope="col">Official source</th><th scope="col">Desk CI</th><th scope="col">Re-read 2026-11-19 · audit note</th></tr></thead><tbody><tr data-source-ids="CP-NFL-STANDINGS"><td><a id="DR-03"></a><code>DR-03</code></td><td>Originate the side first, then the total, then the moneyline</td><td><span class="pill p-impl">Implemented</span></td><td>Stage reconciliation must hold on every build (side/total/ML stages must reproduce the single-shot numbers exactly).</td><td>0 of 0 mismatches per build: 14/14 games reconciled in the lifecycle desk and 13 Week 10 games in the competition lab.</td><td><a href="../../../nfl-competition/site/origination.html"><code>nfl-competition/site/origination.html</code></a></td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">CP-NFL-STANDINGS</a></td><td>referenced by check.yml</td><td>none<br><span class="note">Listed on the root landing page (scan).</span></td></tr><tr data-source-ids="CP-NFL-W10-SCHEDULE"><td><a id="DR-14"></a><code>DR-14</code></td><td>Add a fixture-context feature set built only from published schedule facts</td><td><span class="pill p-part">Partial</span></td><td>Roof, surface and game-day weather are now captured per Game Book for 13 Week 10 games; NWS hourly forecast grids are not joined and no other week is captured.</td><td>NWS hourly grids joined to the official roof/surface designations for one full slate without inference.</td><td><a href="../../../nfl-gamebook-5213243e/site/fixtures-venue.html"><code>nfl-gamebook-5213243e/site/fixtures-venue.html</code></a></td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener noreferrer" target="_blank">CP-NFL-W10-SCHEDULE</a></td><td>not referenced by check.yml</td><td>none<br><span class="note">Artifact desk is not reproduced by the CI job (scan). Listed on the root landing page (scan). See F-04.</span></td></tr><tr data-source-ids="CP-NFL-STANDINGS"><td><a id="DR-15"></a><code>DR-15</code></td><td>Store every model output as a probability plus its inputs, not just a pick</td><td><span class="pill p-impl">Implemented</span></td><td>Applies to originated markets; stored artifacts carry the model inputs (ratings, HFA, shrinkage) with each output.</td><td>Every board row exposes its fair probability and input parameters (78 market rows in the competition lab).</td><td><a href="../../../nfl-competition/site/boards.html"><code>nfl-competition/site/boards.html</code></a></td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">CP-NFL-STANDINGS</a></td><td>referenced by check.yml</td><td>none<br><span class="note">Listed on the root landing page (scan).</span></td></tr><tr data-source-ids="CP-NFL-RESULTS-W1-9"><td><a id="DR-26"></a><code>DR-26</code></td><td>Ingest game-level results to make the ratings opponent-aware</td><td><span class="pill p-impl">Implemented</span></td><td>Ratings refresh weekly as finals publish; they are opponent-aware within the captured season only.</td><td>Walk-forward ratings built from 150 game-level results (weeks 1-10 complete, 2026-11-18), prior state strictly before the target week.</td><td><a href="../../../nfl-results-skill.html"><code>nfl-results-skill.html</code></a></td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-1" rel="noopener noreferrer" target="_blank">CP-NFL-RESULTS-W1-9</a></td><td>scripts/check_site.py (root build)</td><td>none<br><span class="note">Listed on the root landing page (scan). See F-08.</span></td></tr><tr data-source-ids="CP-NFL-W10-SCHEDULE"><td><a id="DR-58"></a><code>DR-58</code></td><td>Stadium roof/surface and NWS hourly wind/precipitation overlay with official 90-minute roof designations</td><td><span class="pill p-part">Partial</span></td><td>Official roof/surface designations and game-day weather are captured per Game Book for 13 Week 10 games; the NWS hourly wind/precipitation grids are still not joined, so totals/weather mispricing cannot be tested yet.</td><td>NWS hourly grids joined to the official 90-minute roof designations for one full slate, each value source-linked.</td><td><a href="../../../nfl-gamebook-5213243e/site/fixtures-venue.html"><code>nfl-gamebook-5213243e/site/fixtures-venue.html</code></a></td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener noreferrer" target="_blank">CP-NFL-W10-SCHEDULE</a></td><td>not referenced by check.yml</td><td>none<br><span class="note">Artifact desk is not reproduced by the CI job (scan). Listed on the root landing page (scan). See F-04.</span></td></tr><tr data-source-ids="CP-NFL-STANDINGS"><td><a id="DR-62"></a><code>DR-62</code></td><td>Publish every model total twice until one wins (two estimators with a gap column, collapsed only after walk-forward)</td><td><span class="pill p-part">Partial</span></td><td>The canonical engine publishes one total per game; the market desk and the competition lab publish their own estimators, but the three have not been collapsed by a walk-forward comparison.</td><td>Both estimators visible with the gap column; walk-forward comparison decides the collapse (or the desks stay separate).</td><td><a href="../../../nfl-competition/site/origination.html"><code>nfl-competition/site/origination.html</code></a></td><td><a href="https://www.nfl.com/standings/" rel="noopener noreferrer" target="_blank">CP-NFL-STANDINGS</a></td><td>referenced by check.yml</td><td>none<br><span class="note">Listed on the root landing page (scan).</span></td></tr><tr data-source-ids="CP-NFL-W10-SCHEDULE"><td><a id="DR-68"></a><code>DR-68</code></td><td>2026 kickoff and declared onside-kick regime priors filter</td><td><span class="pill p-open">Open</span></td><td>The 2026 playing-rules changes (kickoff/onside declarations) are not yet transcribed from the official rulebook into the model context.</td><td>Declared rules transcribed from the official 2026 playing rules and the priors filter added with its source.</td><td><a href="../../../nfl-competition/site/questions.html"><code>nfl-competition/site/questions.html</code></a></td><td><a href="https://www.nfl.com/schedules/2026/by-week/week-10" rel="noopener noreferrer" target="_blank">CP-NFL-W10-SCHEDULE</a></td><td>referenced by check.yml</td><td>none<br><span class="note">Listed on the root landing page (scan).</span></td></tr></tbody></table></div>
+<p><a href="../requirements.html">← All categories</a></p>
+<p class="foot">Generated by <code>nfl-review-1c6816a0/build.py</code> from committed files only. Session arena/1c6816a0-own7. Reads dated 2026-11-19. Not legal advice. Not a betting recommendation.</p>
+</main>
+</body>
+</html>
