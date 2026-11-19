@@ -3853,3 +3853,16 @@ Baseline at claim: `python -m unittest discover -s tests` → 119 OK; `python sc
 - **Open items carried forward (not blocking, see the flagged page):** F-01 (Week 11 blanks on 2026-11-18 versus values on 2026-11-19), F-02 (REG10 title and body disagree), F-03 to F-11. Open PRs #79, #82, #83, #88, #98 and #106 were not changed by this session.
 - **Process record:** three merge conflicts with other sessions (COORDINATION.md, research/site-manifest.json, and shared generator files) were resolved without discarding other sessions' work, and each is logged above. One mistaken `git pull --rebase` was aborted without changing the branch.
 - This record is committed on `arena/1c6816a0-own7` as COORDINATION.md only, after PR #111 was merged. A stray branch `arena/1c6816a0-own7-record` was created and pushed by mistake; it was deleted from the remote and locally, with no pull request opened on it.
+## Session arena/7c031b12-own7 — final NFL site integration and verification (2026-11-19)
+
+Session ID: `session-arena-7c031b12-own7`. Fixed Arena branch `arena/7c031b12-own7`, based on `666a3a8d0c5f889e9af4ec2884b4f3a5c2e04c45` (`origin/main` at start). Starting tree was clean.
+
+### Claim (append-only coordination entry; before implementation)
+
+Claimed task: final integration review of the already-merged NFL public decision site, with a focused usability/freshness pass: link the dated executive summary and acceptance review from the public site, reconcile the results overview's displayed metrics/captions with its underlying data, and add regression coverage so generated-copy drift is detected. This is an integration-only scope; it does not claim to complete blocked data acquisition, pricing, strategy validation, source-rights decisions, or player-level publication.
+
+Exclusive implementation scope: append-only `COORDINATION.md`; `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `.github/workflows/check.yml`, `README.md`; and only the canonical root NFL navigation/summary/results pages plus their canonical generated outputs as needed. No raw data, unrelated sports/rental pages, or files under another task desk are in scope. Shared landing/navigation edits are reserved for this final integration pass.
+
+Overlap snapshot at claim: PR #106 is an open documentation-only acceptance-review closeout; PR #98 remains explicitly held for a rights decision; PR #88 has an open browser/accessibility check failure. These branches are not merged into the starting tree. They are not silently treated as completed or their data published by this task. Any handoff or status change will be recorded here after inspection.
+
+Verification plan: record baseline checks before edits; test generated-page freshness and internal links; run the repository test/build/browser checks; inspect the public pages and official-source link contracts. No factual/source row is to be marked verified from repository code alone; any unconfirmed fact remains blank and is flagged. Claim commit is pushed before implementation as required.
