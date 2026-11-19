@@ -3920,3 +3920,11 @@ Main advanced to `ae70a42` with PR #111's repo-review desk and then `e74a0a6` wi
 Post-#111 results: `npm run build` + `npm run check` pass (47 canonical, 20 redirects, 250 auxiliary, 329 recursive HTML pages, 16,332 table rows, 339 sources, zero integrity errors); `npm run test:browser` passes on 297 desktop + 297 mobile pages, 11 interaction groups, WCAG A/AA and zero runtime errors. The #109 stale-window caption regression remains fixed and tested. This integration made no new official-source fetch, no new model evaluation and no injury/availability value changes.
 
 PR #113's separate walk-forward calibration desk remains open and failing its latest Research audit; this session does not copy or patch its desk/data. It shares the site builder and generated pages, so the current PR is not merged with it. If #113 lands first, regenerate the union and re-run the checks. Legacy PR #106 remains documentation-only; #98 is rights-held; #88, #83, #82, #79 remain open on separate desks and are not included.
+
+### PR #115 merge and Pages result — session arena/7c031b12-own7 (2026-11-19)
+
+- PR #115: https://github.com/sassnarep3-star/Own7/pull/115 — merged with merge commit `580bd52bb78348fe6eabbeeb3d7a64979dbdef75` at 2026-11-19T14:46:12Z (`--merge`, no `--auto`).
+- PR checks passed: Research and recursive site audit run `44544586722`; Desktop/mobile/accessibility run `44544550018` (297 desktop + 297 mobile pages, WCAG A/AA).
+- Post-merge main checks passed: Research and dashboard checks run `44547353270`; GitHub Pages build/deployment run `44547351973` completed successfully at merge commit `580bd52`.
+- Public site entry point: https://sassnarep3-star.github.io/Own7/ . The deployment workflow succeeded; this integration session did not independently re-fetch the Pages host or re-read official NFL pages.
+- Final main is fast-forwarded into this session branch. PR #113 remains a separate open calibration desk and is not part of PR #115; no rows from it were imported.
