@@ -3763,6 +3763,49 @@ Fixed Arena branch: `arena/b2e7c3b7-own7` (base `666a3a8`). Scope: `nfl_pages.py
 - Verification: `python scripts/build_site.py` passed; `npm run check` passed (121 unit tests, 6 NFL build tests, deterministic results reproduction, recursive audit: 313 HTML pages, 16,042 table rows, 332 registered sources, 0 errors); `npm run test:browser` passed before final main merge (281 desktop + 281 mobile pages, WCAG A/AA, no runtime errors). Repeated site build and `npm run check` after merging `origin/main` at `ebc05f7`; clean working tree. Browser suite's successful run preceded that merge; browser-facing diff is summary copy only.
 - Initial browser run lacked installed npm dependencies; `npm ci` resolved it (20 packages, audit found 0 vulnerabilities). No external source capture was performed in this session; correctness of underlying official corpus is bounded by the retained receipt-checked inputs and the existing audit scope.
 - Branch commits: `cf99933` claim, `18fdb64` scope, `3148ced` metric fix, `898c872` integration merge. Task complete; shared canonical requirement/source data was not changed. PR and deployment status to be appended after GitHub checks.
+- PR #109: https://github.com/sassnarep3-star/Own7/pull/109 — merged with merge commit `bfbc5e138bdb08d16fed78e05f4ee2c571f2c170` at 2026-11-19T12:40:24Z. PR checks passed: Research and recursive site audit and Desktop/mobile/accessibility (281-page desktop + mobile coverage on PR head).
+- Main checks after merge passed: [Research and dashboard checks run 44526062943](https://github.com/sassnarep3-star/Own7/actions/runs/44526062943) and [Pages build/deployment run 44526061591](https://github.com/sassnarep3-star/Own7/actions/runs/44526061591). GitHub Pages deployment completed successfully. Public site: https://sassnarep3-star.github.io/Own7/ .
+
+
+## Session arena/b3c4087a-own7 — live Week 11 injury re-read, flagged page, integration (2026-11-19)
+
+Session ID: `session-arena-b3c4087a-own7`. Fixed Arena branch `arena/b3c4087a-own7` (base `666a3a8` = `origin/main` at claim; PR #107 was the last merge). The `session-<id>/<task>` branch naming is not used because the platform fixes the branch for this session and work must stay on it. This session is single-session on this branch.
+
+Honest scope: the full brief (about 70 requirement lines, with many capture, scraper and model tasks) is not completed in one session. Most of those requirements already have desks in this repo; their status is recorded by `nfl-ledger-637442e9` and `nfl-ledger-aedccbe5`. This session does one verifiable thing: it checks the Week 11 official injury report against the repo's own 2026-11-18 capture, and it publishes what changed.
+
+Baseline at claim: `python -m unittest discover -s tests` → 119 OK; `python scripts/check_site.py` → OK; `nfl-ledger-637442e9/build.py --check` → OK.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| B1 | Claim + baseline | done | session-arena-b3c4087a-own7 | COORDINATION.md | Baseline above. |
+| B2 | Fresh official read of https://www.nfl.com/injuries/ (Week 11) and of NFL.com Terms §1.3 | done | session-arena-b3c4087a-own7 | `nfl-live-b3c4087a/data/**` | Single read in seven chunks, 2026-11-19 about 12:05-12:15 UTC. Thursday rows and per-club counts recorded; the full 253-row report is not stored (Terms §1.3). |
+| B3 | Desk: diff vs 2026-11-18 repo capture, flagged page, byte-identical build, tests | done | session-arena-b3c4087a-own7 | `nfl-live-b3c4087a/**` | 8 unit tests OK; `build.py --check` OK. |
+| B4 | Integration: sources (B3C-*), SOURCE_HOSTS, build_site wiring, CI lines, browser allow-list | done | session-arena-b3c4087a-own7 | `research/sources.json` (+3 rows), `scripts/check_site.py`, `scripts/build_site.py`, `scripts/browser_test.mjs`, `scripts/serve_site.py`, `.github/workflows/check.yml`; regenerated shared nav and manifest (56 canonical HTML files gained the nav link) | `check_site.py` OK (335 sources); `npm run test:browser` OK (283 desktop + 283 mobile). |
+| B5 | PR, CI, merge, Pages deploy, record | in progress | session-arena-b3c4087a-own7 | COORDINATION.md, PR | See the log below. |
+
+### Verification log (B2)
+
+- Official page read: https://www.nfl.com/injuries/ (title "Official Latest NFL Injury Report for Players - Week 11 of the 2026 Season | NFL.com"). Seven chunks read (0 to 6).
+- Terms: https://www.nfl.com/legal/terms/ "Updated: May 16, 2024". §1.3 text matches the repo's saved copy in `nfl-ledger-637442e9/evidence/nfl-terms-read-2026-11-18.md`.
+- Result: 26 clubs; 253 printed player rows; 2 clubs print "No Injuries Reported" (CIN, WAS). The repo capture of 2026-11-18 printed rows for 2 clubs (IND 11, HOU 15) and "No Injuries Reported" for 24 clubs.
+- Thursday (Colts at Texans): 17 of 26 players differ from the repo capture in at least one of Injuries, Practice or Game status. Game status is now printed for 16 of 26 (repo 0 of 26). Ten Game Status cells remain blank.
+
+### Irregularities (flagged, non-blocking; published on `nfl-live-b3c4087a/site/flagged.html`)
+
+- B3C-F01: the repo's 2026-11-18 Week 11 capture is superseded for 24 clubs (it is a correct snapshot of its date, not a series).
+- B3C-F02: the repo's W11-F01/F02 claim that every Thursday Game Status cell is blank is superseded (16 of 26 now printed).
+- B3C-F03: the brief's 254-row figure is not reproduced; this read counts 253. Owner to recount.
+- B3C-F04: NFL.com Terms §1.3 prohibits systematic retrieval to compile a collection without written consent. A daily or scheduled capture (Wed to kickoff) is therefore not built. Owner decision: consent, a licensed feed, or manual one-off reads. Not a legal opinion.
+- B3C-F05: printed name and link slug differ for two players (Dee Alford → deaundre-ford; Jacob Hummel → jake-hummel). Printed as-is.
+- B3C-F06: Jaylen Waddle appears in the Broncos table at this read. Not checked against a roster or transaction source.
+- B3C-F07: Sunday and Monday game-status cells are blank at this read. The publishing rule is not verified.
+
+### Session log (arena/b3c4087a-own7)
+
+- Claimed B1–B5, baseline replayed (119 unit tests OK; site check OK; K637 ledger build OK).
+- Found the repo's 2026-11-18 Week 11 capture and the live page disagree (see irregularities). No existing file was edited to hide that: the new desk shows both.
+- Added `research/sources.json` rows B3C-NFL-INJURIES, B3C-NFL-TERMS and B3C-REPO-W11 by append only (the file was not reformatted). Ran `python -m nba_lab run` to refresh research outputs after the registry count changed (335 registered sources; the registry diff is additions only).
+- A first browser-test run failed on table overflow and link underline; fixed in the desk's page styles and retested (283 + 283 pages OK).
 
 ## Session arena/1c6816a0-own7 — repo review, decision-readiness audit and review desk (2026-11-19)
 
@@ -3794,3 +3837,11 @@ Fixed Arena branch: `arena/b2e7c3b7-own7` (base `666a3a8`). Scope: `nfl_pages.py
 6. **Mistaken `git pull --rebase`.** Pulling the remote session branch replayed main's commits, because the remote still held my pre-rebase claim commit (`81c4508`). Aborted with no change to the branch. Resolved with a `-s ours` merge that records `81c4508` as a parent, so the push is a fast-forward. No force push.
 7. **Browser test, two failures.** Run 1: two WCAG `target-size` violations in the desk's table links; fixed with a 24px minimum tap target in the desk's own CSS. Run 2: Chromium was killed by the kernel OOM killer (about 3.4 GB of 3.9 GB in the sandbox); reran on an otherwise idle sandbox. Neither failure was a page defect.
 8. **Self-check recording.** The desk's own build and test checks read the CI record they are part of, so `run_ci.py` records 83 commands and lists the two self-checks as not recorded. CI runs them separately.
+
+#### Merge update — arena/1c6816a0-own7 with main (2026-11-19)
+
+- PR #111 could not merge: `main` moved to `922bd97` (PR #112, `nfl-live-b3c4087a`, which also edits `check.yml`, `scripts/build_site.py`, `scripts/check_site.py`, `scripts/browser_test.mjs`, `research/sources.json` and several generated pages). Merged `origin/main` into the branch with a merge commit (no history rewrite).
+- Conflicts resolved: `COORDINATION.md` (kept both sections, main's first); `research/sources.json` (main's 335 entries plus this desk's four, 339 with no duplicates); `scripts/browser_test.mjs` (main's allowlist plus `nfl-review-1c6816a0`); `scripts/build_site.py` (main's file plus this desk's registration and manifest entries). Generated outputs (`research/results.json`, `research/site-manifest.json`, `sources.html`, desk HTML, ledger audit) taken from main and regenerated.
+- Regeneration reached a fixed point: two consecutive full regenerations produced identical bytes. The first build after a regeneration rewrote `sources.html` and the manifest; the second did not.
+- Re-verified on the merged tree: `check_site.py` passes; the recorded CI reproduction runs **85 of 85** commands (main added two) with 0 worktree changes; the desk's build, scan and 12 tests pass; `nba_lab` and `nfl_lab` checks pass.
+- Process note: the first `git pull --rebase` against the remote session branch replayed main's commits by mistake. It was aborted with no change, and the remote's superseded claim commit was joined by a no-op `ours` merge. No force push.

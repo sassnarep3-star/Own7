@@ -313,6 +313,9 @@ SOURCE_HOSTS.update({
 })
 
 
+SOURCE_HOSTS.update({'B3C-NFL-INJURIES': 'www.nfl.com', 'B3C-NFL-TERMS': 'www.nfl.com', 'B3C-REPO-W11': 'github.com'})  # nfl-live-b3c4087a desk
+
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__(convert_charrefs=True)

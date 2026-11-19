@@ -1,7 +1,7 @@
 {
   "schema": "nfl-review-1c6816a0/scan/1",
   "note": "Deterministic scan of the committed tree. No network, no timestamps. Findings are counts and paths, not judgements about truth.",
-  "ci_commands_in_check_yml": 83,
+  "ci_commands_in_check_yml": 85,
   "ci_commands_missing_script": [],
   "html_desks_not_in_ci": [
     "nfl-gamebook-5213243e",
@@ -89,6 +89,7 @@
     "nfl-ledger-637442e9/site/flagged.html",
     "nfl-ledger-aedccbe5/site/flagged.html",
     "nfl-lifecycle-3f5c/site/flagged.html",
+    "nfl-live-b3c4087a/site/flagged.html",
     "nfl-market-desk/site/flagged.html",
     "nfl-pricing/site/flagged.html",
     "nfl-readiness-1467fdf7/site/flagged.html",
