@@ -1,5 +1,5 @@
 {
-  "run_at_utc": "2026-11-19T12:28:38Z",
+  "run_at_utc": "2026-11-19T13:01:19Z",
   "not_recorded_self_checks": [
     "python nfl-review-1c6816a0/build.py --check",
     "python -m unittest discover -s nfl-review-1c6816a0/tests -v"
@@ -16,7 +16,7 @@
       "step": "Test statistical math, chronology, rights and eligibility",
       "command": "python -m unittest discover -s tests -v",
       "exit_code": 0,
-      "seconds": 3.0,
+      "seconds": 2.8,
       "last_line": "OK"
     },
     {
@@ -48,7 +48,7 @@
       "step": "Reproduce research, sources, blanks, all links and generated pages",
       "command": "python scripts/check_site.py",
       "exit_code": 0,
-      "seconds": 12.6,
+      "seconds": 12.7,
       "last_line": "OK: recursive site, fragments, registered row sources, blank rules, receipts and deterministic builds."
     },
     {
@@ -56,7 +56,7 @@
       "step": "Reproduce research, sources, blanks, all links and generated pages",
       "command": "python nfl-ledger-637442e9/build.py --check",
       "exit_code": 0,
-      "seconds": 0.0,
+      "seconds": 0.1,
       "last_line": "OK: 8 files reproduce byte-identically; 70 ledger lines; 4 evidence files hash-checked."
     },
     {
@@ -96,7 +96,7 @@
       "step": "Reproduce research, sources, blanks, all links and generated pages",
       "command": "python nfl-week11-6c72a9fa/collect.py --check",
       "exit_code": 0,
-      "seconds": 0.1,
+      "seconds": 0.0,
       "last_line": "OK: collect 2026-11-18 — 32 standings (V1 0 failed), 13 W11 fixtures + 6 byes, Game Book #14 (22/22/12 rows), reserve Nov 25 + Oct 25 (+8/-8 vs 11-17), injuries stable re-read (50 rows, 0 diffs), schedule stable=True"
     },
     {
@@ -104,7 +104,7 @@
       "step": "Reproduce research, sources, blanks, all links and generated pages",
       "command": "python nfl-week11-6c72a9fa/build.py --check",
       "exit_code": 0,
-      "seconds": 0.1,
+      "seconds": 0.0,
       "last_line": "OK: nfl-week11-6c72a9fa/site reproduces byte-identically (7 pages, manifest, style)."
     },
     {
@@ -224,7 +224,7 @@
       "step": "Verify retained snapshots and parallel source contributions",
       "command": "python -m unittest discover -s nfl/origination -p \"test_*.py\" -v",
       "exit_code": 0,
-      "seconds": 0.5,
+      "seconds": 0.4,
       "last_line": "OK"
     },
     {
@@ -304,7 +304,7 @@
       "step": "Verify retained snapshots and parallel source contributions",
       "command": "python nfl-readiness-1467fdf7/build.py --check",
       "exit_code": 0,
-      "seconds": 0.1,
+      "seconds": 0.2,
       "last_line": "readiness desk reproduces byte-identically (12 files)"
     },
     {
@@ -352,7 +352,7 @@
       "step": "Verify retained snapshots and parallel source contributions",
       "command": "python -m unittest discover -s nfl-integration-c815/tests -v",
       "exit_code": 0,
-      "seconds": 0.2,
+      "seconds": 0.1,
       "last_line": "OK"
     },
     {
@@ -368,7 +368,7 @@
       "step": "Verify retained snapshots and parallel source contributions",
       "command": "python nfl-results/engine.py",
       "exit_code": 0,
-      "seconds": 6.3,
+      "seconds": 6.4,
       "last_line": "    -> nfl-results/analysis.json"
     },
     {
@@ -376,7 +376,7 @@
       "step": "Verify retained snapshots and parallel source contributions",
       "command": "python -m unittest discover -s nfl-results/tests -v",
       "exit_code": 0,
-      "seconds": 39.3,
+      "seconds": 37.6,
       "last_line": "OK"
     },
     {
@@ -400,7 +400,7 @@
       "step": "Verify retained snapshots and parallel source contributions",
       "command": "python nfl-w11-injuries-3e61/build.py --check",
       "exit_code": 0,
-      "seconds": 0.0,
+      "seconds": 0.1,
       "last_line": "OK: nfl-w11-injuries-3e61 reproduces byte-identically (10 generated files, 5 pages, 26 rows, 16 checks)."
     },
     {
@@ -504,7 +504,7 @@
       "step": "Verify retained snapshots and parallel source contributions",
       "command": "python -m unittest discover -s nfl-pricing/tests -t . -v",
       "exit_code": 0,
-      "seconds": 0.7,
+      "seconds": 0.8,
       "last_line": "OK"
     },
     {
@@ -600,7 +600,7 @@
       "step": "Verify retained snapshots and parallel source contributions",
       "command": "python nfl-market-desk/site_build.py",
       "exit_code": 0,
-      "seconds": 0.0,
+      "seconds": 0.1,
       "last_line": "OK: wrote 13 pages to nfl-market-desk/site/"
     },
     {
@@ -664,7 +664,7 @@
       "step": "Verify retained snapshots and parallel source contributions",
       "command": "python -m unittest discover -s nfl-snapcount-e5e4/tests -v",
       "exit_code": 0,
-      "seconds": 0.4,
+      "seconds": 0.5,
       "last_line": "OK"
     },
     {
