@@ -1,6 +1,6 @@
 # OWN7 · NFL Origination Lab
 
-[Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-executive-summary-2026-11-18.md) · [Historical 2026-11-12 summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md)
+[Live site](https://sassnarep3-star.github.io/Own7/) · [NFL executive summary](docs/nfl-executive-summary-2026-11-18.md) · [Historical 2026-11-12 summary](docs/nfl-origination-summary.md) · [Decision brief](https://sassnarep3-star.github.io/Own7/nfl-decisions.html) · [Suggestions](https://sassnarep3-star.github.io/Own7/nfl-suggestions.html) · [Flagged for review](https://sassnarep3-star.github.io/Own7/nfl-review.html) · [Coordination board](COORDINATION.md) · [Probability calibration audit](https://sassnarep3-star.github.io/Own7/nfl-calibration-01000ff7/site/index.html)
 
 ## New: Week 11 injury desk — first Wednesday read, register re-grade (2026-11-18, session arena/3e6166df-own7)
 

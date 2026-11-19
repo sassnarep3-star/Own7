@@ -169,6 +169,14 @@ SOURCE_HOSTS.update({
     "E15-NFL-SCHED-REG10-1117": "www.nfl.com",
 })
 
+# Week-specific official results pages used by the probability-calibration audit.
+SOURCE_HOSTS.update({
+    'CAL-RESULTS-W02-1114': 'www.nfl.com', 'CAL-RESULTS-W03-1114': 'www.nfl.com',
+    'CAL-RESULTS-W04-1114': 'www.nfl.com', 'CAL-RESULTS-W05-1114': 'www.nfl.com',
+    'CAL-RESULTS-W06-1114': 'www.nfl.com', 'CAL-RESULTS-W07-1114': 'www.nfl.com',
+    'CAL-RESULTS-W08-1114': 'www.nfl.com', 'CAL-RESULTS-W09-1114': 'www.nfl.com',
+})
+
 
 # Readiness-audit desk (session arena/e7efbde7-own7) — official NFL hosts only; each id is
 # a page actually read on 2026-11-17 (standings, REG10 finals, Week 11 slate, injury report,

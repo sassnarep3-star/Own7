@@ -34,6 +34,8 @@ jobs:
           python -m unittest discover -s nfl-ledger-637442e9/tests -v
           python nfl-live-b3c4087a/build.py --check
           python -m unittest discover -s nfl-live-b3c4087a/tests -v
+          python nfl-calibration-01000ff7/build.py --check
+          python -m unittest discover -s nfl-calibration-01000ff7/tests -v
           python nfl-readiness-e7ef/collect.py --check
           python nfl-readiness-e7ef/build.py --check
           python -m unittest discover -s nfl-readiness-e7ef/tests -v

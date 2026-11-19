@@ -1,0 +1,4989 @@
+{
+  "desk": "nfl-calibration-01000ff7",
+  "as_of": "2026-11-19",
+  "model": "Existing nfl-competition three-stage origination; unchanged.",
+  "scope": "Walk-forward three-outcome moneyline probability assessment; binary calibration is conditional on no tie; no market prices or staking.",
+  "n": 134,
+  "binary_n": 133,
+  "target_weeks": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "binary_brier_given_no_tie": 0.242678,
+  "constant_50pct_binary_brier": 0.25,
+  "binary_brier_skill_vs_50pct": 0.029287,
+  "multiclass_brier": 0.493169,
+  "uniform_three_outcome_brier": 0.666667,
+  "multiclass_brier_skill_vs_uniform": 0.260246,
+  "weighted_calibration_error_5_bins": 0.063573,
+  "bootstrap": {
+    "cluster": "target week",
+    "clusters": 9,
+    "reps": 5000,
+    "seed": 20261119,
+    "brier_skill_ci95": [
+      -0.07275,
+      0.116537
+    ],
+    "multiclass_brier_skill_ci95": [
+      0.184707,
+      0.327348
+    ],
+    "calibration_error_ci95": [
+      0.030236,
+      0.16654
+    ],
+    "flag": "Only a small number of weekly clusters; percentile interval is exploratory, not a qualification test."
+  },
+  "bins": [
+    {
+      "bin": 1,
+      "range": "[0.0, 0.2)",
+      "n": 1,
+      "mean_predicted_home_win": 0.165703,
+      "observed_home_win_rate": 1.0,
+      "absolute_gap": 0.834297,
+      "flag": "Low n; descriptive only",
+      "game_ids": [
+        "G023"
+      ],
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        [
+          "CAL-RESULTS-W02-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "NFL Week 2 Schedule 2026: official by-week results"
+        ]
+      ]
+    },
+    {
+      "bin": 2,
+      "range": "[0.2, 0.4)",
+      "n": 19,
+      "mean_predicted_home_win": 0.348082,
+      "observed_home_win_rate": 0.315789,
+      "absolute_gap": 0.031019,
+      "flag": null,
+      "game_ids": [
+        "G024",
+        "G028",
+        "G032",
+        "G036",
+        "G037",
+        "G039",
+        "G043",
+        "G046",
+        "G067",
+        "G068",
+        "G075",
+        "G105",
+        "G118",
+        "G122",
+        "G128",
+        "G138",
+        "G141",
+        "G142",
+        "G143"
+      ],
+      "source_ids": [
+        "CAL-RESULTS-W02-1114",
+        "CAL-RESULTS-W03-1114",
+        "CAL-RESULTS-W05-1114",
+        "CAL-RESULTS-W07-1114",
+        "CAL-RESULTS-W08-1114",
+        "CAL-RESULTS-W09-1114",
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        [
+          "CAL-RESULTS-W02-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "NFL Week 2 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W03-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "NFL Week 3 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W05-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "NFL Week 5 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W07-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "NFL Week 7 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W08-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "NFL Week 8 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W09-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "NFL Week 9 Schedule 2026: official by-week results"
+        ],
+        [
+          "E15-NFL-SCHED-REG10-1117",
+          "https://www.nfl.com/schedules/2026/REG10",
+          "2026 NFL Schedule: Week 10 (REG10)"
+        ]
+      ]
+    },
+    {
+      "bin": 3,
+      "range": "[0.4, 0.6)",
+      "n": 85,
+      "mean_predicted_home_win": 0.493097,
+      "observed_home_win_rate": 0.423529,
+      "absolute_gap": 0.066662,
+      "flag": null,
+      "game_ids": [
+        "G017",
+        "G019",
+        "G026",
+        "G029",
+        "G031",
+        "G035",
+        "G038",
+        "G040",
+        "G042",
+        "G044",
+        "G045",
+        "G047",
+        "G048",
+        "G049",
+        "G050",
+        "G051",
+        "G053",
+        "G054",
+        "G055",
+        "G056",
+        "G057",
+        "G058",
+        "G064",
+        "G065",
+        "G066",
+        "G069",
+        "G070",
+        "G071",
+        "G072",
+        "G073",
+        "G074",
+        "G078",
+        "G079",
+        "G080",
+        "G082",
+        "G083",
+        "G084",
+        "G085",
+        "G086",
+        "G089",
+        "G090",
+        "G091",
+        "G092",
+        "G094",
+        "G095",
+        "G096",
+        "G097",
+        "G098",
+        "G100",
+        "G101",
+        "G103",
+        "G104",
+        "G106",
+        "G107",
+        "G108",
+        "G109",
+        "G110",
+        "G111",
+        "G112",
+        "G114",
+        "G116",
+        "G117",
+        "G119",
+        "G121",
+        "G124",
+        "G125",
+        "G126",
+        "G127",
+        "G129",
+        "G130",
+        "G131",
+        "G133",
+        "G134",
+        "G135",
+        "G136",
+        "G137",
+        "G139",
+        "G140",
+        "G144",
+        "G145",
+        "G146",
+        "G147",
+        "G148",
+        "G149",
+        "G150"
+      ],
+      "source_ids": [
+        "CAL-RESULTS-W02-1114",
+        "CAL-RESULTS-W03-1114",
+        "CAL-RESULTS-W04-1114",
+        "CAL-RESULTS-W05-1114",
+        "CAL-RESULTS-W06-1114",
+        "CAL-RESULTS-W07-1114",
+        "CAL-RESULTS-W08-1114",
+        "CAL-RESULTS-W09-1114",
+        "E15-NFL-SCHED-REG10-1117",
+        "FRESH-NFL-W10-COMPLETE-1118"
+      ],
+      "sources": [
+        [
+          "CAL-RESULTS-W02-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "NFL Week 2 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W03-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "NFL Week 3 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W04-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "NFL Week 4 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W05-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "NFL Week 5 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W06-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "NFL Week 6 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W07-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "NFL Week 7 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W08-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "NFL Week 8 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W09-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "NFL Week 9 Schedule 2026: official by-week results"
+        ],
+        [
+          "E15-NFL-SCHED-REG10-1117",
+          "https://www.nfl.com/schedules/2026/REG10",
+          "2026 NFL Schedule: Week 10 (REG10)"
+        ],
+        [
+          "FRESH-NFL-W10-COMPLETE-1118",
+          "https://www.nfl.com/schedules/2026/by-week/week-10",
+          "NFL 2026 by-week schedule page, week 10 (completion re-read)"
+        ]
+      ]
+    },
+    {
+      "bin": 4,
+      "range": "[0.6, 0.8)",
+      "n": 27,
+      "mean_predicted_home_win": 0.663775,
+      "observed_home_win_rate": 0.62963,
+      "absolute_gap": 0.031399,
+      "flag": null,
+      "game_ids": [
+        "G018",
+        "G020",
+        "G021",
+        "G025",
+        "G027",
+        "G030",
+        "G033",
+        "G034",
+        "G041",
+        "G052",
+        "G059",
+        "G060",
+        "G061",
+        "G062",
+        "G063",
+        "G077",
+        "G081",
+        "G087",
+        "G088",
+        "G093",
+        "G099",
+        "G102",
+        "G113",
+        "G115",
+        "G120",
+        "G123",
+        "G132"
+      ],
+      "source_ids": [
+        "CAL-RESULTS-W02-1114",
+        "CAL-RESULTS-W03-1114",
+        "CAL-RESULTS-W04-1114",
+        "CAL-RESULTS-W05-1114",
+        "CAL-RESULTS-W06-1114",
+        "CAL-RESULTS-W07-1114",
+        "CAL-RESULTS-W08-1114",
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        [
+          "CAL-RESULTS-W02-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "NFL Week 2 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W03-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "NFL Week 3 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W04-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "NFL Week 4 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W05-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "NFL Week 5 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W06-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "NFL Week 6 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W07-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "NFL Week 7 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W08-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "NFL Week 8 Schedule 2026: official by-week results"
+        ],
+        [
+          "CAL-RESULTS-W09-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "NFL Week 9 Schedule 2026: official by-week results"
+        ]
+      ]
+    },
+    {
+      "bin": 5,
+      "range": "[0.8, 1.0]",
+      "n": 1,
+      "mean_predicted_home_win": 0.827827,
+      "observed_home_win_rate": 1.0,
+      "absolute_gap": 0.172173,
+      "flag": "Low n; descriptive only",
+      "game_ids": [
+        "G022"
+      ],
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        [
+          "CAL-RESULTS-W02-1114",
+          "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "NFL Week 2 Schedule 2026: official by-week results"
+        ]
+      ]
+    }
+  ],
+  "games": [
+    {
+      "game_id": "G017",
+      "week": 2,
+      "date": "2026-09-17",
+      "matchup": "DET @ BUF",
+      "home": "BUF",
+      "away": "DET",
+      "p_home": 0.5583965459508974,
+      "p_away": 0.4416034540491026,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5583965459508974,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 2.145833333333332,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G018",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "CAR @ ATL",
+      "home": "ATL",
+      "away": "CAR",
+      "p_home": 0.6546581746155665,
+      "p_away": 0.3453418253844335,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6546581746155665,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 5.8125000000000036,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G019",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "CIN @ HOU",
+      "home": "HOU",
+      "away": "CIN",
+      "p_home": 0.42254066118275296,
+      "p_away": 0.5774593388172471,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.42254066118275296,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.8541666666666643,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G020",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "CLE @ TB",
+      "home": "TB",
+      "away": "CLE",
+      "p_home": 0.6795311394712985,
+      "p_away": 0.3204688605287015,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6795311394712985,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 6.8125,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G021",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "GB @ NYJ",
+      "home": "NYJ",
+      "away": "GB",
+      "p_home": 0.7704199794107784,
+      "p_away": 0.22958002058922156,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.7704199794107784,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 10.8125,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G022",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "IND @ KC",
+      "home": "KC",
+      "away": "IND",
+      "p_home": 0.8278268895505236,
+      "p_away": 0.17217311044947636,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.8278268895505236,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 13.812500000000004,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G023",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "JAX @ DEN",
+      "home": "DEN",
+      "away": "JAX",
+      "p_home": 0.1657031062622446,
+      "p_away": 0.8342968937377554,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.1657031062622446,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -14.1875,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G024",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "LV @ LAC",
+      "home": "LAC",
+      "away": "LV",
+      "p_home": 0.29539164907597765,
+      "p_away": 0.7046083509240224,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.29539164907597765,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -7.854166666666668,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G025",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "MIA @ SF",
+      "home": "SF",
+      "away": "MIA",
+      "p_home": 0.7971576391209471,
+      "p_away": 0.20284236087905294,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.7971576391209471,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 12.145833333333332,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G026",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "MIN @ CHI",
+      "home": "CHI",
+      "away": "MIN",
+      "p_home": 0.5673869262330985,
+      "p_away": 0.4326130737669015,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5673869262330985,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 2.4791666666666714,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G027",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "NO @ BAL",
+      "home": "BAL",
+      "away": "NO",
+      "p_home": 0.6876528910789097,
+      "p_away": 0.3123471089210903,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6876528910789097,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 7.145833333333336,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G028",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "PHI @ TEN",
+      "home": "TEN",
+      "away": "PHI",
+      "p_home": 0.3871790861989133,
+      "p_away": 0.6128209138010867,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.3871790861989133,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -4.1875,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G029",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "PIT @ NE",
+      "home": "NE",
+      "away": "PIT",
+      "p_home": 0.4314916267254135,
+      "p_away": 0.5685083732745865,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.4314916267254135,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -2.520833333333332,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G030",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "SEA @ AZ",
+      "home": "AZ",
+      "away": "SEA",
+      "p_home": 0.6029561330131427,
+      "p_away": 0.39704386698685734,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6029561330131427,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 3.8125,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G031",
+      "week": 2,
+      "date": "2026-09-20",
+      "matchup": "WAS @ DAL",
+      "home": "DAL",
+      "away": "WAS",
+      "p_home": 0.46760287593482996,
+      "p_away": 0.53239712406517,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.46760287593482996,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -1.1875,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G032",
+      "week": 2,
+      "date": "2026-09-21",
+      "matchup": "NYG @ LA",
+      "home": "LA",
+      "away": "NYG",
+      "p_home": 0.2798316471020689,
+      "p_away": 0.720168352897931,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.2798316471020689,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -8.520833333333336,
+        "margin_sd": 14.606933285258751,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 16,
+      "prior_home_games": 1,
+      "prior_away_games": 1,
+      "target_week": 2,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+      "source_ids": [
+        "CAL-RESULTS-W02-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W02-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-2",
+          "title": "NFL Week 2 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G033",
+      "week": 3,
+      "date": "2026-09-24",
+      "matchup": "ATL @ GB",
+      "home": "GB",
+      "away": "ATL",
+      "p_home": 0.6103905865589052,
+      "p_away": 0.3896094134410948,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6103905865589052,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 4.1875,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G034",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "AZ @ SF",
+      "home": "SF",
+      "away": "AZ",
+      "p_home": 0.7307451410669861,
+      "p_away": 0.26925485893301393,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.7307451410669861,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 9.1875,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G035",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "BAL @ DAL",
+      "home": "DAL",
+      "away": "BAL",
+      "p_home": 0.49610519380082735,
+      "p_away": 0.5038948061991726,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.49610519380082735,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.14583333333333215,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G036",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "CAR @ CLE",
+      "home": "CLE",
+      "away": "CAR",
+      "p_home": 0.3778923842193087,
+      "p_away": 0.6221076157806913,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.3778923842193087,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -4.645833333333332,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G037",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "CIN @ PIT",
+      "home": "PIT",
+      "away": "CIN",
+      "p_home": 0.3736587158373271,
+      "p_away": 0.6263412841626729,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.3736587158373271,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -4.8125,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G038",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "HOU @ IND",
+      "home": "IND",
+      "away": "HOU",
+      "p_home": 0.49610519380082735,
+      "p_away": 0.5038948061991726,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.49610519380082735,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -0.14583333333333215,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G039",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "KC @ MIA",
+      "home": "MIA",
+      "away": "KC",
+      "p_home": 0.2556195495886824,
+      "p_away": 0.7443804504113176,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.2556195495886824,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -9.8125,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G040",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "LA @ DEN",
+      "home": "DEN",
+      "away": "LA",
+      "p_home": 0.434089976867063,
+      "p_away": 0.565910023132937,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.434089976867063,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -2.479166666666668,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G041",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "LAC @ BUF",
+      "home": "BUF",
+      "away": "LAC",
+      "p_home": 0.6728161004861272,
+      "p_away": 0.32718389951387283,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6728161004861272,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 6.6875,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G042",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "LV @ NO",
+      "home": "NO",
+      "away": "LV",
+      "p_home": 0.4165990956849205,
+      "p_away": 0.5834009043150795,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.4165990956849205,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -3.1458333333333357,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G043",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "MIN @ TB",
+      "home": "TB",
+      "away": "MIN",
+      "p_home": 0.3610507295685659,
+      "p_away": 0.6389492704314341,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.3610507295685659,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -5.3125,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G044",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "NE @ JAX",
+      "home": "JAX",
+      "away": "NE",
+      "p_home": 0.5183550402908675,
+      "p_away": 0.48164495970913246,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5183550402908675,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 0.6875,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G045",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "NYJ @ DET",
+      "home": "DET",
+      "away": "NYJ",
+      "p_home": 0.42095777487849406,
+      "p_away": 0.5790422251215059,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.42095777487849406,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -2.9791666666666643,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G046",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "SEA @ WAS",
+      "home": "WAS",
+      "away": "SEA",
+      "p_home": 0.3082905262583109,
+      "p_away": 0.6917094737416891,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.3082905262583109,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -7.479166666666664,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G047",
+      "week": 3,
+      "date": "2026-09-27",
+      "matchup": "TEN @ NYG",
+      "home": "NYG",
+      "away": "TEN",
+      "p_home": 0.5183550402908675,
+      "p_away": 0.48164495970913246,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5183550402908675,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 0.6875,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G048",
+      "week": 3,
+      "date": "2026-09-28",
+      "matchup": "PHI @ CHI",
+      "home": "CHI",
+      "away": "PHI",
+      "p_home": 0.5493935894217162,
+      "p_away": 0.45060641057828377,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5493935894217162,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 1.8541666666666679,
+        "margin_sd": 14.937369246289656,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 32,
+      "prior_home_games": 2,
+      "prior_away_games": 2,
+      "target_week": 3,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+      "source_ids": [
+        "CAL-RESULTS-W03-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W03-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-3",
+          "title": "NFL Week 3 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G049",
+      "week": 4,
+      "date": "2026-10-01",
+      "matchup": "PIT @ CLE",
+      "home": "CLE",
+      "away": "PIT",
+      "p_home": 0.4932298310318963,
+      "p_away": 0.5067701689681037,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.4932298310318963,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -0.23611111111110716,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G050",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "AZ @ NYG",
+      "home": "NYG",
+      "away": "AZ",
+      "p_home": 0.5536033710890205,
+      "p_away": 0.44639662891097953,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5536033710890205,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 1.875,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G051",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "DAL @ HOU",
+      "home": "HOU",
+      "away": "DAL",
+      "p_home": 0.43930165600348486,
+      "p_away": 0.5606983439965152,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.43930165600348486,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.125,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G052",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "DEN @ SF",
+      "home": "SF",
+      "away": "DEN",
+      "p_home": 0.7005921847456058,
+      "p_away": 0.2994078152543942,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.7005921847456058,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 7.319444444444443,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G053",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "DET @ CAR",
+      "home": "CAR",
+      "away": "DET",
+      "p_home": 0.550444393997922,
+      "p_away": 0.449555606002078,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.550444393997922,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 1.7638888888888857,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G054",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "GB @ TB",
+      "home": "TB",
+      "away": "GB",
+      "p_home": 0.5818577088205313,
+      "p_away": 0.41814229117946866,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5818577088205313,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 2.875,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G055",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "IND @ WAS",
+      "home": "WAS",
+      "away": "IND",
+      "p_home": 0.5314302985862809,
+      "p_away": 0.4685697014137191,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5314302985862809,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 1.0972222222222179,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G056",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "JAX @ CIN",
+      "home": "CIN",
+      "away": "JAX",
+      "p_home": 0.433011269097188,
+      "p_away": 0.566988730902812,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.433011269097188,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.3472222222222214,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G057",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "KC @ LV",
+      "home": "LV",
+      "away": "KC",
+      "p_home": 0.5123442244151624,
+      "p_away": 0.48765577558483764,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5123442244151624,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 0.43055555555555713,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G058",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "LA @ PHI",
+      "home": "PHI",
+      "away": "LA",
+      "p_home": 0.48685965335005904,
+      "p_away": 0.5131403466499409,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.48685965335005904,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.45833333333333215,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G059",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "LAC @ SEA",
+      "home": "SEA",
+      "away": "LAC",
+      "p_home": 0.6978120476831877,
+      "p_away": 0.3021879523168123,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6978120476831877,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 7.208333333333332,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G060",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "MIA @ MIN",
+      "home": "MIN",
+      "away": "MIA",
+      "p_home": 0.7585997281912973,
+      "p_away": 0.24140027180870272,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.7585997281912973,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 9.76388888888889,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G061",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "NE @ BUF",
+      "home": "BUF",
+      "away": "NE",
+      "p_home": 0.6429578677197083,
+      "p_away": 0.3570421322802917,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6429578677197083,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 5.097222222222218,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G062",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "NYJ @ CHI",
+      "home": "CHI",
+      "away": "NYJ",
+      "p_home": 0.6279558961498144,
+      "p_away": 0.3720441038501856,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6279558961498144,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 4.541666666666668,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G063",
+      "week": 4,
+      "date": "2026-10-04",
+      "matchup": "TEN @ BAL",
+      "home": "BAL",
+      "away": "TEN",
+      "p_home": 0.6369820647078018,
+      "p_away": 0.36301793529219817,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6369820647078018,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 4.875,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G064",
+      "week": 4,
+      "date": "2026-10-05",
+      "matchup": "ATL @ NO",
+      "home": "NO",
+      "away": "ATL",
+      "p_home": 0.5724789860998458,
+      "p_away": 0.4275210139001542,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5724789860998458,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 2.541666666666668,
+        "margin_sd": 13.912530705745015,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 48,
+      "prior_home_games": 3,
+      "prior_away_games": 3,
+      "target_week": 4,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+      "source_ids": [
+        "CAL-RESULTS-W04-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W04-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-4",
+          "title": "NFL Week 4 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G065",
+      "week": 5,
+      "date": "2026-10-08",
+      "matchup": "TB @ DAL",
+      "home": "DAL",
+      "away": "TB",
+      "p_home": 0.5968408748826739,
+      "p_away": 0.4031591251173261,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5968408748826739,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 3.15625,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G066",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "BAL @ ATL",
+      "home": "ATL",
+      "away": "BAL",
+      "p_home": 0.4790268859980478,
+      "p_away": 0.5209731140019522,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.4790268859980478,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.6770833333333321,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G067",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "CHI @ GB",
+      "home": "GB",
+      "away": "CHI",
+      "p_home": 0.32260823591469645,
+      "p_away": 0.6773917640853035,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.32260823591469645,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -5.927083333333332,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G068",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "CIN @ MIA",
+      "home": "MIA",
+      "away": "CIN",
+      "p_home": 0.3509572629461425,
+      "p_away": 0.6490427370538575,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.3509572629461425,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -4.927083333333332,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G069",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "CLE @ NYJ",
+      "home": "NYJ",
+      "away": "CLE",
+      "p_home": 0.5357840197220597,
+      "p_away": 0.4642159802779403,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5357840197220597,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 1.15625,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G070",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "DEN @ LAC",
+      "home": "LAC",
+      "away": "DEN",
+      "p_home": 0.4712945409389105,
+      "p_away": 0.5287054590610896,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.4712945409389105,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.9270833333333321,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G071",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "DET @ AZ",
+      "home": "AZ",
+      "away": "DET",
+      "p_home": 0.4635730021186317,
+      "p_away": 0.5364269978813683,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.4635730021186317,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -1.1770833333333357,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G072",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "HOU @ TEN",
+      "home": "TEN",
+      "away": "HOU",
+      "p_home": 0.5125875812230966,
+      "p_away": 0.48741241877690344,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.5125875812230966,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 0.40625,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G073",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "IND @ PIT",
+      "home": "PIT",
+      "away": "IND",
+      "p_home": 0.4996771879697876,
+      "p_away": 0.5003228120302123,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.4996771879697876,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -0.010416666666667851,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G074",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "LV @ NE",
+      "home": "NE",
+      "away": "LV",
+      "p_home": 0.4100654073730339,
+      "p_away": 0.5899345926269661,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.4100654073730339,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -2.927083333333332,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G075",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "MIN @ NO",
+      "home": "NO",
+      "away": "MIN",
+      "p_home": 0.3727884245599371,
+      "p_away": 0.6272115754400629,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.3727884245599371,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -4.177083333333332,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G076",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "NYG @ WAS",
+      "home": "WAS",
+      "away": "NYG",
+      "p_home": 0.4252280233589913,
+      "p_away": 0.5747719766410087,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.4252280233589913,
+      "outcome": "TIE",
+      "outcome_home_win": null,
+      "probability_inputs": {
+        "projected_home_margin": -2.427083333333332,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G077",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "PHI @ JAX",
+      "home": "JAX",
+      "away": "PHI",
+      "p_home": 0.6906309064688371,
+      "p_away": 0.30936909353116293,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.6906309064688371,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 6.40625,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G078",
+      "week": 5,
+      "date": "2026-10-11",
+      "matchup": "SF @ SEA",
+      "home": "SEA",
+      "away": "SF",
+      "p_home": 0.45329942357687,
+      "p_away": 0.5467005764231301,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.45329942357687,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -1.5104166666666679,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G079",
+      "week": 5,
+      "date": "2026-10-12",
+      "matchup": "BUF @ LA",
+      "home": "LA",
+      "away": "BUF",
+      "p_home": 0.47387093181047785,
+      "p_away": 0.5261290681895221,
+      "p_tie": 0.0,
+      "p_home_given_no_tie": 0.47387093181047785,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.84375,
+        "margin_sd": 12.873275813045028,
+        "tie_rate_prior": 0.0
+      },
+      "prior_games": 64,
+      "prior_home_games": 4,
+      "prior_away_games": 4,
+      "target_week": 5,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+      "source_ids": [
+        "CAL-RESULTS-W05-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W05-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-5",
+          "title": "NFL Week 5 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G080",
+      "week": 6,
+      "date": "2026-10-15",
+      "matchup": "SEA @ DEN",
+      "home": "DEN",
+      "away": "SEA",
+      "p_home": 0.4164385610038843,
+      "p_away": 0.5709032111480145,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.4217775169141905,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -2.5881856540084343,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G081",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "AZ @ LA",
+      "home": "LA",
+      "away": "AZ",
+      "p_home": 0.6065638378054888,
+      "p_away": 0.3807779343464099,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.6143402972645335,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 3.8118143459915643,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G082",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "BAL @ CLE",
+      "home": "CLE",
+      "away": "BAL",
+      "p_home": 0.410556654191039,
+      "p_away": 0.5767851179608597,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.415820201039642,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -2.7881856540084335,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G083",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "BUF @ LV",
+      "home": "LV",
+      "away": "BUF",
+      "p_home": 0.4620234157144899,
+      "p_away": 0.5253183564374089,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.4679467928390346,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -1.0548523206751064,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G084",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "CAR @ PHI",
+      "home": "PHI",
+      "away": "CAR",
+      "p_home": 0.43220671977685093,
+      "p_away": 0.5551350523750479,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.4377478315688618,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.054852320675103,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 4,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G085",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "CHI @ ATL",
+      "home": "ATL",
+      "away": "CHI",
+      "p_home": 0.45006508058088857,
+      "p_away": 0.5372766915710102,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.455835145716541,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -1.4548523206751085,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G086",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "DAL @ GB",
+      "home": "GB",
+      "away": "DAL",
+      "p_home": 0.4820137605442353,
+      "p_away": 0.5053280116076635,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.48819342414095623,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -0.38818565400843497,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G087",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "HOU @ JAX",
+      "home": "JAX",
+      "away": "HOU",
+      "p_home": 0.6103970352782273,
+      "p_away": 0.3769447368736714,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.6182226382946148,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 3.9451476793248936,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G088",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "LAC @ KC",
+      "home": "KC",
+      "away": "LAC",
+      "p_home": 0.6863509437067816,
+      "p_away": 0.3009908284451171,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.6951503147799455,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 6.695147679324901,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 4,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G089",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "NO @ NYG",
+      "home": "NYG",
+      "away": "NO",
+      "p_home": 0.5735610295207887,
+      "p_away": 0.41378074263111003,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.5809143760531065,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 2.6784810126582244,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G090",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "NYJ @ NE",
+      "home": "NE",
+      "away": "NYJ",
+      "p_home": 0.5399709507285749,
+      "p_away": 0.4473708214233238,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.5468936552250951,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 1.5451476793248986,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G091",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "PIT @ TB",
+      "home": "TB",
+      "away": "PIT",
+      "p_home": 0.4740111203867497,
+      "p_away": 0.5133306517651491,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.4800881860327336,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.6548523206750971,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G092",
+      "week": 6,
+      "date": "2026-10-18",
+      "matchup": "TEN @ IND",
+      "home": "IND",
+      "away": "TEN",
+      "p_home": 0.575520954196584,
+      "p_away": 0.4118208179553147,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.582899427968335,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 2.7451476793248943,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G093",
+      "week": 6,
+      "date": "2026-10-19",
+      "matchup": "WAS @ SF",
+      "home": "SF",
+      "away": "WAS",
+      "p_home": 0.6841503269040651,
+      "p_away": 0.30319144524783365,
+      "p_tie": 0.012658227848101266,
+      "p_home_given_no_tie": 0.6929214849412967,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 6.6118143459915615,
+        "margin_sd": 13.114815177892364,
+        "tie_rate_prior": 0.012658227848101266
+      },
+      "prior_games": 79,
+      "prior_home_games": 5,
+      "prior_away_games": 5,
+      "target_week": 6,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+      "source_ids": [
+        "CAL-RESULTS-W06-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W06-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-6",
+          "title": "NFL Week 6 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G094",
+      "week": 7,
+      "date": "2026-10-22",
+      "matchup": "NE @ CHI",
+      "home": "CHI",
+      "away": "NE",
+      "p_home": 0.5155505196550396,
+      "p_away": 0.4736967921729174,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.52115432965129,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 0.6594982078852958,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G095",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "CIN @ BAL",
+      "home": "BAL",
+      "away": "CIN",
+      "p_home": 0.5035664941002866,
+      "p_away": 0.48568081772767036,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.5090400429492028,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 0.2817204301075229,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 5,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G096",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "CLE @ TEN",
+      "home": "TEN",
+      "away": "CLE",
+      "p_home": 0.45039686987553856,
+      "p_away": 0.5388504419524185,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.45529248802635963,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -1.3960573476702542,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G097",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "DEN @ AZ",
+      "home": "AZ",
+      "away": "DEN",
+      "p_home": 0.4294388863549038,
+      "p_away": 0.5598084254730532,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.4341067003370223,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.0627240143369185,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G098",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "GB @ DET",
+      "home": "DET",
+      "away": "GB",
+      "p_home": 0.5317314155384235,
+      "p_away": 0.4575158962895335,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.5375111048377542,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 1.1706093189964193,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 5,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G099",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "IND @ MIN",
+      "home": "MIN",
+      "away": "IND",
+      "p_home": 0.629241256091308,
+      "p_away": 0.360006055736649,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.6360808349618656,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 4.326164874551974,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 5,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G100",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "KC @ SEA",
+      "home": "SEA",
+      "away": "KC",
+      "p_home": 0.42700476093902845,
+      "p_away": 0.5622425508889286,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.4316461170361918,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -2.1405017921146943,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 5,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G101",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "LA @ LV",
+      "home": "LV",
+      "away": "LA",
+      "p_home": 0.5067399934562529,
+      "p_away": 0.48250731837170413,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.512248036863386,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 0.3817204301075279,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G102",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "MIA @ NYJ",
+      "home": "NYJ",
+      "away": "MIA",
+      "p_home": 0.6131900564809865,
+      "p_away": 0.37605725534697054,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.6198551657905624,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 3.792831541218643,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 5,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G103",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "NYG @ HOU",
+      "home": "HOU",
+      "away": "NYG",
+      "p_home": 0.510265175711478,
+      "p_away": 0.478982136116479,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.5158115363170376,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 0.4928315412186315,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G104",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "PIT @ NO",
+      "home": "NO",
+      "away": "PIT",
+      "p_home": 0.43989833501979914,
+      "p_away": 0.5493489768081579,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.44467983866131866,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -1.7293906810035864,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G105",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "SF @ ATL",
+      "home": "ATL",
+      "away": "SF",
+      "p_home": 0.36623571437134783,
+      "p_away": 0.6230115974566092,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.37021653735364507,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -4.118279569892472,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G106",
+      "week": 7,
+      "date": "2026-10-25",
+      "matchup": "TB @ CAR",
+      "home": "CAR",
+      "away": "TB",
+      "p_home": 0.5828896480551684,
+      "p_away": 0.4063576637727886,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.5892254050992464,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 2.8039426523297415,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 5,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G107",
+      "week": 7,
+      "date": "2026-10-26",
+      "matchup": "DAL @ PHI",
+      "home": "PHI",
+      "away": "DAL",
+      "p_home": 0.46092706373119074,
+      "p_away": 0.5283202480967663,
+      "p_tie": 0.010752688172043012,
+      "p_home_given_no_tie": 0.4659371405108776,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -1.062724014336922,
+        "margin_sd": 12.431420100036831,
+        "tie_rate_prior": 0.010752688172043012
+      },
+      "prior_games": 93,
+      "prior_home_games": 6,
+      "prior_away_games": 6,
+      "target_week": 7,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+      "source_ids": [
+        "CAL-RESULTS-W07-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W07-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-7",
+          "title": "NFL Week 7 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G108",
+      "week": 8,
+      "date": "2026-10-29",
+      "matchup": "CAR @ GB",
+      "home": "GB",
+      "away": "CAR",
+      "p_home": 0.49019767687917776,
+      "p_away": 0.5004565287282988,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.49482218326483035,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -0.16340305592641968,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 7,
+      "prior_away_games": 6,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G109",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "ATL @ TB",
+      "home": "TB",
+      "away": "ATL",
+      "p_home": 0.4989175195295232,
+      "p_away": 0.4917366860779534,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.5036242885816885,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 0.11437472185136599,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 7,
+      "prior_away_games": 7,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G110",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "AZ @ DAL",
+      "home": "DAL",
+      "away": "AZ",
+      "p_home": 0.5906554060901432,
+      "p_away": 0.3999987995173334,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.5962276269023143,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 3.0667556742323114,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 7,
+      "prior_away_games": 7,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G111",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "BAL @ BUF",
+      "home": "BUF",
+      "away": "BAL",
+      "p_home": 0.5218189362622937,
+      "p_away": 0.46883526934518294,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.5267417564157115,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 0.84453345201009,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 6,
+      "prior_away_games": 7,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G112",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "CLE @ PIT",
+      "home": "PIT",
+      "away": "CLE",
+      "p_home": 0.5213217474773455,
+      "p_away": 0.46933245813013114,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.526239877170528,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 0.8286604361370671,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 7,
+      "prior_away_games": 7,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G113",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "IND @ JAX",
+      "home": "JAX",
+      "away": "IND",
+      "p_home": 0.6041387332024105,
+      "p_away": 0.3865154724050661,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.6098381552137541,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 3.511200118676758,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 6,
+      "prior_away_games": 7,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G114",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "KC @ DEN",
+      "home": "DEN",
+      "away": "KC",
+      "p_home": 0.4147746311871813,
+      "p_away": 0.5758795744202954,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.41868759940592826,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -2.5840379765613406,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 7,
+      "prior_away_games": 6,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G115",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "LAC @ LA",
+      "home": "LA",
+      "away": "LAC",
+      "p_home": 0.6010198821965506,
+      "p_away": 0.3896343234109261,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.6066898810851973,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 3.4080255155021497,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 7,
+      "prior_away_games": 6,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G116",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "LV @ NYJ",
+      "home": "NYJ",
+      "away": "LV",
+      "p_home": 0.48098236013551254,
+      "p_away": 0.5096718454719641,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.48551992957075324,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.45705384957721407,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 7,
+      "prior_away_games": 7,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G117",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "MIN @ DET",
+      "home": "DET",
+      "away": "MIN",
+      "p_home": 0.4240666975410234,
+      "p_away": 0.5665875080664532,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.4280673267631085,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -2.2824506749740365,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 6,
+      "prior_away_games": 6,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G118",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "NE @ MIA",
+      "home": "MIA",
+      "away": "NE",
+      "p_home": 0.3543087395820683,
+      "p_away": 0.6363454660254083,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.35765127486114445,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -4.59197448449785,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 6,
+      "prior_away_games": 7,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G119",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "PHI @ WAS",
+      "home": "WAS",
+      "away": "PHI",
+      "p_home": 0.48148033091397946,
+      "p_away": 0.5091738746934972,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.48602259818675286,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -0.44118083370419825,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 6,
+      "prior_away_games": 7,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G120",
+      "week": 8,
+      "date": "2026-11-01",
+      "matchup": "TEN @ CIN",
+      "home": "CIN",
+      "away": "TEN",
+      "p_home": 0.6205688503200324,
+      "p_away": 0.37008535528744424,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.6264232734362591,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 4.058819166295802,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 6,
+      "prior_away_games": 7,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G121",
+      "week": 8,
+      "date": "2026-11-02",
+      "matchup": "CHI @ SEA",
+      "home": "SEA",
+      "away": "CHI",
+      "p_home": 0.4884538721577797,
+      "p_away": 0.502200333449697,
+      "p_tie": 0.009345794392523364,
+      "p_home_given_no_tie": 0.4930619275554946,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.21895861148197326,
+        "margin_sd": 12.589583768634533,
+        "tie_rate_prior": 0.009345794392523364
+      },
+      "prior_games": 107,
+      "prior_home_games": 7,
+      "prior_away_games": 7,
+      "target_week": 8,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+      "source_ids": [
+        "CAL-RESULTS-W08-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W08-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-8",
+          "title": "NFL Week 8 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G122",
+      "week": 9,
+      "date": "2026-11-05",
+      "matchup": "JAX @ BAL",
+      "home": "BAL",
+      "away": "JAX",
+      "p_home": 0.36260744797964234,
+      "p_away": 0.6291280892104403,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.36562917671280604,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -4.477371113734751,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 8,
+      "prior_away_games": 7,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G123",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "AZ @ SEA",
+      "home": "SEA",
+      "away": "AZ",
+      "p_home": 0.6234257952717646,
+      "p_away": 0.3683097419183181,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.6286210102323626,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 4.278581267217628,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 8,
+      "prior_away_games": 8,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G124",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "CIN @ ATL",
+      "home": "ATL",
+      "away": "CIN",
+      "p_home": 0.4214861908785524,
+      "p_away": 0.5702493463115303,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.4249985758025403,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.4654663518299884,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 8,
+      "prior_away_games": 7,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G125",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "CLE @ NO",
+      "home": "NO",
+      "away": "CLE",
+      "p_home": 0.5099197400515836,
+      "p_away": 0.4818157971384991,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.51416907121868,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 0.46310507674143864,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 7,
+      "prior_away_games": 8,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G126",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "DAL @ IND",
+      "home": "IND",
+      "away": "DAL",
+      "p_home": 0.4287740593936915,
+      "p_away": 0.5629614777963912,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.4323471765553056,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.221418732782368,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 8,
+      "prior_away_games": 8,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G127",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "DEN @ CAR",
+      "home": "CAR",
+      "away": "DEN",
+      "p_home": 0.4826468936495273,
+      "p_away": 0.5090886435405554,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.4866689510966067,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.43570444706807976,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 7,
+      "prior_away_games": 8,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G128",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "DET @ MIA",
+      "home": "MIA",
+      "away": "DET",
+      "p_home": 0.3887835225528358,
+      "p_away": 0.6029520146372469,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.3920233852407761,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -3.572609208972846,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 7,
+      "prior_away_games": 7,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G129",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "GB @ NE",
+      "home": "NE",
+      "away": "GB",
+      "p_home": 0.5320919792698338,
+      "p_away": 0.4596435579202489,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.5365260790970824,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 1.1952479338842963,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 8,
+      "prior_away_games": 8,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G130",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "HOU @ LAC",
+      "home": "LAC",
+      "away": "HOU",
+      "p_home": 0.41122109029935977,
+      "p_away": 0.5805144468907228,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.4146479327185211,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.8107044470680833,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 7,
+      "prior_away_games": 7,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G131",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "LA @ WAS",
+      "home": "WAS",
+      "away": "LA",
+      "p_home": 0.44717977592445685,
+      "p_away": 0.5445557612656258,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.45090627405716066,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -1.6083234946871343,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 7,
+      "prior_away_games": 8,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G132",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "LV @ SF",
+      "home": "SF",
+      "away": "LV",
+      "p_home": 0.6068792017502866,
+      "p_away": 0.384856335439796,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.611936528431539,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 3.7071526957890555,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 7,
+      "prior_away_games": 8,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G133",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "NYG @ PHI",
+      "home": "PHI",
+      "away": "NYG",
+      "p_home": 0.42841799325086827,
+      "p_away": 0.5633175439392144,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.4319881431946255,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.2333234946871308,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 8,
+      "prior_away_games": 7,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G134",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "NYJ @ KC",
+      "home": "KC",
+      "away": "NYJ",
+      "p_home": 0.5871388492912438,
+      "p_away": 0.40459668789883885,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.5920316730353375,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 3.034533648170015,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 7,
+      "prior_away_games": 8,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G135",
+      "week": 9,
+      "date": "2026-11-08",
+      "matchup": "TB @ CHI",
+      "home": "CHI",
+      "away": "TB",
+      "p_home": 0.5471727628992598,
+      "p_away": 0.4445627742908229,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.5517325359234202,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 1.6952479338842963,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 8,
+      "prior_away_games": 8,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G136",
+      "week": 9,
+      "date": "2026-11-09",
+      "matchup": "BUF @ MIN",
+      "home": "MIN",
+      "away": "BUF",
+      "p_home": 0.505947288521114,
+      "p_away": 0.48578824866896864,
+      "p_tie": 0.008264462809917356,
+      "p_home_given_no_tie": 0.5101635159254566,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 0.33215269578905904,
+        "margin_sd": 13.036376315449653,
+        "tie_rate_prior": 0.008264462809917356
+      },
+      "prior_games": 121,
+      "prior_home_games": 7,
+      "prior_away_games": 7,
+      "target_week": 9,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+      "source_ids": [
+        "CAL-RESULTS-W09-1114"
+      ],
+      "sources": [
+        {
+          "id": "CAL-RESULTS-W09-1114",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-9",
+          "title": "NFL Week 9 Schedule 2026: official by-week results"
+        }
+      ]
+    },
+    {
+      "game_id": "G137",
+      "week": 10,
+      "date": "2026-11-12",
+      "matchup": "WAS @ NYG",
+      "home": "NYG",
+      "away": "WAS",
+      "p_home": 0.5459247728296931,
+      "p_away": 0.44672228599383634,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.549968660035839,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 1.6666666666666679,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 8,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G138",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "BUF @ NYJ",
+      "home": "NYJ",
+      "away": "BUF",
+      "p_home": 0.36758108558583574,
+      "p_away": 0.6250659732376938,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.3703039084420271,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -4.393518518518519,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 9,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G139",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "CAR @ NO",
+      "home": "NO",
+      "away": "CAR",
+      "p_home": 0.48265004277269763,
+      "p_away": 0.5099970160508318,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.4862252282747176,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.4583333333333357,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 8,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G140",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "HOU @ CLE",
+      "home": "CLE",
+      "away": "HOU",
+      "p_home": 0.4367340796163633,
+      "p_away": 0.5559129792071662,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.43996914687278077,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": -2.0046296296296298,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 9,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G141",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "JAX @ TEN",
+      "home": "TEN",
+      "away": "JAX",
+      "p_home": 0.30217559057723103,
+      "p_away": 0.6904714682462985,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.3044139282852105,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -6.791666666666664,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 8,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G142",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "KC @ ATL",
+      "home": "ATL",
+      "away": "KC",
+      "p_home": 0.38576588188075905,
+      "p_away": 0.6068811769427704,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.38862340693172764,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -3.7546296296296298,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 9,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G143",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "LA @ AZ",
+      "home": "AZ",
+      "away": "LA",
+      "p_home": 0.37663989387188945,
+      "p_away": 0.61600716495164,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.3794298190116812,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -4.074074074074076,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 9,
+      "prior_away_games": 9,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G144",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "MIA @ IND",
+      "home": "IND",
+      "away": "MIA",
+      "p_home": 0.51648376169638,
+      "p_away": 0.47616329712714944,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.5203095673385754,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 0.6759259259259238,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 9,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G145",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "MIN @ GB",
+      "home": "GB",
+      "away": "MIN",
+      "p_home": 0.4866544466057008,
+      "p_away": 0.5059926122178287,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.4902592943583356,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -0.3240740740740726,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 9,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G146",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "NE @ DET",
+      "home": "DET",
+      "away": "NE",
+      "p_home": 0.5328794792379954,
+      "p_away": 0.45976757958553405,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.5368267346397583,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 1.2268518518518547,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 8,
+      "prior_away_games": 9,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G147",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "PIT @ CIN",
+      "home": "CIN",
+      "away": "PIT",
+      "p_home": 0.5323292260033369,
+      "p_away": 0.46031783282019256,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.5362724054552135,
+      "outcome": "HOME_WIN",
+      "outcome_home_win": 1,
+      "probability_inputs": {
+        "projected_home_margin": 1.2083333333333321,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 8,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G148",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "SEA @ LV",
+      "home": "LV",
+      "away": "SEA",
+      "p_home": 0.41945240879976853,
+      "p_away": 0.5731946500237609,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.4225594636797668,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.5925925925925917,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 9,
+      "prior_away_games": 9,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G149",
+      "week": 10,
+      "date": "2026-11-15",
+      "matchup": "SF @ DAL",
+      "home": "DAL",
+      "away": "SF",
+      "p_home": 0.4098538176127565,
+      "p_away": 0.5827932412107729,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.41288977181729547,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": -2.921296296296294,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 9,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/REG10",
+      "source_ids": [
+        "E15-NFL-SCHED-REG10-1117"
+      ],
+      "sources": [
+        {
+          "id": "E15-NFL-SCHED-REG10-1117",
+          "url": "https://www.nfl.com/schedules/2026/REG10",
+          "title": "2026 NFL Schedule: Week 10 (REG10)"
+        }
+      ]
+    },
+    {
+      "game_id": "G150",
+      "week": 10,
+      "date": "2026-11-16",
+      "matchup": "LAC @ BAL",
+      "home": "BAL",
+      "away": "LAC",
+      "p_home": 0.5658628421686295,
+      "p_away": 0.42678421665489996,
+      "p_tie": 0.007352941176470588,
+      "p_home_given_no_tie": 0.570054418777286,
+      "outcome": "AWAY_WIN",
+      "outcome_home_win": 0,
+      "probability_inputs": {
+        "projected_home_margin": 2.3425925925925952,
+        "margin_sd": 13.271523399117877,
+        "tie_rate_prior": 0.007352941176470588
+      },
+      "prior_games": 136,
+      "prior_home_games": 9,
+      "prior_away_games": 8,
+      "target_week": 10,
+      "source_url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+      "source_ids": [
+        "FRESH-NFL-W10-COMPLETE-1118"
+      ],
+      "sources": [
+        {
+          "id": "FRESH-NFL-W10-COMPLETE-1118",
+          "url": "https://www.nfl.com/schedules/2026/by-week/week-10",
+          "title": "NFL 2026 by-week schedule page, week 10 (completion re-read)"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    "Binary Brier skill is 1 - conditional-on-no-tie model Brier / 0.25; positive values beat a constant 50% probability on this sample, not a market or an investable benchmark.",
+    "The three-outcome Brier scores home win, away win and tie probabilities for every game; its uniform no-skill reference is 2/3 and its skill value is not a market benchmark.",
+    "For binary scoring, p(home | no tie) is derived as p(home) / (1 - p(tie)); ties remain in the separate three-outcome score and are not recoded as losses or wins.",
+    "Five-bin binary calibration gaps are descriptive. Bins with fewer than 10 games are flagged and should not support a stand-alone claim.",
+    "The percentile intervals resample target weeks (not independent games) to acknowledge within-week dependence. With few weeks, intervals are exploratory and cannot qualify a strategy.",
+    "These are repository-recomputed model outputs paired with official NFL final-result sources. The results feed is not proof of permission for systematic future collection; no capture automation is introduced."
+  ],
+  "flags": [],
+  "input_sha256": {
+    "nfl-results/data/games-2026-w1-10-complete.csv": "78367d475f9218a2cbf9d28da90bc26e61cfc2f0b5f1986235d23dbacc1b9183",
+    "nfl-competition/backtest.py": "95fb1dc8631d20a270dae36ae7b51be06a7ee01891535c21cd387a1cc19d892d",
+    "research/sources.json": "825ca879ad601ec01f11bf4002605002775cddc126daf68b7f3f2e5e1f7641b3"
+  }
+}

@@ -180,7 +180,7 @@
     },
     {
       "evidence": "index.html",
-      "evidence_sha256": "5156e8df00387d9a99123f923c170006cf18362bc190a590f714f9ce585e7b72",
+      "evidence_sha256": "c07e606cf0445582409bc108a99de1bb7ac63f625e83eb23eeee360e1344b1b8",
       "gate": "The landing table counts 16 rows with NR identifiers; the register has 70 DR rows.",
       "id": "DR-22",
       "ledger_status": "Implemented",
@@ -216,7 +216,7 @@
     {
       "artifact": "nfl-results-games.html",
       "artifact_exists": true,
-      "artifact_sha256": "009d296a8f89816647355da5eb1b528905f35c9bbb0227b2e89d01bb24705975",
+      "artifact_sha256": "3a6e2eae0372b22c82a6a0bfa39a6909964b2d77baafcf5180c390acf22612a7",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Results & backtesting",
@@ -369,7 +369,7 @@
     {
       "artifact": "validation.html",
       "artifact_exists": true,
-      "artifact_sha256": "ebd7ca864e27602fb04a4eed71153e5e8d03d1c6b42c4881a61483b15c89aef9",
+      "artifact_sha256": "9a396868af1532bc6d4ee2b2ca8995d00992ea7eac2231d76ce689e2163f48b1",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Leaderboard & competition",
@@ -516,7 +516,7 @@
     {
       "artifact": "nfl-results-skill.html",
       "artifact_exists": true,
-      "artifact_sha256": "dd6be9615b4ed3fe7e5d9dfde2a592854e66bc4df1f57ed0a9ef67914ba7452f",
+      "artifact_sha256": "4d58f1ead0fbc803e19de3bea26f0fb3149237043a329e8912a0988e50ff94dd",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Results & backtesting",
@@ -601,7 +601,7 @@
     {
       "artifact": "nfl-suggestions.html",
       "artifact_exists": true,
-      "artifact_sha256": "7ee5ef0550dad51a9d8d01714f5f17b17079e1cc4d16c1565b31320244610a74",
+      "artifact_sha256": "161c21df1691a524ab333a4f5599e1795ae246eb050854a6f2dae1914c56a57d",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Partial",
       "category": "Governance & publication",
@@ -643,7 +643,7 @@
     {
       "artifact": "index.html",
       "artifact_exists": true,
-      "artifact_sha256": "5156e8df00387d9a99123f923c170006cf18362bc190a590f714f9ce585e7b72",
+      "artifact_sha256": "c07e606cf0445582409bc108a99de1bb7ac63f625e83eb23eeee360e1344b1b8",
       "audit_note": "The brief asks for one row per requirement on the landing page. The table published there is not the DR register, so the row count does not match the register.",
       "audit_status": "Partial",
       "category": "Governance & publication",
@@ -686,7 +686,7 @@
     {
       "artifact": "nfl-results-games.html",
       "artifact_exists": true,
-      "artifact_sha256": "009d296a8f89816647355da5eb1b528905f35c9bbb0227b2e89d01bb24705975",
+      "artifact_sha256": "3a6e2eae0372b22c82a6a0bfa39a6909964b2d77baafcf5180c390acf22612a7",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Governance & publication",
@@ -728,7 +728,7 @@
     {
       "artifact": "nfl-results-skill.html",
       "artifact_exists": true,
-      "artifact_sha256": "dd6be9615b4ed3fe7e5d9dfde2a592854e66bc4df1f57ed0a9ef67914ba7452f",
+      "artifact_sha256": "4d58f1ead0fbc803e19de3bea26f0fb3149237043a329e8912a0988e50ff94dd",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Origination & model",
@@ -896,7 +896,7 @@
     {
       "artifact": "nfl-review.html",
       "artifact_exists": true,
-      "artifact_sha256": "87d86b6392fc897bc1d44de5372e03a2dcaebe349ac9d4139d86e90d10ef2530",
+      "artifact_sha256": "679f7af6011f76f482b9cf0b2e15bb7205b3dd93ec877f0631338cfd157ba499",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Partial",
       "category": "Availability & injuries",
@@ -917,7 +917,7 @@
     {
       "artifact": "nfl-results-leaderboard.html",
       "artifact_exists": true,
-      "artifact_sha256": "36cd72be393b6b0c3701489b756581cf9656cc2e973eaca6b6598c9e66c82c84",
+      "artifact_sha256": "edc0e66dd4be9967c61b49039be98dacb15735ef7aedcb1ca23e5aace3deb4ae",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Leaderboard & competition",
@@ -938,7 +938,7 @@
     {
       "artifact": "nfl-results-correlation.html",
       "artifact_exists": true,
-      "artifact_sha256": "f7bf190c17a70f8f2b6eb2efd95b5c6645fa08ceed38d8bbc98fa9a689267d28",
+      "artifact_sha256": "8b36c4ed1a5ddf90cde2045ab7523794d71c1c58b45228abc02dd2aa82068326",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Leaderboard & competition",
@@ -980,7 +980,7 @@
     {
       "artifact": "nfl-results-leaderboard.html",
       "artifact_exists": true,
-      "artifact_sha256": "36cd72be393b6b0c3701489b756581cf9656cc2e973eaca6b6598c9e66c82c84",
+      "artifact_sha256": "edc0e66dd4be9967c61b49039be98dacb15735ef7aedcb1ca23e5aace3deb4ae",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Leaderboard & competition",
@@ -1001,7 +1001,7 @@
     {
       "artifact": "nfl-verification-2026-11-13.html",
       "artifact_exists": true,
-      "artifact_sha256": "9fe36c0af88cc2828f11f0262032844fa8f17f5af1989ac22611f34560c23a75",
+      "artifact_sha256": "9aeab6cfa998e37a5012318d672c01a4e90ce0d51eba64f1328cc2d58a18c617",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Open",
       "category": "Governance & publication",
@@ -1022,7 +1022,7 @@
     {
       "artifact": "sources.html",
       "artifact_exists": true,
-      "artifact_sha256": "35c67ec133642bc50bef4fdacc92fc70c868d356f82631bfa63aed412dc35b71",
+      "artifact_sha256": "de684fe537851f2388c4cbcd29d4b1687e4e09f4e156ce974bc64db6cf171174",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Partial",
       "category": "Governance & publication",
@@ -1149,7 +1149,7 @@
     {
       "artifact": "nfl-review.html",
       "artifact_exists": true,
-      "artifact_sha256": "87d86b6392fc897bc1d44de5372e03a2dcaebe349ac9d4139d86e90d10ef2530",
+      "artifact_sha256": "679f7af6011f76f482b9cf0b2e15bb7205b3dd93ec877f0631338cfd157ba499",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Availability & injuries",
@@ -1233,7 +1233,7 @@
     {
       "artifact": "nfl-suggestions.html",
       "artifact_exists": true,
-      "artifact_sha256": "7ee5ef0550dad51a9d8d01714f5f17b17079e1cc4d16c1565b31320244610a74",
+      "artifact_sha256": "161c21df1691a524ab333a4f5599e1795ae246eb050854a6f2dae1914c56a57d",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Rejected",
       "category": "Rejected alternatives",
@@ -1444,7 +1444,7 @@
     {
       "artifact": "nfl-pricing/site/prices.html",
       "artifact_exists": true,
-      "artifact_sha256": "a0ff2890ffbcd1de7e57592329ac111ccfcd13cc564d78db09d22dd57186773b",
+      "artifact_sha256": "77596a3f6ef2c2ad6e2b1ac5e1201a3bb1fcb8831aba6897e2fa08dd01662675",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Partial",
       "category": "Market & pricing",
@@ -1465,7 +1465,7 @@
     {
       "artifact": "nfl-results-decisions.html",
       "artifact_exists": true,
-      "artifact_sha256": "227731b6a37c27fcf1a53799410746670ffd4653a52aea2792038a511d3c40da",
+      "artifact_sha256": "e4b0fdb8ac37ea3ee608a35faff03107688847c8699c8ce1986eb105c8ebbd1e",
       "audit_note": "The page renders a diff between dated same-scope captures (standings and availability), so part of the clearing text is met. The brief's diff also names rank and rating change; the rating column is absent by the page's own statement.",
       "audit_status": "Partial",
       "category": "Governance & publication",
@@ -1507,7 +1507,7 @@
     {
       "artifact": "nfl-verification-2026-11-13.html",
       "artifact_exists": true,
-      "artifact_sha256": "9fe36c0af88cc2828f11f0262032844fa8f17f5af1989ac22611f34560c23a75",
+      "artifact_sha256": "9aeab6cfa998e37a5012318d672c01a4e90ce0d51eba64f1328cc2d58a18c617",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Partial",
       "category": "Governance & publication",
@@ -1549,7 +1549,7 @@
     {
       "artifact": "nfl-suggestions.html",
       "artifact_exists": true,
-      "artifact_sha256": "7ee5ef0550dad51a9d8d01714f5f17b17079e1cc4d16c1565b31320244610a74",
+      "artifact_sha256": "161c21df1691a524ab333a4f5599e1795ae246eb050854a6f2dae1914c56a57d",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Rejected",
       "category": "Rejected alternatives",
@@ -1633,7 +1633,7 @@
     {
       "artifact": "nfl-suggestions.html",
       "artifact_exists": true,
-      "artifact_sha256": "7ee5ef0550dad51a9d8d01714f5f17b17079e1cc4d16c1565b31320244610a74",
+      "artifact_sha256": "161c21df1691a524ab333a4f5599e1795ae246eb050854a6f2dae1914c56a57d",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Governance & publication",
@@ -1654,7 +1654,7 @@
     {
       "artifact": "nfl-results-decisions.html",
       "artifact_exists": true,
-      "artifact_sha256": "227731b6a37c27fcf1a53799410746670ffd4653a52aea2792038a511d3c40da",
+      "artifact_sha256": "e4b0fdb8ac37ea3ee608a35faff03107688847c8699c8ce1986eb105c8ebbd1e",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Open",
       "category": "Results & backtesting",
@@ -1675,5 +1675,5 @@
   ],
   "schema": "ledger-audit/1",
   "session": "arena/aedccbe5-own7",
-  "sources_sha256": "5a74077360a3ecb65eeb50afa94f372e72c0b828500c54c47cf86c36c67a4ade"
+  "sources_sha256": "825ca879ad601ec01f11bf4002605002775cddc126daf68b7f3f2e5e1f7641b3"
 }
