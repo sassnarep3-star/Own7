@@ -3763,3 +3763,14 @@ Fixed Arena branch: `arena/b2e7c3b7-own7` (base `666a3a8`). Scope: `nfl_pages.py
 - Verification: `python scripts/build_site.py` passed; `npm run check` passed (121 unit tests, 6 NFL build tests, deterministic results reproduction, recursive audit: 313 HTML pages, 16,042 table rows, 332 registered sources, 0 errors); `npm run test:browser` passed before final main merge (281 desktop + 281 mobile pages, WCAG A/AA, no runtime errors). Repeated site build and `npm run check` after merging `origin/main` at `ebc05f7`; clean working tree. Browser suite's successful run preceded that merge; browser-facing diff is summary copy only.
 - Initial browser run lacked installed npm dependencies; `npm ci` resolved it (20 packages, audit found 0 vulnerabilities). No external source capture was performed in this session; correctness of underlying official corpus is bounded by the retained receipt-checked inputs and the existing audit scope.
 - Branch commits: `cf99933` claim, `18fdb64` scope, `3148ced` metric fix, `898c872` integration merge. Task complete; shared canonical requirement/source data was not changed. PR and deployment status to be appended after GitHub checks.
+
+## Session arena/1c6816a0-own7 — repo review, decision-readiness audit and review desk (2026-11-19)
+
+### Claim (committed and pushed before the review desk is published)
+- Session: `arena/1c6816a0-own7` (fixed by Arena; single branch for this session, so the `session-<id>/<task>` branch scheme in the brief is not used).
+- Base: `main` at `666a3a8`. Status at claim: 6 open PRs, all `CONFLICTING` (#79, #82, #83, #88, #98, #106). None are touched by this session.
+- Task 1, **repo review and CI reproduction**: run the 82 reproduction commands of the `research-static` job of `.github/workflows/check.yml`, record each exit code. Desk: `nfl-review-1c6816a0/run_ci.py` → `data/ci-run.json`.
+- Task 2, **independent audit of the decision-readiness register** (`research/nfl-decision-readiness.json`, 70 rows): artifact present, desk CI result, every source classified official or not. No status is re-graded by this session without an artifact that proves it.
+- Task 3, **requirement crosswalk and flagged-for-review page**: `nfl-review-1c6816a0/site/` (index, requirements, flagged, CI, sources). Lives under the repo root, so GitHub Pages publishes it on merge.
+- Files in scope: `nfl-review-1c6816a0/**`, one added step in `.github/workflows/check.yml` (desk check), and this board. No other desk, no shared index, no nav is edited.
+- Not claimed: daily or scheduled capture of any NFL page (NFL.com Terms §1.3 prohibits systematic retrieval without written consent; verified read of the official page on 2026-11-19, see the desk's sources page).
