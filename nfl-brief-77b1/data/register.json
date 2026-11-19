@@ -251,7 +251,7 @@
     "id": "R21",
     "item": "Kickoff/onside regime priors filter published as stated in the brief",
     "status": "Stated in repository",
-    "evidence": "'onside' appears in repository code and pages (106 files).",
+    "evidence": "'onside' appears in repository code and pages (107 files).",
     "gate": "Filter values to be checked against the brief text",
     "clearing": "",
     "sources": [
