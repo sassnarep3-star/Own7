@@ -3785,6 +3785,42 @@
   "status": "Repository artifact"
  },
  {
+  "id": "B3C-NFL-INJURIES",
+  "publisher": "NFL (NFL Enterprises LLC) — NFL.com",
+  "title": "2026 NFL Injury Report — Week 11 (official page)",
+  "url": "https://www.nfl.com/injuries/",
+  "kind": "Official league injury report (web page)",
+  "authority": "Official NFL.com injury report page",
+  "scope": "Week 11 2026 player rows (Practice Status, Game Status, Injuries as printed) and printed row counts per club; full read on 2026-11-19 in six chunks, Thursday rows and club counts retained",
+  "checked_on": "2026-11-19",
+  "access": "Single fetch of the public page; no scheduled retrieval. Only derived counts and the 26 Thursday rows are stored, per NFL.com Terms §1.3",
+  "status": "Official source"
+ },
+ {
+  "id": "B3C-NFL-TERMS",
+  "publisher": "NFL Enterprises LLC — NFL.com",
+  "title": "NFL.com Terms and Conditions (Updated May 16, 2024)",
+  "url": "https://www.nfl.com/legal/terms/",
+  "kind": "Official legal terms",
+  "authority": "Official NFL.com Terms and Conditions page",
+  "scope": "§1.3 Permitted Uses: systematic retrieval prohibited absent express prior written consent (read 2026-11-19, first chunk)",
+  "checked_on": "2026-11-19",
+  "access": "Public page; read in the first chunk only; other sections not re-read by this desk",
+  "status": "Official source"
+ },
+ {
+  "id": "B3C-REPO-W11",
+  "publisher": "Own7 repository (this project)",
+  "title": "nfl-w11-injuries-3e61/data/injuries-week11.csv (2026-11-18 capture)",
+  "url": "https://github.com/sassnarep3-star/Own7/blob/main/nfl-w11-injuries-3e61/data/injuries-week11.csv",
+  "kind": "Repository artifact (not an external official source)",
+  "authority": "Repository file on main; comparison baseline only",
+  "scope": "Repo capture of the official report read on 2026-11-18 06:20-06:24 UTC; used as the earlier baseline in the comparison",
+  "checked_on": "2026-11-19",
+  "access": "Repository file read by the build; no network",
+  "status": "Repository artifact"
+ },
+ {
   "id": "B77-NFL-TRADES",
   "publisher": "NFL.com",
   "title": "NFL.com league transactions (November 2026 trades)",
