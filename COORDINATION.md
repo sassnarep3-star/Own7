@@ -3757,8 +3757,8 @@ Session ID: `session-arena-1ed52640-own7`. Fixed branch: `arena/1ed52640-own7`, 
 `666a3a8` (`origin/main`) at claim. Working tree was clean.
 
 **Claimed scope (integration-only; no other desk's source data):** `COORDINATION.md`, `scripts/build_site.py`,
-`nfl_pages.py`, `assets/style.css`, `js/suggestion-review.js`, `tests/test_nfl_dashboard.py`,
-`docs/nfl-executive-summary-2026-11-19.md`, and deterministic site outputs (`index.html`,
+`nfl_current_pages.py`, `assets/style.css`, `js/suggestion-review.js`, `scripts/browser_test.mjs`,
+`tests/test_nfl_dashboard.py`, `docs/nfl-executive-summary-2026-11-19.md`, and deterministic site outputs (`index.html`,
 `executive-summary.html`, `nfl-decisions.html`, `nfl-questions.html`, `nfl-suggestions.html`,
 `research/site-manifest.json`, plus generated pages whose shared navigation changes).
 
@@ -3783,10 +3783,10 @@ site files are rebuilt from the canonical generator.
 
 | ID | Task | Status | Owner | Files touched | Sources / verification |
 |---|---|---|---|---|---|
-| I1 | Claim + reproduce current baseline | in progress | session-arena-1ed52640-own7 | `COORDINATION.md` | `npm run check` passed on `666a3a8`; `research/nfl-decision-readiness.json` plus the K637 dated overrides/rechecks and `nfl-results/analysis.json` are the current committed inputs to reconcile. |
-| I2 | Refresh root dashboard and executive summary from dated, reproducible results and the latest 70-row ledger; preserve official-source links and explicit blanks | unclaimed | session-arena-1ed52640-own7 | `nfl_pages.py`, generated root pages, `docs/nfl-executive-summary-2026-11-19.md` | Official manual-review links and committed evidence to be recorded after the build/review. |
-| I3 | Replace stale root Q&A / decision surfaces with current sourced knowns, missing information and discovery gates | unclaimed | session-arena-1ed52640-own7 | `nfl_pages.py`, generated `nfl-decisions.html`, `nfl-questions.html` | Current K637 question register and registered source links; no new source claims. |
-| I4 | Publish review-only choice and export controls on the Suggestions page; no implementation is triggered by a choice | unclaimed | session-arena-1ed52640-own7 | `nfl_pages.py`, `js/suggestion-review.js`, `nfl-suggestions.html`, tests | Current K637 seven-option register; browser tests will verify persistence, export and reset. |
+| I1 | Claim + reproduce current baseline | done | session-arena-1ed52640-own7 | `COORDINATION.md` | Re-run on rebased `ebc05f7`: `npm run check` passed (119 repository tests, 6 NFL build tests; 313 HTML pages, 16,042 rows, 332 sources, 0 errors). |
+| I2 | Refresh root dashboard and executive summary from dated, reproducible results and the latest 70-row ledger; preserve official-source links and explicit blanks | in progress | session-arena-1ed52640-own7 | `nfl_current_pages.py`, `scripts/build_site.py`, generated root pages, `docs/nfl-executive-summary-2026-11-19.md` | Official manual-review links and committed evidence to be recorded after the build/review. |
+| I3 | Replace stale root Q&A / decision surfaces with current sourced knowns, missing information and discovery gates | in progress | session-arena-1ed52640-own7 | `nfl_current_pages.py`, `scripts/build_site.py`, generated `nfl-decisions.html`, `nfl-questions.html` | Current K637 question register and registered source links; no new source claims. |
+| I4 | Publish review-only choice and export controls on the Suggestions page; no implementation is triggered by a choice | in progress | session-arena-1ed52640-own7 | `nfl_current_pages.py`, `scripts/build_site.py`, `js/suggestion-review.js`, `scripts/browser_test.mjs`, `nfl-suggestions.html`, tests | Current K637 seven-option register; browser tests will verify persistence, export and reset. |
 | I5 | Condense the site-wide navigation with accessible native disclosure groups while preserving every destination | unclaimed | session-arena-1ed52640-own7 | `scripts/build_site.py`, `assets/style.css`, generated site outputs | Build/link audit plus desktop/mobile and WCAG browser checks. |
 | I6 | Full integration checks, PR, merge and Pages verification | unclaimed | session-arena-1ed52640-own7 | All claimed integration files | Must not merge unless build, link/source audit and browser checks pass; record PR and deployment. |
 
