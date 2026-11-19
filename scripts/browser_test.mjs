@@ -71,6 +71,23 @@ try{
   for(const slug of visitPages)await visit(slug,'desktop');
   await page.goto(base+'index.html',{waitUntil:'networkidle'});
   await page.screenshot({path:join(out,'dashboard-desktop.png'),fullPage:true});
+  const mainNav=page.locator('nav[aria-label="Main navigation"]');
+  const rootNavSections=mainNav.locator(':scope > details.nav-group');
+  assert.equal(await rootNavSections.count(),3,'navigation has two primary NFL sections and one archive section');
+  assert.equal(await rootNavSections.nth(0).getAttribute('open'),'','current NFL section is expanded');
+  assert.equal(await rootNavSections.nth(1).getAttribute('open'),null,'other primary section starts collapsed');
+  assert.equal(await rootNavSections.nth(2).getAttribute('open'),null,'research archive starts collapsed');
+  const latestBrief=mainNav.locator('a[href="nfl-ledger-637442e9/site/executive-summary.html"]');
+  assert.equal(await latestBrief.count(),1,'dated public decision brief is linked once');
+  assert(await latestBrief.isVisible(),'dated brief is available in the active NFL section');
+  const archiveNav=rootNavSections.nth(2);
+  await archiveNav.locator(':scope > summary').click();
+  const ledgerSection=archiveNav.locator('details.nav-subgroup').filter({hasText:'NFL decision-readiness desk'});
+  assert.equal(await ledgerSection.count(),1,'decision-readiness desk remains a named category');
+  await ledgerSection.locator(':scope > summary').click();
+  assert(await ledgerSection.locator('a[href="nfl-ledger-637442e9/site/gaps.html"]').isVisible(),
+    'nested category opens its own pages');
+  report.assertions.push('Compact navigation exposes the dated brief and expands categorized archive links');
 
   await page.goto(base+'data.html',{waitUntil:'networkidle'});
   const teams=page.locator('#team-data-table');
