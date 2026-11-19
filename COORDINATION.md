@@ -3751,6 +3751,63 @@ is NOT edited: reconciled statuses live in the new desk and the change log says 
 - Merge log: `main` moved twice during K637 (to 1d973d3, then 5799028 with PR #96). Both merges were resolved by taking main's generated outputs and regenerating them. The first integration commit reused the names `ledger_nav_group`, `ledger_pages` and `ledger_result`, which main's `nfl-ledger-aedccbe5` desk already defines; this overwrote that desk's nav and page list. Fixed in 749043d by renaming this desk's names to `desk637_*`. Lesson for integration: `git pull --rebase` on this branch replays main's history (it was aborted with no loss), so use `git fetch` plus `git merge origin/main`.
 - K637 completion record: PR #101 merged to `main` at `ea6fb00` (merge commit). It was merged after main had moved several times. Each time, `main` was merged into the branch, the conflicts were resolved, and the outputs were regenerated and re-checked before pushing. Post-merge state: Pages build succeeded. Flagged for Review page lists F-REG, F-INJ-COUNT, F-TERMS-1.3, F-TERMS-12, F-SNAP, F-CORPUS, F-CONTROL, F-RULES. Open for the owner: choose the canonical register (F-REG), the injury recount (F-INJ-COUNT), the terms and gambling questions (F-TERMS-1.3, F-TERMS-12, with legal advice; not a legal opinion), the snap-count route (F-SNAP), the canonical results file (F-CORPUS), the random-pick control (F-CONTROL), and the rulebook sections (F-RULES).
 
+## Session arena/b2e7c3b7-own7 — audit and decision-quality pass (2026-11-19)
+
+Fixed Arena branch: `arena/b2e7c3b7-own7` (base `666a3a8`). Scope: `nfl_pages.py`, `nfl_results_pages.py`, their generated executive/results pages, regression tests, and append-only coordination record. Fix stale summary/correlation metrics against the reproducible current results artifact; do not change shared requirements, source registry, or navigation. Task: audit the public summary, update mismatches and add regression checks. Status: in progress. No other active session task was claimed after inspecting the current branch and board.
+
+### Completion — arena/b2e7c3b7-own7 (2026-11-19)
+
+- Audit found and corrected a stale public executive summary: it reported 136 finals, obsolete 77–43 / 64.2% / n=120 spread results, an n=114 correlation, and a 2026-11-15 compilation note while the current reproducible analysis has 150 finals through Week 10, 134 walk-forward-scored games, 30 variants (0 qualified, 1 provisional, 29 rejected), and spread/total dependence phi −0.0318 (p=0.7209, n=128).
+- Updated generator sources `nfl_pages.py`, `nfl_results_pages.py`; regenerated `executive-summary.html`, `nfl-results.html`, and manifest. Added regression tests rejecting the obsolete values and checking the current sample/correlation.
+- Official manual-review links retained in generated tables: [NFL Week 10 schedule/results](https://www.nfl.com/schedules/2026/by-week/week-10), [NFL standings](https://www.nfl.com/standings/). Metric values are repository-derived and explicitly not official NFL statistics.
+- Verification: `python scripts/build_site.py` passed; `npm run check` passed (121 unit tests, 6 NFL build tests, deterministic results reproduction, recursive audit: 313 HTML pages, 16,042 table rows, 332 registered sources, 0 errors); `npm run test:browser` passed before final main merge (281 desktop + 281 mobile pages, WCAG A/AA, no runtime errors). Repeated site build and `npm run check` after merging `origin/main` at `ebc05f7`; clean working tree. Browser suite's successful run preceded that merge; browser-facing diff is summary copy only.
+- Initial browser run lacked installed npm dependencies; `npm ci` resolved it (20 packages, audit found 0 vulnerabilities). No external source capture was performed in this session; correctness of underlying official corpus is bounded by the retained receipt-checked inputs and the existing audit scope.
+- Branch commits: `cf99933` claim, `18fdb64` scope, `3148ced` metric fix, `898c872` integration merge. Task complete; shared canonical requirement/source data was not changed. PR and deployment status to be appended after GitHub checks.
+- PR #109: https://github.com/sassnarep3-star/Own7/pull/109 — merged with merge commit `bfbc5e138bdb08d16fed78e05f4ee2c571f2c170` at 2026-11-19T12:40:24Z. PR checks passed: Research and recursive site audit and Desktop/mobile/accessibility (281-page desktop + mobile coverage on PR head).
+- Main checks after merge passed: [Research and dashboard checks run 44526062943](https://github.com/sassnarep3-star/Own7/actions/runs/44526062943) and [Pages build/deployment run 44526061591](https://github.com/sassnarep3-star/Own7/actions/runs/44526061591). GitHub Pages deployment completed successfully. Public site: https://sassnarep3-star.github.io/Own7/ .
+
+
+## Session arena/b3c4087a-own7 — live Week 11 injury re-read, flagged page, integration (2026-11-19)
+
+Session ID: `session-arena-b3c4087a-own7`. Fixed Arena branch `arena/b3c4087a-own7` (base `666a3a8` = `origin/main` at claim; PR #107 was the last merge). The `session-<id>/<task>` branch naming is not used because the platform fixes the branch for this session and work must stay on it. This session is single-session on this branch.
+
+Honest scope: the full brief (about 70 requirement lines, with many capture, scraper and model tasks) is not completed in one session. Most of those requirements already have desks in this repo; their status is recorded by `nfl-ledger-637442e9` and `nfl-ledger-aedccbe5`. This session does one verifiable thing: it checks the Week 11 official injury report against the repo's own 2026-11-18 capture, and it publishes what changed.
+
+Baseline at claim: `python -m unittest discover -s tests` → 119 OK; `python scripts/check_site.py` → OK; `nfl-ledger-637442e9/build.py --check` → OK.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| B1 | Claim + baseline | done | session-arena-b3c4087a-own7 | COORDINATION.md | Baseline above. |
+| B2 | Fresh official read of https://www.nfl.com/injuries/ (Week 11) and of NFL.com Terms §1.3 | done | session-arena-b3c4087a-own7 | `nfl-live-b3c4087a/data/**` | Single read in seven chunks, 2026-11-19 about 12:05-12:15 UTC. Thursday rows and per-club counts recorded; the full 253-row report is not stored (Terms §1.3). |
+| B3 | Desk: diff vs 2026-11-18 repo capture, flagged page, byte-identical build, tests | done | session-arena-b3c4087a-own7 | `nfl-live-b3c4087a/**` | 8 unit tests OK; `build.py --check` OK. |
+| B4 | Integration: sources (B3C-*), SOURCE_HOSTS, build_site wiring, CI lines, browser allow-list | done | session-arena-b3c4087a-own7 | `research/sources.json` (+3 rows), `scripts/check_site.py`, `scripts/build_site.py`, `scripts/browser_test.mjs`, `scripts/serve_site.py`, `.github/workflows/check.yml`; regenerated shared nav and manifest (56 canonical HTML files gained the nav link) | `check_site.py` OK (335 sources); `npm run test:browser` OK (283 desktop + 283 mobile). |
+| B5 | PR, CI, merge, Pages deploy, record | in progress | session-arena-b3c4087a-own7 | COORDINATION.md, PR | See the log below. |
+
+### Verification log (B2)
+
+- Official page read: https://www.nfl.com/injuries/ (title "Official Latest NFL Injury Report for Players - Week 11 of the 2026 Season | NFL.com"). Seven chunks read (0 to 6).
+- Terms: https://www.nfl.com/legal/terms/ "Updated: May 16, 2024". §1.3 text matches the repo's saved copy in `nfl-ledger-637442e9/evidence/nfl-terms-read-2026-11-18.md`.
+- Result: 26 clubs; 253 printed player rows; 2 clubs print "No Injuries Reported" (CIN, WAS). The repo capture of 2026-11-18 printed rows for 2 clubs (IND 11, HOU 15) and "No Injuries Reported" for 24 clubs.
+- Thursday (Colts at Texans): 17 of 26 players differ from the repo capture in at least one of Injuries, Practice or Game status. Game status is now printed for 16 of 26 (repo 0 of 26). Ten Game Status cells remain blank.
+
+### Irregularities (flagged, non-blocking; published on `nfl-live-b3c4087a/site/flagged.html`)
+
+- B3C-F01: the repo's 2026-11-18 Week 11 capture is superseded for 24 clubs (it is a correct snapshot of its date, not a series).
+- B3C-F02: the repo's W11-F01/F02 claim that every Thursday Game Status cell is blank is superseded (16 of 26 now printed).
+- B3C-F03: the brief's 254-row figure is not reproduced; this read counts 253. Owner to recount.
+- B3C-F04: NFL.com Terms §1.3 prohibits systematic retrieval to compile a collection without written consent. A daily or scheduled capture (Wed to kickoff) is therefore not built. Owner decision: consent, a licensed feed, or manual one-off reads. Not a legal opinion.
+- B3C-F05: printed name and link slug differ for two players (Dee Alford → deaundre-ford; Jacob Hummel → jake-hummel). Printed as-is.
+- B3C-F06: Jaylen Waddle appears in the Broncos table at this read. Not checked against a roster or transaction source.
+- B3C-F07: Sunday and Monday game-status cells are blank at this read. The publishing rule is not verified.
+
+### Session log (arena/b3c4087a-own7)
+
+- Claimed B1–B5, baseline replayed (119 unit tests OK; site check OK; K637 ledger build OK).
+- Found the repo's 2026-11-18 Week 11 capture and the live page disagree (see irregularities). No existing file was edited to hide that: the new desk shows both.
+- Added `research/sources.json` rows B3C-NFL-INJURIES, B3C-NFL-TERMS and B3C-REPO-W11 by append only (the file was not reformatted). Ran `python -m nba_lab run` to refresh research outputs after the registry count changed (335 registered sources; the registry diff is additions only).
+- A first browser-test run failed on table overflow and link underline; fixed in the desk's page styles and retested (283 + 283 pages OK).
+
+
 ## Session arena/01000ff7-own7 — walk-forward probability calibration audit (2026-11-19)
 
 Session ID: `session-arena-01000ff7-own7`. Fixed Arena branch `arena/01000ff7-own7` (base `666a3a8`, same as `origin/main` at claim; branch name is fixed by Arena). Baseline: clean tree; 119 repository unit tests and `scripts/check_site.py` pass.
@@ -3764,7 +3821,7 @@ Exclusive new-file scope: `nfl-calibration-01000ff7/**`. Additive integration sc
 | C1 | Claim + baseline replay | done | session-arena-01000ff7-own7 | COORDINATION.md | Baseline 119 tests and recursive site audit green. |
 | C2 | Recompute prequential probabilities and calibration metrics | done | session-arena-01000ff7-own7 | `nfl-calibration-01000ff7/**` | Recomputed all 150 completed official results; 134 target-week forecasts for Weeks 2–10, with 133 non-ties for binary scoring and the tie retained in the three-outcome score; 16 Week 1 games withheld because no prior-season training. No future-week inputs; nine target-week clusters. Every game links an exact-URL registered NFL source. |
 | C3 | Build report site and tests | done | session-arena-01000ff7-own7 | `nfl-calibration-01000ff7/**` | 10 tests pass; deterministic JSON/CSV/site output; every rendered data row has an official source; all probability inputs are stored. Binary non-tie Brier 0.242678 vs 0.25 (BSS 0.029287; 95% weekly-cluster interval [-0.072750, 0.116537], crosses zero). Three-outcome Brier 0.493169 vs uniform 2/3 (BSS 0.260246; interval [0.184707, 0.327348]); only nine clusters, so exploratory and not a strategy qualification. Five-bin weighted conditional calibration gap 0.063573; no market claim. |
-| C4 | Additive site/CI integration and verification | done | session-arena-01000ff7-own7 | shared integration files listed above; append-only source rows | Eight exact-URL NFL Week 2–9 registrations added; Week 10 uses existing dated sources. Root source/link audit: 314 HTML pages, 16,179 body rows, 340 registered sources, 0 errors. `npm run check` passed (119 repository tests); desk tests 10/10; browser 282 desktop + 282 mobile pages, WCAG A/AA, no runtime errors. |
+| C4 | Additive site/CI integration and verification | done | session-arena-01000ff7-own7 | shared integration files listed above; append-only source rows | Eight exact-URL NFL Week 2–9 registrations added; Week 10 uses existing dated sources. Root source/link audit after merge from latest main: 316 HTML pages, 16,251 body rows, 343 registered sources, 0 errors. `npm run check` passed (121 repository tests); calibration tests 10/10; browser 284 desktop + 284 mobile pages, WCAG A/AA, no runtime errors. |
 | C5 | PR, merge, Pages verification, completion record | in progress | session-arena-01000ff7-own7 | COORDINATION.md, PR | Open only after final clean-tree check; merge only with green CI and verify the Pages deployment. |
 
 ### C4 integration and verification log (2026-11-19)
@@ -3775,3 +3832,9 @@ Exclusive new-file scope: `nfl-calibration-01000ff7/**`. Additive integration sc
 - A first source-contract check correctly rejected the broad weeks-1–9 corpus ID for rows whose exact official URL was a different by-week page. Fixed by registering week-specific exact URLs; no source was guessed. A first recursive check also caught aggregate calibration-bin table rows without source IDs; populated bins now link all contributing registered official schedule pages, and empty bins are omitted. First browser run caught undersized source-link targets; table link hit areas were increased and the full browser suite rerun successfully.
 - Verification: calibration build + `--check`; 10 desk unit tests; 119 repo tests; `npm run check`; `nfl-results/extract.py --check`; `scripts/check_site.py` (314 HTML pages, 16,178 table rows, 340 registered sources, 0 errors); browser suite 282 desktop + 282 mobile pages, WCAG A/AA, 10 interaction groups, 0 runtime errors.
 - Shared integration files also appear in stale open PRs #79, #82, #83 and #88. Their latest commits were 2026-11-18 (between 04:41Z and 05:49Z), more than 60 minutes before this integration work, with no subsequent commits visible. Under the board's stale-claim rule, this session takes over only the additive root-site registration for this new desk; it does not alter those PRs' unique desks or rewrite their content. The overlapping PR owners should rebase/reconcile after this integration; PR #88's separately logged browser issue remains outside this desk and is not modified here.
+
+### Latest-main integration (2026-11-19)
+
+- Before push, `git fetch origin` showed `origin/main` advanced from `666a3a8` to `922bd97` (PR #112, live Week 11 injury check). Merged `origin/main` into this fixed branch instead of rebasing. There were conflicts in generated root pages/manifests, `COORDINATION.md`, the source registry and additive integration files. Resolved the board as a union; retained main's live desk, sources and CI, preserved this desk's eight exact-URL registrations and integration, then regenerated pages from the merged tree. No files inside `nfl-live-b3c4087a/` were edited.
+- The latest main integration raised the full source register to 343 and the site to 316 HTML pages. Final `npm run check` passed (121 repository tests, the NFL lab build checks and recursive audit); this desk's 10 tests and deterministic check passed; `nfl-results/extract.py --check` passed. Recursive check: 16,251 table rows and 0 errors. Browser: 284 desktop + 284 mobile pages, WCAG A/AA, 10 interaction groups, no runtime errors.
+- Open PR #111 (session `arena/1c6816a0-own7`, latest commit visible 2026-11-19T13:21:54Z) also has additive edits in shared integration files (`build_site.py`, `check_site.py`, `browser_test.mjs`, CI, README and source registry). This session did not touch its new `nfl-review-1c6816a0/**` desk. Cross-scope request: the PR #111 owner should rebase/union its integration lines with this branch's calibration entries; this branch's entries are append-only and its generated outputs are reproducible. No review or manual decision is being awaited for this session's own PR.

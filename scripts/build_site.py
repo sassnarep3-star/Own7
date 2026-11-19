@@ -534,8 +534,6 @@ def desk637_nav_group():
 
 NAV.extend(desk637_nav_group())
 
-CALIBRATION_NAV_PATH = "nfl-calibration-01000ff7/site/index.html"
-
 
 def calibration_nav_group():
     """Navigation for the independent walk-forward probability calibration audit."""
@@ -547,6 +545,23 @@ def calibration_nav_group():
 
 
 NAV.extend(calibration_nav_group())
+
+
+def live_nav_group():
+    """Additive nav group for the live Week 11 injury check (session arena/b3c4087a-own7).
+
+    Built from the desk's own manifest so this generator never restates a page list.
+    """
+    manifest = ROOT / "nfl-live-b3c4087a" / "site" / "manifest.json"
+    if not manifest.exists():
+        return []
+    pages = [n for n in load_json(str(manifest.relative_to(ROOT)))["pages"] if n.endswith(".html")]
+    labels = {"index.html": "Live check dashboard", "flagged.html": "Flagged for review"}
+    return [("NFL live injury check",
+             [(f"nfl-live-b3c4087a/site/{p}", labels.get(p, p), "validation") for p in pages])]
+
+
+NAV.extend(live_nav_group())
 
 FRESH_NAV_PATH = "nfl-fresh-1118/site/index.html"
 
@@ -1232,13 +1247,18 @@ def build():
     desk637_pages=[n for n in load_json('nfl-ledger-637442e9/site/manifest.json')['pages'] if n.endswith('.html')]
     for name in desk637_pages:
         generated.append(f'nfl-ledger-637442e9/site/{name}')
-    # Independent probability calibration audit (session arena/01000ff7-own7). Recomputes its
-    # walk-forward game probabilities and refuses to publish if the result-source contract drifts.
+    # Independent probability calibration audit (session arena/01000ff7-own7). Deterministic build.
     calibration_result=subprocess.run([sys.executable,str(ROOT/'nfl-calibration-01000ff7'/'build.py')],cwd=ROOT,capture_output=True,text=True)
     if calibration_result.returncode: raise SystemExit('nfl-calibration-01000ff7/build.py failed: '+calibration_result.stdout+calibration_result.stderr)
     calibration_pages=[n for n in load_json('nfl-calibration-01000ff7/site/manifest.json')['pages'] if n.endswith('.html')]
     for name in calibration_pages:
         generated.append(f'nfl-calibration-01000ff7/site/{name}')
+    # Live Week 11 injury check (session arena/b3c4087a-own7). Own deterministic build; pages live under nfl-live-b3c4087a/site/.
+    live_result=subprocess.run([sys.executable,str(ROOT/'nfl-live-b3c4087a'/'build.py')],cwd=ROOT,capture_output=True,text=True)
+    if live_result.returncode: raise SystemExit('nfl-live-b3c4087a/build.py failed: '+live_result.stdout+live_result.stderr)
+    live_pages=[n for n in load_json('nfl-live-b3c4087a/site/manifest.json')['pages'] if n.endswith('.html')]
+    for name in live_pages:
+        generated.append(f'nfl-live-b3c4087a/site/{name}')
     # Official Game Book desk (session arena/5213243e-own7). Runs the desk's own deterministic
     # build (which re-derives every artefact from the committed raw extracts) before publishing.
     gamebook_result=subprocess.run([sys.executable,str(ROOT/'nfl-gamebook-5213243e'/'build_site.py')],cwd=ROOT,capture_output=True,text=True)
@@ -1351,7 +1371,7 @@ def build():
         path=ROOT/f'verified/data/{name}.json'
         path.write_text(encode({'deprecated':True,'canonical':'../../'+target,'rows':[],'note':'Superseded parallel schema. Original assertions preserved only in the baseline git commit; do not treat as current verified facts.'}),encoding='utf-8')
     for file in ('.nojekyll','verified/.nojekyll'):(ROOT/file).write_text('',encoding='utf-8')
-    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-competition/site/{n}' for n in competition_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-snapcount-e5e4/site/{n}' for n in snapcount_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages]+[f'nfl-readiness-e7ef/site/{n}' for n in e7ef_pages]+[f'nfl-week11-4c7d/site/{n}' for n in week11_pages]+[f'nfl-integration-c815/site/{n}' for n in c815_pages]+[f'nfl-week11-6c72a9fa/site/{n}' for n in c672_pages]+[f'nfl-slate-03dcea07/site/{n}' for n in slate_pages]+[f'nfl-ledger-637442e9/site/{n}' for n in desk637_pages]+[f'nfl-calibration-01000ff7/site/{n}' for n in calibration_pages]+[f'nfl-brief-77b1/site/{n}' for n in brief_pages]+[f'nfl-injury-recon-8b53/site/{n}' for n in injrecon_pages]+[f'nfl-ledger-aedccbe5/site/{n}' for n in ledger_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
+    manifest={'canonical_pages':list(pages),'auxiliary_pages':['market-evidence/index.html']+[f'rental/{n}' for n in rental_pages]+[f'nfl/{n}' for n in nfl_pages]+[f'nfl/origination/{n}' for n in lab_pages]+[f'nfl-assurance-9580ac3f/site/{n}' for n in assurance_pages]+[f'nfl-availability-28ef/site/{n}' for n in desk_pages]+[f'session-243828fc/site/{n}' for n in s243_pages]+[f'nfl-skill-cfdd/site/{n}' for n in skill_pages]+[f'nfl-market-desk/site/{n}' for n in market_pages]+[f'nfl-pricing/site/{n}' for n in pricing_pages]+[f'nfl-lifecycle-3f5c/site/{n}' for n in lifecycle_pages]+[f'nfl-competition/site/{n}' for n in competition_pages]+[f'nfl-gamebook-5213243e/site/{n}' for n in gamebook_pages]+[f'nfl-snapcount-e5e4/site/{n}' for n in snapcount_pages]+[f'nfl-readiness-1467fdf7/site/{n}' for n in readiness_pages]+[f'nfl-readiness-e7ef/site/{n}' for n in e7ef_pages]+[f'nfl-week11-4c7d/site/{n}' for n in week11_pages]+[f'nfl-integration-c815/site/{n}' for n in c815_pages]+[f'nfl-week11-6c72a9fa/site/{n}' for n in c672_pages]+[f'nfl-slate-03dcea07/site/{n}' for n in slate_pages]+[f'nfl-ledger-637442e9/site/{n}' for n in desk637_pages]+[f'nfl-calibration-01000ff7/site/{n}' for n in calibration_pages]+[f'nfl-brief-77b1/site/{n}' for n in brief_pages]+[f'nfl-injury-recon-8b53/site/{n}' for n in injrecon_pages]+[f'nfl-ledger-aedccbe5/site/{n}' for n in ledger_pages]+[f'nfl-live-b3c4087a/site/{n}' for n in live_pages],'legacy_redirects':ALIASES,'generated_html':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sorted(generated)},'research_run_hash':RESULTS['run_hash']}
     (ROOT/'research/site-manifest.json').write_text(encode(manifest),encoding='utf-8')
     print(f'Built {len(pages)} canonical pages + {len(ALIASES)} compatibility redirects; single source of truth.')
 

@@ -175,7 +175,6 @@ SOURCE_HOSTS.update({
     'CAL-RESULTS-W04-1114': 'www.nfl.com', 'CAL-RESULTS-W05-1114': 'www.nfl.com',
     'CAL-RESULTS-W06-1114': 'www.nfl.com', 'CAL-RESULTS-W07-1114': 'www.nfl.com',
     'CAL-RESULTS-W08-1114': 'www.nfl.com', 'CAL-RESULTS-W09-1114': 'www.nfl.com',
-    'FRESH-NFL-W10-COMPLETE-1118': 'www.nfl.com',
 })
 
 
@@ -320,6 +319,9 @@ SOURCE_HOSTS.update({
     'K637-REPO-COMP-LB': 'github.com',
     'K637-REPO-PRICING-LB': 'github.com',
 })
+
+
+SOURCE_HOSTS.update({'B3C-NFL-INJURIES': 'www.nfl.com', 'B3C-NFL-TERMS': 'www.nfl.com', 'B3C-REPO-W11': 'github.com'})  # nfl-live-b3c4087a desk
 
 
 class Page(HTMLParser):

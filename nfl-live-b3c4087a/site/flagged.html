@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for review · OWN7 NFL live check</title>
+<meta name="description" content="Non-blocking irregularities and decisions for the NFL live injury check.">
+<link rel="stylesheet" href="../../assets/style.css">
+<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1d2b22;margin:0;padding:24px 28px;max-width:1280px;margin:0 auto;line-height:1.5;font-size:15px}
+header p{font-size:13px;margin:0 0 18px}
+h1{font-size:26px;margin:8px 0 10px}
+h2{font-size:18px;margin:28px 0 10px}
+.lede{font-size:15px;max-width:900px}
+.note{font-size:12.5px;color:#4a5e51;max-width:900px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}
+.card{border:1px solid #d6dfd8;border-radius:8px;padding:12px 14px;background:#fff}
+.card strong{display:block;font-size:22px;color:#1f4d36}
+.card span{font-size:12px;color:#4a5e51}
+.table-wrap{overflow-x:auto;max-width:100%;border:1px solid #d6dfd8;border-radius:8px;background:#fff}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:12.5px}
+.table-wrap th,.table-wrap td{text-align:left;vertical-align:top;padding:7px 9px;border-bottom:1px solid #e6ebe7;word-break:break-word}
+.table-wrap th{background:#f5f8f5;font-weight:600}
+td[data-empty="true"]{background:repeating-linear-gradient(135deg,#fff 0 6px,#f3f5f3 6px 7px)}
+a{color:#1a5a3f;text-decoration:underline}
+nav a,header a{color:#1a5a3f}
+</style>
+</head>
+<body>
+<header>
+<p><a href="index.html">Live check dashboard</a> · <a href="flagged.html">Flagged for review</a> · <a href="../../nfl-w11-injuries-3e61/site/index.html">Week 11 desk (2026-11-18)</a></p>
+</header>
+<main>
+<nav aria-label="Pages"><a href="index.html">Dashboard</a> · <a href="flagged.html">Flagged for review</a></nav>
+<h1>Flagged for review</h1>
+<p class="lede">Non-blocking. Items are published with their sources so they can be reviewed and changed. Nothing here changes a registered gate or the ledger status of any requirement.</p>
+<section><h2>Flags B3C-F01 to F07</h2>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Item</th><th>Detail</th><th>Official source</th><th>Status</th></tr></thead><tbody>
+<tr data-source-ids="B3C-NFL-INJURIES"><td>B3C-F01</td><td>The repo&#x27;s 2026-11-18 Week 11 capture is out of date.</td><td>At 06:20 UTC on 2026-11-18 the page printed &quot;No Injuries Reported&quot; for 24 clubs. At the 2026-11-19 read, 24 clubs print player rows. The repo desk is correct for its date and is not wrong as a snapshot; it is now superseded.</td><td><a href="https://www.nfl.com/injuries/">https://www.nfl.com/injuries/ vs https://github.com/sassnarep3-star/Own7/blob/main/nfl-w11-injuries-3e61/data/injuries-week11.csv</a></td><td>Open</td></tr>
+<tr data-source-ids="B3C-NFL-INJURIES"><td>B3C-F02</td><td>Thursday game-status blanks are partly filled in.</td><td>The repo desk (W11-F01/F02) says every Game Status cell is blank. At the live read 16 of 26 are printed. Ten remain blank: Carlies, Tucker, Al-Shaair, Blankenship, Dell, Fisher, Lassiter, Montgomery, Nwaiwu, Rutledge.</td><td><a href="https://www.nfl.com/injuries/">https://www.nfl.com/injuries/</a></td><td>Open</td></tr>
+<tr data-source-ids="B3C-NFL-INJURIES"><td>B3C-F03</td><td>Row total differs from the brief.</td><td>Counting the printed player rows at this read gives 253. The earlier brief said 254. This is not reproduced; it could be a count error here or a different read. Owner to recount.</td><td><a href="https://www.nfl.com/injuries/">https://www.nfl.com/injuries/</a></td><td>Open</td></tr>
+<tr data-source-ids="B3C-NFL-TERMS"><td>B3C-F04</td><td>Daily or scheduled capture is blocked by the NFL terms.</td><td>NFL.com Terms §1.3 prohibits systematic retrieval of data to create or compile a collection without express prior written consent. Daily Wednesday-to-kickoff snapshots, which the brief asks for, are not built. Options: (a) written consent from NFL; (b) a licensed data feed; (c) no capture, manual one-off reads only. Owner decision; not a legal opinion.</td><td><a href="https://www.nfl.com/legal/terms/">https://www.nfl.com/legal/terms/</a></td><td>Open</td></tr>
+<tr data-source-ids="B3C-NFL-INJURIES"><td>B3C-F05</td><td>Printed name and link slug do not match (2 rows).</td><td>Bills: &quot;Dee Alford&quot; links to /players/deaundre-ford/. Texans: &quot;Jacob Hummel&quot; links to /players/jake-hummel/. Printed as shown; not resolved.</td><td><a href="https://www.nfl.com/injuries/">https://www.nfl.com/injuries/</a></td><td>Open</td></tr>
+<tr data-source-ids="B3C-NFL-INJURIES"><td>B3C-F06</td><td>Jaylen Waddle appears in the Broncos table at this read.</td><td>The page prints Jaylen Waddle (WR, Full Participation) in the Broncos list. The repo has not checked this against an official roster or transaction; the row is kept as printed and not interpreted.</td><td><a href="https://www.nfl.com/injuries/">https://www.nfl.com/injuries/</a></td><td>Open</td></tr>
+<tr data-source-ids="B3C-NFL-INJURIES"><td>B3C-F07</td><td>Sunday and Monday game-status cells blank at this read.</td><td>Game-status text is blank for the Sunday and Monday rows at this read. That may be a publishing schedule, but this desk has not verified the publishing rule. Left blank.</td><td><a href="https://www.nfl.com/injuries/">https://www.nfl.com/injuries/</a></td><td>Open</td></tr>
+</tbody></table></div>
+</section><section><h2>Decisions requested from the owner</h2>
+<ul><li>Choose a rights route for any recurring capture of nfl.com (B3C-F04).</li><li>Confirm or correct the 253 row total (B3C-F03).</li><li>Decide whether the repo should keep the 2026-11-18 Week 11 desk as a dated snapshot (it is now superseded by this read, not deleted).</li></ul>
+</section>
+</main>
+</body>
+</html>

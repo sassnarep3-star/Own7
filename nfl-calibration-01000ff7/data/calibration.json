@@ -4984,6 +4984,6 @@
   "input_sha256": {
     "nfl-results/data/games-2026-w1-10-complete.csv": "78367d475f9218a2cbf9d28da90bc26e61cfc2f0b5f1986235d23dbacc1b9183",
     "nfl-competition/backtest.py": "95fb1dc8631d20a270dae36ae7b51be06a7ee01891535c21cd387a1cc19d892d",
-    "research/sources.json": "6b88b21b035a294b201bba76731085842a8e7de596f53bc2c8b3af34c3316f7c"
+    "research/sources.json": "825ca879ad601ec01f11bf4002605002775cddc126daf68b7f3f2e5e1f7641b3"
   }
 }
