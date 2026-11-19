@@ -3750,3 +3750,43 @@ is NOT edited: reconciled statuses live in the new desk and the change log says 
 - Pages verification and PR number: recorded in the K7 row once the PR is merged.
 - Merge log: `main` moved twice during K637 (to 1d973d3, then 5799028 with PR #96). Both merges were resolved by taking main's generated outputs and regenerating them. The first integration commit reused the names `ledger_nav_group`, `ledger_pages` and `ledger_result`, which main's `nfl-ledger-aedccbe5` desk already defines; this overwrote that desk's nav and page list. Fixed in 749043d by renaming this desk's names to `desk637_*`. Lesson for integration: `git pull --rebase` on this branch replays main's history (it was aborted with no loss), so use `git fetch` plus `git merge origin/main`.
 - K637 completion record: PR #101 merged to `main` at `ea6fb00` (merge commit). It was merged after main had moved several times. Each time, `main` was merged into the branch, the conflicts were resolved, and the outputs were regenerated and re-checked before pushing. Post-merge state: Pages build succeeded. Flagged for Review page lists F-REG, F-INJ-COUNT, F-TERMS-1.3, F-TERMS-12, F-SNAP, F-CORPUS, F-CONTROL, F-RULES. Open for the owner: choose the canonical register (F-REG), the injury recount (F-INJ-COUNT), the terms and gambling questions (F-TERMS-1.3, F-TERMS-12, with legal advice; not a legal opinion), the snap-count route (F-SNAP), the canonical results file (F-CORPUS), the random-pick control (F-CONTROL), and the rulebook sections (F-RULES).
+
+## Session arena/b3c4087a-own7 — live Week 11 injury re-read, flagged page, integration (2026-11-19)
+
+Session ID: `session-arena-b3c4087a-own7`. Fixed Arena branch `arena/b3c4087a-own7` (base `666a3a8` = `origin/main` at claim; PR #107 was the last merge). The `session-<id>/<task>` branch naming is not used because the platform fixes the branch for this session and work must stay on it. This session is single-session on this branch.
+
+Honest scope: the full brief (about 70 requirement lines, with many capture, scraper and model tasks) is not completed in one session. Most of those requirements already have desks in this repo; their status is recorded by `nfl-ledger-637442e9` and `nfl-ledger-aedccbe5`. This session does one verifiable thing: it checks the Week 11 official injury report against the repo's own 2026-11-18 capture, and it publishes what changed.
+
+Baseline at claim: `python -m unittest discover -s tests` → 119 OK; `python scripts/check_site.py` → OK; `nfl-ledger-637442e9/build.py --check` → OK.
+
+| ID | Task | Status | Owner | Files touched | Verification / notes |
+|---|---|---|---|---|---|
+| B1 | Claim + baseline | done | session-arena-b3c4087a-own7 | COORDINATION.md | Baseline above. |
+| B2 | Fresh official read of https://www.nfl.com/injuries/ (Week 11) and of NFL.com Terms §1.3 | done | session-arena-b3c4087a-own7 | `nfl-live-b3c4087a/data/**` | Single read in seven chunks, 2026-11-19 about 12:05-12:15 UTC. Thursday rows and per-club counts recorded; the full 253-row report is not stored (Terms §1.3). |
+| B3 | Desk: diff vs 2026-11-18 repo capture, flagged page, byte-identical build, tests | done | session-arena-b3c4087a-own7 | `nfl-live-b3c4087a/**` | 8 unit tests OK; `build.py --check` OK. |
+| B4 | Integration: sources (B3C-*), SOURCE_HOSTS, build_site wiring, CI lines, browser allow-list | done | session-arena-b3c4087a-own7 | `research/sources.json` (+3 rows), `scripts/check_site.py`, `scripts/build_site.py`, `scripts/browser_test.mjs`, `scripts/serve_site.py`, `.github/workflows/check.yml`; regenerated shared nav and manifest (56 canonical HTML files gained the nav link) | `check_site.py` OK (335 sources); `npm run test:browser` OK (283 desktop + 283 mobile). |
+| B5 | PR, CI, merge, Pages deploy, record | in progress | session-arena-b3c4087a-own7 | COORDINATION.md, PR | See the log below. |
+
+### Verification log (B2)
+
+- Official page read: https://www.nfl.com/injuries/ (title "Official Latest NFL Injury Report for Players - Week 11 of the 2026 Season | NFL.com"). Seven chunks read (0 to 6).
+- Terms: https://www.nfl.com/legal/terms/ "Updated: May 16, 2024". §1.3 text matches the repo's saved copy in `nfl-ledger-637442e9/evidence/nfl-terms-read-2026-11-18.md`.
+- Result: 26 clubs; 253 printed player rows; 2 clubs print "No Injuries Reported" (CIN, WAS). The repo capture of 2026-11-18 printed rows for 2 clubs (IND 11, HOU 15) and "No Injuries Reported" for 24 clubs.
+- Thursday (Colts at Texans): 17 of 26 players differ from the repo capture in at least one of Injuries, Practice or Game status. Game status is now printed for 16 of 26 (repo 0 of 26). Ten Game Status cells remain blank.
+
+### Irregularities (flagged, non-blocking; published on `nfl-live-b3c4087a/site/flagged.html`)
+
+- B3C-F01: the repo's 2026-11-18 Week 11 capture is superseded for 24 clubs (it is a correct snapshot of its date, not a series).
+- B3C-F02: the repo's W11-F01/F02 claim that every Thursday Game Status cell is blank is superseded (16 of 26 now printed).
+- B3C-F03: the brief's 254-row figure is not reproduced; this read counts 253. Owner to recount.
+- B3C-F04: NFL.com Terms §1.3 prohibits systematic retrieval to compile a collection without written consent. A daily or scheduled capture (Wed to kickoff) is therefore not built. Owner decision: consent, a licensed feed, or manual one-off reads. Not a legal opinion.
+- B3C-F05: printed name and link slug differ for two players (Dee Alford → deaundre-ford; Jacob Hummel → jake-hummel). Printed as-is.
+- B3C-F06: Jaylen Waddle appears in the Broncos table at this read. Not checked against a roster or transaction source.
+- B3C-F07: Sunday and Monday game-status cells are blank at this read. The publishing rule is not verified.
+
+### Session log (arena/b3c4087a-own7)
+
+- Claimed B1–B5, baseline replayed (119 unit tests OK; site check OK; K637 ledger build OK).
+- Found the repo's 2026-11-18 Week 11 capture and the live page disagree (see irregularities). No existing file was edited to hide that: the new desk shows both.
+- Added `research/sources.json` rows B3C-NFL-INJURIES, B3C-NFL-TERMS and B3C-REPO-W11 by append only (the file was not reformatted). Ran `python -m nba_lab run` to refresh research outputs after the registry count changed (335 registered sources; the registry diff is additions only).
+- A first browser-test run failed on table overflow and link underline; fixed in the desk's page styles and retested (283 + 283 pages OK).
