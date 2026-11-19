@@ -3789,3 +3789,13 @@ site files are rebuilt from the canonical generator.
 | I4 | Publish review-only choice and export controls on the Suggestions page; no implementation is triggered by a choice | unclaimed | session-arena-1ed52640-own7 | `nfl_pages.py`, `js/suggestion-review.js`, `nfl-suggestions.html`, tests | Current K637 seven-option register; browser tests will verify persistence, export and reset. |
 | I5 | Condense the site-wide navigation with accessible native disclosure groups while preserving every destination | unclaimed | session-arena-1ed52640-own7 | `scripts/build_site.py`, `assets/style.css`, generated site outputs | Build/link audit plus desktop/mobile and WCAG browser checks. |
 | I6 | Full integration checks, PR, merge and Pages verification | unclaimed | session-arena-1ed52640-own7 | All claimed integration files | Must not merge unless build, link/source audit and browser checks pass; record PR and deployment. |
+
+### I1 baseline update after claim push (2026-11-19)
+
+`origin/main` advanced from `666a3a8` to `ebc05f7` (PR #108, merge commit) while the claim was
+being published. The claim was successfully rebased onto the new main and pushed to the same fixed
+branch; no conflict or content was dropped. PR #108 records reviewer decisions in
+`research/nfl/decisions.json` and updates the root Suggestions page. This integration will preserve
+those recorded decisions and keep its new, unresolved seven-item K637 decision queue explicitly
+separate. Re-run after the rebase: `npm run check` passed (119 repository tests, 6 NFL build tests;
+313 recursive HTML pages, 16,042 table rows, 332 registered sources, 0 errors). I1 is done.
