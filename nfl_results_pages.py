@@ -807,7 +807,7 @@ def page_summary():
 
     body = ""
     body += metrics([
-        ("Official games captured", analysis["inputs"]["games"], "Weeks 1–9, reconciled", "data"),
+        ("Official games captured", analysis["inputs"]["games"], "Weeks 1–10, complete", "data"),
         ("Reconciliation", "800/800", "Standings fields matched: frozen w1-9 and frozen w1-10 snapshots, the completed w1-10 feed against the 2026-11-18 snapshot, and both snapshot chain identities", "validation"),
         ("Spread board", pct(spread["directional"]["hit_rate"]), "Directional, provisional", "signals"),
         ("Total board", pct(total["directional"]["hit_rate"]), "No signal — published", "care"),

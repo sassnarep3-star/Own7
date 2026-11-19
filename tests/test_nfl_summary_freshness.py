@@ -18,8 +18,10 @@ class SummaryFreshnessTests(unittest.TestCase):
         for stale in ("77–43", "64.2%", "n=114", "Compiled 2026-11-15"):
             self.assertNotIn(stale, rendered)
 
-    def test_results_summary_uses_current_correlation_sample(self):
+    def test_results_summary_uses_current_correlation_sample_and_window(self):
         rendered = (ROOT / "nfl-results.html").read_text(encoding="utf-8")
+        self.assertIn("Weeks 1–10, complete", rendered)
+        self.assertNotIn("Weeks 1–9, reconciled", rendered)
         self.assertIn("128 games; phi −0.0318, two-sided p=0.7209", rendered)
         self.assertNotIn("over 114 games", rendered)
 
