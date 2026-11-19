@@ -601,7 +601,7 @@
     {
       "artifact": "nfl-suggestions.html",
       "artifact_exists": true,
-      "artifact_sha256": "6653c252b0b157c0305ad8eea0ed367c94c22d7a3dfa4dd28da211534c1066f6",
+      "artifact_sha256": "7ee5ef0550dad51a9d8d01714f5f17b17079e1cc4d16c1565b31320244610a74",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Partial",
       "category": "Governance & publication",
@@ -1233,7 +1233,7 @@
     {
       "artifact": "nfl-suggestions.html",
       "artifact_exists": true,
-      "artifact_sha256": "6653c252b0b157c0305ad8eea0ed367c94c22d7a3dfa4dd28da211534c1066f6",
+      "artifact_sha256": "7ee5ef0550dad51a9d8d01714f5f17b17079e1cc4d16c1565b31320244610a74",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Rejected",
       "category": "Rejected alternatives",
@@ -1549,7 +1549,7 @@
     {
       "artifact": "nfl-suggestions.html",
       "artifact_exists": true,
-      "artifact_sha256": "6653c252b0b157c0305ad8eea0ed367c94c22d7a3dfa4dd28da211534c1066f6",
+      "artifact_sha256": "7ee5ef0550dad51a9d8d01714f5f17b17079e1cc4d16c1565b31320244610a74",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Rejected",
       "category": "Rejected alternatives",
@@ -1633,7 +1633,7 @@
     {
       "artifact": "nfl-suggestions.html",
       "artifact_exists": true,
-      "artifact_sha256": "6653c252b0b157c0305ad8eea0ed367c94c22d7a3dfa4dd28da211534c1066f6",
+      "artifact_sha256": "7ee5ef0550dad51a9d8d01714f5f17b17079e1cc4d16c1565b31320244610a74",
       "audit_note": "Artifact and sources verified; content not re-graded here.",
       "audit_status": "Implemented",
       "category": "Governance & publication",

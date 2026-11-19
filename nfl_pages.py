@@ -105,7 +105,7 @@ def suggestions():
         ('Proposals on the table', len(DECISIONS["suggestions"]), 'Nothing implemented', 'signals'),
         ('Questions to answer', len(QUESTIONS["questions"]), 'Sourced part versus open part', 'validation'),
         ('Blocking a reward', len(blocking), 'All four are data gaps', 'leaderboard'),
-        ('Approved today', 0, 'No reviewer decision recorded', 'requirements'),
+        ('Approved today', sum(1 for s in DECISIONS["suggestions"] if s.get("review_decision", {}).get("decision") == "Approved"), 'Reviewer decisions recorded; three approved, two blocked, five under review', 'requirements'),
     ])
 
     body += section('How to choose: one page, four columns', '<div class="grid-2">'
@@ -127,7 +127,7 @@ def suggestions():
          ('Priority', 'pr'), ('Closes', 'problem'), ('Unlocks', 'unlocks'),
          ('Value', 'dv'), ('Effort', 'effort'), ('Cost', 'cost'),
          ('Confidence gain', 'gain'), ('Reversible', 'rev'), ('Depends on', 'pre'),
-         ('Review state', lambda r: badge(r['state'], 'blue')),
+         ('Review state', lambda r: badge(r['state'], 'good' if r['state'] == 'Approved' else ('warn' if r['state'] == 'Under review' else 'neutral'))),
          ('Evidence today', 'evidence')],
         rows,
         note='Scores are 1-5 and are not measurements. "Depends on" means the proposal cannot be '
@@ -143,6 +143,36 @@ def suggestions():
          for s in DECISIONS["suggestions"]],
         note='A proposal that produces a number without producing this evidence is rejected by the '
              'rule below, regardless of how good the number looks.'))
+
+    decided = [s for s in DECISIONS["suggestions"] if s.get("review_decision")]
+    if decided:
+        dec_rows = []
+        for s in decided:
+            rd = s["review_decision"]
+            dec_rows.append({
+                "id": s["id"], "title": s["title"],
+                "decision": rd["decision"],
+                "reviewer": rd["reviewer"],
+                "date": rd["decision_date"],
+                "question_closed": rd["question_closed"] or "—",
+                "acceptance": rd["acceptance_test_status"],
+                "rationale": rd["rationale"],
+                "source_ids": ["REPO"],
+            })
+        body += section('Review decisions recorded on this register', table(
+            'review-decisions', 'Review decisions',
+            [('Proposal', lambda r: rich(r['title'], r['id'])),
+             ('Decision', lambda r: badge(r['decision'], 'good' if r['decision'] == 'Approved' else ('warn' if r['decision'] == 'Under review' else 'neutral'))),
+             ('Question closed', 'question_closed'),
+             ('Acceptance test', 'acceptance'),
+             ('Reviewer / date', lambda r: f'{esc(r["reviewer"])} · {r["date"]}'),
+             ('Reason', 'rationale')],
+            dec_rows,
+            note='Each decision was recorded by editing this register and rebuilding, which leaves '
+                 'an auditable commit. "Under review" means a decision is still open; "Blocked" '
+                 'means a named precondition must clear first; "Approved" means the acceptance test '
+                 'is met and the register entry stands. No proposal is implemented until a reviewer '
+                 'records Approved.'))
 
     body += section('Two registers exist; here is how to read them', '<div class="panel body-text">'
         '<p>This page ranks ten proposals as <strong>S01-S10</strong>. The NFL research lab, a '
@@ -955,20 +985,20 @@ def executive():
         'The repository now contains separate results, market-price, and availability research desks. '
         'Their samples and price policies are not yet one governed prospective evaluation. A historical '
         'spread finding is promising but retrospective; totals are null. No strategy is qualified for '
-        'live deployment or reward. Compiled 2026-11-15 from source reads dated through 2026-11-14; '
-        'this reconciliation did not perform a new live fetch.')
+        'live deployment or reward. Current saved results cover 150 finals through Week 10, with 134 '
+        'walk-forward-scored games; this page does not claim a fresh live source read.')
     body += section('Executive findings',
         '<div class="grid-2">'
         '<article class="panel body-text"><h3>Official results make retrospective tests possible</h3>'
-        '<p>The results desk records 136 final scores (weeks 1–9 of 2026) and reconciles 160 standings '
-        'fields. This is a saved-results pipeline, not a multi-season or prospective test. '
+        '<p>The results desk records 150 final scores through Week 10 of 2026; the walk-forward engine '
+        'scores 134 games from Weeks 2–10. This is a saved-results pipeline, not a multi-season or prospective test. '
         '<a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">Official NFL schedule/results ↗</a> · '
         '<a href="nfl-results-games.html">Results audit</a></p></article>'
         '<article class="panel body-text"><h3>Signal is not yet deployment evidence</h3>'
-        '<p>One bounded retrospective spread board reports 77–43 (64.2%; permutation p=0.0021; '
-        'BH q=0.022) over 120 scored games; its total board reports 60–60 (50%). These are analyses, '
-        'not official NFL statistics, proof of future skill, or profit. Read the complete selection, '
-        'holdout and uncertainty limits. '
+        '<p>The current results engine tests 30 strategy variants on 134 walk-forward-scored games: '
+        '0 qualified, 1 provisional and 29 rejected. These are repository-derived retrospective '
+        'analyses, not official NFL statistics, proof of future skill, or profit. No strategy is '
+        'cleared for live deployment or rewards. Read the selection, holdout and uncertainty limits. '
         '<a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">Official outcome source ↗</a> · '
         '<a href="nfl-results-skill.html">Skill and luck analysis</a></p></article>'
         '<article class="panel body-text"><h3>Market prices exist in separate research desks</h3>'
@@ -987,8 +1017,8 @@ def executive():
         '<a href="nfl-lifecycle-3f5c/site/replacement-depth.html">Replacement-depth analysis</a> · '
         '<a href="nfl-availability-28ef/site/flagged.html">Availability flags</a></p></article>'
         '<article class="panel body-text"><h3>Correlation is narrowly measured</h3>'
-        '<p>The results desk reports spread/total phi −0.068 (p=0.47, n=114) for its bounded same-game '
-        'sample. This neither validates independence nor supports player-prop combo pricing. Parlays '
+        '<p>The current results engine reports spread/total phi −0.0318 (p=0.7209, n=128) for its '
+        'bounded same-game sample. This neither validates independence nor supports player-prop combo pricing. Parlays '
         'and combos stay blocked until direct joint probabilities and settlement rules are validated. '
         '<a href="https://www.nfl.com/schedules/2026/by-week/week-1" target="_blank" rel="noopener noreferrer">Official outcome source ↗</a> · '
         '<a href="nfl-results-correlation.html">Correlation analysis</a></p></article>'
