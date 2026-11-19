@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import html
 import json
+from datetime import date
 from pathlib import Path
 import subprocess
 import sys
@@ -155,6 +156,21 @@ def chart():
         parts.append(f'<text x="0" y="{y+4}">{esc(row["pair"])}</text><line x1="{low}" x2="{high}" y1="{y}" y2="{y}" stroke="#c9d9c8" stroke-width="6" stroke-linecap="round"/><circle cx="{point}" cy="{y}" r="4" fill="#376a48"/><text class="estimate" x="456" y="{y+4}" text-anchor="end">{row["pearson"]:+.3f}</text>')
     parts.append('</svg><div class="chart-legend"><div><span></span>Pearson estimate</div><div><i></i>Exploratory 95% interval</div></div>')
     return ''.join(parts)
+
+
+def dated_summary_nav_entry():
+    """Link the dated 2026-11-18 decision summary without hard-coding its date label."""
+    manifest = ROOT / "nfl-ledger-637442e9" / "site" / "manifest.json"
+    if manifest.is_file():
+        read_on = json.loads(manifest.read_text(encoding="utf-8")).get("read_on")
+        if read_on:
+            try:
+                display_date = date.fromisoformat(read_on).strftime("%d %b")
+            except ValueError:
+                display_date = read_on
+            return ("nfl-ledger-637442e9/site/executive-summary.html",
+                    f"Decision brief · {display_date}", "brief")
+    return ("executive-summary.html", "Executive summary", "brief")
 
 
 NAV = [
@@ -696,24 +712,119 @@ def page(slug, title, subtitle, body, eyebrow=None, description=None):
                        "validation gates and explicit blanks. Not a betting service."
                        if (parent.startswith("NFL") or eyebrow.startswith("NFL"))
                        else "OWN7 NBA research: source-linked observations, exploratory models, validation and transparent limitations.")
-    navigation = ''
-    for group, entries in NAV:
-        navigation += f'<div class="nav-group"><div class="nav-label">{group}</div>'
-        for href, label, ico in entries:
-            current = ' aria-current="page"' if href == slug else ''
-            count = ''
-            if href == 'review.html':
-                count = f'<span class="nav-count">{OPEN_FLAGS}</span>'
-            elif href == 'nfl-review.html':
-                count = f'<span class="nav-count" title="{NFL_BADGE} flagged items need review">{NFL_OPEN}</span>'
-            navigation += f'<a href="{href}"{current}>{icon(ico)}{label}{count}</a>'
-        navigation += '</div>'
+    def render_nav_group(group, entries, *, nested=False, sections=None):
+        visible_entries = ([entry for _, section_entries in sections for entry in section_entries]
+                           if sections else entries)
+        current_group = any(href == slug for href, _, _ in visible_entries)
+        open_attr = ' open' if current_group else ''
+        group_class = 'nav-subgroup' if nested else 'nav-group'
+        parts = [f'<details class="{group_class}"{open_attr}>'
+                 f'<summary class="nav-label">{esc(group)}'
+                 f'<span class="nav-group-count" aria-hidden="true">{len(visible_entries)}</span></summary>']
+        if sections:
+            for section_name, section_entries in sections:
+                parts.append(render_nav_group(section_name, section_entries, nested=True))
+        else:
+            for href, label, ico in entries:
+                current = ' aria-current="page"' if href == slug else ''
+                count = ''
+                if href == 'review.html':
+                    count = f'<span class="nav-count">{OPEN_FLAGS}</span>'
+                elif href == 'nfl-review.html':
+                    count = f'<span class="nav-count" title="{NFL_BADGE} flagged items need review">{NFL_OPEN}</span>'
+                parts.append(f'<a href="{esc(href)}"{current}>{icon(ico)}{esc(label)}{count}</a>')
+        parts.append('</details>')
+        return ''.join(parts)
+
+    primary_groups = {'NFL origination', 'NFL results & skill lab'}
+    primary_sections = {
+        'NFL origination': [
+            ('Overview', {'index.html', 'executive-summary.html', 'nfl-ledger-637442e9/site/executive-summary.html'}),
+            ('Decisions & review', {'nfl-suggestions.html', 'nfl-decisions.html', 'nfl-questions.html', 'nfl-readiness.html'}),
+            ('Origination & validation', {'nfl-lines.html', 'nfl-correlation.html', 'nfl-validation.html', 'nfl-leaderboard.html'}),
+            ('Availability & flags', {'nfl-injuries.html', 'nfl-standings.html', 'nfl-verification-2026-11-13.html', 'nfl-review.html'}),
+        ],
+        'NFL results & skill lab': [
+            ('Results', {'nfl-results.html', 'nfl-results-games.html'}),
+            ('Evaluation', {'nfl-results-skill.html', 'nfl-results-correlation.html', 'nfl-results-leaderboard.html'}),
+            ('Questions & review', {'nfl-results-decisions.html', 'nfl-results-suggestions.html', 'nfl-results-flagged.html'}),
+        ],
+    }
+    uses_nfl_navigation = parent.startswith('NFL') or parent == 'Transparency'
+    if uses_nfl_navigation:
+        primary = []
+        for group, entries in NAV:
+            if group not in primary_groups:
+                continue
+            if group == 'NFL origination':
+                adjusted = []
+                for href, label, ico in entries:
+                    if href == 'nfl-suggestions.html':
+                        label = 'Suggestions · review choices'
+                    elif href == 'executive-summary.html':
+                        label = 'Results executive summary'
+                    adjusted.append((href, label, ico))
+                    if href == 'executive-summary.html':
+                        adjusted.append(dated_summary_nav_entry())
+                entries = adjusted
+            by_href = {href: (href, label, ico) for href, label, ico in entries}
+            categories = primary_sections[group]
+            categorized = [
+                (name, [by_href[href] for href in ordered_hrefs if href in by_href])
+                for name, ordered_hrefs in ((name, [href for href in by_href if href in href_set])
+                                            for name, href_set in categories)
+            ]
+            assigned = {href for _, category_entries in categorized for href, _, _ in category_entries}
+            if assigned != set(by_href):
+                raise ValueError(f'Navigation category mismatch for {group}: missing={set(by_href)-assigned}, extra={assigned-set(by_href)}')
+            primary.append((group, categorized))
+        secondary = []
+        for group, entries in NAV:
+            if group in primary_groups or not (group.startswith('NFL') or group == 'Transparency'):
+                continue
+            if group == 'NFL origination ledger':
+                group = 'NFL decision-readiness desk'
+                entries = [(href, label, ico) for href, label, ico in entries
+                           if href != 'nfl-ledger-637442e9/site/executive-summary.html']
+                entries = [(href, 'Suggestions review' if href.endswith('/suggestions.html') else label, ico)
+                           for href, label, ico in entries]
+            secondary.append((group, entries))
+        navigation = ''.join(render_nav_group(group, [], sections=sections) for group, sections in primary)
+        if secondary:
+            archive_current = any(any(href == slug for href, _, _ in entries)
+                                  for _, entries in secondary)
+            archive_open = ' open' if archive_current else ''
+            navigation += (f'<details class="nav-group nav-archive"{archive_open}>'
+                           f'<summary class="nav-label">NFL desks &amp; transparency'
+                           f'<span class="nav-group-count" aria-hidden="true">{len(secondary)}</span></summary>')
+            navigation += ''.join(render_nav_group(group, entries, nested=True)
+                                  for group, entries in secondary)
+            navigation += '</details>'
+    else:
+        navigation = ''
+        for group, entries in NAV:
+            navigation += f'<div class="nav-group"><div class="nav-label">{group}</div>'
+            for href, label, ico in entries:
+                current = ' aria-current="page"' if href == slug else ''
+                count = ''
+                if href == 'review.html':
+                    count = f'<span class="nav-count">{OPEN_FLAGS}</span>'
+                elif href == 'nfl-review.html':
+                    count = f'<span class="nav-count" title="{NFL_BADGE} flagged items need review">{NFL_OPEN}</span>'
+                navigation += f'<a href="{href}"{current}>{icon(ico)}{label}{count}</a>'
+            navigation += '</div>'
+    if uses_nfl_navigation:
+        snapshot_markup = '<div class="snapshot">FROZEN EVIDENCE<span><a href="sources.html">Read dates vary by source</a></span></div>'
+        footnote = '<div class="foot-note">This is a frozen research site, not a live feed. Source read dates and scopes are recorded per artifact; see the <a href="sources.html">source register</a> and <a href="nfl-review.html">Flagged for Review</a> for citations, conflicts and unresolved values. The separate <a href="docs/nfl-acceptance-review-2026-11-18.md">18 Nov independent acceptance review</a> is an audit record, not a fresh source read.</div>'
+    else:
+        snapshot_markup = '<div class="snapshot">SNAPSHOT CHECKED<span>12 Nov 2026</span></div>'
+        footnote = '<div class="foot-note">Official sources re-checked this session (2026-11-18): <a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">NFL standings</a> (32 clubs, live), <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL injury report</a> (Week 10; Lions Joseph / Mays / Reed = Out confirmed), <a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">Week 10 schedule</a> (live finals), <a href="https://www.nfl.com/odds/" target="_blank" rel="noopener noreferrer">nfl.com/odds/</a> (404 — no official market price exists).</div>'
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{esc(description)}"><meta name="referrer" content="strict-origin-when-cross-origin"><title>{esc(title)} · OWN7 Research</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><script src="js/app.js" defer></script></head>
 <body><a class="skip-link" href="#main-content">Skip to content</a><aside class="sidebar" id="sidebar" aria-label="Research workspace"><a class="brand" href="index.html" aria-label="OWN7 Research Lab home"><span class="brand-mark" aria-hidden="true">7</span><span class="brand-name">OWN7<small>NFL ORIGINATION LAB</small></span></a><nav aria-label="Main navigation">{navigation}</nav><div class="sidebar-bottom">{link(SOURCES['REPO']['url'], icon('external')+' View repository', True)}<div class="mode"><span class="dot"></span>NON-COMMERCIAL RESEARCH</div><p>No live lines. No wagers placed.</p></div></aside><button class="nav-backdrop" aria-label="Close navigation" tabindex="-1" hidden></button>
-<div class="layout"><header class="topbar"><button type="button" class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">{icon('menu')}</button><div class="breadcrumb"><span class="crumb-parent">{esc(parent)}</span><span class="divider">/</span><strong>{esc(title)}</strong></div><div class="top-right"><label class="search-field">{icon('search')}<span class="sr-only">Search tables on this page</span><input type="search" id="page-search" placeholder="Search this page…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label><div class="snapshot">SNAPSHOT CHECKED<span>12 Nov 2026</span></div></div></header>
+<div class="layout"><header class="topbar"><button type="button" class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">{icon('menu')}</button><div class="breadcrumb"><span class="crumb-parent">{esc(parent)}</span><span class="divider">/</span><strong>{esc(title)}</strong></div><div class="top-right"><label class="search-field">{icon('search')}<span class="sr-only">Search tables on this page</span><input type="search" id="page-search" placeholder="Search this page…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label>{snapshot_markup}</div></header>
 <main class="content" id="main-content"><div class="page-heading"><div><div class="eyebrow">{esc(eyebrow)}</div><h1>{esc(title)}</h1><p>{subtitle}</p></div><div class="heading-actions">{link('research/results.json', icon('download')+' Research JSON', css='button')}{badge('Research only', 'neutral')}</div></div>{body}
-<footer class="footer"><div><strong>OWN7</strong> / INDEPENDENT RESEARCH<br>NFL data attributed to NFL.com; NBA data to NBA.com. Not affiliated with or endorsed by either league.</div><div>Frozen snapshots · not a live feed<br>{link('review.html','Limitations')} &nbsp;·&nbsp; {link('sources.html','Sources')} &nbsp;·&nbsp; {link('responsible-gambling.html','Responsible use')}</div><div class="foot-note">Official sources re-checked this session (2026-11-18): <a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">NFL standings</a> (32 clubs, live), <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL injury report</a> (Week 10; Lions Joseph / Mays / Reed = Out confirmed), <a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">Week 10 schedule</a> (live finals), <a href="https://www.nfl.com/odds/" target="_blank" rel="noopener noreferrer">nfl.com/odds/</a> (404 — no official market price exists).</div></footer></main></div></body></html>\n'''
+<footer class="footer"><div><strong>OWN7</strong> / INDEPENDENT RESEARCH<br>NFL data attributed to NFL.com; NBA data to NBA.com. Not affiliated with or endorsed by either league.</div><div>Frozen snapshots · not a live feed<br>{link('review.html','Limitations')} &nbsp;·&nbsp; {link('sources.html','Sources')} &nbsp;·&nbsp; {link('responsible-gambling.html','Responsible use')}</div>{footnote}</footer></main></div></body></html>\n'''
 
 
 def overview():
