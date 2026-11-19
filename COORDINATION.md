@@ -3750,3 +3750,34 @@ is NOT edited: reconciled statuses live in the new desk and the change log says 
 - Pages verification and PR number: recorded in the K7 row once the PR is merged.
 - Merge log: `main` moved twice during K637 (to 1d973d3, then 5799028 with PR #96). Both merges were resolved by taking main's generated outputs and regenerating them. The first integration commit reused the names `ledger_nav_group`, `ledger_pages` and `ledger_result`, which main's `nfl-ledger-aedccbe5` desk already defines; this overwrote that desk's nav and page list. Fixed in 749043d by renaming this desk's names to `desk637_*`. Lesson for integration: `git pull --rebase` on this branch replays main's history (it was aborted with no loss), so use `git fetch` plus `git merge origin/main`.
 - K637 completion record: PR #101 merged to `main` at `ea6fb00` (merge commit). It was merged after main had moved several times. Each time, `main` was merged into the branch, the conflicts were resolved, and the outputs were regenerated and re-checked before pushing. Post-merge state: Pages build succeeded. Flagged for Review page lists F-REG, F-INJ-COUNT, F-TERMS-1.3, F-TERMS-12, F-SNAP, F-CORPUS, F-CONTROL, F-RULES. Open for the owner: choose the canonical register (F-REG), the injury recount (F-INJ-COUNT), the terms and gambling questions (F-TERMS-1.3, F-TERMS-12, with legal advice; not a legal opinion), the snap-count route (F-SNAP), the canonical results file (F-CORPUS), the random-pick control (F-CONTROL), and the rulebook sections (F-RULES).
+
+## Session arena/fe46e986-own7 — Suggestions review & decision workflow (2026-11-19)
+
+Session ID: `session-arena-fe46e986-own7`. Fixed Arena branch `arena/fe46e986-own7` (base `666a3a8d` = `origin/main` at claim).
+Baseline at claim: working tree clean; `python -m unittest discover -s tests` → 119 OK; `python scripts/check_site.py` → OK.
+
+Scope: the brief asks for a dedicated suggestions section where someone can review proposals and choose the best path before implementing anything. The suggestions page existed (ten proposals, S01-S10, all "Proposed") but recorded zero review decisions. This session recorded review decisions on the register, rendered them, and shipped via PR to GitHub Pages.
+
+Exclusive file scope: `research/nfl/decisions.json` (review decisions added to all 10 suggestions), `nfl_pages.py` (render review-decisions section, color-coded badges, Approved-today metric), `nfl-suggestions.html` (regenerated), `research/site-manifest.json` and `nfl-ledger-aedccbe5/data/ledger-audit.json` (downstream SHA-256 fingerprints of the changed suggestions page).
+
+Verification / notes:
+- 119 unit tests: OK. `scripts/check_site.py`: OK (313 pages, 16,042 table body rows, 332 registered sources, zero errors).
+- Build is deterministic and idempotent (`python scripts/build_site.py` produces no diff when run twice).
+- No NFL data values were added or inferred; review decisions are internal project governance judgments, not sourced market data. Every suggestion row keeps its existing registered source links; blanks stay blank.
+
+Decisions recorded:
+- Approved: S06 rights gate (NFL.com Terms 1.3/11(f)/12 read verbatim; stay non-commercial, no bulk collection, no wagering — closes M07), S07 blank-as-unknown (build enforces it; rejection test present — closes M09), S09 empty shadow ledger (rules locked, pre-registered by commit hash).
+- Under review: S01 market capture (blocked: no operator price on official pages read; nfl.com/odds returns 404), S02 depth/snaps (blocked: no official snap-count source; club depth path 404), S03/S04/S05/S08/S10 (open data/specification gaps).
+
+PR, merge, Pages verification:
+- PR https://github.com/sassnarep3-star/Own7/pull/108 (merge commit `ebc05f7`, merged 2026-11-19, `--merge`, no `--auto`).
+- CI on merge head ebc05f7: Research and dashboard checks = success; pages build and deployment = success.
+- GitHub Pages status: built; live at https://sassnarep3-star.github.io/Own7/ (suggestions page: https://sassnarep3-star.github.io/Own7/nfl-suggestions.html).
+
+## Session arena/fe46e986-own7 log
+
+- Claimed the suggestions-review task; verified the existing suggestions register had zero recorded decisions despite a documented review workflow (Proposed → Under review → Approved → Rejected → Implemented).
+- Added review_decision (reviewer, date, decision, acceptance-test status, question closed, rationale) to each of S01-S10 in research/nfl/decisions.json; aligned review_state/status with the allowed workflow states so the existing grading tests pass.
+- Extended nfl_pages.py suggestions() to render a color-coded "Review decisions" section, color-code the register's Review-state badge, and report a real "Approved today" count (3).
+- Rebuilt the site; updated the two downstream SHA-256 fingerprints (site-manifest.json, ledger-audit.json) that track nfl-suggestions.html.
+- Committed 9a4c5e0, pushed to arena/fe46e986-own7, opened PR #108, merged to main at ebc05f7, confirmed Pages built and CI green.
