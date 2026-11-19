@@ -3845,3 +3845,11 @@ Baseline at claim: `python -m unittest discover -s tests` → 119 OK; `python sc
 - Regeneration reached a fixed point: two consecutive full regenerations produced identical bytes. The first build after a regeneration rewrote `sources.html` and the manifest; the second did not.
 - Re-verified on the merged tree: `check_site.py` passes; the recorded CI reproduction runs **85 of 85** commands (main added two) with 0 worktree changes; the desk's build, scan and 12 tests pass; `nba_lab` and `nfl_lab` checks pass.
 - Process note: the first `git pull --rebase` against the remote session branch replayed main's commits by mistake. It was aborted with no change, and the remote's superseded claim commit was joined by a no-op `ours` merge. No force push.
+
+#### Merge record — arena/1c6816a0-own7 (2026-11-19)
+
+- **PR #111** (`arena/1c6816a0-own7` → `main`): **merged** with a merge commit at **`ae70a42`** (2026-11-19 13:57 UTC). Checks on the merged head `48575b5`: *Research and recursive site audit* pass (1m24s); *Desktop, mobile and accessibility* pass (11m42s).
+- **GitHub Pages:** build for `ae70a42` reports `built`, with no error (`gh api repos/sassnarep3-star/Own7/pages/builds/latest`). Live page checked: https://sassnarep3-star.github.io/Own7/nfl-review-1c6816a0/site/index.html (served, figures match the desk data).
+- **Open items carried forward (not blocking, see the flagged page):** F-01 (Week 11 blanks on 2026-11-18 versus values on 2026-11-19), F-02 (REG10 title and body disagree), F-03 to F-11. Open PRs #79, #82, #83, #88, #98 and #106 were not changed by this session.
+- **Process record:** three merge conflicts with other sessions (COORDINATION.md, research/site-manifest.json, and shared generator files) were resolved without discarding other sessions' work, and each is logged above. One mistaken `git pull --rebase` was aborted without changing the branch.
+- This record was committed on `arena/1c6816a0-own7-record` as COORDINATION.md only, because `main` must receive the merge result after PR #111 is merged.
