@@ -1,0 +1,27 @@
+game_order,game_label,club_code,club_name,rows_printed,status_printed
+1,IND at HOU (Thu 8:15 PM ET),IND,Colts,11,rows
+1,IND at HOU (Thu 8:15 PM ET),HOU,Texans,15,rows
+2,PIT at PHI (Sun 1:00 PM ET),PIT,Steelers,10,rows
+2,PIT at PHI (Sun 1:00 PM ET),PHI,Eagles,15,rows
+3,AZ at KC (Sun 1:00 PM ET),AZ,Cardinals,12,rows
+3,AZ at KC (Sun 1:00 PM ET),KC,Chiefs,15,rows
+4,BAL at CAR (Sun 1:00 PM ET),BAL,Ravens,6,rows
+4,BAL at CAR (Sun 1:00 PM ET),CAR,Panthers,13,rows
+5,TB at DET (Sun 1:00 PM ET),TB,Buccaneers,6,rows
+5,TB at DET (Sun 1:00 PM ET),DET,Lions,8,rows
+6,MIA at BUF (Sun 1:00 PM ET),MIA,Dolphins,11,rows
+6,MIA at BUF (Sun 1:00 PM ET),BUF,Bills,15,rows
+7,TEN at DAL (Sun 1:00 PM ET),TEN,Titans,9,rows
+7,TEN at DAL (Sun 1:00 PM ET),DAL,Cowboys,14,rows
+8,NO at CHI (Sun 1:00 PM ET),NO,Saints,10,rows
+8,NO at CHI (Sun 1:00 PM ET),CHI,Bears,5,rows
+9,NYJ at LAC (Sun 4:05 PM ET),NYJ,Jets,8,rows
+9,NYJ at LAC (Sun 4:05 PM ET),LAC,Chargers,11,rows
+10,JAX at NYG (Sun 4:25 PM ET),JAX,Jaguars,13,rows
+10,JAX at NYG (Sun 4:25 PM ET),NYG,Giants,6,rows
+11,LV at DEN (Sun 4:25 PM ET),LV,Raiders,6,rows
+11,LV at DEN (Sun 4:25 PM ET),DEN,Broncos,9,rows
+12,MIN at SF (Sun 8:20 PM ET),MIN,Vikings,10,rows
+12,MIN at SF (Sun 8:20 PM ET),SF,49ers,15,rows
+13,CIN at WAS (Mon 8:15 PM ET),CIN,Bengals,0,No Injuries Reported
+13,CIN at WAS (Mon 8:15 PM ET),WAS,Commanders,0,No Injuries Reported
