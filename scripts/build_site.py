@@ -175,9 +175,8 @@ def dated_summary_nav_entry():
 
 NAV = [
     ("NFL origination", [("index.html", "NFL overview", "overview"),
-                      ("nfl-suggestions.html", "Suggestions · review choices", "signals"),
-                      ("executive-summary.html", "Results executive summary", "brief"),
-                      dated_summary_nav_entry(),
+                      ("nfl-suggestions.html", "Suggestions", "signals"),
+                      ("executive-summary.html", "Executive summary", "brief"),
                       ("nfl-decisions.html", "Decision brief", "brief"),
                       ("nfl-questions.html", "Questions", "requirements"),
                       ("nfl-lines.html", "Line origination", "lab"),
@@ -536,16 +535,16 @@ def desk637_nav_group():
     manifest = ROOT / "nfl-ledger-637442e9" / "site" / "manifest.json"
     if not manifest.exists():
         return []
-    pages = [n for n in load_json(str(manifest.relative_to(ROOT)))["pages"]
-             if n.endswith(".html") and n != "executive-summary.html"]
+    pages = [n for n in load_json(str(manifest.relative_to(ROOT)))["pages"] if n.endswith(".html")]
     labels = {
         "index.html": "Ledger dashboard",
+        "executive-summary.html": "Executive summary",
         "gaps.html": "Questions and gaps",
-        "suggestions.html": "Suggestions review",
+        "suggestions.html": "Suggestions",
         "flagged.html": "Flagged for review",
         "sources.html": "Ledger sources",
     }
-    return [("NFL decision-readiness desk",
+    return [("NFL origination ledger",
              [(f"nfl-ledger-637442e9/site/{p}", labels.get(p, p), "validation") for p in pages])]
 
 
@@ -713,31 +712,84 @@ def page(slug, title, subtitle, body, eyebrow=None, description=None):
                        "validation gates and explicit blanks. Not a betting service."
                        if (parent.startswith("NFL") or eyebrow.startswith("NFL"))
                        else "OWN7 NBA research: source-linked observations, exploratory models, validation and transparent limitations.")
-    def render_nav_group(group, entries, *, nested=False):
-        current_group = any(href == slug for href, _, _ in entries)
+    def render_nav_group(group, entries, *, nested=False, sections=None):
+        visible_entries = ([entry for _, section_entries in sections for entry in section_entries]
+                           if sections else entries)
+        current_group = any(href == slug for href, _, _ in visible_entries)
         open_attr = ' open' if current_group else ''
         group_class = 'nav-subgroup' if nested else 'nav-group'
         parts = [f'<details class="{group_class}"{open_attr}>'
                  f'<summary class="nav-label">{esc(group)}'
-                 f'<span class="nav-group-count" aria-hidden="true">{len(entries)}</span></summary>']
-        for href, label, ico in entries:
-            current = ' aria-current="page"' if href == slug else ''
-            count = ''
-            if href == 'review.html':
-                count = f'<span class="nav-count">{OPEN_FLAGS}</span>'
-            elif href == 'nfl-review.html':
-                count = f'<span class="nav-count" title="{NFL_BADGE} flagged items need review">{NFL_OPEN}</span>'
-            parts.append(f'<a href="{esc(href)}"{current}>{icon(ico)}{esc(label)}{count}</a>')
+                 f'<span class="nav-group-count" aria-hidden="true">{len(visible_entries)}</span></summary>']
+        if sections:
+            for section_name, section_entries in sections:
+                parts.append(render_nav_group(section_name, section_entries, nested=True))
+        else:
+            for href, label, ico in entries:
+                current = ' aria-current="page"' if href == slug else ''
+                count = ''
+                if href == 'review.html':
+                    count = f'<span class="nav-count">{OPEN_FLAGS}</span>'
+                elif href == 'nfl-review.html':
+                    count = f'<span class="nav-count" title="{NFL_BADGE} flagged items need review">{NFL_OPEN}</span>'
+                parts.append(f'<a href="{esc(href)}"{current}>{icon(ico)}{esc(label)}{count}</a>')
         parts.append('</details>')
         return ''.join(parts)
 
     primary_groups = {'NFL origination', 'NFL results & skill lab'}
+    primary_sections = {
+        'NFL origination': [
+            ('Overview', {'index.html', 'executive-summary.html', 'nfl-ledger-637442e9/site/executive-summary.html'}),
+            ('Decisions & review', {'nfl-suggestions.html', 'nfl-decisions.html', 'nfl-questions.html', 'nfl-readiness.html'}),
+            ('Origination & validation', {'nfl-lines.html', 'nfl-correlation.html', 'nfl-validation.html', 'nfl-leaderboard.html'}),
+            ('Availability & flags', {'nfl-injuries.html', 'nfl-standings.html', 'nfl-verification-2026-11-13.html', 'nfl-review.html'}),
+        ],
+        'NFL results & skill lab': [
+            ('Results', {'nfl-results.html', 'nfl-results-games.html'}),
+            ('Evaluation', {'nfl-results-skill.html', 'nfl-results-correlation.html', 'nfl-results-leaderboard.html'}),
+            ('Questions & review', {'nfl-results-decisions.html', 'nfl-results-suggestions.html', 'nfl-results-flagged.html'}),
+        ],
+    }
     uses_nfl_navigation = parent.startswith('NFL') or parent == 'Transparency'
     if uses_nfl_navigation:
-        primary = [(group, entries) for group, entries in NAV if group in primary_groups]
-        secondary = [(group, entries) for group, entries in NAV
-                     if group not in primary_groups and (group.startswith('NFL') or group == 'Transparency')]
-        navigation = ''.join(render_nav_group(group, entries) for group, entries in primary)
+        primary = []
+        for group, entries in NAV:
+            if group not in primary_groups:
+                continue
+            if group == 'NFL origination':
+                adjusted = []
+                for href, label, ico in entries:
+                    if href == 'nfl-suggestions.html':
+                        label = 'Suggestions · review choices'
+                    elif href == 'executive-summary.html':
+                        label = 'Results executive summary'
+                    adjusted.append((href, label, ico))
+                    if href == 'executive-summary.html':
+                        adjusted.append(dated_summary_nav_entry())
+                entries = adjusted
+            by_href = {href: (href, label, ico) for href, label, ico in entries}
+            categories = primary_sections[group]
+            categorized = [
+                (name, [by_href[href] for href in ordered_hrefs if href in by_href])
+                for name, ordered_hrefs in ((name, [href for href in by_href if href in href_set])
+                                            for name, href_set in categories)
+            ]
+            assigned = {href for _, category_entries in categorized for href, _, _ in category_entries}
+            if assigned != set(by_href):
+                raise ValueError(f'Navigation category mismatch for {group}: missing={set(by_href)-assigned}, extra={assigned-set(by_href)}')
+            primary.append((group, categorized))
+        secondary = []
+        for group, entries in NAV:
+            if group in primary_groups or not (group.startswith('NFL') or group == 'Transparency'):
+                continue
+            if group == 'NFL origination ledger':
+                group = 'NFL decision-readiness desk'
+                entries = [(href, label, ico) for href, label, ico in entries
+                           if href != 'nfl-ledger-637442e9/site/executive-summary.html']
+                entries = [(href, 'Suggestions review' if href.endswith('/suggestions.html') else label, ico)
+                           for href, label, ico in entries]
+            secondary.append((group, entries))
+        navigation = ''.join(render_nav_group(group, [], sections=sections) for group, sections in primary)
         if secondary:
             archive_current = any(any(href == slug for href, _, _ in entries)
                                   for _, entries in secondary)
@@ -751,7 +803,7 @@ def page(slug, title, subtitle, body, eyebrow=None, description=None):
     else:
         navigation = ''
         for group, entries in NAV:
-            navigation += f'<div class="nav-group"><div class="nav-label">{esc(group)}</div>'
+            navigation += f'<div class="nav-group"><div class="nav-label">{group}</div>'
             for href, label, ico in entries:
                 current = ' aria-current="page"' if href == slug else ''
                 count = ''
@@ -759,11 +811,11 @@ def page(slug, title, subtitle, body, eyebrow=None, description=None):
                     count = f'<span class="nav-count">{OPEN_FLAGS}</span>'
                 elif href == 'nfl-review.html':
                     count = f'<span class="nav-count" title="{NFL_BADGE} flagged items need review">{NFL_OPEN}</span>'
-                navigation += f'<a href="{esc(href)}"{current}>{icon(ico)}{esc(label)}{count}</a>'
+                navigation += f'<a href="{href}"{current}>{icon(ico)}{label}{count}</a>'
             navigation += '</div>'
     if uses_nfl_navigation:
         snapshot_markup = '<div class="snapshot">FROZEN EVIDENCE<span><a href="sources.html">Read dates vary by source</a></span></div>'
-        footnote = '<div class="foot-note">This is a frozen research site, not a live feed. Source read dates and scopes are recorded per artifact; see the <a href="sources.html">source register</a> and <a href="nfl-review.html">Flagged for Review</a> for citations, conflicts and unresolved values.</div>'
+        footnote = '<div class="foot-note">This is a frozen research site, not a live feed. Source read dates and scopes are recorded per artifact; see the <a href="sources.html">source register</a> and <a href="nfl-review.html">Flagged for Review</a> for citations, conflicts and unresolved values. The separate <a href="docs/nfl-acceptance-review-2026-11-18.md">18 Nov independent acceptance review</a> is an audit record, not a fresh source read.</div>'
     else:
         snapshot_markup = '<div class="snapshot">SNAPSHOT CHECKED<span>12 Nov 2026</span></div>'
         footnote = '<div class="foot-note">Official sources re-checked this session (2026-11-18): <a href="https://www.nfl.com/standings/" target="_blank" rel="noopener noreferrer">NFL standings</a> (32 clubs, live), <a href="https://www.nfl.com/injuries/" target="_blank" rel="noopener noreferrer">NFL injury report</a> (Week 10; Lions Joseph / Mays / Reed = Out confirmed), <a href="https://www.nfl.com/schedules/2026/by-week/week-10" target="_blank" rel="noopener noreferrer">Week 10 schedule</a> (live finals), <a href="https://www.nfl.com/odds/" target="_blank" rel="noopener noreferrer">nfl.com/odds/</a> (404 — no official market price exists).</div>'
