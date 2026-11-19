@@ -3769,7 +3769,7 @@ hiding routes; and add a review-only, browser-local choice/export workflow for t
 ledger suggestions. No user choice will be invented and no choice will trigger implementation.
 
 **Baseline at claim:** `npm run check` passed (119 repository tests, 6 NFL build tests, receipt-checked
-results and recursive site audit: 313 HTML pages, 16,032 table rows, 33?2 registered sources, 0 errors).
+results and recursive site audit: 313 HTML pages, 16,032 table rows, 332 registered sources, 0 errors).
 The audit is mechanical; official values will be taken only from committed dated evidence and
 registered sources. This session has not made a new NFL-source fetch and will not start scheduled
 NFL.com capture while the published terms gate remains unresolved.
