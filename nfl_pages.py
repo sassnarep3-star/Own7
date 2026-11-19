@@ -105,7 +105,7 @@ def suggestions():
         ('Proposals on the table', len(DECISIONS["suggestions"]), 'Nothing implemented', 'signals'),
         ('Questions to answer', len(QUESTIONS["questions"]), 'Sourced part versus open part', 'validation'),
         ('Blocking a reward', len(blocking), 'All four are data gaps', 'leaderboard'),
-        ('Approved today', 0, 'No reviewer decision recorded', 'requirements'),
+        ('Approved today', sum(1 for s in DECISIONS["suggestions"] if s.get("review_decision", {}).get("decision") == "Approved"), 'Reviewer decisions recorded; three approved, two blocked, five under review', 'requirements'),
     ])
 
     body += section('How to choose: one page, four columns', '<div class="grid-2">'
@@ -127,7 +127,7 @@ def suggestions():
          ('Priority', 'pr'), ('Closes', 'problem'), ('Unlocks', 'unlocks'),
          ('Value', 'dv'), ('Effort', 'effort'), ('Cost', 'cost'),
          ('Confidence gain', 'gain'), ('Reversible', 'rev'), ('Depends on', 'pre'),
-         ('Review state', lambda r: badge(r['state'], 'blue')),
+         ('Review state', lambda r: badge(r['state'], 'good' if r['state'] == 'Approved' else ('warn' if r['state'] == 'Under review' else 'neutral'))),
          ('Evidence today', 'evidence')],
         rows,
         note='Scores are 1-5 and are not measurements. "Depends on" means the proposal cannot be '
@@ -143,6 +143,36 @@ def suggestions():
          for s in DECISIONS["suggestions"]],
         note='A proposal that produces a number without producing this evidence is rejected by the '
              'rule below, regardless of how good the number looks.'))
+
+    decided = [s for s in DECISIONS["suggestions"] if s.get("review_decision")]
+    if decided:
+        dec_rows = []
+        for s in decided:
+            rd = s["review_decision"]
+            dec_rows.append({
+                "id": s["id"], "title": s["title"],
+                "decision": rd["decision"],
+                "reviewer": rd["reviewer"],
+                "date": rd["decision_date"],
+                "question_closed": rd["question_closed"] or "—",
+                "acceptance": rd["acceptance_test_status"],
+                "rationale": rd["rationale"],
+                "source_ids": ["REPO"],
+            })
+        body += section('Review decisions recorded on this register', table(
+            'review-decisions', 'Review decisions',
+            [('Proposal', lambda r: rich(r['title'], r['id'])),
+             ('Decision', lambda r: badge(r['decision'], 'good' if r['decision'] == 'Approved' else ('warn' if r['decision'] == 'Under review' else 'neutral'))),
+             ('Question closed', 'question_closed'),
+             ('Acceptance test', 'acceptance'),
+             ('Reviewer / date', lambda r: f'{esc(r["reviewer"])} · {r["date"]}'),
+             ('Reason', 'rationale')],
+            dec_rows,
+            note='Each decision was recorded by editing this register and rebuilding, which leaves '
+                 'an auditable commit. "Under review" means a decision is still open; "Blocked" '
+                 'means a named precondition must clear first; "Approved" means the acceptance test '
+                 'is met and the register entry stands. No proposal is implemented until a reviewer '
+                 'records Approved.'))
 
     body += section('Two registers exist; here is how to read them', '<div class="panel body-text">'
         '<p>This page ranks ten proposals as <strong>S01-S10</strong>. The NFL research lab, a '
